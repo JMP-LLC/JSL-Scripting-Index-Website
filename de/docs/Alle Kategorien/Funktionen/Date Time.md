@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Abbrev Date( Today() );
 
 ```
@@ -27,7 +26,6 @@ Abbrev Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -42,7 +40,6 @@ As Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date DMY( 15, 7, 2000 ) );
 
 ```
@@ -55,29 +52,26 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
 ```
@@ -90,29 +84,26 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "fractional" );
 
 ```
@@ -127,7 +118,6 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -142,7 +132,6 @@ As Date( Date MDY( 7, 15, 2000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day( Today() );
 
 ```
@@ -157,7 +146,6 @@ Day( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Week( Today() );
 
 ```
@@ -172,7 +160,6 @@ Day Of Week( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Year( Today() );
 
 ```
@@ -187,7 +174,6 @@ Day Of Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 v = Days In Month( 2016, 2 );
 
 ```
@@ -200,40 +186,36 @@ v = Days In Month( 2016, 2 );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Datum/Uhrzeit**
+#### Datum/Uhrzeit
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-**Formatmuster**
+#### Formatmuster
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
 
-**Prozent, Währung**
+#### Prozent, Währung
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
-**Volle Präzision**
+#### Volle Präzision
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
@@ -246,29 +228,26 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -285,7 +264,6 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-Names Default To Here( 1 );
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 et = HP Time();
@@ -304,7 +282,6 @@ Show( it );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hour( Today() );
 
 ```
@@ -319,7 +296,6 @@ Hour( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 ISO Year( Today() );
 
 ```
@@ -334,7 +310,6 @@ ISO Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Days( 1.5 );
 
 ```
@@ -349,7 +324,6 @@ In Days( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Hours( 0.5 );
 
 ```
@@ -364,7 +338,6 @@ In Hours( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Minutes( 1 );
 
 ```
@@ -379,7 +352,6 @@ In Minutes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Weeks( 1 );
 
 ```
@@ -394,7 +366,6 @@ In Weeks( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Years( 1 );
 
 ```
@@ -407,47 +378,42 @@ In Years( 1 );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
 
-**Beispiel 5**
+#### Beispiel 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -467,7 +433,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 v = Is Leap Year( 2016 );
 
 ```
@@ -482,7 +447,6 @@ v = Is Leap Year( 2016 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Long Date( Today() );
 
 ```
@@ -497,7 +461,6 @@ Long Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 MDYHMS( Today() );
 
 ```
@@ -512,7 +475,6 @@ MDYHMS( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Minute( Today() );
 
 ```
@@ -527,7 +489,6 @@ Minute( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Month( Today() );
 
 ```
@@ -542,7 +503,6 @@ Month( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -555,47 +515,42 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
 
-**Beispiel 5**
+#### Beispiel 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -615,7 +570,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Quarter( Today() );
 
 ```
@@ -630,7 +584,6 @@ Quarter( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Second( Today() );
 
 ```
@@ -645,7 +598,6 @@ Second( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Short Date( Today() );
 
 ```
@@ -660,7 +612,6 @@ Short Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 t2 = Tick Seconds();
@@ -678,7 +629,6 @@ Round( t2 - t1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -693,7 +643,6 @@ Format( Time Of Day( Today() ), "h:m:s" );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -706,20 +655,18 @@ As Date( Today() );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Week Of Year( Today() );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Week Of Year( 01jan2012, 1 ),
 	Week Of Year( 01jan2012, 2 ),
@@ -738,7 +685,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Year( Today() );
 
 ```

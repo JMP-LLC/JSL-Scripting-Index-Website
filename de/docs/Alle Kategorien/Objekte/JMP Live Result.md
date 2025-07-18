@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -41,7 +40,6 @@ If( worked == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
 
@@ -61,7 +59,6 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
 
@@ -81,7 +78,6 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -106,7 +102,6 @@ Write( "\!nConnection Name: ", name );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -133,7 +128,6 @@ If( worked == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(

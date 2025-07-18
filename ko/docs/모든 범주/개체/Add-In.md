@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Auto Load( 1 ),
@@ -27,21 +26,19 @@ If( !Is Missing( addin ),
 
 **설명:** 추가기능의 표시 이름을 반환합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Display Name();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Display Name(),
@@ -56,21 +53,19 @@ If( !Is Missing( addin ),
 
 **설명:** 추가기능의 홈 폴더를 반환합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Home Folder();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Home Folder(),
@@ -85,21 +80,19 @@ If( !Is Missing( addin ),
 
 **설명:** 추가기능의 고유 ID를 반환합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << ID();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << ID(),
@@ -114,21 +107,19 @@ If( !Is Missing( addin ),
 
 **설명:** 추가기능이 현재 로드되어 있는지 여부를 반환합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Is Loaded();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Is Loaded(),
@@ -145,7 +136,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Load(),
@@ -162,7 +152,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Unload(),
@@ -177,21 +166,19 @@ If( !Is Missing( addin ),
 
 **설명:** 추가기능의 버전 번호를 반환합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Version();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Version(),

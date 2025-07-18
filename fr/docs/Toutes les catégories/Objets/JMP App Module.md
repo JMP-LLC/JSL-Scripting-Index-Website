@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Run Application;
@@ -29,7 +28,6 @@ modules[1] << Create Instance;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Run Application;

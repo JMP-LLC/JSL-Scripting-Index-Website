@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Run Script( "Bivariate" );
@@ -28,7 +27,6 @@ w << Bring Window To Front;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -44,7 +42,6 @@ w << Close Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Content Size();
@@ -60,7 +57,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -85,7 +81,6 @@ Show( w << Get On Close );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Page Setup Test" ) );
 w << get page setup();
@@ -102,7 +97,6 @@ w << get page setup();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Project();
@@ -118,7 +112,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -136,7 +129,6 @@ Print( w << Get Show Window() );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -152,7 +144,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Icon;
@@ -168,7 +159,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 p = w << Get Window Position();
@@ -184,7 +174,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = w << Get Window Size();
@@ -200,7 +189,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Title;
@@ -216,7 +204,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Print( w << Get Window View() );
@@ -231,7 +218,6 @@ Print( w << Get Window View() );
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "Modal Window", <<Modal ),
 	Function( {win},
@@ -250,7 +236,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -270,7 +255,6 @@ w << Maximize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -288,7 +272,6 @@ w << Minimize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -302,11 +285,10 @@ w << Move Window( 500, 500 );
 
 **Descrizione:** Imposta l&apos;esecuzione di uno script o di una funzione alla chiusura della finestra. Questo script dovrebbe restituire 1 per consentire la chiusura o 0 per impedire la chiusura della finestra.
 
-**Chiudi funzione**
+#### Chiudi funzione
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -324,11 +306,10 @@ w << On Close(
 
 ```
 
-**Chiudi script**
+#### Chiudi script
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -354,7 +335,6 @@ w << On Close(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to Data Table objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Optimize Display;
@@ -369,7 +349,6 @@ dt << Optimize Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -386,7 +365,6 @@ r << Pad Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Print Window;
@@ -403,7 +381,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message can be sent to any display box object but will be applied to the report window
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -419,7 +396,6 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Test",
 	lb = List Box( {"a", "b", "c", "d"} ),
@@ -445,7 +421,6 @@ w << Set Content Size( 400, 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Set Main Window;
@@ -460,7 +435,6 @@ w << Set Main Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
 w << Set page setup(
@@ -482,7 +456,6 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Footer Test" ) );
 w << Set Print Footers(
@@ -501,7 +474,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Header Test" ) );
 w << Set Print Headers(
@@ -520,7 +492,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Example", ex = Button Box( "New Analysis" ) );
 w << Set Window Icon( "Scatter3D" );
@@ -535,7 +506,6 @@ w << Set Window Icon( "Scatter3D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 800, 1200 );
@@ -550,7 +520,6 @@ w << Set Window Size( 800, 1200 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Title( "New Title" );
@@ -565,7 +534,6 @@ w << Set Window Title( "New Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -583,7 +551,6 @@ w << Show Window( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Size Window( 500, 500 );
@@ -598,7 +565,6 @@ w << Size Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 80, 120 );

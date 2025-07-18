@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 
@@ -28,7 +27,6 @@ nb = Notebook();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -45,7 +43,6 @@ nb << Enable Inline Logging( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -66,7 +63,6 @@ nb << Export to a Workflow;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -83,7 +79,6 @@ nb << Get Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -100,7 +95,6 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -122,7 +116,6 @@ nb << Run All Scripts;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -139,7 +132,6 @@ nb << Show Embedded Log( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -159,7 +151,6 @@ Show( nb << Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
@@ -176,7 +167,6 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -194,7 +184,6 @@ block << Block Name( "Test Block Name" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -212,7 +201,6 @@ block << Duplicate Block;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -230,7 +218,6 @@ Show( block << Get Content );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -253,7 +240,6 @@ block2 << Get Output;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 section = nb << Add New Block( "Section" );
@@ -269,7 +255,6 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -287,7 +272,6 @@ block << Line Count( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -308,7 +292,6 @@ block << Move Block Down;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -329,7 +312,6 @@ block2 << Move Block Up;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -352,7 +334,6 @@ block2 << Popout Results;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -370,7 +351,6 @@ block << Remove Block;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 section = nb << Add New Block( "Section" );
@@ -386,7 +366,6 @@ section << Remove Section;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();
@@ -405,7 +384,6 @@ block << Run Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 section = nb << Add New Block( "Section" );
@@ -423,7 +401,6 @@ section << Run Section;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 
 nb = Notebook();

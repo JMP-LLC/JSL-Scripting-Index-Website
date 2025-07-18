@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -36,7 +35,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -54,7 +52,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Neural(
@@ -74,7 +71,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -92,7 +88,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -111,7 +106,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -129,7 +123,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -149,7 +142,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -169,7 +161,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -187,11 +178,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -199,11 +189,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -214,11 +203,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -236,7 +224,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -254,7 +241,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -272,7 +258,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -297,7 +282,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -316,7 +300,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -335,7 +318,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -355,7 +337,6 @@ obj << Fit( NTanH( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -370,7 +351,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -394,11 +374,10 @@ Show( t );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -410,11 +389,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -447,7 +425,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -467,7 +444,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -484,7 +460,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -504,7 +479,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -524,7 +498,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -544,7 +517,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -562,7 +534,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -578,7 +549,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -597,7 +567,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -624,7 +593,6 @@ Per variabili categoriche, i valori mancanti non sono imputati, ma considerati u
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), Go );
@@ -639,7 +607,6 @@ obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -660,7 +627,6 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -682,7 +648,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -701,7 +666,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -723,7 +687,6 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -742,7 +705,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -757,7 +719,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -778,7 +739,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -798,7 +758,6 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -817,7 +776,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -842,7 +800,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -861,7 +818,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -886,7 +842,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -906,7 +861,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -930,7 +884,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -945,7 +898,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -966,7 +918,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -985,7 +936,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1005,7 +955,6 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1030,7 +979,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1055,7 +1003,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1080,7 +1027,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1097,11 +1043,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1118,11 +1063,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1147,7 +1091,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1166,7 +1109,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1185,7 +1127,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1204,7 +1145,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1223,7 +1163,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1244,7 +1183,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1270,7 +1208,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1288,7 +1225,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1308,7 +1244,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1325,7 +1260,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1344,7 +1278,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1369,7 +1302,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1386,7 +1318,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1406,7 +1337,6 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1425,7 +1355,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1440,7 +1369,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1463,7 +1391,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1483,7 +1410,6 @@ obj << (Fit[1] << Categorical Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1505,7 +1431,6 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1528,7 +1453,6 @@ obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1548,7 +1472,6 @@ obj << (Fit[1] << Diagram( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1573,7 +1496,6 @@ Show( ae );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1594,7 +1516,6 @@ Show( ae );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1615,7 +1536,6 @@ Show( ae );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1640,7 +1560,6 @@ Show( avg );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1661,7 +1580,6 @@ Show( avg );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1682,7 +1600,6 @@ Show( avg );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1707,7 +1624,6 @@ Show( cm );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1728,7 +1644,6 @@ Show( cm );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1749,7 +1664,6 @@ Show( cm );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1774,7 +1688,6 @@ Show( cr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1795,7 +1708,6 @@ Show( cr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1816,7 +1728,6 @@ Show( cr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1841,7 +1752,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1862,7 +1772,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1883,7 +1792,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1903,7 +1811,6 @@ code = obj << (Fit[1] << Get MM SAS Data Step);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1924,7 +1831,6 @@ obj << (Fit[1] << Get Measures);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -1949,7 +1855,6 @@ Show( mr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1970,7 +1875,6 @@ Show( mrt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -1991,7 +1895,6 @@ Show( mrt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2012,7 +1915,6 @@ Show( n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -2038,7 +1940,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2060,7 +1961,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2082,7 +1982,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2102,7 +2001,6 @@ obj << (Fit[1] << Get Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -2127,7 +2025,6 @@ Show( re );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2148,7 +2045,6 @@ Show( re );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2169,7 +2065,6 @@ Show( re );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -2195,7 +2090,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2217,7 +2111,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2239,7 +2132,6 @@ Show( ra );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Neural(
 	Y( :BAD ),
@@ -2264,7 +2156,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2286,7 +2177,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2308,7 +2198,6 @@ Show( rt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2328,7 +2217,6 @@ code = obj << (Fit[1] << Get SAS Data Step);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2349,7 +2237,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2369,7 +2256,6 @@ obj << (Fit[1] << Lift Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2389,7 +2275,6 @@ obj << (Fit[1] << Make SAS Data Step);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2409,7 +2294,6 @@ obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2429,7 +2313,6 @@ obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2449,7 +2332,6 @@ obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2469,7 +2351,6 @@ obj << (Fit[1] << Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2489,7 +2370,6 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y Binary ),
@@ -2509,7 +2389,6 @@ obj << (Fit[1] << ROC Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2530,7 +2409,6 @@ obj << (Fit[1] << Remove Fit);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2550,7 +2428,6 @@ obj << (Fit[1] << Save Fast Formulas);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2570,7 +2447,6 @@ obj << (Fit[1] << Save Formulas);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2590,7 +2466,6 @@ obj << (Fit[1] << Save Profile Formulas);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2611,7 +2486,6 @@ obj << (Fit[1] << Save Transformed Covariates);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2631,7 +2505,6 @@ obj << (Fit[1] << Save Validation);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -2651,7 +2524,6 @@ obj << (Fit[1] << Show Estimates( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),

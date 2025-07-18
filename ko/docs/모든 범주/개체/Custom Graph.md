@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -40,7 +39,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [20, 40, 60, 80];
 New Window( "Example",
 	Graph Box( Frame Size( 300, 120 ), Append Seg( Marker Seg( x, x ), Line Seg( x, x ) ) )
@@ -62,11 +60,10 @@ New Window( "Example",
 
 **설명:** 그래프 크기를 설정합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -79,11 +76,10 @@ obj = New Window( "Example",
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 xmin = -2;
 xmax = 1;
 ymin = -1.5;
@@ -238,7 +234,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -260,7 +255,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		<<backgroundcolor( "cyan" ),
@@ -284,7 +278,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -310,7 +303,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -333,7 +325,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -356,7 +347,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -382,7 +372,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -405,7 +394,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),

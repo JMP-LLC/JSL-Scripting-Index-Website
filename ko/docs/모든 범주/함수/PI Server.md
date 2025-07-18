@@ -10,11 +10,10 @@
 
 **JMP추가된 버전:** 17
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -37,11 +36,10 @@ importer << Run;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client( URL( "https://myserver.com/piwebapi" ), Authentication Method( "kerberos" ) );
 importer = client << Importer(
@@ -56,11 +54,10 @@ importer << Run;
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client( URL( "https://myserver.com/piwebapi" ), Authentication Method( "none" ) );
 importer = client << Importer(
@@ -88,11 +85,10 @@ importer << Run;
 
 **JMP추가된 버전:** 17
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -120,11 +116,10 @@ importer << Run;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data  */
 client = New PI Client( URL( "https://myserver.com/piwebapi" ), Authentication Method( "kerberos" ) );
 importer = client << Importer(
@@ -143,11 +138,10 @@ importer << Run;
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client( URL( "https://myserver.com/piwebapi" ), Authentication Method( "none" ) );
 importer = client << Importer(

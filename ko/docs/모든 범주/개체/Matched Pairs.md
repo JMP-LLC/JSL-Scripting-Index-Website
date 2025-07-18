@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP추가된 버전:** 18
 
-**이름으로 검색**
+#### 이름으로 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**익명 사전 설정**
+#### 익명 사전 설정
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**폴더 내에서 검색**
+#### 폴더 내에서 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Automatic Recalc( 1 );
@@ -95,7 +90,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
 objs[1] << Broadcast( Save Summaries );
@@ -110,7 +104,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -125,7 +118,6 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -145,7 +137,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Copy Script;
@@ -160,7 +151,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Data Table Window;
@@ -177,7 +167,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -192,7 +181,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -211,11 +199,10 @@ Show( t );
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
-**일반**
+#### 일반
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 t = obj << Get Container;
@@ -223,11 +210,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**필터 사용 플랫폼**
+#### 필터 사용 플랫폼
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -260,7 +246,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 t = obj << Get Datatable;
@@ -276,7 +261,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -293,7 +277,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 t = obj << Get Script;
@@ -309,7 +292,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 t = obj << Get Script With Data Table;
@@ -325,7 +307,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 t = obj << Get Timing;
@@ -341,7 +322,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -359,7 +339,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -375,7 +354,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -394,7 +372,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -416,7 +393,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -435,7 +411,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -450,7 +425,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
@@ -469,7 +443,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Redo Analysis;
@@ -484,7 +457,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -504,7 +476,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Relaunch Analysis;
@@ -519,7 +490,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -539,7 +509,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -556,7 +525,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -580,7 +548,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -595,7 +562,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 r = obj << Report;
@@ -612,7 +578,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Report View( "Summary" );
@@ -627,7 +592,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -647,7 +611,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -667,7 +630,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -687,7 +649,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Save Script for All Objects;
@@ -700,11 +661,10 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -716,11 +676,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -740,7 +699,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -755,7 +713,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Save Script to Journal;
@@ -770,7 +727,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Save Script to Report;
@@ -785,7 +741,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Save Script to Script Window;
@@ -800,7 +755,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -818,7 +772,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -843,7 +796,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -861,7 +813,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -878,7 +829,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Title( "My Platform" );
@@ -893,7 +843,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 r = obj << Top Report;
@@ -914,7 +863,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -931,7 +879,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -946,7 +893,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -967,7 +913,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -981,7 +926,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -998,7 +942,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), By( _bycol ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Freq( _freqcol ) );
@@ -1011,7 +954,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Freq( _freqcol ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -1023,7 +965,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -1035,7 +976,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Weight( _weightcol ) );
@@ -1048,7 +988,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Weight( _weightcol )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -1060,7 +999,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -1076,7 +1014,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Method Comparison.jmp" );
 obj = dt << Matched Pairs( Y( :Standard, :Method 1, :Method 2 ) );
 obj << Bland Altman Analysis( 1 );
@@ -1093,7 +1030,6 @@ obj << Bland Altman Analysis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Method Comparison.jmp" );
 obj = dt << Matched Pairs( Y( :Standard, :Method 1, :Method 2 ) );
 obj << Bland Altman Percent Analysis( 1 );
@@ -1110,7 +1046,6 @@ obj << Bland Altman Percent Analysis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Dif Statistics( 1 );
@@ -1133,7 +1068,6 @@ obj << Dif Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Percent Dif Statistics( 1 );
@@ -1148,7 +1082,6 @@ obj << Percent Dif Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Plot Dif by Mean( 1 );
@@ -1163,7 +1096,6 @@ obj << Plot Dif by Mean( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Plot Dif by Row( 1 );
@@ -1180,7 +1112,6 @@ obj << Plot Dif by Row( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Plot Percent Dif by Mean( 1 );
@@ -1197,7 +1128,6 @@ obj << Plot Percent Dif by Mean( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Plot Percent Dif by Row( 1 );
@@ -1212,7 +1142,6 @@ obj << Plot Percent Dif by Row( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Reference Frame( 1 );
@@ -1227,7 +1156,6 @@ obj << Reference Frame( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Set Alpha Level( 0.1 );
@@ -1242,7 +1170,6 @@ obj << Set Alpha Level( 0.1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Set Alpha Level( 0.1 );
@@ -1257,7 +1184,6 @@ obj << Set Alpha Level( 0.1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Sign Test( 1 );
@@ -1272,7 +1198,6 @@ obj << Sign Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 obj << Wilcoxon Signed Rank( 1 );

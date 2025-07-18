@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -37,7 +36,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", ((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result );
 result;
 
@@ -53,7 +51,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -71,7 +68,6 @@ op;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123nonnumeric456", Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" ) );
 result;
 
@@ -87,7 +83,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c
@@ -106,7 +101,6 @@ Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -122,7 +116,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 b = "- ";
 Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );
 word;
@@ -139,7 +132,6 @@ word;
 
 ```jsl
 
-Names Default To Here( 1 );
 num = Pat Break( "," );
 sep = ",";
 Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
@@ -157,7 +149,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -175,7 +166,6 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -200,7 +190,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );
 "rc=" || Char( rc ) || " result=" || result;
 
@@ -216,7 +205,6 @@ rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence
 
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
@@ -234,7 +222,6 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -248,11 +235,10 @@ result;
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match( Test, "s" + Pat Look Ahead( "'" ), "z" ), /* find an s that IS followed by an apostrophe and replace it with z */
 	Print( test )
@@ -260,11 +246,10 @@ While( /* repeat the match until it fails */Pat Match( Test, "s" + Pat Look Ahea
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match( Test, "s" + Pat Look Ahead( "'", 1 ), "z" ), /* find an s that is NOT followed by an apostrophe and replace it with z */
 	Print( test )
@@ -272,11 +257,10 @@ While( /* repeat the match until it fails */Pat Match( Test, "s" + Pat Look Ahea
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -299,11 +283,10 @@ While( /* keep repeating the match until it won't match */
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match( Test, Pat Look Behind( "'" ) + "s", "z" ), /* find an s that IS preceded by an apostrophe and replace it with z */
 	Print( test )
@@ -311,11 +294,10 @@ While( /* repeat the match until it fails */Pat Match( Test, Pat Look Behind( "'
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match( Test, Pat Look Behind( "'", 1 ) + "s", "z" ), /* find an s that is NOT preceded by an apostrophe and replace it with a z */
 	Print( test )
@@ -323,11 +305,10 @@ While( /* repeat the match until it fails */Pat Match( Test, Pat Look Behind( "'
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -352,7 +333,6 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Pat Match( string, Pat Break( " " ) >> first + Pat Span( " " ) + Pat Rem() >> last, last || ", " || first );
 string;
@@ -369,7 +349,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );
@@ -387,7 +366,6 @@ word;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"ab3defghi",
 	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) ) + Pat Pos(/* no argument returns current position = 6 */
@@ -407,7 +385,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -423,7 +400,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -439,7 +415,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
 string;
@@ -456,7 +431,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -472,7 +446,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
 	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c
@@ -491,7 +464,6 @@ Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -508,7 +480,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Pat String( "a" || "b" );
 Pat Match( "acbdbababc", Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Rem() >> after );
 "before=" || before || " match=" || match || " after=" || after;
@@ -525,7 +496,6 @@ Pat Match( "acbdbababc", Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Re
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -550,7 +520,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -566,7 +535,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 nCats = 0;
 whichCat = 3;
 string = "catch a catnapping cat in a catsup factory";
@@ -592,7 +560,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 source = "believe";
 // [aeiou] matches exactly one vowel

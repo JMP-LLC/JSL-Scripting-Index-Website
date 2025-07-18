@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -30,7 +29,6 @@ how = (obj << Are Data Different);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -46,7 +44,6 @@ obj << Auto Compare( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -64,7 +61,6 @@ obj << close;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -80,7 +76,6 @@ obj << Compare();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -96,7 +91,6 @@ obj << compare column attributes and properties( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -112,7 +106,6 @@ obj << compare data( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -128,7 +121,6 @@ obj << compare table properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 obj = dt << Compare Data Tables();
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
@@ -144,7 +136,6 @@ same = obj << compare with( dt2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -160,7 +151,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -176,7 +166,6 @@ obj << fuzzy compare( relative error( 0.0001 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -192,7 +181,6 @@ attribDiff = (obj << Get columns attributes differences( :name ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -208,7 +196,6 @@ propDiff = (obj << Get columns properties differences( :name ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -225,7 +212,6 @@ Show( colDiff );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -241,7 +227,6 @@ mtx = (obj << Get Difference Summary matrix);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -257,7 +242,6 @@ scriptDiff = (obj << Get table scripts difference list);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -273,7 +257,6 @@ tvdiff = (obj << Get table variables difference list);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -291,7 +274,6 @@ colDiff = (obj << Get unmatched columns list);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -309,7 +291,6 @@ obj << Hide column properties with no differences( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -327,7 +308,6 @@ obj << Hide columns with no differences( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -345,7 +325,6 @@ obj << Hide rows with no differences( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -363,7 +342,6 @@ obj << Hide table properties with no differences( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -381,7 +359,6 @@ obj << Ignore Case( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -399,7 +376,6 @@ obj << Ignore Missing( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -415,7 +391,6 @@ obj << Ignore Whitespace( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -433,7 +408,6 @@ obj << limit( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -449,7 +423,6 @@ obj << Link( {:age, :weight}, );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -465,7 +438,6 @@ obj << Relative Error( 0.00001 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -491,7 +463,6 @@ ID-Spalte verwenden: Die angegebenen ID-Spalten werden verwendet, um für jede Z
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -507,7 +478,6 @@ obj << Row Alignment( "By Row" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -523,7 +493,6 @@ summaryDT = (obj << save difference summary( invisible ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -539,7 +508,6 @@ obj << Save Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -555,7 +523,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -571,7 +538,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -589,7 +555,6 @@ obj << show window( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -607,7 +572,6 @@ obj << Show Fuzzy Differences( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -625,7 +589,6 @@ obj << Unlink( {"a", "b"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
@@ -643,7 +606,6 @@ obj << Unlink All;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );

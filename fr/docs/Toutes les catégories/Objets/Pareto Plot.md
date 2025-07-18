@@ -10,7 +10,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34,7 +33,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -52,7 +50,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_freqcol",
 	Numeric,
@@ -76,7 +73,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -96,7 +92,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -114,7 +109,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Pareto Plot(
@@ -134,7 +128,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -152,7 +145,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -176,7 +168,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -196,7 +187,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -217,7 +207,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Bar Style( Float );
@@ -232,11 +221,10 @@ obj << Bar Style( Float );
 
 **JMP Version ajoutée :** 17
 
-**Couleur RVB unique**
+#### Couleur RVB unique
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -247,11 +235,10 @@ obj << Cause Colors( {117, 150, 200} );
 
 ```
 
-**Liste de couleurs uniques**
+#### Liste de couleurs uniques
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -262,11 +249,10 @@ obj << Cause Colors( {"corrosion", "Light Gray"} );
 
 ```
 
-**Liste des couleurs multiples**
+#### Liste des couleurs multiples
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -277,11 +263,10 @@ obj << Cause Colors( {{"miscellaneous", "Purple"}, {"silicon defect", "Red"}} );
 
 ```
 
-**Toutes les couleurs**
+#### Toutes les couleurs
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -300,11 +285,10 @@ obj << Cause Colors( "Orange" );
 
 **JMP Version ajoutée :** 17
 
-**Cause unique**
+#### Cause unique
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -314,11 +298,10 @@ obj = dt << Pareto Plot(
 
 ```
 
-**Liste de causes**
+#### Liste de causes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -328,11 +311,10 @@ obj = dt << Pareto Plot(
 
 ```
 
-**Toutes les causes**
+#### Toutes les causes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ), Cause Labels( 1 ) );
 
@@ -346,11 +328,10 @@ obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ), Cause Labels( 1 ) );
 
 **JMP Version ajoutée :** 17
 
-**Cause unique**
+#### Cause unique
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -361,11 +342,10 @@ obj << Cause Markers( {"silicon defect", "Diamond"} );
 
 ```
 
-**Liste de causes**
+#### Liste de causes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -376,11 +356,10 @@ obj << Cause Markers( {{"miscellaneous", "Square"}, {"silicon defect", "Diamond"
 
 ```
 
-**Toutes les causes**
+#### Toutes les causes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -397,11 +376,10 @@ obj << Cause Markers( 1 );
 
 **Description :** Combine les causes spécifiées en une seule cause. Les causes peuvent être spécifiées comme une liste de noms de causes ou en envoyant le message Premier ou Dernier avec un nombre de causes à combiner. Une étiquette facultative peut être spécifiée pour la cause combinée.
 
-**Aucune étiquette**
+#### Aucune étiquette
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 Wait( 2 );
@@ -409,11 +387,10 @@ obj << Combine Causes( {"miscellaneous", "silicon defect", "doping"} );
 
 ```
 
-**Envoyer dernier**
+#### Envoyer dernier
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -423,11 +400,10 @@ obj = dt << Pareto Plot(
 
 ```
 
-**Étiqueté(e)**
+#### Étiqueté(e)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -447,7 +423,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Cum Line Connect Style( "Step" );
@@ -462,7 +437,6 @@ obj << Cum Line Connect Style( "Step" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Cum Percent Curve Color( "Red" );
@@ -479,7 +453,6 @@ obj << Cum Percent Curve Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -498,44 +471,40 @@ obj = dt << Pareto Plot(
 
 **JMP Version ajoutée :** 17
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), Freq( :Count ) );
 obj << Get Causes;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), Freq( :Count ) );
 obj << Get Causes( "First", 3 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), Freq( :Count ) );
 obj << Get Causes( "Last %", 10 );
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :Causes ),
@@ -557,7 +526,6 @@ obj << Get Causes( "Last", 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -582,7 +550,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Label Cum Percent Points( 1 );
@@ -599,7 +566,6 @@ obj << Label Cum Percent Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Legend Position( "Bottom" );
@@ -614,7 +580,6 @@ obj << Legend Position( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 Wait( 1 );
@@ -630,7 +595,6 @@ obj << Legend Settings();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure Raw Data.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ) );
 obj << Move to First( {"corrosion", "doping"} );
@@ -645,7 +609,6 @@ obj << Move to First( {"corrosion", "doping"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure Raw Data.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ) );
 obj << Move to Last( {"miscellaneous"} );
@@ -660,7 +623,6 @@ obj << Move to Last( {"miscellaneous"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure Raw Data.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ) );
 obj << N Legend( 1 );
@@ -675,7 +637,6 @@ obj << N Legend( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), Freq( :Count ), Per Unit Rates( 1 ) );
 obj << No Plot( 1 );
@@ -692,7 +653,6 @@ obj << No Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Orientation( "Horizontal" );
@@ -709,7 +669,6 @@ obj << Orientation( "Horizontal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -729,7 +688,6 @@ obj << Pareto Line Connect Style( "Step" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :Causes ),
@@ -748,7 +706,6 @@ obj << Per Unit Rates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure Raw Data.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ) );
 obj << Percent Scale( 1 );
@@ -763,7 +720,6 @@ obj << Percent Scale( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Pie Chart( 1 );
@@ -778,7 +734,6 @@ obj << Pie Chart( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 Wait( 2 );
@@ -794,7 +749,6 @@ obj << Reorder Horizontal( "before", "after" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), X( :Process, :Day ), Freq( :Count ) );
 Wait( 2 );
@@ -808,11 +762,10 @@ obj << Reorder Vertical( "Process B", "Process A" );
 
 **Description :** Sépare les causes combinées dans des barres distinctes.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Combine Causes( {"miscellaneous", "silicon defect", "doping"} );
@@ -821,11 +774,10 @@ obj << Separate Causes;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Combine Causes(
@@ -845,7 +797,6 @@ obj << Separate Causes( "Other Causes" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Show Cum Percent Axis( 1 );
@@ -860,7 +811,6 @@ obj << Show Cum Percent Axis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Show Cum Percent Curve( 1 );
@@ -875,7 +825,6 @@ obj << Show Cum Percent Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Show Cum Percent Points( 1 );
@@ -892,7 +841,6 @@ obj << Show Cum Percent Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Show Error Bars( 1 );
@@ -909,7 +857,6 @@ obj << Show Error Bars( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -931,7 +878,6 @@ obj << Show Pareto Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Show Pareto Line( 1 );
@@ -948,7 +894,6 @@ obj << Show Pareto Line( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 obj << Show Pareto Markers( 1 );
@@ -965,7 +910,6 @@ obj << Show Pareto Markers( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -986,7 +930,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 dt << Select Where( :Causes == "Corrosion" );
 obj = dt << Pareto Plot( Cause( :Causes ), Freq( :Count ) );
@@ -1002,11 +945,10 @@ obj << Subset;
 
 **JMP Version ajoutée :** 17
 
-**Deux groupes**
+#### Deux groupes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), X( :Process, :Day ), Freq( :Count ) );
 Wait( 2 );
@@ -1014,11 +956,10 @@ obj << Swap Group Orientation( true );
 
 ```
 
-**Un groupe**
+#### Un groupe
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), X( :Process ), Freq( :Count ) );
 Wait( 2 );
@@ -1036,7 +977,6 @@ obj << Swap Group Orientation( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ) );
 obj << Synchronize Y Axes( 0 );
@@ -1053,7 +993,6 @@ obj << Synchronize Y Axes( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1080,7 +1019,6 @@ obj << Tables Match Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), X( :Process ), Freq( :Count ) );
 obj << Test Rate Within Groups( 1 );
@@ -1095,7 +1033,6 @@ obj << Test Rate Within Groups( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Pareto Plot( Cause( :Causes ), X( :Process, :Day ), Freq( :Count ) );
 obj << Test Rates Across Groups( 1 );
@@ -1108,11 +1045,10 @@ obj << Test Rates Across Groups( 1 );
 
 **Description :** Combine les causes qui se trouvent au-dessous du seuil. Cela se produit au lancement initial de la plate-forme.
 
-**Dénombrement**
+#### Dénombrement
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1122,11 +1058,10 @@ obj = dt << Pareto Plot(
 
 ```
 
-**Extrémité %**
+#### Extrémité %
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1144,7 +1079,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 Wait( 2 );
@@ -1162,7 +1096,6 @@ obj << Ungroup Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1180,11 +1113,10 @@ dt << Bivariate(
 
 **JMP Version ajoutée :** 18
 
-**Préconfiguration anonyme**
+#### Préconfiguration anonyme
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1195,11 +1127,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Rechercher dans les dossiers**
+#### Rechercher dans les dossiers
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1207,11 +1138,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**Rechercher par nom**
+#### Rechercher par nom
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1227,7 +1157,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1251,7 +1180,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -1269,7 +1197,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1287,7 +1214,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1314,7 +1240,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1335,7 +1260,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1358,7 +1282,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1373,7 +1296,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1399,11 +1321,10 @@ Show( t );
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
-**Général**
+#### Général
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1417,11 +1338,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Plate-forme avec filtre**
+#### Plate-forme avec filtre
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1456,7 +1376,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1478,7 +1397,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1495,7 +1413,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1517,7 +1434,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1539,7 +1455,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1561,7 +1476,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1579,7 +1493,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate(
@@ -1599,7 +1512,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1618,7 +1530,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1640,7 +1551,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1659,7 +1569,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1674,7 +1583,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1695,7 +1603,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1716,7 +1623,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1743,7 +1649,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1764,7 +1669,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1791,7 +1695,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1811,7 +1714,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1835,7 +1737,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1850,7 +1751,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1873,7 +1773,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1894,7 +1793,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1921,7 +1819,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1948,7 +1845,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1975,7 +1871,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -1994,11 +1889,10 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2017,11 +1911,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2048,7 +1941,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2069,7 +1961,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2090,7 +1981,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2111,7 +2001,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2132,7 +2021,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2153,7 +2041,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2182,7 +2069,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2202,7 +2088,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2219,7 +2104,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2240,7 +2124,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2267,7 +2150,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2284,7 +2166,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2299,7 +2180,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
 	Window View( "Private" ),

@@ -10,7 +10,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -28,7 +27,6 @@ w[FrameBox( 1 )] << append seg(
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -45,7 +43,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -64,7 +61,6 @@ seg << Class Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -96,7 +92,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -115,7 +110,6 @@ seg << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -134,7 +128,6 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -157,7 +150,6 @@ seg << Set Error Bar Cap( "Large" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -176,7 +168,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -199,7 +190,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -216,7 +206,6 @@ seg << Frame;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -235,7 +224,6 @@ fontobj << Get Base Font;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -266,7 +254,6 @@ cs << Get Clip Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -283,7 +270,6 @@ seg << Get Density Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -302,7 +288,6 @@ seg << get description();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -325,7 +310,6 @@ seg << Get Error Bar Cap();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -344,7 +328,6 @@ seg << Get Error Bar Cap Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -359,7 +342,6 @@ seg << Get Fill Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -374,7 +356,6 @@ seg << Get Fill Pattern;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -391,7 +372,6 @@ fontobj << Get Font;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -409,7 +389,6 @@ fontobj << Get Font Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -426,7 +405,6 @@ fontobj << Get Font Scale;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -443,7 +421,6 @@ fontobj << Get Font Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -462,7 +439,6 @@ fontobj << Get Font Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -481,7 +457,6 @@ seg << Get Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -500,7 +475,6 @@ seg << Get Gradient Color Theme;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -519,7 +493,6 @@ seg << Get Gradient Discrete Colors;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -541,7 +514,6 @@ seg << Get Gradient Fill;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -558,11 +530,10 @@ seg << Get Gradient Label Count;
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -574,11 +545,10 @@ seg << Get Gradient Scale Values;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -601,7 +571,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -620,7 +589,6 @@ seg << Get Gradient Legend Horizontal;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -639,7 +607,6 @@ seg << Get Gradient Legend Label Format;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -658,7 +625,6 @@ seg << Get Gradient Legend Label Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -677,7 +643,6 @@ seg << Get Gradient Legend Show Labels;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -696,7 +661,6 @@ seg << Get Gradient Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -715,7 +679,6 @@ seg << Get Gradient Lightness Range;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -737,7 +700,6 @@ seg << Get Gradient Range;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -756,7 +718,6 @@ seg << Get Gradient Reverse Color Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -775,7 +736,6 @@ seg << Get Gradient Reverse Label Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -795,11 +755,10 @@ seg << Get Gradient Scale;
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -811,11 +770,10 @@ seg << Get Gradient Scale Values;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -838,7 +796,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -857,7 +814,6 @@ seg << Get Gradient Show Missing;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -876,7 +832,6 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -913,7 +868,6 @@ seg << Get Interval Draw Directions;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -932,7 +886,6 @@ seg << Get Line Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -951,7 +904,6 @@ seg << Get Line Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -966,7 +918,6 @@ seg << Get Line Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( ts = Text Seg( "moves with axes" ) );
 ts << set location( 60, 60 );
@@ -984,7 +935,6 @@ ts << get location();
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1003,7 +953,6 @@ seg << Get Marker;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1018,7 +967,6 @@ seg << Get Marker Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( seg = Text Seg( "fixed bottom left" ) );
 seg << set location( 0, 1 );
@@ -1035,7 +983,6 @@ seg << get relative();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1066,7 +1013,6 @@ seg << Get Text;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1085,7 +1031,6 @@ seg << Get Text Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -1109,7 +1054,6 @@ seg << Get Text Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1126,7 +1070,6 @@ seg << Get Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1145,7 +1088,6 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1164,7 +1106,6 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1186,7 +1127,6 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1209,7 +1149,6 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1228,7 +1167,6 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1250,7 +1188,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1269,7 +1206,6 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1288,7 +1224,6 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1307,7 +1242,6 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1326,7 +1260,6 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1343,11 +1276,10 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1356,11 +1288,10 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1369,11 +1300,10 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1392,7 +1322,6 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1414,7 +1343,6 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1433,7 +1361,6 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1452,7 +1379,6 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1474,7 +1400,6 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1496,7 +1421,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -1518,7 +1442,6 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1541,7 +1464,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1560,7 +1482,6 @@ seg << Set Line Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1579,7 +1500,6 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1598,7 +1518,6 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1617,7 +1536,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1653,7 +1571,6 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1668,7 +1585,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1685,7 +1601,6 @@ seg << Revert;
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1703,7 +1618,6 @@ fontobj << Set Base Font( "Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1722,7 +1636,6 @@ seg << set description( "my seg" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -1745,7 +1658,6 @@ seg << Set Error Bar Cap( "Large" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -1764,7 +1676,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1779,7 +1690,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1792,11 +1702,10 @@ seg << Set Fill Pattern( "h wave medium" );
 
 **Syntaxe :** obj &lt;&lt; Set Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1805,11 +1714,10 @@ fontobj << Set Font( "Arial Black" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1826,7 +1734,6 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1843,7 +1750,6 @@ fontobj << Set Font Name( "Arial Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1861,7 +1767,6 @@ fontobj << Set Font Scale( 2.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1876,11 +1781,10 @@ fontobj << Set Font Size( 14 );
 
 **Description :** Définit le style de police des chaînes de texte. Pour définir plusieurs styles à la fois, les placer dans la même chaîne, séparés par des espaces (voir l&apos;exemple 2 ci-dessous).
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1889,11 +1793,10 @@ fontobj << Set Font Style( "Italic" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1910,7 +1813,6 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1929,7 +1831,6 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1948,7 +1849,6 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -1967,7 +1867,6 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1989,7 +1888,6 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2012,7 +1910,6 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2031,7 +1928,6 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2053,7 +1949,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2072,7 +1967,6 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2091,7 +1985,6 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2110,7 +2003,6 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2129,7 +2021,6 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2146,11 +2037,10 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2159,11 +2049,10 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2172,11 +2061,10 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2195,7 +2083,6 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2217,7 +2104,6 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2236,7 +2122,6 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2255,7 +2140,6 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2277,7 +2161,6 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2299,7 +2182,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2321,7 +2203,6 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -2358,7 +2239,6 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2377,7 +2257,6 @@ seg << Set Line Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2396,7 +2275,6 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2413,7 +2291,6 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( seg = Text Seg( "fixed bottom left" ) );
 seg << set location( 0, 1 );
@@ -2434,7 +2311,6 @@ ts2 << get location();
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2453,7 +2329,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2471,7 +2346,6 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( seg = Text Seg( "fixed bottom left" ) );
 seg << set location( 0, 1 );
@@ -2489,7 +2363,6 @@ ts2 << set location( 60, 60 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -2522,7 +2395,6 @@ seg << Set Text( seg << Get Text || "  Tallest: Lawrence" );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( seg = Text Seg( "center" ) );
 seg << set relative( 1, 1 );
@@ -2537,7 +2409,6 @@ seg << set text alignment( center, center );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2556,7 +2427,6 @@ seg << Set Text Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -2582,7 +2452,6 @@ seg << Set Text Style( {Center, VCenter} );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2599,7 +2468,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2616,8 +2484,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -2656,7 +2522,6 @@ mapSeg << Sib Append(
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2686,7 +2551,6 @@ seg << Sib Prepend(
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2705,7 +2569,6 @@ seg << Set Text Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -2731,7 +2594,6 @@ seg << Set Text Style( {Center, VCenter} );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	seg = Text Seg( "default location fixed bottom left" )
@@ -2750,7 +2612,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -2782,7 +2643,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -2814,7 +2674,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -2832,7 +2691,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -2846,7 +2704,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -2860,7 +2717,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -2874,7 +2730,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 

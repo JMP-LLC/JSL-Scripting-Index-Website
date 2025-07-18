@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
 ex << get contents;
@@ -29,7 +28,6 @@ ex << get contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{rhymes = ["mouse" => "house",
 	"car" => "star",
@@ -48,7 +46,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 	rhymes << Contains Item( "car" )
 );
@@ -63,7 +60,6 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
 	x = aa << First;
@@ -84,7 +80,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 	aa << Get Contents
 );
@@ -99,7 +94,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
 	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
 	aa << Insert( "set item" ); /* used for sets, value is 1 */
@@ -118,7 +112,6 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 	aa << Get Keys
 );
@@ -133,7 +126,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{prices = Associative Array(
 		{{"pineapple", 1.25}, {"grape", .50}, {"orange", .75}}
@@ -151,7 +143,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 	aa << Get Values
 );
@@ -166,7 +157,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{decode = [".-" => "a",
 	"-..." => "b"], others = ["..." => "s",
@@ -185,7 +175,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {decode = [".-" => "a", "-..." => "b"]},
 	decode << insertitem( "-.-.", "c" );/* or decode["-.-."]="c"*/
 	decode["-.-."] || decode[".-"] || decode["-..."];
@@ -199,11 +188,10 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 **Descripción:** Trata un arreglo asociativo como un conjunto de objetos. Los valores deben ser 1 para los objetos que pertenecen al conjunto. El valor predeterminado debe ser 0. El conjunto actual se sustituye por la intersección de este conjunto con el conjunto que figura en el mensaje.
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be zero for intersect to work */
 	red things << Insert( "apple" ) << Insert( "blood" ) <<
 	Insert( "stop light" ) << Insert( "mars" );
@@ -216,11 +204,10 @@ Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be 
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" ); 
 
 // select where could be used with :age<=12 & :sex=="M" in one step.  this is a demo of set operations with associative arrays.
@@ -248,7 +235,6 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
 	x = aa << First;
@@ -269,7 +255,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1]},
 	primes << Remove( [4 => 1, 6 => 1, 8 => 1, 9 => 1] );
@@ -286,7 +271,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{primes = [2 => 1,
 	3 => 1,
@@ -318,7 +302,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
 	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
 	aa << Insert( "set item" ); /* used for sets, value is 1 */

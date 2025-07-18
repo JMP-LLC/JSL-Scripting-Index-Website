@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
 mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
 Add Custom Functions( {myAdd, mySub} );
@@ -29,7 +28,6 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 45;
 b = As Boolean( x > 2 );
 Show( b );
@@ -46,7 +44,6 @@ Show( b );
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2] + As Column( "height" )[3];
 
@@ -60,11 +57,10 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant", Formula( Random Uniform() ) ),
@@ -73,11 +69,10 @@ New Table( "As Constant Demo Table 1",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
 	New Column( "What's on Your Desktop?",
@@ -95,11 +90,10 @@ New Table( "As Constant Demo Table 2",
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -121,7 +115,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 ::ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
@@ -137,7 +130,6 @@ Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -152,7 +144,6 @@ As List( [11 22 33, 44 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:(As Name( "height" ))[3];
 
@@ -168,7 +159,6 @@ dt:(As Name( "height" ))[3];
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex"
 );
@@ -186,7 +176,6 @@ As Namespace( ns );
 
 ```jsl
 
-Names Default To Here( 1 );
 ::: ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
@@ -202,7 +191,6 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Here:z = 23.5;
 As Scoped( Here, z );
 
@@ -218,7 +206,6 @@ As Scoped( Here, z );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
 ex << get contents;
@@ -257,38 +244,34 @@ Chaînes non appariées
 
 **JMP Version ajoutée :** 15
 
-**Autoriser les modifications**
+#### Autoriser les modifications
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
 
-**Choisir entre les chaînes, pas de modifications**
+#### Choisir entre les chaînes, pas de modifications
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```
 
-**Conserver la ponctuation**
+#### Conserver la ponctuation
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```
 
-**Sans correspondance**
+#### Sans correspondance
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```
@@ -303,7 +286,6 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -361,7 +343,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Globals();
 
 ```
@@ -376,7 +357,6 @@ Clear Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Log();
 
 ```
@@ -391,7 +371,6 @@ Clear Log();
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Symbols();
 
 ```
@@ -406,7 +385,6 @@ Clear Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 Close Log();
 Show( Is Log Open() );
 
@@ -422,7 +400,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -478,7 +455,6 @@ Delete Classes( complex );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -510,7 +486,6 @@ Show Classes();
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Globals();
 
 ```
@@ -525,7 +500,6 @@ Delete Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nsaa = New Namespace(
 	"aa",
@@ -555,7 +529,6 @@ Show Namespaces();
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Symbols();
 
 ```
@@ -570,7 +543,6 @@ Delete Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -585,7 +557,6 @@ Eval( Expr( 1 + 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -600,7 +571,6 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
 ex;
@@ -615,20 +585,18 @@ ex;
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {1 + 2, 3 + 4} );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
@@ -645,7 +613,6 @@ Eval List( {x, y} );
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -666,7 +633,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 First( 11, 22 );
 
 ```
@@ -679,21 +645,19 @@ First( 11, 22 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
 a = exmul( 5 );
@@ -702,11 +666,10 @@ Show( a, b );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 posorneg = Function( {x},
 	{},
 	If(
@@ -729,7 +692,6 @@ posorneg( -5.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -758,7 +720,6 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -786,20 +747,18 @@ Delete Classes( "aa", "bb" );
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -818,7 +777,6 @@ REMARQUE : sous le système d’exploitation Macintosh, le nom de variable est 
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Environment Variable( "PATH" );
 
 ```
@@ -833,7 +791,6 @@ Get Environment Variable( "PATH" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -848,7 +805,6 @@ Get Locale Setting( "Decimal Separator" );
 
 ```jsl
 
-Names Default To Here( 1 );
 all contents = Get Log();
 headcontents = Get Log( 10 );
 tailcontents = Get Log( -5 );
@@ -865,7 +821,6 @@ tailcontents = Get Log( -5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -895,7 +850,6 @@ nsbb << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -920,42 +874,38 @@ nsbb << Delete;
 
 **Syntaxe :** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
-**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
+**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
 
 **JMP Version ajoutée :** 15
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Include Chars( "_" ) );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace(
 	Substitute( "This...string..has..dots",
 		Items( Get Punctuation Characters(), "" ), " "
@@ -974,7 +924,6 @@ Collapse Whitespace(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
@@ -992,7 +941,6 @@ Get Session Script( Report( biv ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Whitespace Characters();
 
 ```
@@ -1007,7 +955,6 @@ Get Whitespace Characters();
 
 ```jsl
 
-Names Default To Here( 1 );
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```
@@ -1022,7 +969,6 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```jsl
 
-Names Default To Here( 1 );
 y = Include File List();
 
 ```
@@ -1035,22 +981,20 @@ y = Include File List();
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Is Log Open(),
 	Close Log()
 );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 If( !Is Log Open(),
 	Open Log()
 );
@@ -1065,38 +1009,34 @@ If( !Is Log Open(),
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -1111,7 +1051,6 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 {1, 2 + 3, [11 22]};
 
 ```
@@ -1126,7 +1065,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -1144,7 +1082,6 @@ Local( {a = 1, b},
 
 ```jsl
 
-Names Default To Here( 1 );
 y = Local Here(
 	a = 1;
 	b = 2;
@@ -1164,7 +1101,6 @@ y = Local Here(
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1190,7 +1126,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1216,7 +1151,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
 		Write( Char( i ) );
@@ -1234,38 +1168,34 @@ Names Default To Here( 1 );
 
 **JMP Version ajoutée :** 15
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "celry", {"celry", "celery"} );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```
@@ -1280,7 +1210,6 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1336,7 +1265,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -1354,29 +1282,26 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
 
@@ -1392,7 +1317,6 @@ N Items( hlist );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -1408,7 +1332,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -1451,7 +1374,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -1492,20 +1414,18 @@ ns << Delete;
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
 	{New Custom Function(
@@ -1521,11 +1441,10 @@ Add Custom Functions(
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
 	{New Custom Function(
@@ -1551,7 +1470,6 @@ Add Custom Functions(
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -1593,7 +1511,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1647,21 +1564,19 @@ Delete Classes( "complex" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Log();
 Show( Is Log Open() );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Bring Log Windows to the Top */
 Open Log( 1 );
 Show( Is Log Open() );
@@ -1678,7 +1593,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -1693,7 +1607,6 @@ Parameter( {a = 1}, a + 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Parse( "x+y" );
 
 ```
@@ -1708,7 +1621,6 @@ Parse( "x+y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( 355 / 113, Pi() );
 
 ```
@@ -1723,7 +1635,6 @@ Print( 355 / 113, Pi() );
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -1748,11 +1659,10 @@ Les variables JSL spéciales sont remplies à l&apos;exécution de la commande 
 
 **JMP Version ajoutée :** 15
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
@@ -1760,11 +1670,10 @@ Recode(
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"A B C",
 	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )
@@ -1784,7 +1693,6 @@ Recode(
 
 ```jsl
 
-Names Default To Here( 1 );
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -1805,7 +1713,6 @@ ex rev( "abcd" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -1820,7 +1727,6 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
 Substr( exlogText, 1, 30 );
@@ -1837,7 +1743,6 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -1857,7 +1762,6 @@ REMARQUE : sous le système d&apos;exploitation Macintosh, le nom de variable es
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -1872,7 +1776,6 @@ Set Environment Variable( "PATH", "some path to a directory" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( 355 / 113, Pi() );
 
 ```
@@ -1887,7 +1790,6 @@ Show( 355 / 113, Pi() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1941,7 +1843,6 @@ Show Classes();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Globals();
 
 ```
@@ -1956,7 +1857,6 @@ Show Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -1998,7 +1898,6 @@ Delete Namespaces( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Symbols();
 
 ```
@@ -2013,7 +1912,6 @@ Show Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -2028,7 +1926,6 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
 ex;
@@ -2043,31 +1940,28 @@ ex;
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Fatal Throw**
+#### Fatal Throw
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
 Print( "AFTER TRY message not reached" );
 
 ```
 
-**Retraçage**
+#### Retraçage
 
 ```jsl
 
-Names Default To Here( 1 );
 Throw( "A line number is included in this error", 1 );
 
 ```
 
-**Try-Catch**
+#### Try-Catch
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```
@@ -2080,20 +1974,18 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), "invalid" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), exception_msg );
 
 ```
@@ -2108,7 +2000,6 @@ Try( Sqrt( "s" ), exception_msg );
 
 ```jsl
 
-Names Default To Here( 1 );
 Type( [1 2 3] );
 
 ```
@@ -2123,7 +2014,6 @@ Type( [1 2 3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -2149,7 +2039,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -2173,29 +2062,26 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Événements OS**
+#### Événements OS
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( -1 ); // Wait for OS events
 
 ```
 
-**Rappels**
+#### Rappels
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 1.5 );
 
 ```
@@ -2210,7 +2096,6 @@ Wait( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 y = 2;
 z = "abc";
@@ -2232,11 +2117,10 @@ w << close Window();
 
 **JMP Version ajoutée :** 18
 
-**Autre**
+#### Autre
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -2246,11 +2130,10 @@ Where( xs[1] < 18 );
 
 ```
 
-**Colonnes**
+#### Colonnes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
 Where( :sex == "M" );
@@ -2258,11 +2141,10 @@ Where( dt, :sex == "M" );
 
 ```
 
-**États de ligne**
+#### États de ligne
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
 Where( Excluded() );
@@ -2270,22 +2152,20 @@ Where( !Excluded() );
 
 ```
 
-**Fonctions de colonne**
+#### Fonctions de colonne
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
 dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
 
 ```
 
-**Matrice/Liste**
+#### Matrice/Liste
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
 xs[Where( !Is Missing( xs ) )];
@@ -2304,7 +2184,6 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -2323,7 +2202,6 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -2342,7 +2220,6 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```

@@ -20,11 +20,10 @@
 
 	Optimización se utiliza para personalizar cómo se publica el informe en JMP Live. De forma predeterminada, el informe se publica para permitir una mayor interactividad.
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -47,11 +46,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -71,11 +69,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -89,11 +86,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),

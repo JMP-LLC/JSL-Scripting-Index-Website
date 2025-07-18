@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP추가된 버전:** 18
 
-**이름으로 검색**
+#### 이름으로 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**익명 사전 설정**
+#### 익명 사전 설정
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**폴더 내에서 검색**
+#### 폴더 내에서 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Automatic Recalc( 1 );
@@ -95,7 +90,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
 objs[1] << Broadcast( Save Summaries );
@@ -110,7 +104,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -125,7 +118,6 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -149,7 +141,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Copy Script;
@@ -164,7 +155,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Data Table Window;
@@ -181,7 +171,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -196,7 +185,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -219,11 +207,10 @@ Show( t );
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
-**일반**
+#### 일반
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 t = obj << Get Container;
@@ -231,11 +218,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**필터 사용 플랫폼**
+#### 필터 사용 플랫폼
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -268,7 +254,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 t = obj << Get Datatable;
@@ -284,7 +269,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -301,7 +285,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 t = obj << Get Script;
@@ -317,7 +300,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 t = obj << Get Script With Data Table;
@@ -333,7 +315,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 t = obj << Get Timing;
@@ -349,7 +330,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -367,7 +347,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -383,7 +362,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -402,7 +380,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -424,7 +401,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -443,7 +419,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -458,7 +433,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
@@ -477,7 +451,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Redo Analysis;
@@ -492,7 +465,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -516,7 +488,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Relaunch Analysis;
@@ -531,7 +502,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -555,7 +525,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -572,7 +541,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -596,7 +564,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -611,7 +578,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 r = obj << Report;
@@ -628,7 +594,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Report View( "Summary" );
@@ -643,7 +608,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -667,7 +631,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -691,7 +654,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -715,7 +677,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Save Script for All Objects;
@@ -728,11 +689,10 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -748,11 +708,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -776,7 +735,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -791,7 +749,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Save Script to Journal;
@@ -806,7 +763,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Save Script to Report;
@@ -821,7 +777,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Save Script to Script Window;
@@ -836,7 +791,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -854,7 +808,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -879,7 +832,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -897,7 +849,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -914,7 +865,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 obj << Title( "My Platform" );
@@ -929,7 +879,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 r = obj << Top Report;
@@ -950,7 +899,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -967,7 +915,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -982,7 +929,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1003,7 +949,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 
@@ -1019,7 +964,6 @@ gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 0.5 );
@@ -1035,7 +979,6 @@ gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 0.5 );
@@ -1051,7 +994,6 @@ gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Auto Stretching( 0 );
@@ -1066,7 +1008,6 @@ gb << Auto Stretching( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Back Color( "Yellow" );
@@ -1081,7 +1022,6 @@ gb << Back Color( "Yellow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Categorical Color Theme( "Pastel" );
@@ -1096,7 +1036,6 @@ gb << Categorical Color Theme( "Pastel" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Continuous Color Theme( "White to Black" );
@@ -1113,7 +1052,6 @@ gb << Continuous Color Theme( "White to Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Done;
@@ -1128,7 +1066,6 @@ gb << Done;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :"F Rate 0-19"n ), Y( :Region ) ),
@@ -1147,7 +1084,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 1 );
@@ -1165,7 +1101,6 @@ gb << Error Bar Offset( 0.01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Extend Axis to Zero( 10 ),
@@ -1185,7 +1120,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Size( 513, 465 ),
@@ -1206,7 +1140,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -1227,7 +1160,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Fit to Window( "Off" );
@@ -1242,7 +1174,6 @@ gb << Fit to Window( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get Element( 1, 1, 1 );
@@ -1257,7 +1188,6 @@ gb << Get Element( 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get Elements( 1, 1 );
@@ -1274,7 +1204,6 @@ gb << Get Elements( 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -1297,7 +1226,6 @@ item << Set Visible( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -1318,7 +1246,6 @@ Show( items );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get N Elements( 1, 1 );
@@ -1333,7 +1260,6 @@ gb << Get N Elements( 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get N Positions( "X" );
@@ -1348,7 +1274,6 @@ gb << Get N Positions( "X" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get N Variables();
@@ -1363,7 +1288,6 @@ gb << Get N Variables();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get Variable( 1 );
@@ -1378,7 +1302,6 @@ gb << Get Variable( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Get Variables();
@@ -1393,7 +1316,6 @@ gb << Get Variables();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Add Variable( {:age, Role( "Wrap" )} );
@@ -1409,7 +1331,6 @@ gb << Graph Spacing( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Graph Spacing( 5 ),
@@ -1428,7 +1349,6 @@ gb << Grid Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Graph Spacing( 5 ),
@@ -1447,7 +1367,6 @@ gb << Grid Transparency( 0.2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 :age[{10, 20, 30}] = .;
@@ -1464,7 +1383,6 @@ gb << Include Missing Categories( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Launch Analysis;
@@ -1481,7 +1399,6 @@ gb << Launch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Legend Position( "Inside Floating" );
@@ -1496,7 +1413,6 @@ gb << Legend Position( "Inside Floating" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Legend Position( "Bottom" );
@@ -1511,7 +1427,6 @@ gb << Legend Position( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 1 );
@@ -1527,7 +1442,6 @@ gb << Legend Settings();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Fill Color( {103, 214, 214} );
@@ -1542,7 +1456,6 @@ gb << Level Fill Color( {103, 214, 214} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Frame Color( "Blue" );
@@ -1557,7 +1470,6 @@ gb << Level Frame Color( "Blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Spacing Color( "Blue" );
@@ -1572,7 +1484,6 @@ gb << Level Spacing Color( "Blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Spacing Transparency( .2 );
@@ -1587,7 +1498,6 @@ gb << Level Spacing Transparency( .2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Text Color( "Red" );
@@ -1602,7 +1512,6 @@ gb << Level Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Transparency( .2 );
@@ -1617,7 +1526,6 @@ gb << Level Transparency( .2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Level Frame Color( "Blue" );
@@ -1635,7 +1543,6 @@ gb << Level Underline( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Lighten large fills( 1 );
@@ -1650,7 +1557,6 @@ gb << Lighten large fills( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Size( 470, 552 ),
@@ -1669,7 +1575,6 @@ gb << Link Page Axes( "Y Only" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Lock Scales( 1 );
@@ -1684,7 +1589,6 @@ gb << Lock Scales( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Make into Data Table;
@@ -1699,7 +1603,6 @@ gb << Make into Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
 gb = dt << Graph Builder(
 	Order Statistic( "Max" ),
@@ -1719,7 +1622,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Overlay Auto Line Styles Limit( 0 ),
@@ -1739,7 +1641,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Overlay Auto Marker Styles Limit( 0 ),
@@ -1759,7 +1660,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Name ) ), Elements( Points( X, Y ) ) );
 gb << Page Count Limit( 5 );
@@ -1774,7 +1674,6 @@ gb << Page Count Limit( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Gap Size( 3 );
@@ -1789,7 +1688,6 @@ gb << Page Gap Size( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Level Fill Color( {103, 214, 214} );
@@ -1804,7 +1702,6 @@ gb << Page Level Fill Color( {103, 214, 214} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Level Frame Color( "Blue" );
@@ -1819,7 +1716,6 @@ gb << Page Level Frame Color( "Blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Level Text Color( "Red" );
@@ -1834,7 +1730,6 @@ gb << Page Level Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Level Transparency( .2 );
@@ -1849,7 +1744,6 @@ gb << Page Level Transparency( .2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder( Variables( X( :Age ), Y( :Height ), Page( :Sex ) ), Elements( Smoother( X, Y ) ) );
 gb << Page Level Frame Color( "Blue" );
@@ -1865,7 +1759,6 @@ gb << Page Level Underline( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Parallel Axis Merging( "Never" );
@@ -1880,7 +1773,6 @@ gb << Parallel Axis Merging( "Never" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :age ), Y( :height ), Y( :weight ) ),
@@ -1901,7 +1793,6 @@ gb << Parallel Y Axes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Sex ), Y( :Height ) ),
@@ -1920,7 +1811,6 @@ gb << Random Seed( 123456 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder(
 	Size( 435, 352 ),
@@ -1941,7 +1831,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 0.5 );
@@ -1957,7 +1846,6 @@ gb << Remove Element( 1, 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 0.5 );
@@ -1975,7 +1863,6 @@ gb << Remove Variable( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Size( 470, 552 ),
@@ -1995,7 +1882,6 @@ gb << Replicate Linked Page Axes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Sampling( 20 );
@@ -2010,7 +1896,6 @@ gb << Sampling( 20 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Set Alpha Level( 0.10 );
@@ -2025,7 +1910,6 @@ gb << Set Alpha Level( 0.10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Set Alpha Level( 0.10 );
@@ -2040,7 +1924,6 @@ gb << Set Alpha Level( 0.10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Control Panel( 1 );
@@ -2055,7 +1938,6 @@ gb << Show Control Panel( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 dt << Select Rows( 1 :: 5 );
@@ -2072,7 +1954,6 @@ gb << Show Excluded Rows( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Footer( 0 );
@@ -2087,7 +1968,6 @@ gb << Show Footer( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Legend( 1 );
@@ -2104,7 +1984,6 @@ gb << Show Legend( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Subtitle( 1 );
@@ -2121,7 +2000,6 @@ gb << Show Subtitle( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Title( 0 );
@@ -2138,7 +2016,6 @@ gb << Show Title( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show X Axis( 0 );
@@ -2155,7 +2032,6 @@ gb << Show X Axis( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show X Axis Title( 0 );
@@ -2172,7 +2048,6 @@ gb << Show X Axis Title( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Y Axis( 0 );
@@ -2189,7 +2064,6 @@ gb << Show Y Axis( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Show Y Axis Title( 0 );
@@ -2204,7 +2078,6 @@ gb << Show Y Axis Title( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Size( 808, 586 );
@@ -2219,7 +2092,6 @@ gb << Size( 808, 586 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Spacing Borders( 1 );
@@ -2236,7 +2108,6 @@ gb << Spacing Borders( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Subtitle Alignment( "Left" );
@@ -2253,7 +2124,6 @@ gb << Subtitle Alignment( "Left" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Subtitle Span( "Graph" );
@@ -2268,7 +2138,6 @@ gb << Subtitle Span( "Graph" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Age ), Y( :Height ), Y( :weight, Position( 1 ) ) ),
@@ -2288,7 +2157,6 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Alignment( "Left" );
@@ -2303,7 +2171,6 @@ gb << Title Alignment( "Left" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Fill Color( "Cyan" );
@@ -2318,7 +2185,6 @@ gb << Title Fill Color( "Cyan" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Frame Color( "Blue" );
@@ -2335,7 +2201,6 @@ gb << Title Frame Color( "Blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Span( "Graph" );
@@ -2350,7 +2215,6 @@ gb << Title Span( "Graph" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Text Color( "Red" );
@@ -2365,7 +2229,6 @@ gb << Title Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Transparency( .2 );
@@ -2380,7 +2243,6 @@ gb << Title Transparency( .2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Title Frame Color( "Blue" );
@@ -2396,7 +2258,6 @@ gb << Title Underline( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 0.5 );
@@ -2414,7 +2275,6 @@ gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range"
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 gb << Use row colors for levels( 1 );
@@ -2429,7 +2289,6 @@ gb << Use row colors for levels( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
 gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
@@ -2443,7 +2302,6 @@ gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ), Smoother( X, Y ) ) );
 Wait( 1 );
@@ -2459,7 +2317,6 @@ gb << X Group Edge( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
@@ -2478,7 +2335,6 @@ gb << Y Group Edge( "Left" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
@@ -2497,7 +2353,6 @@ gb << Y Group Level Orientation( "Horizontal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
@@ -2520,7 +2375,6 @@ gb << Y Group Title Orientation( "Horizontal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
 
@@ -2534,7 +2388,6 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
 
@@ -2548,7 +2401,6 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) ) );
 
@@ -2562,7 +2414,6 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ), Caption Box( X, Y ) ) );
 
@@ -2576,7 +2427,6 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ), Cap
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y ) ) );
 
@@ -2590,7 +2440,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y ) ) );
 
@@ -2604,7 +2453,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder(
 	Variables( X( :height ), Y( Transform Column( "f", Formula( Sin( :height / 5 ) ) ) ) ),
@@ -2621,7 +2469,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y ) ) );
 
@@ -2635,7 +2482,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
 
@@ -2649,7 +2495,6 @@ Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
 
@@ -2663,7 +2508,6 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Line of Fit( X, Y ) ) );
 
@@ -2677,7 +2521,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Line of Fit( X
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SATByYear.jmp" );
 Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ), Elements( Map Shapes() ) );
 
@@ -2691,7 +2534,6 @@ Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ), Elements( Map
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
 
@@ -2705,7 +2547,6 @@ Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder(
 	Variables( X( :height ), X( :weight, Position( 1 ) ), X( :age, Position( 1 ) ) ),
@@ -2722,7 +2563,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
 
@@ -2736,7 +2576,6 @@ Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ) ) );
 
@@ -2750,7 +2589,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y )
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Smoother( X, Y ) ) );
 
@@ -2764,7 +2602,6 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Smoother( X, Y
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Treemap( X, Y ) ) );
 

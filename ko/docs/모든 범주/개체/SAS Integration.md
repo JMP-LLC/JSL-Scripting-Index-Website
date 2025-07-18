@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 If( !Check SAS Dependencies(),
 	Install SAS Dependencies();
@@ -33,7 +32,6 @@ If( !Check SAS Dependencies(),
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
@@ -48,7 +46,6 @@ sas << Submit( "proc print data=sashelp.class; run;" );
 
 ```jsl
 
-Names Default To Here( 1 );
 array = Current SAS Connections();
 array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
@@ -64,7 +61,6 @@ array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 If( !Check SAS Dependencies(),
 	Install SAS Dependencies(),
@@ -81,20 +77,18 @@ If( !Check SAS Dependencies(),
 
 **JMP추가된 버전:** 19
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 
 iom_win = New Data Connector( Type( "SAS Local" ) );
 SAS Connect( iom_win );
@@ -109,11 +103,10 @@ sas << Disconnect();
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect(
 	New Data Connector(
 		ID( "com.jmp.sas_remote" ),
@@ -126,11 +119,10 @@ SAS Connect(
 
 ```
 
-**예제 4**
+#### 예제 4
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "sashost.com", 8591, Username( "jmpuser" ), Prompt( "Always" ) );
 
 ```
@@ -145,7 +137,6 @@ SAS Connect( "sashost.com", 8591, Username( "jmpuser" ), Prompt( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 If( Check SAS Dependencies(),
 	Update SAS Dependencies(),
@@ -168,7 +159,6 @@ If( Check SAS Dependencies(),
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ), GetSASLog( False ) );
 result = sas << Get Results;
@@ -187,7 +177,6 @@ Show( log );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
 result = sas << Get Results;
@@ -206,7 +195,6 @@ Show( out );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc corr data=sashelp.class
@@ -235,7 +223,6 @@ Show( data );
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Disconnect();
@@ -255,7 +242,6 @@ sas << Connect();
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 cas = sas << Current CAS Connection;
 Show( cas );
@@ -266,7 +252,6 @@ Show( cas );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 cas = sas << Current CAS Connection;
 connected = cas << Is Connected();
@@ -286,7 +271,6 @@ Show( connected );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Data Set Exists( "SASHELP", "AIRLINE" );
 Show( result );
@@ -297,7 +281,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Data Set Exists( "SASHELP.AIRLINE" );
 Show( result );
@@ -314,7 +297,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Disconnect();
@@ -331,7 +313,6 @@ sas << Disconnect();
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
@@ -347,7 +328,6 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Data Sets( "SASHELP" );
 Show( result );
@@ -364,7 +344,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Host Name();
 Show( result );
@@ -381,7 +360,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Lib Refs();
 Show( result );
@@ -398,7 +376,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ), GetSASLog( False ) );
 result = sas << Get Log();
@@ -416,7 +393,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Macro Var( "SYSVLONG" );
 Show( result );
@@ -433,7 +409,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Macro Var Names();
 Show( result );
@@ -450,7 +425,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Option Names();
 Show( result );
@@ -467,7 +441,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Option Value( "MEMLIB" );
 Show( result );
@@ -484,7 +457,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
 result = sas << Get Output();
@@ -502,7 +474,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
 result = sas << Get Results();
@@ -520,7 +491,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
 result = sas << Get Submit Status;
@@ -538,7 +508,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Var Info( "SASHELP", "CLASS" );
 Show( result );
@@ -555,7 +524,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Var Names( "SASHELP", "CLASS" );
 Show( result );
@@ -572,7 +540,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Version;
 Show( result );
@@ -589,7 +556,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Work Folder;
 Show( result );
@@ -606,7 +572,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 dt = sas << Import Data( "SASHELP.CLASS" );
 
@@ -622,7 +587,6 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 datasets = sas << List Output Datasets(
 	"\[
@@ -645,7 +609,6 @@ Show( datasets );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 serverName = sas << Name;
 Show( serverName );
@@ -662,7 +625,6 @@ Show( serverName );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc reg data=sashelp.class; model height=weight; output out=result_height_weight residual=res; run; quit;",
@@ -683,7 +645,6 @@ sas << Submit(
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit File( "MySASProgram.sas" );
 

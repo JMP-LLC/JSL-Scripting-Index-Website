@@ -10,32 +10,29 @@
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Shuffle for each Sex", Formula( Col Shuffle( :height, :sex ) ) );
@@ -53,11 +50,10 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 **JMP追加されたバージョン:** 17
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -67,11 +63,10 @@ dt << New Column( "KFold Validation",
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
 	"Numeric",
@@ -91,11 +86,10 @@ dt << New Column( "Stratified KFold",
 
 **JMP追加されたバージョン:** 15
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -106,11 +100,10 @@ dt << New Column( "Validation",
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -121,11 +114,10 @@ dt << New Column( "Validation",
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -153,7 +145,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta( 1, 1 );
@@ -174,7 +165,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
@@ -195,7 +185,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrbinp = 0.5;
 exrbinn = 40;
 exrbinlsz = Log( 1000 );
@@ -259,7 +248,6 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -274,7 +262,6 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Cauchy();
@@ -295,7 +282,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ChiSquare( 2 );
@@ -316,7 +302,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ExGaussian( 0, .5, .25 );
@@ -337,7 +322,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Exp();
@@ -358,7 +342,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random F( 2, 2 );
@@ -379,7 +362,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Frechet( 10, 5 );
@@ -400,7 +382,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
@@ -421,7 +402,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma( 1 );
@@ -442,7 +422,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
@@ -463,7 +442,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
@@ -484,7 +462,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
 New Window( "Example: Random Geometric and Empirical Distribution",
@@ -535,7 +512,6 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Index( 100, 5 );
 
 ```
@@ -550,7 +526,6 @@ Random Index( 100, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Integer( 1, 10 );
@@ -571,7 +546,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
@@ -592,7 +566,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sl( 0.5, 1, 1, 1 );
@@ -613,7 +586,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
@@ -634,7 +606,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LEV( 10, 5 );
@@ -655,7 +626,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
@@ -676,7 +646,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Logistic( 15, 1 );
@@ -697,7 +666,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Loglogistic( 15, 1 );
@@ -716,11 +684,10 @@ Show( x, v );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
@@ -731,11 +698,10 @@ Show( x, v );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
 	exrlny = Graph Box(
@@ -771,7 +737,6 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -789,7 +754,6 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 exnbrn = Random Negative Binomial( 20, 0.3 );
@@ -832,11 +796,10 @@ New Window( "Example: Neg Binomial Probability",
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Normal();
@@ -847,11 +810,10 @@ Show( x, v );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
 For( k = 1, k <= 50, k++,
@@ -897,7 +859,6 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )
@@ -918,7 +879,6 @@ Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
 New Window( "Example: Random Poisson and Empirical Distribution",
@@ -977,7 +937,6 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1 );
 Random Normal();
 
@@ -993,7 +952,6 @@ Random Normal();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SEV( 50, 5 );
@@ -1012,11 +970,10 @@ Show( x, v );
 
 **JMP追加されたバージョン:** 14
 
-**SHASH変換**
+#### SHASH変換
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -1028,11 +985,10 @@ Show( result1, result2 );
 
 ```
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
@@ -1053,7 +1009,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 r = Random Seed State();
 Random Seed State( r );
 
@@ -1069,7 +1024,6 @@ Random Seed State( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -1085,7 +1039,6 @@ Random Shuffle( exA );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
 Random Reset( 13579 );
@@ -1102,11 +1055,10 @@ Show( x, y );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Uniform( 1, 10 );
@@ -1117,11 +1069,10 @@ Show( x, v );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Uniform( 1, 10 );
 
 ```
@@ -1136,7 +1087,6 @@ Random Uniform( 1, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Weibull( 3, 20 );
@@ -1155,11 +1105,10 @@ Show( x, v );
 
 **JMP追加されたバージョン:** 19
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rnb = Random ZI Negative Binomial( 25, .5, .05 );
@@ -1202,11 +1151,10 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -1229,11 +1177,10 @@ dt << Distribution(
 
 **JMP追加されたバージョン:** 19
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rp = Random ZI Poisson( 20, .05 );
@@ -1268,11 +1215,10 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -1297,7 +1243,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random t( 2 );
@@ -1318,7 +1263,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
 New Window( "w", theBox = V List Box() );

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex += 2;
 ex;
@@ -29,7 +28,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -45,7 +43,6 @@ ex1 + ex1;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex /= 2;
 ex;
@@ -62,7 +59,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 3;
 ex *= 2;
 ex;
@@ -79,7 +75,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex--;
 ex;
@@ -96,7 +91,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex++;
 ex;
@@ -113,7 +107,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex -= 2;
 ex;

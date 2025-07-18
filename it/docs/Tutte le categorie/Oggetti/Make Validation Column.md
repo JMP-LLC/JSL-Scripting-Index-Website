@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -34,7 +33,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -56,7 +54,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Make Validation Column(
 	Grouping Column( :ID ),
@@ -74,7 +71,6 @@ obj = dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -96,7 +92,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 obj = dt << Make Validation Column(
 	Y( :Cholesterol Loss ),
@@ -116,11 +111,10 @@ obj = dt << Make Validation Column(
 
 **Descrizione:** Crea una colonna usata per dividere i dati in set di training, validazione e test.
 
-**Esempio di stratificazione**
+#### Esempio di stratificazione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -134,11 +128,10 @@ dt << Make Validation Column(
 
 ```
 
-**Esempio di valore soglia**
+#### Esempio di valore soglia
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -162,7 +155,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -180,11 +172,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -192,11 +183,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -207,11 +197,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -227,7 +216,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -254,7 +242,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -272,7 +259,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -290,7 +276,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -319,7 +304,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -342,7 +326,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -365,7 +348,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -392,7 +374,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -407,7 +388,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -435,11 +415,10 @@ Show( t );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -455,11 +434,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -492,7 +470,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -516,7 +493,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -533,7 +509,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -557,7 +532,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -581,7 +555,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -605,7 +578,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -623,7 +595,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -641,7 +612,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -663,7 +633,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -682,7 +651,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -706,7 +674,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Make Validation Column(
 	Training Set( 0.50 ),
@@ -728,7 +695,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -747,7 +713,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -762,7 +727,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 obj = dt << Make Validation Column(
 	Y( :Cholesterol Loss ),
@@ -782,7 +746,6 @@ obj = dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -803,7 +766,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Make Validation Column(
 	Training Set( 0.75 ),
@@ -822,7 +784,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -845,7 +806,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -874,7 +834,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -897,7 +856,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -926,7 +884,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -946,7 +903,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -970,7 +926,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -985,7 +940,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1010,7 +964,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1033,7 +986,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1062,7 +1014,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1091,7 +1042,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1120,7 +1070,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1141,11 +1090,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1166,11 +1114,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1199,7 +1146,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1222,7 +1168,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1245,7 +1190,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1268,7 +1212,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1291,7 +1234,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1312,7 +1254,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1338,7 +1279,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1356,7 +1296,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1373,7 +1312,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1395,7 +1333,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1418,7 +1355,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1443,7 +1379,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1469,7 +1404,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1486,7 +1420,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Make Validation Column(
 	Training Set( 0.75 ),
@@ -1505,7 +1438,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1527,7 +1459,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1542,7 +1473,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

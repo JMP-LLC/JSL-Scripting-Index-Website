@@ -10,11 +10,10 @@
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
@@ -31,11 +30,10 @@ Eval List( {x1, x2, minFun} );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -65,11 +63,10 @@ Show( x, objVal, iters, gradient, hessian );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -86,11 +83,10 @@ Eval List( {x1, x2, minFun} );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -122,7 +118,6 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
-Names Default To Here( 1 );
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -147,7 +142,6 @@ New Window( "Desirability",
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
 c = [9 6 -4];
@@ -166,11 +160,10 @@ Show( x, z );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example*/ 
 x = 0;
 y = 0;
@@ -179,11 +172,10 @@ Eval List( {x, y, maxf} );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
 n = 3;
@@ -201,11 +193,10 @@ sigSq = 1;/*initial values*/
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with all optional arguments*/ 
 x = 0;
 y = 0;
@@ -227,11 +218,10 @@ y = 0;
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 x = 0;
 y = 0;
@@ -240,11 +230,10 @@ Eval List( {x, y, minFun} );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -262,11 +251,10 @@ b2 = 5;
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -280,11 +268,10 @@ y = 0;
 
 ```
 
-**例 4**
+#### 例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -320,11 +307,10 @@ Minimize(
 
 ```
 
-**例 5**
+#### 例 5
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];

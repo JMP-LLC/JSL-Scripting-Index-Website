@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP追加されたバージョン:** 18
 
-**フォルダ内で検索**
+#### フォルダ内で検索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**匿名のプリセット**
+#### 匿名のプリセット
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**名前で検索**
+#### 名前で検索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -79,7 +75,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -97,7 +92,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -115,7 +109,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -141,7 +134,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -161,7 +153,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -183,7 +174,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -198,7 +188,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -223,11 +212,10 @@ Show( t );
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
-**フィルタのあるプラットフォーム**
+#### フィルタのあるプラットフォーム
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -252,11 +240,10 @@ New Window( "platform boxes",
 
 ```
 
-**一般**
+#### 一般
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -277,7 +264,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -298,7 +284,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -315,7 +300,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -336,7 +320,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -357,7 +340,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -378,7 +360,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -396,7 +377,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -412,7 +392,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -431,7 +410,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -453,7 +431,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -472,7 +449,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -487,7 +463,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -508,7 +483,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -528,7 +502,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -554,7 +527,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -574,7 +546,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -600,7 +571,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -620,7 +590,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -644,7 +613,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -659,7 +627,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -681,7 +648,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -701,7 +667,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -727,7 +692,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -753,7 +717,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -779,7 +742,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -797,11 +759,10 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -819,11 +780,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -849,7 +809,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -869,7 +828,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -889,7 +847,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -909,7 +866,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -929,7 +885,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -950,7 +905,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -976,7 +930,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -994,7 +947,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1011,7 +963,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1031,7 +982,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1055,7 +1005,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1072,7 +1021,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1087,7 +1035,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1106,7 +1053,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1129,7 +1075,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1146,7 +1091,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = Uplift(
@@ -1165,7 +1109,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1182,7 +1125,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1199,7 +1141,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1216,7 +1157,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = Uplift(
@@ -1235,7 +1175,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1252,7 +1191,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1271,11 +1209,10 @@ obj = Uplift(
 
 **説明:** 処置の差を最大にするような分岐を選ぶ対話的パーティションツリーをあてはめる。モデルにより、処置に反応する可能性が最も高い個人のグループを特定できる。
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1286,11 +1223,10 @@ obj = Uplift(
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1319,7 +1255,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1339,7 +1274,6 @@ obj << Color Points;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1357,11 +1291,10 @@ obj << Column Contributions( 1 );
 
 **説明:** テストセットの平均絶対偏差統計量を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1382,11 +1315,10 @@ Show( aabs );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1400,11 +1332,10 @@ Show( aabs );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1418,11 +1349,10 @@ Show( aabs );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1442,11 +1372,10 @@ Show( aabs );
 
 **説明:** 学習セットの平均絶対偏差統計量を戻す。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1459,11 +1388,10 @@ Show( aabs );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1475,11 +1403,10 @@ Show( aabs );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1491,11 +1418,10 @@ Show( aabs );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1513,11 +1439,10 @@ Show( aabs );
 
 **説明:** 検証セットの平均絶対偏差統計量を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1531,11 +1456,10 @@ Show( aabs );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1548,11 +1472,10 @@ Show( aabs );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1565,11 +1488,10 @@ Show( aabs );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1588,11 +1510,10 @@ Show( aabs );
 
 **説明:** テストデータの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1613,11 +1534,10 @@ Show( avg );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1632,11 +1552,10 @@ Show( avg );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1650,11 +1569,10 @@ Show( avg );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1674,11 +1592,10 @@ Show( avg );
 
 **説明:** 学習データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1691,11 +1608,10 @@ Show( avg );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1707,11 +1623,10 @@ Show( avg );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1723,11 +1638,10 @@ Show( avg );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1745,11 +1659,10 @@ Show( avg );
 
 **説明:** 検証データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1763,11 +1676,10 @@ Show( avg );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1781,11 +1693,10 @@ Show( avg );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1798,11 +1709,10 @@ Show( avg );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1821,11 +1731,10 @@ Show( avg );
 
 **説明:** テストセットの混同行列を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1846,11 +1755,10 @@ Show( cm );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1864,11 +1772,10 @@ Show( cm );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1882,11 +1789,10 @@ Show( cm );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1906,11 +1812,10 @@ Show( cm );
 
 **説明:** 学習セットの混同行列を戻す。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1923,11 +1828,10 @@ Show( cm );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1941,11 +1845,10 @@ Show( cm );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1959,11 +1862,10 @@ Show( cm );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1983,11 +1885,10 @@ Show( cm );
 
 **説明:** 検証セットの混同行列を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2001,11 +1902,10 @@ Show( cm );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2019,11 +1919,10 @@ Show( cm );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2037,11 +1936,10 @@ Show( cm );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2061,11 +1959,10 @@ Show( cm );
 
 **説明:** テストセットの混同率を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2086,11 +1983,10 @@ Show( cr );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2104,11 +2000,10 @@ Show( cr );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2122,11 +2017,10 @@ Show( cr );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2146,11 +2040,10 @@ Show( cr );
 
 **説明:** 学習セットの混同率を戻す。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2163,11 +2056,10 @@ Show( cr );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2181,11 +2073,10 @@ Show( cr );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2199,11 +2090,10 @@ Show( cr );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2223,11 +2113,10 @@ Show( cr );
 
 **説明:** 検証セットの混同率を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2241,11 +2130,10 @@ Show( cr );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2259,11 +2147,10 @@ Show( cr );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2277,11 +2164,10 @@ Show( cr );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2303,7 +2189,6 @@ Show( cr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2321,11 +2206,10 @@ obj << Get Difference Formula;
 
 **説明:** テストセットの一般化R2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2346,11 +2230,10 @@ Show( r );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2364,11 +2247,10 @@ Show( r );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2382,11 +2264,10 @@ Show( r );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2406,11 +2287,10 @@ Show( r );
 
 **説明:** 学習セットの一般化R2乗を戻す。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2423,11 +2303,10 @@ Show( r );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2441,11 +2320,10 @@ Show( r );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2459,11 +2337,10 @@ Show( r );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2483,11 +2360,10 @@ Show( r );
 
 **説明:** 検証セットの一般化R2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2501,11 +2377,10 @@ Show( r );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2519,11 +2394,10 @@ Show( r );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2537,11 +2411,10 @@ Show( r );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2565,7 +2438,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2585,7 +2457,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2604,11 +2475,10 @@ Show( time );
 
 **説明:** テストセットの誤分類率を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2629,11 +2499,10 @@ Show( rate );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2647,11 +2516,10 @@ Show( rate );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2665,11 +2533,10 @@ Show( rate );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2689,11 +2556,10 @@ Show( rate );
 
 **説明:** 学習セットの誤分類率を戻す。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2706,11 +2572,10 @@ Show( rate );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2723,11 +2588,10 @@ Show( rate );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2739,11 +2603,10 @@ Show( rate );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2761,11 +2624,10 @@ Show( rate );
 
 **説明:** 検証セットの誤分類率を戻す。 検証セットを使用している場合のみ使用できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2779,11 +2641,10 @@ Show( rate );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Partition(
@@ -2798,11 +2659,10 @@ Show( rate );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Boosted Tree(
@@ -2816,11 +2676,10 @@ Show( rate );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Bootstrap Forest(
@@ -2840,11 +2699,10 @@ Show( rate );
 
 **説明:** テストセットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 検証セットを使用している場合のみ使用できる。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2860,11 +2718,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2879,11 +2736,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2904,11 +2760,10 @@ Show( area );
 
 **説明:** 学習セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2922,11 +2777,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2940,11 +2794,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2964,11 +2817,10 @@ Show( area );
 
 **説明:** 検証セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 検証セットを使用している場合のみ使用できる。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2983,11 +2835,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3001,11 +2852,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3027,7 +2877,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3047,7 +2896,6 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3068,7 +2916,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3089,7 +2936,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3108,11 +2954,10 @@ Show( rms );
 
 **説明:** テストデータのAUC(area under the curve)を戻す。このAUCは、受診者動作曲線(ROC曲線)における曲線の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 検証セットを使用している場合のみ使用できる。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -3128,11 +2973,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -3147,11 +2991,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -3172,11 +3015,10 @@ Show( area );
 
 **説明:** 学習データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3190,11 +3032,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3208,11 +3049,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3232,11 +3072,10 @@ Show( area );
 
 **説明:** 検証データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 検証セットを使用している場合のみ使用できる。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3251,11 +3090,10 @@ Show( area );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3269,11 +3107,10 @@ Show( area );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3295,7 +3132,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3316,7 +3152,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3337,7 +3172,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3358,7 +3192,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3379,7 +3212,6 @@ Show( time );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3399,7 +3231,6 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << K Fold Crossvalidation( 5 );
@@ -3413,11 +3244,10 @@ obj << Go;
 
 **説明:** カテゴリカル変数の場合、欠測値をカテゴリとして扱う。連続変数の場合、適合度に基づき、欠測値をデータの上限値または下限値とする。 デフォルトではオン。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt:Age[3] = .;
 obj = dt << Uplift(
@@ -3430,11 +3260,10 @@ obj = dt << Uplift(
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
@@ -3442,22 +3271,20 @@ obj << Split Best( 1 );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
@@ -3472,7 +3299,6 @@ obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ),
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3491,11 +3317,10 @@ obj << Leaf Report( 1 );
 
 **説明:** 指定の列をロックして、分岐に使用されないようにする。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3511,11 +3336,10 @@ obj << Lock Columns( 1 );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Lock Columns( 1, :age, :size );
@@ -3535,7 +3359,6 @@ obj << Lock Columns( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Minimum Size Split( 15 );
@@ -3549,11 +3372,10 @@ obj << Split Best( 4 );
 
 **説明:** コンピュータで使用可能なスレッドに、計算を分割する。 デフォルトではオン。
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3564,11 +3386,10 @@ obj = dt << Partition(
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3579,11 +3400,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3600,11 +3420,10 @@ obj = dt << Bootstrap Forest(
 
 **説明:** 順序尺度の列に対して、データの順序を保った分岐だけを考慮する。 デフォルトではオン。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3616,32 +3435,29 @@ obj = dt << Uplift(
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
 obj << Split Best( 3 );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
@@ -3655,7 +3471,6 @@ obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y ),
@@ -3674,7 +3489,6 @@ obj << Plot Actual By Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3694,7 +3508,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3716,7 +3529,6 @@ obj << Prune Worst;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3736,7 +3548,6 @@ obj << Publish Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3756,7 +3567,6 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3776,7 +3586,6 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3796,7 +3605,6 @@ obj << Save Difference;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3816,7 +3624,6 @@ obj << Save Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3836,7 +3643,6 @@ obj << Save Leaf Label Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3856,7 +3662,6 @@ obj << Save Leaf Labels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3876,7 +3681,6 @@ obj << Save Leaf Number Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3896,7 +3700,6 @@ obj << Save Leaf Numbers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3916,7 +3719,6 @@ obj << Save Predicteds;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3936,7 +3738,6 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3956,7 +3757,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3974,11 +3774,10 @@ obj << Save Tolerant Prediction Formula;
 
 **説明:** 乱数シード値を指定する。乱数シード値を指定することにより、今後プラットフォームを起動したときに同じ結果を再現できる。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3990,11 +3789,10 @@ obj = dt << Uplift(
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -4005,11 +3803,10 @@ obj = dt << Partition(
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -4020,11 +3817,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -4043,7 +3839,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4064,7 +3859,6 @@ obj << Show Fit Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4086,7 +3880,6 @@ obj << ShowGraph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4108,7 +3901,6 @@ obj << ShowPoints( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4129,7 +3921,6 @@ obj << Show Split Candidates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4151,7 +3942,6 @@ obj << Show Split Stats( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4171,7 +3961,6 @@ obj << ShowTree( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4191,7 +3980,6 @@ obj << Small Tree View( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4211,11 +3999,10 @@ obj << Sort Split Candidates;
 
 **説明:** 最良分岐点でツリーを分岐する。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4228,11 +4015,10 @@ obj << Split Best( 2 );
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best;
@@ -4247,11 +4033,10 @@ obj << Split Best( 2 );
 
 **説明:** 分岐数をX軸、R²値をY軸に示したグラフの表示/非表示を切り替える。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4264,11 +4049,10 @@ obj << Split History;
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best( 5 );
@@ -4285,7 +4069,6 @@ obj << Split History;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4305,11 +4088,10 @@ obj << Uplift Graph;
 
 **JMP追加されたバージョン:** 15
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Uplift(
@@ -4322,11 +4104,10 @@ obj = dt << Uplift(
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Partition(
@@ -4338,11 +4119,10 @@ obj << Split Best( 5 );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Boosted Tree(
@@ -4354,11 +4134,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Bootstrap Forest(
@@ -4376,11 +4155,10 @@ obj = dt << Bootstrap Forest(
 
 **説明:** 指定された確率(fraction)で各行をランダムに選択して、検証データを形成する。 デフォルトの値は"0"。
 
-**アップリフトの例**
+#### アップリフトの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4392,11 +4170,10 @@ obj = dt << Uplift(
 
 ```
 
-**パーティションの例**
+#### パーティションの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition(
 	Y( :country ),
@@ -4407,11 +4184,10 @@ obj << Split Best( 2 );
 
 ```
 
-**ブースティングツリーの例**
+#### ブースティングツリーの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Boosted Tree(
 	Y( :marital status ),
@@ -4422,11 +4198,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**ブートストラップ森の例**
+#### ブートストラップ森の例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :country ),

@@ -1,6 +1,7 @@
-site_name: JMP® 脚本索引
+site_name: JMP 脚本索引
 theme: 
   name: readthedocs
+  custom_dir: custom_theme
   highlightjs: true
   locale: zh_CN
   hljs_languages:
@@ -9,8 +10,8 @@ theme:
   collapse_navigation: false
   navigation_depth: 6
   include_homepage_in_sidebar: false
-site_url: https://jsl.jmp.com/zh_CN
-site_description: The JMP® Scripting Index provides a brief description and the syntax for JSL functions, objects, python integration, and display boxes for the JMP® Software.
+site_url: https://jsl.jmp.com/zh-cn
+site_description: The JMP Scripting Index provides a brief description and the syntax for JSL functions, objects, python integration, and display boxes for the JMP® Software.
 copyright: © 2025 JMP Statistical Discovery LLC. 保留所有权利。
 use_directory_urls: false
 extra_css:

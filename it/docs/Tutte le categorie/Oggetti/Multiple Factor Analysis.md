@@ -16,7 +16,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -59,7 +58,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 dt << Multiple Factor Analysis(
@@ -98,7 +96,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Wine ),
@@ -123,7 +120,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Wine ),
@@ -148,7 +144,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Wine ),
@@ -174,7 +169,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 dt << Multiple Factor Analysis(
@@ -213,7 +207,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Wine ),
@@ -239,7 +232,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -274,7 +266,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -292,11 +283,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -304,11 +294,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -319,11 +308,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -341,7 +329,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -362,7 +349,6 @@ obj << Arrow Lines( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -399,7 +385,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -422,7 +407,6 @@ obj << Biplot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -445,7 +429,6 @@ obj << Biplot Select Component( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -468,7 +451,6 @@ obj << Block Partial Contributions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -491,7 +473,6 @@ obj << Block Partial Inertias( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -514,7 +495,6 @@ obj << Block Partial and Consensus Correlations( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -537,7 +517,6 @@ obj << Block Squared Cosines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -560,7 +539,6 @@ obj << Block Weights( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -578,7 +556,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -598,7 +575,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -621,7 +597,6 @@ obj << Consensus Map( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -642,7 +617,6 @@ obj << Consensus Map Select Component( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -682,7 +656,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -716,7 +689,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -752,7 +724,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -775,7 +746,6 @@ obj << Eigenvalues( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -798,7 +768,6 @@ obj << Eigenvectors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -813,7 +782,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -852,11 +820,10 @@ Show( t );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -883,11 +850,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -920,7 +886,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -955,7 +920,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -972,7 +936,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1007,7 +970,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1042,7 +1004,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1077,7 +1038,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1095,7 +1055,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1113,7 +1072,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1135,7 +1093,6 @@ obj << Highlight Product( "Small Inertia", 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1156,7 +1113,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1177,7 +1133,6 @@ obj << Lg Coefficients( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1201,7 +1156,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1220,7 +1174,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1237,7 +1190,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1260,7 +1212,6 @@ obj << Partial Axes Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1282,7 +1233,6 @@ obj << Partial Axes Plot Select component( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1305,7 +1255,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1326,7 +1275,6 @@ obj << RV Correlations( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1360,7 +1308,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1400,7 +1347,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1434,7 +1380,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1474,7 +1419,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1494,7 +1438,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1518,7 +1461,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1533,7 +1475,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1569,7 +1510,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1605,7 +1545,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1626,7 +1565,6 @@ obj << Save Block Partial Scores();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1666,7 +1604,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1706,7 +1643,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1748,7 +1684,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1771,7 +1706,6 @@ obj << Save Individual Partial Contributions();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1794,7 +1728,6 @@ obj << Save Individual Scores();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1817,7 +1750,6 @@ obj << Save Individual Squared Cosines();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -1838,7 +1770,6 @@ obj << Save Partial Axes Coordinates();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1870,11 +1801,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1906,11 +1836,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1950,7 +1879,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1984,7 +1912,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -2018,7 +1945,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -2052,7 +1978,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -2086,7 +2011,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2107,7 +2031,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2133,7 +2056,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2153,7 +2075,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2176,7 +2097,6 @@ obj << Show Labels( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2199,7 +2119,6 @@ obj << Summary Plot Select Component( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2220,7 +2139,6 @@ obj << Summary Plots( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2237,7 +2155,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -2271,7 +2188,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -2311,7 +2227,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2330,7 +2245,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2353,7 +2267,6 @@ obj << Variable Loadings( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2376,7 +2289,6 @@ obj << Variable Partial Contributions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 obj = dt << Multiple Factor Analysis(
 	MFA Blocks(
@@ -2397,7 +2309,6 @@ obj << Variable Squared Cosines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2412,7 +2323,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 5 );
 
 ```
@@ -27,7 +26,6 @@ Char( Pi(), 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( e(), 10 );
 
 ```

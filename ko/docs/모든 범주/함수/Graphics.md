@@ -8,20 +8,18 @@
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme(
 	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0, 0}, {255, 255,
 	255}, Missing( "Green" )}, {"Full Color", "Tritanopia", "Tritanomaly"}}
@@ -39,7 +37,6 @@ Add Color Theme(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -59,7 +56,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -79,7 +75,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Back Color( "red" );
@@ -97,57 +92,50 @@ New Window( "Example",
 
 **JMP추가된 버전:** 18
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "black", "white", 0.25 );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "sRGB" );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
 
-**예제 4**
+#### 예제 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```
 
-**예제 5**
+#### 예제 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
 
-**예제 6**
+#### 예제 6
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "red";
 c2 = "blue";
 steps = 20;
@@ -177,12 +165,10 @@ New Window( "HLS Radial Color Blending",
 
 ```
 
-**예제 7**
+#### 예제 7
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "blue";
 c2 = "red";
 steps = 20;
@@ -222,7 +208,6 @@ New Window( "HCLuv Radial Color Blending",
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
@@ -237,7 +222,6 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -260,65 +244,58 @@ New Window( "Example",
 
 **JMP추가된 버전:** 18
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "sRGB" );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "redmean" );
 
 ```
 
-**예제 4**
+#### 예제 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE76" );
 
 ```
 
-**예제 5**
+#### 예제 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE94" );
 
 ```
 
-**예제 6**
+#### 예제 6
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
 
-**예제 7**
+#### 예제 7
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "dEok" );
 
 ```
@@ -333,7 +310,6 @@ Color Difference( "red", "blue", "dEok" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -348,7 +324,6 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
@@ -363,7 +338,6 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	H List Box(
@@ -420,11 +394,10 @@ New Window( "Example",
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -440,11 +413,10 @@ New Window( "Example",
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -470,7 +442,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -492,7 +463,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -514,7 +484,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -536,7 +505,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -558,7 +526,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -580,7 +547,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( {1, 1, .5} );
@@ -598,11 +564,10 @@ New Window( "Example",
 
 **JMP추가된 버전:** 버전 14 이전
 
-**마스크**
+#### 마스크
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Pattern( [1 0.5 0 0, 0.5 0 0 1, 0 0 1 0.5, 0 1 0.5 0] );
@@ -612,11 +577,10 @@ New Window( "Example",
 
 ```
 
-**이미지**
+#### 이미지
 
 ```jsl
 
-Names Default To Here( 1 );
 
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
@@ -638,7 +602,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Detail( "JMP Default" );
 
 ```
@@ -651,20 +614,18 @@ Get Color Theme Detail( "JMP Default" );
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names( "sequential" );
 
 ```
@@ -679,7 +640,6 @@ Get Color Theme Names( "sequential" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box( Gradient Function( Log( a * a + b * b ), a, b, [2 10], Z Color( {"Green", "Orange"} ) ) )
 );
@@ -696,7 +656,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -716,7 +675,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -736,7 +694,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -761,7 +718,6 @@ New Window( "Color Wheel",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -789,7 +745,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( z = 0, z < 1, z += .1,
@@ -812,7 +767,6 @@ New Window( "Color Bar",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";
@@ -839,7 +793,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -854,7 +807,6 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -874,11 +826,10 @@ New Window( "Color Bar",
 
 **JMP추가된 버전:** 버전 14 이전
 
-**Constrained smoothing**
+#### Constrained smoothing
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Constrained smoothing",
 	Graph Box(
 		Pen Color( "gray" );
@@ -895,20 +846,18 @@ New Window( "Constrained smoothing",
 
 ```
 
-**Polyline**
+#### Polyline
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
 
-**Smoothing**
+#### Smoothing
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Smoothing",
 	Graph Box(
 		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),
@@ -927,11 +876,10 @@ New Window( "Smoothing",
 
 ```
 
-**Value space interpolation**
+#### Value space interpolation
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -952,7 +900,6 @@ New Window( "Interpolate in value space",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Line Style Example",
 	Graph Box(
 		Frame Size( 500, 400 ),
@@ -980,7 +927,6 @@ New Window( "Line Style Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 grid = 50;
 rmax = 0/*zero for smooth*/;
 nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set 
@@ -1023,7 +969,6 @@ g << Set Y Axis( {Format( "Best", 15 ), Show Major Ticks( 0 ), Rotated Labels( "
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
@@ -1038,7 +983,6 @@ New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -1058,7 +1002,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -1084,7 +1027,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nx = 20; // data is this size
 ny = 15;
@@ -1125,7 +1067,6 @@ New Window( "small and big",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1153,7 +1094,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -1176,7 +1116,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1197,7 +1136,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -1212,7 +1150,6 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( {.3, .5, .7} );
@@ -1232,7 +1169,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -1252,7 +1188,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
 	Graph Box(
@@ -1273,11 +1208,10 @@ New Window( "Example",
 
 **JMP추가된 버전:** 17
 
-**그래프 빌더**
+#### 그래프 빌더
 
 ```jsl
 
-Names Default To Here( 1 );
 
 theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
@@ -1292,11 +1226,10 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```
 
-**행 범례**
+#### 행 범례
 
 ```jsl
 
-Names Default To Here( 1 );
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
 biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );
@@ -1314,7 +1247,6 @@ Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1334,7 +1266,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1360,7 +1291,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1386,7 +1316,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1412,7 +1341,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1446,7 +1374,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	Graph Box(
@@ -1476,7 +1403,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -1495,20 +1421,18 @@ New Window( "Example",
 
 **JMP추가된 버전:** 14
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
@@ -1521,20 +1445,18 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 **JMP추가된 버전:** 14
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```
@@ -1547,11 +1469,10 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 **JMP추가된 버전:** 19
 
-**다중 다각형**
+#### 다중 다각형
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
 polys = dt[rows, {"X", "Y"}];
@@ -1594,11 +1515,10 @@ New Window( "Parishes",
 
 ```
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -1622,7 +1542,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
 	division = 6;
@@ -1661,7 +1580,6 @@ New Window( "RGB Color Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -1684,7 +1602,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -1697,11 +1614,10 @@ Remove Color Theme( "Yellow To Blue" );
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -1711,11 +1627,10 @@ New Window( "Example",
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "blue" );
@@ -1735,7 +1650,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -1755,7 +1669,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Degrees",
 	Graph Box(
 		FrameSize( 400, 400 ),
@@ -1787,7 +1700,6 @@ New Window( "Degrees",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( 20 );
@@ -1805,29 +1717,26 @@ New Window( "Example",
 
 **JMP추가된 버전:** 18
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( "red", "LMS" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```
@@ -1842,7 +1751,6 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -1868,7 +1776,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -1888,7 +1795,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -1908,7 +1814,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -1928,7 +1833,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1948,7 +1852,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1968,7 +1871,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
 	Graph Box(
@@ -1996,7 +1898,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Spiral",
 	Graph Box(
 		Pen Color( "red" );
@@ -2030,7 +1931,6 @@ New Window( "Spiral",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -2050,7 +1950,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -2070,7 +1969,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -2090,7 +1988,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
 	Graph Box(

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP追加されたバージョン:** 18
 
-**フォルダ内で検索**
+#### フォルダ内で検索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**匿名のプリセット**
+#### 匿名のプリセット
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**名前で検索**
+#### 名前で検索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -95,7 +90,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Copy Script;
 
@@ -109,7 +103,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Data Table Window;
 
@@ -125,7 +118,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -138,11 +130,10 @@ biv << Get By Levels;
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
-**フィルタのあるプラットフォーム**
+#### フィルタのあるプラットフォーム
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -167,11 +158,10 @@ New Window( "platform boxes",
 
 ```
 
-**一般**
+#### 一般
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 t = obj << Get Container;
 Show( (t << XPath( "//OutlineBox" )) << Get Title );
@@ -186,7 +176,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 t = obj << Get Datatable;
 Show( N Rows( t ) );
@@ -201,7 +190,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 t = obj << Get Script;
 Show( t );
@@ -216,7 +204,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 t = obj << Get Script With Data Table;
 Show( t );
@@ -231,7 +218,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 t = obj << Get Timing;
 Show( t );
@@ -246,7 +232,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -264,7 +249,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -280,7 +264,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -301,7 +284,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -320,7 +302,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -335,7 +316,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Redo Analysis;
 
@@ -349,7 +329,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Relaunch Analysis;
 
@@ -363,7 +342,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -385,7 +363,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -400,7 +377,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 r = obj << Report;
 t = r[Outline Box( 1 )] << Get Title;
@@ -416,7 +392,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Report View( "Summary" );
 
@@ -430,7 +405,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Save Script for All Objects;
 
@@ -442,21 +416,19 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), By( _bycol ) );
 obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), By( _bycol ) );
 obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
@@ -470,7 +442,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
@@ -484,7 +455,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Save Script to Journal;
 
@@ -498,7 +468,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Save Script to Report;
 
@@ -512,7 +481,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Save Script to Script Window;
 
@@ -526,7 +494,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -547,7 +514,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -573,7 +539,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -591,7 +556,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Title( "My Platform" );
 
@@ -605,7 +569,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 r = obj << Top Report;
 t = r[Outline Box( 1 )] << Get Title;
@@ -621,7 +584,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -636,11 +598,10 @@ xml = obj << View Web XML;
 
 **説明:** 応答の計算式に含まれている入力変数のうち、誤差因子である列を指定する。誤差因子は、誤差因子のばらつきに対するするロバスト性(平坦性)を調べるために使用される。作成されるプロファイルには、誤差因子で応答の計算式を微分したものも描かれる。
 
-**プロファイルの例**
+#### プロファイルの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -652,11 +613,10 @@ obj = dt << Profiler(
 
 ```
 
-**等高線プロファイルの例**
+#### 等高線プロファイルの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -668,11 +628,10 @@ obj = dt << Contour Profiler(
 
 ```
 
-**配合プロファイルの例**
+#### 配合プロファイルの例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Custom Profiler(
 	Y(
@@ -692,7 +651,6 @@ obj = dt << Custom Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```
@@ -705,7 +663,6 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```
@@ -720,7 +677,6 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```
@@ -735,7 +691,6 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Formulas for OPTMODEL;
 
@@ -749,7 +704,6 @@ obj << Formulas for OPTMODEL;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), Model( "Demand" ) );
 
 ```
@@ -762,7 +716,6 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), Model( "Dem
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Prediction Profiler( 1 );
 
@@ -776,7 +729,6 @@ obj << Prediction Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
 obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
 obj << Save Expanded Formulas;
@@ -791,7 +743,6 @@ obj << Save Expanded Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 obj << Show Formulas;
 
@@ -805,7 +756,6 @@ obj << Show Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```

@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -42,7 +41,6 @@ Show( clref == nclref );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -68,7 +66,6 @@ result = clref << Contains( "nObs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -95,7 +92,6 @@ Show( clref );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -124,7 +120,6 @@ Show( clref << Equal( nclref ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -150,7 +145,6 @@ result = clref << First;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -176,7 +170,6 @@ result = clref << Get Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -202,7 +195,6 @@ result = clref << Get Keys;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -228,7 +220,6 @@ class name = clref << Get Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -254,7 +245,6 @@ result = clref << Get Value( "nObs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -280,7 +270,6 @@ result = clref << Get Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -307,7 +296,6 @@ Show( clref );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -334,7 +322,6 @@ Try( clref:nObs = 40, "clref is locked." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -360,7 +347,6 @@ n = clref << N Items;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -386,7 +372,6 @@ result = clref << Next( "addition" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -413,7 +398,6 @@ Show( clref );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -439,7 +423,6 @@ result = clref << Show Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -469,7 +452,6 @@ Try( clref:nObs = 40, Show( "clref is locked." ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;

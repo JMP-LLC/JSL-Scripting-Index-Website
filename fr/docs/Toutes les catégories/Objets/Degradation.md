@@ -10,7 +10,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );
 obj = dt << Degradation(
 	Y( :Strength ),
@@ -28,7 +27,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_freqcol",
 	Numeric,
@@ -60,7 +58,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -78,7 +75,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -96,7 +92,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -114,7 +109,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -132,7 +126,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -150,7 +143,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -172,7 +164,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -202,7 +193,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );
 obj = dt << Degradation(
 	Y( :Strength ),
@@ -223,7 +213,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -245,7 +234,6 @@ obj << Connect Data Markers( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -267,7 +255,6 @@ obj << Curve Interval Alpha( .01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -290,7 +277,6 @@ dt1 = obj << Generate Pseudo Failure Data( 1, .05 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -311,7 +297,6 @@ obj << Generate Report for Current Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -332,7 +317,6 @@ obj << Get Inverse Prediction Results;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -353,7 +337,6 @@ obj << Get Prediction Results;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -373,7 +356,6 @@ obj << Get Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -394,7 +376,6 @@ obj << Get Results;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -420,7 +401,6 @@ obj << Inverse Prediction Alpha( .01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -445,7 +425,6 @@ obj << Inverse Prediction Interval( "Prediction Interval" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -471,7 +450,6 @@ obj << Inverse Prediction Side( "Lower One Sided" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -499,7 +477,6 @@ obj << Longitudinal Prediction Alpha( .01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -526,7 +503,6 @@ obj << Longitudinal Prediction Interval( "Prediction Interval" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -553,7 +529,6 @@ obj << Longitudinal Prediction Time( 3000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -574,7 +549,6 @@ obj << No Tab List( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -595,7 +569,6 @@ obj << Nonlinear Path;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -614,11 +587,10 @@ obj << Prediction Settings;
 
 **Description :** Vous permet de spécifier des options pour le graphique des résidus.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -632,11 +604,10 @@ obj << Residual Plot( Jittering Scale( 1.5 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
 obj = dt << Degradation(
 	Y( :Power Drop ),
@@ -658,7 +629,6 @@ obj << Residual Plot( Jittering( 1 ), Separate Groups( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -687,7 +657,6 @@ obj << Save Crossing Time;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -717,7 +686,6 @@ obj << Save Predictions;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -746,7 +714,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
 obj = dt << Degradation(
 	Y( :Power Drop ),
@@ -795,7 +762,6 @@ obj << Set Baseline( 130 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -817,7 +783,6 @@ obj << Set Censoring Time( 3800 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
 obj = dt << Degradation(
 	Y( :Power Drop ),
@@ -840,7 +805,6 @@ obj << Set Lower Spec Limit( -1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -862,7 +826,6 @@ obj << Set Upper Spec Limit( 6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -883,7 +846,6 @@ obj << Show Curve Interval( "Prediction Interval" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -905,7 +867,6 @@ obj << Show Fitted Lines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -930,7 +891,6 @@ obj << Show Inverse Prediction Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -950,7 +910,6 @@ obj << Show Legend( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -972,7 +931,6 @@ obj << Show Residual Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -994,7 +952,6 @@ obj << Show Spec Limits( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1014,11 +971,10 @@ obj << Simple Linear Path;
 
 **Description :** Vous permet de spécifier et d&apos;ajuster un chemin de modèle directement dans un script. La plate-forme Dégradation identifie les valeurs initiales et ajuste le modèle automatiquement sans autre intervention de l&apos;utilisateur. Chaque modèle est spécifié avec un nom de modèle, une définition du modèle et une commande d&apos;ajustement. Le type de modèle dans l&apos;argument Formule doit être l&apos;un des suivants : Linéaire personnalisé, Taux de réaction, Taux de réaction de type I, ou Taux constant. Pour un modèle linéaire personnalisé, utilisez la fonction Parameter() pour définir la formule, de manière similaire à la spécification de modèles sur la plate-forme Non linéaire. Pour les autres types de modèle, les informations de specification diffèrent selon le type de modèle. Pour plus de détails, consultez les exemples. Le fitting command peut être Fit Model ou Fit by System ID.
 
-**Autres exemples**
+#### Autres exemples
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$sample_data/reliability/Device B.jmp" );
 obj = dt << Degradation(
 	Y( :Power Drop ),
@@ -1073,11 +1029,10 @@ obj << Generate Report for Current Model();
 
 ```
 
-**Exemple d'ajustement par l'ID système**
+#### Exemple d'ajustement par l'ID système
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1096,11 +1051,10 @@ obj << Specify and Fit Path(
 
 ```
 
-**Exemple de modèle linéaire**
+#### Exemple de modèle linéaire
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1127,7 +1081,6 @@ obj << Specify and Fit Path(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );
 obj = dt << Degradation(
 	Y( :"Concentration (mg/Kg)"n ),
@@ -1147,7 +1100,6 @@ obj << Test Stability;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1172,7 +1124,6 @@ obj << Use Interpolation through Data( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );
 obj = dt << Degradation(
 	Y( :"Concentration (mg/Kg)"n ),
@@ -1195,7 +1146,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1213,11 +1163,10 @@ dt << Bivariate(
 
 **JMP Version ajoutée :** 18
 
-**Préconfiguration anonyme**
+#### Préconfiguration anonyme
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1228,11 +1177,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Rechercher dans les dossiers**
+#### Rechercher dans les dossiers
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1240,11 +1188,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**Rechercher par nom**
+#### Rechercher par nom
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1260,7 +1207,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1292,7 +1238,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -1310,7 +1255,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1328,7 +1272,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1363,7 +1306,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1392,7 +1334,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1423,7 +1364,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1438,7 +1378,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1472,11 +1411,10 @@ Show( t );
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
-**Général**
+#### Général
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1498,11 +1436,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Plate-forme avec filtre**
+#### Plate-forme avec filtre
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1537,7 +1474,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1567,7 +1503,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1584,7 +1519,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1614,7 +1548,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1644,7 +1577,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1674,7 +1606,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1692,7 +1623,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate(
@@ -1712,7 +1642,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1731,7 +1660,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1753,7 +1681,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1772,7 +1699,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1787,7 +1713,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1808,7 +1733,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1837,7 +1761,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1872,7 +1795,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -1901,7 +1823,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1936,7 +1857,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1956,7 +1876,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1980,7 +1899,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1995,7 +1913,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2026,7 +1943,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2055,7 +1971,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2090,7 +2005,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2125,7 +2039,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2160,7 +2073,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2187,11 +2099,10 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2218,11 +2129,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2257,7 +2167,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2286,7 +2195,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2315,7 +2223,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2344,7 +2251,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2373,7 +2279,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2394,7 +2299,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2423,7 +2327,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2443,7 +2346,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2460,7 +2362,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2489,7 +2390,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -2524,7 +2424,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2541,7 +2440,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2556,7 +2454,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
 	Window View( "Private" ),

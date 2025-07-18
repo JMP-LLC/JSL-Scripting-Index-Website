@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ) );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -32,7 +31,6 @@ imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -54,7 +52,6 @@ imgSeg << Filter( "contrast", 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 451, 451 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -77,7 +74,6 @@ imgSeg << Crop( 10, 90, 90, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -99,7 +95,6 @@ imgSeg << Filter( "despeckle" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -121,7 +116,6 @@ imgSeg << Filter( "edge" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -143,7 +137,6 @@ imgSeg << Filter( "enhance" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -163,7 +156,6 @@ imgSeg << fill graph;
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -185,7 +177,6 @@ imgSeg << flip both;
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -207,7 +198,6 @@ imgSeg << flip horizontal;
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -229,7 +219,6 @@ imgSeg << flip vertical;
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -251,7 +240,6 @@ imgSeg << Filter( "gamma", 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -273,7 +261,6 @@ imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ) );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -295,7 +282,6 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -317,7 +303,6 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -339,7 +324,6 @@ imgSeg << lock( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -361,7 +345,6 @@ imgSeg << Filter( "median" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 imgBox = win[framebox( 1 )];
@@ -379,7 +362,6 @@ imgSeg << Move( 75, 75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -401,7 +383,6 @@ imgSeg << Filter( "negate" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -423,7 +404,6 @@ imgSeg << Filter( "normalize" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 imgBox = win[framebox( 1 )];
@@ -442,7 +422,6 @@ imgBox << AddImage(
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -464,7 +443,6 @@ imgSeg << Filter( "reduce noise", 2.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -487,7 +465,6 @@ imgSeg << remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -509,7 +486,6 @@ imgSeg << rotate( 45 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -532,7 +508,6 @@ imgSeg << setSize( {300, 500} );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -554,7 +529,6 @@ imgSeg << Filter( "sharpen" );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
@@ -574,7 +548,6 @@ imgSeg << Specify Size( 0, 100, 100, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
 win = New Window( "Image", imgBox );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );

@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -41,7 +40,6 @@ obj << Clear All Filters;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager( Include Extended Statistics( 1 ) );
@@ -57,7 +55,6 @@ obj << Extended Statistics( {"Median Absolute Deviation", "Q1"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Columns Manager;
@@ -73,7 +70,6 @@ obj << Force calculations for all categorical columns( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -89,7 +85,6 @@ obj << Force calculations for all numeric columns( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -106,7 +101,6 @@ tab << Sort By Column( "n unique" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -122,7 +116,6 @@ obj << Hide Excluded Columns( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -138,7 +131,6 @@ obj << Hide Hidden Columns( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -156,7 +148,6 @@ obj << Include Extended Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -174,7 +165,6 @@ obj << Select Rows( :age, :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -192,7 +182,6 @@ obj << Set Columns( {:height, :weight} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -210,7 +199,6 @@ obj << Set Modeling Type Filter( "Continuous", "Ordinal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Columns Manager;
@@ -228,7 +216,6 @@ obj << Set Property Filter( "Matrix Column Names", "Value colors" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -247,7 +234,6 @@ obj << Set Selection Filter( "Keep" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -263,7 +249,6 @@ obj << Set Text Filter( "me" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -279,7 +264,6 @@ obj << Show Attributes( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;
@@ -295,7 +279,6 @@ obj << Show Properties( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Columns Manager;

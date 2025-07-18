@@ -22,7 +22,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 existingFolder = (liveconnection << Get Folder( "~" )) << As Scriptable;
@@ -46,7 +45,6 @@ Write( "New folder path: ", newFolder << Get Path );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -102,7 +100,6 @@ For( i = 1, i <= children << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -138,7 +135,6 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -180,7 +176,6 @@ Write( "\!nDescription: ", report << Get Description );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -217,7 +212,6 @@ Write( "\!n\!nTitle: ", folder << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -260,7 +254,6 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -312,7 +305,6 @@ Write( "\!n\!nChild Count: ", count );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -355,7 +347,6 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -390,7 +381,6 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -426,7 +416,6 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -469,7 +458,6 @@ Write( "\!nTitle: ", report << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -513,7 +501,6 @@ Write( "\!nType: ", report << Get Type );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -556,7 +543,6 @@ Write( "\!nURL: ", report << Get URL );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -612,7 +598,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 content1 = New JMP Live Content( gblinebar, Title( "Line Bar" ) );
@@ -646,7 +631,6 @@ Write( "\!n\!nUpdated report and data: ", resultList );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -696,7 +680,6 @@ Write( "\!nDecription: ", report << Get Description );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -748,7 +731,6 @@ Write( "\!nTitle: ", report << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 content = New JMP Live Content( gblinebar, Title( "Line Bar" ) );

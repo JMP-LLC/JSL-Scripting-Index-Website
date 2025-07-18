@@ -12,22 +12,20 @@
 
 **JMP Versione aggiunta:** 18
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
@@ -48,11 +46,10 @@ Python Create JPIP CMD();
 
 **JMP Versione aggiunta:** 14
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 // NOTE: a,d,x,z must be declared before Execute()
 // as this is the location the results will be written.
@@ -80,11 +77,10 @@ Show( v, m, ml, x, z, a, d );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x1 = 0;
 x2 = 0;
@@ -128,11 +124,10 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **JMP Versione aggiunta:** 14
 
-**Datetime**
+#### Datetime
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date1 = As Date( Today() );
@@ -142,11 +137,10 @@ Show( date1, date2 );
 
 ```
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 x1 = [1, 2, 3];
@@ -161,11 +155,10 @@ Close( dt1 );
 
 ```
 
-**numpy.datetime64**
+#### numpy.datetime64
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 PythonConnection << Install Packages( "numpy" );
@@ -186,7 +179,6 @@ Show( numpy_datetime );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -201,32 +193,29 @@ Show( version );
 
 **JMP Versione aggiunta:** 18
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
 ```
 
-**Esempio 3**
+#### Esempio 3
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -242,7 +231,6 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = PythonConnection << Is Connected;
 Show( x );
@@ -259,7 +247,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 Python Name = PythonConnection << JMP Name To Python Name( a b c );
 Show( Python Name );
@@ -276,7 +263,6 @@ Show( Python Name );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 pi = 3.1415927;
 PythonConnection << Send( pi );
@@ -295,11 +281,10 @@ PythonConnection << Submit( "print(pi)" );
 
 **JMP Versione aggiunta:** 14
 
-**Date**
+#### Date
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date = As Date( Today() );
@@ -308,11 +293,10 @@ PythonConnection << Submit( "print(date)" );
 
 ```
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = [1, 2, 3];
 PythonConnection << Send( x );
@@ -333,7 +317,6 @@ PythonConnection << Submit( "print(dt)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
 dtname = "$SAMPLE_DATA/Baseball.jmp";
@@ -351,11 +334,10 @@ PythonConnection << Submit( "print(Baseball)" );
 
 **JMP Versione aggiunta:** 14
 
-**Date**
+#### Date
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date = As Date( Today() );
@@ -364,11 +346,10 @@ PythonConnection << Submit( "print(date)" );
 
 ```
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = [1, 2, 3];
 PythonConnection << Set( x );
@@ -389,7 +370,6 @@ PythonConnection << Submit( "print(dt)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Submit(
 	"\[
@@ -413,7 +393,6 @@ Show( getStr, getNum );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Submit File( "some_Python_source.py" );
 

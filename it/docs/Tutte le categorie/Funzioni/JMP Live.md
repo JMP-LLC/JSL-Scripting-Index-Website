@@ -10,29 +10,26 @@
 
 **JMP Versione aggiunta:** 15
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live();
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
 
-**Esempio 3**
+#### Esempio 3
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```
@@ -55,11 +52,10 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 **JMP Versione aggiunta:** 17
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -82,11 +78,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -106,11 +101,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Esempio 3**
+#### Esempio 3
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -124,11 +118,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**Esempio 4**
+#### Esempio 4
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),

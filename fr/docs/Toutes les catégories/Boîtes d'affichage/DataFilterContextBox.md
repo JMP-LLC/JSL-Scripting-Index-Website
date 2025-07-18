@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -52,7 +51,6 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -69,7 +67,6 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
@@ -102,7 +99,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -123,7 +119,6 @@ rbiv << Add Polygon Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -141,7 +136,6 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -161,7 +155,6 @@ rbiv << Add Text Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -180,7 +173,6 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -200,7 +192,6 @@ tb << Background Color( "Yellow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -222,7 +213,6 @@ tb << Border( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -242,7 +232,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Run Script( "Bivariate" );
@@ -258,7 +247,6 @@ w << Bring Window To Front;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -278,7 +266,6 @@ Print( axisChild << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -296,7 +283,6 @@ axisbox << Class Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -315,7 +301,6 @@ rbiv << append( clonedBox );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -331,7 +316,6 @@ w << Close Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
 mat << CopyData;
 
@@ -345,7 +329,6 @@ mat << CopyData;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -363,7 +346,6 @@ rbiv = biv << report;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -380,7 +362,6 @@ rbiv << Copy Picture();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -398,7 +379,6 @@ axisbox << Delete Box();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 selected = 0;
 New Window( "Example",
@@ -424,7 +404,6 @@ refresh = Function( {},
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -441,7 +420,6 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -473,7 +451,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -491,7 +468,6 @@ axisbox << Delete();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -515,7 +491,6 @@ annotation << delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -535,7 +510,6 @@ tb << Background Color( "Yellow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -557,7 +531,6 @@ tb << Border( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -577,7 +550,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Content Size();
@@ -591,11 +563,10 @@ Show( c );
 
 **Description :** Obtient une expression relativement robuste pour naviguer entre parent box et obj. Ce chemin n&apos;est pas garanti comme étant stable dans toutes les versions de JMP. Le receiver expr est intégré dans l&apos;expression de sortie s&apos;il est fourni. Sinon, l&apos;expression fournie pour parent box est utilisée à la place. Comme indiqué dans l&apos;exemple, ce message est principalement utile pour augmenter la robustesse d&apos;un chemin déjà disponible. Le mode XPath est défini par défaut.
 
-**Élémentaire**
+#### Élémentaire
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -607,11 +578,10 @@ xpath expr << Select;
 
 ```
 
-**Mode indice**
+#### Mode indice
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -631,7 +601,6 @@ subscript expr << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -661,22 +630,20 @@ New Window( "enabled",
 
 **Description :** Renvoie une chaîne contenant le code source HTLM de la boîte d’affichage.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get HTML );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -693,7 +660,6 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -711,7 +677,6 @@ fb << Get Height;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -731,7 +696,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -748,7 +712,6 @@ Print( rbiv << Get Journal );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -769,7 +732,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -787,7 +749,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -805,7 +766,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -823,7 +783,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -848,7 +807,6 @@ Show( w << Get On Close );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -869,7 +827,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Page Setup Test" ) );
 w << get page setup();
@@ -882,11 +839,10 @@ w << get page setup();
 
 **Description :** Capture db comme objet image. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" affiche le rapport comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
-**Affichage et apparence**
+#### Affichage et apparence
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -907,11 +863,10 @@ New Window( "Example",
 
 ```
 
-**Échelle**
+#### Échelle
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -921,11 +876,10 @@ New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
-**Par défaut**
+#### Par défaut
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -944,7 +898,6 @@ New Window( "Example", rbiv << Get Picture );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Project();
@@ -960,7 +913,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -974,7 +926,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -988,7 +939,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -1000,22 +950,20 @@ bb << Get Property List;
 
 **Description :** Renvoie une chaîne contenant le code source RTF de la boîte d’affichage.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get RTF );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -1030,11 +978,10 @@ Open( "$TEMP/Oneway.rtf" );
 
 **Description :** Renvoie un vecteur contenant l&apos;état de ligne de toutes les lignes de la table de données spécifiée ou active. Les états de ligne peuvent être issus de la table ou du contexte du filtre de la zone.
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -1077,11 +1024,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -1124,7 +1070,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1142,7 +1087,6 @@ Print( w << Get Show Window() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1162,7 +1106,6 @@ Print( fb << Get Size );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -1186,7 +1129,6 @@ spacer << Get Stretch();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get Text );
@@ -1203,7 +1145,6 @@ a << Set Text( win << Get Text );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1227,7 +1168,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1249,7 +1189,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1270,7 +1209,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1286,7 +1224,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1304,7 +1241,6 @@ fb << Get Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Icon;
@@ -1320,7 +1256,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 p = w << Get Window Position();
@@ -1336,7 +1271,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = w << Get Window Size();
@@ -1352,7 +1286,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Title;
@@ -1368,7 +1301,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Print( w << Get Window View() );
@@ -1383,7 +1315,6 @@ Print( w << Get Window View() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "test", a = Text Box( "my test" ) );
 a << set text( win << get xml );
@@ -1398,7 +1329,6 @@ a << set text( win << get xml );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "example",
 	MouseBox(
 		Graph Box(
@@ -1443,7 +1373,6 @@ New Window( "example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1463,7 +1392,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Inval example",
@@ -1507,7 +1435,6 @@ New Window( "Inval example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -1524,7 +1451,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "Modal Window", <<Modal ),
 	Function( {win},
@@ -1543,7 +1469,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1560,7 +1485,6 @@ rbiv << journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Journal Window;
@@ -1575,7 +1499,6 @@ w << Journal Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "example",
@@ -1595,11 +1518,10 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 **Description :** Crée un gestionnaire d&apos;état de ligne pour la table de données spécifiée ou pour la table de données active. La fonction est appelée lorsque les états de ligne changent dans le contexte du filtre de la zone. L&apos;argument de la fonction contient les numéros de lignes modifiés, ou -1 si le filtre de l&apos;état de ligne a été modifié.
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -1642,11 +1564,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -1689,7 +1610,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1710,7 +1630,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1728,7 +1647,6 @@ w << Maximize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1746,7 +1664,6 @@ w << Minimize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -1762,7 +1679,6 @@ w << Move Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1778,11 +1694,10 @@ Print( next << Class Name() );
 
 **Description :** Définit l&apos;exécution d&apos;un script ou d&apos;une fonction à la fermeture d&apos;une fenêtre. Ce script renvoie 1 pour autoriser la fermeture, ou 0 pour empêcher la fermeture de la fenêtre.
 
-**Fermer la fonction**
+#### Fermer la fonction
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -1802,11 +1717,10 @@ w << On Close(
 
 ```
 
-**Fermer le script**
+#### Fermer le script
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -1832,7 +1746,6 @@ w << On Close(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to Data Table objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Optimize Display;
@@ -1847,7 +1760,6 @@ dt << Optimize Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -1864,7 +1776,6 @@ r << Pad Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1885,7 +1796,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	ob = Outline Box( "Outline Box",
@@ -1917,7 +1827,6 @@ ob3 << Page Break;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1936,7 +1845,6 @@ Print( axisParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1955,7 +1863,6 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1974,7 +1881,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Print Window;
@@ -1989,7 +1895,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Reshow example",
@@ -2018,7 +1923,6 @@ New Window( "Reshow example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2035,7 +1939,6 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2052,7 +1955,6 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2069,7 +1971,6 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2086,7 +1987,6 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2103,7 +2003,6 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2118,11 +2017,10 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 **Description :** Enregistre une image de la boîte d&apos;affichage. Les formats pris en charge sont EMF (Windows), PICT (Macintosh), JPEG ou JPG, GIF et PNG. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" l&apos;affiche comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
-**Affichage et apparence**
+#### Affichage et apparence
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -2154,11 +2052,10 @@ New Window( "Example",
 
 ```
 
-**Échelle**
+#### Échelle
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2169,11 +2066,10 @@ New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
-**Par défaut**
+#### Par défaut
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2184,13 +2080,12 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**Syntaxe :** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
+**Syntaxe :** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\\to\\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description :** Enregistre les tables de la boîte d&apos;affichage et les diapositives de graphiques dans une présentation qui peut être vue avec Microsoft PowerPoint ou un autre logiciel de présentation.
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2207,7 +2102,6 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2224,7 +2118,6 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << save text( "$TEMP/jmp_example.txt" );
@@ -2241,7 +2134,6 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message can be sent to any display box object but will be applied to the report window
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -2255,11 +2147,10 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 **Description :** Ajustez la barre de défilement de la fenêtre de manière à afficher l&apos;objet DisplayBox donnée, ou à faire défiler un nombre relatif de pixels, ou à afficher un emplacement de pixel absolu. Pour remplacer un nombre de pixels, vous pouvez utiliser les mots-clés "Start" ou "End".
 
-**Absolute**
+#### Absolute
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2276,11 +2167,10 @@ Wait( 1 );
 
 ```
 
-**Box**
+#### Box
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2301,11 +2191,10 @@ For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 s
 
 ```
 
-**Relative**
+#### Relative
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2332,7 +2221,6 @@ Wait( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example", ex = Button Box( "Press Me" ) );
 ex << Select;
@@ -2347,7 +2235,6 @@ ex << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Test",
 	lb = List Box( {"a", "b", "c", "d"} ),
@@ -2375,7 +2262,6 @@ w << Set Content Size( 400, 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -2392,7 +2278,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2410,7 +2295,6 @@ fb << Set Height( 150 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Set Main Window;
@@ -2425,7 +2309,6 @@ w << Set Main Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2444,7 +2327,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2463,7 +2345,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
 w << Set page setup(
@@ -2485,7 +2366,6 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Footer Test" ) );
 w << Set Print Footers(
@@ -2504,7 +2384,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Header Test" ) );
 w << Set Print Headers(
@@ -2523,7 +2402,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 
@@ -2537,7 +2415,6 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2554,11 +2431,10 @@ rbiv << Set Report Title( "New Title" );
 
 **JMP Version ajoutée :** 16
 
-**Ajuster avec la fenêtre**
+#### Ajuster avec la fenêtre
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	H List Box(
@@ -2579,11 +2455,10 @@ ts << Set Stretch( "Window", "Window" );
 
 ```
 
-**Ajuster pour remplir**
+#### Ajuster pour remplir
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -2606,7 +2481,6 @@ New Window( "Stretch",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2625,7 +2499,6 @@ tb << Set Summary Behavior( "Visible" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2643,7 +2516,6 @@ fb << Set Width( 400 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Example", ex = Button Box( "New Analysis" ) );
 w << Set Window Icon( "Scatter3D" );
@@ -2658,7 +2530,6 @@ w << Set Window Icon( "Scatter3D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 800, 1200 );
@@ -2673,7 +2544,6 @@ w << Set Window Size( 800, 1200 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2690,7 +2560,6 @@ rbiv << Set Window Title( "New Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2707,7 +2576,6 @@ rbiv << Show Properties();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2724,7 +2592,6 @@ rbiv << Show Tree Structure();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -2742,7 +2609,6 @@ w << Show Window( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2761,7 +2627,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2783,7 +2648,6 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2805,7 +2669,6 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Size Window( 500, 500 );
@@ -2822,7 +2685,6 @@ w << Size Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2842,7 +2704,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2864,7 +2725,6 @@ Print( rootParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "UpdateWindow example",
@@ -2916,7 +2776,6 @@ New Window( "rect",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2938,7 +2797,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2959,7 +2817,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2975,11 +2832,10 @@ Show( rbiv << Window Class Name() );
 
 **Description :** Applique une expression Xpath à la représentation XML de l’arbre d’affichage et renvoie les résultats. Par défaut, les chaînes sont renvoyées dans la langue locale et le XML contient les valeurs des données dans des boîtes. Utilisez l&apos;option English pour renvoyer des chaînes anglaises, le cas échéant. Utilisez l&apos;option NoData pour omettre les valeurs des données dans les boîtes, ce qui peut être utile pour optimiser les performances des requêtes basées uniquement sur des attributs de boîte.
 
-**Attributes**
+#### Attributes
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2987,11 +2843,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Box type**
+#### Box type
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2999,11 +2854,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Child box**
+#### Child box
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3012,11 +2866,10 @@ Make Into Data Table;
 
 ```
 
-**Data**
+#### Data
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3025,11 +2878,10 @@ Text Color( "Green" );
 
 ```
 
-**Display Seg**
+#### Display Seg
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3037,11 +2889,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3057,7 +2908,6 @@ biv = dt << Run Script( "Bivariate" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 80, 120 );

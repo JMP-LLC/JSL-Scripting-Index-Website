@@ -20,7 +20,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -41,7 +40,6 @@ Close( exdt, NoSave );
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -59,7 +57,6 @@ Close All( Data Tables, NoSave );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS", "SAMPLE_IMAGES",
 	"USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
@@ -78,7 +75,6 @@ For Each( {pv},
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
 rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
 rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );
@@ -100,7 +96,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -120,7 +115,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -139,22 +133,20 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Format( date, 
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {"Big Class", "Abrasion"}, {"Big", "Abrasive"} );
@@ -171,7 +163,6 @@ Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {"Big Class", "Abrasion"}, {"Big
 
 ```jsl
 
-Names Default To Here( 1 );
 Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -186,7 +177,6 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -207,7 +197,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Format( date, 
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = File Exists( "$TEMP/x.jmp" );
 rc2 = Delete File( "$TEMP/x.jmp" );
@@ -226,7 +215,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -244,7 +232,6 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -262,7 +249,6 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -275,20 +261,18 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Files In Directory( "$HOME" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
 );
@@ -309,7 +293,6 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ```jsl
 
-Names Default To Here( 1 );
 
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
@@ -330,7 +313,6 @@ For( i = 1, i <= N Items( windows ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
 Show( Get Default Directory() );
@@ -347,7 +329,6 @@ Show( Get Default Directory() );
 
 ```jsl
 
-Names Default To Here( 1 );
 sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
 Show( sheetList );
 
@@ -363,7 +344,6 @@ Show( sheetList );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get File Search Path();
 
 ```
@@ -376,11 +356,10 @@ Get File Search Path();
 
 **JMP추가된 버전:** 버전 14 이전
 
-**목록**
+#### 목록
 
 ```jsl
 
-Names Default To Here( 1 );
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME", "USER_APPDATA", "ALL_HOME",
 "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS", "SAMPLE_IMAGES", "SAMPLE_IMPORT_DATA",
@@ -421,11 +400,10 @@ New Window( "Path Variables",
 
 ```
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -443,7 +421,6 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Google Sheet Export( dt, Email( email ), New Spreadsheet( "JSL Example" ), Sheet Name( "Example 1" ) );
@@ -460,7 +437,6 @@ Google Sheet Export( dt, Email( email ), New Spreadsheet( "JSL Example" ), Sheet
 
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet = "https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
                                         
@@ -489,7 +465,6 @@ Google Sheet Import(
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -506,7 +481,6 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Directory Writable( "$SAMPLE_DATA" );
 
 ```
@@ -521,7 +495,6 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
@@ -538,7 +511,6 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -553,7 +525,6 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
@@ -577,7 +548,6 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -594,7 +564,6 @@ dt = JSON To Data Table(
 
 ```jsl
 
-Names Default To Here( 1 );
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -612,14 +581,13 @@ Show( l );
 
 ```jsl
 
-Names Default To Here( 1 );
 Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
 
 ### Load Text File
 
-**구문:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
+**구문:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **설명:** 전체 텍스트 파일을 JSL 변수로 읽어옵니다. Load Text File()은 파일 이름을 묻습니다. Load Text File( path )는 문자열을 반환합니다. XMLParse 옵션은 XML을 표현식 트리로 변환합니다. SASODSXML은 SAS ODS 기본 XML로 파싱합니다. [{JSON}] 옵션은 JSON을 표현식 트리로 변환합니다. BLOB 인수는 JSL Blob 변수의 이진 데이터를 반환합니다. BLOB에 대해 명명된 선택적 파라미터를 사용하면 파일에서 하위 문자열을 읽을 수 있습니다.
 
@@ -627,7 +595,6 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
 /*, Charset("ascii")*/
@@ -648,7 +615,6 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -673,7 +639,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
 );
@@ -696,11 +661,10 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 **JMP추가된 버전:** 버전 14 이전
 
-**Add-In**
+#### Add-In
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -709,11 +673,10 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 
 ```
 
-**Excel**
+#### Excel
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Excel files imported into a data table:
    Open( excelFilePath,
      <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
@@ -749,21 +712,19 @@ dt = Open(
 
 ```
 
-**Folder**
+#### Folder
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
 ```
 
-**PDF**
+#### PDF
 
 ```jsl
 
-Names Default To Here( 1 );
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
     PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
@@ -782,22 +743,20 @@ pdftable2 = Open(
 
 ```
 
-**그림**
+#### 그림
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```
 
-**기타**
+#### 기타
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Other options:
    SAS File imported as a data table:
    Open( sasFilePath,
@@ -853,11 +812,10 @@ Open(
 
 ```
 
-**데이터 테이블**
+#### 데이터 테이블
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -877,11 +835,10 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ```
 
-**텍스트**
+#### 텍스트
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Text files imported into a data table:
    Open( textFilePath,
      <Invisible | Private>,
@@ -920,7 +877,6 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 ```jsl
 
-Names Default To Here( 1 );
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -936,20 +892,18 @@ Show( l );
 
 **JMP추가된 버전:** 버전 14 이전
 
-**Show Files**
+#### Show Files
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```
 
-**단순**
+#### 단순
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory" );
 
 ```
@@ -962,11 +916,10 @@ Pick Directory( "Select a directory" );
 
 **JMP추가된 버전:** 버전 14 이전
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -978,11 +931,10 @@ Pick File(
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Files = Pick File(
 	"Select JMP File",
 	"$SAMPLE_DATA",
@@ -998,11 +950,10 @@ For( i = 1, i <= N Items( Files ), i++,
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 filename = Pick File(
 	"Save As Text",
 	"$DOCUMENTS",
@@ -1028,7 +979,6 @@ If( Is Missing( filename ),
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -1052,7 +1002,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -1074,7 +1023,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -1090,7 +1038,6 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
 
@@ -1106,7 +1053,6 @@ Open( "Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )}
 );
@@ -1127,7 +1073,6 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -1142,7 +1087,6 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 

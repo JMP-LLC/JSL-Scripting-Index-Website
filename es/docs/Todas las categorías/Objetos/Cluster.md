@@ -50,7 +50,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -75,7 +74,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
@@ -91,7 +89,6 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Defects ),
@@ -121,7 +118,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -139,7 +135,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -159,7 +154,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -176,7 +170,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -195,7 +188,6 @@ obj << Color Clusters( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -220,7 +212,6 @@ obj << Color Map( Blue to Gray to Red );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -242,7 +233,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -265,7 +255,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -284,7 +273,6 @@ obj << Constellation Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -309,7 +297,6 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -330,7 +317,6 @@ obj << Distance Graph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -350,7 +336,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -371,7 +356,6 @@ rowOrder = obj << Get Column Display Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 c = obj << Get Column Names;
@@ -387,7 +371,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -407,7 +390,6 @@ rowOrder = obj << Get Display Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -429,7 +411,6 @@ Show( m );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -450,7 +431,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -471,7 +451,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -492,7 +471,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -513,7 +491,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -536,7 +513,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -554,7 +530,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -574,7 +549,6 @@ obj << Legend( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -593,7 +567,6 @@ obj << Mark Clusters;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -612,7 +585,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
@@ -633,7 +605,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Skull.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :length, :basilar, :zygomat, :postorb ),
@@ -651,7 +622,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -677,7 +647,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -699,7 +668,6 @@ obj << Parallel Coord Plots;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 dt << Select Rows( Loc( (obj << Get Clusters) == 3 ) );
@@ -716,7 +684,6 @@ obj << Pivot on Selected Cluster;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 dt << Select Rows( [19, 22, 45, 61, 62, 64] );
 obj = dt << Hierarchical Cluster(
@@ -740,7 +707,6 @@ obj << Release Zoom;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -761,7 +727,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -782,7 +747,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Skull.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :length, :basilar, :zygomat, :postorb ),
@@ -801,7 +765,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -820,7 +783,6 @@ obj << Save Cluster Hierarchy;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -838,7 +800,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -856,7 +817,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -875,7 +835,6 @@ obj << Save Cluster Tree;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -902,7 +861,6 @@ obj << Save Clusters;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -922,7 +880,6 @@ obj << Save Constellation Coordinates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -941,7 +898,6 @@ obj << Save Display Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -959,7 +915,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -978,7 +933,6 @@ obj << Save Formula for Closest Cluster;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1002,7 +956,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -1024,7 +977,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y( :birth, :death ),
@@ -1050,7 +1002,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -1084,7 +1035,6 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Hierarchical Cluster(
 	Y(
@@ -1112,7 +1062,6 @@ obj << Two Way Clustering;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 dt << Select Rows( [19, 22, 45, 61, 62, 64] );
 obj = dt << Hierarchical Cluster(
@@ -1139,7 +1088,6 @@ obj << Zoom to Selected Rows;
 
 ```jsl
 
-Names Default To Here( 1 );
 tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tbl << K nearest rows( 2, 1 ); 
 //2 nearest rows to row 1 are: 
@@ -1157,7 +1105,6 @@ Show( rows );
 
 ```jsl
 
-Names Default To Here( 1 );
 tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );
 distance = tbl << Distance between rows( 1, 2 ); 
 //distance from row 1 to row 2 is: 
@@ -1173,7 +1120,6 @@ Show( distance );
 
 ```jsl
 
-Names Default To Here( 1 );
 tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] ); 
 //  remove 3 rows 
 tbl << Remove Rows( [2 1 3] ); 
@@ -1195,7 +1141,6 @@ Show( rows );
 
 ```jsl
 
-Names Default To Here( 1 );
 tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tbl << K nearest rows( {3, 2.0} ); 
 //3 nearest rows to each row are: 
@@ -1211,7 +1156,6 @@ Show( rows );
 
 ```jsl
 
-Names Default To Here( 1 );
 tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );  
 //  remove 2 rows
 tbl << RemoveRows( [2 1] ); 

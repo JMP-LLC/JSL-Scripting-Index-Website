@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 
 ```
@@ -27,7 +26,6 @@ RConnection = R Connect();
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init( Echo( true ) );
 R Control( Echo( false ) );
 R Submit( "Add R code" );
@@ -44,7 +42,6 @@ R Submit( "Add R code" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 a = "abcdef";
 d = 3.141;
@@ -70,7 +67,6 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -93,7 +89,6 @@ Close( dt1, No Save );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
 R Execute( {img_path}, {}, "\[
@@ -116,7 +111,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 version = R Get Version();
 Show( version );
@@ -133,7 +127,6 @@ Show( version );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 
 ```
@@ -148,7 +141,6 @@ R Init();
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 connected = R Is Connected();
 
@@ -164,7 +156,6 @@ connected = R Is Connected();
 
 ```jsl
 
-Names Default To Here( 1 );
 R name = R JMP Name to R Name( a b c );
 
 ```
@@ -177,11 +168,10 @@ R name = R JMP Name to R Name( a b c );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Columna**
+#### Columna
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -190,11 +180,10 @@ w = R Get( "weight" );
 
 ```
 
-**Tabla de datos**
+#### Tabla de datos
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x = [1, 2, 3];
 R Send( x, "x1" );
@@ -216,7 +205,6 @@ R Submit( "dt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -235,7 +223,6 @@ R Submit( "Baseball" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
@@ -269,7 +256,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
@@ -287,7 +273,6 @@ R Submit File( file_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Term();
 

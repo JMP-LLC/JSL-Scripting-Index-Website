@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -27,7 +26,6 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -42,7 +40,6 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -57,7 +54,6 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -72,7 +68,6 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -87,7 +82,6 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Name( {"x 1", "x 2"} );
 
 ```
@@ -102,7 +96,6 @@ SAS Name( {"x 1", "x 2"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```

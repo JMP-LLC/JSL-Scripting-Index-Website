@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{rhymes = ["mouse" => "house",
 	"car" => "star",
@@ -31,7 +30,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 	rhymes << Contains Item( "car" )
 );
@@ -46,7 +44,6 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
 	x = aa << First;
 	While( !Is Empty( x ),
@@ -66,7 +63,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Contents );
 
 ```
@@ -79,7 +75,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
 	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
 	aa << Insert( "set item" ); /* used for sets, value is 1 */
@@ -98,7 +93,6 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Keys );
 
 ```
@@ -111,7 +105,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"orange", .75}} )},
 	prices << getvalue( "orange" ) /* or prices["orange"] */
 );
@@ -126,7 +119,6 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Values );
 
 ```
@@ -139,7 +131,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." => "c"]},
 	decode << Insert( others );
 	decode["-.-."] || decode[".-"] || decode["-..."] || decode["..."];
@@ -155,7 +146,6 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {decode = [".-" => "a", "-..." => "b"]},
 	decode << insertitem( "-.-.", "c" );/* or decode["-.-."]="c"*/
 	decode["-.-."] || decode[".-"] || decode["-..."];
@@ -169,11 +159,10 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 **Beschreibung:** Behandelt ein assoziatives Array als Objektsatz. Die Werte müssen für Objekte im Satz 1 sein. Der Standardwert muss 0 sein. Der aktuelle Satz wird durch die Schnittmenge mit dem Satz in der Meldung ersetzt.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be zero for intersect to work */
 	red things << Insert( "apple" ) << Insert( "blood" ) << Insert( "stop light" ) <<
 	Insert( "mars" );
@@ -186,11 +175,10 @@ Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be 
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" ); 
 
 // select where could be used with :age<=12 & :sex=="M" in one step.  this is a demo of set operations with associative arrays.
@@ -218,7 +206,6 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
 	x = aa << First;
 	While( !Is Empty( x ),
@@ -238,7 +225,6 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1]},
 	primes << Remove( [4 => 1, 6 => 1, 8 => 1, 9 => 1] );
 	primes << GetKeys; /* retrieve a list of remaining keys */
@@ -254,7 +240,6 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Local(
 	{primes = [2 => 1,
 	3 => 1,
@@ -286,7 +271,6 @@ Local(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
 	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
 	aa << Insert( "set item" ); /* used for sets, value is 1 */
@@ -307,7 +291,6 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
 ex << get contents;

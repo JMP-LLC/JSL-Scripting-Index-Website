@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -29,7 +28,6 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -47,7 +45,6 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Country ), Y( :Weight ) ),
@@ -78,7 +75,6 @@ If( cs2 << Get Layout() == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -95,7 +91,6 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -113,7 +108,6 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -132,7 +126,6 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 columnSwitcher = dt << Column Switcher(
 	:Process 1,
@@ -157,7 +150,6 @@ columnSwitcher << Link Platform( gb );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 gb = Graph Builder(
 	Variables( Y( :Process 1 ) ),
@@ -199,7 +191,6 @@ columnSwitcher << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -216,7 +207,6 @@ ColumnSwitcherObject << Next;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -235,7 +225,6 @@ ColumnSwitcherObject << Pause;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -252,7 +241,6 @@ ColumnSwitcherObject << Previous;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -271,7 +259,6 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 Graph Builder(
 	Variables( X( :Process 1 ), Y( :Process 2 ) ),
@@ -303,7 +290,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -322,7 +308,6 @@ ColumnSwitcherObject << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -345,7 +330,6 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -362,7 +346,6 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Country ), Y( :Weight ) ),
@@ -386,7 +369,6 @@ cs1 << Set Layout( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -405,7 +387,6 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -428,7 +409,6 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -445,7 +425,6 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<
@@ -463,7 +442,6 @@ Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj <<

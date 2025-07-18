@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
 	Options( {"-n 5", "localhost"} ),
@@ -31,7 +30,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 value = "";
 rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );
@@ -59,7 +57,6 @@ Show( value );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 value = "";
 rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );
@@ -81,7 +78,6 @@ Show( value );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 value = "";
 rp = Run Program(

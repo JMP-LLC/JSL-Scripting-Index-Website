@@ -10,29 +10,26 @@
 
 **JMP추가된 버전:** 15
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```
@@ -55,11 +52,10 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 **JMP추가된 버전:** 17
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -79,11 +75,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Data Content" ) );
 folder = jmpliveresult << As Scriptable;
@@ -98,11 +93,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Map Content" ) );
 folder = jmpliveresult << As Scriptable;
@@ -113,11 +107,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 4**
+#### 예제 4
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Image Content" ) );
 folder = jmpliveresult << As Scriptable;

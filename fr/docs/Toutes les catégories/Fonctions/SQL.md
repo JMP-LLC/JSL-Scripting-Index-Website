@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
 	Select(),
@@ -31,7 +30,6 @@ obj = New SQL Query(
 
 ```jsl
 
-Names Default To Here( 1 );
 As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
@@ -46,7 +44,6 @@ As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -61,7 +58,6 @@ Close Database Connection( databaseConnectionHandle );
 
 ```jsl
 
-Names Default To Here( 1 );
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
 );
@@ -76,11 +72,10 @@ dbc = Create Database Connection(
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -89,21 +84,19 @@ dt = Execute SQL(
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
 	dc,
@@ -121,11 +114,10 @@ resultList = Execute SQL(
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Create a data connector from scratch
 dc = New Data Connector(
@@ -141,11 +133,10 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Launch Query Builder from a SQL Server data source
 dc = New Data Connector(
@@ -170,7 +161,6 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
@@ -190,7 +180,6 @@ obj = New SQL Query(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -209,7 +198,6 @@ Open Database(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query( dt, "SELECT name, age, height FROM 'Big Class'
          WHERE age > 14; " );
@@ -249,7 +237,6 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -266,7 +253,6 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -283,7 +269,6 @@ sql = obj << Generate SQL;
 
 ```jsl
 
-Names Default To Here( 1 );
 query << Modify;
 
 ```
@@ -296,7 +281,6 @@ query << Modify;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -313,7 +297,6 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -332,7 +315,6 @@ Show( name );
 
 ```jsl
 
-Names Default To Here( 1 );
 query << Run;
 
 ```
@@ -345,7 +327,6 @@ query << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 query << Run Background(
 	OnRunComplete(
@@ -369,7 +350,6 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 query << Run Foreground(
 	OnRunComplete(
@@ -393,7 +373,6 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Open( "my_query.jmpquery" );
 obj << Query Name( "New Name" );
 obj << Save;
@@ -408,7 +387,6 @@ obj << Save;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )

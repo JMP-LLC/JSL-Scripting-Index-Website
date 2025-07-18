@@ -24,7 +24,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // DisplayBoxPtr label = newLabel(sFiltersLabel).jssID(jss::Id(/*NOTRANS*/"sdiFiltersLabel"))
 // DisplayBoxPtr columnList = buildColPanel().jssClasses(jss::makeClasses(/*NOTRANS*/"launcherColPanel"));
@@ -41,7 +40,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
@@ -73,7 +71,6 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Specificity",
 	JSS Context Box(
@@ -107,7 +104,6 @@ New Window( "Specificity",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "And",
@@ -142,7 +138,6 @@ New Window( "And",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Attr",
 	JSS Context Box(
@@ -168,7 +163,6 @@ New Window( "Attr",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Child",
 	JSS Context Box(
@@ -196,7 +190,6 @@ New Window( "Child",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Class",
@@ -232,7 +225,6 @@ New Window( "Class",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Constants",
 	JSS Context Box(
@@ -267,7 +259,6 @@ New Window( "Constants",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Child",
 	JSS Context Box(
@@ -317,7 +308,6 @@ New Window( "Child",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "First Child",
 	JSS Context Box(
@@ -352,7 +342,6 @@ New Window( "First Child",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Id",
 	JSS Context Box(
@@ -377,11 +366,10 @@ New Window( "Id",
 
 **JMP추가된 버전:** 19
 
-**Host Is**
+#### Host Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "If Host Is",
 	JSS Context Box(
@@ -408,11 +396,10 @@ New Window( "If Host Is",
 
 ```
 
-**Language Is**
+#### Language Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "If Language Is",
 	JSS Context Box(
@@ -430,11 +417,10 @@ New Window( "If Language Is",
 
 ```
 
-**Theme Is**
+#### Theme Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "If Theme Is",
@@ -472,7 +458,6 @@ New Window( "If Theme Is",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Save Text File(
 	"$TEMP/file.jss", JSL Quote(
@@ -506,7 +491,6 @@ New Window( "Include",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Last Child",
 	JSS Context Box(
@@ -541,7 +525,6 @@ New Window( "Last Child",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Next Sibling",
 	JSS Context Box(
@@ -569,7 +552,6 @@ New Window( "Next Sibling",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Selector List",
 	JSS Context Box(
@@ -597,7 +579,6 @@ New Window( "Selector List",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Type",
 	JSS Context Box(
@@ -630,7 +611,6 @@ New Window( "Type",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Universal",
 	JSS Context Box(

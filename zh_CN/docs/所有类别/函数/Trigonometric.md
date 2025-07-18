@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -27,7 +26,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -42,7 +40,6 @@ ArcCosine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -57,7 +54,6 @@ ArcSine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosH( 1 );
 
 ```
@@ -72,7 +68,6 @@ ArcCosH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -87,7 +82,6 @@ ArcCosine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSinH( 1 );
 
 ```
@@ -102,7 +96,6 @@ ArcSinH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -117,7 +110,6 @@ ArcSine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -132,7 +124,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcTanH( 0.5 );
 
 ```
@@ -147,7 +138,6 @@ ArcTanH( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -162,7 +152,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -177,7 +166,6 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 CosH( 1 );
 
 ```
@@ -192,7 +180,6 @@ CosH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -207,7 +194,6 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -222,7 +208,6 @@ Sine( Pi() / 6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SinH( 1 );
 
 ```
@@ -237,7 +222,6 @@ SinH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -252,7 +236,6 @@ Sine( Pi() / 6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -267,7 +250,6 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 TanH( 1 );
 
 ```
@@ -282,7 +264,6 @@ TanH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```

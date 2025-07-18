@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP添加的版本:** 18
 
-**匿名预设**
+#### 匿名预设
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -45,11 +43,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**在文件夹内搜索**
+#### 在文件夹内搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -57,11 +54,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**按名称搜索**
+#### 按名称搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -98,7 +93,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -116,7 +110,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -136,7 +129,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -158,7 +150,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -171,11 +162,10 @@ biv << Get By Levels;
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
-**带过滤器的平台**
+#### 带过滤器的平台
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -200,11 +190,10 @@ New Window( "platform boxes",
 
 ```
 
-**常规**
+#### 常规
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -225,7 +214,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -246,7 +234,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -267,7 +254,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -288,7 +274,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -309,7 +294,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -327,7 +311,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -343,7 +326,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -362,7 +344,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -384,7 +365,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -403,7 +383,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -418,7 +397,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -439,7 +417,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -459,7 +436,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -479,7 +455,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -499,7 +474,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -523,7 +497,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -538,7 +511,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -560,7 +532,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -580,7 +551,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -598,11 +568,10 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -620,11 +589,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -650,7 +618,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -670,7 +637,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -690,7 +656,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -710,7 +675,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -730,7 +694,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -751,7 +714,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -777,7 +739,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -795,7 +756,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -812,7 +772,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -832,7 +791,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -854,7 +812,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -871,7 +828,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -890,11 +846,10 @@ obj = dt << Tabulate(
 
 **说明:** Used with 修改表 to add columns and statistics to an existing table. Also serves as an alias for 添加表
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -914,11 +869,10 @@ obj << modify table(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -941,11 +895,10 @@ obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) )
 
 **说明:** 若当前没有表，则将表添加至窗口，否则将表追加至现有表对象。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -957,11 +910,10 @@ obj << Add Table( Column Table( Grouping Columns( :type ) ) );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate();
 obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
@@ -977,7 +929,6 @@ obj << Add table( row table( grouping column( :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -994,11 +945,10 @@ obj = dt << Tabulate(
 
 **说明:** 将分析列添加至当前表。它可用于“添加表”命令或“修改表”命令。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1009,11 +959,10 @@ obj = dt << Tabulate(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1033,7 +982,6 @@ obj << modifytable( column table( 1 ), analysis columns( :CO ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1051,11 +999,10 @@ obj << Change Item Label( Statistics( Mean, "Average" ) );
 
 **说明:** 在表中添加一个交叉表，它由列名和具有相似值的列的类别组成。编写脚本时，“按类别分类的列”消息必须嵌套在“行表”消息或“列表”消息中。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
 obj = dt << Tabulate(
 	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) )
@@ -1063,11 +1010,10 @@ obj = dt << Tabulate(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
 obj = dt << Tabulate(
 	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks ) ) )
@@ -1084,7 +1030,6 @@ obj << modify table( row table( 1 ), columns by categories( :Money ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1107,11 +1052,10 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 **说明:** 设置或返回“制表”报表表中列的显示宽度。Path 是一系列带引号的列标题，用于跟踪列路径。Width 是以像素为单位的列宽。使用 Data Column 可定义表主体中的列或使用 Row Label 定义行标签区域中的列。若报表中有多个表，则使用 Column Table(n) 或 Row Table(n) 指定path 应用于哪个表。若未指定 width，该选项返回指定列的当前宽度。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1128,11 +1072,10 @@ obj << Display Column Width( Row Label( Row Table( 2 ), "country" ), 150 );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Set Format( Mean( :OZONE( 6, 4 ) ) ),
@@ -1154,11 +1097,10 @@ For( i = 1, i <= ns, i++,
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1183,7 +1125,6 @@ obj << Display Column Width( Row Label( Row Table( 2 ), "country" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
 obj = dt << Tabulate( Add Table( Row Table( Grouping Columns( :Causes ) ) ) );
 Wait( 1 );
@@ -1199,7 +1140,6 @@ obj << Freq( :Count );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1218,11 +1158,10 @@ obj << Make Into Data Table;
 
 **说明:** 将分组列添加至当前表。它可用于“添加表”命令或“修改表”命令。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1233,11 +1172,10 @@ obj = dt << Tabulate(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate();
 obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
@@ -1253,7 +1191,6 @@ obj << modify table( column table( 1 ), grouping column( :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
 obj = dt << Tabulate(
 	Set Format( Uniform Format( 10, 2 ) ),
@@ -1296,7 +1233,6 @@ obj << ID( :Division );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cars.jmp" );
 obj = dt << Tabulate(
 	Add Table( Row Table( Grouping Columns( :Doors ) ) ),
@@ -1311,11 +1247,10 @@ obj = dt << Tabulate(
 
 **说明:** 根据制表中创建的表创建新的数据表。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1327,11 +1262,10 @@ obj << Make Into Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1343,11 +1277,10 @@ obj << Make into Data Table( invisible( 1 ) );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1369,7 +1302,6 @@ obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1392,11 +1324,10 @@ obj << Make Into Data Table;
 
 **说明:** Modifies an existing table.
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate();
 obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
@@ -1412,11 +1343,10 @@ obj << Modify Table( Column Table( 2 ), delete( statistics( "sum" ) ) );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1439,11 +1369,10 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 **说明:** Used with 修改表 to modify table options in an existing table.
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1456,11 +1385,10 @@ obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1485,11 +1413,10 @@ obj << Modify Table(
 
 **JMP添加的版本:** 19
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1510,11 +1437,10 @@ obj << modify table(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Companies.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1547,7 +1473,6 @@ obj << modify table(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cars.jmp" );
 obj = dt << Tabulate( Add Table( Row Table( Grouping Columns( :Make ) ) ) );
 obj << Order by Count of Grouping Columns( 1 );
@@ -1560,11 +1485,10 @@ obj << Order by Count of Grouping Columns( 1 );
 
 **说明:** 将多个统计量堆叠填充到表中的一个列。“Template”选项指定项的格式。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1583,11 +1507,10 @@ obj = dt << Tabulate(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1614,7 +1537,6 @@ obj << Modify Table(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1635,7 +1557,6 @@ obj << page column( :sex( "F" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1657,7 +1578,6 @@ obj << Plot Scale( 0, 25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1678,7 +1598,6 @@ obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1702,7 +1621,6 @@ obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1725,7 +1643,6 @@ obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analy
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1748,7 +1665,6 @@ obj << Make Into Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1767,11 +1683,10 @@ obj << Make Into Data Table;
 
 **说明:** 设置为分析列显示的格式。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Set Format( Mean( :OZONE( 6, 4 ) ) ),
@@ -1783,11 +1698,10 @@ obj = dt << Tabulate(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Tabulate(
 	Set Format(
@@ -1828,7 +1742,6 @@ Tabulate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1852,7 +1765,6 @@ obj << Show Chart( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1872,7 +1784,6 @@ obj << Show Control Panel( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1892,7 +1803,6 @@ obj << Show Shading( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1912,7 +1822,6 @@ obj << Show Table( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1932,7 +1841,6 @@ obj << Show Test Build Panel( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -1952,7 +1860,6 @@ obj << Show Tool Tip( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -1981,7 +1888,6 @@ obj = dt << Tabulate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2000,7 +1906,6 @@ obj = dt << Tabulate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2020,7 +1925,6 @@ obj << Test Build( Sample Size( 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2041,7 +1945,6 @@ obj << Test Data View;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2063,7 +1966,6 @@ obj << undo;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2085,7 +1987,6 @@ obj << Uniform Plot Scale( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),
@@ -2113,7 +2014,6 @@ obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 obj = dt << Tabulate(
 	Show Control Panel( 0 ),

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
@@ -30,7 +29,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -52,7 +50,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
@@ -68,7 +65,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Principal Components(
@@ -86,7 +82,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -104,7 +99,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Principal Components(
@@ -122,7 +116,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
@@ -138,7 +131,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -158,7 +150,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -176,7 +167,6 @@ obj << "3D Score Plot"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -194,7 +184,6 @@ obj << Arrow Lines( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -212,7 +201,6 @@ obj << Bartlett Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -230,7 +218,6 @@ obj << Biplot( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Cluster Components( 1 ) );
@@ -245,7 +232,6 @@ obj << Cluster Variables( Cluster Components( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Cluster Members( 1 ) );
@@ -260,7 +246,6 @@ obj << Cluster Variables( Cluster Members( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Cluster Summary( 1 ) );
@@ -275,7 +260,6 @@ obj << Cluster Variables( Cluster Summary( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -293,7 +277,6 @@ obj << Cluster Variables( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Color Map On Correlations( 1 ) );
@@ -308,7 +291,6 @@ obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width, :Species ),
@@ -326,7 +308,6 @@ obj << Coordinate  Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -344,7 +325,6 @@ obj << Correlations( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -362,7 +342,6 @@ obj << Covariance Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -380,7 +359,6 @@ obj << Eigenvalues( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -404,7 +382,6 @@ obj << Eigenvectors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -422,7 +399,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -440,7 +416,6 @@ obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -458,7 +433,6 @@ obj << Formatted Loading Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 obj << Impute Missing Data( 1 );
@@ -473,7 +447,6 @@ obj << Impute Missing Data( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Launch Fit Model );
@@ -488,7 +461,6 @@ obj << Cluster Variables( Launch Fit Model );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -506,7 +478,6 @@ obj << Loading Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -524,7 +495,6 @@ obj << Loading Plot( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
@@ -546,7 +516,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -564,7 +533,6 @@ obj << Model Driven Multivariate Control Chart( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -585,7 +553,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -604,7 +571,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -626,7 +592,6 @@ obj << Partial Contribution of Variables(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -644,7 +609,6 @@ obj << Profiler for Predicteds( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -664,7 +628,6 @@ obj << Publish Components Formulas( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -682,7 +645,6 @@ obj << Publish Normalized DModX Formula( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
 obj << Cluster Variables( Save Cluster Components );
@@ -697,7 +659,6 @@ obj << Cluster Variables( Save Cluster Components );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 obj << Save Imputed Formula( 1 );
@@ -714,7 +675,6 @@ obj << Save Imputed Formula( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
 obj << Save Individual Partial Contributions( 3 );
@@ -731,7 +691,6 @@ obj << Save Individual Partial Contributions( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
 obj << Save Individual Squared Cosines( 3 );
@@ -746,7 +705,6 @@ obj << Save Individual Squared Cosines( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -768,7 +726,6 @@ obj << Save Low Rank Principal Components( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
 obj << Save Normalized DMODX( 3 );
@@ -785,7 +742,6 @@ obj << Save Normalized DMODX( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
 obj << Save Predicteds( 3 );
@@ -800,7 +756,6 @@ obj << Save Predicteds( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -818,7 +773,6 @@ obj << Save Predicteds As Component Formulas( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -836,7 +790,6 @@ obj << save principal Component script( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -854,7 +807,6 @@ obj << Save Principal Component Values( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -874,7 +826,6 @@ obj << Save Principal Components( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -894,7 +845,6 @@ obj << Save Principal Components with Imputation( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -913,7 +863,6 @@ obj << Save Rotated Components;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -932,7 +881,6 @@ obj << Save Rotated Components with Imputation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -952,7 +900,6 @@ obj << Scatterplot Matrix( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -972,7 +919,6 @@ obj << Score Ellipse Coverage( 0.9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -990,7 +936,6 @@ obj << Score Ellipses( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -1008,7 +953,6 @@ obj << Score Plot( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -1026,7 +970,6 @@ obj << Score Plot with Imputation( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -1044,7 +987,6 @@ obj << Scree Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1062,7 +1004,6 @@ obj << Select Component( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1081,7 +1022,6 @@ obj << Show Supplementary Variable( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Principal Components(
 	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
@@ -1101,7 +1041,6 @@ obj << Squared Cosines of Variables(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Principal Components(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1119,7 +1058,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -1137,7 +1075,6 @@ obj << Summary Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -1154,7 +1091,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
@@ -1171,7 +1107,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),

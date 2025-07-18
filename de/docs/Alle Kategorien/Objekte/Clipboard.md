@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Set Clipboard( "Get Flavor Data Example" );
 clp = New Clipboard( <<Get From OS );
@@ -33,7 +32,6 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Has Flavor Example" );
@@ -52,7 +50,6 @@ Show( clp << Has Flavor( "Graphic" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Send To OS Example" );
@@ -71,7 +68,6 @@ Show( Get Clipboard() );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Set Flavor Data Example" );
@@ -93,7 +89,6 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )

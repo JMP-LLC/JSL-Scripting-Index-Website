@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP添加的版本:** 18
 
-**匿名预设**
+#### 匿名预设
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -45,11 +43,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**在文件夹内搜索**
+#### 在文件夹内搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -57,11 +54,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**按名称搜索**
+#### 按名称搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -95,7 +90,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -115,7 +109,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -137,7 +130,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -150,11 +142,10 @@ biv << Get By Levels;
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
-**带过滤器的平台**
+#### 带过滤器的平台
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -179,11 +170,10 @@ New Window( "platform boxes",
 
 ```
 
-**常规**
+#### 常规
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -204,7 +194,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -225,7 +214,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -246,7 +234,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -267,7 +254,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -288,7 +274,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -306,7 +291,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -322,7 +306,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -341,7 +324,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -363,7 +345,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -382,7 +363,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -397,7 +377,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -418,7 +397,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -438,7 +416,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -458,7 +435,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -478,7 +454,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -502,7 +477,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -517,7 +491,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -539,7 +512,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -559,7 +531,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -577,11 +548,10 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -599,11 +569,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -629,7 +598,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -649,7 +617,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -669,7 +636,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -689,7 +655,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -709,7 +674,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -730,7 +694,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -756,7 +719,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -774,7 +736,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -791,7 +752,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -811,7 +771,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -833,7 +792,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -850,7 +808,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -869,11 +826,10 @@ obj = dt << Contour Profiler(
 
 **说明:** 指定噪声因子，这些噪声因子必须是作为公式列成分的列。噪声因子用于研究与这些因子的传递变异相关的稳健性（或平稳性）。生成的刻画器包括公式对噪声因子的导数。
 
-**刻画器示例**
+#### 刻画器示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -885,11 +841,10 @@ obj = dt << Profiler(
 
 ```
 
-**定制刻画器示例**
+#### 定制刻画器示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Custom Profiler(
 	Y(
@@ -901,21 +856,19 @@ obj = dt << Custom Profiler(
 
 ```
 
-**混料刻画器示例**
+#### 混料刻画器示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
 
 ```
 
-**等高线刻画器示例**
+#### 等高线刻画器示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -935,7 +888,6 @@ obj = dt << Contour Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -954,7 +906,6 @@ obj = dt << Contour Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -977,7 +928,6 @@ obj = dt << Contour Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -999,7 +949,6 @@ obj << Animation( "Stop" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1019,7 +968,6 @@ obj << Append Settings to Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1042,7 +990,6 @@ obj << Arrange X Controls Left( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1070,7 +1017,6 @@ obj << Broadcast Factor Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Wafer Stacked.jmp" );
 Neural(
 	Y( :Defects ),
@@ -1110,7 +1056,6 @@ Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Reactor.jmp" );
 Column( "A" ) << Set Modeling Type( "Nominal" );
 obj = dt << Fit Model(
@@ -1133,7 +1078,6 @@ scrobj << Conditional Predictions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1154,7 +1098,6 @@ obj << Contour Grid( 525.7492294, 2173.9472704279, 206.024755128638, :PredFormul
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1175,7 +1118,6 @@ obj << Contour Label( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1198,7 +1140,6 @@ obj << Contour Value(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1227,7 +1168,6 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1247,7 +1187,6 @@ obj << Custom Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1267,7 +1206,6 @@ obj << Data Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1287,7 +1225,6 @@ obj << Formulas for OPTMODEL;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Profiler(
 	Y( :Pred Formula Y ),
@@ -1305,7 +1242,6 @@ obj << Get Constraints;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1325,7 +1261,6 @@ obj << Get Factor Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1345,7 +1280,6 @@ obj << Get Factor Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1378,7 +1312,6 @@ obj2 << Simulation Experiment;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1399,7 +1332,6 @@ obj << Graph Updating( "Per Mouse Up" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1420,7 +1352,6 @@ obj << Grid Density( "10 x 10" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1440,7 +1371,6 @@ obj << Hide X Controls( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1460,7 +1390,6 @@ obj << Hide Y Controls( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1481,7 +1410,6 @@ obj << Horizontal Factor( :SULFUR );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1507,7 +1435,6 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1530,7 +1457,6 @@ obj << Multiple Contour Frames( Horizontal Factor( :SULFUR ), Vertical Factor( :
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1553,7 +1479,6 @@ obj << Number of Plots Across( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1582,7 +1507,6 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1607,7 +1531,6 @@ obj << Predict For Another Table( dt2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1627,7 +1550,6 @@ obj << Prediction Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1647,7 +1569,6 @@ obj << Remember Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1669,7 +1590,6 @@ obj << Remove Contour Grid;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1690,7 +1610,6 @@ obj << Reset;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
 obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
 obj << Save Expanded Formulas;
@@ -1705,7 +1624,6 @@ obj << Save Expanded Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1729,7 +1647,6 @@ obj << Set Contours to Current;
 
 ```jsl
 
-Names Default To Here( 1 );
 ProfileCallbackLog = Function( {arg}, Show( arg ) );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
@@ -1751,7 +1668,6 @@ obj << Term Value( :Silica( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1772,7 +1688,6 @@ obj << Set to Data in Row( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1792,7 +1707,6 @@ obj << Show Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1812,7 +1726,6 @@ obj << Simulator( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1832,7 +1745,6 @@ obj << Surface Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1852,7 +1764,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1873,7 +1784,6 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1895,7 +1805,6 @@ obj << Maximize Desirability;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1916,7 +1825,6 @@ obj << Up Dots( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -1937,7 +1845,6 @@ obj << Vertical Factor( :SULFUR );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(

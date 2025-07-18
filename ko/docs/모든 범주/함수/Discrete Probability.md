@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 25;
 delta = 0;
@@ -49,7 +48,6 @@ New Window( "Example: BetaBinomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 n = 25;
 p = 0.5;
 delta = 0;
@@ -84,7 +82,6 @@ New Window( "Binomial and BetaBinomial Probabilities",
 
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -144,7 +141,6 @@ New Window( "Example: BetaBinomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 30;
 New Window( "Example: Binomial Distribution",
@@ -175,7 +171,6 @@ New Window( "Example: Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 cltp = 0.03;
 cltn = 30;
 New Window( "Example: Binomial Probability and Central Limit Theorem",
@@ -208,7 +203,6 @@ New Window( "Example: Binomial Probability and Central Limit Theorem",
 
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -257,7 +251,6 @@ New Window( "Example: Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Gamma Poisson Distribution",
@@ -293,7 +286,6 @@ New Window( "Example: Gamma Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Gamma Poisson",
@@ -327,7 +319,6 @@ New Window( "Poisson and Gamma Poisson",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -374,7 +365,6 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Distribution",
@@ -413,7 +403,6 @@ New Window( "Example: Hypergeometric Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Probability",
@@ -443,7 +432,6 @@ New Window( "Example: Hypergeometric Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbdp = 0.5;
 exnbdn = 10;
 New Window( "Example: Neg Binomial Distribution",
@@ -478,7 +466,6 @@ New Window( "Example: Neg Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.5;
 exnbpn = 10;
 New Window( "Example: Neg Binomial Probability",
@@ -508,7 +495,6 @@ New Window( "Example: Neg Binomial Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Negative Binomial Distribution",
@@ -544,7 +530,6 @@ New Window( "Example: Negative Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Negative Binomial",
@@ -578,7 +563,6 @@ New Window( "Poisson and Negative Binomial",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -625,7 +609,6 @@ New Window( "Example: Negative Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Distribution",
 	ppy = Graph Box(
@@ -654,7 +637,6 @@ New Window( "Example: Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Probability",
 	pdy = Graph Box(
@@ -682,7 +664,6 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpn = 40;
 qexpq = 0.5;
@@ -728,7 +709,6 @@ New Window( "Example: Poisson Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .2;
@@ -770,7 +750,6 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .1;
@@ -806,7 +785,6 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpsig = .5;
 qexpp = .2;
@@ -863,7 +841,6 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Zero Inflated Poisson Distribution",
@@ -902,7 +879,6 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Poisson Probability",
@@ -936,7 +912,6 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpp = .2;
 qexpn = 40;

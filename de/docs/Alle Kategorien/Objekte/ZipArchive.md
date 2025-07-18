@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 za = Open( "$TEMP\deleteMe.zip", zip );
 za << Write( "ralph", "this is ralph's data" );
 za << Write( "fred", "this is fred's data" );
@@ -30,7 +29,6 @@ dirlist[1] || ": " || text;
 
 ```jsl
 
-Names Default To Here( 1 );
 za = Open( "$TEMP\deleteMe.zip", zip );
 za << Write( "ralph", "this is ralph's data" );
 za << Write( "fred", "this is fred's data" );
@@ -48,7 +46,6 @@ dirlist[1] || ": " || text;
 
 ```jsl
 
-Names Default To Here( 1 );
 za = Open( "$TEMP\deleteMe.zip", zip );
 za << Write( "ralph", "this is ralph's data" );
 za << Write( "fred", "this is fred's data" );
@@ -68,7 +65,6 @@ dirlist[1] || ": " || text;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,

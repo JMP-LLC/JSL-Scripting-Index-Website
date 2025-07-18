@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Auto Load( 1 ),
@@ -27,21 +26,19 @@ If( !Is Missing( addin ),
 
 **Description :** Renvoie le nom d&apos;affichage d&apos;un complément.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Display Name();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Display Name(),
@@ -56,21 +53,19 @@ If( !Is Missing( addin ),
 
 **Description :** Renvoie le dossier de base d&apos;un complément.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Home Folder();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Home Folder(),
@@ -85,21 +80,19 @@ If( !Is Missing( addin ),
 
 **Description :** Renvoie l&apos;ID unique d&apos;un complément.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << ID();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << ID(),
@@ -114,21 +107,19 @@ If( !Is Missing( addin ),
 
 **Description :** Renvoie si un complément est actuellement chargé ou non.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Is Loaded();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Is Loaded(),
@@ -145,7 +136,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Load(),
@@ -162,7 +152,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Unload(),
@@ -177,21 +166,19 @@ If( !Is Missing( addin ),
 
 **Description :** Renvoie le numéro de version d&apos;un complément.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Version();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Version(),

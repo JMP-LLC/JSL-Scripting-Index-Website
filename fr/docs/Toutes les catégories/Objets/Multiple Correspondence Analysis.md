@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -35,7 +34,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -52,7 +50,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_freqcol",
 	Numeric,
@@ -75,7 +72,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -92,7 +88,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/US Regional Population.jmp" );
 obj = dt << Multiple Correspondence Analysis(
 	Y( :Year ),
@@ -112,7 +107,6 @@ obj << Cross Table of Supplementary Rows( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ), Z( :sex ) );
 
@@ -126,7 +120,6 @@ obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ), Z( :sex
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -143,7 +136,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -160,7 +152,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ), Z( :sex ) );
 
@@ -174,11 +165,10 @@ obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ), Z( :sex
 
 **Description :** Identifie les associations entre les niveaux des variables catégorielles. L&apos;analyse des correspondances multiples est analogue à l&apos;analyse en composantes principales pour données catégorielles.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -187,11 +177,10 @@ dt << Multiple Correspondence Analysis(
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 
@@ -207,7 +196,6 @@ obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << "3D Correspondence Analysis"n( 1 );
@@ -222,7 +210,6 @@ obj << "3D Correspondence Analysis"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Drug_Qtest",
 	Add Rows( 8 ),
 	New Column( "Subject",
@@ -268,7 +255,6 @@ obj << Cochran's Q Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Cross Table( 0 );
@@ -283,7 +269,6 @@ obj << Cross Table( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/US Regional Population.jmp" );
 obj = dt << Multiple Correspondence Analysis(
 	Y( :Region ),
@@ -303,7 +288,6 @@ obj << Cross Table of Supplementary Columns( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/US Regional Population.jmp" );
 obj = dt << Multiple Correspondence Analysis(
 	Y( :Year ),
@@ -323,7 +307,6 @@ obj << Cross Table of Supplementary Rows( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ) );
 obj << Mosaic Plot( 1 );
@@ -338,7 +321,6 @@ obj << Mosaic Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Proportional Marker Size( 1 );
@@ -353,7 +335,6 @@ obj << Proportional Marker Size( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Save Coordinate Formula( 2 );
@@ -368,7 +349,6 @@ obj << Save Coordinate Formula( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Save Coordinates;
@@ -383,7 +363,6 @@ obj << Save Coordinates;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Select Dimension( 1, 3 );
@@ -398,7 +377,6 @@ obj << Select Dimension( 1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Adjusted Inertia( 1 );
@@ -413,7 +391,6 @@ obj << Show Adjusted Inertia( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Coordinates( 1 );
@@ -428,7 +405,6 @@ obj << Show Coordinates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Detail( 0 );
@@ -443,7 +419,6 @@ obj << Show Detail( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Partial Contributions to Inertia( 1 );
@@ -458,7 +433,6 @@ obj << Show Partial Contributions to Inertia( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Plot( 0 );
@@ -473,7 +447,6 @@ obj << Show Plot( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Squared Cosines( 1 );
@@ -488,7 +461,6 @@ obj << Show Squared Cosines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 obj << Show Summary Statistics( 1 );
@@ -503,7 +475,6 @@ obj << Show Summary Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ) );
 obj << Tests for Independence( 1 );
@@ -520,7 +491,6 @@ obj << Tests for Independence( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -538,11 +508,10 @@ dt << Bivariate(
 
 **JMP Version ajoutée :** 18
 
-**Préconfiguration anonyme**
+#### Préconfiguration anonyme
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -553,11 +522,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Rechercher dans les dossiers**
+#### Rechercher dans les dossiers
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -565,11 +533,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**Rechercher par nom**
+#### Rechercher par nom
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -585,7 +552,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -606,7 +572,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -624,7 +589,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -642,7 +606,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -666,7 +629,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -684,7 +646,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -704,7 +665,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -719,7 +679,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -742,11 +701,10 @@ Show( t );
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
-**Général**
+#### Général
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -757,11 +715,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Plate-forme avec filtre**
+#### Plate-forme avec filtre
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -796,7 +753,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -815,7 +771,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -832,7 +787,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -851,7 +805,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -870,7 +823,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -889,7 +841,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -907,7 +858,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate(
@@ -927,7 +877,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -946,7 +895,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -968,7 +916,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -987,7 +934,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1002,7 +948,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1023,7 +968,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1041,7 +985,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1065,7 +1008,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1083,7 +1025,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1107,7 +1048,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1127,7 +1067,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1151,7 +1090,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1166,7 +1104,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1186,7 +1123,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1204,7 +1140,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1228,7 +1163,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1252,7 +1186,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1276,7 +1209,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1292,11 +1224,10 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1312,11 +1243,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1340,7 +1270,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1358,7 +1287,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1376,7 +1304,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1394,7 +1321,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1412,7 +1338,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1433,7 +1358,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1462,7 +1386,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1482,7 +1405,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1499,7 +1421,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1517,7 +1438,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1541,7 +1461,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1558,7 +1477,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1573,7 +1491,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
 	Window View( "Private" ),

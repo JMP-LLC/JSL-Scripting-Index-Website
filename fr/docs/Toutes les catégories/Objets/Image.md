@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 
@@ -26,7 +25,6 @@ obj = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -61,7 +59,6 @@ dt2 = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 dim = 100;
 mat0 = J( dim, dim, 0 );
 mat1 = J( dim, dim, 1 );
@@ -90,7 +87,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -105,11 +101,10 @@ obj2 = New Window( "Cropped", img );
 
 **Description :** Filtre l’image selon l’algorithme spécifié. Le filtrage permet d’éliminer le bruit dans l’image. Le contraste, le gamma et la réduction du bruit requièrent un paramètre (numérique) supplémentaire. Le flou gaussien en requiert deux : le rayon et sigma.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "tile(40,40)", New Image( img ) );
 Wait( 1 );
@@ -124,11 +119,10 @@ New Window( "Contrast filter", New Image( img2 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* http://en.wikipedia.org/wiki/Canny_edge_detector */ 
 radius = 1;
 sigma = 3;
@@ -234,7 +228,6 @@ refilter();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -251,7 +244,6 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -268,7 +260,6 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -285,7 +276,6 @@ obj2 = New Window( "Vertical Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get Current Frame();
 
@@ -301,7 +291,6 @@ num = img << Get Current Frame();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
 exifData = img << getEXIF();
 key = exifData << first;
@@ -321,7 +310,6 @@ While( !Is Empty( key ),
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 durs = img << Get Frame Durations();
 
@@ -335,7 +323,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 
@@ -349,7 +336,6 @@ num = img << Get N Frames();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 loops = img << Get N Loops();
 
@@ -365,11 +351,10 @@ loops = img << Get N Loops();
 
 **Description :** Si aucun indicateur de couleur n&apos;est spécifié, une matrice des couleurs JSL représentant les valeurs des pixels est renvoyée. Un indicateur de couleur rgb renverra une liste de trois matrices, rouge, verte et bleue, respectivement. Spécifier rgba renverra le canal alpha (transparence) ainsi que le rouge, le vert et le bleu.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -377,22 +362,20 @@ Show( m );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b, a} = img << Get Pixels( "rgba" );
@@ -407,7 +390,6 @@ win = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -423,7 +405,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Remove Frame( 0 );
 
@@ -437,7 +418,6 @@ img << Remove Frame( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -454,7 +434,6 @@ obj2 = New Window( "Rotated", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
@@ -467,11 +446,10 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 **Description :** Applique un facteur d&apos;échelle à la hauteur et à la largeur de l&apos;image, ou applique une échelle différente pour la largeur (xscale) et la hauteur (yscale).
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 0.5 );
@@ -479,11 +457,10 @@ obj2 = New Window( "Tile scaled by 0.5", img );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 2, 0.5 );
@@ -505,7 +482,6 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 win = New Window( "Progress", img );
@@ -526,7 +502,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set Frame Duration( 1000 );
 durs = img << Get Frame Durations();
@@ -541,7 +516,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set N Loops( 3 );
 loops = img << Get N Loops();
@@ -554,11 +528,10 @@ loops = img << Get N Loops();
 
 **Description :** Définit la ou les matrices de pixels pour l&apos;image. Si une matrice est spécifiée sans indicateur de couleur, elle est traitée comme une matrice des couleurs JSL. Un indicateur de couleur peut être spécifié, comme rgb, pour indiquer que les matrices suivantes sont respectivement rouges, vertes et bleues. Dans ce cas, la taille de toutes les matrices spécifiées doit être la même.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -569,11 +542,10 @@ win2 = New Window( "Transformed", img );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
@@ -592,7 +564,6 @@ win2 = New Window( "Gray Scale", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Set Size( {600, 600} );
@@ -608,7 +579,6 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -624,7 +594,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 Wait( 1 );

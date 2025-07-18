@@ -10,7 +10,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -33,7 +32,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -50,7 +48,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = Uplift(
@@ -69,7 +66,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -86,7 +82,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -103,7 +98,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -120,7 +114,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = Uplift(
@@ -139,7 +132,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -156,7 +148,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -175,11 +166,10 @@ obj = Uplift(
 
 **Descrizione:** Stima un albero di partizione ricorsivo che seleziona le suddivisioni in modo da massimizzare le differenze di trattamento. I modelli identificano gruppi di individui che più probabilmente potrebbero rispondere a un trattamento.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -190,11 +180,10 @@ obj = Uplift(
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -223,7 +212,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -241,11 +229,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -253,11 +240,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -268,11 +254,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -290,7 +275,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -308,7 +292,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -328,7 +311,6 @@ obj << Color Points;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -348,7 +330,6 @@ obj << Column Contributions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -366,7 +347,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -392,7 +372,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -412,7 +391,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -430,11 +408,10 @@ obj << Data Table Window;
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -448,11 +425,10 @@ Show( aabs );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -466,11 +442,10 @@ Show( aabs );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -491,11 +466,10 @@ Show( aabs );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -515,11 +489,10 @@ Show( aabs );
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -531,11 +504,10 @@ Show( aabs );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -547,11 +519,10 @@ Show( aabs );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -564,11 +535,10 @@ Show( aabs );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -586,11 +556,10 @@ Show( aabs );
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -603,11 +572,10 @@ Show( aabs );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -620,11 +588,10 @@ Show( aabs );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -638,11 +605,10 @@ Show( aabs );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -661,11 +627,10 @@ Show( aabs );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -679,11 +644,10 @@ Show( avg );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -697,11 +661,10 @@ Show( avg );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -722,11 +685,10 @@ Show( avg );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -747,11 +709,10 @@ Show( avg );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -763,11 +724,10 @@ Show( avg );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -779,11 +739,10 @@ Show( avg );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -796,11 +755,10 @@ Show( avg );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -818,11 +776,10 @@ Show( avg );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -835,11 +792,10 @@ Show( avg );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -852,11 +808,10 @@ Show( avg );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -870,11 +825,10 @@ Show( avg );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -898,7 +852,6 @@ Show( avg );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -913,7 +866,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -938,11 +890,10 @@ Show( t );
 
 **Descrizione:** Restituisce la matrice di confusione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -956,11 +907,10 @@ Show( cm );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -974,11 +924,10 @@ Show( cm );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -999,11 +948,10 @@ Show( cm );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1023,11 +971,10 @@ Show( cm );
 
 **Descrizione:** Restituisce la matrice di confusione per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1041,11 +988,10 @@ Show( cm );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1059,11 +1005,10 @@ Show( cm );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1076,11 +1021,10 @@ Show( cm );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1100,11 +1044,10 @@ Show( cm );
 
 **Descrizione:** Restituisce la matrice di confusione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1118,11 +1061,10 @@ Show( cm );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1136,11 +1078,10 @@ Show( cm );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1154,11 +1095,10 @@ Show( cm );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1178,11 +1118,10 @@ Show( cm );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1196,11 +1135,10 @@ Show( cr );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1214,11 +1152,10 @@ Show( cr );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1239,11 +1176,10 @@ Show( cr );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1263,11 +1199,10 @@ Show( cr );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1281,11 +1216,10 @@ Show( cr );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1299,11 +1233,10 @@ Show( cr );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1316,11 +1249,10 @@ Show( cr );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1340,11 +1272,10 @@ Show( cr );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1358,11 +1289,10 @@ Show( cr );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1376,11 +1306,10 @@ Show( cr );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1394,11 +1323,10 @@ Show( cr );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1418,11 +1346,10 @@ Show( cr );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1435,11 +1362,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1472,7 +1398,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1493,7 +1418,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1511,11 +1435,10 @@ obj << Get Difference Formula;
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1529,11 +1452,10 @@ Show( r );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1547,11 +1469,10 @@ Show( r );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1572,11 +1493,10 @@ Show( r );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1596,11 +1516,10 @@ Show( r );
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1614,11 +1533,10 @@ Show( r );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1632,11 +1550,10 @@ Show( r );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1649,11 +1566,10 @@ Show( r );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1673,11 +1589,10 @@ Show( r );
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1691,11 +1606,10 @@ Show( r );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1709,11 +1623,10 @@ Show( r );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1727,11 +1640,10 @@ Show( r );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1753,7 +1665,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1772,7 +1683,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1792,7 +1702,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1811,11 +1720,10 @@ Show( time );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1829,11 +1737,10 @@ Show( rate );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1847,11 +1754,10 @@ Show( rate );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1872,11 +1778,10 @@ Show( rate );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1896,11 +1801,10 @@ Show( rate );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di training.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1912,11 +1816,10 @@ Show( rate );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1928,11 +1831,10 @@ Show( rate );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1945,11 +1847,10 @@ Show( rate );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1968,11 +1869,10 @@ Show( rate );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Boosted Tree(
@@ -1986,11 +1886,10 @@ Show( rate );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Bootstrap Forest(
@@ -2004,11 +1903,10 @@ Show( rate );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2022,11 +1920,10 @@ Show( rate );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Partition(
@@ -2047,11 +1944,10 @@ Show( rate );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di test. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2066,11 +1962,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2085,11 +1980,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2111,11 +2005,10 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di training. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2129,11 +2022,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2147,11 +2039,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2171,11 +2062,10 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di validazione. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2189,11 +2079,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2207,11 +2096,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2234,7 +2122,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2254,7 +2141,6 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2275,7 +2161,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2296,7 +2181,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2315,11 +2199,10 @@ Show( rms );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per i dati del test. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2334,11 +2217,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2353,11 +2235,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2379,11 +2260,10 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per il data set di training. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2397,11 +2277,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2415,11 +2294,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2439,11 +2317,10 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per il data set di validazione. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2457,11 +2334,10 @@ Show( area );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2475,11 +2351,10 @@ Show( area );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2502,7 +2377,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2523,7 +2397,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2544,7 +2417,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2565,7 +2437,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2586,7 +2457,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2607,7 +2477,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2628,7 +2497,6 @@ Show( time );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2649,7 +2517,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2669,7 +2536,6 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -2687,7 +2553,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -2703,7 +2568,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << K Fold Crossvalidation( 5 );
@@ -2719,7 +2583,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -2736,33 +2599,30 @@ dt << Bivariate(
 
 **Descrizione:** Per variabili categoriche, tratta mancante come una categoria. Per variabili continue, tratta mancante come basso o alto, a seconda della stima migliore. Per impostazione predefinita l&apos;opzione è attivata.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt:Age[3] = .;
 obj = dt << Uplift(
@@ -2775,11 +2635,10 @@ obj = dt << Uplift(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
@@ -2795,7 +2654,6 @@ obj << Split Best( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2816,7 +2674,6 @@ obj << Leaf Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2834,11 +2691,10 @@ dt << Distribution(
 
 **Descrizione:** Esclude le colonne specificate dall&apos;utilizzo per le partizioni.
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2854,11 +2710,10 @@ obj << Lock Columns( 1 );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Lock Columns( 1, :age, :size );
@@ -2880,7 +2735,6 @@ obj << Lock Columns( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Minimum Size Split( 15 );
@@ -2894,11 +2748,10 @@ obj << Split Best( 4 );
 
 **Descrizione:** Suddivide i calcoli fra i thread disponibili del computer. Per impostazione predefinita l&apos;opzione è attivata.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2909,11 +2762,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2924,11 +2776,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2949,7 +2800,6 @@ obj = dt << Partition(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -2968,7 +2818,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -2981,31 +2830,28 @@ preset = obj << New Preset();
 
 **Descrizione:** Per le colonne ordinali, considera solo le partizioni che mantengono l&apos;ordine. Per impostazione predefinita l&apos;opzione è attivata.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3017,11 +2863,10 @@ obj = dt << Uplift(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
 obj << Split Best( 3 );
@@ -3036,7 +2881,6 @@ obj << Split Best( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -3057,7 +2901,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y ),
@@ -3076,7 +2919,6 @@ obj << Plot Actual By Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3096,7 +2938,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3118,7 +2959,6 @@ obj << Prune Worst;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3138,7 +2978,6 @@ obj << Publish Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3158,7 +2997,6 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3178,7 +3016,6 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3198,7 +3035,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3224,7 +3060,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3244,7 +3079,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3270,7 +3104,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -3290,7 +3123,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -3314,7 +3146,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -3329,7 +3160,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3351,7 +3181,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3371,7 +3200,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3397,7 +3225,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3423,7 +3250,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3449,7 +3275,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3469,7 +3294,6 @@ obj << Save Difference;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3489,7 +3313,6 @@ obj << Save Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3509,7 +3332,6 @@ obj << Save Leaf Label Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3529,7 +3351,6 @@ obj << Save Leaf Labels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3549,7 +3370,6 @@ obj << Save Leaf Number Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3569,7 +3389,6 @@ obj << Save Leaf Numbers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3589,7 +3408,6 @@ obj << Save Predicteds;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3609,7 +3427,6 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3629,7 +3446,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3647,11 +3463,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3669,11 +3484,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -3699,7 +3513,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3719,7 +3532,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3739,7 +3551,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3759,7 +3570,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3779,7 +3589,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3799,7 +3608,6 @@ obj << Save Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -3820,7 +3628,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -3846,7 +3653,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -3862,11 +3668,10 @@ dt << Distribution(
 
 **Descrizione:** Specifica un seme casuale per riprodurre i risultati per i futuri avvii della piattaforma.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3877,11 +3682,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3892,11 +3696,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3908,11 +3711,10 @@ obj = dt << Uplift(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3931,7 +3733,6 @@ obj = dt << Partition(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3952,7 +3753,6 @@ obj << Show Fit Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3974,7 +3774,6 @@ obj << ShowGraph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3996,7 +3795,6 @@ obj << ShowPoints( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4017,7 +3815,6 @@ obj << Show Split Candidates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4039,7 +3836,6 @@ obj << Show Split Stats( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4059,7 +3855,6 @@ obj << ShowTree( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4079,7 +3874,6 @@ obj << Small Tree View( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4099,11 +3893,10 @@ obj << Sort Split Candidates;
 
 **Descrizione:** Divide l&apos;albero nel punto di partizione ottimale.
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4116,11 +3909,10 @@ obj << Split Best( 2 );
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best;
@@ -4135,11 +3927,10 @@ obj << Split Best( 2 );
 
 **Descrizione:** Mostra o nasconde un grafico che visualizza ciascuna partizione sull&apos;asse X e il corrispondente valore R² per il modello sull&apos;asse Y.
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4152,11 +3943,10 @@ obj << Split History;
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best( 5 );
@@ -4173,7 +3963,6 @@ obj << Split History;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -4190,7 +3979,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4210,7 +3998,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4236,7 +4023,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -4253,7 +4039,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4275,11 +4060,10 @@ obj << Uplift Graph;
 
 <b>Elemento Finestra di dialogo di avvio: Sì</b>
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Boosted Tree(
@@ -4291,11 +4075,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Bootstrap Forest(
@@ -4307,11 +4090,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Uplift(
@@ -4324,11 +4106,10 @@ obj = dt << Uplift(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Partition(
@@ -4346,11 +4127,10 @@ obj << Split Best( 5 );
 
 **Descrizione:** Crea un set di validazione selezionando righe in modo casuale, ove ciascuna riga ha probabilità p (frazione) di essere selezionata. "0", per impostazione predefinita.
 
-**Esempio di albero boosted**
+#### Esempio di albero boosted
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Boosted Tree(
 	Y( :marital status ),
@@ -4361,11 +4141,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**Esempio di foresta di bootstrap**
+#### Esempio di foresta di bootstrap
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :country ),
@@ -4376,11 +4155,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**Esempio di incremento (uplift)**
+#### Esempio di incremento (uplift)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4392,11 +4170,10 @@ obj = dt << Uplift(
 
 ```
 
-**Esempio di partizione**
+#### Esempio di partizione
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition(
 	Y( :country ),
@@ -4415,7 +4192,6 @@ obj << Split Best( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -4430,7 +4206,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

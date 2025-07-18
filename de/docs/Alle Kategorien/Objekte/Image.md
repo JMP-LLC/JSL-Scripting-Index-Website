@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dim = 100;
 mat0 = J( dim, dim, 0 );
 mat1 = J( dim, dim, 1 );
@@ -43,7 +42,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -58,11 +56,10 @@ obj2 = New Window( "Cropped", img );
 
 **Beschreibung:** Filtert das Bild basierend auf dem angegebenen Algorithmus. Filtern ist nützlich, um Rauschen im Bild zu bereinigen. Kontrast, Gamma und Rauschreduktion benötigen einen zusätzlichen (numerischen) Parameter. Gaußscher Weichzeichner benötigt zwei: Radius und Sigma.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "tile(40,40)", New Image( img ) );
 Wait( 1 );
@@ -77,11 +74,10 @@ New Window( "Contrast filter", New Image( img2 ) );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* http://en.wikipedia.org/wiki/Canny_edge_detector */ 
 radius = 1;
 sigma = 3;
@@ -185,7 +181,6 @@ refilter();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -202,7 +197,6 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -219,7 +213,6 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -236,7 +229,6 @@ obj2 = New Window( "Vertical Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get Current Frame();
 
@@ -252,7 +244,6 @@ num = img << Get Current Frame();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
 exifData = img << getEXIF();
 key = exifData << first;
@@ -272,7 +263,6 @@ While( !Is Empty( key ),
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 durs = img << Get Frame Durations();
 
@@ -286,7 +276,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 
@@ -300,7 +289,6 @@ num = img << Get N Frames();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 loops = img << Get N Loops();
 
@@ -316,11 +304,10 @@ loops = img << Get N Loops();
 
 **Beschreibung:** Wenn keine Farbkennung angegeben wird, wird eine Matrix der JSL-Farben mit den Pixelwerten zurückgegeben. Die Farbkennung rgb gibt eine Liste mit drei Matrizen mit jeweils rot, grün und blau zurück. Bei Angabe von rgba werden der Alphakanal (Transparenz) sowie rot, grün und blau zurückgegeben.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -328,22 +315,20 @@ Show( m );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b, a} = img << Get Pixels( "rgba" );
@@ -358,7 +343,6 @@ win = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -374,7 +358,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Remove Frame( 0 );
 
@@ -388,7 +371,6 @@ img << Remove Frame( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -405,7 +387,6 @@ obj2 = New Window( "Rotated", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
@@ -418,11 +399,10 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 **Beschreibung:** Wendet einen Skalierungsfaktor auf die Breite und Höhe des Bilds an oder skaliert die Breite (xscale) und Höhe (yscale) unabhängig voneinander.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 0.5 );
@@ -430,11 +410,10 @@ obj2 = New Window( "Tile scaled by 0.5", img );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 2, 0.5 );
@@ -456,7 +435,6 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 win = New Window( "Progress", img );
@@ -477,7 +455,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set Frame Duration( 1000 );
 durs = img << Get Frame Durations();
@@ -492,7 +469,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set N Loops( 3 );
 loops = img << Get N Loops();
@@ -505,11 +481,10 @@ loops = img << Get N Loops();
 
 **Beschreibung:** Legt die Pixelmatrix bzw. die Pixelmatrizen für das Bild fest. Wenn eine Matrix ohne Farbkennung angegeben wird, wird die Matrix als eine Matrix der JSL-Farben behandelt. Es kann eine Farbkennung wie rgb angegeben werden, um darauf hinzuweisen, dass die folgenden Matrizen jeweils rot, grün und blau sind. In diesem Fall muss die Größe aller angegebenen Matrizen gleich sein.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -520,11 +495,10 @@ win2 = New Window( "Transformed", img );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
@@ -543,7 +517,6 @@ win2 = New Window( "Gray Scale", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Set Size( {600, 600} );
@@ -559,7 +532,6 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -575,7 +547,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -594,7 +565,6 @@ win << reshow;
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 
@@ -608,7 +578,6 @@ obj = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,

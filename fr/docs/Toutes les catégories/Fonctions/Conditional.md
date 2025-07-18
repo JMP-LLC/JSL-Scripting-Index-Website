@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 & 3 < 4;
 
 ```
@@ -27,7 +26,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 AndMZ( 1 < 2, 3 < 4 );
 
 ```
@@ -42,7 +40,6 @@ AndMZ( 1 < 2, 3 < 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -60,7 +57,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```
@@ -75,7 +71,6 @@ Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -91,11 +86,10 @@ For( i = 1, i <= 10, i++,
 
 **JMP Version ajoutée :** 16
 
-**Associative Array**
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10],
 	value > 6
 );
@@ -103,11 +97,10 @@ Show( values );
 
 ```
 
-**Expression**
+#### Expression
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ),
 	Mod( value, 2 ) == 0
 );
@@ -115,21 +108,19 @@ Show( values );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
 
@@ -145,7 +136,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "";
 For( i = 1, i < 10, i++,
 	s ||= " " || Char( i )
@@ -162,11 +152,10 @@ Trim( s );
 
 **JMP Version ajoutée :** 16
 
-**Across**
+#### Across
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Across multiple containers
 x = {1, 3};
@@ -179,11 +168,10 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```
 
-**Across - Count**
+#### Across - Count
 
 ```jsl
 
-Names Default To Here( 1 );
 
 list1 = {1, 3, 5, 7, 9};
 list2 = {2, 4}; 
@@ -214,49 +202,44 @@ Try(
 
 ```
 
-**Associative Array**
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
 	Show( key, value, index )
 );
 
 ```
 
-**Expression**
+#### Expression
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
 
-**Matrice - Indice linéaire**
+#### Matrice - Indice linéaire
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```
@@ -271,7 +254,6 @@ For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -287,7 +269,6 @@ For Each Row( :height = -:height );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Random Uniform() < 0.5,
 	"heads",
 	"tails"
@@ -305,7 +286,6 @@ If( Random Uniform() < 0.5,
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
 x = .;
@@ -325,7 +305,6 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -351,7 +330,6 @@ highestScorer = IfMax(
 
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -375,11 +353,10 @@ lowestScorer = IfMin(
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Interpolate",
 	window:x = (2 :: 9) * 10;
@@ -394,29 +371,26 @@ New Window( "Interpolate",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
 yd = Sin( xd );
@@ -449,7 +423,6 @@ New Window( "Interpolated values are blue",
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Associative Array( [1 => 2] );
 
 ```
@@ -464,7 +437,6 @@ Is Associative Array( [1 => 2] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -523,30 +495,27 @@ Delete Classes( "complex" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Empty( x );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Empty();
 Is Empty( x );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -574,7 +543,6 @@ If( Is Empty( dt ),
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Expr( Expr( x ) );
 
 ```
@@ -589,7 +557,6 @@ Is Expr( Expr( x ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is List( {1, 2, 3} );
 
 ```
@@ -604,7 +571,6 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Name( Name Expr( n ) );
 
 ```
@@ -619,7 +585,6 @@ Is Name( Name Expr( n ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -662,7 +627,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Number( 213 );
 
 ```
@@ -677,7 +641,6 @@ Is Number( 213 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -693,7 +656,6 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is String( "abc" );
 
 ```
@@ -708,7 +670,6 @@ Is String( "abc" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Match( Year( Today() ),
 	2013, "snake",
 	2014, "horse",
@@ -728,7 +689,6 @@ Match( Year( Today() ),
 
 ```jsl
 
-Names Default To Here( 1 );
 MatchMZ( Year( Today() ),
 	2013, "snake",
 	2014, "horse",
@@ -748,7 +708,6 @@ MatchMZ( Year( Today() ),
 
 ```jsl
 
-Names Default To Here( 1 );
 !(1 < 2);
 
 ```
@@ -763,7 +722,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 | 3 < 2;
 
 ```
@@ -778,7 +736,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 OrMZ( 1 < 2, 3 < 2 );
 
 ```
@@ -791,11 +748,10 @@ OrMZ( 1 < 2, 3 < 2 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -818,11 +774,10 @@ Show( vrv, lvrv, nrv );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -842,7 +797,6 @@ Show( f( 7, 15 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -857,7 +811,6 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
 	Print( "i=" || Char( i ) );
@@ -873,11 +826,10 @@ For( i = 1, i <= 10, i++,
 
 **JMP Version ajoutée :** 16
 
-**Associative Array**
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {{key, value}},
 	["A" => 8, "B" => 6, "C" => 10],
 	value + 1
@@ -886,21 +838,19 @@ Show( values );
 
 ```
 
-**Expression 1**
+#### Expression 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
 ```
 
-**Expression 2**
+#### Expression 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Find Functions defined in a script
 parsedScript = Include(
 	"$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl",
@@ -923,31 +873,28 @@ Show( functionNames );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
 ```
 
-**Output**
+#### Output
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Write( "\!N===List===" );
 lst = Transform Each( {value}, [10, 20, 30], Output( "List" ),
@@ -987,7 +934,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 i = 1;
 s = "";
 While( i < 1000,
@@ -1008,7 +954,6 @@ s;
 
 ```jsl
 
-Names Default To Here( 1 );
 Zero Or Missing( 1 < 2 );
 
 ```

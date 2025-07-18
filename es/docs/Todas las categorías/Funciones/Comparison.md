@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 1 == 1;
 
 ```
@@ -27,7 +26,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 3 > 2 > 1;
 
 ```
@@ -42,7 +40,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 3 >= 2 >= 2;
 
 ```
@@ -57,7 +54,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Missing( . );
 
 ```
@@ -70,38 +66,34 @@ Is Missing( . );
 
 **JMP Versión agregada:** 18
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "black", 0 );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", "green", "blue" );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```
@@ -116,7 +108,6 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 1 1] < [0 1 2];
 
 ```
@@ -131,7 +122,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 <= 2;
 
 ```
@@ -146,7 +136,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 <= 2 <= 2;
 
 ```
@@ -161,7 +150,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 2 <= 2 < 3;
 
 ```
@@ -176,7 +164,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 != 2 != 1;
 
 ```

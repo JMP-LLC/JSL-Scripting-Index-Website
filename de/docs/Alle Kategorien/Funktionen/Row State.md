@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
 	Row State() = As Row State(
@@ -33,7 +32,6 @@ For Each Row(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
 Row() = 3;
@@ -51,7 +49,6 @@ Color To RGB( Color Of() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -68,7 +65,6 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -84,7 +80,6 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -103,7 +98,6 @@ Excluded();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -120,7 +114,6 @@ Excluded( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -139,7 +132,6 @@ Hidden();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -156,7 +148,6 @@ Hidden( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -172,7 +163,6 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -191,7 +181,6 @@ Labeled();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -208,7 +197,6 @@ Labeled( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -227,7 +215,6 @@ Marker Of();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -244,7 +231,6 @@ Marker Of( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -261,7 +247,6 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -280,7 +265,6 @@ Selected();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -297,7 +281,6 @@ Selected( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 

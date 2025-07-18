@@ -16,7 +16,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = [=> ];
@@ -38,7 +37,6 @@ rc = cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Action Set( "builtins" );
@@ -55,7 +53,6 @@ action << Action Set( "builtins" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -85,7 +82,6 @@ action = New CAS Action(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -115,7 +111,6 @@ action = New CAS Action(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Endpoint( "/cas/sessions" );
@@ -132,7 +127,6 @@ action << Endpoint( "/cas/sessions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 args =
@@ -171,7 +165,6 @@ If( rc,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -202,7 +195,6 @@ Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -233,7 +225,6 @@ Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -259,7 +250,6 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -285,7 +275,6 @@ Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -311,7 +300,6 @@ Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -342,7 +330,6 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -373,7 +360,6 @@ Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -398,7 +384,6 @@ rc = cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 args =
@@ -437,7 +422,6 @@ If( rc,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -463,7 +447,6 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -492,7 +475,6 @@ action << Make Report();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Method( "PUT" );
@@ -509,7 +491,6 @@ action << Method( "PUT" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -539,7 +520,6 @@ action = New CAS Action(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -573,7 +553,6 @@ action << Make Report();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -600,7 +579,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -629,7 +607,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -659,7 +636,6 @@ Write(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -687,7 +663,6 @@ Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -715,7 +690,6 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -743,7 +717,6 @@ Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -771,7 +744,6 @@ Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -799,7 +771,6 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -828,7 +799,6 @@ Show( output_ds );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -856,7 +826,6 @@ Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -885,7 +854,6 @@ Show( has_output );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -912,7 +880,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -943,7 +910,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = New CAS Server();
 url = "http://myCasURL";
@@ -969,7 +935,6 @@ cas = CAS Connect(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data(
@@ -992,7 +957,6 @@ cas << Delete Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = New CAS Server();
 url = "http://myCasURL";
@@ -1011,7 +975,6 @@ cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1028,7 +991,6 @@ cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class"
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data(
@@ -1055,7 +1017,6 @@ Show( datasets );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 libraries = cas << Get Libraries();
@@ -1073,7 +1034,6 @@ Show( libraries );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
@@ -1098,7 +1058,6 @@ cas = CAS Connect(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
@@ -1117,7 +1076,6 @@ Show( session_ids );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1135,7 +1093,6 @@ cas << Import Data( "Casuser.Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 connected = cas << Is Connected();
@@ -1153,7 +1110,6 @@ Show( connected );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1171,7 +1127,6 @@ cas << Remove Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = [=> ];
@@ -1194,7 +1149,6 @@ rc = cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 session_id = cas << Get Session();
@@ -1214,7 +1168,6 @@ cas << Terminate( session_id );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Terminate Sessions();

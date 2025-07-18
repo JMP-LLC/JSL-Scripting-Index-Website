@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Auto Load( 1 ),
@@ -27,21 +26,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt den Anzeigenamen für ein Add-in zurück.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Display Name();
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Display Name(),
@@ -56,21 +53,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt den Startordner für ein Add-in zurück.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Home Folder();
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Home Folder(),
@@ -85,21 +80,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt die eindeutige ID für ein Add-in zurück.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << ID();
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << ID(),
@@ -114,21 +107,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt zurück, ob derzeit ein Add-in geladen ist oder nicht.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Is Loaded();
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Is Loaded(),
@@ -145,7 +136,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Load(),
@@ -162,7 +152,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Unload(),
@@ -177,21 +166,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt die Versionsnummer für ein Add-in zurück.
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Version();
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Version(),

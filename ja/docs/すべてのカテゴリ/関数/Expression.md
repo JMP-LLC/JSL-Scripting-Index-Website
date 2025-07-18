@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
@@ -25,21 +24,19 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Arg Expr() equivalent
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
 
@@ -55,7 +52,6 @@ Arg Expr( Sum( a, b, c ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```
@@ -70,7 +66,6 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Expr( x + y );
 
 ```
@@ -85,7 +80,6 @@ Expr( x + y );
 
 ```jsl
 
-Names Default To Here( 1 );
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -100,7 +94,6 @@ Extract Expr( a + b * c, Wild() * Wild() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -113,21 +106,19 @@ Head( Expr( Sum( a, b, c ) ) );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Expr() equivalent
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Expr( Sum( a, b, c ) );
 
@@ -143,7 +134,6 @@ Head Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Head Name( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -156,21 +146,19 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Name Expr() equivalent
 Head Name( Expr( Sum( a, b, c ) ) );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Name Expr( Sum( a, b, c ) );
 
@@ -186,7 +174,6 @@ Head Name Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Arg( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -199,21 +186,19 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated N Arg Expr() equivalent
 N Arg( Expr( Sum( a, b, c ) ) );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 N Arg Expr( Sum( a, b, c ) );
 
@@ -229,7 +214,6 @@ N Arg Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( 1 + 2 );
 Eval List( {ex, Name Expr( ex )} );
 

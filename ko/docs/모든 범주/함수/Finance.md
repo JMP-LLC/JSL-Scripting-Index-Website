@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -27,7 +26,6 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Future Value( .03, 12, 100, 0, 1 );
 
 ```
@@ -42,7 +40,6 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -58,7 +55,6 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
-Names Default To Here( 1 );
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
@@ -73,7 +69,6 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Internal Rate of Return( [-10000, 1000, 900, 950] );
 Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
@@ -89,7 +84,6 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
 Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
@@ -105,7 +99,6 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Net Present Value( .05, [-10000, 1000, 900, 9500] );
 Net Present Value( .05, -10000, 1000, 900, 9500 );
 
@@ -121,7 +114,6 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Number of Periods( .05 / 12, -2000, 100000 );
 
 ```
@@ -136,7 +128,6 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -152,7 +143,6 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
-Names Default To Here( 1 );
 Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```
@@ -167,7 +157,6 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -183,7 +172,6 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
-Names Default To Here( 1 );
 Straight Line Depreciation( 1000, 100, 3 );
 
 ```
@@ -198,7 +186,6 @@ Straight Line Depreciation( 1000, 100, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```

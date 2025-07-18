@@ -26,7 +26,6 @@ You create a Mimic object using the Mimic(box|platform) factory function. This o
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -48,7 +47,6 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -72,7 +70,6 @@ mc << Clear Marks;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 mc = Mimic( obj );
@@ -91,7 +88,6 @@ Show( mc << Eval( Bounds( fbox ) ), mc << Eval( TopLeft( fbox ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -115,7 +111,6 @@ mc << Clear Marks;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -134,7 +129,6 @@ mc << Mouse Brush( FrameCoords( box[Frame Box( 1 )], [60 100, 65 150] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 mc = Mimic( obj );
@@ -154,7 +148,6 @@ mc << Mouse Circle Move( Offset( Top Left( prob col ), [30 25] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Oneway();
 Wait( 0 );
@@ -179,7 +172,6 @@ mc << Close Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -198,7 +190,6 @@ mc << Mouse Double Click( box[Axis Box( 1 )] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Local Data Filter );
 rpt = obj << Top Report;
@@ -220,7 +211,6 @@ mc << Mouse Drag( Offset( TopLeft( collist ), [20 45] ), xlabel );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Continuous Distribution( Column( :weight ) ) );
 Wait( 1 );
@@ -239,7 +229,6 @@ mc << Mouse Move( Offset( TopLeft( Report( obj )[FrameBox( 1 )] ), [80 160] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 mc = Mimic( obj );
@@ -257,7 +246,6 @@ mc << Mouse Right Click( box[Frame Box( 1 )] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 Wait( 1 );
@@ -280,7 +268,6 @@ mc << Mouse Click( win );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 Wait( 1 );
@@ -306,11 +293,10 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 **JMP Versione aggiunta:** 18
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 Wait( 1 );
@@ -319,11 +305,10 @@ mc << With Modifier( "Alt", Mouse Click( Lrt( obj ) ) );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -350,7 +335,6 @@ mc << With Modifier(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 c = Mimic( obj );
@@ -368,7 +352,6 @@ c << Mark( Bounds( win[Frame Box( 1 )] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Launch Dialog );
 Wait( 0 );
@@ -386,7 +369,6 @@ Mimic( Window( "Oneway - Distribution by Group" ) ) << Mark( Button( "OK" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 c = Mimic( obj );
@@ -404,7 +386,6 @@ c << Mark( Center( win[Frame Box( 1 )] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -422,7 +403,6 @@ mc << Mouse Click( Disclosure( win[Outline Box( 1 )] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 mc = Mimic( obj );
@@ -440,7 +420,6 @@ mc << Mouse Move( FrameCoords( box[Frame Box( 1 )], [61 107] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << Group Columns( Item Range( :Culmen Length, :Body Mass ), "Measurements" );
 dt << Group Columns( Item Range( :Species, :Individual ID ), "Individual" );
@@ -481,7 +460,6 @@ mc << Mark( Grid Region( box, 5, -4 ) ); // 5th column header group section
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Local Data Filter );
 Wait( 1 );
@@ -500,7 +478,6 @@ mc << Mouse Drag( List Item( win[List Box Box( 1 )], "sex" ), box[Text Edit Box(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -518,7 +495,6 @@ mc << Mouse Click( Lrt( obj ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -536,7 +512,6 @@ mc << Mouse Click( Offset( TopLeft( win[Outline Box( 1 )] ), [25 15] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( Report( obj )["Oneway Anova", "Analysis of Variance"] );

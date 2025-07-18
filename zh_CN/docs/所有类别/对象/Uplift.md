@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP添加的版本:** 18
 
-**匿名预设**
+#### 匿名预设
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -45,11 +43,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**在文件夹内搜索**
+#### 在文件夹内搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -57,11 +54,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**按名称搜索**
+#### 按名称搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -79,7 +75,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -97,7 +92,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -115,7 +109,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -141,7 +134,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -161,7 +153,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -183,7 +174,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -198,7 +188,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -223,11 +212,10 @@ Show( t );
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
-**带过滤器的平台**
+#### 带过滤器的平台
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -252,11 +240,10 @@ New Window( "platform boxes",
 
 ```
 
-**常规**
+#### 常规
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -277,7 +264,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -298,7 +284,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -315,7 +300,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -336,7 +320,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -357,7 +340,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -378,7 +360,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -396,7 +377,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -412,7 +392,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -431,7 +410,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -453,7 +431,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -472,7 +449,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -487,7 +463,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -508,7 +483,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -528,7 +502,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -554,7 +527,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -574,7 +546,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -600,7 +571,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -620,7 +590,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -644,7 +613,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -659,7 +627,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -681,7 +648,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -701,7 +667,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -727,7 +692,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -753,7 +717,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -779,7 +742,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -797,11 +759,10 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -819,11 +780,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -849,7 +809,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -869,7 +828,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -889,7 +847,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -909,7 +866,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -929,7 +885,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -950,7 +905,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -976,7 +930,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -994,7 +947,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1011,7 +963,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1031,7 +982,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1057,7 +1007,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1074,7 +1023,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1089,7 +1037,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1108,11 +1055,10 @@ New Window( "Bivariate Equation",
 
 **说明:** 拟合递归分割树，它选择使处理差异最大化的拆分。模型可识别最可能响应某项处理的个体群组。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1123,11 +1069,10 @@ obj = Uplift(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1154,7 +1099,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1177,7 +1121,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1194,7 +1137,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = Uplift(
@@ -1213,7 +1155,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1230,7 +1171,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1247,7 +1187,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1264,7 +1203,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = Uplift(
@@ -1283,7 +1221,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1300,7 +1237,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1321,7 +1257,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1341,7 +1276,6 @@ obj << Color Points;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -1359,11 +1293,10 @@ obj << Column Contributions( 1 );
 
 **说明:** 返回测试集的绝对偏差的均值统计量。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1377,11 +1310,10 @@ Show( aabs );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1395,11 +1327,10 @@ Show( aabs );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1413,11 +1344,10 @@ Show( aabs );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1444,11 +1374,10 @@ Show( aabs );
 
 **说明:** 返回训练集的绝对偏差的均值统计量。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1460,11 +1389,10 @@ Show( aabs );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1476,11 +1404,10 @@ Show( aabs );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1492,11 +1419,10 @@ Show( aabs );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1515,11 +1441,10 @@ Show( aabs );
 
 **说明:** 返回验证集的绝对偏差的均值统计量。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1532,11 +1457,10 @@ Show( aabs );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1549,11 +1473,10 @@ Show( aabs );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1566,11 +1489,10 @@ Show( aabs );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1590,11 +1512,10 @@ Show( aabs );
 
 **说明:** 返回测试集的 -log(p) 均值，其中 p 等于归因于模型的响应实际发生的概率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1608,11 +1529,10 @@ Show( avg );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1627,11 +1547,10 @@ Show( avg );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1645,11 +1564,10 @@ Show( avg );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1676,11 +1594,10 @@ Show( avg );
 
 **说明:** 返回训练集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1692,11 +1609,10 @@ Show( avg );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1708,11 +1624,10 @@ Show( avg );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1724,11 +1639,10 @@ Show( avg );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1747,11 +1661,10 @@ Show( avg );
 
 **说明:** 返回验证集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1764,11 +1677,10 @@ Show( avg );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1782,11 +1694,10 @@ Show( avg );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1799,11 +1710,10 @@ Show( avg );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1823,11 +1733,10 @@ Show( avg );
 
 **说明:** 返回测试集的混淆矩阵。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1841,11 +1750,10 @@ Show( cm );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1859,11 +1767,10 @@ Show( cm );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1877,11 +1784,10 @@ Show( cm );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1908,11 +1814,10 @@ Show( cm );
 
 **说明:** 返回训练集的混淆矩阵。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1926,11 +1831,10 @@ Show( cm );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1944,11 +1848,10 @@ Show( cm );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1962,11 +1865,10 @@ Show( cm );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1985,11 +1887,10 @@ Show( cm );
 
 **说明:** 返回验证集的混淆矩阵。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2003,11 +1904,10 @@ Show( cm );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2021,11 +1921,10 @@ Show( cm );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2039,11 +1938,10 @@ Show( cm );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2063,11 +1961,10 @@ Show( cm );
 
 **说明:** 返回测试集的混淆率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2081,11 +1978,10 @@ Show( cr );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2099,11 +1995,10 @@ Show( cr );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2117,11 +2012,10 @@ Show( cr );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2148,11 +2042,10 @@ Show( cr );
 
 **说明:** 返回训练集的混淆率。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2166,11 +2059,10 @@ Show( cr );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2184,11 +2076,10 @@ Show( cr );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2202,11 +2093,10 @@ Show( cr );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2225,11 +2115,10 @@ Show( cr );
 
 **说明:** 返回验证集的混淆率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2243,11 +2132,10 @@ Show( cr );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2261,11 +2149,10 @@ Show( cr );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2279,11 +2166,10 @@ Show( cr );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2305,7 +2191,6 @@ Show( cr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2323,11 +2208,10 @@ obj << Get Difference Formula;
 
 **说明:** 返回测试集的广义 R 方。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2341,11 +2225,10 @@ Show( r );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2359,11 +2242,10 @@ Show( r );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2377,11 +2259,10 @@ Show( r );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2408,11 +2289,10 @@ Show( r );
 
 **说明:** 返回训练集的广义 R 方。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2426,11 +2306,10 @@ Show( r );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2444,11 +2323,10 @@ Show( r );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2462,11 +2340,10 @@ Show( r );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2485,11 +2362,10 @@ Show( r );
 
 **说明:** 返回验证集的广义 R 方。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2503,11 +2379,10 @@ Show( r );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2521,11 +2396,10 @@ Show( r );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2539,11 +2413,10 @@ Show( r );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2567,7 +2440,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2587,7 +2459,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2606,11 +2477,10 @@ Show( time );
 
 **说明:** 返回测试集的误分类率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2624,11 +2494,10 @@ Show( rate );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2642,11 +2511,10 @@ Show( rate );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2660,11 +2528,10 @@ Show( rate );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2691,11 +2558,10 @@ Show( rate );
 
 **说明:** 返回训练集的误分类率。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2707,11 +2573,10 @@ Show( rate );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2724,11 +2589,10 @@ Show( rate );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2740,11 +2604,10 @@ Show( rate );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2763,11 +2626,10 @@ Show( rate );
 
 **说明:** 返回验证集的误分类率。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Bootstrap Forest(
@@ -2781,11 +2643,10 @@ Show( rate );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Partition(
@@ -2800,11 +2661,10 @@ Show( rate );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Boosted Tree(
@@ -2818,11 +2678,10 @@ Show( rate );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2842,11 +2701,10 @@ Show( rate );
 
 **说明:** 返回测试集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2861,11 +2719,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2881,11 +2738,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2906,11 +2762,10 @@ Show( area );
 
 **说明:** 返回训练集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2924,11 +2779,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2942,11 +2796,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2966,11 +2819,10 @@ Show( area );
 
 **说明:** 返回验证集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2984,11 +2836,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3003,11 +2854,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3029,7 +2879,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3049,7 +2898,6 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3070,7 +2918,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3091,7 +2938,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3110,11 +2956,10 @@ Show( rms );
 
 **说明:** 返回测试数据的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -3129,11 +2974,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -3149,11 +2993,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -3174,11 +3017,10 @@ Show( area );
 
 **说明:** 返回训练数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3192,11 +3034,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3210,11 +3051,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3234,11 +3074,10 @@ Show( area );
 
 **说明:** 返回验证数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 仅在使用验证集时可用。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3252,11 +3091,10 @@ Show( area );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3271,11 +3109,10 @@ Show( area );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3297,7 +3134,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3318,7 +3154,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3339,7 +3174,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3360,7 +3194,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3381,7 +3214,6 @@ Show( time );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3401,7 +3233,6 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << K Fold Crossvalidation( 5 );
@@ -3415,22 +3246,20 @@ obj << Go;
 
 **说明:** 对于分类变量，将缺失视为一个类别。对于连续变量，将缺失视为低或高（取拟合较优者）。 默认开启。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
@@ -3438,22 +3267,20 @@ obj << Split Best( 1 );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt:Age[3] = .;
 obj = dt << Uplift(
@@ -3474,7 +3301,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3493,11 +3319,10 @@ obj << Leaf Report( 1 );
 
 **说明:** 锁定指定列以防止用于拆分。
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Lock Columns( 1, :age, :size );
@@ -3509,11 +3334,10 @@ obj << Lock Columns( 1 );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3537,7 +3361,6 @@ obj << Lock Columns( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Minimum Size Split( 15 );
@@ -3551,11 +3374,10 @@ obj << Split Best( 4 );
 
 **说明:** 在机器的可用线程间分配计算任务。 默认开启。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3566,11 +3388,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3581,11 +3402,10 @@ obj = dt << Partition(
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3602,42 +3422,38 @@ obj = dt << Boosted Tree(
 
 **说明:** 对于有序型列，仅考虑保留顺序的拆分。 默认开启。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
 obj << Split Best( 3 );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3657,7 +3473,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y ),
@@ -3676,7 +3491,6 @@ obj << Plot Actual By Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3696,7 +3510,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3718,7 +3531,6 @@ obj << Prune Worst;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3738,7 +3550,6 @@ obj << Publish Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3758,7 +3569,6 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3778,7 +3588,6 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3798,7 +3607,6 @@ obj << Save Difference;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3818,7 +3626,6 @@ obj << Save Difference Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3838,7 +3645,6 @@ obj << Save Leaf Label Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3858,7 +3664,6 @@ obj << Save Leaf Labels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3878,7 +3683,6 @@ obj << Save Leaf Number Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3898,7 +3702,6 @@ obj << Save Leaf Numbers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3918,7 +3721,6 @@ obj << Save Predicteds;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3938,7 +3740,6 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3958,7 +3759,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -3976,11 +3776,10 @@ obj << Save Tolerant Prediction Formula;
 
 **说明:** 指定一个随机种子，以便将来启动该平台时重现结果。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3991,11 +3790,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -4006,11 +3804,10 @@ obj = dt << Partition(
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -4021,11 +3818,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4045,7 +3841,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4066,7 +3861,6 @@ obj << Show Fit Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4088,7 +3882,6 @@ obj << ShowGraph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4110,7 +3903,6 @@ obj << ShowPoints( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4131,7 +3923,6 @@ obj << Show Split Candidates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4153,7 +3944,6 @@ obj << Show Split Stats( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4173,7 +3963,6 @@ obj << ShowTree( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4193,7 +3982,6 @@ obj << Small Tree View( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -4213,11 +4001,10 @@ obj << Sort Split Candidates;
 
 **说明:** 在最优拆分点拆分树。
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best;
@@ -4226,11 +4013,10 @@ obj << Split Best( 2 );
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4249,11 +4035,10 @@ obj << Split Best( 2 );
 
 **说明:** 显示或隐藏图，该图在 X 轴上显示每个拆分并在 Y 轴上显示模型的对应 R² 值。
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
 obj << Split Best( 5 );
@@ -4262,11 +4047,10 @@ obj << Split History;
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4287,7 +4071,6 @@ obj << Split History;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4309,11 +4092,10 @@ obj << Uplift Graph;
 
 <b>启动窗口项: 是</b>
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Bootstrap Forest(
@@ -4325,11 +4107,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Partition(
@@ -4341,11 +4122,10 @@ obj << Split Best( 5 );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Boosted Tree(
@@ -4357,11 +4137,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Uplift(
@@ -4380,11 +4159,10 @@ obj = dt << Uplift(
 
 **说明:** 通过随机选择行构成验证集，每行的选中概率为 p（小数）。 默认为“0”。
 
-**Bootstrap 森林法示例**
+#### Bootstrap 森林法示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :country ),
@@ -4395,11 +4173,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**分割示例**
+#### 分割示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition(
 	Y( :country ),
@@ -4410,11 +4187,10 @@ obj << Split Best( 2 );
 
 ```
 
-**提升树示例**
+#### 提升树示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Boosted Tree(
 	Y( :marital status ),
@@ -4425,11 +4201,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**提升示例**
+#### 提升示例
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),

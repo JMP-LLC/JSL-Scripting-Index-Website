@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -31,7 +30,6 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << DeclareFunction(
@@ -58,7 +56,6 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 dll = Load DLL( /*DLL with JSL keyword*/ ); 
 //dll << Get Declaration JSL;
 
@@ -72,7 +69,6 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << DeclareFunction(
@@ -98,7 +94,6 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -119,7 +114,6 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );

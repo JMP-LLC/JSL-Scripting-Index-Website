@@ -404,7 +404,7 @@ print(result)
 
 **JMP添加的版本:** 19
 
-**CSV Fallback**
+#### CSV Fallback
 
 ```python
 
@@ -426,7 +426,7 @@ print(dt)
 
 ```
 
-**Ibis to JMP**
+#### Ibis to JMP
 
 ```python
 
@@ -450,7 +450,7 @@ print(dt)
 
 ```
 
-**JMP to Pandas**
+#### JMP to Pandas
 
 ```python
 
@@ -468,7 +468,7 @@ print(pandas_df)
 
 ```
 
-**JMP to Polars**
+#### JMP to Polars
 
 ```python
 
@@ -486,7 +486,7 @@ print(polars_df)
 
 ```
 
-**Pandas to JMP**
+#### Pandas to JMP
 
 ```python
 
@@ -516,7 +516,7 @@ print(dt)
 
 ```
 
-**Polars to JMP**
+#### Polars to JMP
 
 ```python
 
@@ -585,7 +585,7 @@ print(dt)
 
 **JMP添加的版本:** 18
 
-**Excel**
+#### Excel
 
 ```python
 
@@ -596,7 +596,7 @@ print(obj)
 
 ```
 
-**JMP**
+#### JMP
 
 ```python
 
@@ -607,7 +607,7 @@ print(dt)
 
 ```
 
-**JSL 脚本**
+#### JSL 脚本
 
 ```python
 
@@ -618,7 +618,7 @@ print(obj)
 
 ```
 
-**不可见**
+#### 不可见
 
 ```python
 
@@ -637,7 +637,7 @@ del dt
 
 ```
 
-**私有**
+#### 私有
 
 ```python
 
@@ -721,7 +721,7 @@ print(pi)
 
 **JMP添加的版本:** 18
 
-**列属性**
+#### 列属性
 
 ```python
 
@@ -746,7 +746,7 @@ Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
 
 ```
 
-**获取版本**
+#### 获取版本
 
 ```python
 
@@ -756,7 +756,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```
 
-**返回的值**
+#### 返回的值
 
 ```python
 
@@ -5130,7 +5130,6 @@ import jmp
 from jmputils import jpip
 
 jmp.run_jsl('''
-Names Default To Here( 1 );
 
 src_path = Pick File(
     "Select requirements.txt File",

@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Close();
 
@@ -30,7 +29,6 @@ wf << Close();
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Execute Next();
 
@@ -46,7 +44,6 @@ wf << Execute Next();
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Resume;
 wf << Get Execution Info( 1 );
@@ -63,7 +60,6 @@ wf << Get Execution Info( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step Count;
 
@@ -79,7 +75,6 @@ wf << Get Step Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step JSL( 1 );
 
@@ -95,7 +90,6 @@ wf << Get Step JSL( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step Name( 1 );
 
@@ -111,7 +105,6 @@ wf << Get Step Name( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Log Executed Steps( 1 );
 wf << Resume();
@@ -128,7 +121,6 @@ wf << Resume();
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Presentation Mode( 1 );
 
@@ -144,7 +136,6 @@ wf << Presentation Mode( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Resume();
 
@@ -160,7 +151,6 @@ wf << Resume();
 
 ```jsl
 
-Names Default To Here( 1 );
 //The callback function receives two arguments; the Workflow scriptable and a structure containing information about what step has just been executed and the reason if stopped.
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Set Execution Callback( Function( {wfb, data}, Show( data ) ) );
@@ -178,7 +168,6 @@ wf << Resume;
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Set Next Step To Execute( 2 );
 
@@ -194,7 +183,6 @@ wf << Set Next Step To Execute( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Start Over();
 

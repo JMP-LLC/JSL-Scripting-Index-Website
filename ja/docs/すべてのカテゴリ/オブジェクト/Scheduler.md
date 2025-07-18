@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -31,7 +30,6 @@ s = Schedule(
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -49,7 +47,6 @@ s << Clear Schedule;
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -68,7 +65,6 @@ s << Close;
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -87,7 +83,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -107,7 +102,6 @@ s << Restart;
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();
@@ -125,7 +119,6 @@ s << Show Schedule;
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Schedule(
 	10,
 	Beep();

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 As Table( [1 2 3, 4 5 6] );
 
 ```
@@ -27,7 +26,6 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
 y1 = Col Stored Value( :JOB, 10 );
@@ -46,11 +44,10 @@ Show( y1, y2, y3, y4 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
 ht = Column( "height" );
@@ -58,11 +55,10 @@ col4[1] + ht[2];
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
 col = Column( dt, "sex", "formatted" );
@@ -81,7 +77,6 @@ Write( "\!nData value returned is the formatted value of row 5." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -97,7 +92,6 @@ Column Name( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Count Example",
 	Add Rows( 12 ),
 	New Column( "Count1" ),
@@ -125,7 +119,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
 
@@ -141,7 +134,6 @@ Current Data Table() << Get Column Names;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Data Table( 1 );
@@ -158,7 +150,6 @@ Data Table( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -175,7 +166,6 @@ Dif( :height, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -198,7 +188,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table( 1 );
@@ -221,22 +210,20 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
 
@@ -252,7 +239,6 @@ Get Data Table List( Project( project ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Lag( :height, 2 );
@@ -269,7 +255,6 @@ Lag( :height, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Row( [11 22, 33 44] );
 
 ```
@@ -284,7 +269,6 @@ N Row( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Rows( [11 22, 33 44] );
 
 ```
@@ -297,21 +281,19 @@ N Rows( [11 22, 33 44] );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Open( "$SAMPLE_DATA/Solubility.jmp" );
@@ -331,21 +313,19 @@ d;
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Semblable**
+#### Semblable
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
@@ -361,7 +341,6 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
 	Column( :Narrative Cause ),
@@ -382,7 +361,6 @@ New Column by Text Matching(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name",
@@ -404,22 +382,20 @@ New Table( "Little Class",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Définir la ligne**
+#### Définir la ligne
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 :height * :weight;
 
 ```
 
-**Réinitialiser la ligne**
+#### Réinitialiser la ligne
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
 Show( Row() );
@@ -437,7 +413,6 @@ Row() = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 Row() = 3;
 Sequence( 1, 9, 2 );
 
@@ -451,11 +426,10 @@ Sequence( 1, 9, 2 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -474,11 +448,10 @@ Close( dt );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -506,7 +479,6 @@ dt << setname( "xxx" );
 
 ```jsl
 
-Names Default To Here( 1 );
 {11, 12, 13}[2];
 
 ```
@@ -521,7 +493,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Suppress Formula Eval( 1 );
 
 ```
@@ -534,11 +505,10 @@ Suppress Formula Eval( 1 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -559,11 +529,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );

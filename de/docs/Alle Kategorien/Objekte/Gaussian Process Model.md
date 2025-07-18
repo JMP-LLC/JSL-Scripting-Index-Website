@@ -70,7 +70,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/2D PUT EXAMPLE FILE HERE" );
 obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 

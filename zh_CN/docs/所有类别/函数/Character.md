@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 	Hex To Blob( "436166C3A9" ),
 	"ascii~hex"
@@ -30,7 +29,6 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
@@ -43,29 +41,26 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-**使用语言/区域**
+#### 使用语言/区域
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( 2.1, <<Use Locale( 1 ) );
 
 ```
 
-**全精度**
+#### 全精度
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
 
-**简单**
+#### 简单
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 10, 4 );
 
 ```
@@ -80,7 +75,6 @@ Char( Pi(), 10, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -95,7 +89,6 @@ Char To Blob( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```
@@ -110,7 +103,6 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -125,7 +117,6 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -140,7 +131,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -155,7 +145,6 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "hello ";
 ex ||= "world";
 
@@ -171,7 +160,6 @@ ex ||= "world";
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -185,20 +173,18 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
 	numeric,
@@ -209,11 +195,10 @@ dt << Distribution( Column( :Cheese ) );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 //find repeated character c in cdcef
 Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
@@ -229,7 +214,6 @@ Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -244,7 +228,6 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
 Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -260,7 +243,6 @@ Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Blob( "FF78CE" );
 
 ```
@@ -275,7 +257,6 @@ Hex To Blob( "FF78CE" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```
@@ -290,7 +271,6 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -305,7 +285,6 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
 
@@ -319,33 +298,30 @@ z = Insert( z, 99, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 Wait( 1 );
 Insert Into( hlist, Button Box( "c" ) );
@@ -360,56 +336,50 @@ Insert Into( hlist, Button Box( "c" ) );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( [2 -1], "This is a sentence" );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-**示例 5**
+#### 示例 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, "abcd", "" );
 
 ```
 
-**示例 6**
+#### 示例 6
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```
@@ -422,29 +392,26 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 **JMP添加的版本:** 15
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters(),
@@ -453,11 +420,10 @@ Items(
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -472,7 +438,6 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -486,38 +451,34 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -532,7 +493,6 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -547,7 +507,6 @@ Lowercase( "CAFÉ #23" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```
@@ -562,7 +521,6 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
@@ -575,20 +533,18 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Num( "3.1e6", <<Restrict ),
 	Num( "1989-10-04", <<Restrict ),
@@ -602,13 +558,12 @@ Show(
 
 **语法:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
-**说明:** 在 source 文本中搜索 pattern 的匹配。format 默认值为“\0”（整个匹配），但可以是“Fred”（对于常数替换）或“\1”（使用 pattern 中第一个圆括号匹配的文本）。返回数值缺失值表示无匹配。默认大小写必须匹配。
+**说明:** 在 source 文本中搜索 pattern 的匹配。format 默认值为“\\0”（整个匹配），但可以是“Fred”（对于常数替换）或“\\1”（使用 pattern 中第一个圆括号匹配的文本）。返回数值缺失值表示无匹配。默认大小写必须匹配。
 
 **JMP添加的版本:** 早于版本 14
 
 ```jsl
 
-Names Default To Here( 1 );
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -627,7 +582,6 @@ Regex(
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -640,33 +594,30 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -685,7 +636,6 @@ Remove From( hlist, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -700,7 +650,6 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -713,22 +662,20 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -747,7 +694,6 @@ Reverse Into( hlist );
 
 ```jsl
 
-Names Default To Here( 1 );
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -762,7 +708,6 @@ Right( "http://www.jmp.com", 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
@@ -778,7 +723,6 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -796,7 +740,6 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -817,7 +760,6 @@ Show( all );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -836,7 +778,6 @@ Show( Set Unique( :sports ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -849,22 +790,20 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -883,7 +822,6 @@ Shift Into( hlist, -2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Starts With( "http://www.jmp.com", "http:" );
 
 ```
@@ -896,59 +834,53 @@ Starts With( "http://www.jmp.com", "http:" );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", "All", "Some" );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
-**示例 5**
+#### 示例 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
 );
 
 ```
 
-**示例 6**
+#### 示例 6
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
@@ -961,44 +893,40 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
 Name Expr( ex );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
 Show( s );
@@ -1015,7 +943,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
@@ -1030,7 +957,6 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -1051,7 +977,6 @@ Show( score );
 
 ```jsl
 
-Names Default To Here( 1 );
 Titlecase( "The dog crossed the road" );
 
 ```
@@ -1066,7 +991,6 @@ Titlecase( "The dog crossed the road" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim( " title   ", both );
 
 ```
@@ -1081,7 +1005,6 @@ Trim( " title   ", both );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -1096,7 +1019,6 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 Uppercase( "Café #23" );
 
 ```
@@ -1109,47 +1031,42 @@ Uppercase( "Café #23" );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( [2 -1], "This is a sentence" );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
-**示例 4**
+#### 示例 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-**示例 5**
+#### 示例 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 2, "abcd", "" );
 
 ```
@@ -1162,29 +1079,26 @@ Word( 2, "abcd", "" );
 
 **JMP添加的版本:** 早于版本 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -1199,7 +1113,6 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"

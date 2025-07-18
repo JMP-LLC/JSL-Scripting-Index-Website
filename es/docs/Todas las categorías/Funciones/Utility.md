@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Pi() + 10;
 
 ```
@@ -27,7 +26,6 @@ Pi() + 10;
 
 ```jsl
 
-Names Default To Here( 1 );
 Beep();
 
 ```
@@ -42,7 +40,6 @@ Beep();
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex(/* make it printable */ Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
 			BLOB/* the result is a BLOB, not a string */
@@ -63,7 +60,6 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
@@ -78,7 +74,6 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Build Information();
 
 ```
@@ -91,22 +86,20 @@ Build Information();
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Quitar título**
+#### Quitar título
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
 
 ```
 
-**Título con formato**
+#### Título con formato
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption(
 	{100, 200},
 	"explanation",
@@ -129,7 +122,6 @@ Caption(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "in" );
@@ -157,7 +149,6 @@ Si no existe ningún diario actual en el proyecto especificado, se creará uno a
 
 ```jsl
 
-Names Default To Here( 1 );
 Current Journal();
 
 ```
@@ -172,7 +163,6 @@ Current Journal();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
@@ -188,7 +178,6 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -212,7 +201,6 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
-Names Default To Here( 1 );
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
 x = 5;
@@ -233,7 +221,6 @@ Show( z );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Decode URI( "Foo%20Bar" );
 
@@ -249,7 +236,6 @@ Decode URI( "Foo%20Bar" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```
@@ -264,7 +250,6 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -279,7 +264,6 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable JMP Live URL( "*public.jmp.com" );
 
@@ -295,7 +279,6 @@ Disable JMP Live URL( "*public.jmp.com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable Proxy Settings( 1 );
 
@@ -309,22 +292,20 @@ Disable Proxy Settings( 1 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Recíproco**
+#### Recíproco
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 6 / 3 / 2;
 
 ```
@@ -339,7 +320,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Empty();
 
 ```
@@ -354,7 +334,6 @@ Empty();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable JMP Live URL( "https://public.jmp.com" );
 
@@ -370,7 +349,6 @@ Enable JMP Live URL( "https://public.jmp.com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable Proxy Settings( 0 );
 
@@ -386,7 +364,6 @@ Enable Proxy Settings( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Encode URI( "Foo Bar" );
 
@@ -402,7 +379,6 @@ Encode URI( "Foo Bar" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -417,7 +393,6 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Double( -1.5831 );
 
 ```
@@ -432,7 +407,6 @@ Encode64 Double( -1.5831 );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -453,7 +427,6 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 Show( s, x );
@@ -557,7 +530,6 @@ Otro
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -572,7 +544,6 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addin ids = Get Addins() << id;
 Show( addins, addin ids );
@@ -589,7 +560,6 @@ Show( addins, addin ids );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -604,7 +574,6 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Clipboard();
 
 ```
@@ -617,11 +586,10 @@ Get Clipboard();
 
 **JMP Versión agregada:** 17
 
-**Reemplazar una subcadena**
+#### Reemplazar una subcadena
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 data = " :height + 20 ";
 e = Parse( data );
@@ -630,22 +598,20 @@ Munger( data, positions[1], positions[2], "45" );
 
 ```
 
-**Salida predeterminada**
+#### Salida predeterminada
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( ":height + 20" );
 Get Expr Location( e );
 
 ```
 
-**Seleccionar salida**
+#### Seleccionar salida
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( " :height + 20 " );
 Get Expr Location( e, {"TreeStart", "TreeEnd"} );
@@ -662,7 +628,6 @@ Get Expr Location( e, {"TreeStart", "TreeEnd"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -685,7 +650,6 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/grant-types/
@@ -701,7 +665,6 @@ Show( grant_types );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
 aa = Get OpenID Connect Discovery( url );
@@ -723,7 +686,6 @@ Show( aa );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -738,7 +700,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -753,7 +714,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Policies();
 
 ```
@@ -774,7 +734,6 @@ Get Policies();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -789,7 +748,6 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -804,7 +762,6 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex1 = 1;
 ex2 = 2;
 
@@ -820,7 +777,6 @@ ex2 = 2;
 
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Compress(
 	Char To Blob( "random data does not usually compress well and may get larger" )
 );
@@ -837,7 +793,6 @@ Gzip Compress(
 
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
 		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
@@ -857,7 +812,6 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
 	Show( "Not on Mac" )
@@ -882,7 +836,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -911,7 +864,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -940,7 +892,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -969,7 +920,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -998,7 +948,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://public.jmp.com";
 Show( Is JMP Live URL Enabled( url ) );
@@ -1015,7 +964,6 @@ Show( Is JMP Live URL Enabled( url ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -1044,7 +992,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -1073,7 +1020,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 JMP Product Name();
 
 ```
@@ -1088,7 +1034,6 @@ JMP Product Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 JMP Version();
 
 ```
@@ -1103,7 +1048,6 @@ JMP Version();
 
 ```jsl
 
-Names Default To Here( 1 );
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -1120,7 +1064,6 @@ JSL Encrypted(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = JSL Quote(/* Begin quote. */
     For (i = 1, i <= 5, i++,
@@ -1141,11 +1084,10 @@ New Window( "editor", Script Box( x ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Cross platform using Base Name()**
+#### Cross platform using Base Name()
 
 ```jsl
 
-Names Default To Here( 1 );
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -1155,11 +1097,10 @@ dll << UnloadDLL();
 
 ```
 
-**Windows only**
+#### Windows only
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -1178,56 +1119,50 @@ If( Host is( "Windows" ),
 
 **JMP Versión agregada:** 17
 
-**Turn off logging**
+#### Turn off logging
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( Off );
 
 ```
 
-**Turn on logging**
+#### Turn on logging
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 
 ```
 
-**Turn on logging, and include all messages except "DtMsgClose"**
+#### Turn on logging, and include all messages except "DtMsgClose"
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```
 
-**Turn on logging, and include only the "DtMsgClose" message**
+#### Turn on logging, and include only the "DtMsgClose" message
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```
 
-**Turn on logging, but ignore column messages**
+#### Turn on logging, but ignore column messages
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Disable( "Column" ) );
 
 ```
 
-**Turn on logging, but ignore table messages**
+#### Turn on logging, but ignore table messages
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 Log Table Messages( Disable( "Table" ) );
 
@@ -1243,7 +1178,6 @@ Log Table Messages( Disable( "Table" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -1256,20 +1190,18 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Sample Index" );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Help:Sample Index" );
 
 ```
@@ -1284,7 +1216,6 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-Names Default To Here( 1 );
 -Pi();
 
 ```
@@ -1297,11 +1228,10 @@ Names Default To Here( 1 );
 
 **JMP Versión agregada:** 14
 
-**Ejemplo de scripting**
+#### Ejemplo de scripting
 
 ```jsl
 
-Names Default To Here( 1 );
 
 mfi = Multiple File Import();
 mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
@@ -1311,11 +1241,10 @@ tables = mfi << Import Data();
 
 ```
 
-**Ejemplo interactivo**
+#### Ejemplo interactivo
 
 ```jsl
 
-Names Default To Here( 1 );
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
 // for filtering files and controlling the import
@@ -1337,7 +1266,6 @@ Multiple File Import(
 
 ```jsl
 
-Names Default To Here( 1 );
 2 * Pi();
 
 ```
@@ -1346,13 +1274,12 @@ Names Default To Here( 1 );
 
 **Sintaxis:** Name(string)
 
-**Descripción:** Un nombre es simplemente algo para llamar a un elemento. Los nombres se utilizan para las variables y para las funciones, y pueden emplearse directamente en scripts, siempre que se sigan ciertas reglas. Si el nombre comienza por un carácter alfabético o un guión bajo, y continúa con caracteres alfanuméricos, espacios en blanco, símbolos matemáticos Unicode y ciertos símbolos de puntuación (apóstrofos (’), signos de porcentaje (%), puntos (.), barras inversas (\) y guiones bajos (_)), el nombre puede utilizarse directamente en scripts. Los nombres que no siguen estas reglas pueden emplearse mediante la palabra clave del Name().
+**Descripción:** Un nombre es simplemente algo para llamar a un elemento. Los nombres se utilizan para las variables y para las funciones, y pueden emplearse directamente en scripts, siempre que se sigan ciertas reglas. Si el nombre comienza por un carácter alfabético o un guión bajo, y continúa con caracteres alfanuméricos, espacios en blanco, símbolos matemáticos Unicode y ciertos símbolos de puntuación (apóstrofos (’), signos de porcentaje (%), puntos (.), barras inversas (\\) y guiones bajos (_)), el nombre puede utilizarse directamente en scripts. Los nombres que no siguen estas reglas pueden emplearse mediante la palabra clave del Name().
 
 **JMP Versión agregada:** 14
 
 ```jsl
 
-Names Default To Here( 1 );
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -1369,7 +1296,6 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
@@ -1387,7 +1313,6 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 
 getSentiment = Function( {text},
 	{Default Local},
@@ -1451,7 +1376,6 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -1490,7 +1414,6 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -1541,7 +1464,6 @@ data = request << Send;
 
 ```jsl
 
-Names Default To Here( 1 );
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -1562,7 +1484,6 @@ token = New OAuth2 Token(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 webreport = New Web Report(
@@ -1610,7 +1531,6 @@ If( !Is Empty( file ),
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -1632,20 +1552,18 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help( "Help" );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -1654,11 +1572,10 @@ Open Help(
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -1679,11 +1596,10 @@ Open Help(
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -1697,11 +1613,10 @@ Parse XML( ex,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 
 doc =
 "
@@ -1761,7 +1676,6 @@ Show( docname, doctext, records, NestLevel );
 
 ```jsl
 
-Names Default To Here( 1 );
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -1776,7 +1690,6 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1791,7 +1704,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1806,7 +1718,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -1842,7 +1753,6 @@ Show( "see new window for example output" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1857,7 +1767,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1872,7 +1781,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1887,7 +1795,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1902,7 +1809,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Register Addin(
 	"com.mycompany.myaddin",
 	"$DOCUMENTS/myaddin",
@@ -1927,7 +1833,6 @@ Register Addin(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -1938,32 +1843,29 @@ Names Default To Here( 1 );
 
 **JMP Versión agregada:** 17
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Rummage( Window( dt ), "Wilcox" ) << title;
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Rummage( Report( obj ), "Wilcox" ) << details;
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show(
 	Rummage(
@@ -1985,11 +1887,10 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
 	Options( {"-n 5", "localhost"} ),
@@ -1998,11 +1899,10 @@ RP = Run Program(
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -2011,11 +1911,10 @@ RP = Run Program(
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
 icommand = 0;
 RP = Run Program(
@@ -2048,7 +1947,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 Schedule(
 	10,
 	Beep();
@@ -2067,7 +1965,6 @@ Schedule(
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Clipboard( "example" );
 
 ```
@@ -2082,7 +1979,6 @@ Set Clipboard( "example" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -2097,7 +1993,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -2118,7 +2013,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -2133,7 +2027,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -2150,7 +2043,6 @@ Devuelve 1 si la operación se ha realizado con éxito y 0 en caso contrario.
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Make the Analyze toolbar visible in Script windows
 Set Toolbar Visibility( "Analyze", Script, true );
@@ -2176,7 +2068,6 @@ Set Toolbar Visibility( Default, All );
 
 ```jsl
 
-Names Default To Here( 1 );
 editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
 common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
 	i++,
@@ -2198,7 +2089,6 @@ common;
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Addin Builder Dialog();
 
 ```
@@ -2213,7 +2103,6 @@ Show Addin Builder Dialog();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Addins Dialog();
 
 ```
@@ -2228,7 +2117,6 @@ Show Addins Dialog();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Commands();
 
 ```
@@ -2243,7 +2131,6 @@ Show Commands();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Preferences();
 
 ```
@@ -2258,7 +2145,6 @@ Show Preferences();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Properties( Current Data Table() );
 
 ```
@@ -2273,7 +2159,6 @@ Show Properties( Current Data Table() );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -2290,7 +2175,6 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see the socket's OBJECT messages in the scripting index for better examples
 tCall = Socket();
@@ -2335,7 +2219,6 @@ If( rc[2] == "ok",
 
 ```jsl
 
-Names Default To Here( 1 );
 Speak( "Hello" );
 
 ```
@@ -2350,7 +2233,6 @@ Speak( "Hello" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Status Msg( "calculating..." );
 
 ```
@@ -2365,7 +2247,6 @@ Status Msg( "calculating..." );
 
 ```jsl
 
-Names Default To Here( 1 );
 6 - 2 - 1;
 
 ```
@@ -2392,7 +2273,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -2405,11 +2285,10 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Controlador de sucesos**
+#### Controlador de sucesos
 
 ```jsl
 
-Names Default To Here( 1 );
 //Making a clickable link show up in a formula column
 New Table( "Example",
 	Add Rows( 2 ),
@@ -2433,11 +2312,10 @@ New Table( "Example",
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Web( "http://www.jmp.com/" );
 
 ```
@@ -2452,7 +2330,6 @@ Web( "http://www.jmp.com/" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "HELLO" );
@@ -2471,7 +2348,6 @@ With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties 
 
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -2494,7 +2370,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
@@ -2509,7 +2384,6 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 ```jsl
 
-Names Default To Here( 1 );
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -2524,7 +2398,6 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -2537,17 +2410,16 @@ Parse XML( ex,
 
 ```
 
-### \[...]\
+### \\[...]\\
 
-**Sintaxis:** y = \[string]\
+**Sintaxis:** y = \\[string]\\
 
-**Descripción:** Los pasajes que requieren numerosos caracteres de escape pueden utilizar el separador \[...]\.
+**Descripción:** Los pasajes que requieren numerosos caracteres de escape pueden utilizar el separador \\[...]\\.
 
 **JMP Versión agregada:** Antes de la versión 14
 
 ```jsl
 
-Names Default To Here( 1 );
 
 jslPhrase =
 "The JSL to do this is :\[

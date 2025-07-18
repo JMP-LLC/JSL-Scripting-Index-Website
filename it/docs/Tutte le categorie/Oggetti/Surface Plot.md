@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -37,7 +36,6 @@ obj = dt << Surface Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :silane, :silica, :hardness ) );
 
@@ -51,7 +49,6 @@ obj = dt << Surface Plot( Columns( :silane, :silica, :hardness ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Factors( :silane, :silica, :hardness ) );
 
@@ -67,7 +64,6 @@ obj = dt << Surface Plot( Factors( :silane, :silica, :hardness ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -88,7 +84,6 @@ obj = dt << Surface Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -106,11 +101,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -118,11 +112,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -133,11 +126,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -155,7 +147,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -173,7 +164,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -195,7 +185,6 @@ obj << Clip Sheet( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -217,7 +206,6 @@ obj << Clip Sheet( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -240,7 +228,6 @@ obj << Clip Sheet2( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -263,7 +250,6 @@ obj << Clip Sheet3( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -289,7 +275,6 @@ obj << Clip Sheet4( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -307,7 +292,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ), Show Contour( "On Surface" ) );
 obj << Surface Color Method( ":Pred Formula ABRASION" );
@@ -324,7 +308,6 @@ obj << Contour Color( {255, 128, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ), Show Contour( "On Surface" ) );
 obj << Surface Color Method( ":Pred Formula ABRASION" );
@@ -341,7 +324,6 @@ obj << Contour Color( {255, 128, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -361,7 +343,6 @@ obj << Contour Color2( {255, 128, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -381,7 +362,6 @@ obj << Contour Color3( {255, 0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -405,7 +385,6 @@ obj << Contour Color4( {100, 0, 200} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -426,7 +405,6 @@ obj << Control Panel( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -452,7 +430,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -472,7 +449,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -492,7 +468,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Response( :Pred Formula ABRASION );
@@ -509,7 +484,6 @@ obj << Data Points Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Response( :Pred Formula ABRASION );
@@ -526,7 +500,6 @@ obj << Data Points Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ) );
 obj << Response( "Pred Formula MODULUS", :Pred Formula MODULUS );
@@ -543,7 +516,6 @@ obj << Data Points Color2( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG )
@@ -562,7 +534,6 @@ obj << Data Points Color3( {255, 0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -588,7 +559,6 @@ obj << Frame3D( Set Rotation( -79.3688859847019, -1.23001727812475, 27.709687956
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -609,7 +579,6 @@ obj << Datapoints Choice( "Needles" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -630,7 +599,6 @@ obj << Datapoints Choice( "Needles" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -652,7 +620,6 @@ obj << Datapoints Choice2( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -673,7 +640,6 @@ obj << Datapoints Choice3( "Mesh" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -697,7 +663,6 @@ obj << Datapoints Choice4( "Surface" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -718,7 +683,6 @@ obj << Dependent Variables Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -739,7 +703,6 @@ obj << Dependent Variables Response Grid( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG )
@@ -758,7 +721,6 @@ obj << Show Formula( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -779,7 +741,6 @@ obj << Fit to Window( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -798,7 +759,6 @@ obj << Formula( :Pred Formula ABRASION, :Pred Formula ELONG );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -822,7 +782,6 @@ obj << Frame3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -837,7 +796,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -862,11 +820,10 @@ Show( t );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -879,11 +836,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -916,7 +872,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -937,7 +892,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -954,7 +908,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -975,7 +928,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -996,7 +948,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1017,7 +968,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1035,7 +985,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1051,7 +1000,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Surface Plot();
 Wait( 1 );
 obj << Hide Lights Border( 1 );
@@ -1066,7 +1014,6 @@ obj << Hide Lights Border( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1085,7 +1032,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ) );
 obj << Mode( "Isosurface" );
@@ -1103,7 +1049,6 @@ obj << Iso Value( 1, 1500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1123,7 +1068,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Surface Plot();
 obj << Lock Z Scale( 1 );
 
@@ -1137,7 +1081,6 @@ obj << Lock Z Scale( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Show Mesh( "X and Y" );
@@ -1154,7 +1097,6 @@ obj << Mesh Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Show Mesh( "X and Y" );
@@ -1171,7 +1113,6 @@ obj << Mesh Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ) );
 obj << Mode( "Isosurface" );
@@ -1189,7 +1130,6 @@ obj << Mesh Color2( {255, 0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG )
@@ -1209,7 +1149,6 @@ obj << Mesh Color3( {50, 0, 100} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1234,7 +1173,6 @@ obj << Mesh Color4( {0, 250, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1258,7 +1196,6 @@ obj << Mode( "Isosurface" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1277,7 +1214,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1292,7 +1228,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1313,7 +1248,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1333,7 +1267,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1359,7 +1292,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1379,7 +1311,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1405,7 +1336,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1425,7 +1355,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1449,7 +1378,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1464,7 +1392,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1486,7 +1413,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1506,7 +1432,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Mode( "Isosurface" );
@@ -1525,7 +1450,6 @@ obj << Resolution( 12 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -1543,7 +1467,6 @@ obj << Response( :Pred Formula ABRASION, "", :Pred Formula ELONG );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1565,7 +1488,6 @@ obj << Response Column Color Theme( "Jet" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1587,7 +1509,6 @@ obj << Response Column Color Theme( "Jet" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -1609,7 +1530,6 @@ obj << Response Column Color Theme2( "White to Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -1631,7 +1551,6 @@ obj << Response Column Color Theme3( "Blue to Gray to Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1659,7 +1578,6 @@ obj << Response Column Color Theme4( "White to Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1680,7 +1598,6 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1701,7 +1618,6 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -1722,7 +1638,6 @@ obj << Response Column Fill2( "Continuous Gradients" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -1743,7 +1658,6 @@ obj << Response Column Fill3( "Discrete Gradients" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1770,7 +1684,6 @@ obj << Response Column Fill4( "Continuous Gradients" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1792,7 +1705,6 @@ obj << Response Column Gradient Lines( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1814,7 +1726,6 @@ obj << Response Column Gradient Lines( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -1836,7 +1747,6 @@ obj << Response Column Gradient Lines2( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -1859,7 +1769,6 @@ obj << Response Column Gradient Lines3( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -1888,7 +1797,6 @@ obj << Response Column Gradient Lines4( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1910,7 +1818,6 @@ obj << Response Column Gradients( 9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -1932,7 +1839,6 @@ obj << Response Column Gradients( 9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -1954,7 +1860,6 @@ obj << Response Column Gradients2( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -1976,7 +1881,6 @@ obj << Response Column Gradients3( 7 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2004,7 +1908,6 @@ obj << Response Column Gradients4( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2030,7 +1933,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2056,7 +1958,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2082,7 +1983,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2100,11 +2000,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2122,11 +2021,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2152,7 +2050,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2172,7 +2069,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2192,7 +2088,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2212,7 +2107,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2232,7 +2126,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2255,7 +2148,6 @@ obj << Scale response axes independently( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2276,7 +2168,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2302,7 +2193,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2320,7 +2210,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -2340,7 +2229,6 @@ obj << Set Z Variable( :SILANE );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -2358,7 +2246,6 @@ obj << Set Variable Axis( :SILANE, Axis Data( {Format( "Fixed", 8, 1 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -2374,7 +2261,6 @@ obj << Set X Variable( :SULFUR );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -2390,7 +2276,6 @@ obj << Set Y Variable( :SULFUR );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -2406,7 +2291,6 @@ obj << Set Z Axis( :Pred Formula ABRASION, Axis Data( {Format( "Fixed", 8, 1 )} 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2427,7 +2311,6 @@ obj << Show Contour( "On Surface" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2448,7 +2331,6 @@ obj << Show Contour( "On Surface" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2469,7 +2351,6 @@ obj << Show Contour2( "Above" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2491,7 +2372,6 @@ obj << Show Contour3( "Below" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2513,7 +2393,6 @@ obj << Show Contour4( "On Surface" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2533,7 +2412,6 @@ obj << Show Mesh( "X and Y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2553,7 +2431,6 @@ obj << Show Mesh( "X and Y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2573,7 +2450,6 @@ obj << Show Mesh2( "X" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2593,7 +2469,6 @@ obj << Show Mesh3( "Y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2613,7 +2488,6 @@ obj << Show Mesh4( "X and Y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2634,7 +2508,6 @@ obj << Show Surface( "Below Only" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2655,7 +2528,6 @@ obj << Show Surface( "Below Only" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2676,7 +2548,6 @@ obj << Show Surface2( "Both Sides" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2697,7 +2568,6 @@ obj << Show Surface3( "Above Only" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2718,7 +2588,6 @@ obj << Show Surface4( "Both Sides" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Surface Plot();
 obj << Show Formula( 1 );
 
@@ -2732,7 +2601,6 @@ obj << Show Formula( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2754,7 +2622,6 @@ obj << Surface Alpha( 0.25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2776,7 +2643,6 @@ obj << Surface Alpha( 0.25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2799,7 +2665,6 @@ obj << Surface Alpha2( 0.3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2822,7 +2687,6 @@ obj << Surface Alpha3( 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2845,7 +2709,6 @@ obj << Surface Alpha4( 0.90 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ), Show Surface( "Both Sides" ) );
 Wait( 1 );
@@ -2861,7 +2724,6 @@ obj << Surface Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -2882,7 +2744,6 @@ obj << Surface Color Theme2( "Blue to Gray to Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2905,7 +2766,6 @@ obj << Surface Color Range( "Axis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2928,7 +2788,6 @@ obj << Surface Color Range( "Axis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2951,7 +2810,6 @@ obj << Surface Color Range2( "Data" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2974,7 +2832,6 @@ obj << Surface Color Range3( "Axis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2997,7 +2854,6 @@ obj << Surface Color Range4( "Data" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Surface Gradient Type( "Continuous Gradients" );
@@ -3015,7 +2871,6 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Surface Gradient Type( "Continuous Gradients" );
@@ -3033,7 +2888,6 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -3054,7 +2908,6 @@ obj << Surface Color Theme2( "White to Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -3075,7 +2928,6 @@ obj << Surface Color Theme3( "Spectral" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3099,7 +2951,6 @@ obj << Surface Color Theme4( "Jet" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ), Show Surface( "Both Sides" ) );
 Wait( 1 );
@@ -3115,7 +2966,6 @@ obj << Surface Color( {0, 0, 255} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -3133,7 +2983,6 @@ obj << Surface Color2( {255, 128, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -3151,7 +3000,6 @@ obj << Surface Color3( {255, 0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3172,7 +3020,6 @@ obj << Surface Color4( {100, 0, 200} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -3189,7 +3036,6 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -3206,7 +3052,6 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -3226,7 +3071,6 @@ obj << Surface Color Method( "Solid", ":Pred Formula MODULUS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -3246,7 +3090,6 @@ obj << Surface Color Method( "Solid", "Solid", ":Pred Formula ELONG" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3269,7 +3112,6 @@ obj << Surface Color Method( "Solid", "Solid", "Solid", ":Pred Formula HARDNESS"
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -3289,7 +3131,6 @@ obj << Surface Gradients( 9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION ),
@@ -3309,7 +3150,6 @@ obj << Surface Gradients( 9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ),
@@ -3330,7 +3170,6 @@ obj << Surface Gradients2( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns( :Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG ),
@@ -3351,7 +3190,6 @@ obj << Surface Gradients3( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3375,7 +3213,6 @@ obj << Surface Gradients4( 9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Surface Color Method( ":Pred Formula ABRASION" );
@@ -3392,7 +3229,6 @@ obj << Surface Lighting( "Low Reflection" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Surface Color Method( ":Pred Formula ABRASION" );
@@ -3409,7 +3245,6 @@ obj << Surface Lighting( "Low Reflection" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION, :Pred Formula MODULUS ) );
 obj << Show Surface2( "Both Sides" );
@@ -3427,7 +3262,6 @@ obj << Surface Lighting2( "Normal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3450,7 +3284,6 @@ obj << Surface Lighting3( "Low Reflection" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3473,7 +3306,6 @@ obj << Surface Lighting4( "Normal" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3494,7 +3326,6 @@ obj << Surface Selector( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -3511,7 +3342,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3531,7 +3361,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3557,7 +3386,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -3574,7 +3402,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -3589,7 +3416,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -3608,7 +3434,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3628,7 +3453,6 @@ obj << X Grid( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Mode( "Isosurface" );
@@ -3647,7 +3471,6 @@ obj << Resolution( 12 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -3663,7 +3486,6 @@ obj << XRotate( 30 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3683,7 +3505,6 @@ obj << Y Grid( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Mode( "Isosurface" );
@@ -3702,7 +3523,6 @@ obj << Resolution( 12 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -3718,7 +3538,6 @@ obj << YRotate( 20 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -3738,7 +3557,6 @@ obj << Z Grid( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 obj << Z Grid( 1 );
@@ -3755,7 +3573,6 @@ obj << Z Grid Position( 0.733 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot( Columns( :Pred Formula ABRASION ) );
 Wait( 1 );
@@ -3775,7 +3592,6 @@ obj << ZRotate( 45 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3798,7 +3614,6 @@ obj = Surface Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3826,7 +3641,6 @@ obj << Frame3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3848,7 +3662,6 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3870,7 +3683,6 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3893,7 +3705,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3916,7 +3727,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3939,7 +3749,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3962,7 +3771,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -3985,7 +3793,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4008,7 +3815,6 @@ Show( state );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4031,7 +3837,6 @@ Show( w );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4054,7 +3859,6 @@ Show( q );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4077,7 +3881,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4100,7 +3903,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4123,7 +3925,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4146,7 +3947,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4169,7 +3969,6 @@ Show( o );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4192,7 +3991,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4215,7 +4013,6 @@ Show( z );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4238,7 +4035,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4261,7 +4057,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4284,7 +4079,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4307,7 +4101,6 @@ Show( label );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4330,7 +4123,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4353,7 +4145,6 @@ Show( label );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4376,7 +4167,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4399,7 +4189,6 @@ Show( label );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4424,7 +4213,6 @@ obj << Frame3D( Legend( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4446,7 +4234,6 @@ obj << Frame3D( Set Axes( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4468,7 +4255,6 @@ obj << Frame3D( Set Box( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4490,7 +4276,6 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4512,7 +4297,6 @@ obj << Frame3D( Set Grids( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4534,7 +4318,6 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4556,7 +4339,6 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4578,7 +4360,6 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4600,7 +4381,6 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4622,7 +4402,6 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4644,7 +4423,6 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4666,7 +4444,6 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4688,7 +4465,6 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4710,7 +4486,6 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4732,7 +4507,6 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4754,7 +4528,6 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4778,7 +4551,6 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4800,7 +4572,6 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4822,7 +4593,6 @@ obj << Frame3D( Set Walls( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4844,7 +4614,6 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4866,7 +4635,6 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4888,7 +4656,6 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4910,7 +4677,6 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4932,7 +4698,6 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4954,7 +4719,6 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4976,7 +4740,6 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -4998,7 +4761,6 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5020,7 +4782,6 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5043,7 +4804,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5066,7 +4826,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5089,7 +4848,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5111,7 +4869,6 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(
@@ -5133,7 +4890,6 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Surface Plot(
 	Columns(

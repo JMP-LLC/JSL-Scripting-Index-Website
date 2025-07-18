@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP추가된 버전:** 18
 
-**이름으로 검색**
+#### 이름으로 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**익명 사전 설정**
+#### 익명 사전 설정
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**폴더 내에서 검색**
+#### 폴더 내에서 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Automatic Recalc( 1 );
@@ -95,7 +90,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
 objs[1] << Broadcast( Save Summaries );
@@ -110,7 +104,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -125,7 +118,6 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -145,7 +137,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Copy Script;
@@ -160,7 +151,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Data Table Window;
@@ -177,7 +167,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -192,7 +181,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -211,11 +199,10 @@ Show( t );
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
-**일반**
+#### 일반
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 t = obj << Get Container;
@@ -223,11 +210,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**필터 사용 플랫폼**
+#### 필터 사용 플랫폼
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -260,7 +246,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 t = obj << Get Datatable;
@@ -276,7 +261,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -293,7 +277,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 t = obj << Get Script;
@@ -309,7 +292,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 t = obj << Get Script With Data Table;
@@ -325,7 +307,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 t = obj << Get Timing;
@@ -341,7 +322,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -359,7 +339,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -375,7 +354,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -394,7 +372,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -416,7 +393,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -435,7 +411,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -450,7 +425,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
@@ -469,7 +443,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Redo Analysis;
@@ -484,7 +457,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -504,7 +476,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Relaunch Analysis;
@@ -519,7 +490,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -539,7 +509,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -556,7 +525,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -580,7 +548,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -595,7 +562,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 r = obj << Report;
@@ -612,7 +578,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Report View( "Summary" );
@@ -627,7 +592,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -647,7 +611,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -667,7 +630,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -687,7 +649,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Save Script for All Objects;
@@ -700,11 +661,10 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -716,11 +676,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -740,7 +699,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -755,7 +713,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Save Script to Journal;
@@ -770,7 +727,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Save Script to Report;
@@ -785,7 +741,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Save Script to Script Window;
@@ -800,7 +755,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -818,7 +772,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -843,7 +796,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -861,7 +813,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -878,7 +829,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Title( "My Platform" );
@@ -893,7 +843,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 r = obj << Top Report;
@@ -914,7 +863,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -931,7 +879,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -946,7 +893,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -967,7 +913,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
@@ -985,7 +930,6 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1006,7 +950,6 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), ID( :School Age Children ) );
 obj << Save Stacked DTM For Association;
@@ -1023,7 +966,6 @@ obj << Save Stacked DTM For Association;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
@@ -1039,7 +981,6 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Validation( :School Age Children ) );
 obj << Latent Class Analysis(
@@ -1060,7 +1001,6 @@ obj << Latent Class Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Tokenizing( "Basic Words" );
@@ -1078,7 +1018,6 @@ obj << Add Delimiters( "{}" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1096,7 +1035,6 @@ obj << Add Phrase Exceptions( {"every time"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Add Phrases( {"twice a day", "every time"} );
@@ -1111,7 +1049,6 @@ obj << Add Phrases( {"twice a day", "every time"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );
@@ -1129,7 +1066,6 @@ obj << Add Recode Exceptions( {"neglagent", "negligent"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );
@@ -1145,7 +1081,6 @@ obj << Show Recodes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Stemming( "Stem All Terms" );
@@ -1163,7 +1098,6 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Stemming( "Stem All Terms" );
@@ -1182,7 +1116,6 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Stop Words( 1 );
@@ -1199,7 +1132,6 @@ obj << Add Stop Word Exceptions( {"again", "are"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Stop Words( 1 );
@@ -1216,7 +1148,6 @@ obj << Add Stop Words( {"use", "feel", "like"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Word Cloud( 1 );
@@ -1232,7 +1163,6 @@ obj << Cloud Width( 150 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Word Cloud( 1 );
@@ -1250,7 +1180,6 @@ obj << Coloring( "Arbitrary Colors" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This custom stemmer looks only for words ending in 'ing' and replaces the end with the stemming dot.
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
@@ -1275,7 +1204,6 @@ obj << Custom Stemmer(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1294,7 +1222,6 @@ obj << Customize Regex();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1316,7 +1243,6 @@ obj << Discriminant Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Word Cloud( 1 );
@@ -1332,7 +1258,6 @@ obj << Font( "Arial Narrow", 11, "Plain" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1348,7 +1273,6 @@ obj << Include Builtin Phrases( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1364,7 +1288,6 @@ obj << Include Builtin Stop Words( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "German" ) );
 
@@ -1378,7 +1301,6 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "Germ
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1396,11 +1318,10 @@ obj << Latent Class Analysis(
 
 **설명:** 문서 용어 행렬의 희소 특이값 분해를 수행합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1414,11 +1335,10 @@ obj << Latent Semantic Analysis(
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1440,7 +1360,6 @@ obj << SVD(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Word Cloud( 1 );
@@ -1456,7 +1375,6 @@ obj << Layout( "Alphabetical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Characters per Word( 15 ) );
 
@@ -1470,7 +1388,6 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Charact
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Number of Phrases( 50 ) );
 
@@ -1484,7 +1401,6 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Number 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Words per Phrase( 2 ) );
 
@@ -1498,7 +1414,6 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Words p
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Minimum Characters per Word( 3 ) );
 
@@ -1512,7 +1427,6 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Minimum Charact
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Minimum Frequency for Phrase( 5 );
@@ -1527,7 +1441,6 @@ obj << Minimum Frequency for Phrase( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Phrases Alphabetical( 1 );
@@ -1540,11 +1453,10 @@ obj << Phrases Alphabetical( 1 );
 
 **설명:** 문서 용어 행렬에 대한 Varimax 회전 특이값 분해를 수행하여 주제라는 용어 그룹을 생성합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Latent Semantic Analysis(
@@ -1562,11 +1474,10 @@ obj << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Latent Semantic Analysis(
@@ -1590,11 +1501,10 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 **설명:** 문서 용어 행렬의 희소 특이값 분해를 수행합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1608,11 +1518,10 @@ obj << Latent Semantic Analysis(
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1634,7 +1543,6 @@ obj << SVD(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1650,7 +1558,6 @@ obj << Save DTM Formula( Maximum Number of Terms( 10 ), Minimum Term Frequency( 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1670,7 +1577,6 @@ obj << Save Document Term Matrix(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1686,7 +1592,6 @@ obj << Save Stacked DTM For Association;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1702,7 +1607,6 @@ obj << Save Term Table;
 
 ```jsl
 
-Names Default To Here( 1 );
  
 dt = New Table( "WordTable",
 	New Column( "Original Words",
@@ -1731,7 +1635,6 @@ dt << Text Explorer(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1749,7 +1652,6 @@ obj << Score Terms By Column( :Salary );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -1764,7 +1666,6 @@ sent = obj << Sentiment Analysis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Tokenizing( "Basic Words" );
@@ -1781,7 +1682,6 @@ obj << Set Delimiters( " " );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Set Regex( Library( "Words" ) );
@@ -1796,7 +1696,6 @@ obj << Set Regex( Library( "Words" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Tokenizing( "Basic Words" );
@@ -1815,7 +1714,6 @@ obj << Show Delimiters( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1831,7 +1729,6 @@ obj << Show Filters for All Tables( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Show Word Cloud( 1 );
@@ -1849,7 +1746,6 @@ obj << Show Legend( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1865,7 +1761,6 @@ obj << Show Phrase List( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1883,7 +1778,6 @@ obj << Show Recodes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1900,7 +1794,6 @@ obj << Show Selected Rows( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1917,7 +1810,6 @@ Report( obj )["Specified Phrases"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1933,7 +1825,6 @@ obj << Show Stem Exceptions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1950,7 +1841,6 @@ obj << Show Stem Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1966,7 +1856,6 @@ obj << Show Stop Words( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1982,7 +1871,6 @@ obj << Show Summary Counts( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -1998,7 +1886,6 @@ obj << Show Term List( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -2014,7 +1901,6 @@ obj << Show Term and Phrase Options( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -2030,7 +1916,6 @@ obj << Show Word Cloud( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -2048,7 +1933,6 @@ obj << Stemming( "Stem All Terms" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -2104,7 +1988,6 @@ term = obj << Term Selection(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Terms Alphabetical( 1 );
@@ -2119,7 +2002,6 @@ obj << Terms Alphabetical( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -2133,11 +2015,10 @@ obj << Tokenizing( "Basic Words" );
 
 **설명:** 문서 용어 행렬에 대한 Varimax 회전 특이값 분해를 수행하여 주제라는 용어 그룹을 생성합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Latent Semantic Analysis(
@@ -2155,11 +2036,10 @@ obj << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 obj << Latent Semantic Analysis(
@@ -2185,7 +2065,6 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 Wait( 1 );
@@ -2206,7 +2085,6 @@ obj << Treat Numbers as Words( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2231,7 +2109,6 @@ obj2 = obj << Discriminant Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2255,7 +2132,6 @@ obj2 << Canonical Plot( 1, N Canon( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2280,7 +2156,6 @@ obj2 << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2304,7 +2179,6 @@ obj2 << Save Canonical Scores( N Canon( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2328,7 +2202,6 @@ obj2 << Save Probabilities;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Discriminant Analysis(
@@ -2354,7 +2227,6 @@ obj2 << Save Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2377,7 +2249,6 @@ obj2 = obj << Latent Class Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2398,7 +2269,6 @@ obj2 << Cluster Mixture Probabilities( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2419,7 +2289,6 @@ obj2 << Cluster Probabilities by row( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2439,7 +2308,6 @@ obj2 << Color by Cluster;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2460,7 +2328,6 @@ obj2 << MDS Plot( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2483,7 +2350,6 @@ obj2 << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2504,7 +2370,6 @@ obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2524,7 +2389,6 @@ obj2 << Save Probabilities;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2546,7 +2410,6 @@ obj2 << Save Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2566,7 +2429,6 @@ obj2 = obj << Latent Class Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2589,7 +2451,6 @@ obj2 << Term Probabilities by Cluster( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2612,7 +2473,6 @@ obj2 << Top Terms by Cluster( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Class Analysis(
@@ -2636,7 +2496,6 @@ obj2 << Word Clouds by Cluster( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2663,7 +2522,6 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2694,7 +2552,6 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2725,7 +2582,6 @@ obj3 << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2756,7 +2612,6 @@ obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2787,7 +2642,6 @@ Report( obj )["Rotation Matrix"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2817,7 +2671,6 @@ obj3 << Save Document Topic Vectors;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2847,7 +2700,6 @@ obj3 << Save Item Topic Vectors;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2878,7 +2730,6 @@ obj3 << Save Term Topic Vectors;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2908,7 +2759,6 @@ obj3 << Save Topic Vector Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2938,7 +2788,6 @@ obj3 << Save Transaction Topic Vectors;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -2969,7 +2818,6 @@ obj3 << Top Loadings by Topic( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3001,7 +2849,6 @@ obj3 << Topic Loadings( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3032,7 +2879,6 @@ obj3 << Topic Scatterplot Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3064,7 +2910,6 @@ obj3 << Topic Scores( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3096,7 +2941,6 @@ obj3 << Topic Scores Plots( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3128,7 +2972,6 @@ Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer(
 	TextColumns( :Reasons Not to Floss ),
@@ -3162,7 +3005,6 @@ Report( obj )["Word Clouds by Topic"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3183,7 +3025,6 @@ obj2 = obj << Latent Semantic Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3208,7 +3049,6 @@ obj2 = obj << Latent Semantic Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3232,7 +3072,6 @@ obj2 << Cluster Documents( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );
 obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
@@ -3251,7 +3090,6 @@ obj2 << Cluster Items( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3275,7 +3113,6 @@ obj2 << obj << Cluster Terms( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );
 obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
@@ -3294,7 +3131,6 @@ obj2 << Cluster Transactions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3319,7 +3155,6 @@ obj2 << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3346,7 +3181,6 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3370,7 +3204,6 @@ obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3394,7 +3227,6 @@ obj2 << Save Document Singular Vectors( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3418,7 +3250,6 @@ obj2 << Save Item SVD( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3442,7 +3273,6 @@ obj2 << Save Item Singular Vectors( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3466,7 +3296,6 @@ obj2 << Save Singular Vector Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3490,7 +3319,6 @@ obj2 << Save Term Singular Vectors( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3514,7 +3342,6 @@ obj2 << Save Transaction SVD( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3538,7 +3365,6 @@ obj2 << Save Transaction Singular Vectors( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3563,7 +3389,6 @@ obj2 << Select Near Neighbors( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
 obj2 = obj << Latent Semantic Analysis(
@@ -3594,7 +3419,6 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3613,7 +3437,6 @@ sent = obj << Sentiment Analysis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3631,7 +3454,6 @@ sent << Add Feature Words( {"floss"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3650,7 +3472,6 @@ sent << Add Intensifier Exception Words( {"almost"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3669,7 +3490,6 @@ sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3688,7 +3508,6 @@ sent << Add Negation Exception Words( {"without"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3707,7 +3526,6 @@ sent << Add Negation Words( {"dont"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3726,7 +3544,6 @@ sent << Add Sentiment Exception Words( {"easy"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3745,7 +3562,6 @@ sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3764,7 +3580,6 @@ sent << Include Builtin Intensifier Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3783,7 +3598,6 @@ sent << Include Builtin Negation Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3802,7 +3616,6 @@ sent << Include Builtin Sentiment Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3821,7 +3634,6 @@ sent << Parse Documents( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3839,7 +3651,6 @@ sent << Save Count of Sentiment Scores by Document;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3857,7 +3668,6 @@ sent << Save Document Scores;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3875,7 +3685,6 @@ sent << Score Column( :Gender );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3894,7 +3703,6 @@ sent << Scoring( "Min Max" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3914,7 +3722,6 @@ sent << Show Feature Finder( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3934,7 +3741,6 @@ sent << Show Intensifier Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3954,7 +3760,6 @@ sent << Show Negation Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3972,7 +3777,6 @@ sent << Show Sentiment Cloud( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 sent = obj << Sentiment Analysis( 1 );
@@ -3996,7 +3800,6 @@ sent << Show Sentiment Terms( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4056,7 +3859,6 @@ term = obj << Term Selection(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4114,7 +3916,6 @@ term = obj << Term Selection(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4172,7 +3973,6 @@ term = obj << Term Selection(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4232,7 +4032,6 @@ term << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4291,7 +4090,6 @@ term << Save Document Scores;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4350,7 +4148,6 @@ term << Save Prediction Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(
@@ -4409,7 +4206,6 @@ term << Save Term Score DTM;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
 term = obj << Term Selection(

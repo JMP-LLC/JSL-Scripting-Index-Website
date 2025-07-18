@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -40,7 +39,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [20, 40, 60, 80];
 New Window( "Example",
 	Graph Box(
@@ -65,11 +63,10 @@ New Window( "Example",
 
 **Description :** Définit la taille du graphique.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -82,11 +79,10 @@ obj = New Window( "Example",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 xmin = -2;
 xmax = 1;
 ymin = -1.5;
@@ -247,7 +243,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -269,7 +264,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		<<backgroundcolor( "cyan" ),
@@ -293,7 +287,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -319,7 +312,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -342,7 +334,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -365,7 +356,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Y Scale( -10, 90 ),
@@ -391,7 +381,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),
@@ -414,7 +403,6 @@ obj = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New Window( "Example",
 	Graph Box(
 		Framesize( 400, 400 ),

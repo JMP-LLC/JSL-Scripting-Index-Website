@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Abs( -5 );
 
 ```
@@ -27,7 +26,6 @@ Abs( -5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ceiling( 1.2 );
 
 ```
@@ -42,7 +40,6 @@ Ceiling( 1.2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Derivative( Sin( x ), x );
 
 ```
@@ -57,7 +54,6 @@ Derivative( Sin( x ), x );
 
 ```jsl
 
-Names Default To Here( 1 );
 Floor( 1.2 );
 
 ```
@@ -70,20 +66,18 @@ Floor( 1.2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Integrate( Exp( -x ), x, 0, . );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 100;
 Integrate( Normal Density( x - 100 ), x, ., . );
 
@@ -99,7 +93,6 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```jsl
 
-Names Default To Here( 1 );
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```
@@ -114,7 +107,6 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -129,7 +121,6 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -144,7 +135,6 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Integrate(
 	J( 3, 1, 0 ),
 	Identity( 3 ),
@@ -166,7 +156,6 @@ Normal Integrate(
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x, y}, x ^ 2 + y );
 Num Deriv( f( 2, 1 ) );
 Num Deriv( f( 2, 1 ), 2 );
@@ -183,7 +172,6 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x}, x ^ 3 );
 Num Deriv2( f( 2 ) );
 
@@ -199,7 +187,6 @@ Num Deriv2( f( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( 213, -1 );
 
 ```
@@ -214,7 +201,6 @@ Round( 213, -1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```

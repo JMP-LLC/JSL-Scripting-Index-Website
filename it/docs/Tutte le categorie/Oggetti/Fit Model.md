@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -37,7 +36,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -59,7 +57,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -71,7 +68,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -86,7 +82,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -102,7 +97,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -127,7 +121,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -145,7 +138,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -163,7 +155,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -191,7 +182,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -213,7 +203,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -237,7 +226,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -252,7 +240,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -283,7 +270,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -302,7 +288,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -335,7 +320,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -358,7 +342,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -375,7 +358,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -398,7 +380,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -421,7 +402,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -444,7 +424,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -462,7 +441,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -478,7 +456,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -497,7 +474,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -525,7 +501,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -544,7 +519,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -559,7 +533,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -580,7 +553,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -602,7 +574,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -630,7 +601,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -652,7 +622,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -680,7 +649,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -700,7 +668,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -724,7 +691,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -739,7 +705,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -763,7 +728,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -785,7 +749,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -813,7 +776,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -841,7 +803,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -869,7 +830,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -893,7 +853,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -917,7 +876,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -945,7 +903,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -967,7 +924,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -989,7 +945,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -1011,7 +966,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -1033,7 +987,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1054,7 +1007,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1080,7 +1032,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1104,7 +1055,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1121,7 +1071,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -1143,7 +1092,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -1171,7 +1119,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1188,7 +1135,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1203,7 +1149,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1226,7 +1171,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1250,7 +1194,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1272,7 +1215,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1284,7 +1226,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1299,7 +1240,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1317,7 +1257,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -1335,7 +1274,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1353,7 +1291,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1376,7 +1313,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1401,7 +1337,6 @@ obj << ("color" << Contrast( [1 0 -0.5 -0.5] ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1430,7 +1365,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1453,7 +1387,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -1476,7 +1409,6 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1499,7 +1431,6 @@ obj << Covariance of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1524,7 +1455,6 @@ obj << Custom Test( [0 .5 0 0 0 0 0 .5 -1], Label( "Test 1" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1547,7 +1477,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1570,7 +1499,6 @@ obj << Deviance Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1595,7 +1523,6 @@ obj << Deviance Residuals by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1623,7 +1550,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1647,7 +1573,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1670,7 +1595,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -1694,7 +1618,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1709,7 +1632,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1741,7 +1663,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1761,7 +1682,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1794,7 +1714,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1818,7 +1737,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1835,7 +1753,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1859,7 +1776,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1883,7 +1799,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1907,7 +1822,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1925,7 +1839,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1941,7 +1854,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1960,7 +1872,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -1994,7 +1905,6 @@ obj << Inverse Prediction(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2016,7 +1926,6 @@ obj << Linear Predictor Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2038,7 +1947,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2058,7 +1966,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2083,7 +1990,6 @@ obj << Mean Confidence Interval;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2108,7 +2014,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -2127,7 +2032,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -2142,7 +2046,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2165,7 +2068,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -2186,7 +2088,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2209,7 +2110,6 @@ obj << Pearson Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2232,7 +2132,6 @@ obj << Pearson Residuals by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2256,7 +2155,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2279,7 +2177,6 @@ obj << Predicted Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2302,7 +2199,6 @@ obj << Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -2325,7 +2221,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2348,7 +2243,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2377,7 +2271,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2400,7 +2293,6 @@ obj << Regression Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2423,7 +2315,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2452,7 +2343,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -2472,7 +2362,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2496,7 +2385,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -2511,7 +2399,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2536,7 +2423,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2559,7 +2445,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2588,7 +2473,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2617,7 +2501,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2646,7 +2529,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2669,7 +2551,6 @@ obj << Save Indiv Confid Limits;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2694,7 +2575,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2719,7 +2599,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2748,7 +2627,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2771,7 +2649,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2794,7 +2671,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2817,7 +2693,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2840,7 +2715,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2861,7 +2735,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2887,7 +2760,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2905,7 +2777,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2928,7 +2799,6 @@ obj << Studentized Deviance Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2952,7 +2822,6 @@ obj << Studentized Deviance Residuals by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2975,7 +2844,6 @@ obj << Studentized Pearson Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -2998,7 +2866,6 @@ obj << Studentized Pearson Residuals by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -3021,7 +2888,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -3038,7 +2904,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -3061,7 +2926,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -3090,7 +2954,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -3107,7 +2970,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -3122,7 +2984,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -3145,7 +3006,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3174,7 +3034,6 @@ scrobj << Point Options( "Show Connected Points" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3203,7 +3062,6 @@ scrobj << Show Center Line( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3232,7 +3090,6 @@ scrobj << Show Decision Limit Shading( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3261,7 +3118,6 @@ scrobj << Show Decision Limits( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3294,7 +3150,6 @@ scrobj << Show Summary Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3318,7 +3173,6 @@ obj << (:Drug << {LSMeans Contrast( [1 0 -1] )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3335,7 +3189,6 @@ obj << (:Drug << {LSMeans Dunnett( 1, Control Level( "a" ) )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3356,7 +3209,6 @@ obj << (:Drug << {LSMeans Dunnett( .01, Control Level( "a" ) )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3378,7 +3230,6 @@ obj << (:Drug << {LSMeans Plot});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3399,7 +3250,6 @@ obj << (:Drug << {LSMeans Student's t( 1 )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3421,7 +3271,6 @@ obj << (:Drug << {LSMeans Table( 1 )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3442,7 +3291,6 @@ obj << (:Drug << {LSMeans Tukey HSD( 1 )});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3472,7 +3320,6 @@ obj << (:Drug << {Power Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Fit Model(
 	Y( :height ),
@@ -3498,7 +3345,6 @@ obj << (:height << {:age * :sex << {Test Slices( 1 )}});
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3521,7 +3367,6 @@ scrobj << Connecting Letters Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3550,7 +3395,6 @@ scrobj << Control Differences Chart( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3579,7 +3423,6 @@ scrobj << Control Differences Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3602,7 +3445,6 @@ scrobj << Crosstab Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3625,7 +3467,6 @@ scrobj << Detailed Comparisons( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3648,7 +3489,6 @@ scrobj << Equivalence Test( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3671,7 +3511,6 @@ scrobj << Ordered Differences Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3698,7 +3537,6 @@ scrobj << Save Connecting Letters Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3723,7 +3561,6 @@ scrobj << Forest Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3748,7 +3585,6 @@ scrobj << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3775,7 +3611,6 @@ scrobj << Scatterplot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3806,7 +3641,6 @@ scrobj << Test Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3835,7 +3669,6 @@ scrobj << Show Reference Lines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3863,7 +3696,6 @@ scrobj << All Pairwise Comparisons Scatterplot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3890,7 +3722,6 @@ scrobj << All Pairwise Differences( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Analgesics.jmp" );
 obj = dt << Fit Model(
 	Y( :pain ),
@@ -3917,7 +3748,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Analgesics.jmp" );
 obj = dt << Fit Model(
 	Y( :pain ),
@@ -3949,7 +3779,6 @@ scrobj << Save All Pairwise Differences Connecting Letters Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -3977,7 +3806,6 @@ scrobj << "Calculate Adjusted P-Values"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4009,7 +3837,6 @@ scrobj << Comparisons with Control Decision Chart( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4041,7 +3868,6 @@ scrobj << Differences from Control( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4066,7 +3892,6 @@ scrobj << "Calculate Adjusted P-Values"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4097,7 +3922,6 @@ scrobj << Comparisons with Overall Average Decision Chart( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4131,7 +3955,6 @@ scrobj << Differences from Overall Average( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4161,7 +3984,6 @@ scrobj << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4191,7 +4013,6 @@ scrobj << Show Confidence Limits( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4223,7 +4044,6 @@ scrobj << Show Connected Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4248,7 +4068,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4270,7 +4089,6 @@ obj << Multiple Comparisons( Effect( :Drug ), Comparisons with Overall Average( 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4294,7 +4112,6 @@ obj << Multiple Comparisons( Effect( :Drug ), Equivalence Tests( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4316,7 +4133,6 @@ obj << Multiple Comparisons( Effect( :Drug ), Least Squares Means Plot );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4343,7 +4159,6 @@ scrobj << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Fit Model(
 	Y( :height ),
@@ -4374,7 +4189,6 @@ scrobj << Slice F Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4399,7 +4213,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4428,7 +4241,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4449,7 +4261,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4470,7 +4281,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4492,7 +4302,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4518,7 +4327,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4539,7 +4347,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4561,7 +4368,6 @@ obj << AICc( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -4579,7 +4385,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4603,7 +4408,6 @@ obj << Analysis of Variance( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4638,7 +4442,6 @@ obj2 << (:Oxy << Apply Preset( preset ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4659,7 +4462,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -4681,7 +4483,6 @@ obj << Bayes Plot( K( 10 ), Priors( 0.2, 0.2, 0.2, 0.2, 0.2 ), Go );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -4705,7 +4506,6 @@ obj << Box Cox Y Transformation( 1, Save Best Transformation( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -4723,7 +4523,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -4743,7 +4542,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/US Demographics.jmp" );
 obj = dt << Fit Model(
 	Y( :Eighth Grade Math ),
@@ -4768,7 +4566,6 @@ obj << Compare Slopes(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4788,7 +4585,6 @@ obj << Conditional Indiv CI( 0.001 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4808,7 +4604,6 @@ obj << Conditional Mean CI( 0.01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4828,7 +4623,6 @@ obj << Conditional Pred Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4848,7 +4642,6 @@ obj << Conditional Pred Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -4868,7 +4661,6 @@ obj << Conditional Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -4892,7 +4684,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4913,7 +4704,6 @@ obj << Cook's D Influence;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -4939,7 +4729,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -4959,7 +4748,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -4981,7 +4769,6 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -5006,7 +4793,6 @@ obj << Cox Mixtures( p1( 0.6615 ), p2( 0.126 ), p3( 0.2125 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -5028,7 +4814,6 @@ obj << Cube Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5050,7 +4835,6 @@ obj << Custom Test( [0 0 2 1], Label( "Comparison of intercepts for drug a vs. d
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5070,7 +4854,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/CO2.jmp" );
 obj = dt << Fit Model(
 	Y( :CO2 ),
@@ -5092,7 +4875,6 @@ obj << Durbin Watson Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5114,7 +4896,6 @@ obj << Effect Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5137,7 +4918,6 @@ obj << Effect Leverage Pairs;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5160,7 +4940,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5184,7 +4963,6 @@ obj << Effect Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -5206,7 +4984,6 @@ obj << Error Specification( "Pure Error" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5230,7 +5007,6 @@ obj << Expanded Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5253,7 +5029,6 @@ obj << Externally Studentized Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5276,7 +5051,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -5291,7 +5065,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -5318,7 +5091,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -5340,7 +5112,6 @@ code = obj << Get Conditional Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5357,7 +5128,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -5390,7 +5160,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5411,7 +5180,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5433,7 +5201,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5455,7 +5222,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5477,7 +5243,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -5494,7 +5259,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5514,7 +5278,6 @@ code = obj << Get Indiv Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5534,7 +5297,6 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5556,7 +5318,6 @@ code = obj << Get Mean Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5576,7 +5337,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5598,7 +5358,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5618,7 +5377,6 @@ code = obj << Get Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5638,7 +5396,6 @@ code = obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -5659,7 +5416,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5679,7 +5435,6 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5699,7 +5454,6 @@ code = obj << Get SQL prediction expression;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5720,7 +5474,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5741,7 +5494,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5761,7 +5513,6 @@ code = obj << Get Standard Error Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5783,7 +5534,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5804,7 +5554,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -5825,7 +5574,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -5843,7 +5591,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -5859,7 +5606,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5881,7 +5627,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5903,7 +5648,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5925,7 +5669,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5946,7 +5689,6 @@ obj << Hats;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -5965,7 +5707,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -5987,7 +5728,6 @@ obj << Indicator Parameterization Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6008,7 +5748,6 @@ obj << Indiv Confidence Interval( .001 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6030,7 +5769,6 @@ Show( ref );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -6053,7 +5791,6 @@ obj << Interaction Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -6075,7 +5812,6 @@ obj << Inverse Prediction( Response( 40, 45, 50, 55 ), Term Value( RunTime( . ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -6099,7 +5835,6 @@ obj << Joint Factor Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6121,7 +5856,6 @@ obj << Lack Of Fit( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -6141,7 +5875,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6162,7 +5895,6 @@ obj << Mean Confidence Interval( .01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6186,7 +5918,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -6211,7 +5942,6 @@ obj << Mixture Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6231,7 +5961,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6254,7 +5983,6 @@ obj << Multiple Comparisons( Effect( :Drug ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -6273,7 +6001,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6297,7 +6024,6 @@ preset = obj << (:y << New Preset);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -6319,7 +6045,6 @@ obj << Normal Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6341,7 +6066,6 @@ obj << Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -6363,7 +6087,6 @@ obj << Parameter Power( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6384,7 +6107,6 @@ obj << Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -6406,7 +6128,6 @@ obj << Pareto Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -6427,7 +6148,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6449,7 +6169,6 @@ obj << Plot Actual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6470,7 +6189,6 @@ obj << Plot Effect Leverage( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6494,7 +6212,6 @@ obj << Plot Regression( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6516,7 +6233,6 @@ obj << Plot Residual by Normal Quantiles( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6538,7 +6254,6 @@ obj << Plot Residual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6560,7 +6275,6 @@ obj << Plot Residual by Row( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6582,7 +6296,6 @@ obj << Plot Studentized Residuals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6603,7 +6316,6 @@ obj << Predicted Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6624,7 +6336,6 @@ obj << Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6655,7 +6366,6 @@ dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6677,7 +6387,6 @@ obj << Press( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -6699,7 +6408,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -6719,7 +6427,6 @@ code = obj << Publish Conditional Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6739,7 +6446,6 @@ code = obj << Publish Indiv Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6759,7 +6465,6 @@ code = obj << Publish Mean Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6779,7 +6484,6 @@ code = obj << Publish Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6799,7 +6503,6 @@ code = obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6819,7 +6522,6 @@ code = obj << Publish Standard Error Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6839,7 +6541,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -6865,7 +6566,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6885,7 +6585,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -6911,7 +6610,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -6931,7 +6629,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -6955,7 +6652,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -6970,7 +6666,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -6992,7 +6687,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7012,7 +6706,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7033,7 +6726,6 @@ obj << Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -7059,7 +6751,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -7085,7 +6776,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -7111,7 +6801,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7132,7 +6821,6 @@ obj << Save Coding Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7154,7 +6842,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -7176,7 +6863,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -7202,7 +6888,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7222,7 +6907,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7242,7 +6926,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7262,7 +6945,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7282,7 +6964,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -7306,7 +6987,6 @@ obj << Scaled Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -7327,7 +7007,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -7353,7 +7032,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -7371,7 +7049,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7393,7 +7070,6 @@ obj << Sequential Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7415,7 +7091,6 @@ obj << Show All Confidence Intervals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7437,7 +7112,6 @@ obj << Show Prediction Expression( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -7458,7 +7132,6 @@ obj << Show Sqrt Variance Component( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7480,7 +7153,6 @@ obj << Show VIF( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -7502,7 +7174,6 @@ obj << Sorted Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7523,7 +7194,6 @@ obj << Std Error of Individual;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7544,7 +7214,6 @@ obj << Std Error of Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7565,7 +7234,6 @@ obj << Std Error of Residual;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7586,7 +7254,6 @@ obj << StdErr Pred Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7607,7 +7274,6 @@ obj << Studentized Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7629,7 +7295,6 @@ obj << Summary of Fit( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -7651,7 +7316,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -7668,7 +7332,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7688,7 +7351,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7714,7 +7376,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -7731,7 +7392,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -7746,7 +7406,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -7769,7 +7428,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7790,7 +7448,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7812,7 +7469,6 @@ obj << AICc( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -7830,7 +7486,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7854,7 +7509,6 @@ obj << Analysis of Variance( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7889,7 +7543,6 @@ obj2 << (:Oxy << Apply Preset( preset ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -7910,7 +7563,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -7932,7 +7584,6 @@ obj << Bayes Plot( K( 10 ), Priors( 0.2, 0.2, 0.2, 0.2, 0.2 ), Go );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -7956,7 +7607,6 @@ obj << Box Cox Y Transformation( 1, Save Best Transformation( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -7974,7 +7624,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -7994,7 +7643,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/US Demographics.jmp" );
 obj = dt << Fit Model(
 	Y( :Eighth Grade Math ),
@@ -8019,7 +7667,6 @@ obj << Compare Slopes(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8039,7 +7686,6 @@ obj << Conditional Indiv CI( 0.001 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8059,7 +7705,6 @@ obj << Conditional Mean CI( 0.01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8079,7 +7724,6 @@ obj << Conditional Pred Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8099,7 +7743,6 @@ obj << Conditional Pred Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8119,7 +7762,6 @@ obj << Conditional Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -8143,7 +7785,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8164,7 +7805,6 @@ obj << Cook's D Influence;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -8190,7 +7830,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8210,7 +7849,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -8232,7 +7870,6 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -8257,7 +7894,6 @@ obj << Cox Mixtures( p1( 0.6615 ), p2( 0.126 ), p3( 0.2125 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -8279,7 +7915,6 @@ obj << Cube Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8301,7 +7936,6 @@ obj << Custom Test( [0 0 2 1], Label( "Comparison of intercepts for drug a vs. d
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8321,7 +7955,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/CO2.jmp" );
 obj = dt << Fit Model(
 	Y( :CO2 ),
@@ -8343,7 +7976,6 @@ obj << Durbin Watson Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8365,7 +7997,6 @@ obj << Effect Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8388,7 +8019,6 @@ obj << Effect Leverage Pairs;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8411,7 +8041,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8435,7 +8064,6 @@ obj << Effect Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -8457,7 +8085,6 @@ obj << Error Specification( "Pure Error" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8481,7 +8108,6 @@ obj << Expanded Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8504,7 +8130,6 @@ obj << Externally Studentized Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8527,7 +8152,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -8542,7 +8166,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -8569,7 +8192,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8591,7 +8213,6 @@ code = obj << Get Conditional Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8608,7 +8229,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -8641,7 +8261,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8662,7 +8281,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8684,7 +8302,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8706,7 +8323,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8728,7 +8344,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -8745,7 +8360,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8765,7 +8379,6 @@ code = obj << Get Indiv Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8785,7 +8398,6 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8807,7 +8419,6 @@ code = obj << Get Mean Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8827,7 +8438,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8849,7 +8459,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8869,7 +8478,6 @@ code = obj << Get Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8889,7 +8497,6 @@ code = obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -8910,7 +8517,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8930,7 +8536,6 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8950,7 +8555,6 @@ code = obj << Get SQL prediction expression;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8971,7 +8575,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -8992,7 +8595,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9012,7 +8614,6 @@ code = obj << Get Standard Error Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9034,7 +8635,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9055,7 +8655,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -9076,7 +8675,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -9094,7 +8692,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -9110,7 +8707,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9132,7 +8728,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9154,7 +8749,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9176,7 +8770,6 @@ Show( G );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9197,7 +8790,6 @@ obj << Hats;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -9216,7 +8808,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9238,7 +8829,6 @@ obj << Indicator Parameterization Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9259,7 +8849,6 @@ obj << Indiv Confidence Interval( .001 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9281,7 +8870,6 @@ Show( ref );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -9304,7 +8892,6 @@ obj << Interaction Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -9326,7 +8913,6 @@ obj << Inverse Prediction( Response( 40, 45, 50, 55 ), Term Value( RunTime( . ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -9350,7 +8936,6 @@ obj << Joint Factor Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9372,7 +8957,6 @@ obj << Lack Of Fit( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -9392,7 +8976,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9413,7 +8996,6 @@ obj << Mean Confidence Interval( .01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9437,7 +9019,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -9462,7 +9043,6 @@ obj << Mixture Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9482,7 +9062,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9505,7 +9084,6 @@ obj << Multiple Comparisons( Effect( :Drug ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -9524,7 +9102,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9548,7 +9125,6 @@ preset = obj << (:y << New Preset);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -9570,7 +9146,6 @@ obj << Normal Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9592,7 +9167,6 @@ obj << Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -9614,7 +9188,6 @@ obj << Parameter Power( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9635,7 +9208,6 @@ obj << Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -9657,7 +9229,6 @@ obj << Pareto Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -9678,7 +9249,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9700,7 +9270,6 @@ obj << Plot Actual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9721,7 +9290,6 @@ obj << Plot Effect Leverage( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9745,7 +9313,6 @@ obj << Plot Regression( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9767,7 +9334,6 @@ obj << Plot Residual by Normal Quantiles( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9789,7 +9355,6 @@ obj << Plot Residual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9811,7 +9376,6 @@ obj << Plot Residual by Row( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9833,7 +9397,6 @@ obj << Plot Studentized Residuals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9854,7 +9417,6 @@ obj << Predicted Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9875,7 +9437,6 @@ obj << Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9906,7 +9467,6 @@ dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9928,7 +9488,6 @@ obj << Press( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -9950,7 +9509,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -9970,7 +9528,6 @@ code = obj << Publish Conditional Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -9990,7 +9547,6 @@ code = obj << Publish Indiv Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10010,7 +9566,6 @@ code = obj << Publish Mean Confid Limit Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10030,7 +9585,6 @@ code = obj << Publish Parameterized Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10050,7 +9604,6 @@ code = obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10070,7 +9623,6 @@ code = obj << Publish Standard Error Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10090,7 +9642,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10116,7 +9667,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10136,7 +9686,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10162,7 +9711,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -10182,7 +9730,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -10206,7 +9753,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -10221,7 +9767,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10243,7 +9788,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10263,7 +9807,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10284,7 +9827,6 @@ obj << Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10310,7 +9852,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10336,7 +9877,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10362,7 +9902,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10383,7 +9922,6 @@ obj << Save Coding Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10405,7 +9943,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10427,7 +9964,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -10453,7 +9989,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10473,7 +10008,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10493,7 +10027,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10513,7 +10046,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10533,7 +10065,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -10557,7 +10088,6 @@ obj << Scaled Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -10578,7 +10108,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -10604,7 +10133,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -10622,7 +10150,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10644,7 +10171,6 @@ obj << Sequential Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10666,7 +10192,6 @@ obj << Show All Confidence Intervals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10688,7 +10213,6 @@ obj << Show Prediction Expression( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -10709,7 +10233,6 @@ obj << Show Sqrt Variance Component( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10731,7 +10254,6 @@ obj << Show VIF( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -10753,7 +10275,6 @@ obj << Sorted Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10774,7 +10295,6 @@ obj << Std Error of Individual;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10795,7 +10315,6 @@ obj << Std Error of Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10816,7 +10335,6 @@ obj << Std Error of Residual;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10837,7 +10355,6 @@ obj << StdErr Pred Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10858,7 +10375,6 @@ obj << Studentized Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10880,7 +10396,6 @@ obj << Summary of Fit( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -10902,7 +10417,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -10919,7 +10433,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10939,7 +10452,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 obj = dt << Fit Model(
 	Y( :y ),
@@ -10965,7 +10477,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -10982,7 +10493,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -10997,7 +10507,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -11020,7 +10529,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -11040,7 +10548,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Pressure, :Shrinkage ),
@@ -11064,7 +10571,6 @@ obj << (2 << Apply Preset( preset ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11088,7 +10594,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -11106,7 +10611,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -11124,7 +10628,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11145,7 +10648,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11172,7 +10674,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11193,7 +10694,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11216,7 +10716,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -11231,7 +10730,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11261,7 +10759,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11279,7 +10776,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -11312,7 +10808,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11334,7 +10829,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -11351,7 +10845,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11373,7 +10866,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11395,7 +10887,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11417,7 +10908,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -11435,7 +10925,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -11451,7 +10940,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -11470,7 +10958,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11490,7 +10977,6 @@ obj << Indiv Confidence Interval;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -11510,7 +10996,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11532,7 +11017,6 @@ obj << Mean Confidence Interval;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11554,7 +11038,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -11573,7 +11056,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Pressure, :Shrinkage ),
@@ -11596,7 +11078,6 @@ preset = obj << (1 << New Preset);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -11617,7 +11098,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11638,7 +11118,6 @@ obj << Plot Actual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11658,7 +11137,6 @@ obj << Plot Studentized Residual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11678,7 +11156,6 @@ obj << Plot Studentized Residual by Row( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11698,7 +11175,6 @@ obj << Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11719,7 +11195,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11740,7 +11215,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11767,7 +11241,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11788,7 +11261,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11815,7 +11287,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -11835,7 +11306,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -11859,7 +11329,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -11874,7 +11343,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11897,7 +11365,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11918,7 +11385,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -11938,7 +11404,6 @@ obj << Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11965,7 +11430,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -11992,7 +11456,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -12019,7 +11482,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12042,7 +11504,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -12065,7 +11526,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -12092,7 +11552,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12113,7 +11572,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12134,7 +11592,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12155,7 +11612,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12176,7 +11632,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -12197,7 +11652,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -12223,7 +11677,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -12241,7 +11694,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12261,7 +11713,6 @@ obj << Std Dev Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12281,7 +11732,6 @@ obj << Std Error of Individual;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12301,7 +11751,6 @@ obj << Std Error of Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12321,7 +11770,6 @@ obj << Studentized Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12342,7 +11790,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -12359,7 +11806,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12380,7 +11826,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12407,7 +11852,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -12424,7 +11868,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12444,7 +11887,6 @@ obj << Variance Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -12459,7 +11901,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -12482,7 +11923,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12503,7 +11943,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -12525,7 +11964,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -12537,7 +11975,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -12552,7 +11989,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -12568,7 +12004,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -12586,7 +12021,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12607,7 +12041,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12627,7 +12060,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12649,7 +12081,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -12666,7 +12097,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12683,7 +12113,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -12716,7 +12145,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12737,7 +12165,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12758,7 +12185,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12779,7 +12205,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12800,7 +12225,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -12818,7 +12242,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -12834,7 +12257,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -12853,7 +12275,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -12875,7 +12296,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12897,7 +12317,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -12916,7 +12335,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -12931,7 +12349,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -12952,7 +12369,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12973,7 +12389,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -12993,7 +12408,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13013,7 +12427,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -13033,7 +12446,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -13057,7 +12469,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -13072,7 +12483,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13094,7 +12504,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13114,7 +12523,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13136,7 +12544,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -13158,7 +12565,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -13184,7 +12590,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13204,7 +12609,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13224,7 +12628,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13244,7 +12647,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13264,7 +12666,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -13285,7 +12686,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -13311,7 +12711,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -13329,7 +12728,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13350,7 +12748,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -13367,7 +12764,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13387,7 +12783,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/InjectionMolding.jmp" );
 obj = dt << Fit Model(
 	Y( :Shrinkage ),
@@ -13409,7 +12804,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -13428,7 +12822,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13449,7 +12842,6 @@ obj << (Response[1] << (Effect[1] << Centroid Plot( 1 )));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13470,7 +12862,6 @@ obj << (Response[1] << (Effect[3] << Contrast( [0.5 0.5 -0.5 -0.5] )));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13491,7 +12882,6 @@ obj << (Response[1] << (Effect[1] << Save Canonical Scores));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13516,7 +12906,6 @@ obj << (Response[1] << (Effect[1] << Test Details( 1 )));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13537,7 +12926,6 @@ obj << (Response[2] << Custom Test( [0 1 0 -1 0], Label( "Test 1" ) ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13561,7 +12949,6 @@ obj << (Response[1] << (Effect[1] << Centroid Plot( 1 )));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13582,7 +12969,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -13604,7 +12990,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -13616,7 +13001,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -13631,7 +13015,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -13647,7 +13030,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13670,7 +13052,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -13688,7 +13069,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -13706,7 +13086,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -13732,7 +13111,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13752,7 +13130,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13774,7 +13151,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -13789,7 +13165,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -13818,7 +13193,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13835,7 +13209,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -13868,7 +13241,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13889,7 +13261,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -13906,7 +13277,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13927,7 +13297,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13948,7 +13317,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -13969,7 +13337,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -13987,7 +13354,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -14003,7 +13369,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -14022,7 +13387,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -14044,7 +13408,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14066,7 +13429,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -14085,7 +13447,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -14100,7 +13461,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -14121,7 +13481,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14141,7 +13500,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14167,7 +13525,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14187,7 +13544,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14213,7 +13569,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -14233,7 +13588,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -14257,7 +13611,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -14272,7 +13625,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14294,7 +13646,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14316,7 +13667,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14332,7 +13682,6 @@ obj << Response Function( "Sum" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14353,7 +13702,6 @@ obj << Response Function( "Contrast", Univariate Tests Also );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14379,7 +13727,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14405,7 +13752,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14431,7 +13777,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Fit Model(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -14451,7 +13796,6 @@ obj << Save Discrim;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14471,7 +13815,6 @@ obj << Save Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14491,7 +13834,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14513,7 +13855,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14535,7 +13876,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -14561,7 +13901,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14581,7 +13920,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14601,7 +13939,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14621,7 +13958,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14641,7 +13977,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -14662,7 +13997,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -14688,7 +14022,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -14706,7 +14039,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -14723,7 +14055,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14743,7 +14074,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Fit Model(
 	Y( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -14769,7 +14099,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -14786,7 +14115,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -14801,7 +14129,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -14824,7 +14151,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -14849,7 +14175,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -14867,7 +14192,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -14892,7 +14216,6 @@ obj << Actual by Conditional Predicted Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -14921,7 +14244,6 @@ obj << Actual by Predicted Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -14933,7 +14255,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -14948,7 +14269,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -14966,7 +14286,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -14993,7 +14312,6 @@ obj << "Between-Within Degrees of Freedom"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -15011,7 +14329,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -15031,7 +14348,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 obj = dt << Fit Model(
 	Y( :Calories ),
@@ -15057,7 +14373,6 @@ obj << Compare Slopes(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 obj = dt << Fit Model(
 	Y( :thickness ),
@@ -15087,7 +14402,6 @@ obj << Conditional Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15108,7 +14422,6 @@ obj << Conditional Mean CI;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 obj = dt << Fit Model(
 	Y( :thickness ),
@@ -15136,7 +14449,6 @@ obj << Conditional Mixture Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15160,7 +14472,6 @@ obj << Conditional Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15184,7 +14495,6 @@ obj << Conditional Predictions;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15206,7 +14516,6 @@ obj << Conditional Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15231,7 +14540,6 @@ obj << Conditional Residual Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15255,7 +14563,6 @@ obj << Conditional Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15279,7 +14586,6 @@ obj << Conditional Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15304,7 +14610,6 @@ obj << Containment Degrees of Freedom( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 obj = dt << Fit Model(
 	Y( :thickness ),
@@ -15332,7 +14637,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -15362,7 +14666,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15388,7 +14691,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15416,7 +14718,6 @@ obj << Correlation of Fixed Effects( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15444,7 +14745,6 @@ obj << Covariance of All Parameters( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15472,7 +14772,6 @@ obj << Covariance of Covariance Parameters( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15498,7 +14797,6 @@ obj << Covariance of Fixed Effects( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15522,7 +14820,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
 	Y( :Trait1, :Trait2, :Trait3 ),
@@ -15548,7 +14845,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -15566,7 +14862,6 @@ obj << Empirical Standard Errors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -15591,7 +14886,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15616,7 +14910,6 @@ obj << Fit Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15641,7 +14934,6 @@ obj << Fixed Effects Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15668,7 +14960,6 @@ obj << Fixed Effects Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -15683,7 +14974,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -15716,7 +15006,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15737,7 +15026,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -15770,7 +15058,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15795,7 +15082,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -15812,7 +15098,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15837,7 +15122,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15862,7 +15146,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15887,7 +15170,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -15905,7 +15187,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -15921,7 +15202,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -15945,7 +15225,6 @@ obj << Homogeneity of Variance Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -15966,7 +15245,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -15987,7 +15265,6 @@ obj << Indiv Confidence Interval;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16014,7 +15291,6 @@ obj << Inverse Prediction( Response( 75 ), Term Value( Moisture( . ), Variety( A
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -16038,7 +15314,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -16060,7 +15335,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16083,7 +15357,6 @@ obj << Mean Confidence Interval;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 obj = dt << Fit Model(
 	Y( :thickness ),
@@ -16111,7 +15384,6 @@ obj << Mixture Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -16132,7 +15404,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -16162,7 +15433,6 @@ obj << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -16181,7 +15451,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -16196,7 +15465,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -16217,7 +15485,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16241,7 +15508,6 @@ obj << Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16267,7 +15533,6 @@ Profiler( Y( :Pred Formula Yield 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16291,7 +15556,6 @@ obj << Predictions;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -16313,7 +15577,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16338,7 +15601,6 @@ obj << Random Coefficients( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16363,7 +15625,6 @@ obj << Random Effects Covariance Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16388,7 +15649,6 @@ obj << Random Effects Predictions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16412,7 +15672,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16442,7 +15701,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16466,7 +15724,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16496,7 +15753,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -16516,7 +15772,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -16540,7 +15795,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -16555,7 +15809,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -16584,7 +15837,6 @@ obj << Repeated Effects Covariance Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -16609,7 +15861,6 @@ obj << Repeated Measures Covariance Diagnostics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16635,7 +15886,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16659,7 +15909,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16684,7 +15933,6 @@ obj << Residual Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16708,7 +15956,6 @@ obj << Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
 	Y( :Trait1, :Trait2, :Trait3 ),
@@ -16729,7 +15976,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16759,7 +16005,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16789,7 +16034,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16819,7 +16063,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16845,7 +16088,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16871,7 +16113,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -16901,7 +16142,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16925,7 +16165,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16949,7 +16188,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16973,7 +16211,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -16999,7 +16236,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17023,7 +16259,6 @@ obj << Save Simulation Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -17044,7 +16279,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -17070,7 +16304,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -17090,7 +16323,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17115,7 +16347,6 @@ obj << Sequential Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -17137,7 +16368,6 @@ obj << Show Sqrt Variance Component( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -17157,7 +16387,6 @@ obj << Show VIF( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );
 obj = dt << Fit Model(
 	Y( :"Concentration (mg/Kg)"n ),
@@ -17179,7 +16408,6 @@ obj << Stability Analysis( Quantile( 0.1 ), Lower Spec Limit( 99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17203,7 +16431,6 @@ obj << Standard Error of Conditional Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17227,7 +16454,6 @@ obj << Standard Error of Predicted;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
 	Y( :Trait1, :Trait2, :Trait3 ),
@@ -17249,7 +16475,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -17271,7 +16496,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -17288,7 +16512,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17312,7 +16535,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
 obj = dt << Fit Model(
 	Y( :Yield ),
@@ -17342,7 +16564,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -17359,7 +16580,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );
 obj = dt << Fit Model(
 	Y( :Ozone Concentration ),
@@ -17381,7 +16601,6 @@ obj << Variogram( X( :month ), Exponential, Exponential with Nugget );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -17396,7 +16615,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -17419,7 +16637,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17441,7 +16658,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -17463,7 +16679,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -17475,7 +16690,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -17490,7 +16704,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -17506,7 +16719,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17530,7 +16742,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -17548,7 +16759,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -17566,7 +16776,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17589,7 +16798,6 @@ obj << Confidence Intervals( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17613,7 +16821,6 @@ obj << Confusion Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Fit Model(
 	Y( :Species ),
@@ -17637,7 +16844,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -17664,7 +16870,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17685,7 +16890,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17708,7 +16912,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17730,7 +16933,6 @@ obj << Decision Threshold( 1, Set Probability Threshold( 0.33 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -17757,7 +16959,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17783,7 +16984,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -17807,7 +17007,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -17822,7 +17021,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -17850,7 +17048,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17874,7 +17071,6 @@ obj << Get Confusion Matrix Test;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17895,7 +17091,6 @@ obj << Get Confusion Matrix Training;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17916,7 +17111,6 @@ obj << Get Confusion Matrix Validation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Equity.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17940,7 +17134,6 @@ obj << Get Confusion Rates Test;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17961,7 +17154,6 @@ obj << Get Confusion Rates Training;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -17984,7 +17176,6 @@ obj << Get Confusion Rates Validation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18002,7 +17193,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -18035,7 +17225,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18057,7 +17246,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -18074,7 +17262,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18097,7 +17284,6 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18118,7 +17304,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18139,7 +17324,6 @@ obj << Get Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18160,7 +17344,6 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18182,7 +17365,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18204,7 +17386,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18226,7 +17407,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -18244,7 +17424,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -18260,7 +17439,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -18279,7 +17457,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Detergent.jmp" );
 obj = dt << Fit Model(
 	Freq( :count ),
@@ -18301,7 +17478,6 @@ obj << Indicator Parameterization Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18323,7 +17499,6 @@ obj << Inverse Prediction( Response( 0.5, 0.75, 0.9 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18344,7 +17519,6 @@ obj << Lift Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18365,7 +17539,6 @@ obj << Likelihood Ratio Test( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18387,7 +17560,6 @@ obj << Line Color( "Magenta" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -18407,7 +17579,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18432,7 +17603,6 @@ obj << Logistic Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18455,7 +17625,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -18474,7 +17643,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -18489,7 +17657,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18511,7 +17678,6 @@ obj << Odds Ratios( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -18532,7 +17698,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18554,7 +17719,6 @@ obj << ROC Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18577,7 +17741,6 @@ obj << Precision Recall Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18599,7 +17762,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18620,7 +17782,6 @@ obj << Publish Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18643,7 +17804,6 @@ obj << ROC Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18664,7 +17824,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -18691,7 +17850,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18712,7 +17870,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -18739,7 +17896,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -18759,7 +17915,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -18783,7 +17938,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -18798,7 +17952,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18821,7 +17974,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18842,7 +17994,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -18866,7 +18017,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -18893,7 +18043,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -18920,7 +18069,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -18947,7 +18095,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18968,7 +18115,6 @@ obj << Save Probability Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -18991,7 +18137,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -19014,7 +18159,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -19041,7 +18185,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19062,7 +18205,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19083,7 +18225,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19104,7 +18245,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19125,7 +18265,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -19146,7 +18285,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -19172,7 +18310,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -19190,7 +18327,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19212,7 +18348,6 @@ obj << Show Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19236,7 +18371,6 @@ obj << Show Rate Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y Binary ),
@@ -19257,7 +18391,6 @@ obj << Specify Profit Matrix( [0 -1, -1 0, . .], "High", "Low", "Undecided" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -19282,7 +18415,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -19299,7 +18431,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19320,7 +18451,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19347,7 +18477,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -19364,7 +18493,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -19379,7 +18507,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -19400,7 +18527,6 @@ obj << Wald Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -19421,7 +18547,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -19448,7 +18573,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19469,7 +18593,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -19491,7 +18614,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -19503,7 +18625,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -19518,7 +18639,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -19534,7 +18654,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19557,7 +18676,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -19575,7 +18693,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -19593,7 +18710,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19615,7 +18731,6 @@ obj << Confidence Intervals( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19638,7 +18753,6 @@ obj << Confusion Matrix( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Fit Model(
 	Y( :Job Satisfaction ),
@@ -19662,7 +18776,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -19688,7 +18801,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19708,7 +18820,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19728,7 +18839,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Fit Model(
 	Y( :Employee Tenure, :Position Tenure, :Job Satisfaction ),
@@ -19751,7 +18861,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19776,7 +18885,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19799,7 +18907,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -19814,7 +18921,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -19841,7 +18947,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Fit Model(
@@ -19863,7 +18968,6 @@ obj << Get Confusion Matrix Test;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -19884,7 +18988,6 @@ obj << Get Confusion Matrix Training;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -19905,7 +19008,6 @@ obj << Get Confusion Matrix Validation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Fit Model(
@@ -19927,7 +19029,6 @@ obj << Get Confusion Rates Test;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -19948,7 +19049,6 @@ obj << Get Confusion Rates Training;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Validation( :Validation ),
@@ -19971,7 +19071,6 @@ obj << Get Confusion Rates Validation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -19988,7 +19087,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -20021,7 +19119,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20042,7 +19139,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -20059,7 +19155,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20081,7 +19176,6 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20101,7 +19195,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20121,7 +19214,6 @@ obj << Get Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20141,7 +19233,6 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20162,7 +19253,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20183,7 +19273,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20204,7 +19293,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -20222,7 +19310,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -20238,7 +19325,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -20257,7 +19343,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cheese.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -20278,7 +19363,6 @@ obj << Lift Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20298,7 +19382,6 @@ obj << Likelihood Ratio Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -20318,7 +19401,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20342,7 +19424,6 @@ obj << Logistic Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20364,7 +19445,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -20383,7 +19463,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -20398,7 +19477,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y Ordinal ),
@@ -20419,7 +19497,6 @@ obj << Odds Ratios( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -20440,7 +19517,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20460,7 +19536,6 @@ obj << Precision Recall Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20481,7 +19556,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20501,7 +19575,6 @@ obj << Publish Probability Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20521,7 +19594,6 @@ obj << ROC Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20541,7 +19613,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20567,7 +19638,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20587,7 +19657,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20613,7 +19682,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -20633,7 +19701,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -20657,7 +19724,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -20672,7 +19738,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20694,7 +19759,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20714,7 +19778,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Fit Model(
 	Y( :Employee Tenure, :Position Tenure, :Job Satisfaction ),
@@ -20734,7 +19797,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20760,7 +19822,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20786,7 +19847,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20812,7 +19872,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cheese.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -20833,7 +19892,6 @@ obj << Save Expected Value;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20853,7 +19911,6 @@ obj << Save Probability Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cheese.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -20874,7 +19931,6 @@ obj << Save Quantiles;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20896,7 +19952,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20918,7 +19973,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -20944,7 +19998,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20964,7 +20017,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -20984,7 +20036,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -21004,7 +20055,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -21024,7 +20074,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -21045,7 +20094,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -21071,7 +20119,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -21089,7 +20136,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Fit Model(
 	Y( :Employee Tenure, :Position Tenure, :Job Satisfaction ),
@@ -21110,7 +20156,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -21127,7 +20172,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -21147,7 +20191,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -21173,7 +20216,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -21190,7 +20232,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -21205,7 +20246,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Denim.jmp" );
 obj = dt << Fit Model(
 	Y( :Thread Wear ),
@@ -21225,7 +20265,6 @@ obj << Wald Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -21248,7 +20287,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21271,7 +20309,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -21293,7 +20330,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -21305,7 +20341,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -21320,7 +20355,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -21336,7 +20370,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21361,7 +20394,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -21379,7 +20411,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -21397,7 +20428,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -21425,7 +20455,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21447,7 +20476,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21469,7 +20497,6 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21491,7 +20518,6 @@ obj << Covariance of Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21515,7 +20541,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21532,7 +20557,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21553,7 +20577,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/reliability/Devalt.jmp" );
 dt << Fit Model(
 	Censor( :Censor ),
@@ -21576,7 +20599,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21600,7 +20622,6 @@ obj << Distribution Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21627,7 +20648,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21654,7 +20674,6 @@ obj << Estimate Quantile(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21683,7 +20702,6 @@ obj << Estimate Survival Probability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21708,7 +20726,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -21723,7 +20740,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -21754,7 +20770,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21773,7 +20788,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -21806,7 +20820,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21829,7 +20842,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21852,7 +20864,6 @@ Show( n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21875,7 +20886,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21898,7 +20908,6 @@ Show( e );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -21915,7 +20924,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21938,7 +20946,6 @@ Show( n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21961,7 +20968,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -21984,7 +20990,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22007,7 +21012,6 @@ Show( std );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22030,7 +21034,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -22048,7 +21051,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -22064,7 +21066,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22086,7 +21087,6 @@ obj << Hazard Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -22105,7 +21105,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22127,7 +21126,6 @@ obj << Likelihood Confidence Intervals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22149,7 +21147,6 @@ obj << Likelihood Ratio Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -22171,7 +21168,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22195,7 +21191,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -22214,7 +21209,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -22229,7 +21223,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -22252,7 +21245,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22276,7 +21268,6 @@ obj << Publish Probability Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22298,7 +21289,6 @@ obj << Publish Quantile Formula( 0.1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22320,7 +21310,6 @@ obj << Quantile Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22342,7 +21331,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22370,7 +21358,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22392,7 +21379,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22420,7 +21406,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -22440,7 +21425,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -22464,7 +21448,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -22479,7 +21462,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22503,7 +21485,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22527,7 +21508,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22551,7 +21531,6 @@ obj << Residual Probability Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22573,7 +21552,6 @@ obj << Response versus Fitted Median( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22601,7 +21579,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22629,7 +21606,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22657,7 +21633,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22679,7 +21654,6 @@ obj << Save Probability Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22701,7 +21675,6 @@ obj << Save Quantile Formula( 0.8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22723,7 +21696,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22747,7 +21719,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22771,7 +21742,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -22799,7 +21769,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22821,7 +21790,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22843,7 +21811,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22865,7 +21832,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22887,7 +21853,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -22908,7 +21873,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -22934,7 +21898,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -22954,7 +21917,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22976,7 +21938,6 @@ obj << Standardized Residuals versus Fitted Median( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -22998,7 +21959,6 @@ obj << Survival Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -23015,7 +21975,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -23037,7 +21996,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -23065,7 +22023,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -23082,7 +22039,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -23097,7 +22053,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -23121,7 +22076,6 @@ obj << Wald Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -23142,7 +22096,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -23170,7 +22123,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23192,7 +22144,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -23214,7 +22165,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -23226,7 +22176,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -23241,7 +22190,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -23259,7 +22207,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -23277,7 +22224,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -23295,7 +22241,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -23322,7 +22267,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23343,7 +22287,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23366,7 +22309,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23392,7 +22334,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23416,7 +22357,6 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -23431,7 +22371,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -23461,7 +22400,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23479,7 +22417,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -23512,7 +22449,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23534,7 +22470,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -23551,7 +22486,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23573,7 +22507,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23595,7 +22528,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23617,7 +22549,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -23635,7 +22566,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -23651,7 +22581,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23672,7 +22601,6 @@ obj << Hazard Ratios( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -23691,7 +22619,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23712,7 +22639,6 @@ obj << Likelihood Confidence Intervals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23733,7 +22659,6 @@ obj << Likelihood Ratio Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -23755,7 +22680,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23778,7 +22702,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -23797,7 +22720,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -23812,7 +22734,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -23833,7 +22754,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23854,7 +22774,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -23881,7 +22800,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -23902,7 +22820,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -23929,7 +22846,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -23949,7 +22865,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -23973,7 +22888,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -23988,7 +22902,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24011,7 +22924,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24032,7 +22944,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24059,7 +22970,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24086,7 +22996,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24113,7 +23022,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24136,7 +23044,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24159,7 +23066,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24186,7 +23092,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24207,7 +23112,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24228,7 +23132,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24249,7 +23152,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24270,7 +23172,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -24291,7 +23192,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -24317,7 +23217,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -24335,7 +23234,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -24352,7 +23250,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24373,7 +23270,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24400,7 +23296,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -24417,7 +23312,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -24432,7 +23326,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -24455,7 +23348,6 @@ obj << Wald Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -24478,7 +23370,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24499,7 +23390,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -24521,7 +23411,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -24533,7 +23422,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -24548,7 +23436,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -24564,7 +23451,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24587,7 +23473,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -24605,7 +23490,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -24623,7 +23507,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24649,7 +23532,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24669,7 +23551,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24691,7 +23572,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24714,7 +23594,6 @@ obj << Effect Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24737,7 +23616,6 @@ obj << Effect Tests( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -24759,7 +23637,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
 	Effects( :Sex ),
@@ -24781,7 +23658,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -24796,7 +23672,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -24825,7 +23700,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24842,7 +23716,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -24875,7 +23748,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24896,7 +23768,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -24913,7 +23784,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24934,7 +23804,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24955,7 +23824,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -24976,7 +23844,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -24994,7 +23861,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -25010,7 +23876,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -25029,7 +23894,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Popcorn.jmp" );
 obj = dt << Fit Model(
 	Y( :yield ),
@@ -25053,7 +23917,6 @@ obj << Least Squares Means( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -25075,7 +23938,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25097,7 +23959,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -25116,7 +23977,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -25133,7 +23993,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25155,7 +24014,6 @@ obj << Overall Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25176,7 +24034,6 @@ obj << Overall Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -25197,7 +24054,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25217,7 +24073,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25243,7 +24098,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25263,7 +24117,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25289,7 +24142,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -25309,7 +24161,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -25333,7 +24184,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -25348,7 +24198,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25370,7 +24219,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25390,7 +24238,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = Fit Model(
@@ -25412,7 +24259,6 @@ obj << Save BLUPs;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25438,7 +24284,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25464,7 +24309,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25490,7 +24334,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = Fit Model(
@@ -25512,7 +24355,6 @@ obj << Save Conditional Predicted Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = Fit Model(
@@ -25534,7 +24376,6 @@ obj << Save Conditional Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25554,7 +24395,6 @@ obj << Save Effect Tests;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25574,7 +24414,6 @@ obj << Save Estimates;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 obj = dt << Fit Model(
 	Effects( :age, :sex, :age * :sex ),
@@ -25595,7 +24434,6 @@ obj << Save LSMeans Differences;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 obj = dt << Fit Model(
 	Y( :height, :weight ),
@@ -25615,7 +24453,6 @@ obj << Save Least Squares Means;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25635,7 +24472,6 @@ obj << Save Overall Fit;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25654,7 +24490,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25673,7 +24508,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25695,7 +24529,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25717,7 +24550,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -25743,7 +24575,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25763,7 +24594,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25783,7 +24613,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25803,7 +24632,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25825,7 +24653,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25845,7 +24672,6 @@ obj << Select Effects Where( FDR Logworth > 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25866,7 +24692,6 @@ obj << Select Responses for Selected Effects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -25887,7 +24712,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -25913,7 +24737,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -25931,7 +24754,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Popcorn.jmp" );
 obj = dt << Fit Model(
 	Y( :yield ),
@@ -25955,7 +24777,6 @@ obj << Sliced LSMeans Differences( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -25972,7 +24793,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -25992,7 +24812,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -26018,7 +24837,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -26037,7 +24855,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
 	Effects( :Sex ),
@@ -26057,7 +24874,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -26072,7 +24888,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -26093,7 +24908,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -26121,7 +24935,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26143,7 +24956,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -26161,7 +24973,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26187,7 +24998,6 @@ obj << All Possible Models( 5, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -26199,7 +25009,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -26214,7 +25023,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -26230,7 +25038,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26252,7 +25059,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26276,7 +25082,6 @@ obj << Backward Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -26294,7 +25099,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26316,7 +25120,6 @@ obj << Clear History;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -26334,7 +25137,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -26361,7 +25163,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26382,7 +25183,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26403,7 +25203,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26425,7 +25224,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26445,7 +25243,6 @@ obj << Enter( :Runtime );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26465,7 +25262,6 @@ obj << Enter All;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -26490,7 +25286,6 @@ obj << Make Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26510,7 +25305,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26533,7 +25327,6 @@ obj << Forward Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -26548,7 +25341,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -26578,7 +25370,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26596,7 +25387,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -26629,7 +25419,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26651,7 +25440,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -26670,7 +25458,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26693,7 +25480,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26717,7 +25503,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26739,7 +25524,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26761,7 +25545,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26783,7 +25566,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -26801,7 +25583,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -26817,7 +25598,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26837,7 +25617,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -26856,7 +25635,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26877,7 +25655,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -26897,7 +25674,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26918,7 +25694,6 @@ obj << Lock( :Runtime );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26941,7 +25716,6 @@ obj << Make Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26963,7 +25737,6 @@ obj << Model Averaging( 5, .90 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -26987,7 +25760,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -27006,7 +25778,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -27021,7 +25792,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -27042,7 +25812,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27065,7 +25834,6 @@ obj << Plot Criterion History( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27087,7 +25855,6 @@ obj << Plot RSquare History( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27109,7 +25876,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27133,7 +25899,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27154,7 +25919,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27181,7 +25945,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27202,7 +25965,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27229,7 +25991,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27250,7 +26011,6 @@ obj << Remove( :RunPulse );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27272,7 +26032,6 @@ obj << Remove All;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -27292,7 +26051,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -27316,7 +26074,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -27331,7 +26088,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27354,7 +26110,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27375,7 +26130,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27402,7 +26156,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27423,7 +26176,6 @@ obj << Run Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27450,7 +26202,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27477,7 +26228,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27504,7 +26254,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27527,7 +26276,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27550,7 +26298,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27577,7 +26324,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27598,7 +26344,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27619,7 +26364,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27640,7 +26384,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27661,7 +26404,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -27682,7 +26424,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -27708,7 +26449,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -27726,7 +26466,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27747,7 +26486,6 @@ obj << Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27768,7 +26506,6 @@ obj << Stop;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27792,7 +26529,6 @@ obj << Finish;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -27809,7 +26545,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27830,7 +26565,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27857,7 +26591,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -27874,7 +26607,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -27897,7 +26629,6 @@ obj << Unlock( :Runtime );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -27912,7 +26643,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -27933,7 +26663,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -27962,7 +26691,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -27985,7 +26713,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -28007,7 +26734,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -28019,7 +26745,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -28034,7 +26759,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -28052,7 +26776,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -28070,7 +26793,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -28088,7 +26810,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28116,7 +26837,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28138,7 +26858,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28162,7 +26881,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -28177,7 +26895,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28208,7 +26925,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28227,7 +26943,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -28260,7 +26975,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28283,7 +26997,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -28302,7 +27015,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28325,7 +27037,6 @@ Show( vn );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28348,7 +27059,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28371,7 +27081,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28394,7 +27103,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28417,7 +27125,6 @@ Show( vc );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -28435,7 +27142,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -28451,7 +27157,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -28470,7 +27175,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -28494,7 +27198,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -28513,7 +27216,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -28528,7 +27230,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -28549,7 +27250,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28571,7 +27271,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28599,7 +27298,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28621,7 +27319,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28649,7 +27346,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -28669,7 +27365,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -28693,7 +27388,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -28708,7 +27402,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28732,7 +27425,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28754,7 +27446,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28782,7 +27473,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28810,7 +27500,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28838,7 +27527,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28862,7 +27550,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28886,7 +27573,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -28914,7 +27600,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28936,7 +27621,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28958,7 +27642,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -28980,7 +27663,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -29002,7 +27684,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -29023,7 +27704,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -29049,7 +27729,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -29067,7 +27746,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -29084,7 +27762,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -29106,7 +27783,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -29134,7 +27810,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -29151,7 +27826,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -29166,7 +27840,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -29191,7 +27864,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Repeated Measures Binomial.jmp" );
 fm = Fit Model(
 	Y( :No Headache, :Number of Patients ),
@@ -29217,7 +27889,6 @@ fm << (Fit[1] << "Between-Within Degrees of Freedom"n( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 fm = dt << Fit Model(
 	Y( :thickness ),
@@ -29248,7 +27919,6 @@ fm << (Fit[1] << Conditional Contour Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Manufacturing Defect Counts.jmp" );
 fm = dt << Fit Model(
 	Y( :Defect ),
@@ -29272,7 +27942,6 @@ fm << (fit[1] << Conditional Diagnostic Bundle( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29295,7 +27964,6 @@ fm << (Fit[1] << Conditional Mean CI);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 fm = dt << Fit Model(
 	Y( :thickness ),
@@ -29326,7 +27994,6 @@ fm << (Fit[1] << Conditional Mixture Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29349,7 +28016,6 @@ fm << (Fit[1] << Conditional Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29372,7 +28038,6 @@ fm << (Fit[1] << Conditional Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29397,7 +28062,6 @@ fm << (Fit[1] << Conditional Surface Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29421,7 +28085,6 @@ fm << (Fit[1] << Containment Degrees of Freedom( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 fm = dt << Fit Model(
 	Y( :thickness ),
@@ -29452,7 +28115,6 @@ fm << (Fit[1] << Contour Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29476,7 +28138,6 @@ fm << (Fit[1] << Correlation of Fixed Effects( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29500,7 +28161,6 @@ fm << (Fit[1] << Covariance of All Parameters( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29524,7 +28184,6 @@ fm << (Fit[1] << Covariance of Covariance Parameters( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29548,7 +28207,6 @@ fm << (Fit[1] << Covariance of Fixed Effects( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Manufacturing Defect Counts.jmp" );
 fm = dt << Fit Model(
 	Y( :Defect ),
@@ -29573,7 +28231,6 @@ fm << (fit[1] << Diagnostic Bundle( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29597,7 +28254,6 @@ fm << (Fit[1] << Empirical Standard Errors( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29621,7 +28277,6 @@ fm << (Fit[1] << Fit Statistics( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29645,7 +28300,6 @@ fm << (Fit[1] << Fixed Effects Parameter Estimates( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29669,7 +28323,6 @@ fm << (Fit[1] << Fixed Effects Tests( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29692,7 +28345,6 @@ fm << (Fit[1] << Mean Confidence Interval);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Vinyl Data.jmp" );
 fm = dt << Fit Model(
 	Y( :thickness ),
@@ -29723,7 +28375,6 @@ fm << (Fit[1] << Mixture Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29758,7 +28409,6 @@ fm << (fit[1] << Multiple Comparisons(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29781,7 +28431,6 @@ fm << (Fit[1] << Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29804,7 +28453,6 @@ fm << (Fit[1] << Prediction and Interval Formulas);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29827,7 +28475,6 @@ fm << (Fit[1] << Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29852,7 +28499,6 @@ Report( fm )["Random Coefficients"] << Close( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29876,7 +28522,6 @@ fm << (Fit[1] << Random Effects Covariance Parameter Estimates( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29900,7 +28545,6 @@ fm << (Fit[1] << Random Effects Predictions( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Manufacturing Defect Counts.jmp" );
 fm = dt << Fit Model(
 	Y( :Defect ),
@@ -29923,7 +28567,6 @@ fm << (fit[1] << Save Conditional Residual Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Manufacturing Defect Counts.jmp" );
 fm = dt << Fit Model(
 	Y( :Defect ),
@@ -29946,7 +28589,6 @@ fm << (fit[1] << Save Residual Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29971,7 +28613,6 @@ fm << (Fit[1] << Save Simulation Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -29995,7 +28636,6 @@ fm << (Fit[1] << Sequential Tests( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30018,7 +28658,6 @@ fm << (Fit[1] << Standard Error of Conditional Predicted);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30041,7 +28680,6 @@ fm << (Fit[1] << Standard Error of Predicted);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30066,7 +28704,6 @@ fm << (Fit[1] << Surface Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30096,7 +28733,6 @@ fm = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30120,7 +28756,6 @@ fm = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30142,7 +28777,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -30154,7 +28788,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -30169,7 +28802,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -30187,7 +28819,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -30205,7 +28836,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -30223,7 +28853,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30252,7 +28881,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30275,7 +28903,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30298,7 +28925,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30323,7 +28949,6 @@ fm << (Fit[1] << Fit Statistics( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -30338,7 +28963,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30370,7 +28994,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30390,7 +29013,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -30423,7 +29045,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30447,7 +29068,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -30464,7 +29084,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30488,7 +29107,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30512,7 +29130,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30536,7 +29153,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -30554,7 +29170,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -30570,7 +29185,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -30589,7 +29203,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -30611,7 +29224,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30635,7 +29247,6 @@ fm << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -30654,7 +29265,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -30669,7 +29279,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -30690,7 +29299,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30713,7 +29321,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30742,7 +29349,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30765,7 +29371,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30794,7 +29399,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -30814,7 +29418,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -30838,7 +29441,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -30853,7 +29455,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30878,7 +29479,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -30901,7 +29501,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30930,7 +29529,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30959,7 +29557,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -30988,7 +29585,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31013,7 +29609,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -31038,7 +29633,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -31067,7 +29661,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31090,7 +29683,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31113,7 +29705,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31136,7 +29727,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31159,7 +29749,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -31180,7 +29769,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -31206,7 +29794,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -31224,7 +29811,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -31241,7 +29827,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31264,7 +29849,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
 	Y( :Grade ),
@@ -31293,7 +29877,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -31310,7 +29893,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -31325,7 +29907,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -31348,7 +29929,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31376,7 +29956,6 @@ fm << (fit[1] << Active Parameter Estimates( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -31405,7 +29984,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31426,7 +30004,6 @@ fm << (fit[1] << Cook's D Influence);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31453,7 +30030,6 @@ fm << (fit[1] << Correlation of Estimates);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31482,7 +30058,6 @@ fm << (fit[1] << Covariance of Estimates);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31503,7 +30078,6 @@ fm << (fit[1] << Custom Test( [0 0 0 1 -1 0], Label() ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -31537,7 +30111,6 @@ fm << (fit[1] << Decision Threshold( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -31560,7 +30133,6 @@ fm << (fit[1] << Diagnostic Bundle( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 Fit Model(
 	Y( :satell ),
@@ -31589,7 +30161,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31617,7 +30188,6 @@ fm << (fit[1] << Effect Tests( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31646,7 +30216,6 @@ fm << (fit[1] << Get Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31667,7 +30236,6 @@ fm << (fit[1] << Hats);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 Fit Model(
 	Censor( :censor ),
@@ -31696,7 +30264,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 Fit Model(
 	Censor( :censor ),
@@ -31725,7 +30292,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31752,7 +30318,6 @@ fm << (fit[1] << Hide Inactive Paths);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 Fit Model(
 	Y( :satell ),
@@ -31778,7 +30343,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31819,7 +30383,6 @@ fm << (fit[1] << Inverse Prediction(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -31853,7 +30416,6 @@ fm << (fit[1] << Lift Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31881,7 +30443,6 @@ fm << (fit[1] << Mean Confidence Interval);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31909,7 +30470,6 @@ fm << (fit[1] << Model Summary( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hollywood Movies.jmp" );
 fm = dt << Fit Model(
 	Y( :World Gross ),
@@ -31948,7 +30508,6 @@ fm = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -31969,7 +30528,6 @@ fm << (fit[1] << Normal Quantile Plot);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -31996,7 +30554,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32024,7 +30581,6 @@ fm << (fit[1] << Parameter Estimates for Centered and Scaled Predictors( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32052,7 +30608,6 @@ fm << (fit[1] << Parameter Estimates for Original Predictors( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32074,7 +30629,6 @@ fm << (fit[1] << Plot Actual by Predicted( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 Fit Model(
 	Censor( :censor ),
@@ -32103,7 +30657,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32125,7 +30678,6 @@ fm << (fit[1] << Plot Residual by Predicted( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32147,7 +30699,6 @@ fm << (fit[1] << Plot Residual by Predictor( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32181,7 +30732,6 @@ fm << (fit[1] << Precision Recall Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 Fit Model(
 	Y( :satell ),
@@ -32210,7 +30760,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32237,7 +30786,6 @@ fm << (fit[1] << Publish Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 Fit Model(
 	Y( :satell ),
@@ -32266,7 +30814,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32302,7 +30849,6 @@ fm << (fit[1] << ROC Curve( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32331,7 +30877,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Full Factorial);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32360,7 +30905,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Response Surface Model);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32389,7 +30933,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Second Degree Factorial);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32418,7 +30961,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Second Degree Polynomial);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32447,7 +30989,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Third Degree Factorial);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32474,7 +31015,6 @@ fm << (fit[1] << Relaunch Active Main Effects and Third Degree Polynomial);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32501,7 +31041,6 @@ fm << (fit[1] << Relaunch with Active Effects);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 fm = dt << Fit Model(
 	Y( :Oxy ),
@@ -32530,7 +31069,6 @@ fm << (fit[1] << Remove Fit);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32557,7 +31095,6 @@ fm << (Fit[1] << Reset Solution);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 fm = dt << Fit Model(
 	Censor( :censor ),
@@ -32582,7 +31119,6 @@ fm << (fit[1] << Save Cox Snell Residual Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32605,7 +31141,6 @@ fm << (Fit[1] << Save Distribution Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Simple Linear Functional Data.jmp" );
 fobj = Functional Data Explorer(
 	Y( :Y ),
@@ -32645,7 +31180,6 @@ Save Functional Prediction Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 fm = dt << Fit Model(
 	Y( :satell ),
@@ -32672,7 +31206,6 @@ fm << (fit[1] << Save Linear Predictor);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 fm = dt << Fit Model(
 	Censor( :censor ),
@@ -32695,7 +31228,6 @@ fm << (fit[1] << Save Martingale Residual Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32722,7 +31254,6 @@ fm << (fit[1] << Save Prediction Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32744,7 +31275,6 @@ fm << (fit[1] << Save Resample Formulas);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32771,7 +31301,6 @@ fm << (fit[1] << Save Residual Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32794,7 +31323,6 @@ fm << (fit[1] << Save Simulation Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 fm = dt << Fit Model(
 	Censor( :censor ),
@@ -32817,7 +31345,6 @@ fm << (fit[1] << Save Survival Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32838,7 +31365,6 @@ fm << (fit[1] << Save Validation Column);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 fm = dt << Fit Model(
 	Y( :satell ),
@@ -32862,7 +31388,6 @@ fm << (fit[1] << Save Variance Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32889,7 +31414,6 @@ fm << (fit[1] << Select Nonzero Terms);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32916,7 +31440,6 @@ fm << (fit[1] << Select Zeroed Terms);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -32939,7 +31462,6 @@ fm << (Fit[1] << Set Solution ID( 122 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32968,7 +31490,6 @@ fm << (fit[1] << Show Prediction Expression);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -32996,7 +31517,6 @@ fm << (fit[1] << Show Solution Path Summary( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -33024,7 +31544,6 @@ fm << (fit[1] << Solution Path( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -33052,7 +31571,6 @@ fm << (fit[1] << Std Error of Predicted);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -33079,7 +31597,6 @@ fm << (fit[1] << Std Error of Predicted Formula);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -33106,7 +31623,6 @@ fm << (Fit[1] << Step Backward);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Validation( :Validation ),
@@ -33131,7 +31647,6 @@ fm << (Fit[1] << Step Forward);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 fm = dt << Fit Model(
 	Censor( :censor ),
@@ -33156,7 +31671,6 @@ fm << (fit[1] << Survival Profiler( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -33190,7 +31704,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33218,7 +31731,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -33240,7 +31752,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -33252,7 +31763,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -33267,7 +31777,6 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -33283,7 +31792,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33313,7 +31821,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -33331,7 +31838,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -33349,7 +31855,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -33382,7 +31887,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33409,7 +31913,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33436,7 +31939,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -33465,7 +31967,6 @@ fm = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -33480,7 +31981,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -33516,7 +32016,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33540,7 +32039,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -33573,7 +32071,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33601,7 +32098,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -33618,7 +32114,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33646,7 +32141,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33674,7 +32168,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33702,7 +32195,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -33720,7 +32212,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -33736,7 +32227,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -33763,7 +32253,6 @@ As Table( fm << Get X Matrix );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -33782,7 +32271,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -33804,7 +32292,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33833,7 +32320,6 @@ obj << Model Dialog;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -33852,7 +32338,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -33867,7 +32352,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -33888,7 +32372,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33915,7 +32398,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -33948,7 +32430,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -33975,7 +32456,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34008,7 +32488,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -34028,7 +32507,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -34052,7 +32530,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -34067,7 +32544,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34096,7 +32572,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34123,7 +32598,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34156,7 +32630,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34189,7 +32662,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34222,7 +32694,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fm = dt << Fit Model(
 	Y( :Y ),
@@ -34243,7 +32714,6 @@ fm << Save Coding Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34272,7 +32742,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34301,7 +32770,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -34334,7 +32802,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34361,7 +32828,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34388,7 +32854,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34415,7 +32880,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34442,7 +32906,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -34463,7 +32926,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -34489,7 +32951,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -34509,7 +32970,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 Fit Model(
 	Y( :Y ),
@@ -34532,7 +32992,6 @@ Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -34549,7 +33008,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34576,7 +33034,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Fit Model(
 	Y( :Y ),
@@ -34609,7 +33066,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -34626,7 +33082,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -34641,7 +33096,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -34664,7 +33118,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -34684,7 +33137,6 @@ obj << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Fit Model(
 	Y( :age ),
@@ -34705,7 +33157,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -34727,7 +33178,6 @@ obj << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Probe.jmp" );
 dt << Fit Model(
 	Effects( :Process, :Site, :Process * :Site ),
@@ -34747,7 +33197,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 dt << Fit Model(
 	Y( :days ),
@@ -34768,7 +33217,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -34788,7 +33236,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
 dt << Fit Model(
 	Y( :ls, :ha, :dt ),
@@ -34809,7 +33256,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << Fit Model(
 	Freq( :Count ),
@@ -34830,7 +33276,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -34851,7 +33296,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -34870,7 +33314,6 @@ obj << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -34897,7 +33340,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Scheffe Cubic( :height, :weight ) ) );
@@ -34908,7 +33350,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Scheffe Cubic( :height, :weight
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( :sex, :age, :weight ) );
@@ -34919,7 +33360,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( :sex, :age, :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model(
@@ -34934,7 +33374,6 @@ dialog = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Full Factorial( :sex, :age, :weight ) ) );
@@ -34945,7 +33384,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Full Factorial( :sex, :age, :we
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Factorial Sorted( :sex, :age, :weight ) ) );
@@ -34956,7 +33394,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Factorial Sorted( :sex, :age, :
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Partial Cubic( :height, :weight ) ) );
@@ -34967,7 +33404,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Partial Cubic( :height, :weight
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model(
@@ -34982,7 +33418,6 @@ dialog = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Grouped Regressors( :height, :weight ) ) );
@@ -34993,7 +33428,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Grouped Regressors( :height, :w
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model( Y( :height ), Effects( Response Surface( :weight, :age ) ) );
@@ -35004,7 +33438,6 @@ dialog = dt << Fit Model( Y( :height ), Effects( Response Surface( :weight, :age
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Big Class.jmp" );
 dialog = dt << Fit Model(
@@ -35022,7 +33455,6 @@ dialog = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35046,7 +33478,6 @@ obj << Run Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35067,7 +33498,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -35088,7 +33518,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -35111,7 +33540,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION, :HARDNESS ),
@@ -35131,7 +33559,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Fit Model(
 	Freq( :Count ),
@@ -35153,7 +33580,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Fit Model(
 	Y( :height ),
@@ -35179,7 +33605,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Fit Model(
 	Y( :POP, :Max deg. F Jan ),
@@ -35206,7 +33631,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Fit Model(
 	Y( :POP, :Max deg. F Jan ),
@@ -35240,7 +33664,6 @@ Per variabili categoriche, i valori mancanti non sono imputati, ma considerati u
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[3] = dt:age[2] = .;
 dt << Fit Model(
@@ -35261,7 +33684,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Fit Model(
 	Y( :ABRASION ),
@@ -35281,7 +33703,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -35303,7 +33724,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Fit Model(
 	Y( :POP, :Max deg. F Jan ),
@@ -35331,7 +33751,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -35352,7 +33771,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -35374,7 +33792,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35394,7 +33811,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj = dt << Fit Model(
 	Y( :miles ),
@@ -35416,7 +33832,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tablet Production.jmp" );
 dt << Fit Model(
 	Y( :Disso ),
@@ -35440,7 +33855,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -35463,7 +33877,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35482,7 +33895,6 @@ obj << Run Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 obj = dt << Fit Model(
 	Y( :satell ),
@@ -35506,7 +33918,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Fit Model(
 	Y( :height ),
@@ -35533,7 +33944,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -35557,7 +33967,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Probe.jmp" );
 dt << Fit Model(
 	Effects( :Process, :Site, :Process * :Site ),
@@ -35579,7 +33988,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35595,7 +34003,6 @@ obj << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35614,7 +34021,6 @@ obj << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35633,7 +34039,6 @@ obj << Run Model;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35652,7 +34057,6 @@ obj << Save to DataTable;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35671,7 +34075,6 @@ obj << Save to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
 dt << Fit Model(
 	Y( :ls, :ha, :dt ),
@@ -35692,7 +34095,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Fit Model(
 	Y( :ABRASION ),
@@ -35713,7 +34115,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
 dt << Fit Model(
 	Y( :ls, :ha, :dt ),
@@ -35736,7 +34137,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Fit Model(
 	Y( :age ),
@@ -35757,7 +34157,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
 obj = dt << Fit Model(
 	Y( :Stretch ),
@@ -35777,7 +34176,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Fit Model(
 	Y(
@@ -35802,7 +34200,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
 obj = dt << Fit Model(
 	Y( :Stretch ),
@@ -35824,7 +34221,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 dt << Fit Model(
 	Freq( :Count ),

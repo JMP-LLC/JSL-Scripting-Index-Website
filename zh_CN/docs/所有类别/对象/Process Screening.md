@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP添加的版本:** 18
 
-**匿名预设**
+#### 匿名预设
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -45,11 +43,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**在文件夹内搜索**
+#### 在文件夹内搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -57,11 +54,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**按名称搜索**
+#### 按名称搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Automatic Recalc( 1 );
@@ -95,7 +90,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -113,7 +107,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -131,7 +124,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -155,7 +147,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Copy Script;
@@ -170,7 +161,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Data Table Window;
@@ -187,7 +177,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -202,7 +191,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -225,11 +213,10 @@ Show( t );
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
-**带过滤器的平台**
+#### 带过滤器的平台
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -254,11 +241,10 @@ New Window( "platform boxes",
 
 ```
 
-**常规**
+#### 常规
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Container;
@@ -274,7 +260,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Datatable;
@@ -290,7 +275,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -307,7 +291,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Script;
@@ -323,7 +306,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Script With Data Table;
@@ -339,7 +321,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Timing;
@@ -355,7 +336,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -373,7 +353,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -389,7 +368,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -408,7 +386,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -430,7 +407,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -449,7 +425,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -464,7 +439,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -485,7 +459,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Redo Analysis;
@@ -500,7 +473,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -524,7 +496,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Relaunch Analysis;
@@ -539,7 +510,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -563,7 +533,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -583,7 +552,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -607,7 +575,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -622,7 +589,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 r = obj << Report;
@@ -639,7 +605,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Report View( "Summary" );
@@ -654,7 +619,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -678,7 +642,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -702,7 +665,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -726,7 +688,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script for All Objects;
@@ -739,11 +700,10 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -759,11 +719,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -787,7 +746,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -802,7 +760,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Journal;
@@ -817,7 +774,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Report;
@@ -832,7 +788,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Script Window;
@@ -847,7 +802,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -868,7 +822,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -894,7 +847,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -912,7 +864,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -929,7 +880,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Title( "My Platform" );
@@ -944,7 +894,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 r = obj << Top Report;
@@ -965,7 +914,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -982,7 +930,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -997,7 +944,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1018,7 +964,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -1032,7 +977,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1055,7 +999,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -1069,7 +1012,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -1083,7 +1025,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -1102,7 +1043,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Prices.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Price ),
@@ -1122,7 +1062,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );
 dt << Process Screening(
 	Process Variables( :"# defective"n ),
@@ -1148,7 +1087,6 @@ dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1173,7 +1111,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1196,7 +1133,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1220,7 +1156,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1245,7 +1180,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1268,7 +1202,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1291,7 +1224,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ), Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :NPN1, :PNP1, :PNP2, :NPN2, :PNP3 ),
@@ -1327,7 +1259,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1350,7 +1281,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1373,7 +1303,6 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :PNP3, :IVP1, :IVP2 ) );
 obj << Color Out of Spec Values;
@@ -1388,7 +1317,6 @@ obj << Color Out of Spec Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1409,7 +1337,6 @@ obj << Find and Select( "NPN2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1428,7 +1355,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1448,7 +1374,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -1466,7 +1391,6 @@ obj << Count( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
@@ -1482,7 +1406,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cpk( 0 ) );
 Wait( 1 );
@@ -1500,7 +1423,6 @@ obj << Cpk( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1524,7 +1446,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1544,11 +1465,10 @@ obj = dt << Process Screening(
 
 **JMP添加的版本:** 14
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1559,11 +1479,10 @@ obj = dt << Process Screening(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), );
 Wait( 1 );
@@ -1581,7 +1500,6 @@ obj << Drift Graph Selected( {{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1599,7 +1517,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1619,7 +1536,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1638,7 +1554,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1659,7 +1574,6 @@ obj << Filter Where( Stability Index > 1.3 | Mean <= 4.3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1679,7 +1593,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) );
 
@@ -1697,7 +1610,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 ) );
 
@@ -1715,7 +1627,6 @@ obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -1743,7 +1654,6 @@ dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1773,7 +1683,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1791,7 +1700,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1811,7 +1719,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Latest Out of Spec( 0 ) );
 Wait( 1 );
@@ -1827,7 +1734,6 @@ obj << Latest Out of Spec( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -1850,7 +1756,6 @@ obj << Save Shift Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1873,7 +1778,6 @@ obj << Maximum( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -1893,7 +1797,6 @@ obj << Mean( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1911,7 +1814,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
 obj = dt << Process Screening(
 	Y( :Fill Weight ),
@@ -1932,7 +1834,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1953,7 +1854,6 @@ obj << N Subgroups( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Count( 0 ) );
 Wait( 1 );
@@ -1971,7 +1871,6 @@ obj << Out of Spec Count( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Rate( 0 ) );
 Wait( 1 );
@@ -1987,7 +1886,6 @@ obj << Out of Spec Rate( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2009,7 +1907,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -2025,7 +1922,6 @@ obj << Overall Sigma( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -2047,7 +1943,6 @@ obj << Performance Graph Boundaries( 1.7, 1.2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Ppk( 0 ) );
 Wait( 1 );
@@ -2063,7 +1958,6 @@ obj << Ppk( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -2082,7 +1976,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -2100,7 +1993,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -2118,7 +2010,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
 Column( "Weight" ) << Set Property(
 	"Process Screening",
@@ -2145,7 +2036,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2165,7 +2055,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -2190,7 +2079,6 @@ obj << Relaunch Selected Processes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( dt << get Column Group( "Processes" ) ),
@@ -2210,7 +2098,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2232,7 +2119,6 @@ obj << Remove Selected Items;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
 Wait( 1 );
@@ -2252,7 +2138,6 @@ obj << Reset Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :DIAMETER ),
@@ -2275,7 +2160,6 @@ obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 2, 1 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Details Table;
@@ -2290,7 +2174,6 @@ obj << Save Details Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2309,7 +2192,6 @@ obj << Save Selected Details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -2330,7 +2212,6 @@ obj << Save Shift Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Summary Table;
@@ -2347,7 +2228,6 @@ obj << Save Summary Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Summary Table with Graphs;
@@ -2362,7 +2242,6 @@ obj << Save Summary Table with Graphs;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Select All );
 
@@ -2378,7 +2257,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Sel
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2398,7 +2276,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2416,7 +2293,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -2434,7 +2310,6 @@ obj << Shift Graph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -2455,7 +2330,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2476,7 +2350,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
 obj << Select Where( :MACHINE == "C334" );
@@ -2492,11 +2365,10 @@ obj << Select Where( :MACHINE == "A455" );
 
 **说明:** 绘制在汇总表中选择的过程的小图形。这些图形显示在“为选定项显示的图表”报表中，其中可以同时查看和比较许多过程。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2507,11 +2379,10 @@ obj = dt << Process Screening(
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2521,11 +2392,10 @@ obj = dt << Process Screening(
 
 ```
 
-**示例 3**
+#### 示例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :IVP7, :B1, :IVP8 ),
@@ -2542,7 +2412,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -2562,7 +2431,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2587,7 +2455,6 @@ obj << Show Tests( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -2608,7 +2475,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Mean( 1 ) );
 
@@ -2624,7 +2490,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Me
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 ) );
 
@@ -2640,7 +2505,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std Dev( 1 ) );
 
@@ -2656,7 +2520,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -2674,7 +2537,6 @@ obj << Stability Index( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -2696,7 +2558,6 @@ obj << Stability Index Boundary( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 obj << Stability Ratio( 1 );
@@ -2711,7 +2572,6 @@ obj << Stability Ratio( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -2729,7 +2589,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -2751,7 +2610,6 @@ obj << Summary( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 ) );
 
@@ -2765,7 +2623,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 1( 0 ) );
 
@@ -2779,7 +2636,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 2( 1 ) );
 
@@ -2793,7 +2649,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 3( 1 ) );
 
@@ -2807,7 +2662,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 4( 1 ) );
 
@@ -2821,7 +2675,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 5( 1 ) );
 
@@ -2835,7 +2688,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 6( 1 ) );
 
@@ -2849,7 +2701,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 7( 1 ) );
 
@@ -2863,7 +2714,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 8( 1 ) );
 
@@ -2879,7 +2729,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -2903,7 +2752,6 @@ obj << Test Action( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -2927,7 +2775,6 @@ obj << Test Alert( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -2950,7 +2797,6 @@ obj << Test Alert Increasing( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -2980,7 +2826,6 @@ obj = dt1 << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -3002,7 +2847,6 @@ dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3024,7 +2868,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -3049,7 +2892,6 @@ dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Within Sigma( 0 ) );
 Wait( 1 );
@@ -3073,7 +2915,6 @@ obj << Within Sigma( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3093,7 +2934,6 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3119,7 +2959,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3139,7 +2978,6 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3159,7 +2997,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3184,7 +3021,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3204,7 +3040,6 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3229,7 +3064,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3248,7 +3082,6 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3266,7 +3099,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3291,7 +3123,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3310,7 +3141,6 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3328,7 +3158,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3353,7 +3182,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3372,7 +3200,6 @@ obj << Chart Options for Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3391,7 +3218,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3416,7 +3242,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3436,7 +3261,6 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3455,7 +3279,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3480,7 +3303,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3500,7 +3322,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3519,7 +3340,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3542,7 +3362,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3562,7 +3381,6 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3582,7 +3400,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3607,7 +3424,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3632,7 +3448,6 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3657,7 +3472,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3691,7 +3505,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3709,7 +3522,6 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3733,7 +3545,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3753,7 +3564,6 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3772,7 +3582,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3802,7 +3611,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3822,7 +3630,6 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3848,7 +3655,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3868,7 +3674,6 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3888,7 +3693,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3913,7 +3717,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3933,7 +3736,6 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3958,7 +3760,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3977,7 +3778,6 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3995,7 +3795,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4020,7 +3819,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4039,7 +3837,6 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4057,7 +3854,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4082,7 +3878,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4101,7 +3896,6 @@ obj << Chart Options for Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4120,7 +3914,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4145,7 +3938,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4165,7 +3957,6 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4184,7 +3975,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4209,7 +3999,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4229,7 +4018,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4248,7 +4036,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4271,7 +4058,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4291,7 +4077,6 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4311,7 +4096,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4336,7 +4120,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4361,7 +4144,6 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4386,7 +4168,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4420,7 +4201,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4438,7 +4218,6 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4462,7 +4241,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4482,7 +4260,6 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4501,7 +4278,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4531,7 +4307,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4551,7 +4326,6 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4577,7 +4351,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4597,7 +4370,6 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4617,7 +4389,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4642,7 +4413,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4662,7 +4432,6 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4687,7 +4456,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4706,7 +4474,6 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4724,7 +4491,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4749,7 +4515,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4768,7 +4533,6 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4786,7 +4550,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4811,7 +4574,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4830,7 +4592,6 @@ obj << Chart Options for Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4849,7 +4610,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4874,7 +4634,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4894,7 +4653,6 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4913,7 +4671,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4938,7 +4695,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4958,7 +4714,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4977,7 +4732,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5000,7 +4754,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5020,7 +4773,6 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5040,7 +4792,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5065,7 +4816,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5090,7 +4840,6 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5115,7 +4864,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5149,7 +4897,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5167,7 +4914,6 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5191,7 +4937,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5211,7 +4956,6 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5230,7 +4974,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5260,7 +5003,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5280,7 +5022,6 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5306,7 +5047,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5326,7 +5066,6 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5346,7 +5085,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5371,7 +5109,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5391,7 +5128,6 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5416,7 +5152,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5435,7 +5170,6 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5453,7 +5187,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5478,7 +5211,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5497,7 +5229,6 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5515,7 +5246,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5540,7 +5270,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5559,7 +5288,6 @@ obj << Chart Options for Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5578,7 +5306,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5603,7 +5330,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5623,7 +5349,6 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5642,7 +5367,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5667,7 +5391,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5687,7 +5410,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5706,7 +5428,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5729,7 +5450,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5749,7 +5469,6 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5769,7 +5488,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5794,7 +5512,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5819,7 +5536,6 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5844,7 +5560,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5878,7 +5593,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5896,7 +5610,6 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5920,7 +5633,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5940,7 +5652,6 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5959,7 +5670,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),

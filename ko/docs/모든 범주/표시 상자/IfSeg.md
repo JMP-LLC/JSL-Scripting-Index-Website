@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -40,7 +39,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -68,7 +66,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -86,7 +83,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -100,7 +96,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -114,7 +109,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -128,7 +122,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 
@@ -144,7 +137,6 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -162,7 +154,6 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -179,7 +170,6 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -196,7 +186,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -215,7 +204,6 @@ seg << Class Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -242,7 +230,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -259,7 +246,6 @@ seg << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -276,7 +262,6 @@ seg << Frame;
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -297,7 +282,6 @@ seg << get;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -325,7 +309,6 @@ cs << Get Clip Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -342,7 +325,6 @@ seg << get description();
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -359,7 +341,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -381,7 +362,6 @@ seg << set( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -398,7 +378,6 @@ seg << set description( "my seg" );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];
@@ -415,8 +394,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -453,7 +430,6 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ) );
 frame = g[FrameBox( 1 )];

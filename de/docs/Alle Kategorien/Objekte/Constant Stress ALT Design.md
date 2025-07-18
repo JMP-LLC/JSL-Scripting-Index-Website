@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -48,7 +47,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -84,7 +82,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -120,7 +117,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -156,7 +152,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -192,7 +187,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -228,7 +222,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -264,7 +257,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -300,7 +292,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(
@@ -344,7 +335,6 @@ d = Constant Stress ALT Design(
 
 ```jsl
 
-Names Default To Here( 1 );
 d = Constant Stress ALT Design(
 	Factors(
 		Factor(

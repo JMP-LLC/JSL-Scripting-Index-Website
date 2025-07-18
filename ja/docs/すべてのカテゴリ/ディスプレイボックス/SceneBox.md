@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -29,7 +28,6 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
@@ -62,7 +60,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -83,7 +80,6 @@ rbiv << Add Polygon Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -101,7 +97,6 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -121,7 +116,6 @@ rbiv << Add Text Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -138,7 +132,6 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -160,7 +153,6 @@ tb << Border( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -180,7 +172,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Run Script( "Bivariate" );
@@ -196,7 +187,6 @@ w << Bring Window To Front;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -216,7 +206,6 @@ Print( axisChild << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -234,7 +223,6 @@ axisbox << Class Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -253,7 +241,6 @@ rbiv << append( clonedBox );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -269,7 +256,6 @@ w << Close Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
 mat << CopyData;
 
@@ -283,7 +269,6 @@ mat << CopyData;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -301,7 +286,6 @@ rbiv = biv << report;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -318,7 +302,6 @@ rbiv << Copy Picture();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -336,7 +319,6 @@ axisbox << Delete Box();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 selected = 0;
 New Window( "Example",
@@ -362,7 +344,6 @@ refresh = Function( {},
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -379,7 +360,6 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -411,7 +391,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -429,7 +408,6 @@ axisbox << Delete();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -451,7 +429,6 @@ annotation << delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -473,7 +450,6 @@ tb << Border( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -493,7 +469,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Content Size();
@@ -507,11 +482,10 @@ Show( c );
 
 **説明:** parent boxとobjの間をナビゲートするための比較的ロバストな式を取得する。このパスは、JMPのどのリリースでも同様であることが保証されているものではない。receiver exprが与えられている場合、その式は出力の式に組み込まれる。そうでない場合は、parent boxに与えられた式が代わりに使用される。このメッセージは、すでに利用可能なパスのロバスト性を高めるために主に利用される(例を参照)。デフォルトはXPathモード。
 
-**サブスクリプトモード**
+#### サブスクリプトモード
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -522,11 +496,10 @@ subscript expr << Select;
 
 ```
 
-**基本**
+#### 基本
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -545,7 +518,6 @@ xpath expr << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -575,22 +547,20 @@ New Window( "enabled",
 
 **説明:** ディスプレイボックスに含まれている文字列をHTMLソースとして戻す。
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get HTML );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -607,7 +577,6 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -625,7 +594,6 @@ fb << Get Height;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -645,7 +613,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -662,7 +629,6 @@ Print( rbiv << Get Journal );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -683,7 +649,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -701,7 +666,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -719,7 +683,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -737,7 +700,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -762,7 +724,6 @@ Show( w << Get On Close );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -783,7 +744,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Page Setup Test" ) );
 w << get page setup();
@@ -796,11 +756,10 @@ w << get page setup();
 
 **説明:** dbをイメージオブジェクトとしてキャプチャする。オプションのScale引数は、スケーリングされた解像度でイメージをレンダリングする。スケーリングするには、ディスプレイボックスが伸縮可能でなければならない。Type引数は、結果をスケーラブルなベクターイメージにするか、ビットマップにするかを指定する。デフォルトでは、PDFのようなベクター形式での保存に適したスケーラブルなイメージが戻される。Viewオプションでは、いくつかのボックスの動作が変更される。デフォルトのオプションである"Picture"は、イメージ形式に書き出すときと同様にレポートを描画し、スクロールしないと見えない領域もすべて含まれる。 "Screen"は、スクリーン上で表示されるときと同様にレポートを描画し、"Print"は、ページ設定機能を使わずに、印刷するときと同じようにレポートを描画する。SubRectオプションは、生成された画像全体ではなく、一部をキャプチャする。Appearanceオプションでは、"Default"の出力の色を、画面上に表示される"Current"の色に変更することができる。View、SubRect、およびAppearanceオプションは、Typeの"Bitmap"でのみサポートされている。
 
-**Scale**
+#### Scale
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -810,11 +769,10 @@ New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
-**ViewとAppearance**
+#### ViewとAppearance
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -835,11 +793,10 @@ New Window( "Example",
 
 ```
 
-**デフォルト**
+#### デフォルト
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -858,7 +815,6 @@ New Window( "Example", rbiv << Get Picture );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Project();
@@ -874,7 +830,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -888,7 +843,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -902,7 +856,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -914,22 +867,20 @@ bb << Get Property List;
 
 **説明:** ディスプレイボックスに含まれている文字列をRTFソースとして戻す。
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get RTF );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -944,11 +895,10 @@ Open( "$TEMP/Oneway.rtf" );
 
 **説明:** 指定したデータテーブルまたは現在のデータテーブルの各行の行属性を含むベクトルを戻す。行の属性は、テーブルから取得することも、ボックスのフィルタコンテキストから取得することもできる。
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -988,11 +938,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -1035,7 +984,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1053,7 +1001,6 @@ Print( w << Get Show Window() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1073,7 +1020,6 @@ Print( fb << Get Size );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -1097,7 +1043,6 @@ spacer << Get Stretch();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get Text );
@@ -1114,7 +1059,6 @@ a << Set Text( win << Get Text );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1138,7 +1082,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1160,7 +1103,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1181,7 +1123,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1197,7 +1138,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Icon;
@@ -1213,7 +1153,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 p = w << Get Window Position();
@@ -1229,7 +1168,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = w << Get Window Size();
@@ -1245,7 +1183,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Title;
@@ -1261,7 +1198,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Print( w << Get Window View() );
@@ -1276,7 +1212,6 @@ Print( w << Get Window View() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "test", a = Text Box( "my test" ) );
 a << set text( win << get xml );
@@ -1291,7 +1226,6 @@ a << set text( win << get xml );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "example",
 	MouseBox(
 		Graph Box(
@@ -1336,7 +1270,6 @@ New Window( "example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1356,7 +1289,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Inval example",
@@ -1400,7 +1332,6 @@ New Window( "Inval example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -1417,7 +1348,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "Modal Window", <<Modal ),
 	Function( {win},
@@ -1436,7 +1366,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1453,7 +1382,6 @@ rbiv << journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Journal Window;
@@ -1468,7 +1396,6 @@ w << Journal Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "example",
@@ -1488,11 +1415,10 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 **説明:** 指定したデータテーブルまたは現在のデータテーブルに対して、行属性ハンドラを作成する。この関数は、ボックスのフィルタコンテキスト内で行の属性が変わると呼び出される。関数の引数に、変更された行の番号が格納されるが、行属性のフィルタが変更された場合は、-1が格納される。
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -1532,11 +1458,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -1579,7 +1504,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1600,7 +1524,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1618,7 +1541,6 @@ w << Maximize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -1636,7 +1558,6 @@ w << Minimize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -1652,7 +1573,6 @@ w << Move Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1668,11 +1588,10 @@ Print( next << Class Name() );
 
 **説明:** ウィンドウを閉じる際に実行するスクリプトまたは関数を設定する。このスクリプトが1を戻すとウィンドウが閉じ、0を戻すとウィンドウは閉じない。
 
-**閉じる際のスクリプト**
+#### 閉じる際のスクリプト
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -1688,11 +1607,10 @@ w << On Close(
 
 ```
 
-**閉じる際の関数**
+#### 閉じる際の関数
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -1720,7 +1638,6 @@ w << On Close(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to Data Table objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Optimize Display;
@@ -1735,7 +1652,6 @@ dt << Optimize Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -1752,7 +1668,6 @@ r << Pad Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -1773,7 +1688,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	ob = Outline Box( "Outline Box",
@@ -1799,7 +1713,6 @@ ob3 << Page Break;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1818,7 +1731,6 @@ Print( axisParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1837,7 +1749,6 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1856,7 +1767,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Print Window;
@@ -1871,7 +1781,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Reshow example",
@@ -1900,7 +1809,6 @@ New Window( "Reshow example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1917,7 +1825,6 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1934,7 +1841,6 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1951,7 +1857,6 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1968,7 +1873,6 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -1985,7 +1889,6 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2000,11 +1903,10 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 **説明:** ディスプレイボックスのイメージを保存する。サポートされている形式は、EMF(Windows)、PICT(Macintosh)、JPEG、JPG、GIF、PNG。オプションのScale引数は、スケーリングされた解像度でイメージをレンダリングする。スケーリングするには、ディスプレイボックスが伸縮可能でなければならない。Type引数は、結果をスケーラブルなベクターイメージにするか、ビットマップにするかを指定する。デフォルトでは、PDFのようなベクター形式での保存に適したスケーラブルなイメージが戻される。Viewオプションでは、いくつかのボックスの動作が変更される。デフォルトのオプションである"Picture"は、イメージ形式に書き出すときと同様にレポートを描画し、スクロールしないと見えない領域もすべて含まれる。 "Screen"は、スクリーン上で表示されるときと同様にレポートを描画し、"Print"は、ページ設定機能を使わずに、印刷するときと同じようにレポートを描画する。SubRectオプションは、生成された画像全体ではなく、一部をキャプチャする。Appearanceオプションでは、"Default"の出力の色を、画面上に表示される"Current"の色に変更することができる。View、SubRect、およびAppearanceオプションは、Typeが"Bitmap"の場合のみサポートされている。
 
-**Scale**
+#### Scale
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2015,11 +1917,10 @@ New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
-**ViewとAppearance**
+#### ViewとAppearance
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -2051,11 +1952,10 @@ New Window( "Example",
 
 ```
 
-**デフォルト**
+#### デフォルト
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2066,13 +1966,12 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**構文:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
+**構文:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\\to\\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **説明:** プレゼンテーションにディスプレイボックスのテーブルとグラフを含むスライドを保存する。プレゼンテーションはMicrosoft PowerPointまたはその他のプレゼンテーションソフトウェアで開くことができる。
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2089,7 +1988,6 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2106,7 +2004,6 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << save text( "$TEMP/jmp_example.txt" );
@@ -2123,7 +2020,6 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message can be sent to any display box object but will be applied to the report window
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -2137,11 +2033,10 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 **説明:** DisplayBoxが表示されるようにウィンドウのスクロールバーを調整するか、相対的なまたは絶対ピクセル数だけスクロールする。ピクセル数の代わりに、キーワード"Start"または"End"を使用できる。
 
-**Absolute**
+#### Absolute
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2158,11 +2053,10 @@ Wait( 1 );
 
 ```
 
-**Box**
+#### Box
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2183,11 +2077,10 @@ For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 s
 
 ```
 
-**Relative**
+#### Relative
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -2214,7 +2107,6 @@ Wait( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example", ex = Button Box( "Press Me" ) );
 ex << Select;
@@ -2229,7 +2121,6 @@ ex << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Test",
 	lb = List Box( {"a", "b", "c", "d"} ),
@@ -2257,7 +2148,6 @@ w << Set Content Size( 400, 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -2274,7 +2164,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2292,7 +2181,6 @@ fb << Set Height( 150 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Set Main Window;
@@ -2307,7 +2195,6 @@ w << Set Main Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2326,7 +2213,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2345,7 +2231,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
 w << Set page setup(
@@ -2367,7 +2252,6 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Footer Test" ) );
 w << Set Print Footers(
@@ -2386,7 +2270,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Header Test" ) );
 w << Set Print Headers(
@@ -2405,7 +2288,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 
@@ -2419,7 +2301,6 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2436,11 +2317,10 @@ rbiv << Set Report Title( "New Title" );
 
 **JMP追加されたバージョン:** 16
 
-**ウィンドウとともに伸縮**
+#### ウィンドウとともに伸縮
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	H List Box(
@@ -2461,11 +2341,10 @@ ts << Set Stretch( "Window", "Window" );
 
 ```
 
-**伸縮して空きを埋める**
+#### 伸縮して空きを埋める
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -2484,7 +2363,6 @@ New Window( "Stretch",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2503,7 +2381,6 @@ tb << Set Summary Behavior( "Visible" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2521,7 +2398,6 @@ fb << Set Width( 400 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Example", ex = Button Box( "New Analysis" ) );
 w << Set Window Icon( "Scatter3D" );
@@ -2536,7 +2412,6 @@ w << Set Window Icon( "Scatter3D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 800, 1200 );
@@ -2551,7 +2426,6 @@ w << Set Window Size( 800, 1200 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2568,7 +2442,6 @@ rbiv << Set Window Title( "New Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2585,7 +2458,6 @@ rbiv << Show Properties();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2602,7 +2474,6 @@ rbiv << Show Tree Structure();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -2620,7 +2491,6 @@ w << Show Window( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2639,7 +2509,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2661,7 +2530,6 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2683,7 +2551,6 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Size Window( 500, 500 );
@@ -2700,7 +2567,6 @@ w << Size Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2720,7 +2586,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2742,7 +2607,6 @@ Print( rootParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "UpdateWindow example",
@@ -2794,7 +2658,6 @@ New Window( "rect",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2816,7 +2679,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -2837,7 +2699,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -2853,11 +2714,10 @@ Show( rbiv << Window Class Name() );
 
 **説明:** 表示ツリーのXML表現にXpath式を適用し、その結果を戻す。デフォルトでは、文字列はローカル言語で戻され、XMLには一部のボックスのデータ値が含まれる。Englishオプションを使うと、英語の文字列が戻される。NoDataオプションを使うと、ボックス内のデータ値を省略できるため、ボックスの属性を取得することが目的の場合にパフォーマンスを向上できる。
 
-**Attributes**
+#### Attributes
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2865,11 +2725,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Box type**
+#### Box type
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2877,11 +2736,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Child box**
+#### Child box
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2890,11 +2748,10 @@ Make Into Data Table;
 
 ```
 
-**Data**
+#### Data
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2903,11 +2760,10 @@ Text Color( "Green" );
 
 ```
 
-**Display Seg**
+#### Display Seg
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2915,11 +2771,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -2935,7 +2790,6 @@ biv = dt << Run Script( "Bivariate" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 80, 120 );
@@ -2954,7 +2808,6 @@ w << Zoom Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -2991,7 +2844,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << color( 0, 0, 1 );
 shape << Text( center, baseline, 0.2, "Hello, World." );
@@ -3014,7 +2866,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -3035,7 +2886,6 @@ scene << Background Color( 0, 0, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Begin( POLYGON );
 shape << Color( 1, 0, 0 );
@@ -3063,7 +2913,6 @@ New Window( "Example", scene );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Enable( Blend );
 shape << BlendFunc( SRC_ALPHA, ONE_MINUS_SRC_ALPHA );
@@ -3094,7 +2943,6 @@ New Window( "Example", scene );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Disk( .5, 1, 50, 50 );
@@ -3118,7 +2966,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 500, 500 );
 fps = Scene Display List();
 window = New Window( "Frames Per Second", scene );
@@ -3155,7 +3002,6 @@ While( 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Color( 0, 0.48, 0.72 );
 shape << Cylinder( 0.5, 0.5, 2, 50, 50 );
@@ -3181,7 +3027,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Enable( Blend );
 shape << BlendFunc( SRC_ALPHA, ONE_MINUS_SRC_ALPHA );
@@ -3212,7 +3057,6 @@ New Window( "Example", scene );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.0, 0.0 );
@@ -3258,7 +3102,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color Material( Front_And_Back, Ambient );
 shape << Enable( COLOR_MATERIAL );
@@ -3295,7 +3138,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( CULL_FACE );
 shape << CullFace( Front );
@@ -3334,7 +3176,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Color( 0, 0.48, 0.72 );
 shape << Cylinder( 0.5, 0.5, 2, 50, 50 );
@@ -3357,7 +3198,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( DEPTH_TEST );
 shape << DepthFunc( never );
@@ -3396,7 +3236,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( DEPTH_TEST );
 shape << DepthMask( 0 );
@@ -3435,7 +3274,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( DEPTH_TEST );
 shape << DepthRange( 1, 0 );
@@ -3474,7 +3312,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 showfog = 1;
 scene = Scene Box( 600, 600 );
 New Window( "Example",
@@ -3521,7 +3358,6 @@ refresh();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Color( 0, 0.48, 0.72 );
 shape << Disk( .5, 1, 50, 50 );
@@ -3544,7 +3380,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 showfog = 1;
 scene = Scene Box( 600, 600 );
 New Window( "Example",
@@ -3591,7 +3426,6 @@ refresh();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Begin( POLYGON );
 shape << Color( 1, 0, 0 );
@@ -3619,7 +3453,6 @@ New Window( "Example", scene );
 
 ```jsl
 
-Names Default To Here( 1 );
 NPOINTS = 4;
 points = J( NPOINTS, 3, 0 );
 For( x = 1, x <= NPOINTS, x++,
@@ -3652,7 +3485,6 @@ New Window( "Example", curve );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 10;
 npoints = 16;
 imax = 8;
@@ -3698,7 +3530,6 @@ New Window( "Example", sb );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 100;
 NPOINTS = 4;
 points = J( NPOINTS, 3, 0 );
@@ -3728,7 +3559,6 @@ New Window( "Example", spline );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 10;
 npoints = 32;
 points = J( npoints, 3, 0 );
@@ -3761,7 +3591,6 @@ New Window( "Example", sb );
 
 ```jsl
 
-Names Default To Here( 1 );
 NPOINTS = 4;
 points = J( NPOINTS, 3, 0 );
 For( x = 1, x <= NPOINTS, x++,
@@ -3794,7 +3623,6 @@ New Window( "Example", curve );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 10;
 npoints = 16;
 imax = 8;
@@ -3840,7 +3668,6 @@ New Window( "Example", sb );
 
 ```jsl
 
-Names Default To Here( 1 );
 showfog = 1;
 scene = Scene Box( 600, 600 );
 New Window( "Example",
@@ -3887,7 +3714,6 @@ refresh();
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << frame( -0.2, 0.2, -0.2, 0.2, 0.0, 0.0, 1 );
@@ -3907,7 +3733,6 @@ scene << frame( -0.8, 0.8, -0.8, 0.8, 0.0, 0.0, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( CULL_FACE );
 shape << CullFace( Front );
@@ -3947,7 +3772,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -3983,7 +3807,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -4005,7 +3828,6 @@ scene << Get Background Color();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << color( 0, 0, 1 );
 shape << Text( center, baseline, 0.2, "Hello, World." );
@@ -4030,7 +3852,6 @@ scene << Get Show ArcBall();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -4066,7 +3887,6 @@ scene << Get Width();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -4102,7 +3922,6 @@ scene << Height( 150 );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Sphere( 1.5, 50, 50 );
@@ -4134,7 +3953,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -4170,7 +3988,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << LineWidth( 4 );
@@ -4195,7 +4012,6 @@ scene << Disable( LINE_STIPPLE );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << LineWidth( 1 );
@@ -4222,7 +4038,6 @@ scene << End();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Sphere( 0.5, 50, 50 );
@@ -4250,7 +4065,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Sphere( 0.5, 50, 50 );
@@ -4279,7 +4093,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 spheres = Scene Display List();
 spheres << Point Size( 50 );
 Spheres << PushName( 0 );
@@ -4315,7 +4128,6 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -4339,7 +4151,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 100;
 NPOINTS = 4;
 points = J( NPOINTS, 3, 0 );
@@ -4369,7 +4180,6 @@ New Window( "Example", spline );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 10;
 npoints = 32;
 points = J( npoints, 3, 0 );
@@ -4402,7 +4212,6 @@ New Window( "Example", sb );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 100;
 NPOINTS = 4;
 points = J( NPOINTS, 3, 0 );
@@ -4432,7 +4241,6 @@ New Window( "Example", spline );
 
 ```jsl
 
-Names Default To Here( 1 );
 gridsize = 10;
 npoints = 32;
 points = J( npoints, 3, 0 );
@@ -4465,7 +4273,6 @@ New Window( "Example", sb );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -4498,7 +4305,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Sphere( 0.5, 50, 50 );
@@ -4527,7 +4333,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0.48, 0.72 );
 shape << Sphere( 1.0, 50, 50 );
@@ -4553,7 +4358,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << LightModel( LIGHT_MODEL_TWO_SIDE, 1 );
@@ -4600,7 +4404,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Begin( POLYGON );
 shape << Color( 1, 0, 0 );
@@ -4631,7 +4434,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << Ortho2D( -1, 1, -1, 1 );
@@ -4658,7 +4460,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Color( 0, 0.48, 0.72 );
 shape << PartialDisk( 0.5, 1, 2, 3, 50, 50 );
@@ -4681,7 +4482,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -4701,7 +4501,6 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ```jsl
 
-Names Default To Here( 1 );
 spheres = Scene Display List();
 spheres << Point Size( 50 );
 Spheres << PushName( 0 );
@@ -4737,7 +4536,6 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << pointsize( 1 );
@@ -4770,7 +4568,6 @@ scene << End();
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << PolygonMode( front, line );
 shape << Begin( POLYGON );
@@ -4802,7 +4599,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Begin( POLYGON );
 shape << Color( 1, 0, 0 );
@@ -4838,7 +4634,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0, 1 );
 shape << PushAttrib( GL_CURRENT_BIT );
@@ -4877,7 +4672,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 object = Scene Display List();
 object << PushMatrix;
 object << Translate( 0, 0, .1 );
@@ -4910,7 +4704,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 spheres = Scene Display List();
 spheres << Point Size( 50 );
 Spheres << PushName( 0 );
@@ -4946,7 +4739,6 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0, 0, 1 );
 shape << PushAttrib( GL_CURRENT_BIT );
@@ -4985,7 +4777,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 object = Scene Display List();
 object << PushMatrix;
 object << Translate( 0, 0, .1 );
@@ -5018,7 +4809,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 spheres = Scene Display List();
 spheres << Point Size( 50 );
 Spheres << PushName( 0 );
@@ -5054,7 +4844,6 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << QuadricDrawStyle( LINE );
 shape << Enable( COLOR_MATERIAL );
@@ -5088,7 +4877,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << QuadricNormals( FLAT );
 shape << Enable( COLOR_MATERIAL );
@@ -5122,7 +4910,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << QuadricOrientation( INSIDE );
 shape << Enable( COLOR_MATERIAL );
@@ -5162,7 +4949,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Color( 0.5, 0, 0 );
 shape << Rect( -0.75, -0.75, 0.5, 0.75 );
@@ -5183,7 +4969,6 @@ scene << CallList( shape );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -5204,7 +4989,6 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -5225,7 +5009,6 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Color( 1, 0, 0 );
 shape << Rect( -0.5, -0.5, 0.5, 0.5 );
@@ -5248,7 +5031,6 @@ scene << Disable( scissor_test );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 200, 200 );
 New Window( "Example", scene );
 scene << Ortho2D( -1, 1, -1, 1 );
@@ -5275,7 +5057,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << color( 0, 0, 1 );
 shape << Text( center, baseline, 0.2, "Hello, World." );
@@ -5305,7 +5086,6 @@ scene << Update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );
@@ -5340,7 +5120,6 @@ scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << color( 0, 0, 1 );
 shape << Text( center, baseline, 0.2, "Hello, World." );
@@ -5364,7 +5143,6 @@ scene << Suppress Context Menu( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -5384,7 +5162,6 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 400, 400 );
 New Window( "Example", scene );
 scene << Perspective( 45, 3, 7 );
@@ -5404,7 +5181,6 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 500, 500 );
 fps = Scene Display List();
 window = New Window( "Frames Per Second", scene );
@@ -5441,7 +5217,6 @@ While( 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 scene = Scene Box( 500, 500 );
 fps = Scene Display List();
 window = New Window( "Frames Per Second",
@@ -5490,7 +5265,6 @@ While( 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List();
 shape << Begin( POLYGON );
 shape << Color( 1, 0, 0 );
@@ -5518,7 +5292,6 @@ New Window( "Example", scene );
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = Scene Display List( 0 );
 shape << Enable( COLOR_MATERIAL );
 shape << Color( 0, 0.48, 0.72 );

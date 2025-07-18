@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ), Certificates( "c:\mycerts.crt" ) );
@@ -29,7 +28,6 @@ cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ), Certi
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -47,7 +45,6 @@ CAS Delete Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ) );
@@ -65,7 +62,6 @@ CAS Disconnect();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
@@ -82,7 +78,6 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
@@ -104,7 +99,6 @@ Show( datasets );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 libraries = CAS Get Libraries();
@@ -122,7 +116,6 @@ Show( libraries );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -140,7 +133,6 @@ CAS Import Data( "Casuser.Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 connected = CAS Is Connected();
 Show( connected );
@@ -157,7 +149,6 @@ Show( connected );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -175,7 +166,6 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 json =
 "\[
@@ -406,7 +396,6 @@ dt = CAS Table To Data Table( json );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Terminate Sessions();
@@ -423,7 +412,6 @@ CAS Terminate Sessions();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 connection = Current CAS Connection();
 Show( connection );
@@ -440,7 +428,6 @@ Show( connection );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 echo = [=> ];
 echo["a"] = 1;
@@ -460,7 +447,6 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -486,7 +472,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );

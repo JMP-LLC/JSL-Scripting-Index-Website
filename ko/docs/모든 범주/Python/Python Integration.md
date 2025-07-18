@@ -404,7 +404,7 @@ print(result)
 
 **JMP추가된 버전:** 19
 
-**CSV Fallback**
+#### CSV Fallback
 
 ```python
 
@@ -426,7 +426,7 @@ print(dt)
 
 ```
 
-**Ibis to JMP**
+#### Ibis to JMP
 
 ```python
 
@@ -450,7 +450,7 @@ print(dt)
 
 ```
 
-**JMP to Pandas**
+#### JMP to Pandas
 
 ```python
 
@@ -468,7 +468,7 @@ print(pandas_df)
 
 ```
 
-**JMP to Polars**
+#### JMP to Polars
 
 ```python
 
@@ -486,7 +486,7 @@ print(polars_df)
 
 ```
 
-**Pandas to JMP**
+#### Pandas to JMP
 
 ```python
 
@@ -516,7 +516,7 @@ print(dt)
 
 ```
 
-**Polars to JMP**
+#### Polars to JMP
 
 ```python
 
@@ -585,7 +585,7 @@ print(dt)
 
 **JMP추가된 버전:** 18
 
-**Excel**
+#### Excel
 
 ```python
 
@@ -596,7 +596,7 @@ print(obj)
 
 ```
 
-**JMP**
+#### JMP
 
 ```python
 
@@ -607,7 +607,7 @@ print(dt)
 
 ```
 
-**JSL 스크립트**
+#### JSL 스크립트
 
 ```python
 
@@ -618,7 +618,7 @@ print(obj)
 
 ```
 
-**비공개**
+#### 비공개
 
 ```python
 
@@ -638,7 +638,7 @@ del dt
 
 ```
 
-**숨김**
+#### 숨김
 
 ```python
 
@@ -721,7 +721,7 @@ print(pi)
 
 **JMP추가된 버전:** 18
 
-**반환된 값**
+#### 반환된 값
 
 ```python
 
@@ -736,7 +736,7 @@ print( f'{value} = jmp.run_jsl()')
 
 ```
 
-**버전 가져오기**
+#### 버전 가져오기
 
 ```python
 
@@ -746,7 +746,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```
 
-**열 특성**
+#### 열 특성
 
 ```python
 
@@ -5130,7 +5130,6 @@ import jmp
 from jmputils import jpip
 
 jmp.run_jsl('''
-Names Default To Here( 1 );
 
 src_path = Pick File(
     "Select requirements.txt File",

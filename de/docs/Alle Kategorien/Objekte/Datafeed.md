@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -30,7 +29,6 @@ feed << Close;
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -46,7 +44,6 @@ feed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -63,7 +60,6 @@ feed << Disconnect;
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -89,7 +85,6 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << getLine ) )
@@ -107,7 +102,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -126,7 +120,6 @@ exfeed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -150,7 +143,6 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed( /*no JSL to consume queue for this example*/ );
 For( exi = 1, exi <= 5, exi++,
 	exfeed << Queue Line( {"alice", "chuck", "ralph", "susan", "bobby"}[exi] )
@@ -167,7 +159,6 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -191,7 +182,6 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -210,7 +200,6 @@ feed << Restart;
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -226,7 +215,6 @@ feed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -245,7 +233,6 @@ feed << Stop;
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -268,7 +255,6 @@ exfeed << Write( "Ready" );
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -291,7 +277,6 @@ exfeed << Write Line( "Ready" );
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -314,7 +299,6 @@ exfeed << Write Lines( {"Ready", "Set", "Go"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << getLine ) )

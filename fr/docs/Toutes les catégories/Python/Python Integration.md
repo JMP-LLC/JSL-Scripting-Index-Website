@@ -408,7 +408,7 @@ print(result)
 
 **JMP Version ajoutée :** 19
 
-**CSV Fallback**
+#### CSV Fallback
 
 ```python
 
@@ -430,7 +430,7 @@ print(dt)
 
 ```
 
-**Ibis to JMP**
+#### Ibis to JMP
 
 ```python
 
@@ -454,7 +454,7 @@ print(dt)
 
 ```
 
-**JMP to Pandas**
+#### JMP to Pandas
 
 ```python
 
@@ -472,7 +472,7 @@ print(pandas_df)
 
 ```
 
-**JMP to Polars**
+#### JMP to Polars
 
 ```python
 
@@ -490,7 +490,7 @@ print(polars_df)
 
 ```
 
-**Pandas to JMP**
+#### Pandas to JMP
 
 ```python
 
@@ -520,7 +520,7 @@ print(dt)
 
 ```
 
-**Polars to JMP**
+#### Polars to JMP
 
 ```python
 
@@ -589,7 +589,7 @@ print(dt)
 
 **JMP Version ajoutée :** 18
 
-**Excel**
+#### Excel
 
 ```python
 
@@ -600,7 +600,7 @@ print(obj)
 
 ```
 
-**Invisible**
+#### Invisible
 
 ```python
 
@@ -619,7 +619,7 @@ del dt
 
 ```
 
-**JMP**
+#### JMP
 
 ```python
 
@@ -630,7 +630,7 @@ print(dt)
 
 ```
 
-**Privée**
+#### Privée
 
 ```python
 
@@ -650,7 +650,7 @@ del dt
 
 ```
 
-**Script JSL**
+#### Script JSL
 
 ```python
 
@@ -725,7 +725,7 @@ print(pi)
 
 **JMP Version ajoutée :** 18
 
-**Obtenir la version**
+#### Obtenir la version
 
 ```python
 
@@ -735,7 +735,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```
 
-**Propriétés de colonne**
+#### Propriétés de colonne
 
 ```python
 
@@ -760,7 +760,7 @@ Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
 
 ```
 
-**Valeur renvoyée**
+#### Valeur renvoyée
 
 ```python
 
@@ -5132,7 +5132,6 @@ import jmp
 from jmputils import jpip
 
 jmp.run_jsl('''
-Names Default To Here( 1 );
 
 src_path = Pick File(
     "Select requirements.txt File",

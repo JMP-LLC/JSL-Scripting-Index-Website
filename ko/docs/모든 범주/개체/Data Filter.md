@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -31,7 +30,6 @@ obj = dt << Data Filter(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -49,7 +47,6 @@ obj << Add Filter Columns( :State );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -68,7 +65,6 @@ obj << Filter Column( :State );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -84,7 +80,6 @@ obj << Filter Columns( :State, :OZONE );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -101,11 +96,10 @@ obj = dt << Data Filter(
 
 **설명:** 현재 필터 선택을 제공된 이름과 연결하고 즐겨찾기 목록에 저장합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 df = dt << Data Filter(
 	Add Filter(
@@ -120,11 +114,10 @@ fav1 = df << add favorites( "FemaleAverageHt" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 df = dt << Data Filter(
 	Add Filter( columns( :age, :sex, :height, :weight ), Where( :sex == "F" ) ),
@@ -144,7 +137,6 @@ Show( fav1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter();
 obj << Add Filter( columns( :POP ) );
@@ -164,7 +156,6 @@ obj << Add Filter(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -184,7 +175,6 @@ obj << Animation( Animate Column( :Region ), Bounce );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 df = dt << Data Filter(
 	Add Filter(
@@ -212,7 +202,6 @@ df << apply favorites( "FemaleAverageHt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Data Filter;
 obj << Auto Clear( 1 );
@@ -230,7 +219,6 @@ obj << (filter column( :sex ) << Where( :sex == "M" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
@@ -247,7 +235,6 @@ obj << Clear;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
 Wait( 1 );
@@ -263,7 +250,6 @@ obj << (Filter Column( :Region ) << Clear Selection);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -282,7 +268,6 @@ obj << Close;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :Region, :State ) ) );
 obj << (Filter Column( :Region ) << Where( :Region == {"South"} ));
@@ -301,7 +286,6 @@ obj << conditional( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
@@ -320,7 +304,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -338,11 +321,10 @@ obj << Copy Script;
 
 **JMP추가된 버전:** 14
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Data Filter(
 	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
@@ -356,11 +338,10 @@ Distribution(
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Data Filter(
 	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
@@ -400,7 +381,6 @@ New Window( "Hierarchical Data Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -416,11 +396,10 @@ obj << Data Table Window;
 
 **설명:** 데이터 필터의 기존 필터와 함께 지정된 열을 삭제합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -432,11 +411,10 @@ obj << Delete( {:State} );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -456,7 +434,6 @@ obj << (Filter Column( :State ) << delete);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -476,7 +453,6 @@ obj << Delete All;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -495,7 +471,6 @@ obj << Display( :Region, N Items( 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
 Wait( 1 );
@@ -513,7 +488,6 @@ obj << (Filter Column( :Region ) << Extend Where( :Region = "W" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -534,7 +508,6 @@ regionfilter = obj << Get Data Table();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -554,7 +527,6 @@ regionfilter << Invert Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -572,7 +544,6 @@ obj << Get Filtered Rows;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -591,7 +562,6 @@ Show( txt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );
 Wait( 1 );
@@ -614,7 +584,6 @@ txt = obj << get where clause;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -633,7 +602,6 @@ obj << Inverse( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
 Wait( 1 );
@@ -651,7 +619,6 @@ obj << (Filter Column( :Region ) << invert selection);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Automatic Recalc( 1 ), Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ) ) );
@@ -668,7 +635,6 @@ rs = filter << Make Filter Change Handler( f );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :BP 8W, :BP 6M ) ), Add Filter( columns( :BP 12M ) ) );
 Wait( 1 );
@@ -685,7 +651,6 @@ obj << Match( Filter Columns( :BP 12M ), Where( :BP 12M > 181.9 & :BP 12M < 192.
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
@@ -701,7 +666,6 @@ obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Data Filter;
@@ -718,11 +682,10 @@ df << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
 
 **설명:** 명명된 즐겨찾기를 즐겨찾기 목록에서 제거합니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 df = dt << Data Filter(
 	Add Filter(
@@ -740,11 +703,10 @@ df << remove favorites( "FemaleAverageHt" );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 df = dt << Data Filter(
 	Add Filter(
@@ -770,7 +732,6 @@ df << remove favorites();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -796,7 +757,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -814,7 +774,6 @@ obj << Save Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -832,7 +791,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -850,7 +808,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -866,7 +823,6 @@ obj << Save Where Clause To Clipboard;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -884,7 +840,6 @@ obj << Save Where Clause To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -900,7 +855,6 @@ obj << Save Where Clause To Formula Column;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -916,7 +870,6 @@ obj << Save Where Clause To Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -932,7 +885,6 @@ obj << Save Where Clause To Row State Column;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
@@ -948,7 +900,6 @@ obj << Save Where Clause To Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Save and Restore Current Row States( 1 ),
@@ -967,7 +918,6 @@ obj << Close;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :CO ), Where( :CO >= 9 & :CO < 15 ) ) );
 Wait( 1 );
@@ -983,7 +933,6 @@ obj << (Filter Column( :CO ) << Select Missing);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
 obj << set Include( 1 );
@@ -1000,7 +949,6 @@ obj << set Include( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
 obj << set select( 1 );
@@ -1017,7 +965,6 @@ obj << set select( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
 obj << set Show( 1 );
@@ -1036,7 +983,6 @@ obj << set Show( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -1063,7 +1009,6 @@ obj << Show Controls( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ) );
 Wait( 1 );
@@ -1081,7 +1026,6 @@ obj << Show Histograms and Bars( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -1100,7 +1044,6 @@ obj << Show Modes( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
@@ -1118,7 +1061,6 @@ obj << Show Subset;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -1174,7 +1116,6 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter;
 obj << Use Floating Window;
@@ -1189,7 +1130,6 @@ obj << Use Floating Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );
 Wait( 1 );
@@ -1205,7 +1145,6 @@ obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
 	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
@@ -1227,7 +1166,6 @@ obj << Columns( :Region, :SO2, :CO, :State );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1249,7 +1187,6 @@ regionobj << Blocks Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1277,7 +1214,6 @@ regionobj << Check Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1304,7 +1240,6 @@ regionobj << Clear Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1325,7 +1260,6 @@ regionobj << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1348,7 +1282,6 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1381,7 +1314,6 @@ regionobj << Find( Set Text( "w" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1402,7 +1334,6 @@ regionobj << Invert Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1438,7 +1369,6 @@ regionobj << List Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1461,7 +1391,6 @@ regionobj << Order by Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1483,7 +1412,6 @@ regionobj << Radio Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1504,7 +1432,6 @@ popobj << Select Filter Item;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1532,7 +1459,6 @@ regionobj << Single Category Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1557,7 +1483,6 @@ regionobj << Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1584,7 +1509,6 @@ regionobj << Clear Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1605,7 +1529,6 @@ regionobj << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1626,7 +1549,6 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1661,7 +1583,6 @@ regionobj << Invert Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );
 gb = dt << Graph Builder(
@@ -1689,7 +1610,6 @@ fc << Reset Zoom;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1712,7 +1632,6 @@ popobj << Select Filter Item;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1740,7 +1659,6 @@ ozoneobj << Select Missing;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1763,7 +1681,6 @@ regionobj << Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );
 gb = dt << Graph Builder(
@@ -1794,7 +1711,6 @@ fc << Zoom to Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1816,7 +1732,6 @@ regionobj << Blocks Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1844,7 +1759,6 @@ regionobj << Check Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1871,7 +1785,6 @@ regionobj << Clear Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1892,7 +1805,6 @@ regionobj << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1915,7 +1827,6 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1948,7 +1859,6 @@ regionobj << Find( Set Text( "w" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1969,7 +1879,6 @@ regionobj << Invert Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -1991,7 +1900,6 @@ regionobj << List Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2012,7 +1920,6 @@ sportsobj << Match All;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2033,7 +1940,6 @@ sportsobj << Match Any;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2054,7 +1960,6 @@ sportsobj << Match At Least( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2075,7 +1980,6 @@ sportsobj << Match At Most( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2096,7 +2000,6 @@ sportsobj << Match Between( 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2117,7 +2020,6 @@ sportsobj << Match Exactly;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2138,7 +2040,6 @@ sportsobj << Match None;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2173,7 +2074,6 @@ sportsobj << Match Only;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2196,7 +2096,6 @@ regionobj << Order by Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2218,7 +2117,6 @@ regionobj << Radio Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2239,7 +2137,6 @@ popobj << Select Filter Item;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2267,7 +2164,6 @@ regionobj << Single Category Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2294,7 +2190,6 @@ regionobj << Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Graph Builder(
@@ -2324,7 +2219,6 @@ illness_obj << Add Missing;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2346,7 +2240,6 @@ regionobj << Blocks Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2370,7 +2263,6 @@ regionobj << Check Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Graph Builder(
@@ -2400,7 +2292,6 @@ illness_obj << Clear Filter Texts List;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2427,7 +2318,6 @@ regionobj << Clear Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2448,7 +2338,6 @@ regionobj << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2481,7 +2370,6 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2502,7 +2390,6 @@ regionobj << Invert Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2524,7 +2411,6 @@ regionobj << List Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2545,7 +2431,6 @@ sportsobj << Match All;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2566,7 +2451,6 @@ sportsobj << Match Any;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2587,7 +2471,6 @@ sportsobj << Match At Least( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2608,7 +2491,6 @@ sportsobj << Match At Most( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2629,7 +2511,6 @@ sportsobj << Match Between( 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2650,7 +2531,6 @@ sportsobj << Match Exactly;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2671,7 +2551,6 @@ sportsobj << Match None;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Data Filter(
@@ -2706,7 +2585,6 @@ sportsobj << Match Only;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2729,7 +2607,6 @@ regionobj << Order by Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2751,7 +2628,6 @@ regionobj << Radio Box Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2774,7 +2650,6 @@ popobj << Select Filter Item;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Graph Builder(
@@ -2804,7 +2679,6 @@ illness_obj << Show Filter Text Edit Box( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(
@@ -2832,7 +2706,6 @@ regionobj << Single Category Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Data Filter(

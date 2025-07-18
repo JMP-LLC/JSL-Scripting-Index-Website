@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Char( Hex To Blob( "436166C3A9" ) ) ||
 Blob To Char( Hex To Blob( "436166C3A9" ), "ascii~hex" );
 
@@ -28,7 +27,6 @@ Blob To Char( Hex To Blob( "436166C3A9" ), "ascii~hex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
@@ -41,29 +39,26 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Precisión completa**
+#### Precisión completa
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 10, 4 );
 
 ```
 
-**Usar configuración local**
+#### Usar configuración local
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( 2.1, <<Use Locale( 1 ) );
 
 ```
@@ -78,7 +73,6 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -93,7 +87,6 @@ Char To Blob( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```
@@ -108,7 +101,6 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -123,7 +115,6 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -138,7 +129,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -153,7 +143,6 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "hello ";
 ex ||= "world";
 
@@ -169,7 +158,6 @@ ex ||= "world";
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -183,20 +171,18 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
 	numeric,
@@ -207,11 +193,10 @@ dt << Distribution( Column( :Cheese ) );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 //find repeated character c in cdcef
 Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
@@ -227,7 +212,6 @@ Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -242,7 +226,6 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
 Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -258,7 +241,6 @@ Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Blob( "FF78CE" );
 
 ```
@@ -273,7 +255,6 @@ Hex To Blob( "FF78CE" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```
@@ -288,7 +269,6 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -303,7 +283,6 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
 
@@ -317,33 +296,30 @@ z = Insert( z, 99, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
 );
@@ -360,29 +336,26 @@ Insert Into( hlist, Button Box( "c" ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( [2 -1], "This is a sentence" );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Item(
 	4,
 	"Apple+Banana Tree,,Pear,,Peach,,Grape",
@@ -391,29 +364,26 @@ Item(
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-**Ejemplo 5**
+#### Ejemplo 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, "abcd", "" );
 
 ```
 
-**Ejemplo 6**
+#### Ejemplo 6
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```
@@ -426,29 +396,26 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 **JMP Versión agregada:** 15
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters(),
@@ -457,11 +424,10 @@ Items(
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -476,7 +442,6 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -490,38 +455,34 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -536,7 +497,6 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -551,7 +511,6 @@ Lowercase( "CAFÉ #23" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```
@@ -566,7 +525,6 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Munger( "over there", 1, "t", "" ), Munger(
 		"17 June 2000",
@@ -586,20 +544,18 @@ Eval List(
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Num( "3.1e6", <<Restrict ),
 	Num( "1989-10-04", <<Restrict ),
@@ -613,13 +569,12 @@ Show(
 
 **Sintaxis:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
-**Descripción:** Busca en el texto source una coincidencia con pattern. El format predeterminado es "\0" (la coincidencia completa) pero podría ser "Fred" (para un reemplazo constante) o "\1" (para utilizar el texto que coincida con el primer paréntesis de pattern). Devuelve valores faltantes numéricos para la ausencia de coincidencias. De forma predeterminada, deben coincidir las mayúsculas y minúsculas.
+**Descripción:** Busca en el texto source una coincidencia con pattern. El format predeterminado es "\\0" (la coincidencia completa) pero podría ser "Fred" (para un reemplazo constante) o "\\1" (para utilizar el texto que coincida con el primer paréntesis de pattern). Devuelve valores faltantes numéricos para la ausencia de coincidencias. De forma predeterminada, deben coincidir las mayúsculas y minúsculas.
 
 **JMP Versión agregada:** Antes de la versión 14
 
 ```jsl
 
-Names Default To Here( 1 );
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -638,7 +593,6 @@ Regex(
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -651,33 +605,30 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -700,7 +651,6 @@ Remove From( hlist, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -715,7 +665,6 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -728,22 +677,20 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -766,7 +713,6 @@ Reverse Into( hlist );
 
 ```jsl
 
-Names Default To Here( 1 );
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -781,7 +727,6 @@ Right( "http://www.jmp.com", 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
@@ -797,7 +742,6 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -815,7 +759,6 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -836,7 +779,6 @@ Show( all );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -855,7 +797,6 @@ Show( Set Unique( :sports ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -868,22 +809,20 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -906,7 +845,6 @@ Shift Into( hlist, -2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Starts With( "http://www.jmp.com", "http:" );
 
 ```
@@ -919,59 +857,53 @@ Starts With( "http://www.jmp.com", "http:" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", "All", "Some" );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
-**Ejemplo 5**
+#### Ejemplo 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
 );
 
 ```
 
-**Ejemplo 6**
+#### Ejemplo 6
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
@@ -984,44 +916,40 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
 Name Expr( ex );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
 Show( s );
@@ -1038,7 +966,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
@@ -1053,7 +980,6 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -1074,7 +1000,6 @@ Show( score );
 
 ```jsl
 
-Names Default To Here( 1 );
 Titlecase( "The dog crossed the road" );
 
 ```
@@ -1089,7 +1014,6 @@ Titlecase( "The dog crossed the road" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim( " title   ", both );
 
 ```
@@ -1104,7 +1028,6 @@ Trim( " title   ", both );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -1119,7 +1042,6 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 Uppercase( "Café #23" );
 
 ```
@@ -1132,29 +1054,26 @@ Uppercase( "Café #23" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( [2 -1], "This is a sentence" );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Word(
 	4,
 	"Apple+Banana Tree,,Pear,,Peach,,Grape",
@@ -1163,20 +1082,18 @@ Word(
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-**Ejemplo 5**
+#### Ejemplo 5
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 2, "abcd", "" );
 
 ```
@@ -1189,29 +1106,26 @@ Word( 2, "abcd", "" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -1226,7 +1140,6 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"

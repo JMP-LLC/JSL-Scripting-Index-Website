@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -63,7 +62,6 @@ If( jmpliveresult << Succeeded,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -173,7 +171,6 @@ While( count > 0,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -258,7 +255,6 @@ If( jmpliveresult << Succeeded,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -368,7 +364,6 @@ While( count > 0,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -478,7 +473,6 @@ While( count > 0,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );

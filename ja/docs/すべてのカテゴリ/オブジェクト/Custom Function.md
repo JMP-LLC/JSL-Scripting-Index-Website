@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Custom Format Category( 1 );
 
@@ -30,7 +29,6 @@ myAdd << Custom Format Category( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Description( "Add two numbers together, but subtract 1" );
 
@@ -44,21 +42,19 @@ myAdd << Description( "Add two numbers together, but subtract 1" );
 
 **JMP追加されたバージョン:** 14
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)" );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)", "small add" );
 myAdd << Example( "Add(1, 500)", "bigger add" );
@@ -75,7 +71,6 @@ myAdd << Example( "Add(1, 500)", "bigger add" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Formula Category( "NumberStuff" );
 
@@ -91,7 +86,6 @@ myAdd << Formula Category( "NumberStuff" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Custom Format Category( 1 );
 myAdd << Get Custom Format Category;
@@ -108,7 +102,6 @@ myAdd << Get Custom Format Category;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Description( "Add two numbers together, but subtract 1" );
 myAdd << Get Description;
@@ -125,7 +118,6 @@ myAdd << Get Description;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)", "small add" );
 myAdd << Example( "Add(1, 500)", "bigger add" );
@@ -143,7 +135,6 @@ myAdd << Get Examples;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Formula Category( "NumberStuff" );
 myAdd << Get Formula Category;
@@ -160,7 +151,6 @@ myAdd << Get Formula Category;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Function;
 
@@ -176,7 +166,6 @@ myAdd << Get Function;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Name;
 
@@ -192,7 +181,6 @@ myAdd << Get Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Namespace;
 
@@ -208,7 +196,6 @@ myAdd << Get Namespace;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Parameter( "Number", "number" );
 myAdd << Parameter( "Number", "<number=1>" );
@@ -226,7 +213,6 @@ myAdd << Get Parameters;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Prototype( "Add(number, <number=1>)" );
 myAdd << Get Prototype;
@@ -243,7 +229,6 @@ myAdd << Get Prototype;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( "Number" );
 myAdd << Get Result Type;
@@ -260,7 +245,6 @@ myAdd << Get Result Type;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Scripting Index Category( "My Functions" );
 myAdd << Get Scripting Index Category;
@@ -277,7 +261,6 @@ myAdd << Get Scripting Index Category;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Transform Category( 1 );
 myAdd << Get Transform Category;
@@ -294,7 +277,6 @@ myAdd << Get Transform Category;
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Parameter( "Number", "number" );
 myAdd << Parameter( "Number", "<number=1>" );
@@ -311,7 +293,6 @@ myAdd << Parameter( "Number", "<number=1>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Prototype( "Add(number, <number=1>)" );
 
@@ -325,21 +306,19 @@ myAdd << Prototype( "Add(number, <number=1>)" );
 
 **JMP追加されたバージョン:** 14
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( "Number" );
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( {"Number", "String"} );
 
@@ -355,7 +334,6 @@ myAdd << Result Type( {"Number", "String"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Scripting Index Category( "My Functions" );
 
@@ -371,7 +349,6 @@ myAdd << Scripting Index Category( "My Functions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Transform Category( 1 );
 

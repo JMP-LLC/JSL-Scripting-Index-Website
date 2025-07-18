@@ -10,7 +10,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 jslPhrase =
 "The JSL to do this is :\[
@@ -32,7 +31,6 @@ Show( jslPhrase );
 
 ```jsl
 
-Names Default To Here( 1 );
 Abbrev Date( Today() );
 
 ```
@@ -47,7 +45,6 @@ Abbrev Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Abs( -5 );
 
 ```
@@ -62,7 +59,6 @@ Abs( -5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pi() + 10;
 
 ```
@@ -77,7 +73,6 @@ Pi() + 10;
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme(
 	{"Yellow To Blue", 0, {{255, 255, 0},
 	{0, 0, 255}}, {0.0, 1.0}}
@@ -89,7 +84,6 @@ Add Color Theme(
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme(
 	{"Black To Red To White",
 	{"Continuous", "Categorical",
@@ -111,7 +105,6 @@ Add Color Theme(
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd =
 New Custom Function(
 	"custom",
@@ -138,7 +131,6 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex += 2;
 ex;
@@ -153,7 +145,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [1, 2, 3, 4];
 y = [5, 6, 7, 8];
 alpha = 0.5;
@@ -171,7 +162,6 @@ z = Add Vectors BLAS( x, y, alpha );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -237,7 +227,6 @@ New Window( "Crosstab",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -303,7 +292,6 @@ New Window( "Crosstab",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Alignment MultiBox",
 	Border Box( Top( 15 ), Left( 15 ),
@@ -387,7 +375,6 @@ New Window( "Alignment MultiBox",
 
 ```jsl
 
-Names Default To Here( 1 );
 All( [1 2 3] );
 
 ```
@@ -402,7 +389,6 @@ All( [1 2 3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang =
 Triangulation( X( :X, :Y ), Y( :POP ) );
@@ -420,7 +406,6 @@ ashape = Alpha Shape( triang );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 & 3 < 4;
 
 ```
@@ -435,7 +420,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 AndMZ( 1 < 2, 3 < 4 );
 
 ```
@@ -450,7 +434,6 @@ AndMZ( 1 < 2, 3 < 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Any( [1 0 2] );
 
 ```
@@ -465,7 +448,6 @@ Any( [1 0 2] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -485,7 +467,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open(
 	"$SAMPLE_DATA/Wafer Stacked.jmp"
@@ -530,7 +511,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosH( 1 );
 
 ```
@@ -545,7 +525,6 @@ ArcCosH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -560,7 +539,6 @@ ArcCosine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -575,7 +553,6 @@ ArcCosine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -590,7 +567,6 @@ ArcSine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSinH( 1 );
 
 ```
@@ -605,7 +581,6 @@ ArcSinH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -620,7 +595,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -635,7 +609,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcTanH( 0.5 );
 
 ```
@@ -650,7 +623,6 @@ ArcTanH( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
@@ -667,7 +639,6 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Arg Expr() equivalent
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -677,7 +648,6 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
 
@@ -693,7 +663,6 @@ Arg Expr( Sum( a, b, c ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open(
 	"$SAMPLE_DATA/Time Series/Steel Shipments.jmp"
 );
@@ -724,7 +693,6 @@ ARIMA Forecast(
 
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius( 100 );
 
 ```
@@ -739,7 +707,6 @@ Arrhenius( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius Inv( 100 );
 
 ```
@@ -754,7 +721,6 @@ Arrhenius Inv( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -774,7 +740,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -789,7 +754,6 @@ ArcSine( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 45;
 b = As Boolean( x > 2 );
 Show( b );
@@ -806,7 +770,6 @@ Show( b );
 
 ```jsl
 
-Names Default To Here( 1 );
 As C Expr(
 	Expr(
 		Match( sex,
@@ -829,7 +792,6 @@ As C Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt =
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2]
@@ -849,7 +811,6 @@ exdt:height[1] + :height[2]
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant",
@@ -870,7 +831,6 @@ New Table( "As Constant Demo Table 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
 	New Column(
@@ -898,7 +858,6 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -920,7 +879,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -935,7 +893,6 @@ As Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 ::ex = 23;
 Local( {ex = 12},
 	Eval List(
@@ -955,7 +912,6 @@ Local( {ex = 12},
 
 ```jsl
 
-Names Default To Here( 1 );
 As JavaScript Expr(
 	Expr(
 		Match( sex,
@@ -978,7 +934,6 @@ As JavaScript Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 As JSON Expr(
 	Expr(
 		Match( sex,
@@ -1001,7 +956,6 @@ As JSON Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -1016,7 +970,6 @@ As List( [11 22 33, 44 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open(
 	"$SAMPLE_DATA/Big Class.jmp"
 );
@@ -1034,7 +987,6 @@ dt:(As Name( "height" ))[3];
 
 ```jsl
 
-Names Default To Here( 1 );
 ns =
 New Namespace(
 	"complex"
@@ -1053,7 +1005,6 @@ As Namespace( ns );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Python Expr(
 	Expr(
 		Match( sex,
@@ -1076,7 +1027,6 @@ As Python Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 ::: ex = 23;
 Local( {ex = 12},
 	Eval List(
@@ -1096,7 +1046,6 @@ Local( {ex = 12},
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
 	Row State() =
@@ -1120,7 +1069,6 @@ For Each Row(
 
 ```jsl
 
-Names Default To Here( 1 );
 As SAS Expr(
 	Expr(
 		Match( sex,
@@ -1143,7 +1091,6 @@ As SAS Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 Here:z = 23.5;
 As Scoped( Here, z );
 
@@ -1159,7 +1106,6 @@ As Scoped( Here, z );
 
 ```jsl
 
-Names Default To Here( 1 );
 As SQL Expr(
 	Expr(
 		Match( sex,
@@ -1183,7 +1129,6 @@ As SQL Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 As Table( [1 2 3, 4 5 6] );
 
 ```
@@ -1198,7 +1143,6 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
-Names Default To Here( 1 );
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -1214,7 +1158,6 @@ ex1 + ex1;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 Associative Array(
 	{"red", "blue"},
@@ -1235,7 +1178,6 @@ ex << get contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -1252,7 +1194,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 B Spline Coef(
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 	2
@@ -1268,7 +1209,6 @@ B Spline Coef(
 
 ```jsl
 
-Names Default To Here( 1 );
 xx = (0 :: 10)`;
 yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
 designMat = B Spline Coef( xx, 2 );
@@ -1290,7 +1230,6 @@ Linear Regression(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Back Color( "red" );
@@ -1314,7 +1253,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Beep();
 
 ```
@@ -1329,7 +1267,6 @@ Beep();
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
 	[11.2, 11.5, 11.8, 100.5, 100.7,
@@ -1350,7 +1287,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Beta( 5, 4 );
 
 ```
@@ -1365,7 +1301,6 @@ Beta( 5, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 25;
 delta = 0;
@@ -1449,7 +1384,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 n = 25;
 p = 0.5;
 delta = 0;
@@ -1528,7 +1462,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -1655,7 +1588,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -1713,7 +1645,6 @@ New Window( "Example: Beta Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Distribution",
@@ -1771,7 +1702,6 @@ New Window( "Example: Beta Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -1786,7 +1716,6 @@ Beta Quantile( 0.95, 2, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 30;
 New Window(
@@ -1861,7 +1790,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 cltp = 0.03;
 cltn = 30;
 New Window(
@@ -1926,7 +1854,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -2034,7 +1961,6 @@ New Window( "Example: Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "black", "white", 0.25 );
 
 ```
@@ -2043,7 +1969,6 @@ Blend Colors( "black", "white", 0.25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "sRGB" );
 
 ```
@@ -2052,7 +1977,6 @@ Blend Colors( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
@@ -2061,7 +1985,6 @@ Blend Colors( "red", "blue", "lRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors(
 	"red",
 	"blue",
@@ -2075,7 +1998,6 @@ Blend Colors(
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors(
 	"red",
 	"blue",
@@ -2089,8 +2011,6 @@ Blend Colors(
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "red";
 c2 = "blue";
 steps = 20;
@@ -2156,8 +2076,6 @@ New Window( "HLS Radial Color Blending",
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "blue";
 c2 = "red";
 steps = 20;
@@ -2230,7 +2148,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex(/* make it printable */
 	Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */
@@ -2254,7 +2171,6 @@ Hex(/* make it printable */
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob Peek(
 	Char To Blob(
 		"Quick Bob, eat your lunch!"
@@ -2275,7 +2191,6 @@ Blob Peek(
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Char(
 	Hex To Blob( "436166C3A9" )
 ) ||
@@ -2296,7 +2211,6 @@ Blob To Char(
 
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Matrix(
 	Hex To Blob( "00010002FFFFFFFE" ),
 	"int",
@@ -2317,7 +2231,6 @@ Blob To Matrix(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ),
 		spacing( 10 ),
@@ -2350,7 +2263,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -2365,7 +2277,6 @@ Box Cox Inverse Transform( 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Transform( 3, 2 );
 
 ```
@@ -2380,7 +2291,6 @@ Box Cox Transform( 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g =
 	Graph Box(
@@ -2405,7 +2315,6 @@ Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -2423,7 +2332,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 Build Information();
 
 ```
@@ -2438,7 +2346,6 @@ Build Information();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Busy Light( <<automatic )
 );
@@ -2455,7 +2362,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Button Box( "Press Me",
 		Print( "Pressed." )
@@ -2474,7 +2380,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Calendar Box Example",
 	Calendar Box()
 );
@@ -2493,7 +2398,6 @@ New Window( "Calendar Box Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption(
 	{100, 200},
 	"explanation",
@@ -2510,7 +2414,6 @@ Caption(
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
@@ -2527,7 +2430,6 @@ Caption( remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect(
@@ -2549,7 +2451,6 @@ cas = CAS Connect(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data(
@@ -2571,7 +2472,6 @@ CAS Delete Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect(
@@ -2593,7 +2493,6 @@ CAS Disconnect();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data(
@@ -2614,7 +2513,6 @@ CAS Export Data(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data(
@@ -2641,7 +2539,6 @@ Show( datasets );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 libraries = CAS Get Libraries();
@@ -2659,7 +2556,6 @@ Show( libraries );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data(
@@ -2681,7 +2577,6 @@ CAS Import Data( "Casuser.Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 connected = CAS Is Connected();
 Show( connected );
@@ -2698,7 +2593,6 @@ Show( connected );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data(
@@ -2720,7 +2614,6 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 json =
 "\[
@@ -2951,7 +2844,6 @@ dt = CAS Table To Data Table( json );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Terminate Sessions();
@@ -2968,7 +2860,6 @@ CAS Terminate Sessions();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
 		Y Scale( 0, .4 ),
@@ -2991,7 +2882,6 @@ New Window( "Example: Cauchy Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -3014,7 +2904,6 @@ New Window( "Example: Cauchy Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -3037,7 +2926,6 @@ New Window( "Example: Cauchy Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Generate random values, Normal(0,1) */
 Y = J( 150, 1, Random Normal() );
 
@@ -3081,7 +2969,6 @@ New Window( "Empirical CDF",
 
 ```jsl
 
-Names Default To Here( 1 );
 Ceiling( 1.2 );
 
 ```
@@ -3098,7 +2985,6 @@ Ceiling( 1.2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Char( 88.54 ),
 	Char( 88.54, <<Full Precision( 1 ) )
@@ -3110,7 +2996,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 10, 4 );
 
 ```
@@ -3119,7 +3004,6 @@ Char( Pi(), 10, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( 2.1, <<Use Locale( 1 ) );
 
 ```
@@ -3134,7 +3018,6 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -3149,7 +3032,6 @@ Char To Blob( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " ||
 Hex( "Café", "utf-16be" );
 
@@ -3165,7 +3047,6 @@ Hex( "Café", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Char To Path(
 		"M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z"
@@ -3184,7 +3065,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	cb = Check Box(
 		{"Good"},
@@ -3204,7 +3084,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
 	cdey =
@@ -3246,7 +3125,6 @@ New Window( "Example: ChiSquare Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy =
@@ -3288,7 +3166,6 @@ New Window( "Example: ChiSquare Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 clcdidf = 2;
 New Window(
 	"Example: ChiSquare Log CDistribution",
@@ -3334,7 +3211,6 @@ New Window(
 
 ```jsl
 
-Names Default To Here( 1 );
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey =
@@ -3379,7 +3255,6 @@ New Window( "Example: ChiSquare Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
 	cldiy =
@@ -3424,7 +3299,6 @@ New Window( "Example: ChiSquare Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr =
 	Graph Box(
@@ -3460,7 +3334,6 @@ ChiSquare Noncentrality(
 
 ```jsl
 
-Names Default To Here( 1 );
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -3475,7 +3348,6 @@ ChiSquare Quantile( 0.15, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* The inner product of a design matrix */
 exS = [16 1 0 11 -1 12,
 1 11 -1 1 -1 1,
@@ -3517,7 +3389,6 @@ Show( exAcholnew );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cholesky( [1 2, 2 13] );
 
 ```
@@ -3532,7 +3403,6 @@ Cholesky( [1 2, 2 13] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose( Random Integer( 1, 5 ),
 	"red",
 	"blue",
@@ -3577,7 +3447,6 @@ Chaînes non appariées
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
@@ -3586,7 +3455,6 @@ Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```
@@ -3595,7 +3463,6 @@ Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```
@@ -3604,7 +3471,6 @@ Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest(
 	"MARTHA",
 	{"Martha"},
@@ -3624,7 +3490,6 @@ Choose Closest(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -3661,7 +3526,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -3722,7 +3586,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -3744,7 +3607,6 @@ Clear Global Window Handler();
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Globals();
 
 ```
@@ -3759,7 +3621,6 @@ Clear Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Log();
 
 ```
@@ -3774,7 +3635,6 @@ Clear Log();
 
 ```jsl
 
-Names Default To Here( 1 );
 Clear Symbols();
 
 ```
@@ -3789,7 +3649,6 @@ Clear Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "in" );
@@ -3819,7 +3678,6 @@ Le deuxième argument est utilisé pour enregistrer la table de données. Utilis
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -3840,7 +3698,6 @@ Seules les fenêtres du projet actif (sauf si le script n&apos;est pas exécuté
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -3858,7 +3715,6 @@ Close All( Data Tables, NoSave );
 
 ```jsl
 
-Names Default To Here( 1 );
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -3873,7 +3729,6 @@ Close Database Connection( databaseConnectionHandle );
 
 ```jsl
 
-Names Default To Here( 1 );
 Close Log();
 Show( Is Log Open() );
 
@@ -3889,7 +3744,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex",
 	Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) )
@@ -3913,7 +3767,6 @@ New Column( "Relative to Last Height",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Window( "Example",
 	exx = 1;
 	exy = 4;
@@ -3943,7 +3796,6 @@ dt = New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
@@ -3954,7 +3806,6 @@ Col Cumulative Sum( :height, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -3984,7 +3835,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -4011,7 +3861,6 @@ dt << New Column( "gnp30",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1",
 	Col List Box( all, width( 250 ), maxSelected( 1 ) )
@@ -4023,7 +3872,6 @@ New Window( "Col List Box Example 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
 	Col List Box(
@@ -4040,7 +3888,6 @@ New Window( "Col List Box Example 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
 	H List Box(
@@ -4071,7 +3918,6 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -4081,7 +3927,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -4091,7 +3936,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -4103,7 +3947,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4130,7 +3973,6 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -4140,7 +3982,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -4150,7 +3991,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -4162,7 +4002,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4189,7 +4028,6 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
@@ -4199,7 +4037,6 @@ Col Mean( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
 
@@ -4209,7 +4046,6 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
@@ -4219,7 +4055,6 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
 	Formula( Col Mean( :height, :age, :sex ) )
@@ -4231,7 +4066,6 @@ dt << New Column( "Mean for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4258,7 +4092,6 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -4277,7 +4110,6 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -4290,7 +4122,6 @@ Show( Col Median( :height, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4317,7 +4148,6 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -4327,7 +4157,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -4337,7 +4166,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -4349,7 +4177,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4376,7 +4203,6 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -4386,7 +4212,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -4396,7 +4221,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -4408,7 +4232,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4435,7 +4258,6 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
@@ -4445,7 +4267,6 @@ Col Mode( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
@@ -4455,7 +4276,6 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
 	Formula( Col Mode( :height, :age, :sex ) )
@@ -4467,7 +4287,6 @@ dt << New Column( "Mode for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4494,7 +4313,6 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
@@ -4505,7 +4323,6 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4537,7 +4354,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
@@ -4547,7 +4363,6 @@ Col N Missing( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
@@ -4557,7 +4372,6 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column(
 	"Number of Missing Values for Each Age and Sex Group",
@@ -4570,7 +4384,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
@@ -4597,7 +4410,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex",
 	Formula( Col N Unique( :age, :sex ) )
@@ -4620,7 +4432,6 @@ New Column( "N unique height by age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
@@ -4630,7 +4441,6 @@ Col Number( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
@@ -4640,7 +4450,6 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column(
 	"Number of Nonmissing Values for Each Age and Sex Group",
@@ -4653,7 +4462,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
@@ -4681,7 +4489,6 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -4700,7 +4507,6 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -4713,7 +4519,6 @@ Show( Col Quantile( :height, 0.5, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4746,7 +4551,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height",
 	Formula( Col Rank( :height, <<tie( "average" ) ) )
@@ -4761,7 +4565,6 @@ New Column( "Rank Height by age",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4786,7 +4589,6 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age",
@@ -4805,7 +4607,6 @@ New Column( "Score Height by age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
 New Column( "Alternate within sex",
@@ -4834,7 +4635,6 @@ New Column( "Row within sex, 60+",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1",
 	Numeric,
@@ -4853,7 +4653,6 @@ dt << New Column( "Shuffle 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle",
 	Numeric,
@@ -4867,7 +4666,6 @@ dt << New Column( "Shuffle",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4892,7 +4690,6 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -4909,7 +4706,6 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	Table Box(
 		Col Span Box(
@@ -4934,7 +4730,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
@@ -4945,7 +4740,6 @@ Col Standardize( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
@@ -4955,7 +4749,6 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -4987,7 +4780,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
@@ -4997,7 +4789,6 @@ Col Std Dev( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
@@ -5007,7 +4798,6 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
 	Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) )
@@ -5019,7 +4809,6 @@ For Each Row(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column(
 	"Standard Deviation for Each Age and Sex Group",
@@ -5032,7 +4821,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -5058,7 +4846,6 @@ dt << New Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
 y1 = Col Stored Value( :JOB, 10 );
@@ -5081,7 +4868,6 @@ Show( y1, y2, y3, y4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
@@ -5091,7 +4877,6 @@ Col Sum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
 
@@ -5101,7 +4886,6 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
@@ -5111,7 +4895,6 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
 	Formula( Col Sum( :height, :age, :sex ) )
@@ -5123,7 +4906,6 @@ dt << New Column( "Sum for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
 Exclude;
@@ -5146,7 +4928,6 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -5163,7 +4944,6 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue" );
 
 ```
@@ -5172,7 +4952,6 @@ Color Difference( "red", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "sRGB" );
 
 ```
@@ -5181,7 +4960,6 @@ Color Difference( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "redmean" );
 
 ```
@@ -5190,7 +4968,6 @@ Color Difference( "red", "blue", "redmean" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE76" );
 
 ```
@@ -5199,7 +4976,6 @@ Color Difference( "red", "blue", "CIE76" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE94" );
 
 ```
@@ -5208,7 +4984,6 @@ Color Difference( "red", "blue", "CIE94" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
@@ -5217,7 +4992,6 @@ Color Difference( "red", "blue", "CIEDE2000" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "dEok" );
 
 ```
@@ -5232,7 +5006,6 @@ Color Difference( "red", "blue", "dEok" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" ) <<
 Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -5251,7 +5024,6 @@ Color To RGB( Color Of() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -5268,7 +5040,6 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -5283,7 +5054,6 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
@@ -5300,7 +5070,6 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
 ht = Column( "height" );
@@ -5312,7 +5081,6 @@ col4[1] + ht[2];
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
 col = Column( dt, "sex", "formatted" );
@@ -5333,7 +5101,6 @@ Write(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
 	ex y = ColList( "Y",
@@ -5380,7 +5147,6 @@ Column Dialog(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -5396,7 +5162,6 @@ Column Name( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States(
 	Hue State( 5 ),
@@ -5415,7 +5180,6 @@ Row State( 3 ) = Combine States(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	cb = Combo Box(
 		{"single", "double", "triple"("tool tip")},
@@ -5435,7 +5199,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -5450,7 +5213,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -5465,7 +5227,6 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "hello ";
 ex ||= "world";
 
@@ -5483,7 +5244,6 @@ ex ||= "world";
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
@@ -5505,7 +5265,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -5542,7 +5301,6 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -5564,7 +5322,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -5599,7 +5356,6 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -5617,7 +5373,6 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
@@ -5626,7 +5381,6 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
 	numeric,
@@ -5641,7 +5395,6 @@ dt << Distribution( Column( :Cheese ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //find repeated character c in cdcef
 Contains Item(
 	"abcde,bcdef,cdcef",
@@ -5661,7 +5414,6 @@ Contains Item(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Context Box(
 		Outline Box( "Picker",
@@ -5685,7 +5437,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -5703,7 +5454,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	H List Box(
@@ -5778,7 +5528,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -5798,7 +5547,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -5827,7 +5575,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 {xx, yy} = tri << Get Points();
@@ -5856,7 +5603,6 @@ New Window( "Contour Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA",
 	"SAMPLE_SCRIPTS", "SAMPLE_IMAGES", "USER_APPDATA",
@@ -5879,7 +5625,6 @@ For Each( {pv},
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy Directory(
 	"$SAMPLE_DATA/Loss Function Templates",
 	"$TEMP"
@@ -5904,7 +5649,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File(
 	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
@@ -5928,7 +5672,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-Names Default To Here( 1 );
 Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -5943,7 +5686,6 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -5958,7 +5700,6 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 CosH( 1 );
 
 ```
@@ -5973,7 +5714,6 @@ CosH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -5988,7 +5728,6 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Count Example",
 	Add Rows( 12 ),
 	New Column( "Count1" ),
@@ -6012,7 +5751,6 @@ For Each Row(
 
 ```jsl
 
-Names Default To Here( 1 );
 Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -6027,7 +5765,6 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
 );
@@ -6044,7 +5781,6 @@ dbc = Create Database Connection(
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File(
@@ -6071,7 +5807,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook(
@@ -6086,7 +5821,6 @@ Create Excel Workbook(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook(
@@ -6107,7 +5841,6 @@ Create Excel Workbook(
 
 ```jsl
 
-Names Default To Here( 1 );
 Format(
 	Creation Date( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ddmonyyyy:h:m:s"
@@ -6125,7 +5858,6 @@ Format(
 
 ```jsl
 
-Names Default To Here( 1 );
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -6140,7 +5872,6 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 connection = Current CAS Connection();
 Show( connection );
@@ -6161,7 +5892,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
 
@@ -6185,7 +5915,6 @@ Si le projet spécifié ne contient aucun journal actif, il en sera créé un au
 
 ```jsl
 
-Names Default To Here( 1 );
 Current Journal();
 
 ```
@@ -6204,7 +5933,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Current Report();
 
 ```
@@ -6223,7 +5951,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Example Outline",
 		Text Box( "Example Text" ),
@@ -6243,7 +5970,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -6258,7 +5984,6 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```
@@ -6273,7 +5998,6 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
@@ -6289,7 +6013,6 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -6332,7 +6055,6 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
 	Data Filter Context Box(
@@ -6377,7 +6099,6 @@ New Window( "Selection Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -6394,7 +6115,6 @@ x << Set Data Table( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Data Table( 1 );
@@ -6411,7 +6131,6 @@ Data Table( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -6427,7 +6146,6 @@ New Window( "Example", Data Table Box( dt ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box(
@@ -6448,7 +6166,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box(
@@ -6469,7 +6186,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -6495,7 +6211,6 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference(
 	Date DMY( 31, 1, 2015 ),
 	Date DMY( 1, 3, 2015 ),
@@ -6509,7 +6224,6 @@ Date Difference(
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference(
 	Date DMY( 31, 1, 2015 ),
 	Date DMY( 1, 3, 2015 ),
@@ -6523,7 +6237,6 @@ Date Difference(
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference(
 	Date DMY( 31, 1, 2015 ),
 	Date DMY( 1, 3, 2015 ),
@@ -6543,7 +6256,6 @@ Date Difference(
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date DMY( 15, 7, 2000 ) );
 
 ```
@@ -6560,7 +6272,6 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
@@ -6569,7 +6280,6 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
@@ -6578,7 +6288,6 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "fractional" );
 
 ```
@@ -6593,7 +6302,6 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -6608,7 +6316,6 @@ As Date( Date MDY( 7, 15, 2000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day( Today() );
 
 ```
@@ -6623,7 +6330,6 @@ Day( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Week( Today() );
 
 ```
@@ -6638,7 +6344,6 @@ Day Of Week( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Year( Today() );
 
 ```
@@ -6653,7 +6358,6 @@ Day Of Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 v = Days In Month( 2016, 2 );
 
 ```
@@ -6668,7 +6372,6 @@ v = Days In Month( 2016, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
 x = 5;
@@ -6689,7 +6392,6 @@ Show( z );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Decode URI( "Foo%20Bar" );
 
@@ -6705,7 +6407,6 @@ Decode URI( "Foo%20Bar" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```
@@ -6720,7 +6421,6 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -6735,7 +6435,6 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -6794,7 +6493,6 @@ Delete Classes( complex );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -6826,7 +6524,6 @@ Show Classes();
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File(
@@ -6851,7 +6548,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File(
 	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
 	"$TEMP/x.jmp"
@@ -6874,7 +6570,6 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Globals();
 
 ```
@@ -6889,7 +6584,6 @@ Delete Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nsaa = New Namespace(
 	"aa",
@@ -6919,7 +6613,6 @@ Show Namespaces();
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Symbols();
 
 ```
@@ -6934,7 +6627,6 @@ Delete Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 Derivative( Sin( x ), x );
 
 ```
@@ -6949,7 +6641,6 @@ Derivative( Sin( x ), x );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design( exLevels ) );
@@ -6978,7 +6669,6 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Last(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Last( exLevels ) );
@@ -7016,7 +6706,6 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Nom(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Nom( exLevels ) );
@@ -7054,7 +6743,6 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Ord(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Ord( exLevels ) );
@@ -7092,7 +6780,6 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* example that DesignF(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( DesignF( exLevels ) );
@@ -7128,7 +6815,6 @@ Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -7153,7 +6839,6 @@ New Window( "Desirability",
 
 ```jsl
 
-Names Default To Here( 1 );
 Det( [11 22, 33 44] );
 
 ```
@@ -7168,7 +6853,6 @@ Det( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Diag( [11 22] );
 
 ```
@@ -7185,7 +6869,6 @@ Diag( [11 22] );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Dialog equivalent
 If(
 	ex = New Window( "Dialog() example",
@@ -7214,7 +6897,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 If(
 	ex = Dialog(
@@ -7244,7 +6926,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -7261,7 +6942,6 @@ Dif( :height, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Digamma( 5 );
 
 ```
@@ -7276,7 +6956,6 @@ Digamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -7291,7 +6970,6 @@ Dim( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2, 3 3 3];
 exProd = Direct Product( exA, exB );
@@ -7317,7 +6995,6 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -7335,7 +7012,6 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable JMP Live URL( "*public.jmp.com" );
 
@@ -7351,7 +7027,6 @@ Disable JMP Live URL( "*public.jmp.com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable Proxy Settings( 1 );
 
@@ -7367,7 +7042,6 @@ Disable Proxy Settings( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*1-D example*/
 exX1 = [1, 2, 3, 4];
 exX2 = [2, 4, 6, 8]; 
@@ -7448,7 +7122,6 @@ Show( exDm == exD );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
@@ -7459,7 +7132,6 @@ Show( x, y );
 
 ```jsl
 
-Names Default To Here( 1 );
 6 / 3 / 2;
 
 ```
@@ -7474,7 +7146,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex /= 2;
 ex;
@@ -7491,7 +7162,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -7506,7 +7176,6 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -7528,7 +7197,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -7550,7 +7218,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -7572,7 +7239,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -7594,7 +7260,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -7616,7 +7281,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -7631,7 +7295,6 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett Quantile( 0.95, 3, 11 );
 
 ```
@@ -7646,7 +7309,6 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( e(), 10 );
 
 ```
@@ -7661,7 +7323,6 @@ Round( e(), 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 [11 22 33] :/ [1 2 3];
 
 ```
@@ -7676,7 +7337,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 E Max( [1 22 33], [11 2 3] );
 
 ```
@@ -7691,7 +7351,6 @@ E Max( [1 22 33], [11 2 3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 E Min( [1 22 33], [11 2 3] );
 
 ```
@@ -7706,7 +7365,6 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 2 3] :* [11 22 33];
 
 ```
@@ -7721,7 +7379,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 X = [11 22, 22 33];
 {M, E} = Eigen( X );
 E * Diag( M ) * E`;
@@ -7736,7 +7393,6 @@ E * Diag( M ) * E`;
 
 ```jsl
 
-Names Default To Here( 1 );
 X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 {M1, E1} = Eigen BLAS( X );
 
@@ -7752,7 +7408,6 @@ X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 
 ```jsl
 
-Names Default To Here( 1 );
 Empty();
 
 ```
@@ -7767,7 +7422,6 @@ Empty();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable JMP Live URL( "https://public.jmp.com" );
 
@@ -7783,7 +7437,6 @@ Enable JMP Live URL( "https://public.jmp.com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable Proxy Settings( 0 );
 
@@ -7799,7 +7452,6 @@ Enable Proxy Settings( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Encode URI( "Foo Bar" );
 
@@ -7815,7 +7467,6 @@ Encode URI( "Foo Bar" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -7830,7 +7481,6 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Double( -1.5831 );
 
 ```
@@ -7845,7 +7495,6 @@ Encode64 Double( -1.5831 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -7860,7 +7509,6 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 == 1;
 
 ```
@@ -7875,7 +7523,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Estimate Bartlett Factor Score(
 	[2 2 0],
 	[2.085 2.76 1.56],
@@ -7904,7 +7551,6 @@ Estimate Bartlett Factor Score(
 
 ```jsl
 
-Names Default To Here( 1 );
 Estimate Factor Score(
 	[7 10 5 2 2 0],
 	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
@@ -7931,7 +7577,6 @@ Estimate Factor Score(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -7946,7 +7591,6 @@ Eval( Expr( 1 + 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```
@@ -7961,7 +7605,6 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -7976,7 +7619,6 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
 ex;
@@ -7995,7 +7637,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -8004,7 +7645,6 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
@@ -8021,7 +7661,6 @@ Eval List( {x, y} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -8085,7 +7724,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -8104,7 +7742,6 @@ Excluded();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -8123,7 +7760,6 @@ Excluded( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -8136,7 +7772,6 @@ dt = Execute SQL(
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
@@ -8146,7 +7781,6 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
 	dc,
@@ -8166,7 +7800,6 @@ resultList = Execute SQL(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
 		Y Scale( 0, .2 ),
@@ -8189,7 +7822,6 @@ New Window( "Example: ExGaussian Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -8215,7 +7847,6 @@ New Window( "Example: ExGaussian Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
 		Y Scale( -2, 15 ),
@@ -8238,7 +7869,6 @@ New Window( "Example: ExGaussian Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -8260,7 +7890,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Exp( 1 ), 5 );
 
 ```
@@ -8275,7 +7904,6 @@ Round( Exp( 1 ), 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -8298,7 +7926,6 @@ New Window( "Example: Exp Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -8321,7 +7948,6 @@ New Window( "Example: Exp Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -8343,7 +7969,6 @@ New Window( "Example: Exp Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -8358,7 +7983,6 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -8381,7 +8005,6 @@ New Window( "Example: Exponential Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -8404,7 +8027,6 @@ New Window( "Example: Exponential Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -8426,7 +8048,6 @@ New Window( "Example: Exponential Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Expr( x + y );
 
 ```
@@ -8441,7 +8062,6 @@ Expr( x + y );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -8468,7 +8088,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -8483,7 +8102,6 @@ Extract Expr( a + b * c, Wild() * Wild() );
 
 ```jsl
 
-Names Default To Here( 1 );
 fdedfn = 2;
 fdedfd = 2;
 New Window( "Example: F Density",
@@ -8523,7 +8141,6 @@ New Window( "Example: F Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -8566,7 +8183,6 @@ New Window( "Example: F Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 flcddfn = 5;
 flcddfd = 5;
 New Window( "Example: F Log CDistribution",
@@ -8609,7 +8225,6 @@ New Window( "Example: F Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -8652,7 +8267,6 @@ New Window( "Example: F Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 flddfn = 5;
 flddfd = 5;
 New Window( "Example: F Log Distribution",
@@ -8695,7 +8309,6 @@ New Window( "Example: F Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -8727,7 +8340,6 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 obs = 25;
 dfh = 5;
@@ -8761,7 +8373,6 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
-Names Default To Here( 1 );
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -8776,7 +8387,6 @@ F Quantile( 0.7, 5, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 pow = 0.6;
 dfh = 5;
@@ -8813,7 +8423,6 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
-Names Default To Here( 1 );
 Factorial( 5 );
 
 ```
@@ -8828,7 +8437,6 @@ Factorial( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -8845,7 +8453,6 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -8860,7 +8467,6 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```jsl
 
-Names Default To Here( 1 );
 FFT(
 	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3
 	]}
@@ -8935,7 +8541,6 @@ Show( fin );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -8953,7 +8558,6 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -8970,7 +8574,6 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Files In Directory( "$HOME" );
 
 ```
@@ -8979,7 +8582,6 @@ Files In Directory( "$HOME" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Filter Each( {fn},
 	Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
@@ -8997,7 +8599,6 @@ Filter Each( {fn},
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( {1, 1, .5} );
@@ -9019,7 +8620,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
@@ -9035,7 +8635,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Pattern(
@@ -9057,7 +8656,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example",
 	fontobj = lb = Filter Col Selector( width( 250 ) )
@@ -9077,7 +8675,6 @@ New Window( "Col List Box Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {{key, value}},
 	["A" => 8, "B" => 6, "C" => 10],
 	value > 6
@@ -9090,7 +8687,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ),
 	Mod( value, 2 ) == 0
 );
@@ -9102,7 +8698,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
@@ -9112,7 +8707,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
 
@@ -9132,7 +8726,6 @@ Seules les fenêtres du projet en cours (sauf si le script n&apos;est pas exécu
 
 ```jsl
 
-Names Default To Here( 1 );
 
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
@@ -9153,7 +8746,6 @@ For( i = 1, i <= N Items( windows ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 First( 11, 22 );
 
 ```
@@ -9168,7 +8760,6 @@ First( 11, 22 );
 
 ```jsl
 
-Names Default To Here( 1 );
 result = Fit Censored(
 	Distribution( "Weibull" ),
 	Y(
@@ -9190,7 +8781,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
 result = Fit Circle( x, y );
@@ -9216,7 +8806,6 @@ New Window( "Fit Circle",
 
 ```jsl
 
-Names Default To Here( 1 );
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647,
 -6.9470789, -17.237024, -19.470857, -6.1855986, 2.16525629,
 -30.990061];
@@ -9250,7 +8839,6 @@ Show( results );
 
 ```jsl
 
-Names Default To Here( 1 );
 Floor( 1.2 );
 
 ```
@@ -9265,7 +8853,6 @@ Floor( 1.2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "";
 For( i = 1, i < 10, i++,
 	s ||= " " || Char( i )
@@ -9286,7 +8873,6 @@ Trim( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Across multiple containers
 x = {1, 3};
@@ -9303,7 +8889,6 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 list1 = {1, 3, 5, 7, 9};
 list2 = {2, 4}; 
@@ -9339,7 +8924,6 @@ Try(
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
 	Show( key, value, index )
 );
@@ -9350,7 +8934,6 @@ For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ),
 	Show( value )
 );
@@ -9361,7 +8944,6 @@ For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ),
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
@@ -9370,7 +8952,6 @@ For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```
@@ -9379,7 +8960,6 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, {row, col}}, 10 :: 15,
 	Show( element, row, col )
 );
@@ -9396,7 +8976,6 @@ For Each( {element, {row, col}}, 10 :: 15,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -9418,7 +8997,6 @@ For Each Row( :height = -:height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Print(
 	Format( Today(), "yyyyQq" ),
 	Format( Today(), "m/d/y h:m" )
@@ -9430,7 +9008,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 Print(
 	Format(
 		Today(),
@@ -9445,7 +9022,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -9456,7 +9032,6 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Format( 88.54, "Best" ),
 	Format( 88.54, "Best", "Full Precision" )
@@ -9476,7 +9051,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Print(
 	Format( Today(), "yyyyQq" ),
 	Format( Today(), "m/d/y h:m" )
@@ -9488,7 +9062,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 Print(
 	Format(
 		Today(),
@@ -9503,7 +9076,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -9520,7 +9092,6 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-Names Default To Here( 1 );
 s = Format(
 	Today(),
 	"Format Pattern",
@@ -9634,7 +9205,6 @@ Autre
 
 ```jsl
 
-Names Default To Here( 1 );
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
 Fourier Basis Coef(
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10,
@@ -9654,7 +9224,6 @@ Fourier Basis Coef(
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Density",
@@ -9689,7 +9258,6 @@ New Window( "Example: Frechet Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -9723,7 +9291,6 @@ New Window( "Example: Frechet Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 qq = .5;
@@ -9773,7 +9340,6 @@ New Window( "Example: Frechet Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
@@ -9783,7 +9349,6 @@ exsqr( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
 a = exmul( 5 );
@@ -9796,7 +9361,6 @@ Show( a, b );
 
 ```jsl
 
-Names Default To Here( 1 );
 posorneg = Function( {x},
 	{},
 	If(
@@ -9819,7 +9383,6 @@ posorneg( -5.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Future Value( .03, 12, 100, 0, 1 );
 
 ```
@@ -9834,7 +9397,6 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -9849,7 +9411,6 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Gamma( 5 );
 
 ```
@@ -9864,7 +9425,6 @@ Gamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
 	gdey = Graph Box(
@@ -9905,7 +9465,6 @@ New Window( "Example: Gamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -9946,7 +9505,6 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
 	glcdiy = Graph Box(
@@ -9987,7 +9545,6 @@ New Window( "Example: Gamma Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -10028,7 +9585,6 @@ New Window( "Example: Gamma Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -10069,7 +9625,6 @@ New Window( "Example: Gamma Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Gamma Poisson Distribution",
@@ -10119,7 +9674,6 @@ New Window( "Example: Gamma Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Gamma Poisson",
@@ -10169,7 +9723,6 @@ New Window( "Poisson and Gamma Poisson",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -10253,7 +9806,6 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -10268,7 +9820,6 @@ Gamma Quantile( 0.75, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -10317,7 +9868,6 @@ New Window( "Example: GenGamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -10366,7 +9916,6 @@ New Window( "Example: GenGamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -10436,7 +9985,6 @@ New Window( "Example: GenGamma Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -10451,7 +9999,6 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addin ids = Get Addins() << id;
 Show( addins, addin ids );
@@ -10468,7 +10015,6 @@ Show( addins, addin ids );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -10483,7 +10029,6 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -10512,7 +10057,6 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -10542,7 +10086,6 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Clipboard();
 
 ```
@@ -10557,7 +10100,6 @@ Get Clipboard();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Detail( "JMP Default" );
 
 ```
@@ -10574,7 +10116,6 @@ Get Color Theme Detail( "JMP Default" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names();
 
 ```
@@ -10583,7 +10124,6 @@ Get Color Theme Names();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names( "sequential" );
 
 ```
@@ -10600,7 +10140,6 @@ Get Color Theme Names( "sequential" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions();
 
 ```
@@ -10609,7 +10148,6 @@ Get Custom Functions();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -10632,7 +10170,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table( 1 );
@@ -10659,7 +10196,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
@@ -10670,7 +10206,6 @@ Get Data Table List();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
 
@@ -10686,7 +10221,6 @@ Get Data Table List( Project( project ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
 Show( Get Default Directory() );
@@ -10707,7 +10241,6 @@ REMARQUE : sous le système d’exploitation Macintosh, le nom de variable est 
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Environment Variable( "PATH" );
 
 ```
@@ -10722,7 +10255,6 @@ Get Environment Variable( "PATH" );
 
 ```jsl
 
-Names Default To Here( 1 );
 sheetList = Get Excel Worksheets(
 	"$SAMPLE_IMPORT_DATA\Team Results.xlsx"
 );
@@ -10742,7 +10274,6 @@ Show( sheetList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 data = " :height + 20 ";
 e = Parse( data );
@@ -10758,7 +10289,6 @@ Munger( data, positions[1], positions[2], "45" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( " :height + 20 " );
 Get Expr Location( e, {"TreeStart", "TreeEnd"} );
@@ -10769,7 +10299,6 @@ Get Expr Location( e, {"TreeStart", "TreeEnd"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( ":height + 20" );
 Get Expr Location( e );
@@ -10786,7 +10315,6 @@ Get Expr Location( e );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get File Search Path();
 
 ```
@@ -10801,7 +10329,6 @@ Get File Search Path();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -10816,7 +10343,6 @@ Get Locale Setting( "Decimal Separator" );
 
 ```jsl
 
-Names Default To Here( 1 );
 all contents = Get Log();
 headcontents = Get Log( 10 );
 tailcontents = Get Log( -5 );
@@ -10833,7 +10359,6 @@ tailcontents = Get Log( -5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -10848,7 +10373,6 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -10878,7 +10402,6 @@ nsbb << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -10917,7 +10440,6 @@ nsbb << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/grant-types/
@@ -10933,7 +10455,6 @@ Show( grant_types );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url =
 "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
@@ -10958,7 +10479,6 @@ Show( aa );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -10970,7 +10490,6 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
-Names Default To Here( 1 );
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS",
 "TEMP", "HOME", "USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS",
@@ -11035,7 +10554,6 @@ New Window( "Path Variables",
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -11050,7 +10568,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -11065,7 +10582,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Policies();
 
 ```
@@ -11086,7 +10602,6 @@ Get Policies();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -11101,7 +10616,6 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -11118,7 +10632,6 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -11130,7 +10643,6 @@ Print( Get Project( 2 ) << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -11148,7 +10660,6 @@ project = Get Project( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
                               
@@ -11160,7 +10671,7 @@ Print( Get Project List() << Get Window Title() );
 
 **Syntaxe :** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
-**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
+**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
 
 **JMP Version ajoutée :** 15
 
@@ -11168,7 +10679,6 @@ Print( Get Project List() << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters();
 
 ```
@@ -11177,7 +10687,6 @@ Get Punctuation Characters();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Include Chars( "_" ) );
 
 ```
@@ -11186,7 +10695,6 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
@@ -11195,7 +10703,6 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace(
 	Substitute( "This...string..has..dots",
 		Items( Get Punctuation Characters(), "" ), " "
@@ -11214,7 +10721,6 @@ Collapse Whitespace(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
@@ -11232,7 +10738,6 @@ Get Session Script( Report( biv ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Whitespace Characters();
 
 ```
@@ -11261,7 +10766,6 @@ Utilisez l&apos;argument facultatif Type() avec "Data Tables", "Journals", "Repo
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
@@ -11272,7 +10776,6 @@ window = Get Window( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 window = Get Window( Project( project ), "Big Class" );
@@ -11303,7 +10806,6 @@ Utilisez l&apos;argument facultatif Type() avec "Data Tables", "Journals", "Repo
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Get Window List() << Get Window Title() );
 
 ```
@@ -11312,7 +10814,6 @@ Print( Get Window List() << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print(
@@ -11325,7 +10826,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print(
@@ -11345,7 +10845,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -11361,7 +10860,6 @@ New Window( "Example", Global Box( ex ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -11407,7 +10905,6 @@ New Window( "Example: GLog Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -11456,7 +10953,6 @@ New Window( "Example: Glog Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -11519,7 +11015,6 @@ New Window( "Example: GLog Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 ex1 = 1;
 ex2 = 2;
 
@@ -11535,7 +11030,6 @@ ex2 = 2;
 
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Google Sheet Export(
@@ -11557,7 +11051,6 @@ Google Sheet Export(
 
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet =
 "https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
@@ -11587,7 +11080,6 @@ Google Sheet Import(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Gradient Function(
@@ -11612,7 +11104,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -11634,7 +11125,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
 	Xname( "X Axis" ),
@@ -11671,7 +11161,6 @@ x3d << AddVector(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -11693,7 +11182,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 3 > 2 > 1;
 
 ```
@@ -11708,7 +11196,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 3 >= 2 >= 2;
 
 ```
@@ -11723,7 +11210,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Compress(
 	Char To Blob(
 		"random data does not usually compress well and may get larger"
@@ -11742,7 +11228,6 @@ Gzip Compress(
 
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
 		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
@@ -11762,7 +11247,6 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -11789,7 +11273,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2];
 exProd = H Direct Product( exA, exB );
@@ -11817,7 +11300,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -11837,7 +11319,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H List Box(
@@ -11859,7 +11340,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H Scroll Box(
@@ -11903,7 +11383,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -11967,7 +11446,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -11987,7 +11465,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -12025,7 +11502,6 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```
@@ -12040,7 +11516,6 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -12068,7 +11543,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -12085,7 +11559,6 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Expr() equivalent
 Head( Expr( Sum( a, b, c ) ) );
 
@@ -12095,7 +11568,6 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Expr( Sum( a, b, c ) );
 
@@ -12111,7 +11583,6 @@ Head Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Head Name( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -12128,7 +11599,6 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Name Expr() equivalent
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -12138,7 +11608,6 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Name Expr( Sum( a, b, c ) );
 
@@ -12154,7 +11623,6 @@ Head Name Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( z = 0, z < 1, z += .1,
@@ -12179,7 +11647,6 @@ New Window( "Color Bar",
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) ||
 " " || Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -12195,7 +11662,6 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) ||
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Blob( "FF78CE" );
 
 ```
@@ -12210,7 +11676,6 @@ Hex To Blob( "FF78CE" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Char( "436166C3A9" ) ||
 Hex To Char( "00430061006600E9", "utf-16be" );
 
@@ -12226,7 +11691,6 @@ Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -12241,7 +11705,6 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -12260,7 +11723,6 @@ Hidden();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -12277,7 +11739,6 @@ Hidden( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Hier Box(
 		Text Edit Box( "Cause 1" ),
@@ -12303,7 +11764,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
 exhc = Hierarchical Cluster(
@@ -12330,8 +11790,6 @@ exhistory[3, 1];
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -12362,7 +11820,6 @@ New Window( "Hist Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -12387,7 +11844,6 @@ New Window( "Color Wheel",
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
 	Show( "Not on Mac" )
@@ -12414,7 +11870,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 xx = .4;
 yy = .4;
 angleDegrees = (1 :: 180)`;
@@ -12465,7 +11920,6 @@ New Window( "Hough Transform Demo 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 nRow = 35;
 nCol = 35;
 
@@ -12600,7 +12054,6 @@ New Window( "Hough Transform Demo 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 Hour( Today() );
 
 ```
@@ -12615,7 +12068,6 @@ Hour( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 et = HP Time();
@@ -12634,7 +12086,6 @@ Show( it );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States(
 	Hue State( 5 ),
@@ -12653,7 +12104,6 @@ Row State( 3 ) = Combine States(
 
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Distribution",
@@ -12721,7 +12171,6 @@ New Window( "Example: Hypergeometric Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Probability",
@@ -12776,7 +12225,6 @@ New Window( "Example: Hypergeometric Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -12795,7 +12243,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example with Path",
 	ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" )
 );
@@ -12812,7 +12259,6 @@ New Window( "Example with Path",
 
 ```jsl
 
-Names Default To Here( 1 );
 Identity( 2 );
 
 ```
@@ -12827,7 +12273,6 @@ Identity( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Random Uniform() < 0.5,
 	"heads",
 	"tails"
@@ -12845,7 +12290,6 @@ If( Random Uniform() < 0.5,
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	H List Box(
 		englishBox = If Box( 1, Text Box( "Good day" ) ),
@@ -12868,7 +12312,6 @@ frenchBox << Set( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box(
@@ -12888,7 +12331,6 @@ New Window( "Lines Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -12914,7 +12356,6 @@ highestScorer = IfMax(
 
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -12940,7 +12381,6 @@ lowestScorer = IfMin(
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
 x = .;
@@ -12960,7 +12400,6 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -13001,7 +12440,6 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 In Days( 1.5 );
 
 ```
@@ -13016,7 +12454,6 @@ In Days( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Hours( 0.5 );
 
 ```
@@ -13031,7 +12468,6 @@ In Hours( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Minutes( 1 );
 
 ```
@@ -13046,7 +12482,6 @@ In Minutes( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";
@@ -13081,7 +12516,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -13096,7 +12530,6 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Weeks( 1 );
 
 ```
@@ -13111,7 +12544,6 @@ In Weeks( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 In Years( 1 );
 
 ```
@@ -13126,7 +12558,6 @@ In Years( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```
@@ -13141,7 +12572,6 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```jsl
 
-Names Default To Here( 1 );
 y = Include File List();
 
 ```
@@ -13156,7 +12586,6 @@ y = Include File List();
 
 ```jsl
 
-Names Default To Here( 1 );
 1 :: 10;
 
 ```
@@ -13173,7 +12602,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -13182,7 +12610,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -13191,7 +12618,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -13200,7 +12626,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -13209,7 +12634,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -13227,7 +12651,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
 b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
 y = Inner Product BLAS( a, b );
@@ -13244,7 +12667,6 @@ y = Inner Product BLAS( a, b );
 
 ```jsl
 
-Names Default To Here( 1 );
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
 
@@ -13262,7 +12684,6 @@ z = Insert( z, 99, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
@@ -13273,7 +12694,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
@@ -13284,7 +12704,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
 );
@@ -13305,7 +12724,6 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Integrate( Exp( -x ), x, 0, . );
 
 ```
@@ -13314,7 +12732,6 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 100;
 Integrate( Normal Density( x - 100 ), x, ., . );
 
@@ -13330,7 +12747,6 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 )
 -Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -13347,7 +12763,6 @@ Payment( .05 / 12, 30 * 12, 100000 )
 
 ```jsl
 
-Names Default To Here( 1 );
 Interest Rate(
 	30 * 12,
 	Payment( .05 / 12, 30 * 12, 100000 ),
@@ -13366,7 +12781,6 @@ Interest Rate(
 
 ```jsl
 
-Names Default To Here( 1 );
 Internal Rate of Return( [-10000, 1000, 900, 950] );
 Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
@@ -13384,7 +12798,6 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Interpolate",
 	window:x = (2 :: 9) * 10;
@@ -13403,7 +12816,6 @@ New Window( "Interpolate",
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -13412,7 +12824,6 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
@@ -13421,7 +12832,6 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
 yd = Sin( xd );
@@ -13454,7 +12864,6 @@ New Window( "Interpolated values are blue",
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -13469,7 +12878,6 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Generate a design matrix */
 exX = [1 0 4 2,
 1 0 5 1,
@@ -13527,7 +12935,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -13542,7 +12949,6 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```
@@ -13559,7 +12965,6 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis(
 	Y( :Q1, :Q2, :Q3, :Q4, :Q5 ),
@@ -13574,7 +12979,6 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
 mthlst = {};
@@ -13603,7 +13007,6 @@ mthlst;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -13632,7 +13035,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Associative Array( [1 => 2] );
 
 ```
@@ -13647,7 +13049,6 @@ Is Associative Array( [1 => 2] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -13708,7 +13109,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -13737,7 +13137,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -13766,7 +13165,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -13795,7 +13193,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -13812,7 +13209,6 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Directory Writable( "$SAMPLE_DATA" );
 
 ```
@@ -13829,7 +13225,6 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Empty( x );
 
 ```
@@ -13838,7 +13233,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Empty();
 Is Empty( x );
 
@@ -13848,7 +13242,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -13876,7 +13269,6 @@ If( Is Empty( dt ),
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Expr( Expr( x ) );
 
 ```
@@ -13891,7 +13283,6 @@ Is Expr( Expr( x ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
@@ -13908,7 +13299,6 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -13923,7 +13313,6 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://public.jmp.com";
 Show( Is JMP Live URL Enabled( url ) );
@@ -13940,7 +13329,6 @@ Show( Is JMP Live URL Enabled( url ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 v = Is Leap Year( 2016 );
 
 ```
@@ -13955,7 +13343,6 @@ v = Is Leap Year( 2016 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is List( {1, 2, 3} );
 
 ```
@@ -13972,7 +13359,6 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Is Log Open(),
 	Close Log()
 );
@@ -13983,7 +13369,6 @@ If( Is Log Open(),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( !Is Log Open(),
 	Open Log()
 );
@@ -14000,7 +13385,6 @@ If( !Is Log Open(),
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Matrix( [11 22 33] );
 
 ```
@@ -14015,7 +13399,6 @@ Is Matrix( [11 22 33] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Missing( . );
 
 ```
@@ -14030,7 +13413,6 @@ Is Missing( . );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Name( Name Expr( n ) );
 
 ```
@@ -14045,7 +13427,6 @@ Is Name( Name Expr( n ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -14088,7 +13469,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Number( 213 );
 
 ```
@@ -14103,7 +13483,6 @@ Is Number( 213 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -14134,7 +13513,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "black", 0 );
 
 ```
@@ -14143,7 +13521,6 @@ Is Same Color( "black", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", "green", "blue" );
 
 ```
@@ -14152,7 +13529,6 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -14161,7 +13537,6 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```
@@ -14176,7 +13551,6 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -14192,7 +13566,6 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -14221,7 +13594,6 @@ New Window( "Show me the key",
 
 ```jsl
 
-Names Default To Here( 1 );
 Is String( "abc" );
 
 ```
@@ -14236,7 +13608,6 @@ Is String( "abc" );
 
 ```jsl
 
-Names Default To Here( 1 );
 ISO Year( Today() );
 
 ```
@@ -14253,7 +13624,6 @@ ISO Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
@@ -14262,7 +13632,6 @@ Item( 5, "http://www.jmp.com", ":/." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( [2 -1], "This is a sentence" );
 
 ```
@@ -14271,7 +13640,6 @@ Item( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item(
 	4,
 	"Apple+Banana Tree,,Pear,,Peach,,Grape",
@@ -14284,7 +13652,6 @@ Item(
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -14293,7 +13660,6 @@ Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, "abcd", "" );
 
 ```
@@ -14302,7 +13668,6 @@ Item( 2, "abcd", "" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```
@@ -14319,7 +13684,6 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )}
 );
@@ -14330,7 +13694,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters()
@@ -14342,7 +13705,6 @@ Items(
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters(),
@@ -14355,7 +13717,6 @@ Items(
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	[1 2],
 	",Apple,Banana Tree,Peach",
@@ -14374,7 +13735,6 @@ Items(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Produce a 2x3 matrix, filled with 15.
 m = J( 2, 3, 15 );
@@ -14413,7 +13773,6 @@ J(
 
 ```jsl
 
-Names Default To Here( 1 );
 JMP Product Name();
 
 ```
@@ -14428,7 +13787,6 @@ JMP Product Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 JMP Version();
 
 ```
@@ -14443,7 +13801,6 @@ JMP Version();
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -14500,7 +13857,6 @@ New Window( "Example: Johnson Sb Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -14563,7 +13919,6 @@ New Window( "Example: Johnson Sb Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -14578,7 +13933,6 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -14635,7 +13989,6 @@ New Window( "Example: Johnson Sl Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -14698,7 +14051,6 @@ New Window( "Example: Johnson Sl Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -14713,7 +14065,6 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -14770,7 +14121,6 @@ New Window( "Example: Johnson Su Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -14833,7 +14183,6 @@ New Window( "Example: Johnson Su Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -14848,7 +14197,6 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
 sampjourn = sample << Get Journal;
@@ -14871,7 +14219,6 @@ New Window( "Distribution of Height",
 
 ```jsl
 
-Names Default To Here( 1 );
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -14888,7 +14235,6 @@ JSL Encrypted(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = JSL Quote(/* Begin quote. */
     For (i = 1, i <= 5, i++,
@@ -14911,7 +14257,6 @@ New Window( "editor", Script Box( x ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
@@ -14935,7 +14280,6 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -14952,7 +14296,6 @@ dt = JSON To Data Table(
 
 ```jsl
 
-Names Default To Here( 1 );
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -14968,7 +14311,6 @@ Show( l );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "JSS Context",
 	JSS Context Box(
 		V List Box(
@@ -15003,7 +14345,6 @@ New Window( "JSS Context",
 
 ```jsl
 
-Names Default To Here( 1 );
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
 Random Reset( 113 );
@@ -15080,7 +14421,6 @@ dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, 1 );
 "2 nearest rows to row 1 are " || Char( rows );
@@ -15097,7 +14437,6 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -15116,7 +14455,6 @@ Labeled();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -15133,7 +14471,6 @@ Labeled( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Lag( :height, 2 );
@@ -15150,7 +14487,6 @@ Lag( :height, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Format(
 	Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ddmonyyyy:h:m:s"
@@ -15168,7 +14504,6 @@ Format(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Linear Regression*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -15186,7 +14521,6 @@ X = [1, 2, 3, 4];
 
 ```jsl
 
-Names Default To Here( 1 );
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -15204,7 +14538,6 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
@@ -15213,7 +14546,6 @@ Length( "Café" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
@@ -15222,7 +14554,6 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -15231,7 +14562,6 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -15246,7 +14576,6 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )}
 );
@@ -15263,7 +14592,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 [1 1 1] < [0 1 2];
 
 ```
@@ -15278,7 +14606,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 <= 2;
 
 ```
@@ -15293,7 +14620,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 <= 2 <= 2;
 
 ```
@@ -15308,7 +14634,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 2 <= 2 < 3;
 
 ```
@@ -15323,7 +14648,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Density",
@@ -15358,7 +14682,6 @@ New Window( "Example: LEV Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -15392,7 +14715,6 @@ New Window( "Example: LEV Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 qq = .5;
@@ -15440,7 +14762,6 @@ New Window( "Example: LEV Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -15464,7 +14785,6 @@ New Window( "Color Bar",
 
 ```jsl
 
-Names Default To Here( 1 );
 LGamma( 5 );
 
 ```
@@ -15481,7 +14801,6 @@ LGamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Constrained smoothing",
 	Graph Box(
 		Pen Color( "gray" );
@@ -15510,7 +14829,6 @@ New Window( "Constrained smoothing",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box( Line( [10 30 90], [88 22 44] ) )
 );
@@ -15521,7 +14839,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Smoothing",
 	Graph Box(
 		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),
@@ -15544,7 +14861,6 @@ New Window( "Smoothing",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -15567,7 +14883,6 @@ New Window( "Interpolate in value space",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example",
@@ -15582,7 +14897,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -15598,7 +14912,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -15622,7 +14935,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Line Style Example",
 	Graph Box(
 		Frame Size( 500, 400 ),
@@ -15659,7 +14971,6 @@ New Window( "Line Style Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Linear Regression: y = intercept + beta * x + error*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -15678,7 +14989,6 @@ RSquare Adj = Diagnostics["RSquare Adj"];
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Model: y = beta_1*x + beta_2*x^2 + error*/
 y = [3, 5, 7, 5];
 X = [1 1, 2 4, 3 9, 4 16];
@@ -15691,7 +15001,6 @@ Linear Regression( y, X, <<noIntercept, <<printToLog );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Categorical Variable Example*/
 /*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
 y = [3, 5, 7, 5];
@@ -15713,7 +15022,6 @@ Linear Regression( y, designMat, <<noIntercept, <<printToLog );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( Lines Seg( lines ) )
@@ -15733,7 +15041,6 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -15760,7 +15067,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Lineup Ruler",
 	lrb = Lineup Ruler Box(
@@ -15798,7 +15104,6 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
-Names Default To Here( 1 );
 {1, 2 + 3, [11 22]};
 
 ```
@@ -15815,7 +15120,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	b = List Box( {"single", "double", "triple"}, nlines( 10 ) )
 );
@@ -15826,7 +15130,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	lb = List Box(
 		{{"First Item", "continuous"}, {"Second Item", "ordinal"
@@ -15849,7 +15152,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Ln( Exp( 2 ) );
 
 ```
@@ -15866,7 +15168,6 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -15880,7 +15181,6 @@ dll << UnloadDLL();
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -15893,7 +15193,7 @@ If( Host is( "Windows" ),
 
 ### Load Text File
 
-**Syntaxe :** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
+**Syntaxe :** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Description :** Lit un fichier texte entier dans une variable JSL. Load Text File() vous invite à saisir un nom de fichier. Load Text File( path ) renvoie une chaîne. L&apos;option XMLParse convertit du code XML en une arborescence d&apos;expression. La fonction SASODSXML effectue l&apos;analyse en tant que fichier XML par défaut d&apos;un fichier ODS de SAS. L&apos;option [{JSON}] convertit du code JSON en une arborescence d&apos;expression. L&apos;argument BLOB renvoie des données binaires dans une variable Blob JSL ; les paramètres facultatifs nommés du BLOB permettent de lire une sous-chaîne du fichier.
 
@@ -15901,7 +15201,6 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
 /*, Charset("ascii")*/
@@ -15924,7 +15223,6 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*more examples, above*/
 Show( Loc( [1 0 1 0 1 0] ) );
 Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
@@ -15936,7 +15234,6 @@ Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/
 ;
 
@@ -15946,7 +15243,6 @@ Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [5, 7, 5, ., 5], 5 );
 
 ```
@@ -15955,7 +15251,6 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/
 ;
 
@@ -15965,7 +15260,6 @@ Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 ```
@@ -15980,7 +15274,6 @@ Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc Max( [11 22 33 22 33 11] );
 
 ```
@@ -15995,7 +15288,6 @@ Loc Max( [11 22 33 22 33 11] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc Min( [11 22 33 22 33 11] );
 
 ```
@@ -16010,7 +15302,6 @@ Loc Min( [11 22 33 22 33 11] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```
@@ -16025,7 +15316,6 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
 	Loc Sorted( [11 22 33 44 55], [1] ),
@@ -16044,7 +15334,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -16062,7 +15351,6 @@ Local( {a = 1, b},
 
 ```jsl
 
-Names Default To Here( 1 );
 y = Local Here(
 	a = 1;
 	b = 2;
@@ -16082,7 +15370,6 @@ y = Local Here(
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -16108,7 +15395,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -16134,7 +15420,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log( 256, 2 );
 
 ```
@@ -16149,7 +15434,6 @@ Log( 256, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
 		Write( Char( i ) );
@@ -16171,7 +15455,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( Off );
 
 ```
@@ -16180,7 +15463,6 @@ Log Table Messages( Off );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 
 ```
@@ -16189,7 +15471,6 @@ Log Table Messages( On );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```
@@ -16198,7 +15479,6 @@ Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```
@@ -16207,7 +15487,6 @@ Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Disable( "Column" ) );
 
 ```
@@ -16216,7 +15495,6 @@ Log Table Messages( On, Disable( "Column" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 Log Table Messages( Disable( "Table" ) );
 
@@ -16232,7 +15510,6 @@ Log Table Messages( Disable( "Table" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log10( 100 );
 
 ```
@@ -16247,7 +15524,6 @@ Log10( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log1P( 1e-6 );
 
 ```
@@ -16262,7 +15538,6 @@ Log1P( 1e-6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -16308,7 +15583,6 @@ New Window( "Example: LogGenGamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -16357,7 +15631,6 @@ New Window( "Example: LogGenGamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -16420,7 +15693,6 @@ New Window( "Example: LogGenGamma Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -16435,7 +15707,6 @@ Logist( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist Percent( 10 );
 
 ```
@@ -16450,7 +15721,6 @@ Logist Percent( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Density",
@@ -16485,7 +15755,6 @@ New Window( "Example: Logistic Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -16519,7 +15788,6 @@ New Window( "Example: Logistic Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -16567,7 +15835,6 @@ New Window( "Example: Logistic Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Logit( 0.95 );
 
 ```
@@ -16582,7 +15849,6 @@ Logit( 0.95 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logit Percent( 95.0 );
 
 ```
@@ -16597,7 +15863,6 @@ Logit Percent( 95.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Density",
@@ -16629,7 +15894,6 @@ New Window( "Example: Loglogistic Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -16663,7 +15927,6 @@ New Window( "Example: Loglogistic Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -16711,7 +15974,6 @@ New Window( "Example: Loglogistic Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -16743,7 +16005,6 @@ New Window( "Example: Lognormal Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -16777,7 +16038,6 @@ New Window( "Example: Lognormal Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 qq = .5;
@@ -16825,7 +16085,6 @@ New Window( "Example: Lognormal Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Long Date( Today() );
 
 ```
@@ -16838,7 +16097,6 @@ Long Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [2 0, 0 2];
 U = [2 4, 3 5];
 s = 2.5;
@@ -16856,7 +16114,6 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ```jsl
 
-Names Default To Here( 1 );
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -16871,7 +16128,6 @@ Lowercase( "CAFÉ #23" );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
 c = [9 6 -4];
@@ -16892,7 +16148,6 @@ Show( x, z );
 
 ```jsl
 
-Names Default To Here( 1 );
 Mail(
 	"test@example.com",
 	"revelation",
@@ -16914,7 +16169,6 @@ Mail(
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Sample Index" );
 
 ```
@@ -16923,7 +16177,6 @@ Main Menu( "Sample Index" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Help:Sample Index" );
 
 ```
@@ -16940,7 +16193,6 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -16954,7 +16206,6 @@ dt << New Column( "KFold Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
 	"Numeric",
@@ -16982,7 +16233,6 @@ dt << New Column( "Stratified KFold",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -16997,7 +16247,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -17020,7 +16269,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -17051,7 +16299,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 grid = 50;
 rmax = 0/*zero for smooth*/;
 nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set 
@@ -17119,7 +16366,6 @@ g << Set Y Axis(
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "celry", {"celry", "celery"} );
 
 ```
@@ -17128,7 +16374,6 @@ Map Value( "celry", {"celry", "celery"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```
@@ -17137,7 +16382,6 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
@@ -17146,7 +16390,6 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```
@@ -17161,7 +16404,6 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) )
 );
@@ -17178,7 +16420,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -17199,7 +16440,6 @@ Marker Of();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 sz = Column( "age" ) << get values;
@@ -17224,7 +16464,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -17243,7 +16482,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -17262,7 +16500,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -17287,7 +16524,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -17320,7 +16556,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -17340,7 +16575,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -17357,7 +16591,6 @@ Marker Of( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Match( Year( Today() ),
 	2013, "snake",
 	2014, "horse",
@@ -17377,7 +16610,6 @@ Match( Year( Today() ),
 
 ```jsl
 
-Names Default To Here( 1 );
 MatchMZ( Year( Today() ),
 	2013, "snake",
 	2014, "horse",
@@ -17399,7 +16631,6 @@ MatchMZ( Year( Today() ),
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```
@@ -17408,7 +16639,6 @@ Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```
@@ -17417,7 +16647,6 @@ Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {2, 3 + 7} );
 
 ```
@@ -17426,7 +16655,6 @@ Matrix( {2, 3 + 7} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( 2, 3 );
 
 ```
@@ -17441,7 +16669,6 @@ Matrix( 2, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) )
 );
@@ -17458,7 +16685,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM1 = exMatA * exMatB;
@@ -17481,7 +16707,6 @@ Show( exMatM3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
@@ -17498,7 +16723,6 @@ exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 ```
@@ -17513,7 +16737,6 @@ Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```
@@ -17528,7 +16751,6 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -17545,7 +16767,6 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example*/ 
 x = 0;
 y = 0;
@@ -17558,7 +16779,6 @@ Eval List( {x, y, maxf} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
 n = 3;
@@ -17577,7 +16797,6 @@ Maximize( logDens, {mu, sigSq( 0, . )}, <<details( both ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with all optional arguments*/ 
 x = 0;
 y = 0;
@@ -17602,7 +16821,6 @@ Maximize(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -17617,7 +16835,6 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 MDYHMS( Today() );
 
 ```
@@ -17632,7 +16849,6 @@ MDYHMS( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -17647,7 +16863,6 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -17662,7 +16877,6 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -17721,7 +16935,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -17741,7 +16954,6 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -17758,7 +16970,6 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 x = 0;
 y = 0;
@@ -17771,7 +16982,6 @@ Eval List( {x, y, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -17794,7 +17004,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -17813,7 +17022,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -17862,7 +17070,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -17893,7 +17100,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -17908,7 +17114,6 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 -Pi();
 
 ```
@@ -17923,7 +17128,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Minute( Today() );
 
 ```
@@ -17938,7 +17142,6 @@ Minute( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -17953,7 +17156,6 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```
@@ -17968,7 +17170,6 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
 Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
@@ -17984,7 +17185,6 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -17999,7 +17199,6 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Month( Today() );
 
 ```
@@ -18014,7 +17213,6 @@ Month( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
 		<<setDragText( "hello" ),
@@ -18070,7 +17268,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -18096,7 +17293,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -18121,7 +17317,6 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
 );
@@ -18151,7 +17346,6 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -18165,7 +17359,6 @@ Move to Project( destination( project ), windows( {report} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
 project << Close Window();
@@ -18182,7 +17375,6 @@ project << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
 	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),
@@ -18204,7 +17396,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 mfi = Multiple File Import();
 mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
@@ -18218,7 +17409,6 @@ tables = mfi << Import Data();
 
 ```jsl
 
-Names Default To Here( 1 );
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
 // for filtering files and controlling the import
@@ -18240,7 +17430,6 @@ Multiple File Import(
 
 ```jsl
 
-Names Default To Here( 1 );
 2 * Pi();
 
 ```
@@ -18255,7 +17444,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 3;
 ex *= 2;
 ex;
@@ -18272,7 +17460,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
 . -0.687720061441453 0.29665732536624 -1.94898001941576,
 -0.0425472526673373 0.463229145080277 0.635619352779951 .];
@@ -18304,7 +17491,6 @@ Print( mat );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Munger( "over there", 1, "t", "" ),
 	Munger( "17 June 2000", 4, 4, "March" )}
@@ -18322,7 +17508,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 N Arg( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -18339,7 +17524,6 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated N Arg Expr() equivalent
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -18349,7 +17533,6 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 N Arg Expr( Sum( a, b, c ) );
 
@@ -18365,7 +17548,6 @@ N Arg Expr( Sum( a, b, c ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Choose K( 5, 3 );
 
 ```
@@ -18380,7 +17562,6 @@ N Choose K( 5, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Col( [11 22, 33 44] );
 
 ```
@@ -18395,7 +17576,6 @@ N Col( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Col( [11 22, 33 44] );
 
 ```
@@ -18412,7 +17592,6 @@ N Col( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -18421,7 +17600,6 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -18430,7 +17608,6 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
 );
@@ -18448,7 +17625,6 @@ N Items( hlist );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -18463,7 +17639,6 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Row( [11 22, 33 44] );
 
 ```
@@ -18478,7 +17653,6 @@ N Row( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Rows( [11 22, 33 44] );
 
 ```
@@ -18495,7 +17669,6 @@ N Rows( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
@@ -18505,7 +17678,6 @@ N Table();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Open( "$SAMPLE_DATA/Solubility.jmp" );
@@ -18521,13 +17693,12 @@ d;
 
 **Syntaxe :** Name(string)
 
-**Description :** Un nom permet simplement d&apos;appeler un élément. Les noms sont utilisés pour les variables et les fonctions, et peuvent être utilisés directement dans les scripts si certaines règles sont respectées. Si le nom commence par un caractère alphabétique ou un trait bas, suivi de caractères alphanumériques, d&apos;un espace, de symboles mathématiques Unicode et de certains signes de ponctuation (apostrophes (’), pourcentages (%), points (.), barres obliques inversées (\), et traits bas (_)), alors il peut être utilisé directement dans les scripts. Les noms qui ne respectent pas ces règles peuvent être utilisés à l&apos;aide du mot-clé du Nom().
+**Description :** Un nom permet simplement d&apos;appeler un élément. Les noms sont utilisés pour les variables et les fonctions, et peuvent être utilisés directement dans les scripts si certaines règles sont respectées. Si le nom commence par un caractère alphabétique ou un trait bas, suivi de caractères alphanumériques, d&apos;un espace, de symboles mathématiques Unicode et de certains signes de ponctuation (apostrophes (’), pourcentages (%), points (.), barres obliques inversées (\\), et traits bas (_)), alors il peut être utilisé directement dans les scripts. Les noms qui ne respectent pas ces règles peuvent être utilisés à l&apos;aide du mot-clé du Nom().
 
 **JMP Version ajoutée :** 14
 
 ```jsl
 
-Names Default To Here( 1 );
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -18544,7 +17715,6 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( 1 + 2 );
 Eval List( {ex, Name Expr( ex )} );
 
@@ -18560,7 +17730,6 @@ Eval List( {ex, Name Expr( ex )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -18576,7 +17745,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -18619,7 +17787,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -18662,7 +17829,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( NChooseK Matrix( 5, 3 ) );
 
 ```
@@ -18677,7 +17843,6 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbdp = 0.5;
 exnbdn = 10;
 New Window( "Example: Neg Binomial Distribution",
@@ -18740,7 +17905,6 @@ New Window( "Example: Neg Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.5;
 exnbpn = 10;
 New Window( "Example: Neg Binomial Probability",
@@ -18786,7 +17950,6 @@ New Window( "Example: Neg Binomial Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Negative Binomial Distribution",
@@ -18832,7 +17995,6 @@ New Window( "Example: Negative Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Negative Binomial",
@@ -18882,7 +18044,6 @@ New Window( "Poisson and Negative Binomial",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -18956,7 +18117,6 @@ New Window( "Example: Negative Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Net Present Value( .05, [-10000, 1000, 900, 9500] );
 Net Present Value( .05, -10000, 1000, 900, 9500 );
 
@@ -18972,7 +18132,6 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 echo = [=> ];
 echo["a"] = 1;
@@ -18992,7 +18151,6 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -19018,7 +18176,6 @@ cas << Submit( action );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
@@ -19035,7 +18192,6 @@ cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
@@ -19055,7 +18211,6 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
 
@@ -19065,7 +18220,6 @@ New Column( "like name", Like( :name ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example",
 	"Numeric",
@@ -19086,7 +18240,6 @@ New Column( "example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
 	Column( :Narrative Cause ),
@@ -19113,7 +18266,6 @@ New Column by Text Matching(
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function(
 	"custom",
 	"Add",
@@ -19128,7 +18280,6 @@ myAdd = New Custom Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
 	{New Custom Function(
@@ -19148,7 +18299,6 @@ Add Custom Functions(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
 	{New Custom Function(
@@ -19176,7 +18326,6 @@ Add Custom Functions(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Create a data connector from scratch
 dc = New Data Connector(
@@ -19196,7 +18345,6 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Launch Query Builder from a SQL Server data source
 dc = New Data Connector(
@@ -19221,7 +18369,6 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nx = 20; // data is this size
 ny = 15;
@@ -19272,7 +18419,6 @@ New Window( "small and big",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 getSentiment = Function( {text},
 	{Default Local},
@@ -19338,7 +18484,6 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
 
@@ -19348,7 +18493,6 @@ New Window( "new image", image );
 
 ```jsl
 
-Names Default To Here( 1 );
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
@@ -19359,7 +18503,6 @@ New Window( "new image", image2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 image3 = New Image();
 mat = J( 256, 256 );
 For( y = 0, y < 256, y++,
@@ -19392,7 +18535,6 @@ New Window( "image", image3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live();
 
 ```
@@ -19401,7 +18543,6 @@ jmplive = New JMP Live();
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
@@ -19410,7 +18551,6 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live(
 	Connection( "MyJMPLive" ),
 	Prompt( If Needed )
@@ -19440,7 +18580,6 @@ jmplive = New JMP Live(
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -19470,7 +18609,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection <<
 Create Folder(
@@ -19495,7 +18633,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection <<
 Create Folder(
@@ -19514,7 +18651,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection <<
 Create Folder(
@@ -19544,7 +18680,6 @@ Publish( imageContent, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -19583,7 +18718,6 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -19625,7 +18759,6 @@ ns << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -19678,7 +18811,6 @@ data = request << Send;
 
 ```jsl
 
-Names Default To Here( 1 );
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -19699,7 +18831,6 @@ token = New OAuth2 Token(
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -19760,7 +18891,6 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -19789,7 +18919,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -19813,7 +18942,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -19848,7 +18976,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project();
 
 ```
@@ -19857,7 +18984,6 @@ project = New Project();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -19871,7 +18997,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -19887,7 +19012,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Set Bookmarks(
 		{File( "$SAMPLE_DATA/Animals.jmp" ),
@@ -19907,7 +19031,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open(
@@ -19947,7 +19070,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
@@ -19967,7 +19089,6 @@ obj = New SQL Query(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name",
@@ -19991,7 +19112,6 @@ New Table( "Little Class",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 webreport = New Web Report(
@@ -20035,7 +19155,6 @@ If( !Is Empty( file ),
 
 ```jsl
 
-Names Default To Here( 1 );
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -20063,7 +19182,6 @@ New Window( "No menu, no toolbars",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
@@ -20083,7 +19201,6 @@ ex = New Window( "Dialog example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Modal Dialog example",
 	<<Type( "Modal Dialog" ),
@@ -20122,7 +19239,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 g = Graph Box(
 	Frame Size( 300, 300 ),
@@ -20144,7 +19260,6 @@ New Window( "picture",
 
 ```jsl
 
-Names Default To Here( 1 );
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -20159,7 +19274,6 @@ New Window( "My Window's Title", g );
 
 ```jsl
 
-Names Default To Here( 1 );
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
 dt << Run Script("Bivariate");
@@ -20172,7 +19286,6 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 ex = New Window( "Script example",
@@ -20193,7 +19306,6 @@ ex = New Window( "Script example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -20208,7 +19320,6 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -20236,7 +19347,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -20259,7 +19369,6 @@ New Window( "Example: Normal Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -20282,7 +19391,6 @@ New Window( "Example: Normal Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Integrate(
 	J( 3, 1, 0 ),
 	Identity( 3 ),
@@ -20304,7 +19412,6 @@ Normal Integrate(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -20327,7 +19434,6 @@ New Window( "Example: Normal Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -20350,7 +19456,6 @@ New Window( "Example: Normal Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -20373,7 +19478,6 @@ New Window( "Example: Normal Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -20442,7 +19546,6 @@ New Window( "Univariate Normal Mixture Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -20505,7 +19608,6 @@ New Window( "Univariate Normal Mixture Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 mu1 = -1;
@@ -20581,7 +19683,6 @@ New Window( "Example: Normal Mixture Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -20596,7 +19697,6 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 n = 15;
 New Window( "Example: Tolerance Factor()",
 	tdig = Graph Box(
@@ -20626,7 +19726,6 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
-Names Default To Here( 1 );
 !(1 < 2);
 
 ```
@@ -20641,7 +19740,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 != 2 != 1;
 
 ```
@@ -20664,7 +19762,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -20681,7 +19778,6 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
@@ -20690,7 +19786,6 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Num( "3.1e6", <<Restrict ),
 	Num( "1989-10-04", <<Restrict ),
@@ -20710,7 +19805,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x, y}, x ^ 2 + y );
 Num Deriv( f( 2, 1 ) );
 Num Deriv( f( 2, 1 ), 2 );
@@ -20727,7 +19821,6 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x}, x ^ 3 );
 Num Deriv2( f( 2 ) );
 
@@ -20743,7 +19836,6 @@ Num Deriv2( f( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )}
 );
@@ -20760,7 +19852,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -20783,7 +19874,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -20805,7 +19895,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -20821,7 +19910,6 @@ x = neb << get;
 
 ```jsl
 
-Names Default To Here( 1 );
 Number of Periods( .05 / 12, -2000, 100000 );
 
 ```
@@ -20838,7 +19926,6 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -20855,7 +19942,6 @@ Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Other options:
    SAS File imported as a data table:
    Open( sasFilePath,
@@ -20924,7 +20010,6 @@ Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Excel files imported into a data table:
    Open( excelFilePath,
      <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
@@ -20967,7 +20052,6 @@ dt = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
@@ -20977,7 +20061,6 @@ Open( "$SAMPLE_DATA" );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
@@ -20988,7 +20071,6 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
     PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
@@ -21019,7 +20101,6 @@ pdftable2 = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -21046,7 +20127,6 @@ dt2 = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Text files imported into a data table:
    Open( textFilePath,
      <Invisible | Private>,
@@ -21088,7 +20168,6 @@ dt = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -21107,7 +20186,6 @@ Open Database(
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -21133,7 +20211,6 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help( "Help" );
 
 ```
@@ -21142,7 +20219,6 @@ Open Help( "Help" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search(
@@ -21158,7 +20234,6 @@ Open Help(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search(
@@ -21186,7 +20261,6 @@ Open Help(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Log();
 Show( Is Log Open() );
 
@@ -21196,7 +20270,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Bring Log Windows to the Top */
 Open Log( 1 );
 Show( Is Log Open() );
@@ -21213,7 +20286,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 | 3 < 2;
 
 ```
@@ -21228,7 +20300,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 OrMZ( 1 < 2, 3 < 2 );
 
 ```
@@ -21243,7 +20314,6 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ortho( [1 1, 1 -1] );
 
 ```
@@ -21258,7 +20328,6 @@ Ortho( [1 1, 1 -1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ortho Poly( 1 :: 10, 2 );
 
 ```
@@ -21273,7 +20342,6 @@ Ortho Poly( 1 :: 10, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		{"Show label value", Show( teb << get text )},
@@ -21296,7 +20364,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -21319,7 +20386,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -21335,7 +20401,6 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -21364,7 +20429,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -21386,7 +20450,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 m = J( 3, 2, -1 );
 If(
 	Parallel Assign(
@@ -21409,7 +20472,6 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -21424,7 +20486,6 @@ Parameter( {a = 1}, a + 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Parse( "x+y" );
 
 ```
@@ -21441,7 +20502,6 @@ Parse( "x+y" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -21450,7 +20510,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -21459,7 +20518,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -21468,7 +20526,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -21477,7 +20534,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -21497,7 +20553,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -21517,7 +20572,6 @@ Show( l );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -21539,7 +20593,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 doc =
 "
@@ -21599,7 +20652,6 @@ Show( docname, doctext, records, NestLevel );
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs
@@ -21625,7 +20677,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123456789",
 	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")
@@ -21645,7 +20696,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -21663,7 +20713,6 @@ op;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123nonnumeric456",
 	Pat Span( "0123456789" ) + Pat Arb() >> result
@@ -21683,7 +20732,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@"
@@ -21703,7 +20751,6 @@ Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -21719,7 +20766,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 b = "- ";
 Pat Match(
 	"one two three-",
@@ -21739,7 +20785,6 @@ word;
 
 ```jsl
 
-Names Default To Here( 1 );
 num = Pat Break( "," );
 sep = ",";
 Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
@@ -21757,7 +20802,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -21775,7 +20819,6 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs
@@ -21801,7 +20844,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 rc = Pat Match(
 	"123456789",
 	(Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3"
@@ -21820,7 +20862,6 @@ rc = Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
@@ -21838,7 +20879,6 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -21856,7 +20896,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */
 	Pat Match( Test, "s" + Pat Look Ahead( "'" ), "z" ), /* find an s that IS followed by an apostrophe and replace it with z */
@@ -21869,7 +20908,6 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */
 	Pat Match( Test, "s" + Pat Look Ahead( "'", 1 ), "z" ), /* find an s that is NOT followed by an apostrophe and replace it with z */
@@ -21882,7 +20920,6 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -21911,7 +20948,6 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */
 	Pat Match( Test, Pat Look Behind( "'" ) + "s", "z" ), /* find an s that IS preceded by an apostrophe and replace it with z */
@@ -21924,7 +20960,6 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */
 	Pat Match( Test, Pat Look Behind( "'", 1 ) + "s", "z" ), /* find an s that is NOT preceded by an apostrophe and replace it with a z */
@@ -21937,7 +20972,6 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -21964,7 +20998,6 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Pat Match(
 	string,
@@ -21985,7 +21018,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match(
@@ -22007,7 +21039,6 @@ word;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"ab3defghi",
 	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )
@@ -22028,7 +21059,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -22044,7 +21074,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -22060,7 +21089,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
 string;
@@ -22077,7 +21105,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -22093,7 +21120,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
 	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" )
@@ -22113,7 +21139,6 @@ Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -22130,7 +21155,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Pat String( "a" || "b" );
 Pat Match(
 	"acbdbababc",
@@ -22150,7 +21174,6 @@ Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs
@@ -22176,7 +21199,6 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -22192,7 +21214,6 @@ result;
 
 ```jsl
 
-Names Default To Here( 1 );
 nCats = 0;
 whichCat = 3;
 string = "catch a catnapping cat in a catsup factory";
@@ -22218,7 +21239,6 @@ string;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -22239,7 +21259,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -22254,7 +21273,6 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 )
 -Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -22271,7 +21289,6 @@ Payment( .05 / 12, 30 * 12, 100000 )
 
 ```jsl
 
-Names Default To Here( 1 );
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -22286,7 +21303,6 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( {.3, .5, .7} );
@@ -22306,7 +21322,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -22326,7 +21341,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 5 );
 
 ```
@@ -22341,7 +21355,6 @@ Char( Pi(), 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
 	Graph Box(
@@ -22366,7 +21379,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 theme = Pick Color Theme(
 	"Choose a color theme",
@@ -22388,7 +21400,6 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
 biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );
@@ -22409,7 +21420,6 @@ Row Legend( "age", Color Theme( pickedTheme ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```
@@ -22418,7 +21428,6 @@ Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory" );
 
 ```
@@ -22435,7 +21444,6 @@ Pick Directory( "Select a directory" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -22451,7 +21459,6 @@ Pick File(
 
 ```jsl
 
-Names Default To Here( 1 );
 Files = Pick File(
 	"Select JMP File",
 	"$SAMPLE_DATA",
@@ -22471,7 +21478,6 @@ For( i = 1, i <= N Items( Files ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 filename = Pick File(
 	"Save As Text",
 	"$DOCUMENTS",
@@ -22499,7 +21505,6 @@ If( Is Missing( filename ),
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Picture Box(
 		Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg )
@@ -22512,7 +21517,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
 
@@ -22528,7 +21532,6 @@ New Window( "Example", Picture Box( pict ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -22548,7 +21551,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize(
 	a = by( :age ),
@@ -22575,7 +21577,6 @@ New Window( "Pie Seg",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -22601,7 +21602,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -22627,7 +21627,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -22653,7 +21652,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -22694,7 +21692,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	Graph Box(
@@ -22730,7 +21727,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -22767,7 +21763,6 @@ New Window( "Platform example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -22782,7 +21777,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -22797,7 +21791,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -22820,7 +21813,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Distribution",
 	ppy = Graph Box(
@@ -22856,7 +21848,6 @@ New Window( "Example: Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Probability",
 	pdy = Graph Box(
@@ -22887,7 +21878,6 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpn = 40;
 qexpq = 0.5;
@@ -22943,7 +21933,6 @@ New Window( "Example: Poisson Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -22962,7 +21951,6 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -22985,7 +21973,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -22994,7 +21981,6 @@ area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
@@ -23011,7 +21997,6 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -23020,7 +22005,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```
@@ -23037,7 +22021,6 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -23057,7 +22040,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
 polys = dt[rows, {"X", "Y"}];
@@ -23115,7 +22097,6 @@ New Window( "Parishes",
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -23151,7 +22132,6 @@ Show( "see new window for example output" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -23173,7 +22153,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex--;
 ex;
@@ -23190,7 +22169,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex++;
 ex;
@@ -23207,7 +22185,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 Power( 2, 5 );
 
 ```
@@ -23222,7 +22199,6 @@ Power( 2, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23237,7 +22213,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23252,7 +22227,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23267,7 +22241,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23282,7 +22255,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```
@@ -23297,7 +22269,6 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 )
 -Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -23314,7 +22285,6 @@ Payment( .05 / 12, 30 * 12, 100000 )
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( 355 / 113, Pi() );
 
 ```
@@ -23329,7 +22299,6 @@ Print( 355 / 113, Pi() );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
 Print Matrix( A );
 Print Matrix( A, <<ignore locale( 1 ) );
@@ -23354,7 +22323,6 @@ Print Matrix(
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -23369,7 +22337,6 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -23384,7 +22351,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -23403,7 +22369,6 @@ Show( version );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
@@ -23412,7 +22377,6 @@ Python Create JPIP CMD();
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
@@ -23431,7 +22395,6 @@ conn << Create JPIP CMD();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 a = "abcdef";
 d = 3.141;
@@ -23461,7 +22424,6 @@ Show( v, m, ml, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = 1;
 x2 = 2;
@@ -23509,7 +22471,6 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date1 = As Date( Today() );
 Python Send( date1 );
@@ -23522,7 +22483,6 @@ Show( date1, date2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = {1, 2, 3};
 Python Send( x1 );
@@ -23535,7 +22495,6 @@ Show( x1, x2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Install Packages( "numpy" );
 Python Submit( "import numpy as np" );
@@ -23555,7 +22514,6 @@ Show( numpy_datetime );
 
 ```jsl
 
-Names Default To Here( 1 );
 version = Python Get Version();
 Show( version );
 
@@ -23573,7 +22531,6 @@ Show( version );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Init();
 Python Submit(
@@ -23590,7 +22547,6 @@ Show( getStr );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Init();
 PythonConnection << Submit(
@@ -23615,7 +22571,6 @@ Show( getStr );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -23625,7 +22580,6 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -23635,7 +22589,6 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
@@ -23652,7 +22605,6 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Python Is Connected();
 Show( x );
 
@@ -23668,7 +22620,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -23684,7 +22635,6 @@ Show( Python name );
 
 ```jsl
 
-Names Default To Here( 1 );
 pi = 3.1415927;
 Python Send( pi );
 Python Submit( "print(pi)" );
@@ -23706,7 +22656,6 @@ Python Submit( "print(pi)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
@@ -23718,7 +22667,6 @@ Python Submit( "print(weight)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date = As Date( Today() );
 Python Send( date );
@@ -23730,7 +22678,6 @@ Python Submit( "print(date)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = {1, 2, 3};
 Python Send( x );
@@ -23751,7 +22698,6 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -23770,7 +22716,6 @@ Python Submit( "print(Baseball)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit(
 	"\[
 str = 'The quick brown fox jumps over the lazy dog'
@@ -23792,7 +22737,6 @@ Show( getStr, getNum );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit File( "some_Python_source.py" );
 
 ```
@@ -23815,7 +22759,6 @@ Python Submit File( "some_Python_source.py" );
 
 ```jsl
 
-Names Default To Here( 1 );
 QR( [11 22, 33 44] );
 
 ```
@@ -23830,7 +22773,6 @@ QR( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 QR LAPACK( [11 22, 33 44] );
 
 ```
@@ -23843,7 +22785,6 @@ QR LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = [2 0, 0 2];
 x = [2, 3];
 y = Quadratic Form BLAS( A, x );
@@ -23860,7 +22801,6 @@ y = Quadratic Form BLAS( A, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Quantile(
 		0.75,
@@ -23893,7 +22833,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 Quarter( Today() );
 
 ```
@@ -23908,7 +22847,6 @@ Quarter( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query(
 	dt,
@@ -23949,7 +22887,6 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -23970,7 +22907,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 
 ```
@@ -23985,7 +22921,6 @@ RConnection = R Connect();
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init( Echo( true ) );
 R Control( Echo( false ) );
 R Submit( "Add R code" );
@@ -24002,7 +22937,6 @@ R Submit( "Add R code" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 a = "abcdef";
 d = 3.141;
@@ -24032,7 +22966,6 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -24055,7 +22988,6 @@ Close( dt1, No Save );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
 R Execute( {img_path}, {}, "\[
@@ -24078,7 +23010,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 version = R Get Version();
 Show( version );
@@ -24095,7 +23026,6 @@ Show( version );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 
 ```
@@ -24110,7 +23040,6 @@ R Init();
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 connected = R Is Connected();
 
@@ -24126,7 +23055,6 @@ connected = R Is Connected();
 
 ```jsl
 
-Names Default To Here( 1 );
 R name = R JMP Name to R Name( a b c );
 
 ```
@@ -24143,7 +23071,6 @@ R name = R JMP Name to R Name( a b c );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -24156,7 +23083,6 @@ w = R Get( "weight" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x = [1, 2, 3];
 R Send( x, "x1" );
@@ -24178,7 +23104,6 @@ R Submit( "dt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -24197,7 +23122,6 @@ R Submit( "Baseball" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
@@ -24231,7 +23155,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
@@ -24249,7 +23172,6 @@ R Submit File( file_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Term();
 
@@ -24265,7 +23187,6 @@ R Term();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	rb = Radio Box(
 		{"single", "double", "triple"},
@@ -24285,7 +23206,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta( 1, 1 );
@@ -24306,7 +23226,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
@@ -24327,7 +23246,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrbinp = 0.5;
 exrbinn = 40;
 exrbinlsz = Log( 1000 );
@@ -24413,7 +23331,6 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -24428,7 +23345,6 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Cauchy();
@@ -24449,7 +23365,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ChiSquare( 2 );
@@ -24470,7 +23385,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ExGaussian( 0, .5, .25 );
@@ -24491,7 +23405,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Exp();
@@ -24512,7 +23425,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random F( 2, 2 );
@@ -24533,7 +23445,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Frechet( 10, 5 );
@@ -24554,7 +23465,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma( 1 );
@@ -24575,7 +23485,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
@@ -24596,7 +23505,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
@@ -24617,7 +23525,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
 New Window( "Example: Random Geometric and Empirical Distribution",
@@ -24684,7 +23591,6 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
@@ -24705,7 +23611,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Index( 100, 5 );
 
 ```
@@ -24720,7 +23625,6 @@ Random Index( 100, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Integer( 1, 10 );
@@ -24741,7 +23645,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
@@ -24762,7 +23665,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sl( 0.5, 1, 1, 1 );
@@ -24783,7 +23685,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
@@ -24804,7 +23705,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LEV( 10, 5 );
@@ -24825,7 +23725,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
@@ -24846,7 +23745,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Logistic( 15, 1 );
@@ -24867,7 +23765,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Loglogistic( 15, 1 );
@@ -24890,7 +23787,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
@@ -24905,7 +23801,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
 	exrlny = Graph Box(
@@ -24948,7 +23843,6 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -24966,7 +23860,6 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 exnbrn = Random Negative Binomial( 20, 0.3 );
@@ -25030,7 +23923,6 @@ New Window( "Example: Neg Binomial Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Normal();
@@ -25045,7 +23937,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
 For( k = 1, k <= 50, k++,
@@ -25092,7 +23983,6 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula(
@@ -25117,7 +24007,6 @@ Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
 New Window( "Example: Random Poisson and Empirical Distribution",
@@ -25190,7 +24079,6 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1 );
 Random Normal();
 
@@ -25206,7 +24094,6 @@ Random Normal();
 
 ```jsl
 
-Names Default To Here( 1 );
 r = Random Seed State();
 Random Seed State( r );
 
@@ -25222,7 +24109,6 @@ Random Seed State( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SEV( 50, 5 );
@@ -25245,7 +24131,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
@@ -25260,7 +24145,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -25282,7 +24166,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -25298,7 +24181,6 @@ Random Shuffle( exA );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random SVD( [11 22, 33 44], 1 );
 
 ```
@@ -25313,7 +24195,6 @@ Random SVD( [11 22, 33 44], 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random t( 2 );
@@ -25334,7 +24215,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
 Random Reset( 13579 );
@@ -25355,7 +24235,6 @@ Show( x, y );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Uniform( 1, 10 );
@@ -25370,7 +24249,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Uniform( 1, 10 );
 
 ```
@@ -25385,7 +24263,6 @@ Random Uniform( 1, 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Weibull( 3, 20 );
@@ -25408,7 +24285,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rnb = Random ZI Negative Binomial( 25, .5, .05 );
@@ -25467,7 +24343,6 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -25494,7 +24369,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rp = Random ZI Poisson( 20, .05 );
@@ -25539,7 +24413,6 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -25564,7 +24437,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -25579,7 +24451,6 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 sliderLowerValue = .5;
 sliderUpperValue = .7;
 New Window( "Example",
@@ -25613,7 +24484,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Rank( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -25628,7 +24498,6 @@ Rank( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -25643,7 +24512,6 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ranking( [33, 22, 44, 11, 33] );
 Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
@@ -25659,7 +24527,6 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ranking Tie( [33, 22, 44, 11, 33] );
 
 ```
@@ -25682,7 +24549,6 @@ Les variables JSL spéciales sont remplies à l&apos;exécution de la commande 
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ),
@@ -25695,7 +24561,6 @@ Recode(
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"A B C",
 	{Map Value(
@@ -25718,7 +24583,6 @@ Recode(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -25741,7 +24605,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -25756,13 +24619,12 @@ ex rev( "abcd" );
 
 **Syntaxe :** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
-**Description :** Recherche dans le texte source un appariement pour le pattern. Le format est défini par défaut à « \0 » (appariement complet), mais il peut être défini à « Fred » (pour un remplacement de la constante) ou à « \1 » (pour utiliser le texte apparié par la première parenthèse dans le pattern). Renvoie une valeur numérique manquante si aucun appariement n&apos;est trouvé. Par défaut, la casse doit être respectée.
+**Description :** Recherche dans le texte source un appariement pour le pattern. Le format est défini par défaut à « \\0 » (appariement complet), mais il peut être défini à « Fred » (pour un remplacement de la constante) ou à « \\1 » (pour utiliser le texte apparié par la première parenthèse dans le pattern). Renvoie une valeur numérique manquante si aucun appariement n&apos;est trouvé. Par défaut, la casse doit être respectée.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
-Names Default To Here( 1 );
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -25781,7 +24643,6 @@ Regex(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 source = "believe";
 // [aeiou] matches exactly one vowel
@@ -25818,7 +24679,6 @@ Show( source, matches );
 
 ```jsl
 
-Names Default To Here( 1 );
 Register Addin(
 	"com.mycompany.myaddin",
 	"$DOCUMENTS/myaddin",
@@ -25843,7 +24703,6 @@ Register Addin(
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -25858,7 +24717,6 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -25873,7 +24731,6 @@ Remove Color Theme( "Yellow To Blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -25890,7 +24747,6 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
@@ -25901,7 +24757,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
@@ -25912,7 +24767,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -25935,7 +24789,6 @@ Remove From( hlist, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -25962,7 +24815,6 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File(
 	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
 	"$TEMP/x.jmp"
@@ -25987,7 +24839,6 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -26002,7 +24853,6 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
@@ -26018,7 +24868,6 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
 New Window( "w", theBox = V List Box() );
@@ -26058,7 +24907,6 @@ theBox << CloseWindow;
 
 ```jsl
 
-Names Default To Here( 1 );
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -26085,7 +24933,6 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -26105,7 +24952,6 @@ Show( f( 7, 15 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -26122,7 +24968,6 @@ Reverse( {11, 22, 33, 44, 55} );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
@@ -26133,7 +24978,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -26156,7 +25000,6 @@ Reverse Into( hlist );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -26171,7 +25014,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
 	division = 6;
@@ -26211,7 +25053,6 @@ New Window( "RGB Color Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -26226,7 +25067,6 @@ Right( "http://www.jmp.com", 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1,
 4 5 -4 -3 1];
 X[2, 3] += 15;
@@ -26244,7 +25084,6 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -26259,7 +25098,6 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( 213, -1 );
 
 ```
@@ -26276,7 +25114,6 @@ Round( 213, -1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 :height * :weight;
@@ -26287,7 +25124,6 @@ Row() = 3;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
 Show( Row() );
@@ -26305,7 +25141,6 @@ Row() = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -26322,7 +25157,6 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Rummage( Window( dt ), "Wilcox" ) << title;
 
@@ -26332,7 +25166,6 @@ Rummage( Window( dt ), "Wilcox" ) << title;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Rummage( Report( obj ), "Wilcox" ) << details;
@@ -26343,7 +25176,6 @@ Rummage( Report( obj ), "Wilcox" ) << details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show(
 	Rummage(
@@ -26372,7 +25204,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
 	Options( {"-n 5", "localhost"} ),
@@ -26385,7 +25216,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -26398,7 +25228,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n",
 "exit\!n"};
 icommand = 0;
@@ -26436,7 +25265,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Name( {"x 1", "x 2"} );
 
 ```
@@ -26451,7 +25279,6 @@ SAS Name( {"x 1", "x 2"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```
@@ -26466,7 +25293,6 @@ SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
 Substr( exlogText, 1, 30 );
@@ -26483,7 +25309,6 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -26499,7 +25324,6 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -26514,7 +25338,6 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -26529,7 +25352,6 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
 Scene << showarcball( always );
@@ -26554,7 +25376,6 @@ Scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -26579,7 +25400,6 @@ exScene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 Schedule(
 	10,
 	Beep();
@@ -26598,7 +25418,6 @@ Schedule(
 
 ```jsl
 
-Names Default To Here( 1 );
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -26613,7 +25432,6 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Scoring Impute(
 	[1 2 3 . 4 .],
 	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
@@ -26635,7 +25453,6 @@ Scoring Impute(
 
 ```jsl
 
-Names Default To Here( 1 );
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
@@ -26645,7 +25462,6 @@ New Window( "This is a script box", Script );
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 Script = Script Box( pyscript, "Python", 300, 100 );
@@ -26663,7 +25479,6 @@ New Window( "This is a python script box", Script );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		Scroll Box(
@@ -26707,7 +25522,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Second( Today() );
 
 ```
@@ -26722,7 +25536,6 @@ Second( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -26741,7 +25554,6 @@ Selected();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -26758,7 +25570,6 @@ Selected( Row State( 3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -26774,7 +25585,6 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ```jsl
 
-Names Default To Here( 1 );
 Row() = 3;
 Sequence( 1, 9, 2 );
 
@@ -26790,7 +25600,6 @@ Sequence( 1, 9, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Clipboard( "example" );
 
 ```
@@ -26805,7 +25614,6 @@ Set Clipboard( "example" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
 
@@ -26821,7 +25629,6 @@ Open( "Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
@@ -26841,7 +25648,6 @@ REMARQUE : sous le système d&apos;exploitation Macintosh, le nom de variable es
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -26856,7 +25662,6 @@ Set Environment Variable( "PATH", "some path to a directory" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ),
 	Convert File Path( "$SAMPLE_DATA/Time Series/" )}
@@ -26878,7 +25683,6 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -26900,7 +25704,6 @@ Clear Global Window Handler();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -26918,7 +25721,6 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -26933,7 +25735,6 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -26948,7 +25749,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -26969,7 +25769,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -26984,7 +25783,6 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -27001,7 +25799,6 @@ Renvoie 1 en cas de succès, 0 en cas d&apos;échec.
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Make the Analyze toolbar visible in Script windows
 Set Toolbar Visibility( "Analyze", Script, true );
@@ -27027,7 +25824,6 @@ Set Toolbar Visibility( Default, All );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -27048,7 +25844,6 @@ Show( all );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -27067,7 +25862,6 @@ Show( Set Unique( :sports ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Density",
@@ -27102,7 +25896,6 @@ New Window( "Example: SEV Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -27136,7 +25929,6 @@ New Window( "Example: SEV Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 qq = .5;
@@ -27184,7 +25976,6 @@ New Window( "Example: SEV Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -27200,7 +25991,6 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ),
 	Shape( [11 22, 33 44], ., 4 )}
@@ -27218,7 +26008,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Shape Seg Example",
 	Graph Box(
 		Shape Seg(
@@ -27242,7 +26031,6 @@ New Window( "Shape Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
@@ -27251,7 +26039,6 @@ SHASH Density( 0, -1, 2, -2, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -27275,7 +26062,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -27326,7 +26112,6 @@ New Window( "Example: SHASH Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -27350,7 +26135,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
@@ -27359,7 +26143,6 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -27381,7 +26164,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -27404,7 +26186,6 @@ Show( x1, x2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -27426,7 +26207,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -27485,7 +26265,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -27502,7 +26281,6 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
@@ -27513,7 +26291,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box(
 		Button Box( "a" ),
@@ -27536,7 +26313,6 @@ Shift Into( hlist, -2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Short Date( Today() );
 
 ```
@@ -27551,7 +26327,6 @@ Short Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 editList = Shortest Edit Script(
 	"time flies like an arrow",
 	"fruit flies like a banana"
@@ -27576,7 +26351,6 @@ common;
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( 355 / 113, Pi() );
 
 ```
@@ -27591,7 +26365,6 @@ Show( 355 / 113, Pi() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Addin Builder Dialog();
 
 ```
@@ -27606,7 +26379,6 @@ Show Addin Builder Dialog();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Addins Dialog();
 
 ```
@@ -27621,7 +26393,6 @@ Show Addins Dialog();
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -27678,7 +26449,6 @@ Show Classes();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Commands();
 
 ```
@@ -27693,7 +26463,6 @@ Show Commands();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Globals();
 
 ```
@@ -27708,7 +26477,6 @@ Show Globals();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -27750,7 +26518,6 @@ Delete Namespaces( "complex" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Preferences();
 
 ```
@@ -27765,7 +26532,6 @@ Show Preferences();
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Properties( Current Data Table() );
 
 ```
@@ -27780,7 +26546,6 @@ Show Properties( Current Data Table() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show Symbols();
 
 ```
@@ -27795,7 +26560,6 @@ Show Symbols();
 
 ```jsl
 
-Names Default To Here( 1 );
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```
@@ -27810,7 +26574,6 @@ Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -27825,7 +26588,6 @@ Sine( Pi() / 6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -27840,7 +26602,6 @@ Sine( Pi() / 6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SinH( 1 );
 
 ```
@@ -27855,7 +26616,6 @@ SinH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 sliderValue = .6;
 New Window( "Example",
 	Panel Box( "Slider Box",
@@ -27881,7 +26641,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -27896,7 +26655,6 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -27911,7 +26669,6 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -27928,7 +26685,6 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see the socket's OBJECT messages in the scripting index for better examples
 tCall = Socket();
@@ -27973,7 +26729,6 @@ If( rc[2] == "ok",
 
 ```jsl
 
-Names Default To Here( 1 );
 Solve( [1 1, -1 4], [11, 14] );
 
 ```
@@ -27988,7 +26743,6 @@ Solve( [1 1, -1 4], [11, 14] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sort Ascending( {111, 212, 133, 114, 55} );
 
 ```
@@ -28003,7 +26757,6 @@ Sort Ascending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sort Descending( {111, 212, 133, 114, 55} );
 
 ```
@@ -28018,7 +26771,6 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -28033,7 +26785,6 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
 ex;
@@ -28050,7 +26801,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
 		Text Box( "a" ),
@@ -28073,7 +26823,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```
@@ -28088,7 +26837,6 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Speak( "Hello" );
 
 ```
@@ -28103,7 +26851,6 @@ Speak( "Hello" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box(
 		2,
@@ -28125,7 +26872,6 @@ nb << Set Increment( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```
@@ -28140,7 +26886,6 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Spline Fit",
 	window:x = 20 :: 80;
@@ -28176,7 +26921,6 @@ New Window( "Spline Fit",
 
 ```jsl
 
-Names Default To Here( 1 );
 Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```
@@ -28191,7 +26935,6 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Sqrt( 2 ), 4 );
 
 ```
@@ -28206,7 +26949,6 @@ Round( Sqrt( 2 ), 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Squash( 10 );
 
 ```
@@ -28221,7 +26963,6 @@ Squash( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -28236,7 +26977,6 @@ Logist( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -28251,7 +26991,6 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Starts With( "http://www.jmp.com", "http:" );
 
 ```
@@ -28266,7 +27005,6 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Status Msg( "calculating..." );
 
 ```
@@ -28281,7 +27019,6 @@ Status Msg( "calculating..." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
@@ -28296,7 +27033,6 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -28311,7 +27047,6 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
 	Print( "i=" || Char( i ) );
@@ -28329,7 +27064,6 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 Straight Line Depreciation( 1000, 100, 3 );
 
 ```
@@ -28344,7 +27078,6 @@ Straight Line Depreciation( 1000, 100, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -28367,7 +27100,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -28389,7 +27121,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -28424,7 +27155,6 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -28453,7 +27183,6 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -28498,7 +27227,6 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -28521,7 +27249,6 @@ Close( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -28549,7 +27276,6 @@ dt << setname( "xxx" );
 
 ```jsl
 
-Names Default To Here( 1 );
 {11, 12, 13}[2];
 
 ```
@@ -28566,7 +27292,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -28575,7 +27300,6 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", "All", "Some" );
 
 ```
@@ -28584,7 +27308,6 @@ Substitute( "All things considered", "All", "Some" );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
 
@@ -28594,7 +27317,6 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered",
 	{"things", "All"}, {"ideas", "Some"}
 );
@@ -28605,7 +27327,6 @@ Substitute( "All things considered",
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
 );
@@ -28616,7 +27337,6 @@ Substitute( "Apple,orange,banana-grape",
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
@@ -28633,7 +27353,6 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
 Name Expr( ex );
@@ -28644,7 +27363,6 @@ Name Expr( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
@@ -28655,7 +27373,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
@@ -28666,7 +27383,6 @@ Show( lst );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
 Show( s );
@@ -28683,7 +27399,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )}
 );
@@ -28700,7 +27415,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 6 - 2 - 1;
 
 ```
@@ -28715,7 +27429,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex -= 2;
 ex;
@@ -28732,7 +27445,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -28747,7 +27459,6 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```
@@ -28762,7 +27473,6 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```
@@ -28777,7 +27487,6 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
 Eval List( {exg, Round( exm, 1 )} );
@@ -28794,7 +27503,6 @@ Eval List( {exg, Round( exm, 1 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -28810,7 +27518,6 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```
@@ -28825,7 +27532,6 @@ Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Suppress Formula Eval( 1 );
 
 ```
@@ -28840,7 +27546,6 @@ Suppress Formula Eval( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -28855,7 +27560,6 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SVD( [11 22, 33 44] );
 
 ```
@@ -28870,7 +27574,6 @@ SVD( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 SVD LAPACK( [11 22, 33 44] );
 
 ```
@@ -28885,7 +27588,6 @@ SVD LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 exMatswp = Sweep( exMat, [1, 2, 3, 4] );
 exMatinv = Inverse( exMat );
@@ -28904,7 +27606,6 @@ Show( exMatinv );
 
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatA = exMatA` * exMatA;
 exMatB = [1 2, 1 2, 1 2];
@@ -28922,7 +27623,6 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -28957,7 +27657,6 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -28986,7 +27685,6 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
 	tlcdigr = Graph Box(
@@ -29015,7 +27713,6 @@ New Window( "Example: Students t Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -29044,7 +27741,6 @@ New Window( "Example: Students t Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
 	tldigr = Graph Box(
@@ -29073,7 +27769,6 @@ New Window( "Example: Students t Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -29100,7 +27795,6 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -29143,7 +27837,6 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -29165,7 +27858,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box(
@@ -29191,7 +27883,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -29214,7 +27905,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -29229,7 +27919,6 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -29244,7 +27933,6 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 TanH( 1 );
 
 ```
@@ -29269,7 +27957,6 @@ TanH( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -29283,7 +27970,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "blue" );
@@ -29303,7 +27989,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Justification Example",
 	Outline Box( "text",
 		V List Box(
@@ -29345,7 +28030,6 @@ New Window( "Justification Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -29365,7 +28049,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
 		H List Box(
@@ -29405,7 +28088,6 @@ New Window( "Example: Text Edit Box",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Degrees",
 	Graph Box(
 		FrameSize( 400, 400 ),
@@ -29451,7 +28133,6 @@ New Window( "Degrees",
 
 ```jsl
 
-Names Default To Here( 1 );
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -29470,7 +28151,6 @@ Show( score );
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	ts1 = Text Seg( "default location fixed bottom left" )
@@ -29488,7 +28168,6 @@ w[FrameBox( 1 )] << append seg(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( 20 );
@@ -29508,7 +28187,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
 	Print( "Project: " || (This Project() << Get Window Title()) ),
@@ -29528,7 +28206,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Try(
 	Throw( "!This is a fatal error" ),
@@ -29542,7 +28219,6 @@ Print( "AFTER TRY message not reached" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Throw( "A line number is included in this error", 1 );
 
 ```
@@ -29551,7 +28227,6 @@ Throw( "A line number is included in this error", 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```
@@ -29566,7 +28241,6 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```jsl
 
-Names Default To Here( 1 );
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 t2 = Tick Seconds();
@@ -29584,7 +28258,6 @@ Round( t2 - t1, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -29599,7 +28272,6 @@ Format( Time Of Day( Today() ), "h:m:s" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Titlecase( "The dog crossed the road" );
 
 ```
@@ -29616,7 +28288,6 @@ Titlecase( "The dog crossed the road" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( "red", "LMS" );
 
 ```
@@ -29625,7 +28296,6 @@ To Color Space( "red", "LMS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
@@ -29634,7 +28304,6 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space(
 	{0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061},
 	"HLS"
@@ -29652,7 +28321,6 @@ To Color Space(
 
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -29667,7 +28335,6 @@ As Date( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trace( [11 22, 33 44] );
 
 ```
@@ -29684,7 +28351,6 @@ Trace( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {{key, value}},
 	["A" => 8, "B" => 6, "C" => 10],
 	value + 1
@@ -29697,7 +28363,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
@@ -29707,7 +28372,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Find Functions defined in a script
 parsedScript = Include(
 	"$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl",
@@ -29734,7 +28398,6 @@ Show( functionNames );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
@@ -29744,7 +28407,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
@@ -29754,7 +28416,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Write( "\!N===List===" );
 lst = Transform Each( {value}, [10, 20, 30], Output( "List" ),
@@ -29794,7 +28455,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -29820,7 +28480,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```
@@ -29835,7 +28494,6 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -29865,7 +28523,6 @@ New Window( "TreeBox",
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -29897,7 +28554,6 @@ New Window( "TreeBox Nodes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
@@ -29907,7 +28563,6 @@ tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```
@@ -29922,7 +28577,6 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trigamma( 5 );
 
 ```
@@ -29937,7 +28591,6 @@ Trigamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim( " title   ", both );
 
 ```
@@ -29952,7 +28605,6 @@ Trim( " title   ", both );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -29967,7 +28619,6 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-Names Default To Here( 1 );
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
@@ -29985,7 +28636,6 @@ TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), "invalid" );
 
 ```
@@ -29994,7 +28644,6 @@ Try( Sqrt( "s" ), "invalid" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), exception_msg );
 
 ```
@@ -30013,7 +28662,6 @@ Notez que q est la valeur critique ajustée de Tukey, qui est le quantile de la 
 
 ```jsl
 
-Names Default To Here( 1 );
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -30032,7 +28680,6 @@ Notez que q est la valeur critique ajustée de Tukey, qui est le quantile de la 
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 dfe = 5;
 Tukey HSD Quantile( 1 - alpha, 20, dfe );
@@ -30066,7 +28713,6 @@ New Window( "Example: Tukey HSD Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Type( [1 2 3] );
 
 ```
@@ -30085,7 +28731,6 @@ Type( [1 2 3] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
 		Unlineup Box(
@@ -30113,7 +28758,6 @@ New Window( "unlineup",
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -30139,7 +28783,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -30165,7 +28808,6 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -30182,7 +28824,6 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -30207,7 +28848,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -30240,7 +28880,6 @@ Close( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 Uppercase( "Café #23" );
 
 ```
@@ -30255,7 +28894,6 @@ Uppercase( "Café #23" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -30282,7 +28920,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 [11 22] |/ [33 44];
 
 ```
@@ -30297,7 +28934,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [5 6, 7 8, 9 10];
 exC = [1, 1, 1, 1, 1];
@@ -30319,7 +28955,6 @@ Show( exA, exB, exC, exD, exE );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -30339,7 +28974,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V List Box(
@@ -30361,7 +28995,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 V Max( [11 22, 33 44, 55 66] );
 
 ```
@@ -30376,7 +29009,6 @@ V Max( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Mean( [11 22, 33 44, 55 66] );
 
 ```
@@ -30391,7 +29023,6 @@ V Mean( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Median( [11 22, 33 44, 35 46, 55 66] );
 
 ```
@@ -30406,7 +29037,6 @@ V Median( [11 22, 33 44, 35 46, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Min( [11 22, 33 44, 55 66] );
 
 ```
@@ -30421,7 +29051,6 @@ V Min( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```
@@ -30436,7 +29065,6 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```
@@ -30451,7 +29079,6 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V Scroll Box(
@@ -30503,7 +29130,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -30562,7 +29188,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -30582,7 +29207,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -30620,7 +29244,6 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Standardize( [11 22, 33 44, 55 66] );
 
 ```
@@ -30635,7 +29258,6 @@ V Standardize( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Std( [11 22, 33 44, 55 66] );
 
 ```
@@ -30650,7 +29272,6 @@ V Std( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 V Sum( [11 22, 33 44, 55 66] );
 
 ```
@@ -30665,7 +29286,6 @@ V Sum( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Varimax( [1.2 .4, .9 1.5] );
 
 ```
@@ -30680,7 +29300,6 @@ Varimax( [1.2 .4, .9 1.5] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Vec Diag( [11 22, 33 44] );
 
 ```
@@ -30695,7 +29314,6 @@ Vec Diag( [11 22, 33 44] );
 
 ```jsl
 
-Names Default To Here( 1 );
 exS = [1 3 5, 3 2 6, 5 6 1];
 exX = [1 3 5, 2 4 6];
 Vec Quadratic( exS, exX );
@@ -30712,7 +29330,6 @@ Vec Quadratic( exS, exX );
 
 ```jsl
 
-Names Default To Here( 1 );
 tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
 "2 nearest rows to [1.1 .9 1] are " || Char( rows );
@@ -30731,7 +29348,6 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( -1 ); // Wait for OS events
 
 ```
@@ -30740,7 +29356,6 @@ Wait( -1 ); // Wait for OS events
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
@@ -30749,7 +29364,6 @@ Wait( 0 ); // Wait for OS events and callbacks
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 1.5 );
 
 ```
@@ -30764,7 +29378,6 @@ Wait( 1.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 y = 2;
 z = "abc";
@@ -30788,7 +29401,6 @@ w << close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```
@@ -30805,7 +29417,6 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Making a clickable link show up in a formula column
 New Table( "Example",
 	Add Rows( 2 ),
@@ -30836,7 +29447,6 @@ New Table( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Web( "http://www.jmp.com/" );
 
 ```
@@ -30851,7 +29461,6 @@ Web( "http://www.jmp.com/" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
 wb << Set Stretch( "Window", "Window" );
@@ -30871,7 +29480,6 @@ wb << Set Max Size( 10000, 10000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Week Of Year( Today() );
 
 ```
@@ -30880,7 +29488,6 @@ Week Of Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Week Of Year( 01jan2012, 1 ),
 	Week Of Year( 01jan2012, 2 ),
@@ -30899,7 +29506,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = 0.5;
 New Window( "Example: Weibull Density",
 	y = Graph Box(
@@ -30928,7 +29534,6 @@ New Window( "Example: Weibull Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -30957,7 +29562,6 @@ New Window( "Example: Weibull Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exwqbeta = 2;
 exwqqq = 0.5;
 New Window( "Example: Weibull Quantile",
@@ -31001,7 +29605,6 @@ New Window( "Example: Weibull Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -31015,7 +29618,6 @@ Where( xs[1] < 18 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
 Where( :sex == "M" );
@@ -31027,7 +29629,6 @@ Where( dt, :sex == "M" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
 Where( Excluded() );
@@ -31039,7 +29640,6 @@ Where( !Excluded() );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows(
 	Where( Col Max( :height, :age ) >= 68 )
@@ -31054,7 +29654,6 @@ dt << Clear Select << Select Rows(
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
 xs[Where( !Is Missing( xs ) )];
@@ -31073,7 +29672,6 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
-Names Default To Here( 1 );
 i = 1;
 s = "";
 While( i < 1000,
@@ -31094,7 +29692,6 @@ s;
 
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -31116,7 +29713,6 @@ Extract Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -31138,7 +29734,6 @@ Extract Expr(
 
 ```jsl
 
-Names Default To Here( 1 );
 Window( "Big Class" );
 
 ```
@@ -31153,7 +29748,6 @@ Window( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "HELLO" );
@@ -31177,7 +29771,6 @@ With Clipboard(
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "My Window" ),
 	Function( {window},
@@ -31200,7 +29793,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
@@ -31209,7 +29801,6 @@ Word( 3, "http://www.jmp.com", ":/." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( [2 -1], "This is a sentence" );
 
 ```
@@ -31218,7 +29809,6 @@ Word( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word(
 	4,
 	"Apple+Banana Tree,,Pear,,Peach,,Grape",
@@ -31231,7 +29821,6 @@ Word(
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -31240,7 +29829,6 @@ Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 2, "abcd", "" );
 
 ```
@@ -31257,7 +29845,6 @@ Word( 2, "abcd", "" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )}
 );
@@ -31268,7 +29855,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -31277,7 +29863,6 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -31292,7 +29877,6 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "WrapListBox",
 	Wrap List Box(
 		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),
@@ -31314,7 +29898,6 @@ New Window( "WrapListBox",
 
 ```jsl
 
-Names Default To Here( 1 );
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```
@@ -31329,7 +29912,6 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -31349,7 +29931,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -31375,7 +29956,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -31401,7 +29981,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
 	Graph Box(
@@ -31429,7 +30008,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -31456,7 +30034,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 text = XML Decode(
 	"isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;"
 );
@@ -31473,7 +30050,6 @@ text = XML Decode(
 
 ```jsl
 
-Names Default To Here( 1 );
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -31488,7 +30064,6 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -31515,7 +30090,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"
@@ -31533,7 +30107,6 @@ result = XPath Query(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Spiral",
 	Graph Box(
 		Pen Color( "red" );
@@ -31567,7 +30140,6 @@ New Window( "Spiral",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -31587,7 +30159,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -31613,7 +30184,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -31639,7 +30209,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
 	Graph Box(
@@ -31667,7 +30236,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Year( Today() );
 
 ```
@@ -31682,7 +30250,6 @@ Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Zero Or Missing( 1 < 2 );
 
 ```
@@ -31697,7 +30264,6 @@ Zero Or Missing( 1 < 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .2;
@@ -31767,7 +30333,6 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .1;
@@ -31816,7 +30381,6 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpsig = .5;
 qexpp = .2;
@@ -31920,7 +30484,6 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Zero Inflated Poisson Distribution",
@@ -31965,7 +30528,6 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Poisson Probability",
@@ -32005,7 +30567,6 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpp = .2;
 qexpn = 40;

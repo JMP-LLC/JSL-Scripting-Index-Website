@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -46,7 +45,6 @@ New Window( "Example: Beta Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Distribution",
@@ -80,7 +78,6 @@ New Window( "Example: Beta Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -95,7 +92,6 @@ Beta Quantile( 0.95, 2, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
 		Y Scale( 0, .4 ),
@@ -118,7 +114,6 @@ New Window( "Example: Cauchy Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -141,7 +136,6 @@ New Window( "Example: Cauchy Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -164,7 +158,6 @@ New Window( "Example: Cauchy Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
 	cdey = Graph Box(
@@ -190,7 +183,6 @@ New Window( "Example: ChiSquare Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy = Graph Box(
@@ -216,7 +208,6 @@ New Window( "Example: ChiSquare Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 clcdidf = 2;
 New Window( "Example: ChiSquare Log CDistribution",
 	clcdiy = Graph Box(
@@ -242,7 +233,6 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey = Graph Box(
@@ -268,7 +258,6 @@ New Window( "Example: ChiSquare Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
 	cldiy = Graph Box(
@@ -294,7 +283,6 @@ New Window( "Example: ChiSquare Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -321,7 +309,6 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -336,7 +323,6 @@ ChiSquare Quantile( 0.15, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -351,7 +337,6 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett Quantile( 0.95, 3, 11 );
 
 ```
@@ -366,7 +351,6 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
 		Y Scale( 0, .2 ),
@@ -389,7 +373,6 @@ New Window( "Example: ExGaussian Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -412,7 +395,6 @@ New Window( "Example: ExGaussian Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
 		Y Scale( -2, 15 ),
@@ -435,7 +417,6 @@ New Window( "Example: ExGaussian Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -458,7 +439,6 @@ New Window( "Example: Exp Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -481,7 +461,6 @@ New Window( "Example: Exp Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -503,7 +482,6 @@ New Window( "Example: Exp Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -526,7 +504,6 @@ New Window( "Example: Exponential Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -549,7 +526,6 @@ New Window( "Example: Exponential Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -571,7 +547,6 @@ New Window( "Example: Exponential Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 fdedfn = 2;
 fdedfd = 2;
 New Window( "Example: F Density",
@@ -599,7 +574,6 @@ New Window( "Example: F Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -627,7 +601,6 @@ New Window( "Example: F Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 flcddfn = 5;
 flcddfd = 5;
 New Window( "Example: F Log CDistribution",
@@ -661,7 +634,6 @@ New Window( "Example: F Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -695,7 +667,6 @@ New Window( "Example: F Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 flddfn = 5;
 flddfd = 5;
 New Window( "Example: F Log Distribution",
@@ -723,7 +694,6 @@ New Window( "Example: F Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -747,7 +717,6 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 obs = 25;
 dfh = 5;
@@ -778,7 +747,6 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
-Names Default To Here( 1 );
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -793,7 +761,6 @@ F Quantile( 0.7, 5, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 pow = 0.6;
 dfh = 5;
@@ -824,7 +791,6 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
-Names Default To Here( 1 );
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -839,7 +805,6 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Density",
@@ -868,7 +833,6 @@ New Window( "Example: Frechet Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -896,7 +860,6 @@ New Window( "Example: Frechet Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 qq = .5;
@@ -935,7 +898,6 @@ New Window( "Example: Frechet Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -966,7 +928,6 @@ New Window( "Example: GLog Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -997,7 +958,6 @@ New Window( "Example: Glog Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1045,7 +1005,6 @@ New Window( "Example: GLog Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
 	gdey = Graph Box(
@@ -1074,7 +1033,6 @@ New Window( "Example: Gamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -1103,7 +1061,6 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
 	glcdiy = Graph Box(
@@ -1132,7 +1089,6 @@ New Window( "Example: Gamma Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -1161,7 +1117,6 @@ New Window( "Example: Gamma Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -1190,7 +1145,6 @@ New Window( "Example: Gamma Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -1205,7 +1159,6 @@ Gamma Quantile( 0.75, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1236,7 +1189,6 @@ New Window( "Example: GenGamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1267,7 +1219,6 @@ New Window( "Example: GenGamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1315,7 +1266,6 @@ New Window( "Example: GenGamma Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -1344,7 +1294,6 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -1386,7 +1335,6 @@ New Window( "Example: Johnson Sb Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -1428,7 +1376,6 @@ New Window( "Example: Johnson Sb Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1443,7 +1390,6 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -1491,7 +1437,6 @@ New Window( "Example: Johnson Sl Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -1539,7 +1484,6 @@ New Window( "Example: Johnson Sl Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1554,7 +1498,6 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -1596,7 +1539,6 @@ New Window( "Example: Johnson Su Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -1638,7 +1580,6 @@ New Window( "Example: Johnson Su Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1653,7 +1594,6 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Density",
@@ -1682,7 +1622,6 @@ New Window( "Example: LEV Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -1710,7 +1649,6 @@ New Window( "Example: LEV Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 qq = .5;
@@ -1749,7 +1687,6 @@ New Window( "Example: LEV Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1780,7 +1717,6 @@ New Window( "Example: LogGenGamma Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1811,7 +1747,6 @@ New Window( "Example: LogGenGamma Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1859,7 +1794,6 @@ New Window( "Example: LogGenGamma Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Density",
@@ -1888,7 +1822,6 @@ New Window( "Example: Logistic Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -1916,7 +1849,6 @@ New Window( "Example: Logistic Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -1955,7 +1887,6 @@ New Window( "Example: Logistic Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Density",
@@ -1984,7 +1915,6 @@ New Window( "Example: Loglogistic Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -2012,7 +1942,6 @@ New Window( "Example: Loglogistic Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -2051,7 +1980,6 @@ New Window( "Example: Loglogistic Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -2080,7 +2008,6 @@ New Window( "Example: Lognormal Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -2108,7 +2035,6 @@ New Window( "Example: Lognormal Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 qq = .5;
@@ -2147,7 +2073,6 @@ New Window( "Example: Lognormal Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -2162,7 +2087,6 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -2185,7 +2109,6 @@ New Window( "Example: Normal Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -2208,7 +2131,6 @@ New Window( "Example: Normal Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -2231,7 +2153,6 @@ New Window( "Example: Normal Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -2254,7 +2175,6 @@ New Window( "Example: Normal Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -2277,7 +2197,6 @@ New Window( "Example: Normal Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -2332,7 +2251,6 @@ New Window( "Univariate Normal Mixture Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -2386,7 +2304,6 @@ New Window( "Univariate Normal Mixture Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 mu1 = -1;
@@ -2453,7 +2370,6 @@ New Window( "Example: Normal Mixture Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -2468,7 +2384,6 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -2483,7 +2398,6 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Density",
@@ -2512,7 +2426,6 @@ New Window( "Example: SEV Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -2540,7 +2453,6 @@ New Window( "Example: SEV Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 qq = .5;
@@ -2577,20 +2489,18 @@ New Window( "Example: SEV Quantile",
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
 
-**Transformation SHASH**
+#### Transformation SHASH
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2610,11 +2520,10 @@ Show( result1, result2 );
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -2646,11 +2555,10 @@ New Window( "Example: SHASH Distribution",
 
 ```
 
-**Transformation SHASH**
+#### Transformation SHASH
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2670,20 +2578,18 @@ Show( result1, result2 );
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
 
-**Transformation SHASH**
+#### Transformation SHASH
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2705,7 +2611,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -2740,7 +2645,6 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -2766,7 +2670,6 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -2810,7 +2713,6 @@ Notez que q est la valeur critique ajustée de Tukey, qui est le quantile de la 
 
 ```jsl
 
-Names Default To Here( 1 );
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -2829,7 +2731,6 @@ Notez que q est la valeur critique ajustée de Tukey, qui est le quantile de la 
 
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 dfe = 5;
 Tukey HSD Quantile( 1 - alpha, 20, dfe );
@@ -2860,7 +2761,6 @@ New Window( "Example: Tukey HSD Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = 0.5;
 New Window( "Example: Weibull Density",
 	y = Graph Box(
@@ -2886,7 +2786,6 @@ New Window( "Example: Weibull Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -2912,7 +2811,6 @@ New Window( "Example: Weibull Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 exwqbeta = 2;
 exwqqq = 0.5;
 New Window( "Example: Weibull Quantile",
@@ -2954,7 +2852,6 @@ New Window( "Example: Weibull Quantile",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -2989,7 +2886,6 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -3015,7 +2911,6 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
 	tlcdigr = Graph Box(
@@ -3041,7 +2936,6 @@ New Window( "Example: Students t Log CDistribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -3067,7 +2961,6 @@ New Window( "Example: Students t Log Density",
 
 ```jsl
 
-Names Default To Here( 1 );
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
 	tldigr = Graph Box(
@@ -3093,7 +2986,6 @@ New Window( "Example: Students t Log Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -3117,7 +3009,6 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",

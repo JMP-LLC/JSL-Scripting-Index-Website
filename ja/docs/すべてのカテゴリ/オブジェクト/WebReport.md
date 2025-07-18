@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 webreport = New Web Report();
 webreport << Add Image(
@@ -34,7 +33,6 @@ webreport << Add Image(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -56,7 +54,6 @@ webreport << Add Report( jmpreport );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Distribution(
@@ -90,7 +87,6 @@ If( N Items( windows ) > 0,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport_1 = Distribution(
@@ -126,7 +122,6 @@ If( !Is Empty( file ),
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport1 = dt << Distribution(
@@ -167,7 +162,6 @@ If( !Is Empty( file ),
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -201,7 +195,6 @@ webreport << Add Report( jmpreport );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -227,7 +220,6 @@ If( !Is Empty( file ),
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport_1 = Distribution(

@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -35,7 +34,6 @@ Write( "Description: ", space << Get Description );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -56,7 +54,6 @@ Write( "Key: ", space << Get Key );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -77,7 +74,6 @@ Write( "Name: ", space << Get Name );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 

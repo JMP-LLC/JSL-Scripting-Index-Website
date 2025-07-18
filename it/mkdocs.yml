@@ -1,6 +1,7 @@
-site_name: JMP® Indice di scripting
+site_name: JMP Indice di scripting
 theme: 
   name: readthedocs
+  custom_dir: custom_theme
   highlightjs: true
   locale: it
   hljs_languages:
@@ -10,7 +11,7 @@ theme:
   navigation_depth: 6
   include_homepage_in_sidebar: false
 site_url: https://jsl.jmp.com/it
-site_description: The JMP® Scripting Index provides a brief description and the syntax for JSL functions, objects, python integration, and display boxes for the JMP® Software.
+site_description: The JMP Scripting Index provides a brief description and the syntax for JSL functions, objects, python integration, and display boxes for the JMP® Software.
 copyright: © 2025 JMP Statistical Discovery LLC. Tutti i diritti riservati.
 use_directory_urls: false
 extra_css:

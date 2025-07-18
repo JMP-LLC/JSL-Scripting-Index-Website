@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP추가된 버전:** 18
 
-**이름으로 검색**
+#### 이름으로 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -42,11 +40,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**익명 사전 설정**
+#### 익명 사전 설정
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -57,11 +54,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**폴더 내에서 검색**
+#### 폴더 내에서 검색
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -104,7 +99,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
 objs[1] << Broadcast( Save Summaries );
@@ -119,7 +113,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -134,7 +127,6 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -164,7 +156,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -188,7 +179,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -214,7 +204,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -229,7 +218,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -258,11 +246,10 @@ Show( t );
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
-**일반**
+#### 일반
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -279,11 +266,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**필터 사용 플랫폼**
+#### 필터 사용 플랫폼
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -316,7 +302,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -341,7 +326,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -358,7 +342,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -383,7 +366,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -408,7 +390,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -433,7 +414,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -451,7 +431,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -467,7 +446,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -486,7 +464,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -508,7 +485,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -527,7 +503,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -542,7 +517,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
@@ -561,7 +535,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -585,7 +558,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -615,7 +587,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -639,7 +610,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -669,7 +639,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
@@ -686,7 +655,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -710,7 +678,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -725,7 +692,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -751,7 +717,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -775,7 +740,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -805,7 +769,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -835,7 +798,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -865,7 +827,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -887,11 +848,10 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -913,11 +873,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -947,7 +906,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -971,7 +929,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -995,7 +952,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1019,7 +975,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1043,7 +998,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1061,7 +1015,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1086,7 +1039,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1104,7 +1056,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1121,7 +1072,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1145,7 +1095,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1175,7 +1124,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1192,7 +1140,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1207,7 +1154,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1228,7 +1174,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1251,7 +1196,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1278,7 +1222,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1299,7 +1242,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Bootstrap Forest(
@@ -1322,7 +1264,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1343,7 +1284,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1364,7 +1304,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Bootstrap Forest(
@@ -1387,7 +1326,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1408,7 +1346,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1433,7 +1370,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -1457,7 +1393,6 @@ obj << Column Contributions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1478,7 +1413,6 @@ obj << Decision Threshold( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Bootstrap Forest(
@@ -1497,11 +1431,10 @@ obj = dt << Bootstrap Forest(
 
 **설명:** 테스트 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1515,11 +1448,10 @@ Show( aabs );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1533,11 +1465,10 @@ Show( aabs );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1551,11 +1482,10 @@ Show( aabs );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1582,11 +1512,10 @@ Show( aabs );
 
 **설명:** 훈련 데이터 집합의 평균 절대 편차 통계량을 반환합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1598,11 +1527,10 @@ Show( aabs );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1614,11 +1542,10 @@ Show( aabs );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1630,11 +1557,10 @@ Show( aabs );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1653,11 +1579,10 @@ Show( aabs );
 
 **설명:** 검증 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1670,11 +1595,10 @@ Show( aabs );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1687,11 +1611,10 @@ Show( aabs );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1704,11 +1627,10 @@ Show( aabs );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1728,11 +1650,10 @@ Show( aabs );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 테스트 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1746,11 +1667,10 @@ Show( avg );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1765,11 +1685,10 @@ Show( avg );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -1783,11 +1702,10 @@ Show( avg );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -1814,11 +1732,10 @@ Show( avg );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 훈련 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1830,11 +1747,10 @@ Show( avg );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1846,11 +1762,10 @@ Show( avg );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1862,11 +1777,10 @@ Show( avg );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1885,11 +1799,10 @@ Show( avg );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 검증 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -1902,11 +1815,10 @@ Show( avg );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -1920,11 +1832,10 @@ Show( avg );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -1937,11 +1848,10 @@ Show( avg );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -1961,11 +1871,10 @@ Show( avg );
 
 **설명:** 테스트 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -1979,11 +1888,10 @@ Show( cm );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -1997,11 +1905,10 @@ Show( cm );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2015,11 +1922,10 @@ Show( cm );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2046,11 +1952,10 @@ Show( cm );
 
 **설명:** 훈련 데이터 집합에 대한 혼동 행렬을 반환합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2064,11 +1969,10 @@ Show( cm );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2082,11 +1986,10 @@ Show( cm );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2100,11 +2003,10 @@ Show( cm );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2123,11 +2025,10 @@ Show( cm );
 
 **설명:** 검증 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2141,11 +2042,10 @@ Show( cm );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2159,11 +2059,10 @@ Show( cm );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2177,11 +2076,10 @@ Show( cm );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2201,11 +2099,10 @@ Show( cm );
 
 **설명:** 테스트 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2219,11 +2116,10 @@ Show( cr );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2237,11 +2133,10 @@ Show( cr );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2255,11 +2150,10 @@ Show( cr );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2286,11 +2180,10 @@ Show( cr );
 
 **설명:** 훈련 데이터 집합에 대한 혼동 비율을 반환합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2304,11 +2197,10 @@ Show( cr );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2322,11 +2214,10 @@ Show( cr );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2340,11 +2231,10 @@ Show( cr );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2363,11 +2253,10 @@ Show( cr );
 
 **설명:** 검증 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2381,11 +2270,10 @@ Show( cr );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2399,11 +2287,10 @@ Show( cr );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2417,11 +2304,10 @@ Show( cr );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2441,11 +2327,10 @@ Show( cr );
 
 **설명:** 테스트 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2459,11 +2344,10 @@ Show( r );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2477,11 +2361,10 @@ Show( r );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2495,11 +2378,10 @@ Show( r );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2526,11 +2408,10 @@ Show( r );
 
 **설명:** 훈련 데이터 집합에 대한 일반화 R²을 반환합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2544,11 +2425,10 @@ Show( r );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2562,11 +2442,10 @@ Show( r );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2580,11 +2459,10 @@ Show( r );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2603,11 +2481,10 @@ Show( r );
 
 **설명:** 검증 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2621,11 +2498,10 @@ Show( r );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2639,11 +2515,10 @@ Show( r );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2657,11 +2532,10 @@ Show( r );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2683,7 +2557,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -2707,7 +2580,6 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -2733,7 +2605,6 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -2757,7 +2628,6 @@ obj << Get Measures;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -2780,11 +2650,10 @@ Show( time );
 
 **설명:** 테스트 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -2798,11 +2667,10 @@ Show( rate );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -2816,11 +2684,10 @@ Show( rate );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -2834,11 +2701,10 @@ Show( rate );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2865,11 +2731,10 @@ Show( rate );
 
 **설명:** 훈련 데이터 집합에 대한 오분류 비율을 반환합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -2881,11 +2746,10 @@ Show( rate );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -2898,11 +2762,10 @@ Show( rate );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -2914,11 +2777,10 @@ Show( rate );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -2937,11 +2799,10 @@ Show( rate );
 
 **설명:** 검증 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Boosted Tree(
@@ -2955,11 +2816,10 @@ Show( rate );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Partition(
@@ -2974,11 +2834,10 @@ Show( rate );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
 obj = dt << Bootstrap Forest(
@@ -2992,11 +2851,10 @@ Show( rate );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -3016,11 +2874,10 @@ Show( rate );
 
 **설명:** 테스트 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -3035,11 +2892,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -3055,11 +2911,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -3080,11 +2935,10 @@ Show( area );
 
 **설명:** 훈련 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3098,11 +2952,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3116,11 +2969,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3140,11 +2992,10 @@ Show( area );
 
 **설명:** 검증 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3158,11 +3009,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3177,11 +3027,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3203,7 +3052,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3227,7 +3075,6 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3252,7 +3099,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3277,7 +3123,6 @@ Show( rms );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3300,11 +3145,10 @@ Show( rms );
 
 **설명:** 테스트 데이터의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Boosted Tree(
@@ -3319,11 +3163,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Partition(
@@ -3339,11 +3182,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
 obj = dt << Bootstrap Forest(
@@ -3364,11 +3206,10 @@ Show( area );
 
 **설명:** 훈련 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3382,11 +3223,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3400,11 +3240,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3424,11 +3263,10 @@ Show( area );
 
 **설명:** 검증 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3442,11 +3280,10 @@ Show( area );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3461,11 +3298,10 @@ Show( area );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3487,7 +3323,6 @@ Show( area );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3512,7 +3347,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3537,7 +3371,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3562,7 +3395,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3586,7 +3418,6 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3611,7 +3442,6 @@ Show( time );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3635,7 +3465,6 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3659,7 +3488,6 @@ code = obj << Get Tolerant SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3680,22 +3508,20 @@ obj = dt << Bootstrap Forest(
 
 **설명:** 범주형 변수의 경우 결측값을 범주로 처리합니다. 연속형 변수의 경우 결측값을 낮음 또는 높음으로 처리합니다(둘 중 더 적합한 것으로). 기본적으로 설정되어 있습니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
@@ -3703,22 +3529,20 @@ obj << Split Best( 1 );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age[3] = .;
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 dt:Age[3] = .;
 obj = dt << Uplift(
@@ -3739,7 +3563,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest( Y( :country ), X( :sex, :marital status, :age, :type, :size ), Go );
 obj << Lift Curve( 1 );
@@ -3754,7 +3577,6 @@ obj << Lift Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3778,7 +3600,6 @@ obj << Make SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3802,7 +3623,6 @@ obj << Make Tolerant SAS Data Step;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3824,7 +3644,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3845,7 +3664,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3868,7 +3686,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3891,7 +3708,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3912,11 +3728,10 @@ obj = dt << Bootstrap Forest(
 
 **설명:** 계산을 컴퓨터의 사용 가능한 스레드 간에 분산합니다. 기본적으로 설정되어 있습니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -3927,11 +3742,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -3942,11 +3756,10 @@ obj = dt << Partition(
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -3965,7 +3778,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -3988,7 +3800,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4009,42 +3820,38 @@ obj = dt << Bootstrap Forest(
 
 **설명:** 순서형 열의 경우 순서를 유지하는 분할만 고려합니다. 기본적으로 설정되어 있습니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
 obj << Split Best( 3 );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4064,7 +3871,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4088,7 +3894,6 @@ obj << Plot Actual by Predicted( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4111,7 +3916,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest( Y( :country ), X( :sex, :marital status, :age, :type, :size ), Go );
 obj << Precision Recall Curve( 1 );
@@ -4126,7 +3930,6 @@ obj << Precision Recall Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest( Y( :country ), X( :sex, :marital status, :age, :type, :size ), Go );
 obj << Split Best( 5 );
@@ -4142,7 +3945,6 @@ obj << Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4166,7 +3968,6 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4190,7 +3991,6 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest( Y( :country ), X( :sex, :marital status, :age, :type, :size ), Go );
 obj << ROC Curve( 1 );
@@ -4205,7 +4005,6 @@ obj << ROC Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4229,7 +4028,6 @@ obj << Save Cumulative Details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4253,7 +4051,6 @@ obj << Save Predicteds;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4277,7 +4074,6 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4301,7 +4097,6 @@ obj << Save Residuals;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4323,11 +4118,10 @@ obj << Save Tolerant Prediction Formula;
 
 **설명:** 이후 플랫폼 실행에 대한 결과를 재현하는 데 사용할 난수 시드값을 지정합니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y Binary ),
@@ -4338,11 +4132,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Partition(
 	Y( :Y Binary ),
@@ -4353,11 +4146,10 @@ obj = dt << Partition(
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y Binary ),
@@ -4368,11 +4160,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),
@@ -4392,7 +4183,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4418,7 +4208,6 @@ obj << Show Trees( Show names categories );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :country ),
@@ -4443,7 +4232,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -4474,11 +4262,10 @@ obj = dt << Bootstrap Forest(
 
 <b>실행기 항목: 예</b>
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Boosted Tree(
@@ -4490,11 +4277,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Partition(
@@ -4506,11 +4292,10 @@ obj << Split Best( 5 );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Bootstrap Forest(
@@ -4522,11 +4307,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
 obj = dt << Uplift(
@@ -4545,11 +4329,10 @@ obj = dt << Uplift(
 
 **설명:** 무작위로 행을 선택하여 검증 데이터 집합을 구성합니다. 각 행이 선택될 확률은 p(분수)입니다. 기본값은 "0"입니다.
 
-**부스티드 트리 예제**
+#### 부스티드 트리 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Boosted Tree(
 	Y( :marital status ),
@@ -4560,11 +4343,10 @@ obj = dt << Boosted Tree(
 
 ```
 
-**분할 예제**
+#### 분할 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Partition(
 	Y( :country ),
@@ -4575,11 +4357,10 @@ obj << Split Best( 2 );
 
 ```
 
-**붓스트랩 포레스트 예제**
+#### 붓스트랩 포레스트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :country ),
@@ -4590,11 +4371,10 @@ obj = dt << Bootstrap Forest(
 
 ```
 
-**업리프트 예제**
+#### 업리프트 예제
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
 obj = dt << Uplift(
 	Y( :Purchase ),

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -27,20 +26,18 @@ Show( version );
 
 **JMP Versione aggiunta:** 18
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
@@ -55,11 +52,10 @@ conn << Create JPIP CMD();
 
 **JMP Versione aggiunta:** 14
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 a = "abcdef";
 d = 3.141;
@@ -85,11 +81,10 @@ Show( v, m, ml, x, z, a, d );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = 1;
 x2 = 2;
@@ -133,11 +128,10 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **JMP Versione aggiunta:** 14
 
-**Datetime**
+#### Datetime
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date1 = As Date( Today() );
 Python Send( date1 );
@@ -146,11 +140,10 @@ Show( date1, date2 );
 
 ```
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = {1, 2, 3};
 Python Send( x1 );
@@ -159,11 +152,10 @@ Show( x1, x2 );
 
 ```
 
-**numpy.datetime64**
+#### numpy.datetime64
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Install Packages( "numpy" );
 Python Submit( "import numpy as np" );
@@ -183,7 +175,6 @@ Show( numpy_datetime );
 
 ```jsl
 
-Names Default To Here( 1 );
 version = Python Get Version();
 Show( version );
 
@@ -197,11 +188,10 @@ Show( version );
 
 **JMP Versione aggiunta:** 14
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Init();
 Python Submit( "\[
@@ -212,11 +202,10 @@ Show( getStr );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Init();
 PythonConnection << Submit( "\[
@@ -235,31 +224,28 @@ Show( getStr );
 
 **JMP Versione aggiunta:** 18
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
 ```
 
-**Esempio 3**
+#### Esempio 3
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
@@ -276,7 +262,6 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Python Is Connected();
 Show( x );
 
@@ -292,7 +277,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -308,7 +292,6 @@ Show( Python name );
 
 ```jsl
 
-Names Default To Here( 1 );
 pi = 3.1415927;
 Python Send( pi );
 Python Submit( "print(pi)" );
@@ -326,11 +309,10 @@ Python Submit( "print(pi)" );
 
 **JMP Versione aggiunta:** 14
 
-**Colonna**
+#### Colonna
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
@@ -338,11 +320,10 @@ Python Submit( "print(weight)" );
 
 ```
 
-**Data**
+#### Data
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date = As Date( Today() );
 Python Send( date );
@@ -350,11 +331,10 @@ Python Submit( "print(date)" );
 
 ```
 
-**Tabella di dati**
+#### Tabella di dati
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = {1, 2, 3};
 Python Send( x );
@@ -375,7 +355,6 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -394,7 +373,6 @@ Python Submit( "print(Baseball)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog'
 a = 200]\" );
@@ -414,7 +392,6 @@ Show( getStr, getNum );
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit File( "some_Python_source.py" );
 
 ```

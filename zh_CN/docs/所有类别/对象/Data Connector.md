@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Data Connector(
 	Type( "ODBC" ),
@@ -30,7 +29,6 @@ New Data Connector(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = New Data Connector( Type( "ODBC" ) );
 // Get dc's value for the Supports Schemas option, namely the default value
@@ -46,7 +44,6 @@ dc << Get( Supports Schemas );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Data Connector(
 	ID( "com.example.odbc_example" ),  // Some ODBC-type base configuration
@@ -63,7 +60,6 @@ New Data Connector(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Data Connector(
 	Type( "ODBC" ),
@@ -81,7 +77,6 @@ New Data Connector(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = New Data Connector( Type( "ODBC" ) );
 Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
@@ -98,7 +93,6 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Data Connector( Type( "ODBC" ) ) << Type();
 
 ```

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 ARIMA Forecast(
 	:Steel Shipments,
@@ -36,7 +35,6 @@ ARIMA Forecast(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
 Arc Finder(
@@ -70,7 +68,6 @@ dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
 	[11.2, 11.5, 11.8, 100.5, 100.7, 100.8],
@@ -90,7 +87,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );
 New Column( "Relative to First Height", Formula( :height / Col At( :height, 1, :sex ) ) );
@@ -106,22 +102,20 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Cumulative Sum for each Sex",
@@ -143,7 +137,6 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -160,31 +153,28 @@ dt << New Column( "gnp30",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -192,11 +182,10 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -214,31 +203,28 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -246,11 +232,10 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -268,41 +253,37 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
 	Formula( Col Mean( :height, :age, :sex ) )
@@ -310,11 +291,10 @@ dt << New Column( "Mean for Each Age and Sex Group",
 
 ```
 
-**Beispiel 5**
+#### Beispiel 5
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mean for each Sex", Formula( Col Mean( :height, :sex ) ) );
@@ -332,11 +312,10 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** 15
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -351,11 +330,10 @@ dt << New Column( "Col Median Height by Age",
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -364,11 +342,10 @@ Show( Col Median( :height, :age ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Median for each Sex", Formula( Col Median( :height, :sex ) ) );
@@ -386,31 +363,28 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -418,11 +392,10 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -440,31 +413,28 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -472,11 +442,10 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -494,31 +463,28 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** 17
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
 	Formula( Col Mode( :height, :age, :sex ) )
@@ -526,11 +492,10 @@ dt << New Column( "Mode for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mode for each Sex", Formula( Col Mode( :height, :sex ) ) );
@@ -548,22 +513,20 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Moving Average for each Sex",
@@ -583,31 +546,28 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 	Formula( Col N Missing( :height, :age, :sex ) )
@@ -615,11 +575,10 @@ dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -640,7 +599,6 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );
 New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
@@ -655,31 +613,28 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 	Formula( Col Number( :height, :age, :sex ) )
@@ -687,11 +642,10 @@ dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -710,11 +664,10 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -729,11 +682,10 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -742,11 +694,10 @@ Show( Col Quantile( :height, 0.5, :age ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Quantile for each Sex",
@@ -766,22 +717,20 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );
 New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Rank for each Sex", Formula( Col Rank( :height, :sex ) ) );
@@ -801,7 +750,6 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
@@ -818,7 +766,6 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
 New Column( "Alternate within sex", Formula( Col Sequence( :sex, <<Sequence( 1, 2 ) ) ) );
@@ -838,7 +785,6 @@ New Column( "Row within sex, 60+",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -853,32 +799,29 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standardize for each Sex",
@@ -898,41 +841,37 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Standard Deviation for Each Age and Sex Group",
 	Formula( Col Std Dev( :height, :age, :sex ) )
@@ -940,11 +879,10 @@ dt << New Column( "Standard Deviation for Each Age and Sex Group",
 
 ```
 
-**Beispiel 5**
+#### Beispiel 5
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standard Deviation for each Sex",
@@ -964,41 +902,37 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
 
 ```
 
-**Beispiel 3**
+#### Beispiel 3
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```
 
-**Beispiel 4**
+#### Beispiel 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
 	Formula( Col Sum( :height, :age, :sex ) )
@@ -1006,11 +940,10 @@ dt << New Column( "Sum for Each Age and Sex Group",
 
 ```
 
-**Beispiel 5**
+#### Beispiel 5
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Sum for each Sex", Formula( Col Sum( :height, :sex ) ) );
@@ -1030,7 +963,6 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 ```jsl
 
-Names Default To Here( 1 );
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -1045,7 +977,6 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```jsl
 
-Names Default To Here( 1 );
 result = Fit Censored(
 	Distribution( "Weibull" ),
 	Y( [142, 156, 163, 198, 204, 205, 232, 239, 240, 261, 280, 296, 323, 344] )
@@ -1064,7 +995,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
 result = Fit Circle( x, y );
@@ -1090,7 +1020,6 @@ New Window( "Fit Circle",
 
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
 exhc = Hierarchical Cluster(
@@ -1115,11 +1044,10 @@ exhistory[3, 1];
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-**Beispiel 1**
+#### Beispiel 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );
 obj << Save Ability Formula;
@@ -1127,11 +1055,10 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```
 
-**Beispiel 2**
+#### Beispiel 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
 mthlst = {};
@@ -1159,7 +1086,6 @@ mthlst;
 
 ```jsl
 
-Names Default To Here( 1 );
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
 Random Reset( 113 );
@@ -1229,7 +1155,6 @@ dt << Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
@@ -1244,7 +1169,6 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -1259,7 +1183,6 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -1274,7 +1197,6 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -1289,7 +1211,6 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -1304,7 +1225,6 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -1319,7 +1239,6 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -1334,7 +1253,6 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
 	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),
@@ -1354,7 +1272,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -1369,7 +1286,6 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 n = 15;
 New Window( "Example: Tolerance Factor()",
 	tdig = Graph Box(
@@ -1396,7 +1312,6 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
@@ -1411,7 +1326,6 @@ Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -1426,7 +1340,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),
 	Quantile( 0.5, [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] )}
@@ -1444,7 +1357,6 @@ Eval List(
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -1459,7 +1371,6 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -1474,7 +1385,6 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
@@ -1489,7 +1399,6 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```
@@ -1504,7 +1413,6 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
 Eval List( {exg, Round( exm, 1 )} );
@@ -1521,7 +1429,6 @@ Eval List( {exg, Round( exm, 1 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -1537,7 +1444,6 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```

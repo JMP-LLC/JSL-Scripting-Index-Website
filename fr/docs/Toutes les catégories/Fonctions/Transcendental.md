@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius( 100 );
 
 ```
@@ -27,7 +26,6 @@ Arrhenius( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius Inv( 100 );
 
 ```
@@ -42,7 +40,6 @@ Arrhenius Inv( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Beta( 5, 4 );
 
 ```
@@ -57,7 +54,6 @@ Beta( 5, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -72,7 +68,6 @@ Box Cox Inverse Transform( 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Transform( 3, 2 );
 
 ```
@@ -87,7 +82,6 @@ Box Cox Transform( 3, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -102,7 +96,6 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```
@@ -117,7 +110,6 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Digamma( 5 );
 
 ```
@@ -132,7 +124,6 @@ Digamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Exp( 1 ), 5 );
 
 ```
@@ -147,7 +138,6 @@ Round( Exp( 1 ), 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -162,7 +152,6 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
 A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
 res = FFT( {A} );
@@ -233,7 +222,6 @@ Show( fin );
 
 ```jsl
 
-Names Default To Here( 1 );
 Factorial( 5 );
 
 ```
@@ -248,7 +236,6 @@ Factorial( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024,
 -19.470857, -6.1855986, 2.16525629, -30.990061];
 freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
@@ -278,7 +265,6 @@ Show( results );
 
 ```jsl
 
-Names Default To Here( 1 );
 Gamma( 5 );
 
 ```
@@ -293,7 +279,6 @@ Gamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 LGamma( 5 );
 
 ```
@@ -308,7 +293,6 @@ LGamma( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Ln( Exp( 2 ) );
 
 ```
@@ -323,7 +307,6 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log( 256, 2 );
 
 ```
@@ -338,7 +321,6 @@ Log( 256, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log10( 100 );
 
 ```
@@ -353,7 +335,6 @@ Log10( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log1P( 1e-6 );
 
 ```
@@ -368,7 +349,6 @@ Log1P( 1e-6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -383,7 +363,6 @@ Logist( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist Percent( 10 );
 
 ```
@@ -398,7 +377,6 @@ Logist Percent( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logit( 0.95 );
 
 ```
@@ -413,7 +391,6 @@ Logit( 0.95 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logit Percent( 95.0 );
 
 ```
@@ -428,7 +405,6 @@ Logit Percent( 95.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Choose K( 5, 3 );
 
 ```
@@ -443,7 +419,6 @@ N Choose K( 5, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Power( 2, 5 );
 
 ```
@@ -458,7 +433,6 @@ Power( 2, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -473,7 +447,6 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -496,7 +469,6 @@ Show( x1, x2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -518,7 +490,6 @@ Show( result1, result2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -533,7 +504,6 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -548,7 +518,6 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -563,7 +532,6 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -578,7 +546,6 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -593,7 +560,6 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( Sqrt( 2 ), 4 );
 
 ```
@@ -608,7 +574,6 @@ Round( Sqrt( 2 ), 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Squash( 10 );
 
 ```
@@ -623,7 +588,6 @@ Squash( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -638,7 +602,6 @@ Logist( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -653,7 +616,6 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -668,7 +630,6 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Trigamma( 5 );
 
 ```

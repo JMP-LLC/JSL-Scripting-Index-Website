@@ -10,11 +10,10 @@
 
 **JMP Version ajoutée :** 17
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -39,11 +38,10 @@ importer << Run;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -63,11 +61,10 @@ importer << Run;
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -100,11 +97,10 @@ importer << Run;
 
 **JMP Version ajoutée :** 17
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -132,11 +128,10 @@ importer << Run;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data  */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -158,11 +153,10 @@ importer << Run;
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),

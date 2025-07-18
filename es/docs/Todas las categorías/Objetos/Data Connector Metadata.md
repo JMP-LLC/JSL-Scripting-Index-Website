@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 description = metadata << Get Description();
 
@@ -30,7 +29,6 @@ description = metadata << Get Description();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 type = metadata << Get Driver();
 
@@ -46,7 +44,6 @@ type = metadata << Get Driver();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 name = metadata << Get Name();
 
@@ -62,7 +59,6 @@ name = metadata << Get Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 path = metadata << Get Path();
 
@@ -78,7 +74,6 @@ path = metadata << Get Path();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 type = metadata << Get Type();
 
@@ -94,7 +89,6 @@ type = metadata << Get Type();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 metadata << Set Description( "My frequently used SQL Server connection." );
 
@@ -110,7 +104,6 @@ metadata << Set Description( "My frequently used SQL Server connection." );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 metadata << Set Name( "A new Name" );
 

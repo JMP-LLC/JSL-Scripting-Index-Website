@@ -1,16 +1,17 @@
-site_name: JMP® Scripting Index
+site_name: JMP Scripting Index
 theme: 
   name: readthedocs
+  custom_dir: custom_theme
   highlightjs: true
   locale: en
   hljs_languages:
     - python
-  logo: img/JMPScriptingIndexLogo.svg
+  logo: img/JMPScriptingIndexLogoUpdated.svg
   collapse_navigation: false
   navigation_depth: 6
   include_homepage_in_sidebar: false
 site_url: https://jsl.jmp.com
-site_description: The JMP® Scripting Index provides a brief description and the syntax for JMP Scripting Language functions, objects, python integration, and display boxes for the JMP® Software.
+site_description: The JMP Scripting Index provides a brief description and the syntax for JMP Scripting Language functions, objects, python integration, and display boxes for the JMP® Software.
 copyright: © 2025 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
 extra_css:
@@ -24,18 +25,18 @@ extra_javascript:
 plugins:
   - search:
       prebuild_index: true
-  - llmstxt:
-      full_output: llms-full.txt
-      markdown_description: Documentation for all of the Functions, Objects, Display Boxes, and Python functions that are supported by the JMP® Scripting language also known as JSL. This guide includes syntax, descriptions, code examples, and JMP® software version compatibility for each item.
-      sections:
-        JSL Objects Usage Documentation:
-          - All Categories/Objects/*.md
-        JSL Functions Usage Documentation:
-          - All Categories/Functions/*.md
-        JSL Display Boxes Usage Documentation:
-          - All Categories/Display Boxes/*.md
-        JMP Python Usage Documentation:
-          - All Categories/Python/*.md
+  # - llmstxt:
+  #     full_output: llms-full.txt
+  #     markdown_description: Documentation for all of the Functions, Objects, Display Boxes, and Python functions that are supported by the JMP Scripting Language also known as JSL. This guide includes syntax, descriptions, code examples, and JMP® software version compatibility for each item.
+  #     sections:
+  #       JSL Objects Usage Documentation:
+  #         - All Categories/Objects/*.md
+  #       JSL Functions Usage Documentation:
+  #         - All Categories/Functions/*.md
+  #       JSL Display Boxes Usage Documentation:
+  #         - All Categories/Display Boxes/*.md
+  #       JMP Python Usage Documentation:
+  #         - All Categories/Python/*.md
 
 
   

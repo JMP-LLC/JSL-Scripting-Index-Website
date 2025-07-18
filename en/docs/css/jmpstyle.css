@@ -63,3 +63,7 @@ body {
   max-height: 61.5vh;
   overflow: scroll;
 }
+
+.document {
+  min-height: 70vh;
+}

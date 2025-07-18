@@ -12,11 +12,10 @@
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -34,11 +33,10 @@ Show( subfolder );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -51,11 +49,10 @@ Write( "\!n\!nNew folder ID: ", folder << Get ID, "  Path: ", folder << Get Path
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -94,7 +91,6 @@ Show( subFolder2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -144,7 +140,6 @@ If( result == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -194,7 +189,6 @@ If( result == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -242,11 +236,10 @@ If( result == 1,
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 user = liveconnection << Get Username;
 
@@ -269,11 +262,10 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -311,11 +303,10 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -349,11 +340,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -393,11 +383,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -430,11 +419,10 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -475,11 +463,10 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 **JMP Versión agregada:** 18
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Find Spaces();
@@ -495,11 +482,10 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Find Spaces( Permissions( "Contribute" ) );
@@ -525,7 +511,6 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 connectionname = liveconnection << Get Connection Name();
 Write( "Connection Name: ", connectionname );
@@ -542,7 +527,6 @@ Write( "Connection Name: ", connectionname );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -587,7 +571,6 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -618,7 +601,6 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 httprequest = liveconnection << Get HTTP Request();
 
@@ -639,7 +621,6 @@ httprequest << Get Status Message();
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -679,7 +660,6 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -725,7 +705,6 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 url = liveconnection << Get URL();
 Write( "URL: ", url );
@@ -742,7 +721,6 @@ Write( "URL: ", url );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 username = liveconnection << Get UserName();
 Write( "Username: ", username );
@@ -759,7 +737,6 @@ Write( "Username: ", username );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 isloggedin = liveconnection << Is Logged In();
 Write( "Logged In: ", isloggedin );
@@ -774,11 +751,10 @@ Write( "Logged In: ", isloggedin );
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -800,11 +776,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 gbline = bc << Run Script( "Graph Builder Line and Bar Charts" );
@@ -830,11 +805,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 gbline = bc << Run Script( "Graph Builder Line and Bar Charts" );
@@ -889,11 +863,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 4**
+#### Ejemplo 4
 
 ```jsl
 
-Names Default To Here( 1 );
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -914,11 +887,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```
 
-**Ejemplo 5**
+#### Ejemplo 5
 
 ```jsl
 
-Names Default To Here( 1 );
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -961,11 +933,10 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/S4 Temps.jmp" );
 tod = dt << Run Script( "by Time of Day" );
 therm = dt << Run Script( "by Thermometer" );
@@ -1016,11 +987,10 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/S4 Temps.jmp" );
 tod = dt << Run Script( "by Time of Day" );
 therm = dt << Run Script( "by Thermometer" );
@@ -1075,11 +1045,10 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 **JMP Versión agregada:** 16
 
-**Ejemplo 1**
+#### Ejemplo 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -1111,11 +1080,10 @@ Write( "\!n\!nUpdated data: ", updatedData );
 
 ```
 
-**Ejemplo 2**
+#### Ejemplo 2
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -1146,11 +1114,10 @@ Write( "\!n\!nUpdated data: ", updatedData );
 
 ```
 
-**Ejemplo 3**
+#### Ejemplo 3
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 

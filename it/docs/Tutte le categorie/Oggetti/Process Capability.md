@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -35,11 +34,10 @@ obj = dt << Process Capability(
 
 **Descrizione:** Specifica le colonne come variabili di raggruppamento.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dtLimits = Open( "$SAMPLE_DATA/Cheese Manufacturing Limits.jmp" );
 dt = Open( "$SAMPLE_DATA/Cheese Manufacturing Data.jmp" );
@@ -55,11 +53,10 @@ dt << Process Capability(
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :NPN1[:lot_id], :PNP1[:lot_id], :PNP2[:lot_id] ),
@@ -76,7 +73,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -97,7 +93,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -118,7 +113,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer] )
@@ -137,7 +131,6 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -155,11 +148,10 @@ dt << Bivariate(
 
 **JMP Versione aggiunta:** 18
 
-**Cerca per nome**
+#### Cerca per nome
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -167,11 +159,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Preimpostazione anonima**
+#### Preimpostazione anonima
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -182,11 +173,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Ricerca all'interno delle cartelle**
+#### Ricerca all'interno delle cartelle
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -202,7 +192,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -225,7 +214,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -243,7 +231,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -265,7 +252,6 @@ obj << Capability Box Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -289,7 +275,6 @@ obj << Capability Index Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :OZONE, :CO, :SO2, :NO ),
@@ -307,7 +292,6 @@ obj << Color Out of Spec Values( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -333,7 +317,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -353,7 +336,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -375,7 +357,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -390,7 +371,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -415,11 +395,10 @@ Show( t );
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
-**Generale**
+#### Generale
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -432,11 +411,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Piattaforma con filtro**
+#### Piattaforma con filtro
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -469,7 +447,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -490,7 +467,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -507,7 +483,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt << Process Capability(
@@ -525,7 +500,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -546,7 +520,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -567,7 +540,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -588,7 +560,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -606,7 +577,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -622,7 +592,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -644,7 +613,6 @@ obj << Goal Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -663,7 +631,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -683,7 +650,6 @@ obj << Individual Detail Reports( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -703,7 +669,6 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -723,7 +688,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -747,7 +711,6 @@ obj << Make Goal Plot Summary Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -766,7 +729,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -781,7 +743,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -803,7 +764,6 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -824,7 +784,6 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -845,7 +804,6 @@ obj << Overall Sigma Summary Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -868,7 +826,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -892,7 +849,6 @@ obj << Process Performance Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -912,7 +868,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -938,7 +893,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -958,7 +912,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -984,7 +937,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1008,7 +960,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1023,7 +974,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1045,7 +995,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1065,7 +1014,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1091,7 +1039,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1117,7 +1064,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1143,7 +1089,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :OZONE & Dist( Johnson ), :CO, :SO2 & Dist( Lognormal ), :NO ),
@@ -1161,7 +1106,6 @@ obj << Save Distributions as Column Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1181,7 +1125,6 @@ obj << Save In Spec Indicator Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1199,11 +1142,10 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
+#### Esempio 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1221,11 +1163,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Esempio 2**
+#### Esempio 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1251,7 +1192,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1271,7 +1211,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1291,7 +1230,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1311,7 +1249,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1331,7 +1268,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :OZONE, :CO, :SO2, :NO ),
@@ -1349,7 +1285,6 @@ obj << Save Spec Limits as Column Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1369,7 +1304,6 @@ obj << Save Spec Limits to New Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :OZONE, :CO, :SO2, :NO ),
@@ -1387,7 +1321,6 @@ obj << Select Out of Spec Values( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1408,7 +1341,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1434,7 +1366,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1452,7 +1383,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1469,7 +1399,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1489,7 +1418,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1515,7 +1443,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1532,7 +1459,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt << Process Capability(
@@ -1550,7 +1476,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1565,7 +1490,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1584,7 +1508,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1605,7 +1528,6 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1628,7 +1550,6 @@ obj << Within Sigma Summary Report( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1651,7 +1572,6 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -1676,7 +1596,6 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1710,7 +1629,6 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1741,7 +1659,6 @@ scrobj << Parametric Fit Line( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1775,7 +1692,6 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1815,7 +1731,6 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1850,7 +1765,6 @@ scrobj << Comparison Details( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -1887,7 +1801,6 @@ scrobj << Comparison Histogram( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/cities.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :OZONE ),
@@ -1911,7 +1824,6 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -1933,7 +1845,6 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -1955,7 +1866,6 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -1977,7 +1887,6 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -1999,7 +1908,6 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2021,7 +1929,6 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2043,7 +1950,6 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2064,7 +1970,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2086,7 +1991,6 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2108,7 +2012,6 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2132,7 +2035,6 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2156,7 +2058,6 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2178,7 +2079,6 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -2204,7 +2104,6 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -2232,7 +2131,6 @@ scrobj << Probability Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] & Between ),
@@ -2256,7 +2154,6 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2277,7 +2174,6 @@ scrobj << Show Count Axis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2298,7 +2194,6 @@ scrobj << Show Density Axis( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2321,7 +2216,6 @@ scrobj << Show Overall Sigma Density( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2342,7 +2236,6 @@ scrobj << Show Spec Limits( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2363,7 +2256,6 @@ scrobj << Show Target( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2392,7 +2284,6 @@ scrobj << Show Within Sigma Density( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :PNP1 ),
@@ -2423,7 +2314,6 @@ scrobj << Capability( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :PNP1 ),
@@ -2454,7 +2344,6 @@ scrobj << Nonconformance( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :PNP1 ),
@@ -2485,7 +2374,6 @@ scrobj << Revert to Original Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :PNP1 ),
@@ -2518,7 +2406,6 @@ scrobj << Save New Spec Limits as a Column Property;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2541,7 +2428,6 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2564,7 +2450,6 @@ scrobj << Normal Fit Line( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2587,7 +2472,6 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2616,7 +2500,6 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] & Between ),
@@ -2641,7 +2524,6 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] & Between ),
@@ -2666,7 +2548,6 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] & Between ),
@@ -2691,7 +2572,6 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -2709,7 +2589,6 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2727,7 +2606,6 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Lognormal ) ),
@@ -2750,7 +2628,6 @@ scrobj << Compare Distributions(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 ),
@@ -2776,7 +2653,6 @@ scrobj << Compare Distributions( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Process 1 & Dist( Weibull ) ),
@@ -2798,7 +2674,6 @@ scrobj << Fix Parameters( [., .] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2821,7 +2696,6 @@ scrobj << Histogram( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :PNP1 ),
@@ -2842,7 +2716,6 @@ scrobj << Interactive Capability Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2863,7 +2736,6 @@ scrobj << Nonconformance( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Purity & Dist( Nonparametric ) ),
@@ -2887,7 +2759,6 @@ scrobj << Nonparametric Density( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2908,7 +2779,6 @@ scrobj << Normal Probability Plot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2929,7 +2799,6 @@ scrobj << Overall Sigma Capability( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2950,7 +2819,6 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Thickness & Dist( Johnson ) ),
@@ -2972,7 +2840,6 @@ scrobj << Parameter Estimates( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -2993,7 +2860,6 @@ scrobj << Process Summary( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -3016,7 +2882,6 @@ scrobj << Within Sigma Capability( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -3037,7 +2902,6 @@ scrobj << Within Sigma Target Index( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << Process Capability(
 	Process Variables( :Gap[:Date] ),
@@ -3062,7 +2926,6 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3087,7 +2950,6 @@ scrobj << Capability Lines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3103,7 +2965,6 @@ obj << Goal Plot( 1, Defect Rate Contour( 0.01 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3125,7 +2986,6 @@ scrobj << Defect Rate Contour( 0.01 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3148,7 +3008,6 @@ scrobj << Label Overall Sigma Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3179,7 +3038,6 @@ scrobj << Label Within Sigma Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3208,7 +3066,6 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3231,7 +3088,6 @@ scrobj << Shade Levels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3256,7 +3112,6 @@ scrobj << Show Overall Sigma Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3282,7 +3137,6 @@ scrobj << Show Within Sigma Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3310,7 +3164,6 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3336,7 +3189,6 @@ scrobj << Capability Lines( 1.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3362,7 +3214,6 @@ scrobj << Label Overall Sigma Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3395,7 +3246,6 @@ scrobj << Label Within Sigma Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3425,7 +3275,6 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3451,7 +3300,6 @@ scrobj << Shade Levels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3481,7 +3329,6 @@ scrobj << Show Overall Sigma Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3510,7 +3357,6 @@ scrobj << Show Within Sigma Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3542,7 +3388,6 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3572,7 +3417,6 @@ scrobj << Capability Boundary( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3601,7 +3445,6 @@ scrobj << Label Points( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -3630,7 +3473,6 @@ scrobj << Show Within Cpk Curve( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(

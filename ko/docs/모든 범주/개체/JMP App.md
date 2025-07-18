@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = Distribution( Continuous Distribution( Column( :weight ) ), Nominal Distribution( Column( :age ) ) );
 biv = Bivariate( Y( :weight ), X( :height ) );
@@ -32,7 +31,6 @@ app << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Launcher with Report.jmpappsource" );
 app << Debug;
@@ -47,7 +45,6 @@ app << Debug;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;
@@ -62,7 +59,6 @@ app << Edit;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit Application;
@@ -78,7 +74,6 @@ app << Get Modules();
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 (app << Get Namespace) << Show Contents;
 
@@ -92,11 +87,10 @@ app = JMP App();
 
 **JMP추가된 버전:** 14
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Historical.jmp" );
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
@@ -105,11 +99,10 @@ app << Get Windows();
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Graph Launcher.jmpappsource" );
 app << Run;
@@ -128,7 +121,6 @@ app << Get Windows();
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 box = app << Edit Application;
@@ -143,7 +135,6 @@ box = app << Edit Application;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;
@@ -159,7 +150,6 @@ app << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Run;
@@ -174,7 +164,6 @@ app << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = Include( "$SAMPLE_DASHBOARDS/Six Quality Graphs Dashboard.jmpappsource" );
 app << Run;
 app << Save Script for All Objects;
@@ -189,7 +178,6 @@ app << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;
@@ -205,7 +193,6 @@ app << "Save Script to Add-In";
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;
@@ -221,7 +208,6 @@ app << Save Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;
@@ -237,7 +223,6 @@ app << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Edit;

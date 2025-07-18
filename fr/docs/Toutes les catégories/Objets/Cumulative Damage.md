@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -47,7 +46,6 @@ obj = Cumulative Damage(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 Cumulative Damage(
@@ -81,7 +79,6 @@ Cumulative Damage(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -116,7 +113,6 @@ obj << Get Results;
 
 ```jsl
 
-Names Default To Here( 1 );
 /*See sample scripts in the following data tables.*/
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Ramp Stress.jmp" );
@@ -133,7 +129,6 @@ Open( "$SAMPLE_DATA/Reliability/CD Piecewise Ramp Stress.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 Cumulative Damage(
@@ -169,7 +164,6 @@ Cumulative Damage(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -187,11 +181,10 @@ dt << Bivariate(
 
 **JMP Version ajoutée :** 18
 
-**Préconfiguration anonyme**
+#### Préconfiguration anonyme
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -202,11 +195,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Rechercher dans les dossiers**
+#### Rechercher dans les dossiers
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -214,11 +206,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**Rechercher par nom**
+#### Rechercher par nom
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -234,7 +225,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -269,7 +259,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -287,7 +276,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -321,7 +309,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -357,7 +344,6 @@ obj << Data Table Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -370,11 +356,10 @@ biv << Get By Levels;
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
-**Général**
+#### Général
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -401,11 +386,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Plate-forme avec filtre**
+#### Plate-forme avec filtre
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -440,7 +424,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -475,7 +458,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -510,7 +492,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -545,7 +526,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -580,7 +560,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -598,7 +577,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate(
@@ -618,7 +596,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -637,7 +614,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -659,7 +635,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -678,7 +653,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -693,7 +667,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -714,7 +687,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -748,7 +720,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -782,7 +753,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -802,7 +772,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -826,7 +795,6 @@ dist << remove local data filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -841,7 +809,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -877,7 +844,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -911,7 +877,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -943,11 +908,10 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -984,11 +948,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1033,7 +996,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1067,7 +1029,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1101,7 +1062,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1135,7 +1095,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1169,7 +1128,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1190,7 +1148,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1219,7 +1176,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1239,7 +1195,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1256,7 +1211,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1290,7 +1244,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -1326,7 +1279,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;

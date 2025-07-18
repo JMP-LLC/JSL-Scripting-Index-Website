@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 // This command is only valid within a JMP App Module Script
 
 ```
@@ -25,7 +24,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
 app << Run Application;
@@ -43,7 +41,6 @@ inst << Get Box;
 
 ```jsl
 
-Names Default To Here( 1 );
 app = JMP App();
 (app << Get Namespace) << Show Contents;
 
@@ -57,7 +54,6 @@ app = JMP App();
 
 ```jsl
 
-Names Default To Here( 1 );
 // This command is only valid within a JMP App Module Script
 
 ```
@@ -70,7 +66,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // This command is only valid within a JMP App Module Script
 
 ```

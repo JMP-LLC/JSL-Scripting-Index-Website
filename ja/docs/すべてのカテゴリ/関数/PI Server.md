@@ -10,11 +10,10 @@
 
 **JMP追加されたバージョン:** 17
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -37,11 +36,10 @@ importer << Run;
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -59,11 +57,10 @@ importer << Run;
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -94,11 +91,10 @@ importer << Run;
 
 **JMP追加されたバージョン:** 17
 
-**例 1**
+#### 例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -126,11 +122,10 @@ importer << Run;
 
 ```
 
-**例 2**
+#### 例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data  */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -152,11 +147,10 @@ importer << Run;
 
 ```
 
-**例 3**
+#### 例 3
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),

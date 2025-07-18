@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -56,7 +55,6 @@ Write( "\!nDescription: ", report << Get Description );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -99,7 +97,6 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -142,7 +139,6 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -185,7 +181,6 @@ Write( "\!nTitle: ", report << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -229,7 +224,6 @@ Write( "\!nType: ", report << Get Type );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -272,7 +266,6 @@ Write( "\!nURL: ", report << Get URL );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -322,7 +315,6 @@ Write( "\!nDecription: ", report << Get Description );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 

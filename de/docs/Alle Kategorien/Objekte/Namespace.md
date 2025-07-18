@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -35,7 +34,6 @@ result = nsref << Contains( "nObs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -57,7 +55,6 @@ Show( nsref );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -78,7 +75,6 @@ result = nsref << First;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -99,7 +95,6 @@ result = nsref << Get Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -120,7 +115,6 @@ result = nsref << Get Keys;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -141,7 +135,6 @@ space name = nsref << Get Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -162,7 +155,6 @@ result = nsref << Get Value( "nObs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -183,7 +175,6 @@ result = nsref << Get Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -207,7 +198,6 @@ Show( nsref );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -229,7 +219,6 @@ Try( Add Class:nObs = 40, "Add Class is locked." );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -250,7 +239,6 @@ n = nsref << N Items;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -271,7 +259,6 @@ result = nsref << Next( "addition" );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -293,7 +280,6 @@ Show( nsref );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -316,7 +302,6 @@ result = nsref << Show Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );
@@ -343,7 +328,6 @@ Try( Add Class:nObs = 40, Show( "Add Class is locked." ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 nsref = New Namespace(
 	"Add Class"
 );

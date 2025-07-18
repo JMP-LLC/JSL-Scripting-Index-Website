@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -38,7 +37,6 @@ dataedit << Blink;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -64,7 +62,6 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -90,7 +87,6 @@ dataedit << Go To Row( 23 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -116,7 +112,6 @@ dataedit << New Row;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -142,7 +137,6 @@ dataedit << Next;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -169,7 +163,6 @@ dataedit << Next Selected;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -196,7 +189,6 @@ dataedit << Prev;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SAT.jmp" );
 New Window( "Example",
 	cp = Cell Plot(
@@ -223,7 +215,6 @@ dataedit << Prev Selected;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/SAT.jmp" );
 dt << Save( "$TEMP/SAT.jmp" );

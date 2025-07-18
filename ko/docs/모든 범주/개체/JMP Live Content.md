@@ -20,11 +20,10 @@
 
 	&apos;최적화&apos;는 보고서가 JMP Live에 게시되는 방식을 사용자 정의하는 데 사용됩니다. 기본적으로 보고서는 상호 작용을 높이는 방식으로 게시됩니다.
 
-**예제 1**
+#### 예제 1
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -44,11 +43,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 2**
+#### 예제 2
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Data Content" ) );
 folder = jmpliveresult << As Scriptable;
@@ -63,11 +61,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 3**
+#### 예제 3
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Map Content" ) );
 folder = jmpliveresult << As Scriptable;
@@ -78,11 +75,10 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-**예제 4**
+#### 예제 4
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder( Parent Folder( "~" ), Title( "Folder for Image Content" ) );
 folder = jmpliveresult << As Scriptable;

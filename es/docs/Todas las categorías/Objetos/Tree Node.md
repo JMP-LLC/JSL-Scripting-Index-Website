@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -49,7 +48,6 @@ tree << Expand( root3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -87,7 +85,6 @@ root1 << Append( c7 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -124,7 +121,6 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -161,7 +157,6 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -198,7 +193,6 @@ root2 << Get Child Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -248,7 +242,6 @@ tree << SetNodeSelectScript(
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -285,7 +278,6 @@ root3 << Get Dimmed;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -326,7 +318,6 @@ root1 << Get Expanded Icon;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -363,7 +354,6 @@ root3 << Get Font Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -401,7 +391,6 @@ root1 << Get Icon;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -438,7 +427,6 @@ root3 << Get Label;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -477,7 +465,6 @@ c6 << Get Tip;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -514,7 +501,6 @@ root2 << Index Of( root3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -552,7 +538,6 @@ root3 << Insert( c7, 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -589,7 +574,6 @@ root3 << Is Leaf;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -626,7 +610,6 @@ Print( (root1 << Last Child) << GetLabel );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -663,7 +646,6 @@ Print( (c4 << Parent) << GetLabel );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -701,7 +683,6 @@ root1 << Prepend( c7 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -738,7 +719,6 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -776,7 +756,6 @@ root3 << Remove;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -814,7 +793,6 @@ root2 << Remove All Children;
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -852,7 +830,6 @@ root3 << Remove Child( c6 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -902,7 +879,6 @@ tree << SetNodeSelectScript(
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -940,7 +916,6 @@ c6 << Set Dimmed( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -982,7 +957,6 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -1020,7 +994,6 @@ c6 << Set Font Style( "Bold" );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -1059,7 +1032,6 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -1097,7 +1069,6 @@ c6 << Set Label( "Last Child" );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -1135,7 +1106,6 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );
@@ -1172,7 +1142,6 @@ Print( (c4 << Sib) << Get Label );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 root3 = Tree Node( "Parent 3" );

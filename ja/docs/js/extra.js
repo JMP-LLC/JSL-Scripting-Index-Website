@@ -7,10 +7,6 @@ $(document).ready(function() {
   selector_panel.classList.add("current");
   var selectors = document.querySelectorAll('pre code');
   var copyButton = '<div class="clipboard"><span class="btn-neutral btn-clipboard" title="Copy to clipboard">⧉</span></div>';
-
-  var lastDiv = document.querySelector('div[role="contentinfo"]');
-  var lastDivChild1 = lastDiv.nextSibling;
-  lastDivChild1.remove();
   Array.prototype.forEach.call(selectors, function(selector){
     selector.insertAdjacentHTML('beforebegin', copyButton);
   });

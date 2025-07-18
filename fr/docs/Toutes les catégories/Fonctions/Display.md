@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -50,7 +49,6 @@ New Window( "Crosstab",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -88,7 +86,6 @@ New Window( "Crosstab",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Alignment MultiBox",
 	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),
@@ -131,7 +128,6 @@ New Window( "Alignment MultiBox",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang = Triangulation( X( :X, :Y ), Y( :POP ) );
 ashape = Alpha Shape( triang );
@@ -148,7 +144,6 @@ ashape = Alpha Shape( triang );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -170,7 +165,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -193,7 +187,6 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Busy Light( <<automatic ) );
 
 ```
@@ -208,7 +201,6 @@ New Window( "Example", Busy Light( <<automatic ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
@@ -223,7 +215,6 @@ New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Calendar Box Example", Calendar Box() );
 
 ```
@@ -238,7 +229,6 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
@@ -253,7 +243,6 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -275,7 +264,6 @@ Clear Global Window Handler();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Window( "Example",
 	exx = 1;
 	exy = 4;
@@ -301,11 +289,10 @@ dt = New Window( "Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1",
 	Col List Box( all, width( 250 ), maxSelected( 1 ) )
@@ -313,11 +300,10 @@ New Window( "Col List Box Example 1",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
 	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) )
@@ -325,11 +311,10 @@ New Window( "Col List Box Example 2",
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
 	H List Box(
@@ -352,7 +337,6 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	Table Box(
 		Col Span Box(
@@ -375,7 +359,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
 	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),
@@ -416,7 +399,6 @@ Column Dialog(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
 );
@@ -433,7 +415,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Context Box(
 		Outline Box( "Picker",
@@ -454,7 +435,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 {xx, yy} = tri << Get Points();
@@ -487,7 +467,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 Current Report();
 
 ```
@@ -506,7 +485,6 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Example Outline",
 		Text Box( "Example Text" ),
@@ -526,7 +504,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -566,7 +543,6 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
 	Data Filter Context Box(
@@ -610,7 +586,6 @@ New Window( "Selection Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -627,7 +602,6 @@ x << Set Data Table( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -643,7 +617,6 @@ New Window( "Example", Data Table Box( dt ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) )
@@ -661,7 +634,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box(
@@ -680,11 +652,10 @@ New Window( "Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Dialog equivalent
 If(
 	ex = New Window( "Dialog() example",
@@ -703,11 +674,10 @@ If(
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 If(
 	ex = Dialog(
@@ -735,7 +705,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -785,7 +754,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -807,7 +775,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example",
 	fontobj = lb = Filter Col Selector( width( 250 ) )
@@ -823,11 +790,10 @@ New Window( "Col List Box Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -835,11 +801,10 @@ Print( Get Project( 2 ) << Get Window Title() );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -857,7 +822,6 @@ project = Get Project( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
                               
@@ -885,22 +849,20 @@ Utilisez l&apos;argument facultatif Type() avec "Data Tables", "Journals", "Repo
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 window = Get Window( Project( project ), "Big Class" );
@@ -927,31 +889,28 @@ Utilisez l&apos;argument facultatif Type() avec "Data Tables", "Journals", "Repo
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Get Window List() << Get Window Title() );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print( Get Window List( Project( project ) ) << Get Window Title() );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print(
@@ -971,7 +930,6 @@ Print(
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -987,7 +945,6 @@ New Window( "Example", Global Box( ex ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -1009,7 +966,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
 	Xname( "X Axis" ),
@@ -1044,7 +1000,6 @@ x3d << AddVector(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -1066,7 +1021,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -1093,7 +1047,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
@@ -1112,7 +1065,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H Scroll Box(
@@ -1141,7 +1093,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -1191,7 +1142,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -1223,7 +1173,6 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Hier Box(
 		Text Edit Box( "Cause 1" ),
@@ -1246,8 +1195,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -1270,11 +1217,10 @@ New Window( "Hist Seg Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -1289,11 +1235,10 @@ New Window( "Example",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
@@ -1308,7 +1253,6 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	H List Box(
 		englishBox = If Box( 1, Text Box( "Good day" ) ),
@@ -1331,7 +1275,6 @@ frenchBox << Set( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
@@ -1347,7 +1290,6 @@ New Window( "Lines Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "JSS Context",
 	JSS Context Box(
 		V List Box(
@@ -1378,7 +1320,6 @@ New Window( "JSS Context",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
 sampjourn = sample << Get Journal;
@@ -1397,11 +1338,10 @@ New Window( "Distribution of Height",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
@@ -1410,11 +1350,10 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -1424,11 +1363,10 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -1450,7 +1388,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
 frame = g[FrameBox( 1 )];
@@ -1468,7 +1405,6 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -1490,7 +1426,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Lineup Ruler",
 	lrb = Lineup Ruler Box(
@@ -1526,20 +1461,18 @@ New Window( "Lineup Ruler",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	lb = List Box(
 		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item",
@@ -1560,11 +1493,10 @@ New Window( "Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 sz = Column( "age" ) << get values;
@@ -1585,11 +1517,10 @@ New Window( "Marker Seg Example",
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1604,11 +1535,10 @@ New Window( "Marker Seg Example",
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1623,11 +1553,10 @@ New Window( "Marker Seg Example",
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1646,11 +1575,10 @@ New Window( "Marker Seg Example",
 
 ```
 
-**Exemple 5**
+#### Exemple 5
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1683,7 +1611,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) )
 );
@@ -1700,7 +1627,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
 		<<setDragText( "hello" ),
@@ -1752,11 +1678,10 @@ New Window( "Example",
 
 **JMP Version ajoutée :** 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -1766,11 +1691,10 @@ Move to Project( destination( project ), windows( {report} ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
 project << Close Window();
@@ -1785,32 +1709,29 @@ project << Close Window();
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 image3 = New Image();
 mat = J( 256, 256 );
 For( y = 0, y < 256, y++,
@@ -1831,20 +1752,18 @@ New Window( "image", image3 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project();
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -1854,11 +1773,10 @@ project = New Project(
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -1870,11 +1788,10 @@ project = New Project(
 
 ```
 
-**Exemple 4**
+#### Exemple 4
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Set Bookmarks(
 		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}
@@ -1889,11 +1806,10 @@ project = New Project(
 
 ```
 
-**Exemple 5**
+#### Exemple 5
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script )
@@ -1921,11 +1837,10 @@ project = New Project(
 
 **JMP Version ajoutée :** Avant la version 14
 
-**[Win] Barres d’outils et menus**
+#### [Win] Barres d’outils et menus
 
 ```jsl
 
-Names Default To Here( 1 );
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -1945,11 +1860,10 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```
 
-**Boîte de dialogue**
+#### Boîte de dialogue
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
@@ -1963,11 +1877,10 @@ ex = New Window( "Dialog example",
 
 ```
 
-**Boîte de dialogue modale**
+#### Boîte de dialogue modale
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Modal Dialog example",
 	<<Type( "Modal Dialog" ),
@@ -2002,11 +1915,10 @@ If(
 
 ```
 
-**Invisible**
+#### Invisible
 
 ```jsl
 
-Names Default To Here( 1 );
 
 g = Graph Box(
 	Frame Size( 300, 300 ),
@@ -2022,11 +1934,10 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```
 
-**Rapport**
+#### Rapport
 
 ```jsl
 
-Names Default To Here( 1 );
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -2037,11 +1948,10 @@ New Window( "My Window's Title", g );
 
 ```
 
-**Script**
+#### Script
 
 ```jsl
 
-Names Default To Here( 1 );
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
 dt << Run Script("Bivariate");
@@ -2050,11 +1960,10 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```
 
-**Script Python**
+#### Script Python
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 ex = New Window( "Script example",
@@ -2075,7 +1984,6 @@ ex = New Window( "Script example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2098,7 +2006,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -2120,7 +2027,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -2136,7 +2042,6 @@ x = neb << get;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		{"Show label value", Show( teb << get text )},
@@ -2156,7 +2061,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -2185,7 +2089,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2205,22 +2108,20 @@ New Window( "Example",
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
 );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
 
@@ -2236,7 +2137,6 @@ New Window( "Example", Picture Box( pict ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize(
 	a = by( :age ),
@@ -2263,7 +2163,6 @@ New Window( "Pie Seg",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -2300,7 +2199,6 @@ New Window( "Platform example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2323,7 +2221,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -2342,7 +2239,6 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2364,7 +2260,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
 );
@@ -2381,7 +2276,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 sliderLowerValue = .5;
 sliderUpperValue = .7;
 New Window( "Example",
@@ -2411,7 +2305,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
@@ -2427,7 +2320,6 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
 Scene << showarcball( always );
@@ -2452,7 +2344,6 @@ Scene << update;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -2475,21 +2366,19 @@ exScene << update;
 
 **JMP Version ajoutée :** Avant la version 14
 
-**JSL**
+#### JSL
 
 ```jsl
 
-Names Default To Here( 1 );
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
 ```
 
-**Script Python**
+#### Script Python
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 Script = Script Box( pyscript, "Python", 300, 100 );
@@ -2507,7 +2396,6 @@ New Window( "This is a python script box", Script );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		Scroll Box(
@@ -2536,7 +2424,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -2558,7 +2445,6 @@ Clear Global Window Handler();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Shape Seg Example",
 	Graph Box(
 		Shape Seg(
@@ -2580,7 +2466,6 @@ New Window( "Shape Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -2630,7 +2515,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 sliderValue = .6;
 New Window( "Example",
 	Panel Box( "Slider Box",
@@ -2656,7 +2540,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
 		Text Box( "a" ),
@@ -2679,7 +2562,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box(
 		2,
@@ -2701,7 +2583,6 @@ nb << Set Increment( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2724,7 +2605,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -2746,7 +2626,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2768,7 +2647,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box(
@@ -2791,7 +2669,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2814,7 +2691,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Justification Example",
 	Outline Box( "text",
 		V List Box(
@@ -2856,7 +2732,6 @@ New Window( "Justification Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
 		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
@@ -2885,7 +2760,6 @@ New Window( "Example: Text Edit Box",
 
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg(
 	ts1 = Text Seg( "default location fixed bottom left" )
@@ -2903,7 +2777,6 @@ w[FrameBox( 1 )] << append seg(
 
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
 	Print( "Project: " || (This Project() << Get Window Title()) ),
@@ -2921,7 +2794,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -2949,7 +2821,6 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -2975,21 +2846,19 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 **JMP Version ajoutée :** Avant la version 14
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```
@@ -3004,7 +2873,6 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
 		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),
@@ -3028,7 +2896,6 @@ New Window( "unlineup",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -3055,7 +2922,6 @@ New Window( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
@@ -3074,7 +2940,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V Scroll Box(
@@ -3105,7 +2970,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -3155,7 +3019,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -3187,7 +3050,6 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
 wb << Set Stretch( "Window", "Window" );
@@ -3205,7 +3067,6 @@ wb << Set Max Size( 10000, 10000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Window( "Big Class" );
 
 ```
@@ -3220,7 +3081,6 @@ Window( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "My Window" ),
 	Function( {window},
@@ -3241,7 +3101,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "WrapListBox",
 	Wrap List Box(
 		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),

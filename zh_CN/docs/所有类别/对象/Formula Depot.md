@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -30,11 +29,10 @@ dt << Bivariate(
 
 **JMP添加的版本:** 18
 
-**匿名预设**
+#### 匿名预设
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -45,11 +43,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**在文件夹内搜索**
+#### 在文件夹内搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -57,11 +54,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
-**按名称搜索**
+#### 按名称搜索
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -77,7 +73,6 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -102,7 +97,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -115,11 +109,10 @@ biv << Get By Levels;
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
-**带过滤器的平台**
+#### 带过滤器的平台
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -144,11 +137,10 @@ New Window( "platform boxes",
 
 ```
 
-**常规**
+#### 常规
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -172,7 +164,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -196,7 +187,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -220,7 +210,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -244,7 +233,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -268,7 +256,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -286,7 +273,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -302,7 +288,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -323,7 +308,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -342,7 +326,6 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -359,7 +342,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -374,7 +356,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -399,7 +380,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -420,11 +400,10 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
+#### 示例 1
 
 ```jsl
 
-Names Default To Here( 1 );
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 dt << New Column( "_bycol",
@@ -443,11 +422,10 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-**示例 2**
+#### 示例 2
 
 ```jsl
 
-Names Default To Here( 1 );
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 dt << New Column( "_bycol",
@@ -474,7 +452,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -497,7 +474,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -520,7 +496,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -543,7 +518,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -566,7 +540,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -587,7 +560,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -613,7 +585,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -631,7 +602,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -654,7 +624,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -679,7 +648,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -696,7 +664,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -720,7 +687,6 @@ fd2 = Formula Depot[1];
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 model = dt << RunScript( "Nominal Logistic" );
@@ -741,7 +707,6 @@ mp << Generate Python Code;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 model = dt << RunScript( "Nominal Logistic" );
@@ -762,7 +727,6 @@ Show( text );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 model = dt << RunScript( "Nominal Logistic" );
@@ -786,7 +750,6 @@ Show( text );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 model = dt << RunScript( "Nominal Logistic" );
@@ -807,7 +770,6 @@ Show( text );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -831,7 +793,6 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -855,7 +816,6 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -879,7 +839,6 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -903,7 +862,6 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
@@ -930,7 +888,6 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -961,7 +918,6 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -987,7 +943,6 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -1006,7 +961,6 @@ fd << Remove Model Comparison();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
@@ -1023,7 +977,6 @@ fd << Remove Profiler();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd = Formula Depot();
 fd << Rename Formula Depot( "New Name" );
@@ -1038,7 +991,6 @@ fd << Rename Formula Depot( "New Name" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Create a Formula Depot to store the model
 dt1 = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -1067,7 +1019,6 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
 model = dt << RunScript( "Nominal Logistic" );

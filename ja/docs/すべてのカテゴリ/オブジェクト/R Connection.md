@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 x = RConnection << Is Connected;
 Show( x );
@@ -29,7 +28,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 RConnection << Control( Echo( 0 ) );
 RConnection << Submit( "rnorm(10)" );
@@ -44,7 +42,6 @@ RConnection << Submit( "rnorm(10)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 RConnection << Disconnect;
 
@@ -58,7 +55,6 @@ RConnection << Disconnect;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 RConnection = R Connect();
 a = "abcdef";
@@ -83,7 +79,6 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 x1 = [1, 2, 3];
 RConnection << Set( x1 );
@@ -104,7 +99,6 @@ Close( dt1, No Save );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
 RConnection << Execute( {img_path}, {}, "\[
@@ -125,7 +119,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 version = RConnection << Get Version;
 Show( version );
@@ -140,7 +133,6 @@ Show( version );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 x = RConnection << Is Connected;
 Show( x );
@@ -155,7 +147,6 @@ Show( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 RName = RConnection << JMP Name To R Name( a b c );
 Show( RName );
@@ -170,7 +161,6 @@ Show( RName );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 x = [1, 2, 3];
 RConnection << Send( x );
@@ -189,7 +179,6 @@ RConnection << Submit( "dt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 RConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
 RConnection << Disconnect;
@@ -206,7 +195,6 @@ RConnection << Send File( dtname );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 x = [1, 2, 3];
 RConnection << Set( x );
@@ -225,7 +213,6 @@ RConnection << Submit( "dt" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 RConnection = R Connect();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
@@ -257,7 +244,6 @@ rc = Delete File( img_path );
 
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 RConnection << Submit File( "file containing R source." );
 

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -45,7 +44,6 @@ seg = (frame << Find Seg( Marker Seg( 1 ) ));
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For( i = 1, i <= 40, i++,
 	Labeled( Row State( i ) ) = 1
@@ -65,7 +63,6 @@ seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -97,7 +94,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -131,7 +127,6 @@ seg << Class Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -159,7 +154,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -195,7 +189,6 @@ seg << Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -229,7 +222,6 @@ seg << Delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -261,7 +253,6 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -295,7 +286,6 @@ seg << Frame;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -324,7 +314,6 @@ cs << Get Clip Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -356,7 +345,6 @@ seg << Get Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -390,7 +378,6 @@ seg << Get Colors;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -422,7 +409,6 @@ seg << Get Density Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -462,7 +448,6 @@ seg << get description();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -496,7 +481,6 @@ seg << Get Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -530,7 +514,6 @@ seg << Get Gradient Color Theme;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -564,7 +547,6 @@ seg << Get Gradient Discrete Colors;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -586,7 +568,6 @@ seg << Get Gradient Fill;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -618,11 +599,10 @@ seg << Get Gradient Label Count;
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -634,11 +614,10 @@ seg << Get Gradient Scale Values;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -661,7 +640,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -695,7 +673,6 @@ seg << Get Gradient Legend Horizontal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -729,7 +706,6 @@ seg << Get Gradient Legend Label Format;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -763,7 +739,6 @@ seg << Get Gradient Legend Label Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -797,7 +772,6 @@ seg << Get Gradient Legend Show Labels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -831,7 +805,6 @@ seg << Get Gradient Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -865,7 +838,6 @@ seg << Get Gradient Lightness Range;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -887,7 +859,6 @@ seg << Get Gradient Range;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -921,7 +892,6 @@ seg << Get Gradient Reverse Color Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -955,7 +925,6 @@ seg << Get Gradient Reverse Label Order;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -975,11 +944,10 @@ seg << Get Gradient Scale;
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -991,11 +959,10 @@ seg << Get Gradient Scale Values;
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1018,7 +985,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1052,7 +1018,6 @@ seg << Get Gradient Show Missing;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1082,7 +1047,6 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -1112,7 +1076,6 @@ seg << Get Hide Missing Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -1146,7 +1109,6 @@ seg << Get Hide Missing Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Oneway(
 	Y( :height ),
@@ -1170,7 +1132,6 @@ bandwidth} = seg << Get Jitter();
 
 ```jsl
 
-Names Default To Here( 1 );
 x = J( 1, 100, Random Normal() );
 y = J( 1, 100, 0 );
 New Window( "Marker Seg Example",
@@ -1211,7 +1172,6 @@ avg = Mean( jitter[0, 1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1245,7 +1205,6 @@ seg << Get Marker;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -1265,7 +1224,6 @@ ex = seg << Get Marker Draw Column();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -1283,7 +1241,6 @@ ex = seg << Get Marker Draw Expr();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1315,7 +1272,6 @@ seg << Get Marker Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1345,7 +1301,6 @@ seg << Get Markers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1361,7 +1316,6 @@ seg << Get Overlay Color( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1377,7 +1331,6 @@ seg << Get Overlay Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1395,7 +1348,6 @@ seg << Get Overlay Marker( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1427,7 +1379,6 @@ seg << Get Point( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1459,7 +1410,6 @@ seg << Get Point Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10 50 70];
 y = [60 50 10];
@@ -1480,7 +1430,6 @@ seg << Get Row Numbers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1512,7 +1461,6 @@ seg << Get Sizes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1552,7 +1500,6 @@ seg << Get Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1584,7 +1531,6 @@ seg << Get X Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1616,7 +1562,6 @@ seg << Get Y Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1650,7 +1595,6 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1684,7 +1628,6 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1706,7 +1649,6 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1729,7 +1671,6 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1763,7 +1704,6 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -1785,7 +1725,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1819,7 +1758,6 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1853,7 +1791,6 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1887,7 +1824,6 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1921,7 +1857,6 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1953,11 +1888,10 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1981,11 +1915,10 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2009,11 +1942,10 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2047,7 +1979,6 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2069,7 +2000,6 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2103,7 +2033,6 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2137,7 +2066,6 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2159,7 +2087,6 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2181,7 +2108,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2203,7 +2129,6 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2235,7 +2160,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Labeled( Row State( 5 ) ) = 1;
 Labeled( Row State( 8 ) ) = 1;
@@ -2254,7 +2178,6 @@ seg << label offset( {0, -20, -10}, {1, -20, -30} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2286,7 +2209,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2320,7 +2242,6 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2352,7 +2273,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2387,7 +2307,6 @@ seg << Revert;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2419,7 +2338,6 @@ seg << Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2453,7 +2371,6 @@ seg << set description( "my seg" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -2480,7 +2397,6 @@ Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2514,7 +2430,6 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2548,7 +2463,6 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2582,7 +2496,6 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2604,7 +2517,6 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2627,7 +2539,6 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2661,7 +2572,6 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2683,7 +2593,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2717,7 +2626,6 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2751,7 +2659,6 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2785,7 +2692,6 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2819,7 +2725,6 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2851,11 +2756,10 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version ajoutée :** 18
 
-**Exemple 1**
+#### Exemple 1
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2879,11 +2783,10 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-**Exemple 2**
+#### Exemple 2
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2907,11 +2810,10 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-**Exemple 3**
+#### Exemple 3
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2945,7 +2847,6 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -2967,7 +2868,6 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3001,7 +2901,6 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3035,7 +2934,6 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -3057,7 +2955,6 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder(
 	Variables( X( :X ), Y( :Y ), Color( :Z ) ),
@@ -3079,7 +2976,6 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -3097,7 +2993,6 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -3127,7 +3022,6 @@ seg << Set Hide Missing Color( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -3161,7 +3055,6 @@ seg << Set Hide Missing Size( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Oneway(
 	Y( :height ),
@@ -3186,7 +3079,6 @@ seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -3215,7 +3107,6 @@ Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -3250,7 +3141,6 @@ Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3284,7 +3174,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3304,11 +3193,10 @@ seg << Set Marker Draw Column( :picture );
 
 **JMP Version ajoutée :** 16
 
-**Drawing function**
+#### Drawing function
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3329,11 +3217,10 @@ seg << Set Marker Draw Expr(
 
 ```
 
-**Drawing script**
+#### Drawing script
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3342,11 +3229,10 @@ seg << Set Marker Draw Expr( Expr( Arc( -2, -:age / 3, 2, :age / 3, -90, 90 ) ) 
 
 ```
 
-**Matrix polyline**
+#### Matrix polyline
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3355,11 +3241,10 @@ seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3376,7 +3261,6 @@ seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3408,7 +3292,6 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -3424,7 +3307,6 @@ seg << Set Overlay Color( 1, "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -3442,7 +3324,6 @@ seg << Set Overlay Marker( 1, "Star" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3474,7 +3355,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3506,8 +3386,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -3546,7 +3424,6 @@ mapSeg << Sib Append(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3593,7 +3470,6 @@ seg << Sib Prepend(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3627,7 +3503,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3659,7 +3534,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3691,7 +3565,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -3709,7 +3582,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -3723,7 +3595,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -3737,7 +3608,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -3751,7 +3621,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 
