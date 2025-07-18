@@ -8,9 +8,10 @@
 
 **Description:** Returns a Python connection scriptable object.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -23,11 +24,12 @@ Show( version );
 
 **Description:** Triggers the creation of a jpip command line wrapper script for Python&apos;s pip command. A directory picker dialog will ask for the directory location to save the generated script. This script then provides the full capabilities of pip, while correctly establishing the necessary environment variables for JMP&apos;s isolated Python environment.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
@@ -36,7 +38,6 @@ Python Create JPIP CMD();
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
@@ -49,11 +50,12 @@ conn << Create JPIP CMD();
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 a = "abcdef";
 d = 3.141;
@@ -83,7 +85,6 @@ Show( v, m, ml, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = 1;
 x2 = 2;
@@ -125,11 +126,12 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **Description:** Returns data from Python, where the name argument can represent any of the following Python data types ( numeric | string | matrix | list | dict | data table | data frame | datetime | numpy.datetime64 ).
 
-**Datetime**
+**JMP Version Added:** 14
+
+#### Datetime
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date1 = As Date( Today() );
 Python Send( date1 );
@@ -142,7 +144,6 @@ Show( date1, date2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = {1, 2, 3};
 Python Send( x1 );
@@ -151,11 +152,10 @@ Show( x1, x2 );
 
 ```
 
-**numpy.datetime64**
+#### numpy.datetime64
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Install Packages( "numpy" );
 Python Submit( "import numpy as np" );
@@ -171,9 +171,10 @@ Show( numpy_datetime );
 
 **Description:** Returns the version number of Python being used with the JMP Python interfaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 version = Python Get Version();
 Show( version );
 
@@ -185,11 +186,12 @@ Show( version );
 
 **Description:** Note: This function is deprecated as of JMP 18 and is equivalent to Python Connect().
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Init();
 Python Submit( "\[
@@ -204,7 +206,6 @@ Show( getStr );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Init();
 PythonConnection << Submit( "\[
@@ -221,11 +222,12 @@ Show( getStr );
 
 **Description:** This wrappers the install of Python packages into the JMP site-packages directory. For operations beyond simple package installation, see Python Create JPIP CMD() to create a command line pip wrapper script in a directory chosen with Directory Pick(). Alternatively, to run the install from a JMP Python script window look at jmputils.jpip under the Python category here in the Scripting Index.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -235,7 +237,6 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -245,7 +246,6 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
@@ -258,9 +258,10 @@ conn << Install Packages( "numpy pandas" );
 
 **Description:** Note: This function is deprecated as of JMP 18 and always returns 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = Python Is Connected();
 Show( x );
 
@@ -272,9 +273,10 @@ Show( x );
 
 **Description:** Maps a JMP variable name to a Python variable name using Python variable naming rules.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -286,9 +288,10 @@ Show( Python name );
 
 **Description:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 pi = 3.1415927;
 Python Send( pi );
 Python Submit( "print(pi)" );
@@ -304,11 +307,12 @@ Python Submit( "print(pi)" );
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
-**Column**
+**JMP Version Added:** 14
+
+#### Column
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
@@ -316,11 +320,10 @@ Python Submit( "print(weight)" );
 
 ```
 
-**Data Table**
+#### Data Table
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = {1, 2, 3};
 Python Send( x );
@@ -331,11 +334,10 @@ Python Submit( "print(dt)" );
 
 ```
 
-**Date**
+#### Date
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date = As Date( Today() );
 Python Send( date );
@@ -349,9 +351,10 @@ Python Submit( "print(date)" );
 
 **Description:** Sends a data file to Python, where the filename argument is a string specifying a pathname to the file to be sent to Python.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -366,9 +369,10 @@ Python Submit( "print(Baseball)" );
 
 **Description:** Submits statements to Python. Statements can be in the form of a string value or list of string values. Optional echo() parameter defaults to 1. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog'
 a = 200]\" );
@@ -384,9 +388,10 @@ Show( getStr, getNum );
 
 **Description:** Submits statements to Python using a file specified by the path argument.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit File( "some_Python_source.py" );
 
 ```
@@ -396,4 +401,6 @@ Python Submit File( "some_Python_source.py" );
 **Syntax:** Python Term()
 
 **Description:** Note: This function is deprecated as of JMP 18 and has no effect.
+
+**JMP Version Added:** 14
 

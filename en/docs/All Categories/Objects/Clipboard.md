@@ -10,9 +10,10 @@
 
 **Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
@@ -28,9 +29,10 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 **Description:** Returns data from the Clipboard for the named flavor if it exists, error otherwise. Graphic returns an Image. All other flavors, even Text, return a Blob unless you use the <<Text option.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Set Clipboard( "Get Flavor Data Example" );
 clp = New Clipboard( <<Get From OS );
@@ -45,9 +47,10 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 **Description:** Returns 1 if the Clipboard offers the named flavor of data, 0 otherwise.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Has Flavor Example" );
@@ -62,9 +65,10 @@ Show( clp << Has Flavor( "Graphic" ) );
 
 **Description:** Places the contents of the Clipboard onto the OS Clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Send To OS Example" );
@@ -79,9 +83,10 @@ Show( Get Clipboard() );
 
 **Description:** Provides data to the Clipboard for the named flavor and adds the flavor to the Clipboard. You should provide Graphic with an Image. All other flavors can be provided String or Blob data.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard();
 clp << Set Flavor Data( "Text", "Set Flavor Data Example" );

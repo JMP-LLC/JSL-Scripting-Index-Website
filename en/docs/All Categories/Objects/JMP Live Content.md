@@ -24,7 +24,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -51,7 +50,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -75,7 +73,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -93,7 +90,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),

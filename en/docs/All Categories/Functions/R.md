@@ -8,9 +8,10 @@
 
 **Description:** Returns an R connection scriptable object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 
 ```
@@ -21,9 +22,10 @@ RConnection = R Connect();
 
 **Description:** Changes the control options for R
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init( Echo( true ) );
 R Control( Echo( false ) );
 R Submit( "Add R code" );
@@ -36,9 +38,10 @@ R Submit( "Add R code" );
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 a = "abcdef";
 d = 3.141;
@@ -60,9 +63,10 @@ Show( v, m, rc, x, z, a, d );
 
 **Description:** Returns data from R, where the name argument can represent any of the following R data types ( numeric | string | matrix | list | data frame).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -81,9 +85,10 @@ Close( dt1, No Save );
 
 **Description:** DEPRECATED in JMP 19 and has no effect. As a replacement, set device to a file name such as png("r_plot.png"), and then open the file to retrieve the image. This option will be removed from JMP 20. Code below shows workaround.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
 R Execute( {img_path}, {}, "\[
@@ -102,9 +107,10 @@ rc = Delete File( img_path );
 
 **Description:** Returns the version number of R being used with the JMP R interfaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 version = R Get Version();
 Show( version );
@@ -117,9 +123,10 @@ Show( version );
 
 **Description:** Initializes the R Interfaces.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 
 ```
@@ -130,9 +137,10 @@ R Init();
 
 **Description:** Returns 1 if there is an active R connection; otherwise, returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 connected = R Is Connected();
 
@@ -144,9 +152,10 @@ connected = R Is Connected();
 
 **Description:** Maps a JMP variable name to an R variable name using R variable naming rules.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R name = R JMP Name to R Name( a b c );
 
 ```
@@ -157,11 +166,12 @@ R name = R JMP Name to R Name( a b c );
 
 **Description:** Sends data to R, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column).
 
-**Column**
+**JMP Version Added:** Before version 14
+
+#### Column
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -170,11 +180,10 @@ w = R Get( "weight" );
 
 ```
 
-**Data Table**
+#### Data Table
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x = [1, 2, 3];
 R Send( x, "x1" );
@@ -192,9 +201,10 @@ R Submit( "dt" );
 
 **Description:** Sends a data file to R, where the filename argument is a string specifying a pathname to the file to be sent to R.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -209,9 +219,10 @@ R Submit( "Baseball" );
 
 **Description:** Submit statements to R. Statements can be in the form of a string value or list of string values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
@@ -241,9 +252,10 @@ rc = Delete File( img_path );
 
 **Description:** Submits statements to R using a file specified by the path argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
@@ -257,9 +269,10 @@ R Submit File( file_path );
 
 **Description:** Deprecated in JMP 19 and has no effect.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Term();
 

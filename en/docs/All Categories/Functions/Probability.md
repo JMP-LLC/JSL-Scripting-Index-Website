@@ -8,9 +8,10 @@
 
 **Description:** Returns the density at q for a beta distribution, where q is in the interval theta to theta + sigma, alpha and beta are shape parameters, and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -34,9 +35,10 @@ New Window( "Example: Beta Density",
 
 **Description:** Returns the probability that a beta distributed random variable is less than q, where alpha and beta are shape parameters and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Distribution",
@@ -60,9 +62,10 @@ New Window( "Example: Beta Distribution",
 
 **Description:** Returns the quantile from a Beta distribution, the value for which the probability is p that a random value would be lower, where alpha and beta are shape parameters and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -73,9 +76,10 @@ Beta Quantile( 0.95, 2, 5 );
 
 **Description:** Returns the density at q of a Cauchy distribution with center mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
 		Y Scale( 0, .4 ),
@@ -94,9 +98,10 @@ New Window( "Example: Cauchy Density",
 
 **Description:** Returns the probability that a Cauchy distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -115,9 +120,10 @@ New Window( "Example: Cauchy Distribution",
 
 **Description:** Returns the quantile from a Cauchy distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -136,9 +142,10 @@ New Window( "Example: Cauchy Quantile",
 
 **Description:** Returns the density at q of a Chi-square distribution with df degrees of freedom.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
 	cdey = Graph Box(
@@ -160,9 +167,10 @@ New Window( "Example: ChiSquare Density",
 
 **Description:** Returns the probability that a Chi-square distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy = Graph Box(
@@ -184,9 +192,10 @@ New Window( "Example: ChiSquare Distribution",
 
 **Description:** Returns the log of 1 - Chi-square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 clcdidf = 2;
 New Window( "Example: ChiSquare Log CDistribution",
 	clcdiy = Graph Box(
@@ -208,9 +217,10 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 **Description:** Returns the log of the Chi-square probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey = Graph Box(
@@ -232,9 +242,10 @@ New Window( "Example: ChiSquare Log Density",
 
 **Description:** Returns the log of the Chi-square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
 	cldiy = Graph Box(
@@ -256,9 +267,10 @@ New Window( "Example: ChiSquare Log Distribution",
 
 **Description:** Returns the noncentrality parameter nc such that prob is equal to the probability that a Chi-square distributed random variable with df degrees of freedom is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -278,9 +290,10 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 **Description:** Returns the quantile from a Chi-Square distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -291,9 +304,10 @@ ChiSquare Quantile( 0.15, 5 );
 
 **Description:** Returns the p-value from Dunnett&apos;s multiple comparisons test, where q is the test statistic, nTrt is the number of treatments being compared to the control group, dfe is the error degrees of freedom (based on the total study sample), and the optional lambdaVec is a vector of parameters, which by default are set to 1/sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -304,9 +318,10 @@ Dunnett P value( 1.67623, 3, 11 );
 
 **Description:** Returns the quantile needed in Dunnett&apos;s multiple comparisons test, where 1-alpha is the confidence level, nTrt is the number of treatments being compared to the control group, dfe is the error degrees of freedom (based on the total study sample), and the optional lambdaVec is a vector of parameters, which by default are set to 1/sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett Quantile( 0.95, 3, 11 );
 
 ```
@@ -317,9 +332,10 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 **Description:** Returns the density at x of an ExGaussian distribution.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
 		Y Scale( 0, .2 ),
@@ -338,9 +354,10 @@ New Window( "Example: ExGaussian Density",
 
 **Description:** Returns the probability that an ExGaussian distributed random variable is less than x.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -359,9 +376,10 @@ New Window( "Example: ExGaussian Distribution",
 
 **Description:** Returns the quantile from an ExGaussian distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
 		Y Scale( -2, 15 ),
@@ -380,9 +398,10 @@ New Window( "Example: ExGaussian Quantile",
 
 **Description:** Returns the density at x of an exponential distribution with parameter theta.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -401,9 +420,10 @@ New Window( "Example: Exp Density",
 
 **Description:** Returns the probability that an exponentially distributed random variable is less than x.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -422,9 +442,10 @@ New Window( "Example: Exp Distribution",
 
 **Description:** Returns the quantile from an exponential distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -442,9 +463,10 @@ New Window( "Example: Exp Quantile",
 
 **Description:** Returns the density at x of an exponential distribution with parameter theta.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -463,9 +485,10 @@ New Window( "Example: Exponential Density",
 
 **Description:** Returns the probability that an exponentially distributed random variable is less than x.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -484,9 +507,10 @@ New Window( "Example: Exponential Distribution",
 
 **Description:** Returns the quantile from an exponential distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -504,9 +528,10 @@ New Window( "Example: Exponential Quantile",
 
 **Description:** Returns the density at q of an F distribution with dfn and dfd degrees of freedom.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fdedfn = 2;
 fdedfd = 2;
 New Window( "Example: F Density",
@@ -530,9 +555,10 @@ New Window( "Example: F Density",
 
 **Description:** Returns the probability that an F distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -556,9 +582,10 @@ New Window( "Example: F Distribution",
 
 **Description:** Returns the log of 1 - F Distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 flcddfn = 5;
 flcddfd = 5;
 New Window( "Example: F Log CDistribution",
@@ -582,9 +609,10 @@ New Window( "Example: F Log CDistribution",
 
 **Description:** Returns the log of the F probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -608,9 +636,10 @@ New Window( "Example: F Log Density",
 
 **Description:** Returns the log of the F distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 flddfn = 5;
 flddfd = 5;
 New Window( "Example: F Log Distribution",
@@ -634,9 +663,10 @@ New Window( "Example: F Log Distribution",
 
 **Description:** Solves for the noncentrality parameter nc such that prob = F Distribution( x, ndf, ddf, nc ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -656,9 +686,10 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 **Description:** Calculates the power of an F Test, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and n is the total number of observations. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 obs = 25;
 dfh = 5;
@@ -685,9 +716,10 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 **Description:** Returns the quantile from an F distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -698,9 +730,10 @@ F Quantile( 0.7, 5, 3 );
 
 **Description:** Calculates the sample size, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and power is the power desired. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 pow = 0.6;
 dfh = 5;
@@ -727,9 +760,10 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 **Description:** Returns the false discovery rate adjustment for the specified p-values using the Benjamini-Hochberg method.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -740,9 +774,10 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 **Description:** Returns the density at x of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Density",
@@ -767,9 +802,10 @@ New Window( "Example: Frechet Density",
 
 **Description:** Returns the probability at x of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -793,9 +829,10 @@ New Window( "Example: Frechet Distribution",
 
 **Description:** Returns the quantile at p of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 qq = .5;
@@ -830,9 +867,10 @@ New Window( "Example: Frechet Quantile",
 
 **Description:** Returns the density at q of a generalized logarithm distribution with location mu, scale sigma, and shape lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -859,9 +897,10 @@ New Window( "Example: GLog Density",
 
 **Description:** Returns the probability that a generalized logarithm distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -888,9 +927,10 @@ New Window( "Example: Glog Distribution",
 
 **Description:** Returns the quantile from a generalized logarithm distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -930,9 +970,10 @@ New Window( "Example: GLog Quantile",
 
 **Description:** Returns the density at q of a Gamma probability distribution, where the alpha shape parameter argument must be positive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
 	gdey = Graph Box(
@@ -957,9 +998,10 @@ New Window( "Example: Gamma Density",
 
 **Description:** Returns the probability that a Gamma distributed random variable is less than q, where the alpha shape parameter argument must be positive. IGamma() is an alias name to Gamma Distribution(). The Gamma Distribution() function is equivalent to Gamma(alpha,q)/Gamma(alpha).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -984,9 +1026,10 @@ New Window( "Example: Gamma Distribution",
 
 **Description:** Returns the log of 1 - Gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
 	glcdiy = Graph Box(
@@ -1011,9 +1054,10 @@ New Window( "Example: Gamma Log CDistribution",
 
 **Description:** Returns the log of the Gamma probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -1038,9 +1082,10 @@ New Window( "Example: Gamma Log Density",
 
 **Description:** Returns the log of the Gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -1065,9 +1110,10 @@ New Window( "Example: Gamma Log Distribution",
 
 **Description:** Returns the quantile from a Gamma distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -1078,9 +1124,10 @@ Gamma Quantile( 0.75, 4 );
 
 **Description:** Returns the density at x of an extended generalized gamma probability distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1107,9 +1154,10 @@ New Window( "Example: GenGamma Density",
 
 **Description:** Returns the probability that an extended generalized gamma distributed random variable (with parameters mu, sigma, and lambda) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1136,9 +1184,10 @@ New Window( "Example: GenGamma Distribution",
 
 **Description:** Returns the quantile from an extended generalized gamma distribution (with parameters mu, sigma, and lambda), the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1182,9 +1231,10 @@ New Window( "Example: GenGamma Quantile",
 
 **Description:** Returns the probability that a Gamma distributed random variable is less than q, where the alpha shape parameter argument must be positive. IGamma() is an alias name to Gamma Distribution(). The Gamma Distribution() function is equivalent to Gamma(alpha,q)/Gamma(alpha).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -1209,9 +1259,10 @@ New Window( "Example: Gamma Distribution",
 
 **Description:** Returns the density at q of a Johnson Sb distribution, where q is in the interval theta to theta + sigma, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma>0 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter. Note: theta is the lower endpoint of the distribution and sigma is the range of the support of the distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -1249,9 +1300,10 @@ New Window( "Example: Johnson Sb Density",
 
 **Description:** Returns the probability that a Johnson Sb distributed random variable is less than q. (Note: see the Johnson Sb Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -1289,9 +1341,10 @@ New Window( "Example: Johnson Sb Distribution",
 
 **Description:** Returns the quantile from a Johnson Sb distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Sb Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1302,9 +1355,10 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Returns the density at q of a Johnson Sl distribution, where q is in the interval theta to +∞, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma equal to +1 or -1 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter. Note: When sigma = 1, theta is the lower bound on the distribution, and when sigma=-1, theta is the upper bound. Also, positive sigma implies positive skew, and negative sigma implies negative skew.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -1345,9 +1399,10 @@ New Window( "Example: Johnson Sl Density",
 
 **Description:** Returns the probability that a Johnson Sl distributed random variable is less than q. (Note: see the Johnson Sl Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -1388,9 +1443,10 @@ New Window( "Example: Johnson Sl Distribution",
 
 **Description:** Returns the quantile from a Johnson Sl distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Sl Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1401,9 +1457,10 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Returns the density at q of a Johnson Su distribution, where q is between -∞ and +∞, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma>0 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -1441,9 +1498,10 @@ New Window( "Example: Johnson Su Density",
 
 **Description:** Returns the probability that a Johnson Su distributed random variable is less than q. (Note: see the Johnson Su Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -1481,9 +1539,10 @@ New Window( "Example: Johnson Su Distribution",
 
 **Description:** Returns the quantile from a Johnson Su distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Su Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -1494,9 +1553,10 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Returns the density at x of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Density",
@@ -1521,9 +1581,10 @@ New Window( "Example: LEV Density",
 
 **Description:** Returns the probability at x of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -1547,9 +1608,10 @@ New Window( "Example: LEV Distribution",
 
 **Description:** Returns the quantile at p of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 qq = .5;
@@ -1584,9 +1646,10 @@ New Window( "Example: LEV Quantile",
 
 **Description:** Returns the density at x of a log generalized gamma probability distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1613,9 +1676,10 @@ New Window( "Example: LogGenGamma Density",
 
 **Description:** Returns the probability that a log generalized gamma distributed random variable (with parameters mu, sigma, and lambda) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1642,9 +1706,10 @@ New Window( "Example: LogGenGamma Distribution",
 
 **Description:** Returns the quantile from a log generalized gamma distribution (with parameters mu, sigma, and lambda), the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -1688,9 +1753,10 @@ New Window( "Example: LogGenGamma Quantile",
 
 **Description:** Returns the density at x of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Density",
@@ -1715,9 +1781,10 @@ New Window( "Example: Logistic Density",
 
 **Description:** Returns the probability at x of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -1741,9 +1808,10 @@ New Window( "Example: Logistic Distribution",
 
 **Description:** Returns the quantile at p of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -1778,9 +1846,10 @@ New Window( "Example: Logistic Quantile",
 
 **Description:** Returns the density at x of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Density",
@@ -1805,9 +1874,10 @@ New Window( "Example: Loglogistic Density",
 
 **Description:** Returns the probability at x of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -1831,9 +1901,10 @@ New Window( "Example: Loglogistic Distribution",
 
 **Description:** Returns the quantile at p of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -1868,9 +1939,10 @@ New Window( "Example: Loglogistic Quantile",
 
 **Description:** Returns the density at x of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -1895,9 +1967,10 @@ New Window( "Example: Lognormal Density",
 
 **Description:** Returns the probability at x of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -1921,9 +1994,10 @@ New Window( "Example: Lognormal Distribution",
 
 **Description:** Returns the quantile at p of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 qq = .5;
@@ -1958,9 +2032,10 @@ New Window( "Example: Lognormal Quantile",
 
 **Description:** Computes the probability that an observation (X, Y) is less than or equal to (x, y) with correlation coefficient r where X is marginally normally distributed with mean mu1 and standard deviation s1 and Y is marginally normally distributed with mean mu2 and standard deviation s2. If mu1, s1, mu2, and s2 are not given, the function assumes the standard normal bivariate distribution with mu1=0, s1=1, mu2=0, and s2=1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -1971,9 +2046,10 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 **Description:** Returns the density at q of a Normal distribution with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -1992,9 +2068,10 @@ New Window( "Example: Normal Density",
 
 **Description:** Returns the probability that a normally distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -2013,9 +2090,10 @@ New Window( "Example: Normal Distribution",
 
 **Description:** Returns the log of 1 - Normal distribution at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -2034,9 +2112,10 @@ New Window( "Example: Normal Log CDistribution",
 
 **Description:** Returns the log of the Normal probability density at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -2055,9 +2134,10 @@ New Window( "Example: Normal Log Density",
 
 **Description:** Returns the log of the Normal distribution at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -2076,9 +2156,10 @@ New Window( "Example: Normal Log Distribution",
 
 **Description:** Returns the density at q of a normal mixture distribution with group means meanvec, group standard deviations sdvec, and group probabilities probvec. Here meanvec, sdvec, and probvec are all vectors of the same size.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -2123,9 +2204,10 @@ New Window( "Univariate Normal Mixture Density",
 
 **Description:** Returns the probability that a normal mixture distributed variable with group means meanvec, group standard deviations sdvec, and group probabilities probvec is less than q. Here meanvec, sdvec, and probvec are all vectors of the same size.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -2164,9 +2246,10 @@ New Window( "Univariate Normal Mixture Distribution",
 
 **Description:** Returns the quantile from a normal mixture distribution, the values for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 mu1 = -1;
@@ -2210,9 +2293,10 @@ New Window( "Example: Normal Mixture Quantile",
 
 **Description:** Returns the quantile from a Normal distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -2223,9 +2307,10 @@ Normal Quantile( 0.9 );
 
 **Description:** Returns the quantile from a Normal distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -2236,9 +2321,10 @@ Normal Quantile( 0.9 );
 
 **Description:** Returns the density at x of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Density",
@@ -2263,9 +2349,10 @@ New Window( "Example: SEV Density",
 
 **Description:** Returns the probability at x of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -2289,9 +2376,10 @@ New Window( "Example: SEV Distribution",
 
 **Description:** Returns the quantile at p of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 qq = .5;
@@ -2326,20 +2414,20 @@ New Window( "Example: SEV Quantile",
 
 **Description:** Returns the density at x of a sinh-arcsinh (SHASH) distribution. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
 
-**SHASH Transformation**
+#### SHASH Transformation
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2357,11 +2445,12 @@ Show( result1, result2 );
 
 **Description:** Returns the probability that a sinh-arcsinh (SHASH) distributed random variable is less than q. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -2393,11 +2482,10 @@ New Window( "Example: SHASH Distribution",
 
 ```
 
-**SHASH Transformation**
+#### SHASH Transformation
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2415,20 +2503,20 @@ Show( result1, result2 );
 
 **Description:** Returns the quantile from a sinh-arcsinh (SHASH) distribution, the value for which the probability is p that a random value would be lower. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
 
-**SHASH Transformation**
+#### SHASH Transformation
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -2446,9 +2534,10 @@ Show( result1, result2 );
 
 **Description:** Returns the density function of Student&apos;s t.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -2479,9 +2568,10 @@ New Window( "Example: Students t Density",
 
 **Description:** Returns the probability that a Student&apos;s t distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -2503,9 +2593,10 @@ New Window( "Example: Students t Distribution",
 
 **Description:** Returns the quantile from a Student&apos;s t distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -2536,9 +2627,10 @@ New Window( "Example: Students t Quantile",
 
 Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tukey&apos;s studentized range distribution divided by the sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -2553,9 +2645,10 @@ Tukey HSD P value( 3.73, 6, 34 );
 
 Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tukey&apos;s studentized range distribution divided by the sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 dfe = 5;
 Tukey HSD Quantile( 1 - alpha, 20, dfe );
@@ -2582,9 +2675,10 @@ New Window( "Example: Tukey HSD Quantile",
 
 **Description:** Returns the density at x of a Weibull probability distribution with a shape parameter and optional scale parameter.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 shape = 0.5;
 New Window( "Example: Weibull Density",
 	y = Graph Box(
@@ -2606,9 +2700,10 @@ New Window( "Example: Weibull Density",
 
 **Description:** Returns the probability that a Weibull distributed random variable (with a shape parameter and optional scale parameter) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -2630,9 +2725,10 @@ New Window( "Example: Weibull Distribution",
 
 **Description:** Returns the quantile from a Weibull distribution, the value for which the probability is p that a random value would be lower, where beta and alpha are the shape and scale parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exwqbeta = 2;
 exwqqq = 0.5;
 New Window( "Example: Weibull Quantile",
@@ -2664,9 +2760,10 @@ New Window( "Example: Weibull Quantile",
 
 **Description:** Returns the density function of Student&apos;s t.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -2697,9 +2794,10 @@ New Window( "Example: Students t Density",
 
 **Description:** Returns the probability that a Student&apos;s t distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -2721,9 +2819,10 @@ New Window( "Example: Students t Distribution",
 
 **Description:** Returns the log of 1 - t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
 	tlcdigr = Graph Box(
@@ -2745,9 +2844,10 @@ New Window( "Example: Students t Log CDistribution",
 
 **Description:** Returns the log of the t probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -2769,9 +2869,10 @@ New Window( "Example: Students t Log Density",
 
 **Description:** Returns the log of the t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
 	tldigr = Graph Box(
@@ -2793,9 +2894,10 @@ New Window( "Example: Students t Log Distribution",
 
 **Description:** Solves for the noncentrality parameter of a Student&apos;s t distribution such that prob = t Distribution( x, df, nc ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -2815,9 +2917,10 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 **Description:** Returns the quantile from a Student&apos;s t distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",

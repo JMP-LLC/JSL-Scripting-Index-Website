@@ -8,9 +8,10 @@
 
 **Description:** Converts a number into a row state value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
 	Row State() = As Row State(
@@ -27,9 +28,10 @@ For Each Row(
 
 **Description:** Returns the color component of the specified row state value, either a positive JMP color palette index or a negative RGB-encoded value. If Color Of is used as an L-value, it changes the color of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
 Row() = 3;
@@ -43,9 +45,10 @@ Color To RGB( Color Of() );
 
 **Description:** Returns a row state value with the color component set to the specified value. The color argument can be any valid JSL color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -58,9 +61,10 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 **Description:** Combines several row state values into one.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -72,9 +76,10 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 **Description:** Returns the excluded component of the specified row state value, 0 or 1. If the Excluded() function is used as an L-value, it changes the excluded state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -89,9 +94,10 @@ Excluded();
 
 **Description:** Returns a row state value with the excluded component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -104,9 +110,10 @@ Excluded( Row State( 3 ) );
 
 **Description:** Returns the hidden component of the specified row state value, 0 or 1. If Hidden is used as an L-value, it changes the hidden state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -121,9 +128,10 @@ Hidden();
 
 **Description:** Returns a row state value with the hidden component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -136,9 +144,10 @@ Hidden( Row State( 3 ) );
 
 **Description:** Returns a row state value with the color hue component set to the specified value. Needs to be combined with a Shade State() value to produce a valid color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -150,9 +159,10 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 **Description:** Returns the labeled component of the specified row state value, 0 or 1. If Labeled is used as an L-value, it changes the labeled state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -167,9 +177,10 @@ Labeled();
 
 **Description:** Returns a row state value with the labeled component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -182,9 +193,10 @@ Labeled( Row State( 3 ) );
 
 **Description:** Returns the marker component of the specified row state value. If Marker Of is used as an L-value, it changes the marker of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -199,9 +211,10 @@ Marker Of();
 
 **Description:** Returns a row state value with the marker component set to the specified value. The marker argument specifies a marker and can be a positive integer, a character, a positive integer for Unicode character, or a hex character for Unicode character.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -214,9 +227,10 @@ Marker Of( Row State( 3 ) );
 
 **Description:** Returns the row state of the current (or rth) row in the current data table. If the Row State() function is used as an L-value, it changes the row state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -229,9 +243,10 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 **Description:** Returns the selected component of the specified row state value, 0 or 1. If Selected is used as an L-value, it changes the selected state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -246,9 +261,10 @@ Selected();
 
 **Description:** Returns a row state value with the selected component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -261,9 +277,10 @@ Selected( Row State( 3 ) );
 
 **Description:** Returns a row state value with the color shade component set to the specified value. Needs to be combined with a Hue State() value to produce a valid color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 

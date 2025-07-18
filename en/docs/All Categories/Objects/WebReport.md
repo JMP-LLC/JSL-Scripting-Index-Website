@@ -10,9 +10,10 @@
 
 **Description:** Adds an image to publish in the web report. Optional arguments include title and description.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 webreport = New Web Report();
 webreport << Add Image(
@@ -28,9 +29,10 @@ webreport << Add Image(
 
 **Description:** Adds a report to publish in the web report. Optional arguments include title and description.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -48,9 +50,10 @@ webreport << Add Report( jmpreport );
 
 **Description:** Adds a list of JMP reports to a web report using default options.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Distribution(
@@ -80,9 +83,10 @@ If( N Items( windows ) > 0,
 
 **Description:** Sets the description of the web report.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport_1 = Distribution(
@@ -114,9 +118,10 @@ If( !Is Empty( file ),
 
 **Description:** Adds a custom index page to the web report.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport1 = dt << Distribution(
@@ -153,9 +158,10 @@ If( !Is Empty( file ),
 
 **Description:** Resets the web report to new values. This clears any public designation, file locations, and other cached information.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -185,9 +191,10 @@ webreport << Add Report( jmpreport );
 
 **Description:** Saves the web report to the specified directory. On success, the file name of the published report location is returned. A web report saved locally can contain embedded user data. Setting the Publish Data value to false creates reports using static images rather than embedding user data. The default is true.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport = Distribution(
@@ -209,9 +216,10 @@ If( !Is Empty( file ),
 
 **Description:** Sets the title of the web report.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 jmpreport_1 = Distribution(

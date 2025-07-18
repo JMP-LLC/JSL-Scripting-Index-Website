@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/2D PUT EXAMPLE FILE HERE" );
 obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 
@@ -26,13 +25,19 @@ obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
+**JMP Version Added:** 19
+
 ### Intercept
 
 **Syntax:** obj &lt;&lt; Intercept( number )
 
+**JMP Version Added:** 19
+
 ### Nugget
 
 **Syntax:** obj &lt;&lt; Nugget( number )
+
+**JMP Version Added:** 19
 
 ### Profiler
 
@@ -44,11 +49,15 @@ obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 
 **Syntax:** obj &lt;&lt; Residual( number )
 
+**JMP Version Added:** 19
+
 ### Save Model Fit Script to Data Table
 
 **Syntax:** obj &lt;&lt; Save Model Fit Script to Data Table
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
+
+**JMP Version Added:** 19
 
 ### Save Model Fit Script to Journal
 
@@ -56,11 +65,15 @@ obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
+**JMP Version Added:** 19
+
 ### Save Model Fit Script to Report
 
 **Syntax:** obj &lt;&lt; Save Model Fit Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
+
+**JMP Version Added:** 19
 
 ### Save Model Fit Script to Script Window
 
@@ -68,11 +81,17 @@ obj = dt << Bayesian Optimization( Y( :Y ), X( :X1, :X2 ) );
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
+**JMP Version Added:** 19
+
 ### Starting Values
 
 **Syntax:** obj &lt;&lt; Starting Values( number )
 
+**JMP Version Added:** 19
+
 ### Theta Values
 
 **Syntax:** obj &lt;&lt; Theta Values( number )
+
+**JMP Version Added:** 19
 

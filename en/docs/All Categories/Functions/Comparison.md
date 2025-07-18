@@ -8,9 +8,10 @@
 
 **Description:** Returns 1 if each argument is equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 == 1;
 
 ```
@@ -21,9 +22,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is greater than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 3 > 2 > 1;
 
 ```
@@ -34,9 +36,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is greater than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 3 >= 2 >= 2;
 
 ```
@@ -47,9 +50,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if the x argument is a missing value; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Missing( . );
 
 ```
@@ -60,11 +64,12 @@ Is Missing( . );
 
 **Description:** Compares colors for equality.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "black", 0 );
 
 ```
@@ -73,7 +78,6 @@ Is Same Color( "black", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", "green", "blue" );
 
 ```
@@ -82,7 +86,6 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -91,7 +94,6 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```
@@ -102,9 +104,10 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 **Description:** Returns 1 if each argument is less than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [1 1 1] < [0 1 2];
 
 ```
@@ -115,9 +118,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if the first argument is less than the second argument and each argument except the first is less than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 <= 2;
 
 ```
@@ -128,9 +132,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is less than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 <= 2 <= 2;
 
 ```
@@ -141,9 +146,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if the first argument is less than or equal to the second argument and each argument except the first is less than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 <= 2 < 3;
 
 ```
@@ -154,9 +160,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is not equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 != 2 != 1;
 
 ```

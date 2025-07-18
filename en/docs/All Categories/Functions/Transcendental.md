@@ -8,9 +8,10 @@
 
 **Description:** Returns the non-specific component of the Arrhenius relationship that is then multiplied by the activation energy in the Arrhenius equation. Returns 11604.5181215503 / (tempC + 273.15).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius( 100 );
 
 ```
@@ -21,9 +22,10 @@ Arrhenius( 100 );
 
 **Description:** Returns the inverse of the Arrhenius function, which is (11604.5181215503 / y) - 273.15.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius Inv( 100 );
 
 ```
@@ -34,9 +36,10 @@ Arrhenius Inv( 100 );
 
 **Description:** Returns Beta function of x and y, defined as Gamma( x ) * Gamma( y ) / Gamma( x + y ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beta( 5, 4 );
 
 ```
@@ -47,9 +50,10 @@ Beta( 5, 4 );
 
 **Description:** Returns the inverse Box-Cox transformation of the argument.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -60,9 +64,10 @@ Box Cox Inverse Transform( 3, 2 );
 
 **Description:** Returns the Box-Cox transformation of the argument.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Transform( 3, 2 );
 
 ```
@@ -73,9 +78,10 @@ Box Cox Transform( 3, 2 );
 
 **Description:** Compute cytometry logicle transformation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -86,9 +92,10 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 **Description:** Compute inverse cytometry logicle transformation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```
@@ -99,9 +106,10 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 **Description:** Returns the digamma function evaluated at x, where the digamma function is the derivative of the logarithm of the gamma function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Digamma( 5 );
 
 ```
@@ -112,9 +120,10 @@ Digamma( 5 );
 
 **Description:** Returns e raised to the x power. Argument can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Exp( 1 ), 5 );
 
 ```
@@ -125,9 +134,10 @@ Round( Exp( 1 ), 5 );
 
 **Description:** Returns a more accurate calculation of Exp(x)-1 when x is very small.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -138,9 +148,10 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 **Description:** Conducts Fast Fourier Transformation (FFT) on argument L, a required list consisting of real and imaginary parts of the data in matrix forms. If L consists of only one matrix, the matrix is considered to be the real part. If L consists of two matrices, the first is the real part, and the second is the imaginary part. The two matrices must have the same dimensions and must have more than one row. There are three optional arguments. The inverse argument determines whether to conduct inverse FFT. The multivariate argument determines whether to conduct spatial or multivariate FFT. The scale argument determines the constant by which the return values should be multiplied. Return value is a list of two matrices with the same dimensions as the first input argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
 A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
 res = FFT( {A} );
@@ -207,9 +218,10 @@ Show( fin );
 
 **Description:** Returns the factorial of x, which is the same as Gamma( x + 1 ). If x is an integer, the result is the product 1 * 2 * ... * x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Factorial( 5 );
 
 ```
@@ -220,9 +232,10 @@ Factorial( 5 );
 
 **Description:** Fits a transformation to normality for a vector of data. This includes the Johnson Sl, Johnson Sb, Johnson Su, and GLog distributions. The function returns a list containing parameter estimates, covariance matrix, log-likelihood, AICc, a convergence message, and transformed values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
 -6.1855986, 2.16525629, -30.990061];
 freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
@@ -244,9 +257,10 @@ Show( results );
 
 **Description:** Returns Gamma function of x, defined as the integral of z^(x-1)*exp(-z) dz from 0 to ∞. If limit is present, an incomplete Gamma is computed using that limit of integration.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gamma( 5 );
 
 ```
@@ -257,9 +271,10 @@ Gamma( 5 );
 
 **Description:** Returns the natural logarithm of the Gamma function of x. Useful when Gamma(x) is too large to use directly.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 LGamma( 5 );
 
 ```
@@ -270,9 +285,10 @@ LGamma( 5 );
 
 **Description:** Returns the natural logarithm of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ln( Exp( 2 ) );
 
 ```
@@ -283,9 +299,10 @@ Ln( Exp( 2 ) );
 
 **Description:** Returns the base-b logarithm of x or the natural logarithm of x if b is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log( 256, 2 );
 
 ```
@@ -296,9 +313,10 @@ Log( 256, 2 );
 
 **Description:** Returns the base 10 logarithm of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log10( 100 );
 
 ```
@@ -309,9 +327,10 @@ Log10( 100 );
 
 **Description:** Returns a more accurate calculation of Log(1 + x) when x is very small.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log1P( 1e-6 );
 
 ```
@@ -322,9 +341,10 @@ Log1P( 1e-6 );
 
 **Description:** Returns 1 / (1 + Exp( -x )), which converts a number in the domain -∞...+∞ into range 0...1. The Logist() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -335,9 +355,10 @@ Logist( 2 );
 
 **Description:** Logist function with result scaled 0 to 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist Percent( 10 );
 
 ```
@@ -348,9 +369,10 @@ Logist Percent( 10 );
 
 **Description:** Returns the logit of p, which is defined as log(p / (1 - p)).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logit( 0.95 );
 
 ```
@@ -361,9 +383,10 @@ Logit( 0.95 );
 
 **Description:** Logit function with argument 0 to 100, rather than 0 to 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logit Percent( 95.0 );
 
 ```
@@ -374,9 +397,10 @@ Logit Percent( 95.0 );
 
 **Description:** Returns n! / (k! * (n - k)!), which is the number of ways to choose k items out of n, ignoring order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Choose K( 5, 3 );
 
 ```
@@ -387,9 +411,10 @@ N Choose K( 5, 3 );
 
 **Description:** Returns x raised to the y power. If x is negative, y must be an integer.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Power( 2, 5 );
 
 ```
@@ -400,9 +425,10 @@ Power( 2, 5 );
 
 **Description:** Returns the nth root of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -413,9 +439,10 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 **Description:** Transforms a standard normal variable to a sinh-arcsinh (SHASH) distributed variable.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -434,9 +461,10 @@ Show( x1, x2 );
 
 **Description:** Transforms a sinh-arcsinh (SHASH) distributed variable to a standard normal distributed variable. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -454,9 +482,10 @@ Show( result1, result2 );
 
 **Description:** Transforms a standard normal variable to a double bounded Johnson variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -467,9 +496,10 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 **Description:** Transforms a double bounded Johnson variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -480,9 +510,10 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 **Description:** Evaluates as x1*x2*(x1-x2); used to support modeling notation for cubic mixture models.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -493,9 +524,10 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 **Description:** Transforms a standard normal variable to a Johnson SL variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -506,9 +538,10 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 **Description:** Transforms a Johnson SL variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -519,9 +552,10 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 **Description:** Returns the positive square root of the x argument, which can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Sqrt( 2 ), 4 );
 
 ```
@@ -532,9 +566,10 @@ Round( Sqrt( 2 ), 4 );
 
 **Description:** Returns 1 / (1 + Exp( x )), which converts a number in the domain -∞...+∞ into range 1...0. The Squash() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Squash( 10 );
 
 ```
@@ -545,9 +580,10 @@ Squash( 10 );
 
 **Description:** Returns 1 / (1 + Exp( -x )), which converts a number in the domain -∞...+∞ into range 0...1. The Logist() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -558,9 +594,10 @@ Logist( 2 );
 
 **Description:** Transforms a standard normal variable to an unbounded Johnson variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -571,9 +608,10 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 
 **Description:** Transforms an unbounded Johnson variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -584,9 +622,10 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 **Description:** Returns the trigamma function evaluated at x, where the trigamma function is the derivative of the digamma function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Trigamma( 5 );
 
 ```

@@ -8,15 +8,18 @@
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 15
+
 ### Shaded Contour
 
 **Syntax:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Description:** Shows or hides the shaded contour.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Flight Delays.jmp" );
 obj = dt << Model Driven Multivariate Control Chart(
 	Process( :AA, :CO, :DL, :F9, :FL, :NW, :UA, :US, :WN )

@@ -10,9 +10,10 @@
 
 **Description:** Predicts a response based on the support vectors in the space of the X variables. One of the goals of the Support Vector Machines algorithm is to use training data to learn how to classify new data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -27,9 +28,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...&lt;By( column(s) )&gt;...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -48,9 +50,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...Factor( column(s) )...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -63,9 +66,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...&lt;Freq( column )&gt;...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
 obj = Support Vector Machines(
 	Y( :clean ),
@@ -82,9 +86,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...Response( column )...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -97,9 +102,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...&lt;Validation( column )&gt;...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = Support Vector Machines(
 	Y( :Y Binary ),
@@ -113,9 +119,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...X( column(s) )...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -128,9 +135,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj = Support Vector Machines(...Y( column )...)
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -147,9 +155,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the cost parameter for the SVM fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -170,9 +179,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the maximum Cost for a tuning design.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -194,9 +204,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the minimum Cost for a tuning design.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -218,9 +229,10 @@ obj = Support Vector Machines(
 
 **Description:** Specifies and fits the kernel structure for the support vector machine to the data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -236,9 +248,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the gamma parameter for the Radial Basis kernel.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -259,9 +272,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the maximum Gamma for a tuning design.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -283,9 +297,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the minimum Gamma for a tuning design.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -307,9 +322,10 @@ obj = Support Vector Machines(
 
 **Description:** Starts solving the support vector machine.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -325,9 +341,10 @@ obj << Go;
 
 **Description:** Sets the number of runs for a tuning design.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -350,9 +367,10 @@ obj = Support Vector Machines(
 
 **Description:** Sets the random seed for the randomization process used for KFold and Holdback validation. This is useful if you want to reproduce an analysis.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -372,9 +390,10 @@ obj = Support Vector Machines(
 
 **Syntax:** obj &lt;&lt; Tuning Design( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1234 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
@@ -396,7 +415,6 @@ obj = Support Vector Machines(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -412,11 +430,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -427,11 +446,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -439,11 +457,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -459,7 +476,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -476,9 +492,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -496,7 +513,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -514,7 +530,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -538,7 +553,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -556,7 +570,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -572,9 +585,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -589,7 +603,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -612,11 +625,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -627,11 +639,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -664,7 +675,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -683,7 +693,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -700,7 +709,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -719,7 +727,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -738,7 +745,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -757,7 +763,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -771,9 +776,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -789,7 +795,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -808,7 +813,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -826,9 +830,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -843,9 +848,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -860,7 +866,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -881,7 +886,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -899,7 +903,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -923,7 +926,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -941,7 +943,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -965,7 +966,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -985,7 +985,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1005,9 +1004,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1022,7 +1022,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1042,7 +1041,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1060,7 +1058,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1084,7 +1081,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1108,7 +1104,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1132,7 +1127,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1152,7 +1146,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1172,7 +1165,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1196,7 +1188,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1214,7 +1205,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1232,7 +1222,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1250,7 +1239,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1268,7 +1256,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1289,7 +1276,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1315,7 +1301,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1333,7 +1318,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1350,7 +1334,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1368,7 +1351,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -1386,9 +1368,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1405,7 +1388,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1420,7 +1402,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1441,9 +1422,10 @@ New Window( "Bivariate Equation",
 
 **Description:** Shows or hides a crosstabulation matrix of actual and predicted responses. On by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1460,9 +1442,10 @@ obj << (fit[1] << Confusion Matrix( 0 ));
 
 **Description:** Displays or hides the contour  profiler.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1479,9 +1462,10 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 **Description:** Returns summary measures of fit from the model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1499,9 +1483,10 @@ obj << (Fit[1] << Get Measures);
 
 **Description:** Constructs a script to create a prediction formula column and returns it.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1518,9 +1503,10 @@ obj << (fit[1] << Get Prediction Formula);
 
 **Description:** Shows or hides the Lift Curve plot. A lift curve plots the lift versus the portion of the observations and provides another view of the predictive ability of a model. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1538,9 +1524,10 @@ obj << (fit[1] << Lift Curve( 1 ));
 
 **Description:** For the specified fit, shows or hides a plot for the training set with actual values on the Y axis and predicted values on the X axis. If you are using validation or test sets, plots are shown for these as well. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Y ),
@@ -1557,9 +1544,10 @@ obj << (fit[1] << Plot Actual By Predicted( 0 ));
 
 **Description:** For the specified fit, shows or hides a plot for the training set with residual values on the Y axis and predicted values on the X axis. If you are using validation or test sets, plots are shown for these as well.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Y ),
@@ -1576,9 +1564,10 @@ obj << (fit[1] << Plot Residual By Predicted( 1 ));
 
 **Description:** Shows or hides the Precision-Recall Curve plot that contains a curve for each level of the response variable. A precision-recall curve plots the precision values against the recall values at a variety of thresholds. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1596,9 +1585,10 @@ obj << (fit[1] << Precision Recall Curve( 1 ));
 
 **Description:** Shows a Prediction Profiler plot for the specified fit.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1615,9 +1605,10 @@ obj << (fit[1] << Profiler( 1 ));
 
 **Description:** Creates prediction formulas and saves them as formula column scripts in the Formula Depot platform.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1634,9 +1625,10 @@ obj << (fit[1] << Publish Prediction Formula);
 
 **Description:** Saves the probability of each response level as a separate column in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Y Binary ),
@@ -1653,9 +1645,10 @@ obj << (fit[1] << Publish Probability Formula);
 
 **Description:** Shows or hides the Receiver Operating Characteristic (ROC) curve for each level of the response variable. The ROC curve is a plot of sensitivity versus (1 - specificity). If you used validation, a plot is shown for each of the training, validation, and test sets.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1673,9 +1666,10 @@ obj << (fit[1] << ROC Curve( 1 ));
 
 **Description:** Removes the entire model report.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1694,9 +1688,10 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Displays or hides the Response Profile plot. On by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1713,9 +1708,10 @@ obj << (Fit[1] << Response Profile Plot( 0 ));
 
 **Description:** Saves the predicted values in a new column in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1732,9 +1728,10 @@ obj << (fit[1] << Save Predicteds);
 
 **Description:** Creates new columns in the data table that contain the prediction formulas.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1751,9 +1748,10 @@ obj << (fit[1] << Save Prediction Formula);
 
 **Description:** Saves the probability of each response level as a separate column in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1770,9 +1768,10 @@ obj << (fit[1] << Save Probabilities);
 
 **Description:** Saves the probability of each response level as a separate column in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Y Binary ),
@@ -1789,9 +1788,10 @@ obj << (fit[1] << Save Probability Formula);
 
 **Description:** Creates a new column in the data table that identifies which rows were used in the training, validation and test data sets.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1814,9 +1814,10 @@ obj << (Fit[1] << Save Validation);
 
 **Description:** Displays or hides the table of support vector coefficients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),
@@ -1833,9 +1834,10 @@ obj << (Fit[1] << Support Vector Coefficients( 1 ));
 
 **Description:** Displays or hides the surface profiler.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Support Vector Machines(
 	Y( :Species ),

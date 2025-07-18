@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -29,7 +28,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -56,7 +54,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -70,6 +67,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -78,7 +77,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -93,7 +91,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -108,7 +105,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -123,7 +119,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -146,7 +141,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -169,7 +163,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -184,7 +177,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -195,6 +187,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -203,7 +197,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -218,7 +211,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -234,7 +226,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -250,7 +241,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -266,7 +256,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -283,7 +272,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -299,7 +287,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -314,7 +301,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -329,7 +315,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -344,7 +329,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -369,7 +353,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -383,7 +366,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -400,7 +382,6 @@ obj = dt << Time Series( Y( :steel shipments ), By( _bycol ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -412,7 +393,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -424,7 +404,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -436,7 +415,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -452,7 +430,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << AR Coefficients( 1 );
@@ -467,7 +444,6 @@ obj << AR Coefficients( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -483,7 +459,6 @@ obj << arima( 1, 0, 0, No Intercept( 1 ), No Constrain( 1 ), Confidence Interval
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << ARIMA Model Group( AR( 0, 2 ), MA( 0, 2 ) );
@@ -498,7 +473,6 @@ obj << ARIMA Model Group( AR( 0, 2 ), MA( 0, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Autocorrelation( 1 );
@@ -513,7 +487,6 @@ obj << Autocorrelation( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
@@ -525,6 +498,8 @@ obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
 **Description:** Creates a new data table with the combined results from all model fits in the report.
 
+**JMP Version Added:** 16
+
 ### Connecting Lines
 
 **Syntax:** obj &lt;&lt; Connecting Lines( state=0|1 )
@@ -533,7 +508,6 @@ obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Connecting Lines( 1 );
@@ -548,7 +522,6 @@ obj << Connecting Lines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = dt << Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Cross Correlation( 1 );
@@ -563,7 +536,6 @@ obj << Cross Correlation( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -580,7 +552,6 @@ Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1 );
@@ -596,7 +567,6 @@ obj << Difference( 1, 1, 12 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -616,9 +586,10 @@ Time Series(
 
 **Description:** Fits all recommended state space smoothing models.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Passengers ) );
 obj << Fit Recommended ETS( Period( 12 ), Constrained( "Yes" ) );
@@ -633,7 +604,6 @@ obj << Fit Recommended ETS( Period( 12 ), Constrained( "Yes" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ), Forecast Periods( 10 ) );
 obj << ARIMA( 1, 0, 0 );
@@ -646,9 +616,10 @@ obj << ARIMA( 1, 0, 0 );
 
 **Description:** Determines whether the forecasts are made on future observations or on the holdback observations. If this option is selected, the forecasts are made on the holdback set that is determined by the number specified in the Forecast Periods option.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ), Forecast on Holdback( 1 ) );
 obj << arima( 1, 0, 0 );
@@ -664,7 +635,6 @@ obj << Number of Forecast Periods( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -680,7 +650,6 @@ dt = obj << Generate Simulation( 1, 11111, 100, 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Log Passengers ) );
 obj << Seasonal ARIMA( 0, 1, 1, 0, 1, 1, 12, No Intercept( 1 ) );
@@ -697,7 +666,6 @@ Show( l );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Log Passengers ) );
 obj << Seasonal ARIMA( 0, 1, 1, 0, 1, 1, 12, No Intercept( 1 ) );
@@ -714,7 +682,6 @@ Show( l );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Passengers ) );
 obj << Fit Recommended ETS( Period( 12 ), Constrained( "Yes" ) );
@@ -730,7 +697,6 @@ obj << Hide All Model Reports;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = dt << Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Input Series( :Input Gas Rate, ARIMA( 1, 0, 0 ) );
@@ -745,7 +711,6 @@ obj << Input Series( :Input Gas Rate, ARIMA( 1, 0, 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Passengers ) );
 obj << Fit Recommended ETS( Period( 12 ), Constrained( "Yes" ) );
@@ -760,9 +725,10 @@ obj << Keep Best Models( "AIC" );
 
 **Description:** Specifies the lambda parameter used for the Box-Cox transformation of the original data. "0" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series(
 	Y( :Steel Shipments ),
@@ -782,7 +748,6 @@ obj << Number of Forecast Periods( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -806,7 +771,6 @@ Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Maximum Iterations( 2 );
@@ -822,7 +786,6 @@ obj << ARIMA( 1, 0, 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Mean Line( 1 );
@@ -843,7 +806,6 @@ obj << Mean Line( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -859,7 +821,6 @@ obj << Number of Forecast Periods( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Partial Autocorrelation( 1 );
@@ -874,7 +835,6 @@ obj << Partial Autocorrelation( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = dt << Time Series(
 	Y( :Output CO2 ),
@@ -895,7 +855,6 @@ obj = dt << Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -914,7 +873,6 @@ obj << Remove All Simulation;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Monthly Sales.jmp" );
 obj = dt << Time Series( Y( :Sales ) );
 obj << Remove Cycle( Units per Cycle( 12 ), Has Constant( 1 ) );
@@ -925,6 +883,8 @@ obj << Remove Cycle( Units per Cycle( 12 ), Has Constant( 1 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 ### Remove Linear Trend
 
 **Syntax:** obj &lt;&lt; Remove Linear Trend
@@ -933,7 +893,6 @@ obj << Remove Cycle( Units per Cycle( 12 ), Has Constant( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Monthly Sales.jmp" );
 obj = dt << Time Series( Y( :Sales ) );
 obj << Remove Linear Trend;
@@ -948,7 +907,6 @@ obj << Remove Linear Trend;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -967,7 +925,6 @@ obj << Remove Model Simulation( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Save Spectral Density;
@@ -982,7 +939,6 @@ obj << Save Spectral Density;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << seasonal arima( 1, 0, 0, 1, 0, 0, 12 );
@@ -1009,7 +965,6 @@ obj << seasonal arima(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -1029,7 +984,6 @@ Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -1044,6 +998,8 @@ obj << Simulate Once( 1 );
 
 **Syntax:** obj &lt;&lt; Show Box-Cox Transformation Plot( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Show Lag Plot
 
 **Syntax:** obj &lt;&lt; Show Lag Plot( state=0|1 )
@@ -1056,7 +1012,6 @@ obj << Simulate Once( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Show Points( 1 );
@@ -1071,7 +1026,6 @@ obj << Show Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -1093,7 +1047,6 @@ Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = dt << Time Series( Y( :Close ) );
 sma = obj << Simple Moving Average;
@@ -1113,7 +1066,6 @@ sma << Add Model( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -1131,7 +1083,6 @@ obj << Simulate More( 2, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << arima( 1, 0, 0 );
@@ -1149,7 +1100,6 @@ obj << Simulate Once( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Spectral Density( 1 );
@@ -1162,9 +1112,10 @@ obj << Spectral Density( 1 );
 
 **Description:** Fits a state space smoothing model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Seriesg.jmp" );
 obj = dt << Time Series( Y( :Passengers ) );
 obj << State Space Smoothing(
@@ -1186,7 +1137,6 @@ obj << State Space Smoothing(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Time Series Graph( 1 );
@@ -1201,7 +1151,6 @@ obj << Time Series Graph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = dt << Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -1227,9 +1176,10 @@ obj << Transfer Function(
 
 **Description:** Transforms the original data using a Box-Cox transformation with the lambda that is specified in the Lambda for Box-Cox option. If this option is selected, all analyses in the Time Series report are performed on the transformed data.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ), Name( "Use Box-Cox Transformation" )(1) );
 obj << arima( 1, 0, 0 );
@@ -1245,7 +1195,6 @@ obj << Number of Forecast Periods( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :Steel Shipments ) );
 obj << Variogram( 1 );
@@ -1260,7 +1209,6 @@ obj << Variogram( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 Time Series(
 	Y( :Steel Shipments ),
@@ -1284,7 +1232,6 @@ Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Monthly Sales.jmp" );
 obj = dt << Time Series( X( :Date ), Y( :Sales ) );
 obj << X11( Additive );
@@ -1301,7 +1248,6 @@ obj << X11( Additive );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1317,11 +1263,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1332,11 +1279,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1344,11 +1290,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1364,7 +1309,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Automatic Recalc( 1 );
@@ -1378,9 +1322,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -1398,7 +1343,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1416,7 +1360,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1436,7 +1379,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Copy Script;
@@ -1451,7 +1393,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Data Table Window;
@@ -1464,9 +1405,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1481,7 +1423,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1500,11 +1441,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 t = obj << Get Container;
@@ -1512,11 +1452,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1549,7 +1488,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 t = obj << Get Datatable;
@@ -1565,7 +1503,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1582,7 +1519,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 t = obj << Get Script;
@@ -1598,7 +1534,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 t = obj << Get Script With Data Table;
@@ -1614,7 +1549,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 t = obj << Get Timing;
@@ -1630,7 +1564,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1644,9 +1577,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1662,7 +1596,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1681,7 +1614,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1699,9 +1631,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1716,9 +1649,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1733,7 +1667,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1754,7 +1687,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Redo Analysis;
@@ -1769,7 +1701,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1789,7 +1720,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Relaunch Analysis;
@@ -1804,7 +1734,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1824,7 +1753,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1844,7 +1772,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1864,9 +1791,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1881,7 +1809,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 r = obj << Report;
@@ -1898,7 +1825,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Report View( "Summary" );
@@ -1913,7 +1839,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1933,7 +1858,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1953,7 +1877,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1973,7 +1896,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Save Script for All Objects;
@@ -1990,7 +1912,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2006,7 +1927,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2026,7 +1946,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -2041,7 +1960,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Save Script to Journal;
@@ -2056,7 +1974,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Save Script to Report;
@@ -2071,7 +1988,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Save Script to Script Window;
@@ -2086,7 +2002,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2107,7 +2022,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2133,7 +2047,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2151,7 +2064,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2168,7 +2080,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 obj << Title( "My Platform" );
@@ -2183,7 +2094,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 r = obj << Top Report;
@@ -2198,9 +2108,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2217,7 +2128,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2232,7 +2142,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -2255,7 +2164,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -2270,7 +2178,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2297,7 +2204,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2311,6 +2217,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -2319,7 +2227,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -2334,7 +2241,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -2349,7 +2255,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -2364,7 +2269,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2387,7 +2291,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2410,7 +2313,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -2425,7 +2327,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -2436,6 +2337,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -2444,7 +2347,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -2459,7 +2361,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2475,7 +2376,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2491,7 +2391,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -2507,7 +2406,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -2524,7 +2422,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -2540,7 +2437,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -2555,7 +2451,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -2570,7 +2465,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -2585,7 +2479,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2612,7 +2505,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Autocorrelation( 1 ) );
@@ -2627,7 +2519,6 @@ obj << Difference( 1, 0, 0, Autocorrelation( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Connecting Lines( 1 ) );
@@ -2642,7 +2533,6 @@ obj << Difference( 1, 0, 0, Connecting Lines( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Difference Graph( 1 ) );
@@ -2657,7 +2547,6 @@ obj << Difference( 1, 0, 0, Difference Graph( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Mean Line( 1 ) );
@@ -2672,7 +2561,6 @@ obj << Difference( 1, 0, 0, Mean Line( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Partial Autocorrelation( 1 ) );
@@ -2683,6 +2571,8 @@ obj << Difference( 1, 0, 0, Partial Autocorrelation( 1 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Save
 
 **Syntax:** obj &lt;&lt; Save
@@ -2691,7 +2581,6 @@ obj << Difference( 1, 0, 0, Partial Autocorrelation( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Save );
@@ -2706,7 +2595,6 @@ obj << Difference( 1, 0, 0, Save );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Show Points( 1 ) );
@@ -2721,7 +2609,6 @@ obj << Difference( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Difference( 1, 0, 0, Variogram( 1 ) );
@@ -2740,7 +2627,6 @@ obj << Difference( 1, 0, 0, Variogram( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -2755,7 +2641,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2782,7 +2667,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2796,6 +2680,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -2804,7 +2690,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -2819,7 +2704,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -2834,7 +2718,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -2849,7 +2732,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2872,7 +2754,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -2895,7 +2776,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -2910,7 +2790,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -2921,6 +2800,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -2929,7 +2810,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -2944,7 +2824,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2960,7 +2839,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -2976,7 +2854,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -2992,7 +2869,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -3009,7 +2885,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -3025,7 +2900,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -3040,7 +2914,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -3055,7 +2928,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -3070,7 +2942,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3097,7 +2968,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -3112,7 +2982,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3139,7 +3008,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3153,6 +3021,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -3161,7 +3031,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -3176,7 +3045,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -3191,7 +3059,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -3206,7 +3073,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3229,7 +3095,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3252,7 +3117,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -3267,7 +3131,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -3278,6 +3141,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -3286,7 +3151,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -3301,7 +3165,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3317,7 +3180,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3333,7 +3195,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -3349,7 +3210,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -3366,7 +3226,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -3382,7 +3241,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -3397,7 +3255,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -3412,7 +3269,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -3427,7 +3283,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3454,7 +3309,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -3469,7 +3323,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3496,7 +3349,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3510,6 +3362,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -3518,7 +3372,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -3533,7 +3386,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -3548,7 +3400,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -3563,7 +3414,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3586,7 +3436,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3609,7 +3458,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -3624,7 +3472,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -3635,6 +3482,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -3643,7 +3492,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -3658,7 +3506,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3674,7 +3521,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3690,7 +3536,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -3706,7 +3551,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -3723,7 +3567,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -3739,7 +3582,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -3754,7 +3596,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -3769,7 +3610,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -3784,7 +3624,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3811,7 +3650,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -3826,7 +3664,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3853,7 +3690,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -3867,6 +3703,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -3875,7 +3713,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -3890,7 +3727,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -3905,7 +3741,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -3920,7 +3755,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3943,7 +3777,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -3966,7 +3799,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -3981,7 +3813,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -3992,6 +3823,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -4000,7 +3833,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -4015,7 +3847,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4031,7 +3862,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4047,7 +3877,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -4063,7 +3892,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -4080,7 +3908,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -4096,7 +3923,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -4111,7 +3937,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -4126,7 +3951,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -4141,7 +3965,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4168,7 +3991,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -4183,7 +4005,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4210,7 +4031,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4224,6 +4044,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -4232,7 +4054,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -4247,7 +4068,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -4262,7 +4082,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -4277,7 +4096,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4300,7 +4118,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4323,7 +4140,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -4338,7 +4154,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -4349,6 +4164,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -4357,7 +4174,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -4372,7 +4188,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4388,7 +4203,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4404,7 +4218,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -4420,7 +4233,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -4437,7 +4249,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -4453,7 +4264,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -4468,7 +4278,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -4483,7 +4292,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -4498,7 +4306,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4525,7 +4332,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 sma = obj << Simple Moving Average( Add Model( 10 ) );
@@ -4541,7 +4347,6 @@ sma << Add Model( 15, Centered );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 sma = obj << Simple Moving Average( Connecting Lines );
@@ -4556,7 +4361,6 @@ sma = obj << Simple Moving Average( Connecting Lines );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 resultobj = obj << Simple Moving Average( Get Result );
@@ -4571,7 +4375,6 @@ resultobj = obj << Simple Moving Average( Get Result );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 obj << Simple Moving Average( Remove Model( 5 ) );
@@ -4582,6 +4385,8 @@ obj << Simple Moving Average( Remove Model( 5 ) );
 
 **Syntax:** obj &lt;&lt; Remove Report
 
+**JMP Version Added:** 16
+
 #### Save to Data Table
 
 **Syntax:** obj &lt;&lt; Save to Data Table
@@ -4590,7 +4395,6 @@ obj << Simple Moving Average( Remove Model( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 resultdt = obj << Simple Moving Average( Save to Data Table );
@@ -4605,7 +4409,6 @@ resultdt = obj << Simple Moving Average( Save to Data Table );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 obj = Time Series( Y( :Close ), Simple Moving Average( Add Model( 5 ) ) );
 sma = obj << Simple Moving Average( Show Points( 0 ) );
@@ -4624,7 +4427,6 @@ sma = obj << Simple Moving Average( Show Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4649,7 +4451,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4674,7 +4475,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4690,6 +4490,8 @@ obj << Transfer Function(
 
 **Syntax:** obj &lt;&lt; Import New Inputs
 
+**JMP Version Added:** 16
+
 #### Maximum Iterations
 
 **Syntax:** obj &lt;&lt; Maximum Iterations( number )
@@ -4698,7 +4500,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4723,7 +4524,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4748,7 +4548,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4773,7 +4572,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4798,7 +4596,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4819,7 +4616,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4840,7 +4636,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4861,6 +4656,8 @@ obj << Transfer Function(
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Save Columns
 
 **Syntax:** obj &lt;&lt; Save Columns
@@ -4869,7 +4666,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4889,7 +4685,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/SeriesJ.jmp" );
 obj = Time Series( Y( :Output CO2 ), Input List( :Input Gas Rate ) );
 obj << Transfer Function(
@@ -4914,7 +4709,6 @@ obj << Transfer Function(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
@@ -4929,7 +4723,6 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -4956,7 +4749,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -4970,6 +4762,8 @@ obj2 << Create SAS Job;
 
 **Description:** On by default.
 
+**JMP Version Added:** 16
+
 #### Lower Confidence Limit
 
 **Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
@@ -4978,7 +4772,6 @@ obj2 << Create SAS Job;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
@@ -4993,7 +4786,6 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Constrain( 1 ) );
@@ -5008,7 +4800,6 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, No Intercept( 1 ) );
@@ -5023,7 +4814,6 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -5046,7 +4836,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),
@@ -5069,7 +4858,6 @@ obj = Time Series(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
@@ -5084,7 +4872,6 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
@@ -5095,6 +4882,8 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 **Syntax:** obj &lt;&lt; Remove Fit
 
+**JMP Version Added:** 16
+
 #### Residuals
 
 **Syntax:** obj &lt;&lt; Residuals( state=0|1 )
@@ -5103,7 +4892,6 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
@@ -5118,7 +4906,6 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -5134,7 +4921,6 @@ obj2 << Save Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Arima( 1, 0, 0 );
@@ -5150,7 +4936,6 @@ obj2 << Save Prediction Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -5166,7 +4951,6 @@ obj2 << Show Confidence Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Show Points( 1 ) );
@@ -5183,7 +4967,6 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj2 = obj << Simple Exponential Smoothing( Zero to One );
@@ -5199,7 +4982,6 @@ obj2 << Show Prediction Interval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
@@ -5214,7 +4996,6 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ), Time ID( :Date ) );
 obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
@@ -5229,7 +5010,6 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series( Y( :Steel Shipments ) );
 obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
@@ -5244,7 +5024,6 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = Time Series(
 	Y( :Steel Shipments ),

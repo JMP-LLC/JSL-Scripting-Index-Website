@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -30,7 +29,6 @@ obj = dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 colNum = N Items( dt << Get Column Names );
 obj = dt << Fit Model(
@@ -57,7 +55,6 @@ dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Stochastic Optimization.jmp" );
 dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand );
 
@@ -75,7 +72,6 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -91,7 +87,6 @@ obj = dt << Contour Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Custom Profiler(
 	Y(
@@ -107,7 +102,6 @@ obj = dt << Custom Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
 
@@ -117,7 +111,6 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -137,7 +130,6 @@ obj = dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -157,7 +149,6 @@ obj = dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -179,7 +170,6 @@ obj = dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -200,9 +190,10 @@ obj << Adapt Y Axis;
 
 **Description:** Adds JSL Graph Builder bar chart scripts of the Shapley values by rows for each response in the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -231,9 +222,10 @@ obj << (Fit[1] << Profiler(
 
 **Description:** Starts or stops the animation of the profiler. You can also specify how the animation cycles through factor combinations.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -256,7 +248,6 @@ obj << Animation( "Stop" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -277,7 +268,6 @@ obj << Append Settings to Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -297,9 +287,10 @@ obj << Arrange in Rows( 2 );
 
 **Description:** Sends the factor settings for the current profiler to all other profilers. This option does not link the profilers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -327,7 +318,6 @@ obj << Broadcast Factor Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -347,7 +337,6 @@ obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -370,9 +359,10 @@ subobj << Colorize Profiler;
 
 **Description:** Specifies the types of interactions that are shown as overlaid interaction curves in the profiler.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -392,9 +382,10 @@ obj << Combinations( "Many-Way" );
 
 **Description:** Computes the Shapley values for all rows in the data table, excluded and not excluded.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 r << Exclude;
@@ -427,7 +418,6 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 obj1 = dt << Run Script( "Repeated Measures Model" );
 obj1 << Profiler( Conditional Predictions( 1 ) );
@@ -442,7 +432,6 @@ obj1 << Profiler( Conditional Predictions( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj1 = dt << Run Script( "RSM for 4 Responses" );
 obj1 << Prediction Formula;
@@ -466,7 +455,6 @@ obj << Confidence Intervals( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -487,7 +475,6 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -509,7 +496,6 @@ obj << Optimize;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -538,7 +524,6 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -559,7 +544,6 @@ obj << Custom Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -579,7 +563,6 @@ obj << Data Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -603,7 +586,6 @@ obj << Default N Grid Points( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -628,7 +610,6 @@ obj << Dependent Resampled Inputs( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$Sample_Data/Tiretread.jmp" );
 dt:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 120 ), Show Limits( 1 )} );
@@ -675,7 +656,6 @@ Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -693,9 +673,10 @@ obj << Desirability Functions( 1 );
 
 **Description:** Adds, changes, or deletes linear constraints.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -713,9 +694,10 @@ obj << Edit Constraints;
 
 **Description:** Specifies if extrapolation control is turned on or off, or if only extrapolation control warnings are turned on.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -734,9 +716,10 @@ obj << Profiler( Extrapolation Control Option( "On" ) );
 
 **Description:** Shows or hides the extrapolation control details that give the extrapolation metric of the current point and the extrapolation threshold.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
 	Y( :Oxy ),
@@ -753,6 +736,8 @@ obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 
 
 **Syntax:** obj &lt;&lt; Extrapolation Type Option( "Regularized T2"|"K Nearest Neighbors" )
 
+**JMP Version Added:** 18
+
 ### Formulas for OPTMODEL
 
 **Syntax:** obj &lt;&lt; Formulas for OPTMODEL
@@ -761,7 +746,6 @@ obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -782,7 +766,6 @@ obj << Formulas for OPTMODEL;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Profiler(
 	Y( :Pred Formula Y ),
@@ -800,7 +783,6 @@ obj << Get Constraints;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -822,7 +804,6 @@ Show( d );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -843,7 +824,6 @@ obj << Get Factor Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -864,7 +844,6 @@ obj << Get Factor Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -886,7 +865,6 @@ obj << Get Main Indices;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -920,7 +898,6 @@ obj2 << Simulation Experiment;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -940,9 +917,10 @@ obj << Get Total Indices;
 
 **Description:** Sets the amount of horizontal space between graph panels.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -962,9 +940,10 @@ obj << Graph Spacing( 20 );
 
 **Description:** Hides or unhides the row of desirability profiles.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -985,9 +964,10 @@ obj << Hide Desirability Row( 1 );
 
 **Description:** Specifies the response variables that you would like to show or hide in the profiler.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1008,7 +988,6 @@ obj << Hide Y Variables( :Pred Formula MODULUS );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -1029,7 +1008,6 @@ obj << Independent Resampled Inputs( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -1050,7 +1028,6 @@ obj << Independent Uniform Inputs( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1070,7 +1047,6 @@ obj << Interaction Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << New Script( "Constraint", {1 * :LDL + 1 * :HDL <= 250} );
 fit = Neural(
@@ -1092,7 +1068,6 @@ obj << Linearly Constrained Inputs( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1115,9 +1090,10 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 **Description:** Loads linear constraints from a data table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dtlc = New Table( "Linear Constraints",
 	Add Rows( 2 ),
@@ -1145,9 +1121,10 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 
 **Description:** Creates a new data table that contains iterations of the optimization algorithm.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1169,7 +1146,6 @@ obj << Optimize;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1191,7 +1167,6 @@ obj << Optimize;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1213,7 +1188,6 @@ obj << Optimize;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1235,7 +1209,6 @@ obj << Maximize Desirability;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1256,7 +1229,6 @@ obj << Maximize and Remember;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1276,9 +1248,10 @@ obj << Maximize For Each Grid Point;
 
 **Description:** Specifies the maximum number of curves to show when the Overlaid Interactions option is selected. If the total possible number of curves is greater than the specified maximum number of curves, an arbitrary sample is drawn. "500" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1304,7 +1277,6 @@ obj << Maximum Number of Curves( 100 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1324,7 +1296,6 @@ obj << Output Grid Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1344,7 +1315,6 @@ obj << Output Random Table( 1000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1364,7 +1334,6 @@ obj << Overlaid Interactions( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1393,7 +1362,6 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1419,7 +1387,6 @@ obj << Predict For Another Table( dt2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Fit Model(
 	Y( :ELONG ),
@@ -1450,7 +1417,6 @@ dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1471,7 +1437,6 @@ obj << Prediction Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Design Experiment/Donev Mixture Data.jmp" );
 obj1 = Fit Model(
 	Y( :Damping ),
@@ -1494,7 +1459,6 @@ obj2 << Profile at Boundary( "Stop at Boundaries" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :Pred Formula ABRASION << Set Property( Sigma, 5 );
 :Pred Formula MODULUS << Set Property( Sigma, 100 );
@@ -1511,7 +1475,6 @@ obj << Prop of Error Bars( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1530,9 +1493,10 @@ obj << Remember Settings;
 
 **Description:** Removes the profiler from the platform report. This option is available only in a limited number of platforms.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis w / Latent" );
 rpt = obj << Report();
@@ -1556,7 +1520,6 @@ scobj << Remove Profiler;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1577,7 +1540,6 @@ obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1600,7 +1562,6 @@ obj << Reorder Y Variables(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -1625,7 +1586,6 @@ subobj << Reorder factors by main effect importance;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 fit = Neural(
 	Y( :Y ),
@@ -1661,7 +1621,6 @@ subobj << Reorder factors by total importance;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1681,7 +1640,6 @@ obj << Reset Factor Grid;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1703,9 +1661,10 @@ obj << Desirability Functions( 1 );
 
 **Description:** Specifies the number of sample values taken for each continuous factor for two-way interactions. This value is reduced for many-way interactions and is conditional on the maximum number of curves. "6" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1727,7 +1686,6 @@ obj << Samples per Factor( 10 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Neural(
 	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),
@@ -1745,9 +1703,10 @@ obj << Profiler( Save Bagged Predictions( 10 ) );
 
 **Description:** Saves existing linear constraints to a table script called Constraint.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dtlc = New Table( "Linear Constraints",
 	Add Rows( 2 ),
 	New Column( "SILICA", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 2] ) ),
@@ -1774,9 +1733,10 @@ obj << Save Constraints to Script;
 
 **Description:** Saves existing linear constraints to a new data table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Script(
 	"Constraint",
@@ -1800,7 +1760,6 @@ obj << Save Constraints to Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1821,7 +1780,6 @@ obj << Save Desirabilities;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1842,7 +1800,6 @@ obj << Save Desirability Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
 obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
 obj << Save Expanded Formulas;
@@ -1855,9 +1812,10 @@ obj << Save Expanded Formulas;
 
 **Description:** Calculates Shapley values for each row in the data table that is not excluded.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -1884,7 +1842,6 @@ obj << (Fit[1] << Profiler( 1, Save Shapley Values ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1904,7 +1861,6 @@ obj << Sensitivity Indicator( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1925,7 +1881,6 @@ obj << Set Desirabilities;
 
 ```jsl
 
-Names Default To Here( 1 );
 ProfileCallbackLog = Function( {arg}, Show( arg ) );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
@@ -1946,9 +1901,10 @@ obj << Term Value( :Silica( 1 ) );
 
 **Description:** Can be used to specify the general extrapolation threshold multiplier. Alternatively, you can use this function to open a window that enables you to adjust the extrapolation threshold multiplier.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1976,7 +1932,6 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -1996,9 +1951,10 @@ obj << Set to Data in Row( 4 );
 
 **Description:** Specifies the background data in the Shapley computations as either a percentage of the training data or a number of rows of the training data.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -2028,9 +1984,10 @@ obj << (Fit[1] << Profiler(
 
 **Description:** Sets the number of permutations to be used for calculating the Shapley values. "10" by default.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -2055,9 +2012,10 @@ obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shaple
 
 **Description:** Sets the number of rows of the training data that was used to fit the model for use as the background data in the Shapley computations. "100" by default.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -2087,9 +2045,10 @@ obj << (Fit[1] << Profiler(
 
 **Description:** Sets the percentage of the training data that was used to fit the model for use as the background data in the Shapley computations. "100" by default.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -2119,9 +2078,10 @@ obj << (Fit[1] << Profiler(
 
 **Description:** Sets a random seed for calculating the Shapley values.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
 obj = dt << Neural(
 	Y( :Percent Body Fat ),
@@ -2146,9 +2106,10 @@ obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Va
 
 **Description:** Shows or hides the name of the platform that created the formula in the response column. The platform name appears on the vertical axis. Available only if the response column contains a Creator named argument in the Predicting column property.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 fm = dt << Fit Model(
 	Y( :y ),
@@ -2179,7 +2140,6 @@ Profiler( Y( predForm ), Show Creator( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2200,7 +2160,6 @@ obj << Show Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2219,9 +2178,10 @@ obj << Simulator( 1 );
 
 **Description:** Specifies how the sampling range of each continuous factor is determined. The sampling range for each factor defines the lowest and highest values for which the interaction curves are created.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2243,7 +2203,6 @@ obj << Spanning Range( "Two Standard Deviations" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2264,7 +2223,6 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2286,7 +2244,6 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2308,7 +2265,6 @@ obj << Optimize;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2332,7 +2288,6 @@ obj << Maximize Desirability;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -2348,11 +2303,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -2363,11 +2319,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -2375,11 +2330,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -2395,7 +2349,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -2413,7 +2366,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2434,7 +2386,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2453,9 +2404,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -2468,11 +2420,10 @@ biv << Get By Levels;
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2486,11 +2437,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -2523,7 +2473,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2545,7 +2494,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2567,7 +2515,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2589,7 +2536,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2611,7 +2557,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -2625,9 +2570,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -2643,7 +2589,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -2662,7 +2607,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2680,9 +2624,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -2697,9 +2642,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -2714,7 +2660,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -2735,7 +2680,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2756,7 +2700,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2777,7 +2720,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -2797,7 +2739,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2817,9 +2758,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -2834,7 +2776,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2857,7 +2798,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2878,7 +2818,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2901,7 +2840,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2924,7 +2862,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2951,7 +2888,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2972,7 +2908,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2993,7 +2928,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -3014,7 +2948,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -3035,7 +2968,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -3056,7 +2988,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -3082,7 +3013,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -3100,7 +3030,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -3117,7 +3046,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -3138,7 +3066,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -3161,7 +3088,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -3180,7 +3106,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3209,7 +3134,6 @@ obj2 = obj << Design Space Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3240,7 +3164,6 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3271,7 +3194,6 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3297,9 +3219,10 @@ obj2 << Get Midpoints from Profiler( 0.5 );
 
 **Description:** Locks the continuous factor at the specified value. This lock is temporary.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3327,7 +3250,6 @@ obj2 << Lock( Ethanol( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3369,7 +3291,6 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3399,7 +3320,6 @@ obj2 << Move Outward;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3430,7 +3350,6 @@ obj2 << Move Outward;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3469,7 +3388,6 @@ obj2 << Reset Factor Space(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3498,7 +3416,6 @@ obj2 << Save X Spec Limits;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3527,7 +3444,6 @@ obj2 << Send Limits to Profiler as Constraints;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3556,7 +3472,6 @@ obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3585,7 +3500,6 @@ obj2 << Send Midpoints to Profiler;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3613,7 +3527,6 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3641,7 +3554,6 @@ obj2 << Show Corners;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3667,9 +3579,10 @@ obj2 << Show Current Profiler Values( 1 );
 
 **Description:** Shows or hides the impact ratios. These ratios show how sensitive changes in each factor, from midpoint to each limit, affect how far the predictions are from their specification limits.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
@@ -3697,9 +3610,7 @@ obj2 << Show Impact Ratios;
 
 ```jsl
 
-Names Default To Here( 1 );
 
-Names Default To Here( 1 );
 Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
 New Column( "Pred Formula Yield",
 	Numeric,
@@ -3740,7 +3651,6 @@ obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -3774,7 +3684,6 @@ obj << Simulator(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -3805,7 +3714,6 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -3841,7 +3749,6 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
 :Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
@@ -3874,7 +3781,6 @@ simobj << Defect Parametric Profile( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
 :Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
@@ -3911,7 +3817,6 @@ obj = Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
 :Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
@@ -3942,7 +3847,6 @@ simobj << Defect Profiler( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
 :Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
@@ -3976,7 +3880,6 @@ obj = Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4008,7 +3911,6 @@ obj << Simulator( N Runs( 2500 ), Simulate );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4039,7 +3941,6 @@ simobj << Resimulate;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4073,7 +3974,6 @@ obj << Simulator( Set Random Seed( 1234 ), Simulate );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4102,7 +4002,6 @@ simobj << Simulate to table(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4138,7 +4037,6 @@ obj << Simulator(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4166,7 +4064,6 @@ simobj << Simulation Experiment( NRun( 100 ), Portion( 0.6 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4197,7 +4094,6 @@ obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(
@@ -4230,7 +4126,6 @@ obj << Simulator(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = Profiler(
 	Y(

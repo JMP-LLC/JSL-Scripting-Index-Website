@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -45,7 +44,6 @@ seg = (frame << Find Seg( Marker Seg( 1 ) ));
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For( i = 1, i <= 40, i++,
 	Labeled( Row State( i ) ) = 1
@@ -65,7 +63,6 @@ seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -97,7 +94,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -127,9 +123,10 @@ seg << Class Name;
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -157,7 +154,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -193,7 +189,6 @@ seg << Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -223,9 +218,10 @@ seg << Delete;
 
 **Description:** Sets the coloring behavior of density gradients. "Fade to White" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -257,7 +253,6 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -287,9 +282,10 @@ seg << Frame;
 
 **Description:** Returns the current clipping shape
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -318,7 +314,6 @@ cs << Get Clip Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -350,7 +345,6 @@ seg << Get Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -380,9 +374,10 @@ seg << Get Colors;
 
 **Description:** Gets the coloring behavior of density gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -414,7 +409,6 @@ seg << Get Density Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -444,6 +438,8 @@ seg << get description();
 
 **Description:** Label every marker regardless of the data table row state flags.
 
+**JMP Version Added:** 18
+
 ### Get Gradient
 
 **Syntax:** obj &lt;&lt; Get Gradient
@@ -452,7 +448,6 @@ seg << get description();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -482,9 +477,10 @@ seg << Get Gradient;
 
 **Description:** Gets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -514,9 +510,10 @@ seg << Get Gradient Color Theme;
 
 **Description:** Gets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -546,9 +543,10 @@ seg << Get Gradient Discrete Colors;
 
 **Description:** Gets the coloring behavior for values outside of the range of the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -563,9 +561,10 @@ seg << Get Gradient Fill;
 
 **Description:** Gets the number of labels in a gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -595,11 +594,12 @@ seg << Get Gradient Label Count;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -612,7 +612,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -628,9 +627,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -660,9 +660,10 @@ seg << Get Gradient Legend Horizontal;
 
 **Description:** Gets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -692,9 +693,10 @@ seg << Get Gradient Legend Label Format;
 
 **Description:** Gets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -724,9 +726,10 @@ seg << Get Gradient Legend Label Width;
 
 **Description:** Gets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -756,9 +759,10 @@ seg << Get Gradient Legend Show Labels;
 
 **Description:** Gets the number of levels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -788,9 +792,10 @@ seg << Get Gradient Levels;
 
 **Description:** Gets the minimum and maximum lightness for level colors in a gradient. Missing values indicate that the color theme&apos;s original value is used.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -820,9 +825,10 @@ seg << Get Gradient Lightness Range;
 
 **Description:** Gets the range over which non-custom gradient scales are generated.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -837,9 +843,10 @@ seg << Get Gradient Range;
 
 **Description:** Gets if the order of colors in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -869,9 +876,10 @@ seg << Get Gradient Reverse Color Order;
 
 **Description:** Gets if the order of labels in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -901,9 +909,10 @@ seg << Get Gradient Reverse Label Order;
 
 **Description:** Gets the gradient scale type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -918,11 +927,12 @@ seg << Get Gradient Scale;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -935,7 +945,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -951,9 +960,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets when to show the legend entry for missing values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -983,9 +993,10 @@ seg << Get Gradient Show Missing;
 
 **Description:** Gets the transparency behavior of gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1015,7 +1026,6 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -1045,7 +1055,6 @@ seg << Get Hide Missing Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -1075,9 +1084,10 @@ seg << Get Hide Missing Size;
 
 **Description:** Returns settings used to offset marker positions for collision reduction. method is none|random uniform|random normal|centered|centered grid|positive grid. axis is X|Y|XY. limit is the width of the jitter, adjusted for the method. spacing is the percentage of the marker size using for jittering or 0 for auto-adjustment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -1095,7 +1105,6 @@ bandwidth} = seg << Get Jitter();
 
 ```jsl
 
-Names Default To Here( 1 );
 x = J( 1, 100, Random Normal() );
 y = J( 1, 100, 0 );
 New Window( "Marker Seg Example",
@@ -1118,11 +1127,15 @@ avg = Mean( jitter[0, 1] );
 
 **Description:** Whether forced labels show the X or Y value.
 
+**JMP Version Added:** 18
+
 ### Get Label Value Format
 
 **Syntax:** obj &lt;&lt; Get Label Value Format
 
 **Description:** How to format the X or Y value; Auto means use axis format.
+
+**JMP Version Added:** 18
 
 ### Get Marker
 
@@ -1132,7 +1145,6 @@ avg = Mean( jitter[0, 1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1162,9 +1174,10 @@ seg << Get Marker;
 
 **Description:** Returns any custom marker drawing data table column.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -1180,9 +1193,10 @@ ex = seg << Get Marker Draw Column();
 
 **Description:** Returns the custom marker drawing expression.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -1200,7 +1214,6 @@ ex = seg << Get Marker Draw Expr();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1232,7 +1245,6 @@ seg << Get Marker Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1262,7 +1274,6 @@ seg << Get Markers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1278,7 +1289,6 @@ seg << Get Overlay Color( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1294,7 +1304,6 @@ seg << Get Overlay Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -1312,7 +1321,6 @@ seg << Get Overlay Marker( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1344,7 +1352,6 @@ seg << Get Point( 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1376,7 +1383,6 @@ seg << Get Point Count;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10 50 70];
 y = [60 50 10];
@@ -1397,7 +1403,6 @@ seg << Get Row Numbers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1429,7 +1434,6 @@ seg << Get Sizes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1459,6 +1463,8 @@ seg << Get Transparency;
 
 **Description:** Maximum width for a formatted label value.
 
+**JMP Version Added:** 18
+
 ### Get X Values
 
 **Syntax:** matrix = obj &lt;&lt; Get X Values
@@ -1467,7 +1473,6 @@ seg << Get Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1499,7 +1504,6 @@ seg << Get X Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1531,7 +1535,6 @@ seg << Get Y Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1561,9 +1564,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1593,9 +1597,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1610,9 +1615,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1628,9 +1634,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1660,9 +1667,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1677,9 +1685,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1709,9 +1718,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1741,9 +1751,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1773,9 +1784,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1805,9 +1817,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1837,11 +1850,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1869,7 +1883,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1897,7 +1910,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1927,9 +1939,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1944,9 +1957,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -1976,9 +1990,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2008,9 +2023,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2025,9 +2041,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2042,9 +2059,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2062,9 +2080,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the transparency behavior of gradients. "Linear" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2096,7 +2115,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Labeled( Row State( 5 ) ) = 1;
 Labeled( Row State( 8 ) ) = 1;
@@ -2115,7 +2133,6 @@ seg << label offset( {0, -20, -10}, {1, -20, -30} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2147,7 +2164,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2181,7 +2197,6 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2213,7 +2228,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2248,7 +2262,6 @@ seg << Revert;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2280,7 +2293,6 @@ seg << Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2310,9 +2322,10 @@ seg << set description( "my seg" );
 
 **Description:** Label every marker regardless of the data table row state flags.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -2339,7 +2352,6 @@ Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2369,9 +2381,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2401,9 +2414,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets the gradient to use a list of values for a custom scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2433,9 +2447,10 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2450,9 +2465,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2468,9 +2484,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2500,9 +2517,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2517,9 +2535,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2549,9 +2568,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2581,9 +2601,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2613,9 +2634,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2645,9 +2667,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2677,11 +2700,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2709,7 +2733,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2737,7 +2760,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2767,9 +2789,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2784,9 +2807,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2816,9 +2840,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -2848,9 +2873,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2865,9 +2891,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2882,9 +2909,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2902,7 +2930,6 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -2932,7 +2959,6 @@ seg << Set Hide Missing Color( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1111111 );
 n = 1000;
 T1 = J( n, 1, Random Normal() );
@@ -2962,9 +2988,10 @@ seg << Set Hide Missing Size( true );
 
 **Description:** Applies an offset to marker positions for collision reduction. method is none|random uniform|random normal|centered|centered grid|positive grid. axis is X|Y|XY. limit is the width of the jitter, adjusted for the method. spacing is the percentage of the marker size using for jittering or 0 for auto-adjustment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -2979,9 +3006,10 @@ seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
 
 **Description:** Whether forced labels show the X or Y value.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -3006,9 +3034,10 @@ Bivariate(
 
 **Description:** How to format the X or Y value; Auto means use axis format.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate(
 	Y( :weight ),
@@ -3033,6 +3062,8 @@ Bivariate(
 
 **Description:** Maximum width for a formatted label value.
 
+**JMP Version Added:** 18
+
 ### Set Marker
 
 **Syntax:** obj &lt;&lt; Set Marker( marker )
@@ -3041,7 +3072,6 @@ Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3071,9 +3101,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets a custom marker drawing data table column, which could be a picture, matrix of points, text, drawing code or a function.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3091,11 +3122,12 @@ seg << Set Marker Draw Column( :picture );
 
 **Description:** Sets a custom marker drawing expression, which could be a matrix of points, text, drawing code or a function.
 
-**Drawing function**
+**JMP Version Added:** 16
+
+#### Drawing function
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3116,11 +3148,10 @@ seg << Set Marker Draw Expr(
 
 ```
 
-**Drawing script**
+#### Drawing script
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3129,11 +3160,10 @@ seg << Set Marker Draw Expr( Expr( Arc( -2, -:age / 3, 2, :age / 3, -90, 90 ) ) 
 
 ```
 
-**Matrix polyline**
+#### Matrix polyline
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3142,11 +3172,10 @@ seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = Bivariate( Y( :height ), X( :weight ) );
 frame = (r << report)[FrameBox( 1 )];
@@ -3163,7 +3192,6 @@ seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3195,7 +3223,6 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -3211,7 +3238,6 @@ seg << Set Overlay Color( 1, "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
 rep = op << report;
@@ -3229,7 +3255,6 @@ seg << Set Overlay Marker( 1, "Star" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3261,7 +3286,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3293,8 +3317,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -3331,7 +3353,6 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3376,7 +3397,6 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 aa = [=> 0];
@@ -3410,7 +3430,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3442,7 +3461,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3474,7 +3492,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -3492,7 +3509,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -3506,7 +3522,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -3520,7 +3535,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -3534,7 +3548,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 

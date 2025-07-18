@@ -8,9 +8,10 @@
 
 **Description:** Returns a reference to a display box that contains the row (or column) contents that are contained inside of an Alignment Grid Box.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -38,9 +39,10 @@ New Window( "Crosstab",
 
 **Description:** Returns a reference to a display box that can contain alignment cell boxes.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -68,9 +70,10 @@ New Window( "Crosstab",
 
 **Description:** Returns a reference to a display box that contains multiple elements inside each cell that is contained inside of an Alignment Grid Box.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Alignment MultiBox",
 	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),
@@ -109,9 +112,10 @@ New Window( "Alignment MultiBox",
 
 **Description:** Returns the alpha shape for the given triangulation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang = Triangulation( X( :X, :Y ), Y( :POP ) );
 ashape = Alpha Shape( triang );
@@ -124,9 +128,10 @@ ashape = Alpha Shape( triang );
 
 **Description:** Returns a display box to add space around the argument display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -144,9 +149,10 @@ New Window( "Example",
 
 **Description:** Returns a display seg representing a box plot based on the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) )
 );
@@ -161,9 +167,10 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 **Description:** Creates a rotating image to indicate a busy process.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Busy Light( <<automatic ) );
 
 ```
@@ -174,9 +181,10 @@ New Window( "Example", Busy Light( <<automatic ) );
 
 **Description:** Returns a display box to show a titled button. The script argument is run when the button is clicked.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
@@ -187,9 +195,10 @@ New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 **Description:** Returns a display box containing a calendar control. The calendar supports single-selection of a date and optional time.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Calendar Box Example", Calendar Box() );
 
 ```
@@ -200,9 +209,10 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 **Description:** Returns a display box to show one or more check boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
@@ -213,9 +223,10 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 **Description:** Clears a window handler previously set by Set Global Window Handler.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -233,9 +244,10 @@ Clear Global Window Handler();
 
 **Description:** Returns a column box made up of the given display boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Window( "Example",
 	exx = 1;
 	exy = 4;
@@ -259,11 +271,12 @@ dt = New Window( "Example",
 
 **Description:** Returns a display box to show list box to select data table columns. Use the <<Modeling Type message to allow specialty modeling types or to restrict the types allowed. The default value of "Any" will allow any column with a classic modeling type ("Continuous", "Nominal", "Ordinal").
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
@@ -273,7 +286,6 @@ New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelect
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
 	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) )
@@ -285,7 +297,6 @@ New Window( "Col List Box Example 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
 	H List Box(
@@ -304,9 +315,10 @@ New Window( "Col List Box Example 3",
 
 **Description:** Returns a column that has a header that spans child columns
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	Table Box(
 		Col Span Box(
@@ -325,9 +337,10 @@ New Window( "test",
 
 **Description:** Prompts the user with a modal window with fields to select columns of a data table. The specification can include several types of input boxes as well as container boxes to organize the window.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
 	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),
@@ -361,9 +374,10 @@ Column Dialog(
 
 **Description:** Returns a display box to show a combo box with a popup menu. Each item in the combo box can have an optional tooltip that is specified as a string inside of parentheses following the item text string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
 );
@@ -376,9 +390,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that establishes a scoped evaluation context. Allows different parts of a display window to be executed independently of each other.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Context Box(
 		Outline Box( "Picker",
@@ -395,9 +410,10 @@ New Window( "Example",
 
 **Description:** Returns a display seg representing contours of a Triangulation.  Optional colors can be specified for each level as a matrix or list.  The transparency can be specified as a number or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 {xx, yy} = tri << Get Points();
@@ -426,9 +442,10 @@ New Window( "Contour Seg Example",
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Current Report();
 
 ```
@@ -443,9 +460,10 @@ Current Report();
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Example Outline",
 		Text Box( "Example Text" ),
@@ -461,9 +479,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that defines the extent of the local data filters contained in a display tree. Data filters and Data Filter Context Boxes can be arranged in a hierarchy and will be shared among platforms or boxes contained within the Data Filter Context Boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -496,9 +515,10 @@ New Window( "Shared Local Filter",
 
 **Description:** Returns a display box that defines the source of a selection filter. Selected rows in reports contained by the Data Filter Source Box will be included for analysis in the other reports contained within a common Data Filter Context Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
 	Data Filter Context Box(
@@ -536,9 +556,10 @@ New Window( "Selection Filter",
 
 **Description:** Returns a display box that can hold a data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -551,9 +572,10 @@ x << Set Data Table( dt );
 
 **Description:** Returns a table box representing the given data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -565,9 +587,10 @@ New Window( "Example", Data Table Box( dt ) );
 
 **Description:** Returns a column box corresponding to the given data table column.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) )
@@ -581,9 +604,10 @@ New Window( "Example",
 
 **Description:** Returns a Plot Col Box corresponding to the given data table column and optionally uses the second and third data table columns to create control limits.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) )
@@ -597,11 +621,12 @@ New Window( "Example",
 
 **Description:** Prompts the user with a modal window. This function is deprecated. Please use the New Window function with the <<Modal argument.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Dialog equivalent
 If(
 	ex = New Window( "Dialog() example",
@@ -624,7 +649,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 If(
 	ex = Dialog(
@@ -648,9 +672,10 @@ If(
 
 **Description:** Returns a display box containing the excerpt designated by the report held at number rptnum and the list of display subscripts lstSubscripts. The subscripts reflect the current state of the report, after previous excerpts have been removed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -696,9 +721,10 @@ New Window( "Example",
 
 **Description:** Returns an image containing the specified expression as a formula picture. The default width is 600 pixels and the default max matrix size is 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -716,9 +742,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that contains a list of items. Control allows column filtering.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
@@ -730,11 +757,12 @@ New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 2
 
 **Description:** Returns a reference to a specific open project by title, index, or box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -746,7 +774,6 @@ Print( Get Project( 2 ) << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -760,9 +787,10 @@ project = Get Project( "Big Class" );
 
 **Description:** Returns a list of all open projects.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
                               
@@ -788,11 +816,12 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 Use the optional Type() argument with one of "Data Tables", "Journals", "Reports", or "Dialogs" to limit the search to windows of a particular type.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
@@ -803,7 +832,6 @@ window = Get Window( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 window = Get Window( Project( project ), "Big Class" );
@@ -828,11 +856,12 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 Use the optional Type() argument with one of "Data Tables", "Journals", "Reports", or "Dialogs" to limit the list to windows of a particular type.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Get Window List() << Get Window Title() );
 
 ```
@@ -841,7 +870,6 @@ Print( Get Window List() << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print( Get Window List( Project( project ) ) << Get Window Title() );
@@ -852,7 +880,6 @@ Print( Get Window List( Project( project ) ) << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Window Title() );
@@ -865,9 +892,10 @@ Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Windo
 
 **Description:** Creates a display box showing the value of a global variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -879,9 +907,10 @@ New Window( "Example", Global Box( ex ) );
 
 **Description:** Returns a display box containing a graph with axes. Named property arguments can be title("title"), XScale(low,high), YScale(low,high), FrameSize(h,v), XName("x"), yName("y"), DoubleBuffer, and SuppressAxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -899,9 +928,10 @@ New Window( "Example",
 
 **Description:** (Experimental) Returns a display box with 3D content that can be used with other display boxes to create custom reports.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
 	Xname( "X Axis" ),
@@ -932,9 +962,10 @@ x3d << AddVector(
 
 **Description:** Returns a display box containing a graph with axes. Named property arguments can be title("title"), XScale(low,high), YScale(low,high), FrameSize(h,v), XName("x"), yName("y"), DoubleBuffer, and SuppressAxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -952,9 +983,10 @@ New Window( "Example",
 
 **Description:** Returns a display box with the childbox display box argument centered in the horizontal space defined by the maximum size of that child and all the other siblings of the center box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -977,9 +1009,10 @@ New Window( "test",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for bottom or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -992,9 +1025,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that positions a larger child box using a horizontal scroll bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H Scroll Box(
@@ -1019,9 +1053,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -1067,9 +1102,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges other display boxes horizontally, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -1097,9 +1133,10 @@ spacer << Set Stretch( "Window", "Window" );
 
 **Description:** Returns a display box for hierarchy trees. The text argument is the node&apos;s name and can be a Text Edit Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Hier Box(
 		Text Edit Box( "Cause 1" ),
@@ -1118,10 +1155,10 @@ New Window( "Example",
 
 **Description:** Returns a hist seg
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -1142,11 +1179,12 @@ New Window( "Hist Seg Example",
 
 **Description:** Constructs a display box containing an icon, where the name argument can be a JMP icon name or a path to a an image.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -1165,7 +1203,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
@@ -1176,9 +1213,10 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 **Description:** Returns a display box that conditionally displays the specified display box arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	H List Box(
 		englishBox = If Box( 1, Text Box( "Good day" ) ),
@@ -1197,9 +1235,10 @@ frenchBox << Set( 1 );
 
 **Description:** Returns a display seg that shows or hides display seg children.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
@@ -1211,9 +1250,10 @@ New Window( "Lines Seg Example",
 
 **Syntax:** y = JSS Context Box( displayBox )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "JSS Context",
 	JSS Context Box(
 		V List Box(
@@ -1239,9 +1279,10 @@ New Window( "JSS Context",
 
 **Description:** Constructs a display box from instructions that would be stored in a journal.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
 sampjourn = sample << Get Journal;
@@ -1258,11 +1299,12 @@ New Window( "Distribution of Height",
 
 **Description:** Returns a display seg with lines connecting all of the x and y values.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
@@ -1275,7 +1317,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -1289,7 +1330,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -1307,9 +1347,10 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 **Description:** Returns a display seg with a sequence of line segments for the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
 frame = g[FrameBox( 1 )];
@@ -1323,9 +1364,10 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 **Description:** Returns a display box to show an alignment of boxes in nc columns. The optional Spacing argument specifies the horizontal and vertical space around the display boxes. If the vspace argument is used, vspace is the vertical space and pixels is the horizontal space.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -1343,9 +1385,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that sets the column widths of the Lineup Boxes that it contains.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Lineup Ruler",
 	lrb = Lineup Ruler Box(
@@ -1379,11 +1422,12 @@ New Window( "Lineup Ruler",
 
 **Description:** Returns a display box to show a list box of selection items. If item itself is a two-item list containing the item name and a string specifying a modeling type or sorting order, such as "Ordinal" or "Ascending", the appropriate icon will show up next to that item in the list box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
@@ -1392,7 +1436,6 @@ New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	lb = List Box(
 		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item", "nominal"}},
@@ -1410,11 +1453,12 @@ New Window( "Example",
 
 **Description:** Returns a display seg with markers for all of the x and y values.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 sz = Column( "age" ) << get values;
@@ -1439,7 +1483,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1458,7 +1501,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1477,7 +1519,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1500,7 +1541,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -1528,9 +1568,10 @@ New Window( "Marker Seg Example",
 
 **Description:** Returns a display box to show a matrix of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) ) );
 
 ```
@@ -1541,9 +1582,10 @@ New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "S
 
 **Description:** Returns a box that can make JSL callbacks for mouse actions
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
 		<<setDragText( "hello" ),
@@ -1591,11 +1633,12 @@ New Window( "Example",
 
 **Description:** Moves one or more windows into a project, out of a project, or between projects. Only one of Source and Destination must be specified; the other will default to the current project. (Use only Source to move windows into the current project, and only Destination to move windows out of it.) A data table window will be moved together with its dependent reports, though only one need be specified in the Windows argument. If omitted, the Windows argument defaults to all open windows in the source project.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -1609,7 +1652,6 @@ Move to Project( destination( project ), windows( {report} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
 project << Close Window();
@@ -1622,11 +1664,12 @@ project << Close Window();
 
 **Description:** Returns a new image which can then be edited through JSL commands. If a path is specified to an existing image file, the file should be a .JPG, .PNG, .GIF, .BMP or .TIF file.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
 
@@ -1636,7 +1679,6 @@ New Window( "new image", image );
 
 ```jsl
 
-Names Default To Here( 1 );
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
@@ -1647,7 +1689,6 @@ New Window( "new image", image2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 image3 = New Image();
 mat = J( 256, 256 );
 For( y = 0, y < 256, y++,
@@ -1666,11 +1707,12 @@ New Window( "image", image3 );
 
 **Description:** Creates a new empty project window. One or more project messages can be included as arguments in order to create a project in one step.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project();
 
 ```
@@ -1679,7 +1721,6 @@ project = New Project();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -1693,7 +1734,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -1709,7 +1749,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Set Bookmarks(
 		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}
@@ -1728,7 +1767,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),
 	Set Layout(
@@ -1752,11 +1790,12 @@ project = New Project(
 
 **Description:** Creates a window containing the specified display box or script. A report window is created by default, unless the Type option is specified. A window of Type("Modal Dialog") halts execution until the dialog is responded to. On Open, On Validate, and Return Result are available only for modal windows. On Open() evaluates its expression, function, or class method when the window is created. If On Close() returns false, the window is prevented from closing. On Validate() runs its expression, function, or class method when the OK button is clicked. If the expression returns true, the window is closed. Otherwise, the window remains open. Return Result changes the window&apos;s return value when it closes to match that of the deprecated Dialog() function. For window types that support toolbars, use Show Toolbars to specify changes from the default behavior. The options Show Menu and Suppress AutoHide are Windows only. The Window View("Invisible") option can be used for any window other than a Modal Dialog. A window of Type("Script") creates a JSL document unless the <<Language option is specified.
 
-**[Win] Toolbars and Menus**
+**JMP Version Added:** Before version 14
+
+#### [Win] Toolbars and Menus
 
 ```jsl
 
-Names Default To Here( 1 );
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -1776,11 +1815,10 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```
 
-**Dialog**
+#### Dialog
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
@@ -1794,11 +1832,10 @@ ex = New Window( "Dialog example",
 
 ```
 
-**Invisible**
+#### Invisible
 
 ```jsl
 
-Names Default To Here( 1 );
 
 g = Graph Box(
 	Frame Size( 300, 300 ),
@@ -1814,11 +1851,10 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```
 
-**Modal Dialog**
+#### Modal Dialog
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Modal Dialog example",
 	<<Type( "Modal Dialog" ),
@@ -1853,22 +1889,20 @@ If(
 
 ```
 
-**Python script**
+#### Python script
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
 
 ```
 
-**Report**
+#### Report
 
 ```jsl
 
-Names Default To Here( 1 );
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -1879,11 +1913,10 @@ New Window( "My Window's Title", g );
 
 ```
 
-**Script**
+#### Script
 
 ```jsl
 
-Names Default To Here( 1 );
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
 dt << Run Script("Bivariate");
@@ -1898,9 +1931,10 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 **Description:** Returns a display box to show the numbers specified by the numbers argument, which can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -1919,9 +1953,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show the numbers specified by the numbers argument, which can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -1937,9 +1972,10 @@ New Window( "Example",
 
 **Description:** Returns an edit box that accepts only numeric input. Specify the optional width argument to set the width of the box in characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -1951,9 +1987,10 @@ x = neb << get;
 
 **Description:** Creates an outline element in the report, returning the display box reference. To include a menu in the outline node, specify the command script pairs list, a list specifying menu commands and associated scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		{"Show label value", Show( teb << get text )},
@@ -1969,9 +2006,10 @@ New Window( "Example",
 
 **Description:** Creates a display box that forces a page break.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -1996,9 +2034,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to label and enclose the argument display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2016,11 +2055,12 @@ New Window( "Example",
 
 **Description:** Creates a display box that contains a graphics picture object. You can either open a picture and then reference it, or you can use the Open command with a path to the picture in place of the Picture Object argument.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
 );
@@ -2031,7 +2071,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
 
@@ -2043,9 +2082,10 @@ New Window( "Example", Picture Box( pict ) );
 
 **Description:** Creates a Pie Seg at the specified origin, with the specified radius, based on values specified in matrix format.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
 New Window( "Pie Seg",
@@ -2063,9 +2103,10 @@ New Window( "Pie Seg",
 
 **Description:** Evaluates the given script in the context of the given data table. Returns the resulting display box for embedding in a display tree.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -2088,9 +2129,10 @@ New Window( "Platform example",
 
 **Description:** Returns a display box to graph the numbers. The numbers argument can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2109,9 +2151,10 @@ New Window( "Example",
 
 **Description:** Returns a display seg that represents a polygon with vertices based on the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -2126,9 +2169,10 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 **Description:** Returns a display box with a popup menu defined by label/script pairs.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2146,9 +2190,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show a set of radio buttons.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
 );
@@ -2161,9 +2206,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that shows a range slider control that ranges from minValue to maxValue. As the two sliders&apos; positions change, their values are placed into lowVariable and highVariable, and the script is run.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sliderLowerValue = .5;
 sliderUpperValue = .7;
 New Window( "Example",
@@ -2189,9 +2235,10 @@ New Window( "Example",
 
 **Description:** Returns a reference to the display tree for the report from a platform.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
@@ -2203,9 +2250,10 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 **Description:** Returns a display box for 3D graphics.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
 Scene << showarcball( always );
@@ -2226,9 +2274,10 @@ Scene << update;
 
 **Description:** Returns a display list for 3D graphics.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -2249,21 +2298,21 @@ exScene << update;
 
 **Description:** Returns a display box to edit a script. By default the editor has JSL syntax highlighting and behavior.
 
-**JSL**
+**JMP Version Added:** Before version 14
+
+#### JSL
 
 ```jsl
 
-Names Default To Here( 1 );
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
 ```
 
-**Python script**
+#### Python script
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 Script = Script Box( pyscript, "Python", 300, 100 );
@@ -2277,9 +2326,10 @@ New Window( "This is a python script box", Script );
 
 **Description:** Returns a display box that positions a larger child box using scroll bars.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		Scroll Box(
@@ -2304,9 +2354,10 @@ New Window( "Example",
 
 **Description:** Sets a function to be called each time a new window is created.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -2324,9 +2375,10 @@ Clear Global Window Handler();
 
 **Description:** Returns a display seg with a collection of shapes.  Each shape draws a stroke along the given path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Shape Seg Example",
 	Graph Box(
 		Shape Seg(
@@ -2344,9 +2396,10 @@ New Window( "Shape Seg Example",
 
 **Description:** Returns a display box containing the childbox display box argument with the specified title.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -2392,9 +2445,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that shows a slider control that ranges from minValue to maxValue. As the slider&apos;s position changes, its value is placed into variable and the script is run.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sliderValue = .6;
 New Window( "Example",
 	Panel Box( "Slider Box",
@@ -2416,9 +2470,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that can be used to maintain space between other display boxes or fill a cell in a Lineup Box. The Size arguments are specified in pixels, and the Color argument is any valid JSL color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
 		Text Box( "a" ),
@@ -2437,9 +2492,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show a button with up/down controls.  The script argument is invoked with an argument that indicates the direction of the arrow clicked (negative is down, positive is up).  A magnitude of 1 indicates a single click, while larger values can be used to indicate a repeating action.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box(
 		2,
@@ -2457,9 +2513,10 @@ nb << Set Increment( 1 );
 
 **Description:** Returns a display box to show the strings specified by the strings argument, which is a list of character strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2478,9 +2535,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show the strings specified by the strings argument, which is a list of character strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -2496,9 +2554,10 @@ New Window( "Example",
 
 **Description:** Creates a tabbed-page panel in a display box window.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -2516,9 +2575,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that that can be used in a Tab Box or as a stand-alone container with title. Recognized options include Title(string) to specify a title, Tip(string) to specify a tooltip, Closeable(0|1) to specify whether the page can be closed, Icon(string) to specify the icon, and Moveable(0|1) to specify whether the page can be moved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),
@@ -2534,9 +2594,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that composes a table of the String Col Box, Number Col Box, and Plot Col Box column display boxes provided by the arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -2555,9 +2616,10 @@ New Window( "Example",
 
 **Description:** Constructs a display box that contains the text in the string argument text. The optional arguments are available to control the text justification or set the text wrap width. The argument for Justify Text should be a string containing left, right, or center.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Justification Example",
 	Outline Box( "text",
 		V List Box(
@@ -2592,9 +2654,10 @@ New Window( "Justification Example",
 
 **Description:** Constructs an editable box that contains the quoted string text, returning the display box reference. The optional arguments are available to control the display of the text, to attach a script to the text box, and to set the width in pixels of the text box. Specifying Set Width(-1) forces a resize to content. Note that a script can be attached to the text edit box either by adding the script as an optional argument or by sending the Set Script message.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
 		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
@@ -2616,9 +2679,10 @@ New Window( "Example: Text Edit Box",
 
 **Syntax:** seg = Text Seg("text")
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
@@ -2630,9 +2694,10 @@ w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom l
 
 **Description:** From within a project, returns the corresponding project object. Outside of a project, returns nothing.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
 	Print( "Project: " || (This Project() << Get Window Title()) ),
@@ -2646,9 +2711,10 @@ If(
 
 **Description:** Constructs a display box to show hierarchical information.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -2672,9 +2738,10 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 **Description:** Constructs a tree node intended for display within a Tree Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -2698,11 +2765,12 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 **Description:** Returns an object containing the Delaunay triangulation of the given point set. The optional Y will be averaged for duplicate points, and all points in the output will be unique.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
@@ -2712,7 +2780,6 @@ tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```
@@ -2723,9 +2790,10 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 **Description:** Returns a display box that temporarily suspends the column layout of a Lineup Box. The child of the Unlineup Box will be stretched to span all columns of the Lineup Box.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
 		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),
@@ -2745,9 +2813,10 @@ New Window( "unlineup",
 
 **Description:** Returns a display box with the childbox display box argument centered in the vertical space defined by the maximum size of that child and all the other siblings of the center box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -2770,9 +2839,10 @@ New Window( "test",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -2785,9 +2855,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that positions a larger child box using a vertical scroll bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V Scroll Box(
@@ -2814,9 +2885,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -2862,9 +2934,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges other display boxes vertically, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -2892,9 +2965,10 @@ spacer << Set Stretch( "Window", "Window" );
 
 **Description:** Returns a display box to view a web page, specified by the url string argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
 wb << Set Stretch( "Window", "Window" );
@@ -2908,9 +2982,10 @@ wb << Set Max Size( 10000, 10000 );
 
 **Description:** This function is deprecated and retained only for backward compatibility with existing scripts. For new scripts, use Get Window() or Get Window List().
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Window( "Big Class" );
 
 ```
@@ -2921,9 +2996,10 @@ Window( "Big Class" );
 
 **Description:** Runs a block of code with a function to be called each time a new window is created.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "My Window" ),
 	Function( {window},
@@ -2940,9 +3016,10 @@ With Window Handler(
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout, but will wrap that list when printing.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "WrapListBox",
 	Wrap List Box(
 		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),

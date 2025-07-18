@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << getLine ) )
@@ -30,7 +29,6 @@ feed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -48,7 +46,6 @@ feed << Close;
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -64,7 +61,6 @@ feed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -81,7 +77,6 @@ feed << Disconnect;
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -105,9 +100,10 @@ For( exi = 0, exi < 5, exi++,
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << getLine ) )
@@ -125,7 +121,6 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -144,7 +139,6 @@ exfeed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -168,7 +162,6 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed( /*no JSL to consume queue for this example*/ );
 For( exi = 1, exi <= 5, exi++,
 	exfeed << Queue Line( {"alice", "chuck", "ralph", "susan", "bobby"}[exi] )
@@ -185,7 +178,6 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -209,7 +201,6 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -228,7 +219,6 @@ feed << Restart;
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -244,7 +234,6 @@ feed = Open Datafeed(
 
 ```jsl
 
-Names Default To Here( 1 );
 feed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script( Print( feed << Get Line ) )
@@ -259,9 +248,10 @@ feed << Stop;
 
 **Description:** (Windows only) Sends a string to the data feed device.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -280,9 +270,10 @@ exfeed << Write( "Ready" );
 
 **Description:** (Windows only) Sends the string to the data feed device. If EOL has been set for the data feed, the strings are terminated by the EOL value specified. If EOL has not been set, the line is terminated with CRLF.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(
@@ -301,9 +292,10 @@ exfeed << Write Line( "Ready" );
 
 **Description:** (Windows only) Sends a list of strings to the data feed device. If EOL has been set for the data feed, each string is separated by the EOL value. If EOL has not been set, each line is separated with CRLF.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(
 	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
 	Set Script(

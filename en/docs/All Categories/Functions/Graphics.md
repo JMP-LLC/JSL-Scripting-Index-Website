@@ -6,11 +6,12 @@
 
 **Description:** Creates a new custom color theme and registers it with the theme picker.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
@@ -19,7 +20,6 @@ Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}}
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme(
 	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0,
 	0}, {255, 255, 255}, Missing( "Green" )}, {"Full Color", "Tritanopia", "Tritanomaly"}}
@@ -33,9 +33,10 @@ Add Color Theme(
 
 **Description:** Draws an arc of an oval.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -51,9 +52,10 @@ New Window( "Example",
 
 **Description:** Draws a line with an arrow or a sequence of such lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -69,9 +71,10 @@ New Window( "Example",
 
 **Description:** Sets the background color for the erase mode in the Text() function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Back Color( "red" );
@@ -87,11 +90,12 @@ New Window( "Example",
 
 **Description:** Blends two colors with a configurable percentage and color space.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "black", "white", 0.25 );
 
 ```
@@ -100,7 +104,6 @@ Blend Colors( "black", "white", 0.25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "sRGB" );
 
 ```
@@ -109,7 +112,6 @@ Blend Colors( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
@@ -118,7 +120,6 @@ Blend Colors( "red", "blue", "lRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```
@@ -127,7 +128,6 @@ Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
@@ -136,8 +136,6 @@ Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "red";
 c2 = "blue";
 steps = 20;
@@ -171,8 +169,6 @@ New Window( "HLS Radial Color Blending",
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "blue";
 c2 = "red";
 steps = 20;
@@ -208,9 +204,10 @@ New Window( "HCLuv Radial Color Blending",
 
 **Description:** Converts a path specification from character form to matrix form.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
@@ -221,9 +218,10 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 **Description:** Draws a circle centered at {x, y}. The radius can be specified as an integer based on the vertical axis or as a number of pixels. A pixel-based radius creates a circle that does not vary in size when the vertical axis changes. Arguments can be repeated in any order to draw multiple circles. "FILL", if used, must be last, and fills the circles with the fill color rather than drawing them with the pen color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -250,11 +248,12 @@ New Window( "Example",
 
 **Description:** Returns the difference between two colors under a specified color difference metric.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue" );
 
 ```
@@ -263,7 +262,6 @@ Color Difference( "red", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "sRGB" );
 
 ```
@@ -272,7 +270,6 @@ Color Difference( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "redmean" );
 
 ```
@@ -281,7 +278,6 @@ Color Difference( "red", "blue", "redmean" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE76" );
 
 ```
@@ -290,7 +286,6 @@ Color Difference( "red", "blue", "CIE76" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE94" );
 
 ```
@@ -299,7 +294,6 @@ Color Difference( "red", "blue", "CIE94" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
@@ -308,7 +302,6 @@ Color Difference( "red", "blue", "CIEDE2000" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "dEok" );
 
 ```
@@ -319,9 +312,10 @@ Color Difference( "red", "blue", "dEok" );
 
 **Description:** Returns a list of the hue, lightness, and saturation components.  The color argument can be any valid JSL color, or a matrix of color numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -332,9 +326,10 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 **Description:** Returns a list of the red, green, and blue components, between 0 and 1. The color argument can be any valid JSL color, or a matrix of color numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
@@ -345,9 +340,10 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 **Description:** Draws contours given a grid of values. If there are fewer colors specified than there are contours, options of "Interpolate Colors" or "Cycle Colors" determines how the colors will be applied.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	H List Box(
@@ -407,11 +403,12 @@ New Window( "Example",
 
 **Description:** Evaluates the expression on a grid of xName and yName values and draws the contour lines. The color can be specified as a number, a matrix, a list of RGB values, a list of color names, or a Color Theme.  The transparency t can be specified as a number or as a matrix.  If the Ternary option is specified, the contours are clipped to a ternary coordinate system.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -431,7 +428,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -453,9 +449,10 @@ New Window( "Example",
 
 **Description:** Draws a polyline at the indicated points. Unlike Line though, the points can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -473,9 +470,10 @@ New Window( "Example",
 
 **Description:** Draws movable markers at the indicated points. The matrix values are updated as the markers are moved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -493,9 +491,10 @@ New Window( "Example",
 
 **Description:** Draws a filled polygon at the indicated points. The points can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -513,9 +512,10 @@ New Window( "Example",
 
 **Description:** Draws a rectangle at the indicated points. Unlike Rect though, these corners can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -533,9 +533,10 @@ New Window( "Example",
 
 **Description:** Draws the text at the indicated points. Unlike the Text() function, however, the points can be dragged across the screen, updating the values in the xMatrixName and yMatrixName matrix arguments. The text argument can be a string argument or a list of strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -553,9 +554,10 @@ New Window( "Example",
 
 **Description:** Sets the color for drawing filled areas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( {1, 1, .5} );
@@ -571,11 +573,12 @@ New Window( "Example",
 
 **Description:** Sets the pattern for drawing filled areas. A mask is a matrix of values between 0 and 1 to be applied to the current fill color.
 
-**Image**
+**JMP Version Added:** Before version 14
+
+#### Image
 
 ```jsl
 
-Names Default To Here( 1 );
 
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
@@ -587,11 +590,10 @@ New Window( "Example",
 
 ```
 
-**Mask**
+#### Mask
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Pattern( [1 0.5 0 0, 0.5 0 0 1, 0 0 1 0.5, 0 1 0.5 0] );
@@ -607,9 +609,10 @@ New Window( "Example",
 
 **Description:** Returns the script for a given color theme name
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Detail( "JMP Default" );
 
 ```
@@ -620,11 +623,12 @@ Get Color Theme Detail( "JMP Default" );
 
 **Description:** Returns a list of color theme strings which match the optional parameter kind. kind is one of the following: "continuous", "categorical", "sequential", "diverging", "qualitative", or "chromatic".
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names();
 
 ```
@@ -633,7 +637,6 @@ Get Color Theme Names();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names( "sequential" );
 
 ```
@@ -644,9 +647,10 @@ Get Color Theme Names( "sequential" );
 
 **Description:** Fills the graph with a gradient between two colors. The zExpr argument is a function in terms of the variables specified by xName and yName. The vector zLimits specifies the range of values for zExpr. The zColor argument is a vector or list that defines the two colors that are blended together to create the gradient. The Transparency is a single value applied to the entire grid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Gradient Function(
@@ -667,9 +671,10 @@ New Window( "Example",
 
 **Description:** Draws a horizontal line at y from x1 to x2 or through the entire frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -685,9 +690,10 @@ New Window( "Example",
 
 **Description:** Returns the horizontal size of the graphics frame in pixels.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -703,9 +709,10 @@ New Window( "Example",
 
 **Description:** Returns a color number from the hue, lightness, and saturation components, all between 0 and 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -726,9 +733,10 @@ New Window( "Color Wheel",
 
 **Description:** Draws a square marker at the coordinates specified by xPos and yPos and repeatedly evaluates the dragScript expression when the mouse is pressed over the marker. Before running the script, the globals x and y are set to the mouse value and are restored to their original values afterward. The mouseUpScript expression is run after the mouse button is released.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -752,9 +760,10 @@ New Window( "Example",
 
 **Description:** Returns a color corresponding to a value between 0 and 1. Default theme is "Blue to Gray to Red". Any theme supported by Cell Plot is supported here. Matrix arguments supported.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( z = 0, z < 1, z += .1,
@@ -773,9 +782,10 @@ New Window( "Color Bar",
 
 **Description:** Returns 1 if the point (x,y) is in the given path, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";
@@ -801,9 +811,10 @@ New Window( "Example",
 
 **Description:** Returns 1 if the point (x,y) is in the polygon defined by the vector arguments, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -814,9 +825,10 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 **Description:** Returns a category color, where i is the category level; n is the number of categories (optional); and theme are the color themes in the Column Info dialog&apos;s Value Color combo box. ("JMP Default" is the default theme.) The category index must be >= 1 and <= the number of categories specified in the call or defined by the theme. If the second argument is a character, it is the color theme and n is unspecified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -834,11 +846,12 @@ New Window( "Color Bar",
 
 **Description:** Draws a line or connected lines. In the default case, the line is drawn linearly between the endpoints. If the Value Space option is set, the line follows the projection specified by the underlying axis scales. If the Smooth option is set, connections are smoothed, constrained by tension, domain dimension, min response, and max response.
 
-**Constrained smoothing**
+**JMP Version Added:** Before version 14
+
+#### Constrained smoothing
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Constrained smoothing",
 	Graph Box(
 		Pen Color( "gray" );
@@ -855,20 +868,18 @@ New Window( "Constrained smoothing",
 
 ```
 
-**Polyline**
+#### Polyline
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
 
-**Smoothing**
+#### Smoothing
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Smoothing",
 	Graph Box(
 		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),
@@ -887,11 +898,10 @@ New Window( "Smoothing",
 
 ```
 
-**Value space interpolation**
+#### Value space interpolation
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -908,9 +918,10 @@ New Window( "Interpolate in value space",
 
 **Description:** Sets the current line style, which can be one of: 0 (Solid), 1 (Dotted), 2 (Dashed), 3 (DashDot), or 4 (DashDotDot).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Line Style Example",
 	Graph Box(
 		Frame Size( 500, 400 ),
@@ -934,9 +945,10 @@ New Window( "Line Style Example",
 
 **Description:** calculates the value of the Mandelbrot function at x,y, stopping after n iterations or when radius exceeded
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 grid = 50;
 rmax = 0/*zero for smooth*/;
 nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set 
@@ -983,9 +995,10 @@ g << Set Y Axis(
 
 **Description:** Draws markers at the indicated coordinates.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
@@ -996,9 +1009,10 @@ New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 
 
 **Description:** Sets the size markers are drawn in the graphics frame. 0 = dot, 1 = small, ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -1014,9 +1028,10 @@ New Window( "Example",
 
 **Description:** Evaluates the dragScript expression repeatedly while the mouse is pressed within the graph and not handled by another graph object. Before running the script, the globals x and y are set to the mouse value and are restored to their original values afterward. The mouseUpScript expression is run after the mouse button is released.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -1038,9 +1053,10 @@ New Window( "Example",
 
 **Description:** Creates a heat map image based on a matrix and color theme or gradient.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 nx = 20; // data is this size
 ny = 15;
@@ -1084,9 +1100,10 @@ New Window( "small and big",
 
 **Description:** Draws normal probability contour(s) for k populations and two variables. The prob argument can be either a scalar probability or a matrix of probabilities. The meanMatrix and stdsMatrix arguments are k by 2 matrices, and the corrMatrix argument is a k by 1 vector. The colorsMatrix argument specifies the color(s) for the k contour(s); colors must be specified as JSL colors (either JSL color integer values or return values of JSL color functions such as the RGB Color() or HLS Color() functions). The fill argument specifies the amount of transparency for the contour fill color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1110,9 +1127,10 @@ New Window( "Example",
 
 **Description:** Draws an oval within the specified rectangle, filled if fill is nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -1131,9 +1149,10 @@ New Window( "Example",
 
 **Description:** Draws a stroke along the given path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1150,9 +1169,10 @@ New Window( "Example",
 
 **Description:** Converts a path specification from matrix form to character form.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -1163,9 +1183,10 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 **Description:** Sets the color for drawing lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( {.3, .5, .7} );
@@ -1181,9 +1202,10 @@ New Window( "Example",
 
 **Description:** Sets the pen size in pixels for drawing lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -1199,9 +1221,10 @@ New Window( "Example",
 
 **Description:** Returns a color that was selected with the standard color picker.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
 	Graph Box(
@@ -1220,11 +1243,12 @@ New Window( "Example",
 
 **Description:** Returns a color theme that was selected with the standard color theme picker. The initial theme can be specified explicitly or by specifying a Type to use the themes from preferences.
 
-**Graph Builder**
+**JMP Version Added:** 17
+
+#### Graph Builder
 
 ```jsl
 
-Names Default To Here( 1 );
 
 theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
@@ -1239,11 +1263,10 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```
 
-**Row Legend**
+#### Row Legend
 
 ```jsl
 
-Names Default To Here( 1 );
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
 biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );
@@ -1257,9 +1280,10 @@ Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 **Description:** Draws a pie slice.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1275,9 +1299,10 @@ New Window( "Example",
 
 **Description:** Draws a line from the current pixel-based pen coordinate to the horizontal and vertical coordinates given.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1299,9 +1324,10 @@ New Window( "Example",
 
 **Description:** Moves the pixel-addressed pen to the horizontal and vertical coordinate relative to the origin.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1323,9 +1349,10 @@ New Window( "Example",
 
 **Description:** Sets the origin that pixel drawing commands are based on.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -1347,9 +1374,10 @@ New Window( "Example",
 
 **Description:** Draws a stroke along the given pixel-based path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax. The path will be scaled and translated about its origin according to the optional parameters, with the orientation specified in the axis space.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -1386,9 +1414,10 @@ New Window( "Example",
 
 **Description:** Moves to the {h, v} pixel position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Top Align, Bottom Align, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	Graph Box(
@@ -1414,9 +1443,10 @@ New Window( "Example",
 
 **Description:** Draws the polygon specified by the points.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -1433,11 +1463,12 @@ New Window( "Example",
 
 **Description:** Calculates the area of the specified polygon.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -1446,7 +1477,6 @@ area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
@@ -1457,11 +1487,12 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 **Description:** Calculates the centroid of the specified polygon.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -1470,7 +1501,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```
@@ -1481,11 +1511,12 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 **Description:** Removes points from a polygon that carry a low amount of detail and returns indices of the remaining points. detail factor is inversely proportional to the detail error tolerance. multiple(ids) indicates that many polygons should be simplified together so that common edges are treated consistently. ids is a matrix with one row per point. geodesic(1) indicates coordinates are latitude and longitude for distance measurement.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -1499,11 +1530,10 @@ New Window( "Example",
 
 ```
 
-**Multiple polygons**
+#### Multiple polygons
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
 polys = dt[rows, {"X", "Y"}];
@@ -1557,9 +1587,10 @@ New Window( "Parishes",
 
 **Description:** Returns a color number from the red, green, and blue components, all between 0 and 1. RGB Color(1, 1, 1) is white.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
 	division = 6;
@@ -1594,9 +1625,10 @@ New Window( "RGB Color Example",
 
 **Description:** Draws a rectangle, filled if fill is nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -1615,9 +1647,10 @@ New Window( "Example",
 
 **Description:** Removes a custom color theme from the global list, either by name or by the full color theme object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -1628,11 +1661,12 @@ Remove Color Theme( "Yellow To Blue" );
 
 **Description:** Moves to the {x, y} position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order. You can also use four x, y coordinates to describe a box within which to draw the text. In that case, properties are not used.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -1646,7 +1680,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "blue" );
@@ -1662,9 +1695,10 @@ New Window( "Example",
 
 **Description:** Sets the color for drawing text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -1680,9 +1714,10 @@ New Window( "Example",
 
 **Description:** Sets the font for subsequent Text() drawing. Use without any arguments to get the current font settings. Angle is in degrees clockwise.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Degrees",
 	Graph Box(
 		FrameSize( 400, 400 ),
@@ -1710,9 +1745,10 @@ New Window( "Degrees",
 
 **Description:** Sets the font size that for text drawing.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( 20 );
@@ -1728,11 +1764,12 @@ New Window( "Example",
 
 **Description:** Translates a color into another color space. Out of gamut colors are mapped to fit when converting to smaller color spaces.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( "red", "LMS" );
 
 ```
@@ -1741,7 +1778,6 @@ To Color Space( "red", "LMS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
@@ -1750,7 +1786,6 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```
@@ -1761,9 +1796,10 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 **Description:** Sets the transparency used in the drawing commands. Alpha ranges between 0 (clear) and 1 (opaque, the default). Some operating systems do not support this.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -1785,9 +1821,10 @@ New Window( "Example",
 
 **Description:** Draws a vertical line at x from y1 to y2 or through the entire frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -1803,9 +1840,10 @@ New Window( "Example",
 
 **Description:** Returns the vertical size of the graphics frame in pixels.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -1821,9 +1859,10 @@ New Window( "Example",
 
 **Description:** Draws function xExpr in the X dimension as variable yName varies across the range of the Y axis of the graph. Additional named property arguments include Min(minimum X), Max(maximum Y), Fill(fill pattern, value to fill to), Inc(upper bound of increment).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -1839,9 +1878,10 @@ New Window( "Example",
 
 **Description:** Returns the x value for the left edge of the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1863,9 +1903,10 @@ New Window( "Example",
 
 **Description:** Returns the x distance from left to right. X Origin() + X Range() is the right edge.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1887,9 +1928,10 @@ New Window( "Example",
 
 **Description:** Sets a new scale for the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
 	Graph Box(
@@ -1913,9 +1955,10 @@ New Window( "Example",
 
 **Description:** This graphic script function combines an expression x(t) and an expression y(t) to draw an x-y curve for the specified range of parameter t. Inc() is the maximum increment on t, or steps() is the minimum number of steps on t. Use steps() or inc() if the default value does not show details.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Spiral",
 	Graph Box(
 		Pen Color( "red" );
@@ -1945,9 +1988,10 @@ New Window( "Spiral",
 
 **Description:** Draws function yExpr in the Y dimension as variable xName varies across the range of the X axis of the graph. Additional named property arguments include Min(minimum X), Max(maximum X), Fill(fill pattern, value to fill to), Inc(upper bound of increment).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -1963,9 +2007,10 @@ New Window( "Example",
 
 **Description:** Returns the y value for the bottom edge of the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -1987,9 +2032,10 @@ New Window( "Example",
 
 **Description:** Returns the y distance from bottom to top. Y Origin() + Y Range() is the top edge.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -2011,9 +2057,10 @@ New Window( "Example",
 
 **Description:** Sets a new scale for the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
 	Graph Box(

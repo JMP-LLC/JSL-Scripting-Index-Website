@@ -6,9 +6,10 @@
 
 **Description:** Passages requiring many escape characters can use the delimiter \\[...]\\.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 jslPhrase =
 "The JSL to do this is :\[
@@ -26,9 +27,10 @@ Show( jslPhrase );
 
 **Description:** Returns an abbreviated locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Abbrev Date( Today() );
 
 ```
@@ -39,9 +41,10 @@ Abbrev Date( Today() );
 
 **Description:** Returns the absolute value of x. Argument can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Abs( -5 );
 
 ```
@@ -52,9 +55,10 @@ Abs( -5 );
 
 **Description:** Adds all arguments, which can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pi() + 10;
 
 ```
@@ -63,11 +67,12 @@ Pi() + 10;
 
 **Description:** Creates a new custom color theme and registers it with the theme picker.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
@@ -76,7 +81,6 @@ Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}}
 
 ```jsl
 
-Names Default To Here( 1 );
 Add Color Theme(
 	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0,
 	0}, {255, 255, 255}, Missing( "Green" )}, {"Full Color", "Tritanopia", "Tritanomaly"}}
@@ -90,9 +94,10 @@ Add Color Theme(
 
 **Description:** Defines a list of custom functions for use in scripting and the Formula Editor. The command also adds the list to the environment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
 mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
 Add Custom Functions( {myAdd, mySub} );
@@ -105,9 +110,10 @@ Add Custom Functions( {myAdd, mySub} );
 
 **Description:** Adds a value to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex += 2;
 ex;
@@ -118,9 +124,10 @@ ex;
 
 **Syntax:** z = Add Vectors BLAS( x, y, alpha )
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 x = [1, 2, 3, 4];
 y = [5, 6, 7, 8];
 alpha = 0.5;
@@ -134,9 +141,10 @@ z = Add Vectors BLAS( x, y, alpha );
 
 **Description:** Returns a reference to a display box that contains the row (or column) contents that are contained inside of an Alignment Grid Box.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -164,9 +172,10 @@ New Window( "Crosstab",
 
 **Description:** Returns a reference to a display box that can contain alignment cell boxes.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Crosstab",
 	Alignment Grid Box(
@@ -194,9 +203,10 @@ New Window( "Crosstab",
 
 **Description:** Returns a reference to a display box that contains multiple elements inside each cell that is contained inside of an Alignment Grid Box.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Alignment MultiBox",
 	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),
@@ -235,9 +245,10 @@ New Window( "Alignment MultiBox",
 
 **Description:** Returns 1 if all elements are nonzero, zero otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 All( [1 2 3] );
 
 ```
@@ -248,9 +259,10 @@ All( [1 2 3] );
 
 **Description:** Returns the alpha shape for the given triangulation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang = Triangulation( X( :X, :Y ), Y( :POP ) );
 ashape = Alpha Shape( triang );
@@ -263,9 +275,10 @@ ashape = Alpha Shape( triang );
 
 **Description:** Returns the logical AND of all arguments: 1 if all arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 & 3 < 4;
 
 ```
@@ -276,9 +289,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the logical AND of all arguments with missing values treated as zeros: 1 if all arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 AndMZ( 1 < 2, 3 < 4 );
 
 ```
@@ -289,9 +303,10 @@ AndMZ( 1 < 2, 3 < 4 );
 
 **Description:** Returns 1 if any element is nonzero, zero otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Any( [1 0 2] );
 
 ```
@@ -302,9 +317,10 @@ Any( [1 0 2] );
 
 **Description:** Draws an arc of an oval.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -320,9 +336,10 @@ New Window( "Example",
 
 **Description:** Finds the arcs in the point data and creates a new column identifying the arcs.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
 Arc Finder(
@@ -352,9 +369,10 @@ dt << Graph Builder(
 
 **Description:** Returns the inverse hyperbolic cosine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosH( 1 );
 
 ```
@@ -365,9 +383,10 @@ ArcCosH( 1 );
 
 **Description:** Returns the inverse trigonometric cosine of x, where x is in the range [-1, 1] and the result is in the range [0, Pi()].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -378,9 +397,10 @@ ArcCosine( 0.5 );
 
 **Description:** Returns the inverse trigonometric cosine of x, where x is in the range [-1, 1] and the result is in the range [0, Pi()].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -391,9 +411,10 @@ ArcCosine( 0.5 );
 
 **Description:** Returns the inverse trigonometric sine of x, where x is in the range [-1, 1] and the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -404,9 +425,10 @@ ArcSine( 0.5 );
 
 **Description:** Returns the inverse hyperbolic sine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSinH( 1 );
 
 ```
@@ -417,9 +439,10 @@ ArcSinH( 1 );
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -430,9 +453,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -443,9 +467,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the inverse hyperbolic tangent of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcTanH( 0.5 );
 
 ```
@@ -456,9 +481,10 @@ ArcTanH( 0.5 );
 
 **Description:** Returns the ith argument of the evaluated expression or Empty() if there is no ith argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
@@ -469,11 +495,12 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 **Description:** Returns the ith argument of the expression or Empty() if there is no ith argument. This function is deprecated. Please use Arg() instead.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Arg Expr() equivalent
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -483,7 +510,6 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
 
@@ -495,9 +521,10 @@ Arg Expr( Sum( a, b, c ), 2 );
 
 **Description:** Returns a vector of forecasted values for the dtcol column in the range determined by the from and to arguments. The length argument specifies a portion of the column for the function to use. The model argument matches messages that are sent to the Time Series platform to fit a model. The estimates argument matches the child of a Get Models message result of a single model. Typically, the from value is between 1 and the to value, inclusive. However, if from<=0 and from<=to, part of the results are filtered predictions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 ARIMA Forecast(
 	:Steel Shipments,
@@ -517,9 +544,10 @@ ARIMA Forecast(
 
 **Description:** Returns the non-specific component of the Arrhenius relationship that is then multiplied by the activation energy in the Arrhenius equation. Returns 11604.5181215503 / (tempC + 273.15).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius( 100 );
 
 ```
@@ -530,9 +558,10 @@ Arrhenius( 100 );
 
 **Description:** Returns the inverse of the Arrhenius function, which is (11604.5181215503 / y) - 273.15.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Arrhenius Inv( 100 );
 
 ```
@@ -543,9 +572,10 @@ Arrhenius Inv( 100 );
 
 **Description:** Draws a line with an arrow or a sequence of such lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -561,9 +591,10 @@ New Window( "Example",
 
 **Description:** Returns the inverse trigonometric sine of x, where x is in the range [-1, 1] and the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -574,9 +605,10 @@ ArcSine( 0.5 );
 
 **Description:** Evaluates an expression and returns a Boolean value.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 45;
 b = As Boolean( x > 2 );
 Show( b );
@@ -589,9 +621,10 @@ Show( b );
 
 **Description:** Returns an equivalent expression in the C programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -602,9 +635,10 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Accesses the specified column in the specified or current data table. An error is thrown if no such column or data table is found.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2] + As Column( "height" )[3];
 
@@ -616,11 +650,12 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 **Description:** Evaluates an expression to create a constant value that does not change after it has been computed
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant", Formula( Random Uniform() ) ),
@@ -633,7 +668,6 @@ New Table( "As Constant Demo Table 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
 	New Column( "What's on Your Desktop?",
@@ -655,7 +689,6 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -673,9 +706,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Returns a date-time value marked internally as a date for output purposes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -686,9 +720,10 @@ As Date( Today() );
 
 **Description:** Accesses the specified global variable or throws an error if no such global variable exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ::ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
@@ -700,9 +735,10 @@ Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 **Description:** Returns an equivalent expression in the JavaScript programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -713,9 +749,10 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns a JSON (JavaScript Object Notation) representation of the expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -726,9 +763,10 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns a list representation of a matrix. Multi-column matrices are converted to a list of lists, one per row, as would be expected by the Matrix operator.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -739,9 +777,10 @@ As List( [11 22 33, 44 55 66] );
 
 **Description:** Converts a string into a name or a list of strings into a list of names.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:(As Name( "height" ))[3];
 
@@ -753,9 +792,10 @@ dt:(As Name( "height" ))[3];
 
 **Description:** Accesses the specified Namespace or throws an error if no such namespace exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex"
 );
@@ -769,9 +809,10 @@ As Namespace( ns );
 
 **Description:** Returns an equivalent expression in the Python programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -782,9 +823,10 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Accesses the specified root-scoped variable or throws an error if no such root-scoped variable exists.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 ::: ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
@@ -796,9 +838,10 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 **Description:** Converts a number into a row state value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
 	Row State() = As Row State(
@@ -815,9 +858,10 @@ For Each Row(
 
 **Description:** Returns a version of the expression more suitable for a SAS DATA step. The code must be wrapped in a PROC DS2 call.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -828,9 +872,10 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Accesses the specified scoped variable or throws an error if no such scoped variable exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Here:z = 23.5;
 As Scoped( Here, z );
 
@@ -842,9 +887,10 @@ As Scoped( Here, z );
 
 **Description:** Returns a string that contains the expression converted to valid SQL syntax for use in an SQL Select statement.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
@@ -855,9 +901,10 @@ As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 **Description:** Converts a matrix into a data table. The invisible option can be used to avoid displaying the table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Table( [1 2 3, 4 5 6] );
 
 ```
@@ -868,9 +915,10 @@ As Table( [1 2 3, 4 5 6] );
 
 **Description:** Assigns a value to a variable or a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -882,9 +930,10 @@ ex1 + ex1;
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
 ex << get contents;
@@ -897,9 +946,10 @@ ex << get contents;
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -910,11 +960,12 @@ Names Default To Here( 1 );
 
 **Description:** Returns the matrix of B-Spline coefficients. Internal Knot Grid is either the number of desired knot points based on percentiles of x or a vector specifying the internal knot points. Optional parameter degree specifies the degree of the B-splines with a default of 3. Optional parameter KnotEndPoints takes a 2x1 matrix containing [lower, upper] locations for the knots on the boundary. The knot end points default to the min and max of x. The second example demonstrates how B-spline coefficients can be used as the design matrix in a linear model.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -924,7 +975,6 @@ B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```jsl
 
-Names Default To Here( 1 );
 xx = (0 :: 10)`;
 yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
 designMat = B Spline Coef( xx, 2 );
@@ -938,9 +988,10 @@ Linear Regression( yy, designMat, <<nointercept );
 
 **Description:** Sets the background color for the erase mode in the Text() function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Back Color( "red" );
@@ -956,9 +1007,10 @@ New Window( "Example",
 
 **Description:** Makes an alert sound.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beep();
 
 ```
@@ -969,9 +1021,10 @@ Beep();
 
 **Description:** Determines the optimal grouping (experimental function).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
 	[11.2, 11.5, 11.8, 100.5, 100.7, 100.8],
@@ -987,9 +1040,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns Beta function of x and y, defined as Gamma( x ) * Gamma( y ) / Gamma( x + y ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beta( 5, 4 );
 
 ```
@@ -1000,9 +1054,10 @@ Beta( 5, 4 );
 
 **Description:** Returns the probability that a Beta Binomial distributed random variable is less than or equal to k.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 25;
 delta = 0;
@@ -1035,9 +1090,10 @@ New Window( "Example: BetaBinomial Distribution",
 
 **Description:** Returns the probability that a Beta Binomial distributed random variable is equal to k.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 n = 25;
 p = 0.5;
 delta = 0;
@@ -1071,9 +1127,10 @@ New Window( "Binomial and BetaBinomial Probabilities",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the Beta Binomial( p, n, delta ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -1132,9 +1189,10 @@ New Window( "Example: BetaBinomial Quantile",
 
 **Description:** Returns the density at q for a beta distribution, where q is in the interval theta to theta + sigma, alpha and beta are shape parameters, and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -1158,9 +1216,10 @@ New Window( "Example: Beta Density",
 
 **Description:** Returns the probability that a beta distributed random variable is less than q, where alpha and beta are shape parameters and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Distribution",
@@ -1184,9 +1243,10 @@ New Window( "Example: Beta Distribution",
 
 **Description:** Returns the quantile from a Beta distribution, the value for which the probability is p that a random value would be lower, where alpha and beta are shape parameters and theta and sigma are threshold and range parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -1197,9 +1257,10 @@ Beta Quantile( 0.95, 2, 5 );
 
 **Description:** Returns the probability that a Binomially distributed random variable is less than or equal to k.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 p = 0.5;
 n = 30;
 New Window( "Example: Binomial Distribution",
@@ -1230,9 +1291,10 @@ New Window( "Example: Binomial Distribution",
 
 **Description:** Returns the probability that a Binomially distributed random variable is equal to k.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cltp = 0.03;
 cltn = 30;
 New Window( "Example: Binomial Probability and Central Limit Theorem",
@@ -1261,9 +1323,10 @@ New Window( "Example: Binomial Probability and Central Limit Theorem",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the Binomial( p, n ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 qbinexp = 0.3;
 qbinexn = 20;
 qbinexq = 0.5;
@@ -1312,11 +1375,12 @@ New Window( "Example: Binomial Quantile",
 
 **Description:** Blends two colors with a configurable percentage and color space.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "black", "white", 0.25 );
 
 ```
@@ -1325,7 +1389,6 @@ Blend Colors( "black", "white", 0.25 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "sRGB" );
 
 ```
@@ -1334,7 +1397,6 @@ Blend Colors( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
@@ -1343,7 +1405,6 @@ Blend Colors( "red", "blue", "lRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```
@@ -1352,7 +1413,6 @@ Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
@@ -1361,8 +1421,6 @@ Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "red";
 c2 = "blue";
 steps = 20;
@@ -1396,8 +1454,6 @@ New Window( "HLS Radial Color Blending",
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 c1 = "blue";
 c2 = "red";
 steps = 20;
@@ -1433,9 +1489,10 @@ New Window( "HCLuv Radial Color Blending",
 
 **Description:** Makes a 16-byte result BLOB from a source BLOB (Binary Large OBject). The 16 byte BLOB is the MD5 checksum (or the hash) of the source BLOB.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex(/* make it printable */ Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
 			BLOB/* the result is a BLOB, not a string */
@@ -1452,9 +1509,10 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 **Description:** Makes a new blob from a subrange of bytes of the given blob. The offset argument is zero-based, so the first byte is at offset zero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
@@ -1465,9 +1523,10 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 **Description:** Makes a character string from a BLOB (Binary Large Object), using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, and ascii~hex.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 	Hex To Blob( "436166C3A9" ),
 	"ascii~hex"
@@ -1481,9 +1540,10 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 **Description:** Makes a matrix by converting bytes in the blob to numbers. type is either "int", "uint" or "float". bytesEach is either 1, 2, 4, or 8. endian indicates whether the first byte is the most significant ("big") or the least significant ("little"); "native" indicates the machine&apos;s native format.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
@@ -1494,9 +1554,10 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 **Description:** Returns a display box to add space around the argument display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -1514,9 +1575,10 @@ New Window( "Example",
 
 **Description:** Returns the inverse Box-Cox transformation of the argument.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -1527,9 +1589,10 @@ Box Cox Inverse Transform( 3, 2 );
 
 **Description:** Returns the Box-Cox transformation of the argument.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Box Cox Transform( 3, 2 );
 
 ```
@@ -1540,9 +1603,10 @@ Box Cox Transform( 3, 2 );
 
 **Description:** Returns a display seg representing a box plot based on the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) )
 );
@@ -1557,9 +1621,10 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 **Description:** Causes a break in flow of control within a For or While loop.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -1573,9 +1638,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Returns the build date and time, release or debug build, and product name.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Build Information();
 
 ```
@@ -1586,9 +1652,10 @@ Build Information();
 
 **Description:** Creates a rotating image to indicate a busy process.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Busy Light( <<automatic ) );
 
 ```
@@ -1599,9 +1666,10 @@ New Window( "Example", Busy Light( <<automatic ) );
 
 **Description:** Returns a display box to show a titled button. The script argument is run when the button is clicked.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
@@ -1612,9 +1680,10 @@ New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 **Description:** Returns a display box containing a calendar control. The calendar supports single-selection of a date and optional time.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Calendar Box Example", Calendar Box() );
 
 ```
@@ -1625,11 +1694,12 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 **Description:** Shows a caption window at the location specified by {h, v} and containing the text specified by the text argument. The Delayed( seconds ) argument sets the waiting time in seconds before each caption.
 
+**JMP Version Added:** Before version 14
+
 **Formatted Caption**
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption(
 	{100, 200},
 	"explanation",
@@ -1646,7 +1716,6 @@ Caption(
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
@@ -1659,9 +1728,10 @@ Caption( remove );
 
 **Description:** Connects to a new CAS server. CAS Connect uses URL, User name, Password arguments and optionally Prompt and Session. Prompt can be IfNeeded, Always, or Never. URL, user name, password can be omitted if the Prompt argument is IfNeeded or Always. The default value for Prompt is Never. Session can be used to reconnect to an existing CAS session. The session must be valid for the URL, user name, and password used in the connection. The optional Certificates argument is useful for supplying trusted certificates for https connections to CAS. The optional Verify Certificates or No Verify Certificates argument is useful to temporarily accept self-signed certificates. The optional Proxy Server argument is useful for supplying a proxy host in a proxy environment. The optional Proxy User argument is useful for supplying user and password information for a proxy environment. The optional Bypass Proxy argument is use for bypassing the proxy for certain hosts. The optional Timeout argument sets a timeout value for the CAS connection operations. The optional Authorization Method argument specifies how JMP connects to CAS. This is dependent on the CAS deployment.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect(
@@ -1679,9 +1749,10 @@ cas = CAS Connect(
 
 **Description:** This action deletes the filesystem table. The in memory table is not affected. Specifying Quiet will suppress errors for a non-existent table. Specifying remACs will remove access controls for a table. Specifying Remove will also remove the table from memory.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1695,9 +1766,10 @@ CAS Delete Table( "Casuser", "Big Class" );
 
 **Description:** Disconnects from a CAS server and optionally terminates the session. By default, the session is terminated when disconnected.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ) );
@@ -1711,9 +1783,10 @@ CAS Disconnect();
 
 **Description:** Exports a table to a CAS server. jmp_data_table is the JMP data table to export while cas_libref and cas_dataset are the target locations on the CAS server. The optional named argument is Save(1|0). When a table is exported to CAS, it is not persisted to CAS filesystem unless the Save option is used. Most CAS actions occur in memory.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
@@ -1726,9 +1799,10 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 **Description:** Gets a list of available CAS data sets. These data sets are found on the CAS filesystem. The optional argument limits the list of data sets to the CAS library. If no argument is used, then the data set list contains the fully qualified data set name (library.dataset). If the argument is used, then the data set list is a list of data set names.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
@@ -1746,9 +1820,10 @@ Show( datasets );
 
 **Description:** Gets a list of available CAS libraries.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 libraries = CAS Get Libraries();
@@ -1762,9 +1837,10 @@ Show( libraries );
 
 **Description:** Imports a table from a CAS server. Optional named arguments are Invisible(0|1), Private(0|1) and UseLabelsForVarNames(0|1).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1778,9 +1854,10 @@ CAS Import Data( "Casuser.Big Class" );
 
 **Description:** Returns 1 if there is an active CAS server connection. Otherwise, returns 0.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 connected = CAS Is Connected();
 Show( connected );
@@ -1793,9 +1870,10 @@ Show( connected );
 
 **Description:** This action drops the in-memory table. The file that was created with the save action is not affected. Specifying delete will also delete the table from the file system.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1809,9 +1887,10 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 **Description:** Converts a SAS CAS Table JSON text to a JMP data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 json =
 "\[
@@ -2038,9 +2117,10 @@ dt = CAS Table To Data Table( json );
 
 **Description:** Terminates all CAS sessions owned by the current user.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 CAS Connect( Prompt( ifNeeded ) );
 CAS Terminate Sessions();
@@ -2053,9 +2133,10 @@ CAS Terminate Sessions();
 
 **Description:** Returns the density at q of a Cauchy distribution with center mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
 		Y Scale( 0, .4 ),
@@ -2074,9 +2155,10 @@ New Window( "Example: Cauchy Density",
 
 **Description:** Returns the probability that a Cauchy distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -2095,9 +2177,10 @@ New Window( "Example: Cauchy Distribution",
 
 **Description:** Returns the quantile from a Cauchy distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -2116,9 +2199,10 @@ New Window( "Example: Cauchy Quantile",
 
 **Description:** Returns values of the empirical cumulative probability distribution function for vector or list Y. Cumulative probability is the proportion of data values less than or equal to the corresponding entry in vector QuantVec
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Generate random values, Normal(0,1) */
 Y = J( 150, 1, Random Normal() );
 
@@ -2150,9 +2234,10 @@ New Window( "Empirical CDF",
 
 **Description:** Returns the smallest integer greater than or equal to x. Argument can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ceiling( 1.2 );
 
 ```
@@ -2163,11 +2248,12 @@ Ceiling( 1.2 );
 
 **Description:** Returns a representation of x as a character string, using the maximum width w and decimal places d if the x argument is numeric. <<FullPrecision writes numeric values using all available precision.
 
+**JMP Version Added:** Before version 14
+
 **Full Precision**
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
@@ -2176,7 +2262,6 @@ Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 10, 4 );
 
 ```
@@ -2185,7 +2270,6 @@ Char( Pi(), 10, 4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Char( 2.1, <<Use Locale( 1 ) );
 
 ```
@@ -2196,9 +2280,10 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 **Description:** Makes a BLOB (Binary Large Object) from a string of characters, using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, and ascii~hex.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -2209,9 +2294,10 @@ Char To Blob( "Café", "utf-16be" );
 
 **Description:** Returns the hexadecimal text corresponding to the given value and encoding, which can be a number, a string, or a blob. If the value is a number, IEEE 754 64-bit encoding is used unless the optional argument, "integer", is provided. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, and euc-jp.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```
@@ -2222,9 +2308,10 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 **Description:** Converts a path specification from character form to matrix form.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
@@ -2235,9 +2322,10 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 **Description:** Returns a display box to show one or more check boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
@@ -2248,9 +2336,10 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 **Description:** Returns the density at q of a Chi-square distribution with df degrees of freedom.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
 	cdey = Graph Box(
@@ -2272,9 +2361,10 @@ New Window( "Example: ChiSquare Density",
 
 **Description:** Returns the probability that a Chi-square distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy = Graph Box(
@@ -2296,9 +2386,10 @@ New Window( "Example: ChiSquare Distribution",
 
 **Description:** Returns the log of 1 - Chi-square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 clcdidf = 2;
 New Window( "Example: ChiSquare Log CDistribution",
 	clcdiy = Graph Box(
@@ -2320,9 +2411,10 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 **Description:** Returns the log of the Chi-square probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey = Graph Box(
@@ -2344,9 +2436,10 @@ New Window( "Example: ChiSquare Log Density",
 
 **Description:** Returns the log of the Chi-square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
 	cldiy = Graph Box(
@@ -2368,9 +2461,10 @@ New Window( "Example: ChiSquare Log Distribution",
 
 **Description:** Returns the noncentrality parameter nc such that prob is equal to the probability that a Chi-square distributed random variable with df degrees of freedom is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -2390,9 +2484,10 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 **Description:** Returns the quantile from a Chi-Square distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -2403,9 +2498,10 @@ ChiSquare Quantile( 0.15, 5 );
 
 **Description:** Returns an updated Cholesky root of A+V*C*V&apos; where C is an m by m symmetric matrix and V is an n by m matrix. The argument L must be the Cholesky root of an n by n matrix A.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* The inner product of a design matrix */
 exS = [16 1 0 11 -1 12,
 1 11 -1 1 -1 1,
@@ -2442,9 +2538,10 @@ Show( exAcholnew );
 
 **Description:** Returns the Cholesky decomposition of a positive semi-definite matrix. L is a lower triangular matrix such that L*L` = A.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cholesky( [1 2, 2 13] );
 
 ```
@@ -2455,9 +2552,10 @@ Cholesky( [1 2, 2 13] );
 
 **Description:** Evaluates and returns the ith expr argument or the exprElse argument if there is no ith expr argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```
@@ -2492,11 +2590,12 @@ Unmatched strings
 
 	Use Unmatched to specify the value to be returned.
 
+**JMP Version Added:** 15
+
 **Allow edits**
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
@@ -2505,7 +2604,6 @@ Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```
@@ -2514,7 +2612,6 @@ Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```
@@ -2523,7 +2620,6 @@ Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```
@@ -2534,9 +2630,10 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 **Description:** Draws a circle centered at {x, y}. The radius can be specified as an integer based on the vertical axis or as a number of pixels. A pixel-based radius creates a circle that does not vary in size when the vertical axis changes. Arguments can be repeated in any order to draw multiple circles. "FILL", if used, must be last, and fills the circles with the fill color rather than drawing them with the pen color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -2563,9 +2660,10 @@ New Window( "Example",
 
 **Description:** Returns 1 if the class specified by the name argument exists. Otherwise, a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -2617,9 +2715,10 @@ Delete Classes( "complex" );
 
 **Description:** Clears a window handler previously set by Set Global Window Handler.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -2637,9 +2736,10 @@ Clear Global Window Handler();
 
 **Description:** Clears the values of all currently defined global symbols.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Globals();
 
 ```
@@ -2650,9 +2750,10 @@ Clear Globals();
 
 **Description:** Makes the log empty.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Log();
 
 ```
@@ -2663,9 +2764,10 @@ Clear Log();
 
 **Description:** Clears the values of all currently defined symbols.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Symbols();
 
 ```
@@ -2676,9 +2778,10 @@ Clear Symbols();
 
 **Description:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "in" );
@@ -2702,9 +2805,10 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 The second argument is used to save the data table. Use an appropriate file extension in the path to save the data table as a non-JMP format. Specifying NoSave bypasses the prompt to save or disregard changes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -2721,9 +2825,10 @@ Close( exdt, NoSave );
 
 Only windows in the current project (or no project if not running the script in a project) will be closed. To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -2737,9 +2842,10 @@ Close All( Data Tables, NoSave );
 
 **Description:** Closes a database connection returned from Create Database Connection
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -2750,9 +2856,10 @@ Close Database Connection( databaseConnectionHandle );
 
 **Description:** Close the log window
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Close Log();
 Show( Is Log Open() );
 
@@ -2764,9 +2871,10 @@ Show( Is Log Open() );
 
 **Description:** Returns the value of col at row position index within its byVar group. Rows where the skip missing expression evaluates to a missing value are not included in the indexing.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );
 New Column( "Relative to First Height", Formula( :height / Col At( :height, 1, :sex ) ) );
@@ -2780,9 +2888,10 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 **Description:** Returns a column box made up of the given display boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Window( "Example",
 	exx = 1;
 	exy = 4;
@@ -2806,11 +2915,12 @@ dt = New Window( "Example",
 
 **Description:** Returns the cumulative sum for the current row. By variables do not need to be presorted.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
@@ -2821,7 +2931,6 @@ Col Cumulative Sum( :height, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Cumulative Sum for each Sex",
@@ -2839,9 +2948,10 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 **Description:** Returns an interpolated value within yCol, corresponding to the position of v with xCol. Values outside the range of xCol will be missing unless extrapolate is on, in which case the nearest yCol value will be returned.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -2856,11 +2966,12 @@ dt << New Column( "gnp30",
 
 **Description:** Returns a display box to show list box to select data table columns. Use the <<Modeling Type message to allow specialty modeling types or to restrict the types allowed. The default value of "Any" will allow any column with a classic modeling type ("Continuous", "Nominal", "Ordinal").
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
@@ -2870,7 +2981,6 @@ New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelect
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
 	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) )
@@ -2882,7 +2992,6 @@ New Window( "Col List Box Example 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
 	H List Box(
@@ -2901,11 +3010,12 @@ New Window( "Col List Box Example 3",
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -2915,7 +3025,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -2925,7 +3034,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -2937,7 +3045,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -2953,11 +3060,12 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -2967,7 +3075,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -2977,7 +3084,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -2989,7 +3095,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -3005,11 +3110,12 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **Description:** Returns the sample mean across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
@@ -3019,7 +3125,6 @@ Col Mean( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
 
@@ -3029,7 +3134,6 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
@@ -3039,7 +3143,6 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
 	Formula( Col Mean( :height, :age, :sex ) )
@@ -3051,7 +3154,6 @@ dt << New Column( "Mean for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mean for each Sex", Formula( Col Mean( :height, :sex ) ) );
@@ -3067,11 +3169,12 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 **Description:** Returns the specified median across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -3090,7 +3193,6 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -3103,7 +3205,6 @@ Show( Col Median( :height, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Median for each Sex", Formula( Col Median( :height, :sex ) ) );
@@ -3119,11 +3220,12 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3133,7 +3235,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3143,7 +3244,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -3155,7 +3255,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -3171,11 +3270,12 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3185,7 +3285,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3195,7 +3294,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -3207,7 +3305,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -3223,11 +3320,12 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **Description:** Returns the sample mode across rows in a column, selecting the smallest in the case of multiple modes. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
@@ -3237,7 +3335,6 @@ Col Mode( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
@@ -3247,7 +3344,6 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
 	Formula( Col Mode( :height, :age, :sex ) )
@@ -3259,7 +3355,6 @@ dt << New Column( "Mode for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mode for each Sex", Formula( Col Mode( :height, :sex ) ) );
@@ -3275,11 +3370,12 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 **Description:** Returns the moving average over a given interval based at the current row. For the weight multiplier, 1 means equal weighting, 0 means linear weighting, and other values act as an exponential weighting multiplier. By variables do not need to be presorted.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
@@ -3290,7 +3386,6 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Moving Average for each Sex",
@@ -3308,11 +3403,12 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 **Description:** Returns the number of missing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
@@ -3322,7 +3418,6 @@ Col N Missing( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
@@ -3332,7 +3427,6 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 	Formula( Col N Missing( :height, :age, :sex ) )
@@ -3344,7 +3438,6 @@ dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3361,9 +3454,10 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 **Description:** Returns the number of unique values in a column. If missing values are requested, all missing value codes are counted as a single value.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );
 New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
@@ -3376,11 +3470,12 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 **Description:** Returns the number of nonmissing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
@@ -3390,7 +3485,6 @@ Col Number( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
@@ -3400,7 +3494,6 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 	Formula( Col Number( :height, :age, :sex ) )
@@ -3412,7 +3505,6 @@ dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3429,11 +3521,12 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 **Description:** Returns the specified quantile across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -3452,7 +3545,6 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -3465,7 +3557,6 @@ Show( Col Quantile( :height, 0.5, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Quantile for each Sex",
@@ -3483,11 +3574,12 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 **Description:** Returns the rank, ranging from 1 as the lowest, with row-order tie-breaking unless specified by the <<Tie argument. "average" produces the average for tied ranks, and "minimum" produces the lowest of tied ranks. For "row" and "arbitrary" each row has a unique rank.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );
 New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
@@ -3498,7 +3590,6 @@ New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Rank for each Sex", Formula( Col Rank( :height, :sex ) ) );
@@ -3514,9 +3605,10 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 **Description:** Returns an integer score for each unique value, ordering according to any relevant column properties.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
@@ -3529,9 +3621,10 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 **Description:** Returns the position of this row within its byVar group, adjusted by skip missing and any sequence parameters.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
 New Column( "Alternate within sex", Formula( Col Sequence( :sex, <<Sequence( 1, 2 ) ) ) );
@@ -3547,11 +3640,12 @@ New Column( "Row within sex, 60+",
 
 **Description:** Returns a random integer between 1 and the number of rows of the current data table. When used in a column formula, Col Shuffle() creates a random ordering of row numbers with each row number appearing only once. The ordering is cached internally so that multiple evaluations are efficient.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
@@ -3562,7 +3656,6 @@ dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
@@ -3572,7 +3665,6 @@ dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Shuffle for each Sex", Formula( Col Shuffle( :height, :sex ) ) );
@@ -3588,9 +3680,10 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 **Description:** Returns the simple exponential smoothing prediction for the current row, using smoothing weight alpha. By variables do not need to be presorted. Formula is Predicted Value[t]=alpha * Observed Value[t-1] + (1-alpha) * Predicted Value[t-1], with Predicted Value[1] = Observed Value[1].
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -3603,9 +3696,10 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 **Description:** Returns a column that has a header that spans child columns
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	Table Box(
 		Col Span Box(
@@ -3624,11 +3718,12 @@ New Window( "test",
 
 **Description:** Returns the value minus the column mean divided by the column standard deviation across rows in a column. If by-group columns are specified, the value is standardized against the mean and standard deviation of the by-group.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
@@ -3639,7 +3734,6 @@ Col Standardize( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
@@ -3649,7 +3743,6 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standardize for each Sex",
@@ -3667,11 +3760,12 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 **Description:** Returns the sample standard deviation across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
@@ -3681,7 +3775,6 @@ Col Std Dev( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
@@ -3691,7 +3784,6 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
@@ -3701,7 +3793,6 @@ For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Standard Deviation for Each Age and Sex Group",
 	Formula( Col Std Dev( :height, :age, :sex ) )
@@ -3713,7 +3804,6 @@ dt << New Column( "Standard Deviation for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standard Deviation for each Sex",
@@ -3731,9 +3821,10 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 **Description:** Returns column value that has not had column properties applied to it. If row option is not specified, then the current row is assumed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
 y1 = Col Stored Value( :JOB, 10 );
@@ -3750,11 +3841,12 @@ Show( y1, y2, y3, y4 );
 
 **Description:** Returns the sum across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
@@ -3764,7 +3856,6 @@ Col Sum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
 
@@ -3774,7 +3865,6 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
@@ -3784,7 +3874,6 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
 	Formula( Col Sum( :height, :age, :sex ) )
@@ -3796,7 +3885,6 @@ dt << New Column( "Sum for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Sum for each Sex", Formula( Col Sum( :height, :sex ) ) );
@@ -3812,9 +3900,10 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 **Description:** Trims leading and trailing whitespace and removes duplicate interior white spaces
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -3825,11 +3914,12 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 **Description:** Returns the difference between two colors under a specified color difference metric.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue" );
 
 ```
@@ -3838,7 +3928,6 @@ Color Difference( "red", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "sRGB" );
 
 ```
@@ -3847,7 +3936,6 @@ Color Difference( "red", "blue", "sRGB" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "redmean" );
 
 ```
@@ -3856,7 +3944,6 @@ Color Difference( "red", "blue", "redmean" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE76" );
 
 ```
@@ -3865,7 +3952,6 @@ Color Difference( "red", "blue", "CIE76" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIE94" );
 
 ```
@@ -3874,7 +3960,6 @@ Color Difference( "red", "blue", "CIE94" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
@@ -3883,7 +3968,6 @@ Color Difference( "red", "blue", "CIEDE2000" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Color Difference( "red", "blue", "dEok" );
 
 ```
@@ -3894,9 +3978,10 @@ Color Difference( "red", "blue", "dEok" );
 
 **Description:** Returns the color component of the specified row state value, either a positive JMP color palette index or a negative RGB-encoded value. If Color Of is used as an L-value, it changes the color of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
 Row() = 3;
@@ -3910,9 +3995,10 @@ Color To RGB( Color Of() );
 
 **Description:** Returns a row state value with the color component set to the specified value. The color argument can be any valid JSL color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -3925,9 +4011,10 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 **Description:** Returns a list of the hue, lightness, and saturation components.  The color argument can be any valid JSL color, or a matrix of color numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -3938,9 +4025,10 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 **Description:** Returns a list of the red, green, and blue components, between 0 and 1. The color argument can be any valid JSL color, or a matrix of color numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
@@ -3951,11 +4039,12 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
 ht = Column( "height" );
@@ -3967,7 +4056,6 @@ col4[1] + ht[2];
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
 col = Column( dt, "sex", "formatted" );
@@ -3982,9 +4070,10 @@ Write( "\!nData value returned is the formatted value of row 5." );
 
 **Description:** Prompts the user with a modal window with fields to select columns of a data table. The specification can include several types of input boxes as well as container boxes to organize the window.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
 	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),
@@ -4018,9 +4107,10 @@ Column Dialog(
 
 **Description:** Returns the name of the nth column of the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -4032,9 +4122,10 @@ Column Name( 4 );
 
 **Description:** Combines several row state values into one.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -4046,9 +4137,10 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 **Description:** Returns a display box to show a combo box with a popup menu. Each item in the combo box can have an optional tooltip that is specified as a string inside of parentheses following the item text string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
 );
@@ -4061,9 +4153,10 @@ New Window( "Example",
 
 **Description:** Concatenates strings into a longer string or matrices into a wider matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -4074,9 +4167,10 @@ Names Default To Here( 1 );
 
 **Description:** Joins a list of strings into one long string, separating each from next with the separator, a blank if unspecified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -4087,9 +4181,10 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 **Description:** Concatenates in place. a ||= b is equivalent to a = a || b. This is an assignment operator.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = "hello ";
 ex ||= "world";
 
@@ -4101,11 +4196,12 @@ ex ||= "world";
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression with optional linear constraints. The variables, x1, x2, and so on, can be scalars or vectors. Lower and upper bounds must be specified for each variable in parentheses following the variable&apos;s name or with the optional parameter <<SetVariableLimits(). Optional arguments for the Constrained Maximize function enable you to specify the following: linear constraints, maximum number of iterations, desired tolerance, output details, starting values, and limits for the optimization variables. (See example 2.) Linear constraints are specified using the mat_A coefficient matrix and the vec_b right hand side vector.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
@@ -4126,7 +4222,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -4154,11 +4249,12 @@ Show( x, objVal, iters, gradient, hessian );
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression with optional linear constraints. The variables, x1, x2, and so on, can be scalars or vectors. Lower and upper bounds must be specified for each variable in parentheses following the variable&apos;s name or with the optional parameter <<SetVariableLimits(). Optional arguments for the Constrained Minimize function enable you to specify the following: linear constraints, maximum number of iterations, desired tolerance, output details, starting values, and limits for the optimization variables. (See example 2.) Linear constraints are specified using the mat_A coefficient matrix and the vec_b right hand side vector.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -4179,7 +4275,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -4207,9 +4302,10 @@ Show( x, objVal, iters, gradient, hessian );
 
 **Description:** Returns the position of item within x, starting at position start if provided. If start is negative, the search starts backward from length( x ) - start. The argument x can be a string or a list.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -4221,11 +4317,12 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 **Description:** Returns a Boolean indicating whether the word [item], one of a list of words [list], or pattern [pattern] matches one of the words in the text represented by [x]. Words are delimited by the characters in the optional delimiter [delimiter] string. A comma, ",", character is the default delimiter. Blanks are trimmed from the ends of each extracted word from the input text string [x].
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
@@ -4234,7 +4331,6 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
 	numeric,
@@ -4249,7 +4345,6 @@ dt << Distribution( Column( :Cheese ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //find repeated character c in cdcef
 Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
@@ -4261,9 +4356,10 @@ Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
 **Description:** Returns a display box that establishes a scoped evaluation context. Allows different parts of a display window to be executed independently of each other.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Context Box(
 		Outline Box( "Picker",
@@ -4280,9 +4376,10 @@ New Window( "Example",
 
 **Description:** Causes a continuation of next iteration of flow of control within a For or While loop.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -4296,9 +4393,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Draws contours given a grid of values. If there are fewer colors specified than there are contours, options of "Interpolate Colors" or "Cycle Colors" determines how the colors will be applied.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	H List Box(
@@ -4358,11 +4456,12 @@ New Window( "Example",
 
 **Description:** Evaluates the expression on a grid of xName and yName values and draws the contour lines. The color can be specified as a number, a matrix, a list of RGB values, a list of color names, or a Color Theme.  The transparency t can be specified as a number or as a matrix.  If the Ternary option is specified, the contours are clipped to a ternary coordinate system.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -4382,7 +4481,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -4404,9 +4502,10 @@ New Window( "Example",
 
 **Description:** Returns a display seg representing contours of a Triangulation.  Optional colors can be specified for each level as a matrix or list.  The transparency can be specified as a number or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 {xx, yy} = tri << Get Points();
@@ -4431,9 +4530,10 @@ New Window( "Contour Seg Example",
 
 **Description:** Returns the converted path.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",
 	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
@@ -4451,9 +4551,10 @@ For Each( {pv},
 
 **Description:** Copies files from one directory to another, optionally copying subdirectories. The directory name will be created at the to-path and should not be part of the to-path. Returns 1 if the directory was copied or 0 if the directory was unable to be copied. Throws an error if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
 rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
 rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );
@@ -4471,9 +4572,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 **Description:** Copies a file from the original file to a new file with the same or a different name. Specify a complete path and file name for the destination. Returns 1 if the file was copied or 0 if the file was unable to be copied. Throws an error if the path is invalid or does not exist. A file cannot be copied when either the from or to path is invalid, or if the to file already exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -4490,9 +4592,10 @@ Char( rc4 );/* 0 1 1 1 0 */
 
 **Description:** Returns the correlation matrix of the matrix argument x. The "Pairwise" argument handles missing values in pairwise rather than rowwise fashion. The "Shrink" argument reduces the off-diagonal elements by a factor that is determined using the method described in Schafer and Strimmer, 2005. The Freq and Weight arguments specify vectors of frequency or weight values, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4503,9 +4606,10 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 **Description:** Returns the trigonometric cosine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -4516,9 +4620,10 @@ Cosine( Pi() / 2 );
 
 **Description:** Returns the hyperbolic cosine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 CosH( 1 );
 
 ```
@@ -4529,9 +4634,10 @@ CosH( 1 );
 
 **Description:** Returns the trigonometric cosine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -4542,9 +4648,10 @@ Cosine( Pi() / 2 );
 
 **Description:** Returns the ith value in the sequence of numbers from start to end taking s steps and repeating each number n times, where i is determined by the value of the Row() function. Being dependent on the Row() function, the Count() function is generally used in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Count Example",
 	Add Rows( 12 ),
 	New Column( "Count1" ),
@@ -4564,9 +4671,10 @@ For Each Row(
 
 **Description:** Returns the covariance matrix of the matrix argument x. The "Pairwise" argument handles missing values in pairwise rather than rowwise fashion. The "Shrink" argument reduces the off-diagonal elements by a factor that is determined using the method described in Schafer and Strimmer, 2005. The Freq and Weight arguments specify vectors of frequency or weight values, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4577,9 +4685,10 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 **Description:** Creates a database connection and returns a handle to the connection. If DriverPrompt is true, the user will be prompted using the ODBC driver&apos;s prompt to supply credentials if necessary.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
 );
@@ -4592,9 +4701,10 @@ dbc = Create Database Connection(
 
 **Description:** Creates a directory. Returns 1 if directory was created. Returns 0 if the directory already exists or if JMP was unable to create the directory.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -4612,11 +4722,12 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 **Description:** Generate an Excel Workbook from open JMP Data Tables
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
@@ -4627,7 +4738,6 @@ Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook(
@@ -4644,9 +4754,10 @@ Create Excel Workbook(
 
 **Description:** Returns the creation date of a file or directory. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -4657,9 +4768,10 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 **Description:** Returns a matrix of partial sums for the input matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -4670,9 +4782,10 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 **Description:** Obtains the connection to the current CAS Server.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 connection = Current CAS Connection();
 Show( connection );
@@ -4689,9 +4802,10 @@ Show( connection );
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
 
@@ -4711,9 +4825,10 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 If no current journal exists in the given project, one will be created automatically.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Current Journal();
 
 ```
@@ -4728,9 +4843,10 @@ Current Journal();
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Current Report();
 
 ```
@@ -4745,9 +4861,10 @@ Current Report();
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Example Outline",
 		Text Box( "Example Text" ),
@@ -4763,9 +4880,10 @@ New Window( "Example",
 
 **Description:** Compute cytometry logicle transformation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -4776,9 +4894,10 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 **Description:** Compute inverse cytometry logicle transformation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```
@@ -4789,9 +4908,10 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 **Description:** The collection of data connectors for JMP.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
@@ -4803,9 +4923,10 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 **Description:** Returns a display box that defines the extent of the local data filters contained in a display tree. Data filters and Data Filter Context Boxes can be arranged in a hierarchy and will be shared among platforms or boxes contained within the Data Filter Context Boxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
 	Data Filter Context Box(
@@ -4838,9 +4959,10 @@ New Window( "Shared Local Filter",
 
 **Description:** Returns a display box that defines the source of a selection filter. Selected rows in reports contained by the Data Filter Source Box will be included for analysis in the other reports contained within a common Data Filter Context Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
 	Data Filter Context Box(
@@ -4878,9 +5000,10 @@ New Window( "Selection Filter",
 
 **Description:** Returns a display box that can hold a data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -4893,9 +5016,10 @@ x << Set Data Table( dt );
 
 **Description:** Returns a reference to the specified data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Data Table( 1 );
@@ -4908,9 +5032,10 @@ Data Table( 1 );
 
 **Description:** Returns a table box representing the given data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -4922,9 +5047,10 @@ New Window( "Example", Data Table Box( dt ) );
 
 **Description:** Returns a column box corresponding to the given data table column.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) )
@@ -4938,9 +5064,10 @@ New Window( "Example",
 
 **Description:** Returns a Plot Col Box corresponding to the given data table column and optionally uses the second and third data table columns to create control limits.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) )
@@ -4954,9 +5081,10 @@ New Window( "Example",
 
 **Description:** Creates an object and window you can send messages to manage real-time data feeds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -4976,11 +5104,12 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 **Description:** Returns the difference in intervals of two date/time values. Supported values of intervalName are "Year", "Quarter", "Month", "Week", "Day", "Hour", "Minute", "Second", and "Numeric". An alignment of "Start" includes full or partial intervals, while "Actual" only includes full intervals. An alignment of "Fractional" returns fractional differences, using averages for the duration of "Year", "Quarter", and "Month" intervals.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
@@ -4989,7 +5118,6 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
@@ -4998,7 +5126,6 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
 ```
@@ -5009,9 +5136,10 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **Description:** Converts day, month, and year into a JMP date-time value, which is the number of seconds since 01Jan1904.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date DMY( 15, 7, 2000 ) );
 
 ```
@@ -5022,11 +5150,12 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **Description:** Returns a new date-time value by adding incr number of intervals. Supported values of intervalName are "Year", "Quarter", "Month", "Week", "Day", "Hour", "Minute", "Second", and "Numeric". An alignment of "Start" truncates to the nearest interval prior to adding the increment, while "Actual" retains the full input date/time. An alignment of "Fractional" allows fractional incr values, using averages for the duration of "Year", "Quarter", and "Month" intervals.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
@@ -5035,7 +5164,6 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
@@ -5044,7 +5172,6 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "fractional" );
 
 ```
@@ -5055,9 +5182,10 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 **Description:** Converts month, day, and year into a JMP date value, which is the number of seconds since 01Jan1904.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -5068,9 +5196,10 @@ As Date( Date MDY( 7, 15, 2000 ) );
 
 **Description:** Returns the day of month part of a date-time value, 1 - 31.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day( Today() );
 
 ```
@@ -5081,9 +5210,10 @@ Day( Today() );
 
 **Description:** Returns the day of the week of a date-time value. Sunday = 1, ..., Saturday = 7.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Week( Today() );
 
 ```
@@ -5094,9 +5224,10 @@ Day Of Week( Today() );
 
 **Description:** Returns the day of the year of a date-time value. January 1 is 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Year( Today() );
 
 ```
@@ -5107,9 +5238,10 @@ Day Of Year( Today() );
 
 **Description:** Return the number of days in a given month.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 v = Days In Month( 2016, 2 );
 
 ```
@@ -5120,9 +5252,10 @@ v = Days In Month( 2016, 2 );
 
 **Description:** When this expression is evaluated within the JSL Debugger, the Debugger stops executing the script.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
 x = 5;
@@ -5139,9 +5272,10 @@ Show( z );
 
 **Description:** Encode the string using URI encoding
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Decode URI( "Foo%20Bar" );
 
@@ -5153,9 +5287,10 @@ Decode URI( "Foo%20Bar" );
 
 **Description:** Decodes a printable string of base 64 text into a blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```
@@ -5166,9 +5301,10 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 **Description:** Returns the double-precision floating point number from the Base64 encoded string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -5179,9 +5315,10 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 **Description:** Define a New Class
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -5231,9 +5368,10 @@ Delete Classes( complex );
 
 **Description:** Deletes all class definitions or one or more specific class definitions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -5261,9 +5399,10 @@ Show Classes();
 
 **Description:** Deletes a directory and its files and subdirectories. Returns 1 if the directory was deleted. Returns 0 if directory was unable to be deleted or the path is invalid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -5281,9 +5420,10 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 **Description:** Deletes a file. Returns 1 if the file was deleted. Returns 0 if file was unable to be deleted. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = File Exists( "$TEMP/x.jmp" );
 rc2 = Delete File( "$TEMP/x.jmp" );
@@ -5298,9 +5438,10 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 **Description:** Deletes all the currently defined global symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Globals();
 
 ```
@@ -5311,9 +5452,10 @@ Delete Globals();
 
 **Description:** Deletes all namespaces or one or more specific namespaces.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 nsaa = New Namespace(
 	"aa",
@@ -5339,9 +5481,10 @@ Show Namespaces();
 
 **Description:** Deletes all the currently defined symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Symbols();
 
 ```
@@ -5352,9 +5495,10 @@ Delete Symbols();
 
 **Description:** Returns the symbolic derivative for the given expression with respect to the specified variable name.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Derivative( Sin( x ), x );
 
 ```
@@ -5365,9 +5509,10 @@ Derivative( Sin( x ), x );
 
 **Description:** Creates a design matrix that contains a column of 1s and 0s for each unique value of the argument. Use the levelsList argument to specify a list of the levels for the design matrix. If the <<Levels argument is specified, the return value is a list that contains the design matrix and a list of the levels. If the <<ElseMissing argument is specified, missing values are placed in the design matrix for values in the v argument that do not appear in the levelsList. Otherwise, 0s are placed in the design matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design( exLevels ) );
@@ -5392,9 +5537,10 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 **Description:** Creates a design matrix that contains a column of 1s and 0s for all but the last of the unique values of the argument. The last level is coded as a row of 0s. If the levelsList argument is specified, the last level is the last level in levelsList. Otherwise, the last level is defined as the largest value in v. If the <<Levels argument is specified, the return value is a list that contains the design matrix and a list of the levels. If the <<ElseMissing argument is specified, missing values are placed in the design matrix for values in the v argument that do not appear in the levelsList. Otherwise, 0s are placed in the design matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Last(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Last( exLevels ) );
@@ -5426,9 +5572,10 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 **Description:** Creates a design matrix that contains a column of 1s and 0s for all but the last of the unique values of the argument. The last level is coded as a row of -1s. If the levelsList argument is specified, the last level is the last level in levelsList. Otherwise, the last level is defined as the largest value in v. If the <<Levels argument is specified, the return value is a list that contains the design matrix and a list of the levels. If the <<ElseMissing argument is specified, missing values are placed in the design matrix for values in the v argument that do not appear in the levelsList. Otherwise, 0s are placed in the design matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Nom(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Nom( exLevels ) );
@@ -5460,9 +5607,10 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 **Description:** Creates a design matrix that contains a column for all but the last of the unique values of the argument. The first level is coded as a row of 0s. Each subsequent (nth) level in the levelsList argument is coded as a row of (n-1) 1s and the rest 0s. If the <<Levels argument is specified, the return value is a list that contains the design matrix and a list of the levels. If the <<ElseMissing argument is specified, missing values are placed in the design matrix for values in the v argument that do not appear in the levelsList. Otherwise, 0s are placed in the design matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* example that Design Ord(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Ord( exLevels ) );
@@ -5494,9 +5642,10 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 **Description:** Creates a design matrix that contains a column of 1s and 0s for all but the last of the unique values of the argument. The last level is coded as a row of -1s. If the levelsList argument is specified, the last level is the last level in levelsList. Otherwise, the last level is defined as the largest value in v. If the <<Levels argument is specified, the return value is a list that contains the design matrix and a list of the levels. If the <<ElseMissing argument is specified, missing values are placed in the design matrix for values in the v argument that do not appear in the levelsList. Otherwise, 0s are placed in the design matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* example that DesignF(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( DesignF( exLevels ) );
@@ -5528,9 +5677,10 @@ Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 **Description:** Returns a desirability curve, where yVector is a vector of 3 input values, dVector is the corresponding 3 desirability values, and y is the argument of which to calculate the desirability.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -5551,9 +5701,10 @@ New Window( "Desirability",
 
 **Description:** Returns the determinant of a square matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Det( [11 22, 33 44] );
 
 ```
@@ -5564,9 +5715,10 @@ Det( [11 22, 33 44] );
 
 **Description:** Constructs a diagonal matrix from either a matrix or a vector. If two arguments are specified, the function returns the concatenation of the matrices diagonally.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Diag( [11 22] );
 
 ```
@@ -5577,11 +5729,12 @@ Diag( [11 22] );
 
 **Description:** Prompts the user with a modal window. This function is deprecated. Please use the New Window function with the <<Modal argument.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Dialog equivalent
 If(
 	ex = New Window( "Dialog() example",
@@ -5604,7 +5757,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 If(
 	ex = Dialog(
@@ -5628,9 +5780,10 @@ If(
 
 **Description:** Returns x - Lag( x, n ), also known as the "first difference". Being dependent on Row(), Dif() is mainly useful in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -5643,9 +5796,10 @@ Dif( :height, 2 );
 
 **Description:** Returns the digamma function evaluated at x, where the digamma function is the derivative of the logarithm of the gamma function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Digamma( 5 );
 
 ```
@@ -5656,9 +5810,10 @@ Digamma( 5 );
 
 **Description:** Returns a row vector with the dimensions of the current data table, a specified data table, or a matrix. The dimensions are the number of rows and the number of columns and are listed in that order.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -5669,9 +5824,10 @@ Dim( [11 22, 33 44, 55 66] );
 
 **Description:** Returns the direct or Kronecker product. Result has A[i,j]*B, expanding to all possible products.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2, 3 3 3];
 exProd = Direct Product( exA, exB );
@@ -5693,9 +5849,10 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 **Description:** Determine whether the directory exists. Returns 1 if the path exists. Returns 0 if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -5709,9 +5866,10 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 **Description:** Disables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable JMP Live URL( "*public.jmp.com" );
 
@@ -5723,9 +5881,10 @@ Disable JMP Live URL( "*public.jmp.com" );
 
 **Description:** Disables or enables proxy settings during jmpStartAdmin.jsl execution. Proxy settings are enabled by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable Proxy Settings( 1 );
 
@@ -5737,9 +5896,10 @@ Disable Proxy Settings( 1 );
 
 **Description:** Produces a matrix of distances between rows of x1 and rows of x2. To customize the scaling and powers for each column, specify the extra arguments scale and powers. For Kriging, Exp(-distance(x1,x2)) is used.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /*1-D example*/
 exX1 = [1, 2, 3, 4];
 exX2 = [2, 4, 6, 8]; 
@@ -5806,11 +5966,12 @@ Show( exDm == exD );
 
 **Description:** Divides all subsequent arguments from the first argument. Arguments can be numbers, matrices, or lists of numbers. When called with only one argument, the result will be the reciprocal.
 
+**JMP Version Added:** Before version 14
+
 **Reciprocal**
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
@@ -5821,7 +5982,6 @@ Show( x, y );
 
 ```jsl
 
-Names Default To Here( 1 );
 6 / 3 / 2;
 
 ```
@@ -5832,9 +5992,10 @@ Names Default To Here( 1 );
 
 **Description:** Divides a value into a variable or into a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex /= 2;
 ex;
@@ -5847,9 +6008,10 @@ ex;
 
 **Description:** Returns the depreciation of an asset for a specified period using the double-declining balance method or some other depreciation factor. Equivalent to the DDB function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -5860,9 +6022,10 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 **Description:** Draws a polyline at the indicated points. Unlike Line though, the points can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -5880,9 +6043,10 @@ New Window( "Example",
 
 **Description:** Draws movable markers at the indicated points. The matrix values are updated as the markers are moved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -5900,9 +6064,10 @@ New Window( "Example",
 
 **Description:** Draws a filled polygon at the indicated points. The points can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -5920,9 +6085,10 @@ New Window( "Example",
 
 **Description:** Draws a rectangle at the indicated points. Unlike Rect though, these corners can be dragged across the screen, updating the values in the (LValue) matrix arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -5940,9 +6106,10 @@ New Window( "Example",
 
 **Description:** Draws the text at the indicated points. Unlike the Text() function, however, the points can be dragged across the screen, updating the values in the xMatrixName and yMatrixName matrix arguments. The text argument can be a string argument or a list of strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -5960,9 +6127,10 @@ New Window( "Example",
 
 **Description:** Returns the p-value from Dunnett&apos;s multiple comparisons test, where q is the test statistic, nTrt is the number of treatments being compared to the control group, dfe is the error degrees of freedom (based on the total study sample), and the optional lambdaVec is a vector of parameters, which by default are set to 1/sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -5973,9 +6141,10 @@ Dunnett P value( 1.67623, 3, 11 );
 
 **Description:** Returns the quantile needed in Dunnett&apos;s multiple comparisons test, where 1-alpha is the confidence level, nTrt is the number of treatments being compared to the control group, dfe is the error degrees of freedom (based on the total study sample), and the optional lambdaVec is a vector of parameters, which by default are set to 1/sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dunnett Quantile( 0.95, 3, 11 );
 
 ```
@@ -5986,9 +6155,10 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 **Description:** Returns the mathematical constant e, accurate to approximately 15 decimal digits: 2.7182818....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( e(), 10 );
 
 ```
@@ -5999,9 +6169,10 @@ Round( e(), 10 );
 
 **Description:** Returns an element-wise division of matrices.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [11 22 33] :/ [1 2 3];
 
 ```
@@ -6012,9 +6183,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns a matrix that is the maximum of corresponding elements of its arguments.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 E Max( [1 22 33], [11 2 3] );
 
 ```
@@ -6025,9 +6197,10 @@ E Max( [1 22 33], [11 2 3] );
 
 **Description:** Returns a matrix that is the minimum of corresponding elements of its arguments.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 E Min( [1 22 33], [11 2 3] );
 
 ```
@@ -6038,9 +6211,10 @@ E Min( [1 22 33], [11 2 3] );
 
 **Description:** Returns an element-wise multiplication of matrices.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [1 2 3] :* [11 22 33];
 
 ```
@@ -6051,9 +6225,10 @@ Names Default To Here( 1 );
 
 **Description:** Performs eigenvalue decomposition of symmetric matrix X. Returns list {M, E} such that E*Diag(M)*E` = X.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 X = [11 22, 22 33];
 {M, E} = Eigen( X );
 E * Diag( M ) * E`;
@@ -6064,9 +6239,10 @@ E * Diag( M ) * E`;
 
 **Syntax:** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 {M1, E1} = Eigen BLAS( X );
 
@@ -6078,9 +6254,10 @@ X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 
 **Description:** Returns an empty value. Used in formula editor for unspecified arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Empty();
 
 ```
@@ -6091,9 +6268,10 @@ Empty();
 
 **Description:** Enables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable JMP Live URL( "https://public.jmp.com" );
 
@@ -6105,9 +6283,10 @@ Enable JMP Live URL( "https://public.jmp.com" );
 
 **Description:** Enables or disables proxy settings during jmpStartAdmin.jsl execution. Proxy settings are enabled by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable Proxy Settings( 0 );
 
@@ -6119,9 +6298,10 @@ Enable Proxy Settings( 0 );
 
 **Description:** Encode the string using URI encoding
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Encode URI( "Foo Bar" );
 
@@ -6133,9 +6313,10 @@ Encode URI( "Foo Bar" );
 
 **Description:** Encodes a blob into a printable string of base 64 text.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -6146,9 +6327,10 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 **Description:** Returns a Base64 string encoding of the floating point number.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Double( -1.5831 );
 
 ```
@@ -6159,9 +6341,10 @@ Encode64 Double( -1.5831 );
 
 **Description:** Returns 1 if s ends with sub, otherwise returns 0. The s and sub arguments can be both strings or both lists. Equivalent to Right( s, Length( sub )) == sub.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -6172,9 +6355,10 @@ Ends With( "http://www.jmp.com", ".com" );
 
 **Description:** Returns 1 if each argument is equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 == 1;
 
 ```
@@ -6185,9 +6369,10 @@ Names Default To Here( 1 );
 
 **Description:** Estimates factor scores, using Bartlett&apos;s method, from a structural equation model (SEM). The input arguments are a row vector of data, the model-implied means for the manifest variables, the model-implied means for the latent variables, the S RAM matrix from an SEM, and the A RAM matrix from an SEM. It returns a row vector with estimated factor scores based on the SEM.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Estimate Bartlett Factor Score(
 	[2 2 0],
 	[2.085 2.76 1.56],
@@ -6212,9 +6397,10 @@ Estimate Bartlett Factor Score(
 
 **Description:** Estimates factor scores, using the regression method, from a structural equation model (SEM). The input arguments are a row vector of data, a model-implied variance-covariance matrix, a vector of model-implied manifest variable means, and a vector of model-implied latent variable means. It returns a row vector with estimated factor scores based on the SEM.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Estimate Factor Score(
 	[7 10 5 2 2 0],
 	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
@@ -6237,9 +6423,10 @@ Estimate Factor Score(
 
 **Description:** Evaluates the argument and returns the result.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -6250,9 +6437,10 @@ Eval( Expr( 1 + 2 ) );
 
 **Description:** Returns a copy of expression x with each Expr() clause within x replaced with its evaluated value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```
@@ -6263,9 +6451,10 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -6276,9 +6465,10 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within, replacing l_string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
 ex;
@@ -6291,11 +6481,12 @@ ex;
 
 **Description:** Returns a list where every item in the list has been evaluated.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -6304,7 +6495,6 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
@@ -6317,9 +6507,10 @@ Eval List( {x, y} );
 
 **Description:** Returns a display box containing the excerpt designated by the report held at number rptnum and the list of display subscripts lstSubscripts. The subscripts reflect the current state of the report, after previous excerpts have been removed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -6365,9 +6556,10 @@ New Window( "Example",
 
 **Description:** Returns the excluded component of the specified row state value, 0 or 1. If the Excluded() function is used as an L-value, it changes the excluded state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -6382,9 +6574,10 @@ Excluded();
 
 **Description:** Returns a row state value with the excluded component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -6397,11 +6590,12 @@ Excluded( Row State( 3 ) );
 
 **Description:** Executes SQL against a database connection returned from Create Database Connection or a Data Connector. Enabling Batch Submit allows for receiving multiple results from multiple SQL statements, returning a list with the results (supporting drivers only).
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -6414,7 +6608,6 @@ dt = Execute SQL(
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
@@ -6424,7 +6617,6 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
 	dc,
@@ -6440,9 +6632,10 @@ resultList = Execute SQL(
 
 **Description:** Returns the density at x of an ExGaussian distribution.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
 		Y Scale( 0, .2 ),
@@ -6461,9 +6654,10 @@ New Window( "Example: ExGaussian Density",
 
 **Description:** Returns the probability that an ExGaussian distributed random variable is less than x.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6482,9 +6676,10 @@ New Window( "Example: ExGaussian Distribution",
 
 **Description:** Returns the quantile from an ExGaussian distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
 		Y Scale( -2, 15 ),
@@ -6503,9 +6698,10 @@ New Window( "Example: ExGaussian Quantile",
 
 **Description:** Exits JMP.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -6522,9 +6718,10 @@ If(
 
 **Description:** Returns e raised to the x power. Argument can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Exp( 1 ), 5 );
 
 ```
@@ -6535,9 +6732,10 @@ Round( Exp( 1 ), 5 );
 
 **Description:** Returns the density at x of an exponential distribution with parameter theta.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -6556,9 +6754,10 @@ New Window( "Example: Exp Density",
 
 **Description:** Returns the probability that an exponentially distributed random variable is less than x.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6577,9 +6776,10 @@ New Window( "Example: Exp Distribution",
 
 **Description:** Returns the quantile from an exponential distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6597,9 +6797,10 @@ New Window( "Example: Exp Quantile",
 
 **Description:** Returns a more accurate calculation of Exp(x)-1 when x is very small.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -6610,9 +6811,10 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 **Description:** Returns the density at x of an exponential distribution with parameter theta.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -6631,9 +6833,10 @@ New Window( "Example: Exponential Density",
 
 **Description:** Returns the probability that an exponentially distributed random variable is less than x.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6652,9 +6855,10 @@ New Window( "Example: Exponential Distribution",
 
 **Description:** Returns the quantile from an exponential distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6672,9 +6876,10 @@ New Window( "Example: Exponential Quantile",
 
 **Description:** Returns its argument unevaluated. Used to quote expressions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Expr( x + y );
 
 ```
@@ -6685,9 +6890,10 @@ Expr( x + y );
 
 **Description:** Returns an image containing the specified expression as a formula picture. The default width is 600 pixels and the default max matrix size is 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -6705,9 +6911,10 @@ New Window( "Example",
 
 **Description:** Returns a subexpression matching the specified pattern.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -6718,9 +6925,10 @@ Extract Expr( a + b * c, Wild() * Wild() );
 
 **Description:** Returns the density at q of an F distribution with dfn and dfd degrees of freedom.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fdedfn = 2;
 fdedfd = 2;
 New Window( "Example: F Density",
@@ -6744,9 +6952,10 @@ New Window( "Example: F Density",
 
 **Description:** Returns the probability that an F distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -6770,9 +6979,10 @@ New Window( "Example: F Distribution",
 
 **Description:** Returns the log of 1 - F Distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 flcddfn = 5;
 flcddfd = 5;
 New Window( "Example: F Log CDistribution",
@@ -6796,9 +7006,10 @@ New Window( "Example: F Log CDistribution",
 
 **Description:** Returns the log of the F probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -6822,9 +7033,10 @@ New Window( "Example: F Log Density",
 
 **Description:** Returns the log of the F distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 flddfn = 5;
 flddfd = 5;
 New Window( "Example: F Log Distribution",
@@ -6848,9 +7060,10 @@ New Window( "Example: F Log Distribution",
 
 **Description:** Solves for the noncentrality parameter nc such that prob = F Distribution( x, ndf, ddf, nc ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -6870,9 +7083,10 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 **Description:** Calculates the power of an F Test, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and n is the total number of observations. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 obs = 25;
 dfh = 5;
@@ -6899,9 +7113,10 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 **Description:** Returns the quantile from an F distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -6912,9 +7127,10 @@ F Quantile( 0.7, 5, 3 );
 
 **Description:** Calculates the sample size, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and power is the power desired. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 pow = 0.6;
 dfh = 5;
@@ -6941,9 +7157,10 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 **Description:** Returns the factorial of x, which is the same as Gamma( x + 1 ). If x is an integer, the result is the product 1 * 2 * ... * x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Factorial( 5 );
 
 ```
@@ -6954,9 +7171,10 @@ Factorial( 5 );
 
 **Description:** Generate a sequence of space filling quasi-random numbers using the Faure sequence.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -6969,9 +7187,10 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 **Description:** Returns the false discovery rate adjustment for the specified p-values using the Benjamini-Hochberg method.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -6982,9 +7201,10 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 **Description:** Conducts Fast Fourier Transformation (FFT) on argument L, a required list consisting of real and imaginary parts of the data in matrix forms. If L consists of only one matrix, the matrix is considered to be the real part. If L consists of two matrices, the first is the real part, and the second is the imaginary part. The two matrices must have the same dimensions and must have more than one row. There are three optional arguments. The inverse argument determines whether to conduct inverse FFT. The multivariate argument determines whether to conduct spatial or multivariate FFT. The scale argument determines the constant by which the return values should be multiplied. Return value is a list of two matrices with the same dimensions as the first input argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
 A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
 res = FFT( {A} );
@@ -7051,9 +7271,10 @@ Show( fin );
 
 **Description:** Determine whether the file exists. Returns 1 if the file path exists. Returns 0 if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -7067,9 +7288,10 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 **Description:** Returns the size of the file at the given path. Returns missing when file path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -7080,11 +7302,12 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Returns the list of file names in a directory that is specified by path. If the Recursive argument is not specified, directory names are included in the list.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Files In Directory( "$HOME" );
 
 ```
@@ -7093,7 +7316,6 @@ Files In Directory( "$HOME" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
 );
@@ -7106,9 +7328,10 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 **Description:** Sets the color for drawing filled areas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( {1, 1, .5} );
@@ -7124,11 +7347,12 @@ New Window( "Example",
 
 **Description:** Sets the pattern for drawing filled areas. A mask is a matrix of values between 0 and 1 to be applied to the current fill color.
 
+**JMP Version Added:** Before version 14
+
 **Image**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
@@ -7144,7 +7368,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Pattern( [1 0.5 0 0, 0.5 0 0 1, 0 0 1 0.5, 0 1 0.5 0] );
@@ -7160,9 +7383,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that contains a list of items. Control allows column filtering.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
@@ -7174,11 +7398,12 @@ New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 2
 
 **Description:** Does everything that the For Each function does, but also returns a list of filtered values from the original container based on a boolean value result. The type of the result will match the type of the input container. For Matrix input, a row vector matrix will be returned, since the size of the matrix cannot be known.
 
+**JMP Version Added:** 16
+
 **Associative Array**
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );
 Show( values );
 
@@ -7188,7 +7413,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );
 Show( values );
 
@@ -7198,7 +7422,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
@@ -7208,7 +7431,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
 
@@ -7224,9 +7446,10 @@ Show( values );
 
 Only windows in the current project (or no project if not running the script in a project) will be included. To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
@@ -7243,9 +7466,10 @@ For( i = 1, i <= N Items( windows ), i++,
 
 **Description:** Evaluates each argument and returns the value of the first argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 First( 11, 22 );
 
 ```
@@ -7256,9 +7480,10 @@ First( 11, 22 );
 
 **Description:** Fits a distribution using censored data. The required arguments are Distribution and either YLow or Y. The function returns a list that contains parameter estimates, covariance matrix, log-likelihood, AICc, BIC, and a convergence message. The X and Z arguments specify regression design matrices for location and scale, respectively. When the data vector is large, two optional arguments can be used to specify a sample to compute the initial values. You can specify a percent of the observations or the first nobs observations, but the total sample size must be greater than 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 result = Fit Censored(
 	Distribution( "Weibull" ),
 	Y( [142, 156, 163, 198, 204, 205, 232, 239, 240, 261, 280, 296, 323, 344] )
@@ -7273,9 +7498,10 @@ Show( result );
 
 **Description:** Fits the circle that best goes through three or more points that are defined by two vectors of coordinates. The result is a list that contains the X and Y coordinates of the center point of the circle, the length of the radius, and the sum of squared errors.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
 result = Fit Circle( x, y );
@@ -7297,9 +7523,10 @@ New Window( "Fit Circle",
 
 **Description:** Fits a transformation to normality for a vector of data. This includes the Johnson Sl, Johnson Sb, Johnson Su, and GLog distributions. The function returns a list containing parameter estimates, covariance matrix, log-likelihood, AICc, a convergence message, and transformed values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
 -6.1855986, 2.16525629, -30.990061];
 freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
@@ -7321,9 +7548,10 @@ Show( results );
 
 **Description:** Returns the largest integer less than or equal to x. Argument can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Floor( 1.2 );
 
 ```
@@ -7334,9 +7562,10 @@ Floor( 1.2 );
 
 **Description:** Evaluates initExpr once and repeatedly evaluates whileExpr, bodyExpr, and nextExpr as long as whileExpr evaluates to a nonzero value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 s = "";
 For( i = 1, i < 10, i++,
 	s ||= " " || Char( i )
@@ -7351,11 +7580,12 @@ Trim( s );
 
 **Description:** Iterates over a container, either a list, matrix, associative array, or expression, providing the value, element, or key at each iteration. The index number is also available at each iteration. For Associative Array containers, the key and value can be accessed using a two-item list. For Matrix containers, a linear index is provided by default, but a two item list can be used to access the row and column indices. These symbols are provided within the body of the loop only, with a built-in Local block. A locals list can also be provided, which are initialized after the first iteration symbols are set.
 
+**JMP Version Added:** 16
+
 **Across**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Across multiple containers
 x = {1, 3};
@@ -7372,7 +7602,6 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 list1 = {1, 3, 5, 7, 9};
 list2 = {2, 4}; 
@@ -7398,7 +7627,6 @@ Try(
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
@@ -7407,7 +7635,6 @@ For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, val
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```
@@ -7416,7 +7643,6 @@ For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
@@ -7425,7 +7651,6 @@ For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```
@@ -7434,7 +7659,6 @@ For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```
@@ -7445,9 +7669,10 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 **Description:** Evaluates the body expression iteratively for each row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -7459,11 +7684,12 @@ For Each Row( :height = -:height );
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
+**JMP Version Added:** Before version 14
+
 **Date Time**
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7472,7 +7698,6 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
@@ -7481,7 +7706,6 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
@@ -7490,7 +7714,6 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -7503,11 +7726,12 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7516,7 +7740,6 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
@@ -7525,7 +7748,6 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -7538,9 +7760,10 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 **Description:** Format Patterns are strings that define a date-time format, such as "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>". The parts of the pattern in angle brackets are called field descriptors. The field descriptors represent a value (such as "<YYYY>", which is a four-digit year) or other date-time text (such as "</>", which is a locale-specific date separator). A format pattern enables you to build formats that aren&apos;t provided in JMP. These formats can be used for both formatting and inputting data.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 Show( s, x );
@@ -7633,9 +7856,10 @@ Other
 
 **Description:** Returns the matrix of Fourier Basis coefficients. Number Pairs is the number of sin() and cos() pairs for the basis. Optional parameter Period specifies the period for the trigonometric functions and defaults to max(x) - min(x) + 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
@@ -7647,9 +7871,10 @@ Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
 **Description:** Returns the density at x of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Density",
@@ -7674,9 +7899,10 @@ New Window( "Example: Frechet Density",
 
 **Description:** Returns the probability at x of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -7700,9 +7926,10 @@ New Window( "Example: Frechet Distribution",
 
 **Description:** Returns the quantile at p of a Fréchet distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .5;
 qq = .5;
@@ -7737,11 +7964,12 @@ New Window( "Example: Frechet Quantile",
 
 **Description:** Defines a function with the specified arguments, default values, and optional local variables. Arguments with default values are optional on invocation of the function. If Return() is used within the function&apos;s script, the expression within is returned.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
@@ -7751,7 +7979,6 @@ exsqr( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
 a = exmul( 5 );
@@ -7764,7 +7991,6 @@ Show( a, b );
 
 ```jsl
 
-Names Default To Here( 1 );
 posorneg = Function( {x},
 	{},
 	If(
@@ -7783,9 +8009,10 @@ posorneg( -5.5 );
 
 **Description:** Returns the future value of an investment based on periodic, constant payments and a constant interest rate. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the FV function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Future Value( .03, 12, 100, 0, 1 );
 
 ```
@@ -7796,9 +8023,10 @@ Future Value( .03, 12, 100, 0, 1 );
 
 **Description:** Returns the generalized (Moore-Penrose) matrix inverse.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -7809,9 +8037,10 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 **Description:** Returns Gamma function of x, defined as the integral of z^(x-1)*exp(-z) dz from 0 to ∞. If limit is present, an incomplete Gamma is computed using that limit of integration.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gamma( 5 );
 
 ```
@@ -7822,9 +8051,10 @@ Gamma( 5 );
 
 **Description:** Returns the density at q of a Gamma probability distribution, where the alpha shape parameter argument must be positive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
 	gdey = Graph Box(
@@ -7849,9 +8079,10 @@ New Window( "Example: Gamma Density",
 
 **Description:** Returns the probability that a Gamma distributed random variable is less than q, where the alpha shape parameter argument must be positive. IGamma() is an alias name to Gamma Distribution(). The Gamma Distribution() function is equivalent to Gamma(alpha,q)/Gamma(alpha).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -7876,9 +8107,10 @@ New Window( "Example: Gamma Distribution",
 
 **Description:** Returns the log of 1 - Gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
 	glcdiy = Graph Box(
@@ -7903,9 +8135,10 @@ New Window( "Example: Gamma Log CDistribution",
 
 **Description:** Returns the log of the Gamma probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -7930,9 +8163,10 @@ New Window( "Example: Gamma Log Density",
 
 **Description:** Returns the log of the Gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -7957,9 +8191,10 @@ New Window( "Example: Gamma Log Distribution",
 
 **Description:** Returns the probability that a gamma Poisson distributed random variable is less than or equal to k, where lambda is the mean parameter, sigma is the overdispersion parameter, and k is the count of interest.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Gamma Poisson Distribution",
@@ -7991,9 +8226,10 @@ New Window( "Example: Gamma Poisson Distribution",
 
 **Description:** Returns the probability that a gamma Poisson distributed random variable is equal to k, where lambda is the mean parameter, sigma is the overdispersion parameter, and k is the count of interest.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Gamma Poisson",
@@ -8023,9 +8259,10 @@ New Window( "Poisson and Gamma Poisson",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the Gamma Poisson( lambda, sigma ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -8068,9 +8305,10 @@ New Window( "Example: Gamma Poisson Quantile",
 
 **Description:** Returns the quantile from a Gamma distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -8081,9 +8319,10 @@ Gamma Quantile( 0.75, 4 );
 
 **Description:** Returns the density at x of an extended generalized gamma probability distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -8110,9 +8349,10 @@ New Window( "Example: GenGamma Density",
 
 **Description:** Returns the probability that an extended generalized gamma distributed random variable (with parameters mu, sigma, and lambda) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -8139,9 +8379,10 @@ New Window( "Example: GenGamma Distribution",
 
 **Description:** Returns the quantile from an extended generalized gamma distribution (with parameters mu, sigma, and lambda), the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -8185,9 +8426,10 @@ New Window( "Example: GenGamma Quantile",
 
 **Description:** Retrieves a registered add-in specified by its ID.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -8198,9 +8440,10 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 **Description:** Returns a list of all registered add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addin ids = Get Addins() << id;
 Show( addins, addin ids );
@@ -8213,9 +8456,10 @@ Show( addins, addin ids );
 
 **Description:** Looks up the numeric address for a name. In most cases the name should be used for future IPV6 compatibility.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -8226,9 +8470,10 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 **Description:** Returns a list of names of all currently defined classes.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -8253,9 +8498,10 @@ Delete Classes( "aa", "bb" );
 
 **Description:** Returns a list of references to all currently defined classes
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -8281,9 +8527,10 @@ Delete Classes( "aa", "bb" );
 
 **Description:** Get the current contents of the clipboard
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Clipboard();
 
 ```
@@ -8294,9 +8541,10 @@ Get Clipboard();
 
 **Description:** Returns the script for a given color theme name
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Detail( "JMP Default" );
 
 ```
@@ -8307,11 +8555,12 @@ Get Color Theme Detail( "JMP Default" );
 
 **Description:** Returns a list of color theme strings which match the optional parameter kind. kind is one of the following: "continuous", "categorical", "sequential", "diverging", "qualitative", or "chromatic".
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names();
 
 ```
@@ -8320,7 +8569,6 @@ Get Color Theme Names();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Color Theme Names( "sequential" );
 
 ```
@@ -8331,11 +8579,12 @@ Get Color Theme Names( "sequential" );
 
 **Description:** Get a list of custom functions
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions();
 
 ```
@@ -8344,7 +8593,6 @@ Get Custom Functions();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -8363,9 +8611,10 @@ The search is limited to tables in the current project (or no project when not r
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table( 1 );
@@ -8386,11 +8635,12 @@ The list is limited to tables in the current project (or no project when not run
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
@@ -8401,7 +8651,6 @@ Get Data Table List();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
 
@@ -8413,9 +8662,10 @@ Get Data Table List( Project( project ) );
 
 **Description:** Returns the JMP default directory, which is used as a base for subsequent relative paths. This path is the directory containing the currently executing script if the script is saved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
 Show( Get Default Directory() );
@@ -8432,9 +8682,10 @@ Show( Get Default Directory() );
 
 NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Environment Variable( "PATH" );
 
 ```
@@ -8445,9 +8696,10 @@ Get Environment Variable( "PATH" );
 
 **Description:** Returns a list of worksheets within an Excel Workbook
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
 Show( sheetList );
 
@@ -8459,11 +8711,12 @@ Show( sheetList );
 
 **Description:** Retrieve the locations of the top token in a parsed expression. The default invocation returns {the source file, TokenStartLine, TokenStartCol, TokenLength}.
 
+**JMP Version Added:** 17
+
 **Default output**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( ":height + 20" );
 Get Expr Location( e );
@@ -8474,7 +8727,6 @@ Get Expr Location( e );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 data = " :height + 20 ";
 e = Parse( data );
@@ -8487,7 +8739,6 @@ Munger( data, positions[1], positions[2], "45" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( " :height + 20 " );
 Get Expr Location( e, {"TreeStart", "TreeEnd"} );
@@ -8500,9 +8751,10 @@ Get Expr Location( e, {"TreeStart", "TreeEnd"} );
 
 **Description:** Returns the current list of directories to search for opening files.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get File Search Path();
 
 ```
@@ -8513,9 +8765,10 @@ Get File Search Path();
 
 **Description:** Retrieves a locale setting such as decimal separator
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -8526,9 +8779,10 @@ Get Locale Setting( "Decimal Separator" );
 
 **Description:** Returns a list of lines from the log. If no argument is specified, all the lines from the log are returned. If the numeric argument N is positive, the first N lines from the log are returned. If N is negative, the last N lines from the log are returned. If N is zero, no lines are returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 all contents = Get Log();
 headcontents = Get Log( 10 );
 tailcontents = Get Log( -5 );
@@ -8541,9 +8795,10 @@ tailcontents = Get Log( -5 );
 
 **Description:** Looks up the name for a numeric address. In most cases the name should be used for future IPV6 compatibility.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -8554,9 +8809,10 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 **Description:** Returns a list of names of all currently defined namespaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -8582,9 +8838,10 @@ nsbb << Delete;
 
 **Description:** Returns a list of references to all currently defined namespaces
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -8611,15 +8868,18 @@ nsbb << Delete;
 
 **Description:** Returns a list of all open notebooks.
 
+**JMP Version Added:** 19
+
 ### Get OAuth2 Grant Types
 
 **Syntax:** Get OAuth2 Grant Types
 
 **Description:** Gets the supported JMP OAuth2 grant types.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/grant-types/
@@ -8631,9 +8891,10 @@ Show( grant_types );
 
 ### Get OpenID Connect Discovery
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
 aa = Get OpenID Connect Discovery( url );
@@ -8643,17 +8904,20 @@ Show( aa );
 
 ### Get OpenIDC Discovery
 
+**JMP Version Added:** 15
+
 ### Get Path Variable
 
 **Syntax:** value = Get Path Variable( name )
 
 **Description:** Returns the value of a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -8665,7 +8929,6 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
-Names Default To Here( 1 );
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME",
 "USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS",
@@ -8714,9 +8977,10 @@ New Window( "Path Variables",
 
 **Description:** Gets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -8727,9 +8991,10 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 **Description:** Gets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -8740,9 +9005,10 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 **Description:** Returns an associative array containing the current policy names and values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Policies();
 
 ```
@@ -8751,15 +9017,18 @@ Get Policies();
 
 **Syntax:** Get Policy( "PolicyName" )
 
+**JMP Version Added:** 18
+
 ### Get Preference
 
 **Syntax:** Get Preferences( pref1, ... )
 
 **Description:** Gets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -8770,9 +9039,10 @@ Get Preferences( Graph marker size );
 
 **Description:** Gets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -8783,11 +9053,12 @@ Get Preferences( Graph marker size );
 
 **Description:** Returns a reference to a specific open project by title, index, or box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -8799,7 +9070,6 @@ Print( Get Project( 2 ) << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -8813,9 +9083,10 @@ project = Get Project( "Big Class" );
 
 **Description:** Returns a list of all open projects.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
                               
@@ -8829,11 +9100,12 @@ Print( Get Project List() << Get Window Title() );
 
 **Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters();
 
 ```
@@ -8842,7 +9114,6 @@ Get Punctuation Characters();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Include Chars( "_" ) );
 
 ```
@@ -8851,7 +9122,6 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
@@ -8860,7 +9130,6 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace(
 	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " )
 );
@@ -8873,9 +9142,10 @@ Collapse Whitespace(
 
 **Description:** Returns the session script for the specified windows. The session script is a JSL expression that will recreate the given windows, including data tables, script windows, journals, and reports. Reports created via JSL scripts have limited support, and will only attempt to recreate the display layout.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
@@ -8889,9 +9159,10 @@ Get Session Script( Report( biv ) );
 
 **Description:** Returns a string containing all of the whitespace characters that are typically used.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Whitespace Characters();
 
 ```
@@ -8914,11 +9185,12 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 Use the optional Type() argument with one of "Data Tables", "Journals", "Reports", or "Dialogs" to limit the search to windows of a particular type.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
@@ -8929,7 +9201,6 @@ window = Get Window( "Big Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 window = Get Window( Project( project ), "Big Class" );
@@ -8954,11 +9225,12 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 Use the optional Type() argument with one of "Data Tables", "Journals", "Reports", or "Dialogs" to limit the list to windows of a particular type.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Get Window List() << Get Window Title() );
 
 ```
@@ -8967,7 +9239,6 @@ Print( Get Window List() << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print( Get Window List( Project( project ) ) << Get Window Title() );
@@ -8978,7 +9249,6 @@ Print( Get Window List( Project( project ) ) << Get Window Title() );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
 Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Window Title() );
@@ -8991,9 +9261,10 @@ Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Windo
 
 **Description:** Creates a display box showing the value of a global variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -9005,9 +9276,10 @@ New Window( "Example", Global Box( ex ) );
 
 **Description:** Returns the density at q of a generalized logarithm distribution with location mu, scale sigma, and shape lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -9034,9 +9306,10 @@ New Window( "Example: GLog Density",
 
 **Description:** Returns the probability that a generalized logarithm distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -9063,9 +9336,10 @@ New Window( "Example: Glog Distribution",
 
 **Description:** Returns the quantile from a generalized logarithm distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -9105,9 +9379,10 @@ New Window( "Example: GLog Quantile",
 
 **Description:** Evaluates each argument and returns the last result.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex1 = 1;
 ex2 = 2;
 
@@ -9119,9 +9394,10 @@ ex2 = 2;
 
 **Description:** Exports a Data Table to a new Google Spreadsheet or a new Sheet within an existing Google Spreadsheet.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Google Sheet Export(
@@ -9139,9 +9415,10 @@ Google Sheet Export(
 
 **Description:** Opens a Google Sheet file.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet =
 "https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
@@ -9167,9 +9444,10 @@ Google Sheet Import(
 
 **Description:** Fills the graph with a gradient between two colors. The zExpr argument is a function in terms of the variables specified by xName and yName. The vector zLimits specifies the range of values for zExpr. The zColor argument is a vector or list that defines the two colors that are blended together to create the gradient. The Transparency is a single value applied to the entire grid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Gradient Function(
@@ -9190,9 +9468,10 @@ New Window( "Example",
 
 **Description:** Returns a display box containing a graph with axes. Named property arguments can be title("title"), XScale(low,high), YScale(low,high), FrameSize(h,v), XName("x"), yName("y"), DoubleBuffer, and SuppressAxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9210,9 +9489,10 @@ New Window( "Example",
 
 **Description:** (Experimental) Returns a display box with 3D content that can be used with other display boxes to create custom reports.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
 	Xname( "X Axis" ),
@@ -9243,9 +9523,10 @@ x3d << AddVector(
 
 **Description:** Returns a display box containing a graph with axes. Named property arguments can be title("title"), XScale(low,high), YScale(low,high), FrameSize(h,v), XName("x"), yName("y"), DoubleBuffer, and SuppressAxes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9263,9 +9544,10 @@ New Window( "Example",
 
 **Description:** Returns 1 if each argument is greater than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 3 > 2 > 1;
 
 ```
@@ -9276,9 +9558,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is greater than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 3 >= 2 >= 2;
 
 ```
@@ -9289,9 +9572,10 @@ Names Default To Here( 1 );
 
 **Description:** Compresses a blob of data into a gzip blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Compress(
 	Char To Blob( "random data does not usually compress well and may get larger" )
 );
@@ -9304,9 +9588,10 @@ Gzip Compress(
 
 **Description:** Uncompresses a blob of gzip data into a blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
 		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
@@ -9322,9 +9607,10 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 **Description:** Returns a display box with the childbox display box argument centered in the horizontal space defined by the maximum size of that child and all the other siblings of the center box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -9347,9 +9633,10 @@ New Window( "test",
 
 **Description:** Returns the horizontal direct product, which is the direct product of each row of matrices A and B.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2];
 exProd = H Direct Product( exA, exB );
@@ -9367,9 +9654,10 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 **Description:** Draws a horizontal line at y from x1 to x2 or through the entire frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -9385,9 +9673,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for bottom or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -9400,9 +9689,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that positions a larger child box using a horizontal scroll bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		H Scroll Box(
@@ -9427,9 +9717,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -9475,9 +9766,10 @@ New Window( "Example",
 
 **Description:** Returns the horizontal size of the graphics frame in pixels.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -9493,9 +9785,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges other display boxes horizontally, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -9523,9 +9816,10 @@ spacer << Set Stretch( "Window", "Window" );
 
 **Description:** Creates a Hadamard matrix of order n.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```
@@ -9536,9 +9830,10 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 **Description:** Draws a square marker at the coordinates specified by xPos and yPos and repeatedly evaluates the dragScript expression when the mouse is pressed over the marker. Before running the script, the globals x and y are set to the mouse value and are restored to their original values afterward. The mouseUpScript expression is run after the mouse button is released.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -9562,9 +9857,10 @@ New Window( "Example",
 
 **Description:** Returns the head of the evaluated expression, without its arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -9575,11 +9871,12 @@ Head( Expr( Sum( a, b, c ) ) );
 
 **Description:** Returns the head of the expression, without its arguments. This function is deprecated. Please use Head() instead.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Expr() equivalent
 Head( Expr( Sum( a, b, c ) ) );
 
@@ -9589,7 +9886,6 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Expr( Sum( a, b, c ) );
 
@@ -9601,9 +9897,10 @@ Head Expr( Sum( a, b, c ) );
 
 **Description:** Returns the head of the evaluated expression as a string, without its arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Head Name( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -9614,11 +9911,12 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 **Description:** Returns the head of the expression as a string, without its arguments. This function is deprecated. Please use Head Name() instead.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated Head Name Expr() equivalent
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -9628,7 +9926,6 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 Head Name Expr( Sum( a, b, c ) );
 
@@ -9640,9 +9937,10 @@ Head Name Expr( Sum( a, b, c ) );
 
 **Description:** Returns a color corresponding to a value between 0 and 1. Default theme is "Blue to Gray to Red". Any theme supported by Cell Plot is supported here. Matrix arguments supported.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( z = 0, z < 1, z += .1,
@@ -9661,9 +9959,10 @@ New Window( "Color Bar",
 
 **Description:** Returns the hexadecimal (or other base number system) text corresponding to the given value and encoding, which can be a number a string or a blob. If the value is a number, IEEE 754 64-bit encoding is used unless one of the optional arguments, integer or Base, is provided. If Base is specified, the function returns the text corresponding to the specified number in that base number system instead of hexadecimal. The base must be an integer value between 2 and 36 inclusive. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis and euc-jp.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
 Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -9675,9 +9974,10 @@ Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 **Description:** Makes a BLOB (Binary Large OBject) from the given string of hexadecimal codes, which can also include spaces, commas, carriage returns, and line feeds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Blob( "FF78CE" );
 
 ```
@@ -9688,9 +9988,10 @@ Hex To Blob( "FF78CE" );
 
 **Description:** Returns the text corresponding to the hexadecimal text, using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, and euc-jp.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```
@@ -9701,9 +10002,10 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 **Description:** Returns the number corresponding to the hexadecimal (or other base number system) text. 16 hex digits are converted as IEEE 754 64-bit floating point numbers; otherwise the input is treated as a hex integer. If Base is specified, the text is treated as a string representing the number in that base. Base must be an integer between 2 and 36 inclusive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -9714,9 +10016,10 @@ Hex To Number( "11110000", Base( 2 ) );
 
 **Description:** Returns the hidden component of the specified row state value, 0 or 1. If Hidden is used as an L-value, it changes the hidden state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -9731,9 +10034,10 @@ Hidden();
 
 **Description:** Returns a row state value with the hidden component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -9746,9 +10050,10 @@ Hidden( Row State( 3 ) );
 
 **Description:** Returns a display box for hierarchy trees. The text argument is the node&apos;s name and can be a Text Edit Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Hier Box(
 		Text Edit Box( "Cause 1" ),
@@ -9767,9 +10072,10 @@ New Window( "Example",
 
 **Description:** Returns the clustering history for a hierarchical clustering using Ward&apos;s method (without standardizing data), where x is a data matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
 exhc = Hierarchical Cluster(
@@ -9792,10 +10098,10 @@ exhistory[3, 1];
 
 **Description:** Returns a hist seg
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -9816,9 +10122,10 @@ New Window( "Hist Seg Example",
 
 **Description:** Returns a color number from the hue, lightness, and saturation components, all between 0 and 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -9839,9 +10146,10 @@ New Window( "Color Wheel",
 
 **Description:** Returns 1 if the JMP application matches the argument; returns 0 otherwise. The arguments Windows or Mac test for the specified operating system, and the arguments Bits32 or Bits64 test for the specified 32-bit or 64-bit JMP application. Only one argument can be tested at a time.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
 	Show( "Not on Mac" )
@@ -9862,11 +10170,12 @@ If(
 
 **Description:** Returns the Hough transform for detecting lines in image data
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 xx = .4;
 yy = .4;
 angleDegrees = (1 :: 180)`;
@@ -9905,7 +10214,6 @@ New Window( "Hough Transform Demo 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 nRow = 35;
 nCol = 35;
 
@@ -10021,9 +10329,10 @@ New Window( "Hough Transform Demo 2",
 
 **Description:** Returns the hours part of a date-time value, in 12-hour mode (12, 1 - 11) or 24-hour mode (0 - 23).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hour( Today() );
 
 ```
@@ -10034,9 +10343,10 @@ Hour( Today() );
 
 **Description:** Returns a High Precision time value in microseconds. Only useful relative to another HP Time() value. The time value represents the number of microseconds since the start of the JMP session.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 et = HP Time();
@@ -10051,9 +10361,10 @@ Show( it );
 
 **Description:** Returns a row state value with the color hue component set to the specified value. Needs to be combined with a Shade State() value to produce a valid color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -10065,9 +10376,10 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 **Description:** Returns the probability that a hypergeometrically distributed random variable is less than or equal to x, where N is the population size, K is the number of items in the category of interest, n is the sample size, x is the count of interest, and r is the optional odds ratio.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Distribution",
@@ -10102,9 +10414,10 @@ New Window( "Example: Hypergeometric Distribution",
 
 **Description:** Returns the probability that a hypergeometrically distributed random variable is equal to x, where N is the population size, K is the number of items in the category of interest, n is the sample size, x is the count of interest, and r is the optional odds ratio.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Probability",
@@ -10134,11 +10447,12 @@ New Window( "Example: Hypergeometric Probability",
 
 **Description:** Constructs a display box containing an icon, where the name argument can be a JMP icon name or a path to a an image.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -10157,7 +10471,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
@@ -10168,9 +10481,10 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 **Description:** Creates an n-by-n identity matrix, with ones on diagonal, zeros elsewhere.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Identity( 2 );
 
 ```
@@ -10181,9 +10495,10 @@ Identity( 2 );
 
 **Description:** Evaluates the first of each pair of arguments and returns the evaluation of the result expression associated with the first condition argument that evaluates to a nonzero result. The condition arguments are evaluated in order. If all of the condition arguments evaluate to zero, the optional elseResult is evaluated and the result is returned. If no elseResult is specified, and none of the conditions are true, a missing value is returned. If all of the condition arguments evaluate to missing, a missing value is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Random Uniform() < 0.5,
 	"heads",
 	"tails"
@@ -10197,9 +10512,10 @@ If( Random Uniform() < 0.5,
 
 **Description:** Returns a display box that conditionally displays the specified display box arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	H List Box(
 		englishBox = If Box( 1, Text Box( "Good day" ) ),
@@ -10218,9 +10534,10 @@ frenchBox << Set( 1 );
 
 **Description:** Returns a display seg that shows or hides display seg children.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
@@ -10234,9 +10551,10 @@ New Window( "Lines Seg Example",
 
 **Description:** Evaluates the first of each pair of arguments, and returns the evaluation of the result expression associated with the maximum of the expressions. If there are ties, it returns the first maximum. If all expressions are missing, it returns Empty if an even number of arguments, or the last argument if odd. The test expressions must evaluate to numeric, but the result expressions can be anything.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -10250,9 +10568,10 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 **Description:** Evaluates the first of each pair of arguments, and returns the evaluation of the result expression associated with the minimum of the expressions. If there are ties, it returns the first minimum. If all expressions are missing, it returns Empty if an even number of arguments, or the last argument if odd. The test expressions must evaluate to numeric, but the result expressions can be anything.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -10266,9 +10585,10 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 **Description:** Evaluates the first of each pair of arguments and returns the evaluation of the result expression associated with the first condition argument that evaluates to a nonzero result. The condition arguments are evaluated in order. If all condition arguments evaluate to zero or missing, the optional elseResult is evaluated and the result is returned. If no elseResult is specified, and none of the conditions are true, a missing value is returned. (IfMZ() is equivalent to If() where missing values for evaluated condition arguments are treated as zero.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
 x = .;
@@ -10284,9 +10604,10 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 **Description:** Returns the probability that a Gamma distributed random variable is less than q, where the alpha shape parameter argument must be positive. IGamma() is an alias name to Gamma Distribution(). The Gamma Distribution() function is equivalent to Gamma(alpha,q)/Gamma(alpha).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -10311,9 +10632,10 @@ New Window( "Example: Gamma Distribution",
 
 **Description:** Converts x from a number of days to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Days( 1.5 );
 
 ```
@@ -10324,9 +10646,10 @@ In Days( 1.5 );
 
 **Description:** Converts x from a number of hours to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Hours( 0.5 );
 
 ```
@@ -10337,9 +10660,10 @@ In Hours( 0.5 );
 
 **Description:** Converts x from a number of minutes to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Minutes( 1 );
 
 ```
@@ -10350,9 +10674,10 @@ In Minutes( 1 );
 
 **Description:** Returns 1 if the point (x,y) is in the given path, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";
@@ -10378,9 +10703,10 @@ New Window( "Example",
 
 **Description:** Returns 1 if the point (x,y) is in the polygon defined by the vector arguments, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -10391,9 +10717,10 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 **Description:** Converts x from a number of weeks to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Weeks( 1 );
 
 ```
@@ -10404,9 +10731,10 @@ In Weeks( 1 );
 
 **Description:** Converts x from a number of years to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Years( 1 );
 
 ```
@@ -10417,9 +10745,10 @@ In Years( 1 );
 
 **Description:** Executes the JSL in the specified file. If Parse Only is specified, the script is parsed rather than executed. If New Context is specified, the included JSL is executed in its own unique namespace. If both the parent and included scripts use the global namespace, then specify both New Context and Names Default to Here to avoid name collisions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```
@@ -10430,9 +10759,10 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 **Description:** Returns a list of included files at the point of execution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 y = Include File List();
 
 ```
@@ -10443,9 +10773,10 @@ y = Include File List();
 
 **Description:** Returns a row matrix that contains the sequence of values from n1 to n2 by increments of n3.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 :: 10;
 
 ```
@@ -10456,11 +10787,12 @@ Names Default To Here( 1 );
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -10469,7 +10801,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -10478,7 +10809,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -10487,7 +10817,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -10496,7 +10825,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -10510,9 +10838,10 @@ Show(
 
 **Syntax:** y = Inner Product BLAS( A, B, ... )
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
 b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
 y = Inner Product BLAS( a, b );
@@ -10525,9 +10854,10 @@ y = Inner Product BLAS( a, b );
 
 **Description:** Returns a copy of list x with y inserted at the ith position or appended to the end if the optional i argument is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
 
@@ -10539,11 +10869,12 @@ z = Insert( z, 99, 2 );
 
 **Description:** Modifies list, associative array, or display box x with y inserted into the collection. Lists and display boxes support an optional i to specify the position, or the items will be appended if the position is not specified. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
@@ -10554,7 +10885,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
@@ -10565,7 +10895,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 Wait( 1 );
 Insert Into( hlist, Button Box( "c" ) );
@@ -10578,11 +10907,12 @@ Insert Into( hlist, Button Box( "c" ) );
 
 **Description:** Integrates an expression with respect to a scalar value, using adaptive quadrature method from Gander and Gautschi (2000). If the variable specified with varname has a value assigned to it or the <<StartingValue() optional argument specifies a starting value, that value is used as a typical value to improve the accuracy of the integral. To specify infinite ranges of integration, set lowLimit, upLimit, or both to missing. If <<StoreInfo() is specified, the argument of <<StoreInfo() will contain diagnostics of the numerical integration routine. If <<Tolerance() is specified, the argument of <<Tolerance() is used as the tolerance level in the autointegration function used to evaluate the integral. Smaller values result in longer run time but more precise results.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Integrate( Exp( -x ), x, 0, . );
 
 ```
@@ -10591,7 +10921,6 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 100;
 Integrate( Normal Density( x - 100 ), x, ., . );
 
@@ -10603,9 +10932,10 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 **Description:** Returns the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the IPMT function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -10617,9 +10947,10 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 **Description:** Returns the interest rate per period of an annuity. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the RATE function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
@@ -10630,9 +10961,10 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 **Description:** Returns the internal rate of return for a series of cash flows represented by the numbers in the values argument. Equivalent to the IRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Internal Rate of Return( [-10000, 1000, 900, 950] );
 Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
@@ -10644,11 +10976,12 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 **Description:** Finds the xi arguments that x is between and linearly interpolates the corresponding yi arguments. Note that the xi arguments must be specified in order.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Interpolate",
 	window:x = (2 :: 9) * 10;
@@ -10667,7 +11000,6 @@ New Window( "Interpolate",
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -10676,7 +11008,6 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
@@ -10685,7 +11016,6 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
 yd = Sin( xd );
@@ -10714,9 +11044,10 @@ New Window( "Interpolated values are blue",
 
 **Description:** Returns the inverse of the x argument, which must be a square non-singular matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -10727,9 +11058,10 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 **Description:** Returns an updated inverse matrix, where the first argument S is a symmetric positive definite matrix with the same number of columns as X, the second argument X is a matrix that contains the rows to add or delete, and the third argument w determines whether to add or delete rows (use 1 to add rows and -1 to delete rows). This function evaluates as S-w*S*X`*Inv(I+w*X*S*X`)*X*S, where I is an identity matrix and Inv(A) means an inverse matrix of A.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Generate a design matrix */
 exX = [1 0 4 2,
 1 0 5 1,
@@ -10773,9 +11105,10 @@ Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
 
 **Description:** Returns the inverse of the x argument, which must be a square non-singular matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -10786,9 +11119,10 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 **Description:** Inverts the expr expression argument, unfolding around the single occurrence of xname.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```
@@ -10799,11 +11133,12 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 **Description:** Produces scores for the latent variable in an item response theory model with n binary items and a matrix of known parameters, specified by parmMatrix. The parameter matrix should contain as many rows as there are parameters in the model and as many columns as there are items in the analysis.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );
 obj << Save Ability Formula;
@@ -10815,7 +11150,6 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
 mthlst = {};
@@ -10839,9 +11173,10 @@ mthlst;
 
 **Description:** Returns 1 if the Alt key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts. On the Mac, Alt means Option key.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -10866,9 +11201,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 is the x argument is an associative array, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Associative Array( [1 => 2] );
 
 ```
@@ -10879,9 +11215,10 @@ Is Associative Array( [1 => 2] );
 
 **Description:** Returns 1 if the class argument is a class. Otherwise, a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -10933,9 +11270,10 @@ Delete Classes( "complex" );
 
 **Description:** Returns 1 if the Command key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -10960,9 +11298,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Context key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -10987,9 +11326,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Control key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts. On the Mac, Control means Command key.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11014,9 +11354,10 @@ New Window( "Show me the key",
 
 **Description:** Determine if the given path is a directory. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -11029,9 +11370,10 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 **Description:** Determine if the given directory path is writable. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Directory Writable( "$SAMPLE_DATA" );
 
 ```
@@ -11042,11 +11384,12 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 **Description:** Returns 1 if the variable is undefined or holds the Empty() value.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Empty( x );
 
 ```
@@ -11055,7 +11398,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Empty();
 Is Empty( x );
 
@@ -11065,7 +11407,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -11089,9 +11430,10 @@ If( Is Empty( dt ),
 
 **Description:** Returns 1 if the x argument is an expression, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Expr( Expr( x ) );
 
 ```
@@ -11102,9 +11444,10 @@ Is Expr( Expr( x ) );
 
 **Description:** Determine if the given path is a file. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
@@ -11117,9 +11460,10 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 **Description:** Determine if the given file path is writable. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -11130,9 +11474,10 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Determines if the specified URL can be used in this JMP session. URLs can be enabled and/or disabled using the jmpStartAdmin.jsl script. This does not determine if it is a valid URL, nor if the user is able to login. It only determines if the URL is blocked by JMP.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://public.jmp.com";
 Show( Is JMP Live URL Enabled( url ) );
@@ -11145,9 +11490,10 @@ Show( Is JMP Live URL Enabled( url ) );
 
 **Description:** Return whether a given year is a leap year.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 v = Is Leap Year( 2016 );
 
 ```
@@ -11158,9 +11504,10 @@ v = Is Leap Year( 2016 );
 
 **Description:** Returns 1 if the x argument is a list, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is List( {1, 2, 3} );
 
 ```
@@ -11171,11 +11518,12 @@ Is List( {1, 2, 3} );
 
 **Description:** Return result to indicate whether the log window is open
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Is Log Open(),
 	Close Log()
 );
@@ -11186,7 +11534,6 @@ If( Is Log Open(),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( !Is Log Open(),
 	Open Log()
 );
@@ -11199,9 +11546,10 @@ If( !Is Log Open(),
 
 **Description:** Returns 1 if the argument is a matrix, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Matrix( [11 22 33] );
 
 ```
@@ -11212,9 +11560,10 @@ Is Matrix( [11 22 33] );
 
 **Description:** Returns 1 if the x argument is a missing value; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Missing( . );
 
 ```
@@ -11225,9 +11574,10 @@ Is Missing( . );
 
 **Description:** Returns 1 if the x argument is a name, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Name( Name Expr( n ) );
 
 ```
@@ -11238,9 +11588,10 @@ Is Name( Name Expr( n ) );
 
 **Description:** Returns 1 if the namespace argument is a namespace; otherwise a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -11279,9 +11630,10 @@ ns << Delete;
 
 **Description:** Returns 1 if the x argument is a number, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Number( 213 );
 
 ```
@@ -11292,9 +11644,10 @@ Is Number( 213 );
 
 **Description:** Returns 1 if the Option key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11319,11 +11672,12 @@ New Window( "Show me the key",
 
 **Description:** Compares colors for equality.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "black", 0 );
 
 ```
@@ -11332,7 +11686,6 @@ Is Same Color( "black", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", "green", "blue" );
 
 ```
@@ -11341,7 +11694,6 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -11350,7 +11702,6 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```
@@ -11361,9 +11712,10 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 **Description:** Returns 1 if the x argument is a scriptable object, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -11375,9 +11727,10 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 **Description:** Returns 1 if the Shift key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11402,9 +11755,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the x argument is a string, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is String( "abc" );
 
 ```
@@ -11415,9 +11769,10 @@ Is String( "abc" );
 
 **Description:** Returns the ISO Year of a date-time value. ISO Years correspond to ISO Weeks; they begin on the Monday of the first week containing at least four days.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 ISO Year( Today() );
 
 ```
@@ -11428,11 +11783,12 @@ ISO Year( Today() );
 
 **Description:** Returns the nth item of the s argument, where items are the (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
@@ -11441,7 +11797,6 @@ Item( 5, "http://www.jmp.com", ":/." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( [2 -1], "This is a sentence" );
 
 ```
@@ -11450,7 +11805,6 @@ Item( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -11459,7 +11813,6 @@ Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -11468,7 +11821,6 @@ Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, "abcd", "" );
 
 ```
@@ -11477,7 +11829,6 @@ Item( 2, "abcd", "" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```
@@ -11488,11 +11839,12 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 **Description:** Returns a list of (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
@@ -11501,7 +11853,6 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -11510,7 +11861,6 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters(),
@@ -11523,7 +11873,6 @@ Items(
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -11534,9 +11883,10 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 **Description:** Creates a matrix (nr by nc) of values that are determined by the third argument. The default value of the second argument equals the first argument. The default value of the third argument is 1. But the third argument can be a number, a variable name of a number, or JSL code. If the third argument is code, the code is evaluated and assigned the return value to every element in the matrix, element by element, row by row.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // Produce a 2x3 matrix, filled with 15.
 m = J( 2, 3, 15 );
@@ -11571,9 +11921,10 @@ J(
 
 **Description:** Returns "Standard" or "Pro" based on the version of the product that has been licensed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JMP Product Name();
 
 ```
@@ -11584,9 +11935,10 @@ JMP Product Name();
 
 **Description:** Returns the JMP version (release.revision{.fix}); not available before 6.0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JMP Version();
 
 ```
@@ -11597,9 +11949,10 @@ JMP Version();
 
 **Description:** Returns the density at q of a Johnson Sb distribution, where q is in the interval theta to theta + sigma, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma>0 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter. Note: theta is the lower endpoint of the distribution and sigma is the range of the support of the distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -11637,9 +11990,10 @@ New Window( "Example: Johnson Sb Density",
 
 **Description:** Returns the probability that a Johnson Sb distributed random variable is less than q. (Note: see the Johnson Sb Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -11677,9 +12031,10 @@ New Window( "Example: Johnson Sb Distribution",
 
 **Description:** Returns the quantile from a Johnson Sb distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Sb Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -11690,9 +12045,10 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Returns the density at q of a Johnson Sl distribution, where q is in the interval theta to +∞, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma equal to +1 or -1 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter. Note: When sigma = 1, theta is the lower bound on the distribution, and when sigma=-1, theta is the upper bound. Also, positive sigma implies positive skew, and negative sigma implies negative skew.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -11733,9 +12089,10 @@ New Window( "Example: Johnson Sl Density",
 
 **Description:** Returns the probability that a Johnson Sl distributed random variable is less than q. (Note: see the Johnson Sl Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -11776,9 +12133,10 @@ New Window( "Example: Johnson Sl Distribution",
 
 **Description:** Returns the quantile from a Johnson Sl distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Sl Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -11789,9 +12147,10 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Returns the density at q of a Johnson Su distribution, where q is between -∞ and +∞, delta>0 and gamma between -∞ and +∞ are shape parameters, sigma>0 is a scale parameter, and theta between -∞ and +∞ is a threshold parameter.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -11829,9 +12188,10 @@ New Window( "Example: Johnson Su Density",
 
 **Description:** Returns the probability that a Johnson Su distributed random variable is less than q. (Note: see the Johnson Su Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -11869,9 +12229,10 @@ New Window( "Example: Johnson Su Distribution",
 
 **Description:** Returns the quantile from a Johnson Su distribution, the value for which the probability is p that a random value would be lower. (Note: p is the first parameter. See the Johnson Su Density() function for parameter descriptions.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -11882,9 +12243,10 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 **Description:** Constructs a display box from instructions that would be stored in a journal.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
 sampjourn = sample << Get Journal;
@@ -11901,9 +12263,10 @@ New Window( "Distribution of Height",
 
 **Description:** Embeds an encrypted script within another script. Create an encrypted script by selecting Edit > Encrypt Script from the main menu of a script editor. Enter your passwords and the encrypted text will appear in a new window. Copy this text into a JSL Encrypted("") command to embed the encrypted script in another script.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -11916,9 +12279,10 @@ JSL Encrypted(
 
 **Description:** Store a JSL script in a variable, including all comments and formatting.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 x = JSL Quote(/* Begin quote. */
     For (i = 1, i <= 5, i++,
@@ -11937,9 +12301,10 @@ New Window( "editor", Script Box( x ) );
 
 **Description:** Returns a valid JSON Boolean or null constant value depending on the specification of the parameter.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
@@ -11959,9 +12324,10 @@ If( x == JSON Literal( true ),
 
 **Description:** Convert JSON text to a JMP data table
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -11974,9 +12340,10 @@ dt = JSON To Data Table(
 
 **Description:** Convert JSON text to a JSL list representing the structure specified by the JSON data.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -11988,9 +12355,10 @@ Show( l );
 
 **Syntax:** y = JSS Context Box( displayBox )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "JSS Context",
 	JSS Context Box(
 		V List Box(
@@ -12016,9 +12384,10 @@ New Window( "JSS Context",
 
 **Description:** Returns a kernel density estimator with automatic bandwidth selection. The optional weights argument must be a vector of the same length as the Vector argument. The optional bandwidth argument must be a nonnegative real number or zero, which forces the use of the value of the bandwidth selection argument. The optional bandwidth scale argument must be a positive real number. The optional bandwidth selection argument must be either 0, 1, 2, or 3, corresponding to Sheather and Jones, Normal Reference, Silverman rule of thumb, or Oversmoother, respectively. The optional kernel argument accepts the values 0, 1, 2, 3, or 4, corresponding to Gaussian, Epanechnikov, Biweight, Triangular, or Rectangular, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
 Random Reset( 113 );
@@ -12084,9 +12453,10 @@ dt << Graph Builder(
 
 **Description:** Returns a table for efficiently looking up near neighbors. The matrix arguments are k-dimensional points. There is no built in limit on the number of dimensions or points.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, 1 );
 "2 nearest rows to row 1 are " || Char( rows );
@@ -12099,9 +12469,10 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 **Description:** Returns the labeled component of the specified row state value, 0 or 1. If Labeled is used as an L-value, it changes the labeled state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -12116,9 +12487,10 @@ Labeled();
 
 **Description:** Returns a row state value with the labeled component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -12131,9 +12503,10 @@ Labeled( Row State( 3 ) );
 
 **Description:** Returns the value of the x argument with the current row set to Row() - n. Being dependent on Row(), Lag() is mainly useful in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Lag( :height, 2 );
@@ -12146,9 +12519,10 @@ Lag( :height, 2 );
 
 **Description:** Returns the last modification date of a file or directory. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -12159,9 +12533,10 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 **Description:** Returns a list that contains a vector of estimates, Beta = Inverse(X&apos;X)X&apos;y, and the estimated variance matrix of Beta. The optional <<noIntercept argument specifies a no-intercept model. The optional <<weights argument specifies a vector of weights to perform weighted least squares. The optional <<method argument enables you to choose between the default Sweep method and a generalized inverse ("GInv") method for solving the normal equations.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Linear Regression*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -12175,9 +12550,10 @@ X = [1, 2, 3, 4];
 
 **Description:** Returns a truncated or padded version of the original string or list s. The result contains the left n characters or list items, padded with any filler on the right if the length of s is less than n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -12189,11 +12565,12 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 **Description:** Returns the length of the given string (in characters), list (in items), associative array (in number of keys), blob (in bytes), matrix (in elements), or namespace/class (in number of functions and variables).
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
@@ -12202,7 +12579,6 @@ Length( "Café" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
@@ -12211,7 +12587,6 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -12220,7 +12595,6 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -12231,9 +12605,10 @@ Length( Char To Blob( "Café" ) );
 
 **Description:** Returns Lenth&apos;s pseudo-standard error of the values within a single vector x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
@@ -12244,9 +12619,10 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 **Description:** Returns 1 if each argument is less than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [1 1 1] < [0 1 2];
 
 ```
@@ -12257,9 +12633,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if the first argument is less than the second argument and each argument except the first is less than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 <= 2;
 
 ```
@@ -12270,9 +12647,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is less than or equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 <= 2 <= 2;
 
 ```
@@ -12283,9 +12661,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if the first argument is less than or equal to the second argument and each argument except the first is less than the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 <= 2 < 3;
 
 ```
@@ -12296,9 +12675,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the density at x of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Density",
@@ -12323,9 +12703,10 @@ New Window( "Example: LEV Density",
 
 **Description:** Returns the probability at x of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -12349,9 +12730,10 @@ New Window( "Example: LEV Distribution",
 
 **Description:** Returns the quantile at p of a largest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 10;
 sig = 5;
 qq = .5;
@@ -12386,9 +12768,10 @@ New Window( "Example: LEV Quantile",
 
 **Description:** Returns a category color, where i is the category level; n is the number of categories (optional); and theme are the color themes in the Column Info dialog&apos;s Value Color combo box. ("JMP Default" is the default theme.) The category index must be >= 1 and <= the number of categories specified in the call or defined by the theme. If the second argument is a character, it is the color theme and n is unspecified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -12406,9 +12789,10 @@ New Window( "Color Bar",
 
 **Description:** Returns the natural logarithm of the Gamma function of x. Useful when Gamma(x) is too large to use directly.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 LGamma( 5 );
 
 ```
@@ -12419,11 +12803,12 @@ LGamma( 5 );
 
 **Description:** Draws a line or connected lines. In the default case, the line is drawn linearly between the endpoints. If the Value Space option is set, the line follows the projection specified by the underlying axis scales. If the Smooth option is set, connections are smoothed, constrained by tension, domain dimension, min response, and max response.
 
+**JMP Version Added:** Before version 14
+
 **Constrained smoothing**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Constrained smoothing",
 	Graph Box(
 		Pen Color( "gray" );
@@ -12444,7 +12829,6 @@ New Window( "Constrained smoothing",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
@@ -12453,7 +12837,6 @@ New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Smoothing",
 	Graph Box(
 		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),
@@ -12476,7 +12859,6 @@ New Window( "Smoothing",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -12493,11 +12875,12 @@ New Window( "Interpolate in value space",
 
 **Description:** Returns a display seg with lines connecting all of the x and y values.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
@@ -12510,7 +12893,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -12524,7 +12906,6 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
 y = [10, 90, 10];
@@ -12542,9 +12923,10 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 **Description:** Sets the current line style, which can be one of: 0 (Solid), 1 (Dotted), 2 (Dashed), 3 (DashDot), or 4 (DashDotDot).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Line Style Example",
 	Graph Box(
 		Frame Size( 500, 400 ),
@@ -12568,11 +12950,12 @@ New Window( "Line Style Example",
 
 **Description:** Fits a linear regression for the assumed model y = X * beta + error. The optional <<noIntercept argument specifies a no-intercept model. The optional <<printToLog argument specifies that a summary of fit is printed to the log window. The optional weight argument specifies a vector of weights to perform weighted least squares, and the optional freq argument specifies a vector of frequencies. Returns a list containing a vector of the estimates, a vector of the standard errors, and a list of diagnostics. The list of diagnostics contains vectors of the t statistics and p-values for the estimates, as well as the R-Square and adjusted R-Square values for the regression fit.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Linear Regression: y = intercept + beta * x + error*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -12590,7 +12973,6 @@ RSquare Adj = Diagnostics["RSquare Adj"];
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Model: y = beta_1*x + beta_2*x^2 + error*/
 y = [3, 5, 7, 5];
 X = [1 1, 2 4, 3 9, 4 16];
@@ -12602,7 +12984,6 @@ X = [1 1, 2 4, 3 9, 4 16];
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Categorical Variable Example*/
 /*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
 y = [3, 5, 7, 5];
@@ -12624,9 +13005,10 @@ designMat = Design( gender ) || x;
 
 **Description:** Returns a display seg with a sequence of line segments for the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
 frame = g[FrameBox( 1 )];
@@ -12640,9 +13022,10 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 **Description:** Returns a display box to show an alignment of boxes in nc columns. The optional Spacing argument specifies the horizontal and vertical space around the display boxes. If the vspace argument is used, vspace is the vertical space and pixels is the horizontal space.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
 		Text Box( "Quadratic Formula" ),
@@ -12660,9 +13043,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that sets the column widths of the Lineup Boxes that it contains.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Lineup Ruler",
 	lrb = Lineup Ruler Box(
@@ -12696,9 +13080,10 @@ New Window( "Lineup Ruler",
 
 **Description:** Creates a list of items without evaluating them.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {1, 2 + 3, [11 22]};
 
 ```
@@ -12709,11 +13094,12 @@ Names Default To Here( 1 );
 
 **Description:** Returns a display box to show a list box of selection items. If item itself is a two-item list containing the item name and a string specifying a modeling type or sorting order, such as "Ordinal" or "Ascending", the appropriate icon will show up next to that item in the list box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
@@ -12722,7 +13108,6 @@ New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	lb = List Box(
 		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item", "nominal"}},
@@ -12740,9 +13125,10 @@ New Window( "Example",
 
 **Description:** Returns the natural logarithm of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ln( Exp( 2 ) );
 
 ```
@@ -12753,11 +13139,12 @@ Ln( Exp( 2 ) );
 
 **Description:** Loads a DLL pointed to by the specified path.
 
+**JMP Version Added:** Before version 14
+
 **Cross platform using Base Name()**
 
 ```jsl
 
-Names Default To Here( 1 );
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -12771,7 +13158,6 @@ dll << UnloadDLL();
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -12788,9 +13174,10 @@ If( Host is( "Windows" ),
 
 **Description:** Reads a whole text file into a JSL variable. Load Text File() prompts for a file name. Load Text File( path ) returns a string. The XMLParse option converts XML into an expression tree. The SASODSXML parses as SAS ODS default XML. The [{JSON}] option converts JSON into an expression tree. The BLOB argument returns binary data in a JSL Blob variable; optional named parameters to BLOB enable reading a substring from the file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
 /*, Charset("ascii")*/
@@ -12807,11 +13194,12 @@ Word( 4, ex, " \!t\!n\!r" );
 
 **Description:** Returns a matrix of the positions of the matrix m that are nonzero.If two arguments are specified, Loc(v, x) returns a matrix of the positions of the list or matrix v that are equal to the value x. Prefer Where instead where possible.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*more examples, above*/
 Show( Loc( [1 0 1 0 1 0] ) );
 Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
@@ -12823,7 +13211,6 @@ Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```
@@ -12832,7 +13219,6 @@ Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [5, 7, 5, ., 5], 5 );
 
 ```
@@ -12841,7 +13227,6 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```
@@ -12850,7 +13235,6 @@ Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```jsl
 
-Names Default To Here( 1 );
 Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 ```
@@ -12861,9 +13245,10 @@ Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 **Description:** Returns the first position in x of the maximum value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Loc Max( [11 22 33 22 33 11] );
 
 ```
@@ -12874,9 +13259,10 @@ Loc Max( [11 22 33 22 33 11] );
 
 **Description:** Returns the first position in x of the minimum value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Loc Min( [11 22 33 22 33 11] );
 
 ```
@@ -12887,9 +13273,10 @@ Loc Min( [11 22 33 22 33 11] );
 
 **Description:** Returns a vector of row numbers in argument matrix rows that have no missing values, or for lists, those that are nonmissing numbers or nonempty character.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```
@@ -12900,9 +13287,10 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 **Description:** Creates a column vector of subscript positions where the values of x have values less than or equal to the values in y based on a binary search. x must be a matrix sorted in ascending order without missing values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
 	Loc Sorted( [11 22 33 44 55], [1] ),
@@ -12917,9 +13305,10 @@ Show(
 
 **Description:** Resolves names to local variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -12933,9 +13322,10 @@ Local( {a = 1, b},
 
 **Description:** Executes expression with local Names Default To Here(1)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 y = Local Here(
 	a = 1;
 	b = 2;
@@ -12951,9 +13341,10 @@ y = Local Here(
 
 **Description:** Locks specified global names, preventing them from being modified or being cleared by the Clear Globals function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -12975,9 +13366,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Locks specified global names, preventing them from being modified or being cleared by the Clear Symbols function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -12999,9 +13391,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Returns the base-b logarithm of x or the natural logarithm of x if b is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log( 256, 2 );
 
 ```
@@ -13012,9 +13405,10 @@ Log( 256, 2 );
 
 **Description:** Evaluates the expr argument and captures the output that would have appeared in the JMP log window and returns it in a string instead.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
 		Write( Char( i ) );
@@ -13030,11 +13424,12 @@ Names Default To Here( 1 );
 
 **Description:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
+**JMP Version Added:** 17
+
 **Turn off logging**
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( Off );
 
 ```
@@ -13043,7 +13438,6 @@ Log Table Messages( Off );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 
 ```
@@ -13052,7 +13446,6 @@ Log Table Messages( On );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```
@@ -13061,7 +13454,6 @@ Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```
@@ -13070,7 +13462,6 @@ Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Disable( "Column" ) );
 
 ```
@@ -13079,7 +13470,6 @@ Log Table Messages( On, Disable( "Column" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 Log Table Messages( Disable( "Table" ) );
 
@@ -13091,9 +13481,10 @@ Log Table Messages( Disable( "Table" ) );
 
 **Description:** Returns the base 10 logarithm of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log10( 100 );
 
 ```
@@ -13104,9 +13495,10 @@ Log10( 100 );
 
 **Description:** Returns a more accurate calculation of Log(1 + x) when x is very small.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Log1P( 1e-6 );
 
 ```
@@ -13117,9 +13509,10 @@ Log1P( 1e-6 );
 
 **Description:** Returns the density at x of a log generalized gamma probability distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -13146,9 +13539,10 @@ New Window( "Example: LogGenGamma Density",
 
 **Description:** Returns the probability that a log generalized gamma distributed random variable (with parameters mu, sigma, and lambda) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -13175,9 +13569,10 @@ New Window( "Example: LogGenGamma Distribution",
 
 **Description:** Returns the quantile from a log generalized gamma distribution (with parameters mu, sigma, and lambda), the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -13221,9 +13616,10 @@ New Window( "Example: LogGenGamma Quantile",
 
 **Description:** Returns 1 / (1 + Exp( -x )), which converts a number in the domain -∞...+∞ into range 0...1. The Logist() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -13234,9 +13630,10 @@ Logist( 2 );
 
 **Description:** Logist function with result scaled 0 to 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist Percent( 10 );
 
 ```
@@ -13247,9 +13644,10 @@ Logist Percent( 10 );
 
 **Description:** Returns the density at x of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Density",
@@ -13274,9 +13672,10 @@ New Window( "Example: Logistic Density",
 
 **Description:** Returns the probability at x of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -13300,9 +13699,10 @@ New Window( "Example: Logistic Distribution",
 
 **Description:** Returns the quantile at p of a logistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -13337,9 +13737,10 @@ New Window( "Example: Logistic Quantile",
 
 **Description:** Returns the logit of p, which is defined as log(p / (1 - p)).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logit( 0.95 );
 
 ```
@@ -13350,9 +13751,10 @@ Logit( 0.95 );
 
 **Description:** Logit function with argument 0 to 100, rather than 0 to 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logit Percent( 95.0 );
 
 ```
@@ -13363,9 +13765,10 @@ Logit Percent( 95.0 );
 
 **Description:** Returns the density at x of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Density",
@@ -13390,9 +13793,10 @@ New Window( "Example: Loglogistic Density",
 
 **Description:** Returns the probability at x of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -13416,9 +13820,10 @@ New Window( "Example: Loglogistic Distribution",
 
 **Description:** Returns the quantile at p of a loglogistic distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = .2;
 qq = .5;
@@ -13453,9 +13858,10 @@ New Window( "Example: Loglogistic Quantile",
 
 **Description:** Returns the density at x of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -13480,9 +13886,10 @@ New Window( "Example: Lognormal Density",
 
 **Description:** Returns the probability at x of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -13506,9 +13913,10 @@ New Window( "Example: Lognormal Distribution",
 
 **Description:** Returns the quantile at p of a lognormal distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 0;
 sig = 1;
 qq = .5;
@@ -13543,9 +13951,10 @@ New Window( "Example: Lognormal Quantile",
 
 **Description:** Returns a long locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Long Date( Today() );
 
 ```
@@ -13554,9 +13963,10 @@ Long Date( Today() );
 
 **Syntax:** y = Low Rank Symmetric Update BLAS( A, U, s )
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [2 0, 0 2];
 U = [2 4, 3 5];
 s = 2.5;
@@ -13570,9 +13980,10 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 **Description:** Converts uppercase letters to lowercase letters in the specified string. Rules for upper and lower case are locale dependent.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -13583,9 +13994,10 @@ Lowercase( "CAFÉ #23" );
 
 **Description:** Minimizes the objective function subject to the given constraints and returns a list of two items. The first list item, x, contains the decision variables (and slack variable values if slackVars=1). The second list item, z, contains optimal objective function value (if one exists). The first five arguments are matrices. The A argument is the matrix of constraint coefficients. The b argument is the column of right hand side values of the constraints. The c argument is the vector of cost coefficients of the objective function. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, nle, and nge arguments are the number of equality constraints, less than or equal constraints, and greater than or equal constraints, respectively. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
 c = [9 6 -4];
@@ -13602,9 +14014,10 @@ Show( x, z );
 
 **Description:** Creates an outgoing e-mail message as specified if the operating system allows doing so. Not all options will work on all operating system versions. See Help for details.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -13615,11 +14028,12 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 **Description:** Executes the specified main menu command.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Sample Index" );
 
 ```
@@ -13628,7 +14042,6 @@ Main Menu( "Sample Index" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Help:Sample Index" );
 
 ```
@@ -13639,11 +14052,12 @@ Main Menu( "Help:Sample Index" );
 
 **Description:** Generates a validation column with folds levels when used in a column formula. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -13657,7 +14071,6 @@ dt << New Column( "KFold Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
 	"Numeric",
@@ -13675,11 +14088,12 @@ dt << New Column( "Stratified KFold",
 
 **Description:** Generates a two-level or three-level validation column when used in a column formula. The rates argument is a 3 by 1 matrix that contains the training, validation, and test rates, respectively. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -13694,7 +14108,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -13709,7 +14122,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -13733,9 +14145,10 @@ dt << New Column( "Validation",
 
 **Description:** calculates the value of the Mandelbrot function at x,y, stopping after n iterations or when radius exceeded
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 grid = 50;
 rmax = 0/*zero for smooth*/;
 nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set 
@@ -13782,11 +14195,12 @@ g << Set Y Axis(
 
 **Description:** Evaluate the initial value and return the mapped result or a default.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "celry", {"celry", "celery"} );
 
 ```
@@ -13795,7 +14209,6 @@ Map Value( "celry", {"celry", "celery"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```
@@ -13804,7 +14217,6 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
@@ -13813,7 +14225,6 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```
@@ -13824,9 +14235,10 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 **Description:** Draws markers at the indicated coordinates.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
@@ -13837,9 +14249,10 @@ New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 
 
 **Description:** Returns the marker component of the specified row state value. If Marker Of is used as an L-value, it changes the marker of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -13854,11 +14267,12 @@ Marker Of();
 
 **Description:** Returns a display seg with markers for all of the x and y values.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 sz = Column( "age" ) << get values;
@@ -13883,7 +14297,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -13902,7 +14315,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -13921,7 +14333,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -13944,7 +14355,6 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -13972,9 +14382,10 @@ New Window( "Marker Seg Example",
 
 **Description:** Sets the size markers are drawn in the graphics frame. 0 = dot, 1 = small, ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -13990,9 +14401,10 @@ New Window( "Example",
 
 **Description:** Returns a row state value with the marker component set to the specified value. The marker argument specifies a marker and can be a positive integer, a character, a positive integer for Unicode character, or a hex character for Unicode character.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -14005,9 +14417,10 @@ Marker Of( Row State( 3 ) );
 
 **Description:** Evaluates and returns the exprN argument corresponding to the first vN argument that equals x or evaluates and returns the exprElse argument if no value equals x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14018,9 +14431,10 @@ Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 **Description:** Evaluates and returns the exprN argument corresponding to the first vN argument that equals x or evaluates and returns the exprElse argument if no value equals x. (The MatchMZ() function behaves the same as the Match() function, except that missing values are treated as 0.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14031,11 +14445,12 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 **Description:** Constructs an n-by-m matrix. If you specify a list of n lists that each contain m row values, the matrix is formed by vertically concatenating the evaluated lists. If you specify a single list of n items, the return value is an n-by-1 column vector. If you specify two integer arguments, the return value is a matrix of zeros that contains n rows and m columns.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```
@@ -14044,7 +14459,6 @@ Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```
@@ -14053,7 +14467,6 @@ Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( {2, 3 + 7} );
 
 ```
@@ -14062,7 +14475,6 @@ Matrix( {2, 3 + 7} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Matrix( 2, 3 );
 
 ```
@@ -14073,9 +14485,10 @@ Matrix( 2, 3 );
 
 **Description:** Returns a display box to show a matrix of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) ) );
 
 ```
@@ -14086,9 +14499,10 @@ New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "S
 
 **Description:** Performs matrix multiplication. The matrix arguments must be conformable: NCol(a)==NRow(b). Note that A * B also works.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM1 = exMatA * exMatB;
@@ -14107,9 +14521,10 @@ Show( exMatM3 );
 
 **Description:** Performs matrix multiplication. The matrix arguments must be conformable: NCol(A)==NRow(B).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
@@ -14122,9 +14537,10 @@ exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 **Description:** Returns the rank of the matrix X.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 ```
@@ -14135,9 +14551,10 @@ Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 **Description:** Makes a blob from a matrix by converting the matrix elements to 1, 2, or 4 byte signed or unsigned integers or 4 or 8 byte floating point numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```
@@ -14148,9 +14565,10 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 **Description:** Returns the maximum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -14161,11 +14579,12 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a concave function, Maximize might find a local maximum rather than the global maximum. If this is a concern, try multiple starting values. Also, Maximize works best for functions with a continuous second derivative. Additional arguments for the Maximize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example*/ 
 x = 0;
 y = 0;
@@ -14178,7 +14597,6 @@ Eval List( {x, y, maxf} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
 n = 3;
@@ -14200,7 +14618,6 @@ sigSq = 1;/*initial values*/
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with all optional arguments*/ 
 x = 0;
 y = 0;
@@ -14220,9 +14637,10 @@ y = 0;
 
 **Description:** Returns the maximum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -14233,9 +14651,10 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 **Description:** Returns a representation of a date-time value with the ordering: month, day, year, hour, minute, second.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 MDYHMS( Today() );
 
 ```
@@ -14246,9 +14665,10 @@ MDYHMS( Today() );
 
 **Description:** Returns the arithmetic mean of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -14259,9 +14679,10 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 **Description:** Returns the median of the combined arguments, which can be scalar, matrix or list arguments.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -14272,9 +14693,10 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 **Description:** Create a Method within a Class
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -14324,9 +14746,10 @@ Delete Classes( "complex" );
 
 **Description:** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -14342,9 +14765,10 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 **Description:** Returns the minimum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -14355,11 +14779,12 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a convex function, Minimize might find a local minimum rather than the global minimum. If this is a concern, try multiple starting values. Also, Minimize works best for functions with a continuous second derivative. Additional arguments for the Minimize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 x = 0;
 y = 0;
@@ -14372,7 +14797,6 @@ Eval List( {x, y, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -14394,7 +14818,6 @@ b2 = 5;
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -14412,7 +14835,6 @@ y = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -14452,7 +14874,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -14478,9 +14899,10 @@ b2 = 5;
 
 **Description:** Returns the minimum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -14491,9 +14913,10 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 **Description:** Negates x, which can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 -Pi();
 
 ```
@@ -14504,9 +14927,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the minutes part of a date-time value, 0 - 59.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Minute( Today() );
 
 ```
@@ -14517,9 +14941,10 @@ Minute( Today() );
 
 **Description:** Returns the remainder from dividing x by y. The remainder has the same sign as x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -14530,9 +14955,10 @@ Modulo( 10, 3 );
 
 **Description:** Picks the &apos;most frequent&apos; item from a matrix or list, the lower value for ties
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```
@@ -14543,9 +14969,10 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 **Description:** Returns the modified internal rate of return for a series of periodic cash flows, taking into account both the cost of the investment and the interest received on reinvestment of cash. Equivalent to the MIRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
 Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
@@ -14557,9 +14984,10 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 **Description:** Returns the remainder from dividing x by y. The remainder has the same sign as x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Modulo( 10, 3 );
 
 ```
@@ -14570,9 +14998,10 @@ Modulo( 10, 3 );
 
 **Description:** Returns the month part of a date-time value, 1 - 12.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Month( Today() );
 
 ```
@@ -14583,9 +15012,10 @@ Month( Today() );
 
 **Description:** Returns a box that can make JSL callbacks for mouse actions
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
 		<<setDragText( "hello" ),
@@ -14633,9 +15063,10 @@ New Window( "Example",
 
 **Description:** Evaluates the dragScript expression repeatedly while the mouse is pressed within the graph and not handled by another graph object. Before running the script, the globals x and y are set to the mouse value and are restored to their original values afterward. The mouseUpScript expression is run after the mouse button is released.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -14657,9 +15088,10 @@ New Window( "Example",
 
 **Description:** Moves a directory from one place to another. Returns 1 if the directory was moved. Returns 0 if the directory was unable to be moved. Throws an error if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -14680,9 +15112,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Moves a file from one place to another. Returns 1 if the file was moved. Returns 0 if the file was unable to be moved. Throws an error when the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
 );
@@ -14703,11 +15136,12 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Moves one or more windows into a project, out of a project, or between projects. Only one of Source and Destination must be specified; the other will default to the current project. (Use only Source to move windows into the current project, and only Destination to move windows out of it.) A data table window will be moved together with its dependent reports, though only one need be specified in the Windows argument. If omitted, the Windows argument defaults to all open windows in the source project.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -14721,7 +15155,6 @@ Move to Project( destination( project ), windows( {report} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
 project << Close Window();
@@ -14734,9 +15167,10 @@ project << Close Window();
 
 **Description:** Returns a matrix of moving averages for the input matrix. before and after determine the range ("window") of items to average, where before can be -1 to indicate all prior items. If weighting is 1, all items have equal weight. If weighting is 0, items have linearly incremental weights. Otherwise, weighting is the parameter for exponential weighting (EWMA). partial window is missing indicates whether averages are reported when not all neighbors are present, which can occur at the ends or near missing values. If partial window is missing is nonzero, missing values are reported instead for such partial windows.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
 	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),
@@ -14752,11 +15186,12 @@ Eval List(
 
 **Description:** Creates a Multiple File Import object; the object accepts messages to set a folder, filter files, and import. To bring up a dialog use the "Create Window" message. To immediately import use the "Import Data" message which will return a list of the tables that were created.
 
+**JMP Version Added:** 14
+
 **Interactive example**
 
 ```jsl
 
-Names Default To Here( 1 );
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
 // for filtering files and controlling the import
@@ -14772,7 +15207,6 @@ Multiple File Import(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 mfi = Multiple File Import();
 mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
@@ -14788,9 +15222,10 @@ tables = mfi << Import Data();
 
 **Description:** Multiplies all arguments, which can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 * Pi();
 
 ```
@@ -14801,9 +15236,10 @@ Names Default To Here( 1 );
 
 **Description:** Multiplies a value to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 3;
 ex *= 2;
 ex;
@@ -14816,9 +15252,10 @@ ex;
 
 **Description:** Returns a response vector with imputed values for the missing values in the yVec vector of responses. Imputations are based on a multivariate normal distribution with mean vector meanYvec and symmetric covariance matrix symCovMat. Optional arguments colMin and colMax are the respective vectors of column minimums and maximums. These arguments provide bounds for the imputations.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
 . -0.687720061441453 0.29665732536624 -1.94898001941576,
 -0.0425472526673373 0.463229145080277 0.635619352779951 .];
@@ -14839,9 +15276,10 @@ Print( mat );
 
 **Description:** Searches the s argument for a substring or position depending on combination of arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
@@ -14852,9 +15290,10 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 **Description:** Returns the number of arguments of the evaluated expression head.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Arg( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -14865,11 +15304,12 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 **Description:** Returns the number of arguments of the expression head. This function is deprecated. Please use N Arg() instead.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // See Example 2 for the deprecated N Arg Expr() equivalent
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -14879,7 +15319,6 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Deprecated
 N Arg Expr( Sum( a, b, c ) );
 
@@ -14891,9 +15330,10 @@ N Arg Expr( Sum( a, b, c ) );
 
 **Description:** Returns n! / (k! * (n - k)!), which is the number of ways to choose k items out of n, ignoring order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Choose K( 5, 3 );
 
 ```
@@ -14904,9 +15344,10 @@ N Choose K( 5, 3 );
 
 **Description:** Returns the number of columns in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Col( [11 22, 33 44] );
 
 ```
@@ -14917,9 +15358,10 @@ N Col( [11 22, 33 44] );
 
 **Description:** Returns the number of columns in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Col( [11 22, 33 44] );
 
 ```
@@ -14930,11 +15372,12 @@ N Col( [11 22, 33 44] );
 
 **Description:** Returns the number of items in a list, the number of elements in a matrix, the number of keys in an associative array, the number of functions and variables in a namespace, the number of methods and variables in a class object, or the number of children of a display box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -14943,7 +15386,6 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -14952,7 +15394,6 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
 
@@ -14964,9 +15405,10 @@ N Items( hlist );
 
 **Description:** Returns the number of missing values among arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -14977,9 +15419,10 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 **Description:** Returns the number of rows in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Row( [11 22, 33 44] );
 
 ```
@@ -14990,9 +15433,10 @@ N Row( [11 22, 33 44] );
 
 **Description:** Returns the number of rows in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Rows( [11 22, 33 44] );
 
 ```
@@ -15003,11 +15447,12 @@ N Rows( [11 22, 33 44] );
 
 **Description:** Returns the number of currently open data tables.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
@@ -15017,7 +15462,6 @@ N Table();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Open( "$SAMPLE_DATA/Solubility.jmp" );
@@ -15035,9 +15479,10 @@ d;
 
 **Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -15050,9 +15495,10 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 **Description:** Returns the value of a symbol, without evaluating it if it is an expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( 1 + 2 );
 Eval List( {ex, Name Expr( ex )} );
 
@@ -15064,9 +15510,10 @@ Eval List( {ex, Name Expr( ex )} );
 
 **Description:** Determines where unresolved names are stored, either as a global/local ( 0 ) or in the Here: namespace ( 1 ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -15078,9 +15525,10 @@ Show( x );
 
 **Description:** Return a reference to the namespace specified by the name argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -15119,9 +15567,10 @@ ns << Delete;
 
 **Description:** Returns 1 if the namespace specified by the name argument exists; otherwise a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -15160,9 +15609,10 @@ ns << Delete;
 
 **Description:** Creates a matrix of nChooseK(n,k) rows and k columns forming all the combinations of k integers from 1 to n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Print( NChooseK Matrix( 5, 3 ) );
 
 ```
@@ -15173,9 +15623,10 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 **Description:** Returns the probability that a negative binomially distributed random variable is less than or equal to k, where the probability of success is p and the number of successes is n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exnbdp = 0.5;
 exnbdn = 10;
 New Window( "Example: Neg Binomial Distribution",
@@ -15210,9 +15661,10 @@ New Window( "Example: Neg Binomial Distribution",
 
 **Description:** Returns the probability that a negative binomially distributed random variable is equal to k, where the probability of success is p and the number of successes is n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.5;
 exnbpn = 10;
 New Window( "Example: Neg Binomial Probability",
@@ -15238,9 +15690,10 @@ New Window( "Example: Neg Binomial Probability",
 
 **Description:** Returns the probability that a Negative Binomial distributed random variable is less than or equal to k, where lambda is the location parameter, sigma is the scale parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 20;
 sigma = 2;
 New Window( "Example: Negative Binomial Distribution",
@@ -15272,9 +15725,10 @@ New Window( "Example: Negative Binomial Distribution",
 
 **Description:** Returns the probability that a Negative Binomial distributed random variable is equal to k, where lambda is the location parameter, sigma is the scale parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Negative Binomial",
@@ -15304,9 +15758,10 @@ New Window( "Poisson and Negative Binomial",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the Negative Binomial( lambda, sigma ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexps = 2;
 qexpn = 40;
@@ -15349,9 +15804,10 @@ New Window( "Example: Negative Binomial Quantile",
 
 **Description:** Returns the net present value of an investment by using a discount rate and a series of future payments (negative values) and income (positive values). The values argument is a one dimensional matrix. Equivalent to the NPV function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Net Present Value( .05, [-10000, 1000, 900, 9500] );
 Net Present Value( .05, -10000, 1000, 900, 9500 );
 
@@ -15363,9 +15819,10 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 **Description:** Creates a CAS Action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 echo = [=> ];
 echo["a"] = 1;
@@ -15381,9 +15838,10 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 **Description:** Creates a CAS DATA step action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -15405,9 +15863,10 @@ cas << Submit( action );
 
 **Description:** Creates a new CAS server.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
@@ -15420,9 +15879,10 @@ cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 **Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
@@ -15436,11 +15896,12 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 **Description:** Creates a new column in the current data table. The optional actions arguments are any messages that data columns support.
 
+**JMP Version Added:** Before version 14
+
 **Like**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
 
@@ -15450,7 +15911,6 @@ New Column( "like name", Like( :name ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
@@ -15462,9 +15922,10 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 **Description:** Creates a new column by performing a regular expression pattern match on an existing column.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
 	Column( :Narrative Cause ),
@@ -15481,11 +15942,12 @@ New Column by Text Matching(
 
 **Description:** Create a new custom function object. A custom function will be colorized in the script editor and show up in the Scripting Index. The required information for a custom user function are a namespace (to prevent collisions with global functions), a name, and a function definition. Other help information can be added using messages. Use the Add Custom Functions command to publish the new function into the JMP environment.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
@@ -15494,7 +15956,6 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
 	{New Custom Function(
@@ -15514,7 +15975,6 @@ Add Custom Functions(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
 	{New Custom Function(
@@ -15536,11 +15996,12 @@ Add Custom Functions(
 
 **Description:** Create a data connector configuration object.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Create a data connector from scratch
 dc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );
@@ -15556,7 +16017,6 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Launch Query Builder from a SQL Server data source
 dc = New Data Connector(
@@ -15577,9 +16037,10 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 **Description:** Creates a heat map image based on a matrix and color theme or gradient.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 nx = 20; // data is this size
 ny = 15;
@@ -15623,9 +16084,10 @@ New Window( "small and big",
 
 **Description:** Creates a request to send to a web service.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 getSentiment = Function( {text},
 	{Default Local},
@@ -15685,11 +16147,12 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 **Description:** Returns a new image which can then be edited through JSL commands. If a path is specified to an existing image file, the file should be a .JPG, .PNG, .GIF, .BMP or .TIF file.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
 
@@ -15699,7 +16162,6 @@ New Window( "new image", image );
 
 ```jsl
 
-Names Default To Here( 1 );
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
@@ -15710,7 +16172,6 @@ New Window( "new image", image2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 image3 = New Image();
 mat = J( 256, 256 );
 For( y = 0, y < 256, y++,
@@ -15729,17 +16190,20 @@ New Window( "image", image3 );
 
 **Description:** Creates a new IP21 Client instance that can be used to import data from an AspenTech IP.21 server.
 
+**JMP Version Added:** 19
+
 ### New JMP Live
 
 **Syntax:** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **Description:** Start a connection to JMP Live using stored connection information. Connection is optional and defaults to the connection specified as the default in Connection Manager. If provided it looks up the connection by the name. Prompt is optional and defaults to "No". The valid values for prompt are "Yes", "No", and "If Needed". A value of "Yes" always prompts for login credentials. A value of "No" never prompts for login credentials, but could result in an authentication failure. A value of "If Needed"  prompts for credentials only if the current stored credentials are not valid. Returns a JMP Live Connection object.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live();
 
 ```
@@ -15748,7 +16212,6 @@ jmplive = New JMP Live();
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
@@ -15757,7 +16220,6 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```
@@ -15778,11 +16240,12 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 	Optimization is used to customize the way the report is published to JMP Live. The report is published to enable greater interactivity by default.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -15809,7 +16272,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -15833,7 +16295,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -15851,7 +16312,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -15875,9 +16335,10 @@ jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
 
 **Description:** Sends or downloads multiple HTTP requests in parallel.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -15912,9 +16373,10 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 **Description:** Create a new namespace with the name specified by the name argument or with an anonymous name if name is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -15952,9 +16414,10 @@ ns << Delete;
 
 **Description:** Creates a new OAuth2 authorization.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -16001,9 +16464,10 @@ data = request << Send;
 
 **Description:** Creates an OAuth2 Token for securely accessing data across many different web APIs.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -16020,9 +16484,10 @@ token = New OAuth2 Token(
 
 **Description:** Creates an instance object of a class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -16072,11 +16537,12 @@ Delete Classes( "complex" );
 
 **Description:** Creates a new PI Client instance that can be used to import data from a PI server.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16103,7 +16569,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16125,7 +16590,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16152,11 +16616,12 @@ importer << Run;
 
 **Description:** Creates a new empty project window. One or more project messages can be included as arguments in order to create a project in one step.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project();
 
 ```
@@ -16165,7 +16630,6 @@ project = New Project();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -16179,7 +16643,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script(
 		Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -16195,7 +16658,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Set Bookmarks(
 		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}
@@ -16214,7 +16676,6 @@ project = New Project(
 
 ```jsl
 
-Names Default To Here( 1 );
 project = New Project(
 	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),
 	Set Layout(
@@ -16238,9 +16699,10 @@ project = New Project(
 
 **Description:** Creates an SQL Query object for the connection, columns and table specified, or for the custom SQL query specified. Use Query Builder to generate scripts that create queries.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
@@ -16256,9 +16718,10 @@ obj = New SQL Query(
 
 **Description:** Creates a new data table. "Invisible" hides the data table from view but lists it in the JMP Home Window. "Private" hides the table completely. "Visible" is the default, and creates a normal table that is visible and listed in the JMP Home Window. The optional actions arguments are any messages that data tables support.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),
@@ -16274,9 +16737,10 @@ New Table( "Little Class",
 
 **Description:** Creates an interactive HTML report.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 webreport = New Web Report(
@@ -16312,11 +16776,12 @@ If( !Is Empty( file ),
 
 **Description:** Creates a window containing the specified display box or script. A report window is created by default, unless the Type option is specified. A window of Type("Modal Dialog") halts execution until the dialog is responded to. On Open, On Validate, and Return Result are available only for modal windows. On Open() evaluates its expression, function, or class method when the window is created. If On Close() returns false, the window is prevented from closing. On Validate() runs its expression, function, or class method when the OK button is clicked. If the expression returns true, the window is closed. Otherwise, the window remains open. Return Result changes the window&apos;s return value when it closes to match that of the deprecated Dialog() function. For window types that support toolbars, use Show Toolbars to specify changes from the default behavior. The options Show Menu and Suppress AutoHide are Windows only. The Window View("Invisible") option can be used for any window other than a Modal Dialog. A window of Type("Script") creates a JSL document unless the <<Language option is specified.
 
+**JMP Version Added:** Before version 14
+
 **[Win] Toolbars and Menus**
 
 ```jsl
 
-Names Default To Here( 1 );
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -16340,7 +16805,6 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
@@ -16358,7 +16822,6 @@ ex = New Window( "Dialog example",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 g = Graph Box(
 	Frame Size( 300, 300 ),
@@ -16378,7 +16841,6 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 ex = New Window( "Modal Dialog example",
 	<<Type( "Modal Dialog" ),
@@ -16417,7 +16879,6 @@ If(
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
@@ -16428,7 +16889,6 @@ ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), p
 
 ```jsl
 
-Names Default To Here( 1 );
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -16443,7 +16903,6 @@ New Window( "My Window's Title", g );
 
 ```jsl
 
-Names Default To Here( 1 );
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
 dt << Run Script("Bivariate");
@@ -16458,9 +16917,10 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 **Description:** Computes the probability that an observation (X, Y) is less than or equal to (x, y) with correlation coefficient r where X is marginally normally distributed with mean mu1 and standard deviation s1 and Y is marginally normally distributed with mean mu2 and standard deviation s2. If mu1, s1, mu2, and s2 are not given, the function assumes the standard normal bivariate distribution with mu1=0, s1=1, mu2=0, and s2=1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -16471,9 +16931,10 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 **Description:** Draws normal probability contour(s) for k populations and two variables. The prob argument can be either a scalar probability or a matrix of probabilities. The meanMatrix and stdsMatrix arguments are k by 2 matrices, and the corrMatrix argument is a k by 1 vector. The colorsMatrix argument specifies the color(s) for the k contour(s); colors must be specified as JSL colors (either JSL color integer values or return values of JSL color functions such as the RGB Color() or HLS Color() functions). The fill argument specifies the amount of transparency for the contour fill color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -16497,9 +16958,10 @@ New Window( "Example",
 
 **Description:** Returns the density at q of a Normal distribution with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -16518,9 +16980,10 @@ New Window( "Example: Normal Density",
 
 **Description:** Returns the probability that a normally distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -16539,9 +17002,10 @@ New Window( "Example: Normal Distribution",
 
 **Description:** Returns the result of radial-spherical integration for smooth functions of multivariate normal variables. The basic idea is the same as one method in Genz and Monahan(1996). But Radau-Gauss-Laguerre type quadrature is used for the radial direction.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Integrate(
 	J( 3, 1, 0 ),
 	Identity( 3 ),
@@ -16559,9 +17023,10 @@ Normal Integrate(
 
 **Description:** Returns the log of 1 - Normal distribution at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -16580,9 +17045,10 @@ New Window( "Example: Normal Log CDistribution",
 
 **Description:** Returns the log of the Normal probability density at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -16601,9 +17067,10 @@ New Window( "Example: Normal Log Density",
 
 **Description:** Returns the log of the Normal distribution at x with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -16622,9 +17089,10 @@ New Window( "Example: Normal Log Distribution",
 
 **Description:** Returns the density at q of a normal mixture distribution with group means meanvec, group standard deviations sdvec, and group probabilities probvec. Here meanvec, sdvec, and probvec are all vectors of the same size.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -16669,9 +17137,10 @@ New Window( "Univariate Normal Mixture Density",
 
 **Description:** Returns the probability that a normal mixture distributed variable with group means meanvec, group standard deviations sdvec, and group probabilities probvec is less than q. Here meanvec, sdvec, and probvec are all vectors of the same size.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -16710,9 +17179,10 @@ New Window( "Univariate Normal Mixture Distribution",
 
 **Description:** Returns the quantile from a normal mixture distribution, the values for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 mu1 = -1;
@@ -16756,9 +17226,10 @@ New Window( "Example: Normal Mixture Quantile",
 
 **Description:** Returns the quantile from a Normal distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -16769,9 +17240,10 @@ Normal Quantile( 0.9 );
 
 **Description:** Computes the tolerance factor for constructing a 1-alpha confidence interval to contain proportion p of the means with sample size n from the normal distribution. There is an option to request the factor for a one-sided tolerance interval.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 n = 15;
 New Window( "Example: Tolerance Factor()",
 	tdig = Graph Box(
@@ -16794,9 +17266,10 @@ New Window( "Example: Tolerance Factor()",
 
 **Description:** Returns the logical NOT of x: 1 if x is zero, missing if x is missing, and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 !(1 < 2);
 
 ```
@@ -16807,9 +17280,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns 1 if each argument is not equal to the next argument; returns 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 != 2 != 1;
 
 ```
@@ -16820,15 +17294,18 @@ Names Default To Here( 1 );
 
 **Description:** Returns a reference to the specified notebook.
 
+**JMP Version Added:** 19
+
 ### Nth Day Of Week in the Month
 
 **Syntax:** n = Nth Day Of Week in the Month( datetime )
 
 **Description:** Returns an integer that represents the number of instances of the day of the week of the datetime argument that have occurred in the month. For example, November 28, 2019 is the 4th Thursday of the month, so the function returns 4.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -16839,11 +17316,12 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 **Description:** Converts s to a number using any built-in format, including date and currency formats. Returns missing if the conversion fails. The optional <<Restrict only allows conversion using integer, decimal, and scientific formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
@@ -16852,7 +17330,6 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Num( "3.1e6", <<Restrict ),
 	Num( "1989-10-04", <<Restrict ),
@@ -16868,9 +17345,10 @@ Show(
 
 **Description:** Returns the numerical derivative of the f( x,... ) function with respect to one of its arguments. You can specify that argument as the second argument in the Num Deriv function. If no second argument is specified, the derivative is taken with respect to the function&apos;s first argument. The derivative is evaluated using numeric values specified in the f( x,... ) function expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x, y}, x ^ 2 + y );
 Num Deriv( f( 2, 1 ) );
 Num Deriv( f( 2, 1 ), 2 );
@@ -16883,9 +17361,10 @@ Num Deriv( f( 2, 1 ), 2 );
 
 **Description:** Returns the numerical second derivative of the f( x,... ) function with respect to x. The derivative is evaluated using numeric values specified in the f( x,... ) function expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {x}, x ^ 3 );
 Num Deriv2( f( 2 ) );
 
@@ -16897,9 +17376,10 @@ Num Deriv2( f( 2 ) );
 
 **Description:** Returns the number of non-missing arguments or values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
@@ -16910,9 +17390,10 @@ Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 **Description:** Returns a display box to show the numbers specified by the numbers argument, which can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -16931,9 +17412,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show the numbers specified by the numbers argument, which can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -16949,9 +17431,10 @@ New Window( "Example",
 
 **Description:** Returns an edit box that accepts only numeric input. Specify the optional width argument to set the width of the box in characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -16963,9 +17446,10 @@ x = neb << get;
 
 **Description:** Returns the number of periods for an investment based on periodic, constant payments and a constant interest rate. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the NPER function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Number of Periods( .05 / 12, -2000, 100000 );
 
 ```
@@ -16976,11 +17460,12 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 **Description:** Returns a reference to a data table or other JMP file or object created from a file. If no path is specified, the Open dialog appears. If a folder path is specified, the system file browser is opened and no object is returned. Refer to the Syntax Reference for a complete description of available options.
 
+**JMP Version Added:** Before version 14
+
 **Add-In**
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -16993,7 +17478,6 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -17017,7 +17501,6 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Excel files imported into a data table:
    Open( excelFilePath,
      <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
@@ -17057,7 +17540,6 @@ dt = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
@@ -17067,7 +17549,6 @@ Open( "$SAMPLE_DATA" );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Other options:
    SAS File imported as a data table:
    Open( sasFilePath,
@@ -17127,7 +17608,6 @@ Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
     PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
@@ -17150,7 +17630,6 @@ pdftable2 = Open(
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
@@ -17161,7 +17640,6 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Text files imported into a data table:
    Open( textFilePath,
      <Invisible | Private>,
@@ -17196,9 +17674,10 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 **Description:** Opens a database using ODBC, runs the given SQL, and puts data into a data table with the given output table name.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -17213,9 +17692,10 @@ Open Database(
 
 **Description:** Creates an object and window you can send messages to manage real-time data feeds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -17235,11 +17715,12 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 **Description:** Opens the online JMP help or the Scripting Index.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help( "Help" );
 
 ```
@@ -17248,7 +17729,6 @@ Open Help( "Help" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -17261,7 +17741,6 @@ Open Help(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -17280,11 +17759,12 @@ Open Help(
 
 **Description:** Open the log window
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Log();
 Show( Is Log Open() );
 
@@ -17294,7 +17774,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Bring Log Windows to the Top */
 Open Log( 1 );
 Show( Is Log Open() );
@@ -17307,9 +17786,10 @@ Show( Is Log Open() );
 
 **Description:** Returns the logical OR of all arguments: 1 if any arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 | 3 < 2;
 
 ```
@@ -17320,9 +17800,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the logical OR of all arguments with missing values treated as zeros: 1 if any arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 OrMZ( 1 < 2, 3 < 2 );
 
 ```
@@ -17333,9 +17814,10 @@ OrMZ( 1 < 2, 3 < 2 );
 
 **Description:** Orthogonalizes the columns of a matrix. Center option makes them sum to zero. Scale option makes them unit length.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ortho( [1 1, 1 -1] );
 
 ```
@@ -17346,9 +17828,10 @@ Ortho( [1 1, 1 -1] );
 
 **Description:** Returns orthogonal polynomials of vector V up to order specified by the order argument. The V argument can be a row or column vector. Scale option makes them unit length.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ortho Poly( 1 :: 10, 2 );
 
 ```
@@ -17359,9 +17842,10 @@ Ortho Poly( 1 :: 10, 2 );
 
 **Description:** Creates an outline element in the report, returning the display box reference. To include a menu in the outline node, specify the command script pairs list, a list specifying menu commands and associated scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		{"Show label value", Show( teb << get text )},
@@ -17377,9 +17861,10 @@ New Window( "Example",
 
 **Description:** Draws an oval within the specified rectangle, filled if fill is nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -17398,9 +17883,10 @@ New Window( "Example",
 
 **Description:** Returns the matrix of P-Spline coefficients. Internal Knot Grid is either the number of desired knot points based on percentiles of x or a vector specifying the internal knot points. Optional parameter degree specifies the degree of the P-splines with a default of 3.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -17412,9 +17898,10 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 **Description:** Creates a display box that forces a page break.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -17439,9 +17926,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to label and enclose the argument display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -17459,9 +17947,10 @@ New Window( "Example",
 
 **Description:** Use multiple threads to assign values to the matrix. If any thread throws an exception, a message will be printed to the log and the return value will be 0. If all threads complete without error, the return value will be 1. Functions that launch platforms, create or use data tables, or access the graphics subsystem are only supported on the main thread, and will throw an exception if called from a worker thread.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 m = J( 3, 2, -1 );
 If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,
 	Throw( "thread failed" )
@@ -17476,9 +17965,10 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 **Description:** Defines formula parameters for models for the Nonlinear platform.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -17489,9 +17979,10 @@ Parameter( {a = 1}, a + 1 );
 
 **Description:** Parses the string and returns the resulting JSL expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Parse( "x+y" );
 
 ```
@@ -17502,11 +17993,12 @@ Parse( "x+y" );
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -17515,7 +18007,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -17524,7 +18015,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -17533,7 +18023,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -17542,7 +18031,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -17558,9 +18046,10 @@ Show(
 
 **Description:** Convert JSON text to a JSL list or associative array representing the structure specified by the JSON data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -17574,11 +18063,12 @@ Show( l );
 
 **Description:** Parses an XML expression using the OnElement expressions for specified XML tags.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -17596,7 +18086,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 doc =
 "
@@ -17652,9 +18141,10 @@ Show( docname, doctext, records, NestLevel );
 
 **Description:** Generates a pattern value that causes the entire match to fail immediately with no further backup and retry.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -17675,9 +18165,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches any one of the supplied patterns. Generally written as pat1 | pat2 | ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123456789",
 	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result
@@ -17692,9 +18183,10 @@ result;
 
 **Description:** Generates a pattern value that will match any one character in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -17708,9 +18200,10 @@ op;
 
 **Description:** Generates a pattern value that matches zero or more characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123nonnumeric456",
 	Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" )
@@ -17725,9 +18218,10 @@ result;
 
 **Description:** Generates a pattern value that matches its argument zero or more times. Same as patRepeat(pattern,0,infinity,RELUCTANT); (*? in regex).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c
@@ -17742,9 +18236,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that matches zero characters and assigns the current cursor position to variable. Generally written as patpos()>>variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -17756,9 +18251,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero or more characters not in the string, stopping before a (required) character in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 b = "- ";
 Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );
 word;
@@ -17771,9 +18267,10 @@ word;
 
 **Description:** Generates a pattern value that matches each of the supplied patterns in turn. Generally written as pat1 + pat2 + ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 num = Pat Break( "," );
 sep = ",";
 Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
@@ -17787,9 +18284,10 @@ result;
 
 **Description:** Generates a pattern value that matches the supplied pattern and stores the matched text in variable on success. Generally written as pattern >? variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -17803,9 +18301,10 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 **Description:** Generates a pattern value that always fails to match going forward, forcing the matcher to retry alternatives.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -17826,9 +18325,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches zero characters going forwards and fails when backing up, causing the match to fail. Also used to trim down the pattern backup stack.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );
 "rc=" || Char( rc ) || " result=" || result;
 
@@ -17840,9 +18340,10 @@ rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence
 
 **Description:** Generates a pattern value that matches the supplied pattern and immediately stores the matched text in variable. Generally written as pattern >> variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
@@ -17856,9 +18357,10 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 **Description:** Generates a pattern value that matches n characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -17870,11 +18372,12 @@ result;
 
 **Description:** A zero width pattern match after the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -17890,7 +18393,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -17906,7 +18408,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -17927,11 +18428,12 @@ While( /* keep repeating the match until it won't match */
 
 **Description:** A zero width pattern match before the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -17946,7 +18448,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -17962,7 +18463,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -17983,9 +18483,10 @@ While( /* keep repeating the match until it won't match */
 
 **Description:** Executes the pattern match in the pattern variable against the string in the source variable; optional replacement text replaces the matched text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Pat Match(
 	string,
@@ -18002,9 +18503,10 @@ string;
 
 **Description:** Generates a pattern value that will match any one character not in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );
@@ -18018,9 +18520,10 @@ word;
 
 **Description:** Generates a pattern value that matches zero characters if the cursor is at position n. With no argument, the Pat Pos() function returns the cursor position for >> or >? assignment: patpos()>>variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"ab3defghi",
 	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )
@@ -18036,9 +18539,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero characters if the cursor is n characters from the end.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18050,9 +18554,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero or more characters to move the cursor forward to n characters before the end.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -18064,9 +18569,10 @@ result;
 
 **Description:** Generates a pattern value that matches the regular expression in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
 string;
@@ -18079,9 +18585,10 @@ string;
 
 **Description:** Generates a pattern value that matches the remainder of the text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18093,9 +18600,10 @@ result;
 
 **Description:** Generates a pattern value that matches the supplied pattern between min and max times.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
 	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c
@@ -18110,9 +18618,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that matches one or more characters in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -18125,9 +18634,10 @@ result;
 
 **Description:** Generates a pattern value that matches the string. Generally the string can be used without using the Pat String() function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = Pat String( "a" || "b" );
 Pat Match(
 	"acbdbababc",
@@ -18143,9 +18653,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that always matches zero characters, even when backing up.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -18166,9 +18677,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches zero or more characters to move the cursor forward to position n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -18180,9 +18692,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero characters if the expression is nonzero. The expression is re-evaluated during each test, as if Expr() was used.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nCats = 0;
 whichCat = 3;
 string = "catch a catnapping cat in a catsup factory";
@@ -18204,9 +18717,10 @@ string;
 
 **Description:** Draws a stroke along the given path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -18223,9 +18737,10 @@ New Window( "Example",
 
 **Description:** Converts a path specification from matrix form to character form.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -18236,9 +18751,10 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 **Description:** Returns the payment for a loan based on constant payments and a constant interest rate. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the PMT function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -18250,9 +18766,10 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 **Description:** Returns the number of pages in a PDF file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -18263,9 +18780,10 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 **Description:** Sets the color for drawing lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( {.3, .5, .7} );
@@ -18281,9 +18799,10 @@ New Window( "Example",
 
 **Description:** Sets the pen size in pixels for drawing lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -18299,9 +18818,10 @@ New Window( "Example",
 
 **Description:** Returns the mathematical constant π, accurate to approximately 15 decimal digits: 3.1415926535....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Char( Pi(), 5 );
 
 ```
@@ -18312,9 +18832,10 @@ Char( Pi(), 5 );
 
 **Description:** Returns a color that was selected with the standard color picker.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
 	Graph Box(
@@ -18333,11 +18854,12 @@ New Window( "Example",
 
 **Description:** Returns a color theme that was selected with the standard color theme picker. The initial theme can be specified explicitly or by specifying a Type to use the themes from preferences.
 
+**JMP Version Added:** 17
+
 **Graph Builder**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
@@ -18356,7 +18878,6 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
 biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );
@@ -18370,11 +18891,12 @@ Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 **Description:** Prompts the user with an Open Directory window, returning the pathname of the chosen directory. The optional prompt string is shown at the top of the window. Show Files can be any of the three arguments, and takes a Boolean argument. 1 shows files in the Pick Directory window, 0 does not. The default value is 0. The path string specifies the directory that the Pick Directory window initially displays. If you use the path string, it must follow the prompt string, but Show Files can be between them.
 
+**JMP Version Added:** Before version 14
+
 **Show Files**
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```
@@ -18383,7 +18905,6 @@ Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory" );
 
 ```
@@ -18394,11 +18915,12 @@ Pick Directory( "Select a directory" );
 
 **Description:** Prompts the user with an Open window, returning the pathname of the chosen file. The filterList argument is a list of strings of the form: "Label|suffix1;suffix2;...". The first filter argument specifies which filter is initially shown. The fifth argument indicates whether the window should function as a save (saveFlag = 1) or open (saveFlag = 0) window. The default file argument specifies the file that is initially selected. The multiple argument allows multiple files to be selected if saveFlag is 0.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -18414,7 +18936,6 @@ Pick File(
 
 ```jsl
 
-Names Default To Here( 1 );
 Files = Pick File(
 	"Select JMP File",
 	"$SAMPLE_DATA",
@@ -18434,7 +18955,6 @@ For( i = 1, i <= N Items( Files ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 filename = Pick File(
 	"Save As Text",
 	"$DOCUMENTS",
@@ -18456,11 +18976,12 @@ If( Is Missing( filename ),
 
 **Description:** Creates a display box that contains a graphics picture object. You can either open a picture and then reference it, or you can use the Open command with a path to the picture in place of the Picture Object argument.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
 );
@@ -18471,7 +18992,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
 
@@ -18483,9 +19003,10 @@ New Window( "Example", Picture Box( pict ) );
 
 **Description:** Draws a pie slice.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -18501,9 +19022,10 @@ New Window( "Example",
 
 **Description:** Creates a Pie Seg at the specified origin, with the specified radius, based on values specified in matrix format.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
 New Window( "Pie Seg",
@@ -18521,9 +19043,10 @@ New Window( "Pie Seg",
 
 **Description:** Draws a line from the current pixel-based pen coordinate to the horizontal and vertical coordinates given.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -18545,9 +19068,10 @@ New Window( "Example",
 
 **Description:** Moves the pixel-addressed pen to the horizontal and vertical coordinate relative to the origin.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -18569,9 +19093,10 @@ New Window( "Example",
 
 **Description:** Sets the origin that pixel drawing commands are based on.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -18593,9 +19118,10 @@ New Window( "Example",
 
 **Description:** Draws a stroke along the given pixel-based path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax. The path will be scaled and translated about its origin according to the optional parameters, with the orientation specified in the axis space.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -18632,9 +19158,10 @@ New Window( "Example",
 
 **Description:** Moves to the {h, v} pixel position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Top Align, Bottom Align, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Example",
 	Graph Box(
@@ -18660,9 +19187,10 @@ New Window( "Example",
 
 **Description:** Evaluates the given script in the context of the given data table. Returns the resulting display box for embedding in a display tree.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -18685,9 +19213,10 @@ New Window( "Platform example",
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -18698,9 +19227,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -18711,9 +19241,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Returns a display box to graph the numbers. The numbers argument can be a list or matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -18732,9 +19263,10 @@ New Window( "Example",
 
 **Description:** Returns the probability that a Poisson distributed random variable is less than or equal to k, where lambda is the mean parameter and k is the count of interest.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Distribution",
 	ppy = Graph Box(
@@ -18763,9 +19295,10 @@ New Window( "Example: Poisson Distribution",
 
 **Description:** Returns the probability that a Poisson distributed random variable is equal to k, where lambda is the mean parameter and k is the count of interest.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 New Window( "Example: Poisson Probability",
 	pdy = Graph Box(
@@ -18789,9 +19322,10 @@ New Window( "Example: Poisson Probability",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the Poisson( lambda ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpn = 40;
 qexpq = 0.5;
@@ -18833,9 +19367,10 @@ New Window( "Example: Poisson Quantile",
 
 **Description:** Returns a display seg that represents a polygon with vertices based on the passed in x and y values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -18850,9 +19385,10 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 **Description:** Draws the polygon specified by the points.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -18869,11 +19405,12 @@ New Window( "Example",
 
 **Description:** Calculates the area of the specified polygon.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -18882,7 +19419,6 @@ area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
@@ -18893,11 +19429,12 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 **Description:** Calculates the centroid of the specified polygon.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -18906,7 +19443,6 @@ Names Default To Here( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```
@@ -18917,11 +19453,12 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 **Description:** Removes points from a polygon that carry a low amount of detail and returns indices of the remaining points. detail factor is inversely proportional to the detail error tolerance. multiple(ids) indicates that many polygons should be simplified together so that common edges are treated consistently. ids is a matrix with one row per point. geodesic(1) indicates coordinates are latitude and longitude for distance measurement.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -18939,7 +19476,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
 polys = dt[rows, {"X", "Y"}];
@@ -18993,9 +19529,10 @@ New Window( "Parishes",
 
 **Description:** Generates random uniform points over a convex polytope. The numSamples argument specifies the number of random points to be generated. The A argument is the constraint coefficient matrix. The B argument is the right hand side values of constraints. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, mle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -19027,9 +19564,10 @@ Show( "see new window for example output" );
 
 **Description:** Returns a display box with a popup menu defined by label/script pairs.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -19047,9 +19585,10 @@ New Window( "Example",
 
 **Description:** Subtracts 1 from a variable or from a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex--;
 ex;
@@ -19062,9 +19601,10 @@ ex;
 
 **Description:** Adds 1 to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex++;
 ex;
@@ -19077,9 +19617,10 @@ ex;
 
 **Description:** Returns x raised to the y power. If x is negative, y must be an integer.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Power( 2, 5 );
 
 ```
@@ -19090,9 +19631,10 @@ Power( 2, 5 );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19103,9 +19645,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19116,9 +19659,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19129,9 +19673,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19142,9 +19687,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Returns the present value of an investment. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the PV function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```
@@ -19155,9 +19701,10 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 **Description:** Returns the payment on the principal for a given period for an investment based on periodic, constant payments and a constant interest rate. The type argument is 0 for end-of-period payments and 1 for beginning-of-period payments. Equivalent to the PPMT function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -19169,9 +19716,10 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 **Description:** Displays values of the arguments in the log, one per line.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Print( 355 / 113, Pi() );
 
 ```
@@ -19182,9 +19730,10 @@ Print( 355 / 113, Pi() );
 
 **Description:** Prints the matrix M. The optional argument ignore locale determines whether the printing of decimal separators should respect Locale information, where zero means to respect Locale. The optional argument style determines whether to use a style and which style to use. The available styles are parseable, which is a reformatted JSL matrix expression, latex, and other. When the style argument is other, the last three optional arguments define the beginning and ending characters of printed rows and separating characters of concatenated entries.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
 Print Matrix( A );
 Print Matrix( A, <<ignore locale( 1 ) );
@@ -19205,9 +19754,10 @@ Print Matrix(
 
 **Description:** Returns the quantile from a Normal distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Normal Quantile( 0.9 );
 
 ```
@@ -19218,9 +19768,10 @@ Normal Quantile( 0.9 );
 
 **Description:** Returns the product of evaluations of the bodyExpr arguments, each time incrementing the variable from the assignExpr argument until it is greater than or equal to the limit argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -19231,9 +19782,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns a Python connection scriptable object.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -19246,11 +19798,12 @@ Show( version );
 
 **Description:** Triggers the creation of a jpip command line wrapper script for Python&apos;s pip command. A directory picker dialog will ask for the directory location to save the generated script. This script then provides the full capabilities of pip, while correctly establishing the necessary environment variables for JMP&apos;s isolated Python environment.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
@@ -19259,7 +19812,6 @@ Python Create JPIP CMD();
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
@@ -19272,11 +19824,12 @@ conn << Create JPIP CMD();
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 a = "abcdef";
 d = 3.141;
@@ -19306,7 +19859,6 @@ Show( v, m, ml, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = 1;
 x2 = 2;
@@ -19348,11 +19900,12 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **Description:** Returns data from Python, where the name argument can represent any of the following Python data types ( numeric | string | matrix | list | dict | data table | data frame | datetime | numpy.datetime64 ).
 
+**JMP Version Added:** 14
+
 **Datetime**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date1 = As Date( Today() );
 Python Send( date1 );
@@ -19365,7 +19918,6 @@ Show( date1, date2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x1 = {1, 2, 3};
 Python Send( x1 );
@@ -19378,7 +19930,6 @@ Show( x1, x2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Install Packages( "numpy" );
 Python Submit( "import numpy as np" );
@@ -19394,9 +19945,10 @@ Show( numpy_datetime );
 
 **Description:** Returns the version number of Python being used with the JMP Python interfaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 version = Python Get Version();
 Show( version );
 
@@ -19408,11 +19960,12 @@ Show( version );
 
 **Description:** Note: This function is deprecated as of JMP 18 and is equivalent to Python Connect().
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Init();
 Python Submit( "\[
@@ -19427,7 +19980,6 @@ Show( getStr );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Init();
 PythonConnection << Submit( "\[
@@ -19444,11 +19996,12 @@ Show( getStr );
 
 **Description:** This wrappers the install of Python packages into the JMP site-packages directory. For operations beyond simple package installation, see Python Create JPIP CMD() to create a command line pip wrapper script in a directory chosen with Directory Pick(). Alternatively, to run the install from a JMP Python script window look at jmputils.jpip under the Python category here in the Scripting Index.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -19458,7 +20011,6 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -19468,7 +20020,6 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
@@ -19481,9 +20032,10 @@ conn << Install Packages( "numpy pandas" );
 
 **Description:** Note: This function is deprecated as of JMP 18 and always returns 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = Python Is Connected();
 Show( x );
 
@@ -19495,9 +20047,10 @@ Show( x );
 
 **Description:** Maps a JMP variable name to a Python variable name using Python variable naming rules.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -19509,9 +20062,10 @@ Show( Python name );
 
 **Description:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 pi = 3.1415927;
 Python Send( pi );
 Python Submit( "print(pi)" );
@@ -19527,11 +20081,12 @@ Python Submit( "print(pi)" );
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
+**JMP Version Added:** 14
+
 **Column**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
@@ -19543,7 +20098,6 @@ Python Submit( "print(weight)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 x = {1, 2, 3};
 Python Send( x );
@@ -19558,7 +20112,6 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 date = As Date( Today() );
 Python Send( date );
@@ -19572,9 +20125,10 @@ Python Submit( "print(date)" );
 
 **Description:** Sends a data file to Python, where the filename argument is a string specifying a pathname to the file to be sent to Python.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -19589,9 +20143,10 @@ Python Submit( "print(Baseball)" );
 
 **Description:** Submits statements to Python. Statements can be in the form of a string value or list of string values. Optional echo() parameter defaults to 1. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog'
 a = 200]\" );
@@ -19607,9 +20162,10 @@ Show( getStr, getNum );
 
 **Description:** Submits statements to Python using a file specified by the path argument.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Python Submit File( "some_Python_source.py" );
 
 ```
@@ -19620,15 +20176,18 @@ Python Submit File( "some_Python_source.py" );
 
 **Description:** Note: This function is deprecated as of JMP 18 and has no effect.
 
+**JMP Version Added:** 14
+
 ### QR
 
 **Syntax:** {Q, R} = QR( X )
 
 **Description:** Creates an m by m orthogonal matrix Q and an m by n upper triangular matrix R, such that X = Q * R. The argument X is an m by n matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 QR( [11 22, 33 44] );
 
 ```
@@ -19639,9 +20198,10 @@ QR( [11 22, 33 44] );
 
 **Description:** Creates an m by k orthogonal matrix Q and a k by n upper triangular matrix R, such that X = Q * R. The argument X is an m by n matrix, where k is min(m, n).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 QR LAPACK( [11 22, 33 44] );
 
 ```
@@ -19650,9 +20210,10 @@ QR LAPACK( [11 22, 33 44] );
 
 **Syntax:** y = Quadratic Form BLAS( A, x )
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [2 0, 0 2];
 x = [2, 3];
 y = Quadratic Form BLAS( A, x );
@@ -19665,9 +20226,10 @@ y = Quadratic Form BLAS( A, x );
 
 **Description:** Returns the specified quantile p of the x arguments. The quantile argument can be a scalar or a matrix. The x values can also be specified as values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),
 	Quantile( 0.5, [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] )}
@@ -19681,9 +20243,10 @@ Eval List(
 
 **Description:** Returns the quarter part of a date-time value, 1 - 4.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Quarter( Today() );
 
 ```
@@ -19694,9 +20257,10 @@ Quarter( Today() );
 
 **Description:** Perform an SQL query on JMP data tables. sqlStatement (the SQL query, most likely a SELECT statement) is required and must be the last argument. JMP data tables referenced by the SQL statement must be passed in as arguments to Query(), using Table(dt, "alias") to create an alias for the table that the SQL can use if desired. Invisible or Private can be passed in to control the visibility of the resulting data table. If the SQL statement returns a single value, pass in Scalar, which will cause the single value to be returned instead of a data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query( dt, "SELECT name, age, height FROM 'Big Class'
          WHERE age > 14; " );
@@ -19730,9 +20294,10 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 **Description:** Exits JMP.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -19749,9 +20314,10 @@ If(
 
 **Description:** Returns an R connection scriptable object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 RConnection = R Connect();
 
 ```
@@ -19762,9 +20328,10 @@ RConnection = R Connect();
 
 **Description:** Changes the control options for R
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init( Echo( true ) );
 R Control( Echo( false ) );
 R Submit( "Add R code" );
@@ -19777,9 +20344,10 @@ R Submit( "Add R code" );
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 a = "abcdef";
 d = 3.141;
@@ -19801,9 +20369,10 @@ Show( v, m, rc, x, z, a, d );
 
 **Description:** Returns data from R, where the name argument can represent any of the following R data types ( numeric | string | matrix | list | data frame).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -19822,9 +20391,10 @@ Close( dt1, No Save );
 
 **Description:** DEPRECATED in JMP 19 and has no effect. As a replacement, set device to a file name such as png("r_plot.png"), and then open the file to retrieve the image. This option will be removed from JMP 20. Code below shows workaround.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
 R Execute( {img_path}, {}, "\[
@@ -19843,9 +20413,10 @@ rc = Delete File( img_path );
 
 **Description:** Returns the version number of R being used with the JMP R interfaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 version = R Get Version();
 Show( version );
@@ -19858,9 +20429,10 @@ Show( version );
 
 **Description:** Initializes the R Interfaces.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 
 ```
@@ -19871,9 +20443,10 @@ R Init();
 
 **Description:** Returns 1 if there is an active R connection; otherwise, returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 connected = R Is Connected();
 
@@ -19885,9 +20458,10 @@ connected = R Is Connected();
 
 **Description:** Maps a JMP variable name to an R variable name using R variable naming rules.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R name = R JMP Name to R Name( a b c );
 
 ```
@@ -19898,11 +20472,12 @@ R name = R JMP Name to R Name( a b c );
 
 **Description:** Sends data to R, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column).
 
+**JMP Version Added:** Before version 14
+
 **Column**
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -19915,7 +20490,6 @@ w = R Get( "weight" );
 
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 x = [1, 2, 3];
 R Send( x, "x1" );
@@ -19933,9 +20507,10 @@ R Submit( "dt" );
 
 **Description:** Sends a data file to R, where the filename argument is a string specifying a pathname to the file to be sent to R.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -19950,9 +20525,10 @@ R Submit( "Baseball" );
 
 **Description:** Submit statements to R. Statements can be in the form of a string value or list of string values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
@@ -19982,9 +20558,10 @@ rc = Delete File( img_path );
 
 **Description:** Submits statements to R using a file specified by the path argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
@@ -19998,9 +20575,10 @@ R Submit File( file_path );
 
 **Description:** Deprecated in JMP 19 and has no effect.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 R Init();
 R Term();
 
@@ -20012,9 +20590,10 @@ R Term();
 
 **Description:** Returns a display box to show a set of radio buttons.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
 );
@@ -20027,9 +20606,10 @@ New Window( "Example",
 
 **Description:** Returns a random number from a beta distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta( 1, 1 );
@@ -20046,9 +20626,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a beta binomial distribution for n trials with probability p and correlation delta.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
@@ -20065,9 +20646,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a binomial distribution with n trials and event probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrbinp = 0.5;
 exrbinn = 40;
 exrbinlsz = Log( 1000 );
@@ -20127,9 +20709,10 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 **Description:** Returns a random category given pairs of probability and result expressions. A random uniform number is generated and compared to the probability arguments to determine which result argument is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -20140,9 +20723,10 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 **Description:** Returns a random number from a Cauchy distribution with a median of zero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Cauchy();
@@ -20159,9 +20743,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Chi-Square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ChiSquare( 2 );
@@ -20178,9 +20763,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an ExGaussian distribution.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ExGaussian( 0, .5, .25 );
@@ -20197,9 +20783,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an exponential distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Exp();
@@ -20216,9 +20803,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an F distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random F( 2, 2 );
@@ -20235,9 +20823,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Fréchet distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Frechet( 10, 5 );
@@ -20254,9 +20843,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma( 1 );
@@ -20273,9 +20863,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a gamma Poisson distribution with parameters lambda and sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
@@ -20292,9 +20883,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an extended generalized gamma distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
@@ -20311,9 +20903,10 @@ Show( x, v );
 
 **Description:** Returns a random number of non-events until an event occurs, for events with probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
 New Window( "Example: Random Geometric and Empirical Distribution",
@@ -20360,9 +20953,10 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 **Description:** Returns a random number from a generalized logarithm distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
@@ -20379,9 +20973,10 @@ Show( x, v );
 
 **Description:** Returns a k by 1 matrix of random integers between 1 and n with no duplicates.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Index( 100, 5 );
 
 ```
@@ -20392,9 +20987,10 @@ Random Index( 100, 5 );
 
 **Description:** Returns a random integer between 1 and n (or between k and n) inclusive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Integer( 1, 10 );
@@ -20411,9 +21007,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Sb distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
@@ -20430,9 +21027,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Sl distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sl( 0.5, 1, 1, 1 );
@@ -20449,9 +21047,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Su distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
@@ -20468,9 +21067,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a LEV distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LEV( 10, 5 );
@@ -20487,9 +21087,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a log generalized gamma distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
@@ -20506,9 +21107,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a logistic distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Logistic( 15, 1 );
@@ -20525,9 +21127,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a loglogistic distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Loglogistic( 15, 1 );
@@ -20544,11 +21147,12 @@ Show( x, v );
 
 **Description:** Returns a random number from a lognormal distribution with location parameter mu and scale parameter sigma.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
@@ -20563,7 +21167,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
 	exrlny = Graph Box(
@@ -20595,9 +21198,10 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 **Description:** Returns a random nrows by p matrix from a multivariate normal distribution with mean vector mean and (positive semi-definite) covariance matrix covar, where p is defined as the number of rows of covar.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -20611,9 +21215,10 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 **Description:** Returns a random number of non-events until r events occur, for events with probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 exnbrn = Random Negative Binomial( 20, 0.3 );
@@ -20654,11 +21259,12 @@ New Window( "Example: Neg Binomial Probability",
 
 **Description:** Returns a random number from a normal distribution with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Normal();
@@ -20673,7 +21279,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
 For( k = 1, k <= 50, k++,
@@ -20715,9 +21320,10 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 **Description:** Returns a random number from a normal mixture distribution with group means meanvec, group standard deviations sdvec, and group probabilities probvec.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )
@@ -20734,9 +21340,10 @@ Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 
 **Description:** Returns a random number from a Poisson distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
 New Window( "Example: Random Poisson and Empirical Distribution",
@@ -20791,9 +21398,10 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 **Description:** Restarts the random sequences with a new seed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1 );
 Random Normal();
 
@@ -20805,9 +21413,10 @@ Random Normal();
 
 **Description:** Retrieves or restores the random seed state to or from a blob object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 r = Random Seed State();
 Random Seed State( r );
 
@@ -20819,9 +21428,10 @@ Random Seed State( r );
 
 **Description:** Returns a random number from a SEV distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SEV( 50, 5 );
@@ -20838,11 +21448,12 @@ Show( x, v );
 
 **Description:** Returns a random number from the sinh-arcsinh (SHASH) distribution.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
@@ -20857,7 +21468,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -20875,9 +21485,10 @@ Show( result1, result2 );
 
 **Description:** Returns the matrix with the elements shuffled into a random order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -20889,9 +21500,10 @@ Random Shuffle( exA );
 
 **Description:** Computes the singular value decomposition of matrix X using the randomized singular value decomposition by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Random SVD( [11 22, 33 44], 1 );
 
 ```
@@ -20902,9 +21514,10 @@ Random SVD( [11 22, 33 44], 1 );
 
 **Description:** Returns a random number from an t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random t( 2 );
@@ -20921,9 +21534,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a triangular distribution with lower limit a, mode b, and upper limit c. Random Triangular(b,c) is equivalent to Random Triangular(0,b,c). Random Triangular(b) is equivalent to Random Triangular(0,b,1).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
 Random Reset( 13579 );
@@ -20938,11 +21552,12 @@ Show( x, y );
 
 **Description:** Returns a random number from a uniform distribution between min and max, exclusive.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Uniform( 1, 10 );
@@ -20957,7 +21572,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Uniform( 1, 10 );
 
 ```
@@ -20968,9 +21582,10 @@ Random Uniform( 1, 10 );
 
 **Description:** Returns a random number from a Weibull distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Weibull( 3, 20 );
@@ -20987,11 +21602,12 @@ Show( x, v );
 
 **Description:** Returns a random number from a zero-inflated Negative Binomial distribution with location parameter lambda, scale parameter sigma, and zero inflation parameter pi.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rnb = Random ZI Negative Binomial( 25, .5, .05 );
@@ -21038,7 +21654,6 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -21059,11 +21674,12 @@ dt << Distribution(
 
 **Description:** Returns a random number from a zero-inflated Poisson distribution with location parameter lambda and zero inflation parameter pi.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rp = Random ZI Poisson( 20, .05 );
@@ -21102,7 +21718,6 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -21123,9 +21738,10 @@ dt << Distribution(
 
 **Description:** Returns the minimum and maximum values among the combined arguments, which can be scalar, matrix or list arguments.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -21136,9 +21752,10 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 **Description:** Returns a display box that shows a range slider control that ranges from minValue to maxValue. As the two sliders&apos; positions change, their values are placed into lowVariable and highVariable, and the script is run.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sliderLowerValue = .5;
 sliderUpperValue = .7;
 New Window( "Example",
@@ -21164,9 +21781,10 @@ New Window( "Example",
 
 **Description:** Returns a vector of indices that, used as a subscript to the original vector v, sorts the vector by rank. Excludes missing values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Rank( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -21177,9 +21795,10 @@ Rank( [33, 22, 44, 11, ., 33] );
 
 **Description:** Returns a vector of indices that, used as a subscript to the original vector v, sorts the vector by rank. Excludes missing values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -21190,9 +21809,10 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 **Description:** Returns a vector of ranks of the values of x, low to high as 1 to n, ties arbitrary.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ranking( [33, 22, 44, 11, 33] );
 Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
@@ -21204,9 +21824,10 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 **Description:** Returns a vector of ranks of the values of x, but ranks for ties averaged.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Ranking Tie( [33, 22, 44, 11, 33] );
 
 ```
@@ -21223,11 +21844,12 @@ Special JSL variables are populated during the execution of the command:
 
 	_rcOrig is the original value of the input.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
@@ -21239,7 +21861,6 @@ Recode(
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"A B C",
 	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )},
@@ -21254,9 +21875,10 @@ Recode(
 
 **Description:** Draws a rectangle, filled if fill is nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "Green" );
@@ -21275,9 +21897,10 @@ New Window( "Example",
 
 **Description:** Calls the containing function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -21294,9 +21917,10 @@ ex rev( "abcd" );
 
 **Description:** Searches in the source text for a match to the pattern. The format defaults to "\0" (the entire match) but could be "Fred" (for a constant replacement) or "\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -21311,9 +21935,10 @@ Regex(
 
 **Description:** Executes a regular expression match and returns a list of the entire matched text and the matches for each back reference created by an open parenthesis. Optionally, the third argument specifies a replacement string for the entire match; the replacement string can use back references.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 source = "believe";
 // [aeiou] matches exactly one vowel
@@ -21346,9 +21971,10 @@ Show( source, matches );
 
 **Description:** Register an add-in
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Register Addin(
 	"com.mycompany.myaddin",
 	"$DOCUMENTS/myaddin",
@@ -21361,15 +21987,18 @@ Register Addin(
 
 **Syntax:** Reload Policies()
 
+**JMP Version Added:** 18
+
 ### Remove
 
 **Syntax:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Description:** Returns a copy of list x, deleting n items starting with the ith item or deleting a list of items specified by the list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -21380,9 +22009,10 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **Description:** Removes a custom color theme from the global list, either by name or by the full color theme object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -21393,9 +22023,10 @@ Remove Color Theme( "Yellow To Blue" );
 
 **Description:** Removes a list of custom functions from the environment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -21406,11 +22037,12 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 **Description:** Modifies list, associative array, or display box x by removing items. Associative arrays specify the item to be removed with a key value i. Lists and display boxes remove starting with the item in position i. A list will remove multiple items at once if the n option is specified. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
@@ -21421,7 +22053,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
@@ -21432,7 +22063,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -21447,9 +22077,10 @@ Remove From( hlist, 1 );
 
 **Description:** Renames a directory without moving or copying it; the new name does NOT include a path. Returns 1 if the directory was renamed. Returns 0 if the directory was unable to be renamed or the path is invalid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -21469,9 +22100,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Renames a file without moving or copying it; the new name does NOT include a path. Returns 1 if the file was renamed. Returns 0 if the file was unable to be renamed. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -21489,9 +22121,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Returns the text, matrix, or list specified by the x argument concatenated with itself n times. If x is a number or a matrix, then n indicates vertical repetition and the optional argument m designates horizontal repetition.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -21502,9 +22135,10 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 **Description:** Returns a reference to the display tree for the report from a platform.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
@@ -21516,9 +22150,10 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 **Description:** Generates a frequency count for sampling with replacement, useful for bootstrap samples. With no arguments, the function generates a 100% resample. The rate argument specifies the rate of resampling. If the column argument is specified, the sample size chosen is rate multiplied by the sum of the specified column. A negative rate signals that fractional frequencies are allowed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
 New Window( "w", theBox = V List Box() );
@@ -21540,11 +22175,12 @@ theBox << CloseWindow;
 
 **Description:** Returns an expression value from a user-defined function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -21571,7 +22207,6 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -21587,9 +22222,10 @@ Show( f( 7, 15 ) );
 
 **Description:** Returns a copy of list x with the item order reversed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -21600,11 +22236,12 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **Description:** Modifies list or display box x with the item order reversed. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
@@ -21615,7 +22252,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -21630,9 +22266,10 @@ Reverse Into( hlist );
 
 **Description:** Reverts to factory default menus.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -21643,9 +22280,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns a color number from the red, green, and blue components, all between 0 and 1. RGB Color(1, 1, 1) is white.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
 	division = 6;
@@ -21680,9 +22318,10 @@ New Window( "RGB Color Example",
 
 **Description:** Returns a truncated or padded version of the original string or list s. The result contains the right n characters or list items, padded with any filler on the left if the length of s is less than n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -21693,9 +22332,10 @@ Right( "http://www.jmp.com", 3 );
 
 **Description:** Robustly decomposes data into a low-rank matrix and a sparse matrix of residuals. Outliers are detected in the residuals. It can also impute missing values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];
 X[2, 3] += 15;
 Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
@@ -21708,9 +22348,10 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 **Description:** Returns the nth root of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -21721,9 +22362,10 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 **Description:** Rounds x to n digits after the decimal point (or 0 digits if n is not specified). Note that the n argument can be negative.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( 213, -1 );
 
 ```
@@ -21734,11 +22376,12 @@ Round( 213, -1 );
 
 **Description:** Returns the current row in a data table. Can be set as an L-value. Reset the current row by assigning value of 0.
 
+**JMP Version Added:** Before version 14
+
 **Reset Row**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
 Show( Row() );
@@ -21750,7 +22393,6 @@ Row() = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 :height * :weight;
@@ -21763,9 +22405,10 @@ Row() = 3;
 
 **Description:** Returns the row state of the current (or rth) row in the current data table. If the Row State() function is used as an L-value, it changes the row state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -21776,11 +22419,12 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 **Syntax:** treasures = Rummage( box, query )
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Rummage( Window( dt ), "Wilcox" ) << title;
 
@@ -21790,7 +22434,6 @@ Rummage( Window( dt ), "Wilcox" ) << title;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Rummage( Report( obj ), "Wilcox" ) << details;
@@ -21801,7 +22444,6 @@ Rummage( Report( obj ), "Wilcox" ) << details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show(
 	Rummage(
@@ -21821,11 +22463,12 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 **Description:** Control an external program using stdin and stdout.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
 	Options( {"-n 5", "localhost"} ),
@@ -21838,7 +22481,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -21851,7 +22493,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
 icommand = 0;
 RP = Run Program(
@@ -21880,9 +22521,10 @@ RP = Run Program(
 
 **Description:** Converts JMP variable names to a string containing valid SAS variable names by changing special characters and blanks to underscores. The argument can be specified as a string or a list of strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Name( {"x 1", "x 2"} );
 
 ```
@@ -21893,9 +22535,10 @@ SAS Name( {"x 1", "x 2"} );
 
 **Description:** Returns a list of variable names from a SAS data set.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```
@@ -21906,9 +22549,10 @@ SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 **Description:** Writes the contents of the log to the specified file location. If the write is successful, this function returns the name of the created file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
 Substr( exlogText, 1, 30 );
@@ -21921,9 +22565,10 @@ Substr( exlogText, 1, 30 );
 
 **Description:** Creates a text file with the file name that is specified by the path argument and contents specified by the text string argument. If the save is successful, the Save Text File() function returns the pathname of the created file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -21935,9 +22580,10 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 **Description:** Transforms a standard normal variable to a double bounded Johnson variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -21948,9 +22594,10 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 **Description:** Transforms a double bounded Johnson variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -21961,9 +22608,10 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 **Description:** Returns a display box for 3D graphics.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
 Scene << showarcball( always );
@@ -21984,9 +22632,10 @@ Scene << update;
 
 **Description:** Returns a display list for 3D graphics.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -22007,9 +22656,10 @@ exScene << update;
 
 **Description:** Schedules an event that runs the scpt script argument after sec seconds have elapsed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Schedule(
 	10,
 	Beep();
@@ -22024,9 +22674,10 @@ Schedule(
 
 **Description:** Evaluates as x1*x2*(x1-x2); used to support modeling notation for cubic mixture models.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -22037,9 +22688,10 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 **Description:** Provides streaming functionality for the Automated Data Imputation (ADI) algorithm. The input arguments are a row vector that contains missing values, a loading matrix (also called the V matrix) that is produced by the ADI algorithm, a vector of the column means ignoring missing cells, and a vector of the column standard deviations ignoring missing cells. It returns the row vector with the missing values imputed using least squares estimation.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Scoring Impute(
 	[1 2 3 . 4 .],
 	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
@@ -22055,11 +22707,12 @@ Scoring Impute(
 
 **Description:** Returns a display box to edit a script. By default the editor has JSL syntax highlighting and behavior.
 
+**JMP Version Added:** Before version 14
+
 **JSL**
 
 ```jsl
 
-Names Default To Here( 1 );
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
@@ -22069,7 +22722,6 @@ New Window( "This is a script box", Script );
 
 ```jsl
 
-Names Default To Here( 1 );
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 Script = Script Box( pyscript, "Python", 300, 100 );
@@ -22083,9 +22735,10 @@ New Window( "This is a python script box", Script );
 
 **Description:** Returns a display box that positions a larger child box using scroll bars.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		Scroll Box(
@@ -22110,9 +22763,10 @@ New Window( "Example",
 
 **Description:** Returns the seconds part of a date-time value, including any fractional part, 0 - 60 exclusive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Second( Today() );
 
 ```
@@ -22123,9 +22777,10 @@ Second( Today() );
 
 **Description:** Returns the selected component of the specified row state value, 0 or 1. If Selected is used as an L-value, it changes the selected state of the current (or rth) row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -22140,9 +22795,10 @@ Selected();
 
 **Description:** Returns a row state value with the selected component set to the specified value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -22155,9 +22811,10 @@ Selected( Row State( 3 ) );
 
 **Description:** Sends a message (in the form of an expression) to an object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -22169,9 +22826,10 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 **Description:** Returns the Row()th item in the sequence of numbers from start to end incremented by incr. Each number in the sequence is repeated n times. Because of its dependence on Row(), the Sequence() function is mainly useful in column formulas. To create sequences as JSL matrices, see Index().
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Row() = 3;
 Sequence( 1, 9, 2 );
 
@@ -22183,9 +22841,10 @@ Sequence( 1, 9, 2 );
 
 **Description:** Puts the specified text onto the system clipboard used by the Edit menu.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Clipboard( "example" );
 
 ```
@@ -22196,9 +22855,10 @@ Set Clipboard( "example" );
 
 **Description:** Sets the JMP default directory, which is used as a base for subsequent relative paths.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
 
@@ -22210,9 +22870,10 @@ Open( "Big Class.jmp" );
 
 **Description:** Returns the list of items that occur in list1 but not in list2. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
@@ -22228,9 +22889,10 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -22241,9 +22903,10 @@ Set Environment Variable( "PATH", "some path to a directory" );
 
 **Description:** Sets the current list of directories to search for opening files. "." means the current directory.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )}
 );
@@ -22260,9 +22923,10 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 **Description:** Sets a function to be called each time a new window is created.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -22280,9 +22944,10 @@ Clear Global Window Handler();
 
 **Description:** Returns the list of items that occur in both lists. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -22296,9 +22961,10 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 **Description:** Sets a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -22309,9 +22975,10 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -22322,9 +22989,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -22333,15 +23001,18 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
+**JMP Version Added:** 18
+
 ### Set Preference
 
 **Syntax:** Preferences( pref1( value1 ), ... )
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -22352,9 +23023,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -22367,9 +23039,10 @@ Preferences( Graph marker size( "Large" ) );
 
 Returns 1 if successful, 0 if unsuccessful.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // Make the Analyze toolbar visible in Script windows
 Set Toolbar Visibility( "Analyze", Script, true );
@@ -22391,9 +23064,10 @@ Set Toolbar Visibility( Default, All );
 
 **Description:** Returns the list of items that occur in either list. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -22410,9 +23084,10 @@ Show( all );
 
 **Description:** Returns the list of unique items that occur in the input list. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -22427,9 +23102,10 @@ Show( Set Unique( :sports ) );
 
 **Description:** Returns the density at x of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Density",
@@ -22454,9 +23130,10 @@ New Window( "Example: SEV Density",
 
 **Description:** Returns the probability at x of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -22480,9 +23157,10 @@ New Window( "Example: SEV Distribution",
 
 **Description:** Returns the quantile at p of a smallest extreme distribution with location mu and scale sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 mu = 50;
 sig = 5;
 qq = .5;
@@ -22517,9 +23195,10 @@ New Window( "Example: SEV Quantile",
 
 **Description:** Returns a row state value with the color shade component set to the specified value. Needs to be combined with a Hue State() value to produce a valid color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -22531,9 +23210,10 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 **Description:** Reshapes the M matrix or scalar across rows to be nr rows by nc columns. A missing value is permitted for nr. Data from M is replicated as needed to fill the nr by nc matrix. The optional argument <<bycol fills the data by column. By default, the data is filled by row. Common uses are to reshape a vector into a matrix or to vectorize a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )
 	}
@@ -22547,9 +23227,10 @@ Eval List(
 
 **Description:** Returns a display seg with a collection of shapes.  Each shape draws a stroke along the given path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Shape Seg Example",
 	Graph Box(
 		Shape Seg(
@@ -22567,11 +23248,12 @@ New Window( "Shape Seg Example",
 
 **Description:** Returns the density at x of a sinh-arcsinh (SHASH) distribution. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
@@ -22580,7 +23262,6 @@ SHASH Density( 0, -1, 2, -2, 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -22598,11 +23279,12 @@ Show( result1, result2 );
 
 **Description:** Returns the probability that a sinh-arcsinh (SHASH) distributed random variable is less than q. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -22638,7 +23320,6 @@ New Window( "Example: SHASH Distribution",
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -22656,11 +23337,12 @@ Show( result1, result2 );
 
 **Description:** Returns the quantile from a sinh-arcsinh (SHASH) distribution, the value for which the probability is p that a random value would be lower. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
@@ -22669,7 +23351,6 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -22687,9 +23368,10 @@ Show( result1, result2 );
 
 **Description:** Transforms a standard normal variable to a sinh-arcsinh (SHASH) distributed variable.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -22708,9 +23390,10 @@ Show( x1, x2 );
 
 **Description:** Transforms a sinh-arcsinh (SHASH) distributed variable to a standard normal distributed variable. The SHASH transformation can be used to create more normally distributed data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -22728,9 +23411,10 @@ Show( result1, result2 );
 
 **Description:** Returns a display box containing the childbox display box argument with the specified title.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -22776,9 +23460,10 @@ New Window( "Example",
 
 **Description:** Returns a copy of list x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -22789,11 +23474,12 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **Description:** Modifies list or display box x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
@@ -22804,7 +23490,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -22819,9 +23504,10 @@ Shift Into( hlist, -2 );
 
 **Description:** Returns a numeric (MM/DD/YYYY) locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Short Date( Today() );
 
 ```
@@ -22832,9 +23518,10 @@ Short Date( Today() );
 
 **Description:** Returns one of the shortest edit scripts to convert string A into string B.  The simple form only returns a list.  strings() and lines() have an option to return a matrix or a list.  sequences() only returns a matrix.  The optional limit() will stop the function early if the edit list has more than limit inserts and deletes.  lines() compares lines rather than characters; the optional ignore("characters") or ignoreWhiteSpace() defaults to no ignored characters.   ESC will stop the function if needed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
 common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
 	i++,
@@ -22852,9 +23539,10 @@ common;
 
 **Description:** Displays the name and value of the arguments in the log, one per line.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( 355 / 113, Pi() );
 
 ```
@@ -22865,9 +23553,10 @@ Show( 355 / 113, Pi() );
 
 **Description:** Brings up a dialog that can be used to make custom add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Addin Builder Dialog();
 
 ```
@@ -22878,9 +23567,10 @@ Show Addin Builder Dialog();
 
 **Description:** Brings up a dialog that shows the status of all registered add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Addins Dialog();
 
 ```
@@ -22891,9 +23581,10 @@ Show Addins Dialog();
 
 **Description:** Show the contents of all user-defined classes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -22941,9 +23632,10 @@ Show Classes();
 
 **Description:** Creates one or more data tables that contain information about various JSL components. The keyword argument determines the content of the output table. Specify Builtins (the default) for built-in operators and functions. Specify Scriptables for all the scriptable commands for objects. Specify Translations for English and localized versions of the scriptable commands. Specify Display Boxes for scriptable commands related to display boxes and display segs. Specify Scriptable Names for the names of scriptable objects. Specify Platform Names for names of platforms.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Commands();
 
 ```
@@ -22954,9 +23646,10 @@ Show Commands();
 
 **Description:** Lists all the currently defined global symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Globals();
 
 ```
@@ -22967,9 +23660,10 @@ Show Globals();
 
 **Description:** Show the contents of all user defined namespaces, both named and anonymous.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -23007,9 +23701,10 @@ Delete Namespaces( "complex" );
 
 **Description:** Shows the current preference settings in the log.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Preferences();
 
 ```
@@ -23020,9 +23715,10 @@ Show Preferences();
 
 **Description:** Shows in the log the messages that an object responds to.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Properties( Current Data Table() );
 
 ```
@@ -23033,9 +23729,10 @@ Show Properties( Current Data Table() );
 
 **Description:** Lists all the currently defined symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Symbols();
 
 ```
@@ -23046,9 +23743,10 @@ Show Symbols();
 
 **Description:** Returns an equivalent expression that simplifies the argument expression in various ways.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```
@@ -23059,9 +23757,10 @@ Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 **Description:** Returns the trigonometric sine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -23072,9 +23771,10 @@ Sine( Pi() / 6 );
 
 **Description:** Returns the trigonometric sine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -23085,9 +23785,10 @@ Sine( Pi() / 6 );
 
 **Description:** Returns the hyperbolic sine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SinH( 1 );
 
 ```
@@ -23098,9 +23799,10 @@ SinH( 1 );
 
 **Description:** Returns a display box that shows a slider control that ranges from minValue to maxValue. As the slider&apos;s position changes, its value is placed into variable and the script is run.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sliderValue = .6;
 New Window( "Example",
 	Panel Box( "Slider Box",
@@ -23122,9 +23824,10 @@ New Window( "Example",
 
 **Description:** Transforms a standard normal variable to a Johnson SL variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -23135,9 +23838,10 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 **Description:** Transforms a Johnson SL variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -23148,9 +23852,10 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 **Description:** Generate a sequence of space filling quasi-random numbers using the Sobol sequence in up to 4000 dimensions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -23163,9 +23868,10 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 **Description:** Creates a socket variable that can communicate with sockets on this or another networked computer. The default argument is STREAM. Try your own company&apos;s website.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // see the socket's OBJECT messages in the scripting index for better examples
 tCall = Socket();
@@ -23206,9 +23912,10 @@ If( rc[2] == "ok",
 
 **Description:** Solves the linear system A*x=B for x. The Solve() function is equivalent to Inverse(A)*B if A is non-singular. Note that the A argument must be a square matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Solve( [1 1, -1 4], [11, 14] );
 
 ```
@@ -23219,9 +23926,10 @@ Solve( [1 1, -1 4], [11, 14] );
 
 **Description:** Returns a copy of list or matrix x with the items in ascending order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sort Ascending( {111, 212, 133, 114, 55} );
 
 ```
@@ -23232,9 +23940,10 @@ Sort Ascending( {111, 212, 133, 114, 55} );
 
 **Description:** Returns a copy of list or matrix x with the items in descending order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sort Descending( {111, 212, 133, 114, 55} );
 
 ```
@@ -23245,9 +23954,10 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 **Description:** Returns a copy of list x with the items in ascending order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -23258,9 +23968,10 @@ Sort List( {111, 212, 133, 114, 55} );
 
 **Description:** Modifies list x with the items in ascending order. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
 ex;
@@ -23273,9 +23984,10 @@ ex;
 
 **Description:** Returns a display box that can be used to maintain space between other display boxes or fill a cell in a Lineup Box. The Size arguments are specified in pixels, and the Color argument is any valid JSL color.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
 		Text Box( "a" ),
@@ -23294,9 +24006,10 @@ New Window( "Example",
 
 **Description:** Computes the singular value decomposition of matrix X using the implicitly restarted, partially reorthogonalized Lanczos method for sparse matrices by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```
@@ -23307,9 +24020,10 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 **Description:** Speaks the text if supported by the operating system. Specifying the optional Wait(true) argument delays script execution until speech has finished.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Speak( "Hello" );
 
 ```
@@ -23320,9 +24034,10 @@ Speak( "Hello" );
 
 **Description:** Returns a display box to show a button with up/down controls.  The script argument is invoked with an argument that indicates the direction of the arrow clicked (negative is down, positive is up).  A magnitude of 1 indicates a single click, while larger values can be used to indicate a repeating action.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Lineup Box(
 		2,
@@ -23340,9 +24055,10 @@ nb << Set Increment( 1 );
 
 **Description:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```
@@ -23353,9 +24069,10 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 **Description:** Evaluates the spline predictions using the coef matrix in the same form as returned by the Spline Coef() function. extrapolation indicates how far beyond the spline range, as a fraction of the range, to extend evaluation before returning missing values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Spline Fit",
 	window:x = 20 :: 80;
@@ -23386,9 +24103,10 @@ New Window( "Spline Fit",
 
 **Description:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```
@@ -23399,9 +24117,10 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 **Description:** Returns the positive square root of the x argument, which can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( Sqrt( 2 ), 4 );
 
 ```
@@ -23412,9 +24131,10 @@ Round( Sqrt( 2 ), 4 );
 
 **Description:** Returns 1 / (1 + Exp( x )), which converts a number in the domain -∞...+∞ into range 1...0. The Squash() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Squash( 10 );
 
 ```
@@ -23425,9 +24145,10 @@ Squash( 10 );
 
 **Description:** Returns 1 / (1 + Exp( -x )), which converts a number in the domain -∞...+∞ into range 0...1. The Logist() function is useful in logistic regression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Logist( 2 );
 
 ```
@@ -23438,9 +24159,10 @@ Logist( 2 );
 
 **Description:** Returns the sum of squares of all elements
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -23451,9 +24173,10 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 **Description:** Returns 1 if s starts with sub, otherwise returns 0. The s and sub arguments can be both strings or both lists. Equivalent to Left( s, Length( sub )) == sub.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Starts With( "http://www.jmp.com", "http:" );
 
 ```
@@ -23464,9 +24187,10 @@ Starts With( "http://www.jmp.com", "http:" );
 
 **Description:** Displays the specified message in the status bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Status Msg( "calculating..." );
 
 ```
@@ -23477,9 +24201,10 @@ Status Msg( "calculating..." );
 
 **Description:** Returns the standard deviation of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
@@ -23490,9 +24215,10 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 **Description:** Returns the yi argument corresponding to the largest xi value which satisfies xi less than or equal to the x argument. Note that the xi arguments must be specified in order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -23503,9 +24229,10 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 **Description:** Immediately terminates the execution of a JSL script
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
 	Print( "i=" || Char( i ) );
@@ -23519,9 +24246,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Returns the straight-line depreciation of an asset for one period. Equivalent to the SLN function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Straight Line Depreciation( 1000, 100, 3 );
 
 ```
@@ -23532,9 +24260,10 @@ Straight Line Depreciation( 1000, 100, 3 );
 
 **Description:** Returns a display box to show the strings specified by the strings argument, which is a list of character strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -23553,9 +24282,10 @@ New Window( "Example",
 
 **Description:** Returns a display box to show the strings specified by the strings argument, which is a list of character strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -23571,9 +24301,10 @@ New Window( "Example",
 
 **Description:** Returns the density function of Student&apos;s t.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -23604,9 +24335,10 @@ New Window( "Example: Students t Density",
 
 **Description:** Returns the probability that a Student&apos;s t distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -23628,9 +24360,10 @@ New Window( "Example: Students t Distribution",
 
 **Description:** Returns the quantile from a Student&apos;s t distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -23657,11 +24390,12 @@ New Window( "Example: Students t Quantile",
 
 **Description:** Subscribe to the data table list to be notified when a new data table has been added or closed.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -23684,7 +24418,6 @@ Close( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -23708,9 +24441,10 @@ dt << setname( "xxx" );
 
 **Description:** Returns the ith value of a subscriptable object, which can be a column of a data table, a matrix, a list, or a report display element.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {11, 12, 13}[2];
 
 ```
@@ -23721,11 +24455,12 @@ Names Default To Here( 1 );
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -23734,7 +24469,6 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", "All", "Some" );
 
 ```
@@ -23743,7 +24477,6 @@ Substitute( "All things considered", "All", "Some" );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
 
@@ -23753,7 +24486,6 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
@@ -23762,7 +24494,6 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
 );
@@ -23773,7 +24504,6 @@ Substitute( "Apple,orange,banana-grape",
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
@@ -23784,11 +24514,12 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
 Name Expr( ex );
@@ -23799,7 +24530,6 @@ Name Expr( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
@@ -23810,7 +24540,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
@@ -23821,7 +24550,6 @@ Show( lst );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
 Show( s );
@@ -23834,9 +24562,10 @@ Show( s );
 
 **Description:** Returns the part of string s composed of count characters starting at position start. A negative or absent count means the rest of the string. A negative start means starting start characters from the end. The Substr() function can also be applied to lists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
@@ -23847,9 +24576,10 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 **Description:** Subtracts all subsequent arguments from the first argument. Arguments can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 6 - 2 - 1;
 
 ```
@@ -23860,9 +24590,10 @@ Names Default To Here( 1 );
 
 **Description:** Subtracts a value from a variable or from a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex -= 2;
 ex;
@@ -23875,9 +24606,10 @@ ex;
 
 **Description:** Transforms a standard normal variable to an unbounded Johnson variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -23888,9 +24620,10 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 
 **Description:** Returns the sum of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```
@@ -23901,9 +24634,10 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 **Description:** Returns the sum-of-years&apos; digits depreciation of an asset for a specified period. Equivalent to the SYD function in Microsoft Excel.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```
@@ -23914,9 +24648,10 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 **Description:** Calculates various summary statistics across a By column. The statistic names are Count, Sum, Mean, Max or Maximum, Min or Minimum, StdDev, Corr, Quantile, First. The statistics can be calculated only for numeric columns. The results are stored as matrices in variables with the specified names.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
 Eval List( {exg, Round( exm, 1 )} );
@@ -23929,9 +24664,10 @@ Eval List( {exg, Round( exm, 1 )} );
 
 **Description:** Calculates all Fit Y by X combinations
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -23943,9 +24679,10 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 **Description:** Returns the sum of evaluations of the bodyExpr arguments, each time incrementing the variable from the assignExpr argument until it is greater than or equal to the limit argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```
@@ -23956,9 +24693,10 @@ Summation( i = 0, 10, 1 / Factorial( i ) );
 
 **Description:** Suppresses the evaluation of formulas in all data tables if the argument if nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Suppress Formula Eval( 1 );
 
 ```
@@ -23969,9 +24707,10 @@ Suppress Formula Eval( 1 );
 
 **Description:** Transforms an unbounded Johnson variable to a standard normal variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -23982,9 +24721,10 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 **Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SVD( [11 22, 33 44] );
 
 ```
@@ -23995,9 +24735,10 @@ SVD( [11 22, 33 44] );
 
 **Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 SVD LAPACK( [11 22, 33 44] );
 
 ```
@@ -24008,9 +24749,10 @@ SVD LAPACK( [11 22, 33 44] );
 
 **Description:** Returns the sweep of the matrix A on diagonal pivots indicated by indices. This is a way of inverting a matrix one pivot at a time.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 exMatswp = Sweep( exMat, [1, 2, 3, 4] );
 exMatinv = Inverse( exMat );
@@ -24025,9 +24767,10 @@ Show( exMatinv );
 
 **Description:** Performs matrix multiplication, where A is a symmetric matrix. The matrix arguments must be conformable: NCol(A)==NRow(B).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatA = exMatA` * exMatA;
 exMatB = [1 2, 1 2, 1 2];
@@ -24041,9 +24784,10 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 **Description:** Returns the density function of Student&apos;s t.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdedf = 1;
 New Window( "Example: Students t Density",
 	tdegr = Graph Box(
@@ -24074,9 +24818,10 @@ New Window( "Example: Students t Density",
 
 **Description:** Returns the probability that a Student&apos;s t distributed random variable is less than q.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -24098,9 +24843,10 @@ New Window( "Example: Students t Distribution",
 
 **Description:** Returns the log of 1 - t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
 	tlcdigr = Graph Box(
@@ -24122,9 +24868,10 @@ New Window( "Example: Students t Log CDistribution",
 
 **Description:** Returns the log of the t probability density.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -24146,9 +24893,10 @@ New Window( "Example: Students t Log Density",
 
 **Description:** Returns the log of the t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
 	tldigr = Graph Box(
@@ -24170,9 +24918,10 @@ New Window( "Example: Students t Log Distribution",
 
 **Description:** Solves for the noncentrality parameter of a Student&apos;s t distribution such that prob = t Distribution( x, df, nc ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -24192,9 +24941,10 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 **Description:** Returns the quantile from a Student&apos;s t distribution, the value for which the probability is p that a random value would be lower.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extqdf = 1;
 extqqq = 0.5;
 New Window( "Example: Students t Quantile",
@@ -24221,9 +24971,10 @@ New Window( "Example: Students t Quantile",
 
 **Description:** Creates a tabbed-page panel in a display box window.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -24241,9 +24992,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that that can be used in a Tab Box or as a stand-alone container with title. Recognized options include Title(string) to specify a title, Tip(string) to specify a tooltip, Closeable(0|1) to specify whether the page can be closed, Icon(string) to specify the icon, and Moveable(0|1) to specify whether the page can be moved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),
@@ -24259,9 +25011,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that composes a table of the String Col Box, Number Col Box, and Plot Col Box column display boxes provided by the arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Table",
 		Table Box(
@@ -24280,9 +25033,10 @@ New Window( "Example",
 
 **Description:** Returns the trigonometric tangent of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -24293,9 +25047,10 @@ Tangent( Pi() / 4 );
 
 **Description:** Returns the trigonometric tangent of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -24306,16 +25061,21 @@ Tangent( Pi() / 4 );
 
 **Description:** Returns the hyperbolic tangent of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TanH( 1 );
 
 ```
 
 ### Test Promise Error After
 
+**JMP Version Added:** 17
+
 ### Test Promise Result After
+
+**JMP Version Added:** 17
 
 ### Text
 
@@ -24323,11 +25083,12 @@ TanH( 1 );
 
 **Description:** Moves to the {x, y} position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order. You can also use four x, y coordinates to describe a box within which to draw the text. In that case, properties are not used.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -24341,7 +25102,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "blue" );
@@ -24357,9 +25117,10 @@ New Window( "Example",
 
 **Description:** Constructs a display box that contains the text in the string argument text. The optional arguments are available to control the text justification or set the text wrap width. The argument for Justify Text should be a string containing left, right, or center.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Justification Example",
 	Outline Box( "text",
 		V List Box(
@@ -24394,9 +25155,10 @@ New Window( "Justification Example",
 
 **Description:** Sets the color for drawing text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -24412,9 +25174,10 @@ New Window( "Example",
 
 **Description:** Constructs an editable box that contains the quoted string text, returning the display box reference. The optional arguments are available to control the display of the text, to attach a script to the text box, and to set the width in pixels of the text box. Specifying Set Width(-1) forces a resize to content. Note that a script can be attached to the text edit box either by adding the script as an optional argument or by sending the Set Script message.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
 		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
@@ -24438,9 +25201,10 @@ New Window( "Example: Text Edit Box",
 
 **Description:** Sets the font for subsequent Text() drawing. Use without any arguments to get the current font settings. Angle is in degrees clockwise.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Degrees",
 	Graph Box(
 		FrameSize( 400, 400 ),
@@ -24468,9 +25232,10 @@ New Window( "Degrees",
 
 **Description:** Used to create scoring formulas in Text Explorer. The text-to-number argument is an associative array mapping lowercase words to numbers. The weighting argument is either "Binary", "Ternary", "Count", "LogCount", "LCA" or an array of inverse document frequency weights for TFLogIDF. The scoring matrix must have the same number of columns as words in the associative array, or one more if LCA. The output is a vector of scores. If no scoring matrix is specified, it returns a vector of count scores. If no weighting is specified, it uses Count. This function does not support the Stem for Combining option.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -24485,9 +25250,10 @@ Show( score );
 
 **Syntax:** seg = Text Seg("text")
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
@@ -24499,9 +25265,10 @@ w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom l
 
 **Description:** Sets the font size that for text drawing.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( 20 );
@@ -24517,9 +25284,10 @@ New Window( "Example",
 
 **Description:** From within a project, returns the corresponding project object. Outside of a project, returns nothing.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
 	Print( "Project: " || (This Project() << Get Window Title()) ),
@@ -24533,11 +25301,12 @@ If(
 
 **Description:** Diverts execution to the enclosing Try(). Otherwise, script execution is stopped. If message begins with an exclamation point, the error will be fatal and cannot be caught by Try(). The second argument is an optional boolean for including a traceback.
 
+**JMP Version Added:** Before version 14
+
 **Fatal Throw**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
 Print( "AFTER TRY message not reached" );
@@ -24548,7 +25317,6 @@ Print( "AFTER TRY message not reached" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Throw( "A line number is included in this error", 1 );
 
 ```
@@ -24557,7 +25325,6 @@ Throw( "A line number is included in this error", 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```
@@ -24568,9 +25335,10 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 **Description:** Returns a time value in seconds, usually accurate to at least 1/60 of a second (a "tick"), depending on the computer. Only useful relative to another Tick Seconds() value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 t2 = Tick Seconds();
@@ -24584,9 +25352,10 @@ Round( t2 - t1, 3 );
 
 **Description:** Returns the time part of a date-time value, including any fractional seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -24597,9 +25366,10 @@ Format( Time Of Day( Today() ), "h:m:s" );
 
 **Description:** Converts to title case
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Titlecase( "The dog crossed the road" );
 
 ```
@@ -24610,11 +25380,12 @@ Titlecase( "The dog crossed the road" );
 
 **Description:** Translates a color into another color space. Out of gamut colors are mapped to fit when converting to smaller color spaces.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( "red", "LMS" );
 
 ```
@@ -24623,7 +25394,6 @@ To Color Space( "red", "LMS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
@@ -24632,7 +25402,6 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```jsl
 
-Names Default To Here( 1 );
 To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```
@@ -24643,9 +25412,10 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 **Description:** Returns the date-time value of the current moment.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -24656,9 +25426,10 @@ As Date( Today() );
 
 **Description:** Returns the sum of the diagonal elements of a square matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Trace( [11 22, 33 44] );
 
 ```
@@ -24669,11 +25440,12 @@ Trace( [11 22, 33 44] );
 
 **Description:** Does everything the For Each function does, but also returns a container with the result at each iteration. By default, returns a container matching the type of the input container, but can be changed using the Output argument. For List or Expression output, Empty() will be used when there is no result. For Matrix output, a numeric missing value is used when there is no result, or when the result is non-numeric. For Associative Array output, the key will not exist when there is no result. When Continue() is used, it is equivalent to returning no value for that iteration.
 
+**JMP Version Added:** 16
+
 **Associative Array**
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );
 Show( values );
 
@@ -24683,7 +25455,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
@@ -24693,7 +25464,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Find Functions defined in a script
 parsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );
 functionNames = Transform Each( {statement}, Name Expr( parsedScript ), Output( "List" ),
@@ -24717,7 +25487,6 @@ Show( functionNames );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
@@ -24727,7 +25496,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
@@ -24737,7 +25505,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Write( "\!N===List===" );
 lst = Transform Each( {value}, [10, 20, 30], Output( "List" ), value + 1 );
@@ -24763,9 +25530,10 @@ Show( ex );
 
 **Description:** Sets the transparency used in the drawing commands. Alpha ranges between 0 (clear) and 1 (opaque, the default). Some operating systems do not support this.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -24787,9 +25555,10 @@ New Window( "Example",
 
 **Description:** Transposes the matrix argument by interchanging the rows and columns.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```
@@ -24800,9 +25569,10 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 **Description:** Constructs a display box to show hierarchical information.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -24826,9 +25596,10 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 **Description:** Constructs a tree node intended for display within a Tree Box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
                                         
@@ -24852,11 +25623,12 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 **Description:** Returns an object containing the Delaunay triangulation of the given point set. The optional Y will be averaged for duplicate points, and all points in the output will be unique.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
@@ -24866,7 +25638,6 @@ tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```
@@ -24877,9 +25648,10 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 **Description:** Returns the trigamma function evaluated at x, where the trigamma function is the derivative of the digamma function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Trigamma( 5 );
 
 ```
@@ -24890,9 +25662,10 @@ Trigamma( 5 );
 
 **Description:** Returns a copy of string s with any leading or trailing whitespace characters removed. The second argument specifies either the leading or trailing whitespace characters. If you do not specify the second argument, whitespace characters are removed from both ends.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Trim( " title   ", both );
 
 ```
@@ -24903,9 +25676,10 @@ Trim( " title   ", both );
 
 **Description:** Returns a copy of string s with any leading or trailing whitespace characters removed. The second argument specifies either the leading or trailing whitespace characters. If you do not specify the second argument, whitespace characters are removed from both ends.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -24916,9 +25690,10 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 **Description:** Opens Triple-S files. The Triple-S format comprises an xml or sss file and either a csv file or a dat/asc file. Both files must have the same name with the appropriate extension and must be in the same directory. Specify the xml or sss filepath to import the data.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
@@ -24930,11 +25705,12 @@ TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 **Description:** Evaluates and returns the expr argument, unless the evaluation causes a Throw() or internal exception. In that case, the evaluation of catchExpr is returned. If you use exception_msg as the catchExpr, a list containing more information about the error is returned.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), "invalid" );
 
 ```
@@ -24943,7 +25719,6 @@ Try( Sqrt( "s" ), "invalid" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), exception_msg );
 
 ```
@@ -24958,9 +25733,10 @@ Try( Sqrt( "s" ), exception_msg );
 
 Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tukey&apos;s studentized range distribution divided by the sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -24975,9 +25751,10 @@ Tukey HSD P value( 3.73, 6, 34 );
 
 Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tukey&apos;s studentized range distribution divided by the sqrt(2).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 alpha = 0.05;
 dfe = 5;
 Tukey HSD Quantile( 1 - alpha, 20, dfe );
@@ -25004,14 +25781,17 @@ New Window( "Example: Tukey HSD Quantile",
 
 **Description:** Returns a string naming the type of the value of the argument x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Type( [1 2 3] );
 
 ```
 
 ### Unit Test
+
+**JMP Version Added:** Before version 14
 
 ### Unlineup Box
 
@@ -25019,9 +25799,10 @@ Type( [1 2 3] );
 
 **Description:** Returns a display box that temporarily suspends the column layout of a Lineup Box. The child of the Unlineup Box will be stretched to span all columns of the Lineup Box.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
 		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),
@@ -25041,9 +25822,10 @@ New Window( "unlineup",
 
 **Description:** Unlocks specified global names, allowing them to be modified and to be cleared by the Clear Globals function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -25065,9 +25847,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Unlocks specified global names, allowing them to be modified and to be cleared by the Clear Symbols function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -25089,9 +25872,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Unregister an add-in
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -25102,11 +25886,12 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 **Description:** Remove a subscription to the data table list that had been added thru the command "subscribe to data table list".
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -25131,7 +25916,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -25160,9 +25944,10 @@ Close( dt );
 
 **Description:** Converts lowercase letters to uppercase letters in the specified string. Rules for upper and lower case are locale dependent.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Uppercase( "Café #23" );
 
 ```
@@ -25173,9 +25958,10 @@ Uppercase( "Café #23" );
 
 **Description:** Returns a display box with the childbox display box argument centered in the vertical space defined by the maximum size of that child and all the other siblings of the center box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "test",
 	H List Box(
 		V Center Box( Text Box( "V+V" ) ),
@@ -25198,9 +25984,10 @@ New Window( "test",
 
 **Description:** Concatenates matrices vertically. Arguments must have same number of columns.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 [11 22] |/ [33 44];
 
 ```
@@ -25211,9 +25998,10 @@ Names Default To Here( 1 );
 
 **Description:** Concatenates in place, vertically. a |/= b is equivalent to a = a |/ b. This is an assignment operator.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2, 3 4];
 exB = [5 6, 7 8, 9 10];
 exC = [1, 1, 1, 1, 1];
@@ -25231,9 +26019,10 @@ Show( exA, exB, exC, exD, exE );
 
 **Description:** Draws a vertical line at x from y1 to y2 or through the entire frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -25249,9 +26038,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -25264,9 +26054,10 @@ New Window( "Example",
 
 **Description:** Returns a row vector containing the maximum of each column in the argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Max( [11 22, 33 44, 55 66] );
 
 ```
@@ -25277,9 +26068,10 @@ V Max( [11 22, 33 44, 55 66] );
 
 **Description:** Returns a row vector containing the mean of each column in the argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Mean( [11 22, 33 44, 55 66] );
 
 ```
@@ -25290,9 +26082,10 @@ V Mean( [11 22, 33 44, 55 66] );
 
 **Description:** Returns a row vector containing the median of each column in the argument.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 V Median( [11 22, 33 44, 35 46, 55 66] );
 
 ```
@@ -25303,9 +26096,10 @@ V Median( [11 22, 33 44, 35 46, 55 66] );
 
 **Description:** Returns a row vector containing the minimum of each column in the argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Min( [11 22, 33 44, 55 66] );
 
 ```
@@ -25316,9 +26110,10 @@ V Min( [11 22, 33 44, 55 66] );
 
 **Description:** Returns a row vector containing the specified quantile p of each column in the argument.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```
@@ -25329,9 +26124,10 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 **Description:** Returns a matrix that is centered by the median and scaled by a robust estimate of the standard deviation of matrix X. The optional Boolean arguments specify if centering and scaling are performed.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```
@@ -25342,9 +26138,10 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 **Description:** Returns a display box that positions a larger child box using a vertical scroll bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Outline Box( "Picker",
 		V Scroll Box(
@@ -25371,9 +26168,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	V Sheet Box(
@@ -25419,9 +26217,10 @@ New Window( "Example",
 
 **Description:** Returns the vertical size of the graphics frame in pixels.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -25437,9 +26236,10 @@ New Window( "Example",
 
 **Description:** Returns a display box that arranges other display boxes vertically, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Splitter",
 	V Splitter Box(
 		Size( 800, 600 ),
@@ -25467,9 +26267,10 @@ spacer << Set Stretch( "Window", "Window" );
 
 **Description:** Returns a matrix that is the centered and scaled version of matrix X. Each column of b has mean 0 and standard deviation 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Standardize( [11 22, 33 44, 55 66] );
 
 ```
@@ -25480,9 +26281,10 @@ V Standardize( [11 22, 33 44, 55 66] );
 
 **Description:** Returns a row vector containing the standard deviations of each column in the argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Std( [11 22, 33 44, 55 66] );
 
 ```
@@ -25493,9 +26295,10 @@ V Std( [11 22, 33 44, 55 66] );
 
 **Description:** Returns a row vector containing the sum of each column in the argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 V Sum( [11 22, 33 44, 55 66] );
 
 ```
@@ -25506,9 +26309,10 @@ V Sum( [11 22, 33 44, 55 66] );
 
 **Description:** Performs a varimax rotation of the specified matrix F. Returns a list that contains the rotated matrix and the orthogonal rotation matrix. By default, a normalized varimax rotation is performed. Specify norm = 0 to perform a non-normalized varimax rotation.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Varimax( [1.2 .4, .9 1.5] );
 
 ```
@@ -25519,9 +26323,10 @@ Varimax( [1.2 .4, .9 1.5] );
 
 **Description:** Returns the diagonal elements of the square matrix as a vector.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Vec Diag( [11 22, 33 44] );
 
 ```
@@ -25532,9 +26337,10 @@ Vec Diag( [11 22, 33 44] );
 
 **Description:** Evaluates as Vec Diag( X * S * X` ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exS = [1 3 5, 3 2 6, 5 6 1];
 exX = [1 3 5, 2 4 6];
 Vec Quadratic( exS, exX );
@@ -25547,9 +26353,10 @@ Vec Quadratic( exS, exX );
 
 **Description:** Returns a table for efficiently looking up near neighbors. The matrix arguments are k-dimensional points. There is no built in limit on the number of dimensions or points.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
 "2 nearest rows to [1.1 .9 1] are " || Char( rows );
@@ -25562,11 +26369,12 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 **Description:** Waits for x seconds before proceeding with execution. The default value for x is 3 seconds. If x is 0 or greater, JMP will complete any operating system events (e.g. screen drawing) as well as any pending callbacks (e.g. formula evaluation) in addition to the wait. If x is less than 0, only the screen drawing and pending OS events are confirmed to be completed before proceeding.
 
+**JMP Version Added:** Before version 14
+
 **Callbacks**
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
@@ -25575,7 +26383,6 @@ Wait( 0 ); // Wait for OS events and callbacks
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( -1 ); // Wait for OS events
 
 ```
@@ -25584,7 +26391,6 @@ Wait( -1 ); // Wait for OS events
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 1.5 );
 
 ```
@@ -25595,9 +26401,10 @@ Wait( 1.5 );
 
 **Description:** Creates a window showing variables from Global, Here, and Local namespaces and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 y = 2;
 z = "abc";
@@ -25617,9 +26424,10 @@ w << close Window();
 
 **Description:** Returns the prediction at the points x for the specified Wavelet model. The grid parameter is a vector specifying the grid of the data for the wavelet model. The coef parameter is a vector of wavelet coefficients. The wavelet parameter is the name of the wavelet model. The optional param parameter is the wavelet model parameter (if necessary, defaults to 0).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```
@@ -25630,11 +26438,12 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 **Description:** Opens the URL or file stored in string in the default web browser. The optional second argument specifies that the HTML open in a JMP browser window.
 
+**JMP Version Added:** Before version 14
+
 **Event Handler**
 
 ```jsl
 
-Names Default To Here( 1 );
 //Making a clickable link show up in a formula column
 New Table( "Example",
 	Add Rows( 2 ),
@@ -25662,7 +26471,6 @@ New Table( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Web( "http://www.jmp.com/" );
 
 ```
@@ -25673,9 +26481,10 @@ Web( "http://www.jmp.com/" );
 
 **Description:** Returns a display box to view a web page, specified by the url string argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
 wb << Set Stretch( "Window", "Window" );
@@ -25689,11 +26498,12 @@ wb << Set Max Size( 10000, 10000 );
 
 **Description:** Returns the week of the year containing a date-time value using one of three rules. By default (rule 1), weeks start on Sunday with the first Sunday of the year being week 2. Week 1 will be a partial week or empty (as in 2006). For rule 2, the first Sunday is week 1, with previous days being week 0. For rule 3, the ISO week number is returned, where weeks start on Monday and week 1 is the first week of the year with four days in that year. With ISO weeks, it&apos;s possible for the first or last three days of the year to belong to the neighboring year&apos;s week number.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Week Of Year( Today() );
 
 ```
@@ -25702,7 +26512,6 @@ Week Of Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Week Of Year( 01jan2012, 1 ),
 	Week Of Year( 01jan2012, 2 ),
@@ -25717,9 +26526,10 @@ Show(
 
 **Description:** Returns the density at x of a Weibull probability distribution with a shape parameter and optional scale parameter.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 shape = 0.5;
 New Window( "Example: Weibull Density",
 	y = Graph Box(
@@ -25741,9 +26551,10 @@ New Window( "Example: Weibull Density",
 
 **Description:** Returns the probability that a Weibull distributed random variable (with a shape parameter and optional scale parameter) is less than x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -25765,9 +26576,10 @@ New Window( "Example: Weibull Distribution",
 
 **Description:** Returns the quantile from a Weibull distribution, the value for which the probability is p that a random value would be lower, where beta and alpha are the shape and scale parameters, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exwqbeta = 2;
 exwqqq = 0.5;
 New Window( "Example: Weibull Quantile",
@@ -25799,11 +26611,12 @@ New Window( "Example: Weibull Quantile",
 
 **Description:** Returns indices (usually row numbers) matching the given where clause. The optional dt changes the Current Data Table during the evaluation. These clauses are often written by JMP using the Data Filter. This will often by faster than using Loc, <<Get Rows Where or <<Select Where. The behavior is undefined if the clause modifies the sequences or any symbols during evaluation.
 
+**JMP Version Added:** 18
+
 **Column Functions**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
 dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
@@ -25814,7 +26627,6 @@ dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
 Where( :sex == "M" );
@@ -25826,7 +26638,6 @@ Where( dt, :sex == "M" );
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
 xs[Where( !Is Missing( xs ) )];
@@ -25839,7 +26650,6 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -25853,7 +26663,6 @@ Where( xs[1] < 18 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
 Where( Excluded() );
@@ -25867,9 +26676,10 @@ Where( !Excluded() );
 
 **Description:** Evaluates the testExpr and bodyExpr expressions repeatedly as long as testExpr evaluates to a nonzero value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 i = 1;
 s = "";
 While( i < 1000,
@@ -25886,9 +26696,10 @@ s;
 
 **Description:** Denotes a wildcard position that matches any expression (only used in expression patterns).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -25903,9 +26714,10 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 **Description:** Denotes a series of wildcard arguments that match anything (only used in expression patterns).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -25920,9 +26732,10 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 **Description:** This function is deprecated and retained only for backward compatibility with existing scripts. For new scripts, use Get Window() or Get Window List().
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Window( "Big Class" );
 
 ```
@@ -25933,9 +26746,10 @@ Window( "Big Class" );
 
 **Description:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "HELLO" );
@@ -25950,9 +26764,10 @@ With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties 
 
 **Description:** Runs a block of code with a function to be called each time a new window is created.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "My Window" ),
 	Function( {window},
@@ -25969,11 +26784,12 @@ With Window Handler(
 
 **Description:** Returns the nth word of string s, where words are sub-strings separated by any number of any of the characters in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
@@ -25982,7 +26798,6 @@ Word( 3, "http://www.jmp.com", ":/." );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( [2 -1], "This is a sentence" );
 
 ```
@@ -25991,7 +26806,6 @@ Word( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -26000,7 +26814,6 @@ Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -26009,7 +26822,6 @@ Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Word( 2, "abcd", "" );
 
 ```
@@ -26020,11 +26832,12 @@ Word( 2, "abcd", "" );
 
 **Description:** Returns a list of sub-strings separated by any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
@@ -26033,7 +26846,6 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -26042,7 +26854,6 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -26053,9 +26864,10 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout, but will wrap that list when printing.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "WrapListBox",
 	Wrap List Box(
 		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),
@@ -26073,9 +26885,10 @@ New Window( "WrapListBox",
 
 **Description:** Displays the specified values in the log without adding quotation marks, spaces, or line breaks (as Print() does).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```
@@ -26086,9 +26899,10 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 **Description:** Draws function xExpr in the X dimension as variable yName varies across the range of the Y axis of the graph. Additional named property arguments include Min(minimum X), Max(maximum Y), Fill(fill pattern, value to fill to), Inc(upper bound of increment).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -26104,9 +26918,10 @@ New Window( "Example",
 
 **Description:** Returns the x value for the left edge of the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -26128,9 +26943,10 @@ New Window( "Example",
 
 **Description:** Returns the x distance from left to right. X Origin() + X Range() is the right edge.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -26152,9 +26968,10 @@ New Window( "Example",
 
 **Description:** Sets a new scale for the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
 	Graph Box(
@@ -26178,9 +26995,10 @@ New Window( "Example",
 
 **Description:** Extracts the string value of an XML attribute in the context of being evaluating in a Parse XML() command. If no name if given, an associative array of all attribute name/value pairs is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -26199,9 +27017,10 @@ Parse XML( ex,
 
 **Description:** Decodes symbols in XML to ordinary text, changes " to ", < to <, &gt to >; &amp; to &.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
@@ -26212,9 +27031,10 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 **Description:** Prepares text for embedding in XML, changes " to ", < to <, > to > & to &amp;.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -26225,9 +27045,10 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 **Description:** Extracts the string text of the body of an XML tag in the context of being evaluating in a Parse XML() command.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -26246,9 +27067,10 @@ Parse XML( ex,
 
 **Description:** Runs an XPath query against an XML document.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"
@@ -26262,9 +27084,10 @@ result = XPath Query(
 
 **Description:** This graphic script function combines an expression x(t) and an expression y(t) to draw an x-y curve for the specified range of parameter t. Inc() is the maximum increment on t, or steps() is the minimum number of steps on t. Use steps() or inc() if the default value does not show details.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Spiral",
 	Graph Box(
 		Pen Color( "red" );
@@ -26294,9 +27117,10 @@ New Window( "Spiral",
 
 **Description:** Draws function yExpr in the Y dimension as variable xName varies across the range of the X axis of the graph. Additional named property arguments include Min(minimum X), Max(maximum X), Fill(fill pattern, value to fill to), Inc(upper bound of increment).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -26312,9 +27136,10 @@ New Window( "Example",
 
 **Description:** Returns the y value for the bottom edge of the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -26336,9 +27161,10 @@ New Window( "Example",
 
 **Description:** Returns the y distance from bottom to top. Y Origin() + Y Range() is the top edge.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -26360,9 +27186,10 @@ New Window( "Example",
 
 **Description:** Sets a new scale for the graphics frame.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
 	Graph Box(
@@ -26386,9 +27213,10 @@ New Window( "Example",
 
 **Description:** Returns the year part of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Year( Today() );
 
 ```
@@ -26399,9 +27227,10 @@ Year( Today() );
 
 **Description:** Returns the logical NOT of x with missing values treated as zeros: 1 if x is missing or zero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Zero Or Missing( 1 < 2 );
 
 ```
@@ -26412,9 +27241,10 @@ Zero Or Missing( 1 < 2 );
 
 **Description:** Returns the probability that a zero-inflated Negative Binomial distributed random variable is less than or equal to k, where lambda is the location parameter, sigma is the scale parameter, pi is the zero inflation parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .2;
@@ -26452,9 +27282,10 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 **Description:** Returns the probability that a zero-inflated Negative Binomial distributed random variable is equal to k, where lambda is the location parameter, sigma is the scale parameter, pi is the zero inflation parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 sigma = .5;
 p = .1;
@@ -26486,9 +27317,10 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the zero-inflated Negative Binomial( lambda, sigma, pi ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpsig = .5;
 qexpp = .2;
@@ -26545,9 +27377,10 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 **Description:** Returns the probability that a zero-inflated Poisson distributed random variable is less than or equal to k, where lambda is the location parameter, pi is the zero inflation parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Zero Inflated Poisson Distribution",
@@ -26582,9 +27415,10 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 **Description:** Returns the probability that a zero-inflated Poisson distributed random variable is equal to k, where lambda is the location parameter, pi is the zero inflation parameter, and k is the count of interest.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 lambda = 4;
 p = .2;
 New Window( "Example: Poisson Probability",
@@ -26614,9 +27448,10 @@ New Window( "Example: Poisson Probability",
 
 **Description:** Returns the smallest integer quantile for which the cumulative probability of the zero-inflated Poisson( lambda, pi ) distribution is larger than or equal to cumprob.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 qexpl = 20;
 qexpp = .2;
 qexpn = 40;

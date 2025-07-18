@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -28,9 +27,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; By( column(s) )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -50,9 +50,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Factor( column(s) )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -66,9 +67,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Freq( column )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = Model Screening(
@@ -84,9 +86,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Response( column(s) )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -100,9 +103,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Validation( column )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -116,9 +120,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Weight( column )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = Model Screening(
@@ -134,9 +139,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; X( column(s) )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -150,9 +156,10 @@ obj = Model Screening(
 
 **Syntax:** obj &lt;&lt; Y( column(s) )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -170,9 +177,10 @@ obj = Model Screening(
 
 **Description:** Adds effects for the squares of continuous variables to linear modeling fits.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -190,9 +198,10 @@ obj = Model Screening(
 
 **Description:** Adds all two-way interaction effects to linear modeling fits.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -210,9 +219,10 @@ obj = Model Screening(
 
 **Description:** Calls several additional methods in the Generalized Regression platform in addition to Lasso: Forward Selection, Pruned Forward Selection, Elastic Net, and Ridge.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -230,9 +240,10 @@ obj = Model Screening(
 
 **Description:** Builds a decision tree that is a sequence of smaller trees to predict a response. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -258,9 +269,10 @@ obj = Model Screening(
 
 **Description:** Builds a collection of decision trees using random sampling and averages the results to predict a response. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -286,9 +298,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides a report of the number of levels and how many parameters are used in the linear model fit for each categorical predictor.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Equity.jmp" );
 Model Screening(
@@ -313,9 +326,10 @@ Model Screening(
 
 **Description:** Shows or hides the distribution of fitted probabilities and actual versus predicted tables for each model. You can change the probability threshold to explore how different thresholds affect the classification results.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -343,9 +357,10 @@ obj = Model Screening(
 
 **Description:** Builds a decision tree to predict a response. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -371,9 +386,10 @@ obj = Model Screening(
 
 **Description:** Classifies categorical group membership based on continuous variables. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Iris.jmp" );
 Make Validation Column( Validation Set( .3 ), Training Set( .7 ), Go );
@@ -402,9 +418,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides a report that contains the total elapsed time that was spent fitting each method.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -422,9 +439,10 @@ obj = Model Screening(
 
 **Description:** Fits a linear regression model for a continuous response. Techniques include regression, analysis of variance, analysis of covariance, mixed models, and analysis of designed experiments. The Emphasis option enables you to specify the report layout. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -450,9 +468,10 @@ obj = Model Screening(
 
 **Description:** Fits stepwise regression models, which facilitate variable selection for standard least squares and ordinal logistic models, as well as nominal logistic models with a binary response. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -478,9 +497,10 @@ obj = Model Screening(
 
 **Description:** Fits generalized linear models using penalized regression techniques, which help automate variable selection in a way that avoids overfitting. The penalized regression techniques include the lasso, the adaptive lasso, the elastic net, the adaptive elastic net, and ridge regression. The response distributions can accommodate continuous, categorical, count, and time-to-event response data. This is the recommended personality for most regression settings. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -506,9 +526,10 @@ obj = Model Screening(
 
 **Description:** Enables the informative missing option for all platforms.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Equity.jmp" );
 Model Screening(
@@ -530,9 +551,10 @@ Model Screening(
 
 **Description:** Partitions the data randomly into K parts or folds. A model is fit to the data K times, each time with a different fold held out as a crossvalidation set.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -551,9 +573,10 @@ obj = Model Screening(
 
 **Description:** Predicts a response based on the responses of the k nearest neighbors. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -579,9 +602,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of folds for K Fold Crossvalidation. The default is 5 and K must be greater than 1. "5" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -601,9 +625,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of folds for Nested Crossvalidation. The default is 5 and K must be greater than 1. "5" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -624,9 +649,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of inner folds for Nested Crossvalidation. The default is 4 and L must be greater than 1. "4" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -651,9 +677,10 @@ obj = Model Screening(
 
 **Description:** Fits a logistic regression model of nominal response categories for both continuous and categorical predictors. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -680,9 +707,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of parameters above which the modeling platforms are not run. "450" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -713,9 +741,10 @@ obj = Model Screening(
 
 **Description:** Predicts group membership for a categorical variable.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -743,9 +772,10 @@ obj = Model Screening(
 
 **Description:** Partitions the data randomly into K equal parts and then further partitions all but one of those parts into L equal parts.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -764,9 +794,10 @@ obj = Model Screening(
 
 **Description:** Predicts one or more response variables using a flexible function of the input variables. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -792,9 +823,10 @@ obj = Model Screening(
 
 **Description:** Fits a model to one or more response variables using latent factors. This permits models to be fit when explanatory variables are highly correlated, or when there are more explanatory variables than there are observations.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -821,9 +853,10 @@ obj = Model Screening(
 
 **Description:** Overlays Actual by Predicted points from several model fits.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -850,9 +883,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides overlaid precision-recall curves for all of the model fits. There are separate plots for the Training, Validation, and Test sets.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = dt << Model Screening(
@@ -881,9 +915,10 @@ obj << Precision Recall Curve( 1 );
 
 **Description:** Available if you hold down the shift button, for each platform called, shows information about supported interfaces.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -903,9 +938,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides prediction profilers for each type of model fit. This option is available only for continuous responses.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -932,9 +968,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides overlaid Receiver Operating Characteristic (ROC) curves for all of the model fits. There are separate plots for the Training, Validation, and Test sets.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -962,9 +999,10 @@ obj = Model Screening(
 
 **Description:** Removes the individual model platform reports from the Model Screening report window. You can use this option to free up memory for further work.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -984,9 +1022,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of times the K Fold Crossvalidation or Nested Crossvalidation process is repeated. "0" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1005,9 +1044,10 @@ obj = Model Screening(
 
 **Description:** Specifies the number of rows above which Support Vector Machines are not run. "10000" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Equity.jmp" );
 Model Screening(
@@ -1043,9 +1083,10 @@ Model Screening(
 
 **Description:** Saves the information in the Summary Across the Folds report to a new data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1075,7 +1116,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1105,9 +1145,10 @@ obj << Save Prediction Formulas;
 
 **Description:** Saves the information in the Validation report to a new data table. If there is a test set, the information in the Test report is also saved to a new data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1127,7 +1168,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1145,9 +1185,10 @@ obj << Select Fit( Validation, Largest( "RSquare", 2 ) );
 
 **Description:** Specifies the number of parameters above which the modeling platforms are not run. "0.5" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1176,9 +1217,10 @@ obj = Model Screening(
 
 **Description:** Specifies a random seed to reproduce the results for future launches of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1196,9 +1238,10 @@ obj = Model Screening(
 
 **Description:** Writes out a progress message to the log each time a fitting platform is called.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1216,9 +1259,10 @@ obj = Model Screening(
 
 **Description:** Shows or hides the expected profit for each model using the specified Profit Matrix for the response levels.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 Column( "Y Binary" ) << Set Property(
@@ -1251,7 +1295,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Model Screening(
 	Y( :marital status ),
@@ -1278,9 +1321,10 @@ obj = dt << Model Screening(
 
 **Description:** Predicts a response based on the support vectors in the space of the X variables. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1306,9 +1350,10 @@ obj = Model Screening(
 
 **Description:** Specifies a time limit in seconds for each fit. For platforms that support early stopping, the best estimates up to that point are provided.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Equity.jmp" );
 Model Screening(
@@ -1329,9 +1374,10 @@ Model Screening(
 
 **Description:** Uses only training and validation splits instead of training, validation, and test splits.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1353,7 +1399,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
@@ -1384,7 +1429,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1400,11 +1444,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1415,11 +1460,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1427,11 +1471,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1447,7 +1490,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1465,9 +1507,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -1485,7 +1528,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1503,7 +1545,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1528,7 +1569,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1547,7 +1587,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1564,9 +1603,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1581,7 +1621,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1605,11 +1644,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1621,11 +1659,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1658,7 +1695,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1678,7 +1714,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1695,7 +1730,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1715,7 +1749,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1735,7 +1768,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1755,7 +1787,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1769,9 +1800,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1787,7 +1819,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1806,7 +1837,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1824,9 +1854,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1841,9 +1872,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1858,7 +1890,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1879,7 +1910,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1898,7 +1928,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1923,7 +1952,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1942,7 +1970,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1967,7 +1994,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1987,7 +2013,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2007,9 +2032,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -2024,7 +2050,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2045,7 +2070,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2064,7 +2088,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2089,7 +2112,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2114,7 +2136,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2139,7 +2160,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2160,7 +2180,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2181,7 +2200,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2206,7 +2224,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2225,7 +2242,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2244,7 +2260,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2263,7 +2278,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2282,7 +2296,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2303,7 +2316,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2329,7 +2341,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2347,7 +2358,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2364,7 +2374,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2383,7 +2392,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -2402,9 +2410,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2421,7 +2430,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2436,7 +2444,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

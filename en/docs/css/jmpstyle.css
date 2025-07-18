@@ -59,3 +59,7 @@ body {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace !important;
 }
 
+.wy-menu-vertical li.current ul {
+  max-height: 61.5vh;
+  overflow: scroll;
+}

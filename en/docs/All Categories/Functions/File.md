@@ -16,9 +16,10 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 The second argument is used to save the data table. Use an appropriate file extension in the path to save the data table as a non-JMP format. Specifying NoSave bypasses the prompt to save or disregard changes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -35,9 +36,10 @@ Close( exdt, NoSave );
 
 Only windows in the current project (or no project if not running the script in a project) will be closed. To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -51,9 +53,10 @@ Close All( Data Tables, NoSave );
 
 **Description:** Returns the converted path.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",
 	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
@@ -71,9 +74,10 @@ For Each( {pv},
 
 **Description:** Copies files from one directory to another, optionally copying subdirectories. The directory name will be created at the to-path and should not be part of the to-path. Returns 1 if the directory was copied or 0 if the directory was unable to be copied. Throws an error if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
 rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
 rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );
@@ -91,9 +95,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 **Description:** Copies a file from the original file to a new file with the same or a different name. Specify a complete path and file name for the destination. Returns 1 if the file was copied or 0 if the file was unable to be copied. Throws an error if the path is invalid or does not exist. A file cannot be copied when either the from or to path is invalid, or if the to file already exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -110,9 +115,10 @@ Char( rc4 );/* 0 1 1 1 0 */
 
 **Description:** Creates a directory. Returns 1 if directory was created. Returns 0 if the directory already exists or if JMP was unable to create the directory.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -130,11 +136,12 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 **Description:** Generate an Excel Workbook from open JMP Data Tables
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
@@ -145,7 +152,6 @@ Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} 
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook(
@@ -162,9 +168,10 @@ Create Excel Workbook(
 
 **Description:** Returns the creation date of a file or directory. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -175,9 +182,10 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 **Description:** Deletes a directory and its files and subdirectories. Returns 1 if the directory was deleted. Returns 0 if directory was unable to be deleted or the path is invalid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -195,9 +203,10 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 **Description:** Deletes a file. Returns 1 if the file was deleted. Returns 0 if file was unable to be deleted. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = File Exists( "$TEMP/x.jmp" );
 rc2 = Delete File( "$TEMP/x.jmp" );
@@ -212,9 +221,10 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 **Description:** Determine whether the directory exists. Returns 1 if the path exists. Returns 0 if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -228,9 +238,10 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 **Description:** Determine whether the file exists. Returns 1 if the file path exists. Returns 0 if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -244,9 +255,10 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 **Description:** Returns the size of the file at the given path. Returns missing when file path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -257,11 +269,12 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Returns the list of file names in a directory that is specified by path. If the Recursive argument is not specified, directory names are included in the list.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Files In Directory( "$HOME" );
 
 ```
@@ -270,7 +283,6 @@ Files In Directory( "$HOME" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
 );
@@ -287,9 +299,10 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 Only windows in the current project (or no project if not running the script in a project) will be included. To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
@@ -306,9 +319,10 @@ For( i = 1, i <= N Items( windows ), i++,
 
 **Description:** Returns the JMP default directory, which is used as a base for subsequent relative paths. This path is the directory containing the currently executing script if the script is saved.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
 Show( Get Default Directory() );
@@ -321,9 +335,10 @@ Show( Get Default Directory() );
 
 **Description:** Returns a list of worksheets within an Excel Workbook
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
 Show( sheetList );
 
@@ -335,9 +350,10 @@ Show( sheetList );
 
 **Description:** Returns the current list of directories to search for opening files.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get File Search Path();
 
 ```
@@ -348,11 +364,12 @@ Get File Search Path();
 
 **Description:** Returns the value of a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -360,11 +377,10 @@ See also Convert File Path() and Set Path Variable() */
 
 ```
 
-**Listing**
+#### Listing
 
 ```jsl
 
-Names Default To Here( 1 );
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME",
 "USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS",
@@ -413,9 +429,10 @@ New Window( "Path Variables",
 
 **Description:** Exports a Data Table to a new Google Spreadsheet or a new Sheet within an existing Google Spreadsheet.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Google Sheet Export(
@@ -433,9 +450,10 @@ Google Sheet Export(
 
 **Description:** Opens a Google Sheet file.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet =
 "https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
@@ -461,9 +479,10 @@ Google Sheet Import(
 
 **Description:** Determine if the given path is a directory. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -476,9 +495,10 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 **Description:** Determine if the given directory path is writable. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Directory Writable( "$SAMPLE_DATA" );
 
 ```
@@ -489,9 +509,10 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 **Description:** Determine if the given path is a file. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
@@ -504,9 +525,10 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 **Description:** Determine if the given file path is writable. Returns 0 when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -517,9 +539,10 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Returns a valid JSON Boolean or null constant value depending on the specification of the parameter.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
@@ -539,9 +562,10 @@ If( x == JSON Literal( true ),
 
 **Description:** Convert JSON text to a JMP data table
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -554,9 +578,10 @@ dt = JSON To Data Table(
 
 **Description:** Convert JSON text to a JSL list representing the structure specified by the JSON data.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -570,9 +595,10 @@ Show( l );
 
 **Description:** Returns the last modification date of a file or directory. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -583,9 +609,10 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 **Description:** Reads a whole text file into a JSL variable. Load Text File() prompts for a file name. Load Text File( path ) returns a string. The XMLParse option converts XML into an expression tree. The SASODSXML parses as SAS ODS default XML. The [{JSON}] option converts JSON into an expression tree. The BLOB argument returns binary data in a JSL Blob variable; optional named parameters to BLOB enable reading a substring from the file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
 /*, Charset("ascii")*/
@@ -602,9 +629,10 @@ Word( 4, ex, " \!t\!n\!r" );
 
 **Description:** Moves a directory from one place to another. Returns 1 if the directory was moved. Returns 0 if the directory was unable to be moved. Throws an error if the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -625,9 +653,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Moves a file from one place to another. Returns 1 if the file was moved. Returns 0 if the file was unable to be moved. Throws an error when the path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
 );
@@ -648,11 +677,12 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Returns a reference to a data table or other JMP file or object created from a file. If no path is specified, the Open dialog appears. If a folder path is specified, the system file browser is opened and no object is returned. Refer to the Syntax Reference for a complete description of available options.
 
-**Add-In**
+**JMP Version Added:** Before version 14
+
+#### Add-In
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -661,11 +691,10 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 
 ```
 
-**Data Table**
+#### Data Table
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -685,11 +714,10 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ```
 
-**Excel**
+#### Excel
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Excel files imported into a data table:
    Open( excelFilePath,
      <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
@@ -725,21 +753,19 @@ dt = Open(
 
 ```
 
-**Folder**
+#### Folder
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
 ```
 
-**Other**
+#### Other
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Other options:
    SAS File imported as a data table:
    Open( sasFilePath,
@@ -795,11 +821,10 @@ Open(
 
 ```
 
-**PDF**
+#### PDF
 
 ```jsl
 
-Names Default To Here( 1 );
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
     PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
@@ -818,22 +843,20 @@ pdftable2 = Open(
 
 ```
 
-**Picture**
+#### Picture
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Text files imported into a data table:
    Open( textFilePath,
      <Invisible | Private>,
@@ -868,9 +891,10 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 **Description:** Convert JSON text to a JSL list or associative array representing the structure specified by the JSON data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -884,20 +908,20 @@ Show( l );
 
 **Description:** Prompts the user with an Open Directory window, returning the pathname of the chosen directory. The optional prompt string is shown at the top of the window. Show Files can be any of the three arguments, and takes a Boolean argument. 1 shows files in the Pick Directory window, 0 does not. The default value is 0. The path string specifies the directory that the Pick Directory window initially displays. If you use the path string, it must follow the prompt string, but Show Files can be between them.
 
-**Show Files**
+**JMP Version Added:** Before version 14
+
+#### Show Files
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick Directory( "Select a directory" );
 
 ```
@@ -908,11 +932,12 @@ Pick Directory( "Select a directory" );
 
 **Description:** Prompts the user with an Open window, returning the pathname of the chosen file. The filterList argument is a list of strings of the form: "Label|suffix1;suffix2;...". The first filter argument specifies which filter is initially shown. The fifth argument indicates whether the window should function as a save (saveFlag = 1) or open (saveFlag = 0) window. The default file argument specifies the file that is initially selected. The multiple argument allows multiple files to be selected if saveFlag is 0.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -928,7 +953,6 @@ Pick File(
 
 ```jsl
 
-Names Default To Here( 1 );
 Files = Pick File(
 	"Select JMP File",
 	"$SAMPLE_DATA",
@@ -948,7 +972,6 @@ For( i = 1, i <= N Items( Files ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 filename = Pick File(
 	"Save As Text",
 	"$DOCUMENTS",
@@ -970,9 +993,10 @@ If( Is Missing( filename ),
 
 **Description:** Renames a directory without moving or copying it; the new name does NOT include a path. Returns 1 if the directory was renamed. Returns 0 if the directory was unable to be renamed or the path is invalid.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -992,9 +1016,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Renames a file without moving or copying it; the new name does NOT include a path. Returns 1 if the file was renamed. Returns 0 if the file was unable to be renamed. Throws an error when path is invalid or does not exist.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -1012,9 +1037,10 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 **Description:** Creates a text file with the file name that is specified by the path argument and contents specified by the text string argument. If the save is successful, the Save Text File() function returns the pathname of the created file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -1026,9 +1052,10 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 **Description:** Sets the JMP default directory, which is used as a base for subsequent relative paths.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
 
@@ -1040,9 +1067,10 @@ Open( "Big Class.jmp" );
 
 **Description:** Sets the current list of directories to search for opening files. "." means the current directory.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )}
 );
@@ -1059,9 +1087,10 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 **Description:** Sets a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -1072,9 +1101,10 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 **Description:** Opens Triple-S files. The Triple-S format comprises an xml or sss file and either a csv file or a dat/asc file. Both files must have the same name with the appropriate extension and must be in the same directory. Specify the xml or sss filepath to import the data.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 

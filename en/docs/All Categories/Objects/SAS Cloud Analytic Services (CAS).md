@@ -12,9 +12,10 @@
 
 **Description:** Sets the action name for the CAS action. The Action message can accept fully qualified actionset.action specification.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = [=> ];
@@ -32,9 +33,10 @@ rc = cas << Submit( action );
 
 **Description:** Sets the action set for the CAS action. CAS actions are grouped by action set. This is optional since the CAS Action message can accept fully qualified actionset.action specification.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Action Set( "builtins" );
@@ -47,9 +49,10 @@ action << Action Set( "builtins" );
 
 **Description:** Sets an authorization requirement for a CAS action. CAS actions automatically require Connect, Login, Authorization, and Session.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -71,9 +74,10 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Authoriz
 
 **Description:** Sets a connection requirement for a CAS action. CAS actions automatically require Connect, Login, Authorization, and Session.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -95,9 +99,10 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Connecti
 
 **Description:** Sets the endpoint for the CAS action. An endpoint is the resource relative to the base CAS server URL. In the case of http://cloud.example.com:8777/cas/sessions, /cas/sessions is the endpoint. For most CAS actions use the Action message where the correct endpoint will automatically be selected.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Endpoint( "/cas/sessions" );
@@ -110,9 +115,10 @@ action << Endpoint( "/cas/sessions" );
 
 **Description:** Sets the file parameter for a CAS action. Any path variables in the file name are expanded. The CAS action automatically moves any JSON argument to a JSON Parameters argument if the File message is used.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 args =
@@ -147,9 +153,10 @@ If( rc,
 
 **Description:** Gets the changed resources from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -176,9 +183,10 @@ Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!
 
 **Description:** Gets the disposition from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -205,9 +213,10 @@ Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 **Description:** Gets the returned values from a submitted CAS action as a JSON string.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -229,9 +238,10 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 **Description:** Gets the log from a submitted CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -253,9 +263,10 @@ Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
 
 **Description:** Gets the log as list of log entries from a submitted CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -277,9 +288,10 @@ Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 **Description:** Gets the metrics from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -306,9 +318,10 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 **Description:** Gets the results from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
@@ -335,9 +348,10 @@ Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
 
 **Description:** Sets the JSON argument for the CAS action. CAS actions will take JSON strings or JSL associative arrays as arguments. The JSON arguments are documented for each SAS CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = "\[
@@ -358,9 +372,10 @@ rc = cas << Submit( action );
 
 **Description:** Sets the JSON parameter argument for the CAS action. CAS actions like table.upload use a file in combination with JSON parameters to move a table to CAS. The CAS action will automatically move any JSON argument to a JSON Parameters argument if the File message is used.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 args =
@@ -395,9 +410,10 @@ If( rc,
 
 **Description:** Sets a login requirement for a CAS action. CAS actions automatically require Connect, Login, Authorization, and Session.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -419,9 +435,10 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1
 
 **Description:** Generates a report from a submitted CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -446,9 +463,10 @@ action << Make Report();
 
 **Description:** Sets the HTTP method for the CAS action. HTTP methods include "PUT", "POST", "GET", "PATCH", "HEAD". For most CAS actions the correct HTTP method will automatically be selected.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 action = New CAS Action();
 action << Method( "PUT" );
@@ -461,9 +479,10 @@ action << Method( "PUT" );
 
 **Description:** Sets a session requirement for a CAS action. CAS actions automatically require Connect, Login, Authorization, and Session.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 code =
 "\[
@@ -485,9 +504,10 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Session(
 
 **Description:** Sets a new timeout value in the CAS action.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -517,9 +537,10 @@ action << Make Report();
 
 **Description:** Sets the DATA step code to run. The CAS server is capable of running a subset of SAS DATA step code. See SAS documentation for specific limitations.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -542,9 +563,10 @@ cas << Submit( action );
 
 **Description:** Sets the DATA step code to run. All path variables are expanded. The CAS server can run a subset of SAS DATA step code. See SAS documentation for specific limitations.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -569,9 +591,10 @@ cas << Submit( action );
 
 **Description:** Gets the changed resources from a submitted action as a list.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -595,9 +618,10 @@ Write( "\!Get Changed Resources: " || Char( action << Get Changed Resources ) ||
 
 **Description:** Gets the disposition from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -621,9 +645,10 @@ Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 **Description:** Gets the returned values from a submitted CAS action as a JSON string.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -647,9 +672,10 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 **Description:** Gets the log from a submitted CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -673,9 +699,10 @@ Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
 
 **Description:** Gets the log as list of log entries from a submitted CAS action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -699,9 +726,10 @@ Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 **Description:** Gets the metrics from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -725,9 +753,10 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 **Description:** Gets a list of output data sets (libray.tablename) produced by the submitted action.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -752,9 +781,10 @@ Show( output_ds );
 
 **Description:** Gets the results from a submitted action as an associative array.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -778,9 +808,10 @@ Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
 
 **Description:** Returns 1 if the CAS DATA step action produced output data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -805,9 +836,10 @@ Show( has_output );
 
 **Description:** Specifies the number of threads that are used to run the program. For distributed servers, this value specifies the number of threads on each worker to use for running the program.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -830,9 +862,10 @@ cas << Submit( action );
 
 **Description:** Specifies when to restrict execution to a single thread. "NO" specifies to run the program in the number of threads specified by the nThreads parameter. "NOINPUT" specifies to run the program in one thread when there are no input data sets. When there are input data sets, the nThreads parameter specifies the number of threads to use. For distributed servers, if the program has no input data sets, the program runs in one thread on one worker. Otherwise, the nThreads parameter specifies the number of threads to use. "YES" specifies to override the nThreads parameter and run the program in one thread. For distributed servers, the program runs on one thread on one worker. The default is "NO"
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 code =
@@ -859,9 +892,10 @@ cas << Submit( action );
 
 **Description:** Connects to a new CAS server. CAS Connect uses URL, User name, Password arguments and optionally Prompt and Session. Prompt can be IfNeeded, Always, or Never. URL, user name, password can be omitted if the Prompt argument is IfNeeded or Always. The default value for Prompt is Never. Session can be used to reconnect to an existing CAS session. The session must be valid for the URL, user name, and password used in the connection. The optional Certificates argument is useful for supplying trusted certificates for https connections to CAS. The optional Verify Certificates or No Verify Certificates argument is useful to temporarily accept self-signed certificates. The optional Proxy Server argument is useful for supplying a proxy host in a proxy environment. The optional Proxy User argument is useful for supplying user and password information for a proxy environment. The optional Bypass Proxy argument is use for bypassing the proxy for certain hosts. The optional Timeout argument sets a timeout value for the CAS connection operations. The optional Authorization Method argument specifies how JMP connects to CAS. This is dependent on the CAS deployment.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = New CAS Server();
 url = "http://myCasURL";
@@ -883,9 +917,10 @@ cas = CAS Connect(
 
 **Description:** This action deletes the filesystem table. The in memory table is not affected. Specifying Quiet will suppress errors for a non-existent table. Specifying remACs will remove access controls for a table. Specifying Remove will also remove the table from memory.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
@@ -899,9 +934,10 @@ cas << Delete Table( "Casuser", "Big Class" );
 
 **Description:** Disconnects from a CAS server and optionally terminates the session. By default, the session is terminated when disconnected.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = New CAS Server();
 url = "http://myCasURL";
@@ -916,9 +952,10 @@ cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
 
 **Description:** Exports a table to a CAS server. jmp_data_table is the JMP data table to export while cas_libref and cas_dataset are the target locations on the CAS server. The optional named argument is Save(1|0). When a table is exported to CAS, it is not persisted to CAS filesystem unless the Save option is used. Most CAS actions occur in memory.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -931,9 +968,10 @@ cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class"
 
 **Description:** Gets a list of available CAS data sets. These data sets are found on the CAS filesystem. The optional argument limits the list of data sets to the CAS library. If no argument is used, then the data set list contains the fully qualified data set name (library.dataset). If the argument is used, then the data set list is a list of data set names.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
@@ -951,9 +989,10 @@ Show( datasets );
 
 **Description:** Gets a list of available CAS libraries.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 libraries = cas << Get Libraries();
@@ -967,9 +1006,10 @@ Show( libraries );
 
 **Description:** Gets the session id from the CAS server. This can be used for subsequent re-connections as long as the CAS session remains available.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
@@ -990,9 +1030,10 @@ cas = CAS Connect(
 
 **Description:** Gets the available sessions for the current user.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://myCasURL";
 cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
@@ -1007,9 +1048,10 @@ Show( session_ids );
 
 **Description:** Imports a table from a CAS server. Optional named arguments are Invisible(0|1), Private(0|1) and UseLabelsForVarNames(0|1).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1023,9 +1065,10 @@ cas << Import Data( "Casuser.Big Class" );
 
 **Description:** Returns 1 if there is an active CAS server connection. Otherwise, returns 0.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 connected = cas << Is Connected();
@@ -1039,9 +1082,10 @@ Show( connected );
 
 **Description:** This action drops the in-memory table. The file that was created with the save action is not affected. Specifying delete will also delete the table from the file system.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
@@ -1055,9 +1099,10 @@ cas << Remove Table( "Casuser", "Big Class" );
 
 **Description:** Submits a CAS action to the CAS server.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 echo = [=> ];
@@ -1076,9 +1121,10 @@ rc = cas << Submit( action );
 
 **Description:** Terminates a CAS session owned by the current user. A user cannot terminate a connected session ID
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 session_id = cas << Get Session();
@@ -1094,9 +1140,10 @@ cas << Terminate( session_id );
 
 **Description:** Terminates all CAS sessions owned by the current user.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 cas = Current CAS Connection();
 cas << Terminate Sessions();

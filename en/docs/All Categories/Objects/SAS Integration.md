@@ -10,9 +10,10 @@
 
 **Description:** Checks the status of the SAS Integration dependencies. Returns 1 for success.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 If( !Check SAS Dependencies(),
 	Install SAS Dependencies();
@@ -31,7 +32,6 @@ If( !Check SAS Dependencies(),
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
@@ -42,9 +42,10 @@ sas << Submit( "proc print data=sashelp.class; run;" );
 
 **Syntax:** array = Current SAS Connections()
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 array = Current SAS Connections();
 array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
@@ -56,9 +57,10 @@ array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
 **Description:** Installs the required dependencies for SAS Integration. Returns 1 for success.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 If( !Check SAS Dependencies(),
 	Install SAS Dependencies(),
@@ -73,11 +75,12 @@ If( !Check SAS Dependencies(),
 
 **Description:** Opens a SAS connection.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 
 ```
@@ -86,7 +89,6 @@ SAS Connect( "my sas connection" );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 iom_win = New Data Connector( Type( "SAS Local" ) );
 SAS Connect( iom_win );
@@ -105,7 +107,6 @@ sas << Disconnect();
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect(
 	New Data Connector(
 		ID( "com.jmp.sas_remote" ),
@@ -122,7 +123,6 @@ SAS Connect(
 
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "sashost.com", 8591, Username( "jmpuser" ), Prompt( "Always" ) );
 
 ```
@@ -133,9 +133,10 @@ SAS Connect( "sashost.com", 8591, Username( "jmpuser" ), Prompt( "Always" ) );
 
 **Description:** Updates the required dependencies for SAS Integration. Returns 1 for success.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 If( Check SAS Dependencies(),
 	Update SAS Dependencies(),
@@ -154,9 +155,10 @@ If( Check SAS Dependencies(),
 
 **Description:** Returns a string containing the Log Window contents of the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc print data=sashelp.class; run;",
@@ -175,9 +177,10 @@ Show( log );
 
 **Description:** Returns a string containing the Log Window contents of the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
 result = sas << Get Results;
@@ -192,9 +195,10 @@ Show( out );
 
 **Description:** Returns a string containing the Log Window contents of the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc corr data=sashelp.class
@@ -219,9 +223,10 @@ Show( data );
 
 **Description:** Attempt to reconnect a SAS server connection object that has become disconnected.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Disconnect();
@@ -235,11 +240,12 @@ sas << Connect();
 
 **Description:** Obtains the connection to the current CAS Server.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 cas = sas << Current CAS Connection;
 Show( cas );
@@ -250,7 +256,6 @@ Show( cas );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 cas = sas << Current CAS Connection;
 connected = cas << Is Connected();
@@ -264,11 +269,12 @@ Show( connected );
 
 **Description:** Returns 1 if a SAS data set exists.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Data Set Exists( "SASHELP", "AIRLINE" );
 Show( result );
@@ -279,7 +285,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Data Set Exists( "SASHELP.AIRLINE" );
 Show( result );
@@ -292,9 +297,10 @@ Show( result );
 
 **Description:** Disconnect this SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Connect( "my sas connection" );
 sas = Current SAS Connection();
 sas << Disconnect();
@@ -307,9 +313,10 @@ sas << Disconnect();
 
 **Description:** Exports a JMP data table as a SAS dataset onto the active SAS server connection. Named optional arguments include Columns(list|col1,col2,...,coln), string-valued arguments Password, AlterPassword, ReadPassword, and WritePassword, as well as Boolean-valued arguments HonorExcludedRows, PreserveSASColumnNames, PreserveSASFormats, ReplaceExisting, ExistingAlterPassword, and SaveJMPMetadata. Returns 1 if the export was successful, 0 otherwise.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
@@ -321,9 +328,10 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 **Description:** Returns a list of the data sets defined in a SAS library.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Data Sets( "SASHELP" );
 Show( result );
@@ -336,9 +344,10 @@ Show( result );
 
 **Description:** Get the host name of the SAS server
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Host Name();
 Show( result );
@@ -351,9 +360,10 @@ Show( result );
 
 **Description:** Returns a list of the currently defined SAS librefs from the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Lib Refs();
 Show( result );
@@ -366,9 +376,10 @@ Show( result );
 
 **Description:** Returns a string containing the Log Window contents of the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc print data=sashelp.class; run;",
@@ -386,9 +397,10 @@ Show( result );
 
 **Description:** Get the value of a SAS Macro Variable
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Macro Var( "SYSVLONG" );
 Show( result );
@@ -401,9 +413,10 @@ Show( result );
 
 **Description:** Get a list of SAS Macro Variables
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Macro Var Names();
 Show( result );
@@ -416,9 +429,10 @@ Show( result );
 
 **Description:** Get a list of SAS Options
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Option Names();
 Show( result );
@@ -431,9 +445,10 @@ Show( result );
 
 **Description:** Get the value of a SAS Option
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Option Value( "MEMLIB" );
 Show( result );
@@ -446,9 +461,10 @@ Show( result );
 
 **Description:** Returns a string containing the listing output from the last submission of SAS code to the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
 result = sas << Get Output();
@@ -462,9 +478,10 @@ Show( result );
 
 **Description:** Get the results of the last submit for this server
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
 result = sas << Get Results();
@@ -478,9 +495,10 @@ Show( result );
 
 **Description:** Get the status of the last submit for this server
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit( "proc print data=sashelp.class; run;" );
 result = sas << Get Submit Status;
@@ -494,9 +512,10 @@ Show( result );
 
 **Description:** Get information about the variables in a SAS data set
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Var Info( "SASHELP", "CLASS" );
 Show( result );
@@ -509,9 +528,10 @@ Show( result );
 
 **Description:** Retrieves the variable names contained in the specified data set from the active SAS server connection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Var Names( "SASHELP", "CLASS" );
 Show( result );
@@ -524,9 +544,10 @@ Show( result );
 
 **Description:** Get the version of SAS
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Version;
 Show( result );
@@ -539,9 +560,10 @@ Show( result );
 
 **Description:** Get the server&apos;s WORK library folder
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 result = sas << Get Work Folder;
 Show( result );
@@ -554,9 +576,10 @@ Show( result );
 
 **Description:** Imports a SAS data set from the active SAS server connection into a JMP data table. Named optional arguments include Sample(<named_arguments>), Columns(list|col1,col2,...,coln), string-valued arguments Where, as well as Boolean-valued arguments ConvertCustomFormats, Invisible, UseLabelsForVarNames, SQLTableVariable. Returns a JMP data table object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 dt = sas << Import Data( "SASHELP.CLASS" );
 
@@ -568,9 +591,10 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 **Description:** Lists output datasets for the specified SAS code
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 datasets = sas << List Output Datasets(
 	"\[
@@ -589,9 +613,10 @@ Show( datasets );
 
 **Description:** Returns the name of the server.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 serverName = sas << Name;
 Show( serverName );
@@ -604,9 +629,10 @@ Show( serverName );
 
 **Description:** Submits SAS code to the active SAS server connection. Returns 1 if successful, 0 otherwise.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit(
 	"proc reg data=sashelp.class; model height=weight; output out=result_height_weight residual=res; run; quit;",
@@ -623,9 +649,10 @@ sas << Submit(
 
 **Description:** Submits a file containing SAS code to the active SAS server connection. Named optional arguments are the same as those for SAS Submit. Returns 1 if successful, 0 otherwise.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 sas = Current SAS Connection();
 sas << Submit File( "MySASProgram.sas" );
 

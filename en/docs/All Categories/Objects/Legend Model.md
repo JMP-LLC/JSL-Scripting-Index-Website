@@ -10,9 +10,10 @@
 
 **Description:** Returns the fill color of the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -31,9 +32,10 @@ Show( item << Get Fill Color );
 
 **Description:** Returns a list of Gradient Settings for the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -52,9 +54,10 @@ Print( item << Get Gradient Settings );
 
 **Description:** Returns the label of the Legend Model Item.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -73,9 +76,10 @@ Print( item << Get Label );
 
 **Description:** Returns a list of Marker Size Settings for the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -94,9 +98,10 @@ Print( item << Get Marker Size Settings );
 
 **Description:** Returns a list of Pen Settings for the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -115,9 +120,10 @@ Print( item << Get Pen Settings );
 
 **Description:** Returns the type of the Legend Model Item. Types are: "None", "Marker", "H Line", "V Line", "Step", "Bar", "V Box Plot", "H Interval", "V Interval", "H Bar Box Plot", "V Bar Box Plot", "OHLC Plot", "H Box Plot",Gradient", "Density Gradient", "Fill and Line", "Marker Size", "Line Size", Gradient Line", "Gradient Contour", "Mark Color", "Marker Size Categorical", "Cell Size".
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -136,9 +142,10 @@ Print( item << Get Type );
 
 **Description:** Sets the label for the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -157,9 +164,10 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 **Description:** Set arbitrary display properties for the Legend Model Item which is linked to a Display Seg in the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(

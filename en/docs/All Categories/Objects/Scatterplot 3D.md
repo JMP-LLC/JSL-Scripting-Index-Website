@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -28,7 +27,6 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -50,7 +48,6 @@ obj = dt << Scatterplot 3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -67,7 +64,6 @@ obj = dt << Scatterplot 3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Scatterplot 3D(
@@ -85,7 +81,6 @@ obj = dt << Scatterplot 3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Scatterplot 3D(
@@ -103,7 +98,6 @@ obj = dt << Scatterplot 3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -119,7 +113,6 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Principal Components( 1 );
@@ -133,9 +126,10 @@ obj << Biplot Rays( 1 );
 
 **Description:** Sets the marker size when "Sized Points" is set or a Weight or Freq role is used. "0.2" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 // slightly larger circles
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D(
@@ -154,7 +148,6 @@ obj = dt << Scatterplot 3D(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Connect Points( 1, :Species );
@@ -169,7 +162,6 @@ obj << Connect Points( 1, :Species );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Drop Lines( 1 );
@@ -186,7 +178,6 @@ obj << Drop Line Thickness( 0.8 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Drop Lines( 1 );
@@ -201,7 +192,6 @@ obj << Drop Lines( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Ellipsoid Coverage( 0.8 );
@@ -217,7 +207,6 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Ellipsoid Transparency( 0.4 );
@@ -233,7 +222,6 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set View Zoom( 0.9075 ) );
@@ -248,7 +236,6 @@ obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
@@ -266,7 +253,6 @@ obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Nonpar Density Contour( 1, :Species );
@@ -281,7 +267,6 @@ obj << Nonpar Density Contour( 1, :Species );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Nonpar Density Contour( 1 );
@@ -297,7 +282,6 @@ obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Normal Contour Ellipsoids( 1, :Species );
@@ -312,7 +296,6 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Principal Components;
@@ -327,7 +310,6 @@ obj << Principal Components;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Principal Components( 1 );
@@ -344,7 +326,6 @@ obj << Remove Prin Comp;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Rotated Components( PC, ONE, 3, Varimax );
@@ -359,7 +340,6 @@ obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Principal Components( 1 );
@@ -375,7 +355,6 @@ obj << Save Prin Components( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Rotated Components( PC, ONE, 3, Varimax );
@@ -391,7 +370,6 @@ obj << Save Rotated Components;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Show Controls( 1 );
@@ -406,7 +384,6 @@ obj << Show Controls( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Show Points( 1 );
@@ -421,7 +398,6 @@ obj << Show Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Principal Components( 1 );
@@ -438,7 +414,6 @@ obj << Show Ray Labels( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Sized Points( 1 );
@@ -453,7 +428,6 @@ obj << Sized Points( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Std Prin Components;
@@ -470,7 +444,6 @@ obj << Std Prin Components;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -486,11 +459,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -501,11 +475,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -513,11 +486,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -533,7 +505,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Automatic Recalc( 1 );
@@ -547,9 +518,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -567,7 +539,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -585,7 +556,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -608,7 +578,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Copy Script;
@@ -623,7 +592,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Data Table Window;
@@ -636,9 +604,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -653,7 +622,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -675,11 +643,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Get Container;
@@ -687,11 +654,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -724,7 +690,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Get Datatable;
@@ -740,7 +705,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -757,7 +721,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Get Script;
@@ -773,7 +736,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Get Script With Data Table;
@@ -789,7 +751,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Get Timing;
@@ -805,7 +766,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -819,9 +779,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -837,7 +798,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -856,7 +816,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -874,9 +833,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -891,9 +851,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -908,7 +869,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -929,7 +889,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Redo Analysis;
@@ -944,7 +903,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -967,7 +925,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Relaunch Analysis;
@@ -982,7 +939,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1005,7 +961,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1025,7 +980,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1045,9 +999,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1062,7 +1017,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 r = obj << Report;
@@ -1079,7 +1033,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Report View( "Summary" );
@@ -1094,7 +1047,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1117,7 +1069,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1140,7 +1091,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1163,7 +1113,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Save Script for All Objects;
@@ -1180,7 +1129,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1199,7 +1147,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1222,7 +1169,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -1237,7 +1183,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Save Script to Journal;
@@ -1252,7 +1197,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Save Script to Report;
@@ -1267,7 +1211,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Save Script to Script Window;
@@ -1282,7 +1225,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1303,7 +1245,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1329,7 +1270,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1347,7 +1287,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1364,7 +1303,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Title( "My Platform" );
@@ -1379,7 +1317,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 r = obj << Top Report;
@@ -1394,9 +1331,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1413,7 +1351,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1428,7 +1365,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1451,7 +1387,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -1465,9 +1400,10 @@ obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal widt
 
 **Description:** Draws an ellipsoid on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D(
@@ -1486,9 +1422,10 @@ obj << Frame3D(
 
 **Description:** Draws n markers on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
@@ -1501,9 +1438,10 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 **Description:** Draws a vector or arrow on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "Point" ) ) );
@@ -1516,9 +1454,10 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 **Description:** Returns the state of displaying the axes on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Axes );
@@ -1532,9 +1471,10 @@ Show( s );
 
 **Description:** Returns the state of displaying the box frame on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Box );
@@ -1548,9 +1488,10 @@ Show( s );
 
 **Description:** Returns the state of displaying the grab handles on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Box );
@@ -1564,9 +1505,10 @@ Show( s );
 
 **Description:** Returns the size of the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Graph Size );
@@ -1580,9 +1522,10 @@ Show( s );
 
 **Description:** Returns the state of displaying the grids on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Grids );
@@ -1596,9 +1539,10 @@ Show( s );
 
 **Description:** Returns the state of the lights border around the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 state = obj << Frame3D( Get Hide Lights Border );
@@ -1612,9 +1556,10 @@ Show( state );
 
 **Description:** Returns the line width for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 w = obj << Frame3D( Get Line Scale );
@@ -1628,9 +1573,10 @@ Show( w );
 
 **Description:** Returns the marker characteristics such as shape and shade for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 q = obj << Frame3D( Get Marker Quality );
@@ -1644,9 +1590,10 @@ Show( q );
 
 **Description:** Returns the marker size for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Marker Scale );
@@ -1660,9 +1607,10 @@ Show( s );
 
 **Description:** Returns the marker transparency for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 t = obj << Frame3D( Get Marker Transparency );
@@ -1676,9 +1624,10 @@ Show( t );
 
 **Description:** Returns the current rotation for the frame.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 r = obj << Frame3D( Get Rotation() );
@@ -1692,9 +1641,10 @@ Show( r );
 
 **Description:** Returns the text size for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Text Scale );
@@ -1708,9 +1658,10 @@ Show( s );
 
 **Description:** Returns the state of the orthographic view for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 o = obj << Frame3D( Get View Ortho );
@@ -1724,9 +1675,10 @@ Show( o );
 
 **Description:** Returns the view perspective for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 p = obj << Frame3D( Get View Perspective );
@@ -1740,9 +1692,10 @@ Show( p );
 
 **Description:** Returns the current zoom for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 z = obj << Frame3D( Get View Zoom );
@@ -1756,9 +1709,10 @@ Show( z );
 
 **Description:** Returns the wall color for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 c = obj << Frame3D( Get Wall Color );
@@ -1772,9 +1726,10 @@ Show( c );
 
 **Description:** Returns the state of displaying the walls on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 s = obj << Frame3D( Get Walls );
@@ -1788,9 +1743,10 @@ Show( s );
 
 **Description:** Returns the x axis color for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 c = obj << Frame3D( Get X Axis Color );
@@ -1804,9 +1760,10 @@ Show( c );
 
 **Description:** Returns the label for the X Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 label = obj << Frame3D( Get X Axis Label );
@@ -1820,9 +1777,10 @@ Show( label );
 
 **Description:** Returns the y axis color for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 c = obj << Frame3D( Get Y Axis Color );
@@ -1836,9 +1794,10 @@ Show( c );
 
 **Description:** Returns the label for the Y Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 label = obj << Frame3D( Get Y Axis Label );
@@ -1852,9 +1811,10 @@ Show( label );
 
 **Description:** Returns the z axis color for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 c = obj << Frame3D( Get Z Axis Color );
@@ -1868,9 +1828,10 @@ Show( c );
 
 **Description:** Returns the label for the Z Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 label = obj << Frame3D( Get Z Axis Label );
@@ -1884,9 +1845,10 @@ Show( label );
 
 **Description:** Shows or hides the x, y, and z axes on the plot. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Axes( 1 ) );
@@ -1899,9 +1861,10 @@ obj << Frame3D( Set Axes( 1 ) );
 
 **Description:** Shows or hides the box frame on the plot. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Box( 1 ) );
@@ -1914,9 +1877,10 @@ obj << Frame3D( Set Box( 1 ) );
 
 **Description:** Sets the size of the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Graph Size( 700, 800 ) );
@@ -1929,9 +1893,10 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 **Description:** Shows or hides the grids on the plot. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Grids( 1 ) );
@@ -1944,9 +1909,10 @@ obj << Frame3D( Set Grids( 1 ) );
 
 **Description:** Hides or displays the lights border around the plot. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Hide Lights Border( 0 ) );
@@ -1959,9 +1925,10 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 **Description:** Sets the line width for the grid on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Line Scale( 6.5 ) );
@@ -1974,9 +1941,10 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 **Description:** Sets the marker characteristics such as shape and shade for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
@@ -1989,9 +1957,10 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 **Description:** Sets the marker size for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Marker Scale( 3.5 ) );
@@ -2004,9 +1973,10 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 **Description:** Sets the marker transparency for the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Marker Transparency( 0.4125 ) );
@@ -2019,9 +1989,10 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 **Description:** Sets oscillation rate on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) );
@@ -2034,9 +2005,10 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 **Description:** Rotates the frame to the specified coordinates.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Rotation( -60, -3, 35 ) );
@@ -2049,9 +2021,10 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 **Description:** Spins the graph on a specified axis. The values dx and dy are a delta motion of the mouse from the point, (sx, sy).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
@@ -2064,9 +2037,10 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 **Description:** Sets the text size for the axis text on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Text Scale( 1.4 ) );
@@ -2079,9 +2053,10 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 **Description:** Displays the plot orthographically or linearly.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set View Ortho( 1 ) );
@@ -2094,9 +2069,10 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 **Description:** Sets the view perspective on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set View Perspective( 0.275 ) );
@@ -2109,9 +2085,10 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 **Description:** Sets the zoom on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set View Zoom( 0.5 ) );
@@ -2126,9 +2103,10 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 **Description:** Sets the wall color on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Wall Color( -16775543 ) );
@@ -2141,9 +2119,10 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 **Description:** Shows or hides the walls on the plot. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Walls( 1 ) );
@@ -2156,9 +2135,10 @@ obj << Frame3D( Set Walls( 1 ) );
 
 **Description:** Sets the x axis color on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set X Axis Color( 5 ) );
@@ -2171,9 +2151,10 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 **Description:** Sets the label for the X Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
@@ -2186,9 +2167,10 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 **Description:** Sets the y axis color on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Y Axis Color( 11 ) );
@@ -2201,9 +2183,10 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 **Description:** Sets the label for the Y Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
@@ -2216,9 +2199,10 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 **Description:** Sets the z axis color on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Z Axis Color( "Green" ) );
@@ -2231,9 +2215,10 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 **Description:** Sets the label for the Z Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
@@ -2246,9 +2231,10 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 **Description:** Sets the values for the X Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
@@ -2261,9 +2247,10 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 **Description:** Sets the values for the Y Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
@@ -2276,9 +2263,10 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 **Description:** Sets the values for the Z Axis on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
@@ -2291,9 +2279,10 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 **Description:** Returns the specified light activation shining on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Active( 2 ) );
@@ -2307,9 +2296,10 @@ Show( p );
 
 **Description:** Returns the specified light color shining on the plot as a list {red, green, blue}.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 c = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Color( 1 ) );
@@ -2323,9 +2313,10 @@ Show( c );
 
 **Description:** Returns the specified light position shining on the plot as a list {x, y, z}.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Position( 2 ) );
@@ -2339,9 +2330,10 @@ Show( p );
 
 **Description:** Turns on the specified light shining on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
@@ -2354,9 +2346,10 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 **Description:** Sets the color of the light shining on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) );
@@ -2369,9 +2362,10 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 **Description:** Sets the light position shining on the plot.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Position( 2, -1.5833, 10, 0 ) );

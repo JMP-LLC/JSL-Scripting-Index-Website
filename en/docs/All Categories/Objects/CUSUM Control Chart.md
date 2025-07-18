@@ -10,9 +10,10 @@
 
 **Description:** Creates a chart that plots the cumulative sums of deviations of subgroup means from a target. This chart is also called a tabular CUSUM chart.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -34,9 +35,10 @@ obj = dt << CUSUM Control Chart(
 
 **Description:** Specifies the By column during launch.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << CUSUM Control Chart( Y( :DIAMETER ), X( :DAY ), By( :Phase ) );
 
@@ -48,9 +50,10 @@ obj = dt << CUSUM Control Chart( Y( :DIAMETER ), X( :DAY ), By( :Phase ) );
 
 **Description:** Specifies the X column during launch.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -71,9 +74,10 @@ obj = dt << CUSUM Control Chart(
 
 **Description:** Specifies the Y column during launch.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -95,9 +99,10 @@ obj = dt << CUSUM Control Chart(
 
 **Description:** Shows or hides an interactive profiler for the Average Run Length as parameters change.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -118,9 +123,10 @@ obj << ARL Profiler( 1 );
 
 **Description:** Sends a message whenever a point on a control chart fails a given test. The message can be sent to the log, can be spoken, or can be emailed.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Alarm Script(
@@ -152,9 +158,10 @@ obj << Test Beyond Limits( 1 );
 
 **Description:** Shows or hides a report that contains the current values of the parameters and enables you to change them. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -176,9 +183,10 @@ obj << Control Panel( 0 );
 
 **Description:** Specifies that data units are used in the report rather than standard deviation units.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -199,9 +207,10 @@ obj = dt << CUSUM Control Chart(
 
 **Description:** Imports control limits from a selected data table and replaces calculated limits on the chart.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -228,9 +237,10 @@ obj << Get Limits( limitsTable );
 
 **Description:** Specifies the value of the parameter that defines the limits. If the Data Units option was not specified, this is the h parameter. If the Data Units option was specified, this is the H parameter. Note that H is equal to h times Sigma. "5" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -251,9 +261,10 @@ obj << H( 4.5 );
 
 **Description:** Specifies the value of the cumulative sums before the first sample. Starting the cumulative sums at a nonzero value increases the sensitivity of the CUSUM chart near the beginning of the samples. This parameter is also known as the fast initial response (FIR) value. By default, this parameter is set to 0.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -274,9 +285,10 @@ obj << Head start( 1.0 );
 
 **Description:** Specifies the value of the parameter that defines the smallest change in the mean that is valuable to detect. If the Data Units option was not specified, this is the k parameter. If the Data Units option was specified, this is the K parameter. Note that K is equal to k times Sigma. "0.5" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -297,9 +309,10 @@ obj << K( 0.1 );
 
 **Description:** Shows or hides the negative values for the cumulative sum on the chart. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -320,9 +333,10 @@ obj << Lower Side( 0 );
 
 **Description:** Shows or hides the parameters report.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -343,9 +357,10 @@ obj << Parameters Report( 1 );
 
 **Description:** Resets all parameters back to the default values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -376,9 +391,10 @@ If in Column is specified, the Avg is saved in a Control Limits column property.
 
 If in New Table is specified, parameters h, k, the standard deviation, mean, and head start are saved to a new data table.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -402,9 +418,10 @@ obj << Save Limits( "in New Table" );
 
 **Description:** Saves the sigma used in the control chart as a column property in the data table.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -425,9 +442,10 @@ obj << Save Sigma;
 
 **Description:** Creates a new data table that contains statistics for each subgroup in the CUSUM chart.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -448,9 +466,10 @@ obj << Save Summaries;
 
 **Description:** Shows or hides a report with the Average Run Length computed from the associated CUSUM chart.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -471,9 +490,10 @@ obj << Show ARL( 1 );
 
 **Description:** Shows or hides the center line on the graph. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -494,9 +514,10 @@ obj << Show Center Line( 0 );
 
 **Description:** Specifies whether subgroups that are entirely excluded are shown on the horizontal axis in the CUSUM control chart. Applicable only when an X variable is specified.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << Select Rows( {31, 32, 33, 34, 35, 36, 37, 38, 39, 40} ) << exclude << hide;
 obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Region( 0 ) );
@@ -509,9 +530,10 @@ obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded R
 
 **Description:** Shows or hides the limits. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -532,9 +554,10 @@ obj << Show Limits( 0 );
 
 **Description:** Shows or hides vertical lines that designate shifts in the chart. Shift lines are drawn at the start of a shift. Available only when there is a shift detected in the data. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -556,9 +579,10 @@ obj << Show Shift Lines( 0 );
 
 **Description:** Specifies the known value of the standard deviation. By default, this parameter is set to the average moving range of the Y column. If there is an X variable, the Sigma parameter is set to the average moving range of the summary data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -579,9 +603,10 @@ obj << Sigma( 2 );
 
 **Description:** Specifies the known value of the mean. This is the value of the center line in the chart. By default, this parameter is set to the Target value in the Spec Limits column property for the Y column. If the Y column does not have a Target value in the Spec Limits column property, this parameter is set to the overall average of the Y column.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -602,9 +627,10 @@ obj << Target( 9.5 );
 
 **Description:** Shows or hides a red circle around any point that is above the upper limit or below the lower limit in the CUSUM chart.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -625,9 +651,10 @@ obj << Test Beyond Limits( 1 );
 
 **Description:** Shows or hides a control that enables you to set the value of the k parameter by specifying an acceptable range for the Y variable. In a script, you can also specify the acceptable range directly.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -648,9 +675,10 @@ obj << Tune Chart( Min( 8.08, Max( 8.12 ) ) );
 
 **Description:** Shows or hides the positive values for the cumulative sum on the chart. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -675,7 +703,6 @@ obj << Upper Side( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -691,11 +718,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -706,11 +734,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -718,11 +745,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -738,7 +764,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -760,9 +785,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -780,7 +806,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -809,7 +834,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -832,7 +856,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -853,9 +876,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -870,7 +894,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -898,11 +921,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -918,11 +940,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -955,7 +976,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -979,7 +999,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -996,7 +1015,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1020,7 +1038,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1044,7 +1061,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1068,7 +1084,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1082,9 +1097,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1100,7 +1116,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1117,9 +1132,10 @@ dt << Bivariate(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1134,9 +1150,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1151,7 +1168,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1174,7 +1190,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1203,7 +1218,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1226,7 +1240,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1253,9 +1266,10 @@ obj[1] << Relaunch ByGroup;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1270,7 +1284,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1295,7 +1308,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1318,7 +1330,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1347,7 +1358,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1376,7 +1386,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1405,7 +1414,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1430,7 +1438,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1455,7 +1462,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1484,7 +1490,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1507,7 +1512,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1530,7 +1534,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1553,7 +1556,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1576,7 +1578,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1597,7 +1598,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1623,7 +1623,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1641,7 +1640,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1658,7 +1656,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1681,7 +1678,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -1704,9 +1700,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1723,7 +1720,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1738,7 +1734,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

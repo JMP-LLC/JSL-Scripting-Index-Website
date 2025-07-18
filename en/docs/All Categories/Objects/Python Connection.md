@@ -10,11 +10,12 @@
 
 **Description:** Triggers the creation of a jpip command line wrapper script for Python&apos;s pip command. A directory picker dialog will ask where to save the generated script. This script then provides the full capabilities of pip, while correctly establishing the necessary environment variables for JMP&apos;s isolated Python environment.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Create JPIP CMD();
@@ -25,7 +26,6 @@ conn << Create JPIP CMD();
 
 ```jsl
 
-Names Default To Here( 1 );
 Python Create JPIP CMD();
 
 ```
@@ -36,17 +36,20 @@ Python Create JPIP CMD();
 
 **Description:** Note: This function is deprecated as of JMP 18 and has no effect.
 
+**JMP Version Added:** 14
+
 ### Execute
 
 **Syntax:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 // NOTE: a,d,x,z must be declared before Execute()
 // as this is the location the results will be written.
@@ -78,7 +81,6 @@ Show( v, m, ml, x, z, a, d );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x1 = 0;
 x2 = 0;
@@ -120,11 +122,12 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **Description:** Returns data from Python, where the name argument can represent any of the following Python data types ( numeric | string | matrix | list | dict | data table | data frame | datetime | numpy.datetime64 ).
 
-**Datetime**
+**JMP Version Added:** 14
+
+#### Datetime
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date1 = As Date( Today() );
@@ -138,7 +141,6 @@ Show( date1, date2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 x1 = [1, 2, 3];
@@ -153,11 +155,10 @@ Close( dt1 );
 
 ```
 
-**numpy.datetime64**
+#### numpy.datetime64
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 PythonConnection << Install Packages( "numpy" );
@@ -174,9 +175,10 @@ Show( numpy_datetime );
 
 **Description:** Returns the version number of Python used in the current connection.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
 Show( version );
@@ -189,11 +191,12 @@ Show( version );
 
 **Description:** This wraps the install of Python packages into the JMP site-packages directory. For operations beyond simple package installation, see Python Create JPIP CMD() to create a command line pip wrapper script in a directory chosen with Directory Pick(). Alternatively, to run the install from a JMP Python script window, look at jmputils.jpip under the Python category here in the Scripting Index.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 conn = Python Connect();
 conn << Install Packages( "numpy pandas" );
@@ -204,7 +207,6 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -214,7 +216,6 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -226,9 +227,10 @@ Python Install Packages( {"numpy", "pandas"} );
 
 **Description:** Note: This function is deprecated as of JMP 18 and always returns 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = PythonConnection << Is Connected;
 Show( x );
@@ -241,9 +243,10 @@ Show( x );
 
 **Description:** Maps a JMP variable name to a Python variable name using Python variable naming rules.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 Python Name = PythonConnection << JMP Name To Python Name( a b c );
 Show( Python Name );
@@ -256,9 +259,10 @@ Show( Python Name );
 
 **Description:** Reset the shared Python environment.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 pi = 3.1415927;
 PythonConnection << Send( pi );
@@ -275,11 +279,12 @@ PythonConnection << Submit( "print(pi)" );
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | date ).
 
-**Date**
+**JMP Version Added:** 14
+
+#### Date
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date = As Date( Today() );
@@ -292,7 +297,6 @@ PythonConnection << Submit( "print(date)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = [1, 2, 3];
 PythonConnection << Send( x );
@@ -309,9 +313,10 @@ PythonConnection << Submit( "print(dt)" );
 
 **Description:** Sends a data file to Python, where the filename argument is a string specifying a pathname to the file to be sent to Python.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
 dtname = "$SAMPLE_DATA/Baseball.jmp";
@@ -327,11 +332,12 @@ PythonConnection << Submit( "print(Baseball)" );
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | date ).
 
-**Date**
+**JMP Version Added:** 14
+
+#### Date
 
 ```jsl
 
-Names Default To Here( 1 );
 
 PythonConnection = Python Connect();
 date = As Date( Today() );
@@ -344,7 +350,6 @@ PythonConnection << Submit( "print(date)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 x = [1, 2, 3];
 PythonConnection << Set( x );
@@ -361,9 +366,10 @@ PythonConnection << Submit( "print(dt)" );
 
 **Description:** Submits statements to Python. Statements can be in the form of a string value or list of string values. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Submit(
 	"\[
@@ -383,9 +389,10 @@ Show( getStr, getNum );
 
 **Description:** Submits statements to Python using a file specified by the path argument.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 PythonConnection = Python Connect();
 PythonConnection << Submit File( "some_Python_source.py" );
 

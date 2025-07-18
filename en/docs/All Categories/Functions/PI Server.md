@@ -8,11 +8,12 @@
 
 **Description:** Creates a new PI Client instance that can be used to import data from a PI server.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -39,7 +40,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -61,7 +61,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -90,11 +89,12 @@ importer << Run;
 
 **Description:** Creates a new raw importer instance.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -126,7 +126,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import plot data  */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -152,7 +151,6 @@ importer << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),

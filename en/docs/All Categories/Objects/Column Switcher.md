@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -31,7 +30,6 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -51,7 +49,6 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Country ), Y( :Weight ) ),
@@ -77,7 +74,6 @@ If( cs2 << Get Layout() == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -96,7 +92,6 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -116,7 +111,6 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -133,9 +127,10 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 **Description:** Links a platform to this column switcher.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 columnSwitcher = dt << Column Switcher(
 	:Process 1,
@@ -152,9 +147,10 @@ columnSwitcher << Link Platform( gb );
 
 **Description:** Creates a handler for column switches with callback functions which are called before and after the column is switched. The callback functions receive the previous column, the next column and the ColumnSwitcher. The function specified for before the switch should return a non-zero value to allow the switch. Returning 0 will prevent the switch. The function called after the switch shouldn&apos;t return a value.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 gb = Graph Builder( Variables( Y( :Process 1 ) ), Elements( Histogram( Y, Legend( 3 ) ) ) );
 columnSwitcher = gb << Column Switcher(
@@ -190,7 +186,6 @@ columnSwitcher << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -209,7 +204,6 @@ ColumnSwitcherObject << Next;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -230,7 +224,6 @@ ColumnSwitcherObject << Pause;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -249,7 +242,6 @@ ColumnSwitcherObject << Previous;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -270,7 +262,6 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 Graph Builder(
 	Variables( X( :Process 1 ), Y( :Process 2 ) ),
@@ -298,7 +289,6 @@ Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -315,9 +305,10 @@ ColumnSwitcherObject << Run;
 
 **Description:** Set a script that is run when the column switches
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -340,7 +331,6 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -359,7 +349,6 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
 gb = dt << Graph Builder(
 	Variables( X( :Country ), Y( :Weight ) ),
@@ -382,7 +371,6 @@ cs1 << Set Layout( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -399,9 +387,10 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 **Description:** Set a script that is run when the column switches
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -424,7 +413,6 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -443,7 +431,6 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -462,7 +449,6 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(

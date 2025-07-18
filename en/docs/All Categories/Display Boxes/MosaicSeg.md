@@ -14,7 +14,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -31,7 +30,6 @@ framebox << Add Graphics Script(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 gbox = Graph Box(
 	Frame Size( 300, 300 ),
@@ -57,8 +55,6 @@ New Window( "Example", gbox );
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 table = New Table( "test table",
 	Add Rows( 150000 ),
 	<<New Column( "X", "Numeric", <<Set Each Value( Random Normal() ) ),
@@ -96,7 +92,6 @@ You can reference an existing image (already created via a new image() or open()
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );
 w = New Window( "View Image",
 	Graph Box(
@@ -120,7 +115,6 @@ w = New Window( "View Image",
 
 ```jsl
 
-Names Default To Here( 1 );
 x = [20, 40, 60, 80];
 New Window( "Example",
 	Graph Box( Frame Size( 300, 120 ), Append Seg( Marker Seg( x, x ), Line Seg( x, x ) ) ),
@@ -145,7 +139,6 @@ Images are rasterized maps and support transparency.  Boundaries are vector maps
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Hurricanes.jmp" );
 plot = Bubble Plot(
 	X( :Longitude ),
@@ -178,7 +171,6 @@ framebox << Background Map(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -191,6 +183,8 @@ framebox << Bottom( 0 );
 
 **Syntax:** obj &lt;&lt; Cell Labeling( "No Labels"|"Label by Count"|"Label by Percent"|"Label by Value"|"Label by Row" )
 
+**JMP Version Added:** 15
+
 ### Child Seg
 
 **Syntax:** obj &lt;&lt; Child Seg
@@ -199,7 +193,6 @@ framebox << Bottom( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -213,9 +206,10 @@ rbiv[Frame Box( 1 )] << Child Seg();
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -247,7 +241,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -269,7 +262,6 @@ framebox2 << Paste Customizations;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -291,7 +283,6 @@ framebox2 << Paste Frame Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -313,7 +304,6 @@ framebox2 << Paste Frame Settings;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -334,7 +324,6 @@ framebox << Copy Polygons;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -349,9 +338,10 @@ framebox << Customize;
 
 **Description:** Sets the coloring behavior of density gradients. "Fade to White" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Density Gradient( "Fade to Gray" );
 
 ```
@@ -362,6 +352,8 @@ seg << Density Gradient( "Fade to Gray" );
 
 **Description:** Sends command to all visual elements (&apos;segs&apos;) in the display box.
 
+**JMP Version Added:** 15
+
 ### DispatchSeg
 
 **Syntax:** obj &lt;&lt; DispatchSeg( command )
@@ -370,7 +362,6 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Distribution(
 	Continuous Distribution( Column( :weight ), Fit Distribution( Normal ) ),
@@ -396,7 +387,6 @@ Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -416,9 +406,10 @@ framebox << Edit Graphics Script;
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -437,9 +428,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -458,9 +450,10 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 **Description:** Sets the selection style for fills.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );
 rdist = dist << report;
@@ -476,7 +469,6 @@ framebox << Fill Selection Mode( "Selected Darker" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -489,9 +481,13 @@ ms << delete;
 
 **Syntax:** obj &lt;&lt; Find Segs
 
+**JMP Version Added:** 15
+
 ### First Value
 
 **Syntax:** obj &lt;&lt; First Value( state=0|1 )
+
+**JMP Version Added:** 16
 
 ### Frame Size
 
@@ -501,7 +497,6 @@ ms << delete;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -518,7 +513,6 @@ framebox << Frame Size( 300, 300 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( weight ), x( height ) );
 rbiv = biv << report;
@@ -539,9 +533,10 @@ val1 = framebox << Get Background Fill;
 
 **Description:** Returns the current clipping shape
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -568,9 +563,10 @@ cs << Get Clip Shape();
 
 **Description:** Gets the coloring behavior of density gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Density Gradient;
 
 ```
@@ -581,9 +577,10 @@ seg << Get Density Gradient;
 
 **Description:** Returns the current kind of error bar end cap.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -602,9 +599,10 @@ seg << Get Error Bar Cap();
 
 **Description:** Returns the shape of the end cap on error bars.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -623,9 +621,10 @@ seg << Get Error Bar Cap Shape();
 
 **Description:** Returns the selection style for fills.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );
 rdist = dist << report;
@@ -644,7 +643,6 @@ framebox << Get Fill Selection Mode;
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient;
 
 ```
@@ -655,9 +653,10 @@ seg << Get Gradient;
 
 **Description:** Gets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Color Theme;
 
 ```
@@ -668,9 +667,10 @@ seg << Get Gradient Color Theme;
 
 **Description:** Gets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Discrete Colors;
 
 ```
@@ -681,9 +681,10 @@ seg << Get Gradient Discrete Colors;
 
 **Description:** Gets the coloring behavior for values outside of the range of the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -698,9 +699,10 @@ seg << Get Gradient Fill;
 
 **Description:** Gets the number of labels in a gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Label Count;
 
 ```
@@ -711,11 +713,12 @@ seg << Get Gradient Label Count;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -728,7 +731,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -744,9 +746,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Legend Horizontal;
 
 ```
@@ -757,9 +760,10 @@ seg << Get Gradient Legend Horizontal;
 
 **Description:** Gets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Legend Label Format;
 
 ```
@@ -770,9 +774,10 @@ seg << Get Gradient Legend Label Format;
 
 **Description:** Gets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Legend Label Width;
 
 ```
@@ -783,9 +788,10 @@ seg << Get Gradient Legend Label Width;
 
 **Description:** Gets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Legend Show Labels;
 
 ```
@@ -796,9 +802,10 @@ seg << Get Gradient Legend Show Labels;
 
 **Description:** Gets the number of levels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Levels;
 
 ```
@@ -809,9 +816,10 @@ seg << Get Gradient Levels;
 
 **Description:** Gets the minimum and maximum lightness for level colors in a gradient. Missing values indicate that the color theme&apos;s original value is used.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Lightness Range;
 
 ```
@@ -822,9 +830,10 @@ seg << Get Gradient Lightness Range;
 
 **Description:** Gets the range over which non-custom gradient scales are generated.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -839,9 +848,10 @@ seg << Get Gradient Range;
 
 **Description:** Gets if the order of colors in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Reverse Color Order;
 
 ```
@@ -852,9 +862,10 @@ seg << Get Gradient Reverse Color Order;
 
 **Description:** Gets if the order of labels in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Reverse Label Order;
 
 ```
@@ -865,9 +876,10 @@ seg << Get Gradient Reverse Label Order;
 
 **Description:** Gets the gradient scale type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -882,11 +894,12 @@ seg << Get Gradient Scale;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -899,7 +912,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -915,9 +927,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets when to show the legend entry for missing values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Show Missing;
 
 ```
@@ -928,9 +941,10 @@ seg << Get Gradient Show Missing;
 
 **Description:** Gets the transparency behavior of gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Gradient Transparency;
 
 ```
@@ -943,7 +957,6 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );
 opr = op << report;
@@ -971,9 +984,10 @@ Print( fb << Get Image );
 
 **Description:** Gets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -1010,7 +1024,6 @@ seg << Get Interval Draw Directions;
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Line Color;
 
 ```
@@ -1021,9 +1034,10 @@ seg << Get Line Color;
 
 **Description:** Returns the style of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Line Style;
 
 ```
@@ -1034,9 +1048,10 @@ seg << Get Line Style;
 
 **Description:** Returns the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Line Width;
 
 ```
@@ -1047,9 +1062,10 @@ seg << Get Line Width;
 
 **Description:** Returns the marker style.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Marker;
 
 ```
@@ -1062,7 +1078,6 @@ seg << Get Marker;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1079,9 +1094,10 @@ framebox << Get Marker Selection Mode;
 
 **Description:** Returns the size of the markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Get Marker Size;
 
 ```
@@ -1094,7 +1110,6 @@ seg << Get Marker Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1115,7 +1130,6 @@ Print( framebox << Get Polygons );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
@@ -1126,9 +1140,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Color Theme( "Viridis" );
 
 ```
@@ -1139,9 +1154,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1156,9 +1172,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1174,9 +1191,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Label Count( 8 );
 
 ```
@@ -1187,9 +1205,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1204,9 +1223,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Horizontal( 1 );
 
 ```
@@ -1217,9 +1237,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
@@ -1230,9 +1251,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Label Width( 4 );
 
 ```
@@ -1243,9 +1265,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Show Labels( 0 );
 
 ```
@@ -1256,9 +1279,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Levels( 7 );
 
 ```
@@ -1269,11 +1293,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
@@ -1282,7 +1307,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
@@ -1291,7 +1315,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
@@ -1302,9 +1325,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1319,9 +1343,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Reverse Color Order( 1 );
 
 ```
@@ -1332,9 +1357,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Reverse Label Order( 1 );
 
 ```
@@ -1345,9 +1371,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1362,9 +1389,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1379,9 +1407,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -1399,9 +1428,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the transparency behavior of gradients. "Linear" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Gradient Transparency( "None" );
 
 ```
@@ -1414,7 +1444,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -1429,15 +1458,21 @@ framebox << Grid Line Order( 1 );
 
 **Syntax:** obj &lt;&lt; Horizontal Gap( number )
 
+**JMP Version Added:** 15
+
 ### Hover Label Editor
 
 **Syntax:** obj &lt;&lt; Hover Label Editor
 
 **Description:** Displays the Hover Label Editor window.
 
+**JMP Version Added:** 15
+
 ### Last Value
 
 **Syntax:** obj &lt;&lt; Last Value( state=0|1 )
+
+**JMP Version Added:** 16
 
 ### Left
 
@@ -1447,7 +1482,6 @@ framebox << Grid Line Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1464,7 +1498,6 @@ framebox << Left( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Color( "Green" );
 
 ```
@@ -1475,9 +1508,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Style( "Dotted" );
 
 ```
@@ -1488,9 +1522,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Width( 3 );
 
 ```
@@ -1503,7 +1538,6 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ), FitLine );
 rbiv = biv << report;
@@ -1524,9 +1558,10 @@ framebox << Line Width Scale( 2.0 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Marker( "Square" );
 
 ```
@@ -1539,7 +1574,6 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1562,7 +1596,6 @@ framebox << Marker Drawing Mode( "outlined" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1578,9 +1611,10 @@ framebox << Marker Selection Mode( "Selected Haloed" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Marker( "Square" );
 seg << Set Marker Size( "XL" );
 
@@ -1590,13 +1624,19 @@ seg << Set Marker Size( "XL" );
 
 **Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Min Value
 
 **Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Name
 
 **Syntax:** obj &lt;&lt; Name( state=0|1 )
+
+**JMP Version Added:** 16
 
 ### Name Selection in Column
 
@@ -1606,7 +1646,6 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1626,7 +1665,6 @@ framebox << Name Selection in Column;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );
 opr1 = op << report;
@@ -1659,7 +1697,6 @@ fb2 << Paste Background Image;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -1681,7 +1718,6 @@ framebox2 << Paste Customizations;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -1703,7 +1739,6 @@ framebox2 << Paste Frame Contents;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv1 = biv << report;
@@ -1723,9 +1758,10 @@ framebox2 << Paste Frame Settings;
 
 **Description:** Adds a Graphlet customization based on the clipboard contents.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -1770,7 +1806,6 @@ gpin << Launch Graphlet;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -1789,7 +1824,6 @@ framebox << Reference Line Order( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -1815,9 +1849,10 @@ framebox << Remove Graphics Script( 2 );
 
 **Description:** Reorders segs that are in a graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$sample_data\big class.jmp" );
 gb = Graph Builder(
 	Size( 534, 456 ),
@@ -1845,7 +1880,6 @@ For( blink = 1, blink < 4, blink++,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1864,7 +1898,6 @@ framebox << Right( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1884,7 +1917,6 @@ fb << Right Y Axis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -1915,7 +1947,6 @@ framebox << Right Y Axis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1933,7 +1964,6 @@ framebox << Row Colors( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1950,7 +1980,6 @@ framebox << Row Editor;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1968,7 +1997,6 @@ framebox << Row Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -1986,7 +2014,6 @@ framebox << Row Hide( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2004,7 +2031,6 @@ framebox << Row Hide and Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2022,7 +2048,6 @@ framebox << Row Label( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2039,7 +2064,6 @@ framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2057,7 +2081,6 @@ framebox << Row Markers( 3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( weight ), x( height ), FitLine );
 rbiv = biv << report;
@@ -2072,7 +2095,6 @@ framebox << Scale with Font;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = Bivariate( Y( :weight ), X( :height ), FitLine );
 rbiv = biv << report;
@@ -2088,7 +2110,6 @@ rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2107,7 +2128,6 @@ framebox << Select Matching Cells;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2126,7 +2146,6 @@ framebox << Select Similar;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( weight ), x( height ) );
 rbiv = biv << report;
@@ -2144,15 +2163,18 @@ framebox << Set Background Fill( 0 );
 
 **Syntax:** obj &lt;&lt; Set Colors
 
+**JMP Version Added:** 15
+
 ### Set Error Bar Cap
 
 **Syntax:** obj &lt;&lt; Set Error Bar Cap( "None"|"Tiny"|"Small"|"Medium"|"Large" )
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -2171,9 +2193,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -2194,7 +2217,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
@@ -2205,9 +2227,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Color Theme( "Viridis" );
 
 ```
@@ -2218,9 +2241,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets the gradient to use a list of values for a custom scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```
@@ -2231,9 +2255,10 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2248,9 +2273,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2266,9 +2292,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Label Count( 8 );
 
 ```
@@ -2279,9 +2306,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2296,9 +2324,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Horizontal( 1 );
 
 ```
@@ -2309,9 +2338,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
@@ -2322,9 +2352,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Label Width( 4 );
 
 ```
@@ -2335,9 +2366,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Legend Show Labels( 0 );
 
 ```
@@ -2348,9 +2380,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Levels( 7 );
 
 ```
@@ -2361,11 +2394,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
@@ -2374,7 +2408,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
@@ -2383,7 +2416,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
@@ -2394,9 +2426,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2411,9 +2444,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Reverse Color Order( 1 );
 
 ```
@@ -2424,9 +2458,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Gradient Reverse Label Order( 1 );
 
 ```
@@ -2437,9 +2472,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2454,9 +2490,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2471,9 +2508,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2491,11 +2529,12 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Defines the hover label embedded visualization (graphlet) for this graph.
 
-**External image**
+**JMP Version Added:** 15
+
+#### External image
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2532,11 +2571,10 @@ gpin << Launch Graphlet;
 
 ```
 
-**Preset**
+#### Preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -2572,11 +2610,12 @@ gpin << Launch Graphlet;
 
 **Description:** Defines the hover label content grid (gridlet) for this graph.
 
-**Append**
+**JMP Version Added:** 15
+
+#### Append
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2604,11 +2643,10 @@ frame << Add Pin Annotation(
 
 ```
 
-**Delete**
+#### Delete
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2630,11 +2668,10 @@ frame << Add Pin Annotation(
 
 ```
 
-**Reformat**
+#### Reformat
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2661,11 +2698,10 @@ frame << Add Pin Annotation(
 
 ```
 
-**Rename**
+#### Rename
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2687,11 +2723,10 @@ frame << Add Pin Annotation(
 
 ```
 
-**Style**
+#### Style
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 gb = dt << Graph Builder(
 	Size( 531, 456 ),
@@ -2724,9 +2759,10 @@ frame << Add Pin Annotation(
 
 **Description:** Sets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -2763,7 +2799,6 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Color( "Green" );
 
 ```
@@ -2774,9 +2809,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Style( "Dotted" );
 
 ```
@@ -2787,9 +2823,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Line Width( 3 );
 
 ```
@@ -2800,9 +2837,10 @@ seg << Set Line Width( 3 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Marker( "Square" );
 
 ```
@@ -2813,9 +2851,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Marker( "Square" );
 seg << Set Marker Size( "XL" );
 
@@ -2827,9 +2866,10 @@ seg << Set Marker Size( "XL" );
 
 **Description:** Defines the hover label rich text content (textlet) for this graph.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This example uses hardcoded content from Wikipedia
 // For a complete example that uses dynamic, data-driven content, please see
 // https://community.jmp.com/t5/JMP-Scripts/WikiReader-Augmenting-Hover-Labels-with-web-data-and-images/ta-p/237488
@@ -2870,9 +2910,10 @@ gpin = frame << Add Pin Annotation(
 
 **Description:** Sets the shape transparency. The argument should be a numeric value between 0 and 1.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Transparency( .3 );
 
 ```
@@ -2885,7 +2926,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2900,17 +2940,23 @@ framebox << Size To Isometric;
 
 **Description:** Sets the X-axis title for a ternary frame.
 
+**JMP Version Added:** 15
+
 ### Ternary Y Title
 
 **Syntax:** obj &lt;&lt; Ternary Y Title( text )
 
 **Description:** Sets the Y-axis title for a ternary frame.
 
+**JMP Version Added:** 15
+
 ### Ternary Y1 Title
 
 **Syntax:** obj &lt;&lt; Ternary Y1 Title( text )
 
 **Description:** Sets the Y1-axis title for a ternary frame.
+
+**JMP Version Added:** 15
 
 ### Top
 
@@ -2920,7 +2966,6 @@ framebox << Size To Isometric;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -2935,9 +2980,10 @@ framebox << Top( 0 );
 
 **Description:** Sets the shape transparency. The argument should be a numeric value between 0 and 1.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 seg << Set Transparency( .3 );
 
 ```
@@ -2945,6 +2991,8 @@ seg << Set Transparency( .3 );
 ### Vertical Gap
 
 **Syntax:** obj &lt;&lt; Vertical Gap( number )
+
+**JMP Version Added:** 15
 
 ### X Axis
 
@@ -2956,7 +3004,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -2976,7 +3023,6 @@ fb << X Axis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -3011,7 +3057,6 @@ framebox << X Axis(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -3031,7 +3076,6 @@ fb << Y Axis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = dt << Graph Builder(
 	Show Control Panel( 0 ),
@@ -3066,7 +3110,6 @@ framebox << Y Axis(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3083,7 +3126,6 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
@@ -3116,7 +3158,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3137,7 +3178,6 @@ rbiv << Add Polygon Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3155,7 +3195,6 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3175,7 +3214,6 @@ rbiv << Add Text Annotation(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3190,9 +3228,10 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 **Description:** If the background color is set, the box is filled with the background color prior to drawing its content. If the background color is not set, the background and content of the containing boxes show through.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3212,7 +3251,6 @@ tb << Background Color( "Yellow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3230,9 +3268,10 @@ tb << Border( 1 );
 
 **Description:** Optional color to override the default color for box borders.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3252,7 +3291,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Run Script( "Bivariate" );
@@ -3268,7 +3306,6 @@ w << Bring Window To Front;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3288,7 +3325,6 @@ Print( axisChild << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3306,7 +3342,6 @@ axisbox << Class Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3325,7 +3360,6 @@ rbiv << append( clonedBox );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -3341,7 +3375,6 @@ w << Close Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
 mat << CopyData;
 
@@ -3355,7 +3388,6 @@ mat << CopyData;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3373,7 +3405,6 @@ rbiv = biv << report;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3390,7 +3421,6 @@ rbiv << Copy Picture();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3408,7 +3438,6 @@ axisbox << Delete Box();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 selected = 0;
 New Window( "Example",
@@ -3434,7 +3463,6 @@ refresh = Function( {},
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3451,7 +3479,6 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3483,7 +3510,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3501,7 +3527,6 @@ axisbox << Delete();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3521,9 +3546,10 @@ annotation << delete;
 
 **Description:** If the background color is set, the box is filled with the background color prior to drawing its content. If the background color is not set, the background and content of the containing boxes show through.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3543,7 +3569,6 @@ tb << Background Color( "Yellow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3561,9 +3586,10 @@ tb << Border( 1 );
 
 **Description:** Optional color to override the default color for box borders.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3583,7 +3609,6 @@ tb << Border Color( "Light Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Content Size();
@@ -3597,11 +3622,10 @@ Show( c );
 
 **Description:** Gets a relatively robust expression to navigate between parent box and obj. This path is not guaranteed to be stable across JMP releases. The receiver expr is incorporated into the output expression if provided. If not, the expression provided for parent box is used instead. As shown in the example, this message is mainly useful for increasing the robustness of a path you already have available. The XPath mode is default.
 
-**Basic**
+#### Basic
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3612,11 +3636,10 @@ xpath expr << Select;
 
 ```
 
-**Subscript Mode**
+#### Subscript Mode
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -3635,7 +3658,6 @@ subscript expr << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3669,7 +3691,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get HTML );
@@ -3680,7 +3701,6 @@ a << Set Text( win << Get HTML );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -3697,7 +3717,6 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3715,7 +3734,6 @@ fb << Get Height;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3735,7 +3753,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3752,7 +3769,6 @@ Print( rbiv << Get Journal );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3773,7 +3789,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3791,7 +3806,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3809,7 +3823,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -3827,7 +3840,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -3852,7 +3864,6 @@ Show( w << Get On Close );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -3873,7 +3884,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Page Setup Test" ) );
 w << get page setup();
@@ -3886,11 +3896,10 @@ w << get page setup();
 
 **Description:** Captures db as an Image Object. The optional Scale argument will render the image at a scaled resolution. Scaling requires that the display box be stretchable. The Type argument determines whether the result will be a scalable vector image or a bitmap. By default a scalable image is returned, which is suitable for saving to vector formats like PDF. The View option changes the behavior of some boxes. The default option of "Picture" draws the report as it would when exporting to an image format, with scrolled areas fully shown. View mode of "Screen" draws the report as seen on-screen, and "Print" draws the report as it does when printing, without any of the page setup features. The SubRect option will capture a portion of the resulting image rather than a full image. The Appearance option can change from the "Default" output colors to the "Current" colors as seen on-screen. The View, SubRect, and Appearance options are only supported for Type "Bitmap".
 
-**Default**
+#### Default
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3899,11 +3908,10 @@ New Window( "Example", rbiv << Get Picture );
 
 ```
 
-**Scale**
+#### Scale
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -3913,11 +3921,10 @@ New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
-**View and Appearance**
+#### View and Appearance
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -3944,9 +3951,10 @@ New Window( "Example",
 
 **Description:** Returns the parent project of the window, or Empty() if it is not in a project.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = w << Get Project();
@@ -3962,7 +3970,6 @@ Show( c );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -3976,7 +3983,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -3990,7 +3996,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -4006,7 +4011,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get RTF );
@@ -4017,7 +4021,6 @@ a << Set Text( win << Get RTF );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
@@ -4032,11 +4035,10 @@ Open( "$TEMP/Oneway.rtf" );
 
 **Description:** Returns a vector containing the row state for every row in the given data table or the current data table. The row states can come from the table, or from the filter context of the box.
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -4076,11 +4078,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -4123,7 +4124,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -4141,7 +4141,6 @@ Print( w << Get Show Window() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4157,9 +4156,10 @@ Print( fb << Get Size );
 
 **Description:** Returns the stretching flags for this display box in the horizontal and vertical directions.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -4183,7 +4183,6 @@ spacer << Get Stretch();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << Set Text( win << Get Text );
@@ -4196,9 +4195,10 @@ a << Set Text( win << Get Text );
 
 **Description:** Text will be drawn using the text color if it has been set. If the property has not been set, the box will inherit the text color of the containing box.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4222,7 +4222,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 c1 = Tree Node( "Child 1" );
@@ -4259,7 +4258,6 @@ scroll << User Resizable( {0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4281,7 +4279,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4302,7 +4299,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -4318,7 +4314,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4336,7 +4331,6 @@ fb << Get Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Icon;
@@ -4352,7 +4346,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 p = w << Get Window Position();
@@ -4368,7 +4361,6 @@ Show( p );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = w << Get Window Size();
@@ -4384,7 +4376,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 t = w << Get Window Title;
@@ -4400,7 +4391,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Print( w << Get Window View() );
@@ -4415,7 +4405,6 @@ Print( w << Get Window View() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "test", a = Text Box( "my test" ) );
 a << set text( win << get xml );
@@ -4430,7 +4419,6 @@ a << set text( win << get xml );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "example",
 	MouseBox(
 		Graph Box(
@@ -4475,7 +4463,6 @@ New Window( "example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4495,7 +4482,6 @@ lb << Horizontal Alignment( "Right" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Inval example",
@@ -4535,9 +4521,10 @@ New Window( "Inval example",
 
 **Description:** Gets the document&apos;s modified status. 1 means the document has been modified and will prompt for saving; 0 means the document is not modified.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -4554,7 +4541,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 With Window Handler(
 	New Window( "Modal Window", <<Modal ),
 	Function( {win},
@@ -4573,7 +4559,6 @@ With Window Handler(
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -4590,7 +4575,6 @@ rbiv << journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Journal Window;
@@ -4605,7 +4589,6 @@ w << Journal Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "example",
@@ -4625,11 +4608,10 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 **Description:** Creates a row state handler for the given data table or the current data table. The function is called when the row states change in the filter context of the box. The argument of the function holds the rows numbers that have changed, or -1 if the row state filter has changed.
 
-**Single table**
+#### Single table
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	Data Filter Context Box(
@@ -4669,11 +4651,10 @@ updatetext();
 
 ```
 
-**Where subset**
+#### Where subset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "filter test",
 	t = Text Box( "0 Rows Excluded" ),
@@ -4716,7 +4697,6 @@ updatetext();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4737,7 +4717,6 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -4755,7 +4734,6 @@ w << Maximize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -4773,7 +4751,6 @@ w << Minimize Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
@@ -4789,7 +4766,6 @@ w << Move Window( 500, 500 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -4805,11 +4781,10 @@ Print( next << Class Name() );
 
 **Description:** Sets a script or function to run upon closing the window. This script should return 1 to allow the close, or 0 to prevent the window from closing.
 
-**Close Function**
+#### Close Function
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -4827,11 +4802,10 @@ w << On Close(
 
 ```
 
-**Close Script**
+#### Close Script
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << On Close(
@@ -4853,9 +4827,10 @@ w << On Close(
 
 **Description:** Sets a data table&apos;s column widths and window to an optimum size.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to Data Table objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Optimize Display;
@@ -4870,7 +4845,6 @@ dt << Optimize Display;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -4887,7 +4861,6 @@ r << Pad Window( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -4908,7 +4881,6 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	ob = Outline Box( "Outline Box",
@@ -4934,7 +4906,6 @@ ob3 << Page Break;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -4953,7 +4924,6 @@ Print( axisParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -4968,9 +4938,10 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 **Description:** Returns the previous sibling of the display box.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -4989,7 +4960,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Print Window;
@@ -5004,7 +4974,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "Reshow example",
@@ -5033,7 +5002,6 @@ New Window( "Reshow example",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5050,7 +5018,6 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5067,7 +5034,6 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5084,7 +5050,6 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5101,7 +5066,6 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5118,7 +5082,6 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5133,11 +5096,10 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 **Description:** Saves a picture of the display box. Supported formats are EMF(Windows), PICT(Macintosh), JPEG or JPG, GIF, or PNG. The optional Scale argument will render the image at a scaled resolution. Scaling requires that the display box be stretchable. The Type argument determines whether the result will be a scalable vector image or a bitmap. By default a scalable image is returned, which is suitable for saving to vector formats like PDF. The View option changes the behavior of some boxes. The default option of "Picture" draws the report as it would when exporting to an image format, with scrolled areas fully shown. View mode of "Screen" draws the report as seen on-screen, and "Print" draws the report as it does when printing, without any of the page setup features. The SubRect option will capture a portion of the resulting image rather than a full image. The Appearance option can change from the "Default" output colors to the "Current" colors as seen on-screen. The View, SubRect, and Appearance options are only supported for Type "Bitmap".
 
-**Default**
+#### Default
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5146,11 +5108,10 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
-**Scale**
+#### Scale
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5161,11 +5122,10 @@ New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
-**View and Appearance**
+#### View and Appearance
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate(
@@ -5205,7 +5165,6 @@ New Window( "Example",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = bivariate( y( :weight ), x( :height ) );
 rbiv = biv << report;
@@ -5222,7 +5181,6 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5239,7 +5197,6 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 win = New Window( "Example", a = Text Box( "Example Text" ) );
 a << save text( "$TEMP/jmp_example.txt" );
@@ -5252,9 +5209,10 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 **Description:** Saves the current report window to a JMP report file (.jrp).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message can be sent to any display box object but will be applied to the report window
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = distribution( Column( :height ) );
@@ -5268,11 +5226,10 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 **Description:** Adjust the window scrollbar to bring the given DisplayBox into view, or scroll a relative number of pixels, or scroll to an absolute pixel location. In place of a number of pixels the keywords "Start" or "End" can be used.
 
-**Absolute**
+#### Absolute
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -5289,11 +5246,10 @@ Wait( 1 );
 
 ```
 
-**Box**
+#### Box
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -5314,11 +5270,10 @@ For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 s
 
 ```
 
-**Relative**
+#### Relative
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 fm = Fit Model(
@@ -5345,7 +5300,6 @@ Wait( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example", ex = Button Box( "Press Me" ) );
 ex << Select;
@@ -5360,7 +5314,6 @@ ex << Select;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Test",
 	lb = List Box( {"a", "b", "c", "d"} ),
@@ -5384,9 +5337,10 @@ w << Set Content Size( 400, 300 );
 
 **Description:** Sets the document&apos;s modified status. 0 will not prompt for saving; 1 will prompt.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
 Show( ww << Is Dirty );
@@ -5403,7 +5357,6 @@ Show( ww << Is Dirty );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5421,7 +5374,6 @@ fb << Set Height( 150 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
 w << Set Main Window;
@@ -5436,7 +5388,6 @@ w << Set Main Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5455,7 +5406,6 @@ fb << Get Max Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5474,7 +5424,6 @@ fb << Get Min Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
 w << Set page setup(
@@ -5496,7 +5445,6 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Footer Test" ) );
 w << Set Print Footers(
@@ -5515,7 +5463,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Window", Text Box( "Header Test" ) );
 w << Set Print Headers(
@@ -5534,7 +5481,6 @@ w << Print Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 
@@ -5548,7 +5494,6 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5563,11 +5508,12 @@ rbiv << Set Report Title( "New Title" );
 
 **Description:** Sets the horizontal and vertical stretching behavior of the box. Boxes that stretch with Window will resize as the window or splitter size changes. Boxes that stretch to Fill will stretch to fill available space in their container. Boxes with stretching turned Off generally will not stretch. Most boxes default to Neutral, which means that they will determine their behavior based on their child boxes.
 
-**Stretch to Fill**
+**JMP Version Added:** 16
+
+#### Stretch to Fill
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Stretch",
 	V List Box(
@@ -5578,11 +5524,10 @@ New Window( "Stretch",
 
 ```
 
-**Stretch with Window**
+#### Stretch with Window
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 New Window( "Example",
 	H List Box(
@@ -5611,7 +5556,6 @@ ts << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5630,7 +5574,6 @@ tb << Set Summary Behavior( "Visible" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5648,7 +5591,6 @@ fb << Set Width( 400 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = New Window( "Example", ex = Button Box( "New Analysis" ) );
 w << Set Window Icon( "Scatter3D" );
@@ -5663,7 +5605,6 @@ w << Set Window Icon( "Scatter3D" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 800, 1200 );
@@ -5678,7 +5619,6 @@ w << Set Window Size( 800, 1200 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5695,7 +5635,6 @@ rbiv << Set Window Title( "New Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5712,7 +5651,6 @@ rbiv << Show Properties();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5729,7 +5667,6 @@ rbiv << Show Tree Structure();
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -5747,7 +5684,6 @@ w << Show Window( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5766,7 +5702,6 @@ Print( axisSibling << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5788,7 +5723,6 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5810,7 +5744,6 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Size Window( 500, 500 );
@@ -5823,9 +5756,10 @@ w << Size Window( 500, 500 );
 
 **Description:** Text will be drawn using the text color if it has been set. If the property has not been set, the box will inherit the text color of the containing box.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5845,7 +5779,6 @@ tb << Text Color( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -5867,7 +5800,6 @@ Print( rootParent << Class Name() );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 color = "green"; /* initial color in a variable */
 New Window( "UpdateWindow example",
@@ -5919,7 +5851,6 @@ New Window( "rect",
 
 ```jsl
 
-Names Default To Here( 1 );
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
 c1 = Tree Node( "Child 1" );
@@ -5956,7 +5887,6 @@ scroll << User Resizable( {0, 0} );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5978,7 +5908,6 @@ lb << Vertical Alignment( "Bottom" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 d = dt << Distribution( Column( :height ) );
@@ -5999,7 +5928,6 @@ Show( tb << Get Visibility );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( y( :weight ), x( :height ) );
@@ -6015,11 +5943,10 @@ Show( rbiv << Window Class Name() );
 
 **Description:** Applies an XPath expression to the XML representation of the display tree and returns the results. By default, strings are returned in the local language, and the XML includes data values within some boxes. Use the English option to return English strings where available. Use the NoData option to omit the data values within boxes, which is useful for performance when your query is based only on box attributes.
 
-**Attributes**
+#### Attributes
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6027,11 +5954,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Box type**
+#### Box type
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6039,11 +5965,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Child box**
+#### Child box
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6052,11 +5977,10 @@ Make Into Data Table;
 
 ```
 
-**Data**
+#### Data
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6065,11 +5989,10 @@ Text Color( "Green" );
 
 ```
 
-**Display Seg**
+#### Display Seg
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6077,11 +6000,10 @@ biv = dt << Run Script( "Bivariate" );
 
 ```
 
-**Text**
+#### Text
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Run Script( "Bivariate" );
@@ -6097,7 +6019,6 @@ biv = dt << Run Script( "Bivariate" );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display box objects
 w = Open( "$SAMPLE_DATA/Big Class.jmp" );
 w << Set Window Size( 80, 120 );

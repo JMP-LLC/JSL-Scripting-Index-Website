@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -33,7 +32,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Factor Analysis(
@@ -54,7 +52,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Factor Analysis(
@@ -75,7 +72,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -96,9 +92,10 @@ obj = dt << Factor Analysis(
 
 **Description:** Shows or hides a report of the homogeneity test that determines whether the eigenvalues have equal variances.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -121,7 +118,6 @@ obj << Bartlett's Test of Sphericity( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -145,7 +141,6 @@ obj << Eigenvalues( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -164,9 +159,10 @@ obj << Fit( "ML", "SMC", 2, "Varimax" );
 
 **Description:** Shows or hides the results of the Kaiser-Meyer-Olkin (KMO) test. The test is an indicator of the proportion of variance that might be common variance, potentially due to underlying factors.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -189,7 +185,6 @@ obj << "Kaiser-Meyer-Olkin Test"n( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -217,9 +212,10 @@ If there are missing values, and the number of variables <= 10 and the number of
 
 If there are missing values, and the number of variables > 10 or number of rows > 5000, then the default is Pairwise.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -241,7 +237,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -265,7 +260,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -281,11 +275,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -296,11 +291,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -308,11 +302,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -328,7 +321,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -349,9 +341,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -369,7 +362,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -387,7 +379,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -415,7 +406,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -437,7 +427,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -457,9 +446,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -474,7 +464,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -501,11 +490,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -520,11 +508,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -557,7 +544,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -580,7 +566,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -597,7 +582,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -620,7 +604,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -643,7 +626,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -666,7 +648,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -680,9 +661,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -698,7 +680,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -717,7 +698,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -735,9 +715,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -752,9 +733,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -769,7 +751,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -790,7 +771,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -812,7 +792,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -840,7 +819,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -862,7 +840,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -890,7 +867,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -910,7 +886,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -930,9 +905,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -947,7 +923,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -971,7 +946,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -993,7 +967,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1021,7 +994,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1049,7 +1021,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1077,7 +1048,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1101,7 +1071,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1125,7 +1094,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1153,7 +1121,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1175,7 +1142,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1197,7 +1163,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1219,7 +1184,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1241,7 +1205,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1262,7 +1225,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1288,7 +1250,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1306,7 +1267,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1323,7 +1283,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1345,7 +1304,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1367,9 +1325,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1386,7 +1345,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1401,7 +1359,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1424,7 +1381,6 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1449,7 +1405,6 @@ obj << (Fit[1] << Arrow Lines( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Factor Analysis(
 	Y( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1471,7 +1426,6 @@ obj2 << Paste Model Specification;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1493,7 +1447,6 @@ obj << (Fit[1] << Eigenvalues( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1518,7 +1471,6 @@ obj << (Fit[1] << Factor Loading Plot( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1543,7 +1495,6 @@ obj << (Fit[1] << Factor Structure( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1564,9 +1515,10 @@ obj << (Fit[1] << Final Communality Estimates( 0 ));
 
 **Description:** Shows or hides the matrix of correlations between factors. This option is available only for oblique rotations.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1586,9 +1538,10 @@ obj << (Fit[1] << Interfactor Correlations( 1 ));
 
 **Description:** Shows or hides the measures of factor score determinacy, including Multiple R, Multiple R Square, and Minimum Correlation scores.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1610,9 +1563,10 @@ obj << (Fit[1] << Measures of Factor Scores( 1 ));
 
 **Description:** Shows or hides the measures of fit, including Chi-Square without Bartlett&apos;s Correction, AIC, BIC, Tucker-Lewis&apos;s Index, and the root mean square error of approximation. This option is available only when Maximum Likelihood is selected as the Factoring Method. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1635,7 +1589,6 @@ obj << (Fit[1] << Measures of Fit( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1657,7 +1610,6 @@ obj << (Fit[1] << Prior Communality( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1680,7 +1632,6 @@ obj << (Fit[1] << Remove Fit);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1705,7 +1656,6 @@ obj << (Fit[1] << Rotated Factor Loading( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1725,9 +1675,10 @@ obj << (Fit[1] << Rotation Matrix( 1 ));
 
 **Description:** Saves new formula columns to the original data table. The new columns contain the formulas for the factor scores, which are estimated using the Thurstone method.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1747,9 +1698,10 @@ obj << (Fit[1] << Save Factor Scores);
 
 **Description:** Saves new formula columns to the original data table. The new columns contain the formulas for the factor scores with imputed values for missing values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Factor Analysis(
 	Y( :CO, :SO2, :NO, :PM10 ),
@@ -1768,7 +1720,6 @@ obj << (Fit[1] << Save Factor Scores with Imputation);
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1792,7 +1743,6 @@ obj << (Fit[1] << Score Plot( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Factor Analysis(
 	Y( :CO, :SO2, :NO, :PM10 ),
@@ -1811,9 +1761,10 @@ obj << (Fit[1] << Score Plot with Imputation( 1 ));
 
 **Description:** Shows or hides the results from two significance tests. The first tests the null hypothesis that there are no common factors and the second tests the null hypothesis that a specified number of factors are sufficient. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1836,7 +1787,6 @@ obj << (Fit[1] << Significance Test( 0 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1858,7 +1808,6 @@ obj << (Fit[1] << Standard Score Coefficients( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1880,7 +1829,6 @@ obj << (Fit[1] << Target Matrix( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1900,9 +1848,10 @@ obj << (Fit[1] << Unrotated Factor Loading( 1 ));
 
 **Description:** Shows or hides the unsorted factor loading matrix after rotation.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1924,9 +1873,10 @@ obj << (Fit[1] << Unsorted and Rotated Factor Loading( 1 ));
 
 **Description:** Shows or hides the factor loading matrix prior to sorting and rotation.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1948,7 +1898,6 @@ obj << (Fit[1] << Unsorted and Unrotated Factor Loading( 1 ));
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(

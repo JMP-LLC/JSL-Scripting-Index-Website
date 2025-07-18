@@ -8,9 +8,10 @@
 
 **Description:** Returns an abbreviated locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Abbrev Date( Today() );
 
 ```
@@ -21,9 +22,10 @@ Abbrev Date( Today() );
 
 **Description:** Returns a date-time value marked internally as a date for output purposes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -34,9 +36,10 @@ As Date( Today() );
 
 **Description:** Converts day, month, and year into a JMP date-time value, which is the number of seconds since 01Jan1904.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date DMY( 15, 7, 2000 ) );
 
 ```
@@ -47,11 +50,12 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **Description:** Returns the difference in intervals of two date/time values. Supported values of intervalName are "Year", "Quarter", "Month", "Week", "Day", "Hour", "Minute", "Second", and "Numeric". An alignment of "Start" includes full or partial intervals, while "Actual" only includes full intervals. An alignment of "Fractional" returns fractional differences, using averages for the duration of "Year", "Quarter", and "Month" intervals.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
@@ -60,7 +64,6 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
@@ -69,7 +72,6 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
 ```
@@ -80,11 +82,12 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **Description:** Returns a new date-time value by adding incr number of intervals. Supported values of intervalName are "Year", "Quarter", "Month", "Week", "Day", "Hour", "Minute", "Second", and "Numeric". An alignment of "Start" truncates to the nearest interval prior to adding the increment, while "Actual" retains the full input date/time. An alignment of "Fractional" allows fractional incr values, using averages for the duration of "Year", "Quarter", and "Month" intervals.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
@@ -93,7 +96,6 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
@@ -102,7 +104,6 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Date Increment( Today(), "Month", 100, "fractional" );
 
 ```
@@ -113,9 +114,10 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 **Description:** Converts month, day, and year into a JMP date value, which is the number of seconds since 01Jan1904.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -126,9 +128,10 @@ As Date( Date MDY( 7, 15, 2000 ) );
 
 **Description:** Returns the day of month part of a date-time value, 1 - 31.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day( Today() );
 
 ```
@@ -139,9 +142,10 @@ Day( Today() );
 
 **Description:** Returns the day of the week of a date-time value. Sunday = 1, ..., Saturday = 7.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Week( Today() );
 
 ```
@@ -152,9 +156,10 @@ Day Of Week( Today() );
 
 **Description:** Returns the day of the year of a date-time value. January 1 is 1.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Day Of Year( Today() );
 
 ```
@@ -165,9 +170,10 @@ Day Of Year( Today() );
 
 **Description:** Return the number of days in a given month.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 v = Days In Month( 2016, 2 );
 
 ```
@@ -178,38 +184,36 @@ v = Days In Month( 2016, 2 );
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
-**Date Time**
+**JMP Version Added:** Before version 14
+
+#### Date Time
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-**Format Pattern**
+#### Format Pattern
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
 
-**Full Precision**
+#### Full Precision
 
 ```jsl
 
-Names Default To Here( 1 );
 Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
 
-**Percent, Currency**
+#### Percent, Currency
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -222,11 +226,12 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -235,7 +240,6 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
@@ -244,7 +248,6 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-Names Default To Here( 1 );
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -257,9 +260,10 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 **Description:** Returns a High Precision time value in microseconds. Only useful relative to another HP Time() value. The time value represents the number of microseconds since the start of the JMP session.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 et = HP Time();
@@ -274,9 +278,10 @@ Show( it );
 
 **Description:** Returns the hours part of a date-time value, in 12-hour mode (12, 1 - 11) or 24-hour mode (0 - 23).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hour( Today() );
 
 ```
@@ -287,9 +292,10 @@ Hour( Today() );
 
 **Description:** Returns the ISO Year of a date-time value. ISO Years correspond to ISO Weeks; they begin on the Monday of the first week containing at least four days.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 ISO Year( Today() );
 
 ```
@@ -300,9 +306,10 @@ ISO Year( Today() );
 
 **Description:** Converts x from a number of days to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Days( 1.5 );
 
 ```
@@ -313,9 +320,10 @@ In Days( 1.5 );
 
 **Description:** Converts x from a number of hours to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Hours( 0.5 );
 
 ```
@@ -326,9 +334,10 @@ In Hours( 0.5 );
 
 **Description:** Converts x from a number of minutes to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Minutes( 1 );
 
 ```
@@ -339,9 +348,10 @@ In Minutes( 1 );
 
 **Description:** Converts x from a number of weeks to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Weeks( 1 );
 
 ```
@@ -352,9 +362,10 @@ In Weeks( 1 );
 
 **Description:** Converts x from a number of years to the equivalent number of seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 In Years( 1 );
 
 ```
@@ -365,11 +376,12 @@ In Years( 1 );
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -378,7 +390,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -387,7 +398,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -396,7 +406,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -405,7 +414,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -421,9 +429,10 @@ Show(
 
 **Description:** Return whether a given year is a leap year.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 v = Is Leap Year( 2016 );
 
 ```
@@ -434,9 +443,10 @@ v = Is Leap Year( 2016 );
 
 **Description:** Returns a long locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Long Date( Today() );
 
 ```
@@ -447,9 +457,10 @@ Long Date( Today() );
 
 **Description:** Returns a representation of a date-time value with the ordering: month, day, year, hour, minute, second.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 MDYHMS( Today() );
 
 ```
@@ -460,9 +471,10 @@ MDYHMS( Today() );
 
 **Description:** Returns the minutes part of a date-time value, 0 - 59.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Minute( Today() );
 
 ```
@@ -473,9 +485,10 @@ Minute( Today() );
 
 **Description:** Returns the month part of a date-time value, 1 - 12.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Month( Today() );
 
 ```
@@ -486,9 +499,10 @@ Month( Today() );
 
 **Description:** Returns an integer that represents the number of instances of the day of the week of the datetime argument that have occurred in the month. For example, November 28, 2019 is the 4th Thursday of the month, so the function returns 4.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -499,11 +513,12 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -512,7 +527,6 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
@@ -521,7 +535,6 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -530,7 +543,6 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Informat( "123.45%", "Percent" );
 
 ```
@@ -539,7 +551,6 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Informat( "1.23e4", "Best" ),
 	Informat( "1.23e4", "Best", <<Restrict ),
@@ -555,9 +566,10 @@ Show(
 
 **Description:** Returns the quarter part of a date-time value, 1 - 4.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Quarter( Today() );
 
 ```
@@ -568,9 +580,10 @@ Quarter( Today() );
 
 **Description:** Returns the seconds part of a date-time value, including any fractional part, 0 - 60 exclusive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Second( Today() );
 
 ```
@@ -581,9 +594,10 @@ Second( Today() );
 
 **Description:** Returns a numeric (MM/DD/YYYY) locale-specific representation of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Short Date( Today() );
 
 ```
@@ -594,9 +608,10 @@ Short Date( Today() );
 
 **Description:** Returns a time value in seconds, usually accurate to at least 1/60 of a second (a "tick"), depending on the computer. Only useful relative to another Tick Seconds() value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 t2 = Tick Seconds();
@@ -610,9 +625,10 @@ Round( t2 - t1, 3 );
 
 **Description:** Returns the time part of a date-time value, including any fractional seconds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -623,9 +639,10 @@ Format( Time Of Day( Today() ), "h:m:s" );
 
 **Description:** Returns the date-time value of the current moment.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Date( Today() );
 
 ```
@@ -636,11 +653,12 @@ As Date( Today() );
 
 **Description:** Returns the week of the year containing a date-time value using one of three rules. By default (rule 1), weeks start on Sunday with the first Sunday of the year being week 2. Week 1 will be a partial week or empty (as in 2006). For rule 2, the first Sunday is week 1, with previous days being week 0. For rule 3, the ISO week number is returned, where weeks start on Monday and week 1 is the first week of the year with four days in that year. With ISO weeks, it&apos;s possible for the first or last three days of the year to belong to the neighboring year&apos;s week number.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Week Of Year( Today() );
 
 ```
@@ -649,7 +667,6 @@ Week Of Year( Today() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Show(
 	Week Of Year( 01jan2012, 1 ),
 	Week Of Year( 01jan2012, 2 ),
@@ -664,9 +681,10 @@ Show(
 
 **Description:** Returns the year part of a date-time value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Year( Today() );
 
 ```

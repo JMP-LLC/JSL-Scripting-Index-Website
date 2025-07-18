@@ -10,9 +10,10 @@
 
 **Description:** Clusters rows based on numeric variables in data tables with up to millions of rows. You must specify the number of clusters in advance.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -28,9 +29,10 @@ obj << Go;
 
 **Syntax:** obj = K Means Cluster(...&lt;By( column(s) )&gt;...)
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -50,11 +52,12 @@ obj << Go;
 
 **Syntax:** obj = K Means Cluster(...&lt;Freq( column )&gt;...)
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
 obj = K Means Cluster(
 	Y(
@@ -72,7 +75,6 @@ obj = K Means Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
 obj = Normal Mixtures(
 	Y(
@@ -90,11 +92,12 @@ obj = Normal Mixtures(
 
 **Syntax:** obj = K Means Cluster(...&lt;Weight( column )&gt;...)
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
 obj = K Means Cluster(
 	Y(
@@ -112,7 +115,6 @@ obj = K Means Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
 obj = Normal Mixtures(
 	Y(
@@ -130,9 +132,10 @@ obj = Normal Mixtures(
 
 **Syntax:** obj = K Means Cluster(...Y( column(s) )...)
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -150,9 +153,10 @@ obj = K Means Cluster(
 
 **Description:** Scales each column independently of the other columns. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -169,11 +173,12 @@ obj = dt << K Means Cluster(
 
 **Description:** Launches the platform by completing the iterations.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -187,7 +192,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -203,11 +207,12 @@ obj << Go;
 
 **Description:** Determines how the initial clusters are created. The initial clusters can be randomized or you can specify a categorical column to define the initial clusters, seeding by the means for each category.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -221,7 +226,6 @@ obj = dt << K Means Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -237,9 +241,10 @@ obj = dt << K Means Cluster(
 
 **Description:** Sets the maximum number of iterations.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 obj << Max Iterations( 100 );
@@ -253,11 +258,12 @@ obj << Go;
 
 **Description:** Changes the number of clusters.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -274,7 +280,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -293,9 +298,10 @@ obj << Go;
 
 **Description:** Creates clusters using self-organizing maps. The grid structure used by this method can be used to interpret the clusters in two dimensions.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -312,9 +318,10 @@ obj << Go;
 
 **Description:** Specifies the bandwidth for the self-organizing maps.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -332,9 +339,10 @@ obj << Go;
 
 **Description:** Sets the number of rows for the self-organizing maps.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -352,9 +360,10 @@ obj << Go;
 
 **Description:** Gives higher preference to point assignments to larger clusters.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -371,9 +380,10 @@ obj = dt << K Means Cluster(
 
 **Description:** Enables stepping through individual iterations. In the K Means outline, click the Step button for each iteration.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -393,9 +403,10 @@ obj << Step;
 
 **Description:** Calculates distances scaled by the standard deviation estimated for each cluster.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -416,7 +427,6 @@ obj = dt << K Means Cluster(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -432,11 +442,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -447,11 +458,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -459,11 +469,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -479,7 +488,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -497,9 +505,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -517,7 +526,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -535,7 +543,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -560,7 +567,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -579,7 +585,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -596,9 +601,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -613,7 +619,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -637,11 +642,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -653,11 +657,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -690,7 +693,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -710,7 +712,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -727,7 +728,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -747,7 +747,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -767,7 +766,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -787,7 +785,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -801,9 +798,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -819,7 +817,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -838,7 +835,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -856,9 +852,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -873,9 +870,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -890,7 +888,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -911,7 +908,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -930,7 +926,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -955,7 +950,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -974,7 +968,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -999,7 +992,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1019,7 +1011,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1039,9 +1030,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1056,7 +1048,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1077,7 +1068,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1096,7 +1086,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1121,7 +1110,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1146,7 +1134,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1171,7 +1158,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1192,7 +1178,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1213,7 +1198,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1238,7 +1222,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1257,7 +1240,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1276,7 +1258,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1295,7 +1276,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1314,7 +1294,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1335,7 +1314,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1361,7 +1339,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1379,7 +1356,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1396,7 +1372,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1415,7 +1390,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1434,9 +1408,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1453,7 +1428,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1468,7 +1442,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1489,11 +1462,12 @@ New Window( "Bivariate Equation",
 
 **Description:** Shows or hides a plot of the points and clusters in the first two principal components of the data.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1508,7 +1482,6 @@ obj << Biplot( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1525,11 +1498,12 @@ obj << Biplot( 1 );
 
 **Description:** Shows or hides a plot of the points and clusters in the first three principal components of the data.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1544,7 +1518,6 @@ obj << Biplot 3D( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1561,11 +1534,12 @@ obj << Biplot 3D( 1 );
 
 **Description:** Sets the level for the density contour.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1580,7 +1554,6 @@ obj << Biplot Contour Density( .95 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1597,11 +1570,12 @@ obj << Biplot Contour Density( .95 );
 
 **Description:** Moves the biplot ray display.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1616,7 +1590,6 @@ obj << Biplot Ray Position( [-1, -1, 2] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1633,11 +1606,12 @@ obj << Biplot Ray Position( [-1, -1, 2] );
 
 **Description:** Returns the mean and standard deviation for each variable within each cluster.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1653,7 +1627,6 @@ Show( stats );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1671,11 +1644,12 @@ Show( stats );
 
 **Description:** Sets the markers in the row state for each row in the data table. Each cluster is assigned a different marker. This affects plots across platforms using rowstate markers, including the Biplot in Cluster.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1691,7 +1665,6 @@ obj << Mark Clusters;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1709,11 +1682,12 @@ obj << Mark Clusters;
 
 **Description:** Shows or hides a plot for each cluster separately showing connected line segments that represent each row of the data table.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1728,7 +1702,6 @@ obj << Parallel Coord Plots( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1745,11 +1718,12 @@ obj << Parallel Coord Plots( 1 );
 
 **Description:** Builds probability formulas and publishes them as a formula column script in Formula Depot.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1764,7 +1738,6 @@ obj << Publish Cluster Formulas;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1781,9 +1754,10 @@ obj << Publish Cluster Formulas;
 
 **Description:** Shows or hides a heat map of the SOM cluster means, colored by one of the Y variables that was used in the clustering.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1800,9 +1774,10 @@ obj << SOM Heat Map;
 
 **Description:** Saves a column to the data table that contains the distance to the assigned cluster number.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1819,11 +1794,12 @@ obj << Save Cluster Distance;
 
 **Description:** Saves a column to the data table with a formula that determines the most likely cluster.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1838,7 +1814,6 @@ obj << Save Cluster Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1855,11 +1830,12 @@ obj << Save Cluster Formula;
 
 **Description:** Saves a new column to the data table that contains the most likely cluster for each row.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1874,7 +1850,6 @@ obj << Save Clusters;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1891,11 +1866,12 @@ obj << Save Clusters;
 
 **Description:** Saves the color assigned to the row state in each row according to the cluster membership.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1910,7 +1886,6 @@ obj << Save Colors to Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1927,9 +1902,10 @@ obj << Save Colors to Table;
 
 **Description:** Saves a column to the data table that contains the distance formula to the assigned cluster number.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1946,9 +1922,10 @@ obj << Save Distance Formula;
 
 **Description:** Saves the distance to each cluster center as a separate column in the data table.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1965,9 +1942,10 @@ obj << Save K Cluster Distances;
 
 **Description:** Saves the distance formula to each cluster center as a separate column in the data table.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1984,9 +1962,10 @@ obj << Save K Distance Formulas;
 
 **Description:** Saves new columns to the data table that contain the SOM grid row and column for the most likely cluster.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2003,11 +1982,12 @@ obj << Save SOM Grid;
 
 **Description:** Creates a scatterplot matrix in a new window with confidence ellipses based on the current number of clusters.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2022,7 +2002,6 @@ obj << Scatterplot Matrix;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2039,11 +2018,12 @@ obj << Scatterplot Matrix;
 
 **Description:** Shows or hides the rays on the biplot. On by default.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2058,7 +2038,6 @@ obj << Show Biplot Rays( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2075,11 +2054,12 @@ obj << Show Biplot Rays( 1 );
 
 **Description:** Creates a new data table with simulated data using the estimated cluster mixing probabilities, means, and standard deviations for each cluster.
 
+**JMP Version Added:** 14
+
 **K Means Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2094,7 +2074,6 @@ obj << Simulate Clusters( 1000 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2111,9 +2090,10 @@ obj << Simulate Clusters( 1000 );
 
 **Description:** Takes one K-means step or iteration.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),

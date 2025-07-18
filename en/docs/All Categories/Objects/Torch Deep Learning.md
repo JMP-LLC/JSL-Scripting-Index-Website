@@ -10,9 +10,10 @@
 
 **Description:** Interface to predictive modeling via the Torch Deep Learning add-in
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -24,9 +25,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Censor( column )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -36,9 +38,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Freq( column )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
@@ -49,9 +52,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Inputs( column(s) )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -61,9 +65,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Responses( column(s) )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -73,9 +78,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Subject( column )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -85,9 +91,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Validation( column(s) )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -97,9 +104,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Weight( column )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
@@ -110,9 +118,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; X( column(s) )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -122,9 +131,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Y( column(s) )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -138,15 +148,18 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Description:** Changes X, Y, and other variables for subsequent models.
 
+**JMP Version Added:** 19
+
 ### Compare
 
 **Syntax:** obj &lt;&lt; Compare
 
 **Description:** Updates the Torch Deep Learning comparison metrics.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Compare( AUC( 1 ) );
@@ -159,9 +172,10 @@ obj << Compare( AUC( 1 ) );
 
 **Description:** Fits a Torch Deep Learning model. You can specify parameters and fitting specifications within this command.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
@@ -171,15 +185,18 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 **Syntax:** obj &lt;&lt; Get Measures
 
+**JMP Version Added:** 19
+
 ### Redo Analysis
 
 **Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Redo Analysis;
@@ -192,9 +209,10 @@ obj << Redo Analysis;
 
 **Description:** Return to the launcher for this analysis.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Relaunch Analysis;
@@ -207,9 +225,10 @@ obj << Relaunch Analysis;
 
 **Description:** Specifies parameters for a Torch Deep Learning model.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
 
@@ -221,9 +240,10 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
 
 **Description:** Shows more details.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
@@ -237,9 +257,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -255,11 +276,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 19
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -270,11 +292,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -282,11 +303,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -300,9 +320,10 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -320,9 +341,10 @@ obj[1] << Copy ByGroup Script;
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Copy Script;
@@ -335,9 +357,10 @@ obj << Copy Script;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -350,9 +373,10 @@ biv << Get By Levels;
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -371,11 +395,12 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+**JMP Version Added:** 19
+
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 t = obj << Get Container;
@@ -383,11 +408,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -418,9 +442,10 @@ New Window( "platform boxes",
 
 **Description:** Returns a reference to the data table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 t = obj << Get Datatable;
@@ -434,9 +459,10 @@ Show( N Rows( t ) );
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 t = obj << Get Script;
@@ -450,9 +476,10 @@ Show( t );
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 t = obj << Get Script With Data Table;
@@ -466,9 +493,10 @@ Show( t );
 
 **Description:** Times the platform launch.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 t = obj << Get Timing;
@@ -482,9 +510,10 @@ Show( t );
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -498,9 +527,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -514,9 +544,10 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 **Description:** Ignores the current settings of the platform&apos;s preferences. The message is ignored when sent to the platform after creation.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -533,9 +564,10 @@ dt << Bivariate(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -550,9 +582,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -565,9 +598,10 @@ preset = obj << New Preset();
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -580,9 +614,10 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 **Description:** Returns a reference to the report object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 r = obj << Report;
@@ -597,9 +632,10 @@ Show( t );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -617,9 +653,10 @@ obj[1] << Save ByGroup Script to Data Table;
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -637,9 +674,10 @@ obj[1] << Save ByGroup Script to Journal;
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -657,9 +695,10 @@ obj[1] << Save ByGroup Script to Script Window;
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Save Script for All Objects;
@@ -672,11 +711,12 @@ obj << Save Script for All Objects;
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -692,7 +732,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -710,9 +749,10 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -725,9 +765,10 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Save Script to Journal;
@@ -740,9 +781,10 @@ obj << Save Script to Journal;
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Save Script to Report;
@@ -755,9 +797,10 @@ obj << Save Script to Report;
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Save Script to Script Window;
@@ -770,9 +813,10 @@ obj << Save Script to Script Window;
 
 **Description:** Sends platform commands or display customization commands to each level of a by-group.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -791,9 +835,10 @@ dt << Distribution(
 
 **Description:** SendToEmbeddedScriptable restores settings of embedded scriptable objects.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -817,9 +862,10 @@ dt << Life Distribution(
 
 **Description:** Send To Report is used in tandem with the Dispatch command to customize the appearance of a report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -835,9 +881,10 @@ dt << Distribution(
 
 **Description:** Sets the title of the platform.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 obj << Title( "My Platform" );
@@ -850,9 +897,10 @@ obj << Title( "My Platform" );
 
 **Description:** Returns a reference to the root node in the report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 r = obj << Top Report;
@@ -867,9 +915,10 @@ Show( t );
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -884,6 +933,8 @@ xml = obj << View Web XML;
 
 **Syntax:** Torch Deep Learning Compare
 
+**JMP Version Added:** 19
+
 ### Item Messages
 
 #### AUC
@@ -892,11 +943,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the AUROC, which is the area under the receiver operating characteristic curve. On by default.
 
+**JMP Version Added:** 19
+
 #### Accuracy
 
 **Syntax:** obj &lt;&lt; Accuracy( state=0|1 )
 
 **Description:** Shows or hides the accuracy, which is the proportion of correct classifications. On by default.
+
+**JMP Version Added:** 19
 
 #### Censor
 
@@ -904,11 +959,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Censor command On by default.
 
+**JMP Version Added:** 19
+
 #### Concordance
 
 **Syntax:** obj &lt;&lt; Concordance( state=0|1 )
 
 **Description:** Shows or hides the concordance, which is the Harrell C-Index and measures strength of sorting efficiency On by default.
+
+**JMP Version Added:** 19
 
 #### Correlation
 
@@ -916,11 +975,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Pearson correlation, which is a measure of the strength of the linear relationship. On by default.
 
+**JMP Version Added:** 19
+
 #### F1
 
 **Syntax:** obj &lt;&lt; F1( state=0|1 )
 
 **Description:** Shows or hides the F1 Score, which is the harmonic average of precision and recall. On by default.
+
+**JMP Version Added:** 19
 
 #### Freq
 
@@ -928,11 +991,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Freq column. On by default.
 
+**JMP Version Added:** 19
+
 #### H Measure
 
 **Syntax:** obj &lt;&lt; H Measure( state=0|1 )
 
 **Description:** Shows or hides the H Measure, which measures proportion improvement over baseline. On by default.
+
+**JMP Version Added:** 19
 
 #### Hide All Models
 
@@ -940,11 +1007,15 @@ xml = obj << View Web XML;
 
 **Description:** Hides all models.
 
+**JMP Version Added:** 19
+
 #### LogLoss
 
 **Syntax:** obj &lt;&lt; LogLoss( state=0|1 )
 
 **Description:** Shows or hides the logarithm of the likelihood-based loss function. On by default.
+
+**JMP Version Added:** 19
 
 #### MAE
 
@@ -952,11 +1023,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the MAE, which is the mean absolute error. On by default.
 
+**JMP Version Added:** 19
+
 #### MCC
 
 **Syntax:** obj &lt;&lt; MCC( state=0|1 )
 
 **Description:** Shows or hides the Matthews correlation coefficient, which is the Pearson correlation for binary variables. On by default.
+
+**JMP Version Added:** 19
 
 #### Misclass
 
@@ -964,11 +1039,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the misclassification rate, which is the proportion of incorrect classifications. On by default.
 
+**JMP Version Added:** 19
+
 #### Precision Recall AUC
 
 **Syntax:** obj &lt;&lt; Precision Recall AUC( state=0|1 )
 
 **Description:** Shows or hides the Precision Recall AUC, which is the area under the precision-recall curve. On by default.
+
+**JMP Version Added:** 19
 
 #### Predictors
 
@@ -976,11 +1055,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Predictors column. On by default.
 
+**JMP Version Added:** 19
+
 #### Profit
 
 **Syntax:** obj &lt;&lt; Profit( state=0|1 )
 
 **Description:** Shows or hides the expected profit. On by default.
+
+**JMP Version Added:** 19
 
 #### RMSE
 
@@ -988,11 +1071,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the RMSE, which is the root mean square error. On by default.
 
+**JMP Version Added:** 19
+
 #### RSquare
 
 **Syntax:** obj &lt;&lt; RSquare( state=0|1 )
 
 **Description:** Shows or hides RSquare value, which is the proportion of variability explained. On by default.
+
+**JMP Version Added:** 19
 
 #### Remove Hidden Models
 
@@ -1000,11 +1087,15 @@ xml = obj << View Web XML;
 
 **Description:** Removes all models for which the Show box is not checked.
 
+**JMP Version Added:** 19
+
 #### Remove Shown Models
 
 **Syntax:** obj &lt;&lt; Remove Shown Models
 
 **Description:** Removes all models for which the Show check box is checked and shows the remaining models.
+
+**JMP Version Added:** 19
 
 #### Response
 
@@ -1012,11 +1103,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Response column. On by default.
 
+**JMP Version Added:** 19
+
 #### Show All Models
 
 **Syntax:** obj &lt;&lt; Show All Models
 
 **Description:** Shows all models.
+
+**JMP Version Added:** 19
 
 #### Subject
 
@@ -1024,11 +1119,15 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Subject column On by default.
 
+**JMP Version Added:** 19
+
 #### Training Metrics
 
 **Syntax:** obj &lt;&lt; Training Metrics( state=0|1 )
 
 **Description:** Shows or hides all training metrics. On by default.
+
+**JMP Version Added:** 19
 
 #### Validation
 
@@ -1036,17 +1135,23 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Validation column. On by default.
 
+**JMP Version Added:** 19
+
 #### Validation Metrics
 
 **Syntax:** obj &lt;&lt; Validation Metrics( state=0|1 )
 
 **Description:** Shows or hides all validation metrics. On by default.
 
+**JMP Version Added:** 19
+
 #### Weight
 
 **Syntax:** obj &lt;&lt; Weight( state=0|1 )
 
 **Description:** Shows or hides the Weight column. On by default.
+
+**JMP Version Added:** 19
 
 ## Torch Deep Learning Fit > Post
 
@@ -1058,15 +1163,18 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides a plot using the training data with the predicted values on the X axis and actual values on the Y axis. On by default.
 
+**JMP Version Added:** 19
+
 #### Confusion Matrices
 
 **Syntax:** obj &lt;&lt; ( fit[number] &lt;&lt; Confusion Matrices( state=0|1 ) )
 
 **Description:** Shows or hides a crosstabulation matrix of actual and predicted levels. On by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Torch Deep Learning(
 	Y( :Species ),
@@ -1083,11 +1191,15 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
+**JMP Version Added:** 19
+
 #### Decision Thresholds
 
 **Syntax:** obj &lt;&lt; Decision Thresholds( state=0|1 )
 
 **Description:** Shows or hides decision threshold graphs and tables. On by default.
+
+**JMP Version Added:** 19
 
 #### Fit Details
 
@@ -1095,11 +1207,15 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides the statistics for the fitted model. On by default.
 
+**JMP Version Added:** 19
+
 #### Lift Curves
 
 **Syntax:** obj &lt;&lt; Lift Curves( state=0|1 )
 
 **Description:** Plots how much more saturated the top x-percent of predicted values are compared to the whole population.
+
+**JMP Version Added:** 19
 
 #### Model Details
 
@@ -1107,11 +1223,15 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides model details On by default.
 
+**JMP Version Added:** 19
+
 #### Precision Recall Curves
 
 **Syntax:** obj &lt;&lt; Precision Recall Curves( state=0|1 )
 
 **Description:** Plots the trade-off between precision and recall for different classification thresholds. It is preferred in scenarios where class imbalances exist.
+
+**JMP Version Added:** 19
 
 #### Profiler
 
@@ -1119,17 +1239,23 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides the Prediction Profiler.
 
+**JMP Version Added:** 19
+
 #### ROC Curves
 
 **Syntax:** obj &lt;&lt; ROC Curves( state=0|1 )
 
 **Description:** Plots the response-category sorting efficiency of the model predictions.
 
+**JMP Version Added:** 19
+
 #### Surface Profiler
 
 **Syntax:** obj &lt;&lt; Surface Profiler
 
 **Description:** Shows or hides interactive graphs of cross-sections of the prediction function.
+
+**JMP Version Added:** 19
 
 ## Torch Deep Learning Fit
 
@@ -1139,9 +1265,13 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Syntax:** Post
 
+**JMP Version Added:** 19
+
 #### Torch Deep Learning Fit
 
 **Syntax:** Torch Deep Learning Fit
+
+**JMP Version Added:** 19
 
 ### Item Messages
 
@@ -1151,9 +1281,10 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Specifies the activation function to use after each layer. "ReLU" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" ) ) );
 
@@ -1165,9 +1296,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" )
 
 **Description:** Specifies a space-delimited list of activation functions to use in sequential layers.  This parameter overrides Activation when it is specified, and the last value carries forward.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" ) ) );
 
@@ -1179,9 +1311,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" 
 
 **Description:** Specifies a multiplier applied to an internal range of anchor sizes.  Larger values tend to work better for larger boxes. "16" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" ) ) );
 
@@ -1193,9 +1326,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" )
 
 **Description:** Standard deviation of Gaussian aspect ratio deformation "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
 
@@ -1207,9 +1341,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
 
 **Description:** For transformer models, specifies the number of attention heads as a space delimited list of positive integers, each of which must evenly divide its corresponding layer size. Last value carries forward if necessary. "4" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 ) ) );
 
@@ -1221,9 +1356,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 )
 
 **Description:** Specifies the base activation function for Kolmogorov Arnold B Splines. "GELU" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GELU" ) ) );
 
@@ -1235,9 +1371,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GE
 
 **Description:** For Radial Basis Machine models, specify the basis function. "Gaussian" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex ),
@@ -1253,9 +1390,10 @@ Torch Deep Learning(
 
 **Description:** Specifies the number of rows to randomly sample for each training batch and optimization update. Decrease it to save memory and update gradients more frequently; increase it to pass through the data faster and regularize the model more. "128" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
 
@@ -1267,9 +1405,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
 
 **Description:** Specifies the loss function for binary responses. Choose from Binary Cross Entropy (BCE) or Soft Margin (SM). "BCE" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
 
@@ -1281,9 +1420,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
 
 **Description:** Maximum standard deviation of Gaussian blur "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
 
@@ -1295,9 +1435,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
 
 **Description:** Specifies the multiplier for class loss. "4.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) );
 
@@ -1309,9 +1450,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) )
 
 **Description:** Specifies the confidence score threshold for predicted boxes.  Boxes with probability score less than this threshold are dropped. "0.05" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold( 0.05 ) ) );
 
@@ -1323,9 +1465,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold
 
 **Description:** Specifies the loss function for continuous responses. Choose from Mean Squared Error (MSE), Mean Absolute Error (L1), Smoothed L1 (with margin), Huber (with margin), or Poisson (for count responses). "MSE" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) ) );
 
@@ -1337,15 +1480,18 @@ Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) 
 
 **Description:** Copies the parameter values from this model to the model launch section.
 
+**JMP Version Added:** 19
+
 #### Covariance Structure
 
 **Syntax:** obj &lt;&lt; Covariance Structure( "DotProduct"|"Gaussian"="DotProduct" )
 
 **Description:** For mixed models, specify the covariance structure. "DotProduct" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex ),
@@ -1361,9 +1507,10 @@ Torch Deep Learning(
 
 **Description:** Specifies the number of threads to use to load data into memory. A number near half the number of actual cores is usually near optimal. "4" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
 
@@ -1375,9 +1522,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
 
 **Description:** Specifies the computational device that Torch uses. "auto" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
 
@@ -1389,9 +1537,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
 
 **Description:** For custom convolutional models, specifies the dilations as a space-delimited list of positive integers. Last value carries forward if necessary. "1" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) );
 
@@ -1403,9 +1552,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) )
 
 **Description:** Specifies the probabilities of dropout to use after each layer as a space-delimited list of decimals between 0 and 1. Last value carries forward if necessary. "0.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1" ) ) );
 
@@ -1417,9 +1567,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1"
 
 **Description:** Specifies the number of iterations through the training data to optimize the loss function for each batch and train the model. "20" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
 
@@ -1431,9 +1582,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
 
 **Description:** Specify a space-separated list of 0s and 1s indicating if factorization machine interactions should be added to each linear layer.  Last value carries forward. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex ),
@@ -1449,9 +1601,10 @@ Torch Deep Learning(
 
 **Description:** Check to fit a distinct model for each Y variable, and uncheck to model them jointly. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately( 1 ) ) );
 
@@ -1463,9 +1616,10 @@ Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately
 
 **Description:** Specify the number of fixed effects, all of which must be at the beginning of the X variable list "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) ) );
 
@@ -1477,9 +1631,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) )
 
 **Description:** Select a folder in which to save modeling results. A subfolder for each model is created in this folder.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
 
@@ -1491,9 +1646,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
 
 **Description:** Specifies the number of epochs for which pretrained model bodies remain frozen.  After this number there is full training gradients for all parameters. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
@@ -1505,15 +1661,18 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 **Description:** Creates Python code for model deployment.
 
+**JMP Version Added:** 19
+
 #### Grid Size
 
 **Syntax:** obj &lt;&lt; Grid Size( number=5 )
 
 **Description:** For Kolmogorov Arnold B Spline networks, specifies the number of points in the grid for the spline interpolation. "5" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
 
@@ -1525,9 +1684,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
 
 **Description:** Probability of horizontal flip "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
 
@@ -1539,9 +1699,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
 
 **Description:** Specify a space-separated list of nonnegative integers specifying the number of highway layers to insert in the network.  Last value carries forward. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" ) ) );
 
@@ -1553,9 +1714,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" 
 
 **Description:** Specifies the image network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. "LeNet5" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
 
@@ -1567,9 +1729,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
 
 **Description:** Specifies the size of image to use while training. Input images are transformed to this size square; larger images have higher resolution but slower training times. "28" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
 
@@ -1581,9 +1744,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
 
 **Description:** For custom convolutional models, specifies the kernel sizes as a space-delimited list of positive integers. Last value carries forward if necessary. "3" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) ) );
 
@@ -1595,9 +1759,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) 
 
 **Description:** Specifies a multiplier for the sum of absolute values of weight parameters to be added to the loss and induce sparsity. "0.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
 
@@ -1609,9 +1774,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
 
 **Description:** Specifies output sizes of hidden layers as a space-delimited list of integers (actual sizes) or decimals (multipliers of the previous layer size). The final value is the embedding size. "16" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) ) );
 
@@ -1623,9 +1789,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) 
 
 **Description:** Specifies the learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. "0.001" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
 
@@ -1637,9 +1804,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
 
 **Description:** Specifies the margin used in margin-based loss functions. Larger values should produce larger embedding distances between nominal responses with different levels, but may adversely affect training. "1.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
 
@@ -1651,9 +1819,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
 
 **Description:** Specifies the maximum number of predicted boxes per image. "5" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
 
@@ -1665,9 +1834,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
 
 **Description:** For text models, specifies the maximum number of tokens to create for each text item. "512" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Chips.jmp" );
 Torch Deep Learning(
 	Y( :Buy again? ),
@@ -1683,9 +1853,10 @@ Torch Deep Learning(
 
 **Description:** Specifies portion of mixup samples to add to each training batch. For example, if Batch Size is 128 and Mixup Portion is 0.5, then 64 mixup samples are added. "0.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
 
@@ -1697,9 +1868,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
 
 **Description:** Specifies the non-maximum suppression threshold for predicted boxes.  Overlapping boxes with IOU values above this threshold are dropped. "0.5" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 ) ) );
 
@@ -1711,9 +1883,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 )
 
 **Description:** Maximum standard deviation of additive Gaussian noise "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
 
@@ -1725,9 +1898,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
 
 **Description:** Specifies the cutoff for determining if images in a column are nominal or continuous.  If the number of unique pixel levels is <= this number, then the images are considered to be nominal. "10" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 ) ) );
 
@@ -1739,9 +1913,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 
 
 **Description:** Specifies the loss function for nominal responses. Choose from Negative Loglikelihood (NLL). "NLL" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
 
@@ -1753,9 +1928,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
 
 **Description:** Specifies the type of normalization to apply to each MLP layer. "Batch" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
 
@@ -1767,9 +1943,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
 
 **Description:** Specifies the type of normalization to apply to the input data to the tabular model. Batch norm effectively centers and scales each input. "Batch" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" ) ) );
 
@@ -1781,9 +1958,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" 
 
 **Description:** For custom convolutional and message passing models, specifies the number of linear layers at the end of Layer Sizes. "1" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
 
@@ -1795,9 +1973,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
 
 **Description:** Specifies the optimization method. Choose between Adaptive moment estimation (Adam), Adam weight decay (AdamW), Stochastic Gradient Descent (SGD), or SGD with Adaptive Gradient Clipping (SGDAGC). "AdamW" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
 
@@ -1809,9 +1988,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
 
 **Description:** Standard deviation of Gaussian pitch "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
 
@@ -1823,9 +2003,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
 
 **Description:** Specifies pooling layers as a space-delimited list of one of four keywords:  Max, Avg, Cat, or None. Last value carries forward if necessary. "Max" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max" ) ) );
 
@@ -1837,9 +2018,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max
 
 **Description:** Specify a pretrained tabular model that is prepended to the Tabular Model. "None" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( "None" ) ) );
 
@@ -1851,9 +2033,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( 
 
 **Description:** Specify a space-delimited list of quantiles to use for Quantile loss. "0.9" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) ) );
 
@@ -1865,9 +2048,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) )
 
 **Description:** Specifies the non-maximum suppression threshold for region proposals.  Overlapping boxes with IOU values above this threshold are dropped. "0.7" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0.7 ) ) );
 
@@ -1879,9 +2063,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0
 
 **Description:** Removes the reports and plots for all models except this one.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Torch Deep Learning(
 	Y( :Species ),
@@ -1899,9 +2084,10 @@ obj << (Fit[1] << Remove All But This Fit);
 
 **Description:** Removes the entire model report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Torch Deep Learning(
 	Y( :Species ),
@@ -1919,9 +2105,10 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Select a subfolder containing saved files from a previously fit model. Training for a new model will begin where this model finished. Model architectures and validation variables should match. Leave this field blank to train from scratch. " " by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
 
@@ -1933,9 +2120,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
 
 **Description:** Standard deviation of Gaussian roll "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
@@ -1947,11 +2135,15 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 **Description:** Save gradient-based class activation maps (CAMs) as a new column.
 
+**JMP Version Added:** 19
+
 #### Save Embeddings
 
 **Syntax:** obj &lt;&lt; Save Embeddings
 
 **Description:** Saves model embeddings (from final hidden layer) as new columns in the data table
+
+**JMP Version Added:** 19
 
 #### Save Model
 
@@ -1959,11 +2151,15 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 **Description:** Saves serialized modeling components to disk in a folder that you name.  You can then specify this folder in Restore From to begin training with this model.
 
+**JMP Version Added:** 19
+
 #### Save Predicteds
 
 **Syntax:** obj &lt;&lt; Save Predicteds
 
 **Description:** Saves the predicted values in a new column in the data table.
+
+**JMP Version Added:** 19
 
 #### Screening Method
 
@@ -1971,9 +2167,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 **Description:** Choose a method by which to screen Tabular Model predictors prior to fitting the model within each fold.  ResponseScreening is fast and BootstrapForest is more thorough. "ResponseScreening" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex ),
@@ -1989,9 +2186,10 @@ Torch Deep Learning(
 
 **Description:** If >= 1, the number of Tabular Model predictors to select by screening.  If < 1, the predictors with cumulative portion less than the threshold. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold( 1 ) ) );
 
@@ -2003,9 +2201,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold(
 
 **Description:** Specifies the seed for the random number generator.  Note results may not be fully reproducible with the same seed due to the stochastic nature of certain Torch calculations. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
 
@@ -2017,9 +2216,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
 
 **Description:** Specifies the image segmentation model. "UNet" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/segmentation.jmp" );
 Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11_BN" ) ) );
 
@@ -2031,9 +2231,10 @@ Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11
 
 **Description:** For Kolmogorov Arnold B Spline networks, specifies the order of the spline used for interpolation. "3" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) );
 
@@ -2045,9 +2246,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) 
 
 **Description:** For custom convolutional models, specifies the strides as a space-delimited list of positive integers. Last value carries forward if necessary. "1" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
 
@@ -2059,9 +2261,10 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
 
 **Description:** Specifies the tabular network architecture to use. Choose from Multilayer Perceptron (MLP), Feature Tokenized Transformer (FTTransformer), Kolmogorov Arnold Network (KolmogorovArnoldBSpline), or other options "MultiLayerPerceptron" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex ),
@@ -2077,9 +2280,10 @@ Torch Deep Learning(
 
 **Description:** Specifies the text network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. "BertTiny" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Chips.jmp" );
 Torch Deep Learning(
 	Y( :Buy again? ),
@@ -2095,9 +2299,10 @@ Torch Deep Learning(
 
 **Description:** Specifies the multiplier alpha to use in the following compound loss function: alpha * triplet_loss + (1 - alpha) * loss_function. Must be between 0 and 1. "0.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) ) );
 
@@ -2109,9 +2314,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) )
 
 **Description:** For Radial Basis Machine models, check to use the training data as knots to form an interpolation-style model. "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning(
 	Y( :sex, :height ),
@@ -2127,9 +2333,10 @@ Torch Deep Learning(
 
 **Description:** Probability of vertical flip "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
 
@@ -2141,9 +2348,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
 
 **Description:** Specifies a penalty term multiplier of the L2 norm of the trainable parameters, which regularizes them in a way similar to ridge regression. "0.0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
 
@@ -2155,9 +2363,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
 
 **Description:** Specifies the number of workers to use to load batches of data during training. A number near half the number of actual cores is usually near optimal. "4" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
 
@@ -2169,9 +2378,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
 
 **Description:** Standard deviation of Gaussian random shift along the X axis "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
 
@@ -2183,9 +2393,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
 
 **Description:** Standard deviation of Gaussian random shift along the Y axis "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
 
@@ -2197,9 +2408,10 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
 
 **Description:** Standard deviation of Gaussian yaw "0" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Yaw Sigma( 5 ) ) );
 

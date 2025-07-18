@@ -10,9 +10,10 @@
 
 **Description:** Depending on the operation that produced the JMP Live Result, returns a JMP Live Report, JMP Live Folder or JMP Live Post for further scripting operations.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -35,9 +36,10 @@ If( worked == 1,
 
 **Description:** Gets any message produced by the last operation as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
 
@@ -53,9 +55,10 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 **Description:** Gets the HTTP status code from the last operation. This is an industry standard integer code.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
 
@@ -71,9 +74,10 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 **Description:** Retrieves the underlying JMP Live Connection object.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -94,9 +98,10 @@ Write( "\!nConnection Name: ", name );
 
 **Description:** Gets the type of response produced by the last operation as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -119,9 +124,10 @@ If( worked == 1,
 
 **Description:** Returns whether the last action was successful (1) or not (0).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(

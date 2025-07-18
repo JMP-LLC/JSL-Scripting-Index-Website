@@ -10,9 +10,10 @@
 
 **Description:** Close the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Close();
 
@@ -24,9 +25,10 @@ wf << Close();
 
 **Description:** Execute the current step in the workflow, and move the execution pointer to the following step.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Execute Next();
 
@@ -38,9 +40,10 @@ wf << Execute Next();
 
 **Description:** Return a structure containing information about the steps of the workflow that have been executed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Resume;
 wf << Get Execution Info( 1 );
@@ -53,9 +56,10 @@ wf << Get Execution Info( 1 );
 
 **Description:** Return the number of steps in the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step Count;
 
@@ -67,9 +71,10 @@ wf << Get Step Count;
 
 **Description:** Return the JSL code of the given step in the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step JSL( 1 );
 
@@ -81,9 +86,10 @@ wf << Get Step JSL( 1 );
 
 **Description:** Return the name of the given step in the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Get Step Name( 1 );
 
@@ -95,9 +101,10 @@ wf << Get Step Name( 1 );
 
 **Description:** Log the JSL script for each step that is executed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Log Executed Steps( 1 );
 wf << Resume();
@@ -110,9 +117,10 @@ wf << Resume();
 
 **Description:** Presentation mode removes editing options and unnecessary support interfaces.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Presentation Mode( 1 );
 
@@ -124,9 +132,10 @@ wf << Presentation Mode( 1 );
 
 **Description:** Execute or resume execution of the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Resume();
 
@@ -138,9 +147,10 @@ wf << Resume();
 
 **Description:** Set a callback on the workflow that will be notified each time a step finishes executing with associated information.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 //The callback function receives two arguments; the Workflow scriptable and a structure containing information about what step has just been executed and the reason if stopped.
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Set Execution Callback( Function( {wfb, data}, Show( data ) ) );
@@ -154,9 +164,10 @@ wf << Resume;
 
 **Description:** Move the execution cursor to a step in the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Set Next Step To Execute( 2 );
 
@@ -168,9 +179,10 @@ wf << Set Next Step To Execute( 2 );
 
 **Description:** Reset the workflow back to the beginning, closing all tables and other windows opened by the workflow.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 wf = Open( "$SAMPLE_WORKFLOWS/WorkflowBuilder.jmpflow" );
 wf << Start Over();
 

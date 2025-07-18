@@ -18,9 +18,10 @@
 
 **Description:** Specifies the AICc as the model selection criterion for B-Spline, P-Spline, and Fourier Basis models.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -37,9 +38,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Aligns the output functions (Y) over the range of the input (X) to be in 0 to 1.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -56,9 +58,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Aligns the output functions (Y) using the observed maximum input value (X).
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -75,9 +78,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Aligns the output functions (Y) using the observed minimum input value (X).
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -94,9 +98,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Aligns the output functions (Y) so that the range of each function is over the range of the input (X).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -113,9 +118,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Fits a B-spline model to the data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -132,9 +138,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Opens the Model Controls panel prior to fitting a B-Spline model. You can specify the number of knots and the spline degree.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -151,9 +158,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Specifies the BIC as the model selection criterion for B-Spline, P-Spline, and Fourier Basis models.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -170,11 +178,12 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Fits and removes a baseline model from each function. You can specify the baseline model, correction region, baseline regions, and the anchor points.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -189,7 +198,6 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -206,9 +214,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Centers the output.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -225,9 +234,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Performs Functional PCA directly without fitting a basis function model. This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Formulation for Homogeneity DOE.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Homogeneity Grade ),
@@ -245,9 +255,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Aligns the output functions using dynamic time warping (DTW). DTW is a function alignment technique that finds an optimal warping to align two or more functions together.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Ethanol ),
@@ -264,9 +275,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the exponential function of the output.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :pH ),
@@ -283,9 +295,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Removes input (X) values that are outside of the specified interval.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 obj << Data Processing( Filter X( [5, 50] ) );
@@ -298,9 +311,10 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 **Description:** Removes output (Y) values outside of the specified interval.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 obj << Data Processing( Filter Y( [., 100] ) );
@@ -313,9 +327,10 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 **Description:** Fits a penalized B-spline model to the data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -332,9 +347,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Opens the Model Controls panel prior to fitting a Fourier basis model. You can specify the number of Fourier pairs and the period.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -351,9 +367,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Specifies the generalized cross validation (GCV) as the model selection criterion for B-Spline, P-Spline, and Fourier Basis models.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -370,9 +387,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Specifies a target function.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -389,9 +407,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the natural logarithm of the output.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Air ),
@@ -408,9 +427,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the natural logarithm of the input.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Air ),
@@ -427,9 +447,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the logit function of the output. The output values must be between 0 and 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -447,9 +468,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Applies the Multiplicative Scatter Correction method to the data. This method fits a simple linear regression for each individual function (level of the ID variable) where the response is the output values for the function and the regressor is the output values for the mean function.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
 obj = dt << Functional Data Explorer(
 	Data Format( Row ),
@@ -466,15 +488,18 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Performs multivariate curve resolution (MCR). This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 18
+
 ### Negation
 
 **Syntax:** obj &lt;&lt; Data Processing( Negation )
 
 **Description:** Transforms the data by negating the output.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -491,15 +516,18 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Performs a nonnegative singular value decomposition (SVD) on the stacked matrix of functions. A nonnegative SVD constrains the matrix decomposition so that the scores and loadings are greater than or equal to zero.
 
+**JMP Version Added:** 18
+
 ### P Splines
 
 **Syntax:** obj &lt;&lt; P Splines
 
 **Description:** Fits a penalized B-spline model to the data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -516,9 +544,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Opens the Model Controls panel prior to fitting a P-Spline model. You can specify the number of knots and the spline degree.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -535,11 +564,15 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Finds and summarizes peaks either directly or with a specified parametric model.
 
+**JMP Version Added:** 17
+
 ### Penalized Nonnegative SVD
 
 **Syntax:** obj &lt;&lt; Penalized Nonnegative SVD
 
 **Description:** Performs penalized nonnegative SVD to construct functional PCA. This option requires that the input data be on an evenly spaced grid.
+
+**JMP Version Added:** 18
 
 ### Penalized SVD
 
@@ -547,15 +580,18 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Performs Penalized SVD to construct functional PCA. This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 18
+
 ### Plot Mean Function
 
 **Syntax:** obj &lt;&lt; Plot Mean Function( state=0|1 )
 
 **Description:** Shows or hides the Mean Function plot in the Summaries report. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
 obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );
 Wait( 1 );
@@ -569,9 +605,10 @@ obj << Plot Mean Function( 0 );
 
 **Description:** Shows or hides the Median Function plot in the Summaries report.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Temperature ),
@@ -588,9 +625,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Shows or hides the Standard Deviation Function plot in the Summaries report. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
 obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );
 Wait( 1 );
@@ -604,9 +642,10 @@ obj << Plot Standard Deviation Function( 0 );
 
 **Description:** Scales the output to lie within the range 0 to 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -623,9 +662,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Reduces the data over the input (X) with one of a variety of techniques.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 obj << Data Processing( Reduce( Thin( 2 ) ) );
@@ -636,15 +676,18 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 **Syntax:** obj &lt;&lt; Remove Last Step
 
+**JMP Version Added:** 14
+
 ### Remove Selected
 
 **Syntax:** obj &lt;&lt; Data Processing( Remove Selected )
 
 **Description:** Removes the selected values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 dt << Select Where( :STATION == "USW00024024" );
@@ -659,9 +702,10 @@ obj << Data Processing( Remove Selected );
 
 **Description:** Removes the unselected values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 dt << Select Where( :STATION != "USW00024024" );
@@ -676,9 +720,10 @@ obj << Data Processing( Remove Unselected );
 
 **Description:** Removes observations that have the specified response value.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 Wait( 1 );
@@ -692,9 +737,10 @@ obj << Data Processing( Remove Value( 30 ) );
 
 **Description:** Removes observations that have a response value of zero.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Ethanol ),
@@ -711,9 +757,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Replaces the input values with the row number.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -730,9 +777,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Applies the Standard Normal Variate method to the data. This method standardizes the output by centering and scaling each individual function (level of the ID variable) to have a mean of 0 and a standard deviation of 1.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
 obj = dt << Functional Data Explorer(
 	Data Format( Row ),
@@ -749,9 +797,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Saves the processed data to a separate data table, in the Stacked format.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Ethanol, :Temp, :Molasses Feed ),
@@ -769,9 +818,10 @@ obj << Save Data;
 
 **Description:** Saves the model summary statistics of each function (ID) for each output (Y).
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :Ethanol, :Temp, :Molasses Feed ),
@@ -789,9 +839,10 @@ obj << Save Summaries;
 
 **Description:** Applies the Savitzky-Golay filter to each function. This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
 obj = dt << Functional Data Explorer(
 	Data Format( Row ),
@@ -808,9 +859,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Returns the first derivative from the Savitzky-Golay filter. This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
 obj = dt << Functional Data Explorer(
 	Data Format( Row ),
@@ -827,9 +879,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Returns the second derivative from the Savitzky-Golay filter. This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
 obj = dt << Functional Data Explorer(
 	Data Format( Row ),
@@ -846,9 +899,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the square of the output.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :pH ),
@@ -865,9 +919,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Transforms the data by computing the square root of the output. The output values must be nonnegative.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :pH ),
@@ -884,9 +939,10 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Standardizes the output by centering and scaling.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer(
 	Y( :TMAX ),
@@ -903,15 +959,18 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Performs unconstrained multivariate curve resolution (MCR). This option requires that the input data be on an evenly spaced grid.
 
+**JMP Version Added:** 18
+
 ### Wavelets
 
 **Syntax:** obj &lt;&lt; Wavelets
 
 **Description:** Fits several wavelets models to the data. This option requires that the input data be on an evenly spaced grid. If data are not evenly spaced, a grid is automatically created before the wavelet routine begins.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ), Wavelets );
 
@@ -927,7 +986,6 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -943,11 +1001,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -958,11 +1017,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -970,11 +1028,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -990,7 +1047,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Automatic Recalc( 1 );
 dt << Select Rows( 5 ) << Exclude( 1 );
 
@@ -1004,7 +1060,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1022,7 +1077,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Copy Script;
 
 ```
@@ -1035,7 +1089,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Data Table Window;
 
 ```
@@ -1046,9 +1099,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1061,21 +1115,19 @@ biv << Get By Levels;
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 t = obj << Get Container;
 Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1108,7 +1160,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 t = obj << Get Datatable;
 Show( N Rows( t ) );
 
@@ -1122,7 +1173,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 t = obj << Get Script;
 Show( t );
 
@@ -1136,7 +1186,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 t = obj << Get Script With Data Table;
 Show( t );
 
@@ -1150,7 +1199,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 t = obj << Get Timing;
 Show( t );
 
@@ -1164,7 +1212,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1178,9 +1225,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1196,7 +1244,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1215,7 +1262,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1233,9 +1279,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1250,9 +1297,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1267,7 +1315,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1288,7 +1335,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Redo Analysis;
 
 ```
@@ -1301,7 +1347,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Relaunch Analysis;
 
 ```
@@ -1314,7 +1359,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1334,7 +1378,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1354,9 +1397,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1371,7 +1415,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 r = obj << Report;
 t = r[Outline Box( 1 )] << Get Title;
 Show( t );
@@ -1386,7 +1429,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Report View( "Summary" );
 
 ```
@@ -1399,7 +1441,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Save Script for All Objects;
 
 ```
@@ -1414,7 +1455,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj[1] << Save Script for All Objects To Data Table;
 
 ```
@@ -1423,7 +1463,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
@@ -1436,7 +1475,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
@@ -1449,7 +1487,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Save Script to Journal;
 
 ```
@@ -1462,7 +1499,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Save Script to Report;
 
 ```
@@ -1475,7 +1511,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Save Script to Script Window;
 
 ```
@@ -1488,7 +1523,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1509,7 +1543,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1535,7 +1568,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1553,7 +1585,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1570,7 +1601,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj << Title( "My Platform" );
 
 ```
@@ -1583,7 +1613,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 r = obj << Top Report;
 t = r[Outline Box( 1 )] << Get Title;
 Show( t );
@@ -1598,7 +1627,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;

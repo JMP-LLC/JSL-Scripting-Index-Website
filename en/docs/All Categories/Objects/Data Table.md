@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Grocery Purchases.jmp" );
 obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
 
@@ -26,7 +25,6 @@ obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Attribute Gauge.jmp" );
 obj = dt << Attribute Chart( Y( :A, :B, :C ), X( :Part ), Standard( :Standard ) );
 
@@ -46,7 +44,6 @@ obj = dt << Attribute Chart( Y( :A, :B, :C ), X( :Part ), Standard( :Standard ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
@@ -60,7 +57,6 @@ obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Boosted Tree(
 	Y( :Y ),
@@ -79,7 +75,6 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Bootstrap Forest(
 	Y( :Y ),
@@ -102,7 +97,6 @@ obj = dt << Bootstrap Forest(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
 obj = dt << Bubble Plot(
 	X( :"Portion 0-19"n ),
@@ -119,9 +113,10 @@ obj = dt << Bubble Plot(
 
 **Description:** Creates a chart that plots the cumulative sums of deviations of subgroup means from a target. This chart is also called a tabular CUSUM chart.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
 obj = dt << CUSUM Control Chart(
 	Y( :weight ),
@@ -143,7 +138,6 @@ obj = dt << CUSUM Control Chart(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
@@ -157,7 +151,6 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SAT.jmp" );
 obj = dt << Cell Plot(
 	Y(
@@ -180,7 +173,6 @@ obj = dt << Cell Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
 obj = dt << Choice(
@@ -199,7 +191,6 @@ obj = dt << Choice(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );
 obj = Choice(
 	One Table( 1 ),
@@ -219,7 +210,6 @@ obj = Choice(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 Close( dt );
@@ -234,7 +224,6 @@ Close( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Cluster Variables( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
@@ -248,7 +237,6 @@ obj = dt << Cluster Variables( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
@@ -262,7 +250,6 @@ obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Little Pond.jmp" );
 obj = dt << Contour Plot( X( :X, :Y ), Y( :Z ) );
 
@@ -276,7 +263,6 @@ obj = dt << Contour Plot( X( :X, :Y ), Y( :Z ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Contour Profiler(
 	Y(
@@ -293,11 +279,10 @@ obj = dt << Contour Profiler(
 
 **Description:** Enables you to interactively create control charts, which are used to determine whether a process is stable and predictable. The Control Chart Builder platform can be used to create the following types of control charts: IMR, XBar, Short Run, Run, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR on Means, Three Way, and Rare Event charts.
 
-**C Chart**
+#### C Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a C chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Count, and changing the Sigma to Poisson.
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -308,22 +293,20 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR Chart**
+#### IMR Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ```
 
-**IMR on Group Standard Deviation Chart (Set Subgroup Size)**
+#### IMR on Group Standard Deviation Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Group Standard Deviation chart by adding a Y variable and defining a subgroup size, and changing the Statistic on the location chart to Standard Deviation, on the dispersion chart to Moving Range on Std Dev and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -343,11 +326,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Group Standard Deviation Chart (Subgroup Variable)**
+#### IMR on Group Standard Deviation Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Group Standard Deviation chart by adding a Y variable and a subgroup variable, and changing the Statistic on the location chart to Standard Deviation, on the dispersion chart to Moving Range on Std Dev and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -366,11 +348,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Means Chart (Set Subgroup Size)**
+#### IMR on Means Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Means chart by adding a Y variable and defining a subgroup size, and changing the Statistic on the dispersion chart to Moving Range on Means and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -386,11 +367,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Means Chart (Subgroup Variable)**
+#### IMR on Means Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Means chart by adding a Y variable and a subgroup variable, and changing the Statistic on the dispersion chart to Moving Range on Means and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -405,11 +385,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Levey-Jennings Chart**
+#### Levey-Jennings Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Levey-Jennings chart by adding a Y variable, removing the dispersion chart, and changing the Sigma to Levey Jennings. Make sure that the Statistic is set to Individual.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -420,11 +399,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range Chart**
+#### Median Moving Range Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range chart by adding a Y variable and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -435,11 +413,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Means Chart (Set Subgroup Size)**
+#### Median Moving Range on Group Means Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Means chart by adding a Y variable and defining a subgroup size, changing the Statistic on the dispersion chart to Moving Range on Means, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -455,11 +432,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Means Chart (Subgroup Variable)**
+#### Median Moving Range on Group Means Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Means chart by adding a Y variable and a subgroup variable, changing the Statistic on the dispersion chart to Moving Range on Means, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -474,11 +450,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Standard Deviations Chart (Set Subgroup Size)**
+#### Median Moving Range on Group Standard Deviations Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Standard Deviations chart by adding a Y variable and defining a subgroup size, changing the Statistic on the location chart to Standard deviation, on the dispersion chart to Moving Range on Std Dev, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -498,11 +473,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Standard Deviations Chart (Subgroup Variable)**
+#### Median Moving Range on Group Standard Deviations Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Standard Deviations chart by adding a Y variable and a subgroup variable, changing the Statistic on the location chart to Standard deviation, on the dispersion chart to Moving Range on Std Dev, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -521,11 +495,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**NP Chart**
+#### NP Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an NP chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Count, and changing the Sigma to Binomial (P, NP).
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -536,11 +509,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**P Chart**
+#### P Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a P chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Binomial (P, NP).
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -551,11 +523,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**P' Chart**
+#### P' Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a P' chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Laney P'.
 dt = Open( "$SAMPLE_DATA/Quality Control/Washers.jmp" );
 obj = dt << Control Chart Builder(
@@ -566,11 +537,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Rare Event G Chart**
+#### Rare Event G Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a G chart by changing the class to Rare Event and adding a nonnegative discrete Y variable. Make sure that the Sigma is set to Negative Binomial.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fan Burnout.jmp" );
 obj = dt << Control Chart Builder(
@@ -581,11 +551,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Rare Event T Chart**
+#### Rare Event T Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a T chart by changing the class to Rare Event, changing the Sigma to Weibull, and adding a nonnegative discrete Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fan Burnout.jmp" );
 obj = dt << Control Chart Builder(
@@ -596,11 +565,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Run Chart**
+#### Run Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Run chart by adding a Y variable, turning off the limits, and removing the dispersion chart.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -613,11 +581,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Difference Chart**
+#### Short Run Difference Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Difference chart by changing the class to Short Run and adding a Product or Part variable. Make sure that the Statistic values for the location chart and dispersion chart are set to Centered and Moving Range Centered, respectively. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -627,11 +594,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Difference Chart for XBar**
+#### Short Run Difference Chart for XBar
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Difference chart for summarized data by changing the class to Short Run and adding a Product or Part variable,  Short Run Standardized charts are sometimes referred to as Z-MR charts. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fancy Chocolate Factory.jmp" );
 obj = dt << Control Chart Builder(
@@ -642,11 +608,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Standardized Chart**
+#### Short Run Standardized Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Standardized chart by changing the class to Short Run and adding a Subgroup and a Product or Part variable, changing the Statistic for the location chart type to Standardized, and changing the Statistic for the dispersion chart to Moving Range Standardized. Short Run Standardized charts are sometimes referred to as Z-MR charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -658,11 +623,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Standardized Chart for XBar**
+#### Short Run Standardized Chart for XBar
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Standardized chart for summarized data by changing the class to Short Run and adding a Subgroup and a Product or Part variable,  Short Run Standardized charts are sometimes referred to as Z-MR charts. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fancy Chocolate Factory.jmp" );
 obj = dt << Control Chart Builder(
@@ -675,11 +639,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Three Way Chart (Set Subgroup Size)**
+#### Three Way Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Three Way chart by adding a dispersion chart after adding a Y variable and setting a subgroup size.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -704,11 +667,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Three Way Chart (Subgroup Variable)**
+#### Three Way Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Three Way chart by adding a dispersion chart after adding a Y variable and adding a subgroup variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -728,11 +690,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**U Chart**
+#### U Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a U chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Poisson.
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -743,11 +704,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**U' Chart**
+#### U' Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a U' chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Laney U'.
 dt = Open( "$SAMPLE_DATA/Quality Control/Washers.jmp" );
 obj = dt << Control Chart Builder(
@@ -758,22 +718,20 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**XBar/R Chart**
+#### XBar/R Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/R chart by adding a subgroup or setting a subgroup size after adding a Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ), Set Subgroup Size( 4 ) );
 
 ```
 
-**XBar/S Chart (Set Subgroup Size)**
+#### XBar/S Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/S chart by adding a Y variable and defining a subgroup size, changing the Statistic for the dispersion chart to Standard Deviation, and changing the Sigma for the location chart to Standard Deviation.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -789,11 +747,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**XBar/S Chart (Subgroup Variable)**
+#### XBar/S Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/S chart by adding a Y variable and a subgroup variable, changing the Statistic for the dispersion chart to Standard Deviation, and changing the Sigma for the location chart to Standard Deviation.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -816,7 +773,6 @@ obj = dt << Control Chart Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress.jmp" );
 Open( "$SAMPLE_DATA/Reliability/CD Step Stress Pattern.jmp" );
 obj = Cumulative Damage(
@@ -849,7 +805,6 @@ obj = Cumulative Damage(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Custom Profiler(
 	Y(
@@ -868,7 +823,6 @@ obj = dt << Custom Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
 obj = dt << Degradation(
 	Y( :Current ),
@@ -896,7 +850,6 @@ obj = dt << Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );
 obj = dt << Destructive Degradation(
 	Y( :Strength ),
@@ -918,7 +871,6 @@ obj = dt << Destructive Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Ishikawa.jmp" );
 obj = dt << Diagram( Y( :Child ), X( :Parent ) );
 
@@ -932,7 +884,6 @@ obj = dt << Diagram( Y( :Child ), X( :Parent ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Discriminant(
 	X( :Species ),
@@ -947,9 +898,10 @@ obj = dt << Discriminant(
 
 **Description:** Computes distances between rows using a variety of methods.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Distance Matrix( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -965,7 +917,6 @@ obj = dt << Distance Matrix( Y( :Sepal length, :Sepal width, :Petal length, :Pet
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Column( :Age, :Weight ) );
 
@@ -975,7 +926,6 @@ obj = dt << Distribution( Column( :Age, :Weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 colref = Column( "age" );
 // Correct way to use the colref
@@ -993,7 +943,6 @@ Distribution( colref );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
 obj = dt << EMP Measurement Systems Analysis(
 	Y( :Y ),
@@ -1011,9 +960,10 @@ obj = dt << EMP Measurement Systems Analysis(
 
 **Description:** Creates a chart that plots the exponentially weighted moving averages and a chart that plots either the individual observations or the subgroup means. An EWMA chart is also known as a feedback control chart.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 
@@ -1027,7 +977,6 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
@@ -1041,7 +990,6 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
@@ -1055,7 +1003,6 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
 obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
 
@@ -1069,7 +1016,6 @@ obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Socioeconomic.jmp" );
 obj = dt << Factor Analysis(
 	Y(
@@ -1090,7 +1036,6 @@ obj = dt << Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Metal Wire Z.jmp" );
 obj = dt << Fatigue Model(
@@ -1110,7 +1055,6 @@ obj = dt << Fatigue Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
 obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
 obj << Fit Logistic 4P;
@@ -1125,7 +1069,6 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
 obj = dt << Fit Life by X(
 	Y( :Hours ),
@@ -1146,7 +1089,6 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
 obj = dt << Fit Model(
 	Y( :Time ),
@@ -1167,7 +1109,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Fit Model(
 	Y( :days ),
@@ -1187,7 +1128,6 @@ obj = dt << Fit Model(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 fd1 = Formula Depot();
 dt = Open( "$SAMPLE_DATA\Iris.jmp" );
@@ -1209,7 +1149,6 @@ fd2 = Formula Depot[1];
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
 
@@ -1223,7 +1162,6 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/2D Gaussian Process Example.jmp" );
 obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
@@ -1237,7 +1175,6 @@ obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -1254,7 +1191,6 @@ gb = Graph Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
 obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
@@ -1268,7 +1204,6 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5, :Q6, :Q7, :Q8, :Q9 ) );
 
@@ -1280,9 +1215,10 @@ obj = Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5, :Q6, :Q7, :Q8, :Q9 ) );
 
 **Description:** Clusters rows based on numeric variables in data tables with up to millions of rows. You must specify the number of clusters in advance.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << K Means Cluster(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -1300,7 +1236,6 @@ obj << Go;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = K Nearest Neighbors(
 	Y( :Species ),
@@ -1318,7 +1253,6 @@ obj = K Nearest Neighbors(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Latent Class Analysis(
 	Y( :sex, :marital status, :country, :size, :type ),
@@ -1335,7 +1269,6 @@ obj = dt << Latent Class Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
@@ -1349,7 +1282,6 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
@@ -1365,7 +1297,6 @@ obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << Make Validation Column(
 	Cutpoint Column( :Week of Year ),
@@ -1383,7 +1314,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Make Validation Column(
 	Stratification Columns( :Gender ),
@@ -1405,7 +1335,6 @@ dt << Make Validation Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Manage Limits( Process Variables( dt << Get Column Group( "Processes" ) ) );
 
@@ -1417,11 +1346,12 @@ obj = dt << Manage Limits( Process Variables( dt << Get Column Group( "Processes
 
 **Description:** Estimates population admixture for individuals based on marker genotypes.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 dt << Marker Admixture( Marker( Column Group( "Markers" ) ), Set(), Fit() );
@@ -1432,7 +1362,6 @@ dt << Marker Admixture( Marker( Column Group( "Markers" ) ), Set(), Fit() );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 dt << Marker Admixture(
@@ -1461,11 +1390,12 @@ dt << Marker Admixture(
 
 **Description:** Imputes numeric missing marker genotypes.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1499,7 +1429,6 @@ dt << Marker Imputation(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1535,11 +1464,12 @@ obj = dt << Marker Imputation(
 
 **Description:** Estimates several types of genomic relationship measures between pairs of individuals based genetic markers in both diploid and polyploid organisms.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1558,7 +1488,6 @@ dt << Marker Relatedness(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1579,11 +1508,12 @@ obj = dt << Marker Relatedness(
 
 **Description:** Simulates marker genotypes from parental crosses and computes related measures of breeding performance.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1614,7 +1544,6 @@ dt << Marker Simulation(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
@@ -1648,11 +1577,12 @@ obj = dt << Marker Simulation(
 
 **Description:** Performs analysis on genetic marker data to compute measures such as minor allele frequency, Hardy-Weinberg equilibrium, and linkage disequilibrium.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 dt << Marker Statistics( Marker( Column Group( "Markers" ) ), Ploidy( 2 ) );
 
@@ -1662,7 +1592,6 @@ dt << Marker Statistics( Marker( Column Group( "Markers" ) ), Ploidy( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Marker Statistics(
 	Marker( Column Group( "Markers" ) ),
@@ -1680,7 +1609,6 @@ obj = dt << Marker Statistics(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
@@ -1694,7 +1622,6 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
 obj = dt << MaxDiff(
 	One Table( 1 ),
@@ -1717,7 +1644,6 @@ obj = dt << MaxDiff(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
@@ -1731,7 +1657,6 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 dt << Fit Model(
 	Y( :weight ),
@@ -1755,9 +1680,10 @@ obj = Model Comparison();
 
 **Description:** Creates multivariate control charts based on principal components or partial least squares methods.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Flight Delays.jmp" );
 obj = dt << Model Driven Multivariate Control Chart(
 	Process( :AA, :CO, :DL, :F9, :FL, :NW, :UA, :US, :WN )
@@ -1773,7 +1699,6 @@ obj = dt << Model Driven Multivariate Control Chart(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 obj = Model Screening(
 	Y( :Y ),
@@ -1791,7 +1716,6 @@ obj = Model Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Flight Distances.jmp" );
 obj = dt << Multidimensional Scaling(
 	Y(
@@ -1814,7 +1738,6 @@ obj = dt << Multidimensional Scaling(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 dt << Multiple Correspondence Analysis(
 	Y( :Mfr, :"Hot/Cold"n, :Fiber Gr ),
@@ -1827,7 +1750,6 @@ dt << Multiple Correspondence Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 
@@ -1839,9 +1761,10 @@ obj = dt << Multiple Correspondence Analysis( Y( :country, :size, :type ) );
 
 **Description:** Analyzes agreement among panelists in sensory data analysis.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
 dt << Multiple Factor Analysis(
 	Product ID( :Vineyard ),
@@ -1874,7 +1797,6 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
 
@@ -1886,11 +1808,12 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 **Description:** Maps data from very high-dimensional spaces to a low-dimensional space, using the Uniform Manifold Approximation and Projection (UMAP) method or the t-Distributed Stochastic Neighbor Embedding (t-SNE) method. Many times, you want to map the data to either two or three dimensions so that the low-dimensional space can be easily visualized. Both methods try to preserve the local structure of the data, but UMAP is generally faster than t-SNE for large data sets.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Multivariate Embedding(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
@@ -1902,7 +1825,6 @@ obj = dt << Multivariate Embedding(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 /* Parameters can be changed according to data features */
 obj = dt << Multivariate Embedding(
@@ -1921,7 +1843,6 @@ obj = dt << Multivariate Embedding(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 /* by group example */
 dt << New Column( "_bycol",
@@ -1944,7 +1865,6 @@ obj = dt << Multivariate Embedding(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Naive Bayes(
 	Y( :Species ),
@@ -1961,7 +1881,6 @@ obj = dt << Naive Bayes(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 obj = dt << Neural(
 	Y( :Y ),
@@ -1979,7 +1898,6 @@ obj = dt << Neural(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),
@@ -1996,7 +1914,6 @@ dt = New Table( "Little Class",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
 obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
@@ -2010,7 +1927,6 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Normal Mixtures(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
@@ -2026,9 +1942,10 @@ obj << Go;
 
 **Description:** Adjusts for technical biases and improves suitability for subsequent analysis
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -2042,7 +1959,6 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 ```jsl
 
-Names Default To Here( 1 );
 
 nb = Notebook();
 
@@ -2056,7 +1972,6 @@ nb = Notebook();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
@@ -2072,7 +1987,6 @@ obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -2081,7 +1995,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", ignore columns( "age" ) );
 
 ```
@@ -2090,7 +2003,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp", ignore columns( "age" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", "Column Names Only" );
 
 ```
@@ -2099,7 +2011,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp", "Column Names Only" );
 
 ```jsl
 
-Names Default To Here( 1 );
 info = Open( "$SAMPLE_DATA/probe.jmp", "Table Info" );
 Print( info );
 
@@ -2109,7 +2020,6 @@ Print( info );
 
 ```jsl
 
-Names Default To Here( 1 );
 info = Open( "$SAMPLE_DATA/SATByYear.jmp", random( 10 ) );
 Print( info );
 
@@ -2119,7 +2029,6 @@ Print( info );
 
 ```jsl
 
-Names Default To Here( 1 );
 info = Open( "$SAMPLE_DATA/SATByYear.jmp", First( 10 ) );
 Print( info );
 
@@ -2135,7 +2044,6 @@ Print( info );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/SAT.jmp" );
 dt << Parallel Plot(
 	Y(
@@ -2152,7 +2060,6 @@ dt << Parallel Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 obj = dt << Parallel Plot( Y( :hist0, :hist1, :hist3, :hist5 ) );
 
@@ -2164,31 +2071,28 @@ obj = dt << Parallel Plot( Y( :hist0, :hist1, :hist3, :hist5 ) );
 
 **Description:** Displays the relative frequency of items in a quality-related process in decreasing order. You can define one or more classification variables to create a comparative Pareto plot.
 
-**Group**
+#### Group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ), X( :clean ), Freq( :N ) );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure Raw Data.jmp" );
 obj = dt << Pareto Plot( Cause( :failure ) );
 
 ```
 
-**Subcategory**
+#### Subcategory
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Failure2.jmp" );
 obj = dt << Pareto Plot(
 	Cause( :failure ),
@@ -2209,7 +2113,6 @@ obj = dt << Pareto Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
 obj = dt << Partial Least Squares(
 	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
@@ -2223,7 +2126,6 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
 obj = dt << Partial Least Squares(
 	Y( :ls, :ha, :dt ),
@@ -2244,7 +2146,6 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" ) ) );
 
@@ -2258,7 +2159,6 @@ obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
 obj = dt << Principal Components(
 	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
@@ -2274,7 +2174,6 @@ obj = dt << Principal Components(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Capability(
 	Process Variables(
@@ -2293,7 +2192,6 @@ obj = dt << Process Capability(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
 dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
 obj = dt << Process History Explorer(
@@ -2315,7 +2213,6 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -2331,7 +2228,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Profiler(
 	Y(
@@ -2347,7 +2243,6 @@ obj = dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Diabetes.jmp" );
 colNum = N Items( dt << Get Column Names );
 obj = dt << Fit Model(
@@ -2374,7 +2269,6 @@ dt << Profiler(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Stochastic Optimization.jmp" );
 dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand );
 
@@ -2388,7 +2282,6 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Bladder Cancer.jmp" );
 obj = dt << Recurrence Analysis(
 	Y( :Age ),
@@ -2405,11 +2298,10 @@ obj = dt << Recurrence Analysis(
 
 **Description:** Predicts future failures based on observed data and future units at risk. The platform accepts several input formats. See each format for specification details.
 
-**Dates Format**
+#### Dates Format
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt1 = Open( "$SAMPLE_DATA/Reliability/Small Production part1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Reliability/Small Production part2.jmp" );
@@ -2461,11 +2353,10 @@ obj = dt1 << Reliability Forecast(
 
 ```
 
-**Nevada Format**
+#### Nevada Format
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Widgets.jmp" );
 collist = Transform Each( {i}, 3 :: 38, Output( "List" ), Column( dt, i ) );
 obj = dt << Reliability Forecast(
@@ -2508,11 +2399,10 @@ obj = dt << Reliability Forecast(
 
 ```
 
-**Time to Event Format**
+#### Time to Event Format
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Small Production Time to Event.jmp" );
 obj = dt << Reliability Forecast(
@@ -2554,11 +2444,10 @@ obj = dt << Reliability Forecast(
 
 **Description:** Models the change in reliability of a single repairable system over time as improvements are incorporated into its design. The platform accepts several input formats. See each format for specification details.
 
-**Concurrent Systems**
+#### Concurrent Systems
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Concurrent Systems.jmp" );
 obj = dt << Reliability Growth(
 	Input Format( Concurrent Systems ),
@@ -2570,11 +2459,10 @@ obj << Crow AMSAA;
 
 ```
 
-**Dates**
+#### Dates
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
 obj = dt << Reliability Growth(
 	Input Format( Dates ),
@@ -2584,11 +2472,10 @@ obj = dt << Reliability Growth(
 
 ```
 
-**Parallel Systems**
+#### Parallel Systems
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );
 obj = dt << Reliability Growth(
 	Input Format( Parallel Systems ),
@@ -2601,11 +2488,10 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ```
 
-**Time to Event**
+#### Time to Event
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
 obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
 obj << Crow AMSAA;
@@ -2620,7 +2506,6 @@ obj << Crow AMSAA;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
 obj = dt << Repeated Measures Degradation(
@@ -2644,7 +2529,6 @@ obj = dt << Repeated Measures Degradation(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Probe.jmp" );
 obj = dt << Response Screening(
 	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
@@ -2657,7 +2541,6 @@ obj = dt << Response Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Probe.jmp" );
 obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
@@ -2671,7 +2554,6 @@ obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
@@ -2685,7 +2567,6 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = dt << Scatterplot Matrix(
 	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
@@ -2699,9 +2580,10 @@ obj = dt << Scatterplot Matrix(
 
 **Description:** Provides a framework to fit a variety of models, including confirmatory factor analysis, path models with or without latent variables, measurement error models, and latent growth curve models.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2730,9 +2612,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Predicts a response based on the support vectors in the space of the X variables. One of the goals of the Support Vector Machines algorithm is to use training data to learn how to classify new data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );
 obj = Support Vector Machines(
 	Y( :Species ),
@@ -2749,7 +2632,6 @@ obj = Support Vector Machines(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 obj = dt << Surface Plot(
 	Columns(
@@ -2768,7 +2650,6 @@ obj = dt << Surface Plot(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Rats.jmp" );
 obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
@@ -2782,7 +2663,6 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
 	Add Table(
@@ -2801,7 +2681,6 @@ obj = dt << Tabulate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
 obj = dt << Ternary Plot( Y( :p1, :p2, :p3 ) );
 
@@ -2815,7 +2694,6 @@ obj = dt << Ternary Plot( Y( :p1, :p2, :p3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
@@ -2829,7 +2707,6 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 obj = dt << Time Series( Y( :steel shipments ) );
 
@@ -2843,7 +2720,6 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
 obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
@@ -2859,7 +2735,6 @@ obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 obj = Uplift(
 	Y( :Purchase ),
@@ -2874,7 +2749,6 @@ obj = Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Hair Care Product.jmp" );
 dt << Make Validation Column(
 	Training Set( .6 ),
@@ -2901,7 +2775,6 @@ obj = dt << Uplift(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
 obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
@@ -2931,7 +2804,6 @@ The option &apos;Use Linked Column Name&apos; will build the linked columns with
 
 ```jsl
 
-Names Default To Here( 1 );
 cID = New Table( "Color IDs",
 	Add Rows( 2 ),
 	New Column( "ID", Numeric, Set Property( "Link ID", 1 ), Set Values( [1, 2] ) ),
@@ -2965,7 +2837,6 @@ Write( "\!nRalph's color changed." );
 
 ```jsl
 
-Names Default To Here( 1 );
 cID = New Table( "Color IDs",
 	Add Rows( 2 ),
 	New Column( "ID", Numeric, Set Values( [1, 2] ) ),
@@ -2999,7 +2870,6 @@ Write( "\!nRalph's color changed." );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 cID = New Table( "Color IDs",
 	Add Rows( 2 ),
@@ -3056,7 +2926,6 @@ Write( "\!n", cID:person[2], " likes ", Favs:color[4] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Properties( {2, 4} );
 proplist = dt << Get Selected Properties();
@@ -3073,7 +2942,6 @@ dt2 << Add Properties to Table( proplist );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Properties( {2, 4} );
 proplist = dt << Get Selected Properties();
@@ -3090,7 +2958,6 @@ dt2 << Add scripts to table( proplist );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << anonymize( columns( :name, :age ), output table name( "anonymized" ) );
 
@@ -3102,9 +2969,10 @@ dt << anonymize( columns( :name, :age ), output table name( "anonymized" ) );
 
 **Description:** Turn on to apply filters in the data table Columns list to the data grid.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Column Filter( Column Name( "tude" ) );
 Wait( 1 );
@@ -3126,11 +2994,12 @@ The first group defined serves as the target if the output is &apos;in place&apo
 
 Lastly, the output type can be specified, optionally with a name and group name for new columns.
 
-**New Data Columns/ListRef**
+**JMP Version Added:** 18
+
+#### New Data Columns/ListRef
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Data Table( "Big Class" ) << Apply Formula(
 	Columns(
@@ -3144,11 +3013,10 @@ Data Table( "Big Class" ) << Apply Formula(
 
 ```
 
-**New Formula Columns/Grouping**
+#### New Formula Columns/Grouping
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Apply Formula(
 	Columns( Group( :height, 2 ), Ref( "_relative_from_height" ) ),
@@ -3158,11 +3026,10 @@ dt << Apply Formula(
 
 ```
 
-**Simple New Formula Column**
+#### Simple New Formula Column
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Data Table( "Big Class" ) << Apply Formula(
 	Columns( :height ),
@@ -3180,7 +3047,6 @@ Data Table( "Big Class" ) << Apply Formula(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Central Limit Theorem.jmp" );
 dt << Add Rows( 2000 );
 dt << Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
@@ -3197,11 +3063,12 @@ dt << End Data Update;
 
 **Description:** Compute the table&apos;s checksum. Available flags include: "ColData", "ColName", "ColDataType", "ColModelingType", "ColFormat", "ColInFormat", "ColFormatWidth", "ColAttributes", "ColProperties", "ColListCheck", "ColRangeCheck", "ColCompact", "ColLabel", "ColHidden", "ColExclude", "ColSelection", "ColState", "ColDisplayWidth", "TableVariables", "TableScripts", "RowExclude", "RowHidden", "RowLabel", "RowColor", "RowMarker", "RowSelection", "RowState"
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Checksum();
 
@@ -3211,7 +3078,6 @@ dt << Checksum();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Checksum( Exclude( "ColData" ) );
 
@@ -3221,7 +3087,6 @@ dt << Checksum( Exclude( "ColData" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Checksum( Include( "ColData", "ColAttributes" ) );
 
@@ -3231,7 +3096,6 @@ dt << Checksum( Include( "ColData", "ColAttributes" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 flags = {"ColData", "ColAttributes"};
 dt << Checksum( Include( flags ) );
@@ -3244,11 +3108,12 @@ dt << Checksum( Include( flags ) );
 
 **Description:** Clear the cell color of the selected columns. If no columns are selected, cell colors of all columns are cleared.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :age << Color Cells( "Red" );
 a = {1, 3, 5};
@@ -3264,7 +3129,6 @@ dt << Clear cell colors( {:height, :age} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :age << Color Cells( "Red" );
 a = {1, 3, 5};
@@ -3284,7 +3148,6 @@ dt << Clear cell colors();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Go To( :BP 12F );
 Wait( 2 );
@@ -3300,7 +3163,6 @@ dt << Clear Column Selection();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Edit Lock( "Modify Cells", "Add Rows", "Delete Columns" );
 :age << set selected( 1 );
@@ -3320,7 +3182,6 @@ dt << Clear Edit Lock( "Delete Columns" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 list = {"Bivariate", "Logistic"};
 proplist = dt << Select Properties();
@@ -3333,7 +3194,6 @@ dt << clear properties selection( list );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 list = {"Bivariate", "Logistic"};
 proplist = dt << Select Properties();
@@ -3348,9 +3208,10 @@ dt << clear properties selecction();
 
 **Description:** Create a copy of the data table
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dtClone = dt << Clone;
 
@@ -3364,7 +3225,6 @@ dtClone = dt << Clone;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Close Data Grid( 1 );
 
@@ -3378,7 +3238,6 @@ dt << Close Data Grid( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Close Side Panels( 1 );
 
@@ -3390,9 +3249,10 @@ dt << Close Side Panels( 1 );
 
 **Description:** Close or open the data table&apos;s summary panels.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Close Summary Panels( 1 );
 
@@ -3408,9 +3268,10 @@ dt << Close Summary Panels( 1 );
 
 **Description:** Collapses all column groups
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Group Columns( "Monday", BP 8M, 3 );
 dt << Group Columns( "Wednesday", BP 8W, 3 );
@@ -3427,9 +3288,10 @@ dt << Collapse All Column Groups;
 
 **Description:** Retrieves object to manipulate active column filter for the table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Expand All Column Groups;
 dt:sex << Hide( 1 );
@@ -3458,11 +3320,12 @@ dt << Apply Columns List Filter to Data Grid( 0 );
 
 **Description:** Creates a standalone column switcher
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
 dt << Column Switcher(
 	:Process 1,
@@ -3475,7 +3338,6 @@ dt << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Bivariate",
 	H List Box(
@@ -3495,7 +3357,6 @@ cs << Link Platform( male );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Bivariate",
 	H List Box(
@@ -3518,7 +3379,6 @@ cs << Link Platform( b[2] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Combine Columns(
 	delimiter( "," ),
@@ -3535,7 +3395,6 @@ dt << Combine Columns(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Combine Columns(
 	delimiter( "," ),
@@ -3555,7 +3414,6 @@ dt << Combine Columns(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
 dt << compare data tables( compare With( Data Table( "Students2" ) ) );
@@ -3570,7 +3428,6 @@ dt << compare data tables( compare With( Data Table( "Students2" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Compress File When Saved( 1 );
 
@@ -3588,7 +3445,6 @@ Numeric data will be 1-byte if the data is between -127 and 127.
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
@@ -3604,7 +3460,6 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Trial1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Trial2.jmp" );
 dt << Concatenate( Data Table( "Trial2" ) );
@@ -3615,7 +3470,6 @@ dt << Concatenate( Data Table( "Trial2" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Students.jmp" );
 dt1 = Open( "$SAMPLE_DATA/Students1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
@@ -3638,7 +3492,6 @@ dt << Concatenate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Select Columns( :MODULUS, :ELONG );
 dt << Copy Column Properties;
@@ -3651,7 +3504,6 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Copy Column Properties( {:MODULUS, :ELONG} );
 New Window( "Script", Script Box( "//Try Paste here
@@ -3667,7 +3519,6 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << select properties( {"Distribution", "Oneway"} );
 proplist = dt << Copy Selected Properties();
@@ -3686,7 +3537,6 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Copy Table Script();
 New Window( "Script", Script Box( "//Try Paste here
@@ -3698,7 +3548,6 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Copy Table Script( "No Data" );
 New Window( "Script", Script Box( "//Try Paste here
@@ -3714,7 +3563,6 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Debug Script( "Distribution" );
 
@@ -3730,11 +3578,12 @@ dt << Debug Script( "Distribution" );
 
 **Description:** Create or update a column tag definition on the table. If the tag doesn&apos;t exist, create it. Optionally assign color, symbol, and other attributes.
 
-**Color, Symbol, or None**
+**JMP Version Added:** 19
+
+#### Color, Symbol, or None
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Define Tag( "ID1", Color( Red ) );
 dt << Define Tag( "ID2", Symbol( "\!UD83D\!UDCCB" ) );
@@ -3742,21 +3591,19 @@ dt << Define Tag( "ID3" );
 
 ```
 
-**New Tag**
+#### New Tag
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Define Tag( "ID", Color( Blue ) );
 
 ```
 
-**Replace**
+#### Replace
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Define Tag( "ID", Color( Red ) );
 :height << Set Property( "Tags", {"ID"} );
@@ -3771,11 +3618,12 @@ dt << Define Tag( "Identifier", Replace( "ID" ), Color( Blue ) );
 
 **Description:** Deletes the specified column(s). If no argument is specified, deletes selected columns in the data table.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height << Set Selected;
 Wait( 2 );
@@ -3787,7 +3635,6 @@ dt << Delete Columns();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 dt << Delete Columns( :Height );
@@ -3798,7 +3645,6 @@ dt << Delete Columns( :Height );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 cols = {"height", "weight"};
 Wait( 2 );
@@ -3812,9 +3658,10 @@ dt << Delete Columns( cols );
 
 **Description:** Delete the given filter view.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv dream = dt << New Filter View(
 	"Dream",
@@ -3838,11 +3685,12 @@ dt << Delete Filter View( "Male" );
 
 **Description:** Deletes the specified scripts from the data table.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Table Script(
 	"New Script",
@@ -3857,7 +3705,6 @@ dt << Delete Scripts( "New Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 list = {"Bivariate", "Logistic"};
 Wait( 2 );
@@ -3873,7 +3720,6 @@ dt << Delete Scripts( list );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Table Script(
 	"New Script",
@@ -3892,7 +3738,6 @@ dt << Delete Table Property( "New Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Table Variable( "Days", 42 );
 Wait( 2 );
@@ -3906,11 +3751,12 @@ dt << Delete Table Variable( "Days" );
 
 **Description:** Delete a tag from the table. Tags will not be deleted if any columns still use them, unless the Force(1) flag is provided.
 
-**Delete tag**
+**JMP Version Added:** 19
+
+#### Delete tag
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Define Tag( "ID" );
 Wait( 3 );
@@ -3918,11 +3764,10 @@ dt << Delete Tag( "ID" );
 
 ```
 
-**Force delete**
+#### Force delete
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Define Tag( "ID" );
 :height << Set Property( "Tags", {"ID"} );
@@ -3939,7 +3784,6 @@ dt << Delete Tag( "ID", Force( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -3957,7 +3801,6 @@ dt << deselect column group( "pollutants" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << disable undo( 1 );
 
@@ -3971,7 +3814,6 @@ dt << disable undo( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Central Limit Theorem.jmp" );
 dt << Add Rows( 2000 );
 dt << Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
@@ -3988,9 +3830,10 @@ dt << End Data Update;
 
 **Description:** Excludes the columns from any analysis run
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Exclude Columns( 1, {:Age, :Name} );
 
@@ -4002,9 +3845,10 @@ dt << Exclude Columns( 1, {:Age, :Name} );
 
 **Description:** Return to the unfiltered view. If already in the unfiltered view, this has no effect.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream",
@@ -4021,9 +3865,10 @@ dt << Exit Filter View;
 
 **Description:** Expands all column groups
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Group Columns( "Monday", BP 8M, 3 );
 dt << Group Columns( "Wednesday", BP 8W, 3 );
@@ -4042,7 +3887,6 @@ dt << Expand All Column Groups;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Drug.jmp" );
 dt << Fit Model(
 	Y( :y ),
@@ -4059,9 +3903,10 @@ dt << Fit Model(
 
 **Description:** Get the active filter view. Returns a FilterView object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream",
@@ -4080,7 +3925,6 @@ Show( fv active << Get Name );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 m = dt << Get All Columns As Matrix();
 Show( m );
@@ -4097,7 +3941,6 @@ Show( m );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 jmp_report = New Window( "Big Class",
 	Text Box( "Big Class" ),
@@ -4111,7 +3954,6 @@ jmp_report = New Window( "Big Class",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( :Age < 14 );
 dt << Select Columns( :name, :age, :height );
@@ -4131,7 +3973,6 @@ jmp_report = New Window( "Big Class",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 ht = dt << Get Cell Height;
 
@@ -4145,7 +3986,6 @@ ht = dt << Get Cell Height;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -4161,7 +4001,6 @@ dt << get column group( "xy" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -4177,7 +4016,6 @@ dt << get column groups names;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 n = dt << Get Column Names();
 Show( n );
@@ -4198,7 +4036,6 @@ Show( SNames );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 refList = dt << Get Column Reference( {"sex", "age"} );
 Show( refList );
@@ -4209,7 +4046,6 @@ Show( refList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = {1, 3, 4};
 refList = dt << Get Column Reference( a );
@@ -4225,7 +4061,6 @@ Show( refList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 Wait( 2 );
@@ -4241,7 +4076,6 @@ dt << Get Edit Lock();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Name << Exclude;
 exCols = dt << Get Excluded Columns;
@@ -4257,7 +4091,6 @@ Show( exCols );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( 1 );
 dt << Select Rows( 5 );
@@ -4274,9 +4107,10 @@ Show( r1, r2 );
 
 **Description:** Get a filter view by name, or get one of the special filter views by using <<Temporary or <<Unfiltered. If a filter view by the given name does not exist, returns Empty().
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream",
@@ -4295,9 +4129,10 @@ Show( (dt << Get Filter View( <<Unfiltered )) << Get Name );
 
 **Description:** Get a list of all filter views. By default, the temporary and unfiltered views are not included.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv dream = dt << New Filter View(
 	"Dream",
@@ -4317,7 +4152,6 @@ Show( fvs << Get Name );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 ht = dt << Get Header Height;
 
@@ -4331,7 +4165,6 @@ ht = dt << Get Header Height;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Weight << Hide;
 hidCols = dt << Get Hidden Columns;
@@ -4347,7 +4180,6 @@ Show( hidCols );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( 1 );
 dt << Select Rows( 5 );
@@ -4364,9 +4196,10 @@ Show( r1, r2 );
 
 **Description:** Returns the columns used to label rows.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 labelCols = dt << Get Label Columns;
 Show( labelCols );
@@ -4381,7 +4214,6 @@ Show( labelCols );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( 1 );
 dt << Select Rows( 5 );
@@ -4400,7 +4232,6 @@ Show( r1, r2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = dt << get lock();
@@ -4420,7 +4251,6 @@ Show( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Ratio", Formula( :height / :weight ) );
 dt << Get MM SAS Data Step for Formula Columns;
@@ -4437,7 +4267,6 @@ dt << Get MM SAS Data Step for Formula Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 n = dt << Get Name();
 Show( n );
@@ -4448,7 +4277,6 @@ Show( n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 n = dt << Get Name( "Ignore Extension" );
 Show( n );
@@ -4463,7 +4291,6 @@ Show( n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 path = dt << Get Path();
 Show( path );
@@ -4478,7 +4305,6 @@ Show( path );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = dt << Get Property( "Distribution" );
 Show( s );
@@ -4493,7 +4319,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 ht = dt << Get Row ID Width;
 
@@ -4509,7 +4334,6 @@ ht = dt << Get Row ID Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 rs = dt << Get Row States;
 Show( rs );
@@ -4520,7 +4344,6 @@ Show( rs );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
 rs = dt << GetRowStates;
 w = Marker Of( As Row State( rs[3] ) );
@@ -4537,7 +4360,6 @@ Row State( dt2, 5 ) = Marker State( w );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r1 = dt << Get Rows Where( :sex == "M" );
 r2 = Where( :sex == "M" );
@@ -4553,7 +4375,6 @@ Show( r1, r2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Ratio", Formula( :height / :weight ) );
 dt << Get SAS Data Step for Formula Columns;
@@ -4570,7 +4391,6 @@ dt << Get SAS Data Step for Formula Columns;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = dt << Get Script;
 New Window( "Script", Script Box( Char( Name Expr( s ) ) ) );
@@ -4581,7 +4401,6 @@ New Window( "Script", Script Box( Char( Name Expr( s ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = dt << Get Script( "Distribution" );
 
@@ -4593,9 +4412,10 @@ s = dt << Get Script( "Distribution" );
 
 **Description:** Returns the list of scripts in the group.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -4615,9 +4435,10 @@ dt << run script( gb[2] );
 
 **Description:** Returns the list of names of script groups.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -4637,7 +4458,6 @@ gb = dt << get script groups names;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Name << Scroll Lock;
 lockCols = dt << Get Scroll Locked Columns;
@@ -4653,7 +4473,6 @@ Show( lockCols );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :weight );
 names = dt << Get Selected Columns;
@@ -4671,7 +4490,6 @@ Show( names );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Properties( {2, 4} );
 proplist = dt << Get Selected Properties();
@@ -4682,7 +4500,6 @@ proplist = dt << Get Selected Properties();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 proplist = dt << Get Selected Properties( {2, 4} );
 
@@ -4696,7 +4513,6 @@ proplist = dt << Get Selected Properties( {2, 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( 1 );
 dt << Select Rows( 5 );
@@ -4713,7 +4529,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 names = dt << Get Table Script Names;
 Show( names );
@@ -4728,7 +4543,6 @@ Show( names );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Table Variable( "Days", 42 );
 var = dt << Get Table Variable( "Days" );
@@ -4744,7 +4558,6 @@ Show( var );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
 names = dt << Get Table Variable Names;
 Show( names );
@@ -4759,7 +4572,6 @@ Show( names );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt:Ozone << setProperty( "Tags", {"Air Pollution Levels"} );
 dt:CO << setProperty( "Tags", {"Air Pollution Levels"} );
@@ -4777,9 +4589,10 @@ dt << Get Tagged Columns( "Air Pollution Levels" );
 
 **Description:** Retrieve the list of transform columns associated with this data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "A", Formula( :B + 1 ) );
 dt << Transform Column( "B", Formula( :height + 1 ) );
@@ -4796,7 +4609,6 @@ dt << Delete Columns( {:A, :B} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 m = dt << Get As Matrix();
 Show( m );
@@ -4811,11 +4623,10 @@ Show( x );
 
 **Description:** Groups a list of columns.
 
-**Add to group**
+#### Add to group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 Wait( 1 );
 theGroup = dt << Group Columns( "BP", :BP 8M :: :BP 8W );
@@ -4825,22 +4636,20 @@ theGroup = dt << Group Columns( theGroup, {:BP 12W} );
 
 ```
 
-**Nested group**
+#### Nested group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 Wait( 1 );
 dt << Group Columns( Path( {"Groups", "BP8"} ), :BP 8M :: :BP 8W );
 
 ```
 
-**Using count**
+#### Using count
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 Wait( 1 );
 group = dt << Group Columns( BP 8M, 9 );
@@ -4853,11 +4662,12 @@ group = dt << Group Columns( BP 8M, 9 );
 
 **Description:** Group a list of scripts.
 
-**Nested group**
+**JMP Version Added:** 14
+
+#### Nested group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	Path( {"GB", "Sample Graphs"} ),
@@ -4867,11 +4677,10 @@ dt << group scripts(
 
 ```
 
-**Simple group**
+#### Simple group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -4887,11 +4696,12 @@ dt << group scripts(
 
 **Description:** Inquire whether the data table has a column with the given name.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Has Column( "weight" );
 
@@ -4901,7 +4711,6 @@ dt << Has Column( "weight" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show(
 	dt << Has Column( "Weight" ),
@@ -4920,7 +4729,6 @@ Show(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Has Data View();
 
@@ -4932,9 +4740,10 @@ dt << Has Data View();
 
 **Description:** Hides the columns in the data grid
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Hide Columns( 1, {:Age, :Name} );
 
@@ -4948,7 +4757,6 @@ dt << Hide Columns( 1, {:Age, :Name} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = dt << is Dirty;
 Show( a );
@@ -4964,9 +4772,10 @@ Show( b );
 
 **Description:** Inquire whether the data table is a linked subset
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 linkedSubset = dt << Subset( All Rows, Link To Original Data Table( 1 ) );
 subset = dt << Subset( All Rows );
@@ -4982,7 +4791,6 @@ Show( dt << Is Linked Subset, linkedSubset << Is Linked Subset, subset << Is Lin
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << JMP Query Builder();
 
@@ -4996,7 +4804,6 @@ dt << JMP Query Builder();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Trial1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Little.jmp" );
 dt << Join(
@@ -5016,7 +4823,6 @@ dt << Join(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Journal();
 
@@ -5030,7 +4836,6 @@ dt << Journal();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Journal Link(); // assumes the table can be saved at its current location; button gets name from table
 dt << Journal Link( Embed() ); // embed JSL script to re-create table; button gets name from table
@@ -5057,7 +4862,6 @@ Close( dt, "NoSave" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 date = dt << Last Modified();
 Show( date );
@@ -5072,7 +4876,6 @@ Show( date );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Lock Data Table( 1 );
 // Now try changing a value in the data table.
@@ -5087,7 +4890,6 @@ dt << Lock Data Table( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
 dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
@@ -5101,7 +4903,6 @@ dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << Make Indicator Columns( columns( {:species, :season} ) );
 
@@ -5115,7 +4916,6 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 f = Function( {a}, Print( a ) );
 rs = dt << make row state handler( f );
@@ -5132,7 +4932,6 @@ dt << Select Rows( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sd = dt << Make SAS Data Step();
 Show( sd );
@@ -5147,7 +4946,6 @@ Show( sd );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sd = dt << Make SAS Data Step Window();
 
@@ -5161,7 +4959,6 @@ sd = dt << Make SAS Data Step Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA\Pizza Profiles.jmp" );
 dt2 = Open( "$SAMPLE_DATA\Pizza Responses.jmp" );
 dt1:ID << Set Property( "Link ID", 1 );
@@ -5180,7 +4977,6 @@ dt2 << Merge Referenced Data();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Missing Data Pattern(
 	columns( :POP, :Max deg. F Jan, :OZONE, :CO, :SO2, :NO, :PM10, :Lead )
@@ -5194,11 +4990,10 @@ dt << Missing Data Pattern(
 
 **Description:** Move the column group to specified location. If the column group name is omitted, all groups are moved.
 
-**After group**
+#### After group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -5206,11 +5001,10 @@ dt << move column group( "Pollutants", after( "xy" ) );
 
 ```
 
-**Move all**
+#### Move all
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -5218,11 +5012,10 @@ dt << move column group( to first );
 
 ```
 
-**To first**
+#### To first
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -5236,9 +5029,10 @@ dt << move column group( "xy", to first );
 
 **Description:** Move the script group to specified location. If the script group name is omitted, all groups are moved.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5263,11 +5057,12 @@ dt << move script group( to first );
 
 **Description:** Move the scripts to specified location.
 
-**After group**
+**JMP Version Added:** 14
+
+#### After group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5278,11 +5073,10 @@ dt << Move Selected scripts( {"Logistic"}, after( "GB" ) );
 
 ```
 
-**Move Group**
+#### Move Group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	Path( {"GB", "Graphs"} ),
@@ -5293,11 +5087,10 @@ dt << Move Selected scripts( Path( {"GB", "Graphs"} ), after( "Contingency" ) );
 
 ```
 
-**To first**
+#### To first
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Move Selected scripts(
 	{"Graph Builder Smoother Line", "Graph Builder Line and Bar Charts",
@@ -5313,9 +5106,10 @@ dt << Move Selected scripts(
 
 **Description:** Replaces the values in the first row of the data table with the column names and replaces the column names with default sequencing names.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Move down;
 
@@ -5327,9 +5121,10 @@ dt << Move down;
 
 **Description:** Replaces the column names with the values in the first row of the data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Move up;
 
@@ -5341,9 +5136,10 @@ dt << Move up;
 
 **Description:** Replaces the column names by appending the values in the first row of the data table to the corresponding column names.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Move up and append;
 
@@ -5357,7 +5153,6 @@ dt << Move up and append;
 
 ```jsl
 
-Names Default To Here( 1 );
 dtA = Open( "$SAMPLE_DATA/Big Class.jmp", invisible );
 New Window( "school",
 	H List Box(
@@ -5381,7 +5176,6 @@ dtA = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << New Data View();
 
@@ -5393,11 +5187,12 @@ dt << New Data View();
 
 **Description:** Create a new filter view. The created FilterView object is returned. The new filter view will be active by default. If you do not name the filter view, it is temporary, unless you set Temporary to zero.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream",
@@ -5410,7 +5205,6 @@ dt << New Filter View(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream Inverse",
@@ -5428,7 +5222,6 @@ dt << New Filter View(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	Data Filter( Add Filter( Columns( :Sex ), Where( Is Missing( :Sex ) ) ) )
@@ -5445,7 +5238,6 @@ dt << New Filter View( "Unknown Sex", CopyFrom( fv ), Active( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :sex ) ) );
 
@@ -5459,7 +5251,6 @@ dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :s
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Table Variable( "Days", 42 );
 
@@ -5471,6 +5262,8 @@ dt << New Table Variable( "Days", 42 );
 
 **Description:** Creates a graph that plots the probability of not detecting a shift in process as a function of the size of the shift.
 
+**JMP Version Added:** 16
+
 ### Partition
 
 **Syntax:** obj &lt;&lt; Partition( Y( column ), X( column(s) ) )
@@ -5479,7 +5272,6 @@ dt << New Table Variable( "Days", 42 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
 dt << Partition(
 	Y( :Y ),
@@ -5495,9 +5287,10 @@ dt << Partition(
 
 **Description:** Pastes from the clipboard multiple lists of column properties to multiple columns. Optionally, you can specify a list of target columns instead of selecting them in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Copy Column Properties( {:MODULUS, :ELONG} );
 dt2 = New Table( "test it",
@@ -5518,7 +5311,6 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :weight );
 dt << Recode;
@@ -5537,9 +5329,10 @@ Special JSL variables are populated during the execution of the command:
 
 	_rcOrig is the original value of the input.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( :age );
 col << Data Type( "Character" );
@@ -5557,11 +5350,10 @@ dt << Recode Column(
 
 **Description:** Rename the column group.
 
-**Nested Group**
+#### Nested Group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( Path( {"xy", "Cols"} ), {:X, :y} );
 Wait( 1 );
@@ -5570,11 +5362,10 @@ dt << rename column group( Path( {"XY", "Cols"} ), "Columns" );
 
 ```
 
-**Simple Group**
+#### Simple Group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -5589,11 +5380,12 @@ dt << rename column group( "xy", "coordinates" );
 
 **Description:** Rename the script group
 
-**Nested group**
+**JMP Version Added:** 14
+
+#### Nested group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	Path( {"GB", "Graphs"} ),
@@ -5604,11 +5396,10 @@ dt << rename script group( Path( {"GB", "Graphs"} ), "My Graphs" );
 
 ```
 
-**Simple group**
+#### Simple group
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5627,7 +5418,6 @@ dt << rename script group( "GB", "GraphBuilders" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :sex ) ) );
 Wait( 1 );
@@ -5643,7 +5433,6 @@ dt << Rename Table Property( "New Script", "Great Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :sex ) ) );
 Wait( 1 );
@@ -5659,7 +5448,6 @@ dt << Rename Table Script( "New Script", "Great Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Table Variable( "Days", 42 );
 Wait( 2 );
@@ -5675,7 +5463,6 @@ dt << Rename Table Variable( "Days", "Hours" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Central Limit Theorem.jmp" );
 dt << Add Rows( 100 );
 dt << Rerun Formulas;
@@ -5688,9 +5475,10 @@ dt << Rerun Formulas;
 
 **Description:** When transform columns are accessed, they cache their data for future calls. This function removes that data. The data will be recreated if the column is accessed again.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Reset Transforms();
 
@@ -5704,7 +5492,6 @@ dt << Reset Transforms();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Row States(
 	[33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -5723,7 +5510,6 @@ dt << revert();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Central Limit Theorem.jmp" );
 dt << Add Rows( 10000 );
 dt << Run Formulas();
@@ -5739,7 +5525,6 @@ Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Run Script( "Distribution" );
 
@@ -5753,7 +5538,6 @@ dt << Run Script( "Distribution" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Save( "$temp\deleteme Big Class.jmp" ); // explicit location
 If( dt << Save( "" ),
@@ -5773,7 +5557,6 @@ Close( dt, "NoSave" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Save( "$temp\deleteme Big Class.jmp" ); // explicit location
 If( dt << Save( "" ),
@@ -5793,7 +5576,6 @@ Close( dt, "NoSave" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Save Database( "Connect Dialog", "My_Class" );
 
@@ -5807,7 +5589,6 @@ dt << Save Database( "Connect Dialog", "My_Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bands Data.jmp" );
 obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" ) ) );
 
@@ -5821,7 +5602,6 @@ obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << group columns( "xy", {:X, :y} );
 dt << group columns( "pollutants", :Ozone :: :Lead );
@@ -5839,7 +5619,6 @@ dt << select column group( "xy", "pollutants" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 proplist = dt << Select Properties( {2, 4} );
 
@@ -5849,7 +5628,6 @@ proplist = dt << Select Properties( {2, 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 proplist = dt << Select Properties( {"Bivariate", "Logistic"} );
 
@@ -5861,9 +5639,10 @@ proplist = dt << Select Properties( {"Bivariate", "Logistic"} );
 
 **Description:** Select the script groups. If no script group is given, all groups are selected.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5882,11 +5661,12 @@ dt << select script group( "VL" );
 
 **Description:** Select the named scripts.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5903,7 +5683,6 @@ dt << select scripts( {"Distribution", "Graph Builder Heat Map"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -5923,11 +5702,12 @@ dt << select scripts( a );
 
 **Description:** Select the specified columns. To select all columns, use the keyword &apos;All&apos;.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 dt << Select Columns( :Height );
@@ -5938,7 +5718,6 @@ dt << Select Columns( :Height );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 dt << Select Columns( "All" );
@@ -5949,7 +5728,6 @@ dt << Select Columns( "All" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 clist = {:Height, :Weight};
@@ -5969,9 +5747,10 @@ dt << Select Columns( clist );
 
 **Description:** Set the active filter view
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << New Filter View(
 	"Dream",
@@ -5991,7 +5770,6 @@ dt << Set Active Filter View( "Dream" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Cell Height( 20 );
 
@@ -6005,7 +5783,6 @@ dt << Set Cell Height( 20 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Dirty();
 
@@ -6019,7 +5796,6 @@ dt << Set Dirty();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 
@@ -6033,7 +5809,6 @@ dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Header Height( 20 );
 
@@ -6047,7 +5822,6 @@ dt << Set Header Height( 20 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Set Label Columns( :City, :State );
@@ -6062,7 +5836,6 @@ dt << Set Label Columns( :City, :State );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "B" );
 dt << Set Matrix( [12 59 95, 12 61 123, 12 55 74, 12 66 145] );
 
@@ -6076,7 +5849,6 @@ dt << Set Matrix( [12 59 95, 12 61 123, 12 55 74, 12 66 145] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Name( "New Class" );
 
@@ -6090,7 +5862,6 @@ dt << Set Name( "New Class" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Property( "New Script", Distribution( Column( :Height, :Weight ), By( :sex ) ) );
 
@@ -6104,7 +5875,6 @@ dt << Set Property( "New Script", Distribution( Column( :Height, :Weight ), By( 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Row ID Width( 80 );
 
@@ -6118,7 +5888,6 @@ dt << Set Row ID Width( 80 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Row States(
 	[33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -6135,7 +5904,6 @@ dt << Set Row States(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Set Scroll Lock Columns( :City );
 
@@ -6149,7 +5917,6 @@ dt << Set Scroll Lock Columns( :City );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Set Table Variable( "Days", 42 );
 
@@ -6161,9 +5928,10 @@ dt << Set Table Variable( "Days", 42 );
 
 **Description:** Show or hide the filter icons on columns in the current filter view.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Show Header Filter Icons( 0 );
 
@@ -6175,9 +5943,10 @@ dt << Show Header Filter Icons( 0 );
 
 **Description:** Show or hide the header graphs in the data table display.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Show Header Graphs( 0 );
 
@@ -6189,9 +5958,10 @@ dt << Show Header Graphs( 0 );
 
 **Description:** Show or hide the column groups in the data table display.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Show Header Groups( 0 );
 
@@ -6203,9 +5973,10 @@ dt << Show Header Groups( 0 );
 
 **Description:** Show or hide the header statistics in the data table display.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Show Header Statistics( 0 );
 
@@ -6217,9 +5988,10 @@ dt << Show Header Statistics( 0 );
 
 **Description:** Show or hide the column tags in the data table display.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Lipid Data.jmp" );
 dt << Show Header Tags( 0 );
 
@@ -6231,9 +6003,10 @@ dt << Show Header Tags( 0 );
 
 **Description:** Turn off to omit Hidden columns from the data table Columns list. These columns never show in the data grid.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Hide Columns( 1, {:"pop- m"n, :Max deg. F Jan, :X, :Y} );
 Wait( 1 );
@@ -6247,9 +6020,10 @@ dt << Show Hidden Columns In Columns List( 0 );
 
 **Description:** Print information to the log about the transform columns associated with this data table and its platforms. This is informational and the format might change. It should not be parsed.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "A", Formula( :height + 1 ) );
 dt << Show Transforms();
@@ -6267,7 +6041,6 @@ dt << Delete Columns( :A );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Sort( By( :name ), Order( Ascending ) );
 
@@ -6277,7 +6050,6 @@ dt << Sort( By( :name ), Order( Ascending ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Sort( replace table, By( :name ), Order( Ascending ) );
 
@@ -6291,7 +6063,6 @@ dt << Sort( replace table, By( :name ), Order( Ascending ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Restaurant Tips.jmp" );
 :Day of Week << set property( "Row Order Levels", 1 );
 dt << Split(
@@ -6313,7 +6084,6 @@ dt << Split(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
 dt << Stack(
 	columns( :LogHist0, :LogHist1, :LogHist3, :LogHist5 ),
@@ -6327,7 +6097,6 @@ dt << Stack(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Stack(
 	columns( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
@@ -6344,7 +6113,6 @@ dt << Stack(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Stack(
 	columns( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
@@ -6366,7 +6134,6 @@ dt << Stack(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subscribe( "name1"("client"), On Close( Print( "Closing Data Table" ) ) );
 f = Function( {dtab, oldname},
@@ -6398,7 +6165,6 @@ dt << Subscribe( "name2", On Delete Columns( fcols ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 f = Function( {dtab, col, oldname},
 	Print( dtab << getname() );
@@ -6416,7 +6182,6 @@ dt << unsubscribe( sub, on rename column );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 delRowsFn = Function( {a, b, rows},
 	dtname = (a << Get Name());
@@ -6442,41 +6207,37 @@ dt << subscribe( "Test Add", onAddRows( addRowsFn, 3 ) );
 
 **Description:** Creates a new data table from the selected rows and columns of the source data table. You can also randomly select rows to subset.
 
-**By**
+#### By
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subset( By( :sex ), Keep by columns );
 
 ```
 
-**Filtered Rows**
+#### Filtered Rows
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subset( Filtered Rows( :age == 14 & Contains( :name, "E" ) ) );
 
 ```
 
-**Rows**
+#### Rows
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subset( Rows( [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] ) );
 
 ```
 
-**Stratified Sample**
+#### Stratified Sample
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subset( Sample Size( 10 ), Stratify( :sex ) );
 
@@ -6492,7 +6253,6 @@ dt << Subset( Sample Size( 10 ), Stratify( :sex ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Summary(
 	Group( :Age ),
@@ -6507,7 +6267,6 @@ dt << Summary(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Summary(
 	Group( :Age ),
@@ -6525,7 +6284,6 @@ dt << Summary(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Central Limit Theorem.jmp" );
 dt << Add Rows( 2000 );
 dt << Suppress Formula Eval( 1 );
@@ -6544,7 +6302,6 @@ dt << Suppress Formula Eval( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ) );
 
@@ -6554,7 +6311,6 @@ dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Text To Columns(
 	delimiter( "," ),
@@ -6590,11 +6346,12 @@ dt << Text To Columns(
 
 	Column Properties: These are any standard column properties you wish to set. You can also set them on the column after it is created.
 
-**Nested**
+**JMP Version Added:** 16
+
+#### Nested
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "A", Formula( :B + 1 ) );
 dt << Transform Column( "B", Formula( :height + 1 ) );
@@ -6603,11 +6360,10 @@ dt << Delete Columns( {:A, :B} );
 
 ```
 
-**Random**
+#### Random
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "Predictable", Formula( Random Uniform() ), Random Seed( 314 ) );
 dt << Transform Column( "Random", Formula( Random Uniform() ) );
@@ -6616,11 +6372,10 @@ dt << Delete Columns( {:Predictable, :Random} );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "A", Formula( :height + 1 ) );
 Show( :A[1] );
@@ -6636,7 +6391,6 @@ dt << Delete Columns( :A );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Transpose(
 	columns( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
@@ -6654,7 +6408,6 @@ dt << Transpose(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Variability Data/Type 1 Gauge MSA.jmp" );
 dt << Type 1 Gauge(
 	Y( :Y1, :Y2, :Y3 ),
@@ -6677,7 +6430,6 @@ dt << Type 1 Gauge(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Group Columns( "Monday", BP 8M, 3 );
 dt << Group Columns( "Wednesday", BP 8W, 3 );
@@ -6691,7 +6443,6 @@ dt << Ungroup Columns();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Group Columns( "Monday", BP 8M, 3 );
 dt << Group Columns( "Wednesday", BP 8W, 3 );
@@ -6707,11 +6458,12 @@ dt << Ungroup Columns( Column Group( "Monday" ) );
 
 **Description:** Ungroup a list of scripts. If scripts are not given, selected scripts will be detached from its group. All of the groups will be removed from their grouping if no script is given and no script is selected.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -6730,7 +6482,6 @@ dt << ungroup scripts( {"Graph Builder Line and Bar Charts", "Graph Builder Heat
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group scripts(
 	"GB",
@@ -6753,7 +6504,6 @@ dt << ungroup scripts();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Subscribe( "myname", On Close( Print( "Closing Data table" ) ) );
 dt << Unsubscribe( "myname", On Close );
@@ -6770,7 +6520,6 @@ dt << Unsubscribe( "myname", On Close );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Trial1.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Little.jmp" );
 dt << Update(
@@ -6784,7 +6533,6 @@ dt << Update(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = New Table( "Little Class",
@@ -6808,7 +6556,6 @@ dt1 << Update(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = New Table( "Little Class",
@@ -6835,7 +6582,6 @@ dt1 << Update(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open Database( "DSN=somedb; UID=userid;pwd=PW", "SELECT * FROM DB.TABLE" );
 dt << Update From Database( "Connect Dialog" );
 
@@ -6855,7 +6601,6 @@ dt << Update From Database( "Connect Dialog" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show( Get Data Table List() );
 Wait( 1 );
@@ -6884,7 +6629,6 @@ Close( dt, No Save );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Add Column Properties( List Check( {17, 16, 15, 14, 13, 12} ) );
 
@@ -6898,7 +6642,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death.jmp" );
 dt << New Column( "Row State Col", Row State, Copy from Row States );
 dt << Select Rows( 1 );
@@ -6917,7 +6660,6 @@ col << Add From Row States();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Pickles.jmp" );
 col = Column( "Time Marker" );
 col << Copy To Row States();
@@ -6933,11 +6675,12 @@ col << Add To Row States();
 
 **Description:** Make a column of character values using value labels corresponding to the original codes.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :age << Value Labels(
 	{12 = "12!", 13 = "13!", 14 = "14!", 15 = "15!", 16 = "16!", 17 = "17!"}
@@ -6950,7 +6693,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :sex << Labels to Codes( ["F" => 1, "M" => 2] );
 :sex << Codes To Labels( [1 => "Female", 2 => "Male"] );
@@ -6961,7 +6703,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :sex << Labels to Codes( ["F" => 1.5, "M" => 2.5] );
 :sex << Codes To Labels( {1.5 = "Female", 2.5 = "Male"} );
@@ -6976,7 +6717,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Set Property(
 	"Value Colors",
@@ -6998,7 +6738,6 @@ Wait( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Color Cells( "Red" );
 
@@ -7008,7 +6747,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = {1, 3, 5};
 :Age << Color Cells( "Red", a );
@@ -7019,7 +6757,6 @@ a = {1, 3, 5};
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = {1, 3, 5};
 b = {2, 4, 6};
@@ -7033,11 +6770,12 @@ b = {2, 4, 6};
 
 **Description:** Changes a character column&apos;s internals so it only stores one copy of each value, potentially saving memory and speeding up some operations. The optional Save Format controls the format in which the column is saved. The condensed format is smaller and faster to load, but the table cannot be opened in JMP 17 and earlier. The Default format uses the save format preference.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 :Airline << Compact();
 
@@ -7047,7 +6785,6 @@ dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 :Airline << Compact();
 :Airline << Get Compact;
@@ -7060,9 +6797,10 @@ dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 
 **Description:** Adds the transform column to the data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Transform Column( "New Col", Formula( 1 ) );
 :NewCol << Convert to Table Column();
@@ -7077,7 +6815,6 @@ dt << Transform Column( "New Col", Formula( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Birth Death.jmp" );
 dt << New Column( "Row State Col", Row State, Copy from Row States );
 
@@ -7091,7 +6828,6 @@ dt << New Column( "Row State Col", Row State, Copy from Row States );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Pickles.jmp" );
 col = Column( "Time Marker" );
 Wait( 2 );
@@ -7109,7 +6845,6 @@ col << Copy To Row States();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Time",
 	"Character",
@@ -7126,7 +6861,6 @@ dt:Time << Set Modeling Type( "Continuous" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 dt:Age << Set Data Type( "Character" );
@@ -7138,7 +6872,6 @@ dt:Height << Set Data Type( "Numeric", 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "My Table",
 	New Column( "col1",
 		Character,
@@ -7155,7 +6888,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "My Table",
 	New Column( "col1",
 		Character,
@@ -7176,7 +6908,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 :Time << Delete Formula;
 
@@ -7190,7 +6921,6 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 :Time << Delete Property( "Spec Limits" );
 
@@ -7204,7 +6934,6 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -7222,7 +6951,6 @@ col << Eval Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Format( "Fixed Dec", 6, 3 );
 
@@ -7232,7 +6960,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/XYZ Stock Averages (plots).jmp" );
 :Date << Format( "ddMonyyyy", 9 );
 :DJI High << Format( "Currency" );
@@ -7245,7 +6972,6 @@ dt = Open( "$SAMPLE_DATA/XYZ Stock Averages (plots).jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "hour24_times",
 	Add Rows( 3 ),
 	New Column( "time",
@@ -7265,7 +6991,6 @@ dt = New Table( "hour24_times",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -7280,7 +7005,6 @@ col << Set Formula( :Height / :Weight );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :HARDNESS << Get Column Properties();
 
@@ -7292,11 +7016,12 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 **Description:** Is compact set on the column
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 Show( :Airline << Get Compact );
 
@@ -7306,7 +7031,6 @@ Show( :Airline << Get Compact );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 :Airline << Compact();
 Show( :Airline << Get Compact );
@@ -7319,9 +7043,10 @@ Show( :Airline << Get Compact );
 
 **Description:** Gets the column&apos;s data table.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 c = Column( dt1, "Age" );
 Show( c << Get Name, c << Get Data Table );
@@ -7336,7 +7061,6 @@ Show( c << Get Name, c << Get Data Table );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 which = dt:Age << Get Data Type;
 Show( which );
@@ -7353,7 +7077,6 @@ Show( which );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 which = dt:Age << Get Data Type Length;
 Show( which );
@@ -7364,7 +7087,6 @@ Show( which );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name", Character( 8 ), Nominal, Set Values( {"KATIE", "CAROL", "MARTHA"} ) ),
@@ -7384,7 +7106,6 @@ Show( nameTypeLength, ageTypeLength );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 0 );
 w = :Height << Get Display Width;
@@ -7399,7 +7120,6 @@ w = :Height << Get Display Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Weight << Get excluded;
 Show( s );
@@ -7414,7 +7134,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 width = :Height << Get Field Width;
 Show( width );
@@ -7429,7 +7148,6 @@ Show( width );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 f = :Height << Get Format;
 Show( f );
@@ -7444,7 +7162,6 @@ Show( f );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -7460,11 +7177,12 @@ Show( result );
 
 **Description:** Return the group name or path of the group containing this column, if any.
 
+**JMP Version Added:** 19
+
 **Nested Group**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Group Columns( "XYZ", :sex, 3 );
 dt << Group Columns( Path( "XYZ", "Measures" ), :height, 2 );
@@ -7476,7 +7194,6 @@ Show( :height << Get Group Name );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Group Columns( :height, 2 );
 Show( :height << Get Group Name );
@@ -7489,9 +7206,10 @@ Show( :height << Get Group Name );
 
 **Description:** Get the header color
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Background Color( "Light Red" );
 Show( :height << Get Header Background Color );
@@ -7504,9 +7222,10 @@ Show( :height << Get Header Background Color );
 
 **Description:** Gets the type of chart displayed in the data table column header.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show( :height << Get Header Chart Type );
 
@@ -7518,9 +7237,10 @@ Show( :height << Get Header Chart Type );
 
 **Description:** Get the header text color
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Text Color( "Dark Purple" );
 Show( :height << Get Header Text Color );
@@ -7535,7 +7255,6 @@ Show( :height << Get Header Text Color );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Weight << Get hidden;
 Show( s );
@@ -7550,7 +7269,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "MyDt" );
 dt << Add Rows( 5 );
 Column( dt, 1 ) << set initial data( Log( 1 ) );
@@ -7566,7 +7284,6 @@ Column( dt, 1 ) << get initial data;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 f = :Date << Get Input Format;
 Show( f );
@@ -7581,7 +7298,6 @@ Show( f );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Weight << Get labeled;
 Show( s );
@@ -7596,7 +7312,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Movies.jmp" );
 prop = :Type << Get List Check;
 Show( prop );
@@ -7611,7 +7326,6 @@ Show( prop );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
 lock = :Prin1 << Get Lock;
 Show( lock );
@@ -7626,7 +7340,6 @@ Show( lock );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 which = :Age << Get Modeling Type;
 Show( which );
@@ -7641,7 +7354,6 @@ Show( which );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col name = Column( 4 ) << Get Name;
 Show( col name );
@@ -7656,7 +7368,6 @@ Show( col name );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 :HARDNESS << Get Properties List();
 
@@ -7670,7 +7381,6 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 prop = :Credit Check << Get Property( "Axis" );
 Show( prop );
@@ -7685,7 +7395,6 @@ Show( prop );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Range Check( LE LT( 48, 75 ) );
 check = :Height << Get Range Check;
@@ -7701,7 +7410,6 @@ Show( check );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
 which = :Count << Get Role();
 Show( which );
@@ -7716,7 +7424,6 @@ Show( which );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Age << Get Script;
 Show( s );
@@ -7731,7 +7438,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Weight << Get Scroll locked;
 Show( s );
@@ -7746,7 +7452,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 s = :Weight << Get Selected;
 Show( s );
@@ -7761,7 +7466,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Set Property( "Missing Value Codes", 65 );
 valuesMatrix = :Height << Get Stored Values;
@@ -7788,7 +7492,6 @@ Show( valuesList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 flag = :Color << Get Use Value Labels;
 Show( flag );
@@ -7803,7 +7506,6 @@ Show( flag );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 values = :Color << Get Value Labels;
 Show( values );
@@ -7820,7 +7522,6 @@ Show( values );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 valuesMatrix = :Height << Get Values;
 Show( valuesMatrix );
@@ -7842,7 +7543,6 @@ Show( valuesList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Set Property( "Missing Value Codes", 65 );
 valuesMatrix = :Height << Get Values;
@@ -7869,7 +7569,6 @@ Show( valuesList );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -7887,7 +7586,6 @@ col << ignore errors( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 :Date << Input Format( "ddmmyyyy" );
 
@@ -7897,7 +7595,6 @@ dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "duration_table",
 	Add Rows( 3 ),
 	New Column( "durations",
@@ -7916,9 +7613,10 @@ dt = New Table( "duration_table",
 
 **Description:** Returns 1 if the column is a transform column, 0 otherwise.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Is Transform Column();
 
@@ -7932,7 +7630,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Stock Prices.jmp" );
 flag = :Date << Is Transformed On SAS Export;
 Show( flag );
@@ -7945,11 +7642,12 @@ Show( flag );
 
 **Description:** Make a column of numeric codes with value labels corresponding to the original character values.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :sex << Labels to Codes;
 
@@ -7959,7 +7657,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :sex << Labels to Codes( ["F" => 10, "M" => 20] );
 
@@ -7969,7 +7666,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Big Class.jmp" );
 :sex << Labels to Codes( {"F" = 10, "M" = 20} );
 
@@ -7983,7 +7679,6 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Lock( 1 );
 
@@ -7997,7 +7692,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Preselect Role( "Y" );
 
@@ -8011,7 +7705,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 :Color << Remove Value Labels;
 
@@ -8023,9 +7716,10 @@ dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 
 **Description:** Removes the cached data for the transform column. Accessing column data will rebuild the cache. Use this to reduce memory or to allow recalculation if the formula depends on external information.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 global:a = 2;
 dt << Transform Column( "sqrt[height]", Formula( global:a * Sqrt( :height ) ) );
@@ -8046,7 +7740,6 @@ Show( :"sqrt[height]"n[1] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Time",
 	"Character",
@@ -8063,7 +7756,6 @@ dt:Time << Set Modeling Type( "Continuous" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 dt:Age << Set Data Type( "Character" );
@@ -8075,7 +7767,6 @@ dt:Height << Set Data Type( "Numeric", 2 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "My Table",
 	New Column( "col1",
 		Character,
@@ -8092,7 +7783,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "My Table",
 	New Column( "col1",
 		Character,
@@ -8113,7 +7803,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 0 );
 w = :Height << Get Display Width;
@@ -8129,7 +7818,6 @@ w = :Height << Get Display Width;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "X" );
 dt:X << Set Each Value( 5 );
@@ -8144,7 +7832,6 @@ dt:X << Set Each Value( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Set excluded;
 
@@ -8158,7 +7845,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Set Field Width( 20 );
 
@@ -8172,7 +7858,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -8185,11 +7870,12 @@ col << Set Formula( :Height / :Weight );
 
 **Description:** Set the header color. Set to "None" to use the default color
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Background Color( "Light Red" );
 
@@ -8199,7 +7885,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Background Color( {250, 200, 150} );
 
@@ -8211,9 +7896,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Sets the type of chart to display in the data table column header.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Chart Type( "Run Chart" );
 
@@ -8225,11 +7911,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Set the header text color. Set to "None" to use the default color
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Text Color( "Dark Purple" );
 
@@ -8239,7 +7926,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Header Text Color( {100, 50, 100} );
 
@@ -8253,7 +7939,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Set hidden;
 
@@ -8269,7 +7954,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "MyDt", New Column(), New Column() );
 dt << Add Rows( 5 );
 Column( dt, 1 ) << set initial data( Today() );
@@ -8281,7 +7965,6 @@ Column( dt, 2 ) << set initial data( 99 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "MyDt" );
 dt << Add Rows( 5 );
 Column( dt, 1 ) << set initial data( Log( 1 ) );
@@ -8294,9 +7977,10 @@ Column( dt, 1 ) << set initial data( Log( 1 ) );
 
 **Description:** Use the column&apos;s data value for label.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Set labeled;
 
@@ -8310,7 +7994,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Set Modeling Type( "Continuous" );
 
@@ -8324,7 +8007,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Set Name( "Time" );
 
@@ -8338,7 +8020,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Set Property( "Units", lbs );
 
@@ -8352,7 +8033,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Set Scroll locked;
 
@@ -8366,7 +8046,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Height << Set Selected( 1 );
 
@@ -8378,9 +8057,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 **Description:** Use the values in this column as the markers in a graph.  Expression columns with pictures or character columns with IDs might work well.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Name << Set Use for Marker;
 
@@ -8394,7 +8074,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "X" );
 :X << Set Values(
@@ -8412,7 +8091,6 @@ New Column( "X" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Age << Lock( 1 );
 
@@ -8426,7 +8104,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = New Column( "Ratio" );
 col << Set Formula( :Height / :Weight );
@@ -8442,7 +8119,6 @@ col << suppress eval( true );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 :Color << Use Value Labels( 1 );
 Distribution( Column( :Color ) );
@@ -8457,7 +8133,6 @@ Distribution( Column( :Color ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :sex << Value Labels( {"F" = "Female", "M" = "Male"} );
 
@@ -8475,7 +8150,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = Column( "height" );
 
@@ -8491,7 +8165,6 @@ col = Column( "height" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Multiple Columns( "Date", 5, Character );
 
@@ -8505,7 +8178,6 @@ dt << Add Multiple Columns( "Date", 5, Character );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Go To( :BP 12F );
 Wait( 2 );
@@ -8521,7 +8193,6 @@ dt << Clear Column Selection();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << New Column( "Day 1", Formula( (:BP 8M + :BP 12M + :BP 6M) / 3 ) );
 list1 = {:BP 8W, :BP 8F};
@@ -8543,9 +8214,10 @@ dt << Clone Formula Column(
 
 **Description:** Invoke the Columns Manager on the current table, showing properties and statistics for the columns.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col1 = dt << Columns Manager;
 
@@ -8561,7 +8233,6 @@ col1 = dt << Columns Manager;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Combine Columns(
 	delimiter( "," ),
@@ -8578,7 +8249,6 @@ dt << Combine Columns(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Combine Columns(
 	delimiter( "," ),
@@ -8602,7 +8272,6 @@ Numeric data will be 1-byte if the data is between -127 and 127.
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
@@ -8616,7 +8285,6 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Name << Exclude( 1 );
 
@@ -8630,7 +8298,6 @@ dt:Name << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col1 = dt << New Column( "Ratio", Numeric, Continuous );
 col1 << Formula( :height / :weight );
@@ -8645,7 +8312,6 @@ col1 << Formula( :height / :weight );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = Column( "weight" );
 col << Preselect Role( "freq" );
@@ -8660,7 +8326,6 @@ col << Preselect Role( "freq" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
 dt << Go to( :BP 12F );
 
@@ -8674,7 +8339,6 @@ dt << Go to( :BP 12F );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Age << Hide( 1 );
 
@@ -8690,7 +8354,6 @@ dt:Age << Hide( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age << Set Selected( 1 );
 dt:height << Set Selected( 1 );
@@ -8703,7 +8366,6 @@ b = dt << Invert Column Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 a = {:height, :weight};
 b = dt << Invert Column Selection( a );
@@ -8718,7 +8380,6 @@ b = dt << Invert Column Selection( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Age << Label( 1 );
 
@@ -8732,7 +8393,6 @@ dt:Age << Label( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
 dt << Make Indicator Columns( columns( {:species, :season} ) );
 
@@ -8748,7 +8408,6 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :Age );
 Wait( 2 );
@@ -8760,7 +8419,6 @@ dt << Move Selected Columns( After( :sex ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << group Columns( "Measures", {:height, :weight} );
 dt << Go To( :Age );
@@ -8773,7 +8431,6 @@ dt << Move Selected Columns( After( "Measures" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Move Selected Columns( {:height, :weight}, After( :name ) );
 
@@ -8783,7 +8440,6 @@ dt << Move Selected Columns( {:height, :weight}, After( :name ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :Age );
 Wait( 2 );
@@ -8801,7 +8457,6 @@ dt << Move Selected Columns( To last );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "like name", Like( :name ) );
 
@@ -8811,7 +8466,6 @@ dt << New Column( "like name", Like( :name ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "test",
 	Add Rows( 5 ),
 	New Column( "name",
@@ -8838,7 +8492,6 @@ New Table( "test",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "X", Formula( Random Uniform() ) );
 
@@ -8850,11 +8503,12 @@ dt << New Column( "X", Formula( Random Uniform() ) );
 
 **Description:** Create a formula column in the table, using the columns specified and applying the operation and optional grouping columns. The operation category can be specified if necessary to disambiguate the operation name. Returns a list of column references to the created columns.
 
+**JMP Version Added:** 17
+
 **Group By**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Formula Column(
 	Operation( "Mean" ),
@@ -8868,7 +8522,6 @@ dt << New Formula Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Formula Column( Operation( "Log 2" ), Columns( :height, :weight ) );
 
@@ -8882,7 +8535,6 @@ dt << New Formula Column( Operation( "Log 2" ), Columns( :height, :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age << Set Selected( 1 );
 dt:height << Set Selected( 1 );
@@ -8901,7 +8553,6 @@ dt << Next Selected Column;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Preselect Role( "No Role" );
 
@@ -8915,7 +8566,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :Age );
 dt << Move Selected Columns( To last );
@@ -8930,9 +8580,10 @@ dt << Original Order();
 
 **Description:** Pastes from the clipboard multiple lists of column properties to multiple columns. Optionally, you can specify a list of target columns instead of selecting them in the data table.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 dt << Copy Column Properties( {:MODULUS, :ELONG} );
 dt2 = New Table( "test it",
@@ -8953,7 +8604,6 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:age << Set Selected( 1 );
 dt:height << Set Selected( 1 );
@@ -8973,7 +8623,6 @@ dt << Previous Selected Column;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Reorder By Data Type();
@@ -8988,7 +8637,6 @@ dt << Reorder By Data Type();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Reorder By Modeling Type();
@@ -9003,7 +8651,6 @@ dt << Reorder By Modeling Type();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Reorder By Name();
@@ -9018,7 +8665,6 @@ dt << Reorder By Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Reverse Order();
@@ -9033,7 +8679,6 @@ dt << Reverse Order();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 Wait( 1 );
 dt << Set Label Columns( :City, :State );
@@ -9048,7 +8693,6 @@ dt << Set Label Columns( :City, :State );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt << Set Scroll Lock Columns( :City );
 
@@ -9064,7 +8708,6 @@ dt << Set Scroll Lock Columns( :City );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ) );
 
@@ -9074,7 +8717,6 @@ dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 dt << Text To Columns(
 	delimiter( "," ),
@@ -9090,9 +8732,10 @@ dt << Text To Columns(
 
 **Description:** Use the values in this column as the markers in a graph.  Expression columns with pictures or character columns with IDs might work well.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Name << UseForMarker( 1 );
 
@@ -9104,9 +8747,10 @@ dt:Name << UseForMarker( 1 );
 
 **Description:** Assigns the Validation role to the data table column
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = Column( "age" );
 col << Preselect Role( "Validation" );
@@ -9121,7 +8765,6 @@ col << Preselect Role( "Validation" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:Weight << Preselect Role( "weight" );
 
@@ -9135,7 +8778,6 @@ dt:Weight << Preselect Role( "weight" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 col = Column( "weight" );
 col << Preselect Role( "X" );
@@ -9150,7 +8792,6 @@ col << Preselect Role( "X" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :Weight << Preselect Role( "Y" );
 
@@ -9170,7 +8811,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 3, after( 5 ) );
 
@@ -9180,7 +8820,6 @@ dt << Add Rows( 3, after( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( {name = "David", age = 15} );
 
@@ -9194,7 +8833,6 @@ dt << Add Rows( {name = "David", age = 15} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10, 12, 15] );
 Wait( 2 );
@@ -9210,7 +8848,6 @@ dt << Clear Row States;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10] );
 Wait( 2 );
@@ -9226,7 +8863,6 @@ dt << Clear Select();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 6, 7, 8, 9, 10] );
 r << Exclude;
@@ -9245,7 +8881,6 @@ dt << Clear Selected Row States;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Color by Column( :Age );
 Wait( 2 );
@@ -9261,7 +8896,6 @@ dt << Color Rows by Row State;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Color by Column( :Age );
 
@@ -9275,7 +8909,6 @@ dt << Color by Column( :Age );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Color or Mark by Column( :Age );
 
@@ -9289,7 +8922,6 @@ dt << Color or Mark by Column( :Age );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Run Script( "Bivariate" );
 Wait( 1 );
@@ -9309,7 +8941,6 @@ dt << Colors( "Red" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Data Filter(
 	Location( {218, 114} ),
@@ -9328,7 +8959,6 @@ dt << Data Filter(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Local Data Filter",
 	Data Filter Context Box(
@@ -9359,7 +8989,6 @@ New Window( "Local Data Filter",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( :age < 14 );
 dt << Data View;
@@ -9374,7 +9003,6 @@ dt << Data View;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10] );
 Wait( 2 );
@@ -9391,7 +9019,6 @@ Show( r );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 r << Exclude;
@@ -9406,7 +9033,6 @@ r << Exclude;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows( 3 );
 dt << Get Rows( {1, 2, 3} );
@@ -9421,7 +9047,6 @@ dt << Get Rows( {1, 2, 3} );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To Row( 5 );
 
@@ -9435,7 +9060,6 @@ dt << Go To Row( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 r << Hide and Exclude;
@@ -9450,7 +9074,6 @@ r << Hide and Exclude;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Go To Row( 12 );
 r << Hide;
@@ -9463,9 +9086,10 @@ r << Hide;
 
 **Description:** Inserts rows before selected rows. Has no effect if no rows are selected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [3, 4, 5] );
 dt << Insert Rows;
@@ -9480,7 +9104,6 @@ dt << Insert Rows;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Where( :Age < 14 );
 Wait( 2 );
@@ -9496,7 +9119,6 @@ r << Invert Row Selection;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Go To Row( 5 );
 r << Label;
@@ -9513,7 +9135,6 @@ r << Label;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Marker by Column( :sex );
 
@@ -9523,7 +9144,6 @@ dt << Marker by Column( :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/big class.jmp" );
 dt << Marker By Column(
 	:age,
@@ -9544,7 +9164,6 @@ dt << Marker By Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Where( :sex == "M" );
 r << Markers( "+" );
@@ -9559,7 +9178,6 @@ r << Markers( "+" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 Wait( 2 );
@@ -9575,7 +9193,6 @@ r << Move Rows( At Start );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( :Age < 14 );
 dt << Name Selection in Column(
@@ -9594,7 +9211,6 @@ dt << Name Selection in Column(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 Wait( 2 );
@@ -9610,7 +9226,6 @@ r << Next Selected;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 Wait( 2 );
@@ -9626,7 +9241,6 @@ r << Previous Selected;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 r = dt << Select Rows( [5, 7, 8, 10] );
 r << Row Editor();
@@ -9639,11 +9253,12 @@ r << Row Editor();
 
 **Description:** Selects all rows that meet the defined condition, with option to extend or restrict existing selections, option to execute the selection or just show the dialog. When Match Case is omitted, the default is a case-sensitive match.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Row Selection( Select where( :age < 15 ) );
@@ -9654,7 +9269,6 @@ dt << Row Selection( Select where( :age < 15 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Row Selection( Select where( :age < 15 ) );
@@ -9667,7 +9281,6 @@ dt << Row Selection( Select where( :age == 15 ), current selection( "extend" ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Row Selection( Select where( :age < 15 ) );
@@ -9683,7 +9296,6 @@ dt << Row Selection(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Row Selection( Select where( :name == "jane" ), Match Case( 0 ) );
@@ -9698,7 +9310,6 @@ dt << Row Selection( Select where( :name == "jane" ), Match Case( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Students.jmp" );
 dt << Select Rows( [1, 2, 3, 4] );
@@ -9716,7 +9327,6 @@ dt << Select All Matching Cells();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select All Rows;
 
@@ -9730,7 +9340,6 @@ dt << Select All Rows;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Go To( :height );
 dt << Select Dominant( {:height, :weight}, {0, 0} );
@@ -9743,9 +9352,10 @@ dt << Select Dominant( {:height, :weight}, {0, 0} );
 
 **Description:** Selects duplicate rows and matches on the selected columns. If no match columns are given, rows are matched on all columns of the table. Returns the number of duplicate rows.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select duplicate rows( Match( :age, :height ) );
 
@@ -9759,7 +9369,6 @@ dt << Select duplicate rows( Match( :age, :height ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10, 15] );
 dt << Exclude( 1 );
@@ -9777,7 +9386,6 @@ dt << Select Excluded;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10, 15] );
 dt << Hide( 1 );
@@ -9795,7 +9403,6 @@ dt << Select Hidden;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10, 15] );
 dt << Label( 1 );
@@ -9813,7 +9420,6 @@ dt << Select Labeled;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [1, 2, 3, 4] );
 dt << Go To( :Height );
@@ -9832,7 +9438,6 @@ dt << Select Matching Cells();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Randomly( 0.3 );
 
@@ -9842,7 +9447,6 @@ dt << Select Randomly( 0.3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Randomly( Sample Size( 12 ) );
 
@@ -9852,7 +9456,6 @@ dt << Select Randomly( Sample Size( 12 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Randomly( Sampling Rate( 0.3 ) );
 
@@ -9866,7 +9469,6 @@ dt << Select Randomly( Sampling Rate( 0.3 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [5, 7, 8, 10] );
 
@@ -9882,7 +9484,6 @@ dt << Select Rows( [5, 7, 8, 10] );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( :Age < 14 );
 
@@ -9892,7 +9493,6 @@ dt << Select Where( :Age < 14 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( :Age == 14 );
 Wait( 0 );
@@ -9904,7 +9504,6 @@ dt << Select Where( :sex == "M", current selection( "extend" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Where( Contains( :name, "AR" ) );
 
@@ -9920,9 +9519,10 @@ dt << Select Where( Contains( :name, "AR" ) );
 
 **Description:** Returns the filter view&apos;s filter definition
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -9939,9 +9539,10 @@ Show( fv << Get Data Filter );
 
 **Description:** Returns the table that owns the filter view
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -9960,7 +9561,6 @@ Show( fv << Get Data Table );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -9977,9 +9577,10 @@ Show( fv << Get Name );
 
 **Description:** Returns the show hidden rows setting for this filter view
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -9997,9 +9598,10 @@ Show( fv << Get Show Hidden Rows );
 
 **Description:** Get the type of the filter view; one of: "Unfiltered", "Filtered", or "TemporaryFiltered".
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10016,9 +9618,10 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 **Description:** Returns the lock setting for this filter view
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10036,9 +9639,10 @@ Show( fv << Is Locked );
 
 **Description:** Returns 1 if the filtered view is a temporary filter view
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10055,9 +9659,10 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 **Description:** Returns 1 if the filtered view is the unfiltered filter view
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10076,7 +9681,6 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10094,11 +9698,12 @@ Show( fv << Is Locked );
 
 **Description:** Changes the filter definition of the filter view. The filter definition of the unfiltered view cannot be changed
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View( "Dream", Active( 0 ) );
 fv << Set Data Filter( Add Filter( Columns( :Island ), Where( :Island == "Dream" ) ) );
@@ -10110,7 +9715,6 @@ Show( fv << Get Data Filter );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View( "Dream", Active( 0 ) );
 fv << Set Data Filter(
@@ -10131,7 +9735,6 @@ Show( fv << Get Data Filter );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",
@@ -10149,9 +9752,10 @@ Show( fv << Get Name );
 
 **Description:** Changes the show hidden rows setting for this filter view.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 fv = dt << New Filter View(
 	"Dream",

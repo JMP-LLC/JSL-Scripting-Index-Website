@@ -8,3 +8,5 @@
 
 **Description:** Creates a new IP21 Client instance that can be used to import data from an AspenTech IP.21 server.
 
+**JMP Version Added:** 19
+

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see the socket's OBJECT messages in the scripting index for better examples
 tCall = Socket();
@@ -57,7 +56,6 @@ If( rc[2] == "ok",
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen for a complete example
 skt = Socket();
@@ -73,9 +71,10 @@ rc = skt << accept();
 
 **Description:** Accept a connection from a remote computer on a Listening socket
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen for a complete example
 // Same as <<accept, but does not resolve the client address to a name.
@@ -96,7 +95,6 @@ rc = skt << AcceptFast();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen for complete example
 skt = Socket();
@@ -112,7 +110,6 @@ rc = skt << bind( "localhost", "80" );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Socket();/* use the socket...*/ x << Close();
 
 ```
@@ -125,7 +122,6 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // <<connect is used to connect to a remote computer with an open listening socket.
 // some web sites require www, some don't like it.  Some require the HTTP/1.1 format, some are happy with HTTP/1.0 in the GET.
@@ -185,7 +181,6 @@ Show( Length( blob ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 tCall = Socket();
 rc = tCall << connect( "www.jmp.com", "80" );
@@ -201,7 +196,6 @@ Show( rc, tCall << getPeerName );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 tCall = Socket();
 rc = tCall << connect( "www.jmp.com", "80" );
@@ -217,7 +211,6 @@ Show( rc, tCall << getSockName );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen for complete example
 skt = Socket();
@@ -235,7 +228,6 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // this example puts the listening socket into non blocking mode so
 // it can be polled for connection attempts.  In blocking mode, the
@@ -342,7 +334,6 @@ conskt << close; // nothing else to send to the browser
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen and Connect for complete examples)
 skt = Socket();
@@ -364,7 +355,6 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // DGRAM is a connectionless, unreliable protocol.  this self-contained
 // example sends itself a short message, which will probably arrive, and
@@ -430,7 +420,6 @@ Show( result );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // see Listen and Connect for complete examples
 skt = Socket();
@@ -447,7 +436,6 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // See RecvFrom example
 
 ```

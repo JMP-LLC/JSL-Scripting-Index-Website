@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -26,7 +25,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -49,7 +47,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -63,7 +60,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 
@@ -77,7 +73,6 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -96,7 +91,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Consumer Prices.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Price ),
@@ -116,7 +110,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );
 dt << Process Screening(
 	Process Variables( :"# defective"n ),
@@ -136,9 +129,10 @@ dt << Process Screening(
 
 **Description:** Specifies a probability that determines the value for the Action Limit. For count processes, if the Action Limit is not specified in the limits table, it is set from the estimated quantile based on this probability. "." by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -157,9 +151,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies a probability that determines the value for the Action Limit. For count processes, if the Action Limit is not specified in the limits table, it is set from the estimated quantile based on this probability. "0.9985" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -178,9 +173,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides a plot of alarms, with the processes that have alarms on the Y axis, and the time occurrence on the X axis.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -198,9 +194,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies a probability that determines the value for the Alert Limit. For count processes, if the Alert Limit is not specified in the limits table, it is set from the estimated quantile based on this probability. "." by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -219,9 +216,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies a probability that determines the value for the Alert Limit. For count processes, if the Alert Limit is not specified in the limits table, it is set from the estimated quantile based on this probability. "0.975" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -240,9 +238,10 @@ obj = dt << Process Screening(
 
 **Description:** Enables you to script additional options for the charts that are produced by the Drift Graph Selected option.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -261,9 +260,10 @@ obj << Chart Options Drift Graph( Show Markers( 1 ), Connect Points( 0 ) );
 
 **Description:** Enables you to script additional options for graphlets.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :NPN1, :PNP1, :PNP2, :NPN2, :PNP3 ),
@@ -295,9 +295,10 @@ obj = dt << Process Screening(
 
 **Description:** Enables you to script additional options for the charts that are produced by the Show Charts as Selected option.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -316,9 +317,10 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 **Description:** Enables you to script additional options for the charts that are produced by the Show Charts for Selected option.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -337,9 +339,10 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 **Description:** Colors values in the data table based on the specification limits. Blue indicates that the value is below the lower specification limit. Red indicates that the value is above the upper specification limit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :PNP3, :IVP1, :IVP2 ) );
 obj << Color Out of Spec Values;
@@ -354,7 +357,6 @@ obj << Color Out of Spec Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -375,7 +377,6 @@ obj << Find and Select( "NPN2" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -394,7 +395,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -410,9 +410,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the Count column in the summary table. This column contains the number of observations. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -426,9 +427,10 @@ obj << Count( 0 );
 
 **Description:** Shows or hides the Cp column in the summary table. This column contains the potential capability if target and drift issues are resolved.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
@@ -440,9 +442,10 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
 **Description:** Shows or hides the Cpk column in the summary table. This column contains the Cpk short-run capability index based on Within Sigma or Between-and-Within Sigma and assuming a normal distribution. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cpk( 0 ) );
 Wait( 1 );
@@ -456,9 +459,10 @@ obj << Cpk( 1 );
 
 **Description:** Specifies the Holt-Winters smoothing weight for position in drift detection. This value is usually estimated, rather than specified. If it is specified, you must specify it in the launch script. "." by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -476,9 +480,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies the weight that is used in the Holt Double-Exponential Smoother for drift detection. ".05" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -496,11 +501,12 @@ obj = dt << Process Screening(
 
 **Description:** Shows a drift graph for each process that you select in the summary table. The values that are plotted are the slope estimates from a Holt Double-Exponential Smoothing model.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -515,7 +521,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), );
 Wait( 1 );
@@ -529,9 +534,10 @@ obj << Drift Graph Selected( {{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}} );
 
 **Description:** Shows or hides drift summary columns in the summary table. These columns contain the mean up drift, mean down drift, and mean absolute drift.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -549,7 +555,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -565,9 +570,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the Expected Out of Spec Rate column in the summary table. This column contains the expected proportion of observations that fall outside of the specification limits. The Expected Out of Spec Rate value assumes a stable and normally distributed process and uses the overall sigma.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -582,9 +588,10 @@ obj = dt << Process Screening(
 
 **Description:** Filters and removes the processes in the summary table. The filter is based on the specified condition.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -605,7 +612,6 @@ obj << Filter Where( Stability Index > 1.3 | Mean <= 4.3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -621,9 +627,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides a plot that contains a point for each variable. The spec-normalized mean shift is on the horizontal axis and the spec-normalized standard deviation is on the vertical axis. This option is available only if specification limits are defined for at least one process variable.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) );
 
@@ -635,9 +642,10 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) )
 
 **Description:** Specifies the number of standard deviations (in terms of sigma) that the control limits should be from the centerline. "3" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 ) );
 
@@ -649,9 +657,10 @@ obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 
 
 **Description:** Specifies the number of standard deviations (in terms of sigma) that the control limits should be from the centerline. "3" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -673,9 +682,10 @@ dt << Process Screening(
 
 **Description:** Retains the parameter estimates and quantile details of fitting all the distributions so that they are available to show in the report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -705,7 +715,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -723,7 +732,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -739,9 +747,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the Latest Out of Spec column in the summary table. This column contains the number of observations between the last observation that is outside of the specification limits and the final observation. If the last observation is outside of the specification limits, the Latest Out of Spec value is 1. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Latest Out of Spec( 0 ) );
 Wait( 1 );
@@ -757,7 +766,6 @@ obj << Latest Out of Spec( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -776,9 +784,10 @@ obj << Save Shift Table;
 
 **Description:** Shows or hides the Maximum for Count and Nonnegative Continuous chart types. On by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -797,9 +806,10 @@ obj << Maximum( 0 );
 
 **Description:** Shows or hides the Mean column in the summary table. This column contains the average of the process data. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -813,9 +823,10 @@ obj << Mean( 0 );
 
 **Description:** Specifies the minimum number of data values that a process must have to be included in the analysis. "3" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -833,7 +844,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
 obj = dt << Process Screening(
 	Y( :Fill Weight ),
@@ -850,9 +860,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the N Subgroups column in the summary table. This column contains the number of subgroups. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -869,9 +880,10 @@ obj << N Subgroups( 0 );
 
 **Description:** Shows or hides the Out of Spec Count column in the summary table. This column contains the number of observations that fall outside of the specification limits. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Count( 0 ) );
 Wait( 1 );
@@ -885,9 +897,10 @@ obj << Out of Spec Count( 1 );
 
 **Description:** Shows or hides the Out of Spec Rate column in the summary table. This column contains the proportion of observations that fall outside of the specification limits. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Rate( 0 ) );
 Wait( 1 );
@@ -903,7 +916,6 @@ obj << Out of Spec Rate( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -921,9 +933,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the Overall Sigma column in the summary table. This column contains an estimate of the standard deviation based on all of the observations. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -939,7 +952,6 @@ obj << Overall Sigma( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -957,9 +969,10 @@ obj << Performance Graph Boundaries( 1.7, 1.2 );
 
 **Description:** Shows or hides the Ppk column in the summary table. This column contains the Ppk long-run capability index based on Overall Sigma and assuming a normal distribution. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Ppk( 0 ) );
 Wait( 1 );
@@ -975,7 +988,6 @@ obj << Ppk( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -994,7 +1006,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1012,7 +1023,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1030,7 +1040,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
 Column( "Weight" ) << Set Property(
 	"Process Screening",
@@ -1057,7 +1066,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1073,9 +1081,10 @@ obj = dt << Process Screening(
 
 **Description:** Relaunches the Process Screening platform to create a new report that contains only the selected processes from the original report.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1096,9 +1105,10 @@ obj << Relaunch Selected Processes;
 
 **Description:** Specifies processes to be excluded from the analysis. This option must be specified in the launch script and applies only when a Column Group is specified.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( dt << get Column Group( "Processes" ) ),
@@ -1114,9 +1124,10 @@ obj = dt << Process Screening(
 
 **Description:** Removes the rows that are selected in the summary table and reruns the analysis without those processes.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1134,9 +1145,10 @@ obj << Remove Selected Items;
 
 **Description:** Removes any filter that is currently applied to the summary table.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
 Wait( 1 );
@@ -1152,9 +1164,10 @@ obj << Reset Filter;
 
 **Description:** Sets the row states for the rows in the summary table. The input is an m by 2 matrix. The first column contains row numbers (zero-based in original order) and the second column contains numeric row state values. See the JMP User&apos;s Guide for more information about numeric row state values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :DIAMETER ),
@@ -1177,7 +1190,6 @@ obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 2, 1 )} ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Details Table;
@@ -1192,7 +1204,6 @@ obj << Save Details Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1211,7 +1222,6 @@ obj << Save Selected Details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -1232,7 +1242,6 @@ obj << Save Shift Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Summary Table;
@@ -1245,9 +1254,10 @@ obj << Save Summary Table;
 
 **Description:** Creates a new data table that contains all of the process summary information and a column of quick graphs.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
 obj << Save Summary Table with Graphs;
@@ -1262,7 +1272,6 @@ obj << Save Summary Table with Graphs;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Select All );
 
@@ -1274,9 +1283,10 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Sel
 
 **Description:** Selects process columns in the summary table. The selected columns correspond to the specified condition.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1292,9 +1302,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies how many rows to show in the scrolling summary table. "50" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1312,7 +1323,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -1330,7 +1340,6 @@ obj << Shift Graph( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -1351,7 +1360,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1368,9 +1376,10 @@ obj = dt << Process Screening(
 
 **Description:** Plots small graphs of the processes that are selected in the summary table. The graphs are shown in a Charts as Selected report that automatically updates as you select and deselect processes in the summary table.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
 obj << Select Where( :MACHINE == "C334" );
@@ -1390,7 +1399,6 @@ obj << Select Where( :MACHINE == "A455" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1405,7 +1413,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1419,7 +1426,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :IVP7, :B1, :IVP8 ),
@@ -1436,7 +1442,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
 obj = dt << Process Screening(
 	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
@@ -1456,7 +1461,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1475,9 +1479,10 @@ obj << Show Tests( 0 );
 
 **Description:** Sorts the process data by the subgroup variable, or combination of nested subgroup variables, before calculations are performed. This option is available only if a Subgroup variable is specified.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -1494,9 +1499,10 @@ obj = dt << Process Screening(
 
 **Description:** Shows or hides the (Mean-Tgt)/SpecRange column in the summary table. This column contains the mean relative to the specification limits.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Mean( 1 ) );
 
@@ -1508,9 +1514,10 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Me
 
 **Description:** Shows or hides the specification limit columns in the summary table. These columns contain the lower specification limit (LSL), upper specification limit (USL), and target values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 ) );
 
@@ -1522,9 +1529,10 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 )
 
 **Description:** Shows or hides the StdDev/SpecRange column in the summary table. This column contains the overall standard deviation divided by the range of the specification limits.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std Dev( 1 ) );
 
@@ -1536,9 +1544,10 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std 
 
 **Description:** Shows or hides the Stability Index column in the summary table. This column is a measure of the stability of a process, where a stable process has a stability index near 1. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 Wait( 1 );
@@ -1552,9 +1561,10 @@ obj << Stability Index( 0 );
 
 **Description:** Specifies the boundary between the stable and unstable regions for Stability Index in the Process Performance Graph. "1.25" by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
@@ -1572,9 +1582,10 @@ obj << Stability Index Boundary( 1.5 );
 
 **Description:** Shows or hides the Stability Ratio column in the summary table. This column is a measure of the stability of a process, where a stable process has a stability ratio near 1.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
 obj << Stability Ratio( 1 );
@@ -1589,7 +1600,6 @@ obj << Stability Ratio( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -1607,7 +1617,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening(
 	Y( Eval( 5 :: 132 ) ),
@@ -1625,9 +1634,10 @@ obj << Summary( 1 );
 
 **Description:** Shows or hides the Target Index column in the summary table. This column contains the number of short-term standard deviations that the process average differs from the target value.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 ) );
 
@@ -1641,7 +1651,6 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 1( 0 ) );
 
@@ -1655,7 +1664,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 2( 1 ) );
 
@@ -1669,7 +1677,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 3( 1 ) );
 
@@ -1683,7 +1690,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 4( 1 ) );
 
@@ -1697,7 +1703,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 5( 1 ) );
 
@@ -1711,7 +1716,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 6( 1 ) );
 
@@ -1725,7 +1729,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 7( 1 ) );
 
@@ -1739,7 +1742,6 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 8( 1 ) );
 
@@ -1751,9 +1753,10 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 **Description:** Shows or hides the Action column in the summary table. This test is triggered when a point is greater than an Upper Action Limit or less than a Lower Action Limit. On by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1773,9 +1776,10 @@ obj << Test Action( 0 );
 
 **Description:** Shows or hides the Alert column in the summary table. This test is triggered when a point is greater than the Upper Alert Limit or less than the Lower Alert Limit.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1795,9 +1799,10 @@ obj << Test Alert( 1 );
 
 **Description:** Shows or hides the Alert Increasing column in the summary table. This column counts where the process is increasing and the previous point is above the upper alert limit or if a process is decreasing and the previous point is below the lower alert limit.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
 obj = dt << Process Screening(
 	Process Variables( :Count ),
@@ -1820,7 +1825,6 @@ obj << Test Alert Increasing( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -1844,9 +1848,10 @@ obj = dt1 << Process Screening(
 
 **Description:** Specifies whether to use the K-Sigma lower limit. This option is available only for Proportion charts.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -1868,7 +1873,6 @@ dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -1884,9 +1888,10 @@ obj = dt << Process Screening(
 
 **Description:** Specifies whether to use the K-Sigma upper limit. This option is available only for Proportion charts. On by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
 dt << Process Screening(
 	Process Variables( :N Defective ),
@@ -1907,9 +1912,10 @@ dt << Process Screening(
 
 **Description:** Shows or hides the Within Sigma column in the summary table. This column contains an estimate of the standard deviation based on within subgroup variation. On by default.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Within Sigma( 0 ) );
 Wait( 1 );
@@ -1927,7 +1933,6 @@ obj << Within Sigma( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1943,11 +1948,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1958,11 +1964,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1970,11 +1975,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1990,7 +1994,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Automatic Recalc( 1 );
@@ -2004,9 +2007,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -2024,7 +2028,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -2042,7 +2045,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2066,7 +2068,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Copy Script;
@@ -2081,7 +2082,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Data Table Window;
@@ -2094,9 +2094,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -2111,7 +2112,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2134,11 +2134,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Container;
@@ -2146,11 +2145,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -2183,7 +2181,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Datatable;
@@ -2199,7 +2196,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -2216,7 +2212,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Script;
@@ -2232,7 +2227,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Script With Data Table;
@@ -2248,7 +2242,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 t = obj << Get Timing;
@@ -2264,7 +2257,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -2278,9 +2270,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -2296,7 +2289,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -2315,7 +2307,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2333,9 +2324,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -2350,9 +2342,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -2367,7 +2360,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -2388,7 +2380,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Redo Analysis;
@@ -2403,7 +2394,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2427,7 +2417,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Relaunch Analysis;
@@ -2442,7 +2431,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2466,7 +2454,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -2486,7 +2473,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -2506,9 +2492,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -2523,7 +2510,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 r = obj << Report;
@@ -2540,7 +2526,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Report View( "Summary" );
@@ -2555,7 +2540,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2579,7 +2563,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2603,7 +2586,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2627,7 +2609,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script for All Objects;
@@ -2644,7 +2625,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2664,7 +2644,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -2688,7 +2667,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -2703,7 +2681,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Journal;
@@ -2718,7 +2695,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Report;
@@ -2733,7 +2709,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Save Script to Script Window;
@@ -2748,7 +2723,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2769,7 +2743,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2795,7 +2768,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2813,7 +2785,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2830,7 +2801,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 obj << Title( "My Platform" );
@@ -2845,7 +2815,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
 r = obj << Top Report;
@@ -2860,9 +2829,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2879,7 +2849,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2894,7 +2863,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -2915,11 +2883,12 @@ New Window( "Bivariate Equation",
 
 **Description:** Shows or hides red circles around points that are in an alarm state. The corresponding alarm code is shown next to each circled point. This option is not available for Drift Graphs. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2937,7 +2906,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2959,11 +2927,12 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 **Description:** Shows or hides lines that connect the points. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -2980,7 +2949,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3000,7 +2968,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3022,11 +2989,12 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 **Description:** Shows or hides a range, standard deviation, or moving range chart in addition to the control chart for each process. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3043,7 +3011,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3065,11 +3032,12 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 **Description:** Sets the size of the graph. "500,170" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3086,7 +3054,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3104,7 +3071,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3125,11 +3091,12 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 **Description:** Specifies the layout for the charts. "1" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3146,7 +3113,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3164,7 +3130,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3185,11 +3150,12 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 **Description:** Removes the charts from the report.
 
+**JMP Version Added:** 14
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3206,7 +3172,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3225,7 +3190,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3246,11 +3210,12 @@ obj << Chart Options for Selected( Remove );
 
 **Description:** Shows or hides a solid green line for the average of the process. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3267,7 +3232,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3286,7 +3250,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3308,11 +3271,12 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 **Description:** Shows or hides the upper and lower control limits. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3329,7 +3293,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3348,7 +3311,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3374,7 +3336,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3391,7 +3352,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3411,7 +3371,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3433,11 +3392,12 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 **Description:** Shows or hides the upper and lower specification limits as dotted blue lines.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3463,7 +3423,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3488,7 +3447,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -3515,11 +3473,12 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 **Description:** Shows or hides the one and two standard deviation zones on the charts. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3535,7 +3494,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3555,11 +3513,12 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 **Description:** Shows or hides the vertical axis label on each chart. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3577,7 +3536,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3596,7 +3554,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3622,11 +3579,12 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 **Description:** Shows or hides red circles around points that are in an alarm state. The corresponding alarm code is shown next to each circled point. This option is not available for Drift Graphs. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3644,7 +3602,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3666,11 +3623,12 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 **Description:** Shows or hides lines that connect the points. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3687,7 +3645,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3707,7 +3664,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3729,11 +3685,12 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 **Description:** Shows or hides a range, standard deviation, or moving range chart in addition to the control chart for each process. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3750,7 +3707,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3772,11 +3728,12 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 **Description:** Sets the size of the graph. "500,170" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3793,7 +3750,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3811,7 +3767,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3832,11 +3787,12 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 **Description:** Specifies the layout for the charts. "1" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3853,7 +3809,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3871,7 +3826,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3892,11 +3846,12 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 **Description:** Removes the charts from the report.
 
+**JMP Version Added:** 14
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3913,7 +3868,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3932,7 +3886,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3953,11 +3906,12 @@ obj << Chart Options for Selected( Remove );
 
 **Description:** Shows or hides a solid green line for the average of the process. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3974,7 +3928,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -3993,7 +3946,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4015,11 +3967,12 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 **Description:** Shows or hides the upper and lower control limits. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4036,7 +3989,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4055,7 +4007,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4081,7 +4032,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4098,7 +4048,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4118,7 +4067,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4140,11 +4088,12 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 **Description:** Shows or hides the upper and lower specification limits as dotted blue lines.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4170,7 +4119,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4195,7 +4143,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4222,11 +4169,12 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 **Description:** Shows or hides the one and two standard deviation zones on the charts. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4242,7 +4190,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4262,11 +4209,12 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 **Description:** Shows or hides the vertical axis label on each chart. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4284,7 +4232,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4303,7 +4250,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4329,11 +4275,12 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 **Description:** Shows or hides red circles around points that are in an alarm state. The corresponding alarm code is shown next to each circled point. This option is not available for Drift Graphs. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4351,7 +4298,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4373,11 +4319,12 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 **Description:** Shows or hides lines that connect the points. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4394,7 +4341,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4414,7 +4360,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4436,11 +4381,12 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 **Description:** Shows or hides a range, standard deviation, or moving range chart in addition to the control chart for each process. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4457,7 +4403,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4479,11 +4424,12 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 **Description:** Sets the size of the graph. "500,170" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4500,7 +4446,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4518,7 +4463,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4539,11 +4483,12 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 **Description:** Specifies the layout for the charts. "1" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4560,7 +4505,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4578,7 +4522,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4599,11 +4542,12 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 **Description:** Removes the charts from the report.
 
+**JMP Version Added:** 14
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4620,7 +4564,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4639,7 +4582,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4660,11 +4602,12 @@ obj << Chart Options for Selected( Remove );
 
 **Description:** Shows or hides a solid green line for the average of the process. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4681,7 +4624,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4700,7 +4642,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4722,11 +4663,12 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 **Description:** Shows or hides the upper and lower control limits. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4743,7 +4685,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4762,7 +4703,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4788,7 +4728,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4805,7 +4744,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4825,7 +4763,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4847,11 +4784,12 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 **Description:** Shows or hides the upper and lower specification limits as dotted blue lines.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4877,7 +4815,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4902,7 +4839,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -4929,11 +4865,12 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 **Description:** Shows or hides the one and two standard deviation zones on the charts. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4949,7 +4886,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4969,11 +4905,12 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 **Description:** Shows or hides the vertical axis label on each chart. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -4991,7 +4928,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5010,7 +4946,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5036,11 +4971,12 @@ obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 **Description:** Shows or hides red circles around points that are in an alarm state. The corresponding alarm code is shown next to each circled point. This option is not available for Drift Graphs. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5058,7 +4994,6 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5080,11 +5015,12 @@ obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 **Description:** Shows or hides lines that connect the points. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5101,7 +5037,6 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5121,7 +5056,6 @@ obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5143,11 +5077,12 @@ obj << Chart Options for Selected( Connect Points( 0 ) );
 
 **Description:** Shows or hides a range, standard deviation, or moving range chart in addition to the control chart for each process. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5164,7 +5099,6 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5186,11 +5120,12 @@ obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 **Description:** Sets the size of the graph. "500,170" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5207,7 +5142,6 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5225,7 +5159,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5246,11 +5179,12 @@ obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 **Description:** Specifies the layout for the charts. "1" by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5267,7 +5201,6 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5285,7 +5218,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5306,11 +5238,12 @@ obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 **Description:** Removes the charts from the report.
 
+**JMP Version Added:** 14
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5327,7 +5260,6 @@ obj << Chart Options as Selected( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5346,7 +5278,6 @@ obj << Chart Options Drift Graph( Remove );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5367,11 +5298,12 @@ obj << Chart Options for Selected( Remove );
 
 **Description:** Shows or hides a solid green line for the average of the process. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5388,7 +5320,6 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5407,7 +5338,6 @@ obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5429,11 +5359,12 @@ obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 **Description:** Shows or hides the upper and lower control limits. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5450,7 +5381,6 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5469,7 +5399,6 @@ obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5495,7 +5424,6 @@ obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5512,7 +5440,6 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5532,7 +5459,6 @@ obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5554,11 +5480,12 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 **Description:** Shows or hides the upper and lower specification limits as dotted blue lines.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5584,7 +5511,6 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5609,7 +5535,6 @@ obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
 dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 obj = dt1 << Process Screening(
@@ -5636,11 +5561,12 @@ obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 **Description:** Shows or hides the one and two standard deviation zones on the charts. This option is not available for Drift Graphs.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5656,7 +5582,6 @@ obj = dt << Process Screening(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5676,11 +5601,12 @@ obj << Chart Options for Selected( Show Zones( 1 ) );
 
 **Description:** Shows or hides the vertical axis label on each chart. On by default.
 
+**JMP Version Added:** 17
+
 **Chart Options as Selected Example**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5698,7 +5624,6 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),
@@ -5717,7 +5642,6 @@ obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Process Screening(
 	Y( :DIAMETER ),

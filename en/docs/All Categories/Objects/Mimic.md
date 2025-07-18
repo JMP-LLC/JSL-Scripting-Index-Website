@@ -22,9 +22,10 @@ This is an internal build (UNIT_TEST) protected feature that is designed to help
 
 You create a Mimic object using the Mimic(box|platform) factory function. This object should be used to automate within the window corresponding to the factory arguments. There are messages to help with writing tests, like <<Eval, <<Mark, and <<Clear Marks. And there are actual automation messages like <<Mouse Click, <<Mouse Drag, etc. Almost all of these messages take arguments written in a small domain specific language that augments JSL. This language (called MimicLang here) is only valid within the arguments of these Mimic messages. This language allows Mimic users to work easily with boxes, points, and rectangles. Functions in this language include Bounds(box), Center(rect), TopLeft(rect), etc. In the future, there will be more functions in this language for doing specific tasks like getting the position of a named item in a List Box. Finally, MimicLang evaluations also have available two local variables, box and win. The box is the original Mimic factory function argument. And the win is the top box in the window containing it.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -42,9 +43,10 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 **Description:** Removes all all marks added by <<Mark.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -64,9 +66,10 @@ mc << Clear Marks;
 
 **Description:** Evaluates a mimiclang expression and returns the result.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 mc = Mimic( obj );
@@ -81,9 +84,10 @@ Show( mc << Eval( Bounds( fbox ) ), mc << Eval( TopLeft( fbox ) ) );
 
 **Description:** Marks points and rectangles on the report. Does not respond to scrolling, resizing, or content movement well at this time. The rectangle grid is on 20 units.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -103,9 +107,10 @@ mc << Clear Marks;
 
 **Description:** Drag across the given rectangle. Mainly useful in graphs. This is a convenience wrapper for Mouse Drag that allows using a rectangle directly rather than two points. By default, it drags starting at the top left (1). You can use the second argument to change this to top right (2), bottom right (3), or bottom left (4).
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -120,9 +125,10 @@ mc << Mouse Brush( FrameCoords( box[Frame Box( 1 )], [60 100, 65 150] ) );
 
 **Description:** Move the mouse quickly in a small (several pixel) circle around given point.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 mc = Mimic( obj );
@@ -138,9 +144,10 @@ mc << Mouse Circle Move( Offset( Top Left( prob col ), [30 25] ) );
 
 **Description:** Left click on given geometry.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Oneway();
 Wait( 0 );
@@ -161,9 +168,10 @@ mc << Close Window;
 
 **Description:** Double left click on given geometry.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -178,9 +186,10 @@ mc << Mouse Double Click( box[Axis Box( 1 )] );
 
 **Description:** Left click geo src, drag to geo dest, and release.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Local Data Filter );
 rpt = obj << Top Report;
@@ -198,9 +207,10 @@ mc << Mouse Drag( Offset( TopLeft( collist ), [20 45] ), xlabel );
 
 **Description:** Moves the mouse to the given point.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Continuous Distribution( Column( :weight ) ) );
 Wait( 1 );
@@ -215,9 +225,10 @@ mc << Mouse Move( Offset( TopLeft( Report( obj )[FrameBox( 1 )] ), [80 160] ) );
 
 **Description:** Right click on given geometry.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 mc = Mimic( obj );
@@ -231,9 +242,10 @@ mc << Mouse Right Click( box[Frame Box( 1 )] );
 
 **Description:** Simulate typing the given string on the keyboard.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 Wait( 1 );
@@ -252,9 +264,10 @@ mc << Mouse Click( win );
 
 **Description:** Simulate typing the given special key on the keyboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ), Fit Line );
 Wait( 1 );
@@ -270,17 +283,20 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 **Description:** Equivalent to Wait(<n>). For convenience.
 
+**JMP Version Added:** 19
+
 ### With Modifier
 
 **Syntax:** obj &lt;&lt; With Modifier({"Shift"|"Control"|"Command"|"Alt"|"Option"|"Control", ...}, msg)
 
 **Description:** Push one or more modifier keys, run another Mimic message, then release the keys.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 Wait( 1 );
@@ -293,7 +309,6 @@ mc << With Modifier( "Alt", Mouse Click( Lrt( obj ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 Wait( 1 );
@@ -316,9 +331,10 @@ mc << With Modifier(
 
 **Description:** Gets the rectangle for a given box.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 c = Mimic( obj );
@@ -332,9 +348,10 @@ c << Mark( Bounds( win[Frame Box( 1 )] ) );
 
 **Description:** Gets the first button box ref with the given label under Mimic box.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Launch Dialog );
 Wait( 0 );
@@ -348,9 +365,10 @@ Mimic( Window( "Oneway - Distribution by Group" ) ) << Mark( Button( "OK" ) );
 
 **Description:** Calculates the center point for a given box or rectangle.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 c = Mimic( obj );
@@ -364,9 +382,10 @@ c << Mark( Center( win[Frame Box( 1 )] ) );
 
 **Description:** Get position of the gray disclosure triangle for the given object or outline.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -380,9 +399,10 @@ mc << Mouse Click( Disclosure( win[Outline Box( 1 )] ) );
 
 **Description:** Converts a point or rectangle in Frame coordinates into a point or rectangle in screen space. Works best with continuous scales.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
 obj = dt << Bivariate( Y( :weight ), X( :height ) );
 mc = Mimic( obj );
@@ -396,9 +416,10 @@ mc << Mouse Move( FrameCoords( box[Frame Box( 1 )], [61 107] ) );
 
 **Description:** Looks up named regions from the Data Grid.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
 dt << Group Columns( Item Range( :Culmen Length, :Body Mass ), "Measurements" );
 dt << Group Columns( Item Range( :Species, :Individual ID ), "Individual" );
@@ -435,9 +456,10 @@ mc << Mark( Grid Region( box, 5, -4 ) ); // 5th column header group section
 
 **Description:** Finds the first item with the given label in a List Box Box, reveals it, and gets its bounds
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova, Local Data Filter );
 Wait( 1 );
@@ -452,9 +474,10 @@ mc << Mouse Drag( List Item( win[List Box Box( 1 )], "sex" ), box[Text Edit Box(
 
 **Description:** Get position of the Little Red Triangle for the given object or outline.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -468,9 +491,10 @@ mc << Mouse Click( Lrt( obj ) );
 
 **Description:** Offset the given box/point/rectangle by given point.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( obj );
@@ -484,9 +508,10 @@ mc << Mouse Click( Offset( TopLeft( win[Outline Box( 1 )] ), [25 15] ) );
 
 **Description:** Calculates the top-left corner point for a given box or rectangle.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ), Anova );
 mc = Mimic( Report( obj )["Oneway Anova", "Analysis of Variance"] );

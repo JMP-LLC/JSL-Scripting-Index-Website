@@ -8,9 +8,10 @@
 
 **Description:** Converts a matrix into a data table. The invisible option can be used to avoid displaying the table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Table( [1 2 3, 4 5 6] );
 
 ```
@@ -21,9 +22,10 @@ As Table( [1 2 3, 4 5 6] );
 
 **Description:** Returns column value that has not had column properties applied to it. If row option is not specified, then the current row is assumed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
 y1 = Col Stored Value( :JOB, 10 );
@@ -40,11 +42,12 @@ Show( y1, y2, y3, y4 );
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
 ht = Column( "height" );
@@ -56,7 +59,6 @@ col4[1] + ht[2];
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
 col = Column( dt, "sex", "formatted" );
@@ -71,9 +73,10 @@ Write( "\!nData value returned is the formatted value of row 5." );
 
 **Description:** Returns the name of the nth column of the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -85,9 +88,10 @@ Column Name( 4 );
 
 **Description:** Returns the ith value in the sequence of numbers from start to end taking s steps and repeating each number n times, where i is determined by the value of the Row() function. Being dependent on the Row() function, the Count() function is generally used in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Count Example",
 	Add Rows( 12 ),
 	New Column( "Count1" ),
@@ -111,9 +115,10 @@ For Each Row(
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
 
@@ -125,9 +130,10 @@ Current Data Table() << Get Column Names;
 
 **Description:** Returns a reference to the specified data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Data Table( 1 );
@@ -140,9 +146,10 @@ Data Table( 1 );
 
 **Description:** Returns x - Lag( x, n ), also known as the "first difference". Being dependent on Row(), Dif() is mainly useful in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -155,9 +162,10 @@ Dif( :height, 2 );
 
 **Description:** Returns a row vector with the dimensions of the current data table, a specified data table, or a matrix. The dimensions are the number of rows and the number of columns and are listed in that order.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -176,9 +184,10 @@ The search is limited to tables in the current project (or no project when not r
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table( 1 );
@@ -199,11 +208,12 @@ The list is limited to tables in the current project (or no project when not run
 
 To specify a project, use the optional Project() argument with a title, index, display box, or window object. Use Project(0) to specify no project when running the script in a project.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
@@ -214,7 +224,6 @@ Get Data Table List();
 
 ```jsl
 
-Names Default To Here( 1 );
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
 
@@ -226,9 +235,10 @@ Get Data Table List( Project( project ) );
 
 **Description:** Returns the value of the x argument with the current row set to Row() - n. Being dependent on Row(), Lag() is mainly useful in column formulas.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Lag( :height, 2 );
@@ -241,9 +251,10 @@ Lag( :height, 2 );
 
 **Description:** Returns the number of rows in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Row( [11 22, 33 44] );
 
 ```
@@ -254,9 +265,10 @@ N Row( [11 22, 33 44] );
 
 **Description:** Returns the number of rows in the current data table, a specified data table, or a matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Rows( [11 22, 33 44] );
 
 ```
@@ -267,11 +279,12 @@ N Rows( [11 22, 33 44] );
 
 **Description:** Returns the number of currently open data tables.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
@@ -281,7 +294,6 @@ N Table();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Open( "$SAMPLE_DATA/Solubility.jmp" );
@@ -299,21 +311,21 @@ d;
 
 **Description:** Creates a new column in the current data table. The optional actions arguments are any messages that data columns support.
 
-**Like**
+**JMP Version Added:** Before version 14
+
+#### Like
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
@@ -325,9 +337,10 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 **Description:** Creates a new column by performing a regular expression pattern match on an existing column.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
 	Column( :Narrative Cause ),
@@ -344,9 +357,10 @@ New Column by Text Matching(
 
 **Description:** Creates a new data table. "Invisible" hides the data table from view but lists it in the JMP Home Window. "Private" hides the table completely. "Visible" is the default, and creates a normal table that is visible and listed in the JMP Home Window. The optional actions arguments are any messages that data tables support.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "Little Class",
 	Add Rows( 3 ),
 	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),
@@ -362,11 +376,12 @@ New Table( "Little Class",
 
 **Description:** Returns the current row in a data table. Can be set as an L-value. Reset the current row by assigning value of 0.
 
-**Reset Row**
+**JMP Version Added:** Before version 14
+
+#### Reset Row
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
 Show( Row() );
@@ -374,11 +389,10 @@ Row() = 0;
 
 ```
 
-**Set Row**
+#### Set Row
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 :height * :weight;
@@ -391,9 +405,10 @@ Row() = 3;
 
 **Description:** Returns the Row()th item in the sequence of numbers from start to end incremented by incr. Each number in the sequence is repeated n times. Because of its dependence on Row(), the Sequence() function is mainly useful in column formulas. To create sequences as JSL matrices, see Index().
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Row() = 3;
 Sequence( 1, 9, 2 );
 
@@ -405,11 +420,12 @@ Sequence( 1, 9, 2 );
 
 **Description:** Subscribe to the data table list to be notified when a new data table has been added or closed.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -432,7 +448,6 @@ Close( dt );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -456,9 +471,10 @@ dt << setname( "xxx" );
 
 **Description:** Returns the ith value of a subscriptable object, which can be a column of a data table, a matrix, a list, or a report display element.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {11, 12, 13}[2];
 
 ```
@@ -469,9 +485,10 @@ Names Default To Here( 1 );
 
 **Description:** Suppresses the evaluation of formulas in all data tables if the argument if nonzero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Suppress Formula Eval( 1 );
 
 ```
@@ -482,11 +499,12 @@ Suppress Formula Eval( 1 );
 
 **Description:** Remove a subscription to the data table list that had been added thru the command "subscribe to data table list".
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -511,7 +529,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-Names Default To Here( 1 );
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );

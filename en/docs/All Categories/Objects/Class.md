@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -35,9 +34,10 @@ clref = New Object( Test() );
 
 **Description:** Clone the contents of a class reference making a new object
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -61,9 +61,10 @@ Show( clref == nclref );
 
 **Description:** Returns a 1 if the class contains the specified string expression, or a 0 otherwise.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -85,9 +86,10 @@ result = clref << Contains( "nObs" );
 
 **Description:** Deletes this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -110,9 +112,10 @@ Show( clref );
 
 **Description:** Compare the class reference argument to the target class reference for equality
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -137,9 +140,10 @@ Show( clref << Equal( nclref ) );
 
 **Description:** Returns the string expression for the first item in this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -161,9 +165,10 @@ result = clref << First;
 
 **Description:** Returns a list of items within this class. Each element is a two-item list containing a key and its associated value.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -185,9 +190,10 @@ result = clref << Get Contents;
 
 **Description:** Returns a list of keys within this class. Each key is a string representation of an individual item contained in the class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -209,9 +215,10 @@ result = clref << Get Keys;
 
 **Description:** Returns the name of this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -233,9 +240,10 @@ class name = clref << Get Name;
 
 **Description:** Returns the value of the specified item within this class. The "string" is the key to the item.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -257,9 +265,10 @@ result = clref << Get Value( "nObs" );
 
 **Description:** Returns a list of values corresponding to each item within this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -281,9 +290,10 @@ result = clref << Get Values;
 
 **Description:** Inserts a string expression with the specified value into this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -306,9 +316,10 @@ Show( clref );
 
 **Description:** Locks all method members or specified named members in this class and prevents them from being added, changed, or removed.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -331,9 +342,10 @@ Try( clref:nObs = 40, "clref is locked." );
 
 **Description:** Returns the number of items contains in this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -355,9 +367,10 @@ n = clref << N Items;
 
 **Description:** Returns the string expression for the next item following the key specified in this class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -379,9 +392,10 @@ result = clref << Next( "addition" );
 
 **Description:** Removes the specified string expression from the class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -404,9 +418,10 @@ Show( clref );
 
 **Description:** Shows the contents of a class in the JMP log.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;
@@ -428,9 +443,10 @@ result = clref << Show Contents;
 
 **Description:** Unlocks a locked class containing method members that were prevented from being added, changed, or removed.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"Test",
 	nObs = 20;

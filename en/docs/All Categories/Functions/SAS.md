@@ -8,9 +8,10 @@
 
 **Description:** Returns an equivalent expression in the C programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -21,9 +22,10 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns a JSON (JavaScript Object Notation) representation of the expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -34,9 +36,10 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns an equivalent expression in the JavaScript programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -47,9 +50,10 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns an equivalent expression in the Python programming language.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -60,9 +64,10 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Returns a version of the expression more suitable for a SAS DATA step. The code must be wrapped in a PROC DS2 call.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -73,9 +78,10 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 **Description:** Converts JMP variable names to a string containing valid SAS variable names by changing special characters and blanks to underscores. The argument can be specified as a string or a list of strings.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Name( {"x 1", "x 2"} );
 
 ```
@@ -86,9 +92,10 @@ SAS Name( {"x 1", "x 2"} );
 
 **Description:** Returns a list of variable names from a SAS data set.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```

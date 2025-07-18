@@ -8,11 +8,12 @@
 
 **Description:** Start a connection to JMP Live using stored connection information. Connection is optional and defaults to the connection specified as the default in Connection Manager. If provided it looks up the connection by the name. Prompt is optional and defaults to "No". The valid values for prompt are "Yes", "No", and "If Needed". A value of "Yes" always prompts for login credentials. A value of "No" never prompts for login credentials, but could result in an authentication failure. A value of "If Needed"  prompts for credentials only if the current stored credentials are not valid. Returns a JMP Live Connection object.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live();
 
 ```
@@ -21,7 +22,6 @@ jmplive = New JMP Live();
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
@@ -30,7 +30,6 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```
@@ -51,11 +50,12 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 	Optimization is used to customize the way the report is published to JMP Live. The report is published to enable greater interactivity by default.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -82,7 +82,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -106,7 +105,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -124,7 +122,6 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),

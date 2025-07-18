@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -33,7 +32,6 @@ fontobj = seg = (frame << Find Seg( "TreeMapSeg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -53,7 +51,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -71,9 +68,10 @@ seg << Class Name;
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -105,7 +103,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -123,9 +120,10 @@ seg << Delete;
 
 **Description:** Sets the coloring behavior of density gradients. "Fade to White" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -143,9 +141,10 @@ seg << Density Gradient( "Fade to Gray" );
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -164,9 +163,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -185,7 +185,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -201,6 +200,8 @@ seg << Set Fill Color( "Green" );
 
 **Syntax:** obj &lt;&lt; First Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Frame
 
 **Syntax:** FrameBox = obj &lt;&lt; Frame
@@ -209,7 +210,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -229,7 +229,6 @@ seg << Frame;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city ), Sizes( :POP ) );
 tmr = tm << report;
@@ -252,7 +251,6 @@ tmbox << Frame Size( 200, 200 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -270,9 +268,10 @@ fontobj << Get Base Font;
 
 **Description:** Returns the current clipping shape
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -299,9 +298,10 @@ cs << Get Clip Shape();
 
 **Description:** Gets the coloring behavior of density gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -321,7 +321,6 @@ seg << Get Density Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -339,9 +338,10 @@ seg << get description();
 
 **Description:** Returns the current kind of error bar end cap.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -360,9 +360,10 @@ seg << Get Error Bar Cap();
 
 **Description:** Returns the shape of the end cap on error bars.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -381,7 +382,6 @@ seg << Get Error Bar Cap Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -399,7 +399,6 @@ seg << Get Fill Color;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -417,7 +416,6 @@ seg << Get Fill Pattern;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -437,7 +435,6 @@ fontobj << Get Font;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -458,7 +455,6 @@ fontobj << Get Font Name;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -478,7 +474,6 @@ fontobj << Get Font Scale;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -498,7 +493,6 @@ fontobj << Get Font Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -520,7 +514,6 @@ fontobj << Get Font Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -538,9 +531,10 @@ seg << Get Gradient;
 
 **Description:** Gets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -558,9 +552,10 @@ seg << Get Gradient Color Theme;
 
 **Description:** Gets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -578,9 +573,10 @@ seg << Get Gradient Discrete Colors;
 
 **Description:** Gets the coloring behavior for values outside of the range of the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -595,9 +591,10 @@ seg << Get Gradient Fill;
 
 **Description:** Gets the number of labels in a gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -615,11 +612,12 @@ seg << Get Gradient Label Count;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -632,7 +630,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -648,9 +645,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -668,9 +666,10 @@ seg << Get Gradient Legend Horizontal;
 
 **Description:** Gets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -688,9 +687,10 @@ seg << Get Gradient Legend Label Format;
 
 **Description:** Gets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -708,9 +708,10 @@ seg << Get Gradient Legend Label Width;
 
 **Description:** Gets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -728,9 +729,10 @@ seg << Get Gradient Legend Show Labels;
 
 **Description:** Gets the number of levels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -748,9 +750,10 @@ seg << Get Gradient Levels;
 
 **Description:** Gets the minimum and maximum lightness for level colors in a gradient. Missing values indicate that the color theme&apos;s original value is used.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -768,9 +771,10 @@ seg << Get Gradient Lightness Range;
 
 **Description:** Gets the range over which non-custom gradient scales are generated.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -785,9 +789,10 @@ seg << Get Gradient Range;
 
 **Description:** Gets if the order of colors in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -805,9 +810,10 @@ seg << Get Gradient Reverse Color Order;
 
 **Description:** Gets if the order of labels in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -825,9 +831,10 @@ seg << Get Gradient Reverse Label Order;
 
 **Description:** Gets the gradient scale type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -842,11 +849,12 @@ seg << Get Gradient Scale;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -859,7 +867,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -875,9 +882,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets when to show the legend entry for missing values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -895,9 +903,10 @@ seg << Get Gradient Show Missing;
 
 **Description:** Gets the transparency behavior of gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -915,9 +924,10 @@ seg << Get Gradient Transparency;
 
 **Description:** Gets the floating group label border color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -935,9 +945,10 @@ seg << Get Group Label Border Color();
 
 **Description:** Gets the floating group label fill color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -955,9 +966,10 @@ seg << Get Group Label Color();
 
 **Description:** Gets the group label font.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -975,9 +987,10 @@ seg << Get Group Label Font();
 
 **Description:** Gets the group label font color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -995,9 +1008,10 @@ seg << Get Group Label Font Color();
 
 **Description:** Returns the amount of space around group tiles.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1015,9 +1029,10 @@ seg << Get Group Spacing();
 
 **Description:** Gets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -1054,7 +1069,6 @@ seg << Get Interval Draw Directions;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1072,9 +1086,10 @@ seg << Get Line Color;
 
 **Description:** Returns the style of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1092,9 +1107,10 @@ seg << Get Line Style;
 
 **Description:** Returns the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1112,9 +1128,10 @@ seg << Get Line Width;
 
 **Description:** Returns the marker style.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1132,9 +1149,10 @@ seg << Get Marker;
 
 **Description:** Returns the size of the markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1152,9 +1170,10 @@ seg << Get Marker Size;
 
 **Description:** Gets the relative preference of horizontal vs. vertical area splitting.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SATByYear.jmp" );
 gb = Graph Builder( Variables( X( :State ), Size( :Population ) ), Elements( Treemap( X ) ) );
 frame = Report( gb )[FrameBox( 1 )];
@@ -1169,7 +1188,6 @@ seg << Get Orientation Bias();
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1187,9 +1205,10 @@ seg << Get Text Color;
 
 **Description:** Gets how the text is drawn with respect to the cursor pen.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -1210,7 +1229,6 @@ seg << Get Text Style;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1230,7 +1248,6 @@ seg << Get Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1248,9 +1265,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1268,9 +1286,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1285,9 +1304,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1303,9 +1323,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1323,9 +1344,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1340,9 +1362,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1360,9 +1383,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1380,9 +1404,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1400,9 +1425,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1420,9 +1446,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1440,11 +1467,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1460,7 +1488,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1476,7 +1503,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1494,9 +1520,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1511,9 +1538,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1531,9 +1559,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1551,9 +1580,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1568,9 +1598,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1585,9 +1616,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -1605,9 +1637,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the transparency behavior of gradients. "Linear" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1629,7 +1662,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 gb = Graph Builder(
 	Variables( X( :season ), X( :species, Position( 1 ) ), Color( :miles ) ),
@@ -1645,7 +1677,6 @@ seg << Group Label Background( 0.4 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city, :State ), Sizes( :POP ) );
 tmr = tm << report;
@@ -1671,7 +1702,6 @@ If( prefVal == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 gb = Graph Builder(
 	Variables( X( :season ), X( :species, Position( 1 ) ), Color( :miles ) ),
@@ -1687,7 +1717,6 @@ seg << Ignore Group Hierarchy( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city, :State ), Sizes( :POP ) );
 tmr = tm << report;
@@ -1707,6 +1736,8 @@ If( prefVal == 1,
 
 **Syntax:** obj &lt;&lt; Last Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Line Color
 
 **Syntax:** obj &lt;&lt; Line Color( color )
@@ -1715,7 +1746,6 @@ If( prefVal == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1733,9 +1763,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1753,9 +1784,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1773,9 +1805,10 @@ seg << Set Line Width( 3 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1793,9 +1826,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1812,13 +1846,19 @@ seg << Set Marker Size( "XL" );
 
 **Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Min Value
 
 **Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Name
 
 **Syntax:** obj &lt;&lt; Name( state=0|1 )
+
+**JMP Version Added:** 16
 
 ### Parent
 
@@ -1828,7 +1868,6 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1846,7 +1885,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1866,7 +1904,6 @@ seg << Revert;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1887,7 +1924,6 @@ fontobj << Set Base Font( "Title" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1905,9 +1941,10 @@ seg << set description( "my seg" );
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -1926,9 +1963,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -1947,7 +1985,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1965,7 +2002,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -1985,7 +2021,6 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2001,7 +2036,6 @@ fontobj << Set Font( "Arial Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2021,7 +2055,6 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2041,7 +2074,6 @@ fontobj << Set Font Name( "Arial Black" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2062,7 +2094,6 @@ fontobj << Set Font Scale( 2.0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2084,7 +2115,6 @@ fontobj << Set Font Size( 14 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2100,7 +2130,6 @@ fontobj << Set Font Style( "Italic" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2120,7 +2149,6 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2138,9 +2166,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2158,9 +2187,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets the gradient to use a list of values for a custom scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2178,9 +2208,10 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2195,9 +2226,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2213,9 +2245,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2233,9 +2266,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2250,9 +2284,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2270,9 +2305,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2290,9 +2326,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2310,9 +2347,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2330,9 +2368,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2350,11 +2389,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2370,7 +2410,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2386,7 +2425,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2404,9 +2442,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2421,9 +2460,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2441,9 +2481,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2461,9 +2502,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2478,9 +2520,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2495,9 +2538,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2515,9 +2559,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the floating group label border color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -2535,9 +2580,10 @@ seg << Set Group Label Border Color( "Blue" );
 
 **Description:** Sets the floating group label fill color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -2555,11 +2601,12 @@ seg << Set Group Label Color( "Blue" );
 
 **Description:** Sets the group label font. If a label position is specified, the font is only applied if group labels use that position.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -2575,7 +2622,6 @@ seg << Set Group Label Font( "Arial Black", 16 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -2593,9 +2639,10 @@ seg << Set Group Label Font( "Floating", Size( 24 ) );
 
 **Description:** Sets the group label font color.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :State ), X( :city, Position( 1 ) ), ),
@@ -2613,11 +2660,12 @@ seg << Set Group Label Font Color( "Blue" );
 
 **Description:** Sets the amount of space around group tiles. "1" by default.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2633,7 +2681,6 @@ seg << Set Group Spacing( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2653,9 +2700,10 @@ Graph Builder(
 
 **Description:** Sets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -2692,7 +2740,6 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2710,9 +2757,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2730,9 +2778,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2750,9 +2799,10 @@ seg << Set Line Width( 3 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2770,9 +2820,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2791,9 +2842,10 @@ seg << Set Marker Size( "XL" );
 
 **Description:** Sets the relative preference of horizontal vs. vertical area splitting. The argument should be a number between -1 and 1.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/SATByYear.jmp" );
 gb = Graph Builder( Variables( X( :State ), Size( :Population ) ), Elements( Treemap( X ) ) );
 frame = Report( gb )[FrameBox( 1 )];
@@ -2808,7 +2860,6 @@ seg << Set Orientation Bias( 0.5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2826,9 +2877,10 @@ seg << Set Text Color( "Green" );
 
 **Description:** Sets how the text is drawn with respect to the cursor pen. When supported, "Erased" fills the bounding box of the text and "Erased" outlines it. If not specified, the default horizontal alignment is "Left" and vertical is "Baseline".
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -2847,9 +2899,10 @@ seg << Set Text Style( {Center, VCenter} );
 
 **Description:** Sets the shape transparency. The argument should be a numeric value between 0 and 1.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2875,7 +2928,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 gb = Graph Builder(
 	Variables( X( :season ), X( :species, Position( 1 ) ), Color( :miles ) ),
@@ -2891,7 +2943,6 @@ seg << Show Group Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city, :State ), Sizes( :POP ) );
 tmr = tm << report;
@@ -2921,7 +2972,6 @@ If( prefVal == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 gb = Graph Builder(
 	Variables( X( :season ), X( :species, Position( 1 ) ), Color( :miles ) ),
@@ -2937,7 +2987,6 @@ seg << Show Labels( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city, :State ), Sizes( :POP ) );
 tmr = tm << report;
@@ -2961,7 +3010,6 @@ If( prefVal == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -2981,8 +3029,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -3019,7 +3065,6 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -3054,7 +3099,6 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Animals.jmp" );
 gb = Graph Builder(
 	Variables( X( :season ), X( :species, Position( 1 ) ), Color( :miles ) ),
@@ -3070,7 +3114,6 @@ seg << Suppress Box Frames( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 tm = Treemap( Categories( :city ), Sizes( :POP ) );
 tmr = tm << report;
@@ -3092,7 +3135,6 @@ If( prefVal == 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -3110,9 +3152,10 @@ seg << Set Text Color( "Green" );
 
 **Description:** Sets how the text is drawn with respect to the cursor pen. When supported, "Erased" fills the bounding box of the text and "Erased" outlines it. If not specified, the default horizontal alignment is "Left" and vertical is "Baseline".
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
@@ -3131,9 +3174,10 @@ seg << Set Text Style( {Center, VCenter} );
 
 **Description:** Sets the shape transparency. The argument should be a numeric value between 0 and 1.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :Region ), X( :State, Position( 1 ) ) ),
@@ -3155,7 +3199,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3187,7 +3230,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3219,7 +3261,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -3237,7 +3278,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -3251,7 +3291,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -3265,7 +3304,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -3279,7 +3317,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 

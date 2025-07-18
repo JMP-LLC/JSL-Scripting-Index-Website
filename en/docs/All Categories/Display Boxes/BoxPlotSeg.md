@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -33,7 +32,6 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -53,7 +51,6 @@ seg << Set Box Style( "Solid" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -75,7 +72,6 @@ seg << Set Box Type( "Outlier" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -97,7 +93,6 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -117,9 +112,10 @@ seg << Class Name;
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -149,7 +145,6 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -171,7 +166,6 @@ seg << Set Confidence Diamond( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -191,9 +185,10 @@ seg << Delete;
 
 **Description:** Sets the coloring behavior of density gradients. "Fade to White" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -213,9 +208,10 @@ seg << Density Gradient( "Fade to Gray" );
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -234,9 +230,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -255,7 +252,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -273,9 +269,10 @@ seg << Set Fences( 0 );
 
 **Syntax:** obj &lt;&lt; Fill( state = 0|1 )
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -295,7 +292,6 @@ seg << Set Fill( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -313,6 +309,8 @@ seg << Set Fill Color( "Green" );
 
 **Syntax:** obj &lt;&lt; First Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Frame
 
 **Syntax:** FrameBox = obj &lt;&lt; Frame
@@ -321,7 +319,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -341,7 +338,6 @@ seg << Frame;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -361,7 +357,6 @@ seg << Get Box Style();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -381,9 +376,10 @@ seg << Get Box Type();
 
 **Description:** Returns the current clipping shape
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Cities.jmp" );
 gb = Graph Builder(
 	Size( 653, 396 ),
@@ -410,7 +406,6 @@ cs << Get Clip Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -430,9 +425,10 @@ seg << Get Confidence Diamond();
 
 **Description:** Gets the coloring behavior of density gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -454,7 +450,6 @@ seg << Get Density Gradient;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -474,9 +469,10 @@ seg << get description();
 
 **Description:** Returns the current kind of error bar end cap.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -495,9 +491,10 @@ seg << Get Error Bar Cap();
 
 **Description:** Returns the shape of the end cap on error bars.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -516,7 +513,6 @@ seg << Get Error Bar Cap Shape();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -534,9 +530,10 @@ seg << Get Fences();
 
 **Syntax:** obj &lt;&lt; Get Fill
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -556,7 +553,6 @@ seg << Get Fill;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -576,7 +572,6 @@ seg << Get Fill Color();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -598,7 +593,6 @@ seg << Get Fill Pattern;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -618,9 +612,10 @@ seg << Get Gradient;
 
 **Description:** Gets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -640,9 +635,10 @@ seg << Get Gradient Color Theme;
 
 **Description:** Gets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -662,9 +658,10 @@ seg << Get Gradient Discrete Colors;
 
 **Description:** Gets the coloring behavior for values outside of the range of the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -679,9 +676,10 @@ seg << Get Gradient Fill;
 
 **Description:** Gets the number of labels in a gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -701,11 +699,12 @@ seg << Get Gradient Label Count;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -718,7 +717,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -734,9 +732,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -756,9 +755,10 @@ seg << Get Gradient Legend Horizontal;
 
 **Description:** Gets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -778,9 +778,10 @@ seg << Get Gradient Legend Label Format;
 
 **Description:** Gets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -800,9 +801,10 @@ seg << Get Gradient Legend Label Width;
 
 **Description:** Gets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -822,9 +824,10 @@ seg << Get Gradient Legend Show Labels;
 
 **Description:** Gets the number of levels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -844,9 +847,10 @@ seg << Get Gradient Levels;
 
 **Description:** Gets the minimum and maximum lightness for level colors in a gradient. Missing values indicate that the color theme&apos;s original value is used.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -866,9 +870,10 @@ seg << Get Gradient Lightness Range;
 
 **Description:** Gets the range over which non-custom gradient scales are generated.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -883,9 +888,10 @@ seg << Get Gradient Range;
 
 **Description:** Gets if the order of colors in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -905,9 +911,10 @@ seg << Get Gradient Reverse Color Order;
 
 **Description:** Gets if the order of labels in a gradient is reversed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -927,9 +934,10 @@ seg << Get Gradient Reverse Label Order;
 
 **Description:** Gets the gradient scale type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -944,11 +952,12 @@ seg << Get Gradient Scale;
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -961,7 +970,6 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -977,9 +985,10 @@ seg << Get Gradient Scale Values;
 
 **Description:** Gets when to show the legend entry for missing values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -999,9 +1008,10 @@ seg << Get Gradient Show Missing;
 
 **Description:** Gets the transparency behavior of gradients.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1021,9 +1031,10 @@ seg << Get Gradient Transparency;
 
 **Description:** Gets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -1060,7 +1071,6 @@ seg << Get Interval Draw Directions;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1080,9 +1090,10 @@ seg << Get Line Color;
 
 **Description:** Returns the style of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1102,9 +1113,10 @@ seg << Get Line Style;
 
 **Description:** Returns the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1124,9 +1136,10 @@ seg << Get Line Width;
 
 **Description:** Returns the marker style.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1146,9 +1159,10 @@ seg << Get Marker;
 
 **Description:** Returns the size of the markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1168,7 +1182,6 @@ seg << Get Marker Size;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1188,7 +1201,6 @@ seg << Get Median Line Style();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1206,9 +1218,10 @@ seg << Get Moment( "Std Dev" );
 
 **Syntax:** obj &lt;&lt; Get Notched
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1230,7 +1243,6 @@ seg << Get Notched();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1250,7 +1262,6 @@ seg << Get Quantiles;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1270,7 +1281,6 @@ seg << Get Shortest Half Bracket();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1292,7 +1302,6 @@ seg << Get Shortest Half Color();
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1314,7 +1323,6 @@ seg << Get Transparency;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1334,9 +1342,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1356,9 +1365,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1373,9 +1383,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1391,9 +1402,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1413,9 +1425,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1430,9 +1443,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1452,9 +1466,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1474,9 +1489,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1496,9 +1512,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1518,9 +1535,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1540,11 +1558,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1562,7 +1581,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1580,7 +1598,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1600,9 +1617,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1617,9 +1635,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1639,9 +1658,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1661,9 +1681,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1678,9 +1699,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -1695,9 +1717,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -1715,9 +1738,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the transparency behavior of gradients. "Linear" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1735,6 +1759,8 @@ seg << Gradient Transparency( "None" );
 
 **Syntax:** obj &lt;&lt; Last Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Line Color
 
 **Syntax:** obj &lt;&lt; Line Color( color )
@@ -1743,7 +1769,6 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1763,9 +1788,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1785,9 +1811,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1807,9 +1834,10 @@ seg << Set Line Width( 3 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1829,9 +1857,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1850,13 +1879,14 @@ seg << Set Marker Size( "XL" );
 
 **Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Median Line Style
 
 **Syntax:** obj &lt;&lt; Median Line Style( pen style )
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1874,17 +1904,22 @@ seg << Set Median Line Style( "Dotted" );
 
 **Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
+**JMP Version Added:** 16
+
 ### Name
 
 **Syntax:** obj &lt;&lt; Name( state=0|1 )
+
+**JMP Version Added:** 16
 
 ### Notched
 
 **Syntax:** obj &lt;&lt; Notched( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1906,7 +1941,6 @@ seg << Set Notched( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1926,7 +1960,6 @@ seg << Parent;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1946,7 +1979,6 @@ seg << Set Box Style( "Solid" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1966,7 +1998,6 @@ seg << Set Box Type( "Outlier" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -1988,7 +2019,6 @@ seg << Set Confidence Diamond( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2008,9 +2038,10 @@ seg << set description( "my seg" );
 
 **Description:** Specifies what type of end cap to put on error bars.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -2029,9 +2060,10 @@ seg << Set Error Bar Cap( "Large" );
 
 **Description:** Specifies the shape of the end cap to display on error bars. A single argument sets the shape for both ends of the bar, or separate arguments can be provided for the start and end. The default shape is "Line". A shape of "Arrow" draws an outward pointing arrow, and "None" omits the cap.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :Age ), Y( :Height ) ),
@@ -2050,7 +2082,6 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2068,9 +2099,10 @@ seg << Set Fences( 0 );
 
 **Syntax:** obj &lt;&lt; Set Fill( state = 0|1 )
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2090,7 +2122,6 @@ seg << Set Fill( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2110,7 +2141,6 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2132,7 +2162,6 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2152,9 +2181,10 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 **Description:** Sets the gradient&apos;s color theme.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2174,9 +2204,10 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 **Description:** Sets the gradient to use a list of values for a custom scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2196,9 +2227,10 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2213,9 +2245,10 @@ seg << Set Gradient Discrete Colors( 1 );
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2231,9 +2264,10 @@ seg << Set Gradient Fill( "Between" );
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2253,9 +2287,10 @@ seg << Set Gradient Label Count( 8 );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2270,9 +2305,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2292,9 +2328,10 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 **Description:** Sets the format for gradient legend labels
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2314,9 +2351,10 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2336,9 +2374,10 @@ seg << Set Gradient Legend Label Width( 4 );
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2358,9 +2397,10 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2380,11 +2420,12 @@ seg << Set Gradient Levels( 7 );
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2402,7 +2443,6 @@ seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2420,7 +2460,6 @@ seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2440,9 +2479,10 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2457,9 +2497,10 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 **Description:** Reverses the order of the colors in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2479,9 +2520,10 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 **Description:** Reverses the order of the labels in a gradient.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2501,9 +2543,10 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2518,9 +2561,10 @@ seg << Set Gradient Scale( "Quantile" );
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Little Pond.jmp" );
 gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
 frame = (gb << Report)[FrameBox( 1 )];
@@ -2535,9 +2579,10 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$Sample_Data/Cities.jmp" );
 gb = Graph Builder(
 	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
@@ -2555,9 +2600,10 @@ seg << Set Gradient Show Missing( "Off" );
 
 **Description:** Sets the directions in which intervals should be drawn.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = Graph Builder(
 	Variables( X( :age ), Y( :weight ) ),
@@ -2594,7 +2640,6 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2614,9 +2659,10 @@ seg << Set Line Color( "Green" );
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2636,9 +2682,10 @@ seg << Set Line Style( "Dotted" );
 
 **Description:** Sets the width of the lines.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2658,9 +2705,10 @@ seg << Set Line Width( 3 );
 
 **Description:** Sets the marker style for all markers.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2680,9 +2728,10 @@ seg << Set Marker( "Square" );
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2703,7 +2752,6 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2721,9 +2769,10 @@ seg << Set Median Line Style( "Dotted" );
 
 **Syntax:** obj &lt;&lt; Set Notched( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2743,7 +2792,6 @@ seg << Set Notched( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2763,7 +2811,6 @@ seg << Set Shortest Half Bracket( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2783,7 +2830,6 @@ seg << Set Shortest Half Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2803,7 +2849,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2823,7 +2868,6 @@ seg << Set Shortest Half Bracket( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2845,7 +2889,6 @@ seg << Set Shortest Half Color( "Green" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2867,8 +2910,6 @@ seg << Sib;
 
 ```jsl
 
-Names Default To Here( 1 );
-Names Default To Here( 1 );
 win = New Window( "World",
 	gb = Graph(
 		FrameSize( 800, 400 ),
@@ -2905,7 +2946,6 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2938,7 +2978,6 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Box Plot Seg Example",
 	g = Graph Box(
 		Frame Size( 40, 180 ),
@@ -2962,7 +3001,6 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -2994,7 +3032,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 New Window( "enabled",
 	V List Box(
@@ -3026,7 +3063,6 @@ New Window( "enabled",
 
 ```jsl
 
-Names Default To Here( 1 );
 //This message applies to all display objects
 x = 1;
 w = New Window( "Test", b = Button Box( "Press me" ) );
@@ -3044,7 +3080,6 @@ Show( ns:x, x );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Properties;
 
@@ -3058,7 +3093,6 @@ bb << Get Properties;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property( "Enabled" );
 
@@ -3072,7 +3106,6 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Get Property List;
 
@@ -3086,7 +3119,6 @@ bb << Get Property List;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
 bb << Set Property( "Enabled", 0 );
 

@@ -10,6 +10,8 @@
 
 **Description:** Value corresponding to JSL&apos;s $ALL_HOME directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -22,6 +24,8 @@ print(jmp.ALL_HOME)
 **Syntax:** jmp.BUILTIN_SCRIPTS
 
 **Description:** Value corresponding to JSL&apos;s $BUILTIN_SCRIPTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -38,6 +42,8 @@ print(jmp.BUILTIN_SCRIPTS)
 
 **Description:** Value corresponding to JSL&apos;s $DESKTOP directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -50,6 +56,8 @@ print(jmp.DESKTOP)
 **Syntax:** jmp.DOCUMENTS
 
 **Description:** Value corresponding to JSL&apos;s $DOCUMENTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -64,6 +72,8 @@ print(jmp.DOCUMENTS)
 
 **Description:** Value corresponding to JSL&apos;s $DOWNLOADS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -76,6 +86,8 @@ print(jmp.DOWNLOADS)
 **Syntax:** jmp.DataType.enum_value
 
 **Description:** jmp.DataType is an enumeration representing a JMP column&apos;s data types. These are used with the jmp.DataTable.new_column() function to create columns other than the default Numeric type.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -98,6 +110,8 @@ print( list(map(lambda c: c.name, dType)) )
 
 **Description:** Value corresponding to JSL&apos;s $HOME directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -111,6 +125,8 @@ print(jmp.HOME)
 
 **Description:** Returns the physical path of the project&apos;s temporary directory. Returns the current working directory, or None if script is not running within a project.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -123,6 +139,8 @@ print(jmp.JMPPRJ)
 **Syntax:** jmp.ModelingType.enum_value
 
 **Description:** jmp.ModelingType is an enumeration representing a JMP column&apos;s modeling or analysis type. These are used with the jmp.DataTable.new_column() function to create columns other than the default Continuous modeling type. Note TypeNone differs from JMP&apos;s modeling type None as &apos;None&apos; is a Python keyword.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -141,6 +159,8 @@ print( list(map(lambda c: c.name, mType)) )
 
 **Description:** Path to the JMP installed no-console Python executable (Windows only).
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -157,6 +177,8 @@ if platform.system() == "Windows":
 
 **Description:** Path to the JMP installed Python executable.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -169,6 +191,8 @@ print(jmp.PYTHON_EXE)
 **Syntax:** jmp.PY_USER_APPDIR
 
 **Description:** Path to the user directory location acting as the base of JMP&apos;s Python support. The site-packages directory is within this directory hierarchy.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -183,6 +207,8 @@ print(jmp.PY_USER_APPDIR)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_APPS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -195,6 +221,8 @@ print(jmp.SAMPLE_APPS)
 **Syntax:** jmp.SAMPLE_DASHBOARDS
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_DASHBOARDS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -209,6 +237,8 @@ print(jmp.SAMPLE_DASHBOARDS)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_DATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -221,6 +251,8 @@ print(jmp.SAMPLE_DATA)
 **Syntax:** jmp.SAMPLE_IMAGES
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_IMAGES directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -235,6 +267,8 @@ print(jmp.SAMPLE_IMAGES)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_IMPORT_DATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -247,6 +281,8 @@ print(jmp.SAMPLE_IMPORT_DATA)
 **Syntax:** jmp.SAMPLE_PROJECTS
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_PROJECTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -261,6 +297,8 @@ print(jmp.SAMPLE_PROJECTS)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_SCRIPTS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -273,6 +311,8 @@ print(jmp.SAMPLE_SCRIPTS)
 **Syntax:** jmp.TEMP
 
 **Description:** Value corresponding to JSL&apos;s $TEMP directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -287,6 +327,8 @@ print(jmp.TEMP)
 
 **Description:** Value corresponding to JSL&apos;s $USER_APPDATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -299,6 +341,8 @@ print(jmp.USER_APPDATA)
 **Syntax:** jmp.__jmp_version__
 
 **Description:** Version number of the JMP executable.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -313,6 +357,8 @@ print(jmp.__jmp_version__)
 
 **Description:** Version number of the &apos;jmp&apos; import package. This is not the JMP version.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -325,6 +371,8 @@ print(jmp.__version__)
 **Syntax:** dt = jmp.current()
 
 **Description:** Returns a DataTable object for the current JMP data table.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -340,6 +388,8 @@ print(jmp.current())
 **Syntax:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **Description:** Evaluates the argument and returns the result.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -358,7 +408,9 @@ print(result)
 
 **Description:** Returns a jmp.DataTable object from a protocol compliant library&apos;s dataframe.
 
-**CSV Fallback**
+**JMP Version Added:** 19
+
+#### CSV Fallback
 
 ```python
 
@@ -380,7 +432,7 @@ print(dt)
 
 ```
 
-**Ibis to JMP**
+#### Ibis to JMP
 
 ```python
 
@@ -404,7 +456,7 @@ print(dt)
 
 ```
 
-**JMP to Pandas**
+#### JMP to Pandas
 
 ```python
 
@@ -422,7 +474,7 @@ print(pandas_df)
 
 ```
 
-**JMP to Polars**
+#### JMP to Polars
 
 ```python
 
@@ -440,7 +492,7 @@ print(polars_df)
 
 ```
 
-**Pandas to JMP**
+#### Pandas to JMP
 
 ```python
 
@@ -470,7 +522,7 @@ print(dt)
 
 ```
 
-**Polars to JMP**
+#### Polars to JMP
 
 ```python
 
@@ -501,6 +553,8 @@ print(dt)
 **Syntax:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **Description:** Returns a jmp.DataTable object from a library&apos;s dataframe using the provided CSV conversion method.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -535,7 +589,9 @@ print(dt)
 
 **Description:** Opens a file located at file_path. If the file is a .jmp file or a file that imports into a JMP data table, the object returned will be a DataTable object.  Otherwise will return True or False for success or failure. The optional visibility parameter controls whether the opened file is hidden from view.  Invisible is just hidden from view, while still showing up in the recent files menu and home window.  With a Private table, the reference returned is the only reference to the table, and it does not appear in any of the file lists.
 
-**Excel**
+**JMP Version Added:** 18
+
+#### Excel
 
 ```python
 
@@ -546,7 +602,7 @@ print(obj)
 
 ```
 
-**Invisible**
+#### Invisible
 
 ```python
 
@@ -565,7 +621,7 @@ del dt
 
 ```
 
-**JMP**
+#### JMP
 
 ```python
 
@@ -576,7 +632,7 @@ print(dt)
 
 ```
 
-**JSL Script**
+#### JSL Script
 
 ```python
 
@@ -587,7 +643,7 @@ print(obj)
 
 ```
 
-**Private**
+#### Private
 
 ```python
 
@@ -613,6 +669,8 @@ del dt
 
 **Description:** Returns the value of a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -631,6 +689,8 @@ else:
 
 **Description:** Maps a JMP variable name to an R variable name using R variable naming rules.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -645,6 +705,8 @@ print(rName)
 **Syntax:** jmp.reset()
 
 **Description:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -663,7 +725,9 @@ print(pi)
 
 **Description:** Run JSL scripting from within the Python environment, including the JSL Python interface functions. Optional echo= parameter when set to False or None stops the presented JSL source code from echoing to the log. A result will be returned for the same JSL object types that are supported by Python Send() / Get().  Script failure or unsupported JSL object types will return None.
 
-**Column Properties**
+**JMP Version Added:** 18
+
+#### Column Properties
 
 ```python
 
@@ -688,7 +752,7 @@ Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
 
 ```
 
-**Get Version**
+#### Get Version
 
 ```python
 
@@ -698,7 +762,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```
 
-**Returned value**
+#### Returned value
 
 ```python
 
@@ -718,6 +782,8 @@ print( f'{value} = jmp.run_jsl()')
 **Syntax:** dt = jmp.table(&apos;table_name&apos;)
 
 **Description:** Returns a DataTable object for the opened table having &apos;table_name&apos;
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -739,6 +805,8 @@ print( jmp.table('Big Class') )
 
 
 Changing the copying behavior in subclasses is not supported, so subclasses should not add additional instance attributes because they will not be copied.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -799,6 +867,8 @@ New SQL Query(
 
 **Description:** Gets the value associated with a field.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -839,6 +909,8 @@ jmp.run_jsl("""
 
 
 Avoid storing and using a reference to the connector instance (self) in the returned data source. Other code might also hold a reference and change configuration values unexpectedly. Instead, consider using copy.copy to make an independent copy to refer to, like "self_copy = copy.copy(self)".
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -894,6 +966,8 @@ New SQL Query(
 
 If both this function and _do_as_data_source are implemented, they should be able to open the same set of tables.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -929,6 +1003,8 @@ New Data Connector(
 
 
 This function creates the association by setting attributes on the subclasses.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -1004,6 +1080,8 @@ sensitive: When true, this field is considered to hold sensitive information and
 
 mask_input: When true, the value is obscured and shown with dots in the Data Connector Editor. Defaults to true if "credential" is "password" or "sensitive" is true and credential is not set.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1073,6 +1151,8 @@ New Data Connector(
 
 The use of groups affects the fields&apos; presentation in the data connector editor but not their programmatic access. The group name is used only in the UI, so the advice for field names to avoid characters that should not be used in JSL names does not apply.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1139,6 +1219,8 @@ The keys of the dict are the names of the configuration options, which are expos
 
 The supported types include bool, int, and str. Optional versions of these, such as typing.Optional[bool] or bool | None for bool, are also supported. A missing value is represented by None.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1191,6 +1273,8 @@ New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
 
 **Description:** Subclasses can override this function to provide a list of the schemas in the data source. If this function is not overridden or it returns None, the data source is assumed to not support schemas.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1241,6 +1325,8 @@ New SQL Query(
 
 **Description:** Subclasses should override this function to provide a list of the tables in the data source. If schemas are supported, this list should include only the tables under the schema that is passed. If schemas are not supported, the schema parameter should be ignored.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1290,6 +1376,8 @@ New SQL Query(
 
 
 If returning a data table directly, the table should be created privately. If returning a path string, JMP opens the table itself and captures the settings that it used, preserving them in Query Builder scripts.
+
+**JMP Version Added:** 19
 
 **Create the table directly**
 
@@ -1378,6 +1466,8 @@ New SQL Query(
 
 **Description:** Subclasses can override this function instead of open_table to provide custom handling of table open settings. This function is like open_table but is also called with the existing settings, if any. It must return a data table, and it must also return the new settings, if any. Missing settings are indicated by None.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1434,6 +1524,8 @@ Write( ( New SQL Query(
 
 **Description:** The Column object supports equality and inequality checks. Since a DataTable.Column is actually a reference to a live data table column, multiple Column objects could point to the same actual column. The checks for equality == and inequality != test do not compare content. Instead they check whether two DataTable.Column objects point to the column.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1453,6 +1545,8 @@ print( col1 != col3 )
 
 **Description:** The DataTable.Column object supports the Python mapping protocol. Providing the array [] operators utilizing the numeric row index.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1471,6 +1565,8 @@ for i in range(0, dt.nrows):
 
 **Description:** The DataTable.Column behaves like a Python sequence.  This allows iterating on the values of the column.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1486,6 +1582,8 @@ for n in dt[0]:
 #### Slice
 
 **Description:** The slice operator is used as a parameter to the [ ] get item operation. This consists of start:stop:step.  These parameters are optional.  The returned value will be a list of values, beginning with the start value not including the stop value incremented by the step value.  Negative numbers for start or stop, are 1-based indexes from the end of the sequence.  A negative [step] value decrements the step count, rather than incrementing.  Empty values have appropriate defaults.  [::-1] will return the complete list in reverse order. And [:] will return the entire array in current item order.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -1507,6 +1605,8 @@ print( dt['name'][0:20:2] )              # print every other value in range [0, 
 
 **Description:** Equality test, returns true when two jmp.DataTable.Column objects point to the same JMP data table column. This does not check that content matches, but the two variables point to exactly the same column.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1526,6 +1626,8 @@ print( col1 == col3 )
 
 **Description:** Provides the [] operator for getting a jmp.DataTable.Column object&apos;s value from the column with 0-based index.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1542,6 +1644,8 @@ for i in range ( len(col) ):
 **Syntax:** Column( dt_obj, name | index)
 
 **Description:** Creates a new column object that points to a specific column in a data table.  A jmp.DataTable object is required for the dt_obj parameter and a valid column name or index is required.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -1563,6 +1667,8 @@ print(col2)
 
 **Description:** Returns the number of columns in the table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1577,6 +1683,8 @@ print( len( dt['name'] ) )
 **Syntax:** column1 != column2
 
 **Description:** Inequality test, returns true when two jmp.DataTable.Column objects do not point to the same data table column. This does not check that content matches, but the two objects do not point to exactly the same column.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -1596,6 +1704,8 @@ print( col1 != col3 )
 **Syntax:** dt[&apos;name&apos; | index] = [ list, of, items, count, must, match, table, rows]
 
 **Description:** Provides the [] operator for setting values in a column getting a jmp.DataTable.Column object from the table by column name or 0-based index.
+
+**JMP Version Added:** 18
 
 **datetime.date**
 
@@ -1701,6 +1811,8 @@ dt['birthday'][0] = time.localtime()
 
 **Description:** Returns a sting representation of containing summary information about the data table&apos;s column.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1715,6 +1827,8 @@ print(dt[0])
 
 **Description:** Property returning the column field&apos;s data length. This value can be 0, 1, 2, 4 or 8 bytes.  0 is the default and implies 8 bytes used for data table numeric fields.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1728,6 +1842,8 @@ print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 **Syntax:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
 
 **Description:** Change column&apos;s display width.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -1746,6 +1862,8 @@ print(dt[0].display_width)
 
 **Description:** Property returning the enumeration value for the column&apos;s data type.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1761,6 +1879,8 @@ print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 **Syntax:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **Description:** Get Format
+
+**JMP Version Added:** 19
 
 **Different Variations**
 
@@ -1802,6 +1922,8 @@ print(dt[3].format)
 
 **Description:** Sets a columns formula given an Expression object or a string representing valid JSL.
 
+**JMP Version Added:** 19
+
 **Expression**
 
 ```python
@@ -1834,6 +1956,8 @@ print(dt['ratio'].formula)
 
 **Description:** Property returning the enumeration value for the column&apos;s modeling type.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1850,6 +1974,8 @@ print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 **Syntax:** col_obj.namecol_obj.name = &lt;string&gt;
 
 **Description:** Column name property, is both readable and settable.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -1872,6 +1998,8 @@ dt[0].name = 'First Name'
 
 **Description:** The DataTable object supports equality and inequality checks. Since a DataTable is actually a reference to a live data table, multiple objects could point to the same JMP table. The checks for equality == and inequality != test do not compare content. They check whether two DataTable objects point to the same JMP table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1889,6 +2017,8 @@ print( dt != iris )
 #### Mapping
 
 **Description:** The DataTable object supports the Python mapping protocol. Providing the array [] operators, and use of either a column name or numeric value as the column index.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -1908,6 +2038,8 @@ print( f"Column name: {dt['age'].name}" )
 
 **Description:** The DataTable object behaves like a Python sequence. This allows iterating on the columns of the table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1921,6 +2053,8 @@ for n in dt:
 #### Slice
 
 **Description:** The slice operator is used as a parameter to the [ ] get item operation. This consists of start:stop:step.  These parameters are optional.  The returned value will be a list of values, beginning with the start value not including the stop value incremented by the step value.  Negative numbers for start or stop, are 1-based indexes from the end of the sequence.  A negative &apos;step&apos; value decrements the step count, rather than incrementing.  Empty values have appropriate defaults.  [::-1] will return the complete list in reverse order. And [:] will return the entire array in current item order.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -1942,6 +2076,8 @@ print( dt['name'][0:20:2] )              # print every other value in range [0, 
 
 **Description:** Equality test, returns true when two jmp.DataTable objects point to the same JMP data table.  This does not check that content matches, but the two variables point to exactly the same table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -1960,6 +2096,8 @@ print( dt == iris)
 
 **Description:** Provides the [] operator for getting a jmp.DataTable.Column object from the table by column name or 0-based index.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -1977,6 +2115,8 @@ print(column2)
 **Syntax:** dt = jmp.DataTable(&lt;name=&apos;table_name&apos;&gt;, &lt;rows=n&gt;, &lt;visibility=&apos;Invisible&apos; | &apos;Private&apos; )
 
 **Description:** Create a new data table having name &apos;table_name&apos; with n rows. Parameters and keywords are optional, unless only rows are specified or order of parmeters is reversed.
+
+**JMP Version Added:** 19
 
 **Empty Table**
 
@@ -2038,6 +2178,8 @@ dt = jmp.DataTable(rows=40, name='Powered By Python')
 
 **Description:** Returns the number of columns in the table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2052,6 +2194,8 @@ print( len(dt) )
 **Syntax:** table1 != table2
 
 **Description:** Inequality test, returns true when two jmp.DataTable objects do not point to the same data table.  This does not check that content matches, but the two objects do not point to exactly the same table.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2071,6 +2215,8 @@ print( dt != iris)
 
 **Description:** Provides the [] operator for setting values in a column getting a jmp.DataTable.Column object from the table by column name or 0-based index.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2088,6 +2234,8 @@ print( dt[0][:] )
 
 **Description:** Returns a sting representation of summary information about the data table object.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2101,6 +2249,8 @@ print(dt)
 **Syntax:** add_rows(rows, &lt;at=-1&gt;)
 
 **Description:** Adds rows to the DataTable. rows is required. at is optional. If at is 0, insert at the beginning of the table. If it is <0, insert at the end of the table. Otherwise, if at is m, insert at row m (0-based indexing).
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2118,6 +2268,8 @@ dt.add_rows(2, at=12) # 0-based indexing
 
 **Description:** Set the display height of each data table cell.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2134,6 +2286,8 @@ print(dt.cell_height)
 **Syntax:** dt.close( &lt;save= True | False&gt;)
 
 **Description:** Close method on DataTable object.  Like JSL, defaults to saving the file if called without parameters.  To abandon a file such as a one created as a temporary table use dt.close(False) or dt.close(save=False) for more clarity.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2161,6 +2315,8 @@ dt.close(save=False)      # closes without saving
 
 **Description:** The delete_columms() method works like the JSL equivalent Delete Columns() message. Acceptable arguments are: no arguments; column name or comma separated names; a Python list of column names. Using no arguments means delete the selected columns.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2186,6 +2342,8 @@ print(r)
 
 **Description:** The name property is both a setter and a getter for the data table&apos;s name.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2201,6 +2359,8 @@ dt.name = 'Powered by Python'
 
 **Description:** A read-only property returning the number of columns in the table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2214,6 +2374,8 @@ print(f'Number of columns: {dt.ncols}')
 **Syntax:** dt.new_column( name=&apos;column_name&apos;, dtype=jmp.Numeric | .Character | .RowState | .Expression, mtype=jmp.ModelingType.Continuous | ... | TypeNone dlen=len cell type&apos;s data length especially for numeric 8(double),4(int32),2(int16),1(int8) where=n insert column after column n
 
 **Description:** Create a new data table column, optionally specifying name, column type, data length, and modeling type
+
+**JMP Version Added:** 18
 
 **New Class**
 
@@ -2261,6 +2423,8 @@ dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
 
 **Description:** A read-only property returning the number of rows in the table.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2274,6 +2438,8 @@ print(f'Number of rows: {dt.nrows}')
 **Syntax:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
 
 **Description:** Sets the Row States for all rows in the data table.
+
+**JMP Version Added:** 19
 
 **General Use**
 
@@ -2328,6 +2494,8 @@ print(dt.row_states)
 
 **Description:** Save data table using table name to current directory. Optional path argument allows saving to a different location or name.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2343,6 +2511,8 @@ dt.save('BC_lowercase.jmp')
 **Syntax:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **Description:** The scripts property allows for reading and writing of data table scripts.
+
+**JMP Version Added:** 19
 
 **Deleting Scripts**
 
@@ -2435,6 +2605,8 @@ for name in dt.scripts:
 
 **Description:** The select_columms() method works like the JSL equivalent Select Columns() message. Acceptable arguments are: column name or comma separated names; a Python list of column names.
 
+**JMP Version Added:** 19
+
 **All**
 
 ```python
@@ -2475,6 +2647,8 @@ dt.select_columns(['age', 'height'])
 
 **Description:** The Expression object supports equality and inequality checks. When comparing equality between two Expression objects, the values are compared and returned if they are equal or not. This is a comparison of the values of the Expression object and not the evaluation of the values.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2499,6 +2673,8 @@ print(expr1 != expr3)
 
 **Description:** The equality test returns true if the Expression object has the same content as another Expression object and returns false otherwise.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2516,6 +2692,8 @@ print(expr1 == expr3)
 **Syntax:** Expression(jsl=&lt;string&gt;)
 
 **Description:** Creates a new Expression object.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2536,6 +2714,8 @@ print(f'Expression Adjusted: {eval(expr)}')
 
 **Description:** The inequality test returns true if the Expression object has different content as another Expression object and returns false otherwise.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2554,6 +2734,8 @@ print(expr1 != expr3)
 
 **Description:** Returns a sting representation of containing all information about the Expression object.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2567,6 +2749,8 @@ print(expr)
 **Syntax:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
 
 **Description:** Expression jsl property, is readable and settable.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2591,6 +2775,8 @@ print(expr)
 
 **Description:** The Image object supports equality and inequality checks. When comparing equality between two Image objects, the values are compared and returned if they are equal or not.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2613,6 +2799,8 @@ print(image1 != image3)
 
 **Description:** The equality test returns true if the Image object has the same content as another Image object and returns false otherwise.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2631,6 +2819,8 @@ print(image1 == image3)
 
 **Description:** Creates a new Image object.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2646,6 +2836,8 @@ jmp.open(image)
 **Syntax:** image1 != image2
 
 **Description:** The inequality test returns true if the Image object has different content as another Image object and returns false otherwise.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2664,6 +2856,8 @@ print(image1 != image3)
 **Syntax:** str( image_obj )
 
 **Description:** Returns a sting representation of containing all information about the Image object.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2690,6 +2884,8 @@ print(image)
 **Syntax:** prj = jmp.Project(&lt;name=&apos;Project name&apos;&gt;)
 
 **Description:** Create a new Project object for accessing JMP projects and files.
+
+**JMP Version Added:** 19
 
 **Empty Project**
 
@@ -2726,6 +2922,8 @@ print(prj.name)
 
 **Description:** Returns the string representation of the project
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2740,6 +2938,8 @@ print( prj )
 **Syntax:** prj.name
 
 **Description:** Returns a list of the file names contained within the project.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2756,6 +2956,8 @@ print(prj.contents)
 
 **Description:** Takes a file name and validates if the file exists within the project.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2770,6 +2972,8 @@ print( prj.exists('myfile.data') )
 **Syntax:** prj.extract(&apos;file_name&apos;)
 
 **Description:** Takes a file name and extracts the file from to project to the project&apos;s temporary directory.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2786,6 +2990,8 @@ success = prj.extract('myfile.data')
 
 **Description:** Extracts all project files to the project&apos;s temporary directory.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2801,6 +3007,8 @@ success = prj.extract_all()
 
 **Description:** Takes a file name and checks if the file as already been extracted from the project archive.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2815,6 +3023,8 @@ print( prj.is_extracted('myfile.data') )
 **Syntax:** prj.name
 
 **Description:** The project name property is read only
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2836,6 +3046,8 @@ print(prj.name)
 #### Equality
 
 **Description:** The RowState object supports equality and inequality checks. When comparing equality between two RowState objects, the values are compared and returned if they are equal or not. If two RowStates have the same content yet are intialized differently, they will still return true.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -2861,6 +3073,8 @@ print(rs1 != rs3)
 
 **Description:** The equality test returns true if the RowState object has the same content as another RowState object and returns false otherwise.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2878,6 +3092,8 @@ print(rs1 == rs3)
 **Syntax:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
 
 **Description:** Creates a new RowState object. RowState is an object holding any of the six characteristics that rows in a JMP data table can have: selected, hidden, excluded, labeled, colored, and marked.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2898,6 +3114,8 @@ print(f'Row State from Value: {rs_from_value}')
 
 **Description:** The inequality test returns true if the RowState object has different content as another RowState object and returns false otherwise.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2916,6 +3134,8 @@ print(rs1 != rs3)
 
 **Description:** Returns a sting representation of containing all information about the RowState object.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -2929,6 +3149,8 @@ print(rs)
 **Syntax:** rs_obj.colorrs_obj.color = &lt;int&gt;
 
 **Description:** RowState color property, is readable and settable. Colors are chosen from 0 to 84. (0-15 basics, 16-31 dark, 32-47 light, 48-63 very dark, 64-79 very light, 80-84 grays)
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2947,6 +3169,8 @@ print(rs)
 
 **Description:** RowState excluded property, is readable and settable.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2963,6 +3187,8 @@ print(rs)
 **Syntax:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
 
 **Description:** RowState hidden property, is readable and settable.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -2981,6 +3207,8 @@ print(rs)
 
 **Description:** RowState labeled property, is readable and settable.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -2998,6 +3226,8 @@ print(rs)
 
 **Description:** RowState marker property, is readable and settable. Markers are chosen from 0 to 31
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3014,6 +3244,8 @@ print(rs)
 **Syntax:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
 
 **Description:** RowState selected property, is readable and settable.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3035,6 +3267,8 @@ print(rs)
 #### Iteration
 
 **Description:** The globals property supports iterating across the set of values.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3061,6 +3295,8 @@ for x in jmp.globals:
 
 **Description:** Gets a JSL global variable as a Python object. Returns None if the object cannot be found. Returns an opaque type for data types that cannot be handed. Capable of transferring the same types of objects as Python Send() and Python Get().
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3077,6 +3313,8 @@ print( jmp.globals['pi'] )
 **Syntax:** length = len( jmp.globals )
 
 **Description:** Returns the number of symbols in the JSL global environment.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3096,6 +3334,8 @@ print( len( jmp.globals ) )
 
 **Description:** Due to Python scoping and the design of Python Get(), only variables in the Python global scope are accessible with Python Get(). The jmp.globals dictionary provides the capacity to directly set or create a JSL variable from Python code. The value type can be any Python type currently supported by Python Get().
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3112,6 +3352,8 @@ jmp.run_jsl('''
 **Syntax:** str(jmp.globals)
 
 **Description:** Display the contents of globals in a dictionary representation. Note that the globals dictionary is utilized by JMP itself so there may be additional entries.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3132,6 +3374,8 @@ print(d)
 
 **Description:** The get() function returns the value for the given key. Like JSL, the key is a fuzzy match.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3149,6 +3393,8 @@ print( jmp.globals.get('ana') )
 
 **Description:** Returns a list of key-value pairs in the namespace. Note that the globals dictionary is utilized by JMP itself so there may be additional entries.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3165,6 +3411,8 @@ print( jmp.globals.items() )
 
 **Description:** Returns a list of the keys in the namespace. Note that the globals dictionary is utilized by JMP itself so there may be additional entries.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3180,6 +3428,8 @@ print( jmp.globals.keys() )
 **Syntax:** value_list = jmp.globals.values()
 
 **Description:** Returns the values in the namespace. Note that the globals dictionary is utilized by JMP itself so there may be additional entries.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3200,6 +3450,8 @@ print( jmp.globals.values() )
 #### Iteration
 
 **Description:** The here property supports iterating across the values in the &apos;here&apos; namespace.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3227,6 +3479,8 @@ print([x for x in jmp.globals])
 **Syntax:** value = jmp.here[&apos;name&apos;]
 
 **Description:** Gets a JSL variable from the current &apos;here&apos; namespace as a Python object. Returns None if the object cannot be found, or an opaque type for data types that cannot yet be handled. Providing direct retrieval of a JSL variable into the local Python scope. Supports transfers of the same types of objects as Python Send(). Note that in JSL namespace scoping, the &apos;here&apos; namespace is local to script submission, and code submitted from different script windows will have separate &apos;here&apos; namespaces. Code that includes another script has a single &apos;here&apos; namespace. This shared namespace also exists for a JSL script running Python via Submit() or Execute(), Python scripts calling run_jsl().
+
+**JMP Version Added:** 19
 
 **Example 1**
 
@@ -3278,6 +3532,8 @@ except:
 
 **Description:** Returns the number of symbols in the JSL &apos;here&apos; namespace.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3296,6 +3552,8 @@ print( len( jmp.here ) )
 
 **Description:** Provides the means to set a value into the JSL script&apos;s &apos;here&apos; namespace. This allows sending back a value that could not be reached by Python Get(). Only variables in the Python global scope can be seen by Python Get(). Supports same object types as Python Get(). Note on JSL namespace scoping, the &apos;here&apos; namespace is local to the script submission.  Code submitted from different script windows will have separate &apos;here&apos; namespaces. Code including another script will have a single &apos;here&apos; namespace. This holds true for a JSL script running Python via Submit() or Execute(), Python scripts calling run_jsl().
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3313,6 +3571,8 @@ jmp.run_jsl('''
 **Syntax:** str(jmp.here)
 
 **Description:** Display the contents of here in a dictionary representation.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3333,6 +3593,8 @@ print(d)
 
 **Description:** The get() function returns the value for the given key. Like JSL, the key is a fuzzy match.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3350,6 +3612,8 @@ print( jmp.here.get('b  b') )
 
 **Description:** Returns a list of key-value pairs in the namespace.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3366,6 +3630,8 @@ print( jmp.here.items() )
 
 **Description:** Returns a list of the keys in the namespace.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3381,6 +3647,8 @@ print( jmp.here.keys() )
 **Syntax:** value_list = jmp.here.values()
 
 **Description:** Returns the values in the namespace.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3404,6 +3672,8 @@ print( jmp.here.values() )
 
 **Description:** In JMP Live data refresh scripts, returns the credentials with the given name (or, if no name is provided, the default credentials) assigned to the script. Returned value is a dictionary with "username", "password", and "key_file_path" keys.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3425,6 +3695,8 @@ jmp.live.set_result(dt)
 
 **Description:** In JMP Live data import scripts, returns the path to the uploaded import file.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3444,6 +3716,8 @@ jmp.live.set_result(dt)
 **Syntax:** jmp.live.set_result()
 
 **Description:** In JMP Live data refresh and import scripts, sets the result table. Set the result to None to cancel the update.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3473,6 +3747,8 @@ else:
 
 **Description:** The log.flush() and log.write() functions overload Python&apos;s stdio and stderr flush() and write() functions. These are largely for JMP&apos;s internal use as they direct the Python&apos;s output to the JMP log and embedded log windows. jmp.log.flush() is a NOP, and returns and empty string.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3487,6 +3763,8 @@ jmp.log.flush()
 **Syntax:** jmp.log.write(&apos;message&apos;)
 
 **Description:** The log.flush() and log.write() functions overload Python&apos;s stdio and stderr flush() and write() functions. These are largely for JMP&apos;s internal use as they direct the Python&apos;s output to the JMP log and embedded log windows.  Programs can call jmp.log.write(&apos;message&apos;) to explicitly send the message to the JMP log or embedded log windows.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3507,6 +3785,8 @@ jmp.log.write('I am a log message.')
 
 **Description:** Value corresponding to JSL&apos;s $ALL_HOME directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3519,6 +3799,8 @@ print(jmp.ALL_HOME)
 **Syntax:** jmp.BUILTIN_SCRIPTS
 
 **Description:** Value corresponding to JSL&apos;s $BUILTIN_SCRIPTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3535,6 +3817,8 @@ print(jmp.BUILTIN_SCRIPTS)
 
 **Description:** Value corresponding to JSL&apos;s $DESKTOP directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3547,6 +3831,8 @@ print(jmp.DESKTOP)
 **Syntax:** jmp.DOCUMENTS
 
 **Description:** Value corresponding to JSL&apos;s $DOCUMENTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3561,6 +3847,8 @@ print(jmp.DOCUMENTS)
 
 **Description:** Value corresponding to JSL&apos;s $DOWNLOADS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3573,6 +3861,8 @@ print(jmp.DOWNLOADS)
 **Syntax:** jmp.DataType.enum_value
 
 **Description:** jmp.DataType is an enumeration representing a JMP column&apos;s data types. These are used with the jmp.DataTable.new_column() function to create columns other than the default Numeric type.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3595,6 +3885,8 @@ print( list(map(lambda c: c.name, dType)) )
 
 **Description:** Value corresponding to JSL&apos;s $HOME directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3608,6 +3900,8 @@ print(jmp.HOME)
 
 **Description:** Returns the physical path of the project&apos;s temporary directory. Returns the current working directory, or None if script is not running within a project.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3620,6 +3914,8 @@ print(jmp.JMPPRJ)
 **Syntax:** jmp.ModelingType.enum_value
 
 **Description:** jmp.ModelingType is an enumeration representing a JMP column&apos;s modeling or analysis type. These are used with the jmp.DataTable.new_column() function to create columns other than the default Continuous modeling type. Note TypeNone differs from JMP&apos;s modeling type None as &apos;None&apos; is a Python keyword.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3638,6 +3934,8 @@ print( list(map(lambda c: c.name, mType)) )
 
 **Description:** Path to the JMP installed no-console Python executable (Windows only).
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -3654,6 +3952,8 @@ if platform.system() == "Windows":
 
 **Description:** Path to the JMP installed Python executable.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3666,6 +3966,8 @@ print(jmp.PYTHON_EXE)
 **Syntax:** jmp.PY_USER_APPDIR
 
 **Description:** Path to the user directory location acting as the base of JMP&apos;s Python support. The site-packages directory is within this directory hierarchy.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3680,6 +3982,8 @@ print(jmp.PY_USER_APPDIR)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_APPS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3692,6 +3996,8 @@ print(jmp.SAMPLE_APPS)
 **Syntax:** jmp.SAMPLE_DASHBOARDS
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_DASHBOARDS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3706,6 +4012,8 @@ print(jmp.SAMPLE_DASHBOARDS)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_DATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3718,6 +4026,8 @@ print(jmp.SAMPLE_DATA)
 **Syntax:** jmp.SAMPLE_IMAGES
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_IMAGES directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3732,6 +4042,8 @@ print(jmp.SAMPLE_IMAGES)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_IMPORT_DATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3744,6 +4056,8 @@ print(jmp.SAMPLE_IMPORT_DATA)
 **Syntax:** jmp.SAMPLE_PROJECTS
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_PROJECTS directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3758,6 +4072,8 @@ print(jmp.SAMPLE_PROJECTS)
 
 **Description:** Value corresponding to JSL&apos;s $SAMPLE_SCRIPTS directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3770,6 +4086,8 @@ print(jmp.SAMPLE_SCRIPTS)
 **Syntax:** jmp.TEMP
 
 **Description:** Value corresponding to JSL&apos;s $TEMP directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3784,6 +4102,8 @@ print(jmp.TEMP)
 
 **Description:** Value corresponding to JSL&apos;s $USER_APPDATA directory.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3796,6 +4116,8 @@ print(jmp.USER_APPDATA)
 **Syntax:** jmp.__jmp_version__
 
 **Description:** Version number of the JMP executable.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3810,6 +4132,8 @@ print(jmp.__jmp_version__)
 
 **Description:** Version number of the &apos;jmp&apos; import package. This is not the JMP version.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -3822,6 +4146,8 @@ print(jmp.__version__)
 **Syntax:** dt = jmp.current()
 
 **Description:** Returns a DataTable object for the current JMP data table.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -3837,6 +4163,8 @@ print(jmp.current())
 **Syntax:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **Description:** Evaluates the argument and returns the result.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -3854,6 +4182,8 @@ print(result)
 **Syntax:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **Description:** Returns a jmp.DataTable object from a protocol compliant library&apos;s dataframe.
+
+**JMP Version Added:** 19
 
 **CSV Fallback**
 
@@ -3999,6 +4329,8 @@ print(dt)
 
 **Description:** Returns a jmp.DataTable object from a library&apos;s dataframe using the provided CSV conversion method.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4031,6 +4363,8 @@ print(dt)
 **Syntax:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **Description:** Opens a file located at file_path. If the file is a .jmp file or a file that imports into a JMP data table, the object returned will be a DataTable object.  Otherwise will return True or False for success or failure. The optional visibility parameter controls whether the opened file is hidden from view.  Invisible is just hidden from view, while still showing up in the recent files menu and home window.  With a Private table, the reference returned is the only reference to the table, and it does not appear in any of the file lists.
+
+**JMP Version Added:** 18
 
 **Excel**
 
@@ -4110,6 +4444,8 @@ del dt
 
 **Description:** Returns the value of a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4128,6 +4464,8 @@ else:
 
 **Description:** Maps a JMP variable name to an R variable name using R variable naming rules.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4142,6 +4480,8 @@ print(rName)
 **Syntax:** jmp.reset()
 
 **Description:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -4159,6 +4499,8 @@ print(pi)
 **Syntax:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **Description:** Run JSL scripting from within the Python environment, including the JSL Python interface functions. Optional echo= parameter when set to False or None stops the presented JSL source code from echoing to the log. A result will be returned for the same JSL object types that are supported by Python Send() / Get().  Script failure or unsupported JSL object types will return None.
+
+**JMP Version Added:** 18
 
 **Column Properties**
 
@@ -4216,6 +4558,8 @@ print( f'{value} = jmp.run_jsl()')
 
 **Description:** Returns a DataTable object for the opened table having &apos;table_name&apos;
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -4241,6 +4585,8 @@ print( jmp.table('Big Class') )
 
 **Description:** Function to create R extension class object. Optional parameter to specify backend  for R support. Currently only &apos;rpy2&apos; is supported. This is the default if no argument is specified.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4258,6 +4604,8 @@ print(jr.r_version())
 
 **Description:** The jmpex package&apos;s R support version.
 
+**JMP Version Added:** 18
+
 ```python
 
 import jmp
@@ -4274,6 +4622,8 @@ print(jr.__version__)
 **Syntax:** pyobj = jmpex.R.R.get( &apos;name&apos; )
 
 **Description:** Gets the named variable from the R environment and returns it to Python using the r2obj() function. An R DataFrame is returned as a pandas.DataFrame.
+
+**JMP Version Added:** 19
 
 **Numeric Vector**
 
@@ -4372,6 +4722,8 @@ print(rv)
 
 **Description:** Static function which is available whether or not an R() instance object exists. Indicates R subsystem has been initialized.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4389,6 +4741,8 @@ print(f'R initialized: {R.is_connected()}')
 **Syntax:** jmpex.R.R.obj2r( var )
 
 **Description:** Create an R object from Python object.
+
+**JMP Version Added:** 19
 
 ```python
 
@@ -4418,6 +4772,8 @@ print(p_obj)
 
 **Description:** Create a regular Python object from R object.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4446,6 +4802,8 @@ print(p_obj)
 
 **Description:** Returns the version of R.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4462,6 +4820,8 @@ print(f'R Version: {jr.r_version()}')
 **Syntax:** jmpex.R.R.set( var, as_name )
 
 **Description:** Set Python variable into R environment named by the &apos;as_name&apos; parameter. The R object is created using the obj2r() function internally. Name has been passed through the appropriate name -> R Name() function to ensure name is a valid R variable name.
+
+**JMP Version Added:** 19
 
 **Numeric Vector**
 
@@ -4562,6 +4922,8 @@ print(rv)
 
 **Description:** Submit R program code for evaluation. Returns result as Python object if available.
 
+**JMP Version Added:** 19
+
 **Script**
 
 ```python
@@ -4608,6 +4970,8 @@ print( bc )
 
 **Description:** Submit an R script file for evaluation. Returns result as Python object if available.
 
+**JMP Version Added:** 19
+
 ```python
 
 import jmp
@@ -4636,6 +5000,8 @@ print(po.__class__)
 
 **Description:** The R module represents jmpex.R which contains the Python Class R. The class jmpex.R.R implements the interface functionality.
 
+**JMP Version Added:** 19
+
 ## jmpex
 
 ### Functions
@@ -4645,6 +5011,8 @@ print(po.__class__)
 #### jmpex - package
 
 **Description:** The jmpex package contains extension interfaces supported by JMP. Currently it contains only an R support module.
+
+**JMP Version Added:** 19
 
 ## jmputils
 
@@ -4657,6 +5025,8 @@ print(po.__class__)
 **Syntax:** create_jpip( &apos;directory_path&apos; )
 
 **Description:** Function to create the terminal/command shell version of the jpip script within the specified directory. The jpip script wraps the Python pip command ensuring the appropriate environment variables are configured. This ensures that packages installed by jpip are installed in the JMP site-packages directory.
+
+**JMP Version Added:** 18
 
 ```python
 
@@ -4680,6 +5050,8 @@ jmputils.create_jpip(dest_path)
 **Syntax:** jpip( &apos;pip_cmd&apos;, packages=&apos;&apos; )
 
 **Description:** Callable from within JMP, this function wraps the Python pip command. Pass this function pip command as a string, and optionally a space-delimited string of packages to install. Lists of individual arguments are also accepted. The packages argument defaults to an empty string. The &apos;jmputils&apos; package resides in the same location as the embedded Python standard library files. All functions within jmputils utilize only Python standard library functions or JMP built-in functionality.
+
+**JMP Version Added:** 18
 
 **install**
 
@@ -4760,7 +5132,6 @@ import jmp
 from jmputils import jpip
 
 jmp.run_jsl('''
-Names Default To Here( 1 );
 
 src_path = Pick File(
     "Select requirements.txt File",

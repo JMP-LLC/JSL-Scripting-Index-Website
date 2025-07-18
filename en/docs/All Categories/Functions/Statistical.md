@@ -8,9 +8,10 @@
 
 **Description:** Returns a vector of forecasted values for the dtcol column in the range determined by the from and to arguments. The length argument specifies a portion of the column for the function to use. The model argument matches messages that are sent to the Time Series platform to fit a model. The estimates argument matches the child of a Get Models message result of a single model. Typically, the from value is between 1 and the to value, inclusive. However, if from<=0 and from<=to, part of the results are filtered predictions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 ARIMA Forecast(
 	:Steel Shipments,
@@ -30,9 +31,10 @@ ARIMA Forecast(
 
 **Description:** Finds the arcs in the point data and creates a new column identifying the arcs.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
 Arc Finder(
@@ -62,9 +64,10 @@ dt << Graph Builder(
 
 **Description:** Determines the optimal grouping (experimental function).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
 	[11.2, 11.5, 11.8, 100.5, 100.7, 100.8],
@@ -80,9 +83,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the value of col at row position index within its byVar group. Rows where the skip missing expression evaluates to a missing value are not included in the indexing.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );
 New Column( "Relative to First Height", Formula( :height / Col At( :height, 1, :sex ) ) );
@@ -96,11 +100,12 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 **Description:** Returns the cumulative sum for the current row. By variables do not need to be presorted.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
@@ -111,7 +116,6 @@ Col Cumulative Sum( :height, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Cumulative Sum for each Sex",
@@ -129,9 +133,10 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 **Description:** Returns an interpolated value within yCol, corresponding to the position of v with xCol. Values outside the range of xCol will be missing unless extrapolate is on, in which case the nearest yCol value will be returned.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -146,11 +151,12 @@ dt << New Column( "gnp30",
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -160,7 +166,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -170,7 +175,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -182,7 +186,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -198,11 +201,12 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -212,7 +216,6 @@ Col Maximum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -222,7 +225,6 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
 	Formula( Col Maximum( :height, :age, :sex ) )
@@ -234,7 +236,6 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );
@@ -250,11 +251,12 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 **Description:** Returns the sample mean across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
@@ -264,7 +266,6 @@ Col Mean( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
 
@@ -274,7 +275,6 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
@@ -284,7 +284,6 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
 	Formula( Col Mean( :height, :age, :sex ) )
@@ -296,7 +295,6 @@ dt << New Column( "Mean for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mean for each Sex", Formula( Col Mean( :height, :sex ) ) );
@@ -312,11 +310,12 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 **Description:** Returns the specified median across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -335,7 +334,6 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -348,7 +346,6 @@ Show( Col Median( :height, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Median for each Sex", Formula( Col Median( :height, :sex ) ) );
@@ -364,11 +361,12 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -378,7 +376,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -388,7 +385,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -400,7 +396,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -416,11 +411,12 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -430,7 +426,6 @@ Col Minimum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -440,7 +435,6 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
 	Formula( Col Minimum( :height, :age, :sex ) )
@@ -452,7 +446,6 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );
@@ -468,11 +461,12 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 **Description:** Returns the sample mode across rows in a column, selecting the smallest in the case of multiple modes. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
@@ -482,7 +476,6 @@ Col Mode( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
@@ -492,7 +485,6 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
 	Formula( Col Mode( :height, :age, :sex ) )
@@ -504,7 +496,6 @@ dt << New Column( "Mode for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Mode for each Sex", Formula( Col Mode( :height, :sex ) ) );
@@ -520,11 +511,12 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 **Description:** Returns the moving average over a given interval based at the current row. For the weight multiplier, 1 means equal weighting, 0 means linear weighting, and other values act as an exponential weighting multiplier. By variables do not need to be presorted.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
@@ -535,7 +527,6 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Moving Average for each Sex",
@@ -553,11 +544,12 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 **Description:** Returns the number of missing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
@@ -567,7 +559,6 @@ Col N Missing( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
@@ -577,7 +568,6 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 	Formula( Col N Missing( :height, :age, :sex ) )
@@ -589,7 +579,6 @@ dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -606,9 +595,10 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 **Description:** Returns the number of unique values in a column. If missing values are requested, all missing value codes are counted as a single value.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );
 New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
@@ -621,11 +611,12 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 **Description:** Returns the number of nonmissing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
@@ -635,7 +626,6 @@ Col Number( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
@@ -645,7 +635,6 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 	Formula( Col Number( :height, :age, :sex ) )
@@ -657,7 +646,6 @@ dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -674,11 +662,12 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 **Description:** Returns the specified quantile across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -697,7 +686,6 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -710,7 +698,6 @@ Show( Col Quantile( :height, 0.5, :age ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Quantile for each Sex",
@@ -728,11 +715,12 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 **Description:** Returns the rank, ranging from 1 as the lowest, with row-order tie-breaking unless specified by the <<Tie argument. "average" produces the average for tied ranks, and "minimum" produces the lowest of tied ranks. For "row" and "arbitrary" each row has a unique rank.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );
 New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
@@ -743,7 +731,6 @@ New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Rank for each Sex", Formula( Col Rank( :height, :sex ) ) );
@@ -759,9 +746,10 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 **Description:** Returns an integer score for each unique value, ordering according to any relevant column properties.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
@@ -774,9 +762,10 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 **Description:** Returns the position of this row within its byVar group, adjusted by skip missing and any sequence parameters.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
 New Column( "Alternate within sex", Formula( Col Sequence( :sex, <<Sequence( 1, 2 ) ) ) );
@@ -792,9 +781,10 @@ New Column( "Row within sex, 60+",
 
 **Description:** Returns the simple exponential smoothing prediction for the current row, using smoothing weight alpha. By variables do not need to be presorted. Formula is Predicted Value[t]=alpha * Observed Value[t-1] + (1-alpha) * Predicted Value[t-1], with Predicted Value[1] = Observed Value[1].
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -807,11 +797,12 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 **Description:** Returns the value minus the column mean divided by the column standard deviation across rows in a column. If by-group columns are specified, the value is standardized against the mean and standard deviation of the by-group.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
@@ -822,7 +813,6 @@ Col Standardize( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
@@ -832,7 +822,6 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standardize for each Sex",
@@ -850,11 +839,12 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 **Description:** Returns the sample standard deviation across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
@@ -864,7 +854,6 @@ Col Std Dev( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
@@ -874,7 +863,6 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
@@ -884,7 +872,6 @@ For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Standard Deviation for Each Age and Sex Group",
 	Formula( Col Std Dev( :height, :age, :sex ) )
@@ -896,7 +883,6 @@ dt << New Column( "Standard Deviation for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Standard Deviation for each Sex",
@@ -914,11 +900,12 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 **Description:** Returns the sum across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
@@ -928,7 +915,6 @@ Col Sum( :height );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
 
@@ -938,7 +924,6 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
@@ -948,7 +933,6 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
 	Formula( Col Sum( :height, :age, :sex ) )
@@ -960,7 +944,6 @@ dt << New Column( "Sum for Each Age and Sex Group",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Sum for each Sex", Formula( Col Sum( :height, :sex ) ) );
@@ -976,9 +959,10 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 **Description:** Returns a matrix of partial sums for the input matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -989,9 +973,10 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 **Description:** Fits a distribution using censored data. The required arguments are Distribution and either YLow or Y. The function returns a list that contains parameter estimates, covariance matrix, log-likelihood, AICc, BIC, and a convergence message. The X and Z arguments specify regression design matrices for location and scale, respectively. When the data vector is large, two optional arguments can be used to specify a sample to compute the initial values. You can specify a percent of the observations or the first nobs observations, but the total sample size must be greater than 100.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 result = Fit Censored(
 	Distribution( "Weibull" ),
 	Y( [142, 156, 163, 198, 204, 205, 232, 239, 240, 261, 280, 296, 323, 344] )
@@ -1006,9 +991,10 @@ Show( result );
 
 **Description:** Fits the circle that best goes through three or more points that are defined by two vectors of coordinates. The result is a list that contains the X and Y coordinates of the center point of the circle, the length of the radius, and the sum of squared errors.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
 result = Fit Circle( x, y );
@@ -1030,9 +1016,10 @@ New Window( "Fit Circle",
 
 **Description:** Returns the clustering history for a hierarchical clustering using Ward&apos;s method (without standardizing data), where x is a data matrix.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
 exhc = Hierarchical Cluster(
@@ -1055,11 +1042,12 @@ exhistory[3, 1];
 
 **Description:** Produces scores for the latent variable in an item response theory model with n binary items and a matrix of known parameters, specified by parmMatrix. The parameter matrix should contain as many rows as there are parameters in the model and as many columns as there are items in the analysis.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );
 obj << Save Ability Formula;
@@ -1071,7 +1059,6 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
 mthlst = {};
@@ -1095,9 +1082,10 @@ mthlst;
 
 **Description:** Returns a kernel density estimator with automatic bandwidth selection. The optional weights argument must be a vector of the same length as the Vector argument. The optional bandwidth argument must be a nonnegative real number or zero, which forces the use of the value of the bandwidth selection argument. The optional bandwidth scale argument must be a positive real number. The optional bandwidth selection argument must be either 0, 1, 2, or 3, corresponding to Sheather and Jones, Normal Reference, Silverman rule of thumb, or Oversmoother, respectively. The optional kernel argument accepts the values 0, 1, 2, 3, or 4, corresponding to Gaussian, Epanechnikov, Biweight, Triangular, or Rectangular, respectively.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
 Random Reset( 113 );
@@ -1163,9 +1151,10 @@ dt << Graph Builder(
 
 **Description:** Returns Lenth&apos;s pseudo-standard error of the values within a single vector x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
@@ -1176,9 +1165,10 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 **Description:** Returns the maximum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -1189,9 +1179,10 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 **Description:** Returns the maximum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -1202,9 +1193,10 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 **Description:** Returns the arithmetic mean of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -1215,9 +1207,10 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 **Description:** Returns the median of the combined arguments, which can be scalar, matrix or list arguments.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -1228,9 +1221,10 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 **Description:** Returns the minimum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -1241,9 +1235,10 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 **Description:** Returns the minimum value among the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -1254,9 +1249,10 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 **Description:** Returns a matrix of moving averages for the input matrix. before and after determine the range ("window") of items to average, where before can be -1 to indicate all prior items. If weighting is 1, all items have equal weight. If weighting is 0, items have linearly incremental weights. Otherwise, weighting is the parameter for exponential weighting (EWMA). partial window is missing indicates whether averages are reported when not all neighbors are present, which can occur at the ends or near missing values. If partial window is missing is nonzero, missing values are reported instead for such partial windows.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
 	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),
@@ -1272,9 +1268,10 @@ Eval List(
 
 **Description:** Returns the number of missing values among arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -1285,9 +1282,10 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 **Description:** Computes the tolerance factor for constructing a 1-alpha confidence interval to contain proportion p of the means with sample size n from the normal distribution. There is an option to request the factor for a one-sided tolerance interval.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 n = 15;
 New Window( "Example: Tolerance Factor()",
 	tdig = Graph Box(
@@ -1310,9 +1308,10 @@ New Window( "Example: Tolerance Factor()",
 
 **Description:** Returns the number of non-missing arguments or values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
@@ -1323,9 +1322,10 @@ Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 **Description:** Returns the product of evaluations of the bodyExpr arguments, each time incrementing the variable from the assignExpr argument until it is greater than or equal to the limit argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -1336,9 +1336,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the specified quantile p of the x arguments. The quantile argument can be a scalar or a matrix. The x values can also be specified as values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List(
 	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),
 	Quantile( 0.5, [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] )}
@@ -1352,9 +1353,10 @@ Eval List(
 
 **Description:** Returns the minimum and maximum values among the combined arguments, which can be scalar, matrix or list arguments.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -1365,9 +1367,10 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 **Description:** Returns the sum of squares of all elements
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -1378,9 +1381,10 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 **Description:** Returns the standard deviation of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
@@ -1391,9 +1395,10 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 **Description:** Returns the sum of the arguments or of the values within a single matrix or list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```
@@ -1404,9 +1409,10 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 **Description:** Calculates various summary statistics across a By column. The statistic names are Count, Sum, Mean, Max or Maximum, Min or Minimum, StdDev, Corr, Quantile, First. The statistics can be calculated only for numeric columns. The results are stored as matrices in variables with the specified names.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
 Eval List( {exg, Round( exm, 1 )} );
@@ -1419,9 +1425,10 @@ Eval List( {exg, Round( exm, 1 )} );
 
 **Description:** Calculates all Fit Y by X combinations
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -1433,9 +1440,10 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 **Description:** Returns the sum of evaluations of the bodyExpr arguments, each time incrementing the variable from the assignExpr argument until it is greater than or equal to the limit argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```

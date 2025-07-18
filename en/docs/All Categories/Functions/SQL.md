@@ -10,9 +10,10 @@
 
 **Description:** Creates an SQL Query object for the connection, columns and table specified, or for the custom SQL query specified. Use Query Builder to generate scripts that create queries.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
 	Select(),
@@ -27,9 +28,10 @@ obj = New SQL Query(
 
 **Description:** Returns a string that contains the expression converted to valid SQL syntax for use in an SQL Select statement.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
@@ -40,9 +42,10 @@ As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 **Description:** Closes a database connection returned from Create Database Connection
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -53,9 +56,10 @@ Close Database Connection( databaseConnectionHandle );
 
 **Description:** Creates a database connection and returns a handle to the connection. If DriverPrompt is true, the user will be prompted using the ODBC driver&apos;s prompt to supply credentials if necessary.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
 );
@@ -68,11 +72,12 @@ dbc = Create Database Connection(
 
 **Description:** Executes SQL against a database connection returned from Create Database Connection or a Data Connector. Enabling Batch Submit allows for receiving multiple results from multiple SQL statements, returning a list with the results (supporting drivers only).
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -85,7 +90,6 @@ dt = Execute SQL(
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
@@ -95,7 +99,6 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
 	dc,
@@ -111,11 +114,12 @@ resultList = Execute SQL(
 
 **Description:** Create a data connector configuration object.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Create a data connector from scratch
 dc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );
@@ -131,7 +135,6 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Launch Query Builder from a SQL Server data source
 dc = New Data Connector(
@@ -152,9 +155,10 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 **Description:** Creates an SQL Query object for the connection, columns and table specified, or for the custom SQL query specified. Use Query Builder to generate scripts that create queries.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
@@ -170,9 +174,10 @@ obj = New SQL Query(
 
 **Description:** Opens a database using ODBC, runs the given SQL, and puts data into a data table with the given output table name.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -187,9 +192,10 @@ Open Database(
 
 **Description:** Perform an SQL query on JMP data tables. sqlStatement (the SQL query, most likely a SELECT statement) is required and must be the last argument. JMP data tables referenced by the SQL statement must be passed in as arguments to Query(), using Table(dt, "alias") to create an alias for the table that the SQL can use if desired. Invisible or Private can be passed in to control the visibility of the resulting data table. If the SQL statement returns a single value, pass in Scalar, which will cause the single value to be returned instead of a data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query( dt, "SELECT name, age, height FROM 'Big Class'
          WHERE age > 14; " );
@@ -229,7 +235,6 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -246,7 +251,6 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -263,7 +267,6 @@ sql = obj << Generate SQL;
 
 ```jsl
 
-Names Default To Here( 1 );
 query << Modify;
 
 ```
@@ -276,7 +279,6 @@ query << Modify;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -293,7 +295,6 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
@@ -312,7 +313,6 @@ Show( name );
 
 ```jsl
 
-Names Default To Here( 1 );
 query << Run;
 
 ```
@@ -325,7 +325,6 @@ query << Run;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 query << Run Background(
 	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) )
@@ -347,7 +346,6 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 query << Run Foreground(
 	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) )
@@ -369,7 +367,6 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = Open( "my_query.jmpquery" );
 obj << Query Name( "New Name" );
 obj << Save;
@@ -384,7 +381,6 @@ obj << Save;
 
 ```jsl
 
-Names Default To Here( 1 );
 obj = New SQL Query(
 	Connection( "ODBC:DSN=SampleDSN;" ),
 	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )

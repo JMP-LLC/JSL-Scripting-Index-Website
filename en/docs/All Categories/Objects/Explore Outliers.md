@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
@@ -26,7 +25,6 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -41,9 +39,10 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ), By( _b
 
 **Syntax:** obj &lt;&lt; Label( column )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
@@ -53,9 +52,10 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 **Syntax:** obj &lt;&lt; Validation( column )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
@@ -67,7 +67,6 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
@@ -81,9 +80,10 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 **Description:** For each point, finds the distance to its kth nearest neighbor.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << k Nearest Neighbor Outliers( K( 5 ) );
@@ -94,6 +94,8 @@ obj << k Nearest Neighbor Outliers( K( 5 ) );
 
 **Syntax:** obj &lt;&lt; Multivariate k Nearest Neighbor Outliers
 
+**JMP Version Added:** 14
+
 ### Quantile Range Outliers
 
 **Syntax:** obj &lt;&lt; Quantile Range Outliers
@@ -102,7 +104,6 @@ obj << k Nearest Neighbor Outliers( K( 5 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -117,7 +118,6 @@ obj << Quantile Range Outliers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -130,9 +130,10 @@ obj << Robust Fit Outliers;
 
 **Description:** Robustly decomposes data into a low-rank matrix and a sparse matrix of residuals. Outliers are detected in the residuals. It can also impute missing values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( 2 :: 10 ) );
 obj << Robust PCA Outliers;
@@ -149,7 +150,6 @@ obj << Robust PCA Outliers;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -165,11 +165,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -180,11 +181,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -192,11 +192,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -212,7 +211,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Automatic Recalc( 1 );
@@ -226,9 +224,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -246,7 +245,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -264,7 +262,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -284,7 +281,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Copy Script;
@@ -299,7 +295,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Data Table Window;
@@ -312,9 +307,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -329,7 +325,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -348,11 +343,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 t = obj << Get Container;
@@ -360,11 +354,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -397,7 +390,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 t = obj << Get Datatable;
@@ -413,7 +405,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -430,7 +421,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 t = obj << Get Script;
@@ -446,7 +436,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 t = obj << Get Script With Data Table;
@@ -462,7 +451,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 t = obj << Get Timing;
@@ -478,7 +466,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -492,9 +479,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -510,7 +498,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -529,7 +516,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -547,9 +533,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -564,9 +551,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -581,7 +569,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -602,7 +589,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Redo Analysis;
@@ -617,7 +603,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -637,7 +622,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Relaunch Analysis;
@@ -652,7 +636,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -672,7 +655,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -692,7 +674,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -712,9 +693,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -729,7 +711,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 r = obj << Report;
@@ -746,7 +727,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Report View( "Summary" );
@@ -761,7 +741,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -781,7 +760,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -801,7 +779,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -821,7 +798,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Save Script for All Objects;
@@ -838,7 +814,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -854,7 +829,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -874,7 +848,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -889,7 +862,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Save Script to Journal;
@@ -904,7 +876,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Save Script to Report;
@@ -919,7 +890,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Save Script to Script Window;
@@ -934,7 +904,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -955,7 +924,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -981,7 +949,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -999,7 +966,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1016,7 +982,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Title( "My Platform" );
@@ -1031,7 +996,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 r = obj << Top Report;
@@ -1046,9 +1010,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1065,7 +1030,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1080,7 +1044,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -1099,9 +1062,13 @@ New Window( "Bivariate Equation",
 
 **Syntax:** obj &lt;&lt; Close
 
+**JMP Version Added:** 16
+
 #### Exclude Selected Rows
 
 **Syntax:** obj &lt;&lt; Exclude Selected Rows
+
+**JMP Version Added:** 16
 
 #### Impute Missing
 
@@ -1109,11 +1076,15 @@ New Window( "Bivariate Equation",
 
 **Description:** If there are missing values, Robust PCA is used to impute them before analyzing with K Nearest Neighbors. On by default.
 
+**JMP Version Added:** 16
+
 #### K
 
 **Syntax:** obj &lt;&lt; K( number=8 )
 
 **Description:** The number of near-neighbor rows to find for each row in the table. "8" by default.
+
+**JMP Version Added:** 16
 
 #### Save NN Distances
 
@@ -1121,9 +1092,10 @@ New Window( "Bivariate Equation",
 
 **Description:** Saves new columns to the data table containing distances to the kth nearest neighbor.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( 2 :: 10 ) );
 obj << k Nearest Neighbor Outliers( K( 4 ) );
@@ -1139,7 +1111,6 @@ obj << Save NN Distances;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( 2 :: 10 ) );
 obj << k Nearest Neighbor Outliers( K( 4 ) );
@@ -1155,9 +1126,13 @@ obj << Scatterplot Matrix;
 
 **Syntax:** obj &lt;&lt; Close
 
+**JMP Version Added:** 16
+
 #### Exclude Selected Rows
 
 **Syntax:** obj &lt;&lt; Exclude Selected Rows
+
+**JMP Version Added:** 16
 
 ## Quantile Range Outliers
 
@@ -1171,7 +1146,6 @@ obj << Scatterplot Matrix;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Probe.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Responses" ) ),
@@ -1189,9 +1163,10 @@ dt:PS_RPNBR << Get Column Properties;
 
 **Description:** Selects the columns listed as arguments and adds a Missing Value Code property in those columns for outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -1207,7 +1182,6 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Probe.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Responses" ) ),
@@ -1223,9 +1197,10 @@ obj << Change Highest Nines to Missing( :PS_RPNBR );
 
 **Description:** Selects the columns listed as arguments. In selected columns, changes the values identified as outliers to missing values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1240,9 +1215,10 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Removes a section of the analysis and reopens the command outline.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -1258,9 +1234,10 @@ obj << Close;
 
 **Description:** Selects the columns listed as arguments. In selected columns, colors the cells that correspond to outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1274,15 +1251,18 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Selects the columns listed as arguments. In selected columns, assigns the Color row state to the rows that correspond to outliers.
 
+**JMP Version Added:** 16
+
 #### Exclude Rows
 
 **Syntax:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Description:** Selects the columns listed as arguments. In selected columns, excludes the rows containing values identified as outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1296,9 +1276,10 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Creates new formula columns from the selected columns by changing the outliers to missing.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1313,9 +1294,10 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 **Description:** Creates a script to make new formula columns from the selected columns by changing the outliers to missing.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1332,7 +1314,6 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -1346,9 +1327,10 @@ obj << Get Quantile Outliers;
 
 **Description:** Sets the scale multiple, Q, for the interquantile distance. Values that fall more than Q times the interquantile distance beyond the tail quantiles are considered outliers. Use Rescan to apply the setting. "3" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Q( 4 ) );
@@ -1361,9 +1343,10 @@ obj << Quantile Range Outliers( Q( 4 ) );
 
 **Description:** Use after changing settings to recompute  the criteria and rescan the data to obtain outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -1380,7 +1363,6 @@ obj << Rescan;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1397,7 +1379,6 @@ obj = dt << Explore Outliers(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers;
@@ -1411,9 +1392,10 @@ obj << Save Quantile Outlier Limits;
 
 **Description:** Selects the columns listed as arguments and selects the rows that have outlying values in any of those columns.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.3 ) );
@@ -1429,7 +1411,6 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1444,9 +1425,10 @@ obj = dt << Explore Outliers(
 
 **Description:** Sets the quantile value for each tail. The quantiles are used in computing the interquantile distance. Use Rescan to apply the setting. ".10" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Quantile Range Outliers( Tail Quantile( 0.2 ) );
@@ -1463,9 +1445,10 @@ obj << Quantile Range Outliers( Tail Quantile( 0.2 ) );
 
 **Description:** Selects the columns listed as arguments and adds a Missing Value Code property in those columns for outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1481,7 +1464,6 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1496,9 +1478,10 @@ obj << Rescan;
 
 **Description:** Selects the columns listed as arguments. In selected columns, changes the values identified as outliers to missing values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1513,9 +1496,10 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Removes a section of the analysis and reopens the command outline.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1530,9 +1514,10 @@ obj << Close;
 
 **Description:** Selects the columns listed as arguments. In selected columns, colors the cells that correspond to outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1546,9 +1531,10 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Selects the columns listed as arguments. In selected columns, assigns the Color row state to the rows that correspond to outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 dt << Clear Row States;
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
@@ -1563,9 +1549,10 @@ obj << Color Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Selects the columns listed as arguments. In selected columns, excludes the rows containing values identified as outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1579,9 +1566,10 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Creates new formula columns from the selected columns by changing the outliers to missing.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1596,9 +1584,10 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 **Description:** Creates a script to make new formula columns from the selected columns by changing the outliers to missing.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1615,7 +1604,6 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1630,9 +1618,10 @@ obj << Rescan;
 
 **Description:** Sets the K Sigma value where outliers are defined to be K times the robust scale values away from the robust center. "4" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1649,7 +1638,6 @@ obj << Rescan;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1664,9 +1652,10 @@ obj << Rescan;
 
 **Description:** Use after changing settings to recompute  the criteria and rescan the data to obtain outliers.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1683,7 +1672,6 @@ obj << Rescan;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers;
@@ -1697,9 +1685,10 @@ obj << Save Robust Outlier Limits;
 
 **Description:** Selects the columns listed as arguments and selects the rows that have outlying values in any of those columns.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 obj << Robust Fit Outliers( K Sigma( 2 ) );
@@ -1717,11 +1706,15 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Specifies whether to center the data by the median before the analysis. On by default.
 
+**JMP Version Added:** 16
+
 #### Close
 
 **Syntax:** obj &lt;&lt; Close
 
 **Description:** Removes the RPCA analysis from the platform report.
+
+**JMP Version Added:** 16
 
 #### Lambda
 
@@ -1729,11 +1722,15 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Robust PCA tuning with lower values making it more sensitive to declaring outliers. Default Lambda=2/sqrt(max(nRow,nCol))
 
+**JMP Version Added:** 16
+
 #### MaxIt
 
 **Syntax:** obj &lt;&lt; MaxIt( number )
 
 **Description:** The maximum number of SVD iterations allowed before failing to converge.
+
+**JMP Version Added:** 16
 
 #### Outlier Threshold
 
@@ -1741,11 +1738,15 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Specifies that any scaled residual larger in absolute value than this threshold is shown as it is shown in the outlier report. "2" by default.
 
+**JMP Version Added:** 16
+
 #### Randomized SVD Dim
 
 **Syntax:** obj &lt;&lt; Randomized SVD Dim( state=0|1 )
 
 **Description:** Specifies the number of dimensions in the randomized SVD to which to reduce the wide problem.
+
+**JMP Version Added:** 17
 
 #### Save Cleaned
 
@@ -1753,9 +1754,10 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 **Description:** Creates a new set of columns that contain missing values imputed and outliers modified. Trim(arg) finds scaled residuals greater than arg and changes the scaled residuals in the corresponding cells to the signed arg. Impute(arg) finds scaled residuals greater than arg and changes the scaled residuals in the corresponding cells to the low-rank approximation. Make Missing(value) finds any scaled residual greater than arg and changes scaled residuals in the corresponding cells to missing.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1771,9 +1773,10 @@ obj << Save Cleaned( Trim( 25 ), Impute( 50 ), Make Missing( 100 ) );
 
 **Description:** Creates a new data table that contains the outliers in the report.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1789,9 +1792,10 @@ obj << Save Large Outliers;
 
 **Description:** Creates a new set of columns that contain the low-rank approximation, which is obtained from the singular value decomposition.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1807,9 +1811,10 @@ obj << Save Low Rank Approx;
 
 **Description:** Creates a new set of columns that contain the residuals, which are the observations minus the low-rank approximation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1825,9 +1830,10 @@ obj << Save Residuals;
 
 **Description:** Creates a new set of columns that contain the scaled residuals, which are the scaled observations minus the low-rank approximation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Water Treatment.jmp" );
 obj = dt << Explore Outliers(
 	Y( Column Group( "Sensor Measurements" ) ),
@@ -1843,15 +1849,21 @@ obj << Save Scaled Residuals;
 
 **Description:** Specifies whether to scale the data by an interquantile range analog to the standard deviation before the analysis. On by default.
 
+**JMP Version Added:** 16
+
 #### Tolerance
 
 **Syntax:** obj &lt;&lt; Tolerance( number )
 
 **Description:** Specifies the convergence criterion, which determines when to stop the algorithm. The default convergence criterion values are set based on the number of columns specified in the launch.
 
+**JMP Version Added:** 16
+
 #### Use Randomized SVD
 
 **Syntax:** obj &lt;&lt; Use Randomized SVD( state=0|1 )
 
 **Description:** Reduces the dimensionality using the randomized SVD. This approach can speed up computations for very wide problems.
+
+**JMP Version Added:** 17
 

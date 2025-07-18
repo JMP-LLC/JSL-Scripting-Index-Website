@@ -8,3 +8,5 @@
 
 **Syntax:** obj &lt;&lt; Remove
 
+**JMP Version Added:** 18
+

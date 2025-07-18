@@ -10,9 +10,10 @@
 
 **Description:** Gets the description of the JMP Live Space
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -29,9 +30,10 @@ Write( "Description: ", space << Get Description );
 
 **Description:** Gets the space key for the JMP Live Space
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -48,9 +50,10 @@ Write( "Key: ", space << Get Key );
 
 **Description:** Gets the name of the JMP Live Space
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 
@@ -67,9 +70,10 @@ Write( "Name: ", space << Get Name );
 
 **Description:** Gets the type of the JMP Live Space (Personal or Normal)
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
 

@@ -8,9 +8,10 @@
 
 **Description:** Defines a list of custom functions for use in scripting and the Formula Editor. The command also adds the list to the environment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
 mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
 Add Custom Functions( {myAdd, mySub} );
@@ -23,9 +24,10 @@ Add Custom Functions( {myAdd, mySub} );
 
 **Description:** Evaluates an expression and returns a Boolean value.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 45;
 b = As Boolean( x > 2 );
 Show( b );
@@ -38,9 +40,10 @@ Show( b );
 
 **Description:** Accesses the specified column in the specified or current data table. An error is thrown if no such column or data table is found.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2] + As Column( "height" )[3];
 
@@ -52,11 +55,12 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 **Description:** Evaluates an expression to create a constant value that does not change after it has been computed
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant", Formula( Random Uniform() ) ),
@@ -69,7 +73,6 @@ New Table( "As Constant Demo Table 1",
 
 ```jsl
 
-Names Default To Here( 1 );
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
 	New Column( "What's on Your Desktop?",
@@ -91,7 +94,6 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -109,9 +111,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Accesses the specified global variable or throws an error if no such global variable exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ::ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
@@ -123,9 +126,10 @@ Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 **Description:** Returns a list representation of a matrix. Multi-column matrices are converted to a list of lists, one per row, as would be expected by the Matrix operator.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -136,9 +140,10 @@ As List( [11 22 33, 44 55 66] );
 
 **Description:** Converts a string into a name or a list of strings into a list of names.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:(As Name( "height" ))[3];
 
@@ -150,9 +155,10 @@ dt:(As Name( "height" ))[3];
 
 **Description:** Accesses the specified Namespace or throws an error if no such namespace exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex"
 );
@@ -166,9 +172,10 @@ As Namespace( ns );
 
 **Description:** Accesses the specified root-scoped variable or throws an error if no such root-scoped variable exists.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 ::: ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
@@ -180,9 +187,10 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 **Description:** Accesses the specified scoped variable or throws an error if no such scoped variable exists.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Here:z = 23.5;
 As Scoped( Here, z );
 
@@ -194,9 +202,10 @@ As Scoped( Here, z );
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
 ex << get contents;
@@ -233,38 +242,36 @@ Unmatched strings
 
 	Use Unmatched to specify the value to be returned.
 
-**Allow edits**
+**JMP Version Added:** 15
+
+#### Allow edits
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
 
-**Choose among strings, no edits**
+#### Choose among strings, no edits
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```
 
-**Keep punctuation**
+#### Keep punctuation
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```
 
-**Unmatched**
+#### Unmatched
 
 ```jsl
 
-Names Default To Here( 1 );
 Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```
@@ -275,9 +282,10 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 **Description:** Returns 1 if the class specified by the name argument exists. Otherwise, a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -329,9 +337,10 @@ Delete Classes( "complex" );
 
 **Description:** Clears the values of all currently defined global symbols.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Globals();
 
 ```
@@ -342,9 +351,10 @@ Clear Globals();
 
 **Description:** Makes the log empty.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Log();
 
 ```
@@ -355,9 +365,10 @@ Clear Log();
 
 **Description:** Clears the values of all currently defined symbols.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Clear Symbols();
 
 ```
@@ -368,9 +379,10 @@ Clear Symbols();
 
 **Description:** Close the log window
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Close Log();
 Show( Is Log Open() );
 
@@ -382,9 +394,10 @@ Show( Is Log Open() );
 
 **Description:** Define a New Class
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -434,9 +447,10 @@ Delete Classes( complex );
 
 **Description:** Deletes all class definitions or one or more specific class definitions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -464,9 +478,10 @@ Show Classes();
 
 **Description:** Deletes all the currently defined global symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Globals();
 
 ```
@@ -477,9 +492,10 @@ Delete Globals();
 
 **Description:** Deletes all namespaces or one or more specific namespaces.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 nsaa = New Namespace(
 	"aa",
@@ -505,9 +521,10 @@ Show Namespaces();
 
 **Description:** Deletes all the currently defined symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Delete Symbols();
 
 ```
@@ -518,9 +535,10 @@ Delete Symbols();
 
 **Description:** Evaluates the argument and returns the result.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -531,9 +549,10 @@ Eval( Expr( 1 + 2 ) );
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -544,9 +563,10 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within, replacing l_string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
 ex;
@@ -559,11 +579,12 @@ ex;
 
 **Description:** Returns a list where every item in the list has been evaluated.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -572,7 +593,6 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
@@ -585,9 +605,10 @@ Eval List( {x, y} );
 
 **Description:** Exits JMP.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -604,9 +625,10 @@ If(
 
 **Description:** Evaluates each argument and returns the value of the first argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 First( 11, 22 );
 
 ```
@@ -617,11 +639,12 @@ First( 11, 22 );
 
 **Description:** Defines a function with the specified arguments, default values, and optional local variables. Arguments with default values are optional on invocation of the function. If Return() is used within the function&apos;s script, the expression within is returned.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
@@ -631,7 +654,6 @@ exsqr( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
 a = exmul( 5 );
@@ -644,7 +666,6 @@ Show( a, b );
 
 ```jsl
 
-Names Default To Here( 1 );
 posorneg = Function( {x},
 	{},
 	If(
@@ -663,9 +684,10 @@ posorneg( -5.5 );
 
 **Description:** Returns a list of names of all currently defined classes.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -690,9 +712,10 @@ Delete Classes( "aa", "bb" );
 
 **Description:** Returns a list of references to all currently defined classes
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -718,11 +741,12 @@ Delete Classes( "aa", "bb" );
 
 **Description:** Get a list of custom functions
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions();
 
 ```
@@ -731,7 +755,6 @@ Get Custom Functions();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -746,9 +769,10 @@ Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Environment Variable( "PATH" );
 
 ```
@@ -759,9 +783,10 @@ Get Environment Variable( "PATH" );
 
 **Description:** Retrieves a locale setting such as decimal separator
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -772,9 +797,10 @@ Get Locale Setting( "Decimal Separator" );
 
 **Description:** Returns a list of lines from the log. If no argument is specified, all the lines from the log are returned. If the numeric argument N is positive, the first N lines from the log are returned. If N is negative, the last N lines from the log are returned. If N is zero, no lines are returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 all contents = Get Log();
 headcontents = Get Log( 10 );
 tailcontents = Get Log( -5 );
@@ -787,9 +813,10 @@ tailcontents = Get Log( -5 );
 
 **Description:** Returns a list of names of all currently defined namespaces.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -815,9 +842,10 @@ nsbb << Delete;
 
 **Description:** Returns a list of references to all currently defined namespaces
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nsaa = New Namespace(
 	"aa",
 	{
@@ -844,11 +872,12 @@ nsbb << Delete;
 
 **Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters();
 
 ```
@@ -857,7 +886,6 @@ Get Punctuation Characters();
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Include Chars( "_" ) );
 
 ```
@@ -866,7 +894,6 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
@@ -875,7 +902,6 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Collapse Whitespace(
 	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " )
 );
@@ -888,9 +914,10 @@ Collapse Whitespace(
 
 **Description:** Returns the session script for the specified windows. The session script is a JSL expression that will recreate the given windows, including data tables, script windows, journals, and reports. Reports created via JSL scripts have limited support, and will only attempt to recreate the display layout.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
@@ -904,9 +931,10 @@ Get Session Script( Report( biv ) );
 
 **Description:** Returns a string containing all of the whitespace characters that are typically used.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Whitespace Characters();
 
 ```
@@ -917,9 +945,10 @@ Get Whitespace Characters();
 
 **Description:** Executes the JSL in the specified file. If Parse Only is specified, the script is parsed rather than executed. If New Context is specified, the included JSL is executed in its own unique namespace. If both the parent and included scripts use the global namespace, then specify both New Context and Names Default to Here to avoid name collisions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```
@@ -930,9 +959,10 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 **Description:** Returns a list of included files at the point of execution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 y = Include File List();
 
 ```
@@ -943,11 +973,12 @@ y = Include File List();
 
 **Description:** Return result to indicate whether the log window is open
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Is Log Open(),
 	Close Log()
 );
@@ -958,7 +989,6 @@ If( Is Log Open(),
 
 ```jsl
 
-Names Default To Here( 1 );
 If( !Is Log Open(),
 	Open Log()
 );
@@ -971,11 +1001,12 @@ If( !Is Log Open(),
 
 **Description:** Returns the length of the given string (in characters), list (in items), associative array (in number of keys), blob (in bytes), matrix (in elements), or namespace/class (in number of functions and variables).
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
@@ -984,7 +1015,6 @@ Length( "Café" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
@@ -993,7 +1023,6 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -1002,7 +1031,6 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -1013,9 +1041,10 @@ Length( Char To Blob( "Café" ) );
 
 **Description:** Creates a list of items without evaluating them.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {1, 2 + 3, [11 22]};
 
 ```
@@ -1026,9 +1055,10 @@ Names Default To Here( 1 );
 
 **Description:** Resolves names to local variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -1042,9 +1072,10 @@ Local( {a = 1, b},
 
 **Description:** Executes expression with local Names Default To Here(1)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 y = Local Here(
 	a = 1;
 	b = 2;
@@ -1060,9 +1091,10 @@ y = Local Here(
 
 **Description:** Locks specified global names, preventing them from being modified or being cleared by the Clear Globals function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1084,9 +1116,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Locks specified global names, preventing them from being modified or being cleared by the Clear Symbols function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1108,9 +1141,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Evaluates the expr argument and captures the output that would have appeared in the JMP log window and returns it in a string instead.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
 		Write( Char( i ) );
@@ -1126,11 +1160,12 @@ Names Default To Here( 1 );
 
 **Description:** Evaluate the initial value and return the mapped result or a default.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "celry", {"celry", "celery"} );
 
 ```
@@ -1139,7 +1174,6 @@ Map Value( "celry", {"celry", "celery"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```
@@ -1148,7 +1182,6 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
@@ -1157,7 +1190,6 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```
@@ -1168,9 +1200,10 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 **Description:** Create a Method within a Class
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1220,9 +1253,10 @@ Delete Classes( "complex" );
 
 **Description:** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :age ) );
 outline = Report( obj )[Outline Box( 1 )];
@@ -1238,11 +1272,12 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 **Description:** Returns the number of items in a list, the number of elements in a matrix, the number of keys in an associative array, the number of functions and variables in a namespace, the number of methods and variables in a class object, or the number of children of a display box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -1251,7 +1286,6 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -1260,7 +1294,6 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
 
@@ -1272,9 +1305,10 @@ N Items( hlist );
 
 **Description:** Determines where unresolved names are stored, either as a global/local ( 0 ) or in the Here: namespace ( 1 ).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -1286,9 +1320,10 @@ Show( x );
 
 **Description:** Return a reference to the namespace specified by the name argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -1327,9 +1362,10 @@ ns << Delete;
 
 **Description:** Returns 1 if the namespace specified by the name argument exists; otherwise a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -1368,11 +1404,12 @@ ns << Delete;
 
 **Description:** Create a new custom function object. A custom function will be colorized in the script editor and show up in the Scripting Index. The required information for a custom user function are a namespace (to prevent collisions with global functions), a name, and a function definition. Other help information can be added using messages. Use the Add Custom Functions command to publish the new function into the JMP environment.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
@@ -1381,7 +1418,6 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
 	{New Custom Function(
@@ -1401,7 +1437,6 @@ Add Custom Functions(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
 	{New Custom Function(
@@ -1423,9 +1458,10 @@ Add Custom Functions(
 
 **Description:** Create a new namespace with the name specified by the name argument or with an anonymous name if name is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -1463,9 +1499,10 @@ ns << Delete;
 
 **Description:** Creates an instance object of a class.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1515,11 +1552,12 @@ Delete Classes( "complex" );
 
 **Description:** Open the log window
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Log();
 Show( Is Log Open() );
 
@@ -1529,7 +1567,6 @@ Show( Is Log Open() );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Bring Log Windows to the Top */
 Open Log( 1 );
 Show( Is Log Open() );
@@ -1542,9 +1579,10 @@ Show( Is Log Open() );
 
 **Description:** Defines formula parameters for models for the Nonlinear platform.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -1555,9 +1593,10 @@ Parameter( {a = 1}, a + 1 );
 
 **Description:** Parses the string and returns the resulting JSL expression.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Parse( "x+y" );
 
 ```
@@ -1568,9 +1607,10 @@ Parse( "x+y" );
 
 **Description:** Displays values of the arguments in the log, one per line.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Print( 355 / 113, Pi() );
 
 ```
@@ -1581,9 +1621,10 @@ Print( 355 / 113, Pi() );
 
 **Description:** Exits JMP.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -1606,11 +1647,12 @@ Special JSL variables are populated during the execution of the command:
 
 	_rcOrig is the original value of the input.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
@@ -1622,7 +1664,6 @@ Recode(
 
 ```jsl
 
-Names Default To Here( 1 );
 Recode(
 	"A B C",
 	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )},
@@ -1637,9 +1678,10 @@ Recode(
 
 **Description:** Calls the containing function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -1656,9 +1698,10 @@ ex rev( "abcd" );
 
 **Description:** Removes a list of custom functions from the environment.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```
@@ -1669,9 +1712,10 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 **Description:** Writes the contents of the log to the specified file location. If the write is successful, this function returns the name of the created file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
 Substr( exlogText, 1, 30 );
@@ -1684,9 +1728,10 @@ Substr( exlogText, 1, 30 );
 
 **Description:** Sends a message (in the form of an expression) to an object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -1702,9 +1747,10 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -1715,9 +1761,10 @@ Set Environment Variable( "PATH", "some path to a directory" );
 
 **Description:** Displays the name and value of the arguments in the log, one per line.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( 355 / 113, Pi() );
 
 ```
@@ -1728,9 +1775,10 @@ Show( 355 / 113, Pi() );
 
 **Description:** Show the contents of all user-defined classes.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -1778,9 +1826,10 @@ Show Classes();
 
 **Description:** Lists all the currently defined global symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Globals();
 
 ```
@@ -1791,9 +1840,10 @@ Show Globals();
 
 **Description:** Show the contents of all user defined namespaces, both named and anonymous.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Namespace(
 	"complex",
 	{
@@ -1831,9 +1881,10 @@ Delete Namespaces( "complex" );
 
 **Description:** Lists all the currently defined symbols and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Symbols();
 
 ```
@@ -1844,9 +1895,10 @@ Show Symbols();
 
 **Description:** Returns a copy of list x with the items in ascending order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -1857,9 +1909,10 @@ Sort List( {111, 212, 133, 114, 55} );
 
 **Description:** Modifies list x with the items in ascending order. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
 ex;
@@ -1872,31 +1925,30 @@ ex;
 
 **Description:** Diverts execution to the enclosing Try(). Otherwise, script execution is stopped. If message begins with an exclamation point, the error will be fatal and cannot be caught by Try(). The second argument is an optional boolean for including a traceback.
 
-**Fatal Throw**
+**JMP Version Added:** Before version 14
+
+#### Fatal Throw
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
 Print( "AFTER TRY message not reached" );
 
 ```
 
-**Traceback**
+#### Traceback
 
 ```jsl
 
-Names Default To Here( 1 );
 Throw( "A line number is included in this error", 1 );
 
 ```
 
-**Try-Catch**
+#### Try-Catch
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```
@@ -1907,11 +1959,12 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 **Description:** Evaluates and returns the expr argument, unless the evaluation causes a Throw() or internal exception. In that case, the evaluation of catchExpr is returned. If you use exception_msg as the catchExpr, a list containing more information about the error is returned.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), "invalid" );
 
 ```
@@ -1920,7 +1973,6 @@ Try( Sqrt( "s" ), "invalid" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Try( Sqrt( "s" ), exception_msg );
 
 ```
@@ -1931,9 +1983,10 @@ Try( Sqrt( "s" ), exception_msg );
 
 **Description:** Returns a string naming the type of the value of the argument x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Type( [1 2 3] );
 
 ```
@@ -1944,9 +1997,10 @@ Type( [1 2 3] );
 
 **Description:** Unlocks specified global names, allowing them to be modified and to be cleared by the Clear Globals function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1968,9 +2022,10 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Unlocks specified global names, allowing them to be modified and to be cleared by the Clear Symbols function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -1992,29 +2047,28 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **Description:** Waits for x seconds before proceeding with execution. The default value for x is 3 seconds. If x is 0 or greater, JMP will complete any operating system events (e.g. screen drawing) as well as any pending callbacks (e.g. formula evaluation) in addition to the wait. If x is less than 0, only the screen drawing and pending OS events are confirmed to be completed before proceeding.
 
-**Callbacks**
+**JMP Version Added:** Before version 14
+
+#### Callbacks
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
 
-**OS Events**
+#### OS Events
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( -1 ); // Wait for OS events
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Wait( 1.5 );
 
 ```
@@ -2025,9 +2079,10 @@ Wait( 1.5 );
 
 **Description:** Creates a window showing variables from Global, Here, and Local namespaces and their values.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 y = 2;
 z = "abc";
@@ -2047,22 +2102,22 @@ w << close Window();
 
 **Description:** Returns indices (usually row numbers) matching the given where clause. The optional dt changes the Current Data Table during the evaluation. These clauses are often written by JMP using the Data Filter. This will often by faster than using Loc, <<Get Rows Where or <<Select Where. The behavior is undefined if the clause modifies the sequences or any symbols during evaluation.
 
-**Column Functions**
+**JMP Version Added:** 18
+
+#### Column Functions
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
 dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
 
 ```
 
-**Columns**
+#### Columns
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
 Where( :sex == "M" );
@@ -2070,11 +2125,10 @@ Where( dt, :sex == "M" );
 
 ```
 
-**Matrix/List**
+#### Matrix/List
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
 xs[Where( !Is Missing( xs ) )];
@@ -2083,11 +2137,10 @@ ys[Where( ys >= 20 )];
 
 ```
 
-**Other**
+#### Other
 
 ```jsl
 
-Names Default To Here( 1 );
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -2097,11 +2150,10 @@ Where( xs[1] < 18 );
 
 ```
 
-**Row States**
+#### Row States
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
 Where( Excluded() );
@@ -2115,9 +2167,10 @@ Where( !Excluded() );
 
 **Description:** Denotes a wildcard position that matches any expression (only used in expression patterns).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -2132,9 +2185,10 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 **Description:** Denotes a series of wildcard arguments that match anything (only used in expression patterns).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -2149,9 +2203,10 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 **Description:** Displays the specified values in the log without adding quotation marks, spaces, or line breaks (as Print() does).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```

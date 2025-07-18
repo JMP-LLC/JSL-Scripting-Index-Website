@@ -8,9 +8,10 @@
 
 **Description:** Returns a list representation of a matrix. Multi-column matrices are converted to a list of lists, one per row, as would be expected by the Matrix operator.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -21,9 +22,10 @@ As List( [11 22 33, 44 55 66] );
 
 **Description:** Joins a list of strings into one long string, separating each from next with the separator, a blank if unspecified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -34,11 +36,12 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 **Description:** Returns a list where every item in the list has been evaluated.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -47,7 +50,6 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
@@ -60,9 +62,10 @@ Eval List( {x, y} );
 
 **Description:** Returns a copy of list x with y inserted at the ith position or appended to the end if the optional i argument is not specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
 
@@ -74,11 +77,12 @@ z = Insert( z, 99, 2 );
 
 **Description:** Modifies list, associative array, or display box x with y inserted into the collection. Lists and display boxes support an optional i to specify the position, or the items will be appended if the position is not specified. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
@@ -89,7 +93,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
@@ -100,7 +103,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 Wait( 1 );
 Insert Into( hlist, Button Box( "c" ) );
@@ -113,9 +115,10 @@ Insert Into( hlist, Button Box( "c" ) );
 
 **Description:** Returns 1 if the x argument is a list, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is List( {1, 2, 3} );
 
 ```
@@ -126,11 +129,12 @@ Is List( {1, 2, 3} );
 
 **Description:** Returns a list of (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
@@ -139,7 +143,6 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -148,7 +151,6 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Items(
 	",Apple,Banana Tree,Peach",
 	Get Punctuation Characters(),
@@ -161,7 +163,6 @@ Items(
 
 ```jsl
 
-Names Default To Here( 1 );
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -172,11 +173,12 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 **Description:** Returns the length of the given string (in characters), list (in items), associative array (in number of keys), blob (in bytes), matrix (in elements), or namespace/class (in number of functions and variables).
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( "Café" );
 
 ```
@@ -185,7 +187,6 @@ Length( "Café" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( {1, 2 + 3, [11 22]} );
 
 ```
@@ -194,7 +195,6 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -203,7 +203,6 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Length( Char To Blob( "Café" ) );
 
 ```
@@ -214,9 +213,10 @@ Length( Char To Blob( "Café" ) );
 
 **Description:** Creates a list of items without evaluating them.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {1, 2 + 3, [11 22]};
 
 ```
@@ -227,11 +227,12 @@ Names Default To Here( 1 );
 
 **Description:** Returns the number of items in a list, the number of elements in a matrix, the number of keys in an associative array, the number of functions and variables in a namespace, the number of methods and variables in a class object, or the number of children of a display box.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -240,7 +241,6 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
-Names Default To Here( 1 );
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -249,7 +249,6 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
 
@@ -261,9 +260,10 @@ N Items( hlist );
 
 **Description:** Returns a copy of list x, deleting n items starting with the ith item or deleting a list of items specified by the list argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -274,11 +274,12 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **Description:** Modifies list, associative array, or display box x by removing items. Associative arrays specify the item to be removed with a key value i. Lists and display boxes remove starting with the item in position i. A list will remove multiple items at once if the n option is specified. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
@@ -289,7 +290,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
@@ -300,7 +300,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -315,9 +314,10 @@ Remove From( hlist, 1 );
 
 **Description:** Returns a copy of list x with the item order reversed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -328,11 +328,12 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **Description:** Modifies list or display box x with the item order reversed. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
@@ -343,7 +344,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -358,9 +358,10 @@ Reverse Into( hlist );
 
 **Description:** Returns the list of items that occur in list1 but not in list2. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
@@ -372,9 +373,10 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 **Description:** Returns the list of items that occur in both lists. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -388,9 +390,10 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 **Description:** Returns the list of items that occur in either list. Items can be repeated. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -407,9 +410,10 @@ Show( all );
 
 **Description:** Returns the list of unique items that occur in the input list. If an argument is a multiple-response column reference, it is treated as a list of its values in the current row.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -424,9 +428,10 @@ Show( Set Unique( :sports ) );
 
 **Description:** Returns a copy of list x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -437,11 +442,12 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **Description:** Modifies list or display box x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
@@ -452,7 +458,6 @@ ex;
 
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
 );
@@ -467,9 +472,10 @@ Shift Into( hlist, -2 );
 
 **Description:** Returns a copy of list x with the items in ascending order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -480,9 +486,10 @@ Sort List( {111, 212, 133, 114, 55} );
 
 **Description:** Modifies list x with the items in ascending order. Note that the x argument must be a variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
 ex;
@@ -495,11 +502,12 @@ ex;
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -508,7 +516,6 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", "All", "Some" );
 
 ```
@@ -517,7 +524,6 @@ Substitute( "All things considered", "All", "Some" );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
 
@@ -527,7 +533,6 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
@@ -536,7 +541,6 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
 );
@@ -547,7 +551,6 @@ Substitute( "Apple,orange,banana-grape",
 
 ```jsl
 
-Names Default To Here( 1 );
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
@@ -558,11 +561,12 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
 Name Expr( ex );
@@ -573,7 +577,6 @@ Name Expr( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
@@ -584,7 +587,6 @@ Show( ex );
 
 ```jsl
 
-Names Default To Here( 1 );
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
@@ -595,7 +597,6 @@ Show( lst );
 
 ```jsl
 
-Names Default To Here( 1 );
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
 Show( s );
@@ -608,11 +609,12 @@ Show( s );
 
 **Description:** Returns a list of sub-strings separated by any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
@@ -621,7 +623,6 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -630,7 +631,6 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Names Default To Here( 1 );
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```

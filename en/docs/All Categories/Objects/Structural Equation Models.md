@@ -10,9 +10,10 @@
 
 **Description:** Provides a framework to fit a variety of models, including confirmatory factor analysis, path models with or without latent variables, measurement error models, and latent growth curve models.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -43,7 +44,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
 obj = dt << Structural Equation Models(
@@ -76,7 +76,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
@@ -88,9 +87,10 @@ dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
 **Description:** Specifies means for each manifest variable in a correlation or covariance matrix.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 mat = dt[0, 2 :: 5];
 mat_cor = Correlation( mat );
@@ -113,9 +113,10 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 **Description:** Specifies the variables that will be submitted for analysis.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
@@ -129,9 +130,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Specifies standard deviations for each manifest variable in a correlation matrix.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 mat = dt[0, 2 :: 5];
 mat_cor = Correlation( mat );
@@ -154,7 +156,6 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
 obj = dt << Structural Equation Models(
@@ -187,9 +188,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Relaunches the platform using the existing model specification and including the newly added manifest variables.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );
 obj << Add Manifest Variables();
@@ -202,9 +204,10 @@ obj << Add Manifest Variables();
 
 **Description:** Performs bootstrapping for a user-specified selection of estimates in available fitted models of the SEM report.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
@@ -217,9 +220,10 @@ obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
 
 **Description:** Compares models selected in the Model Comparison table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Measurement Models" );
 obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
@@ -232,9 +236,10 @@ obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
 
 **Description:** Copies the current path diagram properties to the clipboard. You can then paste the properties into another SEM path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
@@ -250,9 +255,10 @@ obj2 << Paste Diagram Properties();
 
 **Description:** Copies the current structural equation model specifications to the clipboard. You can then paste the model specifications into another SEM platform report.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis no Latent" );
 obj << Copy Model Specification();
@@ -269,9 +275,10 @@ obj2 << Paste Model Specification();
 
 **Description:** Enables using different estimators for analysis.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -302,9 +309,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Determines the structural equation model to be fit.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -331,9 +339,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Disables fitting the independence model upon launching the platform. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -348,9 +357,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Disables fitting the unrestricted, also known as saturated, model upon launching the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -365,9 +375,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a multivariate simple statistics report, where the statistics are estimated with full information maximum likelihood to account for missing data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
@@ -382,9 +393,10 @@ obj << Full Information Multivariate Statistics( 1 );
 
 **Description:** Generates R code for the currently specified model. The code is written to a script editor window.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis no Latent" );
 obj << Generate R Code();
@@ -397,9 +409,10 @@ obj << Generate R Code();
 
 **Description:** Hides models according to selections in the model comparison table.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -424,9 +437,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Launches the Explore Missing Values platform.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
@@ -441,9 +455,10 @@ obj << Launch Explore Missing Values( 1 );
 
 **Description:** Launches the Explore Outliers platform.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
@@ -458,9 +473,10 @@ obj << Launch Explore Outliers( 1 );
 
 **Description:** Enables specification of a structural equation model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -479,9 +495,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Pastes the path diagram properties from the clipboard into the current SEM path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
@@ -497,9 +514,10 @@ obj2 << Paste Diagram Properties();
 
 **Description:** Pastes the model specifications from the clipboard into the current model specifications.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis no Latent" );
 obj << Copy Model Specification();
@@ -514,9 +532,10 @@ obj2 << Paste Model Specification();
 
 **Syntax:** obj &lt;&lt; Path Diagram Properties
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables(
@@ -554,9 +573,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Relaunches the platform using the existing model specification but without the removed manifest variables.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );
 obj << Remove Manifest Variables();
@@ -569,9 +589,10 @@ obj << Remove Manifest Variables();
 
 **Description:** Replaces a user-specified independence model with the default one.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Run Script( "SEM: Compare Growth Trajectories" );
 obj << Set as Independence Model( 2 );
@@ -585,9 +606,10 @@ obj << Reset Independence Model();
 
 **Description:** Computes sandwich standard errors for the ML or FIML parameter estimates and the robust fit statistics. This option is used for non-normally distributed outcomes where a continuous underlying distribution is assumed.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Robust Inference( 1 );
@@ -600,9 +622,10 @@ obj << Robust Inference( 1 );
 
 **Description:** Replaces the default independence model with a user-specified one.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Run Script( "SEM: Compare Growth Trajectories" );
 obj << Set as Independence Model( 2 );
@@ -615,9 +638,10 @@ obj << Set as Independence Model( 2 );
 
 **Description:** Sets the variance of latent variables to unity upon specification.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -632,9 +656,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a univariate simple statistics report, where the statistics are calculated for each column independently from other columns that might have missing data.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
@@ -653,7 +678,6 @@ obj << Univariate Simple Statistics( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -669,11 +693,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -684,11 +709,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -696,11 +720,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -716,7 +739,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -747,9 +769,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -767,7 +790,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -785,7 +807,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -823,7 +844,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -855,7 +875,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -885,9 +904,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -902,7 +922,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -939,11 +958,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -968,11 +986,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1005,7 +1022,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1038,7 +1054,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -1055,7 +1070,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1088,7 +1102,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1121,7 +1134,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1154,7 +1166,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1168,9 +1179,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1186,7 +1198,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1205,7 +1216,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1223,9 +1233,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1240,9 +1251,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1257,7 +1269,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1278,7 +1289,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1310,7 +1320,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1348,7 +1357,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1380,7 +1388,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1418,7 +1425,6 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1438,7 +1444,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1458,9 +1463,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1475,7 +1481,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1509,7 +1514,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1541,7 +1545,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1579,7 +1582,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1617,7 +1619,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1655,7 +1656,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1689,7 +1689,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1723,7 +1722,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1761,7 +1759,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1793,7 +1790,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1825,7 +1821,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1857,7 +1852,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1889,7 +1883,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1910,7 +1903,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1936,7 +1928,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1954,7 +1945,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1971,7 +1961,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2003,7 +1992,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2035,9 +2023,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -2054,7 +2043,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -2069,7 +2057,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
@@ -2090,9 +2077,10 @@ New Window( "Bivariate Equation",
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Modification Indices( 1 );
@@ -2105,9 +2093,10 @@ obj << Modification Indices( 1 );
 
 **Description:** Shows or hides a variety of statistics for quantifying the reliability and validity of tests and measures, including indicator reliability, coefficients omega and H, and a construct validity matrix.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Measurement Models" );
 obj << Assess Measurement Model( 1 );
@@ -2120,9 +2109,10 @@ obj << Assess Measurement Model( 1 );
 
 **Description:** Shows or hides 95% confidence intervals for all parameter estimates.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Confidence Intervals( 1 );
@@ -2135,9 +2125,10 @@ obj << Confidence Intervals( 1 );
 
 **Description:** Copies the current path diagram properties to the clipboard. You can then paste the properties into another SEM path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
@@ -2153,9 +2144,10 @@ obj2 << Paste Diagram Properties();
 
 **Description:** Copies the current structural equation model specifications to the clipboard. You can then paste the model specifications into another SEM platform report.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis w/ Latent" );
 obj << (Fit[1] << Copy Model Specification());
@@ -2170,9 +2162,10 @@ obj2 << Paste Model Specification();
 
 **Description:** Shows or hides a report that contains the correlation matrix of the parameter estimates for the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Correlation of Estimates( 1 );
@@ -2185,9 +2178,10 @@ obj << Correlation of Estimates( 1 );
 
 **Description:** Shows or hides a report that contains a heat map of the correlations among the estimates of the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Correlation of Estimates Heat Map( 1 );
@@ -2200,9 +2194,10 @@ obj << Correlation of Estimates Heat Map( 1 );
 
 **Description:** Shows or hides a report that contains the covariance matrix of the parameter estimates for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Covariance of Estimates( 1 );
@@ -2215,9 +2210,10 @@ obj << Covariance of Estimates( 1 );
 
 **Description:** Shows or hides a report that contains a heat map of the covariances among the estimates of the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Covariance of Estimates Heat Map( 1 );
@@ -2232,7 +2228,6 @@ obj << Covariance of Estimates Heat Map( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -2251,9 +2246,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Defines the occasions of measurement for the repeated observations. These values are used for specifying longitudinal models.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),
@@ -2289,9 +2285,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a report that contains details of each equation in the model.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2319,9 +2316,10 @@ obj << Equation Details( 0 );
 
 **Description:** Shows or hides a report that contains fit indices for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Fit Indices( 1 );
@@ -2336,7 +2334,6 @@ obj << Fit Indices( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Indirect Effects( 1 );
@@ -2351,7 +2348,6 @@ obj << Indirect Effects( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2379,7 +2375,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2402,9 +2397,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a report that contains the correlation matrix that is implied by the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Model Implied Correlations( 1 );
@@ -2417,9 +2413,10 @@ obj << Model Implied Correlations( 1 );
 
 **Description:** Shows or hides a report that contains a heat map of the correlations implied by the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Model Implied Correlations Heat Map( 1 );
@@ -2432,9 +2429,10 @@ obj << Model Implied Correlations Heat Map( 1 );
 
 **Description:** Shows or hides a report that contains the covariance matrix that is implied by the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Model Implied Covariances( 1 );
@@ -2447,9 +2445,10 @@ obj << Model Implied Covariances( 1 );
 
 **Description:** Shows or hides a report that contains a heat map of the covariances implied by the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Model Implied Covariances Heat Map( 1 );
@@ -2462,9 +2461,10 @@ obj << Model Implied Covariances Heat Map( 1 );
 
 **Description:** Shows or hides a report that contains the means for each variable that are implied by the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Model Implied Means( 1 );
@@ -2477,9 +2477,10 @@ obj << Model Implied Means( 1 );
 
 **Description:** Sets a model name.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -2498,9 +2499,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Modification Indices( 1 );
@@ -2513,9 +2515,10 @@ obj << Modification Indices( 1 );
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Modification Indices for Covariances( 1 );
@@ -2528,9 +2531,10 @@ obj << Modification Indices for Covariances( 1 );
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Modification Indices for Loadings( 1 );
@@ -2543,9 +2547,10 @@ obj << Modification Indices for Loadings( 1 );
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables(
@@ -2584,9 +2589,10 @@ obj << Modification Indices for Means( 1 );
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Modification Indices for Regressions( 1 );
@@ -2599,9 +2605,10 @@ obj << Modification Indices for Regressions( 1 );
 
 **Description:** Shows or hides a report that contains the estimates of model modification indices. These values can be used to determine which parameters might be added to the model to improve model fit.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables(
@@ -2640,9 +2647,10 @@ obj << Modification Indices for Variances( 1 );
 
 **Description:** Adds a new latent variable in the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -2668,9 +2676,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a report that contains a matrix of the normalized residuals for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Normalized Residuals( 1 );
@@ -2683,9 +2692,10 @@ obj << Normalized Residuals( 1 );
 
 **Description:** Shows or hides a report that contains a heat map of the normalized residuals for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Normalized Residuals Heat Map( 1 );
@@ -2698,9 +2708,10 @@ obj << Normalized Residuals Heat Map( 1 );
 
 **Description:** Shows or hides a report that contains the unstandardized parameter estimates for the model. On by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Parameter Estimates( 0 );
@@ -2713,9 +2724,10 @@ obj << Parameter Estimates( 0 );
 
 **Description:** Pastes the path diagram properties from the clipboard into the current SEM path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
@@ -2729,9 +2741,10 @@ obj2 << Paste Diagram Properties();
 
 **Syntax:** obj &lt;&lt; Path Diagram Properties
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables(
@@ -2769,9 +2782,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Shows or hides a plot of predicted values for endogenous variables in the model.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Run Script( "SEM: LGC with LDF" );
 obj << Predicted Values Plot( 1, 1 );
@@ -2784,9 +2798,10 @@ obj << Predicted Values Plot( 1, 1 );
 
 **Description:** Shows or hides a prediction profiler for the selected outcomes given the selected predictors and the specified model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Run Script( "SEM: Path Analysis w / Latent" );
 obj << Prediction Profiler(
@@ -2804,9 +2819,10 @@ obj << Prediction Profiler(
 
 **Description:** Shows or hides a report with RSquare values for all endogenous variables in the model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << R Square for Endogenous Variables( 1 );
@@ -2819,9 +2835,10 @@ obj << R Square for Endogenous Variables( 1 );
 
 **Description:** Shows or hides a report that contains the model matrices used in reticular action model (RAM) notation.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << RAM Matrices( 1 );
@@ -2834,9 +2851,10 @@ obj << RAM Matrices( 1 );
 
 **Description:** Sets the model in the Model Specification report to the specified model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Recall in Model Specification( 1 );
@@ -2851,7 +2869,6 @@ obj << Recall in Model Specification( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -2870,9 +2887,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Removes the specified model report from the report window.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Remove Fit( 1 );
@@ -2885,9 +2903,10 @@ obj << Remove Fit( 1 );
 
 **Description:** Shows or hides a report that contains a matrix of the residuals for the model. This matrix is the difference between the model implied covariance matrix and the sample covariance matrix.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Residuals( 1 );
@@ -2902,7 +2921,6 @@ obj << Residuals( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Save Bartlett Factor Scores();
@@ -2915,9 +2933,10 @@ obj << Save Bartlett Factor Scores();
 
 **Description:** Saves a column with the factor score for each variable to columns in the data table. The factor scores are calculated in a hidden column that is also added to the data table. The regression method is used to estimate these scores.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Save Factor Scores();
@@ -2930,9 +2949,10 @@ obj << Save Factor Scores();
 
 **Description:** Saves columns to the data table that contain residual values of the observed outcomes in the model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Save Observational Residuals();
@@ -2945,9 +2965,10 @@ obj << Save Observational Residuals();
 
 **Description:** Saves columns to the data table that contain formulas for predicted values of the observed outcomes in the model.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Save Prediction Formulas();
@@ -2960,9 +2981,10 @@ obj << Save Prediction Formulas();
 
 **Description:** Shows or hides the SEM path diagram. On by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Show Path Diagram( 0 );
@@ -2975,9 +2997,10 @@ obj << Show Path Diagram( 0 );
 
 **Description:** Enables you to indicate the specific indirect effects to estimate from the model.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
@@ -2990,9 +3013,10 @@ obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
 
 **Description:** Shows or hides a report that contains the standardized parameter estimates for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Standardized Parameter Estimates( 1 );
@@ -3005,9 +3029,10 @@ obj << Standardized Parameter Estimates( 1 );
 
 **Description:** Shows or hides a report that contains details of the model fit. On by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Summary of Fit( 0 );
@@ -3022,7 +3047,6 @@ obj << Summary of Fit( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Total Effects( 1 );
@@ -3037,7 +3061,6 @@ obj << Total Effects( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -3070,9 +3093,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Modifies the border color of Constant variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" ) );
@@ -3085,9 +3109,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" )
 
 **Description:** Modifies the fill color of Constant variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) );
@@ -3100,9 +3125,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) )
 
 **Description:** Modifies the font of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) );
@@ -3115,9 +3141,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) 
 
 **Description:** Modifies the height (pixels) of Constant variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
@@ -3130,9 +3157,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
 
 **Description:** Modifies the default appearance of the Constant in the path diagram, which is used to represent variables&apos; means and intercepts.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties(
@@ -3148,9 +3176,10 @@ obj << Path Diagram Properties(
 
 **Description:** Changes the size mode for the Constant in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
@@ -3163,9 +3192,10 @@ obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
 
 **Description:** Modifies the text color of Constant variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) );
@@ -3178,9 +3208,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) )
 
 **Description:** Modifies the width (pixels) of Constant variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
@@ -3193,9 +3224,10 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
 
 **Description:** Saves a picture of the diagram window to the clipboard.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 rpt = obj << Report();
@@ -3209,9 +3241,10 @@ rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 **Description:** Saves a copy of the diagram-specific script settings to the clipboard. These settings can then be applied to other diagrams.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 rpt = obj << Report();
@@ -3233,9 +3266,10 @@ other_diagram << Paste Diagram Properties;
 
 **Description:** Shows or hides dashed lines for paths with non-significant p-values. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0 ) );
@@ -3248,9 +3282,10 @@ obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0
 
 **Description:** Changes the size of the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties(
@@ -3276,9 +3311,10 @@ obj << Path Diagram Properties(
 
 **Description:** Enables a visual grid in the Path Diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Enable Grid( 1 ) );
@@ -3291,9 +3327,10 @@ obj << Path Diagram Properties( Enable Grid( 1 ) );
 
 **Description:** Specifies that nodes in the fitted model be partially filled based on their estimated coefficient of determination. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
@@ -3306,9 +3343,10 @@ obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
 
 **Description:** Modifies the border color of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
@@ -3321,9 +3359,10 @@ obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
 
 **Description:** Modifies the fill color of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
@@ -3336,9 +3375,10 @@ obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
 
 **Description:** Modifies the font of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
@@ -3351,9 +3391,10 @@ obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
 
 **Description:** Modifies the height (pixels) of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Height( 30 ) );
@@ -3366,9 +3407,10 @@ obj << Path Diagram Properties( Latent Height( 30 ) );
 
 **Description:** Modifies the default appearance of Latent Variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties(
@@ -3383,9 +3425,10 @@ obj << Path Diagram Properties(
 
 **Description:** Changes the size mode for Latent nodes in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
@@ -3398,9 +3441,10 @@ obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
 
 **Description:** Modifies the text color of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
@@ -3413,9 +3457,10 @@ obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
 
 **Description:** Modifies the width (pixels) of Latent variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Latent Width( 71 ) );
@@ -3428,9 +3473,10 @@ obj << Path Diagram Properties( Latent Width( 71 ) );
 
 **Description:** Sets the initial layout of the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
@@ -3443,9 +3489,10 @@ obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
 
 **Description:** Locks the Path Diagram so that modifications to the model do not cause the layout to change.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Lock Diagram( 1 ) );
@@ -3458,9 +3505,10 @@ obj << Path Diagram Properties( Lock Diagram( 1 ) );
 
 **Description:** Modifies the border color of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
@@ -3473,9 +3521,10 @@ obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
 
 **Description:** Modifies the fill color of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
@@ -3488,9 +3537,10 @@ obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
 
 **Description:** Modifies the font of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
@@ -3503,9 +3553,10 @@ obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
 
 **Description:** Modifies the height (pixels) of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Height( 30 ) );
@@ -3518,9 +3569,10 @@ obj << Path Diagram Properties( Manifest Height( 30 ) );
 
 **Description:** Modifies the default appearance of Manifest Variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
@@ -3533,9 +3585,10 @@ obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
 
 **Description:** Changes the size mode for Manifest Nodes in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
@@ -3548,9 +3601,10 @@ obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
 
 **Description:** Modifies the text color of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
@@ -3563,9 +3617,10 @@ obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
 
 **Description:** Modifies the width (pixels) of Manifest variables in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Manifest Width( 67 ) );
@@ -3578,9 +3633,10 @@ obj << Path Diagram Properties( Manifest Width( 67 ) );
 
 **Description:** Pastes a copy of the diagram-specific script settings from the clipboard.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 rpt = obj << Report();
@@ -3602,9 +3658,10 @@ other_diagram << Paste Diagram Properties;
 
 **Description:** Modifies the default appearance of paths in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
@@ -3617,9 +3674,10 @@ obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
 
 **Description:** Toggles whether the thickness of paths in the diagram is kept at a fixed value or is tied to the strength of its standardized estimate. "Fixed" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
@@ -3632,9 +3690,10 @@ obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
 
 **Description:** Toggles whether the transparency of paths in the diagram is kept at a fixed value or is tied to the strength of its standardized estimate.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
@@ -3647,9 +3706,10 @@ obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
 
 **Description:** Modifies the minimum p-value threshold for using dashed-lines in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
@@ -3662,9 +3722,10 @@ obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
 
 **Description:** Modifies the color of paths in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Paths Color( "Green" ) );
@@ -3677,9 +3738,10 @@ obj << Path Diagram Properties( Paths Color( "Green" ) );
 
 **Description:** Modifies the font used for labeling the paths in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
@@ -3692,9 +3754,10 @@ obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
 
 **Description:** Modifies the opacity of paths in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed" ) );
@@ -3707,9 +3770,10 @@ obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed"
 
 **Description:** Modifies the thickness of paths in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
@@ -3722,9 +3786,10 @@ obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
 
 **Description:** Controls the placement of individual nodes in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties(
@@ -3750,9 +3815,10 @@ obj << Path Diagram Properties(
 
 **Description:** Specifies the color for the partial fill that represents a variable&apos;s estimated R-square value.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
@@ -3765,9 +3831,10 @@ obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
 
 **Description:** Rotates the orientation of all latent indicators in the diagram. If any latent groups are selected, this option rotates the orientation of only the selected latent groups.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 rpt = obj << Report();
@@ -3782,9 +3849,10 @@ diagram << Rotate Latent Groups;
 
 **Description:** Controls the rotation of variance loops within the path diagram. Angles are measured clockwise in radians.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties(
@@ -3810,9 +3878,10 @@ obj << Path Diagram Properties(
 
 **Description:** Shows or hides the edge associated with the constant in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
@@ -3825,9 +3894,10 @@ obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
 
 **Description:** Shows or hides the bidirectional arrows that represent covariances in the path diagram. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Covariances( 0 ) );
@@ -3840,9 +3910,10 @@ obj << Path Diagram Properties( Show Covariances( 0 ) );
 
 **Description:** Shows or hides the equality constraints (Fixed Values or Labels) on edges in the path diagram. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
@@ -3855,9 +3926,10 @@ obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
 
 **Description:** Shows or hides the unstandardized parameter estimates in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Estimates( "None" ) );
@@ -3870,9 +3942,10 @@ obj << Path Diagram Properties( Show Estimates( "None" ) );
 
 **Description:** Shows or hides the latent variable indicators in the path diagram. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Loadings( 0 ) );
@@ -3885,9 +3958,10 @@ obj << Path Diagram Properties( Show Loadings( 0 ) );
 
 **Description:** Shows or hides the  means in the SEM Platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Means( 1 ) );
@@ -3900,9 +3974,10 @@ obj << Path Diagram Properties( Show Means( 1 ) );
 
 **Description:** Shows or hides the R-square values inside the nodes in the path diagram.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show R Squared Values( 1 ) );
@@ -3915,9 +3990,10 @@ obj << Path Diagram Properties( Show R Squared Values( 1 ) );
 
 **Description:** Shows or hides regressions in the SEM Platform. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Regressions( 0 ) );
@@ -3930,9 +4006,10 @@ obj << Path Diagram Properties( Show Regressions( 0 ) );
 
 **Description:** Shows or hides the bidirectional arrows that represent variances in the path diagram. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
 obj = dt << Run Script( "SEM: Bollen (1989)" );
 obj << Path Diagram Properties( Show Variances( 0 ) );
@@ -3951,7 +4028,6 @@ obj << Path Diagram Properties( Show Variances( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -3970,9 +4046,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Defines the occasions of measurement for the repeated observations. These values are used for specifying longitudinal models.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),
@@ -3992,7 +4069,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -4018,9 +4094,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Sets the maximum number of iterations for convergence. "1000" by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -4042,7 +4119,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -4065,9 +4141,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Specifies a name for the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -4086,9 +4163,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Specifies notes for the model.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -4110,9 +4188,10 @@ obj = dt << Structural Equation Models(
 
 **Description:** Adds a new latent variable in the model.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -4140,7 +4219,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Leadership_Avg, :Conflict_Avg ),
@@ -4161,7 +4239,6 @@ obj = dt << Structural Equation Models(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),

@@ -8,11 +8,12 @@
 
 **Description:** Returns a random integer between 1 and the number of rows of the current data table. When used in a column formula, Col Shuffle() creates a random ordering of row numbers with each row number appearing only once. The ordering is cached internally so that multiple evaluations are efficient.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
@@ -23,7 +24,6 @@ dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
@@ -33,7 +33,6 @@ dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
 dt << New Column( "Col Shuffle for each Sex", Formula( Col Shuffle( :height, :sex ) ) );
@@ -49,11 +48,12 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 **Description:** Generates a validation column with folds levels when used in a column formula. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -67,7 +67,6 @@ dt << New Column( "KFold Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
 	"Numeric",
@@ -85,11 +84,12 @@ dt << New Column( "Stratified KFold",
 
 **Description:** Generates a two-level or three-level validation column when used in a column formula. The rates argument is a 3 by 1 matrix that contains the training, validation, and test rates, respectively. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -104,7 +104,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -119,7 +118,6 @@ dt << New Column( "Validation",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -143,9 +141,10 @@ dt << New Column( "Validation",
 
 **Description:** Returns a random number from a beta distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta( 1, 1 );
@@ -162,9 +161,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a beta binomial distribution for n trials with probability p and correlation delta.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
@@ -181,9 +181,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a binomial distribution with n trials and event probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrbinp = 0.5;
 exrbinn = 40;
 exrbinlsz = Log( 1000 );
@@ -243,9 +244,10 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 **Description:** Returns a random category given pairs of probability and result expressions. A random uniform number is generated and compared to the probability arguments to determine which result argument is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -256,9 +258,10 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 **Description:** Returns a random number from a Cauchy distribution with a median of zero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Cauchy();
@@ -275,9 +278,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Chi-Square distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ChiSquare( 2 );
@@ -294,9 +298,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an ExGaussian distribution.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random ExGaussian( 0, .5, .25 );
@@ -313,9 +318,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an exponential distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Exp();
@@ -332,9 +338,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an F distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random F( 2, 2 );
@@ -351,9 +358,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Fréchet distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Frechet( 10, 5 );
@@ -370,9 +378,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a generalized logarithm distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
@@ -389,9 +398,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a gamma distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma( 1 );
@@ -408,9 +418,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a gamma Poisson distribution with parameters lambda and sigma.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
@@ -427,9 +438,10 @@ Show( x, v );
 
 **Description:** Returns a random number from an extended generalized gamma distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
@@ -446,9 +458,10 @@ Show( x, v );
 
 **Description:** Returns a random number of non-events until an event occurs, for events with probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
 New Window( "Example: Random Geometric and Empirical Distribution",
@@ -495,9 +508,10 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 **Description:** Returns a k by 1 matrix of random integers between 1 and n with no duplicates.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Index( 100, 5 );
 
 ```
@@ -508,9 +522,10 @@ Random Index( 100, 5 );
 
 **Description:** Returns a random integer between 1 and n (or between k and n) inclusive.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Integer( 1, 10 );
@@ -527,9 +542,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Sb distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
@@ -546,9 +562,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Sl distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Sl( 0.5, 1, 1, 1 );
@@ -565,9 +582,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a Johnson Su distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
@@ -584,9 +602,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a LEV distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LEV( 10, 5 );
@@ -603,9 +622,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a log generalized gamma distribution with parameters mu, sigma, and lambda.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
@@ -622,9 +642,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a logistic distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Logistic( 15, 1 );
@@ -641,9 +662,10 @@ Show( x, v );
 
 **Description:** Returns a random number from a loglogistic distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Loglogistic( 15, 1 );
@@ -660,11 +682,12 @@ Show( x, v );
 
 **Description:** Returns a random number from a lognormal distribution with location parameter mu and scale parameter sigma.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
@@ -679,7 +702,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
 	exrlny = Graph Box(
@@ -711,9 +733,10 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 **Description:** Returns a random nrows by p matrix from a multivariate normal distribution with mean vector mean and (positive semi-definite) covariance matrix covar, where p is defined as the number of rows of covar.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -727,9 +750,10 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 **Description:** Returns a random number of non-events until r events occur, for events with probability p.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 exnbrn = Random Negative Binomial( 20, 0.3 );
@@ -770,11 +794,12 @@ New Window( "Example: Neg Binomial Probability",
 
 **Description:** Returns a random number from a normal distribution with mean mu and standard deviation sigma.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Normal();
@@ -789,7 +814,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
 For( k = 1, k <= 50, k++,
@@ -831,9 +855,10 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 **Description:** Returns a random number from a normal mixture distribution with group means meanvec, group standard deviations sdvec, and group probabilities probvec.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )
@@ -850,9 +875,10 @@ Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 
 **Description:** Returns a random number from a Poisson distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
 New Window( "Example: Random Poisson and Empirical Distribution",
@@ -907,9 +933,10 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 **Description:** Restarts the random sequences with a new seed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 1 );
 Random Normal();
 
@@ -921,9 +948,10 @@ Random Normal();
 
 **Description:** Returns a random number from a SEV distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SEV( 50, 5 );
@@ -940,11 +968,12 @@ Show( x, v );
 
 **Description:** Returns a random number from the sinh-arcsinh (SHASH) distribution.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
@@ -955,11 +984,10 @@ Show( x, v );
 
 ```
 
-**SHASH Transformation**
+#### SHASH Transformation
 
 ```jsl
 
-Names Default To Here( 1 );
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -977,9 +1005,10 @@ Show( result1, result2 );
 
 **Description:** Retrieves or restores the random seed state to or from a blob object.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 r = Random Seed State();
 Random Seed State( r );
 
@@ -991,9 +1020,10 @@ Random Seed State( r );
 
 **Description:** Returns the matrix with the elements shuffled into a random order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -1005,9 +1035,10 @@ Random Shuffle( exA );
 
 **Description:** Returns a random number from a triangular distribution with lower limit a, mode b, and upper limit c. Random Triangular(b,c) is equivalent to Random Triangular(0,b,c). Random Triangular(b) is equivalent to Random Triangular(0,b,1).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
 Random Reset( 13579 );
@@ -1022,11 +1053,12 @@ Show( x, y );
 
 **Description:** Returns a random number from a uniform distribution between min and max, exclusive.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Uniform( 1, 10 );
@@ -1041,7 +1073,6 @@ Show( x, v );
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Uniform( 1, 10 );
 
 ```
@@ -1052,9 +1083,10 @@ Random Uniform( 1, 10 );
 
 **Description:** Returns a random number from a Weibull distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random Weibull( 3, 20 );
@@ -1071,11 +1103,12 @@ Show( x, v );
 
 **Description:** Returns a random number from a zero-inflated Negative Binomial distribution with location parameter lambda, scale parameter sigma, and zero inflation parameter pi.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rnb = Random ZI Negative Binomial( 25, .5, .05 );
@@ -1122,7 +1155,6 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -1143,11 +1175,12 @@ dt << Distribution(
 
 **Description:** Returns a random number from a zero-inflated Poisson distribution with location parameter lambda and zero inflation parameter pi.
 
+**JMP Version Added:** 19
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 exnbpp = 0.3;
 exnbpn = 20;
 rp = Random ZI Poisson( 20, .05 );
@@ -1186,7 +1219,6 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
-Names Default To Here( 1 );
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -1207,9 +1239,10 @@ dt << Distribution(
 
 **Description:** Returns a random number from an t distribution.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //produce a single random number
 x = Random t( 2 );
@@ -1226,9 +1259,10 @@ Show( x, v );
 
 **Description:** Generates a frequency count for sampling with replacement, useful for bootstrap samples. With no arguments, the function generates a 100% resample. The rate argument specifies the rate of resampling. If the column argument is specified, the sample size chosen is rate multiplied by the sum of the specified column. A negative rate signals that fractional frequencies are allowed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
 New Window( "w", theBox = V List Box() );

@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Auto Load( 1 ),
@@ -31,7 +30,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Display Name();
 
@@ -41,7 +39,6 @@ addins << Display Name();
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Display Name(),
@@ -60,7 +57,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Home Folder();
 
@@ -70,7 +66,6 @@ addins << Home Folder();
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Home Folder(),
@@ -89,7 +84,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << ID();
 
@@ -99,7 +93,6 @@ addins << ID();
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << ID(),
@@ -118,7 +111,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Is Loaded();
 
@@ -128,7 +120,6 @@ addins << Is Loaded();
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Is Loaded(),
@@ -145,7 +136,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Load(),
@@ -162,7 +152,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Unload(),
@@ -181,7 +170,6 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addins << Version();
 
@@ -191,7 +179,6 @@ addins << Version();
 
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 If( !Is Missing( addin ),
 	addin << Version(),

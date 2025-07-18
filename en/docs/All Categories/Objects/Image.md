@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 
@@ -26,7 +25,6 @@ obj = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -54,9 +52,10 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 **Description:** Adds a new frame to an animated image. The frame will not contain any content until Set Pixels is used. An optional duration argument can be specified, which indicates the frame duration in milliseconds. If the duration argument is omitted, the duration of the current frame will be used as the duration of the added frame. If there are no other frames, a default duration of 100 milliseconds is used.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dim = 100;
 mat0 = J( dim, dim, 0 );
 mat1 = J( dim, dim, 1 );
@@ -85,7 +84,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -104,7 +102,6 @@ obj2 = New Window( "Cropped", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "tile(40,40)", New Image( img ) );
 Wait( 1 );
@@ -123,7 +120,6 @@ New Window( "Contrast filter", New Image( img2 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 /* http://en.wikipedia.org/wiki/Canny_edge_detector */ 
 radius = 1;
 sigma = 3;
@@ -227,7 +223,6 @@ refilter();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -244,7 +239,6 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -261,7 +255,6 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -278,7 +271,6 @@ obj2 = New Window( "Vertical Flip", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get Current Frame();
 
@@ -290,9 +282,10 @@ num = img << Get Current Frame();
 
 **Description:** Gets EXIF data that is stored internally with the image. An array of key/value pairs will be returned.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
 exifData = img << getEXIF();
 key = exifData << first;
@@ -312,7 +305,6 @@ While( !Is Empty( key ),
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 durs = img << Get Frame Durations();
 
@@ -326,7 +318,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 
@@ -340,7 +331,6 @@ num = img << Get N Frames();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 loops = img << Get N Loops();
 
@@ -360,7 +350,6 @@ loops = img << Get N Loops();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -372,7 +361,6 @@ Show( m );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
@@ -383,7 +371,6 @@ win = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b, a} = img << Get Pixels( "rgba" );
@@ -398,7 +385,6 @@ win = New Window( "tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -414,7 +400,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Remove Frame( 0 );
 
@@ -428,7 +413,6 @@ img << Remove Frame( 0 );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 Wait( 1 );
@@ -445,7 +429,6 @@ obj2 = New Window( "Rotated", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
@@ -462,7 +445,6 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 0.5 );
@@ -474,7 +456,6 @@ obj2 = New Window( "Tile scaled by 0.5", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << scale( 2, 0.5 );
@@ -496,7 +477,6 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 num = img << Get N Frames();
 win = New Window( "Progress", img );
@@ -517,7 +497,6 @@ win << Close Window();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set Frame Duration( 1000 );
 durs = img << Get Frame Durations();
@@ -532,7 +511,6 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = New Image( "$SAMPLE_IMAGES/progress.gif" );
 img << Set N Loops( 3 );
 loops = img << Get N Loops();
@@ -549,7 +527,6 @@ loops = img << Get N Loops();
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 m = img << Get Pixels;
@@ -564,7 +541,6 @@ win2 = New Window( "Transformed", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 {r, g, b} = img << Get Pixels( "rgb" );
@@ -583,7 +559,6 @@ win2 = New Window( "Gray Scale", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 img << Set Size( {600, 600} );
@@ -599,7 +574,6 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 obj = New Window( "tile(40,40)", img );
 s = {w, h} = img << Get Size;
@@ -615,7 +589,6 @@ Show( s );
 
 ```jsl
 
-Names Default To Here( 1 );
 img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 win = New Window( "tile(40,40)", img );
 Wait( 1 );

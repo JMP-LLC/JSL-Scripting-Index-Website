@@ -10,11 +10,10 @@
 
 **Description:** Enables you to interactively create control charts, which are used to determine whether a process is stable and predictable. The Control Chart Builder platform can be used to create the following types of control charts: IMR, XBar, Short Run, Run, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR on Means, Three Way, and Rare Event charts.
 
-**C Chart**
+#### C Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a C chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Count, and changing the Sigma to Poisson.
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -25,22 +24,20 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR Chart**
+#### IMR Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ```
 
-**IMR on Group Standard Deviation Chart (Set Subgroup Size)**
+#### IMR on Group Standard Deviation Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Group Standard Deviation chart by adding a Y variable and defining a subgroup size, and changing the Statistic on the location chart to Standard Deviation, on the dispersion chart to Moving Range on Std Dev and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -60,11 +57,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Group Standard Deviation Chart (Subgroup Variable)**
+#### IMR on Group Standard Deviation Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Group Standard Deviation chart by adding a Y variable and a subgroup variable, and changing the Statistic on the location chart to Standard Deviation, on the dispersion chart to Moving Range on Std Dev and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -83,11 +79,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Means Chart (Set Subgroup Size)**
+#### IMR on Means Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Means chart by adding a Y variable and defining a subgroup size, and changing the Statistic on the dispersion chart to Moving Range on Means and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -103,11 +98,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**IMR on Means Chart (Subgroup Variable)**
+#### IMR on Means Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR on Means chart by adding a Y variable and a subgroup variable, and changing the Statistic on the dispersion chart to Moving Range on Means and the Sigma on both charts to Moving Range.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -122,11 +116,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Levey-Jennings Chart**
+#### Levey-Jennings Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Levey-Jennings chart by adding a Y variable, removing the dispersion chart, and changing the Sigma to Levey Jennings. Make sure that the Statistic is set to Individual.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -137,11 +130,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range Chart**
+#### Median Moving Range Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range chart by adding a Y variable and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -152,11 +144,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Means Chart (Set Subgroup Size)**
+#### Median Moving Range on Group Means Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Means chart by adding a Y variable and defining a subgroup size, changing the Statistic on the dispersion chart to Moving Range on Means, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -172,11 +163,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Means Chart (Subgroup Variable)**
+#### Median Moving Range on Group Means Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Means chart by adding a Y variable and a subgroup variable, changing the Statistic on the dispersion chart to Moving Range on Means, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -191,11 +181,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Standard Deviations Chart (Set Subgroup Size)**
+#### Median Moving Range on Group Standard Deviations Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Standard Deviations chart by adding a Y variable and defining a subgroup size, changing the Statistic on the location chart to Standard deviation, on the dispersion chart to Moving Range on Std Dev, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -215,11 +204,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Median Moving Range on Group Standard Deviations Chart (Subgroup Variable)**
+#### Median Moving Range on Group Standard Deviations Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Median Moving Range on Group Standard Deviations chart by adding a Y variable and a subgroup variable, changing the Statistic on the location chart to Standard deviation, on the dispersion chart to Moving Range on Std Dev, and changing the Sigma to Median Moving Range on both the location and dispersion charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -238,11 +226,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**NP Chart**
+#### NP Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an NP chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Count, and changing the Sigma to Binomial (P, NP).
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -253,11 +240,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**P Chart**
+#### P Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a P chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Binomial (P, NP).
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -268,11 +254,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**P' Chart**
+#### P' Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a P' chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Laney P'.
 dt = Open( "$SAMPLE_DATA/Quality Control/Washers.jmp" );
 obj = dt << Control Chart Builder(
@@ -283,11 +268,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Rare Event G Chart**
+#### Rare Event G Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a G chart by changing the class to Rare Event and adding a nonnegative discrete Y variable. Make sure that the Sigma is set to Negative Binomial.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fan Burnout.jmp" );
 obj = dt << Control Chart Builder(
@@ -298,11 +282,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Rare Event T Chart**
+#### Rare Event T Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a T chart by changing the class to Rare Event, changing the Sigma to Weibull, and adding a nonnegative discrete Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fan Burnout.jmp" );
 obj = dt << Control Chart Builder(
@@ -313,11 +296,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Run Chart**
+#### Run Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Run chart by adding a Y variable, turning off the limits, and removing the dispersion chart.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -330,11 +312,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Difference Chart**
+#### Short Run Difference Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Difference chart by changing the class to Short Run and adding a Product or Part variable. Make sure that the Statistic values for the location chart and dispersion chart are set to Centered and Moving Range Centered, respectively. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -344,11 +325,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Difference Chart for XBar**
+#### Short Run Difference Chart for XBar
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Difference chart for summarized data by changing the class to Short Run and adding a Product or Part variable,  Short Run Standardized charts are sometimes referred to as Z-MR charts. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fancy Chocolate Factory.jmp" );
 obj = dt << Control Chart Builder(
@@ -359,11 +339,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Standardized Chart**
+#### Short Run Standardized Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Standardized chart by changing the class to Short Run and adding a Subgroup and a Product or Part variable, changing the Statistic for the location chart type to Standardized, and changing the Statistic for the dispersion chart to Moving Range Standardized. Short Run Standardized charts are sometimes referred to as Z-MR charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -375,11 +354,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Short Run Standardized Chart for XBar**
+#### Short Run Standardized Chart for XBar
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Short Run Standardized chart for summarized data by changing the class to Short Run and adding a Subgroup and a Product or Part variable,  Short Run Standardized charts are sometimes referred to as Z-MR charts. Centered Short Run control charts are sometimes referred to as Deviation from Nominal (DNOM) charts.
 dt = Open( "$SAMPLE_DATA/Quality Control/Fancy Chocolate Factory.jmp" );
 obj = dt << Control Chart Builder(
@@ -392,11 +370,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Three Way Chart (Set Subgroup Size)**
+#### Three Way Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Three Way chart by adding a dispersion chart after adding a Y variable and setting a subgroup size.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -421,11 +398,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**Three Way Chart (Subgroup Variable)**
+#### Three Way Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a Three Way chart by adding a dispersion chart after adding a Y variable and adding a subgroup variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -445,11 +421,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**U Chart**
+#### U Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a U chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Poisson.
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
@@ -460,11 +435,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**U' Chart**
+#### U' Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create a U' chart by adding a Y variable, changing the Class to Shewhart Attribute, changing the Statistic to Proportion, and changing the Sigma to Laney U'.
 dt = Open( "$SAMPLE_DATA/Quality Control/Washers.jmp" );
 obj = dt << Control Chart Builder(
@@ -475,22 +449,20 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**XBar/R Chart**
+#### XBar/R Chart
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/R chart by adding a subgroup or setting a subgroup size after adding a Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ), Set Subgroup Size( 4 ) );
 
 ```
 
-**XBar/S Chart (Set Subgroup Size)**
+#### XBar/S Chart (Set Subgroup Size)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/S chart by adding a Y variable and defining a subgroup size, changing the Statistic for the dispersion chart to Standard Deviation, and changing the Sigma for the location chart to Standard Deviation.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -506,11 +478,10 @@ obj = dt << Control Chart Builder(
 
 ```
 
-**XBar/S Chart (Subgroup Variable)**
+#### XBar/S Chart (Subgroup Variable)
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an XBar/S chart by adding a Y variable and a subgroup variable, changing the Statistic for the dispersion chart to Standard Deviation, and changing the Sigma for the location chart to Standard Deviation.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
@@ -533,9 +504,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Adds an additional set of limits for the specified chart. The added limits appear as dashed lines.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ), );
 obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} ) );
@@ -548,9 +520,10 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 **Description:** Sets the specification limits for each Y variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ), );
 obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 22.2 )} ) );
@@ -563,9 +536,10 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 **Description:** Sends a message whenever a point on a control chart fails a given test. The message can be sent to the log, can be spoken, or can be emailed.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -592,9 +566,10 @@ obj << Alarm Script(
 
 **Description:** Sets the warning, limit, and point attributes for the chart that is specified by the Position argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -618,9 +593,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Specifies the class or family of point and sigma statistic combinations.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Orange Juice.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Shewhart Attribute" ),
@@ -636,9 +612,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Colors the points plotted by the level of the product variable. On by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Short Run" ),
@@ -655,9 +632,10 @@ obj << Color By Product( 1 );
 
 **Description:** Determines whether points and lines are connected when some samples have missing values or excluded rows.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = Control Chart Builder( Variables( Y( :Gap ) ) );
 Wait( 1 );
@@ -671,9 +649,10 @@ obj << Connect Thru Missing( 1 );
 
 **Description:** Enables you to select, customize labels, and set the sigma-based distance parameters for Western Electric tests.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -691,7 +670,6 @@ obj = dt << Control Chart Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -705,9 +683,10 @@ obj << Fit to Window( "On" );
 
 **Description:** Imports control limits from a selected data table and replaces calculated limits on the chart.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -725,9 +704,10 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 **Description:** Imports values for the Short Run Product Target and Sigma from a specified data table.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Short Run" ),
@@ -744,9 +724,10 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 **Description:** Imports specification limits from a file.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :OZONE, :CO ) ), Set Subgroup Size( 5 ) );
 obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
@@ -759,9 +740,10 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 **Description:** Shows or hides the internal graph panel borders.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -778,9 +760,10 @@ obj << Graph Borders( 1 );
 
 **Description:** Specifies the amount of space between the graph panels. "2" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -795,9 +778,10 @@ obj << Graph Spacing( 5 );
 
 **Description:** Specifies the color of the space between the graph panels.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -812,9 +796,10 @@ obj << Graph Spacing Color( "Red" );
 
 **Description:** Specifies the transparency level of the space between the graph panels. Must be between 0 and 1.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -829,9 +814,10 @@ obj << Graph Spacing Transparency( 0.3 );
 
 **Description:** Includes an extra level for nominal and ordinal variables when the data contain missing values. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Diameter ), Subgroup( :Day ) ) );
 :Day[{8, 9, 10, 11, 12}] = .;
@@ -846,9 +832,10 @@ obj << Include Missing Categories( 0 );
 
 **Description:** Sets the K value to be multiplied by sigma to form the control limits about the average. "3" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	K Sigma( 2.5 ),
@@ -865,9 +852,10 @@ obj << K Sigma( 3 );
 
 **Description:** Provides options for changing the limit characteristics of the chart. Depending on the type of chart, you can assign one of the following values as the sigma argument: Range, Standard Deviation, Moving Range, Median Moving Range, Levey-Jennings, Poisson, Binomial, Negative Binomial, Weibull, Laney P Prime, or Laney U Prime.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -887,9 +875,10 @@ obj << Chart(
 
 **Description:** Specifies the precision that is displayed in the limits relative to the data.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -907,7 +896,6 @@ obj << Limits Label Precision( 5 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ) );
 Wait( 1 );
@@ -921,9 +909,10 @@ obj << OC Curve;
 
 **Description:** Provides options for changing the point characteristics of the chart. Depending on the type of chart, you can assign one of the following values for the statistic argument: Average, Range, Standard Deviation, Moving Range on Means, Moving Range on Standard Deviation, Individual, Moving Range, Count, Proportion, Centered, Standardized, Range Centered, or Range Standardized.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -941,9 +930,10 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 **Description:** Sets the values for the Short Run Product Target and Sigma.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Short Run" ),
@@ -962,9 +952,10 @@ obj << Product Statistics(
 
 **Description:** Sets the value of the Range Span option that is used in the Moving Range charts. "2" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( K Sigma( 2.5 ), Variables( Y( :Weight ) ) );
 Wait( 1 );
@@ -978,9 +969,10 @@ obj << Range Span( 3 );
 
 **Description:** Reruns all the currently selected tests and any associated alarm script.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Alarm Script(
@@ -1018,9 +1010,10 @@ If in Column is specified and the limits are constant, LCL, Avg, and UCL values 
 
 If in New Table is specified, the standard deviation and mean for each chart are saved to a new data table. If the limits are constant, the LCL, Avg, and UCL for each chart are saved as well. If there are phases, a new set of values is saved for each phase.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1035,9 +1028,10 @@ obj << Save Control Limits( "in New Table" );
 
 **Description:** Saves columns to a new data table. The new data table contains the product statistics (target and sigma) for each level of the Part / Product variable.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Short Run" ),
@@ -1054,9 +1048,10 @@ obj << Save Product Statistics;
 
 **Description:** Saves the specification limits to a new data table. This option is available only if specification limits have been set, with a Spec Limits column property, via JSL, Get Spec Limits file import or the Set Spec Limits option.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ), );
 obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 22.2 )} ) );
@@ -1070,9 +1065,10 @@ obj << Save Spec Limits;
 
 **Description:** Saves a new data table for each chart. The data table includes a row for each sample and columns for the sample label, sample size, and product level, if a Product/Part variable is specified. For each chart, there are also columns for the individual point plotted, the chart type, UCL, Avg, LCL, and any selected tests that are failing.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1086,9 +1082,10 @@ obj << Save Summaries;
 
 **Description:** Sets the control limits for the specified chart.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ) );
 obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 )} ) );
@@ -1101,9 +1098,10 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 **Description:** Changes the horizontal axis to show only the last N subgroups on the graph. The number of specified subgroups does not take into account excluded or hidden observations. This option is not available when there is a Phase variable with more than one level.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1117,9 +1115,10 @@ obj << Set Last n Subgroups( 5 );
 
 **Description:** Sets the sigma value used in the Control Chart.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1134,9 +1133,10 @@ obj << Set Sigma( 1.8 );
 
 **Description:** Specifies the number of rows per subgroup.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 obj << Set Subgroup Size( 4 );
@@ -1149,9 +1149,10 @@ obj << Set Subgroup Size( 4 );
 
 **Description:** Shows or hides the table of alarm rates and out of control samples.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1165,9 +1166,10 @@ obj << Show Alarm Report( 1 );
 
 **Description:** Shows or hides the Process Capability Analysis report. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Y( :Weight ) ),
@@ -1188,9 +1190,10 @@ obj << Show Capability( 0 );
 
 **Description:** Shows or hides the center line. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Subgroup( :Sample ), Y( :Weight ) ), );
 obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
@@ -1203,9 +1206,10 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 **Description:** Shows or hides the control panel. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1220,9 +1224,10 @@ obj << Show Control Panel( 0 );
 
 **Description:** Shows or hides the regions of the chart where samples have been excluded. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1239,9 +1244,10 @@ obj << Show Excluded Region( 0 );
 
 **Description:** Shows or hides the limit labels on the graph.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1255,9 +1261,10 @@ obj << Show Limit Labels( 1 );
 
 **Description:** Shows or hides the Limit Summaries report. This report contains the control limits (LCL and UCL), the center line (Avg), the Points and Limits plotted, and the Sample Size for the chart. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1272,9 +1279,10 @@ obj << Show Limit Summaries( 0 );
 
 **Description:** Shows or hides the lower control limit. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -1289,9 +1297,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Shows or hides dashed vertical lines on the graph indicating the product changed. On by default.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Short Run" ),
@@ -1308,9 +1317,10 @@ obj << Show Product Separators( 0 );
 
 **Description:** Shows or hides the table of Overall Sigma, Within Sigma, Stability Index, and Mean. For Three Way charts, the Between Sigma and Between-and-Within Sigma are also shown.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1324,9 +1334,10 @@ obj << Show Sigma Report( 1 );
 
 **Description:** Shows both the location and the dispersion chart. When the value of this option is 0, the dispersion chart is not shown. On by default.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 obj = dt << Control Chart Builder(
 	Show Two Shewhart Charts( 0 ),
@@ -1341,9 +1352,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Shows or hides the upper control limit. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Sample ), Y( :Weight ) ),
@@ -1358,9 +1370,10 @@ obj = dt << Control Chart Builder(
 
 **Description:** Sets the size of the graph.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1374,9 +1387,10 @@ obj << Size( 808, 586 );
 
 **Description:** Sorts the process data by the subgroup variable, or combination of nested subgroup variables, before calculations are performed. This option is available only if a Subgroup variable is specified.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Airline Delays.jmp" );
 obj = dt << Control Chart Builder(
 	Variables( Subgroup( :Day of Week ), Y( :Arrival Delay ) )
@@ -1392,9 +1406,10 @@ obj << Sort by Subgroup( 1 );
 
 **Description:** Includes or excludes entirely excluded subgroups in the computation of tests. This option is available only when the Show Excluded Region option is selected. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder(
 	Test Excluded Subgroups( 0 ),
@@ -1414,9 +1429,10 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 **Description:** Categorizes ordinal numeric data and offers individual numeric-level modeling selections. The Use Event Chooser option is available only for Attribute Charts that include numeric, non-continuous Y variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Control Chart Builder( Class( "Shewhart Attribute" ), Variables( Y( :Age ) ) );
 obj << Use Event Chooser( 1 );
@@ -1429,9 +1445,10 @@ obj << Use Event Chooser( 1 );
 
 **Description:** Preference for including points which are excluded in the moving range calculations.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Control Chart Builder( Use Excluded Points on MR( 1 ) ) );
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 dt << Select Rows( 4 :: 6 ) << Exclude( 1 );
@@ -1445,9 +1462,10 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 **Description:** Assigns the indicated variables to roles.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1460,9 +1478,10 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 **Description:** Assigns a lot size for an attribute control chart.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Washers.jmp" );
 obj = dt << Control Chart Builder(
 	Class( "Shewhart Attribute" ),
@@ -1482,7 +1501,6 @@ obj = dt << Control Chart Builder(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -1498,11 +1516,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1513,11 +1532,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1525,11 +1543,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -1545,7 +1562,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1562,7 +1578,6 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1580,7 +1595,6 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1596,7 +1610,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1610,9 +1623,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -1625,11 +1639,10 @@ biv << Get By Levels;
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1638,11 +1651,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -1675,7 +1687,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1692,7 +1703,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1709,7 +1719,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1726,7 +1735,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1743,7 +1751,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -1757,9 +1764,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -1775,7 +1783,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -1794,7 +1801,6 @@ dt << Bivariate(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1812,9 +1818,10 @@ dt << Distribution(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -1829,9 +1836,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -1846,7 +1854,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 filter = dist << Local Data Filter(
@@ -1867,7 +1874,6 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1883,7 +1889,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1899,7 +1904,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Contingency( Y( :size ), X( :marital status ) );
 ColumnSwitcherObject = obj << Column Switcher(
@@ -1919,7 +1923,6 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 dist = dt << Distribution(
 	Nominal Distribution( Column( :country ) ),
@@ -1939,9 +1942,10 @@ dist << remove local data filter;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1956,7 +1960,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1974,7 +1977,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -1990,7 +1992,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2008,7 +2009,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 dt << New Column( "_bycol",
@@ -2025,7 +2025,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 dt << New Column( "_bycol",
@@ -2046,7 +2045,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2062,7 +2060,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2078,7 +2075,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2094,7 +2090,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2110,7 +2105,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -2131,7 +2125,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -2157,7 +2150,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -2175,7 +2167,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -2192,7 +2183,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2208,7 +2198,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 // Create an IMR chart by adding a continuous Y variable.
 dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
 obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
@@ -2226,7 +2215,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;

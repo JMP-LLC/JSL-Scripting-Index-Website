@@ -8,9 +8,10 @@
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -21,9 +22,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the inverse trigonometric cosine of x, where x is in the range [-1, 1] and the result is in the range [0, Pi()].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -34,9 +36,10 @@ ArcCosine( 0.5 );
 
 **Description:** Returns the inverse trigonometric sine of x, where x is in the range [-1, 1] and the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -47,9 +50,10 @@ ArcSine( 0.5 );
 
 **Description:** Returns the inverse hyperbolic cosine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosH( 1 );
 
 ```
@@ -60,9 +64,10 @@ ArcCosH( 1 );
 
 **Description:** Returns the inverse trigonometric cosine of x, where x is in the range [-1, 1] and the result is in the range [0, Pi()].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcCosine( 0.5 );
 
 ```
@@ -73,9 +78,10 @@ ArcCosine( 0.5 );
 
 **Description:** Returns the inverse hyperbolic sine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSinH( 1 );
 
 ```
@@ -86,9 +92,10 @@ ArcSinH( 1 );
 
 **Description:** Returns the inverse trigonometric sine of x, where x is in the range [-1, 1] and the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcSine( 0.5 );
 
 ```
@@ -99,9 +106,10 @@ ArcSine( 0.5 );
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -112,9 +120,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the inverse hyperbolic tangent of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ArcTanH( 0.5 );
 
 ```
@@ -125,9 +134,10 @@ ArcTanH( 0.5 );
 
 **Description:** Returns the inverse trigonometric tangent of x1/x2, where the result is in the range [-Pi()/2, Pi()/2].
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 4 * ArcTangent( 1 );
 
 ```
@@ -138,9 +148,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the trigonometric cosine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -151,9 +162,10 @@ Cosine( Pi() / 2 );
 
 **Description:** Returns the hyperbolic cosine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 CosH( 1 );
 
 ```
@@ -164,9 +176,10 @@ CosH( 1 );
 
 **Description:** Returns the trigonometric cosine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Cosine( Pi() / 2 );
 
 ```
@@ -177,9 +190,10 @@ Cosine( Pi() / 2 );
 
 **Description:** Returns the trigonometric sine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -190,9 +204,10 @@ Sine( Pi() / 6 );
 
 **Description:** Returns the hyperbolic sine of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 SinH( 1 );
 
 ```
@@ -203,9 +218,10 @@ SinH( 1 );
 
 **Description:** Returns the trigonometric sine of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Sine( Pi() / 6 );
 
 ```
@@ -216,9 +232,10 @@ Sine( Pi() / 6 );
 
 **Description:** Returns the trigonometric tangent of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```
@@ -229,9 +246,10 @@ Tangent( Pi() / 4 );
 
 **Description:** Returns the hyperbolic tangent of x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TanH( 1 );
 
 ```
@@ -242,9 +260,10 @@ TanH( 1 );
 
 **Description:** Returns the trigonometric tangent of x, where x is an angle in radians.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Tangent( Pi() / 4 );
 
 ```

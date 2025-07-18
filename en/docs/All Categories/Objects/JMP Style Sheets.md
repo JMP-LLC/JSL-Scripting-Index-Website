@@ -10,6 +10,8 @@
 
 **Description:** JMP Style Sheets (JSS) helps us separate DisplayBox content from DisplayBox presentation. The system is modeled on CSS. CSS is to HTML as JSS is to DisplayBox trees in JMP.
 
+**JMP Version Added:** 19
+
 ## Item Messages
 
 ### <C++>
@@ -18,9 +20,10 @@
 
 **Description:** Use DisplayBoxPtr::jssClasses and DisplayBoxPtr::jssID and then target those using selectors. OutlineBoxes and some others automatically set classes from their Scriptable, etc.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // DisplayBoxPtr label = newLabel(sFiltersLabel).jssID(jss::Id(/*NOTRANS*/"sdiFiltersLabel"))
 // DisplayBoxPtr columnList = buildColPanel().jssClasses(jss::makeClasses(/*NOTRANS*/"launcherColPanel"));
@@ -33,9 +36,10 @@ Names Default To Here( 1 );
 
 **Description:** New files must be added to *.jss in the correct order. Use the in-JMP Property Panel for looking at classes, ids, and box structure. Syncing from Perforce gets you the latest styles after you build since the build step copies the files into the build directory. Or you can use the JSS Dir preference to point JMP directly at the files in your Perforce workspace. Then you can check-out files and edit them directly. As soon as you edit a file and save it, JMP will update automatically.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
@@ -47,11 +51,15 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 **Description:** The main unit of a JSS file. Composed of a Selector and multiple Declarations/Messages.
 
+**JMP Version Added:** 19
+
 ### <Selector>
 
 **Syntax:** obj &lt;&lt; &lt;Selector&gt;
 
 **Description:** The first part of a Rule; Used to select boxes. You can compose selectors together to make more complex selectors.
+
+**JMP Version Added:** 19
 
 ### <Specificity>
 
@@ -59,9 +67,10 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 **Description:** This helps us be more declarative with our Rules. See CSS documentation for details.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Specificity",
 	JSS Context Box(
@@ -91,9 +100,10 @@ New Window( "Specificity",
 
 **Description:** Combine two or more selectors, making a new selector that matches only when all of those match. Use the functional form And(...) or wrap in parentheses before sending messages.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "And",
@@ -129,9 +139,10 @@ New Window( "And",
 
 **Description:** Matches boxes with the given attribute. Where the box responds to the given message with that value. Currently only supports boolean attributes.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Attr",
 	JSS Context Box(
@@ -153,9 +164,10 @@ New Window( "Attr",
 
 **Description:** Combines two selectors into a direct parent/child path. A box matches when it and its direct parent both match their individual selectors.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Child",
 	JSS Context Box(
@@ -188,9 +200,10 @@ New Window( "Child",
 
 **Description:** Matches boxes that have the given JSS class (loose comparison).
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Class",
@@ -224,9 +237,10 @@ New Window( "Class",
 
 **Description:** Defines constants that can be used within rule declarations. Basic operations are allowed in the expressions and the names can reference each other. Names are global within a Theme and the last declaration of a name is used.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Constants",
 	JSS Context Box(
@@ -257,9 +271,10 @@ New Window( "Constants",
 
 **Description:** Combines two or more selectors into a path. A box matches when the path to the box matches. Note that the path can skip levels in the display tree.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Child",
 	JSS Context Box(
@@ -306,9 +321,10 @@ New Window( "Child",
 
 **Description:** Matches when a box is the first child of its parent.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "First Child",
 	JSS Context Box(
@@ -344,9 +360,10 @@ New Window( "First Child",
 
 **Description:** Matches boxes that have the given JSS id (loose comparison).
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Id",
 	JSS Context Box(
@@ -369,11 +386,12 @@ New Window( "Id",
 
 **Description:** The allowable condition expressions are limited and resolved when the JSS is parsed. No branch testing is done during the JSS application passes. In other words, these are for testing the state of the system and JMP, not individual boxes or box trees.
 
-**Host Is**
+**JMP Version Added:** 19
+
+#### Host Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "If Host Is",
 	JSS Context Box(
@@ -400,11 +418,10 @@ New Window( "If Host Is",
 
 ```
 
-**Language Is**
+#### Language Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "If Language Is",
 	JSS Context Box(
@@ -428,11 +445,10 @@ New Window( "If Language Is",
 
 ```
 
-**Theme Is**
+#### Theme Is
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "If Theme Is",
@@ -468,9 +484,10 @@ New Window( "If Theme Is",
 
 **Description:** Includes another JSS file from a path relative to this one. Errors within that file will be ignored. Errors accessing that file will not, unless you use the <<NoWarnIfMissing flag.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Save Text File(
 	"$TEMP/file.jss", JSL Quote(
@@ -500,9 +517,10 @@ New Window( "Include",
 
 **Description:** Matches when a box is the last child of its parent.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Last Child",
 	JSS Context Box(
@@ -538,9 +556,10 @@ New Window( "Last Child",
 
 **Description:** Box must match the second selector and be immediately preceded by a box matching the first selector (sharing the same parent).
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Next Sibling",
 	JSS Context Box(
@@ -573,9 +592,10 @@ New Window( "Next Sibling",
 
 **Description:** Combines two or more selectors, making a new selector that matches when any of the individual selectors match. Use the functional form Or(...) or wrap in parentheses before sending messages.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Selector List",
 	JSS Context Box(
@@ -599,9 +619,10 @@ New Window( "Selector List",
 
 **Description:** Matches boxes of the given type (loose comparison).
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Type",
 	JSS Context Box(
@@ -630,9 +651,10 @@ New Window( "Type",
 
 **Description:** Matches all boxes. Useful mainly for clearly expressing intent.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Universal",
 	JSS Context Box(

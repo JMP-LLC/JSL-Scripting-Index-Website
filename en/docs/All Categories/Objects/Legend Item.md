@@ -10,9 +10,10 @@
 
 **Description:** Returns the label of the legend item.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -31,9 +32,10 @@ Print( item << Get Label );
 
 **Description:** Returns the sequential position of an item in the legend, or a negative code if it is not displayed. Codes: -1 = Hidden by User, -2 = Hidden by If Display, -3 = Hidden By Dependency, -4 = Hidden By Initial Setting
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -52,9 +54,10 @@ Print( item << Get Position );
 
 **Description:** Returns the type of the legend item. Types are: "None", "Marker", "H Line", "V Line", "Step", "Bar", "V Box Plot", "H Interval", "V Interval", "H Bar Box Plot", "V Bar Box Plot", "OHLC Plot", "H Box Plot",Gradient", "Density Gradient", "Fill and Line", "Marker Size", "Line Size", Gradient Line", "Gradient Contour", "Mark Color", "Marker Size Categorical", "Cell Size".
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -73,9 +76,10 @@ Print( item << Get Type );
 
 **Description:** Sets the label of an item in the legend.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
@@ -94,9 +98,10 @@ item << Set Label( "Label Set Through Script" );
 
 **Description:** Sets the visibility of an item in the legend.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(

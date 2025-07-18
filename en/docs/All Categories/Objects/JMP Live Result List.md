@@ -10,9 +10,10 @@
 
 **Description:** Returns a scriptable list of JMP Live Folder, JMP Live Report, or JMP Live Post objects depending on the Find operation that was performed to produce the JMP Live Result List.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -57,9 +58,10 @@ If( jmpliveresult << Succeeded,
 
 **Description:** Gets the current page number of items within the list.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -165,9 +167,10 @@ While( count > 0,
 
 **Description:** Get the number of items in this result set.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -248,9 +251,10 @@ If( jmpliveresult << Succeeded,
 
 **Description:** Gets the specific page of JMP Live Folder, JMP Live Report, or JMP Live Post objects within the entire result list of a find operation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -356,9 +360,10 @@ While( count > 0,
 
 **Description:** Returns the next page of results in a find operation. This list can contain JMP Live Folders, JMP Live Reports, or JMP Live Posts depending on the find operation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );
@@ -464,9 +469,10 @@ While( count > 0,
 
 **Description:** Returns the previous page of results in a find operation. This list can contain JMP Live Folders, JMP Live Reports, or JMP Live Posts depending on the find operation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 bivariate = bc << Run Script( "Bivariate" );

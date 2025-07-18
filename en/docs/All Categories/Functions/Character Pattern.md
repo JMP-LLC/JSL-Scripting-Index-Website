@@ -8,9 +8,10 @@
 
 **Description:** Generates a pattern value that causes the entire match to fail immediately with no further backup and retry.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -31,9 +32,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches any one of the supplied patterns. Generally written as pat1 | pat2 | ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123456789",
 	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result
@@ -48,9 +50,10 @@ result;
 
 **Description:** Generates a pattern value that will match any one character in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -64,9 +67,10 @@ op;
 
 **Description:** Generates a pattern value that matches zero or more characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"123nonnumeric456",
 	Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" )
@@ -81,9 +85,10 @@ result;
 
 **Description:** Generates a pattern value that matches its argument zero or more times. Same as patRepeat(pattern,0,infinity,RELUCTANT); (*? in regex).
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c
@@ -98,9 +103,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that matches zero characters and assigns the current cursor position to variable. Generally written as patpos()>>variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -112,9 +118,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero or more characters not in the string, stopping before a (required) character in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 b = "- ";
 Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );
 word;
@@ -127,9 +134,10 @@ word;
 
 **Description:** Generates a pattern value that matches each of the supplied patterns in turn. Generally written as pat1 + pat2 + ....
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 num = Pat Break( "," );
 sep = ",";
 Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
@@ -143,9 +151,10 @@ result;
 
 **Description:** Generates a pattern value that matches the supplied pattern and stores the matched text in variable on success. Generally written as pattern >? variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -159,9 +168,10 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 **Description:** Generates a pattern value that always fails to match going forward, forcing the matcher to retry alternatives.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -182,9 +192,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches zero characters going forwards and fails when backing up, causing the match to fail. Also used to trim down the pattern backup stack.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );
 "rc=" || Char( rc ) || " result=" || result;
 
@@ -196,9 +207,10 @@ rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence
 
 **Description:** Generates a pattern value that matches the supplied pattern and immediately stores the matched text in variable. Generally written as pattern >> variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
@@ -212,9 +224,10 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 **Description:** Generates a pattern value that matches n characters.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -226,11 +239,12 @@ result;
 
 **Description:** A zero width pattern match after the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -246,7 +260,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -262,7 +275,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -283,11 +295,12 @@ While( /* keep repeating the match until it won't match */
 
 **Description:** A zero width pattern match before the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -302,7 +315,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -318,7 +330,6 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
-Names Default To Here( 1 );
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
 	Pat Match(
@@ -339,9 +350,10 @@ While( /* keep repeating the match until it won't match */
 
 **Description:** Executes the pattern match in the pattern variable against the string in the source variable; optional replacement text replaces the matched text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Pat Match(
 	string,
@@ -358,9 +370,10 @@ string;
 
 **Description:** Generates a pattern value that will match any one character not in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );
@@ -374,9 +387,10 @@ word;
 
 **Description:** Generates a pattern value that matches zero characters if the cursor is at position n. With no argument, the Pat Pos() function returns the cursor position for >> or >? assignment: patpos()>>variable.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"ab3defghi",
 	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )
@@ -392,9 +406,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero characters if the cursor is n characters from the end.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -406,9 +421,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero or more characters to move the cursor forward to n characters before the end.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -420,9 +436,10 @@ result;
 
 **Description:** Generates a pattern value that matches the regular expression in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
 string;
@@ -435,9 +452,10 @@ string;
 
 **Description:** Generates a pattern value that matches the remainder of the text.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -449,9 +467,10 @@ result;
 
 **Description:** Generates a pattern value that matches the supplied pattern between min and max times.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
 	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c
@@ -466,9 +485,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that matches one or more characters in the string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -481,9 +501,10 @@ result;
 
 **Description:** Generates a pattern value that matches the string. Generally the string can be used without using the Pat String() function.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = Pat String( "a" || "b" );
 Pat Match(
 	"acbdbababc",
@@ -499,9 +520,10 @@ Pat Match(
 
 **Description:** Generates a pattern value that always matches zero characters, even when backing up.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -522,9 +544,10 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 **Description:** Generates a pattern value that matches zero or more characters to move the cursor forward to position n.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -536,9 +559,10 @@ result;
 
 **Description:** Generates a pattern value that matches zero characters if the expression is nonzero. The expression is re-evaluated during each test, as if Expr() was used.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 nCats = 0;
 whichCat = 3;
 string = "catch a catnapping cat in a catsup factory";
@@ -560,9 +584,10 @@ string;
 
 **Description:** Executes a regular expression match and returns a list of the entire matched text and the matches for each back reference created by an open parenthesis. Optionally, the third argument specifies a replacement string for the entire match; the replacement string can use back references.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 source = "believe";
 // [aeiou] matches exactly one vowel

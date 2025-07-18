@@ -10,11 +10,12 @@
 
 **Description:** Creates a new folder on JMP Live. Returns a JMP Live Result, which can be used to obtain the JMP Live Folder object for the new folder. Title and Parent Folder are required parameters. Parent Folder can be shortened to Parent or Folder. Description is optional. If Exists tells JMP Live what to do if the specified folder already exists: "use" means to just return the existing folder, "fail" means to throw an error, and "default" means to create a new folder and make its name unique by adding "(2)", "(3)", etc.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -36,7 +37,6 @@ Show( subfolder );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -53,7 +53,6 @@ Write( "\!n\!nNew folder ID: ", folder << Get ID, "  Path: ", folder << Get Path
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -88,9 +87,10 @@ Show( subFolder2 );
 
 **Description:** Deletes the specified data post. Returns whether action was successful (1) or not (0).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -136,9 +136,10 @@ If( result == 1,
 
 **Description:** Deletes the specified folder. Returns whether action was successful (1) or not (0).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -184,9 +185,10 @@ If( result == 1,
 
 **Description:** Deletes the specified report. Returns whether action was successful (1) or not (0).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 // Create a folder to publish a report and data to
 folder = (liveconnection << Create Folder(
@@ -232,11 +234,12 @@ If( result == 1,
 
 **Description:** Finds folders by search string, publisher, or both. Returns a JMP Live Result List that can be used to reference individual folders. Subsequent Next() calls on this list return more folders. PageSize specifies how many folders to return, and defaults to 10. All search parameters are optional, and if none are provided, all folders are returned.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 user = liveconnection << Get Username;
 
@@ -263,7 +266,6 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Create Folder(
@@ -299,11 +301,12 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 **Description:** Finds posts (all items including folders, reports and data) by search string, publisher, or both. Returns a JMP Live Result List that can be used to reference individual posts. Subsequent Next() calls on this list return more posts. PageSize specifies how many posts to return, and defaults to 10. All search parameters are optional, and if none are provided, all posts are returned.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -341,7 +344,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -379,11 +381,12 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 **Description:** Finds reports by search string, publisher, or both. Returns a JMP Live Result List that can be used to reference individual reports. Subsequent Next() calls on this list return more reports. PageSize specifies how many reports to return, and defaults to 10. All search parameters are optional, and if none are provided, all reports are returned.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -420,7 +423,6 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
@@ -459,11 +461,12 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 **Description:** Finds spaces by an optional search string and an optional Permissions parameter to further filter the spaces to only those that allow contributions. Currently the Contribute permission is the only permission value supported. Returns a JMP Live Result List that can be used to reference individual spaces within the list. A paging value can be specified to say how many space items you want returned in the result list. Additional Next() calls can be made on this result list to get more spaces back.
 
+**JMP Version Added:** 18
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Find Spaces();
@@ -483,7 +486,6 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 
 jmpliveresult = liveconnection << Find Spaces( Permissions( "Contribute" ) );
@@ -505,9 +507,10 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 **Description:** Retrieves the name of the JMP Live connection as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 connectionname = liveconnection << Get Connection Name();
 Write( "Connection Name: ", connectionname );
@@ -520,9 +523,10 @@ Write( "Connection Name: ", connectionname );
 
 **Description:** Retrieves a data post as a JMP Live Result object, which can be used to obtain the JMP Live Data object for that post.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -563,9 +567,10 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 **Description:** Retrieves a folder object as a JMP Live Result object, which can be used to obtain the JMP Live Folder object for the folder.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -596,7 +601,6 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 httprequest = liveconnection << Get HTTP Request();
 
@@ -613,9 +617,10 @@ httprequest << Get Status Message();
 
 **Description:** Retrieves a post as a JMP Live Result object, which can be used to obtain the JMP Live Post object for that post.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -651,9 +656,10 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 **Description:** Retrieves a report post as a JMP Live Result object, which can be used to obtain the JMP Live Report object for that post.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -695,9 +701,10 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 **Description:** Retrieves the URL to the JMP Live site if it is available.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 url = liveconnection << Get URL();
 Write( "URL: ", url );
@@ -710,9 +717,10 @@ Write( "URL: ", url );
 
 **Description:** Retrieves the Username from the JMP Live object if it is available.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 username = liveconnection << Get UserName();
 Write( "Username: ", username );
@@ -725,9 +733,10 @@ Write( "Username: ", username );
 
 **Description:** Indicates whether an authenticated session is established to the server. Returns whether action was successful (1) or not (0).
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 liveconnection = New JMP Live();
 isloggedin = liveconnection << Is Logged In();
 Write( "Logged In: ", isloggedin );
@@ -740,11 +749,12 @@ Write( "Logged In: ", isloggedin );
 
 **Description:** Publish reports or standalone data to JMP Live. Returns a JMP Live Result List object. You must specify the folder on JMP Live to which the content should be published. Mixing reports and standalone data in the same Publish command is not allowed. When publishing reports, if the report should use data that is already on JMP Live, the optional Use Existing Data parameter can be used to specify that. The Use Existing Data parameter is not valid when publishing standalone data.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -770,7 +780,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 gbline = bc << Run Script( "Graph Builder Line and Bar Charts" );
@@ -800,7 +809,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 gbline = bc << Run Script( "Graph Builder Line and Bar Charts" );
@@ -859,7 +867,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -884,7 +891,6 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -925,11 +931,12 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 **Description:** Replaces an existing JMP Live report with another report. The data options are required to specify how to manage the data being provided with the report. "Use Existing Data" instructs the server to use the existing data on JMP Live for the data specified. "Update Existing Data" instructs the server to replace the data on the server with the data provided in the command. "Publish New Data" instructs the server to publish a new data table and use it for the report being replaced. "Publish New Data" is the default data option for all data tables. Any combination of the data options can be specified. Returns a JMP Live Result List object.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/S4 Temps.jmp" );
 tod = dt << Run Script( "by Time of Day" );
 therm = dt << Run Script( "by Thermometer" );
@@ -984,7 +991,6 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/S4 Temps.jmp" );
 tod = dt << Run Script( "by Time of Day" );
 therm = dt << Run Script( "by Thermometer" );
@@ -1037,11 +1043,12 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 **Description:** Updates the data table or map for a data post with the content provided. The Data parameter identifies the data on JMP Live to be updated. The second parameter is the content to use for the update. It can be a data table object, a path to a data table, or a JMP Live Content object created from a data table or map.
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -1077,7 +1084,6 @@ Write( "\!n\!nUpdated data: ", updatedData );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -1112,7 +1118,6 @@ Write( "\!n\!nUpdated data: ", updatedData );
 
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 

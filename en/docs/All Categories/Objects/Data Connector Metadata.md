@@ -10,9 +10,10 @@
 
 **Description:** Gets the data connector description
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 description = metadata << Get Description();
 
@@ -24,9 +25,10 @@ description = metadata << Get Description();
 
 **Description:** Gets data connector driver, if there is one.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 type = metadata << Get Driver();
 
@@ -38,9 +40,10 @@ type = metadata << Get Driver();
 
 **Description:** Gets the data connector name
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 name = metadata << Get Name();
 
@@ -52,9 +55,10 @@ name = metadata << Get Name();
 
 **Description:** Gets data connector path
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 path = metadata << Get Path();
 
@@ -66,9 +70,10 @@ path = metadata << Get Path();
 
 **Description:** Gets the data connector type
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 type = metadata << Get Type();
 
@@ -80,9 +85,10 @@ type = metadata << Get Type();
 
 **Description:** Sets the data connector description
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 metadata << Set Description( "My frequently used SQL Server connection." );
 
@@ -94,9 +100,10 @@ metadata << Set Description( "My frequently used SQL Server connection." );
 
 **Description:** Sets the data connector name
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 metadata << Set Name( "A new Name" );
 

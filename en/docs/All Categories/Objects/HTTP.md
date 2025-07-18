@@ -48,9 +48,10 @@
 
 By default JMP and the web service negotiate the most secure authentication method.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Authentication Method( "KERBEROS" );
@@ -63,9 +64,10 @@ request << Authentication Method( "KERBEROS" );
 
 **Description:** This will set a Blob value in the request. The Blob value will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/octet-stream".
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 blob = "Testing, Testing 1, 2, 3";
 file = Save Text File( "$TEMP/test_blob", blob );
@@ -84,9 +86,10 @@ data = request << Send;
 
 **Description:** Comma-separated list of hosts which do not use a proxy, if one is specified. The only wildcard is a single * character, which matches all hosts, and effectively disables the proxy. Each name in this list is matched as either a domain which contains the hostname, or the hostname itself. For example, local.com would match local.com, local.com:80, and www.local.com, but not www.notlocal.com.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Proxy Server( "http://my_proxy.com" );
@@ -101,9 +104,10 @@ request << Bypass Proxy( "localhost" );
 
 **Description:** Use the specified certificate file for verification. The file might contain multiple CA certificates. The certificate(s) must be in PEM format.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Certificates( "c:\certs\my_certificate.crt" );
@@ -116,9 +120,10 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 **Description:** Set a cookie in the request.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/get" ),
@@ -135,9 +140,10 @@ data = request << Send;
 
 **Description:** Specify an alternate cookie file.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
@@ -152,9 +158,10 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 The .curlrc (_curlrc on Windows) file contains default options used for curl.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Curlrc( "true" );
@@ -169,9 +176,10 @@ request << Curlrc( "true" );
 
 The .curlrc (_curlrc on Windows) file contains default options used for curl.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Curlrc File( "$DESKTOP\..\my_curlrc.txt" );
@@ -185,9 +193,10 @@ request << Curlrc( "true" );
 
 **Description:** The default DNS cache timeout for the connection is 60 seconds. This value can be adjusted to accommodate DNS caching. Set to 0 to completely disable caching, or set to -1 to make the cached entries remain in memory.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	Url(
@@ -208,9 +217,10 @@ obj = New Window( "Mastering JMP", img );
 
 **Description:** Decode the string using Base 64 encoding
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Decode64 Char(
@@ -225,9 +235,10 @@ data = request << Decode64 Char(
 
 **Description:** Downloads the HTTP Response to a file. Useful for downloading files from a web service.The replace option overwrites any existing file.The rename option uses sequential file names when a duplicate name is found(file, file(1), file(2)...).The append option appends to the existing file. Using show progress shows a cancelable progress bar with the percentage of the file downloaded.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	URL(
@@ -248,9 +259,10 @@ If( !Is Empty( file ),
 
 **Description:** Encode the string using Base 64 encoding
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Encode64 Char( "Man is distinguished, not only by his reason, but ..." );
@@ -263,9 +275,10 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 **Description:** This will set a File value in the request. The File contents will be used as the body of the document. The request content-type header will automatically be set to the appropriate content based on the file extension or application/octet-stream if not found.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 my_file = Save Text File( "$TEMP/test_file.txt", "Testing, Testing 1, 2, 3" );
 request = New HTTP Request(
@@ -283,9 +296,10 @@ data = request << Send;
 
 **Description:** Sets the form data value in the request. The form will be used as the body of the document. Form data can have fields and files elements.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 file1 = Save Text File( "$TEMP/file1", "hello world 1" );
 file2 = Save Text File( "$TEMP/file2", "hello world 2" );
@@ -312,9 +326,10 @@ data = request << Send;
 
 **Description:** Shows details about the certificate, such as who issued it, when it expires, and other information to ensure the certificate is trustworthy.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request( URL( "https://google.com" ) );
 request << Get Certificate Info;
@@ -327,9 +342,10 @@ request << Get Certificate Info;
 
 **Description:** Gets the last URL used in the request. Useful to find the redirected URL.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "http://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );
@@ -344,9 +360,10 @@ Write( Char( request << Get Last URL ) );
 
 **Description:** After Send (or Download) is used with a request, this can be used to retrieve the MIME type of the returned data.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
 request = New HTTP Request( URL( url ), Method( "GET" ) );
@@ -361,9 +378,10 @@ Write( request << Get Mime Type() || "\!n" );
 
 **Description:** Gets the last HTTP method used in the request.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -383,9 +401,10 @@ Write( Char( request << Get Method ) || "\!n" );
 
 **Description:** The response headers are an associative array of key/value pairs returned after a request has been sent. HTTP header definitions can be found here: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. Date, Expires and Last-Modified keys will be converted to JMP dates. Age and Content-Length keys will be converted to numbers. All other values will be character.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
@@ -407,9 +426,10 @@ For( i = 1, i <= N Items( keys ), i++,
 
 **Description:** Returns the status of the request after a Send. The status is the HTTP status if there are no connection errors. Otherwise, the connection status. 200-299 is successful.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/1" ), Method( "GET" ) );
@@ -426,9 +446,10 @@ If( request << Get Status == 200,
 
 **Description:** Returns the status message of the request after a Send message. The status message is the HTTP status message if there are no connection errors. Otherwise, the connection status message. A status of 200-299 is successful.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );
@@ -443,9 +464,10 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 **Description:** Returns the status message of the request after a Send. This is an alias of GetStatusMessage. The status message is the HTTP status message if there are no connection errors. Otherwise, the connection status message. A status of 200-299 is successful.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );
@@ -460,9 +482,10 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 **Description:** Gets the warning header values (if any) from the request.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
@@ -486,9 +509,10 @@ If( !Is Empty( warning_headers ),
 
 **Description:** Returns the Current version of cURL being used in JMP
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Write( New HTTP Request() << GetVersion );
 
 ```
@@ -499,9 +523,10 @@ Write( New HTTP Request() << GetVersion );
 
 **Description:** True if the HTTP status is 400-499.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );
 json = request << Send;
@@ -519,9 +544,10 @@ Write( msg );
 
 **Description:** True if the HTTP status is 400-599.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );
 json = request << Send;
@@ -539,9 +565,10 @@ Write( msg );
 
 **Description:** True if the HTTP status is 100-199.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/20" ), Method( "GET" ) );
@@ -560,9 +587,10 @@ Write( msg );
 
 **Description:** True if the HTTP status is 300-399.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "http://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );
@@ -581,9 +609,10 @@ Write( msg );
 
 **Description:** True if the HTTP status is 500-599.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );
 json = request << Send;
@@ -601,9 +630,10 @@ Write( msg );
 
 **Description:** True if the HTTP status has warning headers
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
@@ -629,9 +659,10 @@ If( !request << Has Warning,
 
 https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. It is used to specify various meta information about the request to help the webservice response appropriately. These values should be thought of as "hints" to the webservice since it may choose not to honor the parameters. Consult the webservice API to verify support. For the request, "Content-Type: application/json" is used when specifying JSON values, "Content-Type: application/octet-stream" is used when specifying Blob values, "Content-Type: [extension/mime type mapping]" is used with File values, and, "Content-Type: application/x-www-form-urlencoded" or "Content-Type: multipart/form-data" depending on the content of the Form. The headers also "hint" to the webservice the type of data that should be returned. Common headers are "Accept: application/json", "Accept: application/xml", "Accept: text/csv", and "Accept: text/html". Header values can be specified as either a JSL list of character data or an Associative Array of character key/value pairs.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://api.nasa.gov/planetary/apod";
 fields = [=> ];
@@ -654,9 +685,10 @@ Write( json || "\!n" );
 
 **Description:** By default, certificate validation is on. If set to true, this will allow requests to complete without certificate validation. If set to prompt, this will allow a user to accept the certificate and complete the request as needed.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	Url(
@@ -677,9 +709,10 @@ obj = New Window( "Mastering JMP", img );
 
 **Description:** True if the HTTP status is 200-299.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://api.nasa.gov/planetary/apod";
 fields = [=> ];
@@ -699,9 +732,10 @@ If( request << Is Success,
 
 **Description:** True if the HTTP status is 200-299.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://api.nasa.gov/planetary/apod";
 fields = [=> ];
@@ -727,9 +761,10 @@ If( request << Is Successful,
 
 **Description:** Is the request valid
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Is Valid();
@@ -742,9 +777,10 @@ data = request << Is Valid();
 
 **Description:** Is the request automatically logging status messages
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Is Verbose();
@@ -757,9 +793,10 @@ data = request << Is Verbose();
 
 **Description:** This will set a JSON string value in the request. The JSON string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/json". You can use the As JSON Expr method to convert an Associative Array to a JSON string.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -776,9 +813,10 @@ data = request << Send;
 
 **Description:** Specify number of redirects the request will follow.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/get" ),
@@ -796,9 +834,10 @@ data = request << Send;
 
 **Description:** Sets the method for the request. Currently, Get, Post, Put, Patch, Delete, and Head are supported.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
@@ -851,9 +890,10 @@ password
 
 	supplies a password. If this token is present, the auto-login process will supply the specified string if the remote server requires a password as part of the login process.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Netrc( "true" );
@@ -898,9 +938,10 @@ password
 
 	supplies a password. If this token is present, the auto-login process will supply the specified string if the remote server requires a password as part of the login process.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << Netrc File( "$DESKTOP\..\my_netrc.txt" );
@@ -914,9 +955,10 @@ request << Netrc( "true" );
 
 **Description:** Sets the password on the request used for basic authentication. This value is used with the request user name, where both user name and password are concatenated with a &apos;:&apos; (name:password) and passed to the web service. In addition, an encoded (such as a Kerberos V5 encoded) username/password value can be used here.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -935,9 +977,10 @@ data = request << Send;
 
 **Description:** The proxy URL can be specified the same way as the proxy environment variables, including the protocol prefix (http://) and the embedded user + password.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 url = "http://my_proxy.com";
@@ -951,9 +994,10 @@ request << Proxy Server( url );
 
 **Description:** User and password that might be provided in the proxy string are URL decoded. This allows you to pass in special characters such as @ by using %40 or pass in a colon with %3a.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 url = "http://my_proxy.com";
@@ -968,9 +1012,10 @@ request << Proxy User( "clark%20kent:superman" );
 
 **Description:** Sets the Query String value in the request. This is an Associative Array key/value collection of character data. The key/value pairs are URL encoded (escaped) when they are sent to the web service.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/get" ),
@@ -987,9 +1032,10 @@ data = request << Send;
 
 **Description:** Resets request to new values.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );
 json1 = request << Send;
@@ -1004,9 +1050,10 @@ json2 = request << Send;
 
 **Description:** Runs the request. This is an alias of Send. The return value from Run will be either character data or binary BLOB. You can check the return with the Is String JSL function.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
@@ -1053,9 +1100,10 @@ Write( json || "\!n" );
 
          "MAX"    Automatically choose the highest supported version
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 request << SSL Version( "1+" );
@@ -1068,9 +1116,10 @@ request << SSL Version( "1+" );
 
 **Description:** By default, certificate validation is on. If set to false, this will allow requests to complete without certificate validation. If set to prompt, this will allow a user to accept the certificate and complete the request as needed.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	Url(
@@ -1091,9 +1140,10 @@ obj = New Window( "Mastering JMP", img );
 
 **Description:** Sends the request. The return value from Send will be either character data or binary BLOB. You can check the return with the Is String JSL function. Using show progress download will show a cancelable progress bar with the progress of data downloaded. Using show progress upload will show a cancelable progress bar with the progress of data uploaded. Using show progress both will show a cancelable progress bar with the progress of data uploaded and downloaded. Using show progress will show a cancelable progress bar with the progress of data uploaded or downloaded (or both). For posting forms, show progress will show upload and download progress. For posting files, show progress will show upload progress. For retrieving data, show progress will show download progress.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 baseURL = "https://swapi.co/api";
 request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
@@ -1108,9 +1158,10 @@ Write( json || "\!n" );
 
 **Description:** This will set text string value in the request. The text string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: text/plain"
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -1127,9 +1178,10 @@ data = request << Send;
 
 **Description:** The default timeout for the request action to complete is 60 seconds. This value can be adjusted to accommodate more time consuming web service actions.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	Url(
@@ -1150,9 +1202,10 @@ obj = New Window( "Mastering JMP", img );
 
 **Description:** When the request is created (or used with Reset), this can be used as a parameter. obj = HTTP Request(URL("http://google.com"));
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 fields = Associative Array();
 fields["text"] = "statistics";
@@ -1170,9 +1223,10 @@ s = New HTTP Request(
 
 **Description:** Configures the request to use cookies for the session. The default is true.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request();
 data = request << Use Cookies( "false" );
@@ -1185,9 +1239,10 @@ data = request << Use Cookies( "false" );
 
 **Description:** Sets the user and password field on the request used for authentication. The format of which is: [user name]:[password]. The user and password strings are not URL decoded, so there is no way to send in a user name containing a colon using this option.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -1206,9 +1261,10 @@ data = request << Send;
 
 **Description:** Sets the user name on the request used for basic authentication. This value is used in conjunction with request password, where both user name and password are concatenated with a &apos;:&apos; (name:password) and passed to the web service.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -1228,9 +1284,10 @@ data = request << Send;
 
 **Description:** Writes extensive error messages to the log. The default is true.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Write(
 	"\!Verbose is true by default.\!nIt automatically outputs status so you'll see the status message twice....\!n"
@@ -1254,9 +1311,10 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 **Description:** Certificate verification is on. If set to false, requests to complete without certificate verification will be allowed.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	Url(
@@ -1277,9 +1335,10 @@ obj = New Window( "Mastering JMP", img );
 
 **Description:** This will set an xml string value in the request. The xml string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/xml"
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 request = New HTTP Request(
 	url( "http://httpbin.org/post" ),
@@ -1310,9 +1369,10 @@ data = request << Send;
 
 **Description:** Add an HTTP Request to MultiHTTPRequest. An optional label can be used. This is useful when performing parallel downloads. All HTTP Requests are validated before they are used.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -1348,11 +1408,12 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 **Description:** Downloads the HTTP Responses to files in parallel. Useful for downloading multiple files at once from one or more web services. Using show progress will show a cancelable progress bar with the progress of the files downloaded. Using details will show the individual download progress.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 urls =
 {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso",
@@ -1377,7 +1438,6 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 urls =
 {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso",
@@ -1413,9 +1473,10 @@ promise << On Error( process_error );
 
 **Syntax:** obj &lt;&lt; Get Requests()
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 http_request_1 = New HTTP Request(
@@ -1444,9 +1505,10 @@ http_requests = requests << Get Requests();
 
 **Description:** Returns true if the multi request has an error. The multi request has an error if any its HTTP requests have an error.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 http_request_1 = New HTTP Request(
@@ -1474,9 +1536,10 @@ Show( requests << Has Error );
 
 **Description:** Returns true if the multi request is successful. The multi request is successful if all of its HTTP requests are successful.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );
@@ -1496,9 +1559,10 @@ Show( requests << Is Successful );
 
 **Description:** Returns true if the multi request is successful. The multi request is successful if all of its HTTP requests are successful.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );
@@ -1518,9 +1582,10 @@ Show( requests << Is Successful );
 
 **Description:** Is the multi request valid. The multi request is valid if all its HTTP requests are valid.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 http_request_1 = New HTTP Request(
@@ -1547,9 +1612,10 @@ Show( requests << Is Valid() );
 
 **Description:** Resets multi requests. This resets any HTTP request that has already been added.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -1580,11 +1646,12 @@ requests << Reset();
 
 **Description:** The return value from Send will be either character data or binary BLOB. You can check the return with the Is String JSL function. Using show progress download will show a cancelable progress bar with the progress of data downloaded. Using show progress upload will show a cancelable progress bar with the progress of data uploaded. Using show progress both will show a cancelable progress bar with the progress of data uploaded and downloaded. Using show progress will show a cancelable progress bar with the progress of data uploaded or downloaded (or both). For posting forms, show progress will show upload and download progress. For posting files, show progress will show upload progress. For retrieving data, show progress will show download progress.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //Taken from the Scripting Index Example for New HTTP Request
 requests = New Multi HTTP Request();
@@ -1674,7 +1741,6 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 //Taken from the Scripting Index Example for New HTTP Request
 requests = New Multi HTTP Request();
@@ -1749,9 +1815,10 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 **Description:** Authorization fields is an associative array of key and value pairs to be used in the query string for the OAuth2 authorization URL.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -1774,9 +1841,10 @@ oauth2 << Authorization Fields( auth_fields );
 
 **Description:** Sets the OAuth2 authorization URL.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
@@ -1790,9 +1858,10 @@ oauth2 << Authorization URL( auth_url );
 
 **Description:** The Default option is to use the embedded browser for OAuth2 authentication unless authenticating with Google. The Embedded option is to use the embedded browser for OAuth2 authentication unless authenticating with Google (currently the same as Default). The External option is to use the external browser for OAuth2 authentication and copy the resulting code/URL into the text area in order to complete authentication.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -1839,9 +1908,10 @@ data = request << Send;
 
 **Description:** Sets the OAuth2 client ID is a public identifier that was used during web service creation.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/
@@ -1858,9 +1928,10 @@ oauth2 << Client Id( client_id );
 
 **Description:** Sets the OAuth2 client secret that was created during web service creation.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/
@@ -1877,9 +1948,10 @@ oauth2 << Client Secret( client_secret );
 
 **Description:** The code verifier is a cryptographically random string that the client uses to identify itself when exchanging an authorization code for an access token. It has a minimum length of 43 characters and a maximum length of 128 characters.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~" );
@@ -1892,9 +1964,10 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 **Description:** Gets the current OAuth2 access token. This initiates communication to the authorization server if needed.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -1936,9 +2009,10 @@ access_token = oauth2 << Get Access Token();
 
 **Description:** Gets the OAuth2 response error.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 error = oauth2 << Get Authentication Response Error();
@@ -1949,9 +2023,13 @@ error = oauth2 << Get Authentication Response Error();
 
 **Syntax:** obj &lt;&lt; Get Auth Response Fields
 
+**JMP Version Added:** 15
+
 #### Get Authentication Response Error
 
 **Syntax:** obj &lt;&lt; Get Authentication Response Error
+
+**JMP Version Added:** 18
 
 #### Get Authorization Header
 
@@ -1963,11 +2041,12 @@ Authorization: Bearer [OAuth2 token]
 
 where [OAuth2 token] is the bearer token obtained from an authorization server.
 
+**JMP Version Added:** 15
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -2012,7 +2091,6 @@ data = request << Send;
 
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2068,9 +2146,10 @@ If( !Is Empty( data ),
 
 **Description:** Gets the current OAuth2 response values from the authorization server.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2112,9 +2191,10 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 **Description:** Gets the current OAuth2 code. This initiates communication to the authorization server if needed.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2156,9 +2236,10 @@ code = oauth2 << Get Code();
 
 **Description:** Gets the current OAuth2 grant type.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 grant_types = oauth2 << Get Grant Types();
@@ -2174,9 +2255,10 @@ Show( grant );
 
 **Description:** Gets the supported JMP OAuth2 grant types.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/grant-types/
@@ -2193,9 +2275,10 @@ Show( grant_types );
 
 **Description:** Gets the current OAuth2 ID token. This initiates communication to the authorization server if needed.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -2237,9 +2320,10 @@ id_token = oauth2 << Get ID Token();
 
 **Description:** Gets the current OAuth2 refresh token. This initiates communication to the authorization server if needed.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2281,9 +2365,10 @@ refresh_token = oauth2 << Get Refresh Token();
 
 **Description:** Gets the current OAuth2 scope.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2325,9 +2410,10 @@ code = oauth2 << Get Scope();
 
 **Description:** Gets the OAuth2 window title.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Set Window Title( "Authorization Window" );
@@ -2341,9 +2427,10 @@ title = oauth2 << Get Window Title;
 
 **Description:** The requested grant type has to be one of the grant types supported by JMP and the OAuth2 authorization provider.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Grant Type( "Authorization Code" );
@@ -2356,15 +2443,18 @@ Show( grant );
 
 **Syntax:** obj &lt;&lt; Has Auth Response Error
 
+**JMP Version Added:** 18
+
 #### Has Authentication Response  Error
 
 **Syntax:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **Description:** Checks for an OAuth2 authentication response error.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 If( oauth2 << Has Authentication Response Error(),
@@ -2379,9 +2469,10 @@ If( oauth2 << Has Authentication Response Error(),
 
 **Description:** Returns whether the current OAuth2 access token has expired.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
@@ -2423,9 +2514,10 @@ expired = oauth2 << Is Expired();
 
 **Description:** Sets the login_hint value. login_hint is an OPTIONAL parameter in the Authentication Request as a "Hint" to the Authorization Server about the login identifier the End-User might use to log in (if necessary).
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Login Hint( "jmp_user@jmp.com" );
@@ -2437,6 +2529,8 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 **Syntax:** oauth2 &lt;&lt; Password(...)
 
 **Description:** Sets the OAuth2 password for the password grant type.
+
+**JMP Version Added:** 14
 
 ```jsl
 
@@ -2450,9 +2544,10 @@ Names Default To Here( 1 );
 
 **Description:** Sets the OAuth2 redirect URL that was used during web service creation.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 redirect_url = "http://localhost/myapp/";
 oauth2 = New OAuth2();
@@ -2466,9 +2561,10 @@ oauth2 << Redirect URL( redirect_url );
 
 **Description:** Sets the OAuth2 scope, a way to limit an application&apos;s access to an account.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/scope/
@@ -2489,9 +2585,10 @@ oauth2 << Authorization Fields( auth_fields );
 
 **Description:** Sets the OAuth2 window title.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Set Window Title( "Authorization Window" );
@@ -2504,9 +2601,10 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 **Description:** An associative array of key and value pairs to be used in the query string for the OAuth2 token URL.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -2527,9 +2625,10 @@ oauth2 << Token Fields( token_fields );
 
 **Description:** Sets the OAuth2 token URL.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
@@ -2543,9 +2642,10 @@ oauth2 << Token URL( token_url );
 
 **Description:** Gets the OAuth2 window title.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 
 oauth2 = New OAuth2();
 oauth2 << Use Default Window Title( 1 );
@@ -2558,6 +2658,8 @@ title = oauth2 << Get Window Title;
 **Syntax:** oauth2 &lt;&lt; Username(...)
 
 **Description:** Sets the OAuth2 user name for the password grant type.
+
+**JMP Version Added:** 14
 
 ```jsl
 

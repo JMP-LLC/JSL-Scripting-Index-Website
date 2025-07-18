@@ -8,9 +8,10 @@
 
 **Description:** Adds a value to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex += 2;
 ex;
@@ -23,9 +24,10 @@ ex;
 
 **Description:** Assigns a value to a variable or a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -37,9 +39,10 @@ ex1 + ex1;
 
 **Description:** Divides a value into a variable or into a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex /= 2;
 ex;
@@ -52,9 +55,10 @@ ex;
 
 **Description:** Multiplies a value to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 3;
 ex *= 2;
 ex;
@@ -67,9 +71,10 @@ ex;
 
 **Description:** Subtracts 1 from a variable or from a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex--;
 ex;
@@ -82,9 +87,10 @@ ex;
 
 **Description:** Adds 1 to a variable or to a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex++;
 ex;
@@ -97,9 +103,10 @@ ex;
 
 **Description:** Subtracts a value from a variable or from a list of variables.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex = 1;
 ex -= 2;
 ex;

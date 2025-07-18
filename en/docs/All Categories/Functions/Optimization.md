@@ -8,11 +8,12 @@
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression with optional linear constraints. The variables, x1, x2, and so on, can be scalars or vectors. Lower and upper bounds must be specified for each variable in parentheses following the variable&apos;s name or with the optional parameter <<SetVariableLimits(). Optional arguments for the Constrained Maximize function enable you to specify the following: linear constraints, maximum number of iterations, desired tolerance, output details, starting values, and limits for the optimization variables. (See example 2.) Linear constraints are specified using the mat_A coefficient matrix and the vec_b right hand side vector.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
@@ -33,7 +34,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -61,11 +61,12 @@ Show( x, objVal, iters, gradient, hessian );
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression with optional linear constraints. The variables, x1, x2, and so on, can be scalars or vectors. Lower and upper bounds must be specified for each variable in parentheses following the variable&apos;s name or with the optional parameter <<SetVariableLimits(). Optional arguments for the Constrained Minimize function enable you to specify the following: linear constraints, maximum number of iterations, desired tolerance, output details, starting values, and limits for the optimization variables. (See example 2.) Linear constraints are specified using the mat_A coefficient matrix and the vec_b right hand side vector.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -86,7 +87,6 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example with optional parameters included*/ 
 x = [., .];
 f = Expr(
@@ -114,9 +114,10 @@ Show( x, objVal, iters, gradient, hessian );
 
 **Description:** Returns a desirability curve, where yVector is a vector of 3 input values, dVector is the corresponding 3 desirability values, and y is the argument of which to calculate the desirability.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -137,9 +138,10 @@ New Window( "Desirability",
 
 **Description:** Minimizes the objective function subject to the given constraints and returns a list of two items. The first list item, x, contains the decision variables (and slack variable values if slackVars=1). The second list item, z, contains optimal objective function value (if one exists). The first five arguments are matrices. The A argument is the matrix of constraint coefficients. The b argument is the column of right hand side values of the constraints. The c argument is the vector of cost coefficients of the objective function. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, nle, and nge arguments are the number of equality constraints, less than or equal constraints, and greater than or equal constraints, respectively. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
 c = [9 6 -4];
@@ -156,11 +158,12 @@ Show( x, z );
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a concave function, Maximize might find a local maximum rather than the global maximum. If this is a concern, try multiple starting values. Also, Maximize works best for functions with a continuous second derivative. Additional arguments for the Maximize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example*/ 
 x = 0;
 y = 0;
@@ -173,7 +176,6 @@ Eval List( {x, y, maxf} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
 n = 3;
@@ -195,7 +197,6 @@ sigSq = 1;/*initial values*/
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with all optional arguments*/ 
 x = 0;
 y = 0;
@@ -215,11 +216,12 @@ y = 0;
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a convex function, Minimize might find a local minimum rather than the global minimum. If this is a concern, try multiple starting values. Also, Minimize works best for functions with a continuous second derivative. Additional arguments for the Minimize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple Example*/
 x = 0;
 y = 0;
@@ -232,7 +234,6 @@ Eval List( {x, y, minFun} );
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -254,7 +255,6 @@ b2 = 5;
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -272,7 +272,6 @@ y = 0;
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -312,7 +311,6 @@ Minimize(
 
 ```jsl
 
-Names Default To Here( 1 );
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];

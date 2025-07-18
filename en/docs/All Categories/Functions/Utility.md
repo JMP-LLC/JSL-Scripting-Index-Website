@@ -8,9 +8,10 @@
 
 **Description:** Adds all arguments, which can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Pi() + 10;
 
 ```
@@ -21,9 +22,10 @@ Pi() + 10;
 
 **Description:** Makes an alert sound.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Beep();
 
 ```
@@ -34,9 +36,10 @@ Beep();
 
 **Description:** Makes a 16-byte result BLOB from a source BLOB (Binary Large OBject). The 16 byte BLOB is the MD5 checksum (or the hash) of the source BLOB.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Hex(/* make it printable */ Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
 			BLOB/* the result is a BLOB, not a string */
@@ -53,9 +56,10 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 **Description:** Makes a new blob from a subrange of bytes of the given blob. The offset argument is zero-based, so the first byte is at offset zero.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
@@ -66,9 +70,10 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 **Description:** Returns the build date and time, release or debug build, and product name.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Build Information();
 
 ```
@@ -79,11 +84,12 @@ Build Information();
 
 **Description:** Shows a caption window at the location specified by {h, v} and containing the text specified by the text argument. The Delayed( seconds ) argument sets the waiting time in seconds before each caption.
 
-**Formatted Caption**
+**JMP Version Added:** Before version 14
+
+#### Formatted Caption
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption(
 	{100, 200},
 	"explanation",
@@ -96,11 +102,10 @@ Caption(
 
 ```
 
-**Remove Caption**
+#### Remove Caption
 
 ```jsl
 
-Names Default To Here( 1 );
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
@@ -113,9 +118,10 @@ Caption( remove );
 
 **Description:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "in" );
@@ -139,9 +145,10 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 If no current journal exists in the given project, one will be created automatically.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Current Journal();
 
 ```
@@ -152,9 +159,10 @@ Current Journal();
 
 **Description:** The collection of data connectors for JMP.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
@@ -166,9 +174,10 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 **Description:** Creates an object and window you can send messages to manage real-time data feeds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -188,9 +197,10 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 **Description:** When this expression is evaluated within the JSL Debugger, the Debugger stops executing the script.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
 x = 5;
@@ -207,9 +217,10 @@ Show( z );
 
 **Description:** Encode the string using URI encoding
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Decode URI( "Foo%20Bar" );
 
@@ -221,9 +232,10 @@ Decode URI( "Foo%20Bar" );
 
 **Description:** Decodes a printable string of base 64 text into a blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```
@@ -234,9 +246,10 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 **Description:** Returns the double-precision floating point number from the Base64 encoded string.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -247,9 +260,10 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 **Description:** Disables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable JMP Live URL( "*public.jmp.com" );
 
@@ -261,9 +275,10 @@ Disable JMP Live URL( "*public.jmp.com" );
 
 **Description:** Disables or enables proxy settings during jmpStartAdmin.jsl execution. Proxy settings are enabled by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Disable Proxy Settings( 1 );
 
@@ -275,22 +290,22 @@ Disable Proxy Settings( 1 );
 
 **Description:** Divides all subsequent arguments from the first argument. Arguments can be numbers, matrices, or lists of numbers. When called with only one argument, the result will be the reciprocal.
 
-**Reciprocal**
+**JMP Version Added:** Before version 14
+
+#### Reciprocal
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 6 / 3 / 2;
 
 ```
@@ -301,9 +316,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns an empty value. Used in formula editor for unspecified arguments.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Empty();
 
 ```
@@ -314,9 +330,10 @@ Empty();
 
 **Description:** Enables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable JMP Live URL( "https://public.jmp.com" );
 
@@ -328,9 +345,10 @@ Enable JMP Live URL( "https://public.jmp.com" );
 
 **Description:** Enables or disables proxy settings during jmpStartAdmin.jsl execution. Proxy settings are enabled by default.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Enable Proxy Settings( 0 );
 
@@ -342,9 +360,10 @@ Enable Proxy Settings( 0 );
 
 **Description:** Encode the string using URI encoding
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Encode URI( "Foo Bar" );
 
@@ -356,9 +375,10 @@ Encode URI( "Foo Bar" );
 
 **Description:** Encodes a blob into a printable string of base 64 text.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -369,9 +389,10 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 **Description:** Returns a Base64 string encoding of the floating point number.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Encode64 Double( -1.5831 );
 
 ```
@@ -382,9 +403,10 @@ Encode64 Double( -1.5831 );
 
 **Description:** Generate a sequence of space filling quasi-random numbers using the Faure sequence.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -393,15 +415,18 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Force Action Notes
 
+**JMP Version Added:** 16
+
 ### Format Pattern
 
 **Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description:** Format Patterns are strings that define a date-time format, such as "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>". The parts of the pattern in angle brackets are called field descriptors. The field descriptors represent a value (such as "<YYYY>", which is a four-digit year) or other date-time text (such as "</>", which is a locale-specific date separator). A format pattern enables you to build formats that aren&apos;t provided in JMP. These formats can be used for both formatting and inputting data.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 Show( s, x );
@@ -494,9 +519,10 @@ Other
 
 **Description:** Retrieves a registered add-in specified by its ID.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -507,9 +533,10 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 **Description:** Returns a list of all registered add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 addins = Get Addins();
 addin ids = Get Addins() << id;
 Show( addins, addin ids );
@@ -522,9 +549,10 @@ Show( addins, addin ids );
 
 **Description:** Looks up the numeric address for a name. In most cases the name should be used for future IPV6 compatibility.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -535,9 +563,10 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 **Description:** Get the current contents of the clipboard
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Clipboard();
 
 ```
@@ -548,22 +577,22 @@ Get Clipboard();
 
 **Description:** Retrieve the locations of the top token in a parsed expression. The default invocation returns {the source file, TokenStartLine, TokenStartCol, TokenLength}.
 
-**Default output**
+**JMP Version Added:** 17
+
+#### Default output
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( ":height + 20" );
 Get Expr Location( e );
 
 ```
 
-**Replace a substring**
+#### Replace a substring
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 data = " :height + 20 ";
 e = Parse( data );
@@ -572,11 +601,10 @@ Munger( data, positions[1], positions[2], "45" );
 
 ```
 
-**Select output**
+#### Select output
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 e = Parse( " :height + 20 " );
 Get Expr Location( e, {"TreeStart", "TreeEnd"} );
@@ -589,9 +617,10 @@ Get Expr Location( e, {"TreeStart", "TreeEnd"} );
 
 **Description:** Looks up the name for a numeric address. In most cases the name should be used for future IPV6 compatibility.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -602,15 +631,18 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 **Description:** Returns a list of all open notebooks.
 
+**JMP Version Added:** 19
+
 ### Get OAuth2 Grant Types
 
 **Syntax:** Get OAuth2 Grant Types
 
 **Description:** Gets the supported JMP OAuth2 grant types.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://oauth.net/2/grant-types/
@@ -622,9 +654,10 @@ Show( grant_types );
 
 ### Get OpenID Connect Discovery
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
 aa = Get OpenID Connect Discovery( url );
@@ -634,15 +667,18 @@ Show( aa );
 
 ### Get OpenIDC Discovery
 
+**JMP Version Added:** 15
+
 ### Get Platform Preference
 
 **Syntax:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Description:** Gets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -653,9 +689,10 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 **Description:** Gets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -666,9 +703,10 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 **Description:** Returns an associative array containing the current policy names and values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Policies();
 
 ```
@@ -677,15 +715,18 @@ Get Policies();
 
 **Syntax:** Get Policy( "PolicyName" )
 
+**JMP Version Added:** 18
+
 ### Get Preference
 
 **Syntax:** Get Preferences( pref1, ... )
 
 **Description:** Gets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -696,9 +737,10 @@ Get Preferences( Graph marker size );
 
 **Description:** Gets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Get Preferences( Graph marker size );
 
 ```
@@ -709,9 +751,10 @@ Get Preferences( Graph marker size );
 
 **Description:** Evaluates each argument and returns the last result.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex1 = 1;
 ex2 = 2;
 
@@ -723,9 +766,10 @@ ex2 = 2;
 
 **Description:** Compresses a blob of data into a gzip blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Compress(
 	Char To Blob( "random data does not usually compress well and may get larger" )
 );
@@ -738,9 +782,10 @@ Gzip Compress(
 
 **Description:** Uncompresses a blob of gzip data into a blob.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
 		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
@@ -756,9 +801,10 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 **Description:** Returns 1 if the JMP application matches the argument; returns 0 otherwise. The arguments Windows or Mac test for the specified operating system, and the arguments Bits32 or Bits64 test for the specified 32-bit or 64-bit JMP application. Only one argument can be tested at a time.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
 	Show( "Not on Mac" )
@@ -779,9 +825,10 @@ If(
 
 **Description:** Returns 1 if the Alt key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts. On the Mac, Alt means Option key.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -806,9 +853,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Command key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -833,9 +881,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Context key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -860,9 +909,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Control key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts. On the Mac, Control means Command key.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -887,9 +937,10 @@ New Window( "Show me the key",
 
 **Description:** Determines if the specified URL can be used in this JMP session. URLs can be enabled and/or disabled using the jmpStartAdmin.jsl script. This does not determine if it is a valid URL, nor if the user is able to login. It only determines if the URL is blocked by JMP.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 url = "http://public.jmp.com";
 Show( Is JMP Live URL Enabled( url ) );
@@ -902,9 +953,10 @@ Show( Is JMP Live URL Enabled( url ) );
 
 **Description:** Returns 1 if the Option key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -929,9 +981,10 @@ New Window( "Show me the key",
 
 **Description:** Returns 1 if the Shift key is being pressed; returns 0 otherwise. Intended to be used in graphics callback scripts.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -956,9 +1009,10 @@ New Window( "Show me the key",
 
 **Description:** Returns "Standard" or "Pro" based on the version of the product that has been licensed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JMP Product Name();
 
 ```
@@ -969,9 +1023,10 @@ JMP Product Name();
 
 **Description:** Returns the JMP version (release.revision{.fix}); not available before 6.0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JMP Version();
 
 ```
@@ -982,9 +1037,10 @@ JMP Version();
 
 **Description:** Embeds an encrypted script within another script. Create an encrypted script by selecting Edit > Encrypt Script from the main menu of a script editor. Enter your passwords and the encrypted text will appear in a new window. Copy this text into a JSL Encrypted("") command to embed the encrypted script in another script.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -997,9 +1053,10 @@ JSL Encrypted(
 
 **Description:** Store a JSL script in a variable, including all comments and formatting.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 x = JSL Quote(/* Begin quote. */
     For (i = 1, i <= 5, i++,
@@ -1018,11 +1075,12 @@ New Window( "editor", Script Box( x ) );
 
 **Description:** Loads a DLL pointed to by the specified path.
 
-**Cross platform using Base Name()**
+**JMP Version Added:** Before version 14
+
+#### Cross platform using Base Name()
 
 ```jsl
 
-Names Default To Here( 1 );
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -1032,11 +1090,10 @@ dll << UnloadDLL();
 
 ```
 
-**Windows only**
+#### Windows only
 
 ```jsl
 
-Names Default To Here( 1 );
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
 	dll << CallDLL( "MessageBeep", "n", 0 );
@@ -1053,56 +1110,52 @@ If( Host is( "Windows" ),
 
 **Description:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
-**Turn off logging**
+**JMP Version Added:** 17
+
+#### Turn off logging
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( Off );
 
 ```
 
-**Turn on logging**
+#### Turn on logging
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 
 ```
 
-**Turn on logging, and include all messages except "DtMsgClose"**
+#### Turn on logging, and include all messages except "DtMsgClose"
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Exclude( "DtMsgClose" ) );
 
 ```
 
-**Turn on logging, and include only the "DtMsgClose" message**
+#### Turn on logging, and include only the "DtMsgClose" message
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Include( "DtMsgClose" ) );
 
 ```
 
-**Turn on logging, but ignore column messages**
+#### Turn on logging, but ignore column messages
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On, Disable( "Column" ) );
 
 ```
 
-**Turn on logging, but ignore table messages**
+#### Turn on logging, but ignore table messages
 
 ```jsl
 
-Names Default To Here( 1 );
 Log Table Messages( On );
 Log Table Messages( Disable( "Table" ) );
 
@@ -1114,9 +1167,10 @@ Log Table Messages( Disable( "Table" ) );
 
 **Description:** Creates an outgoing e-mail message as specified if the operating system allows doing so. Not all options will work on all operating system versions. See Help for details.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -1127,11 +1181,12 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 **Description:** Executes the specified main menu command.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Sample Index" );
 
 ```
@@ -1140,7 +1195,6 @@ Main Menu( "Sample Index" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Main Menu( "Help:Sample Index" );
 
 ```
@@ -1151,9 +1205,10 @@ Main Menu( "Help:Sample Index" );
 
 **Description:** Negates x, which can be a number, matrix, or list of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 -Pi();
 
 ```
@@ -1164,11 +1219,12 @@ Names Default To Here( 1 );
 
 **Description:** Creates a Multiple File Import object; the object accepts messages to set a folder, filter files, and import. To bring up a dialog use the "Create Window" message. To immediately import use the "Import Data" message which will return a list of the tables that were created.
 
-**Interactive example**
+**JMP Version Added:** 14
+
+#### Interactive example
 
 ```jsl
 
-Names Default To Here( 1 );
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
 // for filtering files and controlling the import
@@ -1180,11 +1236,10 @@ Multiple File Import(
 
 ```
 
-**Scripting example**
+#### Scripting example
 
 ```jsl
 
-Names Default To Here( 1 );
 
 mfi = Multiple File Import();
 mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
@@ -1200,9 +1255,10 @@ tables = mfi << Import Data();
 
 **Description:** Multiplies all arguments, which can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 2 * Pi();
 
 ```
@@ -1213,9 +1269,10 @@ Names Default To Here( 1 );
 
 **Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -1228,9 +1285,10 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 **Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 clp = New Clipboard( <<Get From OS );
 New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
@@ -1244,9 +1302,10 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 **Description:** Creates a request to send to a web service.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 getSentiment = Function( {text},
 	{Default Local},
@@ -1306,9 +1365,10 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 **Description:** Sends or downloads multiple HTTP requests in parallel.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 
 requests = New Multi HTTP Request();
 requests << Add(
@@ -1343,9 +1403,10 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 **Description:** Creates a new OAuth2 authorization.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 /*
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
@@ -1392,9 +1453,10 @@ data = request << Send;
 
 **Description:** Creates an OAuth2 Token for securely accessing data across many different web APIs.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -1411,9 +1473,10 @@ token = New OAuth2 Token(
 
 **Description:** Creates an interactive HTML report.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 webreport = New Web Report(
@@ -1449,15 +1512,18 @@ If( !Is Empty( file ),
 
 **Description:** Returns a reference to the specified notebook.
 
+**JMP Version Added:** 19
+
 ### Open Datafeed
 
 **Syntax:** y = Open Datafeed( ... )
 
 **Description:** Creates an object and window you can send messages to manage real-time data feeds.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
 		ex = exfeed << getLine;
@@ -1477,11 +1543,12 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 **Description:** Opens the online JMP help or the Scripting Index.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help( "Help" );
 
 ```
@@ -1490,7 +1557,6 @@ Open Help( "Help" );
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -1503,7 +1569,6 @@ Open Help(
 
 ```jsl
 
-Names Default To Here( 1 );
 Open Help(
 	"Scripting Index",
 	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
@@ -1522,11 +1587,12 @@ Open Help(
 
 **Description:** Parses an XML expression using the OnElement expressions for specified XML tags.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -1544,7 +1610,6 @@ Parse XML( ex,
 
 ```jsl
 
-Names Default To Here( 1 );
 
 doc =
 "
@@ -1600,9 +1665,10 @@ Show( docname, doctext, records, NestLevel );
 
 **Description:** Returns the number of pages in a PDF file.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -1613,9 +1679,10 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1626,9 +1693,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1639,9 +1707,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Generates random uniform points over a convex polytope. The numSamples argument specifies the number of random points to be generated. The A argument is the constraint coefficient matrix. The B argument is the right hand side values of constraints. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, mle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -1673,9 +1742,10 @@ Show( "see new window for example output" );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1686,9 +1756,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1699,9 +1770,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1712,9 +1784,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1725,9 +1798,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Register an add-in
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Register Addin(
 	"com.mycompany.myaddin",
 	"$DOCUMENTS/myaddin",
@@ -1740,15 +1814,18 @@ Register Addin(
 
 **Syntax:** Reload Policies()
 
+**JMP Version Added:** 18
+
 ### Revert Menu
 
 **Syntax:** Revert Menu()
 
 **Description:** Reverts to factory default menus.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -1757,11 +1834,12 @@ Names Default To Here( 1 );
 
 **Syntax:** treasures = Rummage( box, query )
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Rummage( Window( dt ), "Wilcox" ) << title;
 
@@ -1771,7 +1849,6 @@ Rummage( Window( dt ), "Wilcox" ) << title;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Rummage( Report( obj ), "Wilcox" ) << details;
@@ -1782,7 +1859,6 @@ Rummage( Report( obj ), "Wilcox" ) << details;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Show(
 	Rummage(
@@ -1802,11 +1878,12 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 **Description:** Control an external program using stdin and stdout.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
 	Options( {"-n 5", "localhost"} ),
@@ -1819,7 +1896,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -1832,7 +1908,6 @@ RP = Run Program(
 
 ```jsl
 
-Names Default To Here( 1 );
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
 icommand = 0;
 RP = Run Program(
@@ -1861,9 +1936,10 @@ RP = Run Program(
 
 **Description:** Schedules an event that runs the scpt script argument after sec seconds have elapsed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Schedule(
 	10,
 	Beep();
@@ -1878,9 +1954,10 @@ Schedule(
 
 **Description:** Puts the specified text onto the system clipboard used by the Edit menu.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Set Clipboard( "example" );
 
 ```
@@ -1891,9 +1968,10 @@ Set Clipboard( "example" );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1904,9 +1982,10 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Description:** Sets platform preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1915,15 +1994,18 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 **Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
+**JMP Version Added:** 18
+
 ### Set Preference
 
 **Syntax:** Preferences( pref1( value1 ), ... )
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1934,9 +2016,10 @@ Preferences( Graph marker size( "Large" ) );
 
 **Description:** Sets preferences as specified.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1949,9 +2032,10 @@ Preferences( Graph marker size( "Large" ) );
 
 Returns 1 if successful, 0 if unsuccessful.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // Make the Analyze toolbar visible in Script windows
 Set Toolbar Visibility( "Analyze", Script, true );
@@ -1973,9 +2057,10 @@ Set Toolbar Visibility( Default, All );
 
 **Description:** Returns one of the shortest edit scripts to convert string A into string B.  The simple form only returns a list.  strings() and lines() have an option to return a matrix or a list.  sequences() only returns a matrix.  The optional limit() will stop the function early if the edit list has more than limit inserts and deletes.  lines() compares lines rather than characters; the optional ignore("characters") or ignoreWhiteSpace() defaults to no ignored characters.   ESC will stop the function if needed.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
 common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
 	i++,
@@ -1993,9 +2078,10 @@ common;
 
 **Description:** Brings up a dialog that can be used to make custom add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Addin Builder Dialog();
 
 ```
@@ -2006,9 +2092,10 @@ Show Addin Builder Dialog();
 
 **Description:** Brings up a dialog that shows the status of all registered add-ins.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Addins Dialog();
 
 ```
@@ -2019,9 +2106,10 @@ Show Addins Dialog();
 
 **Description:** Creates one or more data tables that contain information about various JSL components. The keyword argument determines the content of the output table. Specify Builtins (the default) for built-in operators and functions. Specify Scriptables for all the scriptable commands for objects. Specify Translations for English and localized versions of the scriptable commands. Specify Display Boxes for scriptable commands related to display boxes and display segs. Specify Scriptable Names for the names of scriptable objects. Specify Platform Names for names of platforms.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Commands();
 
 ```
@@ -2032,9 +2120,10 @@ Show Commands();
 
 **Description:** Shows the current preference settings in the log.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Preferences();
 
 ```
@@ -2045,9 +2134,10 @@ Show Preferences();
 
 **Description:** Shows in the log the messages that an object responds to.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Show Properties( Current Data Table() );
 
 ```
@@ -2058,9 +2148,10 @@ Show Properties( Current Data Table() );
 
 **Description:** Generate a sequence of space filling quasi-random numbers using the Sobol sequence in up to 4000 dimensions.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
@@ -2073,9 +2164,10 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 **Description:** Creates a socket variable that can communicate with sockets on this or another networked computer. The default argument is STREAM. Try your own company&apos;s website.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 
 // see the socket's OBJECT messages in the scripting index for better examples
 tCall = Socket();
@@ -2116,9 +2208,10 @@ If( rc[2] == "ok",
 
 **Description:** Speaks the text if supported by the operating system. Specifying the optional Wait(true) argument delays script execution until speech has finished.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Speak( "Hello" );
 
 ```
@@ -2129,9 +2222,10 @@ Speak( "Hello" );
 
 **Description:** Displays the specified message in the status bar.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Status Msg( "calculating..." );
 
 ```
@@ -2142,18 +2236,25 @@ Status Msg( "calculating..." );
 
 **Description:** Subtracts all subsequent arguments from the first argument. Arguments can be numbers, matrices, or lists of numbers.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 6 - 2 - 1;
 
 ```
 
 ### Test Promise Error After
 
+**JMP Version Added:** 17
+
 ### Test Promise Result After
 
+**JMP Version Added:** 17
+
 ### Unit Test
+
+**JMP Version Added:** Before version 14
 
 ### Unregister Addin
 
@@ -2161,9 +2262,10 @@ Names Default To Here( 1 );
 
 **Description:** Unregister an add-in
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -2174,11 +2276,12 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 **Description:** Opens the URL or file stored in string in the default web browser. The optional second argument specifies that the HTML open in a JMP browser window.
 
-**Event Handler**
+**JMP Version Added:** Before version 14
+
+#### Event Handler
 
 ```jsl
 
-Names Default To Here( 1 );
 //Making a clickable link show up in a formula column
 New Table( "Example",
 	Add Rows( 2 ),
@@ -2202,11 +2305,10 @@ New Table( "Example",
 
 ```
 
-**Simple**
+#### Simple
 
 ```jsl
 
-Names Default To Here( 1 );
 Web( "http://www.jmp.com/" );
 
 ```
@@ -2217,9 +2319,10 @@ Web( "http://www.jmp.com/" );
 
 **Description:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 :height << Set Property( "Units", "HELLO" );
@@ -2234,9 +2337,10 @@ With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties 
 
 **Description:** Extracts the string value of an XML attribute in the context of being evaluating in a Parse XML() command. If no name if given, an associative array of all attribute name/value pairs is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -2255,9 +2359,10 @@ Parse XML( ex,
 
 **Description:** Decodes symbols in XML to ordinary text, changes " to ", < to <, &gt to >; &amp; to &.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
@@ -2268,9 +2373,10 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 **Description:** Prepares text for embedding in XML, changes " to ", < to <, > to > & to &amp;.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -2281,9 +2387,10 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 **Description:** Extracts the string text of the body of an XML tag in the context of being evaluating in a Parse XML() command.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -2296,15 +2403,16 @@ Parse XML( ex,
 
 ```
 
-### \[...]\
+### \\[...]\\
 
-**Syntax:** y = \[string]\
+**Syntax:** y = \\[string]\\
 
-**Description:** Passages requiring many escape characters can use the delimiter \[...]\.
+**Description:** Passages requiring many escape characters can use the delimiter \\[...]\\.
+
+**JMP Version Added:** Before version 14
 
 ```jsl
 
-Names Default To Here( 1 );
 
 jslPhrase =
 "The JSL to do this is :\[

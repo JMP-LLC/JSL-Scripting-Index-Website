@@ -8,9 +8,10 @@
 
 **Description:** Returns the logical AND of all arguments: 1 if all arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 & 3 < 4;
 
 ```
@@ -21,9 +22,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the logical AND of all arguments with missing values treated as zeros: 1 if all arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 AndMZ( 1 < 2, 3 < 4 );
 
 ```
@@ -34,9 +36,10 @@ AndMZ( 1 < 2, 3 < 4 );
 
 **Description:** Causes a break in flow of control within a For or While loop.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -50,9 +53,10 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Evaluates and returns the ith expr argument or the exprElse argument if there is no ith expr argument.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```
@@ -63,9 +67,10 @@ Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 **Description:** Causes a continuation of next iteration of flow of control within a For or While loop.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -79,41 +84,39 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Does everything that the For Each function does, but also returns a list of filtered values from the original container based on a boolean value result. The type of the result will match the type of the input container. For Matrix input, a row vector matrix will be returned, since the size of the matrix cannot be known.
 
-**Associative Array**
+**JMP Version Added:** 16
+
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );
 Show( values );
 
 ```
 
-**Expression**
+#### Expression
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );
 Show( values );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
 
@@ -125,9 +128,10 @@ Show( values );
 
 **Description:** Evaluates initExpr once and repeatedly evaluates whileExpr, bodyExpr, and nextExpr as long as whileExpr evaluates to a nonzero value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 s = "";
 For( i = 1, i < 10, i++,
 	s ||= " " || Char( i )
@@ -142,11 +146,12 @@ Trim( s );
 
 **Description:** Iterates over a container, either a list, matrix, associative array, or expression, providing the value, element, or key at each iteration. The index number is also available at each iteration. For Associative Array containers, the key and value can be accessed using a two-item list. For Matrix containers, a linear index is provided by default, but a two item list can be used to access the row and column indices. These symbols are provided within the body of the loop only, with a built-in Local block. A locals list can also be provided, which are initialized after the first iteration symbols are set.
 
-**Across**
+**JMP Version Added:** 16
+
+#### Across
 
 ```jsl
 
-Names Default To Here( 1 );
 
 // Across multiple containers
 x = {1, 3};
@@ -159,11 +164,10 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```
 
-**Across - Count**
+#### Across - Count
 
 ```jsl
 
-Names Default To Here( 1 );
 
 list1 = {1, 3, 5, 7, 9};
 list2 = {2, 4}; 
@@ -185,47 +189,42 @@ Try(
 
 ```
 
-**Associative Array**
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
 
-**Expression**
+#### Expression
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```
 
-**Matrix - Linear Index**
+#### Matrix - Linear Index
 
 ```jsl
 
-Names Default To Here( 1 );
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```
@@ -236,9 +235,10 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 **Description:** Evaluates the body expression iteratively for each row in the current data table.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -250,9 +250,10 @@ For Each Row( :height = -:height );
 
 **Description:** Evaluates the first of each pair of arguments and returns the evaluation of the result expression associated with the first condition argument that evaluates to a nonzero result. The condition arguments are evaluated in order. If all of the condition arguments evaluate to zero, the optional elseResult is evaluated and the result is returned. If no elseResult is specified, and none of the conditions are true, a missing value is returned. If all of the condition arguments evaluate to missing, a missing value is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 If( Random Uniform() < 0.5,
 	"heads",
 	"tails"
@@ -266,9 +267,10 @@ If( Random Uniform() < 0.5,
 
 **Description:** Evaluates the first of each pair of arguments and returns the evaluation of the result expression associated with the first condition argument that evaluates to a nonzero result. The condition arguments are evaluated in order. If all condition arguments evaluate to zero or missing, the optional elseResult is evaluated and the result is returned. If no elseResult is specified, and none of the conditions are true, a missing value is returned. (IfMZ() is equivalent to If() where missing values for evaluated condition arguments are treated as zero.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
 x = .;
@@ -284,9 +286,10 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 **Description:** Evaluates the first of each pair of arguments, and returns the evaluation of the result expression associated with the maximum of the expressions. If there are ties, it returns the first maximum. If all expressions are missing, it returns Empty if an even number of arguments, or the last argument if odd. The test expressions must evaluate to numeric, but the result expressions can be anything.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -300,9 +303,10 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 **Description:** Evaluates the first of each pair of arguments, and returns the evaluation of the result expression associated with the minimum of the expressions. If there are ties, it returns the first minimum. If all expressions are missing, it returns Empty if an even number of arguments, or the last argument if odd. The test expressions must evaluate to numeric, but the result expressions can be anything.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -316,11 +320,12 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 **Description:** Finds the xi arguments that x is between and linearly interpolates the corresponding yi arguments. Note that the xi arguments must be specified in order.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 
 New Window( "Interpolate",
 	window:x = (2 :: 9) * 10;
@@ -339,7 +344,6 @@ New Window( "Interpolate",
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -348,7 +352,6 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-Names Default To Here( 1 );
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
@@ -357,7 +360,6 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
 yd = Sin( xd );
@@ -386,9 +388,10 @@ New Window( "Interpolated values are blue",
 
 **Description:** Returns 1 is the x argument is an associative array, otherwise returns 0.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Associative Array( [1 => 2] );
 
 ```
@@ -399,9 +402,10 @@ Is Associative Array( [1 => 2] );
 
 **Description:** Returns 1 if the class argument is a class. Otherwise, a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Define Class(
 	"complex",
 	real = 0;
@@ -453,11 +457,12 @@ Delete Classes( "complex" );
 
 **Description:** Returns 1 if the variable is undefined or holds the Empty() value.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 Is Empty( x );
 
 ```
@@ -466,7 +471,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 x = Empty();
 Is Empty( x );
 
@@ -476,7 +480,6 @@ Is Empty( x );
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 1 );
@@ -500,9 +503,10 @@ If( Is Empty( dt ),
 
 **Description:** Returns 1 if the x argument is an expression, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Expr( Expr( x ) );
 
 ```
@@ -513,9 +517,10 @@ Is Expr( Expr( x ) );
 
 **Description:** Returns 1 if the x argument is a list, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is List( {1, 2, 3} );
 
 ```
@@ -526,9 +531,10 @@ Is List( {1, 2, 3} );
 
 **Description:** Returns 1 if the x argument is a name, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Name( Name Expr( n ) );
 
 ```
@@ -539,9 +545,10 @@ Is Name( Name Expr( n ) );
 
 **Description:** Returns 1 if the namespace argument is a namespace; otherwise a 0 is returned.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 ns = New Namespace(
 	"complex",
 	{
@@ -580,9 +587,10 @@ ns << Delete;
 
 **Description:** Returns 1 if the x argument is a number, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is Number( 213 );
 
 ```
@@ -593,9 +601,10 @@ Is Number( 213 );
 
 **Description:** Returns 1 if the x argument is a scriptable object, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -607,9 +616,10 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 **Description:** Returns 1 if the x argument is a string, 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Is String( "abc" );
 
 ```
@@ -620,9 +630,10 @@ Is String( "abc" );
 
 **Description:** Evaluates and returns the exprN argument corresponding to the first vN argument that equals x or evaluates and returns the exprElse argument if no value equals x.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -633,9 +644,10 @@ Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 **Description:** Evaluates and returns the exprN argument corresponding to the first vN argument that equals x or evaluates and returns the exprElse argument if no value equals x. (The MatchMZ() function behaves the same as the Match() function, except that missing values are treated as 0.)
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -646,9 +658,10 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 **Description:** Returns the logical NOT of x: 1 if x is zero, missing if x is missing, and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 !(1 < 2);
 
 ```
@@ -659,9 +672,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the logical OR of all arguments: 1 if any arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 1 < 2 | 3 < 2;
 
 ```
@@ -672,9 +686,10 @@ Names Default To Here( 1 );
 
 **Description:** Returns the logical OR of all arguments with missing values treated as zeros: 1 if any arguments are nonzero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 OrMZ( 1 < 2, 3 < 2 );
 
 ```
@@ -685,11 +700,12 @@ OrMZ( 1 < 2, 3 < 2 );
 
 **Description:** Returns an expression value from a user-defined function.
 
+**JMP Version Added:** Before version 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -716,7 +732,6 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
-Names Default To Here( 1 );
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -732,9 +747,10 @@ Show( f( 7, 15 ) );
 
 **Description:** Returns the yi argument corresponding to the largest xi value which satisfies xi less than or equal to the x argument. Note that the xi arguments must be specified in order.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -745,9 +761,10 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 **Description:** Immediately terminates the execution of a JSL script
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
 	Print( "i=" || Char( i ) );
@@ -761,31 +778,30 @@ For( i = 1, i <= 10, i++,
 
 **Description:** Does everything the For Each function does, but also returns a container with the result at each iteration. By default, returns a container matching the type of the input container, but can be changed using the Output argument. For List or Expression output, Empty() will be used when there is no result. For Matrix output, a numeric missing value is used when there is no result, or when the result is non-numeric. For Associative Array output, the key will not exist when there is no result. When Continue() is used, it is equivalent to returning no value for that iteration.
 
-**Associative Array**
+**JMP Version Added:** 16
+
+#### Associative Array
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );
 Show( values );
 
 ```
 
-**Expression 1**
+#### Expression 1
 
 ```jsl
 
-Names Default To Here( 1 );
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
 ```
 
-**Expression 2**
+#### Expression 2
 
 ```jsl
 
-Names Default To Here( 1 );
 // Find Functions defined in a script
 parsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );
 functionNames = Transform Each( {statement}, Name Expr( parsedScript ), Output( "List" ),
@@ -805,31 +821,28 @@ Show( functionNames );
 
 ```
 
-**List**
+#### List
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
 ```
 
-**Matrix**
+#### Matrix
 
 ```jsl
 
-Names Default To Here( 1 );
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
 ```
 
-**Output**
+#### Output
 
 ```jsl
 
-Names Default To Here( 1 );
 
 Write( "\!N===List===" );
 lst = Transform Each( {value}, [10, 20, 30], Output( "List" ), value + 1 );
@@ -855,9 +868,10 @@ Show( ex );
 
 **Description:** Evaluates the testExpr and bodyExpr expressions repeatedly as long as testExpr evaluates to a nonzero value.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 i = 1;
 s = "";
 While( i < 1000,
@@ -874,9 +888,10 @@ s;
 
 **Description:** Returns the logical NOT of x with missing values treated as zeros: 1 if x is missing or zero and 0 otherwise.
 
+**JMP Version Added:** Before version 14
+
 ```jsl
 
-Names Default To Here( 1 );
 Zero Or Missing( 1 < 2 );
 
 ```

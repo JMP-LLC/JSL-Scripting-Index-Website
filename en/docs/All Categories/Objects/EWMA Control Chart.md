@@ -10,9 +10,10 @@
 
 **Description:** Creates a chart that plots the exponentially weighted moving averages and a chart that plots either the individual observations or the subgroup means. An EWMA chart is also known as a feedback control chart.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 
@@ -26,9 +27,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 **Description:** Specifies the By column during launch.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -45,9 +47,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ), By( _bycol ) );
 
 **Description:** Specifies the Subgroup column during launch.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ) );
 
@@ -59,9 +62,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ) );
 
 **Description:** Specifies the Y column during launch.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 
@@ -75,9 +79,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 **Description:** Sends a message whenever a point on a control chart fails a given test. The message can be sent to the log, can be spoken, or can be emailed.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart(
 	Alarm Script(
@@ -104,9 +109,10 @@ obj << Test Beyond Limits( 1 );
 
 **Description:** Specifies that the data are centered by subtracting the target from each observation.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ), Lambda( 0.2 ), Center Data( 1 ) );
 
@@ -118,9 +124,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Lambda( 0.2 ), Center Data( 1 ) );
 
 **Description:** Connects points when some samples have missing values or excluded rows.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 Wait( 1 );
@@ -134,9 +141,10 @@ obj << Connect Thru Missing( 1 );
 
 **Description:** Uses an asymptotic expression to form constant EWMA limits.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 Wait();
@@ -150,9 +158,10 @@ obj << Constant Limits( 1 );
 
 **Description:** Shows or hides a report that contains the current values of the parameters and enables you to change them. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Control Panel( 0 );
@@ -165,9 +174,10 @@ obj << Control Panel( 0 );
 
 **Description:** Imports control limits from a selected data table and replaces calculated limits on the chart.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dtLimits = New Table( "EWMA Limits",
 	New Column( "_LimitsKey",
 		Character,
@@ -188,9 +198,10 @@ obj << Get Limits( dtLimits );
 
 **Description:** Sets the K value to be multiplied by sigma to form the control limits about the average. "3" by default.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 Wait( 1 );
@@ -204,9 +215,10 @@ obj << K Sigma( 4 );
 
 **Description:** Specifies the smoothing constant for weighting prior samples. "0.2" by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Lambda( 0.5 );
@@ -219,9 +231,10 @@ obj << Lambda( 0.5 );
 
 **Description:** Shows or hides the lambda slider on the control panel.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Lambda Slider( 1 );
@@ -234,9 +247,10 @@ obj << Lambda Slider( 1 );
 
 **Description:** Overlays individual points, or XBar points if the data are summarized, on the EWMA chart.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Overlay Charts( 1 );
@@ -249,9 +263,10 @@ obj << Overlay Charts( 1 );
 
 **Description:** Shows or hides the parameters report.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Parameters Report( 1 );
@@ -264,9 +279,10 @@ obj << Parameters Report( 1 );
 
 **Description:** Resets all parameters back to the default values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Lambda( .9 );
@@ -281,9 +297,10 @@ obj << Reset to Defaults();
 
 **Description:** Restarts calculation of the EWMA statistic after each missing or excluded subgroup.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << Select Rows( {31, 32, 33, 34, 35} ) << exclude << hide;
 Wait();
@@ -307,9 +324,10 @@ If in Column is specified, the average value is saved in an EWMA Control Limits 
 
 If in New Table is specified, Lambda (or weight), the standard deviation, and the mean for each chart are saved to a new data table.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Limits( "in Column" );
@@ -323,9 +341,10 @@ obj << Save Limits( "in New Table" );
 
 **Description:** Saves the sigma used in the control chart as a column property in the data table.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Sigma;
@@ -338,9 +357,10 @@ obj << Save Sigma;
 
 **Description:** Creates a new table that contains summary statistics and limits for each subgroup.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Summaries;
@@ -353,9 +373,10 @@ obj << Save Summaries;
 
 **Description:** Shows or hides a report with the Average Run Length computed from the associated EWMA and X charts.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Show ARL( 1 );
@@ -368,9 +389,10 @@ obj << Show ARL( 1 );
 
 **Description:** Shows or hides the center line on the graph. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Show Center Line( 0 );
@@ -383,9 +405,10 @@ obj << Show Center Line( 0 );
 
 **Description:** Shows or hides the excluded region on the subgroup axis. Applies only for subgroup variables.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << Select Rows( {31, 32, 33, 34, 35, 36, 37, 38, 39, 40} ) << exclude << hide;
 obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Region( 0 ) );
@@ -398,9 +421,10 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Re
 
 **Description:** Shows or hides the limits. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Show Limits( 0 );
@@ -413,9 +437,10 @@ obj << Show Limits( 0 );
 
 **Description:** Shows or hides a chart of residuals.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Show Residuals Chart( 0 );
@@ -428,9 +453,10 @@ obj << Show Residuals Chart( 0 );
 
 **Description:** Shows or hides vertical lines that designate shifts in the chart. Shift lines are drawn at the start of a shift. Available only when there is a shift detected in the data. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 Wait( 1 );
@@ -444,9 +470,10 @@ obj << Show Shift Lines( 0 );
 
 **Description:** Shows or hides the Location chart below the EWMA chart. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Show X Chart( 0 );
@@ -459,9 +486,10 @@ obj << Show X Chart( 0 );
 
 **Description:** Overlays limits from the location chart on the EWMA chart when the Overlay Charts option is selected.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart(
 	Y( :Gap ),
@@ -477,9 +505,10 @@ obj = dt << EWMA Control Chart(
 
 **Description:** Specifies the known value of the standard deviation. By default, this parameter is set to the average moving range of the Y column. If there is a Subgroup variable, the Sigma parameter is set to the average of the moving ranges of the subgroup means.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Sigma( 2 );
@@ -492,9 +521,10 @@ obj << Sigma( 2 );
 
 **Description:** Specifies the known value of the mean. This is the value of the center line in the chart. By default, this parameter is set to the Target value in the Spec Limits column property for the Y column. If the Y column does not have a Target value in the Spec Limits column property, this parameter is set to the overall average of the Y column.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Target( 14.65 );
@@ -507,9 +537,10 @@ obj << Target( 14.65 );
 
 **Description:** Shows or hides a red circle around any point that is above the upper limit or below the lower limit in the EWMA and X charts.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Test Beyond Limits( 1 );
@@ -522,9 +553,10 @@ obj << Test Beyond Limits( 1 );
 
 **Description:** Sets the Target at the overall mean. Note: Applicable only when the Target is set using a Spec Limits column property for Target.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Date ) );
 Wait( 1 );
@@ -542,7 +574,6 @@ obj << Use Overall Mean for Target();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Y( :height ),
@@ -558,11 +589,12 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**Anonymous preset**
+**JMP Version Added:** 18
+
+#### Anonymous preset
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -573,11 +605,10 @@ obj2 << Apply Preset( preset );
 
 ```
 
-**Search by name**
+#### Search by name
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -585,11 +616,10 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
-**Search within folder(s)**
+#### Search within folder(s)
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ) );
 Wait( 1 );
@@ -605,7 +635,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Automatic Recalc( 1 );
@@ -619,9 +648,10 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
 objs = Control Chart Builder(
 	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
@@ -639,7 +669,6 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -659,7 +688,6 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Copy Script;
@@ -674,7 +702,6 @@ obj << Copy Script;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Data Table Window;
@@ -687,9 +714,10 @@ obj << Data Table Window;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv << Get By Levels;
@@ -704,7 +732,6 @@ biv << Get By Levels;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -723,11 +750,10 @@ Show( t );
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**General**
+#### General
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 t = obj << Get Container;
@@ -735,11 +761,10 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
-**Platform with Filter**
+#### Platform with Filter
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Show Control Panel( 0 ),
@@ -772,7 +797,6 @@ New Window( "platform boxes",
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 t = obj << Get Datatable;
@@ -788,7 +812,6 @@ Show( N Rows( t ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
 group = biv[1] << Get Group Platform;
@@ -805,7 +828,6 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 t = obj << Get Script;
@@ -821,7 +843,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 t = obj << Get Script With Data Table;
@@ -837,7 +858,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 t = obj << Get Timing;
@@ -853,7 +873,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 s = obj << Get Web Support();
@@ -867,9 +886,10 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
 biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
@@ -885,7 +905,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Bivariate(
 	Ignore Platform Preferences( 1 ),
@@ -902,9 +921,10 @@ dt << Bivariate(
 
 **Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
@@ -919,9 +939,10 @@ obj << Apply Preset( preset );
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
 preset = obj << New Preset();
@@ -936,7 +957,6 @@ preset = obj << New Preset();
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Redo Analysis;
@@ -951,7 +971,6 @@ obj << Redo Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -971,7 +990,6 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Relaunch Analysis;
@@ -986,7 +1004,6 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1004,9 +1021,10 @@ obj[1] << Relaunch ByGroup;
 
 **Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Oneway( Y( :Height ), X( :Age ) );
 obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
@@ -1021,7 +1039,6 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 r = obj << Report;
@@ -1038,7 +1055,6 @@ Show( t );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Report View( "Summary" );
@@ -1053,7 +1069,6 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1073,7 +1088,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1093,7 +1107,6 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1113,7 +1126,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Script for All Objects;
@@ -1130,7 +1142,6 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1146,7 +1157,6 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 dt << New Column( "_bycol",
 	Character,
@@ -1166,7 +1176,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
@@ -1181,7 +1190,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Script to Journal;
@@ -1196,7 +1204,6 @@ obj << Save Script to Journal;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Script to Report;
@@ -1211,7 +1218,6 @@ obj << Save Script to Report;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Save Script to Script Window;
@@ -1226,7 +1232,6 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	By( :Sex ),
@@ -1247,7 +1252,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 
 dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
 dt << Life Distribution(
@@ -1273,7 +1277,6 @@ dt << Life Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Nominal Distribution( Column( :age ) ),
@@ -1291,7 +1294,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 dist = Distribution( Continuous Distribution( Column( :POP ) ) );
 Wait( 1 );
@@ -1308,7 +1310,6 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 obj << Title( "My Platform" );
@@ -1323,7 +1324,6 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
 obj = dt << EWMA Control Chart( Y( :Gap ) );
 r = obj << Top Report;
@@ -1338,9 +1338,10 @@ Show( t );
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Distribution(
 	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
@@ -1357,7 +1358,6 @@ dt << Distribution(
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
@@ -1372,7 +1372,6 @@ xml = obj << View Web XML;
 
 ```jsl
 
-Names Default To Here( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
 eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;

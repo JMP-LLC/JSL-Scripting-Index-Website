@@ -10,9 +10,10 @@
 
 **Description:** Treat the custom function as a custom format. Specify 0 to exclude the function from the custom format menu.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Custom Format Category( 1 );
 
@@ -24,9 +25,10 @@ myAdd << Custom Format Category( 1 );
 
 **Description:** Set the description for the custom function. This description will show up in the Scripting Index and in tooltips.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Description( "Add two numbers together, but subtract 1" );
 
@@ -38,11 +40,12 @@ myAdd << Description( "Add two numbers together, but subtract 1" );
 
 **Description:** Add an example that shows how to effectively use the function. The example should be passed in as a text string or as JSL code wrapped with the Expr command. You can send the message multiple times to add more than one example.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)" );
 
@@ -52,7 +55,6 @@ myAdd << Example( "Add(1, 2)" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)", "small add" );
 myAdd << Example( "Add(1, 500)", "bigger add" );
@@ -65,9 +67,10 @@ myAdd << Example( "Add(1, 500)", "bigger add" );
 
 **Description:** Include the function in the specified Formula Editor category. If specified, this function will be added at the end of the matching category. If the category doesn&apos;t exist, a new category will be created. Specify 0 or empty string to not show the function in the formula editor tree.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Formula Category( "NumberStuff" );
 
@@ -79,9 +82,10 @@ myAdd << Formula Category( "NumberStuff" );
 
 **Description:** Get the custom format category for the custom function.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Custom Format Category( 1 );
 myAdd << Get Custom Format Category;
@@ -94,9 +98,10 @@ myAdd << Get Custom Format Category;
 
 **Description:** Get the description for the custom function.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Description( "Add two numbers together, but subtract 1" );
 myAdd << Get Description;
@@ -109,9 +114,10 @@ myAdd << Get Description;
 
 **Description:** Retrieve the list of examples, as strings
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Example( "Add(1, 2)", "small add" );
 myAdd << Example( "Add(1, 500)", "bigger add" );
@@ -125,9 +131,10 @@ myAdd << Get Examples;
 
 **Description:** Return which Formula Editor category this function should be part of, if any.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Formula Category( "NumberStuff" );
 myAdd << Get Formula Category;
@@ -140,9 +147,10 @@ myAdd << Get Formula Category;
 
 **Description:** Retrieve the function definition.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Function;
 
@@ -154,9 +162,10 @@ myAdd << Get Function;
 
 **Description:** Retrieve the function name.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Name;
 
@@ -168,9 +177,10 @@ myAdd << Get Name;
 
 **Description:** Retrieve the function namespace.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Get Namespace;
 
@@ -182,9 +192,10 @@ myAdd << Get Namespace;
 
 **Description:** Retrieve the list of parameters.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Parameter( "Number", "number" );
 myAdd << Parameter( "Number", "<number=1>" );
@@ -198,9 +209,10 @@ myAdd << Get Parameters;
 
 **Description:** Get the prototype that shows up for this function in the Scripting Index
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Prototype( "Add(number, <number=1>)" );
 myAdd << Get Prototype;
@@ -213,9 +225,10 @@ myAdd << Get Prototype;
 
 **Description:** Get the result type of the function.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( "Number" );
 myAdd << Get Result Type;
@@ -228,9 +241,10 @@ myAdd << Get Result Type;
 
 **Description:** Get the category for the custom function in the Scripting Index.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Scripting Index Category( "My Functions" );
 myAdd << Get Scripting Index Category;
@@ -243,9 +257,10 @@ myAdd << Get Scripting Index Category;
 
 **Description:** Get the transform category for the custom function.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Transform Category( 1 );
 myAdd << Get Transform Category;
@@ -258,9 +273,10 @@ myAdd << Get Transform Category;
 
 **Description:** Add information about a parameter of the function. Send this message once for each parameter the function takes. This can be used for code validation. Valid choices for the parameter types are Any, Name, Number, String, List, Matrix, RowState. If multiple result types are possible, supply the type names in a list. The hint text is used to indicate what data should be used in the corresponding argument in the formula editor. Specify an empty string if no hint text is desired.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Parameter( "Number", "number" );
 myAdd << Parameter( "Number", "<number=1>" );
@@ -273,9 +289,10 @@ myAdd << Parameter( "Number", "<number=1>" );
 
 **Description:** Set the prototype that shows up for this function in the Scripting Index
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Prototype( "Add(number, <number=1>)" );
 
@@ -287,11 +304,12 @@ myAdd << Prototype( "Add(number, <number=1>)" );
 
 **Description:** Set the result type of the function. This can be used for code validation. Valid choices are Any, Name, Number, String, List, Matrix, RowState. If multiple result types are possible, supply the type names in a list.
 
+**JMP Version Added:** 14
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( "Number" );
 
@@ -301,7 +319,6 @@ myAdd << Result Type( "Number" );
 
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Result Type( {"Number", "String"} );
 
@@ -313,9 +330,10 @@ myAdd << Result Type( {"Number", "String"} );
 
 **Description:** Sets the category for the custom function in the Scripting Index. Every custom function will be listed in the All Functions category in addition to the category that you specify. Specify 0 or "" to list the function in the All Functions category only.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Scripting Index Category( "My Functions" );
 
@@ -327,9 +345,10 @@ myAdd << Scripting Index Category( "My Functions" );
 
 **Description:** Treat the custom function as a column transform. Specify 0 to exclude the function from the column transform menu.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 myAdd << Transform Category( 1 );
 

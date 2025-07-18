@@ -10,9 +10,10 @@
 
 **Description:** Gets the description of the JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -50,9 +51,10 @@ Write( "\!nDescription: ", report << Get Description );
 
 **Description:** Gets the ID for this JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -91,9 +93,10 @@ Write( "\!n\!nID: ", report << Get ID );
 
 **Description:** Gets the path of this JMP Live Report, Folder or Post as a string.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -132,9 +135,10 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 **Description:** Gets the title of the JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -173,9 +177,10 @@ Write( "\!nTitle: ", report << Get Title );
 
 **Description:** Get the specific type of Post (Folder, Data or Report)
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -215,9 +220,10 @@ Write( "\!nType: ", report << Get Type );
 
 **Description:** Gets the URL for this JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -256,9 +262,10 @@ Write( "\!nURL: ", report << Get URL );
 
 **Description:** Given a string, sets the description of the JMP Live Report, JMP Live Folder, or JMP Live Post.  Returns true or false for success or failure.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 
@@ -304,9 +311,10 @@ Write( "\!nDecription: ", report << Get Description );
 
 **Description:** Sets the title of the JMP Live Report, JMP Live Folder, or JMP Live Post. Returns a true or false for success or failure.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
 

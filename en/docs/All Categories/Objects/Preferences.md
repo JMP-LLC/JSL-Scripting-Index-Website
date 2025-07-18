@@ -12,7 +12,6 @@
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -32,11 +31,15 @@ Show( Get Color Theme Detail( "Sunny" ) );
 
 **Description:** Initial number of rows in the Add Rows window
 
+**JMP Version Added:** 18
+
 ### Add Rows recall last value
 
 **Syntax:** obj &lt;&lt; Add Rows recall last value( state=0|1 )
 
 **Description:** The last entered value is used for the number of rows to add
+
+**JMP Version Added:** 18
 
 ### Add files opened by scripts to the Recent Files list
 
@@ -46,7 +49,6 @@ Show( Get Color Theme Detail( "Sunny" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -60,9 +62,10 @@ Preferences[1] << Set( Add files opened by scripts to the Recent Files list( 1 )
 
 **Description:** Specifies whether to use List Check to encode values when there are more than 255 distinct values in the column. If encoded, these columns cannot be read by JMP 14 and earlier.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -76,6 +79,8 @@ Preferences[1] << Set( Allow 16 Bit List Check Compression( 1 ) );
 
 **Description:** Compress Selected Columns will compact columns if that uses less disk space.
 
+**JMP Version Added:** 18
+
 ### Allow Unquoted Strings in JSL
 
 **Syntax:** obj &lt;&lt; Allow Unquoted Strings in JSL( "No"|"Yes (with a warning)"|"Yes (no warning)" )
@@ -86,9 +91,10 @@ Preferences[1] << Set( Allow 16 Bit List Check Compression( 1 ) );
 
 **Description:** Allow format pattern dates with both ISO weeks (<ww>) and non-ISO years (<YYYY> or <YY>), and with both non-ISO weeks (<WW1> or <WW2>) and ISO years (<yyyy> or <yy>). ISO weeks and years are not compatible with non-ISO weeks and years. They should not be mixed. By default, JMP will not allow such date format to be created.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -104,7 +110,6 @@ Preferences[1] << Set( Allow mixed ISO format patterns( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -120,7 +125,6 @@ Preferences[1] << Set( Allow short numeric data format( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -136,7 +140,6 @@ Preferences[1] << Set( Auto Hide Menus( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will affect 
 //the default behavior of JMP. 
 
@@ -152,7 +155,6 @@ Preferences[1] << Set( Auto Run Recent JSL( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will affect 
 //the default behavior of JMP. 
 
@@ -168,7 +170,6 @@ Preferences[1] << Set( Auto match brackets in script editor( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -184,7 +185,6 @@ Preferences[1] << Set( Autosave Maximum Data Table Columns( 1000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -200,7 +200,6 @@ Preferences[1] << Set( Autosave Maximum Data Table Rows( 10000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -216,7 +215,6 @@ Preferences[1] << Set( Autosave Timeout( 15 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -232,7 +230,6 @@ Preferences[1] << Set( Axis Title Above( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -246,9 +243,10 @@ Preferences[1] << Set( Background Color( "Light Blue" ) );
 
 **Description:** Changes the default setting for the continuous color theme appearing in all graphs.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -266,7 +264,6 @@ Show( Get Preference( Bad to Good Color Theme ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will
 //affect the default behavior of JMP.
 
@@ -280,9 +277,10 @@ Preferences[1] << Set( Box Plot Line Width( 2 ) );
 
 **Description:** Disable proxy use for specific hosts
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -298,7 +296,6 @@ Preferences[1] << Set( Bypass Proxy( "www.example.com" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -314,15 +311,18 @@ Show( Get Preference( Categorical Color Theme ) );
 
 **Description:** Default graph to display in column header for nominal and ordinal columns.
 
+**JMP Version Added:** 18
+
 ### Classic Data Table Selection
 
 **Syntax:** obj &lt;&lt; Classic Data Table Selection( state=0|1 )
 
 **Description:** Enables classic click selection behavior in the data table. In this mode, selecting a column will have no effect on row selection, and selecting a row will have no effect on column selection.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -338,7 +338,6 @@ Preferences[1] << Set( Classic Data Table Selection( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will affect 
 //the default behavior of JMP. 
 
@@ -350,6 +349,8 @@ Preferences[1] << Set( Color Mode( Dark ) );
 
 **Syntax:** obj &lt;&lt; Columns Manager
 
+**JMP Version Added:** 18
+
 ### Conditional formatting rules
 
 **Syntax:** obj &lt;&lt; Conditional formatting rules
@@ -358,7 +359,6 @@ Preferences[1] << Set( Color Mode( Dark ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -390,7 +390,6 @@ Preferences(
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -406,17 +405,20 @@ Show( Get Preference( Continuous Color Theme ) );
 
 **Description:** Default graph to display in column header for continuous columns.
 
+**JMP Version Added:** 18
+
 ### Custom Locale Settings
 
 **Syntax:** obj &lt;&lt; Custom Locale Settings
 
 **Description:** Overrides locale settings such as decimal separator and thousands separator
 
+**JMP Version Added:** 16
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -432,7 +434,6 @@ Preferences( Custom Locale Settings( Decimal Separator() ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -445,7 +446,6 @@ Preferences( Custom Locale Settings( Reset to Defaults ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -477,6 +477,8 @@ Get Preferences( Custom Locale Settings );
 
 **Description:** Show Histograms and Bars for filter columns where available
 
+**JMP Version Added:** 15
+
 ### Data Filter Include Check
 
 **Syntax:** obj &lt;&lt; Data Filter Include Check( state=0|1 )
@@ -493,9 +495,10 @@ Get Preferences( Custom Locale Settings );
 
 **Syntax:** obj &lt;&lt; Data Table Actions( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -511,7 +514,6 @@ Preferences[1] << Set( Data Table Actions( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -527,7 +529,6 @@ Preferences[1] << Set( Data Table Title on Output( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -543,7 +544,6 @@ Preferences[1] << Set( Date Title on Output( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -557,11 +557,15 @@ Preferences( Default Field Width( 16 ) );
 
 **Description:** Show the Project pane in new projects
 
+**JMP Version Added:** 16
+
 ### Default Project Show Contents
 
 **Syntax:** obj &lt;&lt; Default Project Show Contents( state=0|1 )
 
 **Description:** Show the Contents pane in new projects
+
+**JMP Version Added:** 16
 
 ### Default Project Show Log
 
@@ -569,11 +573,15 @@ Preferences( Default Field Width( 16 ) );
 
 **Description:** Show the Log pane in new projects
 
+**JMP Version Added:** 16
+
 ### Default Project Show Recent Files
 
 **Syntax:** obj &lt;&lt; Default Project Show Recent Files( state=0|1 )
 
 **Description:** Show the Recent Files pane in new projects
+
+**JMP Version Added:** 16
 
 ### Default Project Show Workspace
 
@@ -581,13 +589,16 @@ Preferences( Default Field Width( 16 ) );
 
 **Description:** Show the Workspace pane in new projects
 
+**JMP Version Added:** 16
+
 ### Display JSL SAS results as HTML
 
 **Syntax:** obj &lt;&lt; Display JSL SAS results as HTML( state=0|1 )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -603,7 +614,6 @@ Preferences[1] << Set( "Display JSL SAS results as HTML"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -617,9 +627,10 @@ Preferences[1] << Set( Display indexes in English( 1 ) );
 
 **Description:** Double clicking on a column header will open the column info dialog rather than editing the column name.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -631,9 +642,10 @@ Preferences[1] << Set( Double Click Opens Column Info( 1 ) );
 
 **Syntax:** obj &lt;&lt; Empty Project at Startup( "Always"|"If no other project is open"|"Never" )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -649,7 +661,6 @@ Preferences[1] << Set( Create an empty project when starting JMP( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -665,7 +676,6 @@ Preferences[1] << Set( Emulate Zoom Mode( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -687,9 +697,10 @@ Preferences[1] << Set( Enable Advanced Linear Algebra Routines( 0 ) );
 
 **Description:** Menu items will no longer be marked after the time limit elapses
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -701,9 +712,10 @@ Preferences[1] << Set( End Menu Item Marking After Deadline( 0 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Alternate Table Rows( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -715,9 +727,10 @@ Preferences[1] << Set( Enhanced Log Shade Alternate Table Rows( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Color By Window( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -729,9 +742,10 @@ Preferences[1] << Set( Enhanced Log Color By Window( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Color By Window Color Theme( "name" )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -745,9 +759,10 @@ Show( Get Preference( Enhanced Log Color By Window Color Theme ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Action( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -759,9 +774,10 @@ Preferences[1] << Set( Enhanced Log Filter Action( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Error( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -773,9 +789,10 @@ Preferences[1] << Set( Enhanced Log Filter Error( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Log( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -787,9 +804,10 @@ Preferences[1] << Set( Enhanced Log Filter Log( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Result( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -801,9 +819,10 @@ Preferences[1] << Set( Enhanced Log Filter Result( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Script( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -815,9 +834,10 @@ Preferences[1] << Set( Enhanced Log Filter Script( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Filter Warn( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -829,9 +849,10 @@ Preferences[1] << Set( Enhanced Log Filter Warn( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Origin Column( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -843,9 +864,10 @@ Preferences[1] << Set( Enhanced Log Origin Column( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Result Column( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -857,9 +879,10 @@ Preferences[1] << Set( Enhanced Log Result Column( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Shade Table Cells( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -871,9 +894,10 @@ Preferences[1] << Set( Enhanced Log Shade Table Cells( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Shade Table Headings( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -885,9 +909,10 @@ Preferences[1] << Set( Enhanced Log Shade Table Headings( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Table Column Borders( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -899,9 +924,10 @@ Preferences[1] << Set( Enhanced Log Table Column Borders( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Table Heading Column Borders( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -913,9 +939,10 @@ Preferences[1] << Set( Enhanced Log Table Heading Column Borders( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Table Row Borders( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -927,9 +954,10 @@ Preferences[1] << Set( Enhanced Log Table Row Borders( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Timestamp Column( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -941,9 +969,10 @@ Preferences[1] << Set( Enhanced Log Timestamp Column( 1 ) );
 
 **Syntax:** obj &lt;&lt; Enhanced Log Underline Table Headings( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -959,7 +988,6 @@ Preferences[1] << Set( Enhanced Log Underline Table Headings( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -975,7 +1003,6 @@ Preferences[1] << Set( Enter Key moves down( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -995,7 +1022,6 @@ Preferences[1] << Set( Evaluate OnOpen Scripts( "Prompt" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1011,7 +1037,6 @@ Preferences[1] << Set( Fast Marker Threshold( 100000 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1027,7 +1052,6 @@ Preferences[1] << Set( Fill Hollow Markers( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1041,9 +1065,10 @@ Preferences[1] << Set( Fill Selection Color( "Red" ) );
 
 **Description:** Changes the default setting for the amount unselected fills are faded.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1059,7 +1084,6 @@ Preferences[1] << Set( Fill Selection Fade( 50 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1073,9 +1097,10 @@ Preferences[1] << Set( Fill Selection Mode( "Selected Patterned" ) );
 
 **Description:** Determines if formula evaluation happens during idle time or if it runs immediately in the foreground
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1091,7 +1116,6 @@ Preferences[1] << Set( Formula Evaluation( "Immediate" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1107,7 +1131,6 @@ Preferences[1] << Set( Frame Border( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1123,7 +1146,6 @@ Preferences[1] << Set( Frame Color( "Green" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 a = Preferences[1] << Get( Show the Tip of the Day at startup );
 Show( a );
 
@@ -1137,7 +1159,6 @@ Show( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 a = Preferences[1] << Get Script;
 Show( a );
 
@@ -1151,7 +1172,6 @@ Show( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1167,7 +1187,6 @@ Preferences[1] << Set( Graph Background Color( "Light Green" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1183,7 +1202,6 @@ Preferences[1] << Set( Graph Border( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1199,7 +1217,6 @@ Preferences[1] << Set( Graph Height( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1215,7 +1232,6 @@ Preferences[1] << Set( Graph Marker( "Diamond" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1231,7 +1247,6 @@ Preferences[1] << Set( Graph Marker Theme( "Classic" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1247,7 +1262,6 @@ Preferences[1] << Set( Graph Marker Unselected Fade( 45 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1259,15 +1273,18 @@ Preferences[1] << Set( Graph Marker size( "Large" ) );
 
 **Syntax:** obj &lt;&lt; HDF5PathDelimiter( text )
 
+**JMP Version Added:** 17
+
 ### Header summary heat map color theme
 
 **Syntax:** obj &lt;&lt; Header summary heat map color theme( "name" )
 
 **Description:** Changes the default setting for the continuous color theme appearing in all graphs.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will
 //affect the default behavior of JMP.
 Show( Get Preference( Header summary heat map color theme ) );
@@ -1284,7 +1301,6 @@ Show( Get Preference( Header summary heat map color theme ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1304,7 +1320,6 @@ Preferences[1] << Set( "Hide 'Find and Replace' window"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1320,7 +1335,6 @@ Preferences[1] << Set( Hide Overlap Labels( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1334,9 +1348,10 @@ Preferences[1] << Set( Histogram Color( "Light Yellow" ) );
 
 **Description:** Changes the default line color for histograms.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
  
@@ -1352,7 +1367,6 @@ Preferences[1] << Set( Histogram Line Color( "Red" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1378,7 +1392,6 @@ Preferences[1] << Set( Hover Help( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1394,7 +1407,6 @@ Preferences[1] << Set( Initial JMP Window( "Home Window" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1410,7 +1422,6 @@ Preferences[1] << Set( Initial Log Window( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1426,7 +1437,6 @@ Preferences[1] << Set( Initial Splash Window( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1440,9 +1450,10 @@ Preferences[1] << Set( Inside Ticks( 1 ) );
 
 **Description:** Changes the default setting for the interactive HTML color theme.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1458,7 +1469,6 @@ Preferences[1] << Set( Interactive HTML Color( "Light Background" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1472,9 +1482,10 @@ Preferences[1] << Set( Internet Open Timeout( 300 /* 5 minutes */ ) );
 
 **Description:** Sets the timeout value for publishing to JMP Live. The default is 180 seconds.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1488,9 +1499,10 @@ Preferences[1] << Set( JMP Live Timeout( 120 ) );
 
 **Description:** Switches theme for all of JMP.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1514,15 +1526,18 @@ restore theme;
 
 **Description:** When saving script with list of columns, use &apos;column group&apos; syntax if the list of columns is a column group
 
+**JMP Version Added:** 16
+
 ### JSS Dir
 
 **Syntax:** obj &lt;&lt; JSS Dir( text )
 
 **Description:** Changes the JSS directory for development use.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1542,7 +1557,6 @@ Set Preference( JSS Dir( "C:\My\Path\To\jss\" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1558,7 +1572,6 @@ Preferences[1] << Set( Language Switch Warning( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1574,7 +1587,6 @@ Preferences[1] << Set( Laser pointer( "Purple" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1588,9 +1600,10 @@ Preferences[1] << Set( Line Width( 2 ) );
 
 **Description:** Changes the default setting for how the logs are displayed. This includes the main and project logs.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1606,7 +1619,6 @@ Preferences[1] << Set( Log Mode( "Text" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will affect 
 //the default behavior of JMP. 
 
@@ -1622,7 +1634,6 @@ Preferences[1] << Set( Log Window Height( 200 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1638,7 +1649,6 @@ Preferences[1] << Set( Major Grid Line Color( "Blue" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1652,9 +1662,10 @@ Preferences[1] << Set( Major Grid Lines( 1 ) );
 
 **Description:** Mark menu items newer than a particular JMP version.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1670,7 +1681,6 @@ Preferences[1] << Set( Mark Items Added Since( "16" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1686,7 +1696,6 @@ Preferences[1] << Set( Marker Label Color( "Blue" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1702,7 +1711,6 @@ Preferences[1] << Set( Marker Label Color Style( "Marker Color" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1714,6 +1722,8 @@ Preferences[1] << Set( Marker Selection Mode( "Selection Haloed" ) );
 
 **Syntax:** obj &lt;&lt; Maximum Auto Size Column List Width( number )
 
+**JMP Version Added:** 18
+
 ### Maximum JMP Call Depth
 
 **Syntax:** obj &lt;&lt; Maximum JMP Call Depth( number )
@@ -1722,7 +1732,6 @@ Preferences[1] << Set( Marker Selection Mode( "Selection Haloed" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1738,7 +1747,6 @@ Preferences[1] << Set( Maximum JMP call depth( 50 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1754,7 +1762,6 @@ Preferences[1] << Set( Maximum Parse Depth( 600 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1770,7 +1777,6 @@ Preferences[1] << Set( Maximum Symbol Evaluation Recursion Depth( 50 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1786,7 +1792,6 @@ Preferences[1] << Set( Minor Grid Line Color( "Black" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1800,11 +1805,15 @@ Preferences[1] << Set( Minor Grid Lines( 1 ) );
 
 **Description:** File to use for new, empty projects.
 
+**JMP Version Added:** 16
+
 ### New character columns default to compact
 
 **Syntax:** obj &lt;&lt; New character columns default to compact( state=0|1 )
 
 **Description:** New character columns or columns switched to the character data type are automatically made compact columns
+
+**JMP Version Added:** 18
 
 ### OAuth2 Authentication Browser
 
@@ -1812,9 +1821,10 @@ Preferences[1] << Set( Minor Grid Lines( 1 ) );
 
 **Description:** Sign in to OAuth2 servers with the specified browser type. Valid values are "Default", "Embedded", "External". "Default" by default.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1832,7 +1842,6 @@ Preferences[1] << Set(
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will
 //affect the default behavior of JMP.
      
@@ -1852,7 +1861,6 @@ Preferences[1] << Name( "ODBC Allow Table Replace" )(0);
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1866,9 +1874,13 @@ Preferences[1] << Set( Open Text File Charset( "utf-8" ) );
 
 **Description:** Automatically open character columns as compact columns when JMP determines it&apos;s advantageous
 
+**JMP Version Added:** 18
+
 ### Open files from outside projects in
 
 **Syntax:** obj &lt;&lt; Open files from outside projects in( "No Project"|"Open Project or No Project"|"Open Project or New Project"|"New Project" )
+
+**JMP Version Added:** 16
 
 ### Outline Close Orientation
 
@@ -1884,7 +1896,6 @@ Preferences[1] << Set( Open Text File Charset( "utf-8" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will
 //affect the default behavior of JMP.
 
@@ -1900,7 +1911,6 @@ Preferences[1] << Set( Parallel Data Table Column Decompression( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1912,9 +1922,10 @@ Preferences[1] << Set( Partial Selection Mode( "Bar" ) );
 
 **Syntax:** obj &lt;&lt; Platform Launch Actions( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1928,7 +1939,6 @@ Preferences[1] << Set( Platform Launch Actions( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
      
@@ -1944,7 +1954,6 @@ Preferences[1] << Name( "Prefer DSN-less ODBC Connection Strings" )(1);
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1960,7 +1969,6 @@ Preferences[1] << Set( Preserve SAS formats when exporting to SAS( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1976,7 +1984,6 @@ Preferences[1] << Set( Preserve SAS variable names when exporting to SAS( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -1990,9 +1997,10 @@ Preferences[1] << Set( Print Data Grid as is( 1 ) );
 
 **Description:** Prompt or no prompt when closing the summary table.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2006,9 +2014,10 @@ Preferences[1] << Set( Close report action( "Prompt" ) );
 
 **Description:** Use the specified proxy port.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2022,9 +2031,10 @@ Preferences[1] << Set( Proxy Port( 80 ) );
 
 **Description:** Use the specified proxy.
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 
 //Caution: Changing a preference will 
 //affect the default behavior of JMP.
@@ -2040,9 +2050,10 @@ Preferences[1] << Set( Proxy Server( url ) );
 
 **Description:** The user name and password to use for proxy authentication. [user name]:[password]
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2058,7 +2069,6 @@ Preferences[1] << Set( Proxy User( "clark%20kent:superman" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2074,7 +2084,6 @@ Preferences[1] << Set( Reopen the initial JMP window on last window close( 1 ) )
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2088,9 +2097,10 @@ Preferences[1] << Set( Report Invalid Display Box Messages( 1 ) );
 
 **Description:** Warnings and errors from submitting JSL will be logged and shown interactively. When disabled, warnings and errors will only be logged
 
+**JMP Version Added:** 15
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2106,9 +2116,10 @@ Preferences[1] << Set( Report JSL warnings and errors interactively( 1 ) );
 
 **Syntax:** obj &lt;&lt; Report Snapshot On Close( state=0|1 )
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2122,6 +2133,8 @@ Preferences[1] << Set( Report Snapshot On Close( 1 ) );
 
 **Description:** If checked, the row editor will shows all the columns in the data table whether or not there are selected columns.
 
+**JMP Version Added:** 16
+
 ### Ruler Tool Units
 
 **Syntax:** obj &lt;&lt; Ruler Tool Units( "Kilometers"|"Miles" )
@@ -2130,7 +2143,6 @@ Preferences[1] << Set( Report Snapshot On Close( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2144,7 +2156,6 @@ Preferences[1] << Set( Ruler Tool Units( "Miles" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2158,7 +2169,6 @@ Preferences[1] << Set( "SAS Automatically Generate ODS results"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
           
@@ -2170,9 +2180,10 @@ Preferences[1] << Set( "SAS Connect to CAS with SAS Viya"n( 1 ) );
 
 **Syntax:** obj &lt;&lt; SAS Data Import Close Warning( state=0|1 )
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2186,7 +2197,6 @@ Preferences[1] << Set( "SAS Data Import Close Warning"n( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2200,7 +2210,6 @@ Preferences[1] << Set( "SAS Data Import Uses Labels"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2218,9 +2227,10 @@ Preferences[1] << Set( "SAS Import generated datasets into JMP"n( 1 ) );
 
 **Description:** "Statistical" by default.
 
+**JMP Version Added:** 19
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2234,7 +2244,6 @@ Preferences[1] << Set( "SAS ODS Style"n( "HTMLBlue" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2250,7 +2259,6 @@ Preferences[1] << Set( "SAS Organize results in JMP project"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2264,6 +2272,8 @@ Preferences[1] << Set( SAS Transport Use UTF8( 1 ) );
 
 **Description:** "|" by default.
 
+**JMP Version Added:** 16
+
 ### Save Data Table Columns GZ Compressed
 
 **Syntax:** obj &lt;&lt; Save Data Table Columns GZ Compressed( state=0|1 )
@@ -2272,7 +2282,6 @@ Preferences[1] << Set( SAS Transport Use UTF8( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2288,7 +2297,6 @@ Preferences[1] << Set( Save Data Table Columns GZ Compressed( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
             
@@ -2304,7 +2312,6 @@ Preferences[1] << Set( Save Image DPI( 300 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2320,7 +2327,6 @@ Preferences[1] << Set( Save Journals GZ Compressed( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2336,7 +2342,6 @@ Preferences[1] << Set( Save Scripts in English( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2352,7 +2357,6 @@ Preferences[1] << Set( Save Text Files as Unicode( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2368,7 +2372,6 @@ Preferences[1] << Set( Save table with report( prompt | embed | separate ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2384,7 +2387,6 @@ Preferences[1] << Set( Save table with report( "Prompt" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2398,11 +2400,12 @@ Preferences[1] << Set( Selected Marker Color( "Cyan" ) );
 
 **Description:** Creates a semantic format that is used when its criteria matches the current report context.
 
+**JMP Version Added:** 17
+
 **Example 1**
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2437,7 +2440,6 @@ Preferences(
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2451,9 +2453,10 @@ Preferences( Semantic formatting( Clear ) );
 
 **Description:** Changes the default setting for the continuous color theme appearing in all graphs.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2471,7 +2474,6 @@ Show( Get Preference( Sequential Color Theme ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 Preferences[1] << Set( Show the Tip of the Day at startup( 1 ) );
@@ -2484,7 +2486,6 @@ Preferences[1] << Set( Show the Tip of the Day at startup( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2498,7 +2499,6 @@ Preferences[1] << Set( Shade Alternate Table Rows( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2512,7 +2512,6 @@ Preferences[1] << Set( Shade Table Cells( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2526,9 +2525,10 @@ Preferences[1] << Set( Shade Table Headings( 1 ) );
 
 **Description:** Changes the default setting for the color of shape boundaries drawn on all graphs, such as background maps.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2550,7 +2550,6 @@ Preferences[1] << Set( Shape Boundary Color( "Black" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2562,11 +2561,15 @@ Preferences[1] << Set( Show Personalization at startup( 1 ) );
 
 **Syntax:** obj &lt;&lt; Show SAS Log( "Never"|"Always"|"On Error" )
 
+**JMP Version Added:** 19
+
 ### Show Search box on Columns Panel
 
 **Syntax:** obj &lt;&lt; Show Search box on Columns Panel( state=0|1 )
 
 **Description:** Show the search edit box on the columns panel by default
+
+**JMP Version Added:** 16
 
 ### Show Status Bar
 
@@ -2576,7 +2579,6 @@ Preferences[1] << Set( Show Personalization at startup( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2592,7 +2594,6 @@ Preferences[1] << Set( Show Status Bar( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2608,7 +2609,6 @@ Preferences[1] << Set( Show conditional formatting( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2622,15 +2622,18 @@ Preferences[1] << Set( Show menu tips( 1 ) );
 
 **Description:** Whether missing data bars or bins are initially displayed in summary graphs. Whatever the value here, they can be toggled for individual summary graphs by right-clicking on the summary graph and selecting "Missing values bar" or "Missing values bin".
 
+**JMP Version Added:** 16
+
 ### Show semantic formatting
 
 **Syntax:** obj &lt;&lt; Show semantic formatting( "Always"|"No Row Matching"|"Never" )
 
 **Description:** Changes the default setting for using semantic formatting in reports. Possible values are: "Always", "No Row Matching", and "Never". Use "No Row Matching" to disable row-specific semantic formats.
 
+**JMP Version Added:** 17
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2644,6 +2647,8 @@ Preferences[1] << Set( Show semantic formatting( "Always" ) );
 
 **Description:** Whether the summary graphs are initially displayed in the data table between the column names and the data cells, if the number of rows is under some performance threshold (3 million rows). Whatever the initial state, the display can be toggled for an individual data table with the icon next to the column names.
 
+**JMP Version Added:** 15
+
 ### Show the Quick Start at startup
 
 **Syntax:** obj &lt;&lt; Show the Quick Start at startup( state=0|1 )
@@ -2652,7 +2657,6 @@ Preferences[1] << Set( Show semantic formatting( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2666,9 +2670,10 @@ Preferences[1] << Set( Show the Quick Start at startup( 1 ) );
 
 **Description:** Set the color for continuous data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2682,9 +2687,10 @@ Preferences( Summary Graph Continuous Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 **Description:** Set the highlight color for continuous data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2698,9 +2704,10 @@ Preferences( Summary Graph Continuous Highlight Color( RGB Color( 0.5, 0.9, 0.9 
 
 **Description:** Set the color for missing continuous data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2714,9 +2721,10 @@ Preferences( Summary Graph Continuous Missing Color( RGB Color( 0.5, 0.9, 0.9 ) 
 
 **Description:** Set the highlight color for missing continuous data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2730,9 +2738,10 @@ Preferences( Summary Graph Continuous Missing Highlight Color( RGB Color( 0.5, 0
 
 **Description:** Set the color for name-ordered data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2746,9 +2755,10 @@ Preferences( Summary Graph Name Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 **Description:** Set the highlight color for name-ordered data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2762,9 +2772,10 @@ Preferences( Summary Graph Name Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.
 
 **Description:** Set the color for the other bar in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2778,9 +2789,10 @@ Preferences( Summary Graph Other Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 **Description:** Set the highlight color for the other bar in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2794,9 +2806,10 @@ Preferences( Summary Graph Other Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) )
 
 **Description:** Set the color for the other bar in summary graphs and data filters
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will
 //affect the default behavior of JMP.
 
@@ -2810,9 +2823,10 @@ Preferences( Summary Graph Run Chart Color( RGB Color( 0.5, 0.1, 0.9 ) ) );
 
 **Description:** Set the color for size-ordered data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2826,9 +2840,10 @@ Preferences( Summary Graph Size Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 **Description:** Set the highlight color for size-ordered data in summary graphs and data filters
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2844,7 +2859,6 @@ Preferences( Summary Graph Size Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2858,7 +2872,6 @@ Preferences[1] << Set( Suppress Formula Eval on Open( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2872,7 +2885,6 @@ Preferences[1] << Set( Table Column Borders( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2886,7 +2898,6 @@ Preferences[1] << Set( Table Column Group Borders( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2900,7 +2911,6 @@ Preferences[1] << Set( Table Heading Column Borders( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2916,7 +2926,6 @@ Preferences[1] << Set( Table Row Borders( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2930,9 +2939,10 @@ Preferences[1] << Set( Task Bar Strategy( "All Windows" ) );
 
 **Description:** When reports or portions of reports are saved as PNG images, the background will be transparent.
 
+**JMP Version Added:** 14
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2946,7 +2956,6 @@ Preferences[1] << Set( Transparent background for report PNG images( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2962,7 +2971,6 @@ Preferences[1] << Set( Underline Table Headings( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2978,7 +2986,6 @@ Preferences[1] << Set( Use Excel Labels as Headings( "Always" ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -2994,7 +3001,6 @@ Preferences[1] << Set( Use Greek letters( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will affect 
 //the default behavior of JMP. 
 
@@ -3008,9 +3014,10 @@ Preferences[1] << Set( Use JMP Locale Settings( 1 ) );
 
 **Description:** Configure column sorting for new columns so that text containing numbers is sorted in numerical order. Columns converted to character type will also be affected if they don&apos;t already contain a Value Order property.
 
+**JMP Version Added:** 16
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3024,6 +3031,8 @@ Preferences( Use Numerical Ordering( 0 ) );
 
 **Description:** Whether to send log messages generated by scripts and windows in a project to the project log window (instead of the main log window)
 
+**JMP Version Added:** 16
+
 ### Use SPSS labels for column names during import
 
 **Syntax:** obj &lt;&lt; Use SPSS labels for column names during import( state=0|1 )
@@ -3032,7 +3041,6 @@ Preferences( Use Numerical Ordering( 0 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3048,7 +3056,6 @@ Preferences[1] << Set( Use SPSS labels for column names during import( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3064,7 +3071,6 @@ Preferences[1] << Set( Use Thousands Separator( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3080,7 +3086,6 @@ Preferences[1] << Set( "Use Triple-S Labels as Headings"n( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3096,7 +3101,6 @@ Preferences[1] << Set( Use a Floating Window for Data Filters( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3110,9 +3114,10 @@ Preferences[1] << Set( Use an Asterisk with the PValue Format( 1 ) );
 
 **Description:** When saving report customizations, use column references instead of strings when referring to customized elements. This generates scripts that are more robust against column name changes. Note that customizations that are saved using this preference might work only in JMP 18.0 and newer.
 
+**JMP Version Added:** 18
+
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3128,7 +3133,6 @@ Preferences[1] << Set( Use column references in Dispatch( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
@@ -3142,11 +3146,15 @@ Preferences[1] << Set( Use math symbols( 1 ) );
 
 **Description:** Automatically open the data table that this column references.
 
+**JMP Version Added:** 16
+
 ### Virtual Join Use Linked Column Name
 
 **Syntax:** obj &lt;&lt; Virtual Join Use Linked Column Name( state=0|1 )
 
 **Description:** Name the virtual column with the linked column&apos;s name.
+
+**JMP Version Added:** 16
 
 ### Warn that compact columns cannot be opened in JMP 17 and earlier
 
@@ -3154,11 +3162,15 @@ Preferences[1] << Set( Use math symbols( 1 ) );
 
 **Description:** The compact file format cannot be opened in JMP 17 and earlier.
 
+**JMP Version Added:** 18
+
 ### Warn when referenced table name has changed
 
 **Syntax:** obj &lt;&lt; Warn when referenced table name has changed( state=0|1 )
 
 **Description:** Give a warning message when a virtually linked (referenced) table&apos;s name has changed.
+
+**JMP Version Added:** 15
 
 ## Platform Preferences
 
@@ -3172,7 +3184,6 @@ Preferences[1] << Set( Use math symbols( 1 ) );
 
 ```jsl
 
-Names Default To Here( 1 );
 a = Platform Preferences[1] << Get( Distribution );
 Show( a );
 
@@ -3186,7 +3197,6 @@ Show( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 a = Platform Preferences[1] << Get Script;
 Show( a );
 
@@ -3200,7 +3210,6 @@ Show( a );
 
 ```jsl
 
-Names Default To Here( 1 );
 //Caution: Changing a preference will 
 //affect the default behavior of JMP. 
 
