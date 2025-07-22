@@ -13,9 +13,6 @@
   color: #ffffff;
   font-size: 16px;
 }
-body {
-  background-color: black;
-}
 .clipboard {
   position: relative;
   display: block;
@@ -51,12 +48,13 @@ body {
   font-display: swap;
 }
 
-* {
+body{
+  background-color: black;
   font-family: "Anova", sans-serif !important;
   --md-text-font: "Anova" !important;
 }
-.rst-content code, .rst-content tt, code, .hljs-title, .hljs-string, .hljs-number, .hljs-variable, .hljs-built_in, .hljs-keyword, .hljs-comment {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace !important;
+.rst-versions{
+  font-family: "Anova", sans-serif !important;
 }
 
 .wy-menu-vertical li.current ul {

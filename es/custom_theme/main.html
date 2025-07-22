@@ -12,6 +12,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% endblock %}
 {% block scripts %}
       {{ super() }}
+      <script>
+  if (window.connectorStatus) {
+    window.connectorStatus.watch("prop", function (value) {
+      if (value == "completed") {
+        Prism.highlightAll();
+      }
+    });
+  } else {
+    if (Prism) {
+      Prism.highlightAll();
+    }
+  }
+</script>
       <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGNNXZW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

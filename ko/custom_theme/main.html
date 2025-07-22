@@ -1,50 +1,69 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block libs %}
 {{ super() }}
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NGNNXZW');</script>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-NGNNXZW');</script>
 <!-- End Google Tag Manager -->
 
 {% endblock %}
 {% block scripts %}
-      {{ super() }}
-      <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGNNXZW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+{{ super() }}
+<script>
+  if (window.connectorStatus) {
+    window.connectorStatus.watch("prop", function (value) {
+      if (value == "completed") {
+        Prism.highlightAll(); //window._jmp.functions.removeNbsp();
+      }
+    });
+  } else {
+    if (Prism) {
+      Prism.highlightAll();
+    }
+  }
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGNNXZW" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<script async="async" type="text/javascript" crossorigin="" src='//consent.trustarc.com/notice?domain=jmp.com&c=teconsent&js=nj&noticeType=bb&gtm=1&text=true'></script>
-  {% endblock %}
+<script async="async" type="text/javascript" crossorigin=""
+  src='//consent.trustarc.com/notice?domain=jmp.com&c=teconsent&js=nj&noticeType=bb&gtm=1&text=true'></script>
+{% endblock %}
 
 {% block footer %}
 {%- block next_prev %}
-  {%- if config.theme.prev_next_buttons_location|lower in ['bottom', 'both']
-        and page and (page.next_page or page.previous_page) %}
-    <div class="rst-footer-buttons" role="navigation" aria-label="{% trans %}Footer Navigation{% endtrans %}">
-      {%- if page.previous_page %}
-        <a href="{{ page.previous_page.url|url }}" class="btn btn-neutral float-left" title="{{ page.previous_page.title }}"><span class="icon icon-circle-arrow-left"></span>이전</a>
-      {%- endif %}
-      {%- if page.next_page %}
-        <a href="{{ page.next_page.url|url }}" class="btn btn-neutral float-right" title="{{ page.next_page.title }}">다음<span class="icon icon-circle-arrow-right"></span></a>
-      {%- endif %}
-    </div>
+{%- if config.theme.prev_next_buttons_location|lower in ['bottom', 'both']
+and page and (page.next_page or page.previous_page) %}
+<div class="rst-footer-buttons" role="navigation" aria-label="{% trans %}Footer Navigation{% endtrans %}">
+  {%- if page.previous_page %}
+  <a href="{{ page.previous_page.url|url }}" class="btn btn-neutral float-left"
+    title="{{ page.previous_page.title }}"><span class="icon icon-circle-arrow-left"></span>이전</a>
   {%- endif %}
-  {%- endblock %}
+  {%- if page.next_page %}
+  <a href="{{ page.next_page.url|url }}" class="btn btn-neutral float-right" title="{{ page.next_page.title }}">다음<span
+      class="icon icon-circle-arrow-right"></span></a>
+  {%- endif %}
+</div>
+{%- endif %}
+{%- endblock %}
 
-  <hr/>
+<hr />
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    {%- if config.copyright %}
-      <p>{{ config.copyright }}</p>
-    {%- endif %}
-  </div>
+<div role="contentinfo">
+  <!-- Copyright etc -->
+  {%- if config.copyright %}
+  <p>{{ config.copyright }}</p>
+  {%- endif %}
+</div>
 
-  <div id="consent_blackbar"></div>
+<div id="consent_blackbar"></div>
 <div id="teconsent"></div>
 
 {% endblock %}

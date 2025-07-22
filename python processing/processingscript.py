@@ -225,14 +225,14 @@ def has_special_chars(s):
 
 def files(abbrv, functions_cat, functions_name):
     headers_map = {}
-    headers_map['en'] = ['Syntax', 'Description', 'JMP Version Added']
-    headers_map['es'] = ['Sintaxis', 'Descripción', 'JMP Versión agregada']
-    headers_map['it'] = ['Sintassi', 'Descrizione', 'JMP Versione aggiunta']
-    headers_map['de'] = ['Syntax', 'Beschreibung', 'JMP Version hinzugefügt']
-    headers_map['fr'] = ['Syntaxe ', 'Description ', 'JMP Version ajoutée ']
-    headers_map['ja'] = ['構文', '説明', 'JMP追加されたバージョン']
-    headers_map['ko'] = ['구문', '설명', 'JMP추가된 버전']
-    headers_map['zh'] = ['语法', '说明', 'JMP添加的版本']
+    headers_map['en'] = ['Syntax', 'Description', 'JMP Version Added', 'Example']
+    headers_map['es'] = ['Sintaxis', 'Descripción', 'JMP Versión agregada', 'Ejemplo']
+    headers_map['it'] = ['Sintassi', 'Descrizione', 'JMP Versione aggiunta', 'Esempio']
+    headers_map['de'] = ['Syntax', 'Beschreibung', 'JMP Version hinzugefügt', 'Beispiel']
+    headers_map['fr'] = ['Syntaxe ', 'Description ', 'JMP Version ajoutée ', 'Exemple']
+    headers_map['ja'] = ['構文', '説明', 'JMP追加されたバージョン', '例']
+    headers_map['ko'] = ['구문', '설명', 'JMP추가된 버전', '예제']
+    headers_map['zh'] = ['语法', '说明', 'JMP添加的版本', '示例']
     headers = headers_map[abbrv]
     markdown_folder_name = 'markdownfiles-' + abbrv
     with open('scriptingindex'+abbrv+'.json', 'r') as f:
@@ -316,9 +316,9 @@ def files(abbrv, functions_cat, functions_name):
                                     f.write("**" + headers[2] + ":** " + str(item[0].get("Version Added")) + "\n\n")
                                 for val in item:
                                     if val.get('Example Label') != '':
-                                        if 'Example' not in str(val.get('Example Label')) and not sub_cat_text:
+                                        if headers[3] not in str(val.get('Example Label')) and not sub_cat_text:
                                             f.write("#### " + str(val.get("Example Label")) + "\n\n")
-                                        elif 'Example' not in str(val.get('Example Label')) and not sub_cat_text:
+                                        elif headers[3] not in str(val.get('Example Label')) and not sub_cat_text:
                                             f.write("##### " + str(val.get("Example Label")) + "\n\n")
                                         else:
                                             f.write("**" + str(val.get("Example Label")) + "**" + "\n\n")

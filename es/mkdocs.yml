@@ -2,10 +2,8 @@ site_name: JMP Índice de scripts
 theme: 
   name: readthedocs
   custom_dir: custom_theme
-  highlightjs: true
+  highlightjs: false
   locale: es
-  hljs_languages:
-    - python
   logo: img/JMPScriptingIndexLogo.svg
   collapse_navigation: false
   navigation_depth: 6
@@ -16,8 +14,10 @@ copyright: © 2025 JMP Statistical Discovery LLC. Todos los derechos reservados.
 use_directory_urls: false
 extra_css:
   - css/jmpstyle.css
+  - css/prism.css
 extra_javascript:
-  - js/syntaxhighlighting.js
+  - js/prism.min.js
+  - js/prism-custom.js
   - js/popper.min.js
   - js/tippy.js
   - js/extra.js
