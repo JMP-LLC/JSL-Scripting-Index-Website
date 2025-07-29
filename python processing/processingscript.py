@@ -147,6 +147,7 @@ display_box_list = [
     "WrapListBox",
 ]
 functions_list = [
+    "JMP Clinical",
     "所有函数",
     "すべての関数",
     "모든 함수",
@@ -311,6 +312,7 @@ def files(abbrv, functions_cat, functions_name):
                                     f.write("**" + headers[0] + ":** " + new_syntax + "\n\n")
                                 if item[0].get('Description') != '':
                                     desc = item[0].get("Description").replace("\\", "\\\\")
+                                    desc = desc.replace("*", "\\*")
                                     f.write("**" + headers[1] + ":** " + desc + "\n\n")
                                 if item[0].get('Version Added') != '':
                                     f.write("**" + headers[2] + ":** " + str(item[0].get("Version Added")) + "\n\n")
@@ -390,8 +392,8 @@ def side_script():
 
 
 if __name__ == '__main__':
-    language = 'Spanish'
-    abbrv = 'es'
+    language = 'English'
+    abbrv = 'en'
     function_map = {}
     function_map['en'] = ['Functions', 'All Functions']
     function_map['de'] = ['Funktionen', 'Alle Funktionen']
