@@ -1,4 +1,11 @@
-{% extends "base.html" %} {% block libs %} {{ super() }}
+{% extends "base.html" %} 
+{% block extrahead %}
+      {{ super() }}
+      {% if page.title %}
+        <meta name="description" content="JMP Scripting Language (JSL) documentation for {{ page.title }} includes descriptions, syntax, and examples." />
+      {% endif %}
+    {% endblock %}
+{% block libs %} {{ super() }}
 <!-- Google Tag Manager -->
 <script>
   (function (w, d, s, l, i) {
