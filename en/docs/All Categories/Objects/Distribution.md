@@ -868,29 +868,6 @@ obj << Mosaic Plot( 1 );
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1053,29 +1030,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Column( :Height ) );
 Wait( 1 );
 obj << Quantiles( 0 );
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
 
 ```
 
@@ -2949,29 +2903,6 @@ obj << Horizontal Layout( 1 );
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -3120,29 +3051,6 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Column( :Height ) );
 Wait( 1 );
 obj << Quantiles( 0 );
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
 
 ```
 
@@ -4054,29 +3962,6 @@ obj << Mosaic Plot( 1 );
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -4133,29 +4018,6 @@ obj << Prob Axis( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
 obj << Prob Axis( 1 );
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
 
 ```
 
@@ -4591,29 +4453,6 @@ obj << Mosaic Plot( 1 );
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -4670,29 +4509,6 @@ obj << Prob Axis( 1 );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
 obj << Prob Axis( 1 );
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
 
 ```
 

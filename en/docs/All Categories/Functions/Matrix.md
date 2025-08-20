@@ -112,7 +112,7 @@ New Window( "Empirical CDF",
 
 **Syntax:** L2 = Chol Update( L, V, C )
 
-**Description:** Returns an updated Cholesky root of A+V*C*V&apos; where C is an m by m symmetric matrix and V is an n by m matrix. The argument L must be the Cholesky root of an n by n matrix A.
+**Description:** Returns an updated Cholesky root of A+V\*C\*V&apos; where C is an m by m symmetric matrix and V is an n by m matrix. The argument L must be the Cholesky root of an n by n matrix A.
 
 **JMP Version Added:** Before version 14
 
@@ -152,7 +152,7 @@ Show( exAcholnew );
 
 **Syntax:** L = Cholesky( A )
 
-**Description:** Returns the Cholesky decomposition of a positive semi-definite matrix. L is a lower triangular matrix such that L*L` = A.
+**Description:** Returns the Cholesky decomposition of a positive semi-definite matrix. L is a lower triangular matrix such that L\*L` = A.
 
 **JMP Version Added:** Before version 14
 
@@ -390,7 +390,7 @@ Diag( [11 22] );
 
 **Syntax:** y = Direct Product( A, B )
 
-**Description:** Returns the direct or Kronecker product. Result has A[i,j]*B, expanding to all possible products.
+**Description:** Returns the direct or Kronecker product. Result has A[i,j]\*B, expanding to all possible products.
 
 **JMP Version Added:** Before version 14
 
@@ -541,7 +541,7 @@ E Min( [1 22 33], [11 2 3] );
 
 **Syntax:** {M, E} = Eigen( X )
 
-**Description:** Performs eigenvalue decomposition of symmetric matrix X. Returns list {M, E} such that E*Diag(M)*E` = X.
+**Description:** Performs eigenvalue decomposition of symmetric matrix X. Returns list {M, E} such that E\*Diag(M)\*E` = X.
 
 **JMP Version Added:** Before version 14
 
@@ -903,7 +903,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 **Syntax:** y = Inv Update( S, X, &lt;w=1&gt; )
 
-**Description:** Returns an updated inverse matrix, where the first argument S is a symmetric positive definite matrix with the same number of columns as X, the second argument X is a matrix that contains the rows to add or delete, and the third argument w determines whether to add or delete rows (use 1 to add rows and -1 to delete rows). This function evaluates as S-w*S*X`*Inv(I+w*X*S*X`)*X*S, where I is an identity matrix and Inv(A) means an inverse matrix of A.
+**Description:** Returns an updated inverse matrix, where the first argument S is a symmetric positive definite matrix with the same number of columns as X, the second argument X is a matrix that contains the rows to add or delete, and the third argument w determines whether to add or delete rows (use 1 to add rows and -1 to delete rows). This function evaluates as S-w\*S\*X`\*Inv(I+w\*X\*S\*X`)\*X\*S, where I is an identity matrix and Inv(A) means an inverse matrix of A.
 
 **JMP Version Added:** Before version 14
 
@@ -1049,7 +1049,7 @@ X = [1, 2, 3, 4];
 
 **Syntax:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
-**Description:** Fits a linear regression for the assumed model y = X * beta + error. The optional <<noIntercept argument specifies a no-intercept model. The optional <<printToLog argument specifies that a summary of fit is printed to the log window. The optional weight argument specifies a vector of weights to perform weighted least squares, and the optional freq argument specifies a vector of frequencies. Returns a list containing a vector of the estimates, a vector of the standard errors, and a list of diagnostics. The list of diagnostics contains vectors of the t statistics and p-values for the estimates, as well as the R-Square and adjusted R-Square values for the regression fit.
+**Description:** Fits a linear regression for the assumed model y = X \* beta + error. The optional <<noIntercept argument specifies a no-intercept model. The optional <<printToLog argument specifies that a summary of fit is printed to the log window. The optional weight argument specifies a vector of weights to perform weighted least squares, and the optional freq argument specifies a vector of frequencies. Returns a list containing a vector of the estimates, a vector of the standard errors, and a list of diagnostics. The list of diagnostics contains vectors of the t statistics and p-values for the estimates, as well as the R-Square and adjusted R-Square values for the regression fit.
 
 **JMP Version Added:** 14
 
@@ -1270,7 +1270,7 @@ Matrix( 2, 3 );
 
 **Syntax:** y = Matrix Mult( A, B, ... ); y = A * B
 
-**Description:** Performs matrix multiplication. The matrix arguments must be conformable: NCol(a)==NRow(b). Note that A * B also works.
+**Description:** Performs matrix multiplication. The matrix arguments must be conformable: NCol(a)==NRow(b). Note that A \* B also works.
 
 **JMP Version Added:** Before version 14
 
@@ -1400,7 +1400,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**Syntax:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
+**Syntax:** L = Ortho( A, &lt;Centered( 1 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Description:** Orthogonalizes the columns of a matrix. Center option makes them sum to zero. Scale option makes them unit length.
 
@@ -1487,7 +1487,7 @@ Print Matrix(
 
 **Syntax:** {Q, R} = QR( X )
 
-**Description:** Creates an m by m orthogonal matrix Q and an m by n upper triangular matrix R, such that X = Q * R. The argument X is an m by n matrix.
+**Description:** Creates an m by m orthogonal matrix Q and an m by n upper triangular matrix R, such that X = Q \* R. The argument X is an m by n matrix.
 
 **JMP Version Added:** Before version 14
 
@@ -1501,7 +1501,7 @@ QR( [11 22, 33 44] );
 
 **Syntax:** {Q, R} = QR LAPACK( X )
 
-**Description:** Creates an m by k orthogonal matrix Q and a k by n upper triangular matrix R, such that X = Q * R. The argument X is an m by n matrix, where k is min(m, n).
+**Description:** Creates an m by k orthogonal matrix Q and a k by n upper triangular matrix R, such that X = Q \* R. The argument X is an m by n matrix, where k is min(m, n).
 
 **JMP Version Added:** 17
 
@@ -1529,7 +1529,7 @@ y = Quadratic Form BLAS( A, x );
 
 **Syntax:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
-**Description:** Computes the singular value decomposition of matrix X using the randomized singular value decomposition by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
+**Description:** Computes the singular value decomposition of matrix X using the randomized singular value decomposition by returning a list {U, M, V} such that U\*diag(M)\*V` is equal to X.
 
 **JMP Version Added:** 17
 
@@ -1616,7 +1616,7 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 **Syntax:** {U, M, V} = SVD( X )
 
-**Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
+**Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U\*diag(M)\*V` is equal to X.
 
 **JMP Version Added:** Before version 14
 
@@ -1630,7 +1630,7 @@ SVD( [11 22, 33 44] );
 
 **Syntax:** {U, M, V} = SVD LAPACK( X )
 
-**Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
+**Description:** Computes the singular value decomposition of matrix X by returning a list {U, M, V} such that U\*diag(M)\*V` is equal to X.
 
 **JMP Version Added:** 17
 
@@ -1680,7 +1680,7 @@ Eval List(
 
 **Syntax:** y = Solve( A, B )
 
-**Description:** Solves the linear system A*x=B for x. The Solve() function is equivalent to Inverse(A)*B if A is non-singular. Note that the A argument must be a square matrix.
+**Description:** Solves the linear system A\*x=B for x. The Solve() function is equivalent to Inverse(A)\*B if A is non-singular. Note that the A argument must be a square matrix.
 
 **JMP Version Added:** Before version 14
 
@@ -1722,7 +1722,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 **Syntax:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
-**Description:** Computes the singular value decomposition of matrix X using the implicitly restarted, partially reorthogonalized Lanczos method for sparse matrices by returning a list {U, M, V} such that U*diag(M)*V` is equal to X.
+**Description:** Computes the singular value decomposition of matrix X using the implicitly restarted, partially reorthogonalized Lanczos method for sparse matrices by returning a list {U, M, V} such that U\*diag(M)\*V` is equal to X.
 
 **JMP Version Added:** Before version 14
 
@@ -2066,7 +2066,7 @@ Vec Diag( [11 22, 33 44] );
 
 **Syntax:** Vec Quadratic( S, X )
 
-**Description:** Evaluates as Vec Diag( X * S * X` ).
+**Description:** Evaluates as Vec Diag( X \* S \* X` ).
 
 **JMP Version Added:** Before version 14
 

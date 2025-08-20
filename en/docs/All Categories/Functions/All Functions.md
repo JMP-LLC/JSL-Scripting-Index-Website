@@ -2772,25 +2772,6 @@ Clear Symbols();
 
 ```
 
-### Clipboard Capture
-
-**Syntax:** clp = Clipboard Capture( box &lt;&lt; Copy )
-
-**Description:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "in" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-Show( Get Clipboard() );
-Show( clp << Get Flavor Data( "Text", <<Text ) );
-
-```
-
 ### Close
 
 **Syntax:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
@@ -8705,46 +8686,6 @@ Show( sheetList );
 
 ```
 
-### Get Expr Location
-
-**Syntax:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
-
-**Description:** Retrieve the locations of the top token in a parsed expression. The default invocation returns {the source file, TokenStartLine, TokenStartCol, TokenLength}.
-
-**JMP Version Added:** 17
-
-**Default output**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( ":height + 20" );
-Get Expr Location( e );
-
-```
-
-**Replace a substring**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-data = " :height + 20 ";
-e = Parse( data );
-positions = Get Expr Location( Arg( e, 2 ), {"TreeStart", "TreeLength"} );
-Munger( data, positions[1], positions[2], "45" );
-
-```
-
-**Select output**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( " :height + 20 " );
-Get Expr Location( e, {"TreeStart", "TreeEnd"} );
-
-```
-
 ### Get File Search Path
 
 **Syntax:** y = Get File Search Path()
@@ -9013,12 +8954,6 @@ Get Policies();
 
 ```
 
-### Get Policy
-
-**Syntax:** Get Policy( "PolicyName" )
-
-**JMP Version Added:** 18
-
 ### Get Preference
 
 **Syntax:** Get Preferences( pref1, ... )
@@ -9098,7 +9033,7 @@ Print( Get Project List() << Get Window Title() );
 
 **Syntax:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
-**Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
+**Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
 
 **JMP Version Added:** 15
 
@@ -12351,33 +12286,6 @@ Show( l );
 
 ```
 
-### JSS Context Box
-
-**Syntax:** y = JSS Context Box( displayBox )
-
-**JMP Version Added:** 19
-
-```jsl
-
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel", Text Box( "Hi" ), Button Box( "Press Me" ), ),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) ) << Background Color( "Blue" );
-			)
-		)
-	)
-);
-
-```
-
 ### KDE
 
 **Syntax:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
@@ -13170,7 +13078,7 @@ If( Host is( "Windows" ),
 
 ### Load Text File
 
-**Syntax:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
+**Syntax:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Description:** Reads a whole text file into a JSL variable. Load Text File() prompts for a file name. Load Text File( path ) returns a string. The XMLParse option converts XML into an expression tree. The SASODSXML parses as SAS ODS default XML. The [{JSON}] option converts JSON into an expression tree. The BLOB argument returns binary data in a JSL Blob variable; optional named parameters to BLOB enable reading a substring from the file.
 
@@ -13415,63 +13323,6 @@ Log( 256, 2 );
 		Write( " " );
 	)
 );
-
-```
-
-### Log Table Messages
-
-**Syntax:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
-
-**Description:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
-
-**JMP Version Added:** 17
-
-**Turn off logging**
-
-```jsl
-
-Log Table Messages( Off );
-
-```
-
-**Turn on logging**
-
-```jsl
-
-Log Table Messages( On );
-
-```
-
-**Turn on logging, and include all messages except "DtMsgClose"**
-
-```jsl
-
-Log Table Messages( On, Exclude( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, and include only the "DtMsgClose" message**
-
-```jsl
-
-Log Table Messages( On, Include( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, but ignore column messages**
-
-```jsl
-
-Log Table Messages( On, Disable( "Column" ) );
-
-```
-
-**Turn on logging, but ignore table messages**
-
-```jsl
-
-Log Table Messages( On );
-Log Table Messages( Disable( "Table" ) );
 
 ```
 
@@ -14740,25 +14591,6 @@ Delete Classes( "complex" );
 
 ```
 
-### Mimic
-
-**Syntax:** mimic obj = Mimic(Box|PlatformRef)
-
-**Description:** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :age ) );
-outline = Report( obj )[Outline Box( 1 )];
-mc = Mimic( obj );
-mc << Mark( outline );
-mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
-
-```
-
 ### Min
 
 **Syntax:** y = Min( x1, ... ); y = Minimum( x1, ... )
@@ -15477,7 +15309,7 @@ d;
 
 **Syntax:** Name(string)
 
-**Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
+**Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
 
 **JMP Version Added:** 14
 
@@ -15870,23 +15702,6 @@ cas << Submit( action );
 
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
-
-```
-
-### New Clipboard
-
-**Syntax:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
-
-**Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-clp = New Clipboard( <<Get From OS );
-New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
-;
 
 ```
 
@@ -17810,7 +17625,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Ortho
 
-**Syntax:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
+**Syntax:** L = Ortho( A, &lt;Centered( 1 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Description:** Orthogonalizes the columns of a matrix. Center option makes them sum to zero. Scale option makes them unit length.
 
@@ -21915,7 +21730,7 @@ ex rev( "abcd" );
 
 **Syntax:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
-**Description:** Searches in the source text for a match to the pattern. The format defaults to "\0" (the entire match) but could be "Fred" (for a constant replacement) or "\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
+**Description:** Searches in the source text for a match to the pattern. The format defaults to "\\0" (the entire match) but could be "Fred" (for a constant replacement) or "\\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
 
 **JMP Version Added:** Before version 14
 
@@ -21982,12 +21797,6 @@ Register Addin(
 );
 
 ```
-
-### Reload Policies
-
-**Syntax:** Reload Policies()
-
-**JMP Version Added:** 18
 
 ### Remove
 
@@ -22412,48 +22221,6 @@ Row() = 3;
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
-
-```
-
-### Rummage
-
-**Syntax:** treasures = Rummage( box, query )
-
-**JMP Version Added:** 17
-
-**Example 1**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Rummage( Window( dt ), "Wilcox" ) << title;
-
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Rummage( Report( obj ), "Wilcox" ) << details;
-
-```
-
-**Example 3**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Show(
-	Rummage(
-		Window( dt ),
-		"graph builder",
-		Algorithm( "FilterUtility" ),
-		Match All Terms( 0 )
-	)[1 :: 5] << Title
-);
-Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << Title );
 
 ```
 
@@ -22996,12 +22763,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
-
-### Set Policy
-
-**Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
-
-**JMP Version Added:** 18
 
 ### Set Preference
 
@@ -25069,14 +24830,6 @@ TanH( 1 );
 
 ```
 
-### Test Promise Error After
-
-**JMP Version Added:** 17
-
-### Test Promise Result After
-
-**JMP Version Added:** 17
-
 ### Text
 
 **Syntax:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
@@ -25788,10 +25541,6 @@ New Window( "Example: Tukey HSD Quantile",
 Type( [1 2 3] );
 
 ```
-
-### Unit Test
-
-**JMP Version Added:** Before version 14
 
 ### Unlineup Box
 
@@ -26737,24 +26486,6 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 ```jsl
 
 Window( "Big Class" );
-
-```
-
-### With Clipboard
-
-**Syntax:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
-
-**Description:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "HELLO" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties );
 
 ```
 

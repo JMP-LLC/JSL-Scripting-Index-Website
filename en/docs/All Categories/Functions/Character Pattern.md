@@ -83,7 +83,7 @@ result;
 
 **Syntax:** Pat Arb No( pattern )
 
-**Description:** Generates a pattern value that matches its argument zero or more times. Same as patRepeat(pattern,0,infinity,RELUCTANT); (*? in regex).
+**Description:** Generates a pattern value that matches its argument zero or more times. Same as patRepeat(pattern,0,infinity,RELUCTANT); (\*? in regex).
 
 **JMP Version Added:** Before version 14
 

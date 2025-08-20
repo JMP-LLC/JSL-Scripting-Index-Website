@@ -27,8 +27,6 @@ New Window( "Filter Col Selector Example",
 
 **Description:** Include or exclude columns with modeling type &apos;none&apos; from the list.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -2843,7 +2841,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Syntax:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
+**Syntax:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\\to\\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description:** Saves the display box tables and graphs slides in a presentation. The presentation can be opened with Microsoft PowerPoint or other presentation software.
 

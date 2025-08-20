@@ -21,20 +21,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -54,26 +44,18 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 obj = dt << Marker Imputation(
 	Marker( Column Group( "Markers" ) ),
 	Ploidy( 2 ),
-	Missing Marker Imputation Method( "LD-kNN" )
+	Set Random Seed( 0 ),
+	Method( "Specified" ),
+	Imputation Value( 1 )
 );
 
 ```
@@ -93,20 +75,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -132,20 +104,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -171,20 +133,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
          //Run platform
 dt << Marker Imputation(
@@ -202,8 +154,6 @@ dt << Marker Imputation(
 
 **Description:** Specifies one of four types of missing marker imputation methods. "LD-kNN" by default.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 
@@ -211,20 +161,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
          //Run platform
 dt << Marker Imputation(
@@ -249,20 +189,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
          //Run platform
 dt << Marker Imputation(
@@ -287,20 +217,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
          //Run platform
 dt << Marker Imputation(
@@ -325,20 +245,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -362,20 +272,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 obj = dt << Marker Imputation(
@@ -402,20 +302,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -440,20 +330,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -541,20 +421,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -620,20 +490,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -659,20 +519,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -697,20 +547,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -755,20 +595,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -797,20 +627,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -864,20 +684,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -919,20 +729,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -958,20 +758,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -997,20 +787,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1092,24 +872,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1159,20 +921,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1201,20 +953,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1240,20 +982,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1282,20 +1014,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1348,22 +1070,6 @@ dist << remove local data filter;
 
 ```
 
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
-
-```
-
 ### Report
 
 **Syntax:** obj &lt;&lt; Report;Report( obj )
@@ -1377,20 +1083,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1417,20 +1113,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1459,20 +1145,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1502,20 +1178,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1545,20 +1211,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1584,20 +1240,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1628,20 +1274,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1667,20 +1303,10 @@ dt << New Column( "_bycol",
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1706,20 +1332,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1744,20 +1360,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1782,20 +1388,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1820,20 +1416,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1936,20 +1522,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1974,20 +1550,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(

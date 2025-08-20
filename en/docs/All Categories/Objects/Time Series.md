@@ -548,7 +548,7 @@ Time Series(
 
 **Syntax:** obj &lt;&lt; Difference( d, &lt;D&gt;, &lt;S&gt; )
 
-**Description:** Computes the differenced series and produces graphs of the autocorrelations and partial autocorrelations of the differenced series. The differenced series is given by  (1-B)^d * (1-B^S)^D * y_t , where y_t is the time series, B is the backshift operator defined by B * y_t = y_(t-1), d is the nonseasonal differencing order, D is the seasonal differencing order, and S is the number of observations per period.
+**Description:** Computes the differenced series and produces graphs of the autocorrelations and partial autocorrelations of the differenced series. The differenced series is given by  (1-B)^d \* (1-B^S)^D \* y_t , where y_t is the time series, B is the backshift operator defined by B \* y_t = y_(t-1), d is the nonseasonal differencing order, D is the seasonal differencing order, and S is the number of observations per period.
 
 ```jsl
 
@@ -1625,24 +1625,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1782,22 +1764,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

@@ -684,7 +684,7 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 **Syntax:** p = F Power( alpha, dfh, dfm, d, n )
 
-**Description:** Calculates the power of an F Test, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and n is the total number of observations. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
+**Description:** Calculates the power of an F Test, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n\*sigma^2) where SSH is the sum of squares for the hypothesis, and n is the total number of observations. Note that for the ANOVA model, d = Sum(a[i]^2)/(k \* sigma^2) where a[i] are effects and k is the number of means.
 
 **JMP Version Added:** Before version 14
 
@@ -728,7 +728,7 @@ F Quantile( 0.7, 5, 3 );
 
 **Syntax:** n = F Sample Size( alpha, dfh, dfm, d, power )
 
-**Description:** Calculates the sample size, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n*sigma^2) where SSH is the sum of squares for the hypothesis, and power is the power desired. Note that for the ANOVA model, d = Sum(a[i]^2)/(k * sigma^2) where a[i] are effects and k is the number of means.
+**Description:** Calculates the sample size, where alpha is the significance level, dfh is the hypothesis degrees of freedom, dfm is the degrees of freedom in the whole model, d is the squared effect size, SSH/(n\*sigma^2) where SSH is the sum of squares for the hypothesis, and power is the power desired. Note that for the ANOVA model, d = Sum(a[i]^2)/(k \* sigma^2) where a[i] are effects and k is the number of means.
 
 **JMP Version Added:** Before version 14
 

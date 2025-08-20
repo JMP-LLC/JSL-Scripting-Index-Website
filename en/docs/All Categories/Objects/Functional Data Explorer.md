@@ -922,24 +922,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1089,22 +1071,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -1574,7 +1540,7 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Fits and removes a baseline model from each function. You can specify the baseline model, correction region, baseline regions, and the anchor points.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 **Example 1**
 
@@ -2350,7 +2316,7 @@ scrobj << Customize Number of FPCs( 2 );
 
 **Description:** Shows or hides the FPCA Diagnostic Plots in the Functional PCA report. On by default.
 
-**JMP Version Added:** 15
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -2503,7 +2469,7 @@ Report( obj )["Basis Function Coefficients"] << Close( 0 );
 
 **Description:** Shows or hides the Diagnostic Plots report. This option is not available for Wavelets or Direction Functional PCA models. On by default.
 
-**JMP Version Added:** 15
+**JMP Version Added:** 14
 
 ```jsl
 
@@ -2718,8 +2684,6 @@ scrobj << Save Data;
 
 **Description:** Specifies the type of script that is saved for reproducing the peak finding results. "Save Script Saves Steps" by default.
 
-**JMP Version Added:** 19
-
 #### Wavelets DOE Analysis
 
 **Syntax:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( state=0|1 ) ); scrobj &lt;&lt; Wavelets DOE Analysis( state=0|1 )
@@ -2869,7 +2833,7 @@ obj = dt << Functional Data Explorer(
 
 **Description:** Shows or hides actual by predicted and residual plots in the Wavelets DOE Analysis report. On by default.
 
-**JMP Version Added:** 15
+**JMP Version Added:** 17
 
 ```jsl
 

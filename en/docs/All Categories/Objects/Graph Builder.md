@@ -10,12 +10,668 @@
 
 **Description:** Provides an interactive graphical interface that enables you to explore your data. You can drag columns into graph zones to create a variety of graphs including scatterplots, contour plots, bar charts, area charts, box plots, histograms, heat maps, pie charts, treemaps, mosaic plots, and maps.
 
+#### Points and smother
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
 	Elements( Points( X, Y ), Smoother( X, Y ) )
+);
+
+```
+
+#### 100% stacked bar chart
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );
+// 100% stacked bar chart, custom legend colors
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Age ), Y( :Cholesterol ), Overlay( :Alcohol Use ) ),
+Elements(
+Bar( X, Y, Legend( 55 ), Bar Style( "Stacked" ), Summary Statistic( "% of Factor" ) )
+),
+SendToReport(
+Dispatch( {}, "Cholesterol", ScaleBox, {Max( 1 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+55,
+Properties( 0, {Fill Color( RGB Color( 0.9, 0.9, 0.9 ) )} ),
+Properties( 1, {Fill Color( RGB Color( 1.0, 0.8, 0.8 ) )} ),
+Properties( 2, {Fill Color( RGB Color( 1.0, 0.6, 0.6 ) )} ),
+Properties( 3, {Fill Color( RGB Color( 1.0, 0.3, 0.3 ) )} )
+)}
+)
+)
+);
+
+```
+
+#### Arrow lines, one per row
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cholesterol.jmp" );
+// arrow lines, one per row
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :April AM ),
+X( :April PM, Position( 1 ) ),
+Y( :June AM ),
+Y( :June PM, Position( 1 ) ),
+Overlay( :treatment )
+),
+Elements(
+Line(
+X( 1 ),
+X( 2 ),
+Y( 1 ),
+Y( 2 ),
+Legend( 8 ),
+Ordering( "Within Row" ),
+Connection( "Arrow" )
+)
+)
+);
+
+```
+
+#### Axis summary table
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+// caption axis table
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :sex ), Y( :height ) ),
+Elements(
+Bar( X, Y, Legend( 4 ) ),
+Caption Box(
+X,
+Y,
+Legend( 5 ),
+Summary Statistic( "Mean" ),
+Summary Statistic 2( "N" ),
+Location( "Axis Table" )
+)
+)
+);
+
+```
+
+#### Bar chart and smooth trend line combination
+
+```jsl
+
+Open( "$SAMPLE_DATA/Spring.jmp" );
+// bar chart and smooth trend line combination, left and right y axes
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :April ), Y( :Temp ), Y( :Precip, Position( 1 ), Side( "Right" ) ) ),
+Elements(
+Points( X, Y( 1 ), Legend( 12 ) ),
+Smoother( X, Y( 1 ), Legend( 13 ) ),
+Bar( X, Y( 2 ), Legend( 16 ) )
+),
+SendToReport(
+Dispatch( {}, "Precip", ScaleBox,
+{Format( "Best", 12 ), Max( 5 ), Inc( 1 ), Minor Ticks( 1 )}
+)
+)
+);
+
+```
+
+#### Bubble chart with overlaid curves
+
+```jsl
+
+Open( "$SAMPLE_DATA/SATByYear.jmp" );
+// Smooth trend line, variable dot size, overlaid y variables, bubble chart. data filter
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :"% Taking (2004)"n ),
+Y( :SAT Verbal ),
+Y( :SAT Math, Position( 1 ) ),
+Size( :Population )
+),
+Elements(
+Points( X, Y( 1 ), Y( 2 ), Legend( 7 ) ),
+Smoother( X, Y( 1 ), Y( 2 ), Legend( 8 ), Lambda( 0.45 ) )
+),
+Local Data Filter( Add Filter( columns( :Year ), Where( :Year == 2004 ) ) ),
+SendToReport(
+Dispatch( {}, "% Taking (2004)", ScaleBox, {Format( "Percent", 12, 0 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model( 7, Properties( 0, {Marker Size( 6 )} ) )}
+)
+)
+);
+
+```
+
+#### Connected lines with overlaid dots
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/M3C Quarterly Wide Format.jmp" );
+// connected lines with overlaid dots, custom markers, nested date axis
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Time ), Y( :N 646 ), Y( :N 647, Position( 1 ) ) ),
+Elements(
+Line( X, Y( 1 ), Y( 2 ), Legend( 10 ) ),
+Points( X, Y( 1 ), Y( 2 ), Legend( 11 ) )
+),
+SendToReport(
+Dispatch( {}, "Time", ScaleBox,
+{Min( 2515958948 ), Max( 2872394250 ), Interval( "Quarter" ), Inc( 1 ),
+Minor Ticks( 0 ), Label Row Nesting( 2 ), Label Row( 1, Set Font Size( 12 ) )}
+),
+Dispatch( {}, "N 646", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+10,
+Properties( 0, {Line Label Properties( {Last Label( 1 )} )} ),
+Properties( 1, {Line Label Properties( {Last Label( 1 )} )} )
+), Legend Model(
+11,
+Base( 0, 0, 0, Item ID( "N 646", 1 ) ),
+Base( 1, 0, 1, Item ID( "N 647", 1 ) ),
+Properties( 0, {Marker( "FilledCircle" )} ),
+Properties( 1, {Marker( "Filled Up Triangle" )} )
+)}
+),
+Dispatch( {}, "Graph Builder", FrameBox,
+{DispatchSeg(
+Line Seg( "Line (N 646)" ),
+Label Offset( "Last", 45, {2843799627.0183, 6317.56810988166} )
+), DispatchSeg(
+Line Seg( "Line (N 647)" ),
+Label Offset( "Last", 45, {2857099451.70628, 4518.71614237549} )
+)}
+)
+)
+);
+
+```
+
+#### Contour plot and scatter plot points
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
+// contour plot and scatter plot points, smoothing, alpha shapes for non-convex hull
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Labor ), Y( :Capital ), Color( :Difference ) ),
+Elements(
+Contour(
+X,
+Y,
+Legend( 9 ),
+Boundary( 0 ),
+Number of Levels( 7 ),
+Alpha( 5 ),
+Smoothness( 0.2 )
+),
+Points( X, Y, Color( 0 ), Legend( 10 ) )
+)
+);
+
+```
+
+#### Coplot-style trellis grouping
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );
+// coplot style grouping using continuous grouping variables, smoother and scatter plot
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :Alpha, Levels( 2 ) ),
+Y( :CPU Time ),
+Group X( :Beta, Levels( 2 ) ),
+Group Y( :Gamma, Levels( 2 ) ),
+Overlay( :Algorithm )
+),
+Elements( Points( X, Y, Legend( 29 ) ), Smoother( X, Y, Legend( 30 ), Lambda( 0.25 ) ) )
+);
+
+```
+
+#### Independent charts using BY variable
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );
+// by variable creates multiple Graph Builder instances
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), ),
+Elements( Points( X, Y, Legend( 17 ) ), Smoother( X, Y, Legend( 18 ) ) ),
+By( :Type )
+);
+
+```
+
+#### Left and right y axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
+// left and right y axes sharing a graph, overlaid lines
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Time ), Y( :pH ), Y( :Tank Level, Position( 1 ), Side( "Right" ) ) ),
+Elements( Line( X, Y( 1 ), Legend( 41 ) ), Line( X, Y( 2 ), Legend( 46 ) ) ),
+SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) )
+);
+
+```
+
+#### Line with custom band interval
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+// range area, custom interval, overlaid line, transparency
+Graph Builder(
+Transform Column(
+"Quantile...=0.75[height][age]",
+Formula( Col Quantile( :height, 0.75, :age, :"@Exclude"n, :"@Filter"n ) )
+),
+Transform Column(
+"Quantile...=0.25[height][age]",
+Formula( Col Quantile( :height, 0.25, :age, :"@Exclude"n, :"@Filter"n ) )
+),
+Show Control Panel( 0 ),
+Variables(
+X( :age ),
+Y( :height ),
+Y( :"Quantile...=0.25[height][age]"n, Position( 1 ) ),
+Y( :"Quantile...=0.75[height][age]"n, Position( 1 ) )
+),
+Elements(
+Area( X, Y( 2 ), Y( 3 ), Legend( 5 ), Area Style( "Range" ) ),
+Line( X, Y( 1 ), Legend( 6 ) )
+),
+SendToReport(
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+5,
+Level Name( 0, "IQR" ),
+Properties( 0, {Transparency( 0.33 )} )
+)}
+),
+Dispatch( {}, "400", LegendBox, {Set Title( "" )} )
+)
+);
+
+```
+
+#### Linear regression panels
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );
+// line of fit, regression, small multiples, custom group color, custom graph spacing
+Graph Builder(
+Show Control Panel( 0 ),
+Grid Color( "Medium Light Gray" ),
+Grid Transparency( 0.25 ),
+Title Fill Color( "Medium Light Gray" ),
+Title Frame Color( "Medium Light Gray" ),
+Level Fill Color( {217, 217, 217} ),
+Level Frame Color( "Medium Light Gray" ),
+Level Spacing Color( "Medium Light Gray" ),
+Graph Spacing( 10 ),
+Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), Wrap( :Type ) ),
+Elements( Points( X, Y, Legend( 17 ) ), Line Of Fit( X, Y, Legend( 19 ) ) ),
+Local Data Filter(
+Add Filter( columns( :"Assets($Mil.)"n ), Where( :"Assets($Mil.)"n <= 60941 ) )
+)
+);
+
+```
+
+#### Mediterranean equal-area choropleth
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );
+// Mediterranean map, choropleth, equal area projection, grid lines
+Graph Builder(
+Size( 1094, 586 ),
+Show Control Panel( 0 ),
+Variables( Color( :Total Median Age ), Shape( :Territory ) ),
+Elements( Map Shapes( Legend( 3 ) ) ),
+SendToReport(
+Dispatch( {}, "", ScaleBox,
+{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -14.2917884823647 ),
+Max( 64.9684846475565 ), Inc( 20 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "", ScaleBox( 2 ),
+{Format( "Latitude DDD", "PUNDIR", 16 ), Min( 21.8020806509188 ),
+Max( 61.3932495299748 ), Inc( 10 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+)
+)
+);
+
+```
+
+#### Multiple x axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );
+// mutiple x variables in separate panels, smoother with confidence intervals and scatter plot
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Alpha ), X( :Beta ), X( :Gamma ), Y( :CPU Time ), Overlay( :Algorithm ) ),
+Elements(
+Position( 1, 1 ),
+Points( X, Y, Legend( 39 ) ),
+Smoother( X, Y, Legend( 40 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+Elements(
+Position( 2, 1 ),
+Points( X, Y, Legend( 41 ) ),
+Smoother( X, Y, Legend( 42 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+Elements(
+Position( 3, 1 ),
+Points( X, Y, Legend( 43 ) ),
+Smoother( X, Y, Legend( 44 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+SendToReport(
+Dispatch( {}, "400", ScaleBox,
+{Legend Model( 40, Properties( 2, {Line Color( RGB Color( 0.4, 0.4, 0.4 ) )} ) )}
+)
+)
+);
+
+```
+
+#### Napoleon's March flow diagram
+
+```jsl
+
+Open( "$SAMPLE_DATA/Napoleons March.jmp" );
+// flow diagram
+Graph Builder(
+Show Control Panel( 0 ),
+Show X Axis( 0 ),
+Show Y Axis( 0 ),
+Show X Axis Title( 0 ),
+Show Y Axis Title( 0 ),
+Variables(
+X( :Longitude ),
+Y( :Latitude ),
+Overlay( :Group ),
+Color( :Direction ),
+Size( :Army Size )
+),
+Elements(
+Line( X, Y, Legend( 3 ), Ordering( "Row Order" ), Missing Values( "No Connection" ) )
+),
+SendToReport(
+Dispatch( {}, "Longitude", ScaleBox,
+{Min( 26.71 ), Max( 34.9 ), Inc( 2.5 ), Minor Ticks( 0 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "Latitude", ScaleBox,
+{Min( 53.32 ), Max( 56.61 ), Inc( 0.5 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+3,
+Properties( 0, {Line Width( 10 )} ),
+Properties( 1, {RGB Color( 1, 0.69, 0.49 )} ),
+Properties( 2, {RGB Color( 0.47, 0.47, 0.47 )} )
+)}
+),
+Dispatch( {}, "graph title", TextEditBox,
+{Set Text( "Napoleon's March to Moscow" )}
+),
+Dispatch( {}, "Graph Builder", FrameBox,
+{Background Map( Images( "Detailed Earth", Transparency( 0.75 ) ) )}
+)
+)
+);
+
+```
+
+#### Overlaid bivariate kernel density contours
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// overlaid bivariate kernel density contour
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Culmen Depth ), Y( :Culmen Length ), Overlay( :Species ) ),
+Elements(
+Contour( X, Y, Legend( 6 ), Line( 1 ), Number of Levels( 5 ), Smoothness( 0.2174 ) )
+)
+);
+
+```
+
+#### Panels with unaligned y axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/US Regional Population.jmp" );
+// panels with unaligned y axes
+Graph Builder(
+Transform Column( "Transform[Year]", Continuous, Formula( Num( :Year ) ) ),
+Show Control Panel( 0 ),
+Link Page Axes( "X Only" ),
+Replicate Linked Page Axes( 0 ),
+Variables(
+X( :"Transform[Year]"n ),
+Y( :Population ),
+Page( :Region, Levels per Row( 3 ) )
+),
+Elements( Points( X, Y, Legend( 3 ) ), Smoother( X, Y, Legend( 4 ) ) ),
+Local Data Filter(
+Add Filter(
+columns( :Region ),
+Where(
+:Region == {"AR,LA,OK,TX", "Great Lakes", "KY,TN,AL,MS", "Midwest",
+"Mountain", "New England", "NY,NJ,PA", "Pacific", "South Atlantic"}
+)
+)
+),
+SendToReport(
+Dispatch( {}, "Population", ScaleBox, {Format( "Engineering SI", 10 )} ),
+Dispatch( {}, "Population", ScaleBox( 2 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 3 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 4 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 5 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 6 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 7 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 8 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 9 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 10 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Transform[Year]", TextEditBox, {Set Text( "Year" )} ),
+Dispatch( {}, "Transform[Year]", Text Edit Box( 2 ), {Set Text( "Year" )} ),
+Dispatch( {}, "Transform[Year]", Text Edit Box( 3 ), {Set Text( "Year" )} )
+)
+);
+
+```
+
+#### Parallel y axes, overlaid lines
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
+// parallel y axes, multiple y scales sharing a graph, overlaid lines
+Graph Builder(
+Show Control Panel( 0 ),
+Parallel Axes( "Y Only" ),
+Variables(
+X( :Time ),
+Y( :Temp ),
+Y( :NH3 Feed ),
+Y( :Air ),
+Y( :Tank Level ),
+Y( :pH )
+),
+Elements( Position( 1, 1 ), Line( X, Y, Legend( 37 ) ) ),
+Elements( Position( 1, 2 ), Line( X, Y, Legend( 39 ) ) ),
+Elements( Position( 1, 3 ), Line( X, Y, Legend( 40 ) ) ),
+Elements( Position( 1, 4 ), Line( X, Y, Legend( 41 ) ) ),
+Elements( Position( 1, 5 ), Line( X, Y, Legend( 42 ) ) ),
+SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) )
+);
+
+```
+
+#### Scatter plot with marginal box plots
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// scatter plot with marginal box plots, custom graph sizes
+Graph Builder(
+Transform Column( "dummy1", Nominal, Formula( 1 ) ),
+Transform Column( "dummy2", Nominal, Formula( 1 ) ),
+Show Control Panel( 0 ),
+Variables(
+X( :Delta 13 C ),
+X( :dummy1 ),
+Y( :dummy2 ),
+Y( :Delta 15 N ),
+Color( :Sex ),
+Size( :Body Mass )
+),
+Relative Sizes( "X", [100 10] ),
+Relative Sizes( "Y", [10 100] ),
+Elements( Position( 1, 1 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 12 ) ) ),
+Elements( Position( 1, 2 ), Points( X, Y, Legend( 4 ) ) ),
+Elements( Position( 2, 1 ) ),
+Elements( Position( 2, 2 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 13 ) ) ),
+SendToReport(
+Dispatch( {}, "dummy1", ScaleBox, {Label Row( Show Major Labels( 0 ) )} ),
+Dispatch( {}, "dummy2", ScaleBox( 2 ), {Label Row( Show Major Labels( 0 ) )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+4,
+Properties( 1, {Transparency( 0.75 )} ),
+Properties( 2, {Transparency( 0.75 )} )
+)}
+),
+Dispatch( {}, "dummy1", TextEditBox, {Set Text( "" )} ),
+Dispatch( {}, "dummy2", TextEditBox, {Set Text( "" )} ),
+Dispatch( {}, "400", LegendBox,
+{Legend Position( {12, [1, -3], 4, [0, 3, 4], 13, [2, -3]} )}
+)
+)
+);
+
+```
+
+#### Variability chart
+
+```jsl
+
+Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+// variability chart, mean and range interval, nested axis
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Operator ), X( :Part, Position( 1 ) ), Y( :Y ) ),
+Elements(
+Points(
+X( 1 ),
+X( 2 ),
+Y,
+Legend( 3 ),
+Summary Statistic( "Mean" ),
+Error Interval( "Range" )
+)
+),
+SendToReport(
+Dispatch( {}, "Operator", ScaleBox, {Label Row( 2, Show Major Grid( 1 ) )} )
+)
+);
+
+```
+
+#### Violin plots with quartiles
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// violin plots, overlaid median line and quartile intervals
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Species ), Y( :Body Mass ) ),
+Elements(
+Contour( X, Y, Legend( 3 ) ),
+Bar(
+X,
+Y,
+Legend( 4 ),
+Bar Style( "Float" ),
+Summary Statistic( "Median" ),
+Error Interval( "Interquartile Range" )
+)
+)
+);
+
+```
+
+#### Wafer map
+
+```jsl
+
+Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
+// wafer map, heat map, trellis, wrap arrangement
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :X_Die ), Y( :Y_Die ), Wrap( :Wafer ), Color( :Defects ) ),
+Elements( Heatmap( X, Y, Legend( 8 ) ) ),
+SendToReport(
+Dispatch( {}, "X_Die", ScaleBox, {Minor Ticks( 9 )} ),
+Dispatch( {}, "Y_Die", ScaleBox, {Minor Ticks( 9 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+8,
+Properties( 0, {gradient( {Color Theme( "White to Orange" )} )} )
+)}
+)
+)
 );
 
 ```
@@ -2055,24 +2711,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -2226,22 +2864,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

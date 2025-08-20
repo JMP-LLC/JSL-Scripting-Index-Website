@@ -1246,33 +1246,6 @@ New Window( "Lines Seg Example",
 
 ```
 
-### JSS Context Box
-
-**Syntax:** y = JSS Context Box( displayBox )
-
-**JMP Version Added:** 19
-
-```jsl
-
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel", Text Box( "Hi" ), Button Box( "Press Me" ), ),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) ) << Background Color( "Blue" );
-			)
-		)
-	)
-);
-
-```
-
 ### Journal Box
 
 **Syntax:** y = Journal Box( journalText )

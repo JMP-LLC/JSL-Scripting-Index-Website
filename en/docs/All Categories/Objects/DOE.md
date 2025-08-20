@@ -8,6 +8,693 @@
 
 **Syntax:** DOE
 
+#### Augment Design
+
+```jsl
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+Augment Design,
+X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+Y( :Percent Reacted ),
+{Augment Method( Augment ), Set Random Seed( 282322901 ), Number of Starts( 800 ),
+Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ),
+Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ),
+Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ),
+Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ),
+Set Sample Size( 16 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design,
+Save X Matrix( 0 ), Simulate Responses( 0 )}
+);
+
+```
+
+#### Augment Design, Add Center Points to a Design
+
+```jsl
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+Augment Design,
+X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+Y( :Percent Reacted ),
+{Group new runs into separate block, Augment Method( Centerpoints, 2 ),
+Save X Matrix( 0 ), Simulate Responses( 0 )}
+);
+
+```
+
+#### Augment Design, Replicate a Design
+
+```jsl
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+Augment Design,
+X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+Y( :Percent Reacted ),
+{Group new runs into separate block, Augment Method( Replicate, 2 ), Save X Matrix( 0 ),
+Simulate Responses( 0 )}
+);
+
+```
+
+#### Choice Design
+
+```jsl
+
+
+DOE(
+Choice Design,
+{Add Factor( Categorical, {"Medium", "Coarse"}, "Grind", 0 ),
+Add Factor( Categorical, {"195", "200", "205"}, "Temperature", 0 ),
+Add Factor( Categorical, {"3", "3.5", "4"}, "Time", 0 ),
+Add Factor( Categorical, {"1.6", "2", "2.4"}, "Charge", 0 ), Set Random Seed( 12345 ),
+Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+Set Prior Mean Choice( [0 0 0 0 0 0 0] ),
+Set Prior Variance Matrix(
+[1 0 0 0 0 0 0,
+0 1 0 0 0 0 0,
+0 0 1 0 0 0 0,
+0 0 0 1 0 0 0,
+0 0 0 0 1 0 0,
+0 0 0 0 0 1 0,
+0 0 0 0 0 0 1]
+), Set Number of Attributes( 4 ), Set Number of Profiles( 2 ),
+Set Number of Choice Sets( 12 ), Set Number of Surveys( 1 ),
+Set Expected Number of Respondents( 10 ), Make Design,
+Choice Design Table Output( Separate )}
+);
+
+```
+
+#### Custom Design, Coffee Strength
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+Continuous, 1.6, 2.4, "Charge", 0
+), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+Make Design}
+);
+
+```
+
+#### Custom Design, Design for Fixed Blocks
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Add Factor( Blocking, 3, "X4" ), Set Random Seed( 12345 ), Number of Starts( 5 ),
+Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+Add Term( {4, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+Add Term( {2, 1}, {3, 1} ), Set Sample Size( 18 ), Make Design}
+);
+
+```
+
+#### Custom Design, Design with Fixed Covariates
+
+```jsl
+
+
+Names Default To Here( 0 );
+Open( "$SAMPLE_DATA/Design Experiment/Thermoplastic.jmp" );
+Wait( 0 );
+DOE(
+Custom Design,
+{Add Response( Minimize, "Shrinkage", ., ., . ),
+Add Factor( Covariate, Specific Gravity, 0 ), Add Factor(
+Covariate, Tensile Strength, 0
+), Add Factor( Covariate, Supplier, 0 ), Add Factor(
+Continuous, -1, 1, "Temperature", 0
+), Add Factor( Continuous, -1, 1, "Speed", 0 ), Add Factor(
+Continuous, -1, 1, "Time", 0
+), Set Random Seed( 84951 ), Number of Starts( 40 ), Add Term( {1, 0} ),
+Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+Add Term( {5, 1} ), Add Term( {6, 1} ), Add Alias Term( {1, 1}, {2, 1} ),
+Add Alias Term( {1, 1}, {3, 1} ), Add Alias Term( {1, 1}, {4, 1} ),
+Add Alias Term( {1, 1}, {5, 1} ), Add Alias Term( {1, 1}, {6, 1} ),
+Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),
+Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),
+Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),
+Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {4, 1}, {5, 1} ),
+Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ),
+Make Design}
+);
+
+```
+
+#### Custom Design, Design with Hard-to-Change Covariates
+
+```jsl
+
+
+Names Default To Here( 0 );
+Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );
+Wait( 0 );
+DOE(
+Custom Design,
+{Add Response( Minimize, "Wear", ., ., . ), Add Factor( Covariate, Miles, 1 ),
+Add Factor( Covariate, Weight, 1 ), Add Factor( Covariate, Strike Point, 1 ),
+Add Factor( Continuous, 5, 20, "Thickness", 0 ),
+Add Factor( Continuous, 1, 10, "Gel", 0 ), Add Factor(
+Categorical,
+{"L1", "L2", "L3"},
+"Outsole",
+0
+), Add Factor( Categorical, {"L1", "L2", "L3"}, "Midsole", 0 ), Set Random Seed( 12345 ),
+Number of Starts( 1 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+Add Term( {7, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ),
+Add Term( {1, 1}, {7, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ), Add Term( {2, 1}, {7, 1} ),
+Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),
+Add Term( {3, 1}, {7, 1} ), Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ),
+Add Term( {4, 1}, {7, 1} ), Add Term( {5, 1}, {6, 1} ), Add Term( {5, 1}, {7, 1} ),
+Add Term( {6, 1}, {7, 1} ), Set N Whole Plots( 32 ), Set Sample Size( 64 ),
+Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design}
+);
+
+```
+
+#### Custom Design, Mixture Design with Nonmixture Factors
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( None, "Damping", ., ., . ), Add Factor( Mixture, 0.2, 0.8, "CuSO4", 0 ),
+Add Factor( Mixture, 0.2, 0.8, "Na2S2O3", 0 ), Add Factor(
+Mixture, 0, 0.6, "Glyoxal", 0
+), Add Factor( Categorical, {"L1", "L2", "L3"}, "Wavelength", 0 ),
+Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+Add Term( {1, 1}, {4, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+Add Term( {3, 1}, {4, 1} ), Set Sample Size( 18 ), Make Design}
+);
+
+```
+
+#### Custom Design, Mixture of Mixtures Design
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Taste", 0, 10, . ), Add Factor( Mixture, 0.1, 0.2, "Cocoa", 0 ),
+Add Factor( Mixture, 0, 0.15, "Sugar", 0 ), Add Factor( Mixture, 0.2, 0.3, "Flour", 0 ),
+Add Factor( Mixture, 0.1, 0.2, "Butter", 0 ), Add Factor(
+Mixture, 0.25, 0.35, "Milk", 0
+), Add Factor( Mixture, 0.05, 0.2, "Eggs", 0 ), Set Random Seed( 12345 ),
+Number of Starts( 40 ), Add Constraint( [1 1 1 0 0 0 0.45, -1 -1 -1 0 0 0 -0.45] ),
+Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+Add Term( {5, 1} ), Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),
+Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),
+Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),
+Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),
+Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),
+Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 10 ), Make Design}
+);
+
+```
+
+#### Custom Design, Resolution V Screening Experiment that Resolves all Two-Factor Interactions
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+Set Random Seed( 12345 ), Number of Starts( 10 ), Add Term( {1, 0} ), Add Term( {1, 1} ),
+Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),
+Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ),
+Add Term( {4, 1}, {5, 1} ), Set Sample Size( 16 ),
+Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
+
+```
+
+#### Custom Design, Response Surface Design
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Match Target, "Y", 54, 56, . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Set Random Seed( 929281409 ), Number of Starts( 40 ), Add Term( {1, 0} ),
+Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ),
+Add Term( {1, 1}, {2, 1} ), Add Term( {2, 2} ), Add Term( {1, 1}, {3, 1} ),
+Add Term( {2, 1}, {3, 1} ), Add Term( {3, 2} ), Set Sample Size( 16 ),
+Optimality Criterion( 2 ), Make Design}
+);
+
+```
+
+#### Custom Design, Response Surface Design with Flexible Blocking
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Blocking, 4, "X3" ),
+Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 0} ), Add Term( {1, 1} ),
+Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ), Add Term( {1, 1}, {2, 1} ),
+Add Term( {2, 2} ), Set Sample Size( 12 ), Optimality Criterion( 2 ), Make Design}
+);
+
+```
+
+#### Custom Design, Screening Experiment that Estimates Main Effects Only
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+Add Factor( Continuous, -1, 1, "X6", 0 ), Set Random Seed( 12345 ), Number of Starts( 1 ),
+Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),
+Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),
+Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),
+Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),
+Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),
+Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ), Make Design}
+);
+
+```
+
+#### Custom Design, Split-Plot Experiment
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "thickness", 10, ., . ),
+Add Factor( Continuous, -1, 1, "extrusion rate", 1 ),
+Add Factor( Continuous, -1, 1, "temperature", 1 ), Add Factor( Mixture, 0, 1, "m1", 0 ),
+Add Factor( Mixture, 0, 1, "m2", 0 ), Add Factor( Mixture, 0, 1, "m3", 0 ),
+Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ),
+Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ),
+Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ), Set N Whole Plots( 7 ),
+Set Sample Size( 28 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
+
+```
+
+#### Custom Design, Supersaturated Screening Design
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+Add Factor( Continuous, -1, 1, "X6", 0 ), Add Factor( Continuous, -1, 1, "X7", 0 ),
+Add Factor( Continuous, -1, 1, "X8", 0 ), Add Factor( Continuous, -1, 1, "X9", 0 ),
+Add Factor( Continuous, -1, 1, "X10", 0 ), Add Factor( Continuous, -1, 1, "X11", 0 ),
+Add Factor( Continuous, -1, 1, "X12", 0 ), Set Random Seed( 12345 ),
+Number of Starts( 5 ), Add Term( {1, 0} ), Add Potential Term( {1, 1} ),
+Add Potential Term( {2, 1} ), Add Potential Term( {3, 1} ), Add Potential Term( {4, 1} ),
+Add Potential Term( {5, 1} ), Add Potential Term( {6, 1} ), Add Potential Term( {7, 1} ),
+Add Potential Term( {8, 1} ), Add Potential Term( {9, 1} ), Add Potential Term( {10, 1} ),
+Add Potential Term( {11, 1} ), Add Potential Term( {12, 1} ), Set Sample Size( 8 ),
+Simulate Responses( 1 ), Save X Matrix( 0 ), Set Run Order( Randomize ), Make Design}
+);
+
+```
+
+#### Custom Design, Two-Way Split-Plot Experiment
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Minimize, "OCV", ., ., . ), Add Factor( Continuous, -1, 1, "A1", 2 ),
+Add Factor( Continuous, -1, 1, "A2", 2 ), Add Factor( Continuous, -1, 1, "A3", 2 ),
+Add Factor( Continuous, -1, 1, "A4", 2 ), Add Factor( Continuous, -1, 1, "C1", 1 ),
+Add Factor( Continuous, -1, 1, "C2", 1 ), Set Random Seed( 1866762673 ),
+Number of Starts( 21 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),
+Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ), Add Term( {2, 1}, {3, 1} ),
+Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ),
+Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),
+Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ), Add Term( {5, 1}, {6, 1} ),
+Make Strip Plot Design, Set N Whole Plots( 16 ), Set N Subplots( 6 ),
+Set Sample Size( 48 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
+
+```
+
+#### Custom Design, Wine Tasting
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Rating", 0, 20, . ), Add Factor( Blocking, 8, "Rater" ),
+Add Factor( Categorical, {"Bernard", "Dijon"}, "Variety", 0 ),
+Add Factor( Categorical, {"1", "2", "3", "4"}, "Field", 0 ),
+Add Factor( Categorical, {"No", "Yes"}, "De-Stem", 0 ),
+Add Factor( Categorical, {"Cultured", "Wild"}, "Yeast", 0 ),
+Add Factor( Categorical, {"High", "Low"}, "Temperature", 0 ),
+Add Factor( Categorical, {"Hard", "Soft"}, "Press", 0 ),
+Add Factor( Categorical, {"New", "2 Years"}, "Barrel Age", 0 ),
+Add Factor( Categorical, {"Air", "Kiln"}, "Barrel Seasoning", 0 ),
+Add Factor( Categorical, {"No", "Yes"}, "Filtering", 0 ), Set Random Seed( 1234 ),
+Number of Starts( 2 ), Add Term( {1, 0} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ), Add Term( {7, 1} ),
+Add Term( {8, 1} ), Add Term( {9, 1} ), Add Term( {10, 1} ), Add Term( {1, 1} ),
+Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),
+Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),
+Add Alias Term( {2, 1}, {7, 1} ), Add Alias Term( {2, 1}, {8, 1} ),
+Add Alias Term( {2, 1}, {9, 1} ), Add Alias Term( {2, 1}, {10, 1} ),
+Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),
+Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {3, 1}, {7, 1} ),
+Add Alias Term( {3, 1}, {8, 1} ), Add Alias Term( {3, 1}, {9, 1} ),
+Add Alias Term( {3, 1}, {10, 1} ), Add Alias Term( {4, 1}, {5, 1} ),
+Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {4, 1}, {7, 1} ),
+Add Alias Term( {4, 1}, {8, 1} ), Add Alias Term( {4, 1}, {9, 1} ),
+Add Alias Term( {4, 1}, {10, 1} ), Add Alias Term( {5, 1}, {6, 1} ),
+Add Alias Term( {5, 1}, {7, 1} ), Add Alias Term( {5, 1}, {8, 1} ),
+Add Alias Term( {5, 1}, {9, 1} ), Add Alias Term( {5, 1}, {10, 1} ),
+Add Alias Term( {6, 1}, {7, 1} ), Add Alias Term( {6, 1}, {8, 1} ),
+Add Alias Term( {6, 1}, {9, 1} ), Add Alias Term( {6, 1}, {10, 1} ),
+Add Alias Term( {7, 1}, {8, 1} ), Add Alias Term( {7, 1}, {9, 1} ),
+Add Alias Term( {7, 1}, {10, 1} ), Add Alias Term( {8, 1}, {9, 1} ),
+Add Alias Term( {8, 1}, {10, 1} ), Add Alias Term( {9, 1}, {10, 1} ),
+Set Sample Size( 40 ), Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design}
+);
+
+```
+
+#### Definitive Screening Design
+
+```jsl
+
+
+DOE(
+Definitive Screening Design,
+{Add Response( Maximize, "Yield", ., ., . ), Add Factor(
+Continuous, 0, 10, "Methanol", 0
+), Add Factor( Continuous, 0, 10, "Ethanol", 0 ),
+Add Factor( Continuous, 0, 10, "Propanol", 0 ), Add Factor(
+Continuous, 0, 10, "Butanol", 0
+), Add Factor( Continuous, 6, 9, "pH", 0 ), Add Factor( Continuous, 1, 2, "Time", 0 ),
+Show Blocking Options( 0, 0 ), Number of Extra Runs( 4 ), Set Random Seed( 880596769 ),
+Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Definitive Screening Design with Blocks
+
+```jsl
+
+
+DOE(
+Definitive Screening Design,
+{Add Response( Maximize, "Yield", ., ., . ), Add Factor( Blocking, 0, "Lot" ),
+Add Factor( Continuous, 0, 10, "Methanol", 0 ), Add Factor(
+Continuous, 0, 10, "Ethanol", 0
+), Add Factor( Continuous, 0, 10, "Propanol", 0 ),
+Add Factor( Continuous, 0, 10, "Butanol", 0 ), Add Factor( Continuous, 6, 9, "pH", 0 ),
+Add Factor( Continuous, 1, 2, "Time", 0 ), Show Blocking Options( 1, 2 ),
+Number of Extra Runs( 0 ), Set Random Seed( 1146016221 ), Make Design,
+Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Full Factorial Design
+
+```jsl
+
+
+DOE(
+Full Factorial Design,
+{Add Response( Maximize, "Percent Reacted", 90, 100, 1 ),
+Add Factor( Continuous, {10, 15}, "Feed Rate", 0 ),
+Add Factor( Continuous, {1, 2}, "Catalyst", 0 ),
+Add Factor( Continuous, {100, 120}, "Stir Rate", 0 ),
+Add Factor( Continuous, {140, 180}, "Temperature", 0 ),
+Add Factor( Continuous, {3, 6}, "Concentration", 0 ), Set Random Seed( 12345 ),
+Make Design}
+);
+
+```
+
+#### Group Orthogonal Supersaturated Design
+
+```jsl
+
+
+DOE(
+Group Orthogonal Supersaturated Design,
+{GOSSDStructure( 12, 16, 4, 4 ), ChangeFactorSettings( 1, Continuous, -1, 1, "Fake 1" ),
+ChangeFactorSettings( 2, Continuous, -1, 1, "Fake 2" ),
+ChangeFactorSettings( 3, Continuous, -1, 1, "Fake 3" ),
+ChangeFactorSettings( 4, Continuous, -1, 1, "X4" ),
+ChangeFactorSettings( 5, Continuous, -1, 1, "X5" ),
+ChangeFactorSettings( 6, Continuous, -1, 1, "X6" ),
+ChangeFactorSettings( 7, Continuous, -1, 1, "X7" ),
+ChangeFactorSettings( 8, Continuous, -1, 1, "X8" ),
+ChangeFactorSettings( 9, Continuous, -1, 1, "X9" ),
+ChangeFactorSettings( 10, Continuous, -1, 1, "X10" ),
+ChangeFactorSettings( 11, Continuous, -1, 1, "X11" ),
+ChangeFactorSettings( 12, Continuous, -1, 1, "X12" ),
+ChangeFactorSettings( 13, Continuous, -1, 1, "X13" ),
+ChangeFactorSettings( 14, Continuous, -1, 1, "X14" ),
+ChangeFactorSettings( 15, Continuous, -1, 1, "X15" ), Make Design,
+Simulate Responses( 0 )}
+);
+
+```
+
+#### MaxDiff Design
+
+```jsl
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Candy Profiles.jmp" );
+DOE(
+MaxDiff Design,
+X( :Candy ),
+{Set Number of Profiles( 4 ), Set Number of Choice Sets( 7 ), Make Design,
+Simulate Responses( 0 )}
+);
+
+```
+
+#### Mixture Design, Extreme Vertices Design
+
+```jsl
+
+
+DOE(
+Mixture Design,
+{Add Response( Maximize, "Y", ., ., . ), Change Factor Settings( 1, 0.05, 0.25, "X1" ),
+Change Factor Settings( 2, 0.1, 0.3, "X2" ), Change Factor Settings( 3, 0.1, 0.3, "X3" ),
+Add Factor( Mixture, 0.1, 0.4, "X4", 0 ), Add Factor( Mixture, 0.05, 0.25, "X5", 0 ),
+Set Random Seed( 1409 ), Mixture Design Type( Extreme Vertices, 4 ), Find Subset( 10 ),
+Simulate Responses( 0 )}
+);
+
+```
+
+#### Mixture Design, Optimal Mixture Design
+
+```jsl
+
+
+DOE(
+Custom Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Mixture, 0, 1, "X1", 0 ),
+Add Factor( Mixture, 0, 1, "X2", 0 ), Add Factor( Mixture, 0, 1, "X3", 0 ),
+Set Random Seed( 1409 ), Number of Starts( 2 ), Add Constraint( [1 1 0 0.8] ),
+Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ),
+Add Term( {1, 1}, {3, 1} ), Add Term( {2, 1}, {3, 1} ), Center Points( 2 ),
+Set Sample Size( 12 ), Simulate Responses( 0 ), Save X Matrix( 0 ),
+Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
+
+```
+
+#### MSA Design
+
+```jsl
+
+
+DOE(
+MSA Design,
+{Add Response( None, "Y", ., ., . ), Add Factor(
+Categorical,
+{"1", "2", "3", "4", "5"},
+"Part",
+MSA( 2, 1 )
+), Add Factor( Categorical, {"1", "2", "3"}, "Operator", MSA( 1, 1 ) ),
+Add Factor( Categorical, {"Lab A", "Lab B", "Lab C"}, "Lab", MSA( 3, 1 ) ),
+Set Random Seed( 123 ), Replicates( 5, 0 ),
+Nesting Structure( {"Lab", {"Operator" || "Part"}} ), Make Design,
+Simulate Responses( 0 )}
+);
+
+```
+
+#### Response Surface Design, Box-Behnken Design
+
+```jsl
+
+
+DOE(
+Response Surface Design,
+{Add Response( Match Target, "Stretch", 350, 550, 1 ),
+Change Factor Settings( 1, 0.7, 1.7, "Silica" ),
+Change Factor Settings( 2, 1.8, 2.8, "Sulfur" ),
+Add Factor( Continuous, 40, 60, "Silane", 0 ), Set Random Seed( 12345 ), Make Design( 1 ),
+Center Points( 3 ), Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Screening Design, Fractional Factorial Design
+
+```jsl
+
+
+DOE(
+Screening Design,
+{Add Response( Match Target, "Depth", 0.12, 0.22, . ),
+Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(
+Continuous, 150, 165, "Current", 0
+), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),
+Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),
+Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),
+Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),
+Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),
+Set Random Seed( 12345 ), Make Design( 1 ), Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Screening Design, Main Effects Screening Design
+
+```jsl
+
+
+DOE(
+Screening Design,
+{Add Response( Match Target, "Depth", 0.12, 0.22, . ),
+Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(
+Continuous, 150, 165, "Current", 0
+), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),
+Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),
+Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),
+Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),
+Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),
+Set Random Seed( 12345 ), Screening Type( 1 ), Number of Starts( 1 ),
+Number of Column Starts( 50 ), Set Sample Size( 12 ), Make Design,
+Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Screening Design, Mixed-Level Screening Design
+
+```jsl
+
+
+DOE(
+Screening Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+Add Factor( Categorical, {"L1", "L2"}, "X6", 0 ),
+Add Factor( Categorical, {"L1", "L2"}, "X7", 0 ),
+Add Factor( Categorical, {"L1", "L2"}, "X8", 0 ), Set Random Seed( 12345 ),
+Screening Type( 2, 2, 16 ), Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
+
+```
+
+#### Space Filling Design, Constrained Fast Flexible Filling
+
+```jsl
+
+
+DOE(
+Space Filling Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),
+Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),
+Add Constraint( [1 1 0.8] ), FFF Optimality Criterion( MaxPro ),
+Space Filling Design Type( Fast Flexible Filling, 200 ), Simulate Responses( 0 )}
+);
+
+```
+
+#### Space Filling Design, Sphere Packing
+
+```jsl
+
+
+DOE(
+Space Filling Design,
+{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),
+Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),
+Space Filling Design Type( Sphere Packing, 8 ), Simulate Responses( 0 )}
+);
+
+```
+
 ## Columns
 
 ### Factor

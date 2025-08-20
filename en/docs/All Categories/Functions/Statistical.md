@@ -779,7 +779,7 @@ New Column( "Row within sex, 60+",
 
 **Syntax:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
-**Description:** Returns the simple exponential smoothing prediction for the current row, using smoothing weight alpha. By variables do not need to be presorted. Formula is Predicted Value[t]=alpha * Observed Value[t-1] + (1-alpha) * Predicted Value[t-1], with Predicted Value[1] = Observed Value[1].
+**Description:** Returns the simple exponential smoothing prediction for the current row, using smoothing weight alpha. By variables do not need to be presorted. Formula is Predicted Value[t]=alpha \* Observed Value[t-1] + (1-alpha) \* Predicted Value[t-1], with Predicted Value[1] = Observed Value[1].
 
 **JMP Version Added:** 15
 

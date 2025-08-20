@@ -2088,7 +2088,7 @@ mfi << Set Name Enable( 1 );
 
 **Syntax:** obj &lt;&lt; Set Name Filter
 
-**Description:** Enables included files to be in a semicolon-delimited list of filters that can include wildcard characters. File names that include semicolons or | must be imported with a wildcard character like ? or *.
+**Description:** Enables included files to be in a semicolon-delimited list of filters that can include wildcard characters. File names that include semicolons or | must be imported with a wildcard character like ? or \*.
 
 **JMP Version Added:** 14
 

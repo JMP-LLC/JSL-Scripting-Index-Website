@@ -10,24 +10,95 @@
 
 **Description:** Automates the process of conducting tests for linear model effects across a large number of responses. Test results and summary statistics are presented in data tables and plots. The false discovery rate (FDR) guards against incorrect declarations of significance. A robust estimation method reduces the sensitivity of tests to outliers.
 
-**Example 1**
+#### Response Screening in subgroups with volcano plot selected
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
+Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
+X( :Father, :Mother, :Sex, :Disease Status ),
+Subgroup( Column Group( "Markers" ) ),
+Common Y Scale( 1 ),
+SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) )
 );
 
 ```
 
-**Example 2**
+#### Response Screening many columns in groups
 
 ```jsl
 
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Grouping( "Sex" )
+);
+
+```
+
+#### Response Screening many columns with means differences volcano plot
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Father, :Mother, :Sex, :Disease Status ),
+Common Y Scale( 1 ),
+Volcano Plots Use FDR Axis( 1 )
+);
+
+```
+
+#### Response Screening of 4 responses and 26 prospective predictors
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
+Response Screening( Y( :ls, :ha, :dt ), X( Column Group( "Intensities" ) ) );
+
+```
+
+#### Response Screening of many columns on each of four predictors
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Trait1, :Trait2, :Trait3, :Trait4 )
+);
+
+```
+
+#### Response Screening specified with column numbers
+
+```jsl
+
+
 dt = Open( "$Sample_Data/Probe.jmp" );
 obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
+
+```
+
+#### Response Screening with robust fitting
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Responses" ) ),
+X( :Process ),
+Robust( 1 )
+);
 
 ```
 
@@ -1356,24 +1427,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1527,22 +1580,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

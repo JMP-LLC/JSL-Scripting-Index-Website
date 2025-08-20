@@ -1642,6 +1642,8 @@ popobj << Select Filter Item;
 
 **Description:** Selects rows that contain missing values.
 
+**JMP Version Added:** 15
+
 ```jsl
 
 

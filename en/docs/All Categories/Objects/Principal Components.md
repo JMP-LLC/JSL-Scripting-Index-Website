@@ -274,8 +274,6 @@ obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 **Description:** Shows or hides a table that contains the component coordinates. This option is available only when there is a categorical variable in the analysis.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Iris.jmp" );

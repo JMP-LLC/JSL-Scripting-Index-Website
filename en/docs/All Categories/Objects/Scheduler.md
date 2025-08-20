@@ -63,8 +63,6 @@ s << Close;
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 s = Schedule(

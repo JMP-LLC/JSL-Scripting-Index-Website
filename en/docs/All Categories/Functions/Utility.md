@@ -112,25 +112,6 @@ Caption( remove );
 
 ```
 
-### Clipboard Capture
-
-**Syntax:** clp = Clipboard Capture( box &lt;&lt; Copy )
-
-**Description:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "in" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-Show( Get Clipboard() );
-Show( clp << Get Flavor Data( "Text", <<Text ) );
-
-```
-
 ### Current Journal
 
 **Syntax:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
@@ -258,7 +239,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 **Syntax:** Disable JMP Live URL(url)
 
-**Description:** Disables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
+**Description:** Disables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk \* can be used a wildcard to specify URLs as \* (any URL), \*.jmp.com (a URL ending in .jmp.com), http://public.\* (a URL starting with http://public.), or \*public\* (a URL that contains public).
 
 **JMP Version Added:** 15
 
@@ -328,7 +309,7 @@ Empty();
 
 **Syntax:** Enable JMP Live URL(url)
 
-**Description:** Enables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk * can be used a wildcard to specify URLs as * (any URL), *.jmp.com (a URL ending in .jmp.com), http://public.* (a URL starting with http://public.), or *public* (a URL that contains public).
+**Description:** Enables a JMP Live URL. This method is available only during jmpStartAdmin.jsl. An asterisk \* can be used a wildcard to specify URLs as \* (any URL), \*.jmp.com (a URL ending in .jmp.com), http://public.\* (a URL starting with http://public.), or \*public\* (a URL that contains public).
 
 **JMP Version Added:** 15
 
@@ -412,10 +393,6 @@ As Table( A );
 Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```
-
-### Force Action Notes
-
-**JMP Version Added:** 16
 
 ### Format Pattern
 
@@ -571,46 +548,6 @@ Get Clipboard();
 
 ```
 
-### Get Expr Location
-
-**Syntax:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
-
-**Description:** Retrieve the locations of the top token in a parsed expression. The default invocation returns {the source file, TokenStartLine, TokenStartCol, TokenLength}.
-
-**JMP Version Added:** 17
-
-#### Default output
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( ":height + 20" );
-Get Expr Location( e );
-
-```
-
-#### Replace a substring
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-data = " :height + 20 ";
-e = Parse( data );
-positions = Get Expr Location( Arg( e, 2 ), {"TreeStart", "TreeLength"} );
-Munger( data, positions[1], positions[2], "45" );
-
-```
-
-#### Select output
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( " :height + 20 " );
-Get Expr Location( e, {"TreeStart", "TreeEnd"} );
-
-```
-
 ### Get Name Info
 
 **Syntax:** Get Name Info( string )
@@ -710,12 +647,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 Get Policies();
 
 ```
-
-### Get Policy
-
-**Syntax:** Get Policy( "PolicyName" )
-
-**JMP Version Added:** 18
 
 ### Get Preference
 
@@ -1104,63 +1035,6 @@ If( Host is( "Windows" ),
 
 ```
 
-### Log Table Messages
-
-**Syntax:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
-
-**Description:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
-
-**JMP Version Added:** 17
-
-#### Turn off logging
-
-```jsl
-
-Log Table Messages( Off );
-
-```
-
-#### Turn on logging
-
-```jsl
-
-Log Table Messages( On );
-
-```
-
-#### Turn on logging, and include all messages except "DtMsgClose"
-
-```jsl
-
-Log Table Messages( On, Exclude( "DtMsgClose" ) );
-
-```
-
-#### Turn on logging, and include only the "DtMsgClose" message
-
-```jsl
-
-Log Table Messages( On, Include( "DtMsgClose" ) );
-
-```
-
-#### Turn on logging, but ignore column messages
-
-```jsl
-
-Log Table Messages( On, Disable( "Column" ) );
-
-```
-
-#### Turn on logging, but ignore table messages
-
-```jsl
-
-Log Table Messages( On );
-Log Table Messages( Disable( "Table" ) );
-
-```
-
 ### Mail
 
 **Syntax:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
@@ -1267,7 +1141,7 @@ tables = mfi << Import Data();
 
 **Syntax:** Name(string)
 
-**Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
+**Description:** A name is simply something to call an item. Names are used for both variables and functions, and can be used directly in scripts as long as certain rules are followed. If the name begins with an alphabetic character or underscore, and continues with alphanumeric characters, whitespace, Unicode mathematical symbols and certain punctuation (apostrophes (’), percent signs (%), periods (.), backslashes (\\), and underscores (_)), then the name can be used directly in scripts. Names that do not follow these rules can be used by using the Name() keyword.
 
 **JMP Version Added:** 14
 
@@ -1276,23 +1150,6 @@ tables = mfi << Import Data();
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
-
-```
-
-### New Clipboard
-
-**Syntax:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
-
-**Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-clp = New Clipboard( <<Get From OS );
-New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
-;
 
 ```
 
@@ -1810,12 +1667,6 @@ Register Addin(
 
 ```
 
-### Reload Policies
-
-**Syntax:** Reload Policies()
-
-**JMP Version Added:** 18
-
 ### Revert Menu
 
 **Syntax:** Revert Menu()
@@ -1827,48 +1678,6 @@ Register Addin(
 ```jsl
 
 /* Reverts menus back to factory default settings. */
-
-```
-
-### Rummage
-
-**Syntax:** treasures = Rummage( box, query )
-
-**JMP Version Added:** 17
-
-**Example 1**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Rummage( Window( dt ), "Wilcox" ) << title;
-
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Rummage( Report( obj ), "Wilcox" ) << details;
-
-```
-
-**Example 3**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Show(
-	Rummage(
-		Window( dt ),
-		"graph builder",
-		Algorithm( "FilterUtility" ),
-		Match All Terms( 0 )
-	)[1 :: 5] << Title
-);
-Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << Title );
 
 ```
 
@@ -1989,12 +1798,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
-
-### Set Policy
-
-**Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
-
-**JMP Version Added:** 18
 
 ### Set Preference
 
@@ -2244,18 +2047,6 @@ Status Msg( "calculating..." );
 
 ```
 
-### Test Promise Error After
-
-**JMP Version Added:** 17
-
-### Test Promise Result After
-
-**JMP Version Added:** 17
-
-### Unit Test
-
-**JMP Version Added:** Before version 14
-
 ### Unregister Addin
 
 **Syntax:** Unregister Addin( uniqueId)
@@ -2310,24 +2101,6 @@ New Table( "Example",
 ```jsl
 
 Web( "http://www.jmp.com/" );
-
-```
-
-### With Clipboard
-
-**Syntax:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
-
-**Description:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
-
-**JMP Version Added:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "HELLO" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties );
 
 ```
 

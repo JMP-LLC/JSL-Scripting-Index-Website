@@ -124,8 +124,6 @@ wb << Set Max Size( 10000, 10000 );
 
 **Description:** Sets the width and height of the web browser box. The web browser box has a default Stretch setting of &apos;Window&apos; that must be changed to &apos;Off&apos; to honor the requested size.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 New Window( "Example", wb = Web Browser Box() );
@@ -2158,7 +2156,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Syntax:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
+**Syntax:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\\to\\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description:** Saves the display box tables and graphs slides in a presentation. The presentation can be opened with Microsoft PowerPoint or other presentation software.
 

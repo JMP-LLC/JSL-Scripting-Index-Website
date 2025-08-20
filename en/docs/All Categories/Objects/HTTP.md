@@ -84,7 +84,7 @@ data = request << Send;
 
 **Syntax:** obj &lt;&lt; Bypass Proxy(localhost)
 
-**Description:** Comma-separated list of hosts which do not use a proxy, if one is specified. The only wildcard is a single * character, which matches all hosts, and effectively disables the proxy. Each name in this list is matched as either a domain which contains the hostname, or the hostname itself. For example, local.com would match local.com, local.com:80, and www.local.com, but not www.notlocal.com.
+**Description:** Comma-separated list of hosts which do not use a proxy, if one is specified. The only wildcard is a single \* character, which matches all hosts, and effectively disables the proxy. Each name in this list is matched as either a domain which contains the hostname, or the hostname itself. For example, local.com would match local.com, local.com:80, and www.local.com, but not www.notlocal.com.
 
 **JMP Version Added:** 15
 
@@ -1068,35 +1068,35 @@ Write( json || "\!n" );
 
 **Description:** "DEFAULT"  Use the default negotiated version (recommended).
 
-\
+\\
 
          "1+"     Force TLS version 1.0 or higher, depending on what the server and client both support.
 
-\
+\\
 
          1.0        Force TLS 1.0
 
-\
+\\
 
          1.1        Force TLS 1.1
 
-\
+\\
 
          1.2        Force TLS 1.2
 
-\
+\\
 
          1.3        Force TLS 1.3
 
-\
+\\
 
          2.0        Force TLS 2.0 (not recommended)
 
-\
+\\
 
          3.0        Force TLS 3.0 (not recommended)
 
-\
+\\
 
          "MAX"    Automatically choose the highest supported version
 
@@ -1408,7 +1408,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 **Description:** Downloads the HTTP Responses to files in parallel. Useful for downloading multiple files at once from one or more web services. Using show progress will show a cancelable progress bar with the progress of the files downloaded. Using details will show the individual download progress.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 17
 
 **Example 1**
 
@@ -1582,7 +1582,7 @@ Show( requests << Is Successful );
 
 **Description:** Is the multi request valid. The multi request is valid if all its HTTP requests are valid.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -1612,7 +1612,7 @@ Show( requests << Is Valid() );
 
 **Description:** Resets multi requests. This resets any HTTP request that has already been added.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -1646,7 +1646,7 @@ requests << Reset();
 
 **Description:** The return value from Send will be either character data or binary BLOB. You can check the return with the Is String JSL function. Using show progress download will show a cancelable progress bar with the progress of data downloaded. Using show progress upload will show a cancelable progress bar with the progress of data uploaded. Using show progress both will show a cancelable progress bar with the progress of data uploaded and downloaded. Using show progress will show a cancelable progress bar with the progress of data uploaded or downloaded (or both). For posting forms, show progress will show upload and download progress. For posting files, show progress will show upload progress. For retrieving data, show progress will show download progress.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 17
 
 **Example 1**
 
@@ -2530,7 +2530,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 **Description:** Sets the OAuth2 password for the password grant type.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2659,7 +2659,7 @@ title = oauth2 << Get Window Title;
 
 **Description:** Sets the OAuth2 user name for the password grant type.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 15
 
 ```jsl
 

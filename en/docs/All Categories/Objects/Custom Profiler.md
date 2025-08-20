@@ -243,8 +243,6 @@ obj2 << Paste Settings Script;
 
 **Description:** Adds, changes, or deletes linear constraints.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
@@ -400,8 +398,6 @@ obj2 << Simulation Experiment;
 
 **Syntax:** obj &lt;&lt; Goal( "Maximize"|"Minimize" )
 
-**JMP Version Added:** 19
-
 ### Link Profilers
 
 **Syntax:** obj &lt;&lt; Link Profilers( state=0|1 )
@@ -430,8 +426,6 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 **Syntax:** obj &lt;&lt; Load Constraints from Table
 
 **Description:** Loads linear constraints from a data table.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -661,8 +655,6 @@ obj << Reset;
 
 **Description:** Saves existing linear constraints to a table script called Constraint.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dtlc = New Table( "Linear Constraints",
@@ -690,8 +682,6 @@ obj << Save Constraints to Script;
 **Syntax:** obj &lt;&lt; Save Constraints to Table
 
 **Description:** Saves existing linear constraints to a new data table.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -1216,24 +1206,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1345,22 +1317,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

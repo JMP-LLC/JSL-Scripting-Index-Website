@@ -558,7 +558,7 @@ Show(
 
 **Syntax:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
-**Description:** Searches in the source text for a match to the pattern. The format defaults to "\0" (the entire match) but could be "Fred" (for a constant replacement) or "\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
+**Description:** Searches in the source text for a match to the pattern. The format defaults to "\\0" (the entire match) but could be "Fred" (for a constant replacement) or "\\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
 
 **JMP Version Added:** Before version 14
 

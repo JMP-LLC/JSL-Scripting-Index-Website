@@ -10,8 +10,6 @@
 
 **Description:** Creates an SQL Query object for the connection, columns and table specified, or for the custom SQL query specified. Use Query Builder to generate scripts that create queries.
 
-**JMP Version Added:** Before version 14
-
 ```jsl
 
 obj = New SQL Query(

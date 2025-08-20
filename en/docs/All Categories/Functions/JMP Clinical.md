@@ -1,5 +1,5 @@
 # JMP Clinical
-These functions are available only for use with JMP® Clinical.
+
 
 
 ### JMPClinicalReviewAPI:closeReviewBuilder
@@ -22,7 +22,7 @@ JMPClinicalReviewAPI:closeReviewBuilder();
 
 ### JMPClinicalReviewAPI:createLiveReport
 
-**Syntax:** JMPClinicalReviewAPI:createLiveReport(connectionName = empty(), space = empty(), publishData = empty(), publishOptimization = empty(), publishNotes = empty(), patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1}, {default local)
+**Syntax:** JMPClinicalReviewAPI:createLiveReport(connectionName = empty(), space = empty(), publishData = empty(),publishOptimization = empty(), publishNotes = empty(),patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1}, {default local)
 
 **Description:** Create a web-based JMP Live version of the Review
 
@@ -65,30 +65,30 @@ JMPClinicalReviewAPI:closeReviewBuilder();
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 Show( JMPClinicalReviewAPI:getCurrentStudy() );
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 JMPClinicalReviewAPI
 :createStaticReport(
-	"PDF", 0,
-	"C:\JMPClinicalReviewManager\APIReview.pdf",
-	"SELECTED", 1, 1
+"PDF", 0,
+"C:\JMPClinicalReviewManager\APIReview.pdf",
+"SELECTED", 1, 1
 );
 JMPClinicalReviewAPI
 :createLiveReport(
-	Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
+Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
 );
 JMPClinicalReviewAPI:closeReviewBuilder();
 exitJMPClinicalBatch();
@@ -162,19 +162,19 @@ registered trademarks or trademarks of their respective companies.
 
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 JMPClinicalReviewAPI
 :createLiveReport(
-	Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
+Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
 );
 
 ```
 
 ### JMPClinicalReviewAPI:createStaticReport
 
-**Syntax:** JMPClinicalReviewAPI:createStaticReport(type = empty(), includeNotes = empty(), filePath = empty(), patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1}, {default local)
+**Syntax:** JMPClinicalReviewAPI:createStaticReport(type = empty(), includeNotes = empty(), filePath = empty(),patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1}, {default local)
 
 **Description:** Create a static version (PDF, RTF, PowerPoint) of the Review
 
@@ -215,30 +215,30 @@ JMPClinicalReviewAPI
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 Show( JMPClinicalReviewAPI:getCurrentStudy() );
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 JMPClinicalReviewAPI
 :createStaticReport(
-	"PDF", 0,
-	"C:\JMPClinicalReviewManager\APIReview.pdf",
-	"SELECTED", 1, 1
+"PDF", 0,
+"C:\JMPClinicalReviewManager\APIReview.pdf",
+"SELECTED", 1, 1
 );
 JMPClinicalReviewAPI
 :createLiveReport(
-	Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
+Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
 );
 JMPClinicalReviewAPI:closeReviewBuilder();
 exitJMPClinicalBatch();
@@ -312,14 +312,14 @@ registered trademarks or trademarks of their respective companies.
 
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 JMPClinicalReviewAPI
 :createStaticReport(
-	"PDF", 0,
-	"C:\JMPClinicalReviewManager\APIReview.pdf",
-	"SELECTED", 1, 1
+"PDF", 0,
+"C:\JMPClinicalReviewManager\APIReview.pdf",
+"SELECTED", 1, 1
 );
 Open( "C:\JMPClinicalReviewManager\APIReview.pdf" );
 
@@ -369,7 +369,7 @@ JMPClinicalReviewAPI:getReviewBuilder();
 
 ### JMPClinicalReviewAPI:openReviewTemplate
 
-**Syntax:** JMPClinicalReviewAPI:openReviewTemplate(templatePath, useNewReviewBuilder=1, returnType=0, toleratePre17Template=1, closeReportsWithInexactOptionValueMatches=0)
+**Syntax:** JMPClinicalReviewAPI:openReviewTemplate(templatePath, useNewReviewBuilder=1, returnType=0, toleratePre17Template=1,closeReportsWithInexactOptionValueMatches=0)
 
 **Description:** Open a Review Template
 
@@ -426,30 +426,30 @@ JMPClinicalReviewAPI:getReviewBuilder();
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 Show( JMPClinicalReviewAPI:getCurrentStudy() );
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 JMPClinicalReviewAPI
 :createStaticReport(
-	"PDF", 0,
-	"C:\JMPClinicalReviewManager\APIReview.pdf",
-	"SELECTED", 1, 1
+"PDF", 0,
+"C:\JMPClinicalReviewManager\APIReview.pdf",
+"SELECTED", 1, 1
 );
 JMPClinicalReviewAPI
 :createLiveReport(
-	Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
+Empty(), "_PERSONAL_", 0, 1, 0, "SELECTED", 1, 1
 );
 JMPClinicalReviewAPI:closeReviewBuilder();
 exitJMPClinicalBatch();
@@ -523,8 +523,8 @@ registered trademarks or trademarks of their respective companies.
 
 JMPClinicalReviewAPI
 :openReviewTemplate(
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
-	1, 0, 1, 0
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+1, 0, 1, 0
 );
 
 ```
@@ -575,13 +575,13 @@ JMPClinicalReviewAPI:setCurrentStudy( "Nicardipine" );
 
 JMPClinicalStudyManagerAPI
 :addStudies(
-	{{"Nicardipine",
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
-	{},
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
-	{}, 1}, {"NicardipineAbbr",
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
-	{}, "", {}, 1}}
+{{"Nicardipine",
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+{},
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+{}, 1}, {"NicardipineAbbr",
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+{}, "", {}, 1}}
 );
 
 ```
@@ -639,20 +639,20 @@ JMPClinicalStudyManagerAPI
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 JMPClinicalStudyManagerAPI
 :addStudy(
-	"APIStudyName",
-	"C:\JMPClinicalStudyManager\data\SDTM\", {},
-	"C:\JMPClinicalStudyManager\data\ADaM\", {}, 1
+"APIStudyName",
+"C:\JMPClinicalStudyManager\data\SDTM\", {},
+"C:\JMPClinicalStudyManager\data\ADaM\", {}, 1
 );
 exitJMPClinicalBatch();
 /*
@@ -725,11 +725,11 @@ registered trademarks or trademarks of their respective companies.
 
 JMPClinicalStudyManagerAPI
 :addStudy(
-	"Nicardipine",
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
-	{},
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
-	{}, 1
+"Nicardipine",
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+{},
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+{}, 1
 );
 
 ```
@@ -795,10 +795,10 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :addValueOrderVariable(
-	"Nicardipine",
-	"ZZ",
-	"ZZVAR",
-	{"ZZ VALUE 1", "ZZ VALUE 2"}
+"Nicardipine",
+"ZZ",
+"ZZVAR",
+{"ZZ VALUE 1", "ZZ VALUE 2"}
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderDomainVariables( "Nicardipine", "ZZ" );
@@ -833,17 +833,17 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :applyAllTreatmentValueOrder(
-	"Nicardipine", "ADSL", "ARM", 1, 1
+"Nicardipine", "ADSL", "ARM", 1, 1
 );
 Show(
-	JMPClinicalStudyManagerAPI
-	:getValueOrderVariableLegendPreview(
-		"Nicardipine", "ADSL", "ARM", 2
-	),
-	JMPClinicalStudyManagerAPI
-	:getValueOrderVariableLegendPreview(
-		"Nicardipine", "ADSL", "TRT01P", 2
-	)
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview(
+"Nicardipine", "ADSL", "ARM", 2
+),
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview(
+"Nicardipine", "ADSL", "TRT01P", 2
+)
 );
 
 ```
@@ -880,13 +880,13 @@ Show(
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 JMPClinicalStudyManagerAPI
@@ -1026,7 +1026,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :deleteValueOrderVariable(
-	"Nicardipine", "ZZ", "ZZVAR"
+"Nicardipine", "ZZ", "ZZVAR"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderDomainVariables( "Nicardipine", "ZZ" );
@@ -1053,7 +1053,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getADaMFolder(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1078,7 +1078,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getAllStudyPreferences(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1103,7 +1103,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getCreatedBy(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1146,7 +1146,7 @@ JMPClinicalStudyManagerAPI:getCurrentStudy();
 
 JMPClinicalStudyManagerAPI
 :getDomainList(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1170,10 +1170,10 @@ JMPClinicalStudyManagerAPI
 ```jsl
 
 As Date(
-	JMPClinicalStudyManagerAPI
-	:getInitialDate(
-		JMPClinicalStudyManagerAPI:getCurrentStudy()
-	)
+JMPClinicalStudyManagerAPI
+:getInitialDate(
+JMPClinicalStudyManagerAPI:getCurrentStudy()
+)
 );
 
 ```
@@ -1198,7 +1198,7 @@ As Date(
 
 JMPClinicalStudyManagerAPI
 :getLastUpdatedBy(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1222,10 +1222,10 @@ JMPClinicalStudyManagerAPI
 ```jsl
 
 As Date(
-	JMPClinicalStudyManagerAPI
-	:getLastUpdatedDate(
-		JMPClinicalStudyManagerAPI:getCurrentStudy()
-	)
+JMPClinicalStudyManagerAPI
+:getLastUpdatedDate(
+JMPClinicalStudyManagerAPI:getCurrentStudy()
+)
 );
 
 ```
@@ -1250,7 +1250,7 @@ As Date(
 
 JMPClinicalStudyManagerAPI
 :getPartialDatesEndDateImputationMethod(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1275,7 +1275,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getPartialDatesStartDateImputationMethod(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1300,7 +1300,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getSDTMFolder(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1325,7 +1325,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getSelectedADaMDomains(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1350,7 +1350,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getSelectedSDTMDomains(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1375,7 +1375,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getSizeOnDisk(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1400,7 +1400,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getSnapshotNumber(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1425,7 +1425,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getStudyDayAnchorDateForStudyDayCalculation(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1450,7 +1450,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getStudyDayValueDerivation(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1518,7 +1518,7 @@ JMPClinicalStudyManagerAPI:getStudyList();
 
 JMPClinicalStudyManagerAPI
 :getStudyPreference(
-	"Nicardipine", "objRefNS:treatcb"
+"Nicardipine", "objRefNS:treatcb"
 );
 
 ```
@@ -1543,7 +1543,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getTestResultsLoadOnly(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1649,7 +1649,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderValueColorOverride(
-	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
 );
 
 ```
@@ -1680,7 +1680,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableColorOverrides(
-	"Nicardipine", "ADSL", "TRT01P", 2
+"Nicardipine", "ADSL", "TRT01P", 2
 );
 
 ```
@@ -1709,7 +1709,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableColorTheme(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -1738,7 +1738,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableLabel(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -1769,7 +1769,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableLegendPreview(
-	"Nicardipine", "LB", "JMPC_ANRIND", 2
+"Nicardipine", "LB", "JMPC_ANRIND", 2
 );
 
 ```
@@ -1798,7 +1798,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableSortState(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -1827,7 +1827,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableValueOrder(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -1856,7 +1856,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :loadStudyADSLDataTable(
-	JMPClinicalStudyManagerAPI:getCurrentStudy()
+JMPClinicalStudyManagerAPI:getCurrentStudy()
 );
 
 ```
@@ -1891,13 +1891,13 @@ JMPClinicalStudyManagerAPI
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 JMPClinicalStudyManagerAPI
@@ -2027,7 +2027,7 @@ studyPreferences = JMPClinicalStudyManagerAPI
 :getAllStudyPreferences( "Nicardipine" );
 JMPClinicalStudyManagerAPI
 :setAllStudyPreferences(
-	"Nicardipine", studyPreferences
+"Nicardipine", studyPreferences
 );
 
 ```
@@ -2082,11 +2082,11 @@ JMPClinicalStudyManagerAPI:getCurrentStudy();
 
 JMPClinicalStudyManagerAPI
 :setStudyPreference(
-	"Nicardipine", "objRefNS:treatcb", "ARM"
+"Nicardipine", "objRefNS:treatcb", "ARM"
 );
 JMPClinicalStudyManagerAPI
 :getStudyPreference(
-	"Nicardipine", "objRefNS:treatcb"
+"Nicardipine", "objRefNS:treatcb"
 );
 
 ```
@@ -2119,7 +2119,7 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderDomainLabel(
-	"Nicardipine", "LB", "Labs"
+"Nicardipine", "LB", "Labs"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderDomainLabel( "Nicardipine", "LB" );
@@ -2154,15 +2154,15 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderValueColorOverride(
-	"Nicardipine",
-	"ADSL",
-	"TRT01P",
-	"Placebo",
-	{200, 0, 0}
+"Nicardipine",
+"ADSL",
+"TRT01P",
+"Placebo",
+{200, 0, 0}
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderValueColorOverride(
-	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
 );
 
 ```
@@ -2193,14 +2193,14 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderVariableColorOverrides(
-	"Nicardipine",
-	"ADSL",
-	"TRT01P",
-	["Placebo" => {200, 0, 0}]
+"Nicardipine",
+"ADSL",
+"TRT01P",
+["Placebo" => {200, 0, 0}]
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableColorOverrides(
-	"Nicardipine", "ADSL", "TRT01P", 2
+"Nicardipine", "ADSL", "TRT01P", 2
 );
 
 ```
@@ -2231,11 +2231,11 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderVariableColorTheme(
-	"Nicardipine", "LB", "JMPC_ANRIND", "JMP Dark"
+"Nicardipine", "LB", "JMPC_ANRIND", "JMP Dark"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableColorTheme(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -2270,12 +2270,12 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderVariableLabel(
-	"Nicardipine", "LB", "JMPC_ANRIND",
-	"Indicator for Reference Range"
+"Nicardipine", "LB", "JMPC_ANRIND",
+"Indicator for Reference Range"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableLabel(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -2308,12 +2308,12 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderVariableSortState(
-	"Nicardipine", "LB", "JMPC_ANRIND",
-	"Natural Descending"
+"Nicardipine", "LB", "JMPC_ANRIND",
+"Natural Descending"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableSortState(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -2346,14 +2346,14 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :setValueOrderVariableValueOrder(
-	"Nicardipine",
-	"LB",
-	"JMPC_ANRIND",
-	{"HIGH", "NORMAL", "LOW"}
+"Nicardipine",
+"LB",
+"JMPC_ANRIND",
+{"HIGH", "NORMAL", "LOW"}
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableValueOrder(
-	"Nicardipine", "LB", "JMPC_ANRIND"
+"Nicardipine", "LB", "JMPC_ANRIND"
 );
 
 ```
@@ -2386,11 +2386,11 @@ JMPClinicalStudyManagerAPI
 
 JMPClinicalStudyManagerAPI
 :swapValueColor(
-	"Nicardipine", "LB", "JMPC_ANRIND", "LOW", "HIGH"
+"Nicardipine", "LB", "JMPC_ANRIND", "LOW", "HIGH"
 );
 JMPClinicalStudyManagerAPI
 :getValueOrderVariableLegendPreview(
-	"Nicardipine", "LB", "JMPC_ANRIND", 2
+"Nicardipine", "LB", "JMPC_ANRIND", 2
 );
 
 ```
@@ -2451,24 +2451,24 @@ JMPClinicalStudyManagerAPI
 
 exitJMPClinicalBatch =
 Function( {},
-	{},
-	Save Log(
-		Get Environment Variable(
-			"JMPClinicalBatchLogPath"
-		) || "JMPClinicalBatchLog.log"
-	);
-	Exit();
+{},
+Save Log(
+Get Environment Variable(
+"JMPClinicalBatchLogPath"
+) || "JMPClinicalBatchLog.log"
+);
+Exit();
 );
 
 JMPClinicalStudyManagerAPI
 :updateSnapStudy(
-	"APIStudyName",
-	JMPClinicalStudyManagerAPI
-	:getSnapshotNumber( "APIStudyName" ) + 1,
-	"C:\JMPClinicalStudyManager\data\snapshot2\SDTM\",
-	{},
-	"C:\JMPClinicalStudyManager\data\snapshot2\ADaM\",
-	{}
+"APIStudyName",
+JMPClinicalStudyManagerAPI
+:getSnapshotNumber( "APIStudyName" ) + 1,
+"C:\JMPClinicalStudyManager\data\snapshot2\SDTM\",
+{},
+"C:\JMPClinicalStudyManager\data\snapshot2\ADaM\",
+{}
 );
 exitJMPClinicalBatch();
 /*
@@ -2541,20 +2541,20 @@ registered trademarks or trademarks of their respective companies.
 
 JMPClinicalStudyManagerAPI
 :updateSnapStudy(
-	"Nicardipine",
-	JMPClinicalStudyManagerAPI
-	:getSnapshotNumber( "Nicardipine" ) + 1,
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
-	{},
-	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
-	{}, 1
+"Nicardipine",
+JMPClinicalStudyManagerAPI
+:getSnapshotNumber( "Nicardipine" ) + 1,
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+{},
+"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+{}, 1
 );
 
 ```
 
 ### jg:domain
 
-**Syntax:** jg:domain( parent=empty(), _name="", _label="", _origin={}, _fileTypeOriginal="", _fileTypeWorking="", _model="", _class="", _creationDateOriginal=., _creationDateWorking=., _modificationDateOriginal=., _modificationDateWorking=., _fileSizeOriginal=., _fileSizeWorking=., _nTotalRows=0, _flagsTrue={})
+**Syntax:** jg:domain( parent=empty(), _name="", _label="", _origin={}, _fileTypeOriginal="", _fileTypeWorking="",_model="", _class="", _creationDateOriginal=., _creationDateWorking=., _modificationDateOriginal=.,_modificationDateWorking=., _fileSizeOriginal=., _fileSizeWorking=., _nTotalRows=0, _flagsTrue={})
 
 **Description:** Creates a new JMP Clinical domain object.
 
@@ -2582,7 +2582,7 @@ notebook = jg:notebook( Empty() );
 
 ### jg:study
 
-**Syntax:** jg:study( _name="", _label="", _origin={}, _sdtmFolderOriginal="", _selectedSdtmDomains={}, _adamFolderOriginal="", _selectedAdamDomains={}, _snapshotNumber=0, _initialDate=., _createdBy="", _lastUpdatedDate=., _lastUpdatedBy="", _releaseVersion="", _testResultsLoadOnly="", _partialDatesStartDateImputationMethod="", _partialDatesEndDateImputationMethod="", _studyDayValueDerivation="", _studyDayAnchorDateForStudyDayCalculation="", _flagsTrue={"saveJMPTables", "compressJMPTables", "compressJMPColumns", "clinical"})
+**Syntax:** jg:study( _name="", _label="", _origin={},_sdtmFolderOriginal="", _selectedSdtmDomains={}, _adamFolderOriginal="", _selectedAdamDomains={},_snapshotNumber=0, _initialDate=., _createdBy="", _lastUpdatedDate=.,_lastUpdatedBy="", _releaseVersion="", _testResultsLoadOnly="", _partialDatesStartDateImputationMethod="",_partialDatesEndDateImputationMethod="", _studyDayValueDerivation="", _studyDayAnchorDateForStudyDayCalculation="",_flagsTrue={"saveJMPTables", "compressJMPTables", "compressJMPColumns", "clinical"})
 
 **Description:** Creates a new JMP Clinical study object.
 
@@ -2596,7 +2596,7 @@ s = jg:study( "study" );
 
 ### jg:variable
 
-**Syntax:** jg:variable( parent=empty(), _name="", _label="", _origin={}, _type="", _colmin=., _colmax=., _valuelist={}, _key=0, _class="", _nMissingRows=0, _flagsTrue={})
+**Syntax:** jg:variable( parent=empty(), _name="", _label="", _origin={}, _type="", _colmin=.,_colmax=., _valuelist={}, _key=0, _class="", _nMissingRows=0,_flagsTrue={})
 
 **Description:** Creates a new JMP Clinical variable object.
 
@@ -2627,9 +2627,9 @@ processNS:cdiscClass = "Custom Reports";
 // The main report code.
 processNS:runReport =
 Function( {},
-	{Default Local}, 
-	// Surfaces a built-in JMP platform on the current data table (tadsl) and opens in a new window.
-	Graph Builder()
+{Default Local}, 
+// Surfaces a built-in JMP platform on the current data table (tadsl) and opens in a new window.
+Graph Builder()
 );
 /*
 ===================================================================================
@@ -2706,47 +2706,47 @@ processNS:cdiscClass = "Custom Reports";
 // The main report code.
 processNS:runReport =
 Function( {},
-	{Default Local}, 
-	// Obtain the path to the study's ADSL data set.
-	path = jg:getPath(
-		"/user/clinical/data/adam", "ADSL.jmp"
-	);
-	If( !File Exists( path ), 
-		// A custom error check.
-		processNS
-		:fatalError(
-			"This report requires an ARM variable in the ADSL dataset.",
-			1
-		)
-	, 
-		// Open the study's ADSL data set.
-		objRefNS:dt = Open( path, invisible );
-		// Send content to the output pane.
-		processNS
-		:setReportOutput(
-			V List Box(
-				// Create a Graph Builder object, hiding the control panel, using ARM as an X variable, displayed as a pie ring.
-				objRefNS:gb =
-				Graph Builder(
-					Show Control Panel( 0 ),
-					Variables( X( :ARM ) ),
-					Elements(
-						Pie(
-							X,
-							Legend( 3 ),
-							Pie Style( "Ring" )
-						)
-					)
-				)
-			)
-		);
-		// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
-		processNS
-		:addDataTableReference(
-			"Custom Report Example Data",
-			"objRefNS:dt"
-		);
-	);
+{Default Local}, 
+// Obtain the path to the study's ADSL data set.
+path = jg:getPath(
+"/user/clinical/data/adam", "ADSL.jmp"
+);
+If( !File Exists( path ), 
+// A custom error check.
+processNS
+:fatalError(
+"This report requires an ARM variable in the ADSL dataset.",
+1
+)
+, 
+// Open the study's ADSL data set.
+objRefNS:dt = Open( path, invisible );
+// Send content to the output pane.
+processNS
+:setReportOutput(
+V List Box(
+// Create a Graph Builder object, hiding the control panel, using ARM as an X variable, displayed as a pie ring.
+objRefNS:gb =
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :ARM ) ),
+Elements(
+Pie(
+X,
+Legend( 3 ),
+Pie Style( "Ring" )
+)
+)
+)
+)
+);
+// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+processNS
+:addDataTableReference(
+"Custom Report Example Data",
+"objRefNS:dt"
+);
+);
 );
 
 0;
@@ -2829,85 +2829,85 @@ processNS:description =
 // The main report code.
 processNS:runReport =
 Function( {},
-	{Default Local}, 
-	// Including functions shared across reports.
-	Include(
-		Convert File Path(
-			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
-			absolute,
-			windows
-		)
-	);
-	objRefNS:in_adsl = prepADSL();
-	
-	// Change JMP names to SAS Labels.
-	jg
-	:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
-	
-	// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
-	reportRefNS
-	:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
-	
-	// Apply value order and color preferences to an analysis data table.
-	jg
-	:ApplyValueOrderToTables(
-		Eval List( {objRefNS:in_adsl} ),
-		objRefNS:StudyName
-	);
-	
-	// Retrieve the column names.
-	objRefNS:columnNames = objRefNS:in_adsl <<
-	getColumnNames( "string" );
-	
-	// Send content to the output pane.
-	processNS
-	:setReportOutput(
-		V List Box(
-			// Create a Graph Builder object, hiding the control panel, using the first column in the
-			//  data table as the initially selected column, displayed as a pie ring, offering a
-			//  column switcher to choose from any column in the data table.
-			objRefNS:gb =
-			Graph Builder(
-				Show Control Panel( 0 ),
-				Variables(
-					X(
-						Eval(
-							objRefNS:columnNames[1]
-						)
-					)
-				),
-				Elements(
-					Pie(
-						X,
-						Legend( 3 ),
-						Pie Style( "Ring" )
-					)
-				),
-				Column Switcher(
-					Eval( objRefNS:columnNames[1] ),
-					Eval( objRefNS:columnNames )
-				)
-			)
-		)
-	);
-	
-	// Collapse empty Options panel.
-	objRefNS:mainhlb << ClosePanel( 1 );
-	
-	// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
-	processNS
-	:addDataTableReference(
-		"Custom Report Example Data",
-		"objRefNS:in_adsl"
-	);
-	
-	// Send these objects to JMP Live.
-	processNS
-	:defineStaticReportContent( {objRefNS:gb} );
-	
-	// Send these objects to the static report.
-	processNS
-	:defineLiveReportContent( {{objRefNS:gb}} );
+{Default Local}, 
+// Including functions shared across reports.
+Include(
+Convert File Path(
+"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
+absolute,
+windows
+)
+);
+objRefNS:in_adsl = prepADSL();
+
+// Change JMP names to SAS Labels.
+jg
+:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
+
+// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
+reportRefNS
+:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
+
+// Apply value order and color preferences to an analysis data table.
+jg
+:ApplyValueOrderToTables(
+Eval List( {objRefNS:in_adsl} ),
+objRefNS:StudyName
+);
+
+// Retrieve the column names.
+objRefNS:columnNames = objRefNS:in_adsl <<
+getColumnNames( "string" );
+
+// Send content to the output pane.
+processNS
+:setReportOutput(
+V List Box(
+// Create a Graph Builder object, hiding the control panel, using the first column in the
+//  data table as the initially selected column, displayed as a pie ring, offering a
+//  column switcher to choose from any column in the data table.
+objRefNS:gb =
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X(
+Eval(
+objRefNS:columnNames[1]
+)
+)
+),
+Elements(
+Pie(
+X,
+Legend( 3 ),
+Pie Style( "Ring" )
+)
+),
+Column Switcher(
+Eval( objRefNS:columnNames[1] ),
+Eval( objRefNS:columnNames )
+)
+)
+)
+);
+
+// Collapse empty Options panel.
+objRefNS:mainhlb << ClosePanel( 1 );
+
+// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+processNS
+:addDataTableReference(
+"Custom Report Example Data",
+"objRefNS:in_adsl"
+);
+
+// Send these objects to JMP Live.
+processNS
+:defineStaticReportContent( {objRefNS:gb} );
+
+// Send these objects to the static report.
+processNS
+:defineLiveReportContent( {{objRefNS:gb}} );
 );
 
 0;
@@ -3006,430 +3006,430 @@ processNS:requirements = ["_ONE_OR_MORE_DEMOGRAPHICS_"
 // The main report code.
 processNS:runReport =
 Function( {},
-	{Default Local}, 
-	// Including functions shared across reports.
-	Include(
-		Convert File Path(
-			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
-			absolute,
-			windows
-		)
-	);
-	objRefNS:in_adsl = prepADSL();
-	
-	// Change JMP names to SAS Labels.
-	jg
-	:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
-	
-	// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
-	reportRefNS
-	:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
-	
-	// Apply value order and color preferences to an analysis data table.
-	jg
-	:ApplyValueOrderToTables(
-		Eval List( {objRefNS:in_adsl} ),
-		objRefNS:StudyName
-	);
-	
-	// Add predefined drill downs to the report.
-	processNS:addDrillDowns( {"ShowSubjects"} );
-	
-	// Working with requirements return. (Not necessary for this report.)
-	processNS:note(
-		"Datasets in _ONE_OR_MORE_DEMOGRAPHICS_: " ||
-		Char(
-			objRefNS:requirementsReturn["domains_wild"
-			]["_ONE_OR_MORE_DEMOGRAPHICS_"]["present"]
-		)
-	);
-	processNS:note(
-		"Datasets passing requirements for _ONE_OR_MORE_DEMOGRAPHICS_: "
-		 || Char(
-			objRefNS:requirementsReturn["domains_wild"
-			]["_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"]
-		)
-	);
-	domainsPass = objRefNS:requirementsReturn[
-	"domains_wild"]["_ONE_OR_MORE_DEMOGRAPHICS_"][
-	"pass"];
-	For( i = 1, i <= N Items( domainsPass ), i++,
-		processNS:note(
-			"Required chosen variables in " ||
-			domainsPass[i] || ": " ||
-			Char(
-				objRefNS:requirementsReturn["domains"]
-				[domainsPass[i]]["required_chosen"]
-			)
-		)
-	);
-	
-	// A custom error check. (Not necessary for this report. Set to 1 to simulate an error.)
-	If( 0,
-		processNS
-		:fatalError(
-			"Cannot run this report because condition X was not met.",
-			1
-		)
-	);
-	
-	// Creating a function for use within this report only.
-	objRefNS:createResults =
-	Function( {cols = {}},
-		{Default Local},
-		distCode = "objRefNS:in_adsl << Distribution(";
-		For( i = 1, i <= N Items( cols ), i++,
-			If( i > 1, distCode ||= "," );
-			distCode ||=
-			Eval Insert(
-				"\[
-				Nominal Distribution(Column(:Name("^cols[i]^")))
-			]\"
-			);
-		);
-		distCode ||= ")";
-		Eval(
-			Parse(
-				Eval Insert(
-					"\[
-			// Send content to the output pane.
-			processNS:setReportOutput(
-				VListBox(
-					// Create a Distribution object using the code built in distCode.
-					objRefNS:db = ^distCode^
-				)
-			);
-		]\"
-				)
-			)
-		);
-	);
-	
-	// Calling a widget constructor (in non-inline form, with a script that runs after the user changes the value, running the script initially).
-	processNS
-	:makeCreateAdditionalDistributionsForSelectedVariablesWidget(
-		0, // 0 is non-inline form; use 1 for inline form
-		// script
-		Expr(
-			Expr(
-				Expr(
-			// Retrieve the current values this widget, convert them into JMP names, and store these in objRefNS:tadslCols.
-					objRefNS:tadslCols = jg
-					:getColumnJMPNames(
-						jg
-						:getWidgetValue(
-							"objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb"
-						), objRefNS:in_adsl
-					);
-			
-			// Call the function defined in this report.
-					objRefNS
-					:createResults(
-						objRefNS:tadslCols
-					);
-			
-			// Renaming a report.
-					//processNS:renameReportTitleDomain("ADSL"); // Honors configuration display preferences for domains.
-					processNS
-					:renameReportTitleSubstring(
-						Char( objRefNS:tadslCols )
-					);
-			//processNS:renameReportTitle("This entirely replaces the original report title."); // Freeform -- does not use processNS:labelSkeleton.
-			
-					// When a widget value change requires the entire report to rerun, issue the following, but be sure to set the runScriptInitial
-					//  argument in the widget constructor to 0 to prevent an endless loop.
-					//processNS:rerunReport();
-				)
-			)
-		),
-		1 // 0 is do not run the script initially; 1 is run the script initially
-	);
-	
-	// Example custom widget creation.
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w1",
-		"class" => "ComboBoxClass"]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w2",
-		"class" => "ComboBoxClass",
-		"label" => "ComboBoxClass Widget 2",
-		"values" => {"A~a", "B~b", "C~c"},
-		"initialvalue" => "B"]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w3",
-		"class" => "ComboBoxClass",
-		"label" => "ComboBoxClass Widget 3",
-		"valuesdataref" => "objRefNS:in_adsl"]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w4",
-		"class" => "CalendarFieldClass",
-		"label" => "CalendarFieldClass Widget",
-		"initialvalue" => "01/01/2015",
-		"selectedformat" => "d/m/y"]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w5",
-		"class" => "CheckboxClass",
-		"label" => "CheckboxClass Widget",
-		"initialvalue" => "No",
-		"scriptd" =>
-		Expr(
-			Expr(
-				Expr(
-					If( !((objRefNS:w5):isChecked()),
-						Try(
-							(objRefNS:w6)
-							:inputContainer <<
-							Visibility( "collapse" )
-						),
-						Try(
-							(objRefNS:w6)
-							:inputContainer <<
-							Visibility( "visible" )
-						)
-					)
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w6",
-		"class" => "FileAndFolderFieldClass",
-		"label" => "FileAndFolderFieldClass Widget",
-		"selectionoptions" => ["selectDirectory" => 1],
-		"scriptd" =>
-		Expr(
-			Expr(
-				Expr(
-					If( !((objRefNS:w5):isChecked()),
-						Try(
-							(objRefNS:w6)
-							:inputContainer <<
-							Visibility( "collapse" )
-						),
-						Try(
-							(objRefNS:w6)
-							:inputContainer <<
-							Visibility( "visible" )
-						)
-					)
-				)
-			)
-		), "script" =>
-		Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w7",
-		"class" => "ListBoxClass",
-		"label" => "ListBoxClass Widget",
-		"maxselected" => 2,
-		"values" => {"A~a", "B~b", "C~c"},
-		"initialvalue" => {"B", "C"}, "script" =>
-		Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w8",
-		"class" => "ManualEntryListBoxClass",
-		"label" => "ManualEntryListBoxClass Widget"]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w9",
-		"class" => "ManualEntryOrderedListBoxClass",
-		"label" =>
-		"ManualEntryOrderedListboxClass Widget",
-		"initialvalue" => {"a", "b", "c"}, "script"
-		 => Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w10",
-		"class" => "OrderedListBoxClass",
-		"label" => "OrderedListBoxClass Widget",
-		"values" => {"A~a", "B~b", "C~c"},
-		"displayoption" => 2,
-		"initialvalue" => {"B"}]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w11",
-		"class" => "RadioBoxClass",
-		"label" => "RadioBoxClass Widget",
-		"values" => {"a", "b", "c"}, "initialvalue"
-		 => "b",
-		"script" =>
-		Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w12",
-		"class" => "SliderFieldClass",
-		"label" => "SliderFieldClass Widget",
-		"min" => 10,
-		"max" => 20,
-		"script" =>
-		Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w13",
-		"class" => "SpinnerFieldClass",
-		"label" => "SpinnerFieldClass Widget",
-		"min" => 10,
-		"max" => 20,
-		"increment" => 2]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w14",
-		"class" => "TextFieldClass",
-		"label" => "TextFieldClass Widget",
-		"initialvalue" => "Test",
-		"script" =>
-		Expr(
-			Expr(
-				Expr(
-					processNS:rerunReport()
-				)
-			)
-		)]
-	);
-	processNS
-	:makeWidget(
-		["ref" => "objRefNS:w16",
-		"class" => "OrderedListBoxClass",
-		"label" => "OrderedListBoxClass Widget 2",
-		"valuesdataref" => "objRefNS:in_adsl",
-		"initialvalue" => {"AGE"}]
-	);
-	
-	// Obtain the current internal value from a widget.
-	processNS:note(
-		"objRefNS:w2's value is " ||
-		Char( jg:getWidgetValue( "objRefNS:w2" ) ) ||
-		"."
-	);
-	
-	// Obtain the current display value from a widget.
-	processNS:note(
-		"objRefNS:w2's value is " ||
-		Char(
-			jg
-			:getWidgetValueAlternate( "objRefNS:w2" )
-		) || "."
-	);
-	
-	// Place the above widget into the Options Data panel.
-	processNS
-	:appendDataOptions(
-		V List Box(
-			// Paste the inputContainer (displaybox) of the widgets in the display tree.
-			(objRefNS
-			:CreateAdditionalDistributionsForSelectedVariablesolb
-			):inputContainer, 
-			// Example custom widgets created above.
-			(objRefNS:w1):inputContainer,
-			(objRefNS:w2):inputContainer,
-			(objRefNS:w3):inputContainer,
-			(objRefNS:w4):inputContainer,
-			(objRefNS:w5):inputContainer,
-			(objRefNS:w6):inputContainer,
-			(objRefNS:w7):inputContainer,
-			(objRefNS:w8):inputContainer,
-			(objRefNS:w9):inputContainer,
-			(objRefNS:w10):inputContainer,
-			(objRefNS:w11):inputContainer,
-			(objRefNS:w12):inputContainer,
-			(objRefNS:w13):inputContainer,
-			(objRefNS:w14):inputContainer, 
-			// Example custom widget created inline.
-			processNS
-			:makeWidget(
-				["ref" => "objRefNS:w15",
-				"class" => "CheckboxClass",
-				"label" => "CheckboxClass Widget 2",
-				"inline" => 1]
-			),
-			(objRefNS:w16):inputContainer
-		),
-		0
-	);
-	
-	// Create a Report Filter.
-	If( Length( objRefNS:tadslCols ),
-		objRefNS:ReportDataFilterReferenceList =
-		reportRefNS
-		:createReportFilter(
-			objRefNS:in_adsl, objRefNS:tadslCols
-		);
-		// Do not display the filter histograms and bars.
-		objRefNS:rptfilter = objRefNS
-		:ReportDataFilterReferenceList[2];
-		objRefNS:rptfilter <<
-		Show Histograms and Bars( 0 );
-	);
-	
-	// Place the Report Filter in the Options Display panel.
-	processNS
-	:appendDisplayOptions(
-		objRefNS:ReportDataFilterReferenceList[1]
-	);
-	
-	// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
-	processNS
-	:addDataTableReference(
-		"Custom Report Example ADSL Data",
-		"objRefNS:in_adsl"
-	);
-	
-	// Send these objects to JMP Live.
-	processNS
-	:defineStaticReportContent( {objRefNS:db} );
-	
-	// Send these objects to the static report.
-	processNS
-	:defineLiveReportContent( {{objRefNS:db}} );
+{Default Local}, 
+// Including functions shared across reports.
+Include(
+Convert File Path(
+"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
+absolute,
+windows
+)
+);
+objRefNS:in_adsl = prepADSL();
+
+// Change JMP names to SAS Labels.
+jg
+:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
+
+// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
+reportRefNS
+:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
+
+// Apply value order and color preferences to an analysis data table.
+jg
+:ApplyValueOrderToTables(
+Eval List( {objRefNS:in_adsl} ),
+objRefNS:StudyName
+);
+
+// Add predefined drill downs to the report.
+processNS:addDrillDowns( {"ShowSubjects"} );
+
+// Working with requirements return. (Not necessary for this report.)
+processNS:note(
+"Datasets in _ONE_OR_MORE_DEMOGRAPHICS_: " ||
+Char(
+objRefNS:requirementsReturn["domains_wild"
+]["_ONE_OR_MORE_DEMOGRAPHICS_"]["present"]
+)
+);
+processNS:note(
+"Datasets passing requirements for _ONE_OR_MORE_DEMOGRAPHICS_: "
+|| Char(
+objRefNS:requirementsReturn["domains_wild"
+]["_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"]
+)
+);
+domainsPass = objRefNS:requirementsReturn[
+"domains_wild"]["_ONE_OR_MORE_DEMOGRAPHICS_"][
+"pass"];
+For( i = 1, i <= N Items( domainsPass ), i++,
+processNS:note(
+"Required chosen variables in " ||
+domainsPass[i] || ": " ||
+Char(
+objRefNS:requirementsReturn["domains"]
+[domainsPass[i]]["required_chosen"]
+)
+)
+);
+
+// A custom error check. (Not necessary for this report. Set to 1 to simulate an error.)
+If( 0,
+processNS
+:fatalError(
+"Cannot run this report because condition X was not met.",
+1
+)
+);
+
+// Creating a function for use within this report only.
+objRefNS:createResults =
+Function( {cols = {}},
+{Default Local},
+distCode = "objRefNS:in_adsl << Distribution(";
+For( i = 1, i <= N Items( cols ), i++,
+If( i > 1, distCode ||= "," );
+distCode ||=
+Eval Insert(
+"\[
+Nominal Distribution(Column(:Name("^cols[i]^")))
+]\"
+);
+);
+distCode ||= ")";
+Eval(
+Parse(
+Eval Insert(
+"\[
+// Send content to the output pane.
+processNS:setReportOutput(
+VListBox(
+// Create a Distribution object using the code built in distCode.
+objRefNS:db = ^distCode^
+)
+);
+]\"
+)
+)
+);
+);
+
+// Calling a widget constructor (in non-inline form, with a script that runs after the user changes the value, running the script initially).
+processNS
+:makeCreateAdditionalDistributionsForSelectedVariablesWidget(
+0, // 0 is non-inline form; use 1 for inline form
+// script
+Expr(
+Expr(
+Expr(
+// Retrieve the current values this widget, convert them into JMP names, and store these in objRefNS:tadslCols.
+objRefNS:tadslCols = jg
+:getColumnJMPNames(
+jg
+:getWidgetValue(
+"objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb"
+), objRefNS:in_adsl
+);
+
+// Call the function defined in this report.
+objRefNS
+:createResults(
+objRefNS:tadslCols
+);
+
+// Renaming a report.
+//processNS:renameReportTitleDomain("ADSL"); // Honors configuration display preferences for domains.
+processNS
+:renameReportTitleSubstring(
+Char( objRefNS:tadslCols )
+);
+//processNS:renameReportTitle("This entirely replaces the original report title."); // Freeform -- does not use processNS:labelSkeleton.
+
+// When a widget value change requires the entire report to rerun, issue the following, but be sure to set the runScriptInitial
+//  argument in the widget constructor to 0 to prevent an endless loop.
+//processNS:rerunReport();
+)
+)
+),
+1 // 0 is do not run the script initially; 1 is run the script initially
+);
+
+// Example custom widget creation.
+processNS
+:makeWidget(
+["ref" => "objRefNS:w1",
+"class" => "ComboBoxClass"]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w2",
+"class" => "ComboBoxClass",
+"label" => "ComboBoxClass Widget 2",
+"values" => {"A~a", "B~b", "C~c"},
+"initialvalue" => "B"]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w3",
+"class" => "ComboBoxClass",
+"label" => "ComboBoxClass Widget 3",
+"valuesdataref" => "objRefNS:in_adsl"]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w4",
+"class" => "CalendarFieldClass",
+"label" => "CalendarFieldClass Widget",
+"initialvalue" => "01/01/2015",
+"selectedformat" => "d/m/y"]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w5",
+"class" => "CheckboxClass",
+"label" => "CheckboxClass Widget",
+"initialvalue" => "No",
+"scriptd" =>
+Expr(
+Expr(
+Expr(
+If( !((objRefNS:w5):isChecked()),
+Try(
+(objRefNS:w6)
+:inputContainer <<
+Visibility( "collapse" )
+),
+Try(
+(objRefNS:w6)
+:inputContainer <<
+Visibility( "visible" )
+)
+)
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w6",
+"class" => "FileAndFolderFieldClass",
+"label" => "FileAndFolderFieldClass Widget",
+"selectionoptions" => ["selectDirectory" => 1],
+"scriptd" =>
+Expr(
+Expr(
+Expr(
+If( !((objRefNS:w5):isChecked()),
+Try(
+(objRefNS:w6)
+:inputContainer <<
+Visibility( "collapse" )
+),
+Try(
+(objRefNS:w6)
+:inputContainer <<
+Visibility( "visible" )
+)
+)
+)
+)
+), "script" =>
+Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w7",
+"class" => "ListBoxClass",
+"label" => "ListBoxClass Widget",
+"maxselected" => 2,
+"values" => {"A~a", "B~b", "C~c"},
+"initialvalue" => {"B", "C"}, "script" =>
+Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w8",
+"class" => "ManualEntryListBoxClass",
+"label" => "ManualEntryListBoxClass Widget"]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w9",
+"class" => "ManualEntryOrderedListBoxClass",
+"label" =>
+"ManualEntryOrderedListboxClass Widget",
+"initialvalue" => {"a", "b", "c"}, "script"
+=> Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w10",
+"class" => "OrderedListBoxClass",
+"label" => "OrderedListBoxClass Widget",
+"values" => {"A~a", "B~b", "C~c"},
+"displayoption" => 2,
+"initialvalue" => {"B"}]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w11",
+"class" => "RadioBoxClass",
+"label" => "RadioBoxClass Widget",
+"values" => {"a", "b", "c"}, "initialvalue"
+=> "b",
+"script" =>
+Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w12",
+"class" => "SliderFieldClass",
+"label" => "SliderFieldClass Widget",
+"min" => 10,
+"max" => 20,
+"script" =>
+Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w13",
+"class" => "SpinnerFieldClass",
+"label" => "SpinnerFieldClass Widget",
+"min" => 10,
+"max" => 20,
+"increment" => 2]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w14",
+"class" => "TextFieldClass",
+"label" => "TextFieldClass Widget",
+"initialvalue" => "Test",
+"script" =>
+Expr(
+Expr(
+Expr(
+processNS:rerunReport()
+)
+)
+)]
+);
+processNS
+:makeWidget(
+["ref" => "objRefNS:w16",
+"class" => "OrderedListBoxClass",
+"label" => "OrderedListBoxClass Widget 2",
+"valuesdataref" => "objRefNS:in_adsl",
+"initialvalue" => {"AGE"}]
+);
+
+// Obtain the current internal value from a widget.
+processNS:note(
+"objRefNS:w2's value is " ||
+Char( jg:getWidgetValue( "objRefNS:w2" ) ) ||
+"."
+);
+
+// Obtain the current display value from a widget.
+processNS:note(
+"objRefNS:w2's value is " ||
+Char(
+jg
+:getWidgetValueAlternate( "objRefNS:w2" )
+) || "."
+);
+
+// Place the above widget into the Options Data panel.
+processNS
+:appendDataOptions(
+V List Box(
+// Paste the inputContainer (displaybox) of the widgets in the display tree.
+(objRefNS
+:CreateAdditionalDistributionsForSelectedVariablesolb
+):inputContainer, 
+// Example custom widgets created above.
+(objRefNS:w1):inputContainer,
+(objRefNS:w2):inputContainer,
+(objRefNS:w3):inputContainer,
+(objRefNS:w4):inputContainer,
+(objRefNS:w5):inputContainer,
+(objRefNS:w6):inputContainer,
+(objRefNS:w7):inputContainer,
+(objRefNS:w8):inputContainer,
+(objRefNS:w9):inputContainer,
+(objRefNS:w10):inputContainer,
+(objRefNS:w11):inputContainer,
+(objRefNS:w12):inputContainer,
+(objRefNS:w13):inputContainer,
+(objRefNS:w14):inputContainer, 
+// Example custom widget created inline.
+processNS
+:makeWidget(
+["ref" => "objRefNS:w15",
+"class" => "CheckboxClass",
+"label" => "CheckboxClass Widget 2",
+"inline" => 1]
+),
+(objRefNS:w16):inputContainer
+),
+0
+);
+
+// Create a Report Filter.
+If( Length( objRefNS:tadslCols ),
+objRefNS:ReportDataFilterReferenceList =
+reportRefNS
+:createReportFilter(
+objRefNS:in_adsl, objRefNS:tadslCols
+);
+// Do not display the filter histograms and bars.
+objRefNS:rptfilter = objRefNS
+:ReportDataFilterReferenceList[2];
+objRefNS:rptfilter <<
+Show Histograms and Bars( 0 );
+);
+
+// Place the Report Filter in the Options Display panel.
+processNS
+:appendDisplayOptions(
+objRefNS:ReportDataFilterReferenceList[1]
+);
+
+// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+processNS
+:addDataTableReference(
+"Custom Report Example ADSL Data",
+"objRefNS:in_adsl"
+);
+
+// Send these objects to JMP Live.
+processNS
+:defineStaticReportContent( {objRefNS:db} );
+
+// Send these objects to the static report.
+processNS
+:defineLiveReportContent( {{objRefNS:db}} );
 );
 
 0;

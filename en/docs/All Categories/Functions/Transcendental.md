@@ -34,7 +34,7 @@ Arrhenius Inv( 100 );
 
 **Syntax:** z = Beta( x, y )
 
-**Description:** Returns Beta function of x and y, defined as Gamma( x ) * Gamma( y ) / Gamma( x + y ).
+**Description:** Returns Beta function of x and y, defined as Gamma( x ) \* Gamma( y ) / Gamma( x + y ).
 
 **JMP Version Added:** Before version 14
 
@@ -216,7 +216,7 @@ Show( fin );
 
 **Syntax:** y = Factorial( x )
 
-**Description:** Returns the factorial of x, which is the same as Gamma( x + 1 ). If x is an integer, the result is the product 1 * 2 * ... * x.
+**Description:** Returns the factorial of x, which is the same as Gamma( x + 1 ). If x is an integer, the result is the product 1 \* 2 \* ... \* x.
 
 **JMP Version Added:** Before version 14
 
@@ -255,7 +255,7 @@ Show( results );
 
 **Syntax:** y = Gamma( x, &lt;limit&gt; )
 
-**Description:** Returns Gamma function of x, defined as the integral of z^(x-1)*exp(-z) dz from 0 to ∞. If limit is present, an incomplete Gamma is computed using that limit of integration.
+**Description:** Returns Gamma function of x, defined as the integral of z^(x-1)\*exp(-z) dz from 0 to ∞. If limit is present, an incomplete Gamma is computed using that limit of integration.
 
 **JMP Version Added:** Before version 14
 
@@ -395,7 +395,7 @@ Logit Percent( 95.0 );
 
 **Syntax:** m = N Choose K( n, k )
 
-**Description:** Returns n! / (k! * (n - k)!), which is the number of ways to choose k items out of n, ignoring order.
+**Description:** Returns n! / (k! \* (n - k)!), which is the number of ways to choose k items out of n, ignoring order.
 
 **JMP Version Added:** Before version 14
 
@@ -508,7 +508,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 **Syntax:** y = Scheffe Cubic( x1, x2 )
 
-**Description:** Evaluates as x1*x2*(x1-x2); used to support modeling notation for cubic mixture models.
+**Description:** Evaluates as x1\*x2\*(x1-x2); used to support modeling notation for cubic mixture models.
 
 **JMP Version Added:** Before version 14
 

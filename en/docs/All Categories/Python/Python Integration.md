@@ -1626,7 +1626,7 @@ print( col1 == col3 )
 
 **Description:** Provides the [] operator for getting a jmp.DataTable.Column object&apos;s value from the column with 0-based index.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```python
 
@@ -1645,7 +1645,7 @@ for i in range ( len(col) ):
 
 **Description:** Creates a new column object that points to a specific column in a data table.  A jmp.DataTable object is required for the dt_obj parameter and a valid column name or index is required.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```python
 
@@ -2096,7 +2096,7 @@ print( dt == iris)
 
 **Description:** Provides the [] operator for getting a jmp.DataTable.Column object from the table by column name or 0-based index.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```python
 
@@ -2116,7 +2116,7 @@ print(column2)
 
 **Description:** Create a new data table having name &apos;table_name&apos; with n rows. Parameters and keywords are optional, unless only rows are specified or order of parmeters is reversed.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 **Empty Table**
 
@@ -2647,7 +2647,7 @@ dt.select_columns(['age', 'height'])
 
 **Description:** The Expression object supports equality and inequality checks. When comparing equality between two Expression objects, the values are compared and returned if they are equal or not. This is a comparison of the values of the Expression object and not the evaluation of the values.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2673,7 +2673,7 @@ print(expr1 != expr3)
 
 **Description:** The equality test returns true if the Expression object has the same content as another Expression object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2714,7 +2714,7 @@ print(f'Expression Adjusted: {eval(expr)}')
 
 **Description:** The inequality test returns true if the Expression object has different content as another Expression object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2734,7 +2734,7 @@ print(expr1 != expr3)
 
 **Description:** Returns a sting representation of containing all information about the Expression object.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2775,7 +2775,7 @@ print(expr)
 
 **Description:** The Image object supports equality and inequality checks. When comparing equality between two Image objects, the values are compared and returned if they are equal or not.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2799,7 +2799,7 @@ print(image1 != image3)
 
 **Description:** The equality test returns true if the Image object has the same content as another Image object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2837,7 +2837,7 @@ jmp.open(image)
 
 **Description:** The inequality test returns true if the Image object has different content as another Image object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2857,7 +2857,7 @@ print(image1 != image3)
 
 **Description:** Returns a sting representation of containing all information about the Image object.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -2922,7 +2922,7 @@ print(prj.name)
 
 **Description:** Returns the string representation of the project
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3024,7 +3024,7 @@ print( prj.is_extracted('myfile.data') )
 
 **Description:** The project name property is read only
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3047,7 +3047,7 @@ print(prj.name)
 
 **Description:** The RowState object supports equality and inequality checks. When comparing equality between two RowState objects, the values are compared and returned if they are equal or not. If two RowStates have the same content yet are intialized differently, they will still return true.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3073,7 +3073,7 @@ print(rs1 != rs3)
 
 **Description:** The equality test returns true if the RowState object has the same content as another RowState object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3114,7 +3114,7 @@ print(f'Row State from Value: {rs_from_value}')
 
 **Description:** The inequality test returns true if the RowState object has different content as another RowState object and returns false otherwise.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3134,7 +3134,7 @@ print(rs1 != rs3)
 
 **Description:** Returns a sting representation of containing all information about the RowState object.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3314,7 +3314,7 @@ print( jmp.globals['pi'] )
 
 **Description:** Returns the number of symbols in the JSL global environment.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3334,7 +3334,7 @@ print( len( jmp.globals ) )
 
 **Description:** Due to Python scoping and the design of Python Get(), only variables in the Python global scope are accessible with Python Get(). The jmp.globals dictionary provides the capacity to directly set or create a JSL variable from Python code. The value type can be any Python type currently supported by Python Get().
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3353,7 +3353,7 @@ jmp.run_jsl('''
 
 **Description:** Display the contents of globals in a dictionary representation. Note that the globals dictionary is utilized by JMP itself so there may be additional entries.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3532,7 +3532,7 @@ except:
 
 **Description:** Returns the number of symbols in the JSL &apos;here&apos; namespace.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3552,7 +3552,7 @@ print( len( jmp.here ) )
 
 **Description:** Provides the means to set a value into the JSL script&apos;s &apos;here&apos; namespace. This allows sending back a value that could not be reached by Python Get(). Only variables in the Python global scope can be seen by Python Get(). Supports same object types as Python Get(). Note on JSL namespace scoping, the &apos;here&apos; namespace is local to the script submission.  Code submitted from different script windows will have separate &apos;here&apos; namespaces. Code including another script will have a single &apos;here&apos; namespace. This holds true for a JSL script running Python via Submit() or Execute(), Python scripts calling run_jsl().
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -3572,7 +3572,7 @@ jmp.run_jsl('''
 
 **Description:** Display the contents of here in a dictionary representation.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 
@@ -4604,7 +4604,7 @@ print(jr.r_version())
 
 **Description:** The jmpex package&apos;s R support version.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```python
 

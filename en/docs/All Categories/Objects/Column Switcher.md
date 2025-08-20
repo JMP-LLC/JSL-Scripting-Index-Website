@@ -107,7 +107,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 **Syntax:** obj &lt;&lt; Get Speed
 
-**Description:** fpm = obj<<getSpeed /* in Frames Per Minute */;
+**Description:** fpm = obj<<getSpeed /\* in Frames Per Minute \*/;
 
 ```jsl
 
@@ -427,7 +427,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 **Syntax:** obj &lt;&lt; Set Speed( number )
 
-**Description:** obj<<setSpeed(60) /* in Frames Per Minute */;
+**Description:** obj<<setSpeed(60) /\* in Frames Per Minute \*/;
 
 ```jsl
 

@@ -595,8 +595,6 @@ Preferences( Default Field Width( 16 ) );
 
 **Syntax:** obj &lt;&lt; Display JSL SAS results as HTML( state=0|1 )
 
-**JMP Version Added:** 19
-
 ```jsl
 
 //Caution: Changing a preference will 
@@ -2227,8 +2225,6 @@ Preferences[1] << Set( "SAS Import generated datasets into JMP"n( 1 ) );
 
 **Description:** "Statistical" by default.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 //Caution: Changing a preference will 
@@ -2560,8 +2556,6 @@ Preferences[1] << Set( Show Personalization at startup( 1 ) );
 ### Show SAS Log
 
 **Syntax:** obj &lt;&lt; Show SAS Log( "Never"|"Always"|"On Error" )
-
-**JMP Version Added:** 19
 
 ### Show Search box on Columns Panel
 

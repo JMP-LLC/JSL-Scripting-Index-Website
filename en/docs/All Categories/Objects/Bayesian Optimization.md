@@ -10,19 +10,17 @@
 
 **Description:** Recommends factor settings to optimize responses by augmenting the data table.
 
+**JMP Version Added:** 19
+
 ## Columns
 
 ### Iteration
 
 **Syntax:** obj &lt;&lt; Iteration( column )
 
-**JMP Version Added:** 19
-
 ### Run Order
 
 **Syntax:** obj &lt;&lt; Run Order( column )
-
-**JMP Version Added:** 19
 
 ### X
 
@@ -38,13 +36,9 @@
 
 **Syntax:** obj &lt;&lt; Batch Size( number )
 
-**JMP Version Added:** 19
-
 ### Candidate Set Size
 
 **Syntax:** obj &lt;&lt; Candidate Set Size( number )
-
-**JMP Version Added:** 19
 
 ### Continuous Correlation Type
 
@@ -52,15 +46,11 @@
 
 **Description:** "Matern 5/2" by default.
 
-**JMP Version Added:** 19
-
 ### Copy All Model Fits Script
 
 **Syntax:** obj &lt;&lt; Copy All Model Fits Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
-
-**JMP Version Added:** 19
 
 ### Copy Startup Script
 
@@ -68,19 +58,13 @@
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
-**JMP Version Added:** 19
-
 ### Minimum RSquare
 
 **Syntax:** obj &lt;&lt; Minimum RSquare( number )
 
-**JMP Version Added:** 19
-
 ### Model Based Augmentation RSquare Threshold
 
 **Syntax:** obj &lt;&lt; Model Based Augmentation RSquare Threshold( number )
-
-**JMP Version Added:** 19
 
 ### Nominal Correlation Type
 
@@ -88,15 +72,11 @@
 
 **Description:** "Equal Correlations" by default.
 
-**JMP Version Added:** 19
-
 ### Ordinal Correlation Type
 
 **Syntax:** obj &lt;&lt; Ordinal Correlation Type( "Equal Correlations"|"Unequal Correlations"|"Latent Variable"="Equal Correlations" )
 
 **Description:** "Equal Correlations" by default.
-
-**JMP Version Added:** 19
 
 ### Save All Model Fits Script to Data Table
 
@@ -104,15 +84,11 @@
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
-**JMP Version Added:** 19
-
 ### Save All Model Fits Script to Journal
 
 **Syntax:** obj &lt;&lt; Save All Model Fits Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
-
-**JMP Version Added:** 19
 
 ### Save All Model Fits Script to Report
 
@@ -120,15 +96,11 @@
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
-**JMP Version Added:** 19
-
 ### Save All Model Fits Script to Script Window
 
 **Syntax:** obj &lt;&lt; Save All Model Fits Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
-
-**JMP Version Added:** 19
 
 ### Save Startup Script to Data Table
 
@@ -136,15 +108,11 @@
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
-**JMP Version Added:** 19
-
 ### Save Startup Script to Journal
 
 **Syntax:** obj &lt;&lt; Save Startup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
-
-**JMP Version Added:** 19
 
 ### Save Startup Script to Report
 
@@ -152,21 +120,15 @@
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
-**JMP Version Added:** 19
-
 ### Save Startup Script to Script Window
 
 **Syntax:** obj &lt;&lt; Save Startup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
-**JMP Version Added:** 19
-
 ### Set Tab
 
 **Syntax:** obj &lt;&lt; Set Tab( number )
-
-**JMP Version Added:** 19
 
 ## Shared Item Messages
 
@@ -465,24 +427,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -580,22 +524,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -824,4 +752,122 @@ obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 xml = obj << View Web XML;
 
 ```
+
+## Bayesian Optimization Batch Customizer > Candidate Set View
+
+### Item Messages
+
+#### Export Candidate Set to Data Table
+
+**Syntax:** obj &lt;&lt; Export Candidate Set to Data Table
+
+#### Select Runs
+
+**Syntax:** obj &lt;&lt; Select Runs( number )
+
+#### Select Table Columns
+
+**Syntax:** obj &lt;&lt; Select Table Columns
+
+#### Show Table Columns
+
+**Syntax:** obj &lt;&lt; Show Table Columns( state=0|1 )
+
+## Bayesian Optimization Batch Customizer
+
+### Item Messages
+
+#### Augmented Prediction Profiler
+
+**Syntax:** obj &lt;&lt; Augmented Prediction Profiler( state=0|1 )
+
+**Description:** Explores how each column changes with respect to changes in each factor value across models.
+
+#### Augmented Prediction Profiler Refresh
+
+**Syntax:** obj &lt;&lt; Augmented Prediction Profiler Refresh( state=0|1 )
+
+**Description:** Explores how each column changes with respect to changes in each factor value across models.
+
+#### Generate Candidate Set from Profiler Settings
+
+**Syntax:** obj &lt;&lt; Generate Candidate Set from Profiler Settings
+
+#### Load Candidate Set from Data Table
+
+**Syntax:** obj &lt;&lt; Load Candidate Set from Data Table
+
+#### Make Table Options
+
+**Syntax:** obj &lt;&lt; Make Table Options( state=0|1 )
+
+## Bayesian Optimization Model Summary
+
+### Item Messages
+
+#### All Responses Profiler
+
+**Syntax:** obj &lt;&lt; All Responses Profiler( state=0|1 )
+
+**Description:** Explores how each column changes with respect to changes in each factor value across models.
+
+## Gaussian Process Model
+
+### Item Messages
+
+#### Copy Model Fit Script
+
+**Syntax:** obj &lt;&lt; Copy Model Fit Script
+
+**Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
+
+#### Intercept
+
+**Syntax:** obj &lt;&lt; Intercept( number )
+
+#### Nugget
+
+**Syntax:** obj &lt;&lt; Nugget( number )
+
+#### Profiler
+
+**Syntax:** obj &lt;&lt; Profiler( state=0|1 )
+
+**Description:** Explores how each column changes with respect to changes in each factor value across models.
+
+#### Residual
+
+**Syntax:** obj &lt;&lt; Residual( number )
+
+#### Save Model Fit Script to Data Table
+
+**Syntax:** obj &lt;&lt; Save Model Fit Script to Data Table
+
+**Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
+
+#### Save Model Fit Script to Journal
+
+**Syntax:** obj &lt;&lt; Save Model Fit Script to Journal
+
+**Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
+
+#### Save Model Fit Script to Report
+
+**Syntax:** obj &lt;&lt; Save Model Fit Script to Report
+
+**Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
+
+#### Save Model Fit Script to Script Window
+
+**Syntax:** obj &lt;&lt; Save Model Fit Script to Script Window
+
+**Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
+
+#### Starting Values
+
+**Syntax:** obj &lt;&lt; Starting Values( number )
+
+#### Theta Values
+
+**Syntax:** obj &lt;&lt; Theta Values( number )
 

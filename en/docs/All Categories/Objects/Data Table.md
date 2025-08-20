@@ -36,6 +36,8 @@ obj = dt << Attribute Chart( Y( :A, :B, :C ), X( :Part ), Standard( :Standard ) 
 
 **Description:** Recommends factor settings to optimize responses by augmenting the data table.
 
+**JMP Version Added:** 19
+
 ### Bivariate
 
 **Syntax:** Bivariate( Y( columns ), X( columns ) )
@@ -136,10 +138,107 @@ obj = dt << CUSUM Control Chart(
 
 **Description:** Summarizes and analyzes categorical response data. Data can be simple responses, multiple responses, repeated measures, rater agreement, aligned responses, or free text. Includes the ability to generate custom cross tabulations of responses.
 
+#### One response by two factors nested
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+```
+
+#### Aligned responses
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+Empty(),
+Empty(),
+Aligned Responses(
+:I am working on my career, :I want to see the world,
+:My home needs some major improvements, :I have vast interests outside of work,
+:I want to get my debt under control, :I come from a large family
+)
+)
+);
+
+```
+
+#### Multiple response with nested groups
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );
+Categorical( X( :clean, :date ), Multiple Response( :Failure1, :Failure2, :Failure3 ) );
+
+```
+
+#### Multiple response, structured
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical( Structured( :Gender, :Brush Delimited + :Floss Delimited ) );
+
+```
+
+#### Nested within individual factors
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+:Single Status * :Gender + :School Age Children * :Gender,
+:I am working on my career + :I want to see the world
+)
+);
+
+```
+
+#### Rater agreement
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Attribute Gauge.jmp" );
+Categorical( Rater Agreement( :A, :B, :C ) );
+
+```
+
+#### Repeated measures
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Presidential Elections.jmp" );
+Categorical(
+Repeated Measures(
+:"1980 Winner"n, :"1984 Winner"n, :"1988 Winner"n, :"1992 Winner"n, :"1996 Winner"n,
+:"2000 Winner"n, :"2004 Winner"n, :"2008 Winner"n, :"2012 Winner"n
+)
+);
+
+```
+
+#### Three responses by two factors individually, structured
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+:I am working on my career + :I want to see the world,
+:Gender + :Single Status + :Age Group
+)
+);
 
 ```
 
@@ -898,7 +997,7 @@ obj = dt << Discriminant(
 
 **Description:** Computes distances between rows using a variety of methods.
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```jsl
 
@@ -941,15 +1040,308 @@ Distribution( colref );
 
 **Description:** Launches the EMP (Evaluating the Measurement Process) method for Measurement Systems Analysis. The average and dispersion (range or standard deviation) charts are displayed by default.
 
+#### Crossed Effects Model, Range Chart
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
 obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Crossed" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Crossed" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed then Nested Effects Model, Range Chart
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",
+Add Rows( 81 ),
+New Column( "Operator",
+Character( 7 ),
+"Nominal",
+Set Values(
+{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane"}
+),
+Set Display Width( 0 )
+),
+New Column( "Instrument",
+Character( 1 ),
+"Nominal",
+Set Values(
+{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+"C"}
+),
+Set Display Width( 0 )
+),
+New Column( "Part",
+Numeric,
+"Nominal",
+Format( "Best", 8 ),
+Set Values(
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+),
+Set Display Width( 0 )
+),
+New Column( "Y",
+Numeric,
+"Continuous",
+Format( "Best", 8 ),
+Set Values(
+[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+),
+Set Display Width( 68 )
+)
+);
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed then Nested (3 Factors Only)"n ),
+Dispersion Chart Type( Range ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed then Nested Effects Model, Std Dev Chart
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",
+Add Rows( 81 ),
+New Column( "Operator",
+Character( 7 ),
+"Nominal",
+Set Values(
+{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane"}
+),
+Set Display Width( 0 )
+),
+New Column( "Instrument",
+Character( 1 ),
+"Nominal",
+Set Values(
+{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+"C"}
+),
+Set Display Width( 0 )
+),
+New Column( "Part",
+Numeric,
+"Nominal",
+Format( "Best", 8 ),
+Set Values(
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+),
+Set Display Width( 0 )
+),
+New Column( "Y",
+Numeric,
+"Continuous",
+Format( "Best", 8 ),
+Set Values(
+[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+),
+Set Display Width( 68 )
+)
+);
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed then Nested (3 Factors Only)"n ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed with Two Factor Interaction Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :new Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed with Two Factor Interactions" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed with Two Factor Interaction Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :new Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed with Two Factor Interactions" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Main Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Main" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Main Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Main" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Nested" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Nested" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested then Crossed Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Nested then Crossed (3 Factors Only)"n ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested then Crossed Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Nested then Crossed (3 Factors Only)"n ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
 );
 
 ```
@@ -1173,12 +1565,668 @@ obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
 **Description:** Provides an interactive graphical interface that enables you to explore your data. You can drag columns into graph zones to create a variety of graphs including scatterplots, contour plots, bar charts, area charts, box plots, histograms, heat maps, pie charts, treemaps, mosaic plots, and maps.
 
+#### Points and smother
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 gb = Graph Builder(
 	Variables( X( :height ), Y( :weight ) ),
 	Elements( Points( X, Y ), Smoother( X, Y ) )
+);
+
+```
+
+#### 100% stacked bar chart
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );
+// 100% stacked bar chart, custom legend colors
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Age ), Y( :Cholesterol ), Overlay( :Alcohol Use ) ),
+Elements(
+Bar( X, Y, Legend( 55 ), Bar Style( "Stacked" ), Summary Statistic( "% of Factor" ) )
+),
+SendToReport(
+Dispatch( {}, "Cholesterol", ScaleBox, {Max( 1 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+55,
+Properties( 0, {Fill Color( RGB Color( 0.9, 0.9, 0.9 ) )} ),
+Properties( 1, {Fill Color( RGB Color( 1.0, 0.8, 0.8 ) )} ),
+Properties( 2, {Fill Color( RGB Color( 1.0, 0.6, 0.6 ) )} ),
+Properties( 3, {Fill Color( RGB Color( 1.0, 0.3, 0.3 ) )} )
+)}
+)
+)
+);
+
+```
+
+#### Arrow lines, one per row
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cholesterol.jmp" );
+// arrow lines, one per row
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :April AM ),
+X( :April PM, Position( 1 ) ),
+Y( :June AM ),
+Y( :June PM, Position( 1 ) ),
+Overlay( :treatment )
+),
+Elements(
+Line(
+X( 1 ),
+X( 2 ),
+Y( 1 ),
+Y( 2 ),
+Legend( 8 ),
+Ordering( "Within Row" ),
+Connection( "Arrow" )
+)
+)
+);
+
+```
+
+#### Axis summary table
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+// caption axis table
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :sex ), Y( :height ) ),
+Elements(
+Bar( X, Y, Legend( 4 ) ),
+Caption Box(
+X,
+Y,
+Legend( 5 ),
+Summary Statistic( "Mean" ),
+Summary Statistic 2( "N" ),
+Location( "Axis Table" )
+)
+)
+);
+
+```
+
+#### Bar chart and smooth trend line combination
+
+```jsl
+
+Open( "$SAMPLE_DATA/Spring.jmp" );
+// bar chart and smooth trend line combination, left and right y axes
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :April ), Y( :Temp ), Y( :Precip, Position( 1 ), Side( "Right" ) ) ),
+Elements(
+Points( X, Y( 1 ), Legend( 12 ) ),
+Smoother( X, Y( 1 ), Legend( 13 ) ),
+Bar( X, Y( 2 ), Legend( 16 ) )
+),
+SendToReport(
+Dispatch( {}, "Precip", ScaleBox,
+{Format( "Best", 12 ), Max( 5 ), Inc( 1 ), Minor Ticks( 1 )}
+)
+)
+);
+
+```
+
+#### Bubble chart with overlaid curves
+
+```jsl
+
+Open( "$SAMPLE_DATA/SATByYear.jmp" );
+// Smooth trend line, variable dot size, overlaid y variables, bubble chart. data filter
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :"% Taking (2004)"n ),
+Y( :SAT Verbal ),
+Y( :SAT Math, Position( 1 ) ),
+Size( :Population )
+),
+Elements(
+Points( X, Y( 1 ), Y( 2 ), Legend( 7 ) ),
+Smoother( X, Y( 1 ), Y( 2 ), Legend( 8 ), Lambda( 0.45 ) )
+),
+Local Data Filter( Add Filter( columns( :Year ), Where( :Year == 2004 ) ) ),
+SendToReport(
+Dispatch( {}, "% Taking (2004)", ScaleBox, {Format( "Percent", 12, 0 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model( 7, Properties( 0, {Marker Size( 6 )} ) )}
+)
+)
+);
+
+```
+
+#### Connected lines with overlaid dots
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/M3C Quarterly Wide Format.jmp" );
+// connected lines with overlaid dots, custom markers, nested date axis
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Time ), Y( :N 646 ), Y( :N 647, Position( 1 ) ) ),
+Elements(
+Line( X, Y( 1 ), Y( 2 ), Legend( 10 ) ),
+Points( X, Y( 1 ), Y( 2 ), Legend( 11 ) )
+),
+SendToReport(
+Dispatch( {}, "Time", ScaleBox,
+{Min( 2515958948 ), Max( 2872394250 ), Interval( "Quarter" ), Inc( 1 ),
+Minor Ticks( 0 ), Label Row Nesting( 2 ), Label Row( 1, Set Font Size( 12 ) )}
+),
+Dispatch( {}, "N 646", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+10,
+Properties( 0, {Line Label Properties( {Last Label( 1 )} )} ),
+Properties( 1, {Line Label Properties( {Last Label( 1 )} )} )
+), Legend Model(
+11,
+Base( 0, 0, 0, Item ID( "N 646", 1 ) ),
+Base( 1, 0, 1, Item ID( "N 647", 1 ) ),
+Properties( 0, {Marker( "FilledCircle" )} ),
+Properties( 1, {Marker( "Filled Up Triangle" )} )
+)}
+),
+Dispatch( {}, "Graph Builder", FrameBox,
+{DispatchSeg(
+Line Seg( "Line (N 646)" ),
+Label Offset( "Last", 45, {2843799627.0183, 6317.56810988166} )
+), DispatchSeg(
+Line Seg( "Line (N 647)" ),
+Label Offset( "Last", 45, {2857099451.70628, 4518.71614237549} )
+)}
+)
+)
+);
+
+```
+
+#### Contour plot and scatter plot points
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
+// contour plot and scatter plot points, smoothing, alpha shapes for non-convex hull
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Labor ), Y( :Capital ), Color( :Difference ) ),
+Elements(
+Contour(
+X,
+Y,
+Legend( 9 ),
+Boundary( 0 ),
+Number of Levels( 7 ),
+Alpha( 5 ),
+Smoothness( 0.2 )
+),
+Points( X, Y, Color( 0 ), Legend( 10 ) )
+)
+);
+
+```
+
+#### Coplot-style trellis grouping
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );
+// coplot style grouping using continuous grouping variables, smoother and scatter plot
+Graph Builder(
+Show Control Panel( 0 ),
+Variables(
+X( :Alpha, Levels( 2 ) ),
+Y( :CPU Time ),
+Group X( :Beta, Levels( 2 ) ),
+Group Y( :Gamma, Levels( 2 ) ),
+Overlay( :Algorithm )
+),
+Elements( Points( X, Y, Legend( 29 ) ), Smoother( X, Y, Legend( 30 ), Lambda( 0.25 ) ) )
+);
+
+```
+
+#### Independent charts using BY variable
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );
+// by variable creates multiple Graph Builder instances
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), ),
+Elements( Points( X, Y, Legend( 17 ) ), Smoother( X, Y, Legend( 18 ) ) ),
+By( :Type )
+);
+
+```
+
+#### Left and right y axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
+// left and right y axes sharing a graph, overlaid lines
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Time ), Y( :pH ), Y( :Tank Level, Position( 1 ), Side( "Right" ) ) ),
+Elements( Line( X, Y( 1 ), Legend( 41 ) ), Line( X, Y( 2 ), Legend( 46 ) ) ),
+SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) )
+);
+
+```
+
+#### Line with custom band interval
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+// range area, custom interval, overlaid line, transparency
+Graph Builder(
+Transform Column(
+"Quantile...=0.75[height][age]",
+Formula( Col Quantile( :height, 0.75, :age, :"@Exclude"n, :"@Filter"n ) )
+),
+Transform Column(
+"Quantile...=0.25[height][age]",
+Formula( Col Quantile( :height, 0.25, :age, :"@Exclude"n, :"@Filter"n ) )
+),
+Show Control Panel( 0 ),
+Variables(
+X( :age ),
+Y( :height ),
+Y( :"Quantile...=0.25[height][age]"n, Position( 1 ) ),
+Y( :"Quantile...=0.75[height][age]"n, Position( 1 ) )
+),
+Elements(
+Area( X, Y( 2 ), Y( 3 ), Legend( 5 ), Area Style( "Range" ) ),
+Line( X, Y( 1 ), Legend( 6 ) )
+),
+SendToReport(
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+5,
+Level Name( 0, "IQR" ),
+Properties( 0, {Transparency( 0.33 )} )
+)}
+),
+Dispatch( {}, "400", LegendBox, {Set Title( "" )} )
+)
+);
+
+```
+
+#### Linear regression panels
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );
+// line of fit, regression, small multiples, custom group color, custom graph spacing
+Graph Builder(
+Show Control Panel( 0 ),
+Grid Color( "Medium Light Gray" ),
+Grid Transparency( 0.25 ),
+Title Fill Color( "Medium Light Gray" ),
+Title Frame Color( "Medium Light Gray" ),
+Level Fill Color( {217, 217, 217} ),
+Level Frame Color( "Medium Light Gray" ),
+Level Spacing Color( "Medium Light Gray" ),
+Graph Spacing( 10 ),
+Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), Wrap( :Type ) ),
+Elements( Points( X, Y, Legend( 17 ) ), Line Of Fit( X, Y, Legend( 19 ) ) ),
+Local Data Filter(
+Add Filter( columns( :"Assets($Mil.)"n ), Where( :"Assets($Mil.)"n <= 60941 ) )
+)
+);
+
+```
+
+#### Mediterranean equal-area choropleth
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );
+// Mediterranean map, choropleth, equal area projection, grid lines
+Graph Builder(
+Size( 1094, 586 ),
+Show Control Panel( 0 ),
+Variables( Color( :Total Median Age ), Shape( :Territory ) ),
+Elements( Map Shapes( Legend( 3 ) ) ),
+SendToReport(
+Dispatch( {}, "", ScaleBox,
+{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -14.2917884823647 ),
+Max( 64.9684846475565 ), Inc( 20 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "", ScaleBox( 2 ),
+{Format( "Latitude DDD", "PUNDIR", 16 ), Min( 21.8020806509188 ),
+Max( 61.3932495299748 ), Inc( 10 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+)
+)
+);
+
+```
+
+#### Multiple x axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );
+// mutiple x variables in separate panels, smoother with confidence intervals and scatter plot
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Alpha ), X( :Beta ), X( :Gamma ), Y( :CPU Time ), Overlay( :Algorithm ) ),
+Elements(
+Position( 1, 1 ),
+Points( X, Y, Legend( 39 ) ),
+Smoother( X, Y, Legend( 40 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+Elements(
+Position( 2, 1 ),
+Points( X, Y, Legend( 41 ) ),
+Smoother( X, Y, Legend( 42 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+Elements(
+Position( 3, 1 ),
+Points( X, Y, Legend( 43 ) ),
+Smoother( X, Y, Legend( 44 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )
+),
+SendToReport(
+Dispatch( {}, "400", ScaleBox,
+{Legend Model( 40, Properties( 2, {Line Color( RGB Color( 0.4, 0.4, 0.4 ) )} ) )}
+)
+)
+);
+
+```
+
+#### Napoleon's March flow diagram
+
+```jsl
+
+Open( "$SAMPLE_DATA/Napoleons March.jmp" );
+// flow diagram
+Graph Builder(
+Show Control Panel( 0 ),
+Show X Axis( 0 ),
+Show Y Axis( 0 ),
+Show X Axis Title( 0 ),
+Show Y Axis Title( 0 ),
+Variables(
+X( :Longitude ),
+Y( :Latitude ),
+Overlay( :Group ),
+Color( :Direction ),
+Size( :Army Size )
+),
+Elements(
+Line( X, Y, Legend( 3 ), Ordering( "Row Order" ), Missing Values( "No Connection" ) )
+),
+SendToReport(
+Dispatch( {}, "Longitude", ScaleBox,
+{Min( 26.71 ), Max( 34.9 ), Inc( 2.5 ), Minor Ticks( 0 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "Latitude", ScaleBox,
+{Min( 53.32 ), Max( 56.61 ), Inc( 0.5 ), Minor Ticks( 1 ),
+Label Row( Show Major Grid( 1 ) )}
+),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+3,
+Properties( 0, {Line Width( 10 )} ),
+Properties( 1, {RGB Color( 1, 0.69, 0.49 )} ),
+Properties( 2, {RGB Color( 0.47, 0.47, 0.47 )} )
+)}
+),
+Dispatch( {}, "graph title", TextEditBox,
+{Set Text( "Napoleon's March to Moscow" )}
+),
+Dispatch( {}, "Graph Builder", FrameBox,
+{Background Map( Images( "Detailed Earth", Transparency( 0.75 ) ) )}
+)
+)
+);
+
+```
+
+#### Overlaid bivariate kernel density contours
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// overlaid bivariate kernel density contour
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Culmen Depth ), Y( :Culmen Length ), Overlay( :Species ) ),
+Elements(
+Contour( X, Y, Legend( 6 ), Line( 1 ), Number of Levels( 5 ), Smoothness( 0.2174 ) )
+)
+);
+
+```
+
+#### Panels with unaligned y axes
+
+```jsl
+
+Open( "$SAMPLE_DATA/US Regional Population.jmp" );
+// panels with unaligned y axes
+Graph Builder(
+Transform Column( "Transform[Year]", Continuous, Formula( Num( :Year ) ) ),
+Show Control Panel( 0 ),
+Link Page Axes( "X Only" ),
+Replicate Linked Page Axes( 0 ),
+Variables(
+X( :"Transform[Year]"n ),
+Y( :Population ),
+Page( :Region, Levels per Row( 3 ) )
+),
+Elements( Points( X, Y, Legend( 3 ) ), Smoother( X, Y, Legend( 4 ) ) ),
+Local Data Filter(
+Add Filter(
+columns( :Region ),
+Where(
+:Region == {"AR,LA,OK,TX", "Great Lakes", "KY,TN,AL,MS", "Midwest",
+"Mountain", "New England", "NY,NJ,PA", "Pacific", "South Atlantic"}
+)
+)
+),
+SendToReport(
+Dispatch( {}, "Population", ScaleBox, {Format( "Engineering SI", 10 )} ),
+Dispatch( {}, "Population", ScaleBox( 2 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 3 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 4 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 5 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 6 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 7 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 8 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 9 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Population", ScaleBox( 10 ),
+{Format( "Engineering SI", 10 ), Min( 0 )}
+),
+Dispatch( {}, "Transform[Year]", TextEditBox, {Set Text( "Year" )} ),
+Dispatch( {}, "Transform[Year]", Text Edit Box( 2 ), {Set Text( "Year" )} ),
+Dispatch( {}, "Transform[Year]", Text Edit Box( 3 ), {Set Text( "Year" )} )
+)
+);
+
+```
+
+#### Parallel y axes, overlaid lines
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
+// parallel y axes, multiple y scales sharing a graph, overlaid lines
+Graph Builder(
+Show Control Panel( 0 ),
+Parallel Axes( "Y Only" ),
+Variables(
+X( :Time ),
+Y( :Temp ),
+Y( :NH3 Feed ),
+Y( :Air ),
+Y( :Tank Level ),
+Y( :pH )
+),
+Elements( Position( 1, 1 ), Line( X, Y, Legend( 37 ) ) ),
+Elements( Position( 1, 2 ), Line( X, Y, Legend( 39 ) ) ),
+Elements( Position( 1, 3 ), Line( X, Y, Legend( 40 ) ) ),
+Elements( Position( 1, 4 ), Line( X, Y, Legend( 41 ) ) ),
+Elements( Position( 1, 5 ), Line( X, Y, Legend( 42 ) ) ),
+SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) )
+);
+
+```
+
+#### Scatter plot with marginal box plots
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// scatter plot with marginal box plots, custom graph sizes
+Graph Builder(
+Transform Column( "dummy1", Nominal, Formula( 1 ) ),
+Transform Column( "dummy2", Nominal, Formula( 1 ) ),
+Show Control Panel( 0 ),
+Variables(
+X( :Delta 13 C ),
+X( :dummy1 ),
+Y( :dummy2 ),
+Y( :Delta 15 N ),
+Color( :Sex ),
+Size( :Body Mass )
+),
+Relative Sizes( "X", [100 10] ),
+Relative Sizes( "Y", [10 100] ),
+Elements( Position( 1, 1 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 12 ) ) ),
+Elements( Position( 1, 2 ), Points( X, Y, Legend( 4 ) ) ),
+Elements( Position( 2, 1 ) ),
+Elements( Position( 2, 2 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 13 ) ) ),
+SendToReport(
+Dispatch( {}, "dummy1", ScaleBox, {Label Row( Show Major Labels( 0 ) )} ),
+Dispatch( {}, "dummy2", ScaleBox( 2 ), {Label Row( Show Major Labels( 0 ) )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+4,
+Properties( 1, {Transparency( 0.75 )} ),
+Properties( 2, {Transparency( 0.75 )} )
+)}
+),
+Dispatch( {}, "dummy1", TextEditBox, {Set Text( "" )} ),
+Dispatch( {}, "dummy2", TextEditBox, {Set Text( "" )} ),
+Dispatch( {}, "400", LegendBox,
+{Legend Position( {12, [1, -3], 4, [0, 3, 4], 13, [2, -3]} )}
+)
+)
+);
+
+```
+
+#### Variability chart
+
+```jsl
+
+Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+// variability chart, mean and range interval, nested axis
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Operator ), X( :Part, Position( 1 ) ), Y( :Y ) ),
+Elements(
+Points(
+X( 1 ),
+X( 2 ),
+Y,
+Legend( 3 ),
+Summary Statistic( "Mean" ),
+Error Interval( "Range" )
+)
+),
+SendToReport(
+Dispatch( {}, "Operator", ScaleBox, {Label Row( 2, Show Major Grid( 1 ) )} )
+)
+);
+
+```
+
+#### Violin plots with quartiles
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );
+// violin plots, overlaid median line and quartile intervals
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :Species ), Y( :Body Mass ) ),
+Elements(
+Contour( X, Y, Legend( 3 ) ),
+Bar(
+X,
+Y,
+Legend( 4 ),
+Bar Style( "Float" ),
+Summary Statistic( "Median" ),
+Error Interval( "Interquartile Range" )
+)
+)
+);
+
+```
+
+#### Wafer map
+
+```jsl
+
+Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
+// wafer map, heat map, trellis, wrap arrangement
+Graph Builder(
+Show Control Panel( 0 ),
+Variables( X( :X_Die ), Y( :Y_Die ), Wrap( :Wafer ), Color( :Defects ) ),
+Elements( Heatmap( X, Y, Legend( 8 ) ) ),
+SendToReport(
+Dispatch( {}, "X_Die", ScaleBox, {Minor Ticks( 9 )} ),
+Dispatch( {}, "Y_Die", ScaleBox, {Minor Ticks( 9 )} ),
+Dispatch( {}, "400", ScaleBox,
+{Legend Model(
+8,
+Properties( 0, {gradient( {Color Theme( "White to Orange" )} )} )
+)}
+)
+)
 );
 
 ```
@@ -1401,20 +2449,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 dt << Marker Imputation(
@@ -1434,26 +2472,18 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
 
 //Set missing values for some markers
 dt = Current Data Table();
-nMarkers = 60; //number of markers in the data table
-Random Reset( 0 ); //set seed for reproducibility
-SelectedMarkers = As List( Random Index( nMarkers, 15 ) + 10 ); //random select 15 markers and return their column indexes
-dt << Clear Select; //clear row selection
-dt << Clear Column Selection; //clear column selection
-For( i = 1, i <= N Items( SelectedMarkers ), i++, //loop over selected markers
-	dt << Select Columns( SelectedMarkers[i] ); //select column in the data table
-	Random Reset( i ); //set seed for reproducibility
-	dt << Select Randomly( 20 ); //random select 20 rows
-	sRows = dt << Get Selected Rows; //get indexes of selected rows
-	Column( SelectedMarkers[i] )[sRows] = .;//set selected rows to missing values
-	dt << Clear Select; //clear row selection
-	dt << Clear Column Selection; //clear column selection
-);
+Random Reset( 1234 );
+markers = dt << Get Column Group( "Markers" );
+markers = markers[Random Index( N Items( markers ), 15 )];
+For Each( {col}, markers, col[Random Index( N Rows( dt ), 20 )] = . );
 
 //Run platform
 obj = dt << Marker Imputation(
 	Marker( Column Group( "Markers" ) ),
 	Ploidy( 2 ),
-	Missing Marker Imputation Method( "LD-kNN" )
+	Set Random Seed( 0 ),
+	Method( "Specified" ),
+	Imputation Value( 1 )
 );
 
 ```
@@ -1942,7 +2972,7 @@ obj << Go;
 
 **Description:** Adjusts for technical biases and improves suitability for subsequent analysis
 
-**JMP Version Added:** 18
+**JMP Version Added:** 19
 
 ```jsl
 
@@ -2211,10 +3241,251 @@ obj = dt << Process History Explorer(
 
 **Description:** Examines many processes from several perspectives, including stability, capability, control chart tests, and shift (drift). Assists with the ability to focus on which processes need attention.
 
+#### Screen count processes with alarm graph for environmental monitoring
+
 ```jsl
 
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Count ),
+Grouping( :Type, :Grade, :Site ),
+Control Chart Type( "Count" ),
+Time( :Time ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Alarm Graph( 1 ),
+Show Charts as Selected( 1 ),
+Select Where( Action >= 1 )
+);
+
+```
+
+#### Screen many processes with grouping column
+
+```jsl
+
+
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Grouping( :Site )
+);
+
+```
+
+#### Screen many processes with individual-and-moving-range control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "Indiv and MR" )
+);
+
+```
+
+#### Screen many processes with xbar-and-r control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "XBar and R" )
+);
+
+```
+
+#### Screen many processes with xbar-and-s control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Subgroup( :wafer ),
+Control Chart Type( "XBar and S" )
+);
+
+```
+
+#### Screen nonnegative continuous data, for environmental monitoring
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Count ),
+Grouping( :Type, :Grade, :Site ),
+Control Chart Type( "Nonnegative Continuous" ),
+Time( :Time ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Alarm Graph( 1 ),
+Show Charts as Selected( 1 )
+);
+
+```
+
+#### Screen process with a 3-way chart, XBar-MR-and-R
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fill Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar MR and R" ),
+Moving Range Limit Exceeded( 1 ),
+Chart Options as Selected( Dispersion Chart( 1 ) ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen process with a 3-way chart, XBar-MR-and-S
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fill Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar MR and S" ),
+Moving Range Limit Exceeded( 1 ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen process with a proportion chart
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+obj = dt << Process Screening(
+Process Variables( :N Defective ),
+Control Chart Type( "Proportion" ),
+n Trials( :N Units ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen processes showing control charts for selected processes
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "Indiv and MR" ),
+Show Charts as Selected( 1 ),
+Select Where( Alarm Rate > 0.006 ), // what selects in the table
+Filter Where( Alarm Rate > 0.005 ) // what shows in the table
+);
+
+```
+
+#### Screen processes with capability goal plot
+
+```jsl
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Goal Plot( 1 )
+);
+
+```
+
+#### Screen processes with process performance graph
+
+```jsl
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Process Performance Graph( 1 )
+);
+
+```
+
+#### Screen processes with Process Potential Graph
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
+Column( "Weight" ) << Set Property(
+"Process Screening",
+{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )}
+);
+Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );
+obj = dt << Process Screening(
+Process Variables( :Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar and R" ),
+Out of Spec Count( 0 ),
+Out of Spec Rate( 0 ),
+Latest Out of Spec( 0 ),
+Process Potential Graph( 1 )
+);
+
+```
+
+#### Screen Processes with Shift Detection
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+Control Chart Type( "Indiv and MR" ),
+Shift Graph( 1 ),
+Show Charts as Selected( 1 ),
+Select Where( Stability Index > 2 )
+);
+
+```
+
+#### Screen processes with spec limits in separate table
+
+```jsl
+
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+Y( :OZONE, :CO, :SO2, :NO ),
+Use Limits Table(
+1,
+dt2,
+Process Variables( :Column 1 ),
+LSL( :_LSL ),
+USL( :_USL ),
+Target( :_Target ),
+Go
+)
+);
 
 ```
 
@@ -2525,24 +3796,95 @@ obj = dt << Repeated Measures Degradation(
 
 **Description:** Automates the process of conducting tests for linear model effects across a large number of responses. Test results and summary statistics are presented in data tables and plots. The false discovery rate (FDR) guards against incorrect declarations of significance. A robust estimation method reduces the sensitivity of tests to outliers.
 
-**Example 1**
+#### Response Screening in subgroups with volcano plot selected
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
+Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
+X( :Father, :Mother, :Sex, :Disease Status ),
+Subgroup( Column Group( "Markers" ) ),
+Common Y Scale( 1 ),
+SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) )
 );
 
 ```
 
-**Example 2**
+#### Response Screening many columns in groups
 
 ```jsl
 
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Grouping( "Sex" )
+);
+
+```
+
+#### Response Screening many columns with means differences volcano plot
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Father, :Mother, :Sex, :Disease Status ),
+Common Y Scale( 1 ),
+Volcano Plots Use FDR Axis( 1 )
+);
+
+```
+
+#### Response Screening of 4 responses and 26 prospective predictors
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
+Response Screening( Y( :ls, :ha, :dt ), X( Column Group( "Intensities" ) ) );
+
+```
+
+#### Response Screening of many columns on each of four predictors
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Markers" ) ),
+X( :Trait1, :Trait2, :Trait3, :Trait4 )
+);
+
+```
+
+#### Response Screening specified with column numbers
+
+```jsl
+
+
 dt = Open( "$Sample_Data/Probe.jmp" );
 obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
+
+```
+
+#### Response Screening with robust fitting
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );
+obj = dt << Response Screening(
+Y( Column Group( "Responses" ) ),
+X( :Process ),
+Robust( 1 )
+);
 
 ```
 
@@ -2582,6 +3924,8 @@ obj = dt << Scatterplot Matrix(
 
 **JMP Version Added:** 15
 
+#### Confirmatory Factor Analysis
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
@@ -2602,6 +3946,270 @@ obj = dt << Structural Equation Models(
 		Standardized Parameter Estimates( 1 ),
 		Normalized Residuals Heat Map( 1 )
 	)
+);
+
+```
+
+#### Higher Order Confirmatory Factor Analysis
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables(
+:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+:Growth_S, :Coworker_S, :Supervisor_S
+),
+Fit(
+Model Name( "Higher Order CFA" ),
+New Latent( "Leadership", "Conflict", "Satisfaction", "General" ),
+Means(
+{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+),
+Loadings(
+{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}},
+{"General", {"Leadership", "Conflict", "Satisfaction"}, {1}}
+),
+Variances(
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}},
+{:Interact_L, {:Interact_L}},
+{:Person_C, {:Person_C}},
+{:Intra_C, {:Intra_C}},
+{:Inter_C, {:Inter_C}},
+{:General_S, {:General_S}},
+{:Growth_S, {:Growth_S}},
+{:Coworker_S, {:Coworker_S}},
+{:Supervisor_S, {:Supervisor_S}},
+{"Leadership", {"Leadership"}},
+{"Conflict", {"Conflict"}},
+{"Satisfaction", {"Satisfaction"}},
+{"General", {"General"}}
+)
+)
+);
+
+```
+
+#### Linear Latent Growth Curve Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+Model Variables(
+:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4
+),
+Fit(
+Model Name( "Linear Growth Curve Model" ),
+New Latent( "Intercept", "Slope" ),
+Means( {"Constant", {"Intercept", "Slope"}} ),
+Loadings(
+{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4}, {0, 1, 2, 3}}
+),
+Variances(
+{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+{"Intercept", {"Intercept"}},
+{"Slope", {"Slope"}}
+),
+Covariances( {"Intercept", {"Slope"}} ),
+Path Diagram Properties( Show Means( 1 ) )
+)
+);
+
+```
+
+#### Multiple Linear Regression with SEM
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Satisfaction_Avg, :Support_L, :Goal_L, :Work_L ),
+Fit(
+Model Name( "Multiple Regression" ),
+Means( {"Constant", {:Satisfaction_Avg, :Support_L, :Goal_L, :Work_L}} ),
+Regressions(
+{:Support_L, {:Satisfaction_Avg}},
+{:Goal_L, {:Satisfaction_Avg}},
+{:Work_L, {:Satisfaction_Avg}}
+),
+Variances(
+{:Satisfaction_Avg, {:Satisfaction_Avg}},
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}}
+),
+Covariances( {:Support_L, {:Goal_L, :Work_L}}, {:Goal_L, {:Work_L}} ),
+
+)
+);
+
+```
+
+#### Path Analysis Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Privacy, :Reputation, :Trust, :Purchase Int ),
+Fit(
+Model Name( "Path Analysis with Observed Variables" ),
+Means( {"Constant", {:Privacy, :Reputation, :Trust, :Purchase Int}} ),
+Regressions(
+{:Privacy, {:Trust}},
+{:Reputation, {:Trust, :Purchase Int}},
+{:Trust, {:Purchase Int}}
+),
+Variances(
+{:Privacy, {:Privacy}},
+{:Reputation, {:Reputation}},
+{:Trust, {:Trust}},
+{:Purchase Int, {:Purchase Int}}
+),
+Covariances( {:Privacy, {:Reputation}} )
+)
+);
+
+```
+
+#### Path Analysis with Latent Variables
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables(
+:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+:Growth_S, :Coworker_S, :Supervisor_S
+),
+Fit(
+Model Name( "Path Analysis with Latent Variables" ),
+New Latent( "Leadership", "Conflict", "Satisfaction" ),
+Means(
+{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+),
+Loadings(
+{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}}
+),
+Regressions(
+{"Leadership", {"Conflict", "Satisfaction"}},
+{"Conflict", {"Satisfaction"}}
+),
+Variances(
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}},
+{:Interact_L, {:Interact_L}},
+{:Person_C, {:Person_C}},
+{:Intra_C, {:Intra_C}},
+{:Inter_C, {:Inter_C}},
+{:General_S, {:General_S}},
+{:Growth_S, {:Growth_S}},
+{:Coworker_S, {:Coworker_S}},
+{:Supervisor_S, {:Supervisor_S}},
+{"Leadership", {"Leadership"}},
+{"Conflict", {"Conflict"}},
+{"Satisfaction", {"Satisfaction"}}
+)
+)
+);
+
+```
+
+#### Quadratic Latent Growth Curve Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+Model Variables(
+:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4
+),
+Fit(
+Model Name( "Quadratic Growth Model" ),
+New Latent( "Intercept", "Slope", "QuadSlope" ),
+Means( {"Constant", {"Intercept", "Slope", "QuadSlope"}} ),
+Loadings(
+{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4}, {0, 1, 2, 3}},
+{"QuadSlope", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {0, 1, 4, 9}}
+),
+Variances(
+{:Multiple Choice Year1, {:Multiple Choice Year1}},
+{:Multiple Choice Year2, {:Multiple Choice Year2}},
+{:Multiple Choice Year3, {:Multiple Choice Year3}},
+{:Multiple Choice Year4, {:Multiple Choice Year4}},
+{"Intercept", {"Intercept"}},
+{"Slope", {"Slope"}},
+{"QuadSlope", {"QuadSlope"}}
+),
+Covariances( {"Intercept", {"Slope", "QuadSlope"}}, {"Slope", {"QuadSlope"}} ),
+Path Diagram Properties( Show Means( 1 ) )
+)
+);
+
+```
+
+#### Simple Linear Regression with SEM
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Leadership_Avg, :Satisfaction_Avg ),
+Fit(
+Model Name( "Simple Regression" ),
+Means( {"Constant", {:Leadership_Avg, :Satisfaction_Avg}} ),
+Regressions( {:Leadership_Avg, {:Satisfaction_Avg}} ),
+Variances(
+{:Leadership_Avg, {:Leadership_Avg}},
+{:Satisfaction_Avg, {:Satisfaction_Avg}}
+)
+)
+);
+
+```
+
+#### Simple Mediation Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ),
+Fit(
+Model Name( "Mediation Analysis" ),
+Means( {"Constant", {:Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg}} ),
+Regressions(
+{:Leadership_Avg, {:Conflict_Avg, :Satisfaction_Avg}},
+{:Conflict_Avg, {:Satisfaction_Avg}}
+),
+Variances(
+{:Leadership_Avg, {:Leadership_Avg}},
+{:Conflict_Avg, {:Conflict_Avg}},
+{:Satisfaction_Avg, {:Satisfaction_Avg}}
+)
+)
 );
 
 ```
@@ -2661,14 +4269,224 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 **Description:** Creates a custom table of summary statistics of one or more variables. The variables can be grouped by one or more classification columns. Enables you to build the summary table using drag and drop operations.
 
+#### Categories and stats
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Column Table( Grouping Columns( :gender, :goals ), Statistics( N, Column % ) ),
+Row Table( Grouping Columns( :Grade, :Age ) )
+)
+);
+
+```
+
+#### Columns by Categories
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) )
+);
+
+```
+
+#### Frequency
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Freq( :Count ),
+Add Table( Row Table( Grouping Columns( :Causes ) ) )
+);
+
+```
+
+#### ID column
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+ID( :Division ),
+Set Format( Uniform Format( 10, 2 ) ),
+Add Table(
+Column Table(
+Statistics( Sum ),
+Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+Pack(
+Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+Template( "^FIRST  (^OTHERS)", "/" )
+)
+),
+Row Table( Grouping Columns( :Mfr Name ) )
+)
+);
+
+```
+
+#### Multiple response grouping columns
+
+```jsl
+
+dt = Open( "$Sample_Data/Consumer Preferences.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Column Table( Grouping Columns( :Floss Delimited ), Statistics( N, "% of Total"n ) ),
+Row Table( Grouping Columns( :Frequency of Teeth Cleaning, :Brush Delimited ) )
+)
+);
+
+```
+
+#### Multiple response page column
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = Tabulate(
+Show Control Panel( 0 ),
+Page Column( :family cars( "Jeep" ) ),
+Add Table(
+Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),
+Row Table( Grouping Columns( :sex ) )
+)
+);
+
+```
+
+#### Multiple row and column tables
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Column Table( Grouping Columns( :gender ) ),
+Column Table( Grouping Columns( :race ) ),
+Row Table( Grouping Columns( :goals ) ),
+Row Table( Grouping Columns( :"Urban/Rural"n ) )
+)
+);
+
+```
+
+#### Multiple row tables
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Row Table( Grouping Columns( :Grades ) ),
+Row Table( Grouping Columns( :Sports ) ),
+Row Table( Grouping Columns( :Looks ) ),
+Row Table( Grouping Columns( :Money ) )
+)
+);
+
+```
+
+#### Nested categories
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
+Show Control Panel( 0 ),
+Add Table(
+Column Table( Grouping Columns( :sex, :marital status ) ),
+Row Table( Grouping Columns( :country, :size ) )
+)
+);
+
+```
+
+#### Packed columns
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Column Table(
+Statistics( Sum, Max ),
+Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+Pack(
+Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+Template( "^FIRST  (^OTHERS)", "/" )
+)
+),
+Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+)
+);
+
+```
+
+#### Page column
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Page Column( :Engine( "Gas" ) ),
+Add Table(
+Column Table( Analysis Columns( :City MPG, :Hwy MPG ), Statistics( Max ) ),
+Row Table( Grouping Columns( :Mfr Name ) )
+)
+);
+
+```
+
+#### Stacked grouping columns
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Add Table(
+Column Table(
+Grouping Columns( :marital status ),
+Add Aggregate Statistics( :marital status ),
+Analysis Columns( :age ),
+Statistics( Min, Max )
+),
+Row Table(
+Grouping Columns( :sex, :country, :size ),
+Add Aggregate Statistics( :sex, :country, :size ),
+Stack Grouping Columns( 1 )
+)
+)
+);
+
+```
+
+#### Weight
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
+obj = dt << Tabulate(
+Show Control Panel( 0 ),
+Weight( :Weight ),
+Add Table(
+Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),
+Row Table( Grouping Columns( :Type ) )
+)
 );
 
 ```
@@ -2773,10 +4591,139 @@ obj = dt << Uplift(
 
 **Description:** Analyzes continuous measurements to determine how your measurement system is performing. You can also perform a gauge study to see measures of variation in your data.
 
+#### Decide Later on Model
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
 obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+```
+
+#### Crossed Effects Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+Y( :Measurement ),
+Model( "Crossed" ),
+X( :Operator, :part# ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed then Nested Effects Model
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",
+Add Rows( 81 ),
+New Column( "Operator",
+Character( 7 ),
+"Nominal",
+Set Values(
+{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane"}
+),
+Set Display Width( 0 )
+),
+New Column( "Instrument",
+Character( 1 ),
+"Nominal",
+Set Values(
+{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+"C"}
+),
+Set Display Width( 0 )
+),
+New Column( "Part",
+Numeric,
+"Nominal",
+Format( "Best", 8 ),
+Set Values(
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+),
+Set Display Width( 0 )
+),
+New Column( "Y",
+Numeric,
+"Continuous",
+Format( "Best", 8 ),
+Set Values(
+[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+),
+Set Display Width( 68 )
+)
+);
+obj = dt << Variability Chart(
+Y( :Y ),
+X( :Operator, :Instrument, :Part ),
+Model( "Crossed then Nested" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Main Effects Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Wafer.jmp" );
+obj = dt << Variability Chart(
+Y( :Y ),
+Model( "Main Effect" ),
+X( :Operator, :Wafer ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested Effects Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << Variability Chart(
+Y( :Y ),
+Model( "Nested" ),
+X( :Operator, :Part ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested then Crossed Effects Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << Variability Chart(
+Y( :Y ),
+Model( "Nested then Crossed" ),
+X( :Operator, :Instrument, :Part ),
+Variance Components( 1 )
+);
 
 ```
 
@@ -8580,8 +10527,6 @@ dt << Original Order();
 
 **Description:** Pastes from the clipboard multiple lists of column properties to multiple columns. Optionally, you can specify a list of target columns instead of selecting them in the data table.
 
-**JMP Version Added:** 15
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
@@ -9539,7 +11484,7 @@ Show( fv << Get Data Filter );
 
 **Description:** Returns the table that owns the filter view
 
-**JMP Version Added:** 14
+**JMP Version Added:** 19
 
 ```jsl
 
@@ -9558,6 +11503,8 @@ Show( fv << Get Data Table );
 **Syntax:** string = obj &lt;&lt; Get Name
 
 **Description:** Get the name of the filter view
+
+**JMP Version Added:** 19
 
 ```jsl
 
@@ -9679,6 +11626,8 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 **Description:** Prevent editing this filter view.
 
+**JMP Version Added:** 19
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Penguins.jmp" );
@@ -9732,6 +11681,8 @@ Show( fv << Get Data Filter );
 **Syntax:** string = obj &lt;&lt; Set Name( name )
 
 **Description:** Changes the name of the filter view. The names of the unfiltered view and the temporary filtered view cannot be changed.
+
+**JMP Version Added:** 19
 
 ```jsl
 

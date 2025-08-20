@@ -12,6 +12,8 @@
 
 **JMP Version Added:** 15
 
+#### Confirmatory Factor Analysis
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
@@ -32,6 +34,270 @@ obj = dt << Structural Equation Models(
 		Standardized Parameter Estimates( 1 ),
 		Normalized Residuals Heat Map( 1 )
 	)
+);
+
+```
+
+#### Higher Order Confirmatory Factor Analysis
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables(
+:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+:Growth_S, :Coworker_S, :Supervisor_S
+),
+Fit(
+Model Name( "Higher Order CFA" ),
+New Latent( "Leadership", "Conflict", "Satisfaction", "General" ),
+Means(
+{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+),
+Loadings(
+{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}},
+{"General", {"Leadership", "Conflict", "Satisfaction"}, {1}}
+),
+Variances(
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}},
+{:Interact_L, {:Interact_L}},
+{:Person_C, {:Person_C}},
+{:Intra_C, {:Intra_C}},
+{:Inter_C, {:Inter_C}},
+{:General_S, {:General_S}},
+{:Growth_S, {:Growth_S}},
+{:Coworker_S, {:Coworker_S}},
+{:Supervisor_S, {:Supervisor_S}},
+{"Leadership", {"Leadership"}},
+{"Conflict", {"Conflict"}},
+{"Satisfaction", {"Satisfaction"}},
+{"General", {"General"}}
+)
+)
+);
+
+```
+
+#### Linear Latent Growth Curve Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+Model Variables(
+:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4
+),
+Fit(
+Model Name( "Linear Growth Curve Model" ),
+New Latent( "Intercept", "Slope" ),
+Means( {"Constant", {"Intercept", "Slope"}} ),
+Loadings(
+{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4}, {0, 1, 2, 3}}
+),
+Variances(
+{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+{"Intercept", {"Intercept"}},
+{"Slope", {"Slope"}}
+),
+Covariances( {"Intercept", {"Slope"}} ),
+Path Diagram Properties( Show Means( 1 ) )
+)
+);
+
+```
+
+#### Multiple Linear Regression with SEM
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Satisfaction_Avg, :Support_L, :Goal_L, :Work_L ),
+Fit(
+Model Name( "Multiple Regression" ),
+Means( {"Constant", {:Satisfaction_Avg, :Support_L, :Goal_L, :Work_L}} ),
+Regressions(
+{:Support_L, {:Satisfaction_Avg}},
+{:Goal_L, {:Satisfaction_Avg}},
+{:Work_L, {:Satisfaction_Avg}}
+),
+Variances(
+{:Satisfaction_Avg, {:Satisfaction_Avg}},
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}}
+),
+Covariances( {:Support_L, {:Goal_L, :Work_L}}, {:Goal_L, {:Work_L}} ),
+
+)
+);
+
+```
+
+#### Path Analysis Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Privacy, :Reputation, :Trust, :Purchase Int ),
+Fit(
+Model Name( "Path Analysis with Observed Variables" ),
+Means( {"Constant", {:Privacy, :Reputation, :Trust, :Purchase Int}} ),
+Regressions(
+{:Privacy, {:Trust}},
+{:Reputation, {:Trust, :Purchase Int}},
+{:Trust, {:Purchase Int}}
+),
+Variances(
+{:Privacy, {:Privacy}},
+{:Reputation, {:Reputation}},
+{:Trust, {:Trust}},
+{:Purchase Int, {:Purchase Int}}
+),
+Covariances( {:Privacy, {:Reputation}} )
+)
+);
+
+```
+
+#### Path Analysis with Latent Variables
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables(
+:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+:Growth_S, :Coworker_S, :Supervisor_S
+),
+Fit(
+Model Name( "Path Analysis with Latent Variables" ),
+New Latent( "Leadership", "Conflict", "Satisfaction" ),
+Means(
+{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+),
+Loadings(
+{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}}
+),
+Regressions(
+{"Leadership", {"Conflict", "Satisfaction"}},
+{"Conflict", {"Satisfaction"}}
+),
+Variances(
+{:Support_L, {:Support_L}},
+{:Goal_L, {:Goal_L}},
+{:Work_L, {:Work_L}},
+{:Interact_L, {:Interact_L}},
+{:Person_C, {:Person_C}},
+{:Intra_C, {:Intra_C}},
+{:Inter_C, {:Inter_C}},
+{:General_S, {:General_S}},
+{:Growth_S, {:Growth_S}},
+{:Coworker_S, {:Coworker_S}},
+{:Supervisor_S, {:Supervisor_S}},
+{"Leadership", {"Leadership"}},
+{"Conflict", {"Conflict"}},
+{"Satisfaction", {"Satisfaction"}}
+)
+)
+);
+
+```
+
+#### Quadratic Latent Growth Curve Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+Model Variables(
+:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4
+),
+Fit(
+Model Name( "Quadratic Growth Model" ),
+New Latent( "Intercept", "Slope", "QuadSlope" ),
+Means( {"Constant", {"Intercept", "Slope", "QuadSlope"}} ),
+Loadings(
+{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+:Multiple Choice Year4}, {0, 1, 2, 3}},
+{"QuadSlope", {:Multiple Choice Year1, :Multiple Choice Year2,
+:Multiple Choice Year3, :Multiple Choice Year4}, {0, 1, 4, 9}}
+),
+Variances(
+{:Multiple Choice Year1, {:Multiple Choice Year1}},
+{:Multiple Choice Year2, {:Multiple Choice Year2}},
+{:Multiple Choice Year3, {:Multiple Choice Year3}},
+{:Multiple Choice Year4, {:Multiple Choice Year4}},
+{"Intercept", {"Intercept"}},
+{"Slope", {"Slope"}},
+{"QuadSlope", {"QuadSlope"}}
+),
+Covariances( {"Intercept", {"Slope", "QuadSlope"}}, {"Slope", {"QuadSlope"}} ),
+Path Diagram Properties( Show Means( 1 ) )
+)
+);
+
+```
+
+#### Simple Linear Regression with SEM
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Leadership_Avg, :Satisfaction_Avg ),
+Fit(
+Model Name( "Simple Regression" ),
+Means( {"Constant", {:Leadership_Avg, :Satisfaction_Avg}} ),
+Regressions( {:Leadership_Avg, {:Satisfaction_Avg}} ),
+Variances(
+{:Leadership_Avg, {:Leadership_Avg}},
+{:Satisfaction_Avg, {:Satisfaction_Avg}}
+)
+)
+);
+
+```
+
+#### Simple Mediation Model
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ),
+Fit(
+Model Name( "Mediation Analysis" ),
+Means( {"Constant", {:Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg}} ),
+Regressions(
+{:Leadership_Avg, {:Conflict_Avg, :Satisfaction_Avg}},
+{:Conflict_Avg, {:Satisfaction_Avg}}
+),
+Variances(
+{:Leadership_Avg, {:Leadership_Avg}},
+{:Conflict_Avg, {:Conflict_Avg}},
+{:Satisfaction_Avg, {:Satisfaction_Avg}}
+)
+)
 );
 
 ```
@@ -1227,24 +1493,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1454,22 +1702,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -1693,7 +1925,7 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
 	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
 );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1712,7 +1944,8 @@ obj = dt << Structural Equation Models(
 		Standardized Parameter Estimates( 1 ),
 		Normalized Residuals Heat Map( 1 )
 	),
-	By( _bycol )
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
 );
 obj[1] << Save Script for All Objects To Data Table;
 
@@ -1726,7 +1959,7 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
 dt << New Column( "_bycol",
 	Character,
 	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
 );
 obj = dt << Structural Equation Models(
 	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
@@ -1745,7 +1978,8 @@ obj = dt << Structural Equation Models(
 		Standardized Parameter Estimates( 1 ),
 		Normalized Residuals Heat Map( 1 )
 	),
-	By( _bycol )
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
 );
 obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
@@ -3241,8 +3475,6 @@ rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 **Description:** Saves a copy of the diagram-specific script settings to the clipboard. These settings can then be applied to other diagrams.
 
-**JMP Version Added:** 16
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
@@ -3632,8 +3864,6 @@ obj << Path Diagram Properties( Manifest Width( 67 ) );
 **Syntax:** obj &lt;&lt; Paste Diagram Properties
 
 **Description:** Pastes a copy of the diagram-specific script settings from the clipboard.
-
-**JMP Version Added:** 16
 
 ```jsl
 

@@ -1588,24 +1588,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1745,22 +1727,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -2125,8 +2091,6 @@ New Window( "Bivariate Equation",
 
 **Description:** Predicts a classification of each document into a category of a specified response column using linear discriminant analysis of the document term matrix.
 
-**JMP Version Added:** 14
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
@@ -2370,8 +2334,6 @@ obj2 << MDS Plot( 0 );
 
 **Description:** Removes the Latent Class Analysis report from the Text Explorer report.
 
-**JMP Version Added:** 14
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
@@ -2414,8 +2376,6 @@ obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 **Description:** Saves the probability of membership for a document to each cluster as a separate column in the data table.
 
-**JMP Version Added:** 14
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
@@ -2434,8 +2394,6 @@ obj2 << Save Probabilities;
 **Syntax:** obj &lt;&lt; Save Probability Formulas
 
 **Description:** Saves a formula column to the data table for each cluster as well as a formula column for the most likely cluster.
-
-**JMP Version Added:** 14
 
 ```jsl
 
@@ -3201,6 +3159,8 @@ obj2 << Remove;
 
 **Description:** Performs a varimax-rotated singular value decomposition of the document term matrix to produce groups of terms called topics.
 
+**JMP Version Added:** 14
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
@@ -3432,6 +3392,8 @@ obj2 << Select Near Neighbors( 8 );
 **Syntax:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Description:** Performs a varimax-rotated singular value decomposition of the document term matrix to produce groups of terms called topics.
+
+**JMP Version Added:** 14
 
 ```jsl
 
@@ -4015,7 +3977,7 @@ term = obj << Term Selection(
 
 **Description:** Removes the Term Selection report from the Text Explorer report window.
 
-**JMP Version Added:** 14
+**JMP Version Added:** 16
 
 ```jsl
 

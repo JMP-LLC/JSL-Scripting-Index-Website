@@ -10,8 +10,6 @@
 
 **Description:** Predictive modeling interface to eXtreme Gradient Boosted trees.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -25,7 +23,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Censor( column )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -38,7 +36,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Factor( column(s) )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -51,7 +49,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Freq( column )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -65,7 +63,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Response( column(s) )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -78,7 +76,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Validation( column(s) )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -91,7 +89,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Weight( column )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -105,7 +103,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; X( column(s) )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -118,7 +116,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Y( column(s) )
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -135,7 +133,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Description:** Changes X, Y, and other variables for subsequent models.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ### Compare
 
@@ -143,7 +141,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Description:** Updates the XGBoost comparison metrics.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -159,7 +157,7 @@ obj << Compare( Correlation( 1 ) );
 
 **Description:** Fits an XGBoost model. You can specify XGBoost parameters and fitting specifications within this.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -172,7 +170,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Syntax:** obj &lt;&lt; Get Measures
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ### Redo Analysis
 
@@ -180,7 +178,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -196,7 +194,7 @@ obj << Redo Analysis;
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -212,7 +210,7 @@ obj << Relaunch Analysis;
 
 **Description:** Shows more details.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -228,8 +226,6 @@ XGBoost( Y( :Weight ), X( :Height ), Show Details( 1 ) );
 **Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -248,7 +244,7 @@ dt << Bivariate(
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 #### Anonymous preset
 
@@ -292,8 +288,6 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -313,8 +307,6 @@ obj[1] << Copy ByGroup Script;
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -329,7 +321,7 @@ obj << Copy Script;
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```jsl
 
@@ -344,8 +336,6 @@ biv << Get By Levels;
 **Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -366,8 +356,6 @@ Show( t );
 **Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
-
-**JMP Version Added:** 19
 
 #### General
 
@@ -414,8 +402,6 @@ New Window( "platform boxes",
 
 **Description:** Returns a reference to the data table.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -430,8 +416,6 @@ Show( N Rows( t ) );
 **Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -448,8 +432,6 @@ Show( t );
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -464,8 +446,6 @@ Show( t );
 **Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -482,8 +462,6 @@ Show( t );
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -499,7 +477,7 @@ Show( s );
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```jsl
 
@@ -516,8 +494,6 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 **Description:** Ignores the current settings of the platform&apos;s preferences. The message is ignored when sent to the platform after creation.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -530,31 +506,13 @@ dt << Bivariate(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 19
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
 
 **Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 18
 
 ```jsl
 
@@ -564,29 +522,11 @@ preset = obj << New Preset();
 
 ```
 
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 19
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
-
-```
-
 ### Report
 
 **Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -603,8 +543,6 @@ Show( t );
 **Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -625,8 +563,6 @@ obj[1] << Save ByGroup Script to Data Table;
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -645,8 +581,6 @@ obj[1] << Save ByGroup Script to Journal;
 **Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -667,8 +601,6 @@ obj[1] << Save ByGroup Script to Script Window;
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -682,8 +614,6 @@ obj << Save Script for All Objects;
 **Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
-
-**JMP Version Added:** 19
 
 **Example 1**
 
@@ -721,8 +651,6 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -736,8 +664,6 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 **Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -753,8 +679,6 @@ obj << Save Script to Journal;
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -769,8 +693,6 @@ obj << Save Script to Report;
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -784,8 +706,6 @@ obj << Save Script to Script Window;
 **Syntax:** SendToByGroup( {":Column == level"}, command );
 
 **Description:** Sends platform commands or display customization commands to each level of a by-group.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -806,8 +726,6 @@ dt << Distribution(
 **Syntax:** SendToEmbeddedScriptable( Dispatch( "Outline name", "Element name", command );
 
 **Description:** SendToEmbeddedScriptable restores settings of embedded scriptable objects.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -834,8 +752,6 @@ dt << Life Distribution(
 
 **Description:** Send To Report is used in tandem with the Dispatch command to customize the appearance of a report.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -853,8 +769,6 @@ dt << Distribution(
 
 **Description:** Sets the title of the platform.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -868,8 +782,6 @@ obj << Title( "My Platform" );
 **Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -887,8 +799,6 @@ Show( t );
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -905,8 +815,6 @@ xml = obj << View Web XML;
 
 **Syntax:** XGBoost Compare
 
-**JMP Version Added:** 19
-
 ### Item Messages
 
 #### AUC
@@ -915,7 +823,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the AUROC, which is the area under the receiver operating characteristic curve. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### AUPRC
 
@@ -923,7 +831,7 @@ xml = obj << View Web XML;
 
 **Description:** Area under the Precision Recall Curve On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Accuracy
 
@@ -931,7 +839,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the accuracy, which is the proportion of correct classifications. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Censor
 
@@ -939,7 +847,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Censor command On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Concordance
 
@@ -947,7 +855,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the concordance, which is the Harrell C-Index and measures strength of sorting efficiency On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Correlation
 
@@ -955,7 +863,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Pearson correlation, which is a measure of the strength of the linear relationship. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### F1
 
@@ -963,7 +871,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the F1 Score, which is the harmonic average of precision and recall. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Features
 
@@ -971,7 +879,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Features column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Freq
 
@@ -979,7 +887,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Freq column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### H Measure
 
@@ -987,7 +895,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the H Measure, which measures proportion improvement over baseline. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Hide All Models
 
@@ -995,7 +903,7 @@ xml = obj << View Web XML;
 
 **Description:** Hides all models.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### LogLoss
 
@@ -1003,7 +911,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the logarithm of the likelihood-based loss function. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### MAE
 
@@ -1011,7 +919,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the MAE, which is the mean absolute error. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### MCC
 
@@ -1019,7 +927,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Matthews correlation coefficient, which is the Pearson correlation for binary variables. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Misclass
 
@@ -1027,7 +935,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the misclassification rate, which is the proportion of incorrect classifications. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Predictors
 
@@ -1035,7 +943,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Predictors column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Profit
 
@@ -1043,7 +951,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the expected profit. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### RMSE
 
@@ -1051,7 +959,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the RMSE, which is the root mean square error. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### RSquare
 
@@ -1059,7 +967,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides RSquare value, which is the proportion of variability explained. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Remove Hidden Models
 
@@ -1067,7 +975,7 @@ xml = obj << View Web XML;
 
 **Description:** Removes all models for which the Show box is not checked.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Remove Shown Models
 
@@ -1075,7 +983,7 @@ xml = obj << View Web XML;
 
 **Description:** Removes all models for which the Show check box is checked and shows the remaining models.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Response
 
@@ -1083,7 +991,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Response column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Show All Models
 
@@ -1091,7 +999,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows all models.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Training Metrics
 
@@ -1099,7 +1007,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides all training metrics. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Validation
 
@@ -1107,7 +1015,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Validation column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Validation Metrics
 
@@ -1115,7 +1023,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides all validation metrics. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Weight
 
@@ -1123,7 +1031,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides the Weight column. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 ## XGBoost Fit
 
@@ -1133,8 +1041,6 @@ xml = obj << View Web XML;
 
 **Syntax:** XGBoost Fit
 
-**JMP Version Added:** 19
-
 ### Item Messages
 
 #### Actual by Predicted Plots
@@ -1143,7 +1049,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides a plot using the training data with the predicted values on the X axis and actual values on the Y axis. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Autotune
 
@@ -1151,7 +1057,7 @@ xml = obj << View Web XML;
 
 **Description:** Creates a fast flexible filling design within min and max parameter settings to fit n models, where n is Number of Runs.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Confusion Matrices
 
@@ -1159,7 +1065,7 @@ xml = obj << View Web XML;
 
 **Description:** Shows or hides a crosstabulation matrix of actual and predicted levels. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1179,7 +1085,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Copy Parameters to Launch
 
@@ -1187,7 +1093,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Copies the parameters from this model to the model launch section.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Decision Thresholds
 
@@ -1195,7 +1101,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides decision threshold graphs and tables. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Fit Details
 
@@ -1203,7 +1109,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides the statistics for the fitted model. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Generate Python Code
 
@@ -1211,7 +1117,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Creates Python code for training and scoring.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 16
 
 #### Importances
 
@@ -1219,7 +1125,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides the importance statistics for each predictor. On by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Lift Curves
 
@@ -1227,7 +1133,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Shows or hides the Lift Curve plot. A lift curve plots the lift versus the portion of the observations and provides another view of the predictive ability of a model.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Number of Design Points
 
@@ -1235,7 +1141,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 **Description:** Specifies the number of tuning design runs to perform. If you have a large problem, keep this value relatively small. "10" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1250,7 +1156,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Design Points( 10 ) ) );
 
 **Description:** Specifies the number of nested inner folds used during the autotune process. "2" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -1265,7 +1171,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Inner Folds( 2 ) ) );
 
 **Description:** Specifies the function to be optimized for model fitting. The function must be consistent with the modeling type of the response. "reg:squarederror" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1280,7 +1186,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 **Description:** Plots the trade-off between precision and recall for different classification thresholds. It is preferred in scenarios where class imbalances exist.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Profiler
 
@@ -1288,7 +1194,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 **Description:** Shows or hides the prediction profiler, which is used to graphically explore the prediction equation by slicing it one factor at a time. The prediction profiler contains features for optimization.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Publish Prediction Formula
 
@@ -1296,7 +1202,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 **Description:** Creates prediction formulas and saves them as formula column scripts in the Formula Depot platform.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### ROC Curves
 
@@ -1304,7 +1210,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 **Description:** Shows or hides the Receiver Operating Characteristic (ROC) curve for each level of the response variable. The ROC curve is a plot of sensitivity versus (1 - specificity).
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Remove All But This Fit
 
@@ -1312,7 +1218,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 **Description:** Removes the reports and plots for all models except this one.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1333,7 +1239,7 @@ obj << (Fit[1] << Remove All But This Fit);
 
 **Description:** Removes the entire model report.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1354,7 +1260,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Saves the predicted values in a new column in the data table.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Save Prediction Formula
 
@@ -1362,7 +1268,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Saves the prediction formula in a new column in the data table. Calculations can be slow for large models.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Save SHAPs
 
@@ -1370,7 +1276,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Saves Shapley values to the data table. These values break down predictions into components for each predictor.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 #### Surface Profiler
 
@@ -1378,7 +1284,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Tree Details
 
@@ -1386,7 +1292,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Shows or hides the breakdown of each tree split.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### Tuning Design Table
 
@@ -1394,7 +1300,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Specifies the name of an open JMP data table of parameter settings used to fit a series of models. The columns of this table must exactly match parameter names, and each row must contain values of these parameters to use for that model fit. Parameters that are not specified are set to their values from this dialog.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 #### alpha
 
@@ -1402,7 +1308,7 @@ obj << (Fit[1] << Remove Fit);
 
 **Description:** Specifies the L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1417,7 +1323,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha( 0.0 ) ) );
 
 **Description:** Specifies the maximum L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.5" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1432,7 +1338,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_max( 2.0 ) ) );
 
 **Description:** Specifies the minimum L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1447,7 +1353,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_min( 0.0 ) ) );
 
 **Description:** Specifies the initial prediction score of all instances, which is the global bias. The mean of y is typically a good choice. "0.5" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1462,7 +1368,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( base_score( 0.5 ) ) );
 
 **Description:** Specifies which booster to use. "gbtree" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1477,7 +1383,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gbtree" ) ) );
 
 **Description:** Specifies the proportion of columns to sample for each level. Sampling occurs once for every new depth level reached in a tree. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1492,7 +1398,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bylevel( 1.0 ) ) );
 
 **Description:** Specifies the proportion of columns to sample for each node (split). Sampling occurs once every time a new split is evaluated. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1507,7 +1413,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bynode( 1.0 ) ) );
 
 **Description:** Specifies the proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1522,7 +1428,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree( 1.0 ) ) );
 
 **Description:** Specifies the maximum proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1537,7 +1443,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_max( 1.0 ) ) );
 
 **Description:** Specifies the minimum proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "0.5" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1552,7 +1458,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_min( 0.3 ) ) );
 
 **Description:** Specifies the metric shown in the iteration history plot but does not affect the actual model fit. Leave this value blank for the default metric corresponding to the objective function, or specify one of the following: rmse, rmsle, mae, logloss, error, error@t, merror, auc, aucpr, ndcg, map, ndcg@n, map@n, ndcg-, map-, ndcg@n-, map@n-, poisson-nloglik, gamma-nloglik, cox-nloglik, gamma-deviance, tweedie-nloglik.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1567,7 +1473,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( eval_metric( rmse ) ) );
 
 **Description:** Specifies the feature selection and ordering method for the linear booster. "cyclic" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1587,7 +1493,7 @@ XGBoost(
 
 **Description:** Specifies the minimum loss reduction required to make a further partition on a leaf node of the tree. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1602,7 +1508,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Gamma( 0.0 ) ) );
 
 **Description:** Specifies the method used to add new nodes to trees. Currently, this option applies only when tree_method=hist. "depthwise" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1617,7 +1523,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( grow_policy( "depthwise" ) ) );
 
 **Description:** Specifies feature interaction constraints as a nested list of feature indices using brackets. Features grouped together can interact only with each other.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -1633,7 +1539,7 @@ XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( interaction_constraints( "[[0,1]
 
 **Description:** Specifies the number of boosting iterations. "30" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1648,7 +1554,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations( 100 ) ) );
 
 **Description:** Specifies the maximum number of boosting iterations. "100" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1663,7 +1569,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_max( 300 ) ) );
 
 **Description:** Specifies the minimum number of boosting iterations. "20" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1678,7 +1584,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_min( 20 ) ) );
 
 **Description:** Specifies the L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1693,7 +1599,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda( 1.0 ) ) );
 
 **Description:** Specifies the maximum L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "2.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1708,7 +1614,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_max( 2.0 ) ) );
 
 **Description:** Specifies the minimum L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1723,7 +1629,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_min( 0.0 ) ) );
 
 **Description:** Specifies the learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. "0.3" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1738,7 +1644,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate( 0.3 ) ) );
 
 **Description:** Specifies the maximum learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. "0.4" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1753,7 +1659,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_max( 0.4 ) ) );
 
 **Description:** Specifies the minimum learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. "0.05" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1768,7 +1674,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_min( 0.05 ) ) );
 
 **Description:** Specifies the maximum number of discrete bins into which to bucket continuous features. This option applies only for tree_method=hist. "256" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1783,7 +1689,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_bin( 256 ) ) );
 
 **Description:** Specifies the maximum delta step that each leaf output can take. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1798,7 +1704,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_delta_step( 0.0 ) ) );
 
 **Description:** Specifies the maximum depth of the tree. This value must be an integer. Complexity increases as depth increases. Models with larger max_depth have a higher risk of overfitting. "6" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1813,7 +1719,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth( 6 ) ) );
 
 **Description:** Specifies the maximum depth of tree maximum. This value must be an integer. Complexity increases as depth increases. Models with depths of 2^depth and larger have higher risk of overfitting. "8" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1828,7 +1734,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_max( 9 ) ) );
 
 **Description:** Specifies the maximum depth of tree minimum. This value must be an integer. Complexity increases as depth increases. Models with depths of 2^depth and larger have higher risk of overfitting. "1" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1843,7 +1749,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_min( 3 ) ) );
 
 **Description:** Specifies the maximum number of nodes to be added. This option applies only for grow_policy=lossguide. "0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1858,7 +1764,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_leaves( 0 ) ) );
 
 **Description:** Specifies the minimum sum of instance weight (Hessian) needed in a child. This value is the minimum size of each leaf. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1873,7 +1779,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight( 1.0 ) ) );
 
 **Description:** Specifies the maximum sum of instance weight (Hessian) needed in a child. This value is the maximum size of each leaf. "3.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1888,7 +1794,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_max( 10.0 ) ) );
 
 **Description:** Specifies the minimum sum of instance weight (Hessian) needed in a child. This value is the minimum size of each leaf. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1903,7 +1809,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_min( 1.0 ) ) );
 
 **Description:** Specifies monotonicity constraints for each feature. The constraints must be specified using a comma-separated list of values within parentheses, where -1 indicates negative, 1 indicates positive, and 0 indicates no constraint.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -1919,7 +1825,7 @@ XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( monotone_constraints( "(1,1)" ) 
 
 **Description:** Specifies the type of normalization algorithm for the DART booster. "tree" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1934,7 +1840,7 @@ XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( normalize_type( "tr
 
 **Description:** Specifies the number of parallel threads used to run XGBoost. By default, all available threads are used. "0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1949,7 +1855,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( nthread( 8 ) ) );
 
 **Description:** Specifies the number of boosted trees to grow in parallel. Then the results are averaged. "1" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1964,7 +1870,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( num_parallel_tree( 1 ) ) );
 
 **Description:** When this flag is enabled in the DART booster, at least one tree is always dropped during the dropout. "0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1979,7 +1885,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), one_drop( 0 ) ) );
 
 **Description:** Specifies the type of predictor algorithm. "auto" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -1994,7 +1900,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( predictor( "cpu_predictor" ) ) );
 
 **Description:** Specifies the type of boosting process to run. "default" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2009,7 +1915,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( process_type( "default" ) ) );
 
 **Description:** Specifies the dropout rate for the DART booster. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2024,7 +1930,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), rate_drop( 0.0 ) ) 
 
 **Description:** Specifies the parameter of the refresh updater. If set to 1, leaves and nodes updated. If set to 0, only nodes are updated. "1" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2039,7 +1945,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( refresh_leaf( 1 ) ) );
 
 **Description:** Specifies the type of sampling algorithm for the DART booster. "uniform" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2054,7 +1960,7 @@ XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( sample_type( "unifo
 
 **Description:** Specifies the balance of positive and negative weights, which are useful for unbalanced classes. A typical value to consider is sum(negative instances) / sum(positive instances). "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2069,7 +1975,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( scale_posweight( 1.0 ) ) );
 
 **Description:** Specifies the seed for the random number generator. Set this value for reproducibility of the results. "0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2084,7 +1990,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( seed( 0 ) ) );
 
 **Description:** Used only for tree_method=approx, this value approximately translates into (1 / sketch_eps) = number of bins. "0.03" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2099,7 +2005,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( sketch_eps( 0.03 ) ) );
 
 **Description:** Specifies the probability of skipping the dropout procedure during a DART boosting iteration. "0.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2114,7 +2020,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), skip_drop( 0.0 ) ) 
 
 **Description:** Specifies the proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2129,7 +2035,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample( 1.0 ) ) );
 
 **Description:** Specifies the maximum proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "1.0" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2144,7 +2050,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_max( 1.0 ) ) );
 
 **Description:** Specifies the minimum proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "0.5" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2159,7 +2065,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_min( 0.3 ) ) );
 
 **Description:** Specifies the number of top features to select in greedy and thrifty feature selector. This option applies only for the gblinear booster. "256" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2174,7 +2080,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gblinear" ), top_k( 0 ) ) );
 
 **Description:** Specifies the tree construction algorithm used in XGBoost. "auto" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2189,7 +2095,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( tree_method( "auto" ) ) );
 
 **Description:** Specifies the power of the Tweedie distribution. This value must be between 1 and 2. This option applies only for objective=reg:tweedie. "1.5" by default.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 
@@ -2208,7 +2114,7 @@ XGBoost(
 
 **Description:** Specifies the tree updater to run for the gbtree booster. Specify one of the following: grow_colmaker, distcol, grow_histmaker, grow_local_histmaker, grow_skmaker, sync, refresh, prune. For the gblinear booster, specify either shotgun or coord_descent.
 
-**JMP Version Added:** 19
+**JMP Version Added:** 15
 
 ```jsl
 

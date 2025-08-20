@@ -10,10 +10,251 @@
 
 **Description:** Examines many processes from several perspectives, including stability, capability, control chart tests, and shift (drift). Assists with the ability to focus on which processes need attention.
 
+#### Screen count processes with alarm graph for environmental monitoring
+
 ```jsl
 
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Count ),
+Grouping( :Type, :Grade, :Site ),
+Control Chart Type( "Count" ),
+Time( :Time ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Alarm Graph( 1 ),
+Show Charts as Selected( 1 ),
+Select Where( Action >= 1 )
+);
+
+```
+
+#### Screen many processes with grouping column
+
+```jsl
+
+
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Grouping( :Site )
+);
+
+```
+
+#### Screen many processes with individual-and-moving-range control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "Indiv and MR" )
+);
+
+```
+
+#### Screen many processes with xbar-and-r control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "XBar and R" )
+);
+
+```
+
+#### Screen many processes with xbar-and-s control chart metrics
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Subgroup( :wafer ),
+Control Chart Type( "XBar and S" )
+);
+
+```
+
+#### Screen nonnegative continuous data, for environmental monitoring
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Count ),
+Grouping( :Type, :Grade, :Site ),
+Control Chart Type( "Nonnegative Continuous" ),
+Time( :Time ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Alarm Graph( 1 ),
+Show Charts as Selected( 1 )
+);
+
+```
+
+#### Screen process with a 3-way chart, XBar-MR-and-R
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fill Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar MR and R" ),
+Moving Range Limit Exceeded( 1 ),
+Chart Options as Selected( Dispersion Chart( 1 ) ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen process with a 3-way chart, XBar-MR-and-S
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fill Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar MR and S" ),
+Moving Range Limit Exceeded( 1 ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen process with a proportion chart
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+obj = dt << Process Screening(
+Process Variables( :N Defective ),
+Control Chart Type( "Proportion" ),
+n Trials( :N Units ),
+Show Charts as Selected( 1 ),
+RowStates( [0 1] )
+);
+
+```
+
+#### Screen processes showing control charts for selected processes
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Control Chart Type( "Indiv and MR" ),
+Show Charts as Selected( 1 ),
+Select Where( Alarm Rate > 0.006 ), // what selects in the table
+Filter Where( Alarm Rate > 0.005 ) // what shows in the table
+);
+
+```
+
+#### Screen processes with capability goal plot
+
+```jsl
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Goal Plot( 1 )
+);
+
+```
+
+#### Screen processes with process performance graph
+
+```jsl
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+Process Variables( Column Group( "Processes" ) ),
+Set Scrolling( 10 ), // table shows only the first 10 processes
+Process Performance Graph( 1 )
+);
+
+```
+
+#### Screen processes with Process Potential Graph
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
+Column( "Weight" ) << Set Property(
+"Process Screening",
+{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )}
+);
+Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );
+obj = dt << Process Screening(
+Process Variables( :Weight ),
+Subgroup( :Sample ),
+Control Chart Type( "XBar and R" ),
+Out of Spec Count( 0 ),
+Out of Spec Rate( 0 ),
+Latest Out of Spec( 0 ),
+Process Potential Graph( 1 )
+);
+
+```
+
+#### Screen Processes with Shift Detection
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+Control Chart Type( "Indiv and MR" ),
+Shift Graph( 1 ),
+Show Charts as Selected( 1 ),
+Select Where( Stability Index > 2 )
+);
+
+```
+
+#### Screen processes with spec limits in separate table
+
+```jsl
+
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+Y( :OZONE, :CO, :SO2, :NO ),
+Use Limits Table(
+1,
+dt2,
+Process Variables( :Column 1 ),
+LSL( :_LSL ),
+USL( :_USL ),
+Target( :_Target ),
+Go
+)
+);
 
 ```
 
@@ -2138,8 +2379,12 @@ Show( t );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 132 ) ) );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
 t = obj << Get Container;
 Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
@@ -2318,24 +2563,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -2486,22 +2713,6 @@ dist << remove local data filter;
 
 ```
 
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
-
-```
-
 ### Report
 
 **Syntax:** obj &lt;&lt; Report;Report( obj )
@@ -2629,12 +2840,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
 	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
 );
 obj = dt << Process Screening(
-	Grouping( :Site ),
-	Process Variables( Eval( 5 :: 132 ) ),
-	By( _bycol )
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
 );
 obj[1] << Save Script for All Objects To Data Table;
 
@@ -2648,12 +2860,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
 dt << New Column( "_bycol",
 	Character,
 	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
 );
 obj = dt << Process Screening(
-	Grouping( :Site ),
-	Process Variables( Eval( 5 :: 132 ) ),
-	By( _bycol )
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
 );
 obj[1] << Save Script for All Objects To Data Table( "My Script" );
 

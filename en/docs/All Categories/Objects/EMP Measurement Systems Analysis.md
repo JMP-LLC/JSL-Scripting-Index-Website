@@ -10,15 +10,308 @@
 
 **Description:** Launches the EMP (Evaluating the Measurement Process) method for Measurement Systems Analysis. The average and dispersion (range or standard deviation) charts are displayed by default.
 
+#### Crossed Effects Model, Range Chart
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
 obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Crossed" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Crossed" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed then Nested Effects Model, Range Chart
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",
+Add Rows( 81 ),
+New Column( "Operator",
+Character( 7 ),
+"Nominal",
+Set Values(
+{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane"}
+),
+Set Display Width( 0 )
+),
+New Column( "Instrument",
+Character( 1 ),
+"Nominal",
+Set Values(
+{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+"C"}
+),
+Set Display Width( 0 )
+),
+New Column( "Part",
+Numeric,
+"Nominal",
+Format( "Best", 8 ),
+Set Values(
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+),
+Set Display Width( 0 )
+),
+New Column( "Y",
+Numeric,
+"Continuous",
+Format( "Best", 8 ),
+Set Values(
+[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+),
+Set Display Width( 68 )
+)
+);
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed then Nested (3 Factors Only)"n ),
+Dispersion Chart Type( Range ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed then Nested Effects Model, Std Dev Chart
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",
+Add Rows( 81 ),
+New Column( "Operator",
+Character( 7 ),
+"Nominal",
+Set Values(
+{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+"Jane", "Jane", "Jane", "Jane", "Jane"}
+),
+Set Display Width( 0 )
+),
+New Column( "Instrument",
+Character( 1 ),
+"Nominal",
+Set Values(
+{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+"C"}
+),
+Set Display Width( 0 )
+),
+New Column( "Part",
+Numeric,
+"Nominal",
+Format( "Best", 8 ),
+Set Values(
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+),
+Set Display Width( 0 )
+),
+New Column( "Y",
+Numeric,
+"Continuous",
+Format( "Best", 8 ),
+Set Values(
+[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+),
+Set Display Width( 68 )
+)
+);
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed then Nested (3 Factors Only)"n ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed with Two Factor Interaction Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :new Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed with Two Factor Interactions" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Crossed with Two Factor Interaction Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :new Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Crossed with Two Factor Interactions" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Main Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Main" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Main Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Main" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Nested" ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator ),
+Part( :Part ),
+Model( "Nested" ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested then Crossed Effects Model, Range Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Nested then Crossed (3 Factors Only)"n ),
+Dispersion Chart Type( "Range" ),
+Variance Components( 1 )
+);
+
+```
+
+#### Nested then Crossed Effects Model, Std Dev Chart
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << EMP Measurement Systems Analysis(
+Y( :Y ),
+X( :Operator, :Instrument ),
+Part( :Part ),
+Model( "Nested then Crossed (3 Factors Only)"n ),
+Dispersion Chart Type( "Standard Deviation" ),
+Variance Components( 1 )
 );
 
 ```
@@ -963,24 +1256,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1146,22 +1421,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

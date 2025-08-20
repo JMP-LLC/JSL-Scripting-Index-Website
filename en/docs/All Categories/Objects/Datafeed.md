@@ -100,8 +100,6 @@ For( exi = 0, exi < 5, exi++,
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 feed = Open Datafeed(

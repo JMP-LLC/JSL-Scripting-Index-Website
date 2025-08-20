@@ -28,15 +28,65 @@ obj = dt << Fit Model(
 
 ### Item Messages
 
+#### Fit
+
+**Syntax:** Fit Model(...Run( Fit( options ) )...);obj &lt;&lt; Fit( options );obj &lt;&lt; (Fit[number] &lt;&lt; option)
+
+**Description:** Enables you to send messages to the platform. This option can be used in a model launch script or to generate a handle to a specific model in the report.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
+fm = dt << Fit Model(
+	Y( :Time ),
+	Treatment( :Treatment ),
+	Effects( :Age, :Diag Time ),
+	Treatment Effects( :Age, :Diag Time, :Cell Type ),
+	Personality( "Causal Treatment" ),
+	Run( Fit )
+);
+
+```
+
 #### Model Dialog
 
 **Syntax:** obj &lt;&lt; Model Dialog
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
+fm = dt << Fit Model(
+	Y( :Time ),
+	Treatment( :Treatment ),
+	Effects( :Age, :Diag Time ),
+	Treatment Effects( :Age, :Diag Time, :Cell Type ),
+	Personality( "Causal Treatment" ),
+	Run
+);
+fm << Model Dialog;
+
+```
 
 #### Show Tips and Interpretations
 
 **Syntax:** obj &lt;&lt; Show Tips and Interpretations( state=0|1 )
 
 **JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/VA Lung Cancer.jmp" );
+fm = dt << Fit Model(
+	Y( :Time ),
+	Treatment( :Treatment ),
+	Effects( :Age, :Diag Time ),
+	Treatment Effects( :Age, :Diag Time, :Cell Type ),
+	Personality( "Causal Treatment" ),
+	Run
+);
+fm << Show Tips and Interpretations;
+
+```
 
 ### Shared Item Messages
 
@@ -497,24 +547,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -684,22 +716,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -2312,24 +2328,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -2503,22 +2501,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -3946,6 +3928,8 @@ scrobj << Differences from Overall Average( 1 );
 **Syntax:** scrobj &lt;&lt; Remove
 
 **Description:** Removes the Least Squares Means plot from the report.
+
+**JMP Version Added:** 14
 
 ```jsl
 
@@ -6800,24 +6784,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### Paste Local Data Filter
 
 **Syntax:** obj &lt;&lt; Paste Local Data Filter
@@ -6963,22 +6929,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -7411,6 +7361,211 @@ New Window( "Bivariate Equation",
 ## Fit Least Squares
 
 ### Associated Constructors
+
+#### Fit Least Squares
+
+**Syntax:** Fit Model( Y( columns ), Effects( columns ), Personality( "Standard Least Squares" ), Emphasis( "Effect Leverage"|"Effect Screening"|"Minimal Report" )
+
+**Description:** Fits a linear regression model for a continuous response. Techniques include regression, analysis of variance, analysis of covariance, mixed models, and analysis of designed experiments. The Emphasis option enables you to specify the report layout.
+
+**Fit Multiple Random Effects**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Split Plot.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects( :Tenderizer, :Roasting Time, :Tenderizer * :Roasting Time ),
+Random Effects( :Carcass, :Carcass * :Tenderizer ),
+Center Polynomials( 0 ),
+Personality( "Standard Least Squares" ),
+Emphasis( "Minimal Report" ),
+Run
+);
+
+```
+
+**Fit Multiple Regression**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
+
+**Fit Parallel Slopes, ANCOVA**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Drug.jmp" );
+obj = dt << Fit Model(
+Y( :y ),
+Effects( :Drug, :x ),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
+
+**Fit Quadratic Response Surface**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Tiretread.jmp" );
+obj = dt << Fit Model(
+Y( :HARDNESS ),
+Effects(
+:SILICA, :SILANE, :SULFUR, :SILICA * :SILICA, :SILANE * :SILICA, :SILANE * :SILANE,
+:SULFUR * :SILICA, :SULFUR * :SILANE, :SULFUR * :SULFUR
+),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
+
+**Fit Random Slopes Mixed Model**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Wheat.jmp" );
+obj = dt << Fit Model(
+Y( :Yield ),
+Effects( :Moisture ),
+Random Effects( :Variety, :Moisture[:Variety] ),
+Personality( "Standard Least Squares" ),
+Emphasis( "Minimal Report" ),
+Run
+);
+
+```
+
+**Fit Screening Design with Interactions**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Reactor.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects(
+:F, :Ct, :A, :T, :Cn, :F * :Ct, :F * :A, :F * :T, :F * :Cn, :Ct * :A, :Ct * :T,
+:Ct * :Cn, :A * :T, :A * :Cn, :T * :Cn
+),
+Personality( "Standard Least Squares" ),
+Emphasis( "Effect Screening" ),
+Run
+);
+
+```
+
+**Fit Separate Slopes Crossed**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Drug.jmp" );
+obj = dt << Fit Model(
+Y( :y ),
+Effects( :Drug, :x, :Drug * :x ),
+Personality( "Standard Least Squares" ),
+Emphasis( "Minimal Report" ),
+Run
+);
+
+```
+
+**Fit Separate Slopes Nested**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Drug.jmp" );
+obj = dt << Fit Model(
+Y( :y ),
+Effects( :Drug, :x[:Drug] ),
+Personality( "Standard Least Squares" ),
+Emphasis( "Minimal Report" ),
+Run
+);
+
+```
+
+**Fit Several Responses**
+
+```jsl
+
+dt = Open( "$Sample_Data/Tiretread.jmp" );
+obj = dt << Fit Model(
+Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),
+Effects(
+:SILICA, :SILANE, :SULFUR, :SILICA * :SILICA, :SILANE * :SILICA, :SILANE * :SILANE,
+:SULFUR * :SILICA, :SULFUR * :SILANE, :SULFUR * :SULFUR
+),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
+
+**Fit Split Plot**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Animals.jmp" );
+obj = dt << Fit Model(
+Y( :miles ),
+Effects( :species, :season, :species * :season ),
+Random Effects( :subject[:species] ),
+Personality( "Standard Least Squares" ),
+Emphasis( "Minimal Report" ),
+Run
+);
+
+```
+
+**Fit Treatment Effect Blocked**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Snapdragon.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects( :Soil ),
+Random Effects( :Block ),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
+
+**Fit Two-way Crossed**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Analgesics.jmp" );
+obj = dt << Fit Model(
+Y( :pain ),
+Effects( :gender, :drug, :gender * :drug ),
+Personality( "Standard Least Squares" ),
+Run
+);
+
+```
 
 #### Least Squares Personality
 
@@ -9899,24 +10054,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### Paste Local Data Filter
 
 **Syntax:** obj &lt;&lt; Paste Local Data Filter
@@ -10062,22 +10199,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -11273,24 +11394,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### Paste Local Data Filter
 
 **Syntax:** obj &lt;&lt; Paste Local Data Filter
@@ -11440,22 +11543,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -12335,24 +12422,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -12464,22 +12533,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -13501,24 +13554,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -13680,22 +13715,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -14135,7 +14154,7 @@ New Window( "Bivariate Equation",
 
 **Description:** Fits a linear mixed model for a variety of complex covariance structures using REML. These models can be used for random coefficients, repeated measures, split-plots, spatial data, and data with multiple correlated responses.
 
-**JMP Version Added:** 19
+**Random Coefficient Model**
 
 ```jsl
 
@@ -14149,6 +14168,73 @@ obj = dt << Fit Model(
 	),
 	Personality( "Mixed Model" ),
 	Run()
+);
+
+```
+
+**Random Block Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
+obj = dt << Fit Model(
+Y( :Calories ),
+Effects( :Sugars, :Fiber Gr, :Sugars * :Fiber Gr ),
+Random Effects( :Manufacturer ),
+NoBounds( 1 ),
+Personality( "Mixed Model" ),
+Run
+);
+
+```
+
+**Repeated Measures Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cholesterol Stacked.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects( :Treatment, :Month, :Month * :Treatment ),
+NoBounds( 1 ),
+Personality( "Mixed Model" ),
+Subject( :Patient ),
+Repeated Effects( :Time ),
+Repeated Structure( "Unstructured" ),
+Run
+);
+
+```
+
+**Spatial Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Uniformity Trial.jmp" );
+obj = dt << Fit Model(
+Y( :Yield ),
+Effects,
+Center Polynomials( 0 ),
+Personality( "Mixed Model" ),
+Repeated Effects( :Row, :Column ),
+Repeated Structure( "Spatial" ),
+Repeated Structure Type( "Spherical" ),
+Run
+);
+
+```
+
+**Split Plot Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Split Plot.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects( :Tenderizer, :Roasting Time, :Tenderizer * :Roasting Time ),
+Random Effects( :Carcass, :Carcass * :Tenderizer ),
+Personality( "Mixed Model" ),
+Run
 );
 
 ```
@@ -14288,6 +14374,8 @@ obj << Conditional Contour Profiler( 1 );
 **Syntax:** obj &lt;&lt; Conditional Mean CI
 
 **Description:** Saves two new columns to the data table. The new columns contain the lower and upper confidence limits for the expected value of the conditional prediction. The confidence intervals include random effects estimates for models that contain random effects. This option is available only when the model contains at least one random effect.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -14793,6 +14881,8 @@ obj << Homogeneity of Variance Test( 1 );
 
 **Description:** Saves two new columns to the data table. The new columns contain confidence limits for individual response values.
 
+**JMP Version Added:** 16
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Wheat.jmp" );
@@ -14861,6 +14951,8 @@ obj = dt << Fit Model(
 **Syntax:** obj &lt;&lt; Mean Confidence Interval
 
 **Description:** Saves two new columns to the data table. The new columns contain the lower and upper confidence limits for the mean response.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -15263,6 +15355,8 @@ obj << Save Simulation Formula;
 **Syntax:** obj &lt;&lt; Sequential Tests( state=0|1 )
 
 **Description:** Shows or hides the Sequential (Type 1) Tests report that contains the sums of squares as effects are added to the model sequentially. This option is available only when the model contains at least one fixed effect.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -15907,24 +16001,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -16102,22 +16178,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -16676,6 +16736,8 @@ obj << Confusion Matrix( 1 );
 **Syntax:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Description:** Shows or hides the contour profiler, which shows the contours of the response graphically for two factors at a time. Available only when the model contains more than one continuous factor.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -17869,24 +17931,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -18052,22 +18096,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -18605,6 +18633,8 @@ obj << Confusion Matrix( 1 );
 **Syntax:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Description:** Shows or hides the contour profiler, which shows the contours of the response graphically for two factors at a time. Available only when the model contains more than one continuous factor.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -19621,24 +19651,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -19800,22 +19812,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -21394,24 +21390,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -21581,22 +21559,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -22682,24 +22644,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -22865,22 +22809,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -23334,14 +23262,80 @@ New Window( "Bivariate Equation",
 
 **Description:** Automates the process of conducting tests for linear model effects across a large number of responses. Test results and summary statistics are presented in data tables and plots. The false discovery rate (FDR) guards against incorrect declarations of significance. A robust estimation method reduces the sensitivity of tests to outliers.
 
+**Fit a few columns with many switched predictors**
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
 obj = dt << Fit Model(
-	Y( :ABRASION, :HARDNESS ),
-	Effects( :SILICA, :SILANE, :SULFUR ),
-	Personality( "Response Screening" ),
-	Run
+Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Switch( Column Group( "Markers" ) ),
+Effects( :Disease Status ),
+Personality( "Response Screening" ),
+Run
+);
+
+```
+
+**Fit many columns on four predictors**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Fit Model(
+Y( Column Group( "Markers" ) ),
+Effects( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Personality( "Response Screening" ),
+Run
+);
+
+```
+
+**Fit many columns with Sliced LSMeans Differences**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Fit Model(
+Y( Column Group( "Markers" ) ),
+Effects( :Father, :Mother, :Sex, :Disease Status ),
+Personality( "Response Screening" ),
+Run( (Sliced LSMeans Differences( 1 )) )
+);
+
+```
+
+**Fit many columns with subgroups**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Fit Model(
+Y( Column Group( "Markers" ) ),
+Effects( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Personality( "Response Screening" ),
+Subgroup( :Father, :Mother, :Sex, :Disease Status ),
+Run
+);
+
+```
+
+**Fit with a random effect**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
+obj = dt << Fit Model(
+Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
+Effects( :Sex, :Disease Status ),
+Random Effects( :Sample ),
+Personality( "Response Screening" ),
+Run( (Sliced LSMeans Differences( 1 )) )
 );
 
 ```
@@ -23375,6 +23369,8 @@ obj << Effect Plots( 1 );
 **Syntax:** obj &lt;&lt; Effect Tests( state=0|1 )
 
 **Description:** Shows or hides the Effect Tests table. On by default.
+
+**JMP Version Added:** 17
 
 ```jsl
 
@@ -24236,24 +24232,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -24415,22 +24393,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -24864,20 +24826,100 @@ New Window( "Bivariate Equation",
 
 ### Associated Constructors
 
-#### Stepwise Personality
+#### Fit Stepwise
 
 **Syntax:** Fit Model( Y( columns ), Effects( columns ), Personality( "Stepwise" ) )
 
 **Description:** Fits stepwise regression models, which facilitate variable selection for standard least squares and ordinal logistic models, as well as nominal logistic models with a binary response.
 
+**All possible models**
+
 ```jsl
+
+
+dt = Open( "$Sample_Data/Reactor.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects(
+:F, :Ct, :A, :T, :Cn, :F * :Ct, :F * :A, :F * :T, :F * :Cn, :Ct * :A, :Ct * :T,
+:Ct * :Cn, :A * :T, :A * :Cn, :T * :Cn
+),
+Personality( "Stepwise" ),
+Run
+);
+obj << All Possible Models( 10, 5, Heredity Restriction( 1 ) );
+
+```
+
+**Forward Selection**
+
+```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
 obj = dt << Fit Model(
-	Y( :Oxy ),
-	Effects( :Runtime, :Weight, :RunPulse, :RstPulse, :MaxPulse ),
-	Personality( "Stepwise" ),
-	Run
+Y( :Oxy ),
+Effects( :Runtime, :Weight, :RunPulse, :RstPulse, :MaxPulse ),
+Personality( "Stepwise" ),
+Run
+);
+obj << Finish;
+
+```
+
+**Interactions respecting effect heredity**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Reactor.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects(
+:F, :Ct, :A, :T, :Cn, :F * :Ct, :F * :A, :F * :T, :F * :Cn, :Ct * :A, :Ct * :T,
+:Ct * :Cn, :A * :T, :A * :Cn, :T * :Cn
+),
+Personality( "Stepwise" ),
+Run( Rules( "Whole Effects Respecting Heredity" ) )
+);
+obj << Finish;
+
+```
+
+**Model Averaging**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Reactor.jmp" );
+obj = dt << Fit Model(
+Y( :Y ),
+Effects(
+:F, :Ct, :A, :T, :Cn, :F * :Ct, :F * :A, :F * :T, :F * :Cn, :Ct * :A, :Ct * :T,
+:Ct * :Cn, :A * :T, :A * :Cn, :T * :Cn
+),
+Personality( "Stepwise" ),
+Run
+);
+obj << Model Averaging( 10, 0.95 );
+
+```
+
+**Using categorical predictors**
+
+```jsl
+
+
+dt = Open( "$Sample_Data/Tablet Production.jmp" );
+obj = dt << Fit Model(
+Y( :Dissolution ),
+Effects(
+:Mill Time, :Screen Size, :Mag. Stearate Supplier, :Lactose Supplier, :Sugar Supplier,
+:Talc Supplier, :Blend Time, :Blend Speed, :Compressor, :Force, :Coating Supplier,
+:Coating Viscosity, :Inlet Temp, :Exhaust Temp, :Spray Rate, :Atomizer Pressure
+),
+Personality( "Stepwise" ),
+Run
 );
 obj << Finish;
 
@@ -25971,24 +26013,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -26154,22 +26178,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -26671,6 +26679,8 @@ obj = dt << Fit Model(
 
 **Description:** Returns the names of the random effects.  Available for REML analysis methods.
 
+**JMP Version Added:** 16
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Animals.jmp" );
@@ -27146,24 +27156,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -27333,22 +27325,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -28069,8 +28045,6 @@ fm << (Fit[1] << Contour Profiler( 1 ));
 
 **Description:** Shows or hides the correlation matrix for the fixed effects in the model.
 
-**JMP Version Added:** 16
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
@@ -28093,8 +28067,6 @@ fm << (Fit[1] << Correlation of Fixed Effects( 1 ));
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance of All Parameters( state=0|1 ))
 
 **Description:** Shows or hides the covariance matrix for all effects in the model.
-
-**JMP Version Added:** 16
 
 ```jsl
 
@@ -28119,8 +28091,6 @@ fm << (Fit[1] << Covariance of All Parameters( 1 ));
 
 **Description:** Shows or hides the covariance matrix for the random effects in the model.
 
-**JMP Version Added:** 16
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
@@ -28143,8 +28113,6 @@ fm << (Fit[1] << Covariance of Covariance Parameters( 1 ));
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance of Fixed Effects( state=0|1 ))
 
 **Description:** Shows or hides the covariance matrix for the fixed effects in the model.
-
-**JMP Version Added:** 16
 
 ```jsl
 
@@ -28365,6 +28333,20 @@ fm << (fit[1] << Multiple Comparisons(
 
 **Description:** Shows or hides a report that contains odds ratios for categorical predictors, and unit odds ratios and range odds ratios for continuous predictors.
 
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Fit Model(
+	Y( :Y Ordinal ),
+	Effects( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Personality( "Generalized Linear Mixed Model" ),
+	Run
+);
+Wait( 0 );
+obj << (fit[1] << Odds Ratios( 1 ));
+
+```
+
 #### Prediction Formula
 
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Prediction Formula)
@@ -28551,8 +28533,6 @@ fm << (fit[1] << Save Residual Formula);
 
 **Description:** Saves a new formula column to the data table. The new column can be used to create random response values from the fitted model. You can use the formula column with the Simulate feature in JMP Pro. This option is not available if a By variable is used. Use subset data tables if By group simulation formulas are needed.
 
-**JMP Version Added:** 16
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
@@ -28574,6 +28554,8 @@ fm << (Fit[1] << Save Simulation Formula);
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Sequential Tests( state=0|1 ))
 
 **Description:** Shows or hides the Sequential (Type 1) Tests report that contains the sums of squares as effects are added to the model sequentially. This option is available only when the model contains at least one fixed effect.
+
+**JMP Version Added:** 18
 
 ```jsl
 
@@ -28664,23 +28646,95 @@ fm << (Fit[1] << Surface Profiler( 1 ));
 
 #### Fit GLMM Platform
 
-**Syntax:** Fit Model( Y( columns ), Effects( columns ), Personality( "Generalized Linear Mixed Model" ) )
+**Syntax:** Fit Model( Y( columns ), Effects( columns ), Random Effects( columns ), Repeated Effects( columns ), Repeated Structure( type ), Personality( "Generalized Linear Mixed Model" ) )
 
 **Description:** Fits a generalized linear mixed model. These models can be used for random coefficients, split-plots, and blocked designs when the response is non-Gaussian. The response distributions can accommodate continuous, categorical, count, and time-to-event response data.
 
-**JMP Version Added:** 19
+**Nested Random Effect Model**
 
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Student Testing.jmp" );
 fm = dt << Fit Model(
-	Y( :Grade ),
-	Effects( :Program ),
-	Random Effects( :School, :Class[:School] ),
-	NoBounds( 0 ),
-	Personality( "Generalized Linear Mixed Model" ),
-	Generalized Distribution( "Binomial" ),
-	Run
+Y( :Grade ),
+Effects( :Program ),
+Random Effects( :School, :Class[:School] ),
+NoBounds( 0 ),
+Personality( "Generalized Linear Mixed Model" ),
+Generalized Distribution( "Binomial" ),
+Run()
+);
+
+```
+
+**Random Coefficient Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Manufacturing Defect Counts.jmp" );
+fm = dt << Fit Model(
+Y( :Defect ),
+Effects( :Finishing Treatment ),
+Random Effects( :Lot, :Lot * :Finishing Treatment ),
+NoBounds( 1 ),
+Personality( "Generalized Linear Mixed Model" ),
+Generalized Distribution( "Negative Binomial" ),
+Run()
+);
+
+```
+
+**Repeated Measures Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Repeated Measures Binomial.jmp" );
+fm = Fit Model(
+Y( :No Headache, :Number of Patients ),
+Effects( :Treatment, :Week, :Treatment * :Week ),
+Personality( "Generalized Linear Mixed Model" ),
+Subject( :"Treatment(Clinic)"n ),
+Repeated Effects( :Week Continuous ),
+Repeated Structure( "AR(1)" ),
+Generalized Distribution( "Binomial" ),
+Link Function( "Logit" ),
+Run()
+);
+
+```
+
+**Spatial Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hessian Fly.jmp" );
+fm = Fit Model(
+Y( :Y, :N ),
+Effects( :Entry ),
+Personality( "Generalized Linear Mixed Model" ),
+Repeated Effects( :Latitude, :Longitude ),
+Repeated Structure( "Spatial" ),
+Repeated Structure Type( "Exponential" ),
+Generalized Distribution( "Binomial" ),
+Link Function( "Logit" ),
+Run()
+);
+
+```
+
+**Split Plot Model**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Time to Flower.jmp" );
+fm = dt << Fit Model(
+Y( :Days ),
+Effects( :A, :B, :A * :B ),
+Random Effects( :Block, :Block * :A ),
+NoBounds( 1 ),
+Personality( "Generalized Linear Mixed Model" ),
+Generalized Distribution( "Gamma" ),
+Run()
 );
 
 ```
@@ -29203,24 +29257,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -29394,22 +29430,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -29944,6 +29964,8 @@ obj = dt << Fit Model(
 
 **Description:** Saves a new column to the original data table. The new column contains the values for Cook&apos;s D Influence statistic. This option is available only if the specified Distribution is Normal and the specified Estimation Method is Standard Least Squares.
 
+**JMP Version Added:** 14
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
@@ -30016,6 +30038,8 @@ fm << (fit[1] << Covariance of Estimates);
 
 **Description:** Shows or hides a Custom Test report that enables you to test a custom hypothesis. If the model has a Solution Path, the custom test results update as you update the solution.
 
+**JMP Version Added:** 14
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
@@ -30035,8 +30059,6 @@ fm << (fit[1] << Custom Test( [0 0 0 1 -1 0], Label() ));
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Decision Threshold( state=0|1, Set Probability Threshold( number=0.5 ))
 
 **Description:** Shows or hides Decision Thresholds reports for the Training, Validation, and Test sets, if specified. Each report contains a graph of the distribution of fitted probabilities for each model, confusion matrices for each model, and classification graphs to compare the model fits. This option is available only for binary categorical responses.
-
-**JMP Version Added:** 17
 
 ```jsl
 
@@ -30173,6 +30195,8 @@ fm << (fit[1] << Get Prediction Formula);
 **Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Hats)
 
 **Description:** Saves a new column to the original data table. The new column contains the diagonal elements of the hat matrix, which are sometimes called hat values. This option is available only if the specified Distribution is Normal and the specified Estimation Method is Standard Least Squares.
+
+**JMP Version Added:** 14
 
 ```jsl
 
@@ -31259,8 +31283,6 @@ fm << (fit[1] << Save Residual Formula);
 
 **Description:** Saves a new formula column to the original data table. The new column contains a formula that generates simulated values using the estimated parameters for the model that you fit. This column can be used in the Simulate utility as a Column to Switch In.
 
-**JMP Version Added:** 16
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
@@ -32316,24 +32338,6 @@ dt << Distribution(
 
 ```
 
-#### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 #### New Preset
 
 **Syntax:** obj = New Preset()
@@ -32523,22 +32527,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

@@ -269,7 +269,7 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 **Syntax:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
-**Description:** How wide the dendrogram frame is for the clustering of rows. "min(max(256,n*3),500)" by default.
+**Description:** How wide the dendrogram frame is for the clustering of rows. "min(max(256,n\*3),500)" by default.
 
 #### Distance Graph
 

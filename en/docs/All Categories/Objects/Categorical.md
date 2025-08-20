@@ -10,10 +10,107 @@
 
 **Description:** Summarizes and analyzes categorical response data. Data can be simple responses, multiple responses, repeated measures, rater agreement, aligned responses, or free text. Includes the ability to generate custom cross tabulations of responses.
 
+#### One response by two factors nested
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
 obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+```
+
+#### Aligned responses
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+Empty(),
+Empty(),
+Aligned Responses(
+:I am working on my career, :I want to see the world,
+:My home needs some major improvements, :I have vast interests outside of work,
+:I want to get my debt under control, :I come from a large family
+)
+)
+);
+
+```
+
+#### Multiple response with nested groups
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );
+Categorical( X( :clean, :date ), Multiple Response( :Failure1, :Failure2, :Failure3 ) );
+
+```
+
+#### Multiple response, structured
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical( Structured( :Gender, :Brush Delimited + :Floss Delimited ) );
+
+```
+
+#### Nested within individual factors
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+:Single Status * :Gender + :School Age Children * :Gender,
+:I am working on my career + :I want to see the world
+)
+);
+
+```
+
+#### Rater agreement
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Attribute Gauge.jmp" );
+Categorical( Rater Agreement( :A, :B, :C ) );
+
+```
+
+#### Repeated measures
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Presidential Elections.jmp" );
+Categorical(
+Repeated Measures(
+:"1980 Winner"n, :"1984 Winner"n, :"1988 Winner"n, :"1992 Winner"n, :"1996 Winner"n,
+:"2000 Winner"n, :"2004 Winner"n, :"2008 Winner"n, :"2012 Winner"n
+)
+);
+
+```
+
+#### Three responses by two factors individually, structured
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured(
+:I am working on my career + :I want to see the world,
+:Gender + :Single Status + :Age Group
+)
+);
 
 ```
 
@@ -596,6 +693,109 @@ obj << Hide Nonsignificant( 1 );
 
 **Description:** Highlights the cells that satisfy the specified conditions.
 
+#### Highlight by Category
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),
+Mean Score( 1 ),
+Highlight Cells( Share >= 0.5, Color( "Magenta" ), Category( "30-34" ) ),
+Highlight Cells( Share >= 0.46, Color( "Green" ), Category( "5 to 10 years" ) ),
+Highlight Cells( Share < 0.5, Color( "Blue" ), Category( "Agree" ) ),
+Highlight Cells( Mean Score <= 2, Color( "Yellow" ), Category( "25-29" ) )
+);
+
+```
+
+#### Highlight by Column
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),
+Mean Score( 1 ),
+Highlight Cells( Share >= 0.5, Column( :Age Group ) ),
+Highlight Cells( Share >= 0.46, Color( "Fuchsia" ), Column( :Brush ) )
+);
+
+```
+
+#### Highlight by Highest and Lowest in Table
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+Categorical(
+ID( :ID ),
+X( :clean, :date ),
+Multiple Delimited( :failures ),
+Share Chart( 1 ),
+Highlight Cells( Highest in Table( Freq ), Color( "Green" ) ),
+Highlight Cells( Lowest in Table( Freq ), Color( "Purple" ) )
+);
+
+```
+
+#### Highlight by Highest Response and Highest Sample
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+obj = dt << Categorical(
+Multiple Delimited( :failures ),
+ID( :ID ),
+X( :clean, :date ),
+Highlight Cells( Highest Response( Share ), Color( "Green" ) ),
+Highlight Cells( Highest Sample( Share ), Color( "Purple" ) )
+);
+
+```
+
+#### Highlight by Lowest Response and Lowest Sample
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+obj = dt << Categorical(
+Multiple Delimited( :failures ),
+ID( :ID ),
+X( :clean, :date ),
+Highlight Cells( Lowest Response( Share ), Color( "Green" ) ),
+Highlight Cells( Lowest Sample( Share ), Color( "Purple" ) )
+);
+
+```
+
+#### Highlight by Mean Score and Share
+
+```jsl
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+X( :Gender, :Age Group ),
+Responses( :Job Satisfaction ),
+Responses( :I am working on my career ),
+Mean Score( 1 ),
+Mean Std Error( 1 ),
+Mean Confidence Interval( 1 ),
+Std Dev Score( 1 ),
+Share Chart( 0 ),
+Highlight Cells( Mean Score > 2.3, Color( "Blue" ) ),
+Highlight Cells( Share >= 0.6, Color( "Cyan" ) ),
+Highlight Cells( Share > 0.7, Color( "Green" ) )
+);
+
+```
+
 ### Homogeneity Test
 
 **Syntax:** obj &lt;&lt; Homogeneity Test( state=0|1 )
@@ -1052,8 +1252,6 @@ obj << Save Contingency Table;
 **Syntax:** obj &lt;&lt; Save DocX File
 
 **Description:** Undocumented and Experimental Feature
-
-**JMP Version Added:** 19
 
 ### Save Excel File
 
@@ -1985,24 +2183,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -2142,22 +2322,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 

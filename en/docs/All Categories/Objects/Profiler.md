@@ -673,8 +673,6 @@ obj << Desirability Functions( 1 );
 
 **Description:** Adds, changes, or deletes linear constraints.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
@@ -940,8 +938,6 @@ obj << Graph Spacing( 20 );
 
 **Description:** Hides or unhides the row of desirability profiles.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
@@ -1090,8 +1086,6 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 **Description:** Loads linear constraints from a data table.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 
@@ -1120,8 +1114,6 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 **Syntax:** obj &lt;&lt; Log Iterations( state=0|1 )
 
 **Description:** Creates a new data table that contains iterations of the optimization algorithm.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -1703,8 +1695,6 @@ obj << Profiler( Save Bagged Predictions( 10 ) );
 
 **Description:** Saves existing linear constraints to a table script called Constraint.
 
-**JMP Version Added:** 19
-
 ```jsl
 
 dtlc = New Table( "Linear Constraints",
@@ -1732,8 +1722,6 @@ obj << Save Constraints to Script;
 **Syntax:** obj &lt;&lt; Save Constraints to Table
 
 **Description:** Saves existing linear constraints to a new data table.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -2618,24 +2606,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -2749,22 +2719,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -3186,6 +3140,33 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```
 
+#### Error StdDev
+
+**Syntax:** obj &lt;&lt; Error StdDev( Set Error StdDev(colume name(value),...) )
+
+**Description:** Sets the standard deviation used to simulate the error for the responses.
+
+```jsl
+
+
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
+New Column( "Pred Formula Yield",
+	Numeric,
+	Continuous,
+	Formula(
+		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
+		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
+		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
+	),
+	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
+	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
+);
+obj = Profiler( Y( :Pred Formula Yield ) );
+obj2 = obj << Design Space Profiler( 1 );
+obj2 << Error StdDev( Pred Formula Yield( 2.0 ) );
+
+```
+
 #### Get Midpoints from Profiler
 
 **Syntax:** obj &lt;&lt; Get Midpoints from Profiler( fraction )
@@ -3218,8 +3199,6 @@ obj2 << Get Midpoints from Profiler( 0.5 );
 **Syntax:** obj &lt;&lt; Lock( Lock(colume name(lock_value),...) )
 
 **Description:** Locks the continuous factor at the specified value. This lock is temporary.
-
-**JMP Version Added:** 19
 
 ```jsl
 
@@ -3578,8 +3557,6 @@ obj2 << Show Current Profiler Values( 1 );
 **Syntax:** obj &lt;&lt; Show Impact Ratios( state=0|1 )
 
 **Description:** Shows or hides the impact ratios. These ratios show how sensitive changes in each factor, from midpoint to each limit, affect how far the predictions are from their specification limits.
-
-**JMP Version Added:** 19
 
 ```jsl
 

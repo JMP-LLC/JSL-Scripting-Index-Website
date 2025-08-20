@@ -870,7 +870,7 @@ nsbb << Delete;
 
 **Syntax:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
-**Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
+**Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\\/#@&~()[]<>"\*`%$+=^|{} and some common Unicode punctuation.
 
 **JMP Version Added:** 15
 
@@ -1244,25 +1244,6 @@ Define Class(
 cl = New Object( complex( 1, 2 ) );
 cl << Delete;
 Delete Classes( "complex" );
-
-```
-
-### Mimic
-
-**Syntax:** mimic obj = Mimic(Box|PlatformRef)
-
-**Description:** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :age ) );
-outline = Report( obj )[Outline Box( 1 )];
-mc = Mimic( obj );
-mc << Mark( outline );
-mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 ```
 

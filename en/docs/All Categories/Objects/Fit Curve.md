@@ -1562,24 +1562,6 @@ dt << Distribution(
 
 ```
 
-### New JSL Preset
-
-**Syntax:** New JSL Preset( preset )
-
-**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
-
 ### New Preset
 
 **Syntax:** obj = New Preset()
@@ -1723,22 +1705,6 @@ dist = dt << Distribution(
 );
 Wait( 2 );
 dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntax:** Render Preset( preset )
-
-**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version Added:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ```
 
@@ -2117,6 +2083,8 @@ New Window( "Bivariate Equation",
 
 **Description:** Sets the alpha level that is used to compute the confidence intervals on the equivalence chart.
 
+**JMP Version Added:** 16
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
@@ -2161,6 +2129,8 @@ obj << Fit Logistic 4P(
 
 **Description:** Shows or hides the center line on the equivalence chart. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
@@ -2181,6 +2151,8 @@ obj << Fit Logistic 4P(
 **Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 ))))
 
 **Description:** Shows or hides the decision limit shading on the equivalence chart. On by default.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -2203,6 +2175,8 @@ obj << Fit Logistic 4P(
 
 **Description:** Shows or hides the decision limit lines on the equivalence chart. On by default.
 
+**JMP Version Added:** 16
+
 ```jsl
 
 dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
@@ -2223,6 +2197,8 @@ obj << Fit Logistic 4P(
 **Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 ))))
 
 **Description:** Shows or hides the Equivalence Summary report that contains the parameter estimates, the decision limits, and whether the parameter exceeded the limits.
+
+**JMP Version Added:** 16
 
 ```jsl
 
@@ -2381,6 +2357,8 @@ scrobj << Generalized Regression for Model Parameters( 0 );
 **Syntax:** scrobj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves a new formula column to the original data table. The new column contains the prediction formula for the response.
+
+**JMP Version Added:** 16
 
 ```jsl
 
