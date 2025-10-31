@@ -22,7 +22,11 @@ extra_javascript:
   - js/tippy.js
   - js/extra.js
   - js/clipboard.js
-
+markdown_extensions:
+    - toc:
+        permalink: 
+        permalink_title: "Click to copy url"
+        anchorlink: true
 plugins:
   - search:
       prebuild_index: true
