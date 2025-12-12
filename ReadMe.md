@@ -10,27 +10,29 @@ Because the menu can only be accessed within the JMP desktop product, it can lea
 
 ## To Run This Locally 
 
-1. Clone the Repository.
-2. Choose a Run Platform.
+1. Clone the Repository.  
+2. Choose a Run Platform.  
 
 ### Run with Python 
 Run the following commands: 
-    a. Install the MK Docs Package
-    ```
-    pip install mkdocs
-    ```
-    b. Navigate to the correct language directory you would like to build
-    ```
-    cd en 
-    ```
-    c. To Build the Site
-    ```
-    mkdocs build
-    ```
-    d. To serve the site at localhost 3001
-    ```
-    mkdocs serve
-    ```
+
+* Install the MK Docs Package.  
+```
+pip install mkdocs
+```
+
+* Navigate to the correct language directory you would like to build.  
+```
+cd en 
+```
+* Build the Site.  
+```
+mkdocs build
+```
+* Serve the site at localhost port 3001.  
+```
+mkdocs serve
+```
 
 If your OS environment contains multiple versions python you may need to specify in the command the python version on your machine.
 Ex:
