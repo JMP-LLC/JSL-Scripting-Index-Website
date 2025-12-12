@@ -65,3 +65,20 @@ body{
 .document {
   min-height: 70vh;
 }
+/* Show URL after search result title */
+.search-results a::after {
+  font-size: 1rem;
+  color: #888;
+  font-weight: normal;
+}
+/* Style for the breadcrumb path */
+.search-result-path {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.search-result-path::before {
+  content: "📍 ";
+}

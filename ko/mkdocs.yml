@@ -24,4 +24,5 @@ extra_javascript:
   - js/clipboard.js
 plugins:
   - search:
-      prebuild_index: true
+      # prebuild_index: true
+      indexing: sections

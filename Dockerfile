@@ -7,7 +7,7 @@ WORKDIR /docs
 # Copy your MkDocs project files into the container
 # This assumes your mkdocs.yml and 'docs' directory are in the same directory as the Dockerfile
 COPY mkdocs.yml .
-COPY docs ./docs
+COPY en/docs ./docs
 
 # (Optional) If you use a specific theme like MkDocs Material or other plugins, install them
 # For MkDocs Material:
