@@ -14,13 +14,7 @@
 
 ```jsl
 
-
-If( !Check SAS Dependencies(),
-	Install SAS Dependencies();
-	Print( "Dependencies are installed" );
-,
-	Print( "Dependencies are installed" )
-);
+If( !Check SAS Dependencies(),	Install SAS Dependencies();	Print( "Dependencies are installed" );,	Print( "Dependencies are installed" ));
 
 ```
 
@@ -32,9 +26,7 @@ If( !Check SAS Dependencies(),
 
 ```jsl
 
-SAS Connect( "my sas connection" );
-sas = Current SAS Connection();
-sas << Submit( "proc print data=sashelp.class; run;" );
+SAS Connect( "my sas connection" );sas = Current SAS Connection();sas << Submit( "proc print data=sashelp.class; run;" );
 
 ```
 
@@ -46,8 +38,7 @@ sas << Submit( "proc print data=sashelp.class; run;" );
 
 ```jsl
 
-array = Current SAS Connections();
-array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
+array = Current SAS Connections();array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
 ```
 
@@ -61,11 +52,7 @@ array["my connection"] << Submit( "proc print data=sashelp.class; run;" );
 
 ```jsl
 
-
-If( !Check SAS Dependencies(),
-	Install SAS Dependencies(),
-	Print( "Dependencies are installed" )
-);
+If( !Check SAS Dependencies(),	Install SAS Dependencies(),	Print( "Dependencies are installed" ));
 
 ```
 
@@ -77,7 +64,7 @@ If( !Check SAS Dependencies(),
 
 **JMP Versión agregada:** 19
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -85,41 +72,23 @@ SAS Connect( "my sas connection" );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-
-iom_win = New Data Connector( Type( "SAS Local" ) );
-SAS Connect( iom_win );
-sas = Current SAS Connection();
-librefs = sas << Get Librefs();
-For( i = 1, i <= N Items( librefs ), i++,
-	tables = sas << Get Data Sets( librefs[i] );
-	Write( "\!n\!nLibref:" || librefs[i] );
-	Write( "\!nTables:" || Char( tables ) );
-);
-sas << Disconnect();
+iom_win = New Data Connector( Type( "SAS Local" ) );SAS Connect( iom_win );sas = Current SAS Connection();librefs = sas << Get Librefs();For( i = 1, i <= N Items( librefs ), i++,	tables = sas << Get Data Sets( librefs[i] );	Write( "\!n\!nLibref:" || librefs[i] );	Write( "\!nTables:" || Char( tables ) ););sas << Disconnect();
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-SAS Connect(
-	New Data Connector(
-		ID( "com.jmp.sas_remote" ),
-		Port( 8591 ),
-		User( "jmpuser" ),
-		Host Name( "sashost.com" )
-	),
-	Prompt( If Needed )
-);
+SAS Connect(	New Data Connector(		ID( "com.jmp.sas_remote" ),		Port( 8591 ),		User( "jmpuser" ),		Host Name( "sashost.com" )	),	Prompt( If Needed ));
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -137,11 +106,7 @@ SAS Connect( "sashost.com", 8591, Username( "jmpuser" ), Prompt( "Always" ) );
 
 ```jsl
 
-
-If( Check SAS Dependencies(),
-	Update SAS Dependencies(),
-	Print( "Dependencies are not installed" )
-);
+If( Check SAS Dependencies(),	Update SAS Dependencies(),	Print( "Dependencies are not installed" ));
 
 ```
 
@@ -159,15 +124,7 @@ If( Check SAS Dependencies(),
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit(
-	"proc print data=sashelp.class; run;",
-	NoOutputWindow( True ),
-	GetSASLog( False )
-);
-result = sas << Get Results;
-log = result << Get Log();
-Show( log );
+sas = Current SAS Connection();sas << Submit(	"proc print data=sashelp.class; run;",	NoOutputWindow( True ),	GetSASLog( False ));result = sas << Get Results;log = result << Get Log();Show( log );
 
 ```
 
@@ -181,11 +138,7 @@ Show( log );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
-result = sas << Get Results;
-out = result << Get Output();
-Show( out );
+sas = Current SAS Connection();sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );result = sas << Get Results;out = result << Get Output();Show( out );
 
 ```
 
@@ -199,17 +152,7 @@ Show( out );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit(
-	"proc corr data=sashelp.class
-    outp=pearson outs=spearman;
-    var height weight;
-    run;",
-	NoOutputWindow( True )
-);
-result = sas << Get Results;
-data = result << Get Output Datasets;
-Show( data );
+sas = Current SAS Connection();sas << Submit(	"proc corr data=sashelp.class    outp=pearson outs=spearman;    var height weight;    run;",	NoOutputWindow( True ));result = sas << Get Results;data = result << Get Output Datasets;Show( data );
 
 ```
 
@@ -227,10 +170,7 @@ Show( data );
 
 ```jsl
 
-SAS Connect( "my sas connection" );
-sas = Current SAS Connection();
-sas << Disconnect();
-sas << Connect();
+SAS Connect( "my sas connection" );sas = Current SAS Connection();sas << Disconnect();sas << Connect();
 
 ```
 
@@ -246,9 +186,7 @@ sas << Connect();
 
 ```jsl
 
-sas = Current SAS Connection();
-cas = sas << Current CAS Connection;
-Show( cas );
+sas = Current SAS Connection();cas = sas << Current CAS Connection;Show( cas );
 
 ```
 
@@ -256,10 +194,7 @@ Show( cas );
 
 ```jsl
 
-sas = Current SAS Connection();
-cas = sas << Current CAS Connection;
-connected = cas << Is Connected();
-Show( connected );
+sas = Current SAS Connection();cas = sas << Current CAS Connection;connected = cas << Is Connected();Show( connected );
 
 ```
 
@@ -275,9 +210,7 @@ Show( connected );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Data Set Exists( "SASHELP", "AIRLINE" );
-Show( result );
+sas = Current SAS Connection();result = sas << Data Set Exists( "SASHELP", "AIRLINE" );Show( result );
 
 ```
 
@@ -285,9 +218,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Data Set Exists( "SASHELP.AIRLINE" );
-Show( result );
+sas = Current SAS Connection();result = sas << Data Set Exists( "SASHELP.AIRLINE" );Show( result );
 
 ```
 
@@ -301,15 +232,13 @@ Show( result );
 
 ```jsl
 
-SAS Connect( "my sas connection" );
-sas = Current SAS Connection();
-sas << Disconnect();
+SAS Connect( "my sas connection" );sas = Current SAS Connection();sas << Disconnect();
 
 ```
 
 #### Export Data
 
-**Sintaxis:** y = sas &lt;&lt; Export Data( dt, libref, dataset, &lt;named_arguments&gt; );y = sas &lt;&lt; SAS Export Data( dt, libref.dataset, &lt;named_arguments&gt; )
+**Sintaxis:** y = sas &lt;&lt; Export Data( dt, libref, dataset, &lt;named_arguments&gt; ); y = sas &lt;&lt; SAS Export Data( dt, libref.dataset, &lt;named_arguments&gt; )
 
 **Descripción:** Exporta una tabla de datos de JMP como un conjunto de datos de SAS por la conexión activa a un servidor SAS. Algunos de los argumentos opcionales con nombre son Columns(list|col1,col2,...,coln), argumentos con valores de cadenas de caracteres Password, AlterPassword, ReadPassword y WritePassword y los argumentos con valores booleanos HonorExcludedRows, PreserveSASColumnNames, PreserveSASFormats, ReplaceExisting, ExistingAlterPassword y SaveJMPMetadata. Devuelve 1 si la exportación se ha realizado correctamente, 0 en caso contrario.
 
@@ -317,8 +246,7 @@ sas << Disconnect();
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
+sas = Current SAS Connection();sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 ```
 
@@ -332,9 +260,7 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Data Sets( "SASHELP" );
-Show( result );
+sas = Current SAS Connection();result = sas << Get Data Sets( "SASHELP" );Show( result );
 
 ```
 
@@ -348,9 +274,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Host Name();
-Show( result );
+sas = Current SAS Connection();result = sas << Get Host Name();Show( result );
 
 ```
 
@@ -364,9 +288,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Lib Refs();
-Show( result );
+sas = Current SAS Connection();result = sas << Get Lib Refs();Show( result );
 
 ```
 
@@ -380,14 +302,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit(
-	"proc print data=sashelp.class; run;",
-	NoOutputWindow( True ),
-	GetSASLog( False )
-);
-result = sas << Get Log();
-Show( result );
+sas = Current SAS Connection();sas << Submit(	"proc print data=sashelp.class; run;",	NoOutputWindow( True ),	GetSASLog( False ));result = sas << Get Log();Show( result );
 
 ```
 
@@ -401,9 +316,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Macro Var( "SYSVLONG" );
-Show( result );
+sas = Current SAS Connection();result = sas << Get Macro Var( "SYSVLONG" );Show( result );
 
 ```
 
@@ -417,9 +330,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Macro Var Names();
-Show( result );
+sas = Current SAS Connection();result = sas << Get Macro Var Names();Show( result );
 
 ```
 
@@ -433,9 +344,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Option Names();
-Show( result );
+sas = Current SAS Connection();result = sas << Get Option Names();Show( result );
 
 ```
 
@@ -449,9 +358,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Option Value( "MEMLIB" );
-Show( result );
+sas = Current SAS Connection();result = sas << Get Option Value( "MEMLIB" );Show( result );
 
 ```
 
@@ -465,10 +372,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );
-result = sas << Get Output();
-Show( result );
+sas = Current SAS Connection();sas << Submit( "proc print data=sashelp.class; run;", NoOutputWindow( True ) );result = sas << Get Output();Show( result );
 
 ```
 
@@ -482,10 +386,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit( "proc print data=sashelp.class; run;" );
-result = sas << Get Results();
-Show( result );
+sas = Current SAS Connection();sas << Submit( "proc print data=sashelp.class; run;" );result = sas << Get Results();Show( result );
 
 ```
 
@@ -499,16 +400,13 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit( "proc print data=sashelp.class; run;" );
-result = sas << Get Submit Status;
-Show( result );
+sas = Current SAS Connection();sas << Submit( "proc print data=sashelp.class; run;" );result = sas << Get Submit Status;Show( result );
 
 ```
 
 #### Get Var Info
 
-**Sintaxis:** result = sas &lt;&lt; Get Var Info( libref, dataset );result = sas &lt;&lt; Get Var Info( libref.dataset )
+**Sintaxis:** result = sas &lt;&lt; Get Var Info( libref, dataset ); result = sas &lt;&lt; Get Var Info( libref.dataset )
 
 **Descripción:** Obtiene información sobre las variables de un conjunto de datos de SAS.
 
@@ -516,15 +414,13 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Var Info( "SASHELP", "CLASS" );
-Show( result );
+sas = Current SAS Connection();result = sas << Get Var Info( "SASHELP", "CLASS" );Show( result );
 
 ```
 
 #### Get Var Names
 
-**Sintaxis:** result = sas &lt;&lt; Get Var Names( libref, dataset );result = sas &lt;&lt; SAS Get Var Names( libref.dataset )
+**Sintaxis:** result = sas &lt;&lt; Get Var Names( libref, dataset ); result = sas &lt;&lt; SAS Get Var Names( libref.dataset )
 
 **Descripción:** Recupera los nombres de las variables incluidas en el conjunto de datos especificado desde la conexión activa del servidor SAS.
 
@@ -532,9 +428,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Var Names( "SASHELP", "CLASS" );
-Show( result );
+sas = Current SAS Connection();result = sas << Get Var Names( "SASHELP", "CLASS" );Show( result );
 
 ```
 
@@ -548,9 +442,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Version;
-Show( result );
+sas = Current SAS Connection();result = sas << Get Version;Show( result );
 
 ```
 
@@ -564,15 +456,13 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-result = sas << Get Work Folder;
-Show( result );
+sas = Current SAS Connection();result = sas << Get Work Folder;Show( result );
 
 ```
 
 #### Import Data
 
-**Sintaxis:** dt = sas &lt;&lt; Import Data( libref, dataset, &lt;named_arguments&gt; );dt = sas &lt;&lt; Import Data( libref.dataset|path, &lt;named_arguments&gt; )
+**Sintaxis:** dt = sas &lt;&lt; Import Data( libref, dataset, &lt;named_arguments&gt; ); dt = sas &lt;&lt; Import Data( libref.dataset|path, &lt;named_arguments&gt; )
 
 **Descripción:** Importa un conjunto de datos de SAS desde la conexión activa a un servidor SAS a una tabla de datos de JMP. Algunos de los argumentos opcionales con nombre son Sample(<named_arguments>), Columns(list|col1,col2,...,coln), argumentos con valores de cadena de caracteres Where y los argumentos con valores booleanos ConvertCustomFormats, Invisible, UseLabelsForVarNames y SQLTableVariable. Devuelve un objeto de tabla de datos de JMP.
 
@@ -580,8 +470,7 @@ Show( result );
 
 ```jsl
 
-sas = Current SAS Connection();
-dt = sas << Import Data( "SASHELP.CLASS" );
+sas = Current SAS Connection();dt = sas << Import Data( "SASHELP.CLASS" );
 
 ```
 
@@ -595,15 +484,7 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 ```jsl
 
-sas = Current SAS Connection();
-datasets = sas << List Output Datasets(
-	"\[
-proc means data=sashelp.class;
-    var age height weight;
-run;
-]\"
-);
-Show( datasets );
+sas = Current SAS Connection();datasets = sas << List Output Datasets(	"\[proc means data=sashelp.class;    var age height weight;run;]\");Show( datasets );
 
 ```
 
@@ -617,9 +498,7 @@ Show( datasets );
 
 ```jsl
 
-sas = Current SAS Connection();
-serverName = sas << Name;
-Show( serverName );
+sas = Current SAS Connection();serverName = sas << Name;Show( serverName );
 
 ```
 
@@ -633,13 +512,7 @@ Show( serverName );
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit(
-	"proc reg data=sashelp.class; model height=weight; output out=result_height_weight residual=res; run; quit;",
-	ODSStyle( "default" ),
-	OpenODSResults( true ),
-	OpenOutputDatasets( All )
-);
+sas = Current SAS Connection();sas << Submit(	"proc reg data=sashelp.class; model height=weight; output out=result_height_weight residual=res; run; quit;",	ODSStyle( "default" ),	OpenODSResults( true ),	OpenOutputDatasets( All ));
 
 ```
 
@@ -653,8 +526,7 @@ sas << Submit(
 
 ```jsl
 
-sas = Current SAS Connection();
-sas << Submit File( "MySASProgram.sas" );
+sas = Current SAS Connection();sas << Submit File( "MySASProgram.sas" );
 
 ```
 

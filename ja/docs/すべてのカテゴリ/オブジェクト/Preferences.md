@@ -12,16 +12,7 @@
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Set Preference(
-	Add Color Theme(
-		{"Sunny", {{255, 255, 0}, {255, 128, 64}, {255, 0, 0}, {163, 12, 27}}, {0, 0.5,
-		0.642857142857143, 1}}
-	)
-);
-Show( Get Color Theme Detail( "Sunny" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Set Preference(	Add Color Theme(		{"Sunny", {{255, 255, 0}, {255, 128, 64}, {255, 0, 0}, {163, 12, 27}}, {0, 0.5,		0.642857142857143, 1}}	));Show( Get Color Theme Detail( "Sunny" ) );
 
 ```
 
@@ -49,10 +40,7 @@ Show( Get Color Theme Detail( "Sunny" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Add files opened by scripts to the Recent Files list( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Add files opened by scripts to the Recent Files list( 1 ) );
 
 ```
 
@@ -66,10 +54,7 @@ Preferences[1] << Set( Add files opened by scripts to the Recent Files list( 1 )
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Allow 16 Bit List Check Compression( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Allow 16 Bit List Check Compression( 1 ) );
 
 ```
 
@@ -95,10 +80,7 @@ Preferences[1] << Set( Allow 16 Bit List Check Compression( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Allow mixed ISO format patterns( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Allow mixed ISO format patterns( 1 ) );
 
 ```
 
@@ -110,12 +92,17 @@ Preferences[1] << Set( Allow mixed ISO format patterns( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Allow short numeric data format( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Allow short numeric data format( 1 ) );
 
 ```
+
+### Always allow publishing to JMP Public
+
+**構文:** obj &lt;&lt; Always allow publishing to JMP Public( state=0|1 )
+
+**説明:** 他のJMP Live接続が設定されている場合も含め、JMP Publicへの発行のメニュー項目を常に表示する。
+
+**JMP追加されたバージョン:** 19
 
 ### Auto Hide Menus
 
@@ -125,10 +112,7 @@ Preferences[1] << Set( Allow short numeric data format( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Auto Hide Menus( "Always" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Auto Hide Menus( "Always" ) );
 
 ```
 
@@ -140,10 +124,7 @@ Preferences[1] << Set( Auto Hide Menus( "Always" ) );
 
 ```jsl
 
-//Caution: Changing a preference will affect 
-//the default behavior of JMP. 
-
-Preferences[1] << Set( Auto Run Recent JSL( 1 ) );
+//Caution: Changing a preference will affect //the default behavior of JMP. Preferences[1] << Set( Auto Run Recent JSL( 1 ) );
 
 ```
 
@@ -155,10 +136,7 @@ Preferences[1] << Set( Auto Run Recent JSL( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will affect 
-//the default behavior of JMP. 
-
-Preferences[1] << Set( Auto match brackets in script editor( 1 ) );
+//Caution: Changing a preference will affect //the default behavior of JMP. Preferences[1] << Set( Auto match brackets in script editor( 1 ) );
 
 ```
 
@@ -170,10 +148,7 @@ Preferences[1] << Set( Auto match brackets in script editor( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Autosave Maximum Data Table Columns( 1000 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Autosave Maximum Data Table Columns( 1000 ) );
 
 ```
 
@@ -185,10 +160,7 @@ Preferences[1] << Set( Autosave Maximum Data Table Columns( 1000 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Autosave Maximum Data Table Rows( 10000 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Autosave Maximum Data Table Rows( 10000 ) );
 
 ```
 
@@ -200,10 +172,7 @@ Preferences[1] << Set( Autosave Maximum Data Table Rows( 10000 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Autosave Timeout( 15 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Autosave Timeout( 15 ) );
 
 ```
 
@@ -215,10 +184,7 @@ Preferences[1] << Set( Autosave Timeout( 15 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Axis Title Above( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Axis Title Above( 1 ) );
 
 ```
 
@@ -230,10 +196,7 @@ Preferences[1] << Set( Axis Title Above( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Background Color( "Light Blue" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Background Color( "Light Blue" ) );
 
 ```
 
@@ -247,12 +210,7 @@ Preferences[1] << Set( Background Color( "Light Blue" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Show( Get Preference( Continuous Color Theme ) );
-Set Preference( Bad to Good Color Theme( "Green to Purple" ) );
-Show( Get Preference( Bad to Good Color Theme ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Show( Get Preference( Continuous Color Theme ) );Set Preference( Bad to Good Color Theme( "Green to Purple" ) );Show( Get Preference( Bad to Good Color Theme ) );
 
 ```
 
@@ -264,10 +222,7 @@ Show( Get Preference( Bad to Good Color Theme ) );
 
 ```jsl
 
-//Caution: Changing a preference will
-//affect the default behavior of JMP.
-
-Preferences[1] << Set( Box Plot Line Width( 2 ) );
+//Caution: Changing a preference will//affect the default behavior of JMP.Preferences[1] << Set( Box Plot Line Width( 2 ) );
 
 ```
 
@@ -281,10 +236,7 @@ Preferences[1] << Set( Box Plot Line Width( 2 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Bypass Proxy( "www.example.com" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Bypass Proxy( "www.example.com" ) );
 
 ```
 
@@ -296,12 +248,7 @@ Preferences[1] << Set( Bypass Proxy( "www.example.com" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Show( Get Preference( Categorical Color Theme ) );
-Set Preference( Categorical Color Theme( "Jet" ) );
-Show( Get Preference( Categorical Color Theme ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Show( Get Preference( Categorical Color Theme ) );Set Preference( Categorical Color Theme( "Jet" ) );Show( Get Preference( Categorical Color Theme ) );
 
 ```
 
@@ -323,10 +270,7 @@ Show( Get Preference( Categorical Color Theme ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Classic Data Table Selection( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Classic Data Table Selection( 1 ) );
 
 ```
 
@@ -338,10 +282,7 @@ Preferences[1] << Set( Classic Data Table Selection( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will affect 
-//the default behavior of JMP. 
-
-Preferences[1] << Set( Color Mode( Dark ) );
+//Caution: Changing a preference will affect //the default behavior of JMP. Preferences[1] << Set( Color Mode( Dark ) );
 
 ```
 
@@ -359,26 +300,7 @@ Preferences[1] << Set( Color Mode( Dark ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences(
-	Conditional Formatting Rules(
-		RuleSet(
-			RuleName( "My Special Rule" ),
-			GreaterThan(
-				Value( 0 ),
-				Inclusive( 0 ),
-				Format(
-					Text Color( "Medium Dark Red" ),
-					Back Color( "Light Yellow" ),
-					Annotation( 1 ),
-					FontStyle( Bold )
-				)
-			)
-		)
-	)
-);
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences(	Conditional Formatting Rules(		RuleSet(			RuleName( "My Special Rule" ),			GreaterThan(				Value( 0 ),				Inclusive( 0 ),				Format(					Text Color( "Medium Dark Red" ),					Back Color( "Light Yellow" ),					Annotation( 1 ),					FontStyle( Bold )				)			)		)	));
 
 ```
 
@@ -390,12 +312,7 @@ Preferences(
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Show( Get Preference( Continuous Color Theme ) );
-Set Preference( Continuous Color Theme( "Green to Purple" ) );
-Show( Get Preference( Continuous Color Theme ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Show( Get Preference( Continuous Color Theme ) );Set Preference( Continuous Color Theme( "Green to Purple" ) );Show( Get Preference( Continuous Color Theme ) );
 
 ```
 
@@ -415,41 +332,27 @@ Show( Get Preference( Continuous Color Theme ) );
 
 **JMP追加されたバージョン:** 16
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Custom Locale Settings( Decimal Separator( "," ) ) );
-Print( Format( 1.25, "Best" ) );
-Preferences( Custom Locale Settings( Decimal Separator( "." ) ) );
-Print( Format( 1.25, "Best" ) );
-Preferences( Custom Locale Settings( Decimal Separator() ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Custom Locale Settings( Decimal Separator( "," ) ) );Print( Format( 1.25, "Best" ) );Preferences( Custom Locale Settings( Decimal Separator( "." ) ) );Print( Format( 1.25, "Best" ) );Preferences( Custom Locale Settings( Decimal Separator() ) );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-// Clear all locale overrides...
-Preferences( Custom Locale Settings( Reset to Defaults ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. // Clear all locale overrides...Preferences( Custom Locale Settings( Reset to Defaults ) );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Get Preferences( Custom Locale Settings );
+//Caution: Changing a preference will //affect the default behavior of JMP. Get Preferences( Custom Locale Settings );
 
 ```
 
@@ -499,10 +402,7 @@ Get Preferences( Custom Locale Settings );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Data Table Actions( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Data Table Actions( 1 ) );
 
 ```
 
@@ -514,10 +414,7 @@ Preferences[1] << Set( Data Table Actions( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Data Table Title on Output( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Data Table Title on Output( 1 ) );
 
 ```
 
@@ -529,10 +426,7 @@ Preferences[1] << Set( Data Table Title on Output( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Date Title on Output( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Date Title on Output( 1 ) );
 
 ```
 
@@ -544,10 +438,7 @@ Preferences[1] << Set( Date Title on Output( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Default Field Width( 16 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Default Field Width( 16 ) );
 
 ```
 
@@ -597,10 +488,7 @@ Preferences( Default Field Width( 16 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "Display JSL SAS results as HTML"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "Display JSL SAS results as HTML"n( 1 ) );
 
 ```
 
@@ -612,10 +500,7 @@ Preferences[1] << Set( "Display JSL SAS results as HTML"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Display indexes in English( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Display indexes in English( 1 ) );
 
 ```
 
@@ -629,10 +514,7 @@ Preferences[1] << Set( Display indexes in English( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Double Click Opens Column Info( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Double Click Opens Column Info( 1 ) );
 
 ```
 
@@ -644,10 +526,7 @@ Preferences[1] << Set( Double Click Opens Column Info( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Create an empty project when starting JMP( "Always" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Create an empty project when starting JMP( "Always" ) );
 
 ```
 
@@ -659,10 +538,7 @@ Preferences[1] << Set( Create an empty project when starting JMP( "Always" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Emulate Zoom Mode( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Emulate Zoom Mode( 1 ) );
 
 ```
 
@@ -674,10 +550,7 @@ Preferences[1] << Set( Emulate Zoom Mode( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enable Advanced Linear Algebra Routines( 0 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enable Advanced Linear Algebra Routines( 0 ) );
 
 ```
 
@@ -699,10 +572,7 @@ Preferences[1] << Set( Enable Advanced Linear Algebra Routines( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( End Menu Item Marking After Deadline( 0 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( End Menu Item Marking After Deadline( 0 ) );
 
 ```
 
@@ -714,10 +584,7 @@ Preferences[1] << Set( End Menu Item Marking After Deadline( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Shade Alternate Table Rows( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Shade Alternate Table Rows( 1 ) );
 
 ```
 
@@ -729,10 +596,7 @@ Preferences[1] << Set( Enhanced Log Shade Alternate Table Rows( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Color By Window( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Color By Window( 1 ) );
 
 ```
 
@@ -744,12 +608,7 @@ Preferences[1] << Set( Enhanced Log Color By Window( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Show( Get Preference( Enhanced Log Color By Window Color Theme ) );
-Set Preference( Enhanced Log Color By Window Color Theme( "Jet" ) );
-Show( Get Preference( Enhanced Log Color By Window Color Theme ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Show( Get Preference( Enhanced Log Color By Window Color Theme ) );Set Preference( Enhanced Log Color By Window Color Theme( "Jet" ) );Show( Get Preference( Enhanced Log Color By Window Color Theme ) );
 
 ```
 
@@ -761,10 +620,7 @@ Show( Get Preference( Enhanced Log Color By Window Color Theme ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Action( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Action( 1 ) );
 
 ```
 
@@ -776,10 +632,7 @@ Preferences[1] << Set( Enhanced Log Filter Action( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Error( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Error( 1 ) );
 
 ```
 
@@ -791,10 +644,7 @@ Preferences[1] << Set( Enhanced Log Filter Error( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Log( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Log( 1 ) );
 
 ```
 
@@ -806,10 +656,7 @@ Preferences[1] << Set( Enhanced Log Filter Log( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Result( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Result( 1 ) );
 
 ```
 
@@ -821,10 +668,7 @@ Preferences[1] << Set( Enhanced Log Filter Result( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Script( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Script( 1 ) );
 
 ```
 
@@ -836,10 +680,7 @@ Preferences[1] << Set( Enhanced Log Filter Script( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Filter Warn( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Filter Warn( 1 ) );
 
 ```
 
@@ -851,10 +692,7 @@ Preferences[1] << Set( Enhanced Log Filter Warn( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Origin Column( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Origin Column( 1 ) );
 
 ```
 
@@ -866,10 +704,7 @@ Preferences[1] << Set( Enhanced Log Origin Column( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Result Column( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Result Column( 1 ) );
 
 ```
 
@@ -881,10 +716,7 @@ Preferences[1] << Set( Enhanced Log Result Column( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Shade Table Cells( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Shade Table Cells( 1 ) );
 
 ```
 
@@ -896,10 +728,7 @@ Preferences[1] << Set( Enhanced Log Shade Table Cells( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Shade Table Headings( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Shade Table Headings( 1 ) );
 
 ```
 
@@ -911,10 +740,7 @@ Preferences[1] << Set( Enhanced Log Shade Table Headings( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Table Column Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Table Column Borders( 1 ) );
 
 ```
 
@@ -926,10 +752,7 @@ Preferences[1] << Set( Enhanced Log Table Column Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Table Heading Column Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Table Heading Column Borders( 1 ) );
 
 ```
 
@@ -941,10 +764,7 @@ Preferences[1] << Set( Enhanced Log Table Heading Column Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Table Row Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Table Row Borders( 1 ) );
 
 ```
 
@@ -956,10 +776,7 @@ Preferences[1] << Set( Enhanced Log Table Row Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Timestamp Column( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Timestamp Column( 1 ) );
 
 ```
 
@@ -971,10 +788,7 @@ Preferences[1] << Set( Enhanced Log Timestamp Column( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enhanced Log Underline Table Headings( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enhanced Log Underline Table Headings( 1 ) );
 
 ```
 
@@ -986,10 +800,7 @@ Preferences[1] << Set( Enhanced Log Underline Table Headings( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Enter Key moves down( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Enter Key moves down( 1 ) );
 
 ```
 
@@ -1001,10 +812,7 @@ Preferences[1] << Set( Enter Key moves down( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Evaluate OnOpen Scripts( "Prompt" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Evaluate OnOpen Scripts( "Prompt" ) );
 
 ```
 
@@ -1020,10 +828,7 @@ Preferences[1] << Set( Evaluate OnOpen Scripts( "Prompt" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Fast Marker Threshold( 100000 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Fast Marker Threshold( 100000 ) );
 
 ```
 
@@ -1035,10 +840,7 @@ Preferences[1] << Set( Fast Marker Threshold( 100000 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Fill Hollow Markers( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Fill Hollow Markers( 1 ) );
 
 ```
 
@@ -1050,10 +852,7 @@ Preferences[1] << Set( Fill Hollow Markers( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Fill Selection Color( "Red" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Fill Selection Color( "Red" ) );
 
 ```
 
@@ -1067,10 +866,7 @@ Preferences[1] << Set( Fill Selection Color( "Red" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Fill Selection Fade( 50 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Fill Selection Fade( 50 ) );
 
 ```
 
@@ -1082,10 +878,7 @@ Preferences[1] << Set( Fill Selection Fade( 50 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Fill Selection Mode( "Selected Patterned" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Fill Selection Mode( "Selected Patterned" ) );
 
 ```
 
@@ -1099,10 +892,7 @@ Preferences[1] << Set( Fill Selection Mode( "Selected Patterned" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Formula Evaluation( "Immediate" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Formula Evaluation( "Immediate" ) );
 
 ```
 
@@ -1114,10 +904,7 @@ Preferences[1] << Set( Formula Evaluation( "Immediate" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Frame Border( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Frame Border( 1 ) );
 
 ```
 
@@ -1129,10 +916,7 @@ Preferences[1] << Set( Frame Border( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Frame Color( "Green" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Frame Color( "Green" ) );
 
 ```
 
@@ -1144,8 +928,7 @@ Preferences[1] << Set( Frame Color( "Green" ) );
 
 ```jsl
 
-a = Preferences[1] << Get( Show the Tip of the Day at startup );
-Show( a );
+a = Preferences[1] << Get( Show the Tip of the Day at startup );Show( a );
 
 ```
 
@@ -1157,8 +940,7 @@ Show( a );
 
 ```jsl
 
-a = Preferences[1] << Get Script;
-Show( a );
+a = Preferences[1] << Get Script;Show( a );
 
 ```
 
@@ -1170,10 +952,7 @@ Show( a );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Background Color( "Light Green" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Background Color( "Light Green" ) );
 
 ```
 
@@ -1185,10 +964,7 @@ Preferences[1] << Set( Graph Background Color( "Light Green" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Border( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Border( 1 ) );
 
 ```
 
@@ -1200,10 +976,7 @@ Preferences[1] << Set( Graph Border( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Height( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Height( 1 ) );
 
 ```
 
@@ -1215,10 +988,7 @@ Preferences[1] << Set( Graph Height( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Marker( "Diamond" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Marker( "Diamond" ) );
 
 ```
 
@@ -1230,10 +1000,7 @@ Preferences[1] << Set( Graph Marker( "Diamond" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Marker Theme( "Classic" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Marker Theme( "Classic" ) );
 
 ```
 
@@ -1245,10 +1012,7 @@ Preferences[1] << Set( Graph Marker Theme( "Classic" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Marker Unselected Fade( 45 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Marker Unselected Fade( 45 ) );
 
 ```
 
@@ -1260,10 +1024,7 @@ Preferences[1] << Set( Graph Marker Unselected Fade( 45 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Graph Marker size( "Large" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Graph Marker size( "Large" ) );
 
 ```
 
@@ -1283,11 +1044,7 @@ Preferences[1] << Set( Graph Marker size( "Large" ) );
 
 ```jsl
 
-//Caution: Changing a preference will
-//affect the default behavior of JMP.
-Show( Get Preference( Header summary heat map color theme ) );
-Set Preference( Header summary heat map color theme( "Green to Purple" ) );
-Show( Get Preference( Header summary heat map color theme ) );
+//Caution: Changing a preference will//affect the default behavior of JMP.Show( Get Preference( Header summary heat map color theme ) );Set Preference( Header summary heat map color theme( "Green to Purple" ) );Show( Get Preference( Header summary heat map color theme ) );
 
 ```
 
@@ -1299,10 +1056,7 @@ Show( Get Preference( Header summary heat map color theme ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "Hide 'Find and Replace' window"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "Hide 'Find and Replace' window"n( 1 ) );
 
 ```
 
@@ -1318,10 +1072,7 @@ Preferences[1] << Set( "Hide 'Find and Replace' window"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Hide Overlap Labels( 0 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Hide Overlap Labels( 0 ) );
 
 ```
 
@@ -1333,10 +1084,7 @@ Preferences[1] << Set( Hide Overlap Labels( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Histogram Color( "Light Yellow" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Histogram Color( "Light Yellow" ) );
 
 ```
 
@@ -1350,10 +1098,7 @@ Preferences[1] << Set( Histogram Color( "Light Yellow" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
- 
-Preferences[1] << Set( Histogram Line Color( "Red" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP.  Preferences[1] << Set( Histogram Line Color( "Red" ) );
 
 ```
 
@@ -1365,10 +1110,7 @@ Preferences[1] << Set( Histogram Line Color( "Red" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Hover Help( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Hover Help( 1 ) );
 
 ```
 
@@ -1390,10 +1132,7 @@ Preferences[1] << Set( Hover Help( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Initial JMP Window( "Home Window" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Initial JMP Window( "Home Window" ) );
 
 ```
 
@@ -1405,10 +1144,7 @@ Preferences[1] << Set( Initial JMP Window( "Home Window" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Initial Log Window( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Initial Log Window( 1 ) );
 
 ```
 
@@ -1420,10 +1156,7 @@ Preferences[1] << Set( Initial Log Window( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Initial Splash Window( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Initial Splash Window( 1 ) );
 
 ```
 
@@ -1435,10 +1168,7 @@ Preferences[1] << Set( Initial Splash Window( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Inside Ticks( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Inside Ticks( 1 ) );
 
 ```
 
@@ -1452,10 +1182,7 @@ Preferences[1] << Set( Inside Ticks( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Interactive HTML Color( "Light Background" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Interactive HTML Color( "Light Background" ) );
 
 ```
 
@@ -1467,10 +1194,7 @@ Preferences[1] << Set( Interactive HTML Color( "Light Background" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Internet Open Timeout( 300 /* 5 minutes */ ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Internet Open Timeout( 300 /* 5 minutes */ ) );
 
 ```
 
@@ -1484,10 +1208,7 @@ Preferences[1] << Set( Internet Open Timeout( 300 /* 5 minutes */ ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( JMP Live Timeout( 120 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( JMP Live Timeout( 120 ) );
 
 ```
 
@@ -1501,20 +1222,7 @@ Preferences[1] << Set( JMP Live Timeout( 120 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
-
-restore theme = Get Preference( JMP Theme );
-Set Preference( JMP Theme( "Traditional" ) );
-Wait( 2 );
-Set Preference( JMP Theme( "Comfortable" ) );
-Wait( 2 );
-Set Preference( JMP Theme( "JMP Live" ) );
-Wait( 2 );
-restore theme;
+//Caution: Changing a preference will //affect the default behavior of JMP. dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );restore theme = Get Preference( JMP Theme );Set Preference( JMP Theme( "Traditional" ) );Wait( 2 );Set Preference( JMP Theme( "Comfortable" ) );Wait( 2 );Set Preference( JMP Theme( "JMP Live" ) );Wait( 2 );restore theme;
 
 ```
 
@@ -1536,10 +1244,7 @@ restore theme;
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Set Preference( JSS Dir( "C:\My\Path\To\jss\" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Set Preference( JSS Dir( "C:\My\Path\To\jss\" ) );
 
 ```
 
@@ -1555,10 +1260,7 @@ Set Preference( JSS Dir( "C:\My\Path\To\jss\" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Language Switch Warning( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Language Switch Warning( 1 ) );
 
 ```
 
@@ -1570,10 +1272,7 @@ Preferences[1] << Set( Language Switch Warning( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Laser pointer( "Purple" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Laser pointer( "Purple" ) );
 
 ```
 
@@ -1585,10 +1284,7 @@ Preferences[1] << Set( Laser pointer( "Purple" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Line Width( 2 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Line Width( 2 ) );
 
 ```
 
@@ -1602,10 +1298,7 @@ Preferences[1] << Set( Line Width( 2 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Log Mode( "Text" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Log Mode( "Text" ) );
 
 ```
 
@@ -1617,10 +1310,7 @@ Preferences[1] << Set( Log Mode( "Text" ) );
 
 ```jsl
 
-//Caution: Changing a preference will affect 
-//the default behavior of JMP. 
-
-Preferences[1] << Set( Log Window Height( 200 ) );
+//Caution: Changing a preference will affect //the default behavior of JMP. Preferences[1] << Set( Log Window Height( 200 ) );
 
 ```
 
@@ -1632,10 +1322,7 @@ Preferences[1] << Set( Log Window Height( 200 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Major Grid Line Color( "Blue" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Major Grid Line Color( "Blue" ) );
 
 ```
 
@@ -1647,10 +1334,7 @@ Preferences[1] << Set( Major Grid Line Color( "Blue" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Major Grid Lines( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Major Grid Lines( 1 ) );
 
 ```
 
@@ -1664,10 +1348,7 @@ Preferences[1] << Set( Major Grid Lines( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Mark Items Added Since( "16" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Mark Items Added Since( "16" ) );
 
 ```
 
@@ -1679,10 +1360,7 @@ Preferences[1] << Set( Mark Items Added Since( "16" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Marker Label Color( "Blue" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Marker Label Color( "Blue" ) );
 
 ```
 
@@ -1694,10 +1372,7 @@ Preferences[1] << Set( Marker Label Color( "Blue" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Marker Label Color Style( "Marker Color" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Marker Label Color Style( "Marker Color" ) );
 
 ```
 
@@ -1709,10 +1384,7 @@ Preferences[1] << Set( Marker Label Color Style( "Marker Color" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Marker Selection Mode( "Selection Haloed" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Marker Selection Mode( "Selection Haloed" ) );
 
 ```
 
@@ -1730,10 +1402,7 @@ Preferences[1] << Set( Marker Selection Mode( "Selection Haloed" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Maximum JMP call depth( 50 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Maximum JMP call depth( 50 ) );
 
 ```
 
@@ -1745,10 +1414,7 @@ Preferences[1] << Set( Maximum JMP call depth( 50 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Maximum Parse Depth( 600 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Maximum Parse Depth( 600 ) );
 
 ```
 
@@ -1760,10 +1426,7 @@ Preferences[1] << Set( Maximum Parse Depth( 600 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Maximum Symbol Evaluation Recursion Depth( 50 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Maximum Symbol Evaluation Recursion Depth( 50 ) );
 
 ```
 
@@ -1775,10 +1438,7 @@ Preferences[1] << Set( Maximum Symbol Evaluation Recursion Depth( 50 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Minor Grid Line Color( "Black" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Minor Grid Line Color( "Black" ) );
 
 ```
 
@@ -1790,10 +1450,7 @@ Preferences[1] << Set( Minor Grid Line Color( "Black" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Minor Grid Lines( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Minor Grid Lines( 1 ) );
 
 ```
 
@@ -1823,12 +1480,7 @@ Preferences[1] << Set( Minor Grid Lines( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set(
-	Sign in to OAuth2 servers with the specified browser type( "Embedded" )
-);
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set(	Sign in to OAuth2 servers with the specified browser type( "Embedded" ));
 
 ```
 
@@ -1840,10 +1492,7 @@ Preferences[1] << Set(
 
 ```jsl
 
-//Caution: Changing a preference will
-//affect the default behavior of JMP.
-     
-Preferences[1] << Name( "ODBC Allow Table Replace" )(0);
+//Caution: Changing a preference will//affect the default behavior of JMP.     Preferences[1] << Name( "ODBC Allow Table Replace" )(0);
 
 ```
 
@@ -1859,10 +1508,7 @@ Preferences[1] << Name( "ODBC Allow Table Replace" )(0);
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Open Text File Charset( "utf-8" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Open Text File Charset( "utf-8" ) );
 
 ```
 
@@ -1894,10 +1540,7 @@ Preferences[1] << Set( Open Text File Charset( "utf-8" ) );
 
 ```jsl
 
-//Caution: Changing a preference will
-//affect the default behavior of JMP.
-
-Preferences[1] << Set( Parallel Data Table Column Decompression( 0 ) );
+//Caution: Changing a preference will//affect the default behavior of JMP.Preferences[1] << Set( Parallel Data Table Column Decompression( 0 ) );
 
 ```
 
@@ -1909,10 +1552,7 @@ Preferences[1] << Set( Parallel Data Table Column Decompression( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Partial Selection Mode( "Bar" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Partial Selection Mode( "Bar" ) );
 
 ```
 
@@ -1924,10 +1564,7 @@ Preferences[1] << Set( Partial Selection Mode( "Bar" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Platform Launch Actions( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Platform Launch Actions( 1 ) );
 
 ```
 
@@ -1937,10 +1574,7 @@ Preferences[1] << Set( Platform Launch Actions( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-     
-Preferences[1] << Name( "Prefer DSN-less ODBC Connection Strings" )(1);
+//Caution: Changing a preference will //affect the default behavior of JMP.      Preferences[1] << Name( "Prefer DSN-less ODBC Connection Strings" )(1);
 
 ```
 
@@ -1952,10 +1586,7 @@ Preferences[1] << Name( "Prefer DSN-less ODBC Connection Strings" )(1);
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Preserve SAS formats when exporting to SAS( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Preserve SAS formats when exporting to SAS( 1 ) );
 
 ```
 
@@ -1967,10 +1598,7 @@ Preferences[1] << Set( Preserve SAS formats when exporting to SAS( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Preserve SAS variable names when exporting to SAS( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Preserve SAS variable names when exporting to SAS( 1 ) );
 
 ```
 
@@ -1982,10 +1610,7 @@ Preferences[1] << Set( Preserve SAS variable names when exporting to SAS( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Print Data Grid as is( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Print Data Grid as is( 1 ) );
 
 ```
 
@@ -1999,10 +1624,7 @@ Preferences[1] << Set( Print Data Grid as is( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Close report action( "Prompt" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Close report action( "Prompt" ) );
 
 ```
 
@@ -2016,10 +1638,7 @@ Preferences[1] << Set( Close report action( "Prompt" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Proxy Port( 80 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Proxy Port( 80 ) );
 
 ```
 
@@ -2033,12 +1652,7 @@ Preferences[1] << Set( Proxy Port( 80 ) );
 
 ```jsl
 
-
-//Caution: Changing a preference will 
-//affect the default behavior of JMP.
-
-url = "http:://myproxy.com:80";
-Preferences[1] << Set( Proxy Server( url ) );
+//Caution: Changing a preference will //affect the default behavior of JMP.url = "http:://myproxy.com:80";Preferences[1] << Set( Proxy Server( url ) );
 
 ```
 
@@ -2052,10 +1666,7 @@ Preferences[1] << Set( Proxy Server( url ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Proxy User( "clark%20kent:superman" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Proxy User( "clark%20kent:superman" ) );
 
 ```
 
@@ -2067,10 +1678,7 @@ Preferences[1] << Set( Proxy User( "clark%20kent:superman" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Reopen the initial JMP window on last window close( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Reopen the initial JMP window on last window close( 1 ) );
 
 ```
 
@@ -2082,10 +1690,7 @@ Preferences[1] << Set( Reopen the initial JMP window on last window close( 1 ) )
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Report Invalid Display Box Messages( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Report Invalid Display Box Messages( 1 ) );
 
 ```
 
@@ -2099,10 +1704,7 @@ Preferences[1] << Set( Report Invalid Display Box Messages( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Report JSL warnings and errors interactively( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Report JSL warnings and errors interactively( 1 ) );
 
 ```
 
@@ -2118,10 +1720,7 @@ Preferences[1] << Set( Report JSL warnings and errors interactively( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Report Snapshot On Close( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Report Snapshot On Close( 1 ) );
 
 ```
 
@@ -2141,10 +1740,7 @@ Preferences[1] << Set( Report Snapshot On Close( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Ruler Tool Units( "Miles" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Ruler Tool Units( "Miles" ) );
 
 ```
 
@@ -2154,10 +1750,7 @@ Preferences[1] << Set( Ruler Tool Units( "Miles" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS Automatically Generate ODS results"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS Automatically Generate ODS results"n( 1 ) );
 
 ```
 
@@ -2167,10 +1760,7 @@ Preferences[1] << Set( "SAS Automatically Generate ODS results"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-          
-Preferences[1] << Set( "SAS Connect to CAS with SAS Viya"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP.           Preferences[1] << Set( "SAS Connect to CAS with SAS Viya"n( 1 ) );
 
 ```
 
@@ -2182,10 +1772,7 @@ Preferences[1] << Set( "SAS Connect to CAS with SAS Viya"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS Data Import Close Warning"n( 0 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS Data Import Close Warning"n( 0 ) );
 
 ```
 
@@ -2195,10 +1782,7 @@ Preferences[1] << Set( "SAS Data Import Close Warning"n( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS Data Import Uses Labels"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS Data Import Uses Labels"n( 1 ) );
 
 ```
 
@@ -2208,10 +1792,7 @@ Preferences[1] << Set( "SAS Data Import Uses Labels"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS Import generated datasets into JMP"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS Import generated datasets into JMP"n( 1 ) );
 
 ```
 
@@ -2227,10 +1808,7 @@ Preferences[1] << Set( "SAS Import generated datasets into JMP"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS ODS Style"n( "HTMLBlue" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS ODS Style"n( "HTMLBlue" ) );
 
 ```
 
@@ -2240,10 +1818,7 @@ Preferences[1] << Set( "SAS ODS Style"n( "HTMLBlue" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "SAS Organize results in JMP project"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "SAS Organize results in JMP project"n( 1 ) );
 
 ```
 
@@ -2255,10 +1830,7 @@ Preferences[1] << Set( "SAS Organize results in JMP project"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( SAS Transport Use UTF8( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( SAS Transport Use UTF8( 1 ) );
 
 ```
 
@@ -2278,10 +1850,7 @@ Preferences[1] << Set( SAS Transport Use UTF8( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save Data Table Columns GZ Compressed( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save Data Table Columns GZ Compressed( 1 ) );
 
 ```
 
@@ -2293,10 +1862,7 @@ Preferences[1] << Set( Save Data Table Columns GZ Compressed( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-            
-Preferences[1] << Set( Save Image DPI( 300 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP.             Preferences[1] << Set( Save Image DPI( 300 ) );
 
 ```
 
@@ -2308,10 +1874,7 @@ Preferences[1] << Set( Save Image DPI( 300 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save Journals GZ Compressed( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save Journals GZ Compressed( 1 ) );
 
 ```
 
@@ -2323,10 +1886,7 @@ Preferences[1] << Set( Save Journals GZ Compressed( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save Scripts in English( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save Scripts in English( 1 ) );
 
 ```
 
@@ -2338,10 +1898,7 @@ Preferences[1] << Set( Save Scripts in English( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save Text Files as Unicode( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save Text Files as Unicode( 1 ) );
 
 ```
 
@@ -2353,10 +1910,7 @@ Preferences[1] << Set( Save Text Files as Unicode( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save table with report( prompt | embed | separate ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save table with report( prompt | embed | separate ) );
 
 ```
 
@@ -2368,10 +1922,7 @@ Preferences[1] << Set( Save table with report( prompt | embed | separate ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Save table with report( "Prompt" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Save table with report( "Prompt" ) );
 
 ```
 
@@ -2383,10 +1934,7 @@ Preferences[1] << Set( Save table with report( "Prompt" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Selected Marker Color( "Cyan" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Selected Marker Color( "Cyan" ) );
 
 ```
 
@@ -2398,48 +1946,19 @@ Preferences[1] << Set( Selected Marker Color( "Cyan" ) );
 
 **JMP追加されたバージョン:** 17
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
-
-Preferences(
-	Semantic formatting(
-		Add Semantic Format(
-			Format Name( "My Format 1" ),
-			Semantic Format( Format( "Fixed Dec", 11, 1 ) ),
-			Criteria(
-				Object Name( "*mean*" ),
-				Outline Path( "** :: Means for Oneway Anova" )
-			)
-		),
-		Add Semantic Format(
-			Format Name( "My Format 2" ),
-			Semantic Format( Format( "Fixed Dec", 11, 2 ) ),
-			Criteria(
-				Object Name( "*mean*" ),
-				Outline Path( "** :: Means for Oneway Anova" ),
-				Row Name( "M" )
-			)
-		)
-	)
-);
+//Caution: Changing a preference will //affect the default behavior of JMP. dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Preferences(	Semantic formatting(		Add Semantic Format(			Format Name( "My Format 1" ),			Semantic Format( Format( "Fixed Dec", 11, 1 ) ),			Criteria(				Object Name( "*mean*" ),				Outline Path( "** :: Means for Oneway Anova" )			)		),		Add Semantic Format(			Format Name( "My Format 2" ),			Semantic Format( Format( "Fixed Dec", 11, 2 ) ),			Criteria(				Object Name( "*mean*" ),				Outline Path( "** :: Means for Oneway Anova" ),				Row Name( "M" )			)		)	));
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Semantic formatting( Clear ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Semantic formatting( Clear ) );
 
 ```
 
@@ -2453,12 +1972,7 @@ Preferences( Semantic formatting( Clear ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Show( Get Preference( Continuous Color Theme ) );
-Set Preference( Sequential Color Theme( "Green to Purple" ) );
-Show( Get Preference( Sequential Color Theme ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Show( Get Preference( Continuous Color Theme ) );Set Preference( Sequential Color Theme( "Green to Purple" ) );Show( Get Preference( Sequential Color Theme ) );
 
 ```
 
@@ -2470,9 +1984,17 @@ Show( Get Preference( Sequential Color Theme ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-Preferences[1] << Set( Show the Tip of the Day at startup( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show the Tip of the Day at startup( 1 ) );
+
+```
+
+### Set ODBC Primary Key as Link ID
+
+**構文:** Preferences[1] &lt;&lt; Name("Set ODBC Primary Key as Link ID") ( state = 0|1 )
+
+```jsl
+
+//Caution: Changing a preference will //affect the default behavior of JMP.      Preferences[1] << Name( "Set ODBC Primary Key as Link ID" )(1);
 
 ```
 
@@ -2482,10 +2004,7 @@ Preferences[1] << Set( Show the Tip of the Day at startup( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Shade Alternate Table Rows( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Shade Alternate Table Rows( 1 ) );
 
 ```
 
@@ -2495,10 +2014,7 @@ Preferences[1] << Set( Shade Alternate Table Rows( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Shade Table Cells( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Shade Table Cells( 1 ) );
 
 ```
 
@@ -2508,10 +2024,7 @@ Preferences[1] << Set( Shade Table Cells( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Shade Table Headings( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Shade Table Headings( 1 ) );
 
 ```
 
@@ -2525,10 +2038,7 @@ Preferences[1] << Set( Shade Table Headings( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Shape Boundary Color( "Black" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Shape Boundary Color( "Black" ) );
 
 ```
 
@@ -2546,16 +2056,13 @@ Preferences[1] << Set( Shape Boundary Color( "Black" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show Personalization at startup( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show Personalization at startup( 1 ) );
 
 ```
 
 ### Show SAS Log
 
-**構文:** obj &lt;&lt; Show SAS Log( "Never"|"Always"|"On Error" )
+**構文:** obj &lt;&lt; Show SAS Log( "しない"|"常に"|"エラー発生時" )
 
 ### Show Search box on Columns Panel
 
@@ -2573,10 +2080,7 @@ Preferences[1] << Set( Show Personalization at startup( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show Status Bar( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show Status Bar( 1 ) );
 
 ```
 
@@ -2588,10 +2092,7 @@ Preferences[1] << Set( Show Status Bar( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show conditional formatting( "Always" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show conditional formatting( "Always" ) );
 
 ```
 
@@ -2603,10 +2104,7 @@ Preferences[1] << Set( Show conditional formatting( "Always" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show menu tips( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show menu tips( 1 ) );
 
 ```
 
@@ -2628,10 +2126,7 @@ Preferences[1] << Set( Show menu tips( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show semantic formatting( "Always" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show semantic formatting( "Always" ) );
 
 ```
 
@@ -2651,10 +2146,7 @@ Preferences[1] << Set( Show semantic formatting( "Always" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Show the Quick Start at startup( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Show the Quick Start at startup( 1 ) );
 
 ```
 
@@ -2668,10 +2160,7 @@ Preferences[1] << Set( Show the Quick Start at startup( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Continuous Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Continuous Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2685,10 +2174,7 @@ Preferences( Summary Graph Continuous Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Continuous Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Continuous Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2702,10 +2188,7 @@ Preferences( Summary Graph Continuous Highlight Color( RGB Color( 0.5, 0.9, 0.9 
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Continuous Missing Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Continuous Missing Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2719,10 +2202,7 @@ Preferences( Summary Graph Continuous Missing Color( RGB Color( 0.5, 0.9, 0.9 ) 
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Continuous Missing Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Continuous Missing Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2736,10 +2216,7 @@ Preferences( Summary Graph Continuous Missing Highlight Color( RGB Color( 0.5, 0
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Name Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Name Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2753,10 +2230,7 @@ Preferences( Summary Graph Name Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Name Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Name Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2770,10 +2244,7 @@ Preferences( Summary Graph Name Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Other Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Other Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2787,10 +2258,7 @@ Preferences( Summary Graph Other Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Other Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Other Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2804,10 +2272,7 @@ Preferences( Summary Graph Other Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) )
 
 ```jsl
 
-//Caution: Changing a preference will
-//affect the default behavior of JMP.
-
-Preferences( Summary Graph Run Chart Color( RGB Color( 0.5, 0.1, 0.9 ) ) );
+//Caution: Changing a preference will//affect the default behavior of JMP.Preferences( Summary Graph Run Chart Color( RGB Color( 0.5, 0.1, 0.9 ) ) );
 
 ```
 
@@ -2821,10 +2286,7 @@ Preferences( Summary Graph Run Chart Color( RGB Color( 0.5, 0.1, 0.9 ) ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Size Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Size Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2838,10 +2300,7 @@ Preferences( Summary Graph Size Ordered Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Summary Graph Size Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Summary Graph Size Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.9 ) ) );
 
 ```
 
@@ -2853,10 +2312,7 @@ Preferences( Summary Graph Size Ordered Highlight Color( RGB Color( 0.5, 0.9, 0.
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Suppress Formula Eval on Open( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Suppress Formula Eval on Open( 1 ) );
 
 ```
 
@@ -2866,10 +2322,7 @@ Preferences[1] << Set( Suppress Formula Eval on Open( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Table Column Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Table Column Borders( 1 ) );
 
 ```
 
@@ -2879,10 +2332,7 @@ Preferences[1] << Set( Table Column Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Table Column Group Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Table Column Group Borders( 1 ) );
 
 ```
 
@@ -2892,10 +2342,7 @@ Preferences[1] << Set( Table Column Group Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Table Heading Column Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Table Heading Column Borders( 1 ) );
 
 ```
 
@@ -2905,10 +2352,7 @@ Preferences[1] << Set( Table Heading Column Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Table Row Borders( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Table Row Borders( 1 ) );
 
 ```
 
@@ -2920,10 +2364,7 @@ Preferences[1] << Set( Table Row Borders( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Task Bar Strategy( "All Windows" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Task Bar Strategy( "All Windows" ) );
 
 ```
 
@@ -2937,10 +2378,7 @@ Preferences[1] << Set( Task Bar Strategy( "All Windows" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Transparent background for report PNG images( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Transparent background for report PNG images( 1 ) );
 
 ```
 
@@ -2950,10 +2388,7 @@ Preferences[1] << Set( Transparent background for report PNG images( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Underline Table Headings( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Underline Table Headings( 1 ) );
 
 ```
 
@@ -2965,10 +2400,7 @@ Preferences[1] << Set( Underline Table Headings( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use Excel Labels as Headings( "Always" ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use Excel Labels as Headings( "Always" ) );
 
 ```
 
@@ -2980,10 +2412,7 @@ Preferences[1] << Set( Use Excel Labels as Headings( "Always" ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use Greek letters( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use Greek letters( 1 ) );
 
 ```
 
@@ -2995,10 +2424,7 @@ Preferences[1] << Set( Use Greek letters( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will affect 
-//the default behavior of JMP. 
-
-Preferences[1] << Set( Use JMP Locale Settings( 1 ) );
+//Caution: Changing a preference will affect //the default behavior of JMP. Preferences[1] << Set( Use JMP Locale Settings( 1 ) );
 
 ```
 
@@ -3012,10 +2438,7 @@ Preferences[1] << Set( Use JMP Locale Settings( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences( Use Numerical Ordering( 0 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences( Use Numerical Ordering( 0 ) );
 
 ```
 
@@ -3035,10 +2458,7 @@ Preferences( Use Numerical Ordering( 0 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use SPSS labels for column names during import( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use SPSS labels for column names during import( 1 ) );
 
 ```
 
@@ -3050,10 +2470,7 @@ Preferences[1] << Set( Use SPSS labels for column names during import( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use Thousands Separator( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use Thousands Separator( 1 ) );
 
 ```
 
@@ -3065,10 +2482,7 @@ Preferences[1] << Set( Use Thousands Separator( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( "Use Triple-S Labels as Headings"n( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( "Use Triple-S Labels as Headings"n( 1 ) );
 
 ```
 
@@ -3080,10 +2494,7 @@ Preferences[1] << Set( "Use Triple-S Labels as Headings"n( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use a Floating Window for Data Filters( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use a Floating Window for Data Filters( 1 ) );
 
 ```
 
@@ -3095,10 +2506,7 @@ Preferences[1] << Set( Use a Floating Window for Data Filters( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use an Asterisk with the PValue Format( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use an Asterisk with the PValue Format( 1 ) );
 
 ```
 
@@ -3112,10 +2520,7 @@ Preferences[1] << Set( Use an Asterisk with the PValue Format( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use column references in Dispatch( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use column references in Dispatch( 1 ) );
 
 ```
 
@@ -3127,10 +2532,7 @@ Preferences[1] << Set( Use column references in Dispatch( 1 ) );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Preferences[1] << Set( Use math symbols( 1 ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Preferences[1] << Set( Use math symbols( 1 ) );
 
 ```
 
@@ -3178,8 +2580,7 @@ Preferences[1] << Set( Use math symbols( 1 ) );
 
 ```jsl
 
-a = Platform Preferences[1] << Get( Distribution );
-Show( a );
+a = Platform Preferences[1] << Get( Distribution );Show( a );
 
 ```
 
@@ -3191,8 +2592,7 @@ Show( a );
 
 ```jsl
 
-a = Platform Preferences[1] << Get Script;
-Show( a );
+a = Platform Preferences[1] << Get Script;Show( a );
 
 ```
 
@@ -3204,10 +2604,7 @@ Show( a );
 
 ```jsl
 
-//Caution: Changing a preference will 
-//affect the default behavior of JMP. 
-
-Platform Preferences[1] << Set( Distribution( Vertical( 1 ) ) );
+//Caution: Changing a preference will //affect the default behavior of JMP. Platform Preferences[1] << Set( Distribution( Vertical( 1 ) ) );
 
 ```
 

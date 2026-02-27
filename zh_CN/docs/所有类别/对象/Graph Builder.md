@@ -2,6 +2,112 @@
 
 
 
+## Area Element
+
+### 关联的构造器
+
+#### Area Element
+
+**语法:** Area Element
+
+**说明:** 显示按类别汇总的响应。
+
+**100% 堆叠面积图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Corn Wheat Soybean Production.jmp" );// 100% stacked areaGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Year ),		Y( :Commodity Acres Planted ),		Group X( :State, Show Title( 0 ) ),		Overlay( :Commodity )	),	Elements( Area( X, Y, Legend( 40 ), Summary Statistic( "% of Factor" ) ) ),	Local Data Filter(		Add Filter( columns( :State ), Where( :State == {"IOWA", "NEBRASKA", "OKLAHOMA"} ) )	),	SendToReport(		Dispatch( {}, "Commodity Acres Planted", ScaleBox,			{Format( "Percent", 13, 0 ), Max( 1 )}		),		Dispatch( {}, "400", LegendBox, {Legend Position( {40, [2, 1, 0, -3, -3, -3]} )} )	));
+
+```
+
+**使用填充模式的叠加面积图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Corn Wheat Soybean Production.jmp" );// overlaid area with fill patternsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Year ),		Y( :Commodity Acres Planted ),		Group X( :State, Show Title( 0 ) ),		Overlay( :Commodity )	),	Elements( Area( X, Y, Legend( 40 ), Area Style( "Overlaid" ) ) ),	Local Data Filter(		Add Filter( columns( :State ), Where( :State == {"IOWA", "NEBRASKA", "OKLAHOMA"} ) )	),	SendToReport(		Dispatch( {}, "Commodity Acres Planted", ScaleBox, {Format( "Engineering SI", 13 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				40,				Properties( 0, {Fill Pattern( "grid dots" )} ),				Properties( 1, {Fill Pattern( "right slant medium" )} ),				Properties( 2, {Fill Pattern( "left slant medium" )} )			)}		),		Dispatch( {}, "400", LegendBox, {Legend Position( {40, [2, 1, 0, -3, -3, -3]} )} )	));
+
+```
+
+**堆叠面积图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Corn Wheat Soybean Production.jmp" );// stacked areaGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Year ),		Y( :Commodity Acres Planted ),		Group X( :State, Show Title( 0 ) ),		Overlay( :Commodity )	),	Elements( Area( X, Y, Legend( 40 ) ) ),	Local Data Filter(		Add Filter( columns( :State ), Where( :State == {"IOWA", "NEBRASKA", "OKLAHOMA"} ) )	),	SendToReport(		Dispatch( {}, "Commodity Acres Planted", ScaleBox, {Format( "Engineering SI", 13 )} ),		Dispatch( {}, "400", LegendBox, {Legend Position( {40, [2, 1, 0, -3, -3, -3]} )} )	));
+
+```
+
+**将范围区域设置为围绕线条的定制区间**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// range area, custom interval, overlaid line, transparencyGraph Builder(	Transform Column(		"Quantile...=0.75[height][age]",		Formula( Col Quantile( :height, 0.75, :age, :"@Exclude"n, :"@Filter"n ) )	),	Transform Column(		"Quantile...=0.25[height][age]",		Formula( Col Quantile( :height, 0.25, :age, :"@Exclude"n, :"@Filter"n ) )	),	Show Control Panel( 0 ),	Variables(		X( :age ),		Y( :height ),		Y( :"Quantile...=0.25[height][age]"n, Position( 1 ) ),		Y( :"Quantile...=0.75[height][age]"n, Position( 1 ) )	),	Elements(		Area( X, Y( 2 ), Y( 3 ), Legend( 5 ), Area Style( "Range" ) ),		Line( X, Y( 1 ), Legend( 6 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Level Name( 0, "IQR" ),				Properties( 0, {Transparency( 0.33 )} )			)}		),		Dispatch( {}, "400", LegendBox, {Set Title( "" )} )	));
+
+```
+
+### 项消息
+
+#### Area Style
+
+**语法:** obj &lt;&lt; Area Style( "堆叠"|"叠加"|"范围"|"堆叠极差" )
+
+#### Connection
+
+**语法:** obj &lt;&lt; Connection( "线条"|"箭头"|"曲线"|"步进"|"居中步进"|"水平"|"垂直" )
+
+#### Error Interval
+
+**语法:** obj &lt;&lt; Error Interval( "自动"|"无"|"极差"|"四分位数间距"|"标准误差"|"标准差"|"置信区间"|"绝对偏差中位数"|"定制区间"|"双向区间" )
+
+#### Interval Style
+
+**语法:** obj &lt;&lt; Interval Style( "误差条"|"带"|"哈希带"|"箭头" )
+
+#### Missing Factors
+
+**语法:** obj &lt;&lt; Missing Factors( "跳过"|"视为缺失"|"视为零" )
+
+**说明:** 如何显示跨越缺失因子水平的连接
+
+**JMP添加的版本:** 15
+
+#### Missing Values
+
+**语法:** obj &lt;&lt; Missing Values( "连接穿过"|"连接变淡"|"用虚线连接"|"无连接" )
+
+**说明:** 如何显示跨越缺失值的连接。
+
+#### Ordering
+
+**语法:** obj &lt;&lt; Ordering( "自动"|"行顺序"|"汇总"|"行内" )
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Row order
+
+**语法:** obj &lt;&lt; Row order( state=0|1 )
+
+#### Save Summary Formula
+
+**语法:** obj &lt;&lt; Save Summary Formula
+
+#### Smoothness
+
+**语法:** obj &lt;&lt; Smoothness( number )
+
+#### Stack Negative
+
+**语法:** obj &lt;&lt; Stack Negative( "叠加"|"分隔负值"|"视为零" )
+
+**说明:** 控制堆叠时如何处理负数据值。
+
+**JMP添加的版本:** 17
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
 ## 共享项消息
 
 ### Action
@@ -12,12 +118,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,13 +134,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -47,10 +142,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -58,10 +150,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,13 +162,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -93,12 +176,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -110,12 +188,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -127,18 +200,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -150,12 +212,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Copy Script;
 
 ```
 
@@ -167,12 +224,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Data Table Window;
 
 ```
 
@@ -186,9 +238,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -200,19 +250,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -226,27 +264,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -254,13 +272,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -272,13 +284,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -290,11 +296,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -306,13 +308,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -324,13 +320,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -342,13 +332,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -360,10 +344,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -377,10 +358,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -392,13 +370,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -410,32 +382,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**语法:** New JSL Preset( preset )
-
-**说明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -449,9 +396,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -463,15 +408,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -483,35 +420,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**语法:** obj &lt;&lt; Redo ByGroup Analysis
-
-**说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Redo Analysis;
 
 ```
 
@@ -523,35 +432,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**语法:** obj &lt;&lt; Relaunch ByGroup
-
-**说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Relaunch Analysis;
 
 ```
 
@@ -563,14 +444,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -582,51 +456,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**语法:** Render Preset( preset )
-
-**说明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report;Report( obj )
+**语法:** obj &lt;&lt; Report; Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -638,12 +480,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Report View( "Summary" );
 
 ```
 
@@ -655,18 +492,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -678,18 +504,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -701,18 +516,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -724,12 +528,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Save Script for All Objects;
 
 ```
 
@@ -739,41 +538,19 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -785,12 +562,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -802,12 +574,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Save Script to Journal;
 
 ```
 
@@ -819,12 +586,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Save Script to Report;
 
 ```
 
@@ -836,12 +598,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Save Script to Script Window;
 
 ```
 
@@ -853,15 +610,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -873,20 +622,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -898,12 +634,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -915,11 +646,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -931,12 +658,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));obj << Title( "My Platform" );
 
 ```
 
@@ -948,14 +670,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -971,11 +686,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -987,27 +698,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**语法:** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1019,13 +722,203 @@ New Window( "Bivariate Equation",
 
 **说明:** 提供一个使您可以探索数据的交互式图形界面。您可以将列拖动到图形区域中以创建各种图形，包括散点图、等高线图、条形图、面积图、箱线图、直方图、热图、饼图、矩形树图、马赛克图和地图。
 
+#### 100% 堆叠条形图
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// 100% stacked bar chart, custom legend colorsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Age ), Y( :Cholesterol ), Overlay( :Alcohol Use ) ),	Elements(		Bar( X, Y, Legend( 55 ), Bar Style( "Stacked" ), Summary Statistic( "% of Factor" ) )	),	SendToReport(		Dispatch( {}, "Cholesterol", ScaleBox, {Max( 1 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				55,				Properties( 0, {Fill Color( RGB Color( 0.9, 0.9, 0.9 ) )} ),				Properties( 1, {Fill Color( RGB Color( 1.0, 0.8, 0.8 ) )} ),				Properties( 2, {Fill Color( RGB Color( 1.0, 0.6, 0.6 ) )} ),				Properties( 3, {Fill Color( RGB Color( 1.0, 0.3, 0.3 ) )} )			)}		)	));
+
+```
+
+#### y 轴未对齐的面板
+
+```jsl
+
+Open( "$SAMPLE_DATA/US Regional Population.jmp" );// panels with unaligned y axesGraph Builder(	Transform Column( "Transform[Year]", Continuous, Formula( Num( :Year ) ) ),	Show Control Panel( 0 ),	Extend Axis to Zero( 10 ),	Link Page Axes( "X Only" ),	Replicate Linked Page Axes( 0 ),	Variables(		X( :"Transform[Year]"n ),		Y( :Population ),		Page( :Region, Levels per Row( 3 ) )	),	Elements( Points( X, Y, Legend( 3 ) ), Smoother( X, Y, Legend( 4 ) ) ),	Local Data Filter(		Add Filter(			columns( :Region ),			Where(				:Region == {"AR,LA,OK,TX", "Great Lakes", "KY,TN,AL,MS", "Midwest",				"Mountain", "New England", "NY,NJ,PA", "Pacific", "South Atlantic"}			)		)	),	SendToReport(		Dispatch( {}, "Population", ScaleBox, {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 2 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 3 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 4 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 5 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 6 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 7 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 8 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 9 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Population", ScaleBox( 10 ), {Format( "Engineering SI", 10 )} ),		Dispatch( {}, "Transform[Year]", TextEditBox, {Set Text( "Year" )} ),		Dispatch( {}, "Transform[Year]", Text Edit Box( 2 ), {Set Text( "Year" )} ),		Dispatch( {}, "Transform[Year]", Text Edit Box( 3 ), {Set Text( "Year" )} )	));
+
+```
+
+#### 二项比例置信区间
+
+```jsl
+
+Open( "$SAMPLE_DATA/Bands Data.jmp" );// binomial proportion confidence intervalGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Show Title( 0 ),	Show Y Axis Title( 0 ),	Variables( X( :customer ), Y( :Banding? ) ),	Elements(		Points( X, Y, Legend( 3 ) ),		Line Of Fit( X, Y, Legend( 4 ), Means and Std Devs( 1 ) )	),	Local Data Filter(		Add Filter(			columns( :customer ),			Where( :customer == {"MODMAT", "REI", "ROSES", "SHEPLERS", "TARGET"} )		)	),	SendToReport(		Dispatch( {}, "Banding?", ScaleBox,			{Min( -0.07 ), Max( 1.07 ), Label Row( Show Major Grid( 1 ) )}		)	));
+
+```
+
+#### 使用“依据”变量的独立图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );// by variable creates multiple Graph Builder instancesGraph Builder(	Show Control Panel( 0 ),	Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), ),	Elements( Points( X, Y, Legend( 17 ) ), Smoother( X, Y, Legend( 18 ) ) ),	By( :Type ));
+
+```
+
+#### 分面式网格分组
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );// coplot style grouping using continuous grouping variables, smoother and scatter plotGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Alpha, Levels( 2 ) ),		Y( :CPU Time ),		Group X( :Beta, Levels( 2 ) ),		Group Y( :Gamma, Levels( 2 ) ),		Overlay( :Algorithm )	),	Elements( Points( X, Y, Legend( 29 ) ), Smoother( X, Y, Legend( 30 ), Lambda( 0.25 ) ) ));
+
+```
+
+#### 变异性图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );// variability chart, mean and range interval, nested axisGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Operator ), X( :Part, Position( 1 ) ), Y( :Y ) ),	Elements(		Points(			X( 1 ),			X( 2 ),			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Range" )		)	),	SendToReport(		Dispatch( {}, "Operator", ScaleBox, {Label Row( 2, Show Major Grid( 1 ) )} )	));
+
+```
+
+#### 叠加点的连接线
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/M3C Quarterly Wide Format.jmp" );// connected lines with overlaid dots, custom markers, nested date axisGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Time ), Y( :N 646 ), Y( :N 647, Position( 1 ) ) ),	Elements(		Line( X, Y( 1 ), Y( 2 ), Legend( 10 ) ),		Points( X, Y( 1 ), Y( 2 ), Legend( 11 ) )	),	SendToReport(		Dispatch( {}, "Time", ScaleBox,			{Min( 2515958948 ), Max( 2872394250 ), Interval( "Quarter" ), Inc( 1 ),			Minor Ticks( 0 ), Label Row Nesting( 2 ), Label Row( 1, Set Font Size( 12 ) )}		),		Dispatch( {}, "N 646", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				10,				Properties( 0, {Line Label Properties( {Last Label( 1 )} )} ),				Properties( 1, {Line Label Properties( {Last Label( 1 )} )} )			), Legend Model(				11,				Base( 0, 0, 0, Item ID( "N 646", 1 ) ),				Base( 1, 0, 1, Item ID( "N 647", 1 ) ),				Properties( 0, {Marker( "FilledCircle" )} ),				Properties( 1, {Marker( "Filled Up Triangle" )} )			)}		),		Dispatch( {}, "Graph Builder", FrameBox,			{DispatchSeg(				Line Seg( "Line (N 646)" ),				Label Offset( "Last", 45, {2843799627.0183, 6317.56810988166} )			), DispatchSeg(				Line Seg( "Line (N 647)" ),				Label Offset( "Last", 45, {2857099451.70628, 4518.71614237549} )			)}		)	));
+
+```
+
+#### 叠加的二元核密度等高线
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// overlaid bivariate kernel density contourGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Depth ), Y( :Culmen Length ), Overlay( :Species ) ),	Elements(		Contour( X, Y, Legend( 6 ), Line( 1 ), Number of Levels( 5 ), Smoothness( 0.2174 ) )	));
+
+```
+
+#### 叠加经验累积分布函数曲线
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// CDF, empirical cumulative distribution functionGraph Builder(	Transform Column(		"Rank[Culmen Length]@Overlay",		Formula(			Col Rank( :Culmen Length, :"@Exclude"n, :"@Filter"n, :"@Graph"n, :"@Overlay"n )			 / Col Number(				:Culmen Length,				:"@Exclude"n,				:"@Filter"n,				:"@Graph"n,				:"@Overlay"n			)		)	),	Show Control Panel( 0 ),	Legend Position( "Inside Bottom Right" ),	Show Title( 0 ),	Show Y Axis Title( 0 ),	Variables(		X( :Culmen Length ),		Y( :"Rank[Culmen Length]@Overlay"n ),		Overlay( :Species )	),	Elements( Line( X, Y, Legend( 15 ), Connection( "Step" ) ) ),	SendToReport(		Dispatch( {}, "Rank[Culmen Length]@Overlay", ScaleBox, {Max( 1.0117745954803 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				15,				Level Name( 0, "Adelie" ),				Level Name( 1, "Chinstrap" ),				Level Name( 2, "Gentoo" )			)}		)	));
+
+```
+
+#### 地中海等积等值区域图
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );// Mediterranean map, choropleth, equal area projection, grid linesGraph Builder(	Size( 1094, 586 ),	Show Control Panel( 0 ),	Variables( Color( :Total Median Age ), Shape( :Territory ) ),	Elements( Map Shapes( Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "", ScaleBox,			{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -14.2917884823647 ),			Max( 64.9684846475565 ), Inc( 20 ), Minor Ticks( 1 ),			Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "", ScaleBox( 2 ),			{Format( "Latitude DDD", "PUNDIR", 16 ), Min( 21.8020806509188 ),			Max( 61.3932495299748 ), Inc( 10 ), Minor Ticks( 1 ),			Label Row( Show Major Grid( 1 ) )}		)	));
+
+```
+
+#### 多个 x 轴
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Algorithm Data.jmp" );// mutiple x variables in separate panels, smoother with confidence intervals and scatter plotGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Alpha ), X( :Beta ), X( :Gamma ), Y( :CPU Time ), Overlay( :Algorithm ) ),	Elements(		Position( 1, 1 ),		Points( X, Y, Legend( 39 ) ),		Smoother( X, Y, Legend( 40 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )	),	Elements(		Position( 2, 1 ),		Points( X, Y, Legend( 41 ) ),		Smoother( X, Y, Legend( 42 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )	),	Elements(		Position( 3, 1 ),		Points( X, Y, Legend( 43 ) ),		Smoother( X, Y, Legend( 44 ), Lambda( 1.5 ), Confidence of Fit( 1 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 40, Properties( 2, {Line Color( RGB Color( 0.4, 0.4, 0.4 ) )} ) )}		)	));
+
+```
+
+#### 左 y 轴和右 y 轴
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );// left and right y axes sharing a graph, overlaid linesGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Time ), Y( :pH ), Y( :Tank Level, Position( 1 ), Side( "Right" ) ) ),	Elements( Line( X, Y( 1 ), Legend( 41 ) ), Line( X, Y( 2 ), Legend( 46 ) ) ),	SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) ));
+
+```
+
+#### 带叠加曲线的气泡图
+
+```jsl
+
+Open( "$SAMPLE_DATA/SATByYear.jmp" );// Smooth trend line, variable dot size, overlaid y variables, bubble chart. data filterGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :"% Taking (2004)"n ),		Y( :SAT Verbal ),		Y( :SAT Math, Position( 1 ) ),		Size( :Population )	),	Elements(		Points( X, Y( 1 ), Y( 2 ), Legend( 7 ) ),		Smoother( X, Y( 1 ), Y( 2 ), Legend( 8 ), Lambda( 0.45 ) )	),	Local Data Filter( Add Filter( columns( :Year ), Where( :Year == 2004 ) ) ),	SendToReport(		Dispatch( {}, "% Taking (2004)", ScaleBox, {Format( "Percent", 12, 0 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model( 7, Properties( 0, {Marker Size( 6 )} ) )}		)	));
+
+```
+
+#### 带四分位数的小提琴图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// violin plots, overlaid median line and quartile intervalsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ) ),	Elements(		Contour( X, Y, Legend( 3 ) ),		Bar(			X,			Y,			Legend( 4 ),			Bar Style( "Float" ),			Summary Statistic( "Median" ),			Error Interval( "Interquartile Range" )		)	));
+
+```
+
+#### 带定制带区间的线条
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// range area, custom interval, overlaid line, transparencyGraph Builder(	Transform Column(		"Quantile...=0.75[height][age]",		Formula( Col Quantile( :height, 0.75, :age, :"@Exclude"n, :"@Filter"n ) )	),	Transform Column(		"Quantile...=0.25[height][age]",		Formula( Col Quantile( :height, 0.25, :age, :"@Exclude"n, :"@Filter"n ) )	),	Show Control Panel( 0 ),	Variables(		X( :age ),		Y( :height ),		Y( :"Quantile...=0.25[height][age]"n, Position( 1 ) ),		Y( :"Quantile...=0.75[height][age]"n, Position( 1 ) )	),	Elements(		Area( X, Y( 2 ), Y( 3 ), Legend( 5 ), Area Style( "Range" ) ),		Line( X, Y( 1 ), Legend( 6 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Level Name( 0, "IQR" ),				Properties( 0, {Transparency( 0.33 )} )			)}		),		Dispatch( {}, "400", LegendBox, {Set Title( "" )} )	));
+
+```
+
+#### 带边缘箱线图的散点图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// scatter plot with marginal box plots, custom graph sizesGraph Builder(	Transform Column( "dummy1", Nominal, Formula( 1 ) ),	Transform Column( "dummy2", Nominal, Formula( 1 ) ),	Show Control Panel( 0 ),	Variables(		X( :Delta 13 C ),		X( :dummy1 ),		Y( :dummy2 ),		Y( :Delta 15 N ),		Color( :Sex ),		Size( :Body Mass )	),	Relative Sizes( "X", [100 10] ),	Relative Sizes( "Y", [10 100] ),	Elements( Position( 1, 1 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 12 ) ) ),	Elements( Position( 1, 2 ), Points( X, Y, Legend( 4 ) ) ),	Elements( Position( 2, 1 ) ),	Elements( Position( 2, 2 ), Box Plot( X, Y, Color( 0 ), Size( 0 ), Legend( 13 ) ) ),	SendToReport(		Dispatch( {}, "dummy1", ScaleBox, {Label Row( Show Major Labels( 0 ) )} ),		Dispatch( {}, "dummy2", ScaleBox, {Label Row( Show Major Labels( 0 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				4,				Properties( 1, {Transparency( 0.75 )} ),				Properties( 2, {Transparency( 0.75 )} )			)}		),		Dispatch( {}, "dummy1", TextEditBox, {Set Text( "" )} ),		Dispatch( {}, "dummy2", TextEditBox, {Set Text( "" )} ),		Dispatch( {}, "400", LegendBox,			{Legend Position( {12, [1, -3], 4, [0, 3, 4], 13, [2, -3]} )}		)	));
+
+```
+
+#### 平行 y 轴，叠加线条
+
+```jsl
+
+Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );// parallel y axes, multiple y scales sharing a graph, overlaid linesGraph Builder(	Show Control Panel( 0 ),	Parallel Axes( "Y Only" ),	Variables(		X( :Time ),		Y( :Temp ),		Y( :NH3 Feed ),		Y( :Air ),		Y( :Tank Level ),		Y( :pH )	),	Elements( Position( 1, 1 ), Line( X, Y, Legend( 37 ) ) ),	Elements( Position( 1, 2 ), Line( X, Y, Legend( 39 ) ) ),	Elements( Position( 1, 3 ), Line( X, Y, Legend( 40 ) ) ),	Elements( Position( 1, 4 ), Line( X, Y, Legend( 41 ) ) ),	Elements( Position( 1, 5 ), Line( X, Y, Legend( 42 ) ) ),	SendToReport( Dispatch( {}, "Time", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ) ));
+
+```
+
+#### 拿破仑行军流程图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Napoleons March.jmp" );// flow diagramGraph Builder(	Show Control Panel( 0 ),	Show X Axis( 0 ),	Show Y Axis( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables(		X( :Longitude ),		Y( :Latitude ),		Overlay( :Group ),		Color( :Direction ),		Size( :Army Size )	),	Elements(		Line( X, Y, Legend( 3 ), Ordering( "Row Order" ), Missing Values( "No Connection" ) )	),	SendToReport(		Dispatch( {}, "Longitude", ScaleBox,			{Min( 26.71 ), Max( 34.9 ), Inc( 2.5 ), Minor Ticks( 0 ),			Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "Latitude", ScaleBox,			{Min( 53.32 ), Max( 56.61 ), Inc( 0.5 ), Minor Ticks( 1 ),			Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				3,				Properties( 0, {Line Width( 10 )} ),				Properties( 1, {RGB Color( 1, 0.69, 0.49 )} ),				Properties( 2, {RGB Color( 0.47, 0.47, 0.47 )} )			)}		),		Dispatch( {}, "graph title", TextEditBox,			{Set Text( "Napoleon's March to Moscow" )}		),		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Images( "Detailed Earth", Transparency( 0.75 ) ) )}		)	));
+
+```
+
+#### 晶片图
+
+```jsl
+
+Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );// wafer map, heat map, trellis, wrap arrangementGraph Builder(	Show Control Panel( 0 ),	Variables( X( :X_Die ), Y( :Y_Die ), Wrap( :Wafer ), Color( :Defects ) ),	Elements( Heatmap( X, Y, Legend( 8 ) ) ),	SendToReport(		Dispatch( {}, "X_Die", ScaleBox, {Minor Ticks( 9 )} ),		Dispatch( {}, "Y_Die", ScaleBox, {Minor Ticks( 9 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				8,				Properties( 0, {gradient( {Color Theme( "White to Orange" )} )} )			)}		)	));
+
+```
+
+#### 条形图和平滑趋势线组合
+
+```jsl
+
+Open( "$SAMPLE_DATA/Spring.jmp" );// bar chart and smooth trend line combination, left and right y axesGraph Builder(	Show Control Panel( 0 ),	Variables( X( :April ), Y( :Temp ), Y( :Precip, Position( 1 ), Side( "Right" ) ) ),	Elements(		Points( X, Y( 1 ), Legend( 12 ) ),		Smoother( X, Y( 1 ), Legend( 13 ) ),		Bar( X, Y( 2 ), Legend( 16 ) )	),	SendToReport(		Dispatch( {}, "Precip", ScaleBox,			{Format( "Best", 12 ), Max( 5 ), Inc( 1 ), Minor Ticks( 1 )}		)	));
+
+```
+
+#### 点和平滑线
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));
+
+```
+
+#### 等高线图和散点图各点
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );// contour plot and scatter plot points, smoothing, alpha shapes for non-convex hullGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Labor ), Y( :Capital ), Color( :Difference ) ),	Elements(		Contour(			X,			Y,			Legend( 9 ),			Boundary( 0 ),			Number of Levels( 7 ),			Alpha( 5 ),			Smoothness( 0.2 )		),		Points( X, Y, Color( 0 ), Legend( 10 ) )	));
+
+```
+
+#### 箭头线，每行一条
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cholesterol.jmp" );// arrow lines, one per rowGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :April AM ),		X( :April PM, Position( 1 ) ),		Y( :June AM ),		Y( :June PM, Position( 1 ) ),		Overlay( :treatment )	),	Elements(		Line(			X( 1 ),			X( 2 ),			Y( 1 ),			Y( 2 ),			Legend( 8 ),			Ordering( "Within Row" ),			Connection( "Arrow" )		)	));
+
+```
+
+#### 线性回归面板
+
+```jsl
+
+Open( "$SAMPLE_DATA/Financial.jmp" );// line of fit, regression, small multiples, custom group color, custom graph spacingGraph Builder(	Show Control Panel( 0 ),	Grid Color( "Medium Light Gray" ),	Grid Transparency( 0.25 ),	Title Fill Color( "Medium Light Gray" ),	Title Frame Color( "Medium Light Gray" ),	Level Fill Color( {217, 217, 217} ),	Level Frame Color( "Medium Light Gray" ),	Level Spacing Color( "Medium Light Gray" ),	Graph Spacing( 10 ),	Variables( X( :"Assets($Mil.)"n ), Y( :"Stockholder's Eq($Mil.)"n ), Wrap( :Type ) ),	Elements( Points( X, Y, Legend( 17 ) ), Line Of Fit( X, Y, Legend( 19 ) ) ),	Local Data Filter(		Add Filter( columns( :"Assets($Mil.)"n ), Where( :"Assets($Mil.)"n <= 60941 ) )	));
+
+```
+
+#### 轴汇总表
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// caption axis tableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :sex ), Y( :height ) ),	Elements(		Bar( X, Y, Legend( 4 ) ),		Caption Box(			X,			Y,			Legend( 5 ),			Summary Statistic( "Mean" ),			Summary Statistic 2( "N" ),			Location( "Axis Table" )		)	));
 
 ```
 
@@ -1039,13 +932,7 @@ gb = Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 0.5 );
-gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 0.5 );gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ```
 
@@ -1057,13 +944,7 @@ gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 0.5 );
-gb << Add Variable( {:age, Role( "Wrap" )} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 0.5 );gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ```
 
@@ -1075,12 +956,7 @@ gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Auto Stretching( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Auto Stretching( 0 );
 
 ```
 
@@ -1092,12 +968,7 @@ gb << Auto Stretching( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Back Color( "Yellow" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Back Color( "Yellow" );
 
 ```
 
@@ -1109,12 +980,7 @@ gb << Back Color( "Yellow" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Categorical Color Theme( "Pastel" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Categorical Color Theme( "Pastel" );
 
 ```
 
@@ -1126,12 +992,7 @@ gb << Categorical Color Theme( "Pastel" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Continuous Color Theme( "White to Black" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Continuous Color Theme( "White to Black" );
 
 ```
 
@@ -1145,28 +1006,19 @@ gb << Continuous Color Theme( "White to Black" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Done;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Done;
 
 ```
 
 ### Elements
 
-**语法:** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() ))&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() )) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识可视化的元素。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :"F Rate 0-19"n ), Y( :Region ) ),
-	Elements( Box Plot( X, Y ), Line( X, Y, Summary Statistic( "Mean" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );gb = dt << Graph Builder(	Variables( X( :"F Rate 0-19"n ), Y( :Region ) ),	Elements( Box Plot( X, Y ), Line( X, Y, Summary Statistic( "Mean" ) ) ));
 
 ```
 
@@ -1180,13 +1032,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << Error Bar Offset( 0.01 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 1 );gb << Error Bar Offset( 0.01 );
 
 ```
 
@@ -1200,12 +1046,7 @@ gb << Error Bar Offset( 0.01 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Extend Axis to Zero( 10 ),
-	Variables( X( :Weight ), Y( :Height ) ),
-	Elements( Line( X, Y ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Extend Axis to Zero( 10 ),	Variables( X( :Weight ), Y( :Height ) ),	Elements( Line( X, Y ) ));
 
 ```
 
@@ -1219,13 +1060,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Size( 513, 465 ),
-	Extend Dual Axes to Zero( 10 ),
-	Variables( X( :age ), Y( :weight, Side( "Right" ) ), Y( :height, Position( 1 ) ) ),
-	Elements( Line( X, Y( 2 ) ), Line( X, Y( 1 ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Size( 513, 465 ),	Extend Dual Axes to Zero( 10 ),	Variables( X( :age ), Y( :weight, Side( "Right" ) ), Y( :height, Position( 1 ) ) ),	Elements( Line( X, Y( 2 ) ), Line( X, Y( 1 ) ) ));
 
 ```
 
@@ -1239,15 +1074,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Show Control Panel( 0 ),
-	Parallel Axes( "Y Only" ),
-	Extend Parallel Y Axes to Zero( 0 ),
-	Variables( X( :age ), Y( :height ), Y( :weight ) ),
-	Elements( Position( 1, 1 ), Line( X, Y ) ),
-	Elements( Position( 1, 2 ), Line( X, Y ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Parallel Axes( "Y Only" ),	Extend Parallel Y Axes to Zero( 0 ),	Variables( X( :age ), Y( :height ), Y( :weight ) ),	Elements( Position( 1, 1 ), Line( X, Y ) ),	Elements( Position( 1, 2 ), Line( X, Y ) ));
 
 ```
 
@@ -1259,12 +1086,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Fit to Window( "Off" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Fit to Window( "Off" );
 
 ```
 
@@ -1276,12 +1098,7 @@ gb << Fit to Window( "Off" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get Element( 1, 1, 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get Element( 1, 1, 1 );
 
 ```
 
@@ -1293,12 +1110,7 @@ gb << Get Element( 1, 1, 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get Elements( 1, 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get Elements( 1, 1 );
 
 ```
 
@@ -1312,15 +1124,7 @@ gb << Get Elements( 1, 1 );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
-);
-lgnd = gb << Get Legend Display;
-item = lgnd << Get Item( 2, 1 );
-item << Set Visible( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));lgnd = gb << Get Legend Display;item = lgnd << Get Item( 2, 1 );item << Set Visible( 0 );
 
 ```
 
@@ -1334,15 +1138,7 @@ item << Set Visible( 0 );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
-);
-lgnd = gb << Get Legend Server;
-items = lgnd << Get Legend Items;
-Show( items );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));lgnd = gb << Get Legend Server;items = lgnd << Get Legend Items;Show( items );
 
 ```
 
@@ -1354,12 +1150,7 @@ Show( items );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get N Elements( 1, 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get N Elements( 1, 1 );
 
 ```
 
@@ -1371,12 +1162,7 @@ gb << Get N Elements( 1, 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get N Positions( "X" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get N Positions( "X" );
 
 ```
 
@@ -1388,12 +1174,7 @@ gb << Get N Positions( "X" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get N Variables();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get N Variables();
 
 ```
 
@@ -1405,12 +1186,7 @@ gb << Get N Variables();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get Variable( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get Variable( 1 );
 
 ```
 
@@ -1422,12 +1198,7 @@ gb << Get Variable( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Get Variables();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Get Variables();
 
 ```
 
@@ -1439,13 +1210,7 @@ gb << Get Variables();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Add Variable( {:age, Role( "Wrap" )} );
-gb << Graph Spacing( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Add Variable( {:age, Role( "Wrap" )} );gb << Graph Spacing( 3 );
 
 ```
 
@@ -1457,13 +1222,7 @@ gb << Graph Spacing( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Graph Spacing( 5 ),
-	Variables( X( :height ), Y( :weight ), Wrap( :age ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Grid Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Graph Spacing( 5 ),	Variables( X( :height ), Y( :weight ), Wrap( :age ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Grid Color( "Red" );
 
 ```
 
@@ -1475,13 +1234,7 @@ gb << Grid Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Graph Spacing( 5 ),
-	Variables( X( :height ), Y( :weight ), Wrap( :age ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Grid Transparency( 0.2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Graph Spacing( 5 ),	Variables( X( :height ), Y( :weight ), Wrap( :age ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Grid Transparency( 0.2 );
 
 ```
 
@@ -1493,14 +1246,7 @@ gb << Grid Transparency( 0.2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-:age[{10, 20, 30}] = .;
-gb << Add Variable( {:age, Role( "Wrap" )} );
-gb << Include Missing Categories( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));:age[{10, 20, 30}] = .;gb << Add Variable( {:age, Role( "Wrap" )} );gb << Include Missing Categories( 1 );
 
 ```
 
@@ -1512,12 +1258,7 @@ gb << Include Missing Categories( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Launch Analysis;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Launch Analysis;
 
 ```
 
@@ -1531,12 +1272,7 @@ gb << Launch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Legend Position( "Inside Floating" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Legend Position( "Inside Floating" );
 
 ```
 
@@ -1548,12 +1284,7 @@ gb << Legend Position( "Inside Floating" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Legend Position( "Bottom" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Legend Position( "Bottom" );
 
 ```
 
@@ -1565,13 +1296,7 @@ gb << Legend Position( "Bottom" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << Legend Settings();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 1 );gb << Legend Settings();
 
 ```
 
@@ -1583,12 +1308,7 @@ gb << Legend Settings();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Fill Color( {103, 214, 214} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Fill Color( {103, 214, 214} );
 
 ```
 
@@ -1600,12 +1320,7 @@ gb << Level Fill Color( {103, 214, 214} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Frame Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Frame Color( "Blue" );
 
 ```
 
@@ -1617,12 +1332,7 @@ gb << Level Frame Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Spacing Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Spacing Color( "Blue" );
 
 ```
 
@@ -1634,12 +1344,7 @@ gb << Level Spacing Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Spacing Transparency( .2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Spacing Transparency( .2 );
 
 ```
 
@@ -1651,12 +1356,7 @@ gb << Level Spacing Transparency( .2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Text Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Text Color( "Red" );
 
 ```
 
@@ -1668,12 +1368,7 @@ gb << Level Text Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Transparency( .2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Transparency( .2 );
 
 ```
 
@@ -1685,13 +1380,7 @@ gb << Level Transparency( .2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Level Frame Color( "Blue" );
-gb << Level Underline( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Level Frame Color( "Blue" );gb << Level Underline( 1 );
 
 ```
 
@@ -1705,12 +1394,7 @@ gb << Level Underline( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Lighten large fills( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Lighten large fills( 1 );
 
 ```
 
@@ -1722,13 +1406,7 @@ gb << Lighten large fills( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Size( 470, 552 ),
-	Variables( X( :height ), Y( :weight ), Page( :sex ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Link Page Axes( "Y Only" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Size( 470, 552 ),	Variables( X( :height ), Y( :weight ), Page( :sex ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Link Page Axes( "Y Only" );
 
 ```
 
@@ -1740,12 +1418,7 @@ gb << Link Page Axes( "Y Only" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Lock Scales( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Lock Scales( 1 );
 
 ```
 
@@ -1757,12 +1430,7 @@ gb << Lock Scales( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Make into Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Make into Data Table;
 
 ```
 
@@ -1774,12 +1442,7 @@ gb << Make into Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
-gb = dt << Graph Builder(
-	Order Statistic( "Max" ),
-	Variables( X( :"F Rate 0-19"n ), Y( :Region, Order By( :"F Rate 0-19"n, Ascending ) ) ),
-	Elements( Box Plot( X, Y ) )
-);
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );gb = dt << Graph Builder(	Order Statistic( "Max" ),	Variables( X( :"F Rate 0-19"n ), Y( :Region, Order By( :"F Rate 0-19"n, Ascending ) ) ),	Elements( Box Plot( X, Y ) ));
 
 ```
 
@@ -1793,12 +1456,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Overlay Auto Line Styles Limit( 0 ),
-	Variables( X( :Weight ), Y( :Height ), Overlay( :sex ), Color( :Age ) ),
-	Elements( Line( X, Y ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Overlay Auto Line Styles Limit( 0 ),	Variables( X( :Weight ), Y( :Height ), Overlay( :sex ), Color( :Age ) ),	Elements( Line( X, Y ) ));
 
 ```
 
@@ -1812,12 +1470,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Overlay Auto Marker Styles Limit( 0 ),
-	Variables( X( :Weight ), Y( :Height ), Overlay( :sex ), Color( :Age ) ),
-	Elements( Points( X, Y ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Overlay Auto Marker Styles Limit( 0 ),	Variables( X( :Weight ), Y( :Height ), Overlay( :sex ), Color( :Age ) ),	Elements( Points( X, Y ) ));
 
 ```
 
@@ -1831,12 +1484,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Name ) ),
-	Elements( Points( X, Y ) )
-);
-gb << Page Count Limit( 5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Name ) ),	Elements( Points( X, Y ) ));gb << Page Count Limit( 5 );
 
 ```
 
@@ -1848,12 +1496,7 @@ gb << Page Count Limit( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Gap Size( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Gap Size( 3 );
 
 ```
 
@@ -1865,12 +1508,7 @@ gb << Page Gap Size( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Level Fill Color( {103, 214, 214} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Level Fill Color( {103, 214, 214} );
 
 ```
 
@@ -1882,12 +1520,7 @@ gb << Page Level Fill Color( {103, 214, 214} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Level Frame Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Level Frame Color( "Blue" );
 
 ```
 
@@ -1899,12 +1532,7 @@ gb << Page Level Frame Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Level Text Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Level Text Color( "Red" );
 
 ```
 
@@ -1916,12 +1544,7 @@ gb << Page Level Text Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Level Transparency( .2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Level Transparency( .2 );
 
 ```
 
@@ -1933,13 +1556,7 @@ gb << Page Level Transparency( .2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),
-	Elements( Smoother( X, Y ) )
-);
-gb << Page Level Frame Color( "Blue" );
-gb << Page Level Underline( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Page( :Sex ) ),	Elements( Smoother( X, Y ) ));gb << Page Level Frame Color( "Blue" );gb << Page Level Underline( 1 );
 
 ```
 
@@ -1951,12 +1568,7 @@ gb << Page Level Underline( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Parallel Axis Merging( "Never" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Parallel Axis Merging( "Never" );
 
 ```
 
@@ -1968,13 +1580,7 @@ gb << Parallel Axis Merging( "Never" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :age ), Y( :height ), Y( :weight ) ),
-	Elements( Position( 1, 1 ), Points( X, Y ), Smoother( X, Y ) ),
-	Elements( Position( 1, 2 ), Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Parallel Y Axes( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :age ), Y( :height ), Y( :weight ) ),	Elements( Position( 1, 1 ), Points( X, Y ), Smoother( X, Y ) ),	Elements( Position( 1, 2 ), Points( X, Y ), Smoother( X, Y ) ));gb << Parallel Y Axes( 1 );
 
 ```
 
@@ -1988,13 +1594,7 @@ gb << Parallel Y Axes( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Sex ), Y( :Height ) ),
-	Elements( Points( X, Y, Jitter( "Random Uniform" ) ) )
-);
-Wait( 1 );
-gb << Random Seed( 123456 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Sex ), Y( :Height ) ),	Elements( Points( X, Y, Jitter( "Random Uniform" ) ) ));Wait( 1 );gb << Random Seed( 123456 );
 
 ```
 
@@ -2006,15 +1606,7 @@ gb << Random Seed( 123456 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder(
-	Size( 435, 352 ),
-	Show Control Panel( 0 ),
-	Variables( X( :weight ), Y( :height ), Y( :sex ) ),
-	Relative Sizes( "Y", [4 1] ),
-	Elements( Position( 1, 1 ), Points( X, Y ) ),
-	Elements( Position( 1, 2 ), Points( X, Y ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Graph Builder(	Size( 435, 352 ),	Show Control Panel( 0 ),	Variables( X( :weight ), Y( :height ), Y( :sex ) ),	Relative Sizes( "Y", [4 1] ),	Elements( Position( 1, 1 ), Points( X, Y ) ),	Elements( Position( 1, 2 ), Points( X, Y ) ));
 
 ```
 
@@ -2026,13 +1618,7 @@ Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 0.5 );
-gb << Remove Element( 1, 1, 2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 0.5 );gb << Remove Element( 1, 1, 2 );
 
 ```
 
@@ -2044,15 +1630,7 @@ gb << Remove Element( 1, 1, 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 0.5 );
-gb << Add Variable( {:age, Role( "Wrap" )} );
-Wait( 0.5 );
-gb << Remove Variable( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 0.5 );gb << Add Variable( {:age, Role( "Wrap" )} );Wait( 0.5 );gb << Remove Variable( 3 );
 
 ```
 
@@ -2064,14 +1642,7 @@ gb << Remove Variable( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Size( 470, 552 ),
-	Variables( X( :height ), Y( :weight ), Page( :age ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Link Page Axes( "X and Y" );
-gb << Replicate Linked Page Axes( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Size( 470, 552 ),	Variables( X( :height ), Y( :weight ), Page( :age ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Link Page Axes( "X and Y" );gb << Replicate Linked Page Axes( 1 );
 
 ```
 
@@ -2083,12 +1654,7 @@ gb << Replicate Linked Page Axes( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Sampling( 20 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Sampling( 20 );
 
 ```
 
@@ -2100,12 +1666,7 @@ gb << Sampling( 20 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Set Alpha Level( 0.10 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Set Alpha Level( 0.10 );
 
 ```
 
@@ -2117,12 +1678,7 @@ gb << Set Alpha Level( 0.10 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Set Alpha Level( 0.10 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Set Alpha Level( 0.10 );
 
 ```
 
@@ -2134,12 +1690,7 @@ gb << Set Alpha Level( 0.10 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Control Panel( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Control Panel( 1 );
 
 ```
 
@@ -2151,14 +1702,7 @@ gb << Show Control Panel( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-dt << Select Rows( 1 :: 5 );
-dt << Exclude();
-gb << Show Excluded Rows( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));dt << Select Rows( 1 :: 5 );dt << Exclude();gb << Show Excluded Rows( 1 );
 
 ```
 
@@ -2170,12 +1714,7 @@ gb << Show Excluded Rows( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Footer( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Footer( 0 );
 
 ```
 
@@ -2187,12 +1726,7 @@ gb << Show Footer( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Legend( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Legend( 1 );
 
 ```
 
@@ -2206,12 +1740,7 @@ gb << Show Legend( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Subtitle( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Subtitle( 1 );
 
 ```
 
@@ -2225,12 +1754,7 @@ gb << Show Subtitle( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Title( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Title( 0 );
 
 ```
 
@@ -2244,12 +1768,7 @@ gb << Show Title( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show X Axis( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show X Axis( 0 );
 
 ```
 
@@ -2263,12 +1782,7 @@ gb << Show X Axis( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show X Axis Title( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show X Axis Title( 0 );
 
 ```
 
@@ -2282,12 +1796,7 @@ gb << Show X Axis Title( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Y Axis( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Y Axis( 0 );
 
 ```
 
@@ -2301,12 +1810,7 @@ gb << Show Y Axis( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Show Y Axis Title( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Show Y Axis Title( 0 );
 
 ```
 
@@ -2318,12 +1822,7 @@ gb << Show Y Axis Title( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Size( 808, 586 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Size( 808, 586 );
 
 ```
 
@@ -2335,12 +1834,7 @@ gb << Size( 808, 586 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Spacing Borders( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Spacing Borders( 1 );
 
 ```
 
@@ -2354,12 +1848,7 @@ gb << Spacing Borders( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Subtitle Alignment( "Left" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Subtitle Alignment( "Left" );
 
 ```
 
@@ -2373,12 +1862,7 @@ gb << Subtitle Alignment( "Left" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Subtitle Span( "Graph" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Subtitle Span( "Graph" );
 
 ```
 
@@ -2390,12 +1874,7 @@ gb << Subtitle Span( "Graph" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Age ), Y( :Height ), Y( :weight, Position( 1 ) ) ),
-	Summary Statistic( "Sum" ),
-	Elements( Bar( X, Y( 1 ), Y( 2 ), Legend( 2 ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Age ), Y( :Height ), Y( :weight, Position( 1 ) ) ),	Summary Statistic( "Sum" ),	Elements( Bar( X, Y( 1 ), Y( 2 ), Legend( 2 ) ) ));
 
 ```
 
@@ -2409,12 +1888,7 @@ gb = dt << Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Alignment( "Left" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Alignment( "Left" );
 
 ```
 
@@ -2426,12 +1900,7 @@ gb << Title Alignment( "Left" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Fill Color( "Cyan" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Fill Color( "Cyan" );
 
 ```
 
@@ -2443,12 +1912,7 @@ gb << Title Fill Color( "Cyan" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Frame Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Frame Color( "Blue" );
 
 ```
 
@@ -2462,12 +1926,7 @@ gb << Title Frame Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Span( "Graph" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Span( "Graph" );
 
 ```
 
@@ -2479,12 +1938,7 @@ gb << Title Span( "Graph" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Text Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Text Color( "Red" );
 
 ```
 
@@ -2496,12 +1950,7 @@ gb << Title Text Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Transparency( .2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Transparency( .2 );
 
 ```
 
@@ -2513,13 +1962,7 @@ gb << Title Transparency( .2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Title Frame Color( "Blue" );
-gb << Title Underline( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Title Frame Color( "Blue" );gb << Title Underline( 1 );
 
 ```
 
@@ -2531,13 +1974,7 @@ gb << Title Underline( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 0.5 );
-gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range" )} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 0.5 );gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range" )} );
 
 ```
 
@@ -2551,25 +1988,19 @@ gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range"
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-gb << Use row colors for levels( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));gb << Use row colors for levels( 1 );
 
 ```
 
 ### Variables
 
-**语法:** Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 定义用于可视化的变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
-gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
+dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ```
 
@@ -2581,13 +2012,7 @@ gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y ), Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << X Group Edge( "Bottom" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y ), Smoother( X, Y ) ));Wait( 1 );gb << X Group Edge( "Bottom" );
 
 ```
 
@@ -2599,13 +2024,7 @@ gb << X Group Edge( "Bottom" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
-	Elements( Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << Y Group Edge( "Left" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),	Elements( Smoother( X, Y ) ));Wait( 1 );gb << Y Group Edge( "Left" );
 
 ```
 
@@ -2617,13 +2036,7 @@ gb << Y Group Edge( "Left" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
-	Elements( Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << Y Group Level Orientation( "Horizontal" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),	Elements( Smoother( X, Y ) ));Wait( 1 );gb << Y Group Level Orientation( "Horizontal" );
 
 ```
 
@@ -2635,260 +2048,2069 @@ gb << Y Group Level Orientation( "Horizontal" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),
-	Elements( Smoother( X, Y ) )
-);
-Wait( 1 );
-gb << Y Group Title Orientation( "Horizontal" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Variables( X( :Sex ), Y( :Height ), Group Y( :Age ) ),	Elements( Smoother( X, Y ) ));Wait( 1 );gb << Y Group Title Orientation( "Horizontal" );
 
 ```
 
-## Graph Builder Elements
+## Bar Element
+
+### 关联的构造器
+
+#### Bar Element
+
+**语法:** Bar Element
+
+**说明:** 显示按类别汇总的响应。
+
+**100% 堆叠条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// 100% stacked bar chart, custom legend colorsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Age ), Y( :Cholesterol ), Overlay( :Alcohol Use ) ),	Elements(		Bar( X, Y, Legend( 55 ), Bar Style( "Stacked" ), Summary Statistic( "% of Factor" ) )	),	SendToReport(		Dispatch( {}, "Cholesterol", ScaleBox, {Max( 1 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				55,				Properties( 0, {Fill Color( RGB Color( 0.9, 0.9, 0.9 ) )} ),				Properties( 1, {Fill Color( RGB Color( 1.0, 0.8, 0.8 ) )} ),				Properties( 2, {Fill Color( RGB Color( 1.0, 0.6, 0.6 ) )} ),				Properties( 3, {Fill Color( RGB Color( 1.0, 0.3, 0.3 ) )} )			)}		)	));
+
+```
+
+**使用中位数的并排分组条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// bar chart, side-by-side, 3 y variables, median, custom colorsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Sex ),		Y( :Cholesterol ),		Y( :HDL, Position( 1 ) ),		Y( :LDL, Position( 1 ) )	),	Elements( Bar( X, Y( 1 ), Y( 2 ), Y( 3 ), Summary Statistic( "Median" ), Legend( 5 ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Properties( 0, {Fill Color( "dark gray" )} ),				Properties( 1, {Fill Color( "blue" )} ),				Properties( 2, {Fill Color( "orange" )} )			)}		)	));
+
+```
+
+**使用变换的带点区间**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// interval bar chart, transform columnsGraph Builder(	Transform Column( "Maximum[HDL][Sex]", Formula( Col Maximum( :HDL, :Sex ) ) ),	Transform Column( "Minimum[HDL][Sex]", Formula( Col Minimum( :HDL, :Sex ) ) ),	Transform Column( "Mean[HDL][Sex]", Formula( Col Mean( :HDL, :Sex ) ) ),	Show Control Panel( 0 ),	Variables(		X( :Sex ),		Y( :"Minimum[HDL][Sex]"n ),		Y( :"Maximum[HDL][Sex]"n, Position( 1 ) ),		Y( :"Mean[HDL][Sex]"n, Position( 1 ) ),	),	Elements( Bar( X, Y( 1 ), Y( 2 ), Y( 3 ), Bar Style( "Interval" ) ) ));
+
+```
+
+**具有 3 个变量和定制颜色的堆叠条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// bar chart, stacked, 3 y variables, meanGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Sex ),		Y( :Cholesterol ),		Y( :HDL, Position( 1 ) ),		Y( :LDL, Position( 1 ) )	),	Elements(		Bar(			X,			Y( 1 ),			Y( 2 ),			Y( 3 ),			Bar Style( "Stacked" ),			Summary Statistic( "Mean" ),			Legend( 5 )		)	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Properties( 0, {Fill Color( "dark gray" )} ),				Properties( 1, {Fill Color( "blue" )} ),				Properties( 2, {Fill Color( "orange" )} )			)}		)	));
+
+```
+
+**叠加了点的浮动线条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// float lines and overlaid pointsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Sex ), Y( :LDL ), Y( :HDL, Position( 1 ) ) ),	Elements(		Bar( X, Y( 1 ), Y( 2 ), Legend( 1 ), Bar Style( "Float" ) ),		Points( X, Y( 1 ), Y( 2 ), Legend( 3 ) )	));
+
+```
+
+**叠加了线条的直条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// bar with floating lines, custom colorsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Sex ),		Y( :Cholesterol ),		Y( :HDL, Position( 1 ) ),		Y( :LDL, Position( 1 ) )	),	Elements( Bar( X, Y( 1 ), Y( 2 ), Y( 3 ), Legend( 5 ), Bar Style( "Single" ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Properties( 0, {Fill Color( "light gray" )} ),				Properties( 1, {Line Color( "green" )} ),				Properties( 2, {Line Color( "orange" )} )			)}		)	));
+
+```
+
+**可变宽度直条，按值排序**
+
+```jsl
+
+Open( "$SAMPLE_DATA/SAT.jmp" );// variable width bars, ordered by valueGraph Builder(	Show Control Panel( 0 ),	Variables(		X(			:State,			Order By( :"2004 Verbal"n, "Descending", Order Statistic( "Mean" ) ),			Size By( :"% Taking (2004)"n, Size Statistic( "Mean" ) )		),		Y( :"2004 Verbal"n )	),	Elements( Bar( X, Y, Legend( 4 ) ) ));
+
+```
+
+**小值堆叠为“其他”的直条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );// stacked other bar, packed bars, paretoGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Count ), Y( :Causes ) ),	Elements(		Bar(			X,			Y,			Bar Style( "Packed" ),			Packed Placement( "Separate stack" ),			Packed Primary Labels( "On axis" )		)	));
+
+```
+
+**带已添加标签的直条的条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// bar chart, label by valueGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Sex ), Y( :Cholesterol ) ),	Elements( Bar( X, Y, Label( "Label by Value" ), Label Format( "Fixed Dec", 9, 1 ) ) ));
+
+```
+
+**带置信区间的条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// bar chart with confidence intervalsGraph Builder(	Size( 658, 555 ),	Show Control Panel( 0 ),	Variables( X( :age ), Y( :height ) ),	Elements( Bar( X, Y, Legend( 6 ), Error Interval( "Confidence Interval" ) ) ));
+
+```
+
+**弹道图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// bar chart, bullet, 2 y variablesGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Sex ), Y( :HDL ), Y( :LDL, Position( 1 ) ) ),	Elements( Bar( X, Y( 1 ), Y( 2 ), Legend( 1 ), Bar Style( "Bullet" ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 1, Properties( 1, {Fill Color( "light gray" )} ) )}		)	));
+
+```
+
+**按计数排序的条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// bar chart, ordered by countGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Airline, Order By( :Airline, "Descending", Order Statistic( "N" ) ) ) ),	Elements( Bar( X, Legend( 4 ) ) ));
+
+```
+
+**排序堆叠条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Quality Control/Cabinet Defects.jmp" );// bar chart, sorted stacked, filtered, custom legend colorsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Lot Number ), Overlay( :Type of Defect ) ),	Elements( Bar( X, Legend( 3 ), Bar Style( "Sorted stacked" ) ) ),	Local Data Filter(		Add Filter(			columns( :Lot Number, :Type of Defect ),			Where( :Lot Number <= 10.5 ),			Where(				:Type of Defect == {"Bruised veneer", "Checked veneer", "Chipped veneer",				"Defective sanding", "Loose veneer", "Sand throughs", "Scratched veneer",				"Split veneer"}			),			Display( :Type of Defect, N Items( 9 ) )		)	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				3,				Properties( 0, {Fill Color( RGB Color( 0.55, 0.83, 0.78 ) )} ),				Properties( 1, {Fill Color( RGB Color( 0.75, 0.73, 0.85 ) )} ),				Properties( 2, {Fill Color( RGB Color( 0.98, 0.50, 0.45 ) )} ),				Properties( 3, {Fill Color( RGB Color( 0.50, 0.69, 0.83 ) )} ),				Properties( 4, {Fill Color( RGB Color( 0.99, 0.71, 0.38 ) )} ),				Properties( 5, {Fill Color( RGB Color( 0.70, 0.87, 0.41 ) )} ),				Properties( 6, {Fill Color( RGB Color( 0.99, 0.80, 0.90 ) )} ),				Properties( 7, {Fill Color( RGB Color( 0.74, 0.50, 0.74 ) )} )			)}		)	));
+
+```
+
+**数据驱动的直条着色**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Dogs.jmp" );// data-driven bar coloring, diverging barsGraph Builder(	Transform Column(		"hilo",		Nominal,		Formula(			If(				:diff == Col Minimum( :diff ), "min",				:diff == Col Maximum( :diff ), "max",				"other"			)		)	),	Show Control Panel( 0 ),	Variables( X( :ID ), Y( :diff ), Color( :hilo ) ),	Elements( Bar( X, Y, Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "diff", ScaleBox, {Add Ref Line( 0, "Solid", "Black", "", 1, 0.75 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				3,				Properties( 0, {Fill Color( RGB Color( 0.5, 0.5, 0.9 ) )} ),				Properties( 1, {Fill Color( RGB Color( 0.95, 0.6, 0.6 ) )} ),				Properties( 2, {Fill Color( RGB Color( 0.7, 0.7, 0.7 ) )} )			)}		),		Dispatch( {}, "400", LegendBox,			{Set Title( "" ), Legend Position( {3, [0, 1, -1]} )}		)	));
+
+```
+
+**极差条形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// range bar chart between two variablesGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Sex ), Y( :HDL ), Y( :LDL, Position( 1 ) ) ),	Elements( Bar( X, Y( 1 ), Y( 2 ), Bar Style( "Range" ) ) ),);
+
+```
+
+**直条和箭头图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// arrow and bar chart Graph Builder(	Show Control Panel( 0 ),	Variables( X( :Sex ), Y( :HDL ), Y( :LDL, Position( 1 ) ) ),	Elements( Bar( X, Y( 1 ), Y( 2 ), Bar Style( "Arrow" ) ), Bar( X, Y( 1 ) ) ));
+
+```
+
+**突出显示前十个类别的堆叠填充直条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Billion Dollar Events.jmp" );// packed bar chart, top 10, custom axis format, subtitleGraph Builder(	Size( 813, 512 ),	Show Control Panel( 0 ),	Show Legend( 0 ),	Title Alignment( "Left" ),	Title Span( "Graph contents" ),	Subtitle Alignment( "Left" ),	Subtitle Span( "Graph contents" ),	Show Subtitle( 1 ),	Show Footer( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables( X( :Cost ), Y( :Unique Event ) ),	Elements(		Bar( X, Y, Bar Style( "Packed" ), Packed Primaries( 10 ), Packed Labeling( 0.4091 ) )	),	SendToReport(		Dispatch( {}, "Cost", ScaleBox,			{Format(				"Custom",				Formula(					If( value == 0,						"0",						"$" || Format( value, "precision", Keep trailing zeroes( 0 ), 3 ) ||						"B"					)				),				17			), Min( 0 ), Max( 164.25 ), Inc( 20 ), Minor Ticks( 0 )}		),		Dispatch( {}, "graph title", TextEditBox,			{Margin( {Left( 5 ), Top( 0 ), Right( 0 ), Bottom( 0 )} ),			Set Text( "Billion-dollar disasters in the US, 1980-2017" ),			Set Font Style( "Plain" )}		),		Dispatch( {}, "graph 1 title", TextEditBox,			{Margin( {Left( 5 ), Top( 0 ), Right( 0 ), Bottom( 0 )} ),			Set Text( "CPI-adjusted estimated costs from NOAA, www.ncdc.noaa.gov/billions/" )			}		)	));
+
+```
+
+**采用李克特尺度的发散堆叠直条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Likert Survey.jmp" );// diverging stacked bars, likert scaleGraph Builder(	Transform Column( "neg sd", Formula( -:strongly disagree ) ),	Transform Column( "neg d", Formula( -:disagree ) ),	Transform Column( "neg n", Formula( -:neutral / 2 ) ),	Transform Column( "pos n", Formula( :neutral / 2 ) ),	Show Control Panel( 0 ),	Legend Position( "Bottom" ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables(		X( :neg n ),		X( :neg d, Position( 1 ) ),		X( :neg sd, Position( 1 ) ),		X( :pos n, Position( 1 ) ),		X( :agree, Position( 1 ) ),		X( :strongly agree, Position( 1 ) ),		Y( :question )	),	Elements(		Bar(			X( 1 ),			X( 2 ),			X( 3 ),			X( 4 ),			X( 5 ),			X( 6 ),			Y,			Legend( 4 ),			Bar Style( "Stacked" )		)	),	SendToReport(		Dispatch( {}, "neg n", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "question", ScaleBox, {Min( 19.6 ), Max( -0.6 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				4,				Level Name( 0, "neutral" ),				Level Name( 1, "disagree" ),				Level Name( 2, "strongly disagree" ),				Level Name( 3, "neutral" ),				Properties( 0, {Fill Color( RGB Color( {0.9, 0.9, 0.9} ) )} ),				Properties( 1, {Fill Color( RGB Color( {1.0, 0.7, 0.7} ) )} ),				Properties( 2, {Fill Color( RGB Color( {1.0, 0.3, 0.3} ) )} ),				Properties( 3, {Fill Color( RGB Color( {0.9, 0.9, 0.9} ) )} ),				Properties( 4, {Fill Color( RGB Color( {0.8, 0.8, 1.0} ) )} ),				Properties( 5, {Fill Color( RGB Color( {0.5, 0.5, 1.0} ) )} )			)}		)	),	Dispatch( {}, "400", LegendBox, {Legend Position( {4, [2, 1, 0, -1, 3, 4]} )} ));
+
+```
+
+**针状图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// needle bar chartGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Age ), Y( :Cholesterol ) ),	Elements( Bar( X, Y, Bar Style( "Needle" ), Summary Statistic( "Max" ) ) ));
+
+```
 
 ### 项消息
 
-#### Area
+#### Bar Style
 
-**语法:** obj &lt;&lt; Area
+**语法:** obj &lt;&lt; Bar Style( "并排"|"堆叠"|"排序堆叠"|"弹道图"|"嵌套"|"范围"|"并排范围"|"区间"|"并排区间"|"双向区间"|"箭头"|"单个"|"股票"|"箱线图"|"针"|"浮动"|"矩形树图"|"堆叠填充" )
 
-**说明:** 面积图: 显示按类别汇总的响应。
+#### Error Interval
 
-```jsl
+**语法:** obj &lt;&lt; Error Interval( "自动"|"无"|"极差"|"四分位数间距"|"标准误差"|"标准差"|"置信区间"|"绝对偏差中位数"|"定制区间"|"双向区间" )
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
+#### Interval Style
 
-```
+**语法:** obj &lt;&lt; Interval Style( "误差条"|"带"|"哈希带"|"箭头" )
 
-#### Bar
+#### Label
 
-**语法:** obj &lt;&lt; Bar
+**语法:** obj &lt;&lt; Label( "无标签"|"将值用作标签"|"将占合计的百分比用作标签"|"将行用作标签" )
 
-**说明:** 条形图: 显示按类别汇总的响应。
+#### Label Format
 
-```jsl
+**语法:** obj &lt;&lt; Label Format
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
+**JMP添加的版本:** 16
 
-```
+#### Overlap
 
-#### Box Plot
+**语法:** obj &lt;&lt; Overlap( "自动"|"无"|"一半"|"完全" )
 
-**语法:** obj &lt;&lt; Box Plot
+**JMP添加的版本:** 16
 
-**说明:** 箱线图: 显示带四分位数和离群值的变量分布的紧凑视图。
+#### Packed Coloring
 
-```jsl
+**语法:** obj &lt;&lt; Packed Coloring( "直条颜色"|"变淡的直条颜色"|"灰色" )
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) ) );
+**JMP添加的版本:** 14
 
-```
+#### Packed Labeling
 
-#### Caption Box
+**语法:** obj &lt;&lt; Packed Labeling( number )
 
-**语法:** obj &lt;&lt; Caption Box
+**JMP添加的版本:** 14
 
-**说明:** 说明文字框: 显示数据的汇总统计量值。
+#### Packed Ordering
 
-```jsl
+**语法:** obj &lt;&lt; Packed Ordering( "按大小"|"按标签" )
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder(
-	Variables( X( :age ), Y( :weight ) ),
-	Elements( Line( X, Y ), Caption Box( X, Y ) )
-);
+**JMP添加的版本:** 14
 
-```
+#### Packed Placement
 
-#### Contour
+**语法:** obj &lt;&lt; Packed Placement( "单独堆叠"|"最小堆叠"|"第一个堆叠" )
 
-**语法:** obj &lt;&lt; Contour
+**JMP添加的版本:** 14
 
-**说明:** 等高线: 显示数据密度区域（或带“颜色”变量的值等高线）。当 X 为分类变量时生成小提琴图形。
+#### Packed Primaries
 
-```jsl
+**语法:** obj &lt;&lt; Packed Primaries( number )
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y ) ) );
+**JMP添加的版本:** 14
 
-```
+#### Packed Primary Labels
 
-#### Ellipse
+**语法:** obj &lt;&lt; Packed Primary Labels( "轴上"|"直条内部" )
 
-**语法:** obj &lt;&lt; Ellipse
+**JMP添加的版本:** 14
 
-**说明:** 椭圆: 显示二元正态密度椭圆。
+#### Response Axis
 
-```jsl
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y ) ) );
+#### Save Summary Formula
 
-```
+**语法:** obj &lt;&lt; Save Summary Formula
 
-#### Formula
+#### Summary Statistic
 
-**语法:** obj &lt;&lt; Formula
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
 
-**说明:** 公式: 显示列公式定义的函数。
+## Box Plot Element
 
-```jsl
+### 关联的构造器
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder(
-	Variables( X( :height ), Y( Transform Column( "f", Formula( Sin( :height / 5 ) ) ) ) ),
-	Elements( Formula( X, Y ) )
-);
+#### Box Plot Element
 
-```
+**语法:** Box Plot Element
 
-#### Heatmap
+**说明:** 显示带四分位数和离群值的变量分布的紧凑视图。
 
-**语法:** obj &lt;&lt; Heatmap
-
-**说明:** 热图: 使用颜色显示 X 和 Y 类别的计数。
+**叠加箱线图**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y ) ) );
+Open( "$SAMPLE_DATA/Penguins.jmp" );// box plots, overlaidGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ), Overlay( :Sex ) ),	Elements( Box Plot( X, Y, Legend( 2 ) ) ));
 
 ```
 
-#### Histogram
-
-**语法:** obj &lt;&lt; Histogram
-
-**说明:** 直方图: 使用分箱显示变量分布。
+**水平离群值箱线图**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );// horizontal outlier box plotsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :sex ) ),	Elements( Box Plot( X, Y, Legend( 4 ) ) ),	SendToReport( Dispatch( {}, "height", ScaleBox, {Min( 50 )} ) ));
 
 ```
+
+**采用数据驱动颜色的纯色箱线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// solid box plots, colored by summary of a different variableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ), Color( :Flipper Length ) ),	Elements( Box Plot( X, Y, Legend( 2 ), Box Style( "Solid" ), Fences( 0 ) ) ));
+
+```
+
+### 项消息
+
+#### 5 Number Summary
+
+**语法:** obj &lt;&lt; 5 Number Summary( state=0|1 )
+
+**JMP添加的版本:** 14
+
+#### Box Placement
+
+**语法:** obj &lt;&lt; Box Placement( "偏移"|"对齐" )
+
+**JMP添加的版本:** 16
+
+#### Box Style
+
+**语法:** obj &lt;&lt; Box Style( "正常"|"纯色"|"细" )
+
+#### Box Type
+
+**语法:** obj &lt;&lt; Box Type( "分位数"|"离群值" )
+
+#### Confidence Diamond
+
+**语法:** obj &lt;&lt; Confidence Diamond( state=0|1 )
+
+**JMP添加的版本:** 16
+
+#### Fences
+
+**语法:** obj &lt;&lt; Fences( state=0|1 )
+
+**JMP添加的版本:** 16
+
+#### Jitter
+
+**语法:** obj &lt;&lt; Jitter( "无"|"自动"|"随机均匀"|"随机正态"|"密度随机"|"堆叠填充"|"网格"|"六边形网格"|"蜂群" )
+
+#### Notched
+
+**语法:** obj &lt;&lt; Notched( state=0|1 )
+
+**JMP添加的版本:** 16
+
+#### Outliers
+
+**语法:** obj &lt;&lt; Outliers( state=0|1 )
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Shortest Half
+
+**语法:** obj &lt;&lt; Shortest Half( state=0|1 )
+
+**JMP添加的版本:** 16
+
+#### Shortest Half Color
+
+**语法:** obj &lt;&lt; Shortest Half Color( color )
+
+**JMP添加的版本:** 16
+
+#### Width Proportion
+
+**语法:** obj &lt;&lt; Width Proportion( number=0 )
+
+**说明:** 默认为“0”。
+
+**JMP添加的版本:** 15
+
+## Caption Element
+
+### 关联的构造器
+
+#### Caption Element
+
+**语法:** Caption Element
+
+**说明:** 显示数据的汇总统计量值。
+
+**两个说明文字统计量，每因子**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// caption per factor, mean and count, custom number formatGraph Builder(	Show Control Panel( 0 ),	Variables( X( :sex ), Y( :height ) ),	Elements(		Bar( X, Y, Legend( 4 ) ),		Caption Box(			X,			Y,			Legend( 5 ),			Summary Statistic( "Mean" ),			Summary Statistic 2( "N" ),			Location( "Graph per factor" ),			Number Format( "Best", 5 )		)	));
+
+```
+
+**图形级别的说明文字汇总统计量**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// caption annotation per graphGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ), Group X( :sex ) ),	Elements(		Points( X, Y, Legend( 2 ) ),		Line Of Fit( X, Y, Legend( 4 ) ),		Caption Box( X, Y, Legend( 5 ), Summary Statistic( "N" ), X Position( "Left" ) )	));
+
+```
+
+**数据驱动的参考线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// caption reference line, run chartGraph Builder(	Show Control Panel( 0 ),	Variables( Y( :weight ) ),	Elements(		Caption Box(			Y,			Legend( 5 ),			Summary Statistic( "Mean" ),			Location( "Axis Reference Line" ),			X Position( "Left" )		),		Line( Y, Legend( 6 ), Ordering( "Row Order" ) )	));
+
+```
+
+**轴表汇总统计量**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// caption axis tableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :sex ), Y( :height ) ),	Elements(		Bar( X, Y, Legend( 4 ) ),		Caption Box(			X,			Y,			Legend( 5 ),			Summary Statistic( "Mean" ),			Summary Statistic 2( "N" ),			Location( "Axis Table" )		)	));
+
+```
+
+### 项消息
+
+#### Location
+
+**语法:** obj &lt;&lt; Location( "图形"|"每因子图形"|"轴表"|"轴参考线" )
+
+#### Number Format
+
+**语法:** obj &lt;&lt; Number Format
+
+**JMP添加的版本:** 16
+
+#### Per Factor
+
+**语法:** obj &lt;&lt; Per Factor( state=0|1 )
+
+**JMP添加的版本:** 14
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数"|"5 数汇总" )
+
+#### Summary Statistic 2
+
+**语法:** obj &lt;&lt; Summary Statistic 2( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数"|"5 数汇总" )
+
+#### Summary Statistic 3
+
+**语法:** obj &lt;&lt; Summary Statistic 3( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数"|"5 数汇总" )
+
+#### Summary Statistic 4
+
+**语法:** obj &lt;&lt; Summary Statistic 4( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数"|"5 数汇总" )
+
+#### Summary Statistic 5
+
+**语法:** obj &lt;&lt; Summary Statistic 5( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数"|"5 数汇总" )
+
+#### X Position
+
+**语法:** obj &lt;&lt; X Position( "左"|"中"|"右" )
+
+#### Y Position
+
+**语法:** obj &lt;&lt; Y Position( "顶部"|"中部"|"底部" )
+
+## Contour Element
+
+### 关联的构造器
+
+#### Contour Element
+
+**语法:** Contour Element
+
+**说明:** 显示数据密度区域（或带“颜色”变量的值等高线）。当 X 为分类变量时生成小提琴图形。
+
+**HDR，最高密度区域**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// HDR, highest denisty regions with mode lineGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ) ),	Elements( Contour( X, Y, Legend( 4 ), Smoothness( 0.113 ), Contour Type 1D( "HDR" ) ) ));
+
+```
+
+**二元核密度等高线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// bivariate kernel density contourGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Distance ), Y( :Arrival Delay ), Wrap( :Airline ) ),	Elements( Contour( X, Y, Legend( 6 ), Number of Levels( 6 ) ) ));
+
+```
+
+**叠加细箱线图的小提琴图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/S4 Temps.jmp" );// violin plots overlaid with thin box plotsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :type of space ), Y( :Y ) ),	Elements(		Contour( X, Y, Legend( 5 ), Violin Scaling( "Weighted Area" ) ),		Box Plot( X, Y, Legend( 6 ), Outliers( 0 ), Box Style( "Thin" ), Fences( 0 ) )	));
+
+```
+
+**地理等高线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cities.jmp" );// contour, geographic, background map, clipped to shapes, sequential colors, hidden axesGraph Builder(	Show Control Panel( 0 ),	Show X Axis( 0 ),	Show Y Axis( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables( X( :Longitude ), Y( :Latitude ), Color( :PM10 ) ),	Elements(		Contour(			X,			Y,			Legend( 5 ),			Boundary( 0 ),			Number of Levels( 5 ),			Alpha( 0.04 ),			Smoothness( 0.02 )		)	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Properties( 0, {gradient( {Color Theme( "White to Red" )} )} )			)}		),		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 1 ),			Reference Line Order( 4 ), Reorder Segs( {1, 3} ),			DispatchSeg( Contour Seg( 1 ), {Clip Shape( Boundaries( "US States" ) )} )}		)	));
+
+```
+
+**带中位数线和均值菱形的小提琴图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// violin plots, overlaid median line and mean diamond markerGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ) ),	Elements(		Contour( X, Y, Legend( 3 ) ),		Bar( X, Y, Legend( 4 ), Bar Style( "Float" ), Summary Statistic( "Median" ) ),		Points( X, Y, Legend( 5 ), Summary Statistic( "Mean" ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 5, Properties( 0, {Marker( "Diamond" )} ) )}		)	));
+
+```
+
+**带四分位数的小提琴图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// violin plots, overlaid median line and quartile intervalsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ) ),	Elements(		Contour( X, Y, Legend( 3 ) ),		Bar(			X,			Y,			Legend( 4 ),			Bar Style( "Float" ),			Summary Statistic( "Median" ),			Error Interval( "Interquartile Range" )		)	));
+
+```
+
+**平滑等高线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// contour plot, smooth contours, alpha shapes for non-convex hullGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Length ), Y( :Flipper Length ), Color( :Body Mass ) ),	Elements(		Contour(			X,			Y,			Legend( 7 ),			Number of Levels( 5 ),			Alpha( 0.1 ),			Smoothness( 0.065 )		)	));
+
+```
+
+**面板式等高线热图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Peanut Data.jmp" );// paneled contour heatmap, trellisGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Ratio ),		Y( :Agitation Speed ),		Group X( :Hydrolyze ),		Group Y( :"Pre-Soak"n ),		Color( :Solids )	),	Elements( Contour( X, Y, Legend( 28 ), Smoothness( 0.01 ) ) ));
+
+```
+
+### 项消息
+
+#### Adapt to Axis Scale
+
+**语法:** obj &lt;&lt; Adapt to Axis Scale( state=0|1 )
+
+**说明:** 关于对数和其他轴变换，它是对变换的坐标应用计算的。
+
+#### Alpha
+
+**语法:** obj &lt;&lt; Alpha( number )
+
+**说明:** 控制边界的形状。值为 0 会得到点集的凸包。较大的值会删除有长边的三角。
+
+**JMP添加的版本:** 15
+
+#### Boundary
+
+**语法:** obj &lt;&lt; Boundary( state=0|1 )
+
+**说明:** 在定义的数据区域的边界处绘制一条线。该边界根据 Alpha 属性可能是非凸的。
+
+**JMP添加的版本:** 15
+
+#### Contour Placement
+
+**语法:** obj &lt;&lt; Contour Placement( "偏移"|"对齐" )
+
+**JMP添加的版本:** 16
+
+#### Contour Type
+
+**语法:** obj &lt;&lt; Contour Type( "小提琴图形"|"HDR" )
+
+**JMP添加的版本:** 15
+
+#### Contour Type 1D
+
+**语法:** obj &lt;&lt; Contour Type 1D( "小提琴图形"|"HDR" )
+
+**JMP添加的版本:** 15
+
+#### Contour Type 2D
+
+**语法:** obj &lt;&lt; Contour Type 2D( "非参数密度"|"袋状图"|"HDR" )
+
+**JMP添加的版本:** 15
+
+#### Fill
+
+**语法:** obj &lt;&lt; Fill( state=0|1 )
+
+**说明:** 使用渐变中的颜色填充等高线之间的区域。
+
+**JMP添加的版本:** 15
+
+#### Jitter
+
+**语法:** obj &lt;&lt; Jitter( "无"|"自动"|"随机均匀"|"随机正态"|"密度随机"|"堆叠填充"|"网格"|"六边形网格"|"蜂群" )
 
 #### Line
 
-**语法:** obj &lt;&lt; Line
+**语法:** obj &lt;&lt; Line( state=0|1 )
 
-**说明:** 线: 显示按类别汇总的响应。
+**说明:** 在每个等高线水平处绘制一条线，按渐变或按单独的线条颜色着色。
 
-```jsl
+**JMP添加的版本:** 15
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
+#### Number of Levels
 
-```
+**语法:** obj &lt;&lt; Number of Levels( number )
 
-#### Line Of Fit
+**说明:** 设置要绘制的填充等高线区域数。
 
-**语法:** obj &lt;&lt; Line Of Fit
+#### Outliers
 
-**说明:** 拟合线: 为连续型 X 和 Y 显示带置信区间的线性回归。为分类 X 拟合均值。
+**语法:** obj &lt;&lt; Outliers( state=0|1 )
 
-```jsl
+#### Smoothness
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Line of Fit( X, Y ) ) );
+**语法:** obj &lt;&lt; Smoothness( number )
 
-```
+**说明:** 平滑底层数据和等高线。
 
-#### Map Shapes
+**JMP添加的版本:** 14
 
-**语法:** obj &lt;&lt; Map Shapes
+#### Transform
 
-**说明:** 地图形状: 显示“地图形状”变量定义的区域，通常带有“颜色”变量。
+**语法:** obj &lt;&lt; Transform( "无"|"标准化范围" )
 
-```jsl
+**说明:** 可以选择在计算用于内插的三角测量之前变换点。
 
-Open( "$SAMPLE_DATA/SATByYear.jmp" );
-Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ), Elements( Map Shapes() ) );
+#### Violin Scaling
 
-```
+**语法:** obj &lt;&lt; Violin Scaling( "面积相等"|"宽度相等"|"加权面积" )
 
-#### Mosaic
+**JMP添加的版本:** 14
 
-**语法:** obj &lt;&lt; Mosaic
+## Ellipse Element
 
-**说明:** 马赛克图: 使用大小显示 X 和 Y 类别的计数。
+### 关联的构造器
 
-```jsl
+#### Ellipse Element
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
+**语法:** Ellipse Element
 
-```
+**说明:** 显示二元正态密度椭圆。
 
-#### Parallel
-
-**语法:** obj &lt;&lt; Parallel
-
-**说明:** 平行: 沿平行轴显示每行多个变量，每行对应一条连接线。
+**叠加密度椭圆**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder(
-	Variables( X( :height ), X( :weight, Position( 1 ) ), X( :age, Position( 1 ) ) ),
-	Elements( Parallel( X( 1 ), X( 2 ), X( 3 ) ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );// overlaid density ellipse, correlation coefficientGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ), Overlay( :sex ) ),	Elements( Points( X, Y, Legend( 2 ) ), Ellipse( X, Y, Legend( 5 ), Correlation( 1 ) ) ));
 
 ```
 
-#### Pie
-
-**语法:** obj &lt;&lt; Pie
-
-**说明:** 饼图: 显示整体的各个部分。
+**带中心均值标记的密度椭圆**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );// density ellipse, correlation, central meanGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ), Group Y( :sex ) ),	Elements(		Points( X, Y, Legend( 2 ) ),		Ellipse( X, Y, Legend( 5 ), Coverage( "95%" ), Mean Point( 1 ) )	));
 
 ```
 
-#### Points
-
-**语法:** obj &lt;&lt; Points
-
-**说明:** 点: 显示数据值的散点图。
+**带相关性系数的密度椭圆**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y ) ) );
+Open( "$SAMPLE_DATA/Penguins.jmp" );// density ellipse, correlation coefficientGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Depth ), Y( :Culmen Length ), Overlay( :Species ) ),	Elements(		Points( X, Y, Legend( 8 ) ),		Ellipse( X, Y, Legend( 10 ), Coverage( "50%" ), Correlation( 1 ), Mean Point( 1 ) )	));
 
 ```
 
-#### Smoother
-
-**语法:** obj &lt;&lt; Smoother
-
-**说明:** 平滑线: 显示通过数据的平滑曲线。最适用于相互关系未知的连续型 X 和 Y。
+**面板中的密度椭圆**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Smoother( X, Y ) ) );
+Open( "$SAMPLE_DATA/Penguins.jmp" );// density ellipse, correlation coefficient, panels, mean diamondGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Culmen Depth ),		Y( :Culmen Length ),		Group X( :Species ),		Group Y( :Sex )	),	Elements(		Points( X, Y, Legend( 8 ) ),		Ellipse( X, Y, Legend( 10 ), Correlation( 1 ), Mean Point( 1 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 8, Properties( 0, {Marker( "Circle" ), Transparency( 0.5 )} ) ),			Legend Model(				10,				Properties( 1, {Marker( "Filled Diamond" ), Marker Size( 6 )} )			)}		)	));
 
 ```
 
-#### Treemap
+### 项消息
 
-**语法:** obj &lt;&lt; Treemap
+#### Adapt to Axis Scale
 
-**说明:** 矩形树图: 显示按多个类别汇总的响应。
+**语法:** obj &lt;&lt; Adapt to Axis Scale( state=0|1 )
+
+**说明:** 关于对数和其他轴变换，它是对变换的坐标应用计算的。
+
+#### Correlation
+
+**语法:** obj &lt;&lt; Correlation( state=0|1 )
+
+**说明:** X 和 Y 变量的相关系数。
+
+#### Coverage
+
+**语法:** obj &lt;&lt; Coverage( "99%"|"95%"|"90%"|"50%" )
+
+#### Mean Point
+
+**语法:** obj &lt;&lt; Mean Point( state=0|1 )
+
+**说明:** 显示椭圆的均值点。
+
+## Formula Element
+
+### 关联的构造器
+
+#### Formula Element
+
+**语法:** Formula Element
+
+**说明:** 显示列公式定义的函数。
+
+**参数方程**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Treemap( X, Y ) ) );
+New Table( "bowtie",	New Column( "t", Set Values( [0, 10] ) ),	New Column( "x", Formula( Cos( :t ) ) ),	New Column( "y", Formula( Sine( :t * 2 ) ) ));// function plot, parametric equationsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :x ), Y( :y ) ),	Elements( Formula( X, Y, Legend( 5 ) ) ),	SendToReport(		Dispatch( {}, "x", ScaleBox, {Min( -1.1 ), Max( 1.1 )} ),		Dispatch( {}, "y", ScaleBox, {Min( -1.4 ), Max( 1.4 )} )	));
 
 ```
+
+**模型比较**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Corn.jmp" );// function plot, non-linear functions piecewise linear, piecewise quadraticLocal( {obj},	obj = Data Table( "Corn.jmp" ) << Nonlinear(		Y( :yield ),		X( :linear ),		"Newton",		Finish	);	obj << Save Prediction Formula;	obj << Close Window;);Local( {obj},	obj = Data Table( "Corn.jmp" ) << Nonlinear(		Y( :yield ),		X( :quad ),		"QuasiNewton SR1",		Finish	);	obj << Save Prediction Formula;	obj << Close Window;);Graph Builder(	Show Control Panel( 0 ),	Variables(		X( :nitrate ),		Y( :yield ),		Y( :Fitted linear, Position( 1 ) ),		Y( :Fitted quad, Position( 1 ) )	),	Elements( Points( X, Y( 1 ), Legend( 8 ) ), Formula( X, Y( 2 ), Y( 3 ), Legend( 9 ) ) ));
+
+```
+
+### 项消息
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+## Heatmap Element
+
+### 关联的构造器
+
+#### Heatmap Element
+
+**语法:** Heatmap Element
+
+**说明:** 使用颜色显示 X 和 Y 类别的计数。
+
+**已添加标签的热图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Peanut Data.jmp" );// labeled heatmap, treating continuous variables as categorical with transformGraph Builder(	Transform Column( "Ordinal Agitation Speed", Ordinal, Formula( :Agitation Speed ) ),	Transform Column( "Ordinal Ratio", Ordinal, Formula( :Ratio ) ),	Show Control Panel( 0 ),	Variables( X( :Ordinal Agitation Speed ), Y( :Ordinal Ratio ), Color( :Solids ) ),	Elements( Heatmap( X, Y, Legend( 29 ), Label( "Label by Value" ) ) ));
+
+```
+
+**带分类颜色的热图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// heat map, categorical colorGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Depth ), Y( :Culmen Length ), Color( :Species ) ),	Elements( Heatmap( X, Y, Legend( 4 ) ) ));
+
+```
+
+**带定制梯度的分类热图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// heat map, custom gradientGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Day of Week ), Y( :Month ), Color( :Arrival Delay ) ),	Elements( Heatmap( X, Y, Legend( 17 ) ) ),	Local Data Filter(		Add Filter( columns( :Distance ), Where( :Distance >= 500 & :Distance <= 1500 ) )	),	SendToReport(		Dispatch( {}, "Month", ScaleBox, {Reversed Scale} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				17,				Properties(					0,					{gradient(						{Color Theme(							{"Blue to Gray to Red Copy", {"Continuous", "Categorical",							"Diverging"}, {{42, 63, 255}, {166, 170, 203}, {192, 192, 192},							{201, 165, 165}, {252, 11, 11}, Missing( "Black" )}, {0, 0.33,							0.5, 0.67, 1}, {"Full Color", "Tritanopia"}}						), Scale Values( [. 0 .] )}					)}				)			)}		)	));
+
+```
+
+**数据驱动的背景颜色**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Corn Wheat Soybean Production.jmp" );// heat map as background colorGraph Builder(	Transform Column(		"Mean[Total Acres Planted][State]",		Formula( Col Mean( :Total Acres Planted, :State ) )	),	Transform Column(		"delta",		Formula(			(Col At( :Total Acres Planted, -1, :State )			-Col At( :Total Acres Planted, 1, :State )) /			Col Mean( :Total Acres Planted, :State )		)	),	Show Control Panel( 0 ),	Variables(		X( :Year ),		Y( :Total Acres Planted ),		Wrap(			:State,			Order By( :Total Acres Planted, "Descending", Order Statistic( "Mean" ) )		),		Color( :delta )	),	Elements(		Heatmap( Legend( 16 ) ),		Points( X, Y, Color( 0 ), Legend( 14 ) ),		Smoother( X, Y, Color( 0 ), Legend( 15 ) )	),	Local Data Filter(		Add Filter(			columns( :"Mean[Total Acres Planted][State]"n ),			Where( :"Mean[Total Acres Planted][State]"n >= 3245000 )		)	),	SendToReport(		Dispatch( {}, "Total Acres Planted", ScaleBox,			{Format( "Engineering SI", 13 ), Minor Ticks( 0 )}		),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				16,				Properties(					0,					{gradient(						{Scale Values( [-0.3 0 0.3] ), Label Format( "Percent", 12, 0 )}					)}				)			)}		),		Dispatch( {}, "400", LegendBox, {Legend Position( {16, [2], 14, [0], 15, [1]} )} )	));
+
+```
+
+**晶片图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );// wafer map, heat map, trellis, wrap arrangementGraph Builder(	Show Control Panel( 0 ),	Variables( X( :X_Die ), Y( :Y_Die ), Wrap( :Wafer ), Color( :Defects ) ),	Elements( Heatmap( X, Y, Legend( 8 ) ) ),	SendToReport(		Dispatch( {}, "X_Die", ScaleBox, {Minor Ticks( 9 )} ),		Dispatch( {}, "Y_Die", ScaleBox, {Minor Ticks( 9 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				8,				Properties( 0, {gradient( {Color Theme( "White to Orange" )} )} )			)}		)	));
+
+```
+
+**计数的六角形热图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// hexagonal heatmap, color by count, sequential color gradientGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Depth ), Y( :Culmen Length ) ),	Elements(		Heatmap( X, Y, Legend( 4 ), Bin Shape( "Hexagonal" ), Hex Bin Radius( 24.61 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				4,				Properties( 0, {gradient( {Color Theme( "White to Purple" )} )} )			)}		)	));
+
+```
+
+### 项消息
+
+#### Bin Shape
+
+**语法:** obj &lt;&lt; Bin Shape( "矩形"|"六角形" )
+
+**JMP添加的版本:** 16
+
+#### Cell Outline
+
+**语法:** obj &lt;&lt; Cell Outline( state=0|1 )
+
+**说明:** 按照字体大小定义最大增量。
+
+**JMP添加的版本:** 16
+
+#### Hex Bin Radius
+
+**语法:** obj &lt;&lt; Hex Bin Radius( number )
+
+**JMP添加的版本:** 16
+
+#### Label
+
+**语法:** obj &lt;&lt; Label( "无标签"|"将值用作标签"|"将占合计的百分比用作标签"|"将行用作标签" )
+
+**JMP添加的版本:** 14
+
+#### Label Format
+
+**语法:** obj &lt;&lt; Label Format
+
+**JMP添加的版本:** 16
+
+#### Max Label Size
+
+**语法:** obj &lt;&lt; Max Label Size( number )
+
+## Histogram Element
+
+### 关联的构造器
+
+#### Histogram Element
+
+**语法:** Histogram Element
+
+**说明:** 使用分箱显示变量分布。
+
+**叠加直方图，百分比标签**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// overlaid histograms, percent labelsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Overlay( :sex ) ),	Elements( Histogram( X, Legend( 8 ), Smoothness( -0.0833 ), Percents( 1 ) ) ));
+
+```
+
+**带计数轴的直方图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// histogram, countGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Distance ), Wrap( :Airline, Show Title( 0 ) ) ),	Elements( Histogram( X, Legend( 9 ) ) ),	SendToReport(		Dispatch( {}, "Distance", ScaleBox,			{Min( -6 ), Max( 2900 ), Inc( 1000 ), Minor Ticks( 1 )}		),		Dispatch( {}, "", ScaleBox, {Format( "Engineering SI", 12 ), Inc( 2000 )} ),		Dispatch( {}, "graph title", TextEditBox,			{Set Text( "Flight Distance by Airline" )}		)	));
+
+```
+
+**平滑核密度面积图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// kernel density estimate KDE area chartGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :sex ) ),	Elements(		Histogram(			X,			Y,			Legend( 8 ),			Histogram Style( "Kernel Density" ),			Smoothness( -0.08 )		)	));
+
+```
+
+**按因子水平显示的直方图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// histograms by levelGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :sex ) ),	Elements( Histogram( X, Y, Legend( 8 ) ) ));
+
+```
+
+**脊线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/NYC 311 Records.jmp" );// ridgeline plot, overlapping kernel density estimate areas, KDEGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Time ), Y( :Day of Week ) ),	Elements(		Histogram(			X,			Y,			Legend( 3 ),			Response Scale( "Percent" ),			Overlap( 4.8 ),			Histogram Style( "Kernel Density" ),			Smoothness( -0.1 )		)	),	SendToReport(		Dispatch( {}, "Time", ScaleBox, {Min( -2316 ), Max( 88403 ), Minor Ticks( 3 )} ),		Dispatch( {}, "Day of Week", ScaleBox, {Max( 4.45 )} )	));
+
+```
+
+### 项消息
+
+#### Confid Percent
+
+**语法:** obj &lt;&lt; Confid Percent( number=. )
+
+**说明:** 均值的置信区间，覆盖率以百分比形式给出。 默认为“.”。
+
+**JMP添加的版本:** 14
+
+#### Counts
+
+**语法:** obj &lt;&lt; Counts( state=0|1 )
+
+**JMP添加的版本:** 15
+
+#### Histogram Style
+
+**语法:** obj &lt;&lt; Histogram Style( "条形图"|"多边形"|"核密度"|"阴影图" )
+
+**JMP添加的版本:** 15
+
+#### Horizontal
+
+**语法:** obj &lt;&lt; Horizontal( state=0|1 )
+
+#### Means and Std Devs
+
+**语法:** obj &lt;&lt; Means and Std Devs( state=0|1 )
+
+**JMP添加的版本:** 14
+
+#### Overlap
+
+**语法:** obj &lt;&lt; Overlap( number )
+
+**JMP添加的版本:** 15
+
+#### Percents
+
+**语法:** obj &lt;&lt; Percents( state=0|1 )
+
+**JMP添加的版本:** 15
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Response Scale
+
+**语法:** obj &lt;&lt; Response Scale( "计数"|"百分比"|"填充" )
+
+**JMP添加的版本:** 15
+
+#### Smoothness
+
+**语法:** obj &lt;&lt; Smoothness( number )
+
+**说明:** 带宽控制密度曲线中的平滑量。减小带宽使曲线更不平滑，具有更多尖峰。增大带宽将平滑曲线但会模糊某些细节。
+
+**JMP添加的版本:** 15
+
+#### Vertical
+
+**语法:** obj &lt;&lt; Vertical( state=0|1 )
+
+**说明:** 默认开启。
+
+#### t Test for Mean At
+
+**语法:** obj &lt;&lt; t Test for Mean At( number=. )
+
+**说明:** 检验均值为某个指定值。 默认为“.”。
+
+**JMP添加的版本:** 14
+
+## Line Element
+
+### 关联的构造器
+
+#### Line Element
+
+**语法:** Line Element
+
+**说明:** 显示按类别汇总的响应。
+
+**事件跨度**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nic Adverse Events.jmp" );// event spans, start and stop times, categorical colorGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Study Day of Start of Adverse Event ),		X( :Study Day of End of Adverse Event, Position( 1 ) ),		Y( :Unique Subject Identifier ),		Color( :"Severity/Intensity"n )	),	Elements( Line( X( 1 ), X( 2 ), Y, Legend( 4 ), Ordering( "Within Row" ) ) ),	Local Data Filter(		Add Filter(			columns( :"Dictionary-Derived Term"n, :Action Taken with Study Treatment ),			Where( :"Dictionary-Derived Term"n == "Hypertension" ),			Where( :Action Taken with Study Treatment == "DRUG WITHDRAWN" )		)	),	SendToReport(		Dispatch( {}, "Unique Subject Identifier", ScaleBox,			{Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				4,				Properties( 0, {Line Color( RGB Color( 0.31, 0.61, 1 ) ), Line Width( 4 )} ),				Properties(					1,					{Line Color( RGB Color( 0.69, 0.65, 0.01 ) ), Line Width( 4 )}				),				Properties(					2,					{Line Color( RGB Color( 0.79, 0.09, 0.16 ) ), Line Width( 4 )}				)			)}		)	));
+
+```
+
+**凹凸图，连接的排名**
+
+```jsl
+
+Open( "$SAMPLE_DATA/SATByYear.jmp" );// Bump chart, line chart of ranking, smooth connections, transform columnGraph Builder(	Transform Column(		"Rank",		Formula(			(Col Number( :SAT Verbal, :Year, :"@Exclude"n, :"@Filter"n )			-Col Rank( :SAT Verbal, :Year, :"@Exclude"n, :"@Filter"n )) + 1		)	),	Show Control Panel( 0 ),	Variables( X( :Year ), Y( :Rank ), Overlay( :State ) ),	Elements( Line( X, Y, Legend( 4 ), Connection( "Curve" ) ) ),	Local Data Filter(		Add Filter(			columns( :Region ),			Where(				:Region == {"Midwest", "Mountain", "New England", "Northeast", "Pacific",				"Plains", "South", "Southwest"}			)		)	),	SendToReport( Dispatch( {}, "Rank", ScaleBox, {Reversed Scale} ) ));
+
+```
+
+**尾部移动平均值线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );// trailing moving average line chartGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Pin ), Y( :Weight ), Color( :Product ) ),	Elements(		Points( X, Y, Legend( 11 ) ),		Smoother(			X,			Y,			Color( 0 ),			Legend( 12 ),			Method( "Moving Average" ),			Local Region( "Trailing" ),			Local Width( 6 ),			Trim( 0.6435 )		)	),	SendToReport(		Dispatch( {}, "Pin", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "Weight", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				12,				Properties( 0, {Line Color( RGB Color( 0.25, 0.25, 0.25 ) )} )			)}		)	));
+
+```
+
+**已添加标签的线条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// overlaid line chart, labels in graphGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Day of Week ), Y( :Arrival Delay ), Overlay( :Airline ) ),	Elements( Line( X, Y, Legend( 11 ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				11,				Type Properties( "H Line", {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 0, {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 1, {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 2, {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 3, {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 4, {Line Label Properties( {Name Label( 1 )} )} ),				Properties( 5, {Line Label Properties( {Name Label( 1 )} )} )			)}		)	));
+
+```
+
+**带误差带的线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// line chart, error bandGraph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :height ) ),	Elements(		Line(			X,			Y,			Legend( 4 ),			Error Interval( "Confidence Interval" ),			Interval Style( "Band" )		)	));
+
+```
+
+**意面图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/Air.jmp" );// Spaghetti plot, line chart, smooth connections, mean line, transform columnGraph Builder(	Transform Column( "Year", Nominal, Formula( Year( :date ) ) ),	Show Control Panel( 0 ),	Variables( X( :month ), Y( :Ozone Concentration ), Overlay( :Year ) ),	Elements(		Line( X, Y, Legend( 8 ), Connection( "Curve" ) ),		Line( X, Y, Overlay( 0 ), Legend( 9 ), Connection( "Curve" ), Smoothness( 0.6 ) )	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				8,				Properties( 0, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 1, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 2, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 3, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 4, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 5, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 6, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 7, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 8, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 9, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 10, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 11, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 12, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 13, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 14, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 15, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 16, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 17, {Line Color( "gray" ), Transparency( 0.5 )} ),				Properties( 18, {Line Color( "gray" ), Transparency( 0.5 )} )			), Legend Model( 9, Properties( 0, {Line Color( "black" ), Line Width( 4 )} ) )}		)	));
+
+```
+
+**移动平均值线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );// moving average line chartGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Pin ), Y( :Weight ), Color( :Product ) ),	Elements(		Points( X, Y, Legend( 11 ) ),		Smoother( X, Y, Color( 0 ), Legend( 12 ), Method( "Moving Average" ) )	),	SendToReport(		Dispatch( {}, "Pin", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "Weight", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				12,				Properties( 0, {Line Color( RGB Color( 0.25, 0.25, 0.25 ) )} )			)}		)	));
+
+```
+
+**箭头线，每行一条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cholesterol.jmp" );// arrow lines, one per rowGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :April AM ),		X( :April PM, Position( 1 ) ),		Y( :June AM ),		Y( :June PM, Position( 1 ) ),		Overlay( :treatment )	),	Elements(		Line(			X( 1 ),			X( 2 ),			Y( 1 ),			Y( 2 ),			Legend( 8 ),			Ordering( "Within Row" ),			Connection( "Arrow" )		)	));
+
+```
+
+**运行图，按行顺序**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/Air.jmp" );// Run chart, line chart by row, grid linesGraph Builder(	Show Control Panel( 0 ),	Variables( Y( :Ozone Concentration ) ),	Elements( Line( Y, Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "", ScaleBox,			{Min( 0 ), Max( 220 ), Label Row( {Show Major Grid( 1 ), Show Minor Grid( 1 )} )}		),		Dispatch( {}, "Ozone Concentration", ScaleBox, {Label Row( Show Major Grid( 1 ) )} )	));
+
+```
+
+**连接的散点图**
+
+```jsl
+
+New Table( "prey and predator",	Add Rows( 48 ),	New Column( "Month", Formula( Row() ) ),	New Column( "Rabbits", Formula( 10 * Cos( :Month * 0.35 ) + Random Normal( 50, 1.5 ) ) ),	New Column( "Foxes", Formula( 8 * Cos( :Month * 0.35 + 1 ) + Random Normal( 30, 1 ) ) ),);// connected scatter plot, smooth line connections, row orderGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Foxes ), Y( :Rabbits ), Color( :Month ) ),	Elements(		Line( X, Y, Legend( 5 ), Ordering( "Row Order" ), Connection( "Curve" ) ),		Points( X, Y, Color( 0 ), Legend( 6 ) )	));
+
+```
+
+**连接的箭头**
+
+```jsl
+
+Open( "$SAMPLE_DATA/SAT.jmp" );// arrow chart, multiple x and y variables, overlaidGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :"1992 Verbal"n ),		X( :"1999 Verbal"n, Position( 1 ) ),		X( :"2004 Verbal"n, Position( 1 ) ),		Y( :"1992 Math"n ),		Y( :"1999 Math"n, Position( 1 ) ),		Y( :"2004 Math"n, Position( 1 ) ),		Overlay( :State )	),	Elements(		Line(			X( 1 ),			X( 2 ),			X( 3 ),			Y( 1 ),			Y( 2 ),			Y( 3 ),			Legend( 7 ),			Ordering( "Within Row" ),			Connection( "Arrow" )		)	),	Local Data Filter(		Add Filter( columns( :"% Taking (2004)"n ), Where( :"% Taking (2004)"n >= 0.57788 ) )	),	SendToReport(		Dispatch( {}, "1992 Verbal & 2 more", TextEditBox, {Set Text( "Verbal" )} ),		Dispatch( {}, "1992 Math & 2 more", TextEditBox, {Set Text( "Math" )} )	));
+
+```
+
+### 项消息
+
+#### Connection
+
+**语法:** obj &lt;&lt; Connection( "线条"|"箭头"|"曲线"|"步进"|"居中步进"|"水平"|"垂直" )
+
+#### Error Interval
+
+**语法:** obj &lt;&lt; Error Interval( "自动"|"无"|"极差"|"四分位数间距"|"标准误差"|"标准差"|"置信区间"|"绝对偏差中位数"|"定制区间"|"双向区间" )
+
+#### Fill
+
+**语法:** obj &lt;&lt; Fill( "无"|"向下填充"|"之间填充" )
+
+**JMP添加的版本:** 15
+
+#### Interval Style
+
+**语法:** obj &lt;&lt; Interval Style( "误差条"|"带"|"哈希带"|"箭头" )
+
+#### Missing Factors
+
+**语法:** obj &lt;&lt; Missing Factors( "跳过"|"视为缺失"|"视为零" )
+
+**说明:** 如何显示跨越缺失因子水平的连接
+
+**JMP添加的版本:** 15
+
+#### Missing Values
+
+**语法:** obj &lt;&lt; Missing Values( "连接穿过"|"连接变淡"|"用虚线连接"|"无连接" )
+
+**说明:** 如何显示跨越缺失值的连接。
+
+#### Ordering
+
+**语法:** obj &lt;&lt; Ordering( "自动"|"行顺序"|"汇总"|"行内" )
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Row order
+
+**语法:** obj &lt;&lt; Row order( state=0|1 )
+
+#### Save Summary Formula
+
+**语法:** obj &lt;&lt; Save Summary Formula
+
+#### Smoothness
+
+**语法:** obj &lt;&lt; Smoothness( number )
+
+#### Stack
+
+**语法:** obj &lt;&lt; Stack( state=0|1 )
+
+**JMP添加的版本:** 15
+
+#### Stack Negative
+
+**语法:** obj &lt;&lt; Stack Negative( "叠加"|"分隔负值"|"视为零" )
+
+**说明:** 控制堆叠时如何处理负数据值。
+
+**JMP添加的版本:** 17
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+## Line of Fit Element
+
+### 关联的构造器
+
+#### Line of Fit Element
+
+**语法:** Line of Fit Element
+
+**说明:** 为连续型 X 和 Y 显示带置信区间的线性回归。为分类 X 拟合均值。
+
+**二次拟合**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// linear regression, overlaid curves, quadraticGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Culmen Length ), Y( :Flipper Length ), Overlay( :Species ) ),	Elements(		Points( X, Y, Legend( 9 ) ),		Line Of Fit( X, Y, Legend( 10 ), Degree( "Quadratic" ) )	));
+
+```
+
+**叠加线性回归**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// linear regression, overlaid with confidence intervalsGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ), Overlay( :sex ) ),	Elements( Points( X, Y, Legend( 2 ) ), Line Of Fit( X, Y, Legend( 4 ) ) ));
+
+```
+
+**方差分析拟合，单因子，均值比较**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// ANOVA fit, oneway, means comparison, confidence interval, F test p-valueGraph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :weight ) ),	Elements(		Points( X, Y, Legend( 1 ) ),		Line Of Fit( X, Y, Legend( 2 ), Unequal Variances( 1 ), F Test( 1 ) )	));
+
+```
+
+**时间序列回归**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/Monthly Sales.jmp" );// time series regression, periodicGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Date ), Y( :Sales ) ),	Elements(		Points( X, Y, Legend( 3 ) ),		Line Of Fit( X, Y, Legend( 5 ), Fit( "Time Series" ), Seasonal Period( 12 ) )	));
+
+```
+
+### 项消息
+
+#### Adapt to Axis Scale
+
+**语法:** obj &lt;&lt; Adapt to Axis Scale( state=0|1 )
+
+**说明:** 关于对数和其他轴变换，它是对变换的坐标应用计算的。
+
+#### Confidence of Fit
+
+**语法:** obj &lt;&lt; Confidence of Fit( state=0|1 )
+
+#### Confidence of Prediction
+
+**语法:** obj &lt;&lt; Confidence of Prediction( state=0|1 )
+
+#### Constrain Parameters
+
+**语法:** obj &lt;&lt; Constrain Parameters( state=0|1 )
+
+**说明:** 约束 ETS 参数。
+
+**JMP添加的版本:** 17
+
+#### Degree
+
+**语法:** obj &lt;&lt; Degree( "线性"|"二次"|"三次" )
+
+#### Equation
+
+**语法:** obj &lt;&lt; Equation( state=0|1 )
+
+**说明:** 拟合的方程式。
+
+#### F Test
+
+**语法:** obj &lt;&lt; F Test( state=0|1 )
+
+**说明:** 整体模型检验的显著性水平。
+
+**JMP添加的版本:** 14
+
+#### Fit
+
+**语法:** obj &lt;&lt; Fit( "多项式"|"稳健 Cauchy"|"时间序列" )
+
+**JMP添加的版本:** 15
+
+#### Forecast Model
+
+**语法:** obj &lt;&lt; Forecast Model( state=0|1 )
+
+**说明:** 显示用于预测的模型，带参数估计值。
+
+**JMP添加的版本:** 15
+
+#### Forecast Periods
+
+**语法:** obj &lt;&lt; Forecast Periods( number )
+
+**说明:** 预测前面的期间数。
+
+**JMP添加的版本:** 15
+
+#### Means and Std Devs
+
+**语法:** obj &lt;&lt; Means and Std Devs( state=0|1 )
+
+**说明:** 显示均值线附近的每个组的均值与标准差。
+
+**JMP添加的版本:** 14
+
+#### Prediction
+
+**语法:** obj &lt;&lt; Prediction( state=0|1 )
+
+**说明:** 单个预测值的置信区域
+
+#### RMSE
+
+**语法:** obj &lt;&lt; RMSE( state=0|1 )
+
+**说明:** 均方根误差，以响应单位对误差的一种测度。
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Root Mean Square Error
+
+**语法:** obj &lt;&lt; Root Mean Square Error( state=0|1 )
+
+#### R²
+
+**语法:** obj &lt;&lt; R²( state=0|1 )
+
+**说明:** 决定系数，拟合预测数据良好程度的一种测度。
+
+#### Save Formula
+
+**语法:** obj &lt;&lt; Save Formula
+
+#### Seasonal Period
+
+**语法:** obj &lt;&lt; Seasonal Period( number )
+
+**说明:** 季节中的期间数。例如，对于每月数据，依照一年内的季节有 12 个期间。
+
+**JMP添加的版本:** 15
+
+#### Unequal Variances
+
+**语法:** obj &lt;&lt; Unequal Variances( state=0|1 )
+
+**说明:** 是否基于不同组具有不同方差的假定来计算检验和置信限。
+
+## Mosaic Element
+
+### 关联的构造器
+
+#### Mosaic Element
+
+**语法:** Mosaic Element
+
+**说明:** 使用大小显示 X 和 Y 类别的计数。
+
+**水平马赛克图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// horizontal mosaic, axis label line wrappingGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Clutch Completion ), Y( :Species ) ),	Elements( Mosaic( X, Y, Legend( 5 ), Response Axis( "X" ) ) ));
+
+```
+
+**马赛克图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// mosaic, marimekkoGraph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :sex ) ),	Elements( Mosaic( X, Y, Legend( 4 ) ) ));
+
+```
+
+### 项消息
+
+#### Cell Labeling
+
+**语法:** obj &lt;&lt; Cell Labeling( "无标签"|"将计数用作标签"|"将百分比用作标签"|"将值用作标签"|"将行用作标签" )
+
+**JMP添加的版本:** 14
+
+#### Chi-square Test
+
+**语法:** obj &lt;&lt; Chi-square Test( state=0|1 )
+
+**说明:** 各组的响应率相同的卡方检验，或两个响应独立的卡方检验
+
+**JMP添加的版本:** 14
+
+#### Confid Percent
+
+**语法:** obj &lt;&lt; Confid Percent( number=. )
+
+**说明:** 高水平中的比例的置信区间覆盖率，以百分比表示。 默认为“.”。
+
+**JMP添加的版本:** 14
+
+#### Horizontal
+
+**语法:** obj &lt;&lt; Horizontal( state=0|1 )
+
+#### Label Format
+
+**语法:** obj &lt;&lt; Label Format
+
+**JMP添加的版本:** 16
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Test Proportion At
+
+**语法:** obj &lt;&lt; Test Proportion At( number=. )
+
+**说明:** 检验高水平中的比例为某个指定值。 默认为“.”。
+
+**JMP添加的版本:** 14
+
+#### Vertical
+
+**语法:** obj &lt;&lt; Vertical( state=0|1 )
+
+**说明:** 默认开启。
+
+## Parallel Element
+
+### 关联的构造器
+
+#### Parallel Element
+
+**语法:** Parallel Element
+
+**说明:** 沿平行轴显示每行多个变量，每行对应一条连接线。
+
+**Sankey 平行集**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );// parallel sets, sankey, categorical parallel coordinatesGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables(		X( :What is your gender?, Combine( "Parallel Independent" ) ),		X(			:"What is your favorite color? (select one)"n,			Position( 1 ),			Combine( "Parallel Independent" )		),		X( :What is your favorite color?, Position( 1 ), Combine( "Parallel Independent" ) ),		Color( :"What is your favorite color? (select one)"n )	),	Elements( Parallel( X( 1 ), X( 2 ), X( 3 ), Legend( 15 ) ) ),	SendToReport(		Dispatch( {}, "What is your gender?", ScaleBox,			{Label Row(				{Tick Mark(					Label( "What is your favorite color?" ),					Label( "Specific favorite color" )				), Tick Mark(					Label( "What is your favorite color? (select one)" ),					Label( "General favorite color" )				), Tick Mark( Label( "What is your gender?" ), Label( "Gender" ) )}			)}		)	));
+
+```
+
+**带对齐尺度的平行坐标**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// parallel coordinates - aligned scaleGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :"Trig-3yrs"n, Combine( "Parallel Merged" ) ),		X( :"Chol-3yrs"n, Position( 1 ), Combine( "Parallel Merged" ) ),		X( :"HDL-3yrs"n, Position( 1 ), Combine( "Parallel Merged" ) ),		X( :"LDL-3yrs"n, Position( 1 ), Combine( "Parallel Merged" ) )	),	Elements( Parallel( X( 1 ), X( 2 ), X( 3 ), X( 4 ), Legend( 8 ) ) ));
+
+```
+
+**平行坐标图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// parallel coordinates - linesGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Height ),		X( :Skinfold, Position( 1 ) ),		X( :Weight, Position( 1 ) ),		X( :"% Ideal Body Wt."n, Position( 1 ) ),		X( :"% Ideal Weight-3yr"n, Position( 1 ) ),		X( :"Weight-3yr"n, Position( 1 ) ),		X( :Cholesterol, Position( 1 ) ),		X( :Triglycerides, Position( 1 ) ),		X( :HDL, Position( 1 ) ),		X( :LDL, Position( 1 ) ),		X( :Cholesterol Loss, Position( 1 ) ),		Color( :Sex )	),	Elements(		Parallel(			X( 1 ),			X( 2 ),			X( 3 ),			X( 4 ),			X( 5 ),			X( 6 ),			X( 7 ),			X( 8 ),			X( 9 ),			X( 10 ),			X( 11 ),			Smoothness( 0.5 )		)	));
+
+```
+
+**平行点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// parallel coordinates - dotsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Height ),		X( :Skinfold, Position( 1 ) ),		X( :Weight, Position( 1 ) ),		X( :"% Ideal Body Wt."n, Position( 1 ) ),		X( :"% Ideal Weight-3yr"n, Position( 1 ) ),		X( :"Weight-3yr"n, Position( 1 ) ),		X( :Cholesterol, Position( 1 ) ),		X( :Triglycerides, Position( 1 ) ),		X( :HDL, Position( 1 ) ),		X( :LDL, Position( 1 ) ),		X( :Cholesterol Loss, Position( 1 ) ),		Color( :Sex )	),	Points(		Parallel(			X( 1 ),			X( 2 ),			X( 3 ),			X( 4 ),			X( 5 ),			X( 6 ),			X( 7 ),			X( 8 ),			X( 9 ),			X( 10 ),			X( 11 ),			Smoothness( 0.5 )		)	));
+
+```
+
+**平行箱线图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Lipid Data.jmp" );// parallel coordinates - box plotsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Height ),		X( :Skinfold, Position( 1 ) ),		X( :Weight, Position( 1 ) ),		X( :"% Ideal Body Wt."n, Position( 1 ) ),		X( :"% Ideal Weight-3yr"n, Position( 1 ) ),		X( :"Weight-3yr"n, Position( 1 ) ),		X( :Cholesterol, Position( 1 ) ),		X( :Triglycerides, Position( 1 ) ),		X( :HDL, Position( 1 ) ),		X( :LDL, Position( 1 ) ),		X( :Cholesterol Loss, Position( 1 ) )	),	Elements(		Box Plot(			X( 1 ),			X( 2 ),			X( 3 ),			X( 4 ),			X( 5 ),			X( 6 ),			X( 7 ),			X( 8 ),			X( 9 ),			X( 11 )		)	));
+
+```
+
+**平行集**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Titanic Passengers.jmp" );// parallel setsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Survived ),		X( :Passenger Class, Position( 1 ) ),		X( :Sex, Position( 1 ) ),		X( :Age, Position( 1 ) ),		Color( :Survived )	),	Elements( Parallel( X( 1 ), X( 2 ), X( 3 ), X( 4 ), Legend( 5 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{DispatchSeg( ParallelAxisSeg( 1 ), Reversed( Passenger Class, Sex ) )}		)	));
+
+```
+
+### 项消息
+
+#### Axes Labels
+
+**语法:** obj &lt;&lt; Axes Labels( state=0|1 )
+
+#### Combine Sets
+
+**语法:** obj &lt;&lt; Combine Sets( state=0|1 )
+
+#### Smoothness
+
+**语法:** obj &lt;&lt; Smoothness( number )
+
+**JMP添加的版本:** 16
+
+## Pie Element
+
+### 关联的构造器
+
+#### Pie Element
+
+**语法:** Pie Element
+
+**说明:** 显示整体的各个部分。
+
+**按计数排序的环形图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// donut chart by countGraph Builder(	Show Control Panel( 0 ),	Variables( X( :age ) ),	Elements( Pie( X, Legend( 6 ), Pie Style( "Ring" ) ) ));
+
+```
+
+**按计数排序的饼图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// pie chart by countGraph Builder(	Show Control Panel( 0 ),	Variables( X( :age ) ),	Elements( Pie( X, Legend( 6 ) ) ));
+
+```
+
+**饼图面板**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Smartphone OS.jmp" );// pie panelGraph Builder(	Transform Column( "Market Share freq", Formula( Round( :Market Share * 1000 ) ) ),	Show Control Panel( 0 ),	Show Footer( 0 ),	Variables( X( :Operating System ), Wrap( :Year ), Frequency( :Market Share freq ) ),	Elements( Pie( X, Legend( 6 ) ) ),	SendToReport(		Dispatch( {}, "graph title", TextEditBox,			{Set Text( "SmartPhone OS Market Share" )}		)	));
+
+```
+
+### 项消息
+
+#### Label
+
+**语法:** obj &lt;&lt; Label( "无标签"|"将值用作标签"|"将占合计的百分比用作标签"|"将行用作标签" )
+
+#### Label Format
+
+**语法:** obj &lt;&lt; Label Format
+
+**JMP添加的版本:** 16
+
+#### Pie Style
+
+**语法:** obj &lt;&lt; Pie Style( "饼式"|"环式"|"鸡冠花式" )
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+## Points Element
+
+### 关联的构造器
+
+#### Points Element
+
+**语法:** Points Element
+
+**说明:** 显示数据值的散点图。
+
+**中心化并排点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// center dot plots, colored by categorical variableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ), Color( :Sex ) ),	Elements( Points( X, Y, Legend( 10 ) ) ),	SendToReport(		Dispatch( {}, "Species", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				10,				Properties( 0, {Marker Size( 5 )} ),				Properties( 1, {Marker Size( 5 )} )			)}		)	));
+
+```
+
+**使用大小和颜色的散点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// bubble plotGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Culmen Depth ),		Y( :Culmen Length ),		Group X( :Species, Show Title( 0 ) ),		Color( :Sex ),		Size( :Body Mass )	),	Elements( Points( X, Y, Legend( 20 ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				20,				Properties( 1, {Marker( "Circle" ), Transparency( 0.5 )}, ),				Properties( 2, {Marker( "FilledCircle" ), Transparency( 0.5 )} )			)}		)	));
+
+```
+
+**六角形对侧点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/S4 Temps.jmp" );// dot plot, hexagonal jitter from opposite side (ordinal), custom axis label formatGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Y ), Y( :type of space ) ),	Elements(		Points(			X,			Y,			Legend( 9 ),			Jitter( "Hex Grid" ),			Jitter Side( "Ordinal" ),			Jitter Smooth( 1 )		)	),	Local Data Filter(		Add Filter(			columns( :type of space ),			Where( :type of space == {"exterior", "interior"} )		)	),	SendToReport(		Dispatch( {}, "Y", ScaleBox,			{Format( "Custom", Formula( Char( value ) || "°" ), 12, 0 )}		),		Dispatch( {}, "type of space", ScaleBox, {Min( 0 ), Max( 1 )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model( 9, Properties( 0, {Line Color( "Gray" ), Marker Size( 6 )} ) )}		),		Dispatch( {}, "Y", TextEditBox, {Set Text( "Temperature (Celcius))" )} )	));
+
+```
+
+**六角形网格点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// center hexagonal grid dot plots, smoothed jitter placement, colored by categorical variableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ), Color( :Sex ) ),	Elements( Points( X, Y, Legend( 10 ), Jitter( "Hex Grid" ), Jitter Smooth( 1 ) ) ),	SendToReport(		Dispatch( {}, "Species", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				10,				Properties( 0, {Marker Size( 5 )} ),				Properties( 1, {Marker Size( 5 )} )			)}		)	));
+
+```
+
+**变异性图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );// variability chart, mean and range interval, nested axisGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Operator ), X( :Part, Position( 1 ) ), Y( :Y ) ),	Elements(		Points(			X( 1 ),			X( 2 ),			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Range" )		)	),	SendToReport(		Dispatch( {}, "Operator", ScaleBox, {Label Row( 2, Show Major Grid( 1 ) )} )	));
+
+```
+
+**圆堆积随机散布**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Design Experiment/Peanut Data.jmp" );// categorical 2D jitter, circle packing, color by responseGraph Builder(	Show Control Panel( 0 ),	Variables( X( :"Pre-Soak"n ), Y( :Hydrolyze ), Color( :Solids ) ),	Elements( Points( X, Y, Legend( 4 ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 4, Properties( 1, {Marker Size( 10 )} ) )}		)	));
+
+```
+
+**密度点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );// density dot plot, beeswarmGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Privacy ), Y( :Female ) ),	Elements(		Points(			X,			Y,			Legend( 3 ),			Jitter( "Hex Grid" ),			Jitter Side( "Positive" ),			Jitter Smooth( 1 )		)	),	SendToReport(		Dispatch( {}, "Female", ScaleBox,			{Min( 0 ), Max( 1.99 ), Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "400", ScaleBox,			{Legend Model( 3, Properties( 0, {Marker( "FilledCircle" )} ) )}		)	));
+
+```
+
+**平滑中心化并排点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// center dot plots, smoothed jitter placement, colored by categorical variableGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Species ), Y( :Body Mass ), Color( :Sex ) ),	Elements( Points( X, Y, Legend( 10 ), Jitter Smooth( 0.5 ) ) ),	SendToReport(		Dispatch( {}, "Species", ScaleBox, {Label Row( Show Major Grid( 1 ) )} ),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				10,				Properties( 0, {Marker Size( 5 )} ),				Properties( 1, {Marker Size( 5 )} )			)}		)	));
+
+```
+
+**平滑点图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );// smoothed dot plot, color by ordinalGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Privacy ), Y( :Female ), Color( :Internet Use ) ),	Elements( Points( X, Y, Legend( 5 ), Jitter Smooth( 0.8 ) ) ),	SendToReport(		Dispatch( {}, "Privacy", ScaleBox,			{Min( -2 ), Max( 2 ), Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "400", ScaleBox,			{Legend Model(				5,				Type Properties( 0, "Marker", {Marker Size( 5 )} ),				Properties(					0,					{Line Color( RGB Color( 0.86, 0.52, 0.35 ) ), Marker Size( 5 )}				),				Properties(					1,					{Line Color( RGB Color( 0.95, 0.79, 0.45 ) ), Marker Size( 5 )}				),				Properties(					2,					{Line Color( RGB Color( 0.56, 0.02, 0.23 ) ), Marker Size( 5 )}				),				Properties(					3,					{Line Color( RGB Color( 0.88, 0.9, 0.74 ) ), Marker Size( 5 )}				)			)}		),		Dispatch( {}, "400", LegendBox, {Legend Position( {5, [1, 2, 0, 3]} )} )	));
+
+```
+
+**散点图矩阵**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// scatter plot matrix with main diagonal histogramsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Culmen Length ),		X( :Culmen Depth ),		X( :Flipper Length ),		X( :Body Mass ),		Y( :Culmen Length ),		Y( :Culmen Depth ),		Y( :Flipper Length ),		Y( :Body Mass ),		Overlay( :Species )	),	Elements( Position( 1, 1 ), Histogram( X, Y, Legend( 87 ) ) ),	Elements(		Position( 1, 2 ),		Points( X, Y, Legend( 57 ) ),		Smoother( X, Y, Legend( 58 ) )	),	Elements(		Position( 1, 3 ),		Points( X, Y, Legend( 59 ) ),		Smoother( X, Y, Legend( 60 ) )	),	Elements(		Position( 1, 4 ),		Points( X, Y, Legend( 61 ) ),		Smoother( X, Y, Legend( 62 ) )	),	Elements(		Position( 2, 1 ),		Points( X, Y, Legend( 63 ) ),		Smoother( X, Y, Legend( 64 ) )	),	Elements( Position( 2, 2 ), Histogram( X, Y, Legend( 88 ) ) ),	Elements(		Position( 2, 3 ),		Points( X, Y, Legend( 67 ) ),		Smoother( X, Y, Legend( 68 ) )	),	Elements(		Position( 2, 4 ),		Points( X, Y, Legend( 69 ) ),		Smoother( X, Y, Legend( 70 ) )	),	Elements(		Position( 3, 1 ),		Points( X, Y, Legend( 71 ) ),		Smoother( X, Y, Legend( 72 ) )	),	Elements(		Position( 3, 2 ),		Points( X, Y, Legend( 73 ) ),		Smoother( X, Y, Legend( 74 ) )	),	Elements( Position( 3, 3 ), Histogram( X, Y, Legend( 89 ) ) ),	Elements(		Position( 3, 4 ),		Points( X, Y, Legend( 77 ) ),		Smoother( X, Y, Legend( 78 ) )	),	Elements(		Position( 4, 1 ),		Points( X, Y, Legend( 79 ) ),		Smoother( X, Y, Legend( 80 ) )	),	Elements(		Position( 4, 2 ),		Points( X, Y, Legend( 81 ) ),		Smoother( X, Y, Legend( 82 ) )	),	Elements(		Position( 4, 3 ),		Points( X, Y, Legend( 83 ) ),		Smoother( X, Y, Legend( 84 ) )	),	Elements( Position( 4, 4 ), Histogram( X, Y, Legend( 90 ) ) ));
+
+```
+
+**纬度和经度**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Cities.jmp" );// geographic scatter plot, background map, sized dotsGraph Builder(	Show Control Panel( 0 ),	Show X Axis( 0 ),	Show Y Axis( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables( X( :Longitude ), Y( :Latitude ), Color( :PM10 ), Size( :POP ) ),	Elements( Points( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model(				2,				Properties( 0, {Marker Size( 8 )} ),				Properties( 1, {gradient( {Color Theme( "Muted Yellow to Red" )} )} )			)}		),		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) )}		)	));
+
+```
+
+### 项消息
+
+#### Error Interval
+
+**语法:** obj &lt;&lt; Error Interval( "自动"|"无"|"极差"|"四分位数间距"|"标准误差"|"标准差"|"置信区间"|"绝对偏差中位数"|"定制区间"|"双向区间" )
+
+#### Interval Style
+
+**语法:** obj &lt;&lt; Interval Style( "误差条"|"带"|"哈希带"|"箭头" )
+
+#### Jitter
+
+**语法:** obj &lt;&lt; Jitter( "无"|"自动"|"随机均匀"|"随机正态"|"密度随机"|"堆叠填充"|"网格"|"六边形网格"|"蜂群" )
+
+#### Jitter Limit
+
+**语法:** obj &lt;&lt; Jitter Limit( number )
+
+**JMP添加的版本:** 14
+
+#### Jitter Overlap
+
+**语法:** obj &lt;&lt; Jitter Overlap( number )
+
+**JMP添加的版本:** 19
+
+#### Jitter Side
+
+**语法:** obj &lt;&lt; Jitter Side( "中心化"|"正"|"负"|"有序型" )
+
+#### Jitter Smooth
+
+**语法:** obj &lt;&lt; Jitter Smooth( number )
+
+**JMP添加的版本:** 19
+
+#### Label
+
+**语法:** obj &lt;&lt; Label( "无标签"|"将值用作标签"|"将行用作标签"|"按行和值添加标签" )
+
+#### Label Format
+
+**语法:** obj &lt;&lt; Label Format
+
+**JMP添加的版本:** 18
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Save Summary Formula
+
+**语法:** obj &lt;&lt; Save Summary Formula
+
+#### Set Shape Column
+
+**语法:** obj &lt;&lt; Set Shape Column
+
+**JMP添加的版本:** 16
+
+#### Set Shape Expression
+
+**语法:** obj &lt;&lt; Set Shape Expression
+
+**JMP添加的版本:** 16
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+## Shapes Element
+
+### 关联的构造器
+
+#### Map Shapes Element
+
+**语法:** Map Shapes Element
+
+**说明:** 显示“地图形状”变量定义的区域，通常带有“颜色”变量。
+
+**世界地图等值区域图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );// world map, choropleth, grid linesGraph Builder(	Show Control Panel( 0 ),	Variables( Color( :Total Median Age ), Shape( :Territory ) ),	Elements( Map Shapes( Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "", ScaleBox,			{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -175.3 ), Max( 175.3 ), Inc( 30 ),			Minor Ticks( 0 ), Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "", ScaleBox( 2 ),			{Format( "Latitude DDD", "PUNDIR", 16 ), Min( -82.6 ), Max( 82.6 ), Inc( 30 ),			Minor Ticks( 0 ), Label Row( Show Major Grid( 1 ) )}		)	));
+
+```
+
+**以亚太为中心的世界地图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );// world map, choropleth, grid lines, Pacific centeringGraph Builder(	Size( 1094, 586 ),	Show Control Panel( 0 ),	Variables( Color( :Total Median Age ), Shape( :Territory ) ),	Elements( Map Shapes( Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "", ScaleBox,			{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -23.27 ), Max( 327.33 ), Inc( 30 ),			Minor Ticks( 0 ), Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "", ScaleBox( 2 ),			{Format( "Latitude DDD", "PUNDIR", 16 ), Min( -87.55 ), Max( 87.55 ), Inc( 30 ),			Minor Ticks( 0 ), Label Row( Show Major Grid( 1 ) )}		)	));
+
+```
+
+**使用分类颜色的定制形状文件**
+
+```jsl
+
+Open( "$SAMPLE_DATA/S4 Temps.jmp" );// custom shape file choropleth, categorical colorGraph Builder(	Show Control Panel( 0 ),	Show X Axis( 0 ),	Show Y Axis( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables( Color( :sector ), Shape( :"room/office"n ) ),	Elements( Map Shapes( Legend( 2 ) ) ));
+
+```
+
+**使用渐变颜色的定制形状文件**
+
+```jsl
+
+Open( "$SAMPLE_DATA/S4 Temps.jmp" );// custom shape file choropleth, color gradientGraph Builder(	Show Control Panel( 0 ),	Show X Axis( 0 ),	Show Y Axis( 0 ),	Show X Axis Title( 0 ),	Show Y Axis Title( 0 ),	Variables( Group X( :time of day ), Color( :fahrenheit ), Shape( :"room/office"n ) ),	Elements( Map Shapes( Legend( 2 ) ) ));
+
+```
+
+**地中海等积等值区域图**
+
+```jsl
+
+Open( "$SAMPLE_DATA/World Demographics.jmp" );// Mediterranean map, choropleth, equal area projection, grid linesGraph Builder(	Size( 1094, 586 ),	Show Control Panel( 0 ),	Variables( Color( :Total Median Age ), Shape( :Territory ) ),	Elements( Map Shapes( Legend( 3 ) ) ),	SendToReport(		Dispatch( {}, "", ScaleBox,			{Format( "Longitude DDD", "PUNDIR", 16 ), Min( -14.2917884823647 ),			Max( 64.9684846475565 ), Inc( 20 ), Minor Ticks( 1 ),			Label Row( Show Major Grid( 1 ) )}		),		Dispatch( {}, "", ScaleBox( 2 ),			{Format( "Latitude DDD", "PUNDIR", 16 ), Min( 21.8020806509188 ),			Max( 61.3932495299748 ), Inc( 10 ), Minor Ticks( 1 ),			Label Row( Show Major Grid( 1 ) )}		)	));
+
+```
+
+### 项消息
+
+#### Aspect Ratio
+
+**语法:** obj &lt;&lt; Aspect Ratio( number )
+
+**说明:** X:Y 缩放比例的调整因子。
+
+#### Show Missing Shapes
+
+**语法:** obj &lt;&lt; Show Missing Shapes( state=0|1 )
+
+**JMP添加的版本:** 16
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+## Smoother Element
+
+### 关联的构造器
+
+#### Smoother Element
+
+**语法:** Smoother Element
+
+**说明:** 显示通过数据的平滑曲线。最适用于相互关系未知的连续型 X 和 Y。
+
+**使用拆分的平滑时间序列趋势**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/Air.jmp" );// Time series, split trend curve, grid linesGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :date ),		Y( :Ozone Concentration ),		Overlay( :Intervention for post 1960 period )	),	Elements( Points( X, Y, Legend( 9 ) ), Smoother( X, Y, Legend( 10 ), Lambda( 1.4 ) ) ),	SendToReport(		Dispatch( {}, "date", ScaleBox, {Minor Ticks( 4 )} ),		Dispatch( {}, "Ozone Concentration", ScaleBox, {Label Row( Show Major Grid( 1 ) )} )	));
+
+```
+
+**单调平滑趋势线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Penguins.jmp" );// monotonic smooth trend line, p-spline, constraintGraph Builder(	Show Control Panel( 0 ),	Include Missing Continuous Values( 0 ),	Variables( X( :Culmen Length ), Y( :Culmen Depth ), Overlay( :Species ) ),	Elements(		Points( X, Y ),		Smoother(			X,			Y,			Method( "P-Spline" ),			Lambda( 0.3 ),			Shape Constraint( "Non-descending" )		)	));
+
+```
+
+**周期性平滑线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Time Series/Air.jmp" );// smoother, cycle, p-spline, bootstrap confidence intervalGraph Builder(	Show Control Panel( 0 ),	Variables( X( :month ), Y( :Ozone Concentration ) ),	Elements(		Points( X, Y, Legend( 5 ) ),		Smoother(			X,			Y,			Legend( 6 ),			Method( "P-Spline" ),			Shape Constraint( "Cycle" ),			Confidence of Fit( 1 )		)	));
+
+```
+
+**在对数 x 轴上单调**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );// monotonic spline smoother, log x axis, overlaid, legend in graph cornerGraph Builder(	Show Control Panel( 0 ),	Legend Position( "Inside Left" ),	Variables( X( :Concentration ), Y( :Toxicity ), Overlay( :Formulation ) ),	Elements(		Points( X, Y, Legend( 11 ) ),		Smoother(			X,			Y,			Legend( 12 ),			Method( "P-Spline" ),			Shape Constraint( "Non-descending" )		)	),	SendToReport(		Dispatch( {}, "Concentration", ScaleBox, {Scale( "Log" ), Minor Ticks( 1 )} )	));
+
+```
+
+**平滑线比较: loess，样条，p 样条**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Corn.jmp" );// smoothers, loess, cubic spline, p-spline, monotonic, legend in bottom rightGraph Builder(	Show Control Panel( 0 ),	Legend Position( "Inside Bottom Right" ),	Variables( X( :nitrate ), Y( :yield ) ),	Elements(		Points( X, Y, Legend( 3 ) ),		Smoother(			X,			Y,			Legend( 4 ),			Method( "Local Kernel" ),			Lambda( 0.5 ),			Local Width( 0.687 ),			Trim( 0 )		),		Smoother( X, Y, Legend( 5 ), Lambda( 0.4 ) ),		Smoother(			X,			Y,			Legend( 6 ),			Method( "P-Spline" ),			Lambda( 2.0 ),			Shape Constraint( "Non-descending" )		)	),	SendToReport(		Dispatch( {}, "400", ScaleBox,			{Legend Model( 4, Level Name( 0, "Loess" ) ),			Legend Model( 5, Level Name( 0, "Spline" ) ),			Legend Model( 6, Level Name( 0, "Monotonic p-spline" ) )}		),		Dispatch( {}, "400", LegendBox,			{Set Title( "" ), Legend Position( {3, [-1], 4, [0], 5, [1], 6, [2]} )}		)	));
+
+```
+
+**平滑趋势和置信区间**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );// cubic spline smoother confidence intervalGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Concentration ), Y( :"Velocity (y)"n ) ),	Elements(		Points( X, Y, Legend( 3 ) ),		Smoother( X, Y, Legend( 4 ), Confidence of Fit( 1 ) )	));
+
+```
+
+**平滑趋势曲线，叠加**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );// overlaid cubic spline trend linesGraph Builder(	Show Control Panel( 0 ),	Legend Position( "Inside Left" ),	Variables( X( :Days ), Y( :Algae density ), Overlay( :Treatment ) ),	Elements( Points( X, Y, Legend( 9 ) ), Smoother( X, Y, Legend( 10 ) ) ));
+
+```
+
+**平滑趋势曲线，面板式**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );// paneled cubic spline trend linesGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables( X( :Days ), Y( :Algae density ), Wrap( :Treatment ) ),	Elements( Points( X, Y, Legend( 9 ) ), Smoother( X, Y, Legend( 10 ) ) ));
+
+```
+
+**平滑趋势曲线，面板式和叠加**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Corn Wheat Soybean Production.jmp" );// smoothers paneled and filteredGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :Year ),		Y( :Commodity Acres Planted ),		Group X( :State ),		Overlay( :Commodity )	),	Elements( Points( X, Y, Legend( 38 ) ), Smoother( X, Y, Legend( 39 ) ) ),	Local Data Filter(		Add Filter( columns( :State ), Where( :State == {"IOWA", "NEBRASKA", "OKLAHOMA"} ) )	));
+
+```
+
+**散点图上的平滑趋势线**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );// smoothers and scatter plot, overlay, panels, trellis, trend curve, splineGraph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ), Wrap( :age ), Overlay( :sex ) ),	Elements( Points( X, Y ), Smoother( X, Y, Lambda( 0.2 ) ) ));
+
+```
+
+### 项消息
+
+#### Adapt to Axis Scale
+
+**语法:** obj &lt;&lt; Adapt to Axis Scale( state=0|1 )
+
+**说明:** 关于对数和其他轴变换，它是对变换的坐标应用计算的。
+
+#### Confidence Bootstrap
+
+**语法:** obj &lt;&lt; Confidence Bootstrap( number )
+
+**JMP添加的版本:** 14
+
+#### Confidence of Fit
+
+**语法:** obj &lt;&lt; Confidence of Fit( state=0|1 )
+
+**说明:** 拟合的 Bootstrap 置信区域。
+
+**JMP添加的版本:** 14
+
+#### Constrain Confidence Region
+
+**语法:** obj &lt;&lt; Constrain Confidence Region( state=0|1 )
+
+**说明:** 形状约束是否也适用于用于计算拟合置信度区域的 Bootstrap 拟合。
+
+**JMP添加的版本:** 19
+
+#### Degree
+
+**语法:** obj &lt;&lt; Degree( "中间值"|"均值"|"线性"|"二次"|"三次" )
+
+**JMP添加的版本:** 16
+
+#### Lambda
+
+**语法:** obj &lt;&lt; Lambda( number )
+
+#### Local Constraint
+
+**语法:** obj &lt;&lt; Local Constraint( state=0|1 )
+
+**说明:** 将曲线限制到附近值的范围内。
+
+**JMP添加的版本:** 19
+
+#### Local Region
+
+**语法:** obj &lt;&lt; Local Region( "功效"|"比例"|"固定"|"尾部" )
+
+**JMP添加的版本:** 16
+
+#### Local Robustness
+
+**语法:** obj &lt;&lt; Local Robustness( number )
+
+**JMP添加的版本:** 16
+
+#### Local Weighting
+
+**语法:** obj &lt;&lt; Local Weighting( "Tri-cube"|"余弦"|"Epanechnikov"|"高斯"|"Cauchy"|"Laplace"|"三角形"|"矩形" )
+
+**JMP添加的版本:** 16
+
+#### Local Width
+
+**语法:** obj &lt;&lt; Local Width( number )
+
+**JMP添加的版本:** 16
+
+#### Maximum Constraint
+
+**语法:** obj &lt;&lt; Maximum Constraint( number )
+
+#### Method
+
+**语法:** obj &lt;&lt; Method( "样条"|"P 样条"|"局部核"|"Savitzky-Golay"|"移动平均值"|"移动框" )
+
+**JMP添加的版本:** 15
+
+#### Minimum Constraint
+
+**语法:** obj &lt;&lt; Minimum Constraint( number )
+
+#### Response Axis
+
+**语法:** obj &lt;&lt; Response Axis( "自动"|"X"|"Y" )
+
+#### Save Formula
+
+**语法:** obj &lt;&lt; Save Formula
+
+#### Scale lambda for count
+
+**语法:** obj &lt;&lt; Scale lambda for count( state=0|1 )
+
+**说明:** 调整样条平滑参数 lambda 以考虑数据大小。对于在不同大小的组之间保持一致的平滑很有用。
+
+#### Shape Constraint
+
+**语法:** obj &lt;&lt; Shape Constraint( "无"|"非递减"|"非递增"|"高峰"|"低谷"|"高峰和低谷"|"平坦开始"|"平坦结束"|"平坦开始和结束"|"周期" )
+
+**JMP添加的版本:** 19
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "无"|"数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+#### Trim
+
+**语法:** obj &lt;&lt; Trim( number )
+
+**JMP添加的版本:** 16
+
+## Treemap Element
+
+### 关联的构造器
+
+#### Treemap Element
+
+**语法:** Treemap Element
+
+**说明:** 显示按多个类别汇总的响应。
+
+**‌位置排序提示**
+
+```jsl
+
+Open( "$SAMPLE_DATA/SATByYear.jmp" );// treemap, positional ordering hintsGraph Builder(	Show Control Panel( 0 ),	Variables(		X( :State ),		Y( :Longitude ),		Y( :Latitude, Position( 1 ) ),		Color( :SAT Verbal ),		Size( :Population )	),	Elements( Treemap( X, Y( 1 ), Y( 2 ), Legend( 9 ) ) ));
+
+```
+
+**嵌套矩形树图，方形化**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );// nested treemap, squarify, color value column propertyGraph Builder(	Show Control Panel( 0 ),	Show Legend( 0 ),	Variables(		X( :What is your gender? ),		X( :"What is your favorite color? (select one)"n, Position( 1 ) ),		X( :What is your favorite color?, Position( 1 ) ),		Color( :"What is your favorite color? (select one)"n )	),	Elements(		Treemap(			X( 1 ),			X( 2 ),			X( 3 ),			Legend( 6 ),			Layout( "Squarify" ),			Group Labels( "Above" )		)	));
+
+```
+
+**连续颜色渐变**
+
+```jsl
+
+Open( "$SAMPLE_DATA/Airline Delays.jmp" );// treemap, continuous color gradientGraph Builder(	Show Control Panel( 0 ),	Variables( X( :Airline ), Color( :Arrival Delay ) ),	Elements( Treemap( X, Legend( 5 ), Summary Statistic( "N" ) ) ),	SendToReport(		Dispatch( {}, "graph title", TextEditBox,			{Set Text( "Airline Flight Count colored by Average Delay" )}		)	));
+
+```
+
+### 项消息
+
+#### Category Name
+
+**语法:** obj &lt;&lt; Category Name( state=0|1 )
+
+**说明:** 将类别的列名作为类别标签的一部分显示。该选项仅在也显示类别值时使用。
+
+#### Category Value
+
+**语法:** obj &lt;&lt; Category Value( state=0|1 )
+
+**说明:** 将类别的值作为类别标签的一部分显示。
+
+#### Color Label Format
+
+**语法:** obj &lt;&lt; Color Label Format
+
+**JMP添加的版本:** 16
+
+#### Color Name
+
+**语法:** obj &lt;&lt; Color Name( state=0|1 )
+
+**说明:** 将颜色变量的名称作为颜色标签的一部分显示。仅当同时显示颜色值时才使用该选项。
+
+**JMP添加的版本:** 16
+
+#### Color Value
+
+**语法:** obj &lt;&lt; Color Value( state=0|1 )
+
+**说明:** 将颜色变量的值作为类别标签的一部分显示。该选项仅在指定了颜色变量时使用。
+
+#### Group Labels
+
+**语法:** obj &lt;&lt; Group Labels( "无"|"上"|"浮动" )
+
+**说明:** 关闭组标签，或将组标签显示在类别上方或显示为浮动框。
+
+#### Implicit Color
+
+**语法:** obj &lt;&lt; Implicit Color( state=0|1 )
+
+**说明:** 对矩形树图使用唯一颜色。取消选择该选项会将矩形树图显示为一种实色。若指定了颜色变量，则禁用该选项。 默认开启。
+
+#### Label Justification
+
+**语法:** obj &lt;&lt; Label Justification( "左"|"中心"|"右" )
+
+#### Label Threshold
+
+**语法:** obj &lt;&lt; Label Threshold( number )
+
+**说明:** 用于在框中显示标签的最小大小（区域）。
+
+#### Label Transparency
+
+**语法:** obj &lt;&lt; Label Transparency( number )
+
+**说明:** 当组标签浮动时，设置组标签的透明度。有效值介于 0.0 和 1.0 之间（含 0.0 和 1.0）。
+
+**JMP添加的版本:** 16
+
+#### Layout
+
+**语法:** obj &lt;&lt; Layout( "拆分"|"方形化"|"混合" )
+
+#### Max Label Size
+
+**语法:** obj &lt;&lt; Max Label Size( number )
+
+**说明:** 按照字体大小定义最大增量。
+
+#### Orientation Bias
+
+**语法:** obj &lt;&lt; Orientation Bias( number )
+
+**说明:** 设置水平与垂直区域拆分的相对偏好。
+
+**JMP添加的版本:** 17
+
+#### Show Frames
+
+**语法:** obj &lt;&lt; Show Frames( state=0|1 )
+
+**说明:** 默认开启。
+
+#### Show Group Name
+
+**语法:** obj &lt;&lt; Show Group Name( state=0|1 )
+
+**说明:** 将组的列名作为组标签的一部分显示。该选项仅在组标签位于组拼块上方时使用。
+
+#### Size Label Format
+
+**语法:** obj &lt;&lt; Size Label Format
+
+**JMP添加的版本:** 16
+
+#### Size Name
+
+**语法:** obj &lt;&lt; Size Name( state=0|1 )
+
+**说明:** 将大小变量的名称作为大小标签的一部分显示。仅当同时显示大小值时才使用该选项。
+
+**JMP添加的版本:** 16
+
+#### Size Value
+
+**语法:** obj &lt;&lt; Size Value( state=0|1 )
+
+**说明:** 将大小变量的值作为类别标签的一部分显示。
+
+#### Summary Statistic
+
+**语法:** obj &lt;&lt; Summary Statistic( "数目"|"均值"|"中位数"|"众数"|"几何均值"|"最小值"|"最大值"|"极差"|"总和"|"累积和"|"累积百分比"|"占合计的百分比"|"占因子的百分比"|"占总计的百分比"|"标准差"|"方差"|"标准误差"|"变异系数"|"四分位数间距"|"绝对偏差中位数"|"第一四分位数"|"第三四分位数" )
+
+#### Tile Labels
+
+**语法:** obj &lt;&lt; Tile Labels
 

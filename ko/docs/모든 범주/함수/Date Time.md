@@ -52,7 +52,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -60,7 +60,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -68,7 +68,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -84,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -92,7 +92,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -100,7 +100,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -180,7 +180,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**구문:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**구문:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **설명:** 지정된 형식으로 숫자를 반환합니다. 형식에는 열 정보 대화상자의 항목(예: "최적" 및 "h:m:s")이 포함됩니다. p 값, 통화, 날짜 및 시간, 지리 형식을 포함한 다른 옵션의 경우 도움말 항목을 참조하십시오.
 
@@ -198,13 +198,11 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
-#### 전체 정밀도
+#### 최대 정밀도
 
 ```jsl
 
@@ -222,13 +220,13 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ### Format Date
 
-**구문:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**구문:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **설명:** 지정된 형식으로 숫자를 반환합니다. 형식에는 열 정보 대화상자의 항목(예: "최적" 및 "h:m:s")이 포함됩니다. p 값, 통화, 날짜 및 시간, 지리 형식을 포함한 다른 옵션의 경우 도움말 항목을 참조하십시오.
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -236,7 +234,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -244,13 +242,11 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -264,11 +260,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -372,13 +364,13 @@ In Years( 1 );
 
 ### Informat
 
-**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **설명:** 지정된 형식의 문자열을 파싱합니다. 날짜/시간 형식의 경우 값은 As Date()로 묶인 것처럼 표현되고 ddMonyyyy 형식의 날짜를 반환합니다. "Best" formatString과 함께 사용되는 선택적 <<Restrict는 정수, 십진수 및 과학적 형식을 사용한 변환만 허용합니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -386,7 +378,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -394,7 +386,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -402,7 +394,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
@@ -410,16 +402,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 예제 5
+**예제 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -509,13 +496,13 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **설명:** 지정된 형식의 문자열을 파싱합니다. 날짜/시간 형식의 경우 값은 As Date()로 묶인 것처럼 표현되고 ddMonyyyy 형식의 날짜를 반환합니다. "Best" formatString과 함께 사용되는 선택적 <<Restrict는 정수, 십진수 및 과학적 형식을 사용한 변환만 허용합니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -523,7 +510,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -531,7 +518,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -539,7 +526,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
@@ -547,16 +534,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 예제 5
+**예제 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -612,10 +594,7 @@ Short Date( Today() );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -655,7 +634,7 @@ As Date( Today() );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -663,7 +642,7 @@ Week Of Year( Today() );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 

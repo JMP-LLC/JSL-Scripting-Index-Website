@@ -8,24 +8,15 @@
 
 **Syntaxe :** obj = Normal Mixtures(...&lt;By( column(s) )&gt;...)
 
+**Description :** Lance une analyse distincte pour chaque niveau de la colonne spécifiée.
+
 **JMP Version ajoutée :** 14
 
 <b>Élément lanceur : Oui</b>
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;
 
 ```
 
@@ -39,12 +30,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);
 
 ```
 
@@ -52,41 +38,25 @@ obj = Normal Mixtures(
 
 **Syntaxe :** obj = Normal Mixtures(...&lt;Freq( column )&gt;...)
 
+**Description :** Spécifie une colonne dont les valeurs assignent une fréquence à chaque ligne pour l&apos;analyse.
+
 **JMP Version ajoutée :** 14
 
 <b>Élément lanceur : Oui</b>
 
-#### Exemple de K-means
+**Exemple de K-means**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
-obj = K Means Cluster(
-	Y(
-		:contamination, :corrosion, :doping, :metallization, :miscellaneous,
-		:oxide defect, :silicon defect
-	),
-	Freq( :SampleSize ),
-	Number of Clusters( 2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = K Means Cluster(	Y(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	),	Freq( :SampleSize ),	Number of Clusters( 2 ),	Go);
 
 ```
 
-#### Exemple de méthode des mélanges normaux
+**Exemple de méthode des mélanges normaux**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
-obj = Normal Mixtures(
-	Y(
-		:contamination, :corrosion, :doping, :metallization, :miscellaneous,
-		:oxide defect, :silicon defect
-	),
-	Freq( :SampleSize ),
-	Number of Clusters( 2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = Normal Mixtures(	Y(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	),	Freq( :SampleSize ),	Number of Clusters( 2 ),	Go);
 
 ```
 
@@ -94,41 +64,25 @@ obj = Normal Mixtures(
 
 **Syntaxe :** obj = Normal Mixtures(...&lt;Weight( column )&gt;...)
 
+**Description :** Spécifie une colonne dont les valeurs attribuent une pondération à chaque ligne pour l&apos;analyse.
+
 **JMP Version ajoutée :** 14
 
 <b>Élément lanceur : Oui</b>
 
-#### Exemple de K-means
+**Exemple de K-means**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
-obj = K Means Cluster(
-	Y(
-		:contamination, :corrosion, :doping, :metallization, :miscellaneous,
-		:oxide defect, :silicon defect
-	),
-	Weight( :SampleSize ),
-	Number of Clusters( 2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = K Means Cluster(	Y(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	),	Weight( :SampleSize ),	Number of Clusters( 2 ),	Go);
 
 ```
 
-#### Exemple de méthode des mélanges normaux
+**Exemple de méthode des mélanges normaux**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
-obj = Normal Mixtures(
-	Y(
-		:contamination, :corrosion, :doping, :metallization, :miscellaneous,
-		:oxide defect, :silicon defect
-	),
-	Weight( :SampleSize ),
-	Number of Clusters( 2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = Normal Mixtures(	Y(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	),	Weight( :SampleSize ),	Number of Clusters( 2 ),	Go);
 
 ```
 
@@ -142,12 +96,7 @@ obj = Normal Mixtures(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);
 
 ```
 
@@ -161,12 +110,7 @@ obj = Normal Mixtures(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;
 
 ```
 
@@ -182,12 +126,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
-);
-obj << Diagonal Variance( 1 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Diagonal Variance( 1 );obj << Go;
 
 ```
 
@@ -199,29 +138,19 @@ obj << Go;
 
 **JMP Version ajoutée :** 14
 
-#### Exemple de K-means
+**Exemple de K-means**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;
 
 ```
 
-#### Exemple de méthode des mélanges normaux
+**Exemple de méthode des mélanges normaux**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;
 
 ```
 
@@ -235,12 +164,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
-);
-obj << Mixtures MaxIter( 100 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Mixtures MaxIter( 100 );obj << Go;
 
 ```
 
@@ -254,12 +178,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
-);
-obj << Mixtures N Starts( 20 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Mixtures N Starts( 20 );obj << Go;
 
 ```
 
@@ -273,12 +192,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
-);
-obj << Mixtures Tolerance( 1e-7 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Mixtures Tolerance( 1e-7 );obj << Go;
 
 ```
 
@@ -290,35 +204,19 @@ obj << Go;
 
 **JMP Version ajoutée :** 14
 
-#### Exemple de K-means
+**Exemple de K-means**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-Wait( 1 );
-obj << Number of Clusters( 5 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);Wait( 1 );obj << Number of Clusters( 5 );obj << Go;
 
 ```
 
-#### Exemple de méthode des mélanges normaux
+**Exemple de méthode des mélanges normaux**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-Wait( 1 );
-obj << Number of Clusters( 5 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);Wait( 1 );obj << Number of Clusters( 5 );obj << Go;
 
 ```
 
@@ -332,12 +230,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
-);
-obj << Outlier Cluster( 1 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Outlier Cluster( 1 );obj << Go;
 
 ```
 
@@ -351,12 +244,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -372,13 +260,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -386,10 +268,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -397,10 +276,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -412,14 +288,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -433,12 +302,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -450,12 +314,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -467,19 +326,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -491,13 +338,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Copy Script;
 
 ```
 
@@ -509,13 +350,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Data Table Window;
 
 ```
 
@@ -529,9 +364,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -543,20 +376,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -570,14 +390,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -585,29 +398,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -619,14 +410,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -638,11 +422,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -654,14 +434,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;t = obj << Get Script;Show( t );
 
 ```
 
@@ -673,14 +446,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -692,14 +458,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;t = obj << Get Timing;Show( t );
 
 ```
 
@@ -711,10 +470,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -728,14 +484,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -747,13 +496,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -765,32 +508,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -804,9 +522,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -818,15 +534,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -838,37 +546,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Redo Analysis;
 
 ```
 
@@ -880,37 +558,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
-
-**Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Relaunch Analysis;
 
 ```
 
@@ -922,14 +570,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -941,52 +582,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -998,13 +606,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Report View( "Summary" );
 
 ```
 
@@ -1016,19 +618,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1040,19 +630,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1064,19 +642,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1088,13 +654,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Script for All Objects;
 
 ```
 
@@ -1104,43 +664,19 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	By( _bycol )
-);
-obj << Go;
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Go;obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1152,13 +688,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1170,13 +700,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Script to Journal;
 
 ```
 
@@ -1188,13 +712,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Script to Report;
 
 ```
 
@@ -1206,13 +724,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Script to Script Window;
 
 ```
 
@@ -1224,15 +736,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1244,23 +748,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value(
-				Time( 6000, Lock( 0 ), Show( 1 ) )
-			)}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1272,14 +760,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1291,11 +772,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1307,13 +784,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Title( "My Platform" );
 
 ```
 
@@ -1325,15 +796,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1349,11 +812,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1365,34 +824,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Syntaxe :** obj = Normal Mixtures(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Normal Mixtures(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1412,13 +856,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot( 1 );
 
 ```
 
@@ -1426,13 +864,7 @@ obj << Biplot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot( 1 );
 
 ```
 
@@ -1448,13 +880,7 @@ obj << Biplot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot 3D( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot 3D( 1 );
 
 ```
 
@@ -1462,13 +888,7 @@ obj << Biplot 3D( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot 3D( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot 3D( 1 );
 
 ```
 
@@ -1484,13 +904,7 @@ obj << Biplot 3D( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Biplot Contour Density( .95 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Biplot Contour Density( .95 );
 
 ```
 
@@ -1498,13 +912,7 @@ obj << Biplot Contour Density( .95 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Biplot Contour Density( .95 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Biplot Contour Density( .95 );
 
 ```
 
@@ -1520,13 +928,7 @@ obj << Biplot Contour Density( .95 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Biplot Ray Position( [-1, -1, 2] );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Biplot Ray Position( [-1, -1, 2] );
 
 ```
 
@@ -1534,13 +936,7 @@ obj << Biplot Ray Position( [-1, -1, 2] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Biplot Ray Position( [-1, -1, 2] );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Biplot Ray Position( [-1, -1, 2] );
 
 ```
 
@@ -1556,14 +952,7 @@ obj << Biplot Ray Position( [-1, -1, 2] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-stats = obj << Get Statistics;
-Show( stats );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);stats = obj << Get Statistics;Show( stats );
 
 ```
 
@@ -1571,14 +960,7 @@ Show( stats );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-stats = obj << Get Statistics;
-Show( stats );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);stats = obj << Get Statistics;Show( stats );
 
 ```
 
@@ -1594,14 +976,7 @@ Show( stats );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot( 1 );
-obj << Mark Clusters;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot( 1 );obj << Mark Clusters;
 
 ```
 
@@ -1609,14 +984,7 @@ obj << Mark Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Biplot( 1 );
-obj << Mark Clusters;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Biplot( 1 );obj << Mark Clusters;
 
 ```
 
@@ -1632,13 +1000,7 @@ obj << Mark Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Parallel Coord Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Parallel Coord Plots( 1 );
 
 ```
 
@@ -1646,13 +1008,7 @@ obj << Parallel Coord Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Parallel Coord Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Parallel Coord Plots( 1 );
 
 ```
 
@@ -1668,13 +1024,7 @@ obj << Parallel Coord Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Publish Cluster Formulas;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Publish Cluster Formulas;
 
 ```
 
@@ -1682,13 +1032,7 @@ obj << Publish Cluster Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Publish Cluster Formulas;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Publish Cluster Formulas;
 
 ```
 
@@ -1704,13 +1048,7 @@ obj << Publish Cluster Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Cluster Formula;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Cluster Formula;
 
 ```
 
@@ -1718,13 +1056,7 @@ obj << Save Cluster Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Cluster Formula;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Cluster Formula;
 
 ```
 
@@ -1740,13 +1072,7 @@ obj << Save Cluster Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Clusters;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Clusters;
 
 ```
 
@@ -1754,13 +1080,7 @@ obj << Save Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Clusters;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Clusters;
 
 ```
 
@@ -1776,13 +1096,7 @@ obj << Save Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Colors to Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Colors to Table;
 
 ```
 
@@ -1790,13 +1104,7 @@ obj << Save Colors to Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Save Colors to Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Save Colors to Table;
 
 ```
 
@@ -1810,13 +1118,7 @@ obj << Save Colors to Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Density Formula;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Density Formula;
 
 ```
 
@@ -1830,13 +1132,7 @@ obj << Save Density Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Mixture Formulas;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Mixture Formulas;
 
 ```
 
@@ -1850,13 +1146,7 @@ obj << Save Mixture Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Save Mixture Probabilities;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Save Mixture Probabilities;
 
 ```
 
@@ -1872,13 +1162,7 @@ obj << Save Mixture Probabilities;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Scatterplot Matrix;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Scatterplot Matrix;
 
 ```
 
@@ -1886,13 +1170,7 @@ obj << Scatterplot Matrix;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 )
-);
-obj << Go;
-obj << Scatterplot Matrix;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ));obj << Go;obj << Scatterplot Matrix;
 
 ```
 
@@ -1908,13 +1186,7 @@ obj << Scatterplot Matrix;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Show Biplot Rays( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Show Biplot Rays( 1 );
 
 ```
 
@@ -1922,13 +1194,7 @@ obj << Show Biplot Rays( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go( Biplot( 1 ) )
-);
-obj << Show Biplot Rays( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go( Biplot( 1 ) ));obj << Show Biplot Rays( 1 );
 
 ```
 
@@ -1944,13 +1210,7 @@ obj << Show Biplot Rays( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = K Means Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Simulate Clusters( 1000 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = K Means Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Simulate Clusters( 1000 );
 
 ```
 
@@ -1958,13 +1218,7 @@ obj << Simulate Clusters( 1000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = Normal Mixtures(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Go
-);
-obj << Simulate Clusters( 1000 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Normal Mixtures(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Go);obj << Simulate Clusters( 1000 );
 
 ```
 

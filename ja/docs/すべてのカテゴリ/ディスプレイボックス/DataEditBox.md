@@ -12,20 +12,7 @@
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Blink;
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << Blink;
 
 ```
 
@@ -37,20 +24,7 @@ dataedit << Blink;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Find( Contains( :State, "North Carolina" ) );
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ```
 
@@ -62,20 +36,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Go To Row( 23 );
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << Go To Row( 23 );
 
 ```
 
@@ -87,20 +48,7 @@ dataedit << Go To Row( 23 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << New Row;
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << New Row;
 
 ```
 
@@ -112,20 +60,7 @@ dataedit << New Row;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Next;
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << Next;
 
 ```
 
@@ -137,21 +72,7 @@ dataedit << Next;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dt << Select Where( dt:population > 10000000 );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Next Selected;
+dt = Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dt << Select Where( dt:population > 10000000 );dataedit = win[Data Edit Box( 1 )];dataedit << Next Selected;
 
 ```
 
@@ -163,21 +84,7 @@ dataedit << Next Selected;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Go To Row( 23 );
-dataedit << Prev;
+Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << Go To Row( 23 );dataedit << Prev;
 
 ```
 
@@ -189,21 +96,7 @@ dataedit << Prev;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/SAT.jmp" );
-New Window( "Example",
-	cp = Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dt << Select Where( dt:population > 10000000 );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << Prev Selected;
+dt = Open( "$SAMPLE_DATA/SAT.jmp" );New Window( "Example",	cp = Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dt << Select Where( dt:population > 10000000 );dataedit = win[Data Edit Box( 1 )];dataedit << Prev Selected;
 
 ```
 
@@ -215,23 +108,7 @@ dataedit << Prev Selected;
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/SAT.jmp" );
-dt << Save( "$TEMP/SAT.jmp" );
-New Window( "Example",
-	cp = dt << Cell Plot(
-		Scale Uniformly( 0 ),
-		Center at zero( 0 ),
-		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )
-	)
-);
-cpr = cp << report;
-cpb = cpr[Cell Plot Box( 1 )];
-cpb << Row Editor;
-win = Window( "Row Editor for SAT" );
-dataedit = win[Data Edit Box( 1 )];
-dataedit << New Row;
-dataedit << Save;
+dt = Open( "$SAMPLE_DATA/SAT.jmp" );dt << Save( "$TEMP/SAT.jmp" );New Window( "Example",	cp = dt << Cell Plot(		Scale Uniformly( 0 ),		Center at zero( 0 ),		Y( :"2004 Verbal"n, :"2004 Math"n, :"2003 Verbal"n, :"2003 Math"n )	));cpr = cp << report;cpb = cpr[Cell Plot Box( 1 )];cpb << Row Editor;win = Window( "Row Editor for SAT" );dataedit = win[Data Edit Box( 1 )];dataedit << New Row;dataedit << Save;
 
 ```
 

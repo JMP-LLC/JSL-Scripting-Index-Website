@@ -8,23 +8,11 @@
 
 **Sintaxis:** obj &lt;&lt; By( column(s) )
 
+**Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -34,15 +22,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -50,19 +30,11 @@ obj = dt << Fit Life by X(
 
 **Sintaxis:** obj &lt;&lt; Freq( column )
 
+**Descripción:** Especifica una columna cuyos valores asignan una frecuencia a cada fila del análisis.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	Freq( _freqcol )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	Freq( :_freqcol ));
 
 ```
 
@@ -72,15 +44,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -90,15 +54,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -108,15 +64,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -130,15 +78,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -152,17 +92,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-Wait( 1 );
-obj << Add Density Curve to Scatterplot( 50 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));Wait( 1 );obj << Add Density Curve to Scatterplot( 50 );
 
 ```
 
@@ -174,38 +104,19 @@ obj << Add Density Curve to Scatterplot( 50 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-Wait( 1 );
-obj << Add Quantile Line to Scatterplot( 0.1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));Wait( 1 );obj << Add Quantile Line to Scatterplot( 0.1 );
 
 ```
 
 ### Censor Code
 
-**Sintaxis:** obj = Fit Life by X(...Censor Code( value=1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Fit Life by X(...Censor Code( value=1 )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Identifica el valor de la columna Censura que indica las observaciones censuradas a la derecha. "1" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Status ),
-	Freq( :Weight ),
-	Censor Code( "Censored" ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Status ),	Freq( :Weight ),	Censor Code( "Censored" ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -217,16 +128,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	Confidence Interval Method( "Likelihood" )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	Confidence Interval Method( "Likelihood" ));
 
 ```
 
@@ -238,17 +140,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-d = obj << Density( Lognormal, 30000, 10 );
-Show( d );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));d = obj << Density( Lognormal, 30000, 10 );Show( d );
 
 ```
 
@@ -260,15 +152,7 @@ Show( d );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Frechet ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Frechet ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));
 
 ```
 
@@ -280,18 +164,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit All Distributions;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit All Distributions;
 
 ```
 
@@ -303,18 +176,7 @@ obj << Fit All Distributions;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Exponential;
 
 ```
 
@@ -326,18 +188,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Frechet;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Frechet;
 
 ```
 
@@ -349,18 +200,7 @@ obj << Fit Frechet;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit LEV;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit LEV;
 
 ```
 
@@ -372,18 +212,7 @@ obj << Fit LEV;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Logistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Logistic;
 
 ```
 
@@ -395,18 +224,7 @@ obj << Fit Logistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Loglogistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Loglogistic;
 
 ```
 
@@ -418,18 +236,7 @@ obj << Fit Loglogistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Weibull ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Weibull ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Lognormal;
 
 ```
 
@@ -441,18 +248,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Normal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Normal;
 
 ```
 
@@ -464,18 +260,7 @@ obj << Fit Normal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit SEV;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit SEV;
 
 ```
 
@@ -487,18 +272,7 @@ obj << Fit SEV;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Inverse Power ),
-	Freq( :Weight ),
-	Show Density Curves( 1 )
-);
-Wait( 1 );
-obj << Fit Weibull;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Inverse Power ),	Freq( :Weight ),	Show Density Curves( 1 ));Wait( 1 );obj << Fit Weibull;
 
 ```
 
@@ -510,18 +284,7 @@ obj << Fit Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Nested Model Tests( Regression )
-);
-r = obj << Get Results;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Nested Model Tests( Regression ));r = obj << Get Results;Show( r );
 
 ```
 
@@ -533,17 +296,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-h = obj << Hazard( Lognormal, 30000, 10 );
-Show( h );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));h = obj << Hazard( Lognormal, 30000, 10 );Show( h );
 
 ```
 
@@ -555,17 +308,7 @@ Show( h );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Frechet ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Maximum Iterations( 20 ),
-	Nested Model Tests( Regression )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Frechet ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Maximum Iterations( 20 ),	Nested Model Tests( Regression ));
 
 ```
 
@@ -577,16 +320,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	Nested Model Tests( Regression )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	Nested Model Tests( Regression ));
 
 ```
 
@@ -598,17 +332,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-p = obj << Probability( Lognormal, 30000, 10 );
-Show( p );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));p = obj << Probability( Lognormal, 30000, 10 );Show( p );
 
 ```
 
@@ -620,17 +344,7 @@ Show( p );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-q = obj << Quantile( Lognormal, 0.005, 10 );
-Show( q );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));q = obj << Quantile( Lognormal, 0.005, 10 );Show( q );
 
 ```
 
@@ -650,15 +364,7 @@ Show( q );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Frechet ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Inverse Power )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Frechet ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Inverse Power ));
 
 ```
 
@@ -672,19 +378,7 @@ obj = dt << Fit Life by X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-obj << Add Quantile Line to Scatterplot( 0.1 );
-obj << Show Quantile Line CI Bands( 1 );
-Wait( 1 );
-obj << Set Level of Quantile Line CI Bands( .90 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));obj << Add Quantile Line to Scatterplot( 0.1 );obj << Show Quantile Line CI Bands( 1 );Wait( 1 );obj << Set Level of Quantile Line CI Bands( .90 );
 
 ```
 
@@ -696,18 +390,7 @@ obj << Set Level of Quantile Line CI Bands( .90 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Nested Model Tests( Regression )
-);
-Wait( 1 );
-obj << Set Scale( Logistic );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Nested Model Tests( Regression ));Wait( 1 );obj << Set Scale( Logistic );
 
 ```
 
@@ -719,18 +402,7 @@ obj << Set Scale( Logistic );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-obj << Set Scriptables(
-	{Distribution Comparisons( Profiler( 1, Term Value( Temp( 50 ), Hours( 2600 ) ) ) )}
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));obj << Set Scriptables(	{Distribution Comparisons( Profiler( 1, Term Value( Temp( 50 ), Hours( 2600 ) ) ) )});
 
 ```
 
@@ -742,17 +414,7 @@ obj << Set Scriptables(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-Wait( 1 );
-obj << Show Density Curves( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));Wait( 1 );obj << Show Density Curves( 1 );
 
 ```
 
@@ -764,25 +426,7 @@ obj << Show Density Curves( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Location ),
-	Freq( :Weight )
-);
-rpt = obj << report;
-rpt["Scatterplot"] << Close( 1 );
-rpt["Nonparametric Overlay"] << Close( 1 );
-rpt["Comparisons"] << Close( 1 );
-rpt[TabListBox( 2 )] << SetSelected( 2 );
-rpt["Overlay by Levels"] << Close( 0 );
-Wait( 1 );
-obj << Show Overlay by Levels( 0 );
-Wait( 1 );
-obj << Show Overlay by Levels( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Location ),	Freq( :Weight ));rpt = obj << report;rpt["Scatterplot"] << Close( 1 );rpt["Nonparametric Overlay"] << Close( 1 );rpt["Comparisons"] << Close( 1 );rpt[TabListBox( 2 )] << SetSelected( 2 );rpt["Overlay by Levels"] << Close( 0 );Wait( 1 );obj << Show Overlay by Levels( 0 );Wait( 1 );obj << Show Overlay by Levels( 1 );
 
 ```
 
@@ -794,20 +438,7 @@ obj << Show Overlay by Levels( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Nested Model Tests( Regression )
-);
-Wait( 1 );
-obj << Show Points( 0 );
-Wait( 1 );
-obj << Show Points( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Nested Model Tests( Regression ));Wait( 1 );obj << Show Points( 0 );Wait( 1 );obj << Show Points( 1 );
 
 ```
 
@@ -821,18 +452,7 @@ obj << Show Points( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-obj << Add Quantile Line to Scatterplot( 0.1 );
-Wait( 1 );
-obj << Show Quantile Line CI Bands( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));obj << Add Quantile Line to Scatterplot( 0.1 );Wait( 1 );obj << Show Quantile Line CI Bands( 1 );
 
 ```
 
@@ -844,24 +464,7 @@ obj << Show Quantile Line CI Bands( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-rpt = obj << report;
-rpt["Scatterplot"] << Close( 1 );
-rpt["Comparisons"] << Close( 1 );
-rpt[TabListBox( 2 )] << SetSelected( 2 );
-rpt["Lognormal"] << Close( 0 );
-Wait( 1 );
-obj << Show Surface Plot( 0 );
-Wait( 1 );
-obj << Show Surface Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));rpt = obj << report;rpt["Scatterplot"] << Close( 1 );rpt["Comparisons"] << Close( 1 );rpt[TabListBox( 2 )] << SetSelected( 2 );rpt["Lognormal"] << Close( 0 );Wait( 1 );obj << Show Surface Plot( 0 );Wait( 1 );obj << Show Surface Plot( 1 );
 
 ```
 
@@ -873,17 +476,7 @@ obj << Show Surface Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-af = obj << TAF( Lognormal, 10, 40 );
-Show( af );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));af = obj << TAF( Lognormal, 10, 40 );Show( af );
 
 ```
 
@@ -895,21 +488,7 @@ Show( af );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Nested Model Tests( Regression )
-);
-rpt = obj << report;
-rpt["Scatterplot"] << Close( 1 );
-rpt["Comparisons"] << Close( 1 );
-Wait( 1 );
-obj << Tabbed Individual Report( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Nested Model Tests( Regression ));rpt = obj << report;rpt["Scatterplot"] << Close( 1 );rpt["Comparisons"] << Close( 1 );Wait( 1 );obj << Tabbed Individual Report( 0 );
 
 ```
 
@@ -921,18 +500,7 @@ obj << Tabbed Individual Report( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight ),
-	Nested Model Tests( Regression )
-);
-Wait( 1 );
-obj << Tabbed Overall Report( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ),	Nested Model Tests( Regression ));Wait( 1 );obj << Tabbed Overall Report( 1 );
 
 ```
 
@@ -944,16 +512,7 @@ obj << Tabbed Overall Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-obj << Time Acceleration Baseline( 20 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));obj << Time Acceleration Baseline( 20 );
 
 ```
 
@@ -965,17 +524,7 @@ obj << Time Acceleration Baseline( 20 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-Wait( 1 );
-obj << Transposed Axes( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));Wait( 1 );obj << Transposed Axes( 1 );
 
 ```
 
@@ -987,17 +536,7 @@ obj << Transposed Axes( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Relationship( Arrhenius Celsius ),
-	Freq( :Weight )
-);
-Wait( 1 );
-obj << Use Transformation Scale( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Relationship( Arrhenius Celsius ),	Freq( :Weight ));Wait( 1 );obj << Use Transformation Scale( 1 );
 
 ```
 
@@ -1011,12 +550,7 @@ obj << Use Transformation Scale( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1032,10 +566,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1043,10 +574,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1054,13 +582,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1072,17 +594,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1096,12 +608,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1113,12 +620,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1130,22 +632,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -1157,16 +644,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Copy Script;
 
 ```
 
@@ -1178,16 +656,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Data Table Window;
 
 ```
 
@@ -1201,9 +670,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1215,23 +682,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1245,17 +696,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1263,27 +704,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1295,17 +716,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1317,11 +728,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1333,17 +740,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -1355,17 +752,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1377,17 +764,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1399,10 +776,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1416,10 +790,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1431,13 +802,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1449,32 +814,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1488,9 +828,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1502,15 +840,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1522,43 +852,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Redo Analysis;
 
 ```
 
@@ -1570,43 +864,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
-
-**Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Relaunch Analysis;
 
 ```
 
@@ -1618,14 +876,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1637,55 +888,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1697,16 +912,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Report View( "Summary" );
 
 ```
 
@@ -1718,22 +924,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1745,22 +936,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1772,22 +948,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1799,16 +960,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Save Script for All Objects;
 
 ```
 
@@ -1818,49 +970,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1872,16 +994,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1893,16 +1006,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Save Script to Journal;
 
 ```
 
@@ -1914,16 +1018,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Save Script to Report;
 
 ```
 
@@ -1935,16 +1030,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Save Script to Script Window;
 
 ```
 
@@ -1956,15 +1042,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1976,20 +1054,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -2001,12 +1066,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -2018,11 +1078,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -2034,16 +1090,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));obj << Title( "My Platform" );
 
 ```
 
@@ -2055,18 +1102,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Fit Life by X(
-	Y( :Hours ),
-	X( :Temp ),
-	Distribution( Lognormal ),
-	Censor( :Censor ),
-	Freq( :Weight ),
-	Relationship( Arrhenius Celsius )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Fit Life by X(	Y( :Hours ),	X( :Temp ),	Distribution( Lognormal ),	Censor( :Censor ),	Freq( :Weight ),	Relationship( Arrhenius Celsius ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2082,11 +1118,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2098,27 +1130,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintaxis:** obj = Fit Life by X(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Fit Life by X(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

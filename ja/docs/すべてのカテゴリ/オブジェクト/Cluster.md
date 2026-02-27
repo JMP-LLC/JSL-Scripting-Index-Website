@@ -18,6 +18,8 @@
 
 **構文:** obj &lt;&lt; Freq( column )
 
+**説明:** 分析の際に各行の度数として用いる値の列を指定する。
+
 ### Label
 
 **構文:** obj &lt;&lt; Label( column )
@@ -36,6 +38,8 @@
 
 **構文:** obj &lt;&lt; Weight( column )
 
+**説明:** 分析の際に各行の重みとして用いる値の列を指定する。
+
 ### Y
 
 **構文:** obj &lt;&lt; Y( column(s) )
@@ -48,15 +52,11 @@
 
 **構文:** obj &lt;&lt; By( column(s) )
 
+**説明:** 指定された列の各水準に対して、個別に分析を実行する。
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), By( _bycol ) );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -70,8 +70,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), By( _b
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 ```
 
@@ -85,24 +84,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Defects ),
-	Object ID( :Lot, :Wafer ),
-	Attribute ID( :X_Die, :Y_Die ),
-	Method( "Ward" ),
-	Standardize Data( 0 ),
-	Dendrogram Scale( "Distance Scale" ),
-	Number of Clusters( 12 ),
-	g
-    Add Spatial Measures(
-		Attributes( 1 ),
-		Angle( 1 ),
-		Radius( 1 ),
-		Streak Angle( 1 ),
-		Streak Distance( 1 )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );obj = dt << Hierarchical Cluster(	Y( :Defects ),	Object ID( :Lot, :Wafer ),	Attribute ID( :X_Die, :Y_Die ),	Method( "Ward" ),	Standardize Data( 0 ),	Dendrogram Scale( "Distance Scale" ),	Number of Clusters( 12 ),	g    Add Spatial Measures(		Attributes( 1 ),		Angle( 1 ),		Radius( 1 ),		Streak Angle( 1 ),		Streak Distance( 1 )	));
 
 ```
 
@@ -114,8 +96,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluster Criterion );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluster Criterion );
 
 ```
 
@@ -127,12 +108,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluste
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Cluster Summary
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Hierarchical Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Cluster Summary);
 
 ```
 
@@ -146,11 +122,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Clustering History( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Hierarchical Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Clustering History( 0 ));
 
 ```
 
@@ -162,13 +134,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Color Clusters( 1 );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Color Clusters( 1 );
 
 ```
 
@@ -180,15 +146,7 @@ obj << Color Clusters( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Color Map( Green to Black to Red );
-Wait( 1 );
-obj << Color Map( Blue to Gray to Red );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Color Map( Green to Black to Red );Wait( 1 );obj << Color Map( Blue to Gray to Red );
 
 ```
 
@@ -204,13 +162,7 @@ obj << Color Map( Blue to Gray to Red );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Number of Clusters( 5 ),
-	Two Way Clustering,
-	Column Dendrogram Position( "Above" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Number of Clusters( 5 ),	Two Way Clustering,	Column Dendrogram Position( "Above" ));
 
 ```
 
@@ -222,14 +174,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Number of Clusters( 5 ),
-	Two Way Clustering,
-	Distance Graph( 0 ),
-	Column Label Position( "Above" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Number of Clusters( 5 ),	Two Way Clustering,	Distance Graph( 0 ),	Column Label Position( "Above" ));
 
 ```
 
@@ -241,13 +186,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Constellation Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Constellation Plot( 1 );
 
 ```
 
@@ -259,13 +198,7 @@ obj << Constellation Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Dendrogram Scale( Geometric Spacing );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Dendrogram Scale( Geometric Spacing );
 
 ```
 
@@ -273,7 +206,7 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 **構文:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
-**説明:** 行クラスターの樹形図におけるフレームの幅。 デフォルトの値は"min(max(256,n*3),500)"。
+**説明:** 行クラスターの樹形図におけるフレームの幅。 デフォルトの値は"min(max(256,n\*3),500)"。
 
 #### Distance Graph
 
@@ -283,15 +216,7 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 ),
-	Distance Graph( 0 )
-);
-Wait( 1 );
-obj << Distance Graph( 1 );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ),	Distance Graph( 0 ));Wait( 1 );obj << Distance Graph( 1 );
 
 ```
 
@@ -303,14 +228,7 @@ obj << Distance Graph( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 3 )
-);
-c = obj << Get Clusters;
-Show( c );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 3 ));c = obj << Get Clusters;Show( c );
 
 ```
 
@@ -322,12 +240,7 @@ Show( c );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane, :"1-Octanol"n ),
-	Twoway Clustering
-);
-rowOrder = obj << Get Column Display Order;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane, :"1-Octanol"n ),	Twoway Clustering);rowOrder = obj << Get Column Display Order;
 
 ```
 
@@ -339,10 +252,7 @@ rowOrder = obj << Get Column Display Order;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
-c = obj << Get Column Names;
-Show( c );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );c = obj << Get Column Names;Show( c );
 
 ```
 
@@ -354,11 +264,7 @@ Show( c );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane, :"1-Octanol"n )
-);
-rowOrder = obj << Get Display Order;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane, :"1-Octanol"n ));rowOrder = obj << Get Display Order;
 
 ```
 
@@ -370,13 +276,7 @@ rowOrder = obj << Get Display Order;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Number of Clusters( 8 )
-);
-m = obj << Get Distance Matrix;
-Show( m );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Number of Clusters( 8 ));m = obj << Get Distance Matrix;Show( m );
 
 ```
 
@@ -388,12 +288,7 @@ Show( m );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Method( "Hybrid Ward" ),
-	Hybrid Cycles( 20 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Method( "Hybrid Ward" ),	Hybrid Cycles( 20 ));
 
 ```
 
@@ -405,12 +300,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Method( "Hybrid Ward" ),
-	Hybrid Goal( 300 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Method( "Hybrid Ward" ),	Hybrid Goal( 300 ));
 
 ```
 
@@ -422,12 +312,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Method( "Hybrid Ward" ),
-	Hybrid Initial K( 8 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Method( "Hybrid Ward" ),	Hybrid Initial K( 8 ));
 
 ```
 
@@ -439,12 +324,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Method( "Hybrid Ward" ),
-	Hybrid Log Details( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Method( "Hybrid Ward" ),	Hybrid Log Details( 1 ));
 
 ```
 
@@ -456,12 +336,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Method( "Hybrid Ward" ),
-	Hybrid RandomPCA Dim( 3 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Method( "Hybrid Ward" ),	Hybrid RandomPCA Dim( 3 ));
 
 ```
 
@@ -475,12 +350,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Late Join Outliers( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Birth Death.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Late Join Outliers( 1 ));
 
 ```
 
@@ -492,14 +362,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 ),
-	Color Map( Blue to Gray to Red )
-);
-obj << Legend( 1 );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ),	Color Map( Blue to Gray to Red ));obj << Legend( 1 );
 
 ```
 
@@ -511,13 +374,7 @@ obj << Legend( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Mark Clusters;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Mark Clusters;
 
 ```
 
@@ -529,13 +386,7 @@ obj << Mark Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 ),
-	Method( "Complete" )
-);
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ),	Method( "Complete" ));
 
 ```
 
@@ -547,15 +398,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Method( "Ward" ),
-	Standardize Data( 1 ),
-	Missing value imputation( 1 ),
-	Dendrogram Scale( "Distance Scale" ),
-	Number of Clusters( 6 )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Hierarchical Cluster(	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Method( "Ward" ),	Standardize Data( 1 ),	Missing value imputation( 1 ),	Dendrogram Scale( "Distance Scale" ),	Number of Clusters( 6 ));
 
 ```
 
@@ -567,12 +410,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Skull.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :length, :basilar, :zygomat, :postorb ),
-	Color Map( "Blue to Gray to Red" ),
-	More Color Map columns( :sex )
-);
+dt = Open( "$SAMPLE_DATA/Skull.jmp" );obj = dt << Hierarchical Cluster(	Y( :length, :basilar, :zygomat, :postorb ),	Color Map( "Blue to Gray to Red" ),	More Color Map columns( :sex ));
 
 ```
 
@@ -584,12 +422,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 3 )
-);
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 3 ));
 
 ```
 
@@ -609,13 +442,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),
-	Label( :Model ),
-	Number of Clusters( 3 )
-);
-obj << Parallel Coord Plots;
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Hierarchical Cluster(	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),	Label( :Model ),	Number of Clusters( 3 ));obj << Parallel Coord Plots;
 
 ```
 
@@ -627,11 +454,7 @@ obj << Parallel Coord Plots;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
-dt << Select Rows( Loc( (obj << Get Clusters) == 3 ) );
-Wait( 2 );
-obj << Pivot on Selected Cluster;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );dt << Select Rows( Loc( (obj << Get Clusters) == 3 ) );Wait( 2 );obj << Pivot on Selected Cluster;
 
 ```
 
@@ -643,15 +466,7 @@ obj << Pivot on Selected Cluster;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-dt << Select Rows( [19, 22, 45, 61, 62, 64] );
-obj = dt << Hierarchical Cluster(
-	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),
-	Label( :Model )
-);
-obj << Zoom to Selected Rows;
-Wait( 2 );
-obj << Release Zoom;
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );dt << Select Rows( [19, 22, 45, 61, 62, 64] );obj = dt << Hierarchical Cluster(	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),	Label( :Model ));obj << Zoom to Selected Rows;Wait( 2 );obj << Release Zoom;
 
 ```
 
@@ -663,12 +478,7 @@ obj << Release Zoom;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Two Way Clustering,
-	Row Dendrogram Position( "Left" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Two Way Clustering,	Row Dendrogram Position( "Left" ));
 
 ```
 
@@ -680,12 +490,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Two Way Clustering,
-	Row Label Position( "Right" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Two Way Clustering,	Row Label Position( "Right" ));
 
 ```
 
@@ -697,13 +502,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Skull.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :length, :basilar, :zygomat, :postorb ),
-	Color Map( "Blue to Gray to Red" ),
-	More Color Map Columns( :sex ),
-	Row More Position( "Right" )
-);
+dt = Open( "$SAMPLE_DATA/Skull.jmp" );obj = dt << Hierarchical Cluster(	Y( :length, :basilar, :zygomat, :postorb ),	Color Map( "Blue to Gray to Red" ),	More Color Map Columns( :sex ),	Row More Position( "Right" ));
 
 ```
 
@@ -715,13 +514,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Save Cluster Hierarchy;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Save Cluster Hierarchy;
 
 ```
 
@@ -733,12 +526,7 @@ obj << Save Cluster Hierarchy;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Save Cluster History
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Hierarchical Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Save Cluster History);
 
 ```
 
@@ -750,12 +538,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Save Cluster Means
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Hierarchical Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Save Cluster Means);
 
 ```
 
@@ -767,13 +550,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Save Cluster Tree;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Save Cluster Tree;
 
 ```
 
@@ -785,13 +562,7 @@ obj << Save Cluster Tree;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Save Clusters;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Save Clusters;
 
 ```
 
@@ -811,14 +582,7 @@ obj << Save Clusters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Constellation Plot( 1 );
-obj << Save Constellation Coordinates( 1 );
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Constellation Plot( 1 );obj << Save Constellation Coordinates( 1 );
 
 ```
 
@@ -830,13 +594,7 @@ obj << Save Constellation Coordinates( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Save Display Order;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Save Display Order;
 
 ```
 
@@ -848,12 +606,7 @@ obj << Save Display Order;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Save Distance Matrix
-);
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Save Distance Matrix);
 
 ```
 
@@ -865,13 +618,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 )
-);
-obj << Save Formula for Closest Cluster;
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ));obj << Save Formula for Closest Cluster;
 
 ```
 
@@ -883,12 +630,7 @@ obj << Save Formula for Closest Cluster;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Number of Clusters( 3 ),
-	Scatterplot Matrix
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Hierarchical Cluster(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Clusters( 3 ),	Scatterplot Matrix);
 
 ```
 
@@ -906,16 +648,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 3 ),
-	Distance Graph( 0 ),
-	Color Map( Green to Black to Red ),
-	Color Clusters( 1 ),
-	Show Dendrogram( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 3 ),	Distance Graph( 0 ),	Color Map( Green to Black to Red ),	Color Clusters( 1 ),	Show Dendrogram( 0 ));
 
 ```
 
@@ -927,14 +660,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :birth, :death ),
-	Label( :country ),
-	Number of Clusters( 4 ),
-	Color Clusters( 1 ),
-	Show NCluster Handle( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Birth Death Subset.jmp" );obj = dt << Hierarchical Cluster(	Y( :birth, :death ),	Label( :country ),	Number of Clusters( 4 ),	Color Clusters( 1 ),	Show NCluster Handle( 0 ));
 
 ```
 
@@ -952,13 +678,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Unstandardized" ),
-	Two Way Clustering,
-	Row Label Position( "Right" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Unstandardized" ),	Two Way Clustering,	Row Label Position( "Right" ));
 
 ```
 
@@ -982,13 +702,7 @@ obj = dt << Hierarchical Cluster(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Hierarchical Cluster(
-	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Number of Clusters( 8 )
-);
-Wait( .1 );
-obj << Two Way Clustering;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Hierarchical Cluster(	Y( :"1-Octanol"n, :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Number of Clusters( 8 ));Wait( .1 );obj << Two Way Clustering;
 
 ```
 
@@ -1006,14 +720,7 @@ obj << Two Way Clustering;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-dt << Select Rows( [19, 22, 45, 61, 62, 64] );
-obj = dt << Hierarchical Cluster(
-	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),
-	Label( :Model )
-);
-Wait( 2 );
-obj << Zoom to Selected Rows;
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );dt << Select Rows( [19, 22, 45, 61, 62, 64] );obj = dt << Hierarchical Cluster(	Y( :Type, :Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size ),	Label( :Model ));Wait( 2 );obj << Zoom to Selected Rows;
 
 ```
 
@@ -1029,10 +736,7 @@ obj << Zoom to Selected Rows;
 
 ```jsl
 
-tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tbl << K nearest rows( 2, 1 ); 
-//2 nearest rows to row 1 are: 
-Show( rows );
+tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tbl << K nearest rows( 2, 1 ); //2 nearest rows to row 1 are: Show( rows );
 
 ```
 
@@ -1046,10 +750,7 @@ Show( rows );
 
 ```jsl
 
-tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );
-distance = tbl << Distance between rows( 1, 2 ); 
-//distance from row 1 to row 2 is: 
-Show( distance );
+tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );distance = tbl << Distance between rows( 1, 2 ); //distance from row 1 to row 2 is: Show( distance );
 
 ```
 
@@ -1061,16 +762,7 @@ Show( distance );
 
 ```jsl
 
-tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] ); 
-//  remove 3 rows 
-tbl << Remove Rows( [2 1 3] ); 
-//  re-insert 1 row 
-tbl << InsertRows( 2 ); 
-// re-insert 2 rows, ignoring row 2 
-tbl << InsertRows( [3 2] );
-{rows, dist} = tbl << K nearest rows( 2, 4 ); 
-//2 nearest rows to row 4, ignoring row 1, are:
-Show( rows );
+tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] ); //  remove 3 rows tbl << Remove Rows( [2 1 3] ); //  re-insert 1 row tbl << InsertRows( 2 ); // re-insert 2 rows, ignoring row 2 tbl << InsertRows( [3 2] );{rows, dist} = tbl << K nearest rows( 2, 4 ); //2 nearest rows to row 4, ignoring row 1, are:Show( rows );
 
 ```
 
@@ -1082,10 +774,7 @@ Show( rows );
 
 ```jsl
 
-tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tbl << K nearest rows( {3, 2.0} ); 
-//3 nearest rows to each row are: 
-Show( rows );
+tbl = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tbl << K nearest rows( {3, 2.0} ); //3 nearest rows to each row are: Show( rows );
 
 ```
 
@@ -1097,14 +786,7 @@ Show( rows );
 
 ```jsl
 
-tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );  
-//  remove 2 rows
-tbl << RemoveRows( [2 1] ); 
-//  re-insert 1 row 
-tbl << Insert rows( 2 );
-{rows, dist} = tbl << K nearest rows( 2, [1.5 1.5] ); 
-//2 nearest rows to point at [1.5 1.5], ignoring row 1, are: 
-Show( rows );
+tbl = KDTable( [1 1, 2 2, 1 2, 2 1, 4 4] );  //  remove 2 rowstbl << RemoveRows( [2 1] ); //  re-insert 1 row tbl << Insert rows( 2 );{rows, dist} = tbl << K nearest rows( 2, [1.5 1.5] ); //2 nearest rows to point at [1.5 1.5], ignoring row 1, are: Show( rows );
 
 ```
 

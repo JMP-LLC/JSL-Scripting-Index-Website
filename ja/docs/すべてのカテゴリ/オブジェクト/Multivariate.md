@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,10 +56,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -90,12 +70,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -107,12 +82,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -124,17 +94,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -146,9 +106,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Copy Script;
 
 ```
 
@@ -160,9 +118,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Data Table Window;
 
 ```
 
@@ -176,9 +132,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -190,18 +144,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -215,27 +158,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -243,10 +166,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -258,10 +178,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -273,11 +190,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -289,10 +202,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -304,10 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -319,10 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -334,10 +238,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -351,10 +252,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -366,13 +264,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -384,32 +276,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**構文:** New JSL Preset( preset )
-
-**説明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -423,9 +290,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -437,15 +302,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -457,31 +314,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**構文:** obj &lt;&lt; Redo ByGroup Analysis
-
-**説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Redo Analysis;
 
 ```
 
@@ -493,31 +326,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**構文:** obj &lt;&lt; Relaunch ByGroup
-
-**説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Relaunch Analysis;
 
 ```
 
@@ -529,14 +338,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -548,48 +350,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**構文:** Render Preset( preset )
-
-**説明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**構文:** obj &lt;&lt; Report;Report( obj )
+**構文:** obj &lt;&lt; Report; Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -601,9 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Report View( "Summary" );
 
 ```
 
@@ -615,17 +386,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -637,17 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -659,17 +410,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -681,9 +422,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Save Script for All Objects;
 
 ```
 
@@ -693,39 +432,19 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -737,9 +456,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -751,9 +468,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Save Script to Journal;
 
 ```
 
@@ -765,9 +480,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Save Script to Report;
 
 ```
 
@@ -779,9 +492,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Save Script to Script Window;
 
 ```
 
@@ -793,15 +504,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -813,20 +516,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -838,12 +528,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -855,11 +540,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -871,9 +552,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Title( "My Platform" );
 
 ```
 
@@ -885,11 +564,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -903,11 +578,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -919,9 +590,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -933,13 +602,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -949,18 +612,11 @@ New Window( "Bivariate Equation",
 
 **構文:** obj &lt;&lt; By( column(s) )
 
+**説明:** 指定された列の各水準に対して、個別に分析を実行する。
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -970,8 +626,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
 
 ```
 
@@ -979,14 +634,11 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 **構文:** obj &lt;&lt; Freq( column )
 
+**説明:** 分析の際に各行の度数として用いる値の列を指定する。
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Freq( _freqcol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Freq( :_freqcol ));
 
 ```
 
@@ -994,14 +646,11 @@ obj = Multivariate(
 
 **構文:** obj &lt;&lt; Weight( column )
 
+**説明:** 分析の際に各行の重みとして用いる値の列を指定する。
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Weight( _weightcol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Weight( :_weightcol ));
 
 ```
 
@@ -1011,8 +660,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
 
 ```
 
@@ -1026,8 +674,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
 
 ```
 
@@ -1041,9 +688,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << CI of Correlation( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << CI of Correlation( 1 );
 
 ```
 
@@ -1055,9 +700,7 @@ obj << CI of Correlation( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Cluster the Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Cluster the Correlations( 1 );
 
 ```
 
@@ -1069,9 +712,7 @@ obj << Cluster the Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Correlations( 1 );
 
 ```
 
@@ -1085,9 +726,7 @@ obj << Color Map on Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Hoeffding's D( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Hoeffding's D( 1 );
 
 ```
 
@@ -1101,9 +740,7 @@ obj << Color Map on Hoeffding's D( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Kendall's Tau( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Kendall's Tau( 1 );
 
 ```
 
@@ -1117,9 +754,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Kendall's Tau( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Kendall's Tau( 1 );
 
 ```
 
@@ -1133,9 +768,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Pairwise Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Pairwise Correlations( 1 );
 
 ```
 
@@ -1149,9 +782,7 @@ obj << Color Map on Pairwise Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Spearman's Rho( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Spearman's Rho( 1 );
 
 ```
 
@@ -1165,9 +796,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Color Map on Spearman's Rho( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Color Map on Spearman's Rho( 1 );
 
 ```
 
@@ -1179,9 +808,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << "Color Map on p-Values"n( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << "Color Map on p-Values"n( 1 );
 
 ```
 
@@ -1193,9 +820,7 @@ obj << "Color Map on p-Values"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Correlation Probability( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Correlation Probability( 1 );
 
 ```
 
@@ -1207,9 +832,7 @@ obj << Correlation Probability( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Correlations Multivariate( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Correlations Multivariate( 1 );
 
 ```
 
@@ -1221,9 +844,7 @@ obj << Correlations Multivariate( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Covariance Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Covariance Matrix( 1 );
 
 ```
 
@@ -1235,9 +856,7 @@ obj << Covariance Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "REML" ) );
-obj << Create SAS Job();
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "REML" ) );obj << Create SAS Job();
 
 ```
 
@@ -1249,9 +868,7 @@ obj << Create SAS Job();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Cronbach's alpha( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Cronbach's alpha( 1 );
 
 ```
 
@@ -1263,9 +880,7 @@ obj << Cronbach's alpha( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Cronbach's alpha( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Cronbach's alpha( 1 );
 
 ```
 
@@ -1277,9 +892,7 @@ obj << Cronbach's alpha( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
 
 ```
 
@@ -1291,10 +904,7 @@ obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-corr = obj << Get Correlation Matrix;
-Show( corr );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );corr = obj << Get Correlation Matrix;Show( corr );
 
 ```
 
@@ -1306,10 +916,7 @@ Show( corr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Inverse Correlations( 1 ) );
-icorr = obj << Get Inv Correlation Matrix;
-Show( icorr );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Inverse Correlations( 1 ) );icorr = obj << Get Inv Correlation Matrix;Show( icorr );
 
 ```
 
@@ -1321,9 +928,7 @@ Show( icorr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Hoeffding's D( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Hoeffding's D( 1 );
 
 ```
 
@@ -1335,9 +940,7 @@ obj << Hoeffding's D( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
 
 ```
 
@@ -1349,9 +952,7 @@ obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Impute Missing Data;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Impute Missing Data;
 
 ```
 
@@ -1363,9 +964,7 @@ obj << Impute Missing Data;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Inverse Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Inverse Correlations( 1 );
 
 ```
 
@@ -1377,9 +976,7 @@ obj << Inverse Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Jackknife Distances( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Jackknife Distances( 1 );
 
 ```
 
@@ -1391,9 +988,7 @@ obj << Jackknife Distances( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Kendall's Tau( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Kendall's Tau( 1 );
 
 ```
 
@@ -1405,9 +1000,7 @@ obj << Kendall's Tau( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Kendall's Tau( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Kendall's Tau( 1 );
 
 ```
 
@@ -1419,9 +1012,7 @@ obj << Kendall's Tau( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Mahalanobis Distances( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Mahalanobis Distances( 1 );
 
 ```
 
@@ -1433,8 +1024,7 @@ obj << Mahalanobis Distances( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Triangular" ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Triangular" ) );
 
 ```
 
@@ -1446,9 +1036,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Tr
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :POP, :OZONE, :CO, :SO2, :NO ) );
-obj << Multivariate Simple Statistics( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :POP, :OZONE, :CO, :SO2, :NO ) );obj << Multivariate Simple Statistics( 1 );
 
 ```
 
@@ -1460,9 +1048,7 @@ obj << Multivariate Simple Statistics( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Pairwise Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Pairwise Correlations( 1 );
 
 ```
 
@@ -1474,9 +1060,7 @@ obj << Pairwise Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Parallel Coord Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Parallel Coord Plot( 1 );
 
 ```
 
@@ -1488,9 +1072,7 @@ obj << Parallel Coord Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Partial Correlation Diagram( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Partial Correlation Diagram( 1 );
 
 ```
 
@@ -1504,9 +1086,7 @@ obj << Partial Correlation Diagram( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Partial Correlation Probability( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Partial Correlation Probability( 1 );
 
 ```
 
@@ -1518,9 +1098,7 @@ obj << Partial Correlation Probability( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Partial Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Partial Correlations( 1 );
 
 ```
 
@@ -1532,9 +1110,7 @@ obj << Partial Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Save Imputed Formula;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Save Imputed Formula;
 
 ```
 
@@ -1546,11 +1122,7 @@ obj << Save Imputed Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( 0 ));
 
 ```
 
@@ -1562,10 +1134,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Set Alpha Level( 0.01 );
-obj << CI of Correlation( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Set Alpha Level( 0.01 );obj << CI of Correlation( 1 );
 
 ```
 
@@ -1577,10 +1146,7 @@ obj << CI of Correlation( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Set α Level( 0.01 );
-obj << CI of Correlation( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Set α Level( 0.01 );obj << CI of Correlation( 1 );
 
 ```
 
@@ -1592,9 +1158,7 @@ obj << CI of Correlation( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Spearman's Rho( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Spearman's Rho( 1 );
 
 ```
 
@@ -1606,9 +1170,7 @@ obj << Spearman's Rho( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Spearman's Rho( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Spearman's Rho( 1 );
 
 ```
 
@@ -1620,9 +1182,7 @@ obj << Spearman's Rho( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Standardized alpha( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Standardized alpha( 1 );
 
 ```
 
@@ -1634,9 +1194,7 @@ obj << Standardized alpha( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << Standardized alpha( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << Standardized alpha( 1 );
 
 ```
 
@@ -1648,9 +1206,7 @@ obj << Standardized alpha( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << T Square( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << T Square( 1 );
 
 ```
 
@@ -1662,9 +1218,7 @@ obj << T Square( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );
-obj << T Square( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ) );obj << T Square( 1 );
 
 ```
 
@@ -1676,9 +1230,7 @@ obj << T Square( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :POP, :OZONE, :CO, :SO2, :NO ) );
-obj << Univariate Simple Statistics( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :POP, :OZONE, :CO, :SO2, :NO ) );obj << Univariate Simple Statistics( 1 );
 
 ```
 
@@ -1696,8 +1248,7 @@ obj << Univariate Simple Statistics( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML" ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML" ) );
 
 ```
 
@@ -1713,9 +1264,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", "3D Score Plot"n );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", "3D Score Plot"n );
 
 ```
 
@@ -1729,9 +1278,7 @@ obj << Principal Components( "on Correlations", "3D Score Plot"n );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
 
 ```
 
@@ -1743,9 +1290,7 @@ obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
 
 ```
 
@@ -1757,12 +1302,7 @@ obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components(
-	"on Correlations",
-	Factor Rotation( "ML", "SMC", 2, "Varimax" )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components(	"on Correlations",	Factor Rotation( "ML", "SMC", 2, "Varimax" ));
 
 ```
 
@@ -1774,9 +1314,7 @@ obj << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
 
 ```
 
@@ -1788,9 +1326,7 @@ obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Save Principal Components( 3 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Save Principal Components( 3 ) );
 
 ```
 
@@ -1802,12 +1338,7 @@ obj << Principal Components( "on Correlations", Save Principal Components( 3 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components(
-	"on Correlations",
-	Save Principal Components with Imputation( 3 )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components(	"on Correlations",	Save Principal Components with Imputation( 3 ));
 
 ```
 
@@ -1819,13 +1350,7 @@ obj << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components(
-	"on Correlations",
-	Factor Rotation( "SMC", 2, "Varimax" ),
-	Save Rotated Components
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components(	"on Correlations",	Factor Rotation( "SMC", 2, "Varimax" ),	Save Rotated Components);
 
 ```
 
@@ -1837,13 +1362,7 @@ obj << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components(
-	"on Correlations",
-	Factor Rotation( "SMC", 2, "Varimax" ),
-	Save Rotated Components with Imputation
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components(	"on Correlations",	Factor Rotation( "SMC", 2, "Varimax" ),	Save Rotated Components with Imputation);
 
 ```
 
@@ -1855,9 +1374,7 @@ obj << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Score Plot( 2 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Score Plot( 2 ) );
 
 ```
 
@@ -1869,9 +1386,7 @@ obj << Principal Components( "on Correlations", Score Plot( 2 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) );
 
 ```
 
@@ -1883,9 +1398,7 @@ obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Principal Components( "on Correlations", Scree Plot( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Principal Components( "on Correlations", Scree Plot( 1 ) );
 
 ```
 
@@ -1901,11 +1414,7 @@ obj << Principal Components( "on Correlations", Scree Plot( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Density Ellipses( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Density Ellipses( 1 ) ));
 
 ```
 
@@ -1917,11 +1426,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Alpha( 0.1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Alpha( 0.1 ) ));
 
 ```
 
@@ -1933,11 +1438,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Color( "Blue" ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Color( "Blue" ) ));
 
 ```
 
@@ -1949,11 +1450,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Alpha( 0.1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Density Ellipses( 1 ), Ellipse Alpha( 0.1 ) ));
 
 ```
 
@@ -1965,11 +1462,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Density Ellipses( 1 ), Ellipses Coverage( 0.9 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Density Ellipses( 1 ), Ellipses Coverage( 0.9 ) ));
 
 ```
 
@@ -1981,11 +1474,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Ellipses Transparency( 0.6 ), Shaded Ellipses( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Ellipses Transparency( 0.6 ), Shaded Ellipses( 1 ) ));
 
 ```
 
@@ -1997,11 +1486,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Fit line( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Fit line( 1 ) ));
 
 ```
 
@@ -2015,11 +1500,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Heat Map( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Heat Map( 1 ) ));
 
 ```
 
@@ -2031,11 +1512,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Horizontal( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Horizontal( 1 ) ));
 
 ```
 
@@ -2047,11 +1524,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Nonpar Density( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Nonpar Density( 1 ) ));
 
 ```
 
@@ -2063,11 +1536,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Shaded Ellipses( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Shaded Ellipses( 1 ) ));
 
 ```
 
@@ -2079,11 +1548,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Show Correlations( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Show Correlations( 1 ) ));
 
 ```
 
@@ -2095,11 +1560,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Vertical( 1 ), Show Counts( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Vertical( 1 ), Show Counts( 1 ) ));
 
 ```
 
@@ -2111,11 +1572,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Show Points( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Show Points( 1 ) ));
 
 ```
 
@@ -2129,11 +1586,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Significance Circles( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Significance Circles( 1 ) ));
 
 ```
 
@@ -2145,11 +1598,7 @@ obj = Multivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = Multivariate(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Scatterplot Matrix( Vertical( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = Multivariate(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Scatterplot Matrix( Vertical( 1 ) ));
 
 ```
 

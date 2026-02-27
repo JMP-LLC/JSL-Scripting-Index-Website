@@ -10,7 +10,7 @@
 
 **JMP Version hinzugefügt:** 15
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -18,7 +18,7 @@ jmplive = New JMP Live();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
@@ -26,7 +26,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
@@ -52,90 +52,35 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 **JMP Version hinzugefügt:** 17
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dist = bc << Run Script( "Distribution" );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Sample Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	dist,
-	Title( "Distribution Web Report" ),
-	Description( "This report was created with the sample found in the Scripting Index" ),
-	Publish Data( 1 ),
-	Optimization( "Interactivity" )
-);
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = bc << Run Script( "Distribution" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Sample Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	dist,	Title( "Distribution Web Report" ),	Description( "This report was created with the sample found in the Scripting Index" ),	Publish Data( 1 ),	Optimization( "Interactivity" ));jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Data Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	Data( "$SAMPLE_DATA/Big Class.jmp" ),
-	Title( "Big Class Sample Table" ),
-	Description(
-		"This data table was published with the sample found in the Scripting Index"
-	)
-);
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Data Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	Data( "$SAMPLE_DATA/Big Class.jmp" ),	Title( "Big Class Sample Table" ),	Description(		"This data table was published with the sample found in the Scripting Index"	));jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Map Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content( Map( "$SAMPLE_DATA/S4-XY.jmp" ) );
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Map Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content( Map( "$SAMPLE_DATA/S4-XY.jmp" ) );jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
-#### Beispiel 4
+**Beispiel 4**
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Image Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-imageContent = New JMP Live Content(
-	Image( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),
-	Title( "Rhino Footprint" ),
-	Description( "An image of a rhino footprint from the Sample Data" )
-);
-
-jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Image Content" ));folder = jmpliveresult << As Scriptable;imageContent = New JMP Live Content(	Image( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),	Title( "Rhino Footprint" ),	Description( "An image of a rhino footprint from the Sample Data" ));jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
 
 ```
 

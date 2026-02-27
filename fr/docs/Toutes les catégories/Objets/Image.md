@@ -6,14 +6,13 @@
 
 ### New Image
 
-**Syntaxe :** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
+**Syntaxe :** img = Open( filepath, jpg|png|gif|bmp|tif ) New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **Description :** Un objet image, qui peut servir à ajouter une image à un cadre ou à une boîte d’affichage.
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );
 
 ```
 
@@ -25,25 +24,7 @@ obj = New Window( "tile(40,40)", img );
 
 ```jsl
 
-/* Data tables, other JMP files, external files:
-   Open( filePath,
-     <Invisible | Private>,
-     <Select Columns( "col", ... )>,
-     <Ignore Columns( "col", ... )>,
-     <Add to Recent Files(bool)>,
-     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>
-     <Force Refresh>,
-     <Enable Filter Views(bool)>,
-     <"file type">
-   )
-*/
-//Basic data table open
-dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-//Data table open with some options
-dt2 = Open(
-	"$SAMPLE_DATA/Fitness.jmp",
-	Select Columns( "Name", "Sex", "Age", "Weight" )
-);
+/* Data tables, other JMP files, external files:   Open( filePath,     <Invisible | Private>,     <Select Columns( "col", ... )>,     <Ignore Columns( "col", ... )>,     <Add to Recent Files(bool)>,     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>     <Force Refresh>,     <Enable Filter Views(bool)>,     <"file type">   )*///Basic data table opendt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );//Data table open with some optionsdt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "Weight" ) );
 
 ```
 
@@ -59,23 +40,7 @@ dt2 = Open(
 
 ```jsl
 
-dim = 100;
-mat0 = J( dim, dim, 0 );
-mat1 = J( dim, dim, 1 );
-multiImage = New Image( "rgb", {mat1, mat0, mat0} );
-multiImage << Add Frame( 2000 );
-multiImage << Set Pixels( "rgb", {mat0, mat1, mat0} );
-multiImage << Add Frame( 1000 );
-multiImage << Set Pixels( "rgb", {mat0, mat0, mat1} );
-win = New Window( "Multi-Frame Image", multiImage );
-durs = multiImage << Get Frame Durations();
-For( i = 0, i < 3, i++,
-	multiImage << Set Current Frame( i );
-	win << reshow();
-	dur = durs[i + 1] / 1000.0;
-	Wait( dur );
-);
-win << Close Window();
+dim = 100;mat0 = J( dim, dim, 0 );mat1 = J( dim, dim, 1 );multiImage = New Image( "rgb", {mat1, mat0, mat0} );multiImage << Add Frame( 2000 );multiImage << Set Pixels( "rgb", {mat0, mat1, mat0} );multiImage << Add Frame( 1000 );multiImage << Set Pixels( "rgb", {mat0, mat0, mat1} );win = New Window( "Multi-Frame Image", multiImage );durs = multiImage << Get Frame Durations();For( i = 0, i < 3, i++,	multiImage << Set Current Frame( i );	win << reshow();	dur = durs[i + 1] / 1000.0;	Wait( dur ););win << Close Window();
 
 ```
 
@@ -83,15 +48,11 @@ win << Close Window();
 
 **Syntaxe :** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
-**Description :** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
+**Description :** Modifie l&apos;image en sous-image aux coordonnées spécifiées, en pixels, dans l&apos;image existante.
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Crop( Left( 50 ), Right( 300 ), Top( 20 ), Bottom( 200 ) );
-obj2 = New Window( "Cropped", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );Wait( 1 );img << Crop( Left( 50 ), Right( 300 ), Top( 20 ), Bottom( 200 ) );obj2 = New Window( "Cropped", img );
 
 ```
 
@@ -101,122 +62,19 @@ obj2 = New Window( "Cropped", img );
 
 **Description :** Filtre l’image selon l’algorithme spécifié. Le filtrage permet d’éliminer le bruit dans l’image. Le contraste, le gamma et la réduction du bruit requièrent un paramètre (numérique) supplémentaire. Le flou gaussien en requiert deux : le rayon et sigma.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-New Window( "tile(40,40)", New Image( img ) );
-Wait( 1 );
-img << Filter( "negate" );
-New Window( "Neg filter", img ); 
-//contrast filter example 
-img2 = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
-obj = New Window( "Black Rhino", New Image( img2 ) );
-Wait( 1 );
-img3 = New Image( img2 );/*save a copy for later*/ img2 << Filter( "Contrast", 4 );
-New Window( "Contrast filter", New Image( img2 ) );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );New Window( "tile(40,40)", New Image( img ) );Wait( 1 );img << Filter( "negate" );New Window( "Neg filter", img ); //contrast filter example img2 = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );obj = New Window( "Black Rhino", New Image( img2 ) );Wait( 1 );img3 = New Image( img2 );/*save a copy for later*/ img2 << Filter( "Contrast", 4 );New Window( "Contrast filter", New Image( img2 ) );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-/* http://en.wikipedia.org/wiki/Canny_edge_detector */ 
-radius = 1;
-sigma = 3;
-smallThreshold = .01;
-largeThreshold = .3;
-file = Pick File(
-	"pick picture",
-	"$SAMPLE_IMAGES",
-	{"pictures|png;jpg", "All Files|*"},
-	1,
-	0,
-	"black rhino footprint.jpg"
-);
-original = New Image( file );
-edges = New Image( original );
-New Window( "canny",
-	H List Box(
-		Slider Box(
-			0,
-			10,
-			radius,
-			refilter();
-			hb << reshow;
-			t1 << settext( Char( Floor( radius ) ) );,
-			<<setwidth( 100 )
-		),
-		Text Box( "radius of smoothing filter=" ),
-		t1 = Text Box( Char( Floor( radius ) ) )
-	),
-	H List Box(
-		Slider Box(
-			1,
-			5,
-			sigma,
-			refilter();
-			hb << reshow;
-			t2 << settext( Char( Floor( sigma ) ) );,
-			<<setwidth( 100 )
-		),
-		Text Box( "smoothing repeat=" ),
-		t2 = Text Box( Char( Floor( sigma ) ) )
-	),
-	H List Box(
-		sb1 = Slider Box(
-			.0001,
-			1,
-			largeThreshold,
-			If( smallThreshold >= largeThreshold,
-				sb0 << set( largeThreshold / 2 )
-			);
-			refilter();
-			hb << reshow;
-			t3 << settext( Char( largeThreshold ) );
-			t4 << settext( Char( smallThreshold ) );,
-			<<setwidth( 300 )
-		),
-		Text Box( "large (start) threshold=" ),
-		t3 = Text Box( Char( largeThreshold ) )
-	),
-	H List Box(
-		sb0 = Slider Box(
-			.0001,
-			1,
-			smallThreshold,
-			If( smallThreshold >= largeThreshold,
-				sb1 << set( smallThreshold + .1 )
-			);
-			refilter();
-			hb << reshow;
-			t4 << settext( Char( smallThreshold ) );
-			t3 << settext( Char( largeThreshold ) );,
-			<<setwidth( 300 )
-		),
-		Text Box( "small (stop) threshold=" ),
-		t4 = Text Box( Char( smallThreshold ) )
-	),
-	Spacer Box( size( 10, 20 ) ),
-	hb = H List Box( original, edges )
-);
-refilter = Function( {},
-	edges << setpixels( original << getpixels );
-    //edges << filter( "gaussian blur", radius, sigma ); //you could use the gaussian blur filter by setting radius(0), below
-	edges << filter(
-		"canny"/* here it is! */,
-		largeThreshold( largeThreshold )/*tracing begins when a large-value edge is found*/
-	,
-		smallThreshold( smallThreshold )/*tracing stops when the edge value gets too small*/
-	,
-		radius( radius )/*a blur-filter, use 0 for no blurring*/,
-		Repeat( sigma )/* number of repeats of a box-blur; 3 approximates a gaussian-blur filter */
-	);
-	edges << filter( "negate" );/*black on white*/
-);
-refilter();
+/* http://en.wikipedia.org/wiki/Canny_edge_detector */ radius = 1;sigma = 3;smallThreshold = .01;largeThreshold = .3;file = Pick File(	"pick picture",	"$SAMPLE_IMAGES",	{"pictures|png;jpg", "All Files|*"},	1,	0,	"black rhino footprint.jpg");original = New Image( file );edges = New Image( original );New Window( "canny",	H List Box(		Slider Box(			0,			10,			radius,			refilter();			hb << reshow;			t1 << settext( Char( Floor( radius ) ) );,			<<setwidth( 100 )		),		Text Box( "radius of smoothing filter=" ),		t1 = Text Box( Char( Floor( radius ) ) )	),	H List Box(		Slider Box(			1,			5,			sigma,			refilter();			hb << reshow;			t2 << settext( Char( Floor( sigma ) ) );,			<<setwidth( 100 )		),		Text Box( "smoothing repeat=" ),		t2 = Text Box( Char( Floor( sigma ) ) )	),	H List Box(		sb1 = Slider Box(			.0001,			1,			largeThreshold,			If( smallThreshold >= largeThreshold,				sb0 << set( largeThreshold / 2 )			);			refilter();			hb << reshow;			t3 << settext( Char( largeThreshold ) );			t4 << settext( Char( smallThreshold ) );,			<<setwidth( 300 )		),		Text Box( "large (start) threshold=" ),		t3 = Text Box( Char( largeThreshold ) )	),	H List Box(		sb0 = Slider Box(			.0001,			1,			smallThreshold,			If( smallThreshold >= largeThreshold,				sb1 << set( smallThreshold + .1 )			);			refilter();			hb << reshow;			t4 << settext( Char( smallThreshold ) );			t3 << settext( Char( largeThreshold ) );,			<<setwidth( 300 )		),		Text Box( "small (stop) threshold=" ),		t4 = Text Box( Char( smallThreshold ) )	),	Spacer Box( size( 10, 20 ) ),	hb = H List Box( original, edges ));refilter = Function( {},	edges << setpixels( original << getpixels );    //edges << filter( "gaussian blur", radius, sigma ); //you could use the gaussian blur filter by setting radius(0), below	edges << filter(		"canny"/* here it is! */,		largeThreshold( largeThreshold )/*tracing begins when a large-value edge is found*/,		smallThreshold( smallThreshold )/*tracing stops when the edge value gets too small*/,		radius( radius )/*a blur-filter, use 0 for no blurring*/,		Repeat( sigma )/* number of repeats of a box-blur; 3 approximates a gaussian-blur filter */	);	edges << filter( "negate" );/*black on white*/);refilter();
 
 ```
 
@@ -228,11 +86,7 @@ refilter();
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Flip Both;
-obj2 = New Window( "Diagonal Flip", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );Wait( 1 );img << Flip Both;obj2 = New Window( "Diagonal Flip", img );
 
 ```
 
@@ -244,11 +98,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Flip Horizontal;
-obj2 = New Window( "Horizontal Flip", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );Wait( 1 );img << Flip Horizontal;obj2 = New Window( "Horizontal Flip", img );
 
 ```
 
@@ -260,11 +110,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Flip Vertical;
-obj2 = New Window( "Vertical Flip", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );Wait( 1 );img << Flip Vertical;obj2 = New Window( "Vertical Flip", img );
 
 ```
 
@@ -276,8 +122,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-num = img << Get Current Frame();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );num = img << Get Current Frame();
 
 ```
 
@@ -291,14 +136,7 @@ num = img << Get Current Frame();
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-exifData = img << getEXIF();
-key = exifData << first;
-While( !Is Empty( key ),
-	v = exifData << getValue( key );
-	Show( key, v );
-	key = exifData << next( key );
-);
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );exifData = img << getEXIF();key = exifData << first;While( !Is Empty( key ),	v = exifData << getValue( key );	Show( key, v );	key = exifData << next( key ););
 
 ```
 
@@ -310,8 +148,7 @@ While( !Is Empty( key ),
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-durs = img << Get Frame Durations();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );durs = img << Get Frame Durations();
 
 ```
 
@@ -323,8 +160,7 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-num = img << Get N Frames();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );num = img << Get N Frames();
 
 ```
 
@@ -336,8 +172,7 @@ num = img << Get N Frames();
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-loops = img << Get N Loops();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );loops = img << Get N Loops();
 
 ```
 
@@ -347,38 +182,31 @@ loops = img << Get N Loops();
 
 ### Get Pixels
 
-**Syntaxe :** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
+**Syntaxe :** mat = img &lt;&lt; Get Pixels(); {r, g, b} = img &lt;&lt; Get Pixels("rgb"); {r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **Description :** Si aucun indicateur de couleur n&apos;est spécifié, une matrice des couleurs JSL représentant les valeurs des pixels est renvoyée. Un indicateur de couleur rgb renverra une liste de trois matrices, rouge, verte et bleue, respectivement. Spécifier rgba renverra le canal alpha (transparence) ainsi que le rouge, le vert et le bleu.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-m = img << Get Pixels;
-Show( m );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );m = img << Get Pixels;Show( m );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-{r, g, b} = img << Get Pixels( "rgb" );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );{r, g, b} = img << Get Pixels( "rgb" );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-{r, g, b, a} = img << Get Pixels( "rgba" );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );{r, g, b, a} = img << Get Pixels( "rgba" );
 
 ```
 
@@ -390,10 +218,7 @@ win = New Window( "tile(40,40)", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-s = {w, h} = img << Get Size;
-Show( s );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );s = {w, h} = img << Get Size;Show( s );
 
 ```
 
@@ -405,8 +230,7 @@ Show( s );
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-img << Remove Frame( 0 );
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );img << Remove Frame( 0 );
 
 ```
 
@@ -418,11 +242,7 @@ img << Remove Frame( 0 );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Rotate( 45 );
-obj2 = New Window( "Rotated", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );Wait( 1 );img << Rotate( 45 );obj2 = New Window( "Rotated", img );
 
 ```
 
@@ -434,9 +254,7 @@ obj2 = New Window( "Rotated", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ```
 
@@ -446,25 +264,19 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 **Description :** Applique un facteur d&apos;échelle à la hauteur et à la largeur de l&apos;image, ou applique une échelle différente pour la largeur (xscale) et la hauteur (yscale).
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-img << scale( 0.5 );
-obj2 = New Window( "Tile scaled by 0.5", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );img << scale( 0.5 );obj2 = New Window( "Tile scaled by 0.5", img );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-img << scale( 2, 0.5 );
-obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );img << scale( 2, 0.5 );obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ```
 
@@ -482,15 +294,7 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-num = img << Get N Frames();
-win = New Window( "Progress", img );
-For( i = 0, i < num, i++,
-	img << Set Current Frame( i );
-	win << reshow();
-	Wait( 1 );
-);
-win << Close Window();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );num = img << Get N Frames();win = New Window( "Progress", img );For( i = 0, i < num, i++,	img << Set Current Frame( i );	win << reshow();	Wait( 1 ););win << Close Window();
 
 ```
 
@@ -502,9 +306,7 @@ win << Close Window();
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-img << Set Frame Duration( 1000 );
-durs = img << Get Frame Durations();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );img << Set Frame Duration( 1000 );durs = img << Get Frame Durations();
 
 ```
 
@@ -516,43 +318,29 @@ durs = img << Get Frame Durations();
 
 ```jsl
 
-img = New Image( "$SAMPLE_IMAGES/progress.gif" );
-img << Set N Loops( 3 );
-loops = img << Get N Loops();
+img = New Image( "$SAMPLE_IMAGES/progress.gif" );img << Set N Loops( 3 );loops = img << Get N Loops();
 
 ```
 
 ### Set Pixels
 
-**Syntaxe :** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
+**Syntaxe :** img &lt;&lt; Set Pixels(jslmat); img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **Description :** Définit la ou les matrices de pixels pour l&apos;image. Si une matrice est spécifiée sans indicateur de couleur, elle est traitée comme une matrice des couleurs JSL. Un indicateur de couleur peut être spécifié, comme rgb, pour indiquer que les matrices suivantes sont respectivement rouges, vertes et bleues. Dans ce cas, la taille de toutes les matrices spécifiées doit être la même.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-m = img << Get Pixels;
-Wait( 1 );
-n = m`;
-img << Set Pixels( n );
-win2 = New Window( "Transformed", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );m = img << Get Pixels;Wait( 1 );n = m`;img << Set Pixels( n );win2 = New Window( "Transformed", img );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-{r, g, b} = img << Get Pixels( "rgb" );
-Wait( 1 );
-i = .30 * r + .59 * g + .11 * b;
-img << Set Pixels( "rgb", {i, i, i} );
-win2 = New Window( "Gray Scale", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );{r, g, b} = img << Get Pixels( "rgb" );Wait( 1 );i = .30 * r + .59 * g + .11 * b;img << Set Pixels( "rgb", {i, i, i} );win2 = New Window( "Gray Scale", img );
 
 ```
 
@@ -564,10 +352,7 @@ win2 = New Window( "Gray Scale", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-img << Set Size( {600, 600} );
-obj2 = New Window( "Larger tile(40,40)", img );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );img << Set Size( {600, 600} );obj2 = New Window( "Larger tile(40,40)", img );
 
 ```
 
@@ -579,10 +364,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-obj = New Window( "tile(40,40)", img );
-s = {w, h} = img << Get Size;
-Show( s );
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );obj = New Window( "tile(40,40)", img );s = {w, h} = img << Get Size;Show( s );
 
 ```
 
@@ -594,11 +376,7 @@ Show( s );
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-win = New Window( "tile(40,40)", img );
-Wait( 1 );
-img << Transparency( 0.5 );
-win << reshow;
+img = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );win = New Window( "tile(40,40)", img );Wait( 1 );img << Transparency( 0.5 );win << reshow;
 
 ```
 

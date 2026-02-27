@@ -14,8 +14,7 @@
 
 ```jsl
 
-
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```
 
@@ -29,8 +28,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```jsl
 
-
-list = Data Connector Registry() << Get Available();
+list = Data Connector Registry() << Get Available();
 
 ```
 
@@ -44,8 +42,7 @@ list = Data Connector Registry() << Get Available();
 
 ```jsl
 
-
-metadata = Data Connector Registry() << Get Metadata( "com.jmp.sql_server" );
+metadata = Data Connector Registry() << Get Metadata( "com.jmp.sql_server" );
 
 ```
 
@@ -59,8 +56,7 @@ metadata = Data Connector Registry() << Get Metadata( "com.jmp.sql_server" );
 
 ```jsl
 
-
-Data Connector Registry() << Register( Path( "$DOCUMENTS/my connector.jmpdc" ), Name( "My Data Connector" ) );
+Data Connector Registry() << Register( Path( "$DOCUMENTS/my connector.jmpdc" ), Name( "My Data Connector" ) );
 
 ```
 
@@ -74,8 +70,7 @@ Data Connector Registry() << Register( Path( "$DOCUMENTS/my connector.jmpdc" ), 
 
 ```jsl
 
-
-dc = Data Connector Registry() << Unregister( "My Data Connector" );
+dc = Data Connector Registry() << Unregister( "My Data Connector" );
 
 ```
 

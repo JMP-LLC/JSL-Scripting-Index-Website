@@ -6,17 +6,13 @@
 
 ### New SQL Query
 
-**语法:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**语法:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) ); obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **说明:** 为指定的连接、列和表或为指定的自定义 SQL 查询创建 SQL 查询对象。使用“查询生成器”生成创建查询的脚本。
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=mydsn" ),
-	Select(),
-	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) )
-);
+obj = New SQL Query(	Connection( "ODBC:DSN=mydsn" ),	Select(),	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ));
 
 ```
 
@@ -58,9 +54,7 @@ Close Database Connection( databaseConnectionHandle );
 
 ```jsl
 
-dbc = Create Database Connection(
-	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
-);
+dbc = Create Database Connection(	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;");
 
 ```
 
@@ -72,37 +66,27 @@ dbc = Create Database Connection(
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-dt = Execute SQL(
-	databaseConnectionHandle,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass",
-	"NewTable"
-);
+dt = Execute SQL(	databaseConnectionHandle,	"SELECT HEIGHT, WEIGHT FROM Bigclass",	"NewTable");
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-resultList = Execute SQL(
-	dc,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",
-	Batch Submit( 1 )
-);
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );resultList = Execute SQL(	dc,	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",	Batch Submit( 1 ));
 
 ```
 
@@ -114,36 +98,19 @@ resultList = Execute SQL(
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-
-// Create a data connector from scratch
-dc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );
-Show( dc << Get( Database ) );  // Overridden database value "foo"
-Show( dc << Get( Driver ) );  // Default driver value . (missing)
-dc << Set( Database( "foo2" ), Driver( "SQL Server" ) );
-Show( dc << Get( Database ) );  // New database value "foo2"
-Show( dc << Get( Driver ) );  // New driver value "SQL Server"
+// Create a data connector from scratchdc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );Show( dc << Get( Database ) );  // Overridden database value "foo"Show( dc << Get( Driver ) );  // Default driver value . (missing)dc << Set( Database( "foo2" ), Driver( "SQL Server" ) );Show( dc << Get( Database ) );  // New database value "foo2"Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-
-// Launch Query Builder from a SQL Server data source
-dc = New Data Connector(
-	ID( "com.jmp.sql_server" ), 
-    // All these example values need to be replaced with real ones
-	Server( "database.example.com" ),
-	Database( "MainDatabase" ),
-	User( "username" ),
-	Password( "password" )
-);
-New SQL Query( Connection( dc ) ) << Modify;
+// Launch Query Builder from a SQL Server data sourcedc = New Data Connector(	ID( "com.jmp.sql_server" ),     // All these example values need to be replaced with real ones	Server( "database.example.com" ),	Database( "MainDatabase" ),	User( "username" ),	Password( "password" ));New SQL Query( Connection( dc ) ) << Modify;
 
 ```
 
@@ -157,12 +124,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ```jsl
 
-
-obj = New SQL Query(
-	Connection( "ODBC:DSN=mydsn" ),
-	Select(),
-	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) )
-);
+obj = New SQL Query(	Connection( "ODBC:DSN=mydsn" ),	Select(),	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ));
 
 ```
 
@@ -176,11 +138,7 @@ obj = New SQL Query(
 
 ```jsl
 
-Open Database(
-	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
-	"SELECT HEIGHT, WEIGHT FROM Bigclass",
-	"hw"
-);
+Open Database(	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",	"SELECT HEIGHT, WEIGHT FROM Bigclass",	"hw");
 
 ```
 
@@ -194,30 +152,7 @@ Open Database(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-Query( dt, "SELECT name, age, height FROM 'Big Class'
-         WHERE age > 14; " );
-
-		// Using aliases, performing a join
-dtSAT = Open( "$SAMPLE_DATA/SATByYear.jmp", Invisible );
-dtUS = Open( "$SAMPLE_DATA/US Demographics.jmp", Invisible );
-Query(
-	Table( dtSAT, "t1" ),
-	Table( dtUS, "t2" ), 
-
-	"\[SELECT t1.State, t1."SAT Math", t2."College Degrees",
-            t2."Eighth Grade Math"
-       FROM t1
-       LEFT OUTER JOIN t2
-           ON t1.State = t2.State
-       WHERE t1.'SAT Math' > 550;
-      ]\"
-);
-
-		// Query that returns a scalar value
-retval = Query( Scalar, dt, "SELECT AVG(height) from 'Big Class';" );
-// Query with no tables
-retval = Query( Scalar, "SELECT SQRT(152399025);" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );Query( dt, "SELECT name, age, height FROM 'Big Class'         WHERE age > 14; " );		// Using aliases, performing a joindtSAT = Open( "$SAMPLE_DATA/SATByYear.jmp", Invisible );dtUS = Open( "$SAMPLE_DATA/US Demographics.jmp", Invisible );Query(	Table( dtSAT, "t1" ),	Table( dtUS, "t2" ), 	"\[SELECT t1.State, t1."SAT Math", t2."College Degrees",            t2."Eighth Grade Math"       FROM t1       LEFT OUTER JOIN t2           ON t1.State = t2.State       WHERE t1.'SAT Math' > 550;      ]\");		// Query that returns a scalar valueretval = Query( Scalar, dt, "SELECT AVG(height) from 'Big Class';" );// Query with no tablesretval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```
 
@@ -233,11 +168,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=SampleDSN;" ),
-	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
-);
-obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
+obj = New SQL Query(	Connection( "ODBC:DSN=SampleDSN;" ),	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ));obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 ```
 
@@ -249,11 +180,7 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=SampleDSN;" ),
-	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
-);
-sql = obj << Generate SQL;
+obj = New SQL Query(	Connection( "ODBC:DSN=SampleDSN;" ),	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ));sql = obj << Generate SQL;
 
 ```
 
@@ -277,11 +204,7 @@ query << Modify;
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=SampleDSN;" ),
-	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
-);
-obj << Post Query Script( "show( queryResult << Get As Matrix );" );
+obj = New SQL Query(	Connection( "ODBC:DSN=SampleDSN;" ),	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ));obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 ```
 
@@ -293,13 +216,7 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=SampleDSN;" ),
-	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
-);
-obj << Query Name( "New Name" );
-name = obj << Query Name;
-Show( name );
+obj = New SQL Query(	Connection( "ODBC:DSN=SampleDSN;" ),	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ));obj << Query Name( "New Name" );name = obj << Query Name;Show( name );
 
 ```
 
@@ -323,16 +240,7 @@ query << Run;
 
 ```jsl
 
-
-query << Run Background(
-	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) )
-);
-
-MyRunCompleteFunc = Function( {dt},
-	{Default Local},
-	Write( "Number of rows in query result: ", N Rows( dt ) )
-);
-query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
+query << Run Background(	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) ));MyRunCompleteFunc = Function( {dt},	{Default Local},	Write( "Number of rows in query result: ", N Rows( dt ) ));query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 ```
 
@@ -344,16 +252,7 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-
-query << Run Foreground(
-	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) )
-);
-
-MyRunCompleteFunc = Function( {dt},
-	{Default Local},
-	Write( "Number of rows in query result: ", N Rows( dt ) )
-);
-query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
+query << Run Foreground(	OnRunComplete( Write( "Number of rows in query result: ", N Rows( queryResult ) ) ));MyRunCompleteFunc = Function( {dt},	{Default Local},	Write( "Number of rows in query result: ", N Rows( dt ) ));query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 ```
 
@@ -365,9 +264,7 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 ```jsl
 
-obj = Open( "my_query.jmpquery" );
-obj << Query Name( "New Name" );
-obj << Save;
+obj = Open( "my_query.jmpquery" );obj << Query Name( "New Name" );obj << Save;
 
 ```
 
@@ -379,11 +276,7 @@ obj << Save;
 
 ```jsl
 
-obj = New SQL Query(
-	Connection( "ODBC:DSN=SampleDSN;" ),
-	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" )
-);
-obj << Save As( "c:\users\public\temp.jmpquery" );
+obj = New SQL Query(	Connection( "ODBC:DSN=SampleDSN;" ),	Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ));obj << Save As( "c:\users\public\temp.jmpquery" );
 
 ```
 

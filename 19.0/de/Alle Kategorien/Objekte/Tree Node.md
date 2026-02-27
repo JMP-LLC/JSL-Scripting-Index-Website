@@ -1,0 +1,1172 @@
+# Tree Node
+
+
+
+## Elementmeldungen
+
+### Append
+
+**Syntax:** obj &lt;&lt; Append
+
+**Beschreibung:** Hängt einen Baumknoten an die untergeordneten Elemente dieses Knotens an.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+c7 = Tree Node( "New Child" );
+root1 << Append( c7 );
+
+```
+
+### First Child
+
+**Syntax:** node = obj &lt;&lt; First Child
+
+**Beschreibung:** Gibt den ersten untergeordneten Knoten zurück oder Leer, wenn der Knoten keine untergeordneten Elemente hat.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (root1 << Firs tChild) << GetLabel );
+
+```
+
+### Get Child
+
+**Syntax:** obj &lt;&lt; Get Child( index )
+
+**Beschreibung:** Untergeordneten Knoten am angegebenen Index abrufen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (root2 << Get Child( 2 )) << Get Label );
+
+```
+
+### Get Child Count
+
+**Syntax:** obj &lt;&lt; Get Child Count
+
+**Beschreibung:** Anzahl der untergeordneten Knoten abrufen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root2 << Get Child Count;
+
+```
+
+### Get Data
+
+**Syntax:** data = obj &lt;&lt; Get Data
+
+**Beschreibung:** Diesem Knoten zugewiesene Anwenderdaten abrufen. Ruft den beim Festlegen von Daten festgelegten Wert bzw. das festgelegte Objekt ab. Weitere Informationen finden Sie unter Set Data.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+tree << SetNodeSelectScript(
+	Function( {this},
+		{},
+		Print( Eval( (this << getselected) << GetData ) )
+	)
+);
+
+```
+
+### Get Dimmed
+
+**Syntax:** dimmed = obj &lt;&lt; Get Dimmed
+
+**Beschreibung:** Option abrufen, den Text für diesen Knoten zu dimmen.
+
+**JMP Version hinzugefügt:** 15
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root3 << Get Dimmed;
+
+```
+
+### Get Expanded Icon
+
+**Syntax:** obj &lt;&lt; Get Expanded Icon
+
+**Beschreibung:** Ruft das Symbol für einen erweiterten Baumknoten ab. Leer wird zurückgegeben, wenn kein Symbol angegeben ist.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root1 << Set Icon( "Distrib" );
+root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );
+root1 << Get Expanded Icon;
+
+```
+
+### Get Font Style
+
+**Syntax:** style = obj &lt;&lt; Get Font Style
+
+**Beschreibung:** Schriftstil für diesen Knoten abrufen.
+
+**JMP Version hinzugefügt:** 15
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root3 << Get Font Style;
+
+```
+
+### Get Icon
+
+**Syntax:** obj &lt;&lt; Get Icon
+
+**Beschreibung:** Ruft das Symbol für einen Baumknoten ab. Leer wird zurückgegeben, wenn kein Symbol angegeben ist.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root1 << Set Icon( "Distrib" );
+root1 << Get Icon;
+
+```
+
+### Get Label
+
+**Syntax:** label = obj &lt;&lt; Get Label
+
+**Beschreibung:** Beschriftung für diesen Knoten abrufen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root3 << Get Label;
+
+```
+
+### Get Tip
+
+**Syntax:** tip = obj &lt;&lt; Get Tip
+
+**Beschreibung:** Tooltip-Text für diesen Knoten abrufen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+c6 << Set Tip( "This is the tool tip for the last child" );
+c6 << Get Tip;
+
+```
+
+### Index Of
+
+**Syntax:** index = obj &lt;&lt; Index Of( node )
+
+**Beschreibung:** Index des angegebenen untergeordneten Knotens abrufen. Gibt 0 zurück, wenn der Index nicht gefunden wird.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root2 << Index Of( root3 );
+
+```
+
+### Insert
+
+**Syntax:** obj &lt;&lt; Insert( node, index )
+
+**Beschreibung:** Knoten am angegebenen Index einfügen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+c7 = Tree Node( "New Child" );
+root3 << Insert( c7, 2 );
+
+```
+
+### Is Leaf
+
+**Syntax:** isLeaf = obj &lt;&lt; Is Leaf
+
+**Beschreibung:** Ist dieser Knoten ein Blattknoten im Baum?
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root3 << Is Leaf;
+
+```
+
+### Last Child
+
+**Syntax:** node = obj &lt;&lt; Last Child
+
+**Beschreibung:** Gibt den letzten untergeordneten Knoten zurück oder Leer, wenn der Knoten keine untergeordneten Elemente hat.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (root1 << Last Child) << GetLabel );
+
+```
+
+### Parent
+
+**Syntax:** node = obj &lt;&lt; Parent
+
+**Beschreibung:** Gibt den übergeordneten Knoten zurück oder Leer, wenn dieser Knoten keinen übergeordnetes Knoten hat.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (c4 << Parent) << GetLabel );
+
+```
+
+### Prepend
+
+**Syntax:** obj &lt;&lt; Prepend( node )
+
+**Beschreibung:** Stellt den untergeordneten Elementen dieses Knotens einen Baumknoten voran.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+c7 = Tree Node( "New Child" );
+root1 << Prepend( c7 );
+
+```
+
+### Prev Sib
+
+**Syntax:** node = obj &lt;&lt; Prev Sib
+
+**Beschreibung:** Gibt das vorherige Geschwisterelement dieses Knotens in den untergeordneten Elementen des übergeordneten Knotens zurück oder Leer, wenn dies das erste untergeordnete Element ist.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (c4 << Prev Sib) << Get Label );
+
+```
+
+### Remove
+
+**Syntax:** obj &lt;&lt; Remove
+
+**Beschreibung:** Diesen Knoten und alle untergeordneten Elemente aus dem Baum entfernen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+root3 << Remove;
+
+```
+
+### Remove All Children
+
+**Syntax:** obj &lt;&lt; Remove All Children
+
+**Beschreibung:** Alle untergeordneten Knoten entfernen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+root2 << Remove All Children;
+
+```
+
+### Remove Child
+
+**Syntax:** obj &lt;&lt; Remove Child( node )
+
+**Beschreibung:** Entfernt den angegebenen untergeordneten Knoten.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+root3 << Remove Child( c6 );
+
+```
+
+### Set Data
+
+**Syntax:** obj &lt;&lt; Set Data( data )
+
+**Beschreibung:** Anwenderdaten für diesen Knoten festlegen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
+tree << SetNodeSelectScript(
+	Function( {this},
+		{},
+		Print( Eval( (this << getselected) << GetData ) )
+	)
+);
+
+```
+
+### Set Dimmed
+
+**Syntax:** obj &lt;&lt; Set Dimmed( state=0|1 )
+
+**Beschreibung:** Option festlegen, den Text für diesen Knoten zu dimmen.
+
+**JMP Version hinzugefügt:** 15
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+c6 << Set Dimmed( 1 );
+
+```
+
+### Set Expanded Icon
+
+**Syntax:** obj &lt;&lt; Set Expanded Icon( icon | path, &lt;boolean&gt; )
+
+**Beschreibung:** Legt den Symbolnamen fest, der bei Erweiterung des Knotens verwendet werden soll. Optionaler Parameter gibt an, ob das zum Pfad zugehörige Symbol geladen werden soll (nur Windows).
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root1 << Set Icon( "Distrib" );
+root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );
+root2 << Set Icon( "Oneway" );
+root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
+
+```
+
+### Set Font Style
+
+**Syntax:** obj &lt;&lt; Set Font Style( "Plain" | "Bold" )
+
+**Beschreibung:** Schriftstil für diesen Knoten festlegen.
+
+**JMP Version hinzugefügt:** 15
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+c6 << Set Font Style( "Bold" );
+
+```
+
+### Set Icon
+
+**Syntax:** obj &lt;&lt; Set Icon( icon | path, &lt;boolean&gt; )
+
+**Beschreibung:** Knotensymbol festlegen. Optionaler Parameter gibt an, ob das zum Pfad zugehörige Symbol geladen werden soll (nur Windows).
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+root1 << Set Icon( "Distrib" );
+root2 << Set Icon( "$SAMPLE_IMAGES/pi.gif" );
+root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
+
+```
+
+### Set Label
+
+**Syntax:** obj &lt;&lt; Set Label( label )
+
+**Beschreibung:** Beschriftung für diesen Knoten festlegen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+c6 << Set Label( "Last Child" );
+
+```
+
+### Set Tip
+
+**Syntax:** obj &lt;&lt; Set Tip( tip )
+
+**Beschreibung:** Tooltip-Text für diesen Knoten festlegen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Wait( 1 );
+c6 << Set Tip( "This is the tool tip for the last child" );
+
+```
+
+### Sib
+
+**Syntax:** node = obj &lt;&lt; Sib
+
+**Beschreibung:** Gibt das nächste Geschwisterelement dieses Knotens in den untergeordneten Elementen des übergeordneten Knotens zurück oder Leer, wenn dies das letzte untergeordnete Element ist.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (c4 << Sib) << Get Label );
+
+```
+
+### Top Parent
+
+**Syntax:** node = obj &lt;&lt; Top Parent
+
+**Beschreibung:** Gibt das Basiselement des Baums mit diesem Knoten zurück oder Leer, wenn dieser Knoten keinen übergeordneten Knoten hat.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+Print( (c6 << Top Parent) << GetLabel );
+
+```
+
+## Zugehörige Konstruktoren
+
+### Tree Node
+
+**Syntax:** node = Tree Node( &lt;label&gt; )
+
+**Beschreibung:** Knoten für die Anzeige in einem Baumanzeigefeld erstellen.
+
+```jsl
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+root3 = Tree Node( "Parent 3" );
+
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+c5 = Tree Node( "Child 5" );
+c6 = Tree Node( "Child 6" );
+
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+root2 << Append( root3 );
+root3 << Append( c5 );
+root3 << Append( c6 );
+
+New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+tree << Expand( root1 );
+tree << Expand( root2 );
+tree << Expand( root3 );
+
+```
+

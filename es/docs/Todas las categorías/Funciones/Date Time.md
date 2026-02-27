@@ -52,7 +52,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -60,7 +60,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -68,7 +68,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -84,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -92,7 +92,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -100,7 +100,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -180,7 +180,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**Sintaxis:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintaxis:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descripción:** Devuelve el número en el formato especificado. Entre los formatos se incluyen los elementos del cuadro de diálogo Info de columna, tales como "Mejor" y "h:m:s". Consulte los temas de ayuda para conocer otras opciones, incluidos los formatos de valor p, fecha y hora, y geográfico.
 
@@ -206,9 +206,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -222,13 +220,13 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ### Format Date
 
-**Sintaxis:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintaxis:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descripción:** Devuelve el número en el formato especificado. Entre los formatos se incluyen los elementos del cuadro de diálogo Info de columna, tales como "Mejor" y "h:m:s". Consulte los temas de ayuda para conocer otras opciones, incluidos los formatos de valor p, fecha y hora, y geográfico.
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -236,7 +234,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -244,13 +242,11 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -264,11 +260,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -372,13 +364,13 @@ In Years( 1 );
 
 ### Informat
 
-**Sintaxis:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintaxis:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descripción:** Analiza una cadena de caracteres de un formato dado. Si el formato es un formato de fecha y hora, el valor se expresa como si estuviera rodeado por As Date(), devolviendo la fecha en formato ddmesaaaa. El ajuste <<Restrict opcional utilizado con la "mejor" formatString solo permite la conversión con formatos enteros, decimales y científicos.
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -386,7 +378,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -394,7 +386,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -402,7 +394,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -410,16 +402,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### Ejemplo 5
+**Ejemplo 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -509,13 +496,13 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**Sintaxis:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintaxis:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descripción:** Analiza una cadena de caracteres de un formato dado. Si el formato es un formato de fecha y hora, el valor se expresa como si estuviera rodeado por As Date(), devolviendo la fecha en formato ddmesaaaa. El ajuste <<Restrict opcional utilizado con la "mejor" formatString solo permite la conversión con formatos enteros, decimales y científicos.
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -523,7 +510,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -531,7 +518,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -539,7 +526,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -547,16 +534,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### Ejemplo 5
+**Ejemplo 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -612,10 +594,7 @@ Short Date( Today() );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -655,7 +634,7 @@ As Date( Today() );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -663,15 +642,11 @@ Week Of Year( Today() );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-Show(
-	Week Of Year( 01jan2012, 1 ),
-	Week Of Year( 01jan2012, 2 ),
-	Week Of Year( 01jan2012, 3 )
-);
+Show(	Week Of Year( 01jan2012, 1 ),	Week Of Year( 01jan2012, 2 ),	Week Of Year( 01jan2012, 3 ));
 
 ```
 

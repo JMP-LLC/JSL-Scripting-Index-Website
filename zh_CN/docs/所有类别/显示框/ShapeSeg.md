@@ -6,63 +6,25 @@
 
 ### Enabled
 
-**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
 ### Get Enabled
 
-**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
@@ -74,12 +36,7 @@ New Window( "enabled",
 
 ```jsl
 
-//This message applies to all display objects
-x = 1;
-w = New Window( "Test", b = Button Box( "Press me" ) );
-b:x = 2;
-ns = b << GetNamespace();
-Show( ns:x, x );
+//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
 
 ```
 
@@ -91,8 +48,7 @@ Show( ns:x, x );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Properties;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
 
 ```
 
@@ -104,8 +60,7 @@ bb << Get Properties;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property( "Enabled" );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
 
 ```
 
@@ -117,8 +72,7 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property List;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
 
 ```
 
@@ -130,8 +84,7 @@ bb << Get Property List;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Set Property( "Enabled", 0 );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -143,38 +96,19 @@ bb << Set Property( "Enabled", 0 );
 
 **说明:** 返回带一组形状的显示段。若“填充”为 0，则沿指定路径绘线；若“填充”不为 0，则在指定路径内部填充颜色。可以使用 N x 3 矩阵或文本表示法来指定路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可以为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )},
-			Row States( {Selected State( 1 ), Color State( "red" )} )
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )},			Row States( {Selected State( 1 ), Color State( "red" )} )		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));
 
 ```
 
@@ -188,17 +122,7 @@ seg = (frame << Find Seg( Shape Seg( 1 ) ));
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Child; // not many segs support children
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Child; // not many segs support children
 
 ```
 
@@ -210,17 +134,7 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Class Name;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Class Name;
 
 ```
 
@@ -234,22 +148,7 @@ seg << Class Name;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-Wait( 2 );
-cs << Clip Shape( Boundaries( "US States" ) );
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -261,17 +160,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Color( "Green" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Color( "Green" );
 
 ```
 
@@ -287,17 +176,7 @@ seg << Color( "Green" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Delete;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Delete;
 
 ```
 
@@ -311,17 +190,7 @@ seg << Delete;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Density Gradient( "Fade to Gray" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Density Gradient( "Fade to Gray" );
 
 ```
 
@@ -333,17 +202,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Fill Color( "Green" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Fill Color( "Green" );
 
 ```
 
@@ -355,17 +214,7 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Frame;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Frame;
 
 ```
 
@@ -379,23 +228,7 @@ seg << Frame;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-cs << Clip Shape( Boundaries( "US States" ) );
-Wait( 2 );
-cs << Get Clip Shape();
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
 
 ```
 
@@ -407,17 +240,7 @@ cs << Get Clip Shape();
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Color;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Color;
 
 ```
 
@@ -431,17 +254,7 @@ seg << Get Color;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Density Gradient;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Density Gradient;
 
 ```
 
@@ -453,17 +266,7 @@ seg << Get Density Gradient;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << get description();
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << get description();
 
 ```
 
@@ -475,17 +278,7 @@ seg << get description();
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Fill Color;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Fill Color;
 
 ```
 
@@ -495,17 +288,7 @@ seg << Get Fill Color;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Fill Pattern;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Fill Pattern;
 
 ```
 
@@ -517,17 +300,7 @@ seg << Get Fill Pattern;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient;
 
 ```
 
@@ -541,17 +314,7 @@ seg << Get Gradient;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Color Theme;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Color Theme;
 
 ```
 
@@ -565,17 +328,7 @@ seg << Get Gradient Color Theme;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Discrete Colors;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Discrete Colors;
 
 ```
 
@@ -589,11 +342,7 @@ seg << Get Gradient Discrete Colors;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Fill;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Fill;
 
 ```
 
@@ -607,17 +356,7 @@ seg << Get Gradient Fill;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Label Count;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Label Count;
 
 ```
 
@@ -629,28 +368,19 @@ seg << Get Gradient Label Count;
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -664,17 +394,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Legend Horizontal;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Legend Horizontal;
 
 ```
 
@@ -688,17 +408,7 @@ seg << Get Gradient Legend Horizontal;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Legend Label Format;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Legend Label Format;
 
 ```
 
@@ -712,17 +422,7 @@ seg << Get Gradient Legend Label Format;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Legend Label Width;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Legend Label Width;
 
 ```
 
@@ -736,17 +436,7 @@ seg << Get Gradient Legend Label Width;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Legend Show Labels;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Legend Show Labels;
 
 ```
 
@@ -760,17 +450,7 @@ seg << Get Gradient Legend Show Labels;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Levels;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Levels;
 
 ```
 
@@ -784,17 +464,7 @@ seg << Get Gradient Levels;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Lightness Range;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Lightness Range;
 
 ```
 
@@ -808,11 +478,7 @@ seg << Get Gradient Lightness Range;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Range;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Range;
 
 ```
 
@@ -826,17 +492,7 @@ seg << Get Gradient Range;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Reverse Color Order;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Reverse Color Order;
 
 ```
 
@@ -850,17 +506,7 @@ seg << Get Gradient Reverse Color Order;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Reverse Label Order;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Reverse Label Order;
 
 ```
 
@@ -874,11 +520,7 @@ seg << Get Gradient Reverse Label Order;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale;
 
 ```
 
@@ -890,28 +532,19 @@ seg << Get Gradient Scale;
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -925,17 +558,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Show Missing;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Show Missing;
 
 ```
 
@@ -949,17 +572,7 @@ seg << Get Gradient Show Missing;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Gradient Transparency;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Gradient Transparency;
 
 ```
 
@@ -971,17 +584,7 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Line Style;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Line Style;
 
 ```
 
@@ -993,17 +596,7 @@ seg << Get Line Style;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Line Width;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Line Width;
 
 ```
 
@@ -1015,39 +608,19 @@ seg << Get Line Width;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Get Transparency;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Get Transparency;
 
 ```
 
 ### Gradient
 
-**语法:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**语法:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **说明:** 设置着色渐变。
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1061,17 +634,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1085,11 +648,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1103,12 +662,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1122,17 +676,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1146,11 +690,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1164,17 +704,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1188,17 +718,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1212,17 +732,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1236,17 +746,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1260,17 +760,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1282,57 +772,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -1346,11 +806,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -1364,17 +820,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -1388,17 +834,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -1412,11 +848,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -1430,11 +862,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1448,14 +876,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -1469,17 +890,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Gradient Transparency( "None" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Gradient Transparency( "None" );
 
 ```
 
@@ -1491,17 +902,7 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Line Style( "Dotted" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -1513,17 +914,7 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Line Width( 3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Line Width( 3 );
 
 ```
 
@@ -1535,17 +926,7 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Parent;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Parent;
 
 ```
 
@@ -1557,20 +938,7 @@ seg << Parent;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-Wait( 1 );
-seg << Set Color( "Red" );
-Wait( 1 );
-seg << Revert;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));Wait( 1 );seg << Set Color( "Red" );Wait( 1 );seg << Revert;
 
 ```
 
@@ -1582,17 +950,7 @@ seg << Revert;
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Color( "Green" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Color( "Green" );
 
 ```
 
@@ -1604,17 +962,7 @@ seg << Color( "Green" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << set description( "my seg" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << set description( "my seg" );
 
 ```
 
@@ -1626,17 +974,7 @@ seg << set description( "my seg" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Fill Color( "Green" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Fill Color( "Green" );
 
 ```
 
@@ -1646,40 +984,19 @@ seg << Set Fill Color( "Green" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Fill Color( "Blue" );
-seg << Set Fill Pattern( "h wave medium" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Fill Color( "Blue" );seg << Set Fill Pattern( "h wave medium" );
 
 ```
 
 ### Set Gradient
 
-**语法:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**语法:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **说明:** 设置着色渐变。
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1693,17 +1010,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1717,17 +1024,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```
 
@@ -1741,11 +1038,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1759,12 +1052,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1778,17 +1066,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1802,11 +1080,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1820,17 +1094,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1844,17 +1108,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1868,17 +1122,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1892,17 +1136,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1916,17 +1150,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1938,57 +1162,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -2002,11 +1196,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -2020,17 +1210,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -2044,17 +1224,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -2068,11 +1238,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -2086,11 +1252,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -2104,14 +1266,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -2131,17 +1286,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Line Style( "Dotted" );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -2153,17 +1298,7 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Line Width( 3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Line Width( 3 );
 
 ```
 
@@ -2175,17 +1310,7 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Transparency( .3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 
@@ -2197,17 +1322,7 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Sib;
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Sib;
 
 ```
 
@@ -2219,31 +1334,7 @@ seg << Sib;
 
 ```jsl
 
-win = New Window( "World",
-	gb = Graph(
-		FrameSize( 800, 400 ),
-		X Scale( -180, 180 ),
-		Y Scale( -90, 90 ),
-		<<Background Map( Images( "Simple Earth" ) )
-	)
-);
-imgBox = win[framebox( 1 )];
-mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
-mapSeg << Transparency( 0.5 );
-Try(
-	xAxis = gb[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = gb[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -2255,30 +1346,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-Try(
-	xAxis = g[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = g[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -2290,17 +1358,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	g = Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-frame = g[Frame Box( 1 )];
-seg = (frame << Find Seg( Shape Seg( 1 ) ));
-seg << Set Transparency( .3 );
+New Window( "Shape Seg Example",	g = Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));frame = g[Frame Box( 1 )];seg = (frame << Find Seg( Shape Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 

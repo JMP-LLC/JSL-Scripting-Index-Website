@@ -66,7 +66,7 @@ Is Missing( . );
 
 **JMP추가된 버전:** 18
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -74,7 +74,7 @@ Is Same Color( "black", 0 );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -82,7 +82,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -90,7 +90,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 

@@ -1,0 +1,99 @@
+# Data Connector
+
+
+
+## Elementmeldungen
+
+### Dump
+
+**Syntax:** res = obj &lt;&lt; Dump()
+
+**Beschreibung:** Ruft den Inhalt dieses Datenkonnektors als Spezifikationszeichenkette ab, die den Typ und alle Nicht-Standardwerte angibt.
+
+```jsl
+
+
+New Data Connector(
+	Type( "ODBC" ),
+	Block Fetch( "ON" ),  // Default value; won't be included
+	Supports Schemas( "ON" ),  // Non-default value; will be included
+) << Dump();
+
+```
+
+### Get
+
+**Syntax:** res = obj &lt;&lt; Get( OPTION )
+
+**Beschreibung:** Ruft den Wert einer Option ab.
+
+```jsl
+
+
+dc = New Data Connector( Type( "ODBC" ) );
+// Get dc's value for the Supports Schemas option, namely the default value
+dc << Get( Supports Schemas );
+
+```
+
+### Open
+
+**Syntax:** res = obj &lt;&lt; Open()
+
+**Beschreibung:** Öffnet eine neue Datentabelle wie von diesem Datenkonnektor angegeben.
+
+```jsl
+
+
+New Data Connector(
+	ID( "com.example.odbc_example" ),  // Some ODBC-type base configuration
+	Table( "my_table" )  // The table to open
+) << Open();
+
+```
+
+### Save
+
+**Syntax:** obj &lt;&lt; Save( file path )
+
+**Beschreibung:** Speichert den Inhalt dieses Datenkonnektors in einer Datei. Der Inhalt der Datei ist derselbe wie das Ergebnis von << Dump().
+
+```jsl
+
+
+New Data Connector(
+	Type( "ODBC" ),
+	Block Fetch( "ON" ),  // Default value; won't be included
+	Supports Schemas( "ON" ),  // Non-default value; will be included
+) << Save( "$DOCUMENTS/data connector save example.jmpdc" );
+
+```
+
+### Set
+
+**Syntax:** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
+
+**Beschreibung:** Legt den Wert einer beliebigen Anzahl von Optionen fest.
+
+```jsl
+
+
+dc = New Data Connector( Type( "ODBC" ) );
+Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
+dc << Set( Block Fetch( "ON" ), Supports Schemas( "ON" ) );
+Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
+
+```
+
+### Type
+
+**Syntax:** res = obj &lt;&lt; Type()
+
+**Beschreibung:** Ruft den Typ des Datenkonnektors ab.
+
+```jsl
+
+New Data Connector( Type( "ODBC" ) ) << Type();
+
+```
+

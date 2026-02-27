@@ -12,14 +12,7 @@
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ) );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
-{l, r, t, b} = imgSeg << getBounds;
+imgBox = Graph Box( frameSize( 150, 150 ) );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );{l, r, t, b} = imgSeg << getBounds;
 
 ```
 
@@ -31,13 +24,7 @@ imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "contrast", 3 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "contrast", 3 );
 
 ```
 
@@ -49,14 +36,7 @@ imgSeg << Filter( "contrast", 3 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 451, 451 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-Wait( 1 );
-imgSeg << Crop( 10, 90, 90, 10 );
+imgBox = Graph Box( frameSize( 451, 451 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );Wait( 1 );imgSeg << Crop( 10, 90, 90, 10 );
 
 ```
 
@@ -68,13 +48,7 @@ imgSeg << Crop( 10, 90, 90, 10 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "despeckle" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "despeckle" );
 
 ```
 
@@ -86,13 +60,7 @@ imgSeg << Filter( "despeckle" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "edge" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "edge" );
 
 ```
 
@@ -104,13 +72,7 @@ imgSeg << Filter( "edge" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "enhance" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "enhance" );
 
 ```
 
@@ -122,14 +84,7 @@ imgSeg << Filter( "enhance" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 50 ), top( 50 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-Wait( 1 );
-imgSeg << fill graph;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 50 ), top( 50 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );Wait( 1 );imgSeg << fill graph;
 
 ```
 
@@ -141,13 +96,7 @@ imgSeg << fill graph;
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << flip both;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << flip both;
 
 ```
 
@@ -159,13 +108,7 @@ imgSeg << flip both;
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << flip horizontal;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << flip horizontal;
 
 ```
 
@@ -177,13 +120,7 @@ imgSeg << flip horizontal;
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << flip vertical;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << flip vertical;
 
 ```
 
@@ -195,13 +132,7 @@ imgSeg << flip vertical;
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "gamma", 1.5 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "gamma", 1.5 );
 
 ```
 
@@ -213,13 +144,7 @@ imgSeg << Filter( "gamma", 1.5 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
 
 ```
 
@@ -231,13 +156,7 @@ imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ) );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-{l, r, t, b} = imgSeg << getBounds;
+imgBox = Graph Box( frameSize( 150, 150 ) );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );{l, r, t, b} = imgSeg << getBounds;
 
 ```
 
@@ -249,13 +168,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-{w, h} = imgSeg << getSize;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );{w, h} = imgSeg << getSize;
 
 ```
 
@@ -267,13 +180,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << lock( 1 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << lock( 1 );
 
 ```
 
@@ -285,13 +192,7 @@ imgSeg << lock( 1 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "median" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "median" );
 
 ```
 
@@ -303,12 +204,7 @@ imgSeg << Filter( "median" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Open( "$SAMPLE_IMAGES/tile.jpg" ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Move( 75, 75 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );imgBox = win[framebox( 1 )];imgBox << AddImage( Open( "$SAMPLE_IMAGES/tile.jpg" ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Move( 75, 75 );
 
 ```
 
@@ -320,13 +216,7 @@ imgSeg << Move( 75, 75 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "negate" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "negate" );
 
 ```
 
@@ -338,13 +228,7 @@ imgSeg << Filter( "negate" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "normalize" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "normalize" );
 
 ```
 
@@ -356,13 +240,7 @@ imgSeg << Filter( "normalize" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage(
-	Open( "$SAMPLE_IMAGES/tile.jpg" ),
-	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
-);
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );imgBox = win[framebox( 1 )];imgBox << AddImage(	Open( "$SAMPLE_IMAGES/tile.jpg" ),	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ));
 
 ```
 
@@ -374,13 +252,7 @@ imgBox << AddImage(
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "reduce noise", 2.0 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "reduce noise", 2.0 );
 
 ```
 
@@ -392,14 +264,7 @@ imgSeg << Filter( "reduce noise", 2.0 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-Wait( 1 );
-imgSeg << remove;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );Wait( 1 );imgSeg << remove;
 
 ```
 
@@ -411,13 +276,7 @@ imgSeg << remove;
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << rotate( 45 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << rotate( 45 );
 
 ```
 
@@ -429,14 +288,7 @@ imgSeg << rotate( 45 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << setSize( {300, 500} );
-{w, h} = imgSeg << getSize;
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << setSize( {300, 500} );{w, h} = imgSeg << getSize;
 
 ```
 
@@ -448,13 +300,7 @@ imgSeg << setSize( {300, 500} );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Filter( "sharpen" );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Filter( "sharpen" );
 
 ```
 
@@ -466,14 +312,7 @@ imgSeg << Filter( "sharpen" );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-Wait( 1 );
-imgSeg << Specify Size( 0, 100, 100, 0 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );Wait( 1 );imgSeg << Specify Size( 0, 100, 100, 0 );
 
 ```
 
@@ -485,13 +324,7 @@ imgSeg << Specify Size( 0, 100, 100, 0 );
 
 ```jsl
 
-imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
-win = New Window( "Image", imgBox );
-img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
-imgBox = win[framebox( 1 )];
-imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );
-imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
-imgSeg << Transparency( 0.5 );
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );win = New Window( "Image", imgBox );img = New Image( "$SAMPLE_IMAGES/tile.jpg" );imgBox = win[framebox( 1 )];imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) ) );imgSeg = imgBox << FindSeg( PictSeg( 1 ) );imgSeg << Transparency( 0.5 );
 
 ```
 

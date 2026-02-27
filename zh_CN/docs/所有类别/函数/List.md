@@ -38,7 +38,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -46,13 +46,11 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-x = 5;
-y = 10;
-Eval List( {x, y} );
+x = 5;y = 10;Eval List( {x, y} );
 
 ```
 
@@ -66,8 +64,7 @@ Eval List( {x, y} );
 
 ```jsl
 
-z = {11, 22, 33};
-z = Insert( z, 99, 2 );
+z = {11, 22, 33};z = Insert( z, 99, 2 );
 
 ```
 
@@ -79,33 +76,27 @@ z = Insert( z, 99, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-ex = {11, 22, 33};
-Insert Into( ex, 99 );
-ex;
+ex = {11, 22, 33};Insert Into( ex, 99 );ex;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, => 0];
-Insert Into( ex, "c", 12 );
-ex;
+ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
-Wait( 1 );
-Insert Into( hlist, Button Box( "c" ) );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );Wait( 1 );Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
@@ -131,7 +122,7 @@ Is List( {1, 2, 3} );
 
 **JMP添加的版本:** 15
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -139,7 +130,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -147,19 +138,15 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-Items(
-	",Apple,Banana Tree,Peach",
-	Get Punctuation Characters(),
-	Include Boundary Delimiters
-);
+Items(	",Apple,Banana Tree,Peach",	Get Punctuation Characters(),	Include Boundary Delimiters);
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
@@ -175,7 +162,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -183,7 +170,7 @@ Length( "Café" );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -191,7 +178,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -199,7 +186,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
@@ -229,7 +216,7 @@ Length( Char To Blob( "Café" ) );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -237,7 +224,7 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -245,12 +232,11 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
-N Items( hlist );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );N Items( hlist );
 
 ```
 
@@ -276,35 +262,27 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Remove From( ex, 3, 2 );
-ex;
+ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
-Remove From( ex, "c" );
-ex;
+ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
-);
-Wait( 1 );
-Remove From( hlist, 1 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Remove From( hlist, 1 );
 
 ```
 
@@ -330,25 +308,19 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Reverse Into( ex );
-ex;
+ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
-);
-Wait( 1 );
-Reverse Into( hlist );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Reverse Into( hlist );
 
 ```
 
@@ -362,8 +334,7 @@ Reverse Into( hlist );
 
 ```jsl
 
-Show( Set Difference( {1, 3}, {3, 2} ) );
-Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```
 
@@ -377,10 +348,7 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```jsl
 
-Show( Set Intersection( {1, 3}, {3, 2} ) );
-Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```
 
@@ -394,13 +362,7 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Show( Set Union( {1, 3}, {3, 2} ) );
-Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-all = {};
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-For Each Row( all = Set Union( all, :sports ) );
-all = Set Unique( all );
-Show( all );
+Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );all = {};Open( "$SAMPLE_DATA/Big Class Families.jmp" );For Each Row( all = Set Union( all, :sports ) );all = Set Unique( all );Show( all );
 
 ```
 
@@ -414,11 +376,7 @@ Show( all );
 
 ```jsl
 
-Show( Set Unique( {1, 3, 2} ) );
-Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-Row() = 1;
-Show( Set Unique( :sports ) );
+Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );Open( "$SAMPLE_DATA/Big Class Families.jmp" );Row() = 1;Show( Set Unique( :sports ) );
 
 ```
 
@@ -444,25 +402,19 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Shift Into( ex, -2 );
-ex;
+ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
-);
-Wait( 1 );
-Shift Into( hlist, -2 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Shift Into( hlist, -2 );
 
 ```
 
@@ -490,21 +442,19 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-ex = {111, 212, 133, 114, 55};
-Sort List Into( ex );
-ex;
+ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
 
 ```
 
 ### Substitute
 
-**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 返回字符串、列表或表达式 x 的副本，将每个模式表达式的实例替换为相应的替换表达式。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -512,7 +462,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -520,16 +470,15 @@ Substitute( "All things considered", "All", "Some" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute( lst, "a", "A" );
+lst = {"a", "b", "c"};Substitute( lst, "a", "A" );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
@@ -537,17 +486,15 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
-#### 示例 5
+**示例 5**
 
 ```jsl
 
-Substitute( "Apple,orange,banana-grape",
-	Items( Get Punctuation Characters() || "-'", "" ), " "
-);
+Substitute( "Apple,orange,banana-grape",	Items( Get Punctuation Characters() || "-'", "" ), " ");
 
 ```
 
-#### 示例 6
+**示例 6**
 
 ```jsl
 
@@ -557,49 +504,41 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 修改字符串、列表或表达式 x，将每个模式表达式的实例替换为相应的替换表达式。请注意，x 参数必须是变量。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-ex = Expr( a + Sqrt( a ) );
-Substitute Into( ex, Expr( a ), Expr( b ) );
-Name Expr( ex );
+ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Expr( ex );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-ex = "All things considered";
-Substitute Into( ex, "All", "Some" );
-Show( ex );
+ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute Into( lst, "a", "A" );
-Show( lst );
+lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
-s = "Apple,APPLE,apple";
-Substitute Into( s, "apple", "orange", <<IGNORECASE );
-Show( s );
+s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );Show( s );
 
 ```
 
@@ -611,7 +550,7 @@ Show( s );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -619,7 +558,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -627,7 +566,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 

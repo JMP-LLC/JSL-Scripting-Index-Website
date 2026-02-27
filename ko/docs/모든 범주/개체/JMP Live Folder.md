@@ -22,14 +22,7 @@
 
 ```jsl
 
-liveconnection = New JMP Live();
-
-existingFolder = (liveconnection << Get Folder( "~" )) << As Scriptable;
-
-newFolder = (existingFolder << Create Folder( Title( "Important Reports" ), If Exists( "default" ) )) <<
-As Scriptable;
-
-Write( "New folder path: ", newFolder << Get Path );
+liveconnection = New JMP Live();existingFolder = (liveconnection << Get Folder( "~" )) << As Scriptable;newFolder = (existingFolder << Create Folder( Title( "Important Reports" ), If Exists( "default" ) )) <<As Scriptable;Write( "New folder path: ", newFolder << Get Path );
 
 ```
 
@@ -43,42 +36,7 @@ Write( "New folder path: ", newFolder << Get Path );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-gbline = bc << Run Script( "Graph Builder Line Chart" );
-gbheat = bc << Run Script( "Graph Builder Heatmap" );
-
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder - Get Children Example" )
-);
-folder = jmpliveresult << As Scriptable;
-
-contentlist = {};
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) )
-);
-Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );
-jmpliveresult = folder << Publish( contentlist );
-
-jmpliveresult = folder << Get Children;
-children = jmpliveresult << As Scriptable;
-For( i = 1, i <= children << Get Number Of Items, i += 1,
-	Write( "\!n\!nChild ID: ", children[i] << Get ID );
-	Write( "\!nChild Type: ", children[i] << Get Type );
-);
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );gbline = bc << Run Script( "Graph Builder Line Chart" );gbheat = bc << Run Script( "Graph Builder Heatmap" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder - Get Children Example" ));folder = jmpliveresult << As Scriptable;contentlist = {};Insert Into(	contentlist,	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) ));Insert Into(	contentlist,	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) ));Insert Into(	contentlist,	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) ));Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );jmpliveresult = folder << Publish( contentlist );jmpliveresult = folder << Get Children;children = jmpliveresult << As Scriptable;For( i = 1, i <= children << Get Number Of Items, i += 1,	Write( "\!n\!nChild ID: ", children[i] << Get ID );	Write( "\!nChild Type: ", children[i] << Get Type ););
 
 ```
 
@@ -92,28 +50,7 @@ For( i = 1, i <= children << Get Number Of Items, i += 1,
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-post = (folder << Get Data( "Big Class" )) << As Scriptable;
-
-Write( "\!n\!nTitle: ", post << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );post = (folder << Get Data( "Big Class" )) << As Scriptable;Write( "\!n\!nTitle: ", post << Get Title );
 
 ```
 
@@ -127,34 +64,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" )
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nDescription: ", report << Get Description );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ));jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nDescription: ", report << Get Description );
 
 ```
 
@@ -168,29 +78,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-personalFolder = (liveConnection << Get Folder( "~" )) << As Scriptable;
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( personalFolder ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-subfolder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = subfolder << Publish( content );
-
-folder = (personalFolder << Get Folder( "Reports and Posts - Messages" )) << As Scriptable;
-
-Write( "\!n\!nTitle: ", folder << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();personalFolder = (liveConnection << Get Folder( "~" )) << As Scriptable;jmpliveresult = liveconnection << Create Folder(	Parent Folder( personalFolder ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));subfolder = jmpliveresult << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = subfolder << Publish( content );folder = (personalFolder << Get Folder( "Reports and Posts - Messages" )) << As Scriptable;Write( "\!n\!nTitle: ", folder << Get Title );
 
 ```
 
@@ -204,35 +92,7 @@ Write( "\!n\!nTitle: ", folder << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-
-Write( "\!n\!nID: ", report << Get ID );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );
 
 ```
 
@@ -246,38 +106,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-gbline = bc << Run Script( "Graph Builder Line Chart" );
-gbheat = bc << Run Script( "Graph Builder Heatmap" );
-
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder - Get Children Count Example" )
-);
-folder = jmpliveresult << As Scriptable;
-
-contentlist = {};
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) )
-);
-Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );
-jmpliveresult = folder << Publish( contentlist );
-
-count = folder << Get Number of Items;
-Write( "\!n\!nChild Count: ", count );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );gbline = bc << Run Script( "Graph Builder Line Chart" );gbheat = bc << Run Script( "Graph Builder Heatmap" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder - Get Children Count Example" ));folder = jmpliveresult << As Scriptable;contentlist = {};Insert Into(	contentlist,	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) ));Insert Into(	contentlist,	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) ));Insert Into(	contentlist,	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) ));Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );jmpliveresult = folder << Publish( contentlist );count = folder << Get Number of Items;Write( "\!n\!nChild Count: ", count );
 
 ```
 
@@ -291,35 +120,7 @@ Write( "\!n\!nChild Count: ", count );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-
-Write( "\!n\!nPath: ", report << Get Path );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nPath: ", report << Get Path );
 
 ```
 
@@ -333,27 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-post = (folder << Get Post( "A Very Important Report" )) << As Scriptable;
-
-Write( "\!n\!nTitle: ", post << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );post = (folder << Get Post( "A Very Important Report" )) << As Scriptable;Write( "\!n\!nTitle: ", post << Get Title );
 
 ```
 
@@ -367,28 +148,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-post = (folder << Get Report( "A Very Important Report" )) << As Scriptable;
-
-Write( "\!n\!nTitle: ", post << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );post = (folder << Get Report( "A Very Important Report" )) << As Scriptable;Write( "\!n\!nTitle: ", post << Get Title );
 
 ```
 
@@ -402,35 +162,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nTitle: ", report << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nTitle: ", report << Get Title );
 
 ```
 
@@ -444,36 +176,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nType: ", report << Get Type );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nType: ", report << Get Type );
 
 ```
 
@@ -487,35 +190,7 @@ Write( "\!nType: ", report << Get Type );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nURL: ", report << Get URL );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nURL: ", report << Get URL );
 
 ```
 
@@ -529,42 +204,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-gbline = bc << Run Script( "Graph Builder Line Chart" );
-gbheat = bc << Run Script( "Graph Builder Heatmap" );
-
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder - Publish Example" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-
-contentlist = {};
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) )
-);
-Insert Into(
-	contentlist,
-	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) )
-);
-Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );
-jmpliveresult = folder << Publish( contentlist );
-postlist = jmpliveresult << As Scriptable();
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	Write( "\!n\!nPost[", i, "]", "(ID): ", postlist[i] << Get ID );
-	Write( "\!nPost[", i, "]", "(Type): ", postlist[i] << Get Type );
-	Write( "\!nPost[", i, "]", "(Title): ", postlist[i] << Get Title );
-);
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );gbline = bc << Run Script( "Graph Builder Line Chart" );gbheat = bc << Run Script( "Graph Builder Heatmap" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder - Publish Example" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;contentlist = {};Insert Into(	contentlist,	New JMP Live Content( gbsmoother, Title( "SearchString - Graph Builder Smoother Line" ) ));Insert Into(	contentlist,	New JMP Live Content( gblinebar, Title( "SearchString - Graph Builder Line and Bar Charts" ) ));Insert Into(	contentlist,	New JMP Live Content( gbline, Title( "SearchString - Graph Builder Line Chart" ) ));Insert Into( contentlist, New JMP Live Content( gbheat, Title( "SearchString - Graph Builder Heatmap" ) ) );jmpliveresult = folder << Publish( contentlist );postlist = jmpliveresult << As Scriptable();For( i = 1, i <= postlist << Get Number Of Items, i += 1,	Write( "\!n\!nPost[", i, "]", "(ID): ", postlist[i] << Get ID );	Write( "\!nPost[", i, "]", "(Type): ", postlist[i] << Get Type );	Write( "\!nPost[", i, "]", "(Title): ", postlist[i] << Get Title ););
 
 ```
 
@@ -578,26 +218,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
-content1 = New JMP Live Content( gblinebar, Title( "Line Bar" ) );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-content2 = New JMP Live Content( gbsmoother, Title( "Smoother" ) );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder - Replace Example" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-publishList = (folder << Publish( content1 )) << As Scriptable;
-publishedReport = publishList[1];
-
-replaceResult = folder << Replace( Report( publishedReport ), content2 );
-
-resultList = replaceResult << As Scriptable();
-Write( "\!n\!nUpdated report and data: ", resultList );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );content1 = New JMP Live Content( gblinebar, Title( "Line Bar" ) );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );content2 = New JMP Live Content( gbsmoother, Title( "Smoother" ) );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder - Replace Example" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;publishList = (folder << Publish( content1 )) << As Scriptable;publishedReport = publishList[1];replaceResult = folder << Replace( Report( publishedReport ), content2 );resultList = replaceResult << As Scriptable();Write( "\!n\!nUpdated report and data: ", resultList );
 
 ```
 
@@ -611,42 +232,7 @@ Write( "\!n\!nUpdated report and data: ", resultList );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nDescription: ", report << Get Description );
-
-report << Set Description( "A Much Nicer Description" );
-jmpliveresult = liveconnection << Get Report( report << Get ID );
-updated = jmpliveresult << As Scriptable;
-
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nDecription: ", report << Get Description );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nDescription: ", report << Get Description );report << Set Description( "A Much Nicer Description" );jmpliveresult = liveconnection << Get Report( report << Get ID );updated = jmpliveresult << As Scriptable;Write( "\!n\!nID: ", report << Get ID );Write( "\!nDecription: ", report << Get Description );
 
 ```
 
@@ -660,44 +246,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );
-
-liveconnection = New JMP Live();
-result = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Reports and Posts - Messages" ),
-	If Exists( "use" )
-);
-folder = result << As Scriptable;
-// Make sure the report we will create does not already exist.
-liveconnection << Delete Report( "~/Reports and Posts - Messages/A New Title" );
-
-content = New JMP Live Content(
-	gbsmoother,
-	Title( "A Very Important Report" ),
-	Description( "The Report That Is Published" ),
-
-);
-jmpliveresult = folder << Publish( content );
-
-report = Empty();
-postList = jmpliveresult << As Scriptable;
-For( i = 1, i <= postlist << Get Number Of Items, i += 1,
-	posttype = postlist[i] << Get Type;
-	If( posttype == "Report",
-		report = postlist[i]
-	);
-);
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nTitle: ", report << Get Title );
-
-report << Set Title( "A New Title" );
-jmpliveresult = liveconnection << Get Report( report << Get ID );
-updated = jmpliveresult << As Scriptable;
-
-Write( "\!n\!nID: ", report << Get ID );
-Write( "\!nTitle: ", report << Get Title );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gbsmoother = bc << Run Script( "Graph Builder Smoother Line" );liveconnection = New JMP Live();result = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Reports and Posts - Messages" ),	If Exists( "use" ));folder = result << As Scriptable;// Make sure the report we will create does not already exist.liveconnection << Delete Report( "~/Reports and Posts - Messages/A New Title" );content = New JMP Live Content(	gbsmoother,	Title( "A Very Important Report" ),	Description( "The Report That Is Published" ),);jmpliveresult = folder << Publish( content );report = Empty();postList = jmpliveresult << As Scriptable;For( i = 1, i <= postlist << Get Number Of Items, i += 1,	posttype = postlist[i] << Get Type;	If( posttype == "Report",		report = postlist[i]	););Write( "\!n\!nID: ", report << Get ID );Write( "\!nTitle: ", report << Get Title );report << Set Title( "A New Title" );jmpliveresult = liveconnection << Get Report( report << Get ID );updated = jmpliveresult << As Scriptable;Write( "\!n\!nID: ", report << Get ID );Write( "\!nTitle: ", report << Get Title );
 
 ```
 
@@ -711,29 +260,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );
-content = New JMP Live Content( gblinebar, Title( "Line Bar" ) );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder - Replace Example" ),
-	If Exists( "use" )
-);
-folder = jmpliveresult << As Scriptable;
-publishList = (folder << Publish( content )) << As Scriptable;
-publishedData = publishList[2];
-
-bc << Add Rows( 1 );
-bc[N Rows(), 0] = {"KEIRA", 16, "F", 62, 112};
-bc << Add Rows( 1 );
-bc[N Rows(), 0] = {"ORLANDO", 17, "M", 66, 164};
-
-updateResult = folder << Update Data( Data( publishedData ), bc );
-
-updatedData = updateResult << As Scriptable;
-Write( "\!n\!nUpdated data: ", updatedData );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );gblinebar = bc << Run Script( "Graph Builder Line and Bar Charts" );content = New JMP Live Content( gblinebar, Title( "Line Bar" ) );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder - Replace Example" ),	If Exists( "use" ));folder = jmpliveresult << As Scriptable;publishList = (folder << Publish( content )) << As Scriptable;publishedData = publishList[2];bc << Add Rows( 1 );bc[N Rows(), 0] = {"KEIRA", 16, "F", 62, 112};bc << Add Rows( 1 );bc[N Rows(), 0] = {"ORLANDO", 17, "M", 66, 164};updateResult = folder << Update Data( Data( publishedData ), bc );updatedData = updateResult << As Scriptable;Write( "\!n\!nUpdated data: ", updatedData );
 
 ```
 

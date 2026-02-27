@@ -40,10 +40,7 @@ AndMZ( 1 < 2, 3 < 4 );
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i == 5, Break() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i == 5, Break() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -71,10 +68,7 @@ Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i < 2, Continue() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i < 2, Continue() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -90,10 +84,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10],
-	value > 6
-);
-Show( values );
+values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );Show( values );
 
 ```
 
@@ -101,10 +92,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ),
-	Mod( value, 2 ) == 0
-);
-Show( values );
+values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );Show( values );
 
 ```
 
@@ -112,8 +100,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
-Show( values );
+values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );Show( values );
 
 ```
 
@@ -121,8 +108,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {x, i}, 100 :: 120, i > 10 );
-Show( values );
+values = Filter Each( {x, i}, 100 :: 120, i > 10 );Show( values );
 
 ```
 
@@ -136,11 +122,7 @@ Show( values );
 
 ```jsl
 
-s = "";
-For( i = 1, i < 10, i++,
-	s ||= " " || Char( i )
-);
-Trim( s );
+s = "";For( i = 1, i < 10, i++,	s ||= " " || Char( i ));Trim( s );
 
 ```
 
@@ -156,15 +138,7 @@ Trim( s );
 
 ```jsl
 
-
-// Across multiple containers
-x = {1, 3};
-y = {2, 4};
-For Each( {{a, b}, index}, Across( x, y ), Show( a, b, index ) );
-
-// Across list of containers
-xy = {{1, 3}, {2, 4}};
-For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
+// Across multiple containersx = {1, 3};y = {2, 4};For Each( {{a, b}, index}, Across( x, y ), Show( a, b, index ) );// Across list of containersxy = {{1, 3}, {2, 4}};For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```
 
@@ -172,33 +146,7 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```jsl
 
-
-list1 = {1, 3, 5, 7, 9};
-list2 = {2, 4}; 
-
-Write( "\!N===Longest [default]===" );
-For Each( {{l1, l2}}, Across( list1, list2, Count( "Longest" ) ),
-	Show( l1, l2 )
-);
-
-Write( "\!N===Shortest===" );
-For Each( {{s1, s2}}, Across( list1, list2, Count( "Shortest" ) ),
-	Show( s1, s2 )
-);
-
-Write( "\!N===N===" );
-For Each( {{n1, n2}}, Across( list1, list2, Count( 7 ) ),
-	Show( n1, n2 )
-);
-
-Write( "\!N===Enforce Equal===" );
-Try(
-	For Each( {values},
-		Across( list1, list2, Count( "Enforce Equal" ) ),
-		Show( values )
-	),
-	Print( "Error occurred" )
-);
+list1 = {1, 3, 5, 7, 9};list2 = {2, 4}; Write( "\!N===Longest [default]===" );For Each( {{l1, l2}}, Across( list1, list2, Count( "Longest" ) ), Show( l1, l2 ) );Write( "\!N===Shortest===" );For Each( {{s1, s2}}, Across( list1, list2, Count( "Shortest" ) ), Show( s1, s2 ) );Write( "\!N===N===" );For Each( {{n1, n2}}, Across( list1, list2, Count( 7 ) ), Show( n1, n2 ) );Write( "\!N===Enforce Equal===" );Try(	For Each( {values}, Across( list1, list2, Count( "Enforce Equal" ) ), Show( values ) ),	Print( "Error occurred" ));
 
 ```
 
@@ -206,9 +154,7 @@ Try(
 
 ```jsl
 
-For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
-	Show( key, value, index )
-);
+For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
 
@@ -254,8 +200,7 @@ For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( :height = -:height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( :height = -:height );
 
 ```
 
@@ -269,10 +214,7 @@ For Each Row( :height = -:height );
 
 ```jsl
 
-If( Random Uniform() < 0.5,
-	"heads",
-	"tails"
-);
+If( Random Uniform() < 0.5,	"heads",	"tails");
 
 ```
 
@@ -286,12 +228,7 @@ If( Random Uniform() < 0.5,
 
 ```jsl
 
-x = 1;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( If( x == 1, 10, x == 2, 20, 30 ) );
+x = 1;Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );x = .;Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );x = .;Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```
 
@@ -305,18 +242,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```jsl
 
-TomScore = 45;
-JonScore = 47;
-TimScore = 46;
-highestScorer = IfMax(
-	TomScore,
-	"Tom",
-	JonScore,
-	"Jon",
-	TimScore,
-	"Tim",
-	"Noone"
-);
+TomScore = 45;JonScore = 47;TimScore = 46;highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone" );
 
 ```
 
@@ -330,48 +256,27 @@ highestScorer = IfMax(
 
 ```jsl
 
-TomScore = 45;
-JonScore = 47;
-TimScore = 46;
-lowestScorer = IfMin(
-	TomScore,
-	"Tom",
-	JonScore,
-	"Jon",
-	TimScore,
-	"Tim",
-	"Noone"
-);
+TomScore = 45;JonScore = 47;TimScore = 46;lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone" );
 
 ```
 
 ### Interpolate
 
-**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Description :** Trouve les arguments xi qui comprennent x et interpole linéairement les arguments yi correspondants. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-
-New Window( "Interpolate",
-	window:x = (2 :: 9) * 10;
-	window:y = 50 + Sin( (2 :: 9) ) * 40;
-	Graph Box(
-		Pen Color( "blue" );
-		Marker( window:x, window:y );
-		Y Function( Interpolate( a, window:x, window:y ), a );
-	);
-)
-;
+New Window( "Interpolate",	window:x = (2 :: 9) * 10;	window:y = 50 + Sin( (2 :: 9) ) * 40;	Graph Box(		Pen Color( "blue" );		Marker( window:x, window:y );		Y Function( Interpolate( a, window:x, window:y ), a );	););
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -379,7 +284,7 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
@@ -387,29 +292,11 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
 
-#### Exemple 4
+**Exemple 4**
 
 ```jsl
 
-
-xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
-yd = Sin( xd );
-                                    
-xd2 = xd + 0.15;
-yd2 = Interpolate( xd2, xd, yd );
-                                    
-New Window( "Interpolated values are blue",
-	Graph Box(
-		X Scale( 1, 6 * Pi() ),
-		Y Scale( -1, 1 ),
-		For( i = 0, i < N Rows( xd ), i++,
-			Pen Color( "red" );
-			Circle( {xd[i], yd[i]}, 0.01 );
-			Pen Color( "blue" );
-			Circle( {xd2[i], yd2[i]}, 0.01 );
-		)
-	)
-);
+xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );yd = Sin( xd );                                    xd2 = xd + 0.15;yd2 = Interpolate( xd2, xd, yd );                                    New Window( "Interpolated values are blue",	Graph Box(		X Scale( 1, 6 * Pi() ),		Y Scale( -1, 1 ),		For( i = 0, i < N Rows( xd ), i++,			Pen Color( "red" );			Circle( {xd[i], yd[i]}, 0.01 );			Pen Color( "blue" );			Circle( {xd2[i], yd2[i]}, 0.01 );		)	));
 
 ```
 
@@ -437,53 +324,7 @@ Is Associative Array( [1 => 2] );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-iscl = Is Class( cl );
-Show( iscl );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );iscl = Is Class( cl );Show( iscl );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -495,7 +336,7 @@ Delete Classes( "complex" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -503,33 +344,19 @@ Is Empty( x );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-x = Empty();
-Is Empty( x );
+x = Empty();Is Empty( x );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 1 );
-If( Is Empty( dt ),
-	Print( "There is no open data table." ),
-	Print( "This data table is open: " || (dt << Get Name()) )
-);
-Wait( 1 );
-Close( DT, "nosave" );
-Wait( 1 );
-If( Is Empty( dt ),
-	Print( "There is no open data table." ),
-	Print( "This data table is open: " || (dt << Get Name()) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );If( Is Empty( dt ),	Print( "There is no open data table." ),	Print( "This data table is open: " || (dt << Get Name()) ));Wait( 1 );Close( DT, "nosave" );Wait( 1 );If( Is Empty( dt ),	Print( "There is no open data table." ),	Print( "This data table is open: " || (dt << Get Name()) ));
 
 ```
 
@@ -585,35 +412,7 @@ Is Name( Name Expr( n ) );
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-isns = Is Namespace( ns );
-Show( isns );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});isns = Is Namespace( ns );Show( isns );ns << Delete;
 
 ```
 
@@ -641,8 +440,7 @@ Is Number( 213 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 ```
 
@@ -670,12 +468,7 @@ Is String( "abc" );
 
 ```jsl
 
-Match( Year( Today() ),
-	2013, "snake",
-	2014, "horse",
-	2015, "goat",
-	"other"
-);
+Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
 
@@ -689,12 +482,7 @@ Match( Year( Today() ),
 
 ```jsl
 
-MatchMZ( Year( Today() ),
-	2013, "snake",
-	2014, "horse",
-	2015, "goat",
-	"other"
-);
+MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
 
@@ -748,48 +536,25 @@ OrMZ( 1 < 2, 3 < 2 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-vr = Function( {},
-	x = 2;
-	y = 4;
-	Return( Char( x * y ) );
-);
-lvr = Function( {},
-	x = 2;
-	y = 4;
-	For( i = 1, i < 5, i++,
-		If( i == 3,
-			Return( i * x * y )
-		)
-	);
-);
-nr = Function( {}, Return() );
-vrv = vr();
-lvrv = lvr();
-nrv = nr();
-Show( vrv, lvrv, nrv );
+vr = Function( {},	x = 2;	y = 4;	Return( Char( x * y ) ););lvr = Function( {},	x = 2;	y = 4;	For( i = 1, i < 5, i++,		If( i == 3,			Return( i * x * y )		)	););nr = Function( {}, Return() );vrv = vr();lvrv = lvr();nrv = nr();Show( vrv, lvrv, nrv );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-f = Function( {a, b},
-	Return( a - b, a + b )
-);
-{lo, hi} = f( 10, 1 );
-Show( lo, hi );
-Show( f( 7, 15 ) );
+f = Function( {a, b},	Return( a - b, a + b ));{lo, hi} = f( 10, 1 );Show( lo, hi );Show( f( 7, 15 ) );
 
 ```
 
 ### Step
 
-**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Description :** Renvoie l’argument yi correspondant à la valeur la plus grande de xi telle que xi est supérieur ou égal à l’argument x. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
@@ -811,10 +576,7 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i == 7, Stop() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i == 7, Stop() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -830,11 +592,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-values = Transform Each( {{key, value}},
-	["A" => 8, "B" => 6, "C" => 10],
-	value + 1
-);
-Show( values );
+values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );Show( values );
 
 ```
 
@@ -842,8 +600,7 @@ Show( values );
 
 ```jsl
 
-ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
-Show( ex );
+ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );Show( ex );
 
 ```
 
@@ -851,25 +608,7 @@ Show( ex );
 
 ```jsl
 
-// Find Functions defined in a script
-parsedScript = Include(
-	"$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl",
-	<<ParseOnly
-);
-functionNames = Transform Each( {statement}, Name Expr( parsedScript ),
-	Output( "List" ), {lhs, rhs},
-	If( Head( statement ) == Expr( Assign() ),
-		rhs = Arg( statement, 2 );
-		If( !Is Empty( rhs ) & Contains( {Function()}, Head( rhs ) ),
-			Head Name( Arg( statement, 1 ) ),
-			Empty()
-		);
-	,
-		Empty()
-	)
-);
-functionNames = Filter Each( {f}, functionNames, !Is Empty( f ) );
-Show( functionNames );
+// Find Functions defined in a scriptparsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );functionNames = Transform Each( {statement}, Name Expr( parsedScript ), Output( "List" ),	{lhs, rhs},	If( Head( statement ) == Expr( Assign() ),		rhs = Arg( statement, 2 );		If( !Is Empty( rhs ) & Contains( {Function()}, Head( rhs ) ),			Head Name( Arg( statement, 1 ) ),			Empty()		);	,		Empty()	));functionNames = Filter Each( {f}, functionNames, !Is Empty( f ) );Show( functionNames );
 
 ```
 
@@ -877,8 +616,7 @@ Show( functionNames );
 
 ```jsl
 
-values = Transform Each( {value}, {10, 20, 30}, value + 5 );
-Show( values );
+values = Transform Each( {value}, {10, 20, 30}, value + 5 );Show( values );
 
 ```
 
@@ -886,8 +624,7 @@ Show( values );
 
 ```jsl
 
-values = Transform Each( {element}, 10 :: 15, element + 5 );
-Show( values );
+values = Transform Each( {element}, 10 :: 15, element + 5 );Show( values );
 
 ```
 
@@ -895,32 +632,7 @@ Show( values );
 
 ```jsl
 
-
-Write( "\!N===List===" );
-lst = Transform Each( {value}, [10, 20, 30], Output( "List" ),
-	value + 1
-);
-Show( lst );
-
-Write( "\!N===Matrix===" );
-mat = Transform Each( {value}, {10, 20, 30}, Output( "Matrix" ),
-	value + 1
-);
-Show( mat );
-
-Write( "\!N===Associative Array===" );
-aa = Transform Each( {value}, {10, 20, 30},
-	Output( "Associative Array" ),
-	value + 1
-);
-Show( aa );
-
-Write( "\!N===Expression===" );
-ex = Transform Each( {value}, {10, 20, 30},
-	Output( "Expression", "My Values" ),
-	value + 1
-);
-Show( ex );
+Write( "\!N===List===" );lst = Transform Each( {value}, [10, 20, 30], Output( "List" ), value + 1 );Show( lst );Write( "\!N===Matrix===" );mat = Transform Each( {value}, {10, 20, 30}, Output( "Matrix" ), value + 1 );Show( mat );Write( "\!N===Associative Array===" );aa = Transform Each( {value}, {10, 20, 30}, Output( "Associative Array" ), value + 1 );Show( aa );Write( "\!N===Expression===" );ex = Transform Each( {value}, {10, 20, 30}, Output( "Expression", "My Values" ), value + 1 );Show( ex );
 
 ```
 
@@ -934,13 +646,7 @@ Show( ex );
 
 ```jsl
 
-i = 1;
-s = "";
-While( i < 1000,
-	s ||= " " || Char( i );
-	i *= 2;
-);
-s;
+i = 1;s = "";While( i < 1000,	s ||= " " || Char( i );	i *= 2;);s;
 
 ```
 

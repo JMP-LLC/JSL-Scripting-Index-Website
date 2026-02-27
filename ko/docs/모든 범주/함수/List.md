@@ -38,7 +38,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -46,13 +46,11 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-x = 5;
-y = 10;
-Eval List( {x, y} );
+x = 5;y = 10;Eval List( {x, y} );
 
 ```
 
@@ -66,8 +64,7 @@ Eval List( {x, y} );
 
 ```jsl
 
-z = {11, 22, 33};
-z = Insert( z, 99, 2 );
+z = {11, 22, 33};z = Insert( z, 99, 2 );
 
 ```
 
@@ -79,33 +76,27 @@ z = Insert( z, 99, 2 );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-ex = {11, 22, 33};
-Insert Into( ex, 99 );
-ex;
+ex = {11, 22, 33};Insert Into( ex, 99 );ex;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, => 0];
-Insert Into( ex, "c", 12 );
-ex;
+ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
-Wait( 1 );
-Insert Into( hlist, Button Box( "c" ) );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );Wait( 1 );Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
@@ -131,7 +122,7 @@ Is List( {1, 2, 3} );
 
 **JMP추가된 버전:** 15
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -139,7 +130,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -147,7 +138,7 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -155,7 +146,7 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters(), Include Boundar
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
@@ -171,7 +162,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -179,7 +170,7 @@ Length( "Café" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -187,7 +178,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
@@ -195,7 +186,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
@@ -225,7 +216,7 @@ Length( Char To Blob( "Café" ) );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -233,7 +224,7 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -241,12 +232,11 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
-N Items( hlist );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );N Items( hlist );
 
 ```
 
@@ -272,33 +262,27 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Remove From( ex, 3, 2 );
-ex;
+ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
-Remove From( ex, "c" );
-ex;
+ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );
-Wait( 1 );
-Remove From( hlist, 1 );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );Wait( 1 );Remove From( hlist, 1 );
 
 ```
 
@@ -324,23 +308,19 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Reverse Into( ex );
-ex;
+ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );
-Wait( 1 );
-Reverse Into( hlist );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );Wait( 1 );Reverse Into( hlist );
 
 ```
 
@@ -354,8 +334,7 @@ Reverse Into( hlist );
 
 ```jsl
 
-Show( Set Difference( {1, 3}, {3, 2} ) );
-Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```
 
@@ -369,10 +348,7 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```jsl
 
-Show( Set Intersection( {1, 3}, {3, 2} ) );
-Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```
 
@@ -386,13 +362,7 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Show( Set Union( {1, 3}, {3, 2} ) );
-Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-all = {};
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-For Each Row( all = Set Union( all, :sports ) );
-all = Set Unique( all );
-Show( all );
+Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );all = {};Open( "$SAMPLE_DATA/Big Class Families.jmp" );For Each Row( all = Set Union( all, :sports ) );all = Set Unique( all );Show( all );
 
 ```
 
@@ -406,11 +376,7 @@ Show( all );
 
 ```jsl
 
-Show( Set Unique( {1, 3, 2} ) );
-Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-Row() = 1;
-Show( Set Unique( :sports ) );
+Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );Open( "$SAMPLE_DATA/Big Class Families.jmp" );Row() = 1;Show( Set Unique( :sports ) );
 
 ```
 
@@ -436,23 +402,19 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Shift Into( ex, -2 );
-ex;
+ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );
-Wait( 1 );
-Shift Into( hlist, -2 );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ) );Wait( 1 );Shift Into( hlist, -2 );
 
 ```
 
@@ -480,21 +442,19 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-ex = {111, 212, 133, 114, 55};
-Sort List Into( ex );
-ex;
+ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
 
 ```
 
 ### Substitute
 
-**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x의 복사본을 반환합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -502,7 +462,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -510,16 +470,15 @@ Substitute( "All things considered", "All", "Some" );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute( lst, "a", "A" );
+lst = {"a", "b", "c"};Substitute( lst, "a", "A" );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
@@ -527,7 +486,7 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
-#### 예제 5
+**예제 5**
 
 ```jsl
 
@@ -535,7 +494,7 @@ Substitute( "Apple,orange,banana-grape", Items( Get Punctuation Characters() || 
 
 ```
 
-#### 예제 6
+**예제 6**
 
 ```jsl
 
@@ -545,49 +504,41 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x를 수정합니다. x 인수는 변수여야 합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-ex = Expr( a + Sqrt( a ) );
-Substitute Into( ex, Expr( a ), Expr( b ) );
-Name Expr( ex );
+ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Expr( ex );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-ex = "All things considered";
-Substitute Into( ex, "All", "Some" );
-Show( ex );
+ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute Into( lst, "a", "A" );
-Show( lst );
+lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
 
 ```
 
-#### 예제 4
+**예제 4**
 
 ```jsl
 
-s = "Apple,APPLE,apple";
-Substitute Into( s, "apple", "orange", <<IGNORECASE );
-Show( s );
+s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );Show( s );
 
 ```
 
@@ -599,7 +550,7 @@ Show( s );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -607,7 +558,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
@@ -615,7 +566,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 

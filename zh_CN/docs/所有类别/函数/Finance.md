@@ -40,8 +40,7 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -61,7 +60,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**语法:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**语法:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **说明:** 返回由 values 参数中的数值表示的一系列现金流的内部收益率。等价于 Microsoft Excel 中的 IRR 函数。该函数的第二个原型接受所有标量参数。
 
@@ -69,14 +68,13 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );
-Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**语法:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**语法:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **说明:** 返回一系列定期现金流的修正内部收益率，该函数同时考虑了投资成本和现金再投资的收益。等价于 Microsoft Excel 中的 MIRR 函数。该函数的第二个原型接受所有标量参数。
 
@@ -84,14 +82,13 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
-Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**语法:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**语法:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **说明:** 通过使用贴现率、一系列将来的支出（负值）和收入（正值）进行计算，返回投资的净现值。values 参数是个一维矩阵。等价于 Microsoft Excel 中的 NPV 函数。该函数的第二个原型接受所有标量参数。
 
@@ -99,8 +96,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );
-Net Present Value( .05, -10000, 1000, 900, 9500 );
+Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -128,8 +124,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -157,8 +152,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 

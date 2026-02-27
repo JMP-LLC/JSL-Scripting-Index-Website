@@ -2,6 +2,206 @@
 
 
 
+## Columnas
+
+### Analysis Columns
+
+**Sintaxis:** Analysis Columns( Column(s) )
+
+**Descripción:** Agrega columnas de análisis a la tabla actual. Se puede utilizar con el comando Agregar tabla o el comando Modificar tabla.
+
+#### Agregar a existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Modify Table( Column Table( 1 ), Analysis Columns( :CO ) );
+
+```
+
+#### Agregar a nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));
+
+```
+
+### By
+
+**Sintaxis:** obj &lt;&lt; By( column(s) )
+
+**Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :type ));
+
+```
+
+### Columns by Categories
+
+**Sintaxis:** Columns by Categories( column1, column2, ...) )
+
+**Descripción:** Agrega a la tabla una tabulación cruzada de los nombres de columna y las categorías recopiladas para columnas con valores similares.  Durante el script, el mensaje Columnas por categorías debe estar dentro de un mensaje, o bien de Tabla de columnas o bien de Tabla de filas.
+
+#### Agregar a existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks ) ) ));obj << Modify Table( Row Table( 1 ), Columns by Categories( :Money ) );
+
+```
+
+#### Agregar a nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) ));
+
+```
+
+### Freq
+
+**Sintaxis:** Freq( Column )
+
+**Descripción:** Especifica la columna de frecuencia que se debe usar al calcular los estadísticos.
+
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));Wait( 1 );obj << Freq( :Count );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Freq( :Count ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));
+
+```
+
+### Grouping Columns
+
+**Sintaxis:** Grouping Columns( Column(s) )
+
+**Descripción:** Agrega columnas de agrupación a la tabla actual. Se puede utilizar con el comando Agregar tabla o el comando Modificar tabla.
+
+#### Add nested to new
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));
+
+```
+
+#### Agregar a existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Modify Table( Row Table( 1 ), Grouping Column( :age ) );
+
+```
+
+#### Agregar a nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Grouping Columns( :sex ) ) ));
+
+```
+
+#### Agregar anidado a existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Modify Table( Column Table( 1 ), Grouping Column( :age ) );
+
+```
+
+### ID
+
+**Sintaxis:** ID( Column )
+
+**Descripción:** Especifica la columna de identificadores que se utiliza para contar los eventos unívocos.
+
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));Wait( 1 );obj << ID( :Division );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	ID( :Division ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+```
+
+### Page Column
+
+**Sintaxis:** Page Column( Column )
+
+**Descripción:** Especifica la columna de la página que se debe usar para configurar las páginas del informe.
+
+#### Columna de página de respuesta múltiple
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Control Panel( 0 ),	Page Column( :family cars( "Jeep" ) ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :sex ) )	));
+
+```
+
+#### Establecer columna de página en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :sex ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));
+
+```
+
+#### Establecer columna de página y nivel en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));Wait( 1 );obj << Page Column( :sex( "F" ) );
+
+```
+
+#### Establecer columna de página y nivel en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :sex( "F" ) ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));
+
+```
+
+### Weight
+
+**Sintaxis:** Weight( Column )
+
+**Descripción:** Especifica la columna de ponderación que se debe usar al calcular los estadísticos.
+
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));Wait( 1 );obj << Weight( :Weight );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Weight( :Weight ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));
+
+```
+
 ## Constructores asociados
 
 ### Tabulate
@@ -10,15 +210,107 @@
 
 **Descripción:** Crea una tabla personalizada de estadísticos de resumen de una o más variables. Las variables se pueden agrupar en una o más columnas de clasificación. Le permite construir la tabla de resumen mediante operaciones de arrastrar y colocar.
 
+#### Categorías anidadas
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));
+
+```
+
+#### Categorías y estadísticas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :gender, :goals ), Statistics( N, Column % ) ),		Row Table( Grouping Columns( :Grade, :Age ) )	));
+
+```
+
+#### Columna de página
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :Engine( "Gas" ) ),	Add Table(		Column Table( Analysis Columns( :City MPG, :Hwy MPG ), Statistics( Max ) ),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+```
+
+#### Columna de página de respuesta múltiple
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Control Panel( 0 ),	Page Column( :family cars( "Jeep" ) ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :sex ) )	));
+
+```
+
+#### Columna ID
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	ID( :Division ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+```
+
+#### Columnas de agrupación apiladas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size ),			Stack Grouping Columns( 1 )		)	));
+
+```
+
+#### Columnas de agrupación de respuesta múltiple
+
+```jsl
+
+dt = Open( "$Sample_Data/Consumer Preferences.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Floss Delimited ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :Frequency of Teeth Cleaning, :Brush Delimited ) )	));
+
+```
+
+#### Columnas empaquetadas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum, Max ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
+
+```
+
+#### Columnas por categorías
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) ));
+
+```
+
+#### Frecuencia
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Freq( :Count ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));
+
+```
+
+#### Peso
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Weight( :Weight ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));
+
+```
+
+#### Tablas con varias filas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Row Table( Grouping Columns( :Grades ) ),		Row Table( Grouping Columns( :Sports ) ),		Row Table( Grouping Columns( :Looks ) ),		Row Table( Grouping Columns( :Money ) )	));
+
+```
+
+#### Tablas con varias filas y columnas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :gender ) ),		Column Table( Grouping Columns( :race ) ),		Row Table( Grouping Columns( :goals ) ),		Row Table( Grouping Columns( :"Urban/Rural"n ) )	));
 
 ```
 
@@ -26,50 +318,39 @@ obj = dt << Tabulate(
 
 ### Add
 
-**Sintaxis:** add (&lt;Column Table | Row Table&gt;(table index), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;))&gt;, &lt;analysis column | grouping column | statistic&gt;(operand name)),
+**Sintaxis:** add(&lt;Column Table | Row Table&gt;(table index), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;))&gt;, &lt;analysis column | grouping column | statistic&gt;(operand name)),
 
-**Descripción:** Used with Modificar tabla to add columns and statistics to an existing table. Also serves as an alias for Agregar tabla
+**Descripción:** Se utiliza con Modificar tabla para agregar columnas y estadísticos a una tabla existente. También sirve como alias para Agregar tabla.
 
-#### Ejemplo 1
+#### Agregar columna de análisis antes de la nombrada
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table(
-	column table( 1 ),
-	Add( After( Statistics( max ) ), Statistics( Range ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Analysis Columns( :weight ) ) ));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( Before( Analysis Columns( :weight ) ), Analysis Columns( :height ) ));
 
 ```
 
-#### Ejemplo 2
+#### Agregar estadístico antes del índice
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) ) );
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( Before( Statistics( 2 ) ), Statistics( Median ) ));
+
+```
+
+#### Agregar estadístico antes del primero
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Add( Before First, Statistics( N ) ) );
+
+```
+
+#### Agregar estadístico después del nombrado
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( After( Statistics( Max ) ), Statistics( Range ) ));
 
 ```
 
@@ -79,29 +360,19 @@ obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) )
 
 **Descripción:** Agrega una tabla a la ventana si no hay una tabla actual o añade una tabla al objeto de tabla existente.
 
-#### Ejemplo 1
+#### Agregar a existente
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Add Table( Column Table( Grouping Columns( :type ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Add Table( Column Table( Grouping Columns( :type ) ) );
 
 ```
 
-#### Ejemplo 2
+#### Agregar a vacío
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate();
-obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
-obj << Add table( row table( grouping column( :age ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Add Table( Row Table( Grouping Columns( :age ) ) );
 
 ```
 
@@ -111,50 +382,19 @@ obj << Add table( row table( grouping column( :age ) ) );
 
 **Descripción:** Agrega a la tabla actual una columna separada para cada nivel de la columna especificada junto con una columna de suma. Durante el script, el mensaje Agregar estadísticos debe de estar dentro de un mensaje, o bien de Tabla de columnas o bien de Tabla de filas.
 
+#### Establecer al agregar a existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis columns( :OZONE ), statistics( mean ) ),
-		Row Table( Grouping Columns( :Region ), aggregate statistics( :Region ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ) ));obj << Modify Table(	Row Table( 1 ),	Grouping Columns( :Region ),	Aggregate Statistics( :Region ));
 
 ```
 
-### Analysis Columns
-
-**Sintaxis:** Analysis Columns( Column(s) )
-
-**Descripción:** Agrega columnas de análisis a la tabla actual. Se puede utilizar con el comando Agregar tabla o el comando Modificar tabla.
-
-#### Ejemplo 1
+#### Establecer al agregar a nuevo
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
-
-```
-
-#### Ejemplo 2
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
-obj << modifytable( column table( 1 ), analysis columns( :CO ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ), Aggregate Statistics( :Region ) )	));
 
 ```
 
@@ -166,43 +406,7 @@ obj << modifytable( column table( 1 ), analysis columns( :CO ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
-obj << Change Item Label( Statistics( Mean, "Average" ) );
-
-```
-
-### Columns by Categories
-
-**Sintaxis:** Columns by Categories( column1, column2, ...) )
-
-**Descripción:** Agrega a la tabla una tabulación cruzada de los nombres de columna y las categorías recopiladas para columnas con valores similares.  Durante el script, el mensaje Columnas por categorías debe estar dentro de un mensaje, o bien de Tabla de columnas o bien de Tabla de filas.
-
-#### Ejemplo 1
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
-obj = dt << Tabulate(
-	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) )
-);
-
-```
-
-#### Ejemplo 2
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
-obj = dt << Tabulate(
-	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks ) ) )
-);
-obj << modify table( row table( 1 ), columns by categories( :Money ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Change Item Label( Statistics( Mean, "Average" ) );
 
 ```
 
@@ -210,109 +414,51 @@ obj << modify table( row table( 1 ), columns by categories( :Money ) );
 
 **Sintaxis:** delete( &lt;analysis columns | grouping columns | statistics&gt;(operand name, operand name, ...))
 
-**Descripción:** Used with Modificar tabla to remove columns and statistics from an existing table.
+**Descripción:** Se utiliza con Modificar tabla para eliminar columnas y estadísticos de una tabla existente.
+
+#### Eliminar columna de análisis con nombre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
+
+```
+
+#### Eliminar estadístico en el índice
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Statistics( 1 ) ) );
 
 ```
 
 ### Display Column Width
 
-**Sintaxis:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; );obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
+**Sintaxis:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; ); obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
 
 **Descripción:** Establece o devuelve el ancho de visualización de una columna en una tabla de informe Tabular. Path es una secuencia de encabezados de columna entrecomillados que traza la ruta de la columna. Width es el ancho de una columna en píxeles. Utilice Data Column para definir columnas en el cuerpo principal de la tabla o Row Label para las columnas en el área de etiquetas de fila. Si hay varias tablas en el informe, utilice Column Table(n) o Row Table(n) para especificar a qué tabla se aplica path. Si no se especifica width, esta opción devuelve el ancho actual de la columna especificada.
 
-#### Ejemplo 1
+#### Cambiar tamaño de las columnas de datos a anchos iguales
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table(
-			Grouping Columns( :sex, :marital status ),
-			Analysis Columns( :age ),
-			Statistics( Sum, "% of Total" )
-		),
-		Row Table( Grouping Columns( :type ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Display Column Width( Row Label( Row Table( 2 ), "country" ), 150 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Mean( :OZONE( 6, 4 ) ) ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Min, Max, Mean, Std Dev ) ),		Row Table( Grouping Columns( :Region ) )	));stats = {"Min", "Max", "Mean", "Std Dev"};ns = N Items( stats );a = {};For( i = 1, i <= ns, i++,	a[i] = obj << Display Column Width( Data Column( "OZONE", stats[i] ) ));amax = Max( a );For( i = 1, i <= ns, i++,	obj << Display Column Width( Data Column( "OZONE", stats[i] ), amax ));
 
 ```
 
-#### Ejemplo 2
+#### Establecer ancho de la etiqueta de fila
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Set Format( Mean( :OZONE( 6, 4 ) ) ),
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Min, Max, Mean, std dev ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
-stats = {"Min", "Max", "Mean", "Std Dev"};
-ns = N Items( stats );
-a = {};
-For( i = 1, i <= ns, i++,
-	a[i] = obj << Display Column Width( Data Column( "OZONE", stats[i] ) )
-);
-amax = Max( a );
-For( i = 1, i <= ns, i++,
-	obj << Display Column Width( Data Column( "OZONE", stats[i] ), amax )
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :sex, :marital status ),			Analysis Columns( :age ),			Statistics( Sum, "% of Total" )		),		Row Table( Grouping Columns( :type ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Display Column Width( Row Label( Row Table( 2 ), "country" ), 150 );
 
 ```
 
-#### Ejemplo 3
+#### Obtener ancho de columna
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table(
-			Grouping Columns( :sex, :marital status ),
-			Analysis Columns( :age ),
-			Statistics( Sum, "% of Total" )
-		),
-		Row Table( Grouping Columns( :type ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Display Column Width( Row Label( Row Table( 2 ), "country" ) );
-
-```
-
-### Freq
-
-**Sintaxis:** Freq( Column )
-
-**Descripción:** Especifica la columna de frecuencia que se debe usar al calcular los estadísticos.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
-obj = dt << Tabulate( Add Table( Row Table( Grouping Columns( :Causes ) ) ) );
-Wait( 1 );
-obj << Freq( :Count );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :sex, :marital status ),			Analysis Columns( :age ),			Statistics( Sum, "% of Total" )		),		Row Table( Grouping Columns( :type ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Display Column Width(	Column( Column Table( 1 ), "sex", "Female", "Marital status", "Single", "age", "Sum" ));
 
 ```
 
@@ -324,74 +470,7 @@ obj << Freq( :Count );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Full Path Column Name( 1 );
-obj << Make Into Data Table;
-
-```
-
-### Grouping Columns
-
-**Sintaxis:** Grouping Columns( Column(s) )
-
-**Descripción:** Agrega columnas de agrupación a la tabla actual. Se puede utilizar con el comando Agregar tabla o el comando Modificar tabla.
-
-#### Ejemplo 1
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-
-```
-
-#### Ejemplo 2
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate();
-obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
-obj << modify table( column table( 1 ), grouping column( :age ) );
-
-```
-
-### ID
-
-**Sintaxis:** ID( Column )
-
-**Descripción:** Especifica la columna de identificadores que se utiliza para contar los eventos unívocos.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
-obj = dt << Tabulate(
-	Set Format( Uniform Format( 10, 2 ) ),
-	Add Table(
-		Column Table(
-			Statistics( Sum ),
-			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
-			Pack(
-				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
-				Template( "^FIRST  (^OTHERS)", "/" )
-			)
-		),
-		Row Table( Grouping Columns( :Mfr Name ) )
-	)
-);
-Wait( 1 );
-obj << ID( :Division );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Full Path Column Name( 1 );obj << Make Into Data Table;
 
 ```
 
@@ -401,13 +480,45 @@ obj << ID( :Division );
 
 **JMP Versión agregada:** 19
 
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));obj << Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));
+
+```
+
 ### Ignore duplicates in multiple response columns
 
 **Sintaxis:** obj &lt;&lt; Ignore duplicates in multiple response columns( state=0|1 )
 
-**Descripción:** Ignores duplicate responses in multiple response columns. Each repeated response is treated as a single occurrence.
+**Descripción:** Ignora las respuestas duplicadas en columnas de respuestas múltiples. Cada respuesta repetida se trata como una sola instancia.
 
 **JMP Versión agregada:** 19
+
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));obj << Ignore Duplicates In Multiple Response Columns( 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Ignore Duplicates In Multiple Response Columns( 1 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));
+
+```
 
 ### Include missing for grouping columns
 
@@ -415,64 +526,49 @@ obj << ID( :Division );
 
 **Descripción:** Agrega una columna separada con los conteos de los valores que faltan para todas las columnas de agrupación de la tabla actual.
 
+#### Establecer en existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );
-obj = dt << Tabulate(
-	Add Table( Row Table( Grouping Columns( :Doors ) ) ),
-	Include missing for grouping columns( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Doors ) ) ));obj << Include Missing For Grouping Columns( 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Include Missing For Grouping Columns( 1 ),	Add Table( Row Table( Grouping Columns( :Doors ) ) ));
 
 ```
 
 ### Make Into Data Table
 
-**Sintaxis:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt;, &lt;Output Table ( table name)&gt;, &lt;Full Path Column Name(bool)&gt; )
+**Sintaxis:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt;, &lt;Output Table( table name)&gt;, &lt;Full Path Column Name(bool)&gt; )
 
 **Descripción:** Crea una nueva tabla de datos a partir de la tabla creada en Tabular.
 
-#### Ejemplo 1
+#### Crear en tabla de datos
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Make Into Data Table;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make Into Data Table;
 
 ```
 
-#### Ejemplo 2
+#### Crear en tabla de datos invisible
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Make into Data Table( invisible( 1 ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make into Data Table( Invisible( 1 ) );
 
 ```
 
-#### Ejemplo 3
+#### Usar nombre de columna de ruta completa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Make into Data Table( Full Path Column Name( 1 ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ```
 
@@ -480,21 +576,23 @@ obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 **Sintaxis:** obj &lt;&lt; Max scroll locked columns( number=3 )
 
-**Descripción:** Set the maximum number of columns to be scroll locked. Either all or none of the row header columns will be locked. Opción activada de forma predeterminada.
+**Descripción:** Establezca el número máximo de columnas en las que se aplicará la protección frente a desplazamiento. Se bloquearán todas las columnas de encabezado de fila o ninguna. Opción activada de forma predeterminada.
 
 **JMP Versión agregada:** 19
 
+#### Límite dentro del conteo de encabezados permitido
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Max Scroll Locked Columns( 1 );
-obj << Make Into Data Table;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Max Scroll Locked Columns( 2 );obj << Make Into Data Table;
+
+```
+
+#### Límite inferior del conteo de encabezados
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Max Scroll Locked Columns( 1 );obj << Make Into Data Table;
 
 ```
 
@@ -502,48 +600,43 @@ obj << Make Into Data Table;
 
 **Sintaxis:** obj &lt;&lt; Missing sum is zero( state=0|1 )
 
+**Descripción:** Especifica si los valores faltantes del estadístico de resumen de la suma deben mostrarse como 0 o como faltantes.
+
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),		Row Table( Grouping Columns( :name ) )	));obj << Missing Sum Is Zero( 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Missing Sum Is Zero( 1 ),	Add Table(		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),		Row Table( Grouping Columns( :name ) )	));
+
+```
+
 ### Modify Table
 
 **Sintaxis:** obj &lt;&lt; Modify Table( &lt;Column Table | Row Table&gt;(table index), ... )
 
-**Descripción:** Modifies an existing table.
+**Descripción:** Modifica una tabla existente.
 
-#### Ejemplo 1
+#### Crear y editar tabla completa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate();
-obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
-obj << Add table( row table( grouping column( :age ) ) );
-obj << Add Table( Column Table( Analysis Column( :height ) ) );
-obj << Add Table( Column Table( Analysis Column( :Weight ) ) );
-obj << Modify Table( Column Table( 2 ), statistics( min, max ) );
-obj << Modify Table( Column Table( 2 ), grouping columns( :sex ) );
-obj << Modify Table( Column Table( 2 ), Analysis Column( :Weight ) );
-Wait( 1 );
-obj << Modify Table( Column Table( 2 ), delete( Analysis Column( :Weight ) ) );
-obj << Modify Table( Column Table( 2 ), delete( statistics( "sum" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Add table( Row Table( Grouping Columns( :age ) ) );obj << Add Table( Column Table( Analysis Columns( :height ) ) );obj << Add Table( Column Table( Analysis Columns( :weight ) ) );obj << Modify Table( Column Table( 2 ), Statistics( Min, Max ) );obj << Modify Table( Column Table( 2 ), Grouping Columns( :sex ) );obj << Modify Table( Column Table( 2 ), Analysis Columns( :weight ) );Wait( 1 );obj << Modify Table( Column Table( 2 ), Delete( Analysis Columns( :weight ) ) );obj << Modify Table( Column Table( 2 ), Delete( Statistics( Sum ) ) );
 
 ```
 
-#### Ejemplo 2
+#### Eliminar columna de análisis
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
 
 ```
 
@@ -551,97 +644,45 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 **Sintaxis:** obj &lt;&lt; Modify Table Option
 
-**Descripción:** Used with Modificar tabla to modify table options in an existing table.
+**Descripción:** Se utiliza con Modificar tabla para modificar las opciones de una tabla existente.
 
-#### Ejemplo 1
+#### Apilar columnas de agrupación en existente
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :age, :sex ) )
-	)
-);
-obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( true ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age, :sex ) )	));obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( true ) ) );
 
 ```
 
-#### Ejemplo 2
+#### Cambiar etiqueta de grupo apilado en existente
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :age, :sex ), Stack Grouping Columns( 1 ) )
-	)
-);
-obj << Modify Table(
-	Row Table( 1 ),
-	Modify Table Option( Change Stacked Group Label ),
-	"new label"
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age, :sex ), Stack Grouping Columns( 1 ) )	));obj << Modify Table(	Row Table( 1 ),	Modify Table Option( Change Stacked Group Label ),	"new label");
 
 ```
 
 ### Move
 
-**Sintaxis:** move (&lt;Column Table | Row Table&gt;(table index), &lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)&gt;)
+**Sintaxis:** move(&lt;Column Table | Row Table&gt;(table index), &lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)&gt;)
 
-**Descripción:** Used with Modificar tabla to move columns and statistics in an existing table.
+**Descripción:** Se utiliza con Modificar tabla para mover columnas y estadísticos en una tabla existente.
 
 **JMP Versión agregada:** 19
 
-#### Ejemplo 1
+#### Mover columna de agrupación de la tabla de columnas a la tabla de filas
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table(
-	column table( 1 ),
-	move( column table( 1 ), Statistics( mean ) ),
-	After( Statistics( max ) )
-);
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Row Table( 1 ),	Move( Column Table( 1 ), Grouping Column( :Type ) ),	Before First);
 
 ```
 
-#### Ejemplo 2
+#### Mover estadístico después del nombrado
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :Type ),
-			Analysis Columns( :"Sales ($M)"n, :Assets ),
-			statistics( min, mean, max )
-		)
-	)
-);
-Wait( 0 );
-obj << modify table(
-	row table( 1 ),
-	move( column table( 1 ), Grouping Column( :Type ) ),
-	before first
-);
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Move( Column Table( 1 ), Statistics( Mean ) ),	After( Statistics( Max ) ));
 
 ```
 
@@ -649,17 +690,41 @@ obj << modify table(
 
 **Sintaxis:** obj &lt;&lt; Order By Count( Grouping Columns( column ), true | false )
 
+#### Establecer en existente
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :age ) ) ));obj << Order By Count( Grouping Columns( :age ), 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Order By Count( Grouping Columns( :age ), 1 ),	Add Table( Row Table( Grouping Columns( :age ) ) ));
+
+```
+
 ### Order by count of grouping columns
 
 **Sintaxis:** obj &lt;&lt; Order by count of grouping columns( state=0|1 )
 
 **Descripción:** Ordena los niveles de las columnas de agrupación por conteos en la tabla.
 
+#### Establecer en existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );
-obj = dt << Tabulate( Add Table( Row Table( Grouping Columns( :Make ) ) ) );
-obj << Order by Count of Grouping Columns( 1 );
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Make ) ) ));obj << Order by Count of Grouping Columns( 1 );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Order by Count of Grouping Columns( 1 ),	Add Table( Row Table( Grouping Columns( :Make ) ) ));
 
 ```
 
@@ -669,67 +734,27 @@ obj << Order by Count of Grouping Columns( 1 );
 
 **Descripción:** Apila varios estadísticos en una columna de la tabla. La opción Template especifica el formato de los elementos.
 
-#### Ejemplo 1
+#### Empaquetar columnas de análisis en existente
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Statistics( Sum ),
-			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
-			Pack(
-				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
-				Template( "^FIRST  (^OTHERS)", "/" )
-			)
-		),
-		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Sum ), Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ) ),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));obj << Modify Table(	Column Table( 1 ),	Pack(		Analysis Columns( City MPG, Hwy MPG, Comb MPG ),		Template( "^FIRST  (^OTHERS)", "/" )	));
 
 ```
 
-#### Ejemplo 2
+#### Empaquetar columnas de análisis en nuevo
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table( Statistics( Sum ), Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ) ),
-		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
-	)
-);
-obj << Modify Table(
-	Column Table( 1 ),
-	Pack(
-		Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
-		Template( "^FIRST  (^OTHERS)", "/" )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack( Analysis Columns( City MPG, Hwy MPG, Comb MPG ) )		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
 
 ```
 
-### Page Column
-
-**Sintaxis:** Page Column( Column )
-
-**Descripción:** Especifica la columna de la página que se debe usar para configurar las páginas del informe.
+#### Empaquetar columnas de análisis en nuevo con plantilla
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :age ) )
-	)
-);
-Wait( 1 );
-obj << page column( :sex( "F" ) );
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
 
 ```
 
@@ -741,16 +766,7 @@ obj << page column( :sex( "F" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Chart( 1 );
-Wait( 2 );
-obj << Plot Scale( 0, 25 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );Wait( 2 );obj << Plot Scale( 0, 25 );
 
 ```
 
@@ -762,15 +778,7 @@ obj << Plot Scale( 0, 25 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :Region ) ),
-		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )
-	)
-);
-Wait( 2 );
-obj << Remove Column Label( Grouping Columns( :Region ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Region ) ),		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )	));Wait( 2 );obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ```
 
@@ -782,16 +790,7 @@ obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :Region ) ),
-		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )
-	)
-);
-obj << Remove Column Label( Grouping Columns( :Region ) );
-Wait( 2 );
-obj << Restore Column Label( Grouping Columns( :Region ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Region ) ),		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )	));obj << Remove Column Label( Grouping Columns( :Region ) );Wait( 2 );obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ```
 
@@ -799,21 +798,23 @@ obj << Restore Column Label( Grouping Columns( :Region ) );
 
 **Sintaxis:** Retype( &lt;Analysis Columns | Grouping Columns&gt;( operand name, ... ), &lt;Analysis Column | Gropuing Column&gt; )
 
-**Descripción:** Used with Modificar tabla to convert between analysis columns and grouping columns in an existing table.
+**Descripción:** Se utiliza con Modificar tabla para convertir columnas de análisis en columnas de agrupación, y viceversa, en una tabla existente.
 
 **JMP Versión agregada:** 19
 
+#### Cambiar columna de agrupación a columna de análisis
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table( Statistics( N ), Grouping Columns( :age ) ),
-		Row Table( Grouping Columns( :sex ) )
-	)
-);
-obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analysis Column );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( N ), Grouping Columns( :age ) ),		Row Table( Grouping Columns( :sex ) )	));obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analysis Column );
+
+```
+
+#### Cambiar columna de análisis a columna de agrupación
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( N ), Analysis Columns( :age ) ),		Row Table( Grouping Columns( :sex ) )	));obj << Modify Table( Column Table( 1 ), Retype( Analysis Column( :age ) ), Grouping Column );
 
 ```
 
@@ -821,21 +822,23 @@ obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analy
 
 **Sintaxis:** obj &lt;&lt; Save grouping as tags in data table export( state=0|1 )
 
-**Descripción:** Sets if the grouping levels should be included in the data table as column tags. Opción activada de forma predeterminada.
+**Descripción:** Establece si los niveles de agrupación se deben incluir en la tabla de datos como etiquetas de columna. Opción activada de forma predeterminada.
 
 **JMP Versión agregada:** 19
 
+#### Guardar etiquetas
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save grouping as tags in data table export( 0 );
-obj << Make Into Data Table;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Grouping As Tags In Data Table Export( 1 );obj << Make Into Data Table;
+
+```
+
+#### No guardar etiquetas
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Grouping As Tags In Data Table Export( 0 );obj << Make Into Data Table;
 
 ```
 
@@ -843,21 +846,23 @@ obj << Make Into Data Table;
 
 **Sintaxis:** obj &lt;&lt; Scroll lock row headers in data table export( state=0|1 )
 
-**Descripción:** Sets if the columns containing the row headers should be scroll locked. Opción activada de forma predeterminada.
+**Descripción:** Establece si se deben bloquear las columnas que contienen los encabezados de fila para que no se puedan desplazar. Opción activada de forma predeterminada.
 
 **JMP Versión agregada:** 19
 
+#### No proteger frente a desplazamiento de los encabezados de fila
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Scroll lock row headers in data table export( 0 );
-obj << Make Into Data Table;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 0 );obj << Make Into Data Table;
+
+```
+
+#### Proteger frente a desplazamiento de los encabezados de fila
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Make Into Data Table;
 
 ```
 
@@ -867,54 +872,35 @@ obj << Make Into Data Table;
 
 **Descripción:** Establece el formato visualizado para las columnas de análisis.
 
-#### Ejemplo 1
+#### Formatear en existente
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Set Format( Mean( :OZONE( 6, 4 ) ) ),
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Set Format( Mean( :OZONE( 6, 4 ) ) );
 
 ```
 
-#### Ejemplo 2
+#### Formatear estadístico sin columna de análisis
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Tabulate(
-	Set Format(
-		Mean(
-			:height( 10, 1 ),
-			Analysis Column(
-				Transform Column( "Log[height]", Formula( Log( :height ) ) ),
-				Format( 10, "Best" )
-			)
-		),
-		"% of Total"n(
-			:height( 12, 2 ),
-			Analysis Column(
-				Transform Column( "Log[height]", Formula( Log( :height ) ) ),
-				Format( 12, 2 )
-			)
-		)
-	),
-	Add Table(
-		Column Table(
-			Analysis Columns(
-				:height,
-				Transform Column( "Log[height]", Formula( Log( :height ) ) )
-			),
-			Statistics( Mean, "% of Total"n )
-		),
-		Row Table( Grouping Columns( :sex ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Row %( Format( 9, 1, "Percent" ) ) ),	Add Table( Column Table( Grouping Columns( :age ), Statistics( Row % ) ) ));
+
+```
+
+#### Formatear un solo estadístico y columna de análisis
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Mean( :OZONE( 6, 4 ) ) ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));
+
+```
+
+#### Formatear varios estadísticos y columnas de análisis
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Tabulate(	Show Control Panel( 0 ),	Set Format(		Mean(			:height( 10, 1 ),			Analysis Column(				Transform Column( "Log[height]", Formula( Log( :height ) ) ),				Format( 10, "Best" )			)		),		"% of Total"n(			:height( 12, 2 ),			Analysis Column(				Transform Column( "Log[height]", Formula( Log( :height ) ) ),				Format( 12, 2 )			)		)	),	Add Table(		Column Table(			Analysis Columns(				:height,				Transform Column( "Log[height]", Formula( Log( :height ) ) )			),			Statistics( Mean, "% of Total"n )		),		Row Table( Grouping Columns( :sex ) )	));
 
 ```
 
@@ -926,20 +912,9 @@ Tabulate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Chart( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );
 
 ```
-
-### Show Control
-
-**Sintaxis:** obj &lt;&lt; Show Control( state=0|1 )
 
 ### Show Control Panel
 
@@ -949,14 +924,7 @@ obj << Show Chart( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Control Panel( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Control Panel( 1 );
 
 ```
 
@@ -968,14 +936,7 @@ obj << Show Control Panel( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Shading( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Shading( 1 );
 
 ```
 
@@ -987,14 +948,7 @@ obj << Show Shading( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Table( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Table( 1 );
 
 ```
 
@@ -1004,16 +958,19 @@ obj << Show Table( 1 );
 
 **Descripción:** Muestra u oculta el panel que controla el muestreo para una generación de prueba de la tabla.
 
+#### Mostrar para existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Statistics( Mean, Std Dev ) ),
-		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
-	)
-);
-obj << Show Test Build Panel( 1 );
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 1 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Show Test Build Panel( 1 );
+
+```
+
+#### Mostrar para nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 1 ),	Show Test Build Panel( 1 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));
 
 ```
 
@@ -1025,14 +982,7 @@ obj << Show Test Build Panel( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Tool Tip( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Tool Tip( 1 );
 
 ```
 
@@ -1042,25 +992,19 @@ obj << Show Tool Tip( 1 );
 
 **Descripción:** Apila las columnas de agrupación en una única columna utilizando la sangría para mostrar la estructura de anidación.
 
+#### Establecer en existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Grouping Columns( :marital status ),
-			Add Aggregate Statistics( :marital status ),
-			Analysis Columns( :age ),
-			Statistics( Min, Max )
-		),
-		Row Table(
-			Grouping Columns( :sex, :country, :size ),
-			Add Aggregate Statistics( :sex, :country, :size ),
-			Stack Grouping Columns( 1 )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size )		)	));obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( 1 ) ) );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size ),			Stack Grouping Columns( 1 )		)	));
 
 ```
 
@@ -1070,15 +1014,19 @@ obj = dt << Tabulate(
 
 **Descripción:** Agrega estadísticos a una columna o fila de la tabla. Durante el script, el mensaje de Estadísticos() se encuentra junto al mensaje de identificación Columnas de análisis( columna ), y ambos están anidados dentro de un comando, o bien Tabla de filas() o bien Tabla de columnas().
 
+#### Agregar a existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),
-		Row Table( Grouping Columns( :Region ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Modify Table( Column Table( 1 ), Statistics( Min ) );
+
+```
+
+#### Agregar a nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),		Row Table( Grouping Columns( :Region ) )	));
 
 ```
 
@@ -1088,16 +1036,19 @@ obj = dt << Tabulate(
 
 **Descripción:** Muestra la tabla mediante una muestra de generación de prueba de los datos de tamaño number.
 
+#### Establecer en existente
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Statistics( Mean, Std Dev ) ),
-		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
-	)
-);
-obj << Test Build( Sample Size( 100 ) );
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Test Build( Sample Size( 100 ) );
+
+```
+
+#### Establecer en nuevo
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Test Build( Sample Size( 100 ) ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));
 
 ```
 
@@ -1109,15 +1060,7 @@ obj << Test Build( Sample Size( 100 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Statistics( Mean, Std Dev ) ),
-		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
-	)
-);
-obj << Test Build( Sample Size( 100 ) );
-obj << Test Data View;
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Test Build( Sample Size( 100 ) );obj << Test Data View;
 
 ```
 
@@ -1129,16 +1072,7 @@ obj << Test Data View;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Add Table( Column Table( Grouping Columns( :type ) ) );
-Wait( 2 );
-obj << undo;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Add Table( Column Table( Grouping Columns( :type ) ) );Wait( 2 );obj << Undo;
 
 ```
 
@@ -1150,16 +1084,7 @@ obj << undo;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Show Chart( 1 );
-Wait( 2 );
-obj << Uniform Plot Scale( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );Wait( 2 );obj << Uniform Plot Scale( 1 );
 
 ```
 
@@ -1167,47 +1092,11 @@ obj << Uniform Plot Scale( 1 );
 
 **Sintaxis:** obj &lt;&lt; Unpack( &lt;Analysis columns | Statistics&gt;(operand name, ...) )
 
-**Descripción:** Unpacks a packed set of columns.
+**Descripción:** Desempaqueta un conjunto de columnas empaquetadas.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table(
-			Statistics( Sum ),
-			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
-			Pack(
-				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
-				Template( "^FIRST  (^OTHERS)", "/" )
-			)
-		),
-		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
-	)
-);
-obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) );
-
-```
-
-### Weight
-
-**Sintaxis:** Weight( Column )
-
-**Descripción:** Especifica la columna de ponderación que se debe usar al calcular los estadísticos.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-obj = dt << Tabulate(
-	Show Control Panel( 0 ),
-	Add Table(
-		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),
-		Row Table( Grouping Columns( :Type ) )
-	)
-);
-Wait( 1 );
-obj << Weight( :Weight );
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) );
 
 ```
 
@@ -1221,12 +1110,7 @@ obj << Weight( :Weight );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1242,10 +1126,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1253,10 +1134,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1264,13 +1142,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1282,15 +1154,21 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+```
+
+### Broadcast
+
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
+
+**Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
+
+**JMP Versión agregada:** 18
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1302,12 +1180,19 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+```
+
+### Copy ByGroup Script
+
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
+
+**Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -1319,14 +1204,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Copy Script;
 
 ```
 
@@ -1338,14 +1216,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Data Table Window;
 
 ```
 
@@ -1359,9 +1230,19 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+```
+
+### Get ByGroup Script
+
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
+
+**Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1375,15 +1256,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1391,27 +1264,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1423,15 +1276,19 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Datatable;Show( N Rows( t ) );
+
+```
+
+### Get Group Platform
+
+**Sintaxis:** obj &lt;&lt; Get Group Platform
+
+**Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1443,15 +1300,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Script;Show( t );
 
 ```
 
@@ -1463,15 +1312,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1483,15 +1324,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1503,10 +1336,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1520,10 +1350,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1535,13 +1362,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1553,32 +1374,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1592,9 +1388,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1606,15 +1400,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1626,14 +1412,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Redo Analysis;
 
 ```
 
@@ -1645,14 +1424,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Relaunch Analysis;
 
 ```
 
@@ -1664,14 +1436,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1683,53 +1448,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1741,14 +1472,43 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Report View( "Summary" );
+
+```
+
+### Save ByGroup Script to Data Table
+
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
+
+**Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+```
+
+### Save ByGroup Script to Journal
+
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
+
+**Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+```
+
+### Save ByGroup Script to Script Window
+
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
+
+**Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1760,14 +1520,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script for All Objects;
 
 ```
 
@@ -1777,45 +1530,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1827,14 +1554,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1846,14 +1566,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Journal;
 
 ```
 
@@ -1865,14 +1578,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Report;
 
 ```
 
@@ -1884,14 +1590,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Script Window;
 
 ```
 
@@ -1903,15 +1602,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1923,20 +1614,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1948,12 +1626,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1965,11 +1638,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1981,14 +1650,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Title( "My Platform" );
 
 ```
 
@@ -2000,16 +1662,23 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Tabulate(
-	Add Table(
-		Column Table( Grouping Columns( :sex, :marital status ) ),
-		Row Table( Grouping Columns( :country, :size ) )
-	)
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+```
+
+### Transform Column
+
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+
+**Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
+
+**JMP Versión agregada:** 16
+
+<b>Elemento de inicio: Sí</b>
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2021,9 +1690,19 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+```
+
+### Window View
+
+**Sintaxis:** obj = Tabulate(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+
+**Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

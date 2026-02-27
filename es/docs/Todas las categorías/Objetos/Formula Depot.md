@@ -12,16 +12,7 @@
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];
 
 ```
 
@@ -35,13 +26,7 @@ fd2 = Formula Depot[1];
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-fd = Formula Depot();
-model << Save Probability Formula;
-mp = fd << Add Formula From Column( Table( dt ), Columns( 11 ) ); // "Most Likely Species"
-mp << Generate Python Code;
+dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );fd = Formula Depot();model << Save Probability Formula;mp = fd << Add Formula From Column( Table( dt ), Columns( 11 ) ); // "Most Likely Species"mp << Generate Python Code;
 
 ```
 
@@ -55,15 +40,7 @@ mp << Generate Python Code;
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-fd = Formula Depot();
-predictor = model << Publish Probability Formulas;
-fd << Copy Formulas as Functions( Formulas( predictor ) );
-Wait( 0 );
-text = Get Clipboard();
-Show( text );
+dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );fd = Formula Depot();predictor = model << Publish Probability Formulas;fd << Copy Formulas as Functions( Formulas( predictor ) );Wait( 0 );text = Get Clipboard();Show( text );
 
 ```
 
@@ -75,18 +52,7 @@ Show( text );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-fd = Formula Depot();
-model << Publish Probability Formulas;
-fd << Copy Formulas as Transforms(
-    // English: Formulas("Fit Nominal Logistic - Species")
-	Formulas( 1 )
-);
-Wait( 0 );
-text = Get Clipboard();
-Show( text );
+dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );fd = Formula Depot();model << Publish Probability Formulas;fd << Copy Formulas as Transforms(    // English: Formulas("Fit Nominal Logistic - Species")	Formulas( 1 ));Wait( 0 );text = Get Clipboard();Show( text );
 
 ```
 
@@ -98,15 +64,7 @@ Show( text );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-fd = Formula Depot();
-predictor = model << Publish Probability Formulas;
-fd << Copy Scripts( Formulas( predictor ) );
-Wait( 0 );
-text = Get Clipboard();
-Show( text );
+dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );fd = Formula Depot();predictor = model << Publish Probability Formulas;fd << Copy Scripts( Formulas( predictor ) );Wait( 0 );text = Get Clipboard();Show( text );
 
 ```
 
@@ -118,18 +76,7 @@ Show( text );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-md = dt << Run Script( "Nominal Logistic" );
-predictor = md << Publish Probability Formulas;
-// Save code to string 
-c_code = fd << Generate C Code( Formulas( predictor ), No Editor );
-// shortcut using predictor reference
-// c_code = predictor << Generate C Code(No Editor);
-Save Text File( "$TEMP\logist.c", c_code );
-// Open code in editor window
-fd << Generate C Code( Formulas( predictor ) );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );md = dt << Run Script( "Nominal Logistic" );predictor = md << Publish Probability Formulas;// Save code to string c_code = fd << Generate C Code( Formulas( predictor ), No Editor );// shortcut using predictor reference// c_code = predictor << Generate C Code(No Editor);Save Text File( "$TEMP\logist.c", c_code );// Open code in editor windowfd << Generate C Code( Formulas( predictor ) );
 
 ```
 
@@ -141,18 +88,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-md = dt << Run Script( "Nominal Logistic" );
-predictor = md << Publish Probability Formulas;
-// Save code to string 
-js_code = fd << Generate JavaScript Code( Formulas( predictor ), No Editor );
-// shortcut using predictor reference
-// js_code = predictor << Generate JavaScript Code(No Editor);
-Save Text File( "$TEMP\logist.js", js_code );
-// Open code in editor window
-fd << Generate JavaScript Code( Formulas( predictor ) );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );md = dt << Run Script( "Nominal Logistic" );predictor = md << Publish Probability Formulas;// Save code to string js_code = fd << Generate JavaScript Code( Formulas( predictor ), No Editor );// shortcut using predictor reference// js_code = predictor << Generate JavaScript Code(No Editor);Save Text File( "$TEMP\logist.js", js_code );// Open code in editor windowfd << Generate JavaScript Code( Formulas( predictor ) );
 
 ```
 
@@ -164,18 +100,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-md = dt << Run Script( "Nominal Logistic" );
-predictor = md << Publish Probability Formulas;
-// Save code to string 
-py_code = fd << Generate Python Code( Formulas( predictor ), No Editor );
-// shortcut using predictor reference
-// py_code = predictor << Generate Python Code(No Editor);
-Save Text File( "$TEMP\logist.py", py_code );
-// Open code in editor window
-fd << Generate Python Code( Formulas( predictor ) );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );md = dt << Run Script( "Nominal Logistic" );predictor = md << Publish Probability Formulas;// Save code to string py_code = fd << Generate Python Code( Formulas( predictor ), No Editor );// shortcut using predictor reference// py_code = predictor << Generate Python Code(No Editor);Save Text File( "$TEMP\logist.py", py_code );// Open code in editor windowfd << Generate Python Code( Formulas( predictor ) );
 
 ```
 
@@ -187,18 +112,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-md = dt << Run Script( "Nominal Logistic" );
-predictor = md << Publish Probability Formulas;
-// Save code to string 
-sas_code = fd << Generate SAS Code( Formulas( predictor ), No Editor );
-// shortcut using predictor reference
-// sas_code = predictor << Generate SAS Code(No Editor);
-Save Text File( "$TEMP\logist.sas", sas_code );
-// Open code in editor window
-fd << Generate SAS Code( Formulas( predictor ) );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );md = dt << Run Script( "Nominal Logistic" );predictor = md << Publish Probability Formulas;// Save code to string sas_code = fd << Generate SAS Code( Formulas( predictor ), No Editor );// shortcut using predictor reference// sas_code = predictor << Generate SAS Code(No Editor);Save Text File( "$TEMP\logist.sas", sas_code );// Open code in editor windowfd << Generate SAS Code( Formulas( predictor ) );
 
 ```
 
@@ -210,21 +124,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );
-md = dt << Run Script( "Elastic Net Poisson, BIC" );
-mp_obs = md << xpath( "//OutlineBox" );
-scriptables = Filter Each( {ob}, mp_obs << Get Scriptable Object(), !Is Empty( ob ) );
-mp = scriptables[2];
-predictor = mp << Publish Prediction Formula;
-// Save code to string 
-sql_code = fd << Generate SQL Code( Formulas( 1 ), No Editor );
-// shortcut using predictor reference
-// sql_code = predictor << Generate SQL Code(No Editor);
-Save Text File( "$TEMP\genreg.sql", sql_code );
-// Open code in editor window
-fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Liver Cancer.jmp" );md = dt << Run Script( "Elastic Net Poisson, BIC" );mp_obs = md << xpath( "//OutlineBox" );scriptables = Filter Each( {ob}, mp_obs << Get Scriptable Object(), !Is Empty( ob ) );mp = scriptables[2];predictor = mp << Publish Prediction Formula;// Save code to string sql_code = fd << Generate SQL Code( Formulas( 1 ), No Editor );// shortcut using predictor reference// sql_code = predictor << Generate SQL Code(No Editor);Save Text File( "$TEMP\genreg.sql", sql_code );// Open code in editor windowfd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ```
 
@@ -236,25 +136,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-nl_md = dt << Run Script( "Nominal Logistic" );
-nl_mp = nl_md << Publish Probability Formulas;
-nn_md = Neural(
-	Y( :Species ),
-	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Informative Missing( 0 ),
-	Validation Method( "Holdback", 0.3333 ),
-	Fit( NTanH( 3 ) )
-);
-nn_mp = nn_md << Publish Prediction Formula;
-mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
-// Other options:
-// mds = {"Fit Nominal Logistic - Species", "Neural - Species"};
-// fd << ModelComparison( Formulas( mds ) );
-// fd << ModelComparison( Formulas( 1 ), Formulas( 2 ) );
-// fd << ModelComparison; // all models
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );nl_md = dt << Run Script( "Nominal Logistic" );nl_mp = nl_md << Publish Probability Formulas;nn_md = Neural(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Informative Missing( 0 ),	Validation Method( "Holdback", 0.3333 ),	Fit( NTanH( 3 ) ));nn_mp = nn_md << Publish Prediction Formula;mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );// Other options:// mds = {"Fit Nominal Logistic - Species", "Neural - Species"};// fd << ModelComparison( Formulas( mds ) );// fd << ModelComparison( Formulas( 1 ), Formulas( 2 ) );// fd << ModelComparison; // all models
 
 ```
 
@@ -266,20 +148,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-nl_md = dt << Run Script( "Nominal Logistic" );
-nl_mp = nl_md << Publish Probability Formulas;
-nn_md = Neural(
-	Y( :Species ),
-	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Informative Missing( 0 ),
-	Validation Method( "Holdback", 0.3333 ),
-	Fit( NTanH( 3 ) )
-);
-nn_mp = nn_md << Publish Prediction Formula;
-fd << Profiler( Formulas( nl_mp, nn_mp ) );
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );nl_md = dt << Run Script( "Nominal Logistic" );nl_mp = nl_md << Publish Probability Formulas;nn_md = Neural(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Informative Missing( 0 ),	Validation Method( "Holdback", 0.3333 ),	Fit( NTanH( 3 ) ));nn_mp = nn_md << Publish Prediction Formula;fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ```
 
@@ -291,13 +160,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-nl_md = dt << Run Script( "Nominal Logistic" );
-nl_md << Publish Probability Formulas;
-fd << Model Comparison();
-fd << Remove Model Comparison();
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );nl_md = dt << Run Script( "Nominal Logistic" );nl_md << Publish Probability Formulas;fd << Model Comparison();fd << Remove Model Comparison();
 
 ```
 
@@ -309,13 +172,7 @@ fd << Remove Model Comparison();
 
 ```jsl
 
-
-fd = Formula Depot();
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-nl_md = dt << Run Script( "Nominal Logistic" );
-nl_md << Publish Probability Formulas;
-fd << Profiler();
-fd << Remove Profiler();
+fd = Formula Depot();dt = Open( "$SAMPLE_DATA/Iris.jmp" );nl_md = dt << Run Script( "Nominal Logistic" );nl_md << Publish Probability Formulas;fd << Profiler();fd << Remove Profiler();
 
 ```
 
@@ -325,9 +182,7 @@ fd << Remove Profiler();
 
 ```jsl
 
-
-fd = Formula Depot();
-fd << Rename Formula Depot( "New Name" );
+fd = Formula Depot();fd << Rename Formula Depot( "New Name" );
 
 ```
 
@@ -339,23 +194,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ```jsl
 
-
-// Create a Formula Depot to store the model
-dt1 = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt1 << RunScript( "Nominal Logistic" );
-fd1 = Formula Depot();
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-// Clean-up
-Close( dt1, NoSave );
-fd1 << Close Window;
-// Read FD from disk
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-// Create columns from stored model; usually this is a new table with a compatible schema
-dt2 = Open( "$SAMPLE_DATA\Iris.jmp" );
-fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
+// Create a Formula Depot to store the modeldt1 = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt1 << RunScript( "Nominal Logistic" );fd1 = Formula Depot();model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );// Clean-upClose( dt1, NoSave );fd1 << Close Window;// Read FD from diskOpen( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];// Create columns from stored model; usually this is a new table with a compatible schemadt2 = Open( "$SAMPLE_DATA\Iris.jmp" );fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ```
 
@@ -367,12 +206,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-fd = Formula Depot();
-model << Publish Probability Formulas;
-fd << Show Scripts( Formulas( 1 ) );
+dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );fd = Formula Depot();model << Publish Probability Formulas;fd << Show Scripts( Formulas( 1 ) );
 
 ```
 
@@ -386,12 +220,7 @@ fd << Show Scripts( Formulas( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -407,10 +236,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -418,10 +244,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -429,13 +252,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -447,17 +264,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Copy Script;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Copy Script;
 
 ```
 
@@ -471,9 +278,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -487,18 +292,7 @@ biv << Get By Levels;
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -506,27 +300,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -538,18 +312,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -561,18 +324,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-t = obj << Get Script;
-Show( t );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];t = obj << Get Script;Show( t );
 
 ```
 
@@ -584,18 +336,7 @@ Show( t );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-t = obj << Get Script With Data Table;
-Show( t );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -607,18 +348,7 @@ Show( t );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-t = obj << Get Timing;
-Show( t );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];t = obj << Get Timing;Show( t );
 
 ```
 
@@ -630,10 +360,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -647,10 +374,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -662,31 +386,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -700,49 +400,19 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -754,17 +424,7 @@ Show( t );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Save Script for All Objects;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Save Script for All Objects;
 
 ```
 
@@ -774,47 +434,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ), By( _bycol ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj[1] << Save Script for All Objects To Data Table;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File(	"$TEMP\fd.jrp",	Char( Name Expr( fd_script ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ), By( _bycol ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File(	"$TEMP\fd.jrp",	Char( Name Expr( fd_script ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -826,17 +458,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -848,17 +470,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Save Script to Journal;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Save Script to Journal;
 
 ```
 
@@ -870,17 +482,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Save Script to Report;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Save Script to Report;
 
 ```
 
@@ -892,17 +494,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Save Script to Script Window;
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Save Script to Script Window;
 
 ```
 
@@ -914,15 +506,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -934,20 +518,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -959,12 +530,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -976,17 +542,7 @@ dt << Distribution(
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-obj << Title( "My Platform" );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];obj << Title( "My Platform" );
 
 ```
 
@@ -998,19 +554,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-
-fd1 = Formula Depot();
-dt = Open( "$SAMPLE_DATA\Iris.jmp" );
-model = dt << RunScript( "Nominal Logistic" );
-model << Publish Probability Formulas;
-fd_script = fd1 << Get Script;
-Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );
-fd1 << Close Window;
-Open( "$TEMP\fd.jrp" );
-fd2 = Formula Depot[1];
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+fd1 = Formula Depot();dt = Open( "$SAMPLE_DATA\Iris.jmp" );model = dt << RunScript( "Nominal Logistic" );model << Publish Probability Formulas;fd_script = fd1 << Get Script;Save Text File( "$TEMP\fd.jrp", Char( Name Expr( fd_script ) ) );fd1 << Close Window;Open( "$TEMP\fd.jrp" );fd2 = Formula Depot[1];r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1022,9 +566,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 

@@ -12,16 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	By( _bycol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -33,10 +24,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ));
 
 ```
 
@@ -48,12 +36,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Freq( _freqcol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Freq( :_freqcol ));
 
 ```
 
@@ -65,12 +48,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Z( :Species ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Z( :Species ),	Standardize( "Standardized" ));
 
 ```
 
@@ -82,12 +60,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Weight( _weightcol )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Weight( :_weightcol ));
 
 ```
 
@@ -99,10 +72,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ));
 
 ```
 
@@ -114,12 +84,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Z( :Species ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Z( :Species ),	Standardize( "Standardized" ));
 
 ```
 
@@ -133,10 +98,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ));
 
 ```
 
@@ -150,12 +112,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << "3D Score Plot"n( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << "3D Score Plot"n( 1 );
 
 ```
 
@@ -167,12 +124,7 @@ obj << "3D Score Plot"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Arrow Lines( 0 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Arrow Lines( 0 );
 
 ```
 
@@ -184,12 +136,7 @@ obj << Arrow Lines( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Bartlett Test( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Bartlett Test( 1 );
 
 ```
 
@@ -201,12 +148,7 @@ obj << Bartlett Test( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Biplot( 2 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Biplot( 2 );
 
 ```
 
@@ -218,9 +160,7 @@ obj << Biplot( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Cluster Components( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Cluster Components( 1 ) );
 
 ```
 
@@ -232,9 +172,7 @@ obj << Cluster Variables( Cluster Components( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Cluster Members( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Cluster Members( 1 ) );
 
 ```
 
@@ -246,9 +184,7 @@ obj << Cluster Variables( Cluster Members( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Cluster Summary( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Cluster Summary( 1 ) );
 
 ```
 
@@ -260,12 +196,7 @@ obj << Cluster Variables( Cluster Summary( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Cluster Variables( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Cluster Variables( 1 );
 
 ```
 
@@ -277,9 +208,7 @@ obj << Cluster Variables( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Color Map On Correlations( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 ```
 
@@ -287,16 +216,11 @@ obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 **構文:** obj &lt;&lt; Coordinate Matrix( state=0|1 )
 
-**説明:** Shows or hides a table that contains the component coordinates. This option is available only when there is a categorical variable in the analysis.
+**説明:** 主成分分析の座標をまとめた表の表示/非表示を切り替える。このオプションは、分析変数にカテゴリカル変数がある場合のみ使用できる。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width, :Species ),
-	Standardize( "Standardized" )
-);
-obj << Coordinate  Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width, :Species ),	Standardize( "Standardized" ));obj << Coordinate  Matrix( 1 );
 
 ```
 
@@ -308,12 +232,7 @@ obj << Coordinate  Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Correlations( 1 );
 
 ```
 
@@ -325,12 +244,7 @@ obj << Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Covariance Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Covariance Matrix( 1 );
 
 ```
 
@@ -342,12 +256,7 @@ obj << Covariance Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Eigenvalues( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Eigenvalues( 1 );
 
 ```
 
@@ -359,12 +268,7 @@ obj << Eigenvalues( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Eigenvectors( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Eigenvectors( 1 );
 
 ```
 
@@ -382,12 +286,7 @@ obj << Eigenvectors( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" ),
-	Estimation Method( "REML" )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ),	Estimation Method( "REML" ));
 
 ```
 
@@ -399,12 +298,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
 
 ```
 
@@ -416,12 +310,7 @@ obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Formatted Loading Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Formatted Loading Matrix( 1 );
 
 ```
 
@@ -433,9 +322,7 @@ obj << Formatted Loading Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Impute Missing Data( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Impute Missing Data( 1 );
 
 ```
 
@@ -447,9 +334,7 @@ obj << Impute Missing Data( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Launch Fit Model );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Launch Fit Model );
 
 ```
 
@@ -461,12 +346,7 @@ obj << Cluster Variables( Launch Fit Model );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Loading Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Loading Matrix( 1 );
 
 ```
 
@@ -478,12 +358,7 @@ obj << Loading Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Loading Plot( 2 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Loading Plot( 2 );
 
 ```
 
@@ -495,14 +370,7 @@ obj << Loading Plot( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Estimation Method( "Truncated SVD" ),
-	Number of Components( 6 ),
-	Missing value imputation( 0 ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Estimation Method( "Truncated SVD" ),	Number of Components( 6 ),	Missing value imputation( 0 ),	Standardize( "Standardized" ));
 
 ```
 
@@ -516,12 +384,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Model Driven Multivariate Control Chart( 2 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Model Driven Multivariate Control Chart( 2 );
 
 ```
 
@@ -533,13 +396,7 @@ obj << Model Driven Multivariate Control Chart( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Estimation Method( "Sparse" ),
-	Number of Components( 3 ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Estimation Method( "Sparse" ),	Number of Components( 3 ),	Standardize( "Standardized" ));
 
 ```
 
@@ -553,13 +410,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Estimation Method( "Default" ),
-	Standardize( "Standardized" ),
-	Outlier Analysis( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Estimation Method( "Default" ),	Standardize( "Standardized" ),	Outlier Analysis( 1 ));
 
 ```
 
@@ -571,14 +422,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Partial Contribution of Variables(
-	Plot of Partial Contribution of Variables( Overview( 3 ), "Side by side" )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Partial Contribution of Variables(	Plot of Partial Contribution of Variables( Overview( 3 ), "Side by side" ));
 
 ```
 
@@ -592,12 +436,7 @@ obj << Partial Contribution of Variables(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Profiler for Predicteds( 2 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Profiler for Predicteds( 2 );
 
 ```
 
@@ -609,12 +448,7 @@ obj << Profiler for Predicteds( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Estimation Method( "Wide" )
-);
-obj << Publish Components Formulas( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Estimation Method( "Wide" ));obj << Publish Components Formulas( 3 );
 
 ```
 
@@ -628,12 +462,7 @@ obj << Publish Components Formulas( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Publish Normalized DModX Formula( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Publish Normalized DModX Formula( 3 );
 
 ```
 
@@ -645,9 +474,7 @@ obj << Publish Normalized DModX Formula( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );
-obj << Cluster Variables( Save Cluster Components );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Correlations" );obj << Cluster Variables( Save Cluster Components );
 
 ```
 
@@ -659,9 +486,7 @@ obj << Cluster Variables( Save Cluster Components );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
-obj << Save Imputed Formula( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );obj << Save Imputed Formula( 1 );
 
 ```
 
@@ -675,9 +500,7 @@ obj << Save Imputed Formula( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
-obj << Save Individual Partial Contributions( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );obj << Save Individual Partial Contributions( 3 );
 
 ```
 
@@ -691,9 +514,7 @@ obj << Save Individual Partial Contributions( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
-obj << Save Individual Squared Cosines( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );obj << Save Individual Squared Cosines( 3 );
 
 ```
 
@@ -705,14 +526,7 @@ obj << Save Individual Squared Cosines( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" ),
-	Estimation Method( "Robust PCA" ),
-	Number of Components( 3 )
-);
-obj << Save Low Rank Principal Components( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ),	Estimation Method( "Robust PCA" ),	Number of Components( 3 ));obj << Save Low Rank Principal Components( 3 );
 
 ```
 
@@ -726,9 +540,7 @@ obj << Save Low Rank Principal Components( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
-obj << Save Normalized DMODX( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );obj << Save Normalized DMODX( 3 );
 
 ```
 
@@ -742,9 +554,7 @@ obj << Save Normalized DMODX( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );
-obj << Save Predicteds( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), "on Covariances" );obj << Save Predicteds( 3 );
 
 ```
 
@@ -756,12 +566,7 @@ obj << Save Predicteds( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Save Predicteds As Component Formulas( 3 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Save Predicteds As Component Formulas( 3 );
 
 ```
 
@@ -773,12 +578,7 @@ obj << Save Predicteds As Component Formulas( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << save principal Component script( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << save principal Component script( 3 );
 
 ```
 
@@ -790,12 +590,7 @@ obj << save principal Component script( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Save Principal Component Values( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Save Principal Component Values( 3 );
 
 ```
 
@@ -807,12 +602,7 @@ obj << Save Principal Component Values( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Save Principal Components( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Save Principal Components( 3 );
 
 ```
 
@@ -826,12 +616,7 @@ obj << Save Principal Components( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Save Principal Components with Imputation( 3 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Save Principal Components with Imputation( 3 );
 
 ```
 
@@ -845,13 +630,7 @@ obj << Save Principal Components with Imputation( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" ),
-	Factor Analysis( "SMC", 2, "Varimax" )
-);
-obj << Save Rotated Components;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ),	Factor Analysis( "SMC", 2, "Varimax" ));obj << Save Rotated Components;
 
 ```
 
@@ -863,13 +642,7 @@ obj << Save Rotated Components;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" ),
-	Factor Analysis( "SMC", 2, "Varimax" )
-);
-obj << Save Rotated Components with Imputation;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ),	Factor Analysis( "SMC", 2, "Varimax" ));obj << Save Rotated Components with Imputation;
 
 ```
 
@@ -881,12 +654,7 @@ obj << Save Rotated Components with Imputation;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Scatterplot Matrix( 4 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Scatterplot Matrix( 4 );
 
 ```
 
@@ -900,12 +668,7 @@ obj << Scatterplot Matrix( 4 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Score Ellipse Coverage( 0.9 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Score Ellipse Coverage( 0.9 );
 
 ```
 
@@ -919,12 +682,7 @@ obj << Score Ellipse Coverage( 0.9 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Score Ellipses( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Score Ellipses( 1 );
 
 ```
 
@@ -936,12 +694,7 @@ obj << Score Ellipses( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Score Plot( 2 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Score Plot( 2 );
 
 ```
 
@@ -953,12 +706,7 @@ obj << Score Plot( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Score Plot with Imputation( 2 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Score Plot with Imputation( 2 );
 
 ```
 
@@ -970,12 +718,7 @@ obj << Score Plot with Imputation( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Scree Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Scree Plot( 1 );
 
 ```
 
@@ -987,12 +730,7 @@ obj << Scree Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Standardize( "Standardized" )
-);
-obj << Select Component( 1, 3 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Standardize( "Standardized" ));obj << Select Component( 1, 3 );
 
 ```
 
@@ -1004,13 +742,7 @@ obj << Select Component( 1, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Z( :Species ),
-	Standardize( "Standardized" )
-);
-obj << Show Supplementary Variable( 0 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Z( :Species ),	Standardize( "Standardized" ));obj << Show Supplementary Variable( 0 );
 
 ```
 
@@ -1022,14 +754,7 @@ obj << Show Supplementary Variable( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Principal Components(
-	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),
-	Standardize( "Standardized" )
-);
-obj << Squared Cosines of Variables(
-	Plot of Squared Cosines of Variables( Overview( 3 ), "Stacked", "Horizontal" )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Principal Components(	Y( :OZONE, :CO, :SO2, :NO, :PM10 ),	Standardize( "Standardized" ));obj << Squared Cosines of Variables(	Plot of Squared Cosines of Variables( Overview( 3 ), "Stacked", "Horizontal" ));
 
 ```
 
@@ -1041,12 +766,7 @@ obj << Squared Cosines of Variables(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Principal Components(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Estimation Method( "Row-wise" ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Principal Components(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Estimation Method( "Row-wise" ),	Standardize( "Standardized" ));
 
 ```
 
@@ -1058,12 +778,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
-obj << Summary Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));obj << Summary Plots( 1 );
 
 ```
 
@@ -1075,11 +790,7 @@ obj << Summary Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	Standardize( "Standardized" )
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	Standardize( "Standardized" ));
 
 ```
 
@@ -1091,11 +802,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	"on Covariances"
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	"on Covariances");
 
 ```
 
@@ -1107,11 +814,7 @@ obj = dt << Principal Components(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Solubility.jmp" );
-obj = dt << Principal Components(
-	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),
-	"on Unscaled"
-);
+dt = Open( "$SAMPLE_DATA/Solubility.jmp" );obj = dt << Principal Components(	Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :Hexane ),	"on Unscaled");
 
 ```
 

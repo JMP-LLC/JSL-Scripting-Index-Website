@@ -8,20 +8,11 @@
 
 **Sintaxis:** obj &lt;&lt; By( column(s) )
 
+**Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);
 
 ```
 
@@ -31,12 +22,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
@@ -44,16 +30,11 @@ obj = dt << Partial Least Squares(
 
 **Sintaxis:** obj &lt;&lt; Freq( column )
 
+**Descripción:** Especifica una columna cuyos valores asignan una frecuencia a cada fila del análisis.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Freq( _freqcol ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Freq( :_freqcol ),	Go);
 
 ```
 
@@ -63,12 +44,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
@@ -78,12 +54,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
@@ -93,12 +64,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
@@ -108,12 +74,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
@@ -125,32 +86,19 @@ obj = dt << Partial Least Squares(
 
 **Descripción:** Ajusta un modelo a una o más variables de respuesta usando factores latentes. Esto permite que se ajusten los modelos cuando las variables explicativas están altamente correlacionadas o cuando hay más variables explicativas que observaciones.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Go);
 
 ```
 
@@ -158,23 +106,13 @@ obj = dt << Partial Least Squares(
 
 ### Centering
 
-**Sintaxis:** obj = Partial Least Squares(...Centering( state=0|1)...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Centering( state=0|1)...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Centra todas las variables Y y los efectos del modelo restando la media a cada columna. Opción activada de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Centering( 0 ),
-	Validation Method( KFold( 7 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Centering( 0 ),	Validation Method( KFold( 7 ) ),	Go);
 
 ```
 
@@ -186,16 +124,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Method( NIPALS ), Number of Factors( 7 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Method( NIPALS ), Number of Factors( 7 ) ),	Go);
 
 ```
 
@@ -207,55 +136,31 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	)
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	));obj << Go;
 
 ```
 
 ### Imputation Method
 
-**Sintaxis:** obj = Partial Least Squares(...Imputation Method( "Media"|"EM" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Imputation Method( "Media"|"EM" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método de imputación. El método Media reemplaza los valores faltantes por la media de los valores no faltantes en la misma columna. El método EM utiliza un enfoque de maximización de expectativas (EM) iterativo para imputar los valores faltantes.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Y ),
-	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Impute Missing Data( 1 ),
-	Imputation Method( "EM" ),
-	Max Iterations( 2 ),
-	Validation Method( None, Initial Number of Factors( 6 ) ),
-	Fit( Method( NIPALS ), Number of Factors( 6 ) )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Partial Least Squares(	Y( :Y ),	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Impute Missing Data( 1 ),	Imputation Method( "EM" ),	Max Iterations( 2 ),	Validation Method( None, Initial Number of Factors( 6 ) ),	Fit( Method( NIPALS ), Number of Factors( 6 ) ));
 
 ```
 
 ### Impute Missing Data
 
-**Sintaxis:** obj = Partial Least Squares(...Impute Missing Data( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Impute Missing Data( state=0|1 )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Reemplaza los valores de datos faltantes en las respuestas y regresores por valores no faltantes. De lo contrario, se excluyen del análisis las filas con valores faltantes.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Partial Least Squares(
-	Y( :Y ),
-	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Impute Missing Data( 1 ),
-	Validation Method( None, Initial Number of Factors( 6 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Partial Least Squares(	Y( :Y ),	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Impute Missing Data( 1 ),	Validation Method( None, Initial Number of Factors( 6 ) ),	Go);
 
 ```
 
@@ -267,38 +172,19 @@ obj = Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Validation Method( KFold( 7 ), Initial Number of Factors( 10 ) ), 
-
-);
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Validation Method( KFold( 7 ), Initial Number of Factors( 10 ) ), );obj << Go;
 
 ```
 
 ### Max Iterations
 
-**Sintaxis:** obj = Partial Least Squares(...Max Iterations( number=1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Max Iterations( number=1 )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que se llevarán a cabo en el bucle de imputación EM. "1" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Y ),
-	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Impute Missing Data( 1 ),
-	Imputation Method( "EM" ),
-	Max Iterations( 2 ),
-	Validation Method( None, Initial Number of Factors( 6 ) ),
-	Fit( Method( NIPALS ), Number of Factors( 6 ) )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Partial Least Squares(	Y( :Y ),	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Impute Missing Data( 1 ),	Imputation Method( "EM" ),	Max Iterations( 2 ),	Validation Method( None, Initial Number of Factors( 6 ) ),	Fit( Method( NIPALS ), Number of Factors( 6 ) ));
 
 ```
 
@@ -310,16 +196,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Method( NIPALS ), Number of Factors( 11 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Method( NIPALS ), Number of Factors( 11 ) ),	Go);
 
 ```
 
@@ -331,13 +208,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Model Dialog;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Model Dialog;
 
 ```
 
@@ -351,39 +222,19 @@ obj << Model Dialog;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Validation Method( KFold( 7 ) ),
-	Go
-);
-obj << Fit( SVD( Classical ), Method( SIMPLS ) );
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Validation Method( KFold( 7 ) ),	Go);obj << Fit( SVD( Classical ), Method( SIMPLS ) );
 
 ```
 
 ### Scaling
 
-**Sintaxis:** obj = Partial Least Squares(...Scaling( state=0|1)...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Scaling( state=0|1)...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Escala todas las variables Y y los efectos del modelo dividiendo cada columna entre su desviación estándar. Opción activada de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Scaling( 0 ),
-	Validation Method( KFold( 7 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Scaling( 0 ),	Validation Method( KFold( 7 ) ),	Go);
 
 ```
 
@@ -395,17 +246,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Set Random Seed( 12345 ),
-	Validation Method( KFold( 7 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Set Random Seed( 12345 ),	Validation Method( KFold( 7 ) ),	Go);
 
 ```
 
@@ -417,16 +258,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Validation Method( KFold( 7 ), Initial Number of Factors( 15 ) ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Validation Method( KFold( 7 ), Initial Number of Factors( 15 ) ),	Go);
 
 ```
 
@@ -440,12 +272,7 @@ obj = dt << Partial Least Squares(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -461,10 +288,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -472,10 +296,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -483,13 +304,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -503,12 +318,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -520,12 +330,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -537,19 +342,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -561,13 +354,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Copy Script;
 
 ```
 
@@ -579,13 +366,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Data Table Window;
 
 ```
 
@@ -599,9 +380,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -613,20 +392,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -640,14 +406,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -655,27 +414,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -687,14 +426,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -706,11 +438,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -722,14 +450,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);t = obj << Get Script;Show( t );
 
 ```
 
@@ -741,14 +462,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -760,14 +474,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);t = obj << Get Timing;Show( t );
 
 ```
 
@@ -779,10 +486,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -796,10 +500,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -811,13 +512,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -829,32 +524,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -868,9 +538,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -882,15 +550,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -902,37 +562,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Redo Analysis;
 
 ```
 
@@ -944,37 +574,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
-
-**Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Relaunch Analysis;
 
 ```
 
@@ -986,14 +586,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1005,52 +598,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1062,13 +622,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Report View( "Summary" );
 
 ```
 
@@ -1080,19 +634,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1104,19 +646,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1128,19 +658,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1152,13 +670,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Save Script for All Objects;
 
 ```
 
@@ -1168,43 +680,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1216,13 +704,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1234,13 +716,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Save Script to Journal;
 
 ```
 
@@ -1252,13 +728,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Save Script to Report;
 
 ```
 
@@ -1270,13 +740,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Save Script to Script Window;
 
 ```
 
@@ -1288,15 +752,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1308,20 +764,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1333,12 +776,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1350,11 +788,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1366,13 +800,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);obj << Title( "My Platform" );
 
 ```
 
@@ -1384,15 +812,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Hedonic, :Goes with meat, :Goes with dessert ),
-	X( :Price, :Sugar, :Alcohol, :Acidity ),
-	Go
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Tasting.jmp" );obj = dt << Partial Least Squares(	Y( :Hedonic, :Goes with meat, :Goes with dessert ),	X( :Price, :Sugar, :Alcohol, :Acidity ),	Go);r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1408,11 +828,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1424,27 +840,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintaxis:** obj = Partial Least Squares(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Partial Least Squares(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1460,16 +868,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Coefficient Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Coefficient Plots( 1 ));
 
 ```
 
@@ -1483,16 +882,7 @@ obj << (Fit[1] << Coefficient Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Correlation Loading Plot( 2 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Correlation Loading Plot( 2 ));
 
 ```
 
@@ -1500,16 +890,7 @@ obj << (Fit[1] << Correlation Loading Plot( 2 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Correlation Loading Plot( 4 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Correlation Loading Plot( 4 ));
 
 ```
 
@@ -1521,16 +902,7 @@ obj << (Fit[1] << Correlation Loading Plot( 4 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Diagnostics Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Diagnostics Plots( 1 ));
 
 ```
 
@@ -1542,16 +914,7 @@ obj << (Fit[1] << Diagnostics Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Distance Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Distance Plots( 1 ));
 
 ```
 
@@ -1563,17 +926,7 @@ obj << (Fit[1] << Distance Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-Wait( 2 );
-obj << (Fit[1] << Fit Line( 0 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));Wait( 2 );obj << (Fit[1] << Fit Line( 0 ));
 
 ```
 
@@ -1587,16 +940,7 @@ obj << (Fit[1] << Fit Line( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Get Measures);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Get Measures);
 
 ```
 
@@ -1608,16 +952,7 @@ obj << (Fit[1] << Get Measures);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Loading Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Loading Plots( 1 ));
 
 ```
 
@@ -1629,16 +964,7 @@ obj << (Fit[1] << Loading Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
 
 ```
 
@@ -1650,16 +976,7 @@ obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Make Model Using VIP);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Make Model Using VIP);
 
 ```
 
@@ -1673,16 +990,7 @@ obj << (Fit[1] << Make Model Using VIP);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
 
 ```
 
@@ -1694,16 +1002,7 @@ obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Percent variation plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Percent variation plots( 1 ));
 
 ```
 
@@ -1715,16 +1014,7 @@ obj << (Fit[1] << Percent variation plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Profiler( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Profiler( 1 ));
 
 ```
 
@@ -1738,16 +1028,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Profiler for Predicteds);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Profiler for Predicteds);
 
 ```
 
@@ -1759,16 +1040,7 @@ obj << (Fit[1] << Profiler for Predicteds);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Publish Prediction Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Publish Prediction Formula);
 
 ```
 
@@ -1780,16 +1052,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Publish Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Publish Score Formula);
 
 ```
 
@@ -1801,17 +1064,7 @@ obj << (Fit[1] << Publish Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-Wait( 3 );
-obj << (Fit[1] << Remove Fit);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));Wait( 3 );obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -1823,16 +1076,7 @@ obj << (Fit[1] << Remove Fit);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Distance);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Distance);
 
 ```
 
@@ -1846,16 +1090,7 @@ obj << (Fit[1] << Save Distance);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Distance as X Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Distance as X Score Formula);
 
 ```
 
@@ -1867,17 +1102,7 @@ obj << (Fit[1] << Save Distance as X Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :Y ),
-	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),
-	Impute Missing Data( 1 ),
-	Imputation Method( "EM" ),
-	Max Iterations( 2 ),
-	Validation Method( None, Initial Number of Factors( 6 ) ),
-	Fit( Method( NIPALS ), Number of Factors( 6 ) )
-);
-obj << (Fit[1] << Save Imputation);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Partial Least Squares(	Y( :Y ),	X( :OZONE, :CO, :SO2, :NO, :PM10, :Lead ),	Impute Missing Data( 1 ),	Imputation Method( "EM" ),	Max Iterations( 2 ),	Validation Method( None, Initial Number of Factors( 6 ) ),	Fit( Method( NIPALS ), Number of Factors( 6 ) ));obj << (Fit[1] << Save Imputation);
 
 ```
 
@@ -1889,16 +1114,7 @@ obj << (Fit[1] << Save Imputation);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Indiv Confidence Limit Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Indiv Confidence Limit Formula);
 
 ```
 
@@ -1910,16 +1126,7 @@ obj << (Fit[1] << Save Indiv Confidence Limit Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Loadings);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Loadings);
 
 ```
 
@@ -1931,16 +1138,7 @@ obj << (Fit[1] << Save Loadings);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Mean Confidence Limit Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Mean Confidence Limit Formula);
 
 ```
 
@@ -1952,16 +1150,7 @@ obj << (Fit[1] << Save Mean Confidence Limit Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Percent Variation Explained For X Effects);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Percent Variation Explained For X Effects);
 
 ```
 
@@ -1973,16 +1162,7 @@ obj << (Fit[1] << Save Percent Variation Explained For X Effects);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
 
 ```
 
@@ -1994,16 +1174,7 @@ obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Prediction as X Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Prediction as X Score Formula);
 
 ```
 
@@ -2015,16 +1186,7 @@ obj << (Fit[1] << Save Prediction as X Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Prediction Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Prediction Formula);
 
 ```
 
@@ -2036,16 +1198,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Score Formula);
 
 ```
 
@@ -2057,16 +1210,7 @@ obj << (Fit[1] << Save Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Scores);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Scores);
 
 ```
 
@@ -2078,16 +1222,7 @@ obj << (Fit[1] << Save Scores);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Standard Errors of Prediction Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Standard Errors of Prediction Formula);
 
 ```
 
@@ -2099,16 +1234,7 @@ obj << (Fit[1] << Save Standard Errors of Prediction Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Standardized Loadings);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Standardized Loadings);
 
 ```
 
@@ -2120,16 +1246,7 @@ obj << (Fit[1] << Save Standardized Loadings);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Standardized Scores);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Standardized Scores);
 
 ```
 
@@ -2141,16 +1258,7 @@ obj << (Fit[1] << Save Standardized Scores);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save T Square);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save T Square);
 
 ```
 
@@ -2164,16 +1272,7 @@ obj << (Fit[1] << Save T Square);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save T Square as X Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save T Square as X Score Formula);
 
 ```
 
@@ -2185,16 +1284,7 @@ obj << (Fit[1] << Save T Square as X Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Validation);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Validation);
 
 ```
 
@@ -2206,16 +1296,7 @@ obj << (Fit[1] << Save Validation);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save X Predicted Values);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save X Predicted Values);
 
 ```
 
@@ -2229,16 +1310,7 @@ obj << (Fit[1] << Save X Predicted Values);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save X Prediction as X Score Formula);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save X Prediction as X Score Formula);
 
 ```
 
@@ -2250,16 +1322,7 @@ obj << (Fit[1] << Save X Prediction as X Score Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save X Residuals);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save X Residuals);
 
 ```
 
@@ -2275,16 +1338,7 @@ obj << (Fit[1] << Save X Residuals);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save X Weights);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save X Weights);
 
 ```
 
@@ -2296,16 +1350,7 @@ obj << (Fit[1] << Save X Weights);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Y Predicted Values);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Y Predicted Values);
 
 ```
 
@@ -2317,16 +1362,7 @@ obj << (Fit[1] << Save Y Predicted Values);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Save Y Residuals);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Save Y Residuals);
 
 ```
 
@@ -2338,16 +1374,7 @@ obj << (Fit[1] << Save Y Residuals);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
 
 ```
 
@@ -2359,18 +1386,7 @@ obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Variable Importance Plot( 1 ));
-Wait( 3 );
-obj << (Fit[1] << Set VIP Threshold( 0.5 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Variable Importance Plot( 1 ));Wait( 3 );obj << (Fit[1] << Set VIP Threshold( 0.5 ));
 
 ```
 
@@ -2382,16 +1398,7 @@ obj << (Fit[1] << Set VIP Threshold( 0.5 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Show Confidence Band( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Show Confidence Band( 1 ));
 
 ```
 
@@ -2403,16 +1410,7 @@ obj << (Fit[1] << Show Confidence Band( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Spectral Profiler( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Spectral Profiler( 1 ));
 
 ```
 
@@ -2424,16 +1422,7 @@ obj << (Fit[1] << Spectral Profiler( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << T Square Plot( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << T Square Plot( 1 ));
 
 ```
 
@@ -2445,16 +1434,7 @@ obj << (Fit[1] << T Square Plot( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
 
 ```
 
@@ -2466,16 +1446,7 @@ obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Baltic.jmp" );
-obj = dt << Partial Least Squares(
-	Y( :ls, :ha, :dt ),
-	X(
-		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,
-		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27
-	),
-	Fit( Number of Factors( 5 ) )
-);
-obj << (Fit[1] << Variable Importance Plot( 1 ));
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Partial Least Squares(	Y( :ls, :ha, :dt ),	X(		:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16,		:v17, :v18, :v19, :v20, :v21, :v22, :v23, :v24, :v25, :v26, :v27	),	Fit( Number of Factors( 5 ) ));obj << (Fit[1] << Variable Importance Plot( 1 ));
 
 ```
 

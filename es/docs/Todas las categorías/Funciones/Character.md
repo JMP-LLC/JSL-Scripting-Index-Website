@@ -12,8 +12,7 @@
 
 ```jsl
 
-Blob To Char( Hex To Blob( "436166C3A9" ) ) ||
-Blob To Char( Hex To Blob( "436166C3A9" ), "ascii~hex" );
+Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(	Hex To Blob( "436166C3A9" ),	"ascii~hex");
 
 ```
 
@@ -143,8 +142,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
-ex = "hello ";
-ex ||= "world";
+ex = "hello ";ex ||= "world";
 
 ```
 
@@ -158,8 +156,7 @@ ex ||= "world";
 
 ```jsl
 
-Show( Contains( "redreed", "re", -1 ) );
-Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
+Show( Contains( "redreed", "re", -1 ) );Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ```
 
@@ -171,7 +168,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -179,26 +176,19 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
-dt << New Column( "Cheese",
-	numeric,
-	continuous,
-	Formula( Contains Item( dt:Item Name, "Cheese", ", " ) )
-);
-dt << Distribution( Column( :Cheese ) );
+dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );dt << New Column( "Cheese",	numeric,	continuous,	Formula( Contains Item( dt:Item Name, "Cheese", ", " ) ));dt << Distribution( Column( :Cheese ) );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-//find repeated character c in cdcef
-Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
+//find repeated character c in cdcefContains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
 ```
 
@@ -226,8 +216,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
-Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
-Hex( 11, Base( 2 ), Pad To( 8 ) );
+Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```
 
@@ -283,8 +272,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ```jsl
 
-z = {11, 22, 33};
-z = Insert( z, 99, 2 );
+z = {11, 22, 33};z = Insert( z, 99, 2 );
 
 ```
 
@@ -296,35 +284,27 @@ z = Insert( z, 99, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-ex = {11, 22, 33};
-Insert Into( ex, 99 );
-ex;
+ex = {11, 22, 33};Insert Into( ex, 99 );ex;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, => 0];
-Insert Into( ex, "c", 12 );
-ex;
+ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
-);
-Wait( 1 );
-Insert Into( hlist, Button Box( "c" ) );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );Wait( 1 );Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
@@ -336,7 +316,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -344,7 +324,7 @@ Item( 5, "http://www.jmp.com", ":/." );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -352,19 +332,15 @@ Item( [2 -1], "This is a sentence" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-Item(
-	4,
-	"Apple+Banana Tree,,Pear,,Peach,,Grape",
-	Get Punctuation Characters()
-);
+Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -372,7 +348,7 @@ Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-#### Ejemplo 5
+**Ejemplo 5**
 
 ```jsl
 
@@ -380,7 +356,7 @@ Item( 2, "abcd", "" );
 
 ```
 
-#### Ejemplo 6
+**Ejemplo 6**
 
 ```jsl
 
@@ -396,7 +372,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 **JMP Versión agregada:** 15
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -404,7 +380,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -412,19 +388,15 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-Items(
-	",Apple,Banana Tree,Peach",
-	Get Punctuation Characters(),
-	Include Boundary Delimiters
-);
+Items(	",Apple,Banana Tree,Peach",	Get Punctuation Characters(),	Include Boundary Delimiters);
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -442,8 +414,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-exurl = "http://www.jmp.com";
-Left( exurl, Contains( exurl, ":" ) - 1 );
+exurl = "http://www.jmp.com";Left( exurl, Contains( exurl, ":" ) - 1 );
 
 ```
 
@@ -455,7 +426,7 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -463,7 +434,7 @@ Length( "Café" );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -471,7 +442,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -479,7 +450,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -525,14 +496,7 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
-Eval List(
-	{Munger( "over there", 1, "t", "" ), Munger(
-		"17 June 2000",
-		4,
-		4,
-		"March"
-	)}
-);
+Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
 
@@ -544,7 +508,7 @@ Eval List(
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -552,16 +516,11 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-Show(
-	Num( "3.1e6", <<Restrict ),
-	Num( "1989-10-04", <<Restrict ),
-	Num( "5%", <<Restrict ),
-	Num( "£23", <<Restrict )
-);
+Show(	Num( "3.1e6", <<Restrict ),	Num( "1989-10-04", <<Restrict ),	Num( "5%", <<Restrict ),	Num( "£23", <<Restrict ));
 
 ```
 
@@ -575,11 +534,7 @@ Show(
 
 ```jsl
 
-Regex(
-	"   Are you there Alice?, asked Jerry.",
-	" (here|there) (\w+).+(said|asked) (\w+)\.",
-	"  I am \1, \4, replied \2."
-);
+Regex(	"   Are you there Alice?, asked Jerry.",	" (here|there) (\w+).+(said|asked) (\w+)\.",	"  I am \1, \4, replied \2.");
 
 ```
 
@@ -605,39 +560,27 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Remove From( ex, 3, 2 );
-ex;
+ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
-Remove From( ex, "c" );
-ex;
+ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Remove From( hlist, 1 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Remove From( hlist, 1 );
 
 ```
 
@@ -677,29 +620,19 @@ Reverse( {11, 22, 33, 44, 55} );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Reverse Into( ex );
-ex;
+ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Reverse Into( hlist );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Reverse Into( hlist );
 
 ```
 
@@ -727,8 +660,7 @@ Right( "http://www.jmp.com", 3 );
 
 ```jsl
 
-Show( Set Difference( {1, 3}, {3, 2} ) );
-Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```
 
@@ -742,10 +674,7 @@ Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```jsl
 
-Show( Set Intersection( {1, 3}, {3, 2} ) );
-Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```
 
@@ -759,13 +688,7 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
-Show( Set Union( {1, 3}, {3, 2} ) );
-Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-all = {};
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-For Each Row( all = Set Union( all, :sports ) );
-all = Set Unique( all );
-Show( all );
+Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );all = {};Open( "$SAMPLE_DATA/Big Class Families.jmp" );For Each Row( all = Set Union( all, :sports ) );all = Set Unique( all );Show( all );
 
 ```
 
@@ -779,11 +702,7 @@ Show( all );
 
 ```jsl
 
-Show( Set Unique( {1, 3, 2} ) );
-Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-Row() = 1;
-Show( Set Unique( :sports ) );
+Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );Open( "$SAMPLE_DATA/Big Class Families.jmp" );Row() = 1;Show( Set Unique( :sports ) );
 
 ```
 
@@ -809,29 +728,19 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Shift Into( ex, -2 );
-ex;
+ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Shift Into( hlist, -2 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Shift Into( hlist, -2 );
 
 ```
 
@@ -851,13 +760,13 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ### Substitute
 
-**Sintaxis:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintaxis:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descripción:** Devuelve una copia de la cadena, lista o expresión x, donde cada una de las instancias de cada expresión de patrón está sustituida por la expresión de sustitución correspondiente. El argumento opcional <<IGNORECASE habilita la búsqueda de coincidencias sin distinguir entre mayúsculas y minúsculas si x es una cadena.
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -865,7 +774,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -873,16 +782,15 @@ Substitute( "All things considered", "All", "Some" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute( lst, "a", "A" );
+lst = {"a", "b", "c"};Substitute( lst, "a", "A" );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -890,17 +798,15 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
-#### Ejemplo 5
+**Ejemplo 5**
 
 ```jsl
 
-Substitute( "Apple,orange,banana-grape",
-	Items( Get Punctuation Characters() || "-'", "" ), " "
-);
+Substitute( "Apple,orange,banana-grape",	Items( Get Punctuation Characters() || "-'", "" ), " ");
 
 ```
 
-#### Ejemplo 6
+**Ejemplo 6**
 
 ```jsl
 
@@ -910,49 +816,41 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Sintaxis:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintaxis:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descripción:** Modifica la cadena, lista o expresión x, donde cada una de las instancias de cada expresión de patrón está sustituida por la expresión de sustitución correspondiente. Tenga en cuenta que el argumento x debe ser una variable. El argumento opcional <<IGNORECASE habilita la búsqueda de coincidencias sin distinguir entre mayúsculas y minúsculas si x es una cadena.
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-ex = Expr( a + Sqrt( a ) );
-Substitute Into( ex, Expr( a ), Expr( b ) );
-Name Expr( ex );
+ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Expr( ex );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-ex = "All things considered";
-Substitute Into( ex, "All", "Some" );
-Show( ex );
+ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute Into( lst, "a", "A" );
-Show( lst );
+lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
-s = "Apple,APPLE,apple";
-Substitute Into( s, "apple", "orange", <<IGNORECASE );
-Show( s );
+s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );Show( s );
 
 ```
 
@@ -980,13 +878,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```jsl
 
-score = Text Score(
-	"over the lazy dogs back",
-	["lazy" => 1, "dogs" => 2],
-	"Count",
-	[1 0, 0 1]
-);
-Show( score );
+score = Text Score(	"over the lazy dogs back",	["lazy" => 1, "dogs" => 2],	"Count",	[1 0, 0 1]);Show( score );
 
 ```
 
@@ -1054,7 +946,7 @@ Uppercase( "Café #23" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -1062,7 +954,7 @@ Word( 3, "http://www.jmp.com", ":/." );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -1070,19 +962,15 @@ Word( [2 -1], "This is a sentence" );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-Word(
-	4,
-	"Apple+Banana Tree,,Pear,,Peach,,Grape",
-	Get Punctuation Characters()
-);
+Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
-#### Ejemplo 4
+**Ejemplo 4**
 
 ```jsl
 
@@ -1090,7 +978,7 @@ Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
 
-#### Ejemplo 5
+**Ejemplo 5**
 
 ```jsl
 
@@ -1106,7 +994,7 @@ Word( 2, "abcd", "" );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
@@ -1114,7 +1002,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
@@ -1122,7 +1010,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
@@ -1140,10 +1028,7 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-result = XPath Query(
-	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
-	"//color/text()"
-);
+result = XPath Query(	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",	"//color/text()");
 
 ```
 

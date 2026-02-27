@@ -1,0 +1,111 @@
+# Data Connector Metadata
+
+
+
+## 项消息
+
+### Get Description
+
+**语法:** metadata &lt;&lt; Get Description()
+
+**说明:** 获取数据连接器说明
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+description = metadata << Get Description();
+
+```
+
+### Get Driver
+
+**语法:** metadata &lt;&lt; Get Driver()
+
+**说明:** 获取数据连接器驱动程序（若存在）。
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+type = metadata << Get Driver();
+
+```
+
+### Get Name
+
+**语法:** metadata &lt;&lt; Get Name()
+
+**说明:** 获取数据连接器名称
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+name = metadata << Get Name();
+
+```
+
+### Get Path
+
+**语法:** metadaata &lt;&lt; Get Path()
+
+**说明:** 获取数据连接器路径
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+path = metadata << Get Path();
+
+```
+
+### Get Type
+
+**语法:** metadata &lt;&lt; Get Type()
+
+**说明:** 获取数据连接器类型
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+type = metadata << Get Type();
+
+```
+
+### Set Description
+
+**语法:** metadata &lt;&lt; Set Description(description)
+
+**说明:** 设置数据连接器说明
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+metadata << Set Description( "My frequently used SQL Server connection." );
+
+```
+
+### Set Name
+
+**语法:** metadata &lt;&lt; Set Name( name )
+
+**说明:** 设置数据连接器名称
+
+**JMP添加的版本:** 18
+
+```jsl
+
+
+metadata << Set Name( "A new Name" );
+
+```
+

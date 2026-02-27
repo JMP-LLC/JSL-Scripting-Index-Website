@@ -12,24 +12,7 @@
 
 ```jsl
 
-
-New Window( "Crosstab",
-	Alignment Grid Box(
-		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),
-		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),
-		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),
-		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),
-		Alignment Cell Box(
-			4,
-			1,
-			6,
-			3,
-			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",
-			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",
-			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}
-		)
-	)
-);
+New Window( "Crosstab",	Alignment Grid Box(		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),		Alignment Cell Box(			4,			1,			6,			3,			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}		)	));
 
 ```
 
@@ -43,24 +26,7 @@ New Window( "Crosstab",
 
 ```jsl
 
-
-New Window( "Crosstab",
-	Alignment Grid Box(
-		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),
-		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),
-		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),
-		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),
-		Alignment Cell Box(
-			4,
-			1,
-			6,
-			3,
-			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",
-			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",
-			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}
-		)
-	)
-);
+New Window( "Crosstab",	Alignment Grid Box(		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),		Alignment Cell Box(			4,			1,			6,			3,			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}		)	));
 
 ```
 
@@ -74,35 +40,7 @@ New Window( "Crosstab",
 
 ```jsl
 
-
-New Window( "Alignment MultiBox",
-	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),
-		Alignment Grid Box(
-			Alignment Multi Box( 0, 1, 1, 1, 2, {}, {{"Freq"}, {"Share"}} ),
-			Alignment Cell Box( 0, 2, 1, 1, ColSpan( [2] ), {"sex"} ),
-			Alignment Cell Box( 1, 2, 1, 2, ColSpan( [1, 1] ), {"F", "M"} ),
-			Alignment Cell Box( 2, 0, 1, 1, RowSpan( [7] ), {"age"} ),
-			Alignment Cell Box(
-				2,
-				1,
-				7,
-				1,
-				{"12", "13", "14", "15", "16", "17", "Total Responses"}
-			),
-			Alignment Multi Box(
-				2,
-				2,
-				6,
-				2,
-				2,
-				{[5 3, 5 2, 2 1, 3 4, 7 5, 1 2], [0.277 0.167, 0.278 0.111, 0.111 0.055,
-				0.136 0.181, 0.318 0.227, 0.045 0.090]},
-				{Empty(), Empty()}
-			),
-			Alignment Cell Box( 8, 2, 1, 2, [18 22] )
-		)
-	)
-);
+New Window( "Alignment MultiBox",	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),		Alignment Grid Box(			Alignment Multi Box( 0, 1, 1, 1, 2, {}, {{"Freq"}, {"Share"}} ),			Alignment Cell Box( 0, 2, 1, 1, ColSpan( [2] ), {"sex"} ),			Alignment Cell Box( 1, 2, 1, 2, ColSpan( [1, 1] ), {"F", "M"} ),			Alignment Cell Box( 2, 0, 1, 1, RowSpan( [7] ), {"age"} ),			Alignment Cell Box(				2,				1,				7,				1,				{"12", "13", "14", "15", "16", "17", "Total Responses"}			),			Alignment Multi Box(				2,				2,				6,				2,				2,				{[5 3, 5 2, 2 1, 3 4, 7 5, 1 2], [0.277 0.167, 0.278 0.111, 0.111 0.055,				0.136 0.181, 0.318 0.227, 0.045 0.090]},				{Empty(), Empty()}			),			Alignment Cell Box( 8, 2, 1, 2, [18 22] )		)	));
 
 ```
 
@@ -116,9 +54,7 @@ New Window( "Alignment MultiBox",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = Alpha Shape( triang );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = Alpha Shape( triang );
 
 ```
 
@@ -132,14 +68,7 @@ ashape = Alpha Shape( triang );
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ), spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),
-			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -153,11 +82,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Box Plot Seg Example",
-	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) )
-);
-g[AxisBox( 2 )] << delete;
-seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
+New Window( "Box Plot Seg Example",	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) ));g[AxisBox( 2 )] << delete;seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```
 
@@ -227,14 +152,7 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```jsl
 
-Set Global Window Handler(
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
-New Window( "My Window" );
-Clear Global Window Handler();
+Set Global Window Handler(	Function( {window},		Print( window << get window title() );		window << close window();	));New Window( "My Window" );Clear Global Window Handler();
 
 ```
 
@@ -248,20 +166,7 @@ Clear Global Window Handler();
 
 ```jsl
 
-dt = New Window( "Example",
-	exx = 1;
-	exy = 4;
-	exz = 8;
-	Table Box(
-		String Col Box( "strings", {"x", "y", "z"} ),
-		Col Box(
-			"boxes",
-			Slider Box( 0, 10, exx, Show( exx ) ),
-			Slider Box( 0, 10, exy, Show( exy ) ),
-			Slider Box( 0, 10, exz, Show( exz ) )
-		)
-	);
-);
+dt = New Window( "Example",	exx = 1;	exy = 4;	exz = 8;	Table Box(		String Col Box( "strings", {"x", "y", "z"} ),		Col Box(			"boxes",			Slider Box( 0, 10, exx, Show( exx ) ),			Slider Box( 0, 10, exy, Show( exy ) ),			Slider Box( 0, 10, exz, Show( exz ) )		)	););
 
 ```
 
@@ -273,39 +178,27 @@ dt = New Window( "Example",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 2",
-	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 2",	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) ));
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 3",
-	H List Box(
-		ll1 = Col List Box( all ),
-		Button Box( "Add", ll2 << append( ll1 << get selected ) ),
-		ll2 = Col List Box( "numeric", MaxItems( 1 ), nlines( 1 ) ),
-		Button Box( "Remove", ll2 << remove selected )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 3",	H List Box(		ll1 = Col List Box( all ),		Button Box( "Add", ll2 << append( ll1 << get selected ) ),		ll2 = Col List Box( "numeric", MaxItems( 1 ), nlines( 1 ) ),		Button Box( "Remove", ll2 << remove selected )	));
 
 ```
 
@@ -319,15 +212,7 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
-New Window( "test",
-	Table Box(
-		Col Span Box(
-			"Col Span",
-			String Col Box( "col 1", {"A", "B", "C"} ),
-			Number Col Box( "col2", {1, 2, 3} )
-		)
-	)
-);
+New Window( "test",	Table Box(		Col Span Box(			"Col Span",			String Col Box( "col 1", {"A", "B", "C"} ),			Number Col Box( "col2", {1, 2, 3} )		)	));
 
 ```
 
@@ -341,30 +226,7 @@ New Window( "test",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-Column Dialog(
-	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),
-	ex x = ColList( "X", Max Col( 1 ), Modeling Type( {"Continuous", "Multiple Response"} ) ),
-	Line Up( 2,
-		Text Box( "Alpha" ), ex = EditNumber( .05 ),
-		Text Box( "Beta" ), ey = EditText( "xyz" )
-	),
-	HList( cb = Check Box( "check", 1 ) ),
-	HList( combo = Combo Box( "option1", "option2" ) ),
-	HList( rb = RadioButtons( "a", "b" ) ),
-	Window Title( "Custom Launch Dialog" ),
-	Window Icon( "RowState" ), //icon string can be a full path file name of an image file.
-	Dialog Description( "The dialog before a groundbreaking discovery!" ),
-	Recall Script(
-		Function( {dlgBox},
-			dlgBox[list box box( 2 )] << remove all;
-			dlgBox[list box box( 1 )] << clear selection;
-			dlgBox[list box box( 1 )] << set selected( 3 );
-			dlgBox[Button Box( 2 )] << click;
-		)
-	),
-	Help Script( Web( "http://www.jmp.com/" ) )
-);
+Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Column Dialog(	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),	ex x = ColList( "X", Max Col( 1 ), Modeling Type( {"Continuous", "Multiple Response"} ) ),	Line Up( 2,		Text Box( "Alpha" ), ex = EditNumber( .05 ),		Text Box( "Beta" ), ey = EditText( "xyz" )	),	HList( cb = Check Box( "check", 1 ) ),	HList( combo = Combo Box( "option1", "option2" ) ),	HList( rb = RadioButtons( "a", "b" ) ),	Window Title( "Custom Launch Dialog" ),	Window Icon( "RowState" ), //icon string can be a full path file name of an image file.	Dialog Description( "The dialog before a groundbreaking discovery!" ),	Recall Script(		Function( {dlgBox},			dlgBox[list box box( 2 )] << remove all;			dlgBox[list box box( 1 )] << clear selection;			dlgBox[list box box( 1 )] << set selected( 3 );			dlgBox[Button Box( 2 )] << click;		)	),	Help Script( Web( "http://www.jmp.com/" ) ));
 
 ```
 
@@ -378,9 +240,7 @@ Column Dialog(
 
 ```jsl
 
-New Window( "Example",
-	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
-);
+New Window( "Example",	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) ));
 
 ```
 
@@ -394,13 +254,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Context Box(
-		Outline Box( "Picker",
-			V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
-		)
-	)
-);
+New Window( "Example",	Context Box(		Outline Box( "Picker",			V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )		)	));
 
 ```
 
@@ -414,21 +268,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-{xx, yy} = tri << Get Points();
-New Window( "Contour Seg Example",
-	g = Graph Box(
-		X Scale( Min( xx ) - .1, Max( xx ) + .1 ),
-		Y Scale( Min( yy ) - .1, Max( yy ) + .1 ),
-		Contour Seg(
-			tri,
-			[0, 400, 1000, 2000, 9000],
-			zColor( 5 + [64 32 0 16 48] ),
-			Transparency( [1, 1, 1, 1, 1] )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );{xx, yy} = tri << Get Points();New Window( "Contour Seg Example",	g = Graph Box(		X Scale( Min( xx ) - .1, Max( xx ) + .1 ),		Y Scale( Min( yy ) - .1, Max( yy ) + .1 ),		Contour Seg(			tri,			[0, 400, 1000, 2000, 9000],			zColor( 5 + [64 32 0 16 48] ),			Transparency( [1, 1, 1, 1, 1] )		)	));
 
 ```
 
@@ -464,12 +304,7 @@ Um ein Projekt anzugeben, verwenden Sie das optionale Argument Projekt() mit ein
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Example Outline",
-		Text Box( "Example Text" ),
-		Button Box( "Close", Current Window() << Close Window )
-	)
-);
+New Window( "Example",	Outline Box( "Example Outline",		Text Box( "Example Text" ),		Button Box( "Close", Current Window() << Close Window )	));
 
 ```
 
@@ -483,29 +318,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Shared Local Filter",
-	Data Filter Context Box(
-		H List Box(
-			dt << Data Filter( Local, Add Filter( columns( :sex ), Where( :sex == "F" ) ) ),
-			dt << Bubble Plot(
-				X( :weight ),
-				Y( :height ),
-				Fit To Window( "On" ),
-				Sizes( :age ),
-				Title Position( 0, 0 )
-			),
-			dt << Graph Builder(
-				Size( 525, 456 ),
-				Show Control Panel( 0 ),
-				Fit To Window( "On" ),
-				Variables( X( :weight ), Y( :age ) ),
-				Elements( Box Plot( X, Y, Legend( 4 ) ) ),
-
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Shared Local Filter",	Data Filter Context Box(		H List Box(			dt << Data Filter( Local, Add Filter( columns( :sex ), Where( :sex == "F" ) ) ),			dt << Bubble Plot(				X( :weight ),				Y( :height ),				Fit To Window( "On" ),				Sizes( :age ),				Title Position( 0, 0 )			),			dt << Graph Builder(				Size( 525, 456 ),				Show Control Panel( 0 ),				Fit To Window( "On" ),				Variables( X( :weight ), Y( :age ) ),				Elements( Box Plot( X, Y, Legend( 4 ) ) ),			)		)	));
 
 ```
 
@@ -519,34 +332,7 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Selection Filter",
-	Data Filter Context Box(
-		H List Box(
-			Data Filter Source Box(
-				Graph Builder(
-					Size( 208, 207 ),
-					Show Control Panel( 0 ),
-					Show Legend( 0 ),
-					Variables( X( :age ) ),
-					Elements( Bar( X, Legend( 3 ) ) ),
-					SendToReport(
-						Dispatch( {}, "Graph Builder", OutlineBox, {Set Title( "Filter" )} )
-					)
-				)
-			),
-			Platform(
-				Current Data Table(),
-				Bubble Plot(
-					X( :weight ),
-					Y( :height ),
-					Sizes( :age ),
-					Title Position( 0, 0 )
-				)
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Selection Filter",	Data Filter Context Box(		H List Box(			Data Filter Source Box(				Graph Builder(					Size( 208, 207 ),					Show Control Panel( 0 ),					Show Legend( 0 ),					Variables( X( :age ) ),					Elements( Bar( X, Legend( 3 ) ) ),					SendToReport(						Dispatch( {}, "Graph Builder", OutlineBox, {Set Title( "Filter" )} )					)				)			),			Platform(				Current Data Table(),				Bubble Plot(					X( :weight ),					Y( :height ),					Sizes( :age ),					Title Position( 0, 0 )				)			)		)	));
 
 ```
 
@@ -560,9 +346,7 @@ New Window( "Selection Filter",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example", x = Data Grid Box() );
-x << Set Data Table( dt );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example", x = Data Grid Box() );x << Set Data Table( dt );
 
 ```
 
@@ -576,8 +360,7 @@ x << Set Data Table( dt );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example", Data Table Box( dt ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example", Data Table Box( dt ) );
 
 ```
 
@@ -591,10 +374,7 @@ New Window( "Example", Data Table Box( dt ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) ));
 
 ```
 
@@ -608,10 +388,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) ));
 
 ```
 
@@ -623,46 +400,19 @@ New Window( "Example",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-// See Example 2 for the deprecated Dialog equivalent
-If(
-	ex = New Window( "Dialog() example",
-		<<Modal,
-		<<Return Result,
-		V List Box(
-			H List Box( "Set this value", variable = Number Edit Box( 42 ) ),
-			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-		)
-	);
-	ex["button"] == 1;
-,
-	ex["variable"],
-	"CANCEL"
-);
+// See Example 2 for the deprecated Dialog equivalentIf(	ex = New Window( "Dialog() example",		<<Modal,		<<Return Result,		V List Box(			H List Box( "Set this value", variable = Number Edit Box( 42 ) ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	);	ex["button"] == 1;,	ex["variable"],	"CANCEL");
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-// Deprecated
-If(
-	ex = Dialog(
-		Title( " Dialog() example" ),
-		vlist(
-			hlist( "Set this value", variable = EditNumber( 42 ) ),
-			hlist( Button( "OK" ), Button( "Cancel" ) )
-		)
-	);
-	ex["button"] == 1;
-,
-	ex["variable"],
-	"CANCEL"
-);
+// DeprecatedIf(	ex = Dialog(		Title( " Dialog() example" ),		vlist(			hlist( "Set this value", variable = EditNumber( 42 ) ),			hlist( Button( "OK" ), Button( "Cancel" ) )		)	);	ex["button"] == 1;,	ex["variable"],	"CANCEL");
 
 ```
 
@@ -676,42 +426,7 @@ If(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),
-			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -725,14 +440,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ), spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),
-			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -746,8 +454,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
 ```
 
@@ -759,25 +466,19 @@ New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 2
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-                             
-Print( Get Project( 2 ) << Get Window Title() );
+Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );                             Print( Get Project( 2 ) << Get Window Title() );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-                             
-project = Get Project( "Big Class" );
+Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );                             project = Get Project( "Big Class" );
 
 ```
 
@@ -791,10 +492,7 @@ project = Get Project( "Big Class" );
 
 ```jsl
 
-New Project();
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-                              
-Print( Get Project List() << Get Window Title() );
+New Project();Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );                              Print( Get Project List() << Get Window Title() );
 
 ```
 
@@ -818,23 +516,19 @@ Verwenden Sie das optionale Argument Typ() entweder mit „Datentabellen“, „
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA\Big Class.jmp" );
-                                        
-window = Get Window( "Big Class" );
+Open( "$SAMPLE_DATA\Big Class.jmp" );                                        window = Get Window( "Big Class" );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-window = Get Window( Project( project ), "Big Class" );
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             window = Get Window( Project( project ), "Big Class" );
 
 ```
 
@@ -858,7 +552,7 @@ Um ein Projekt anzugeben, verwenden Sie das optionale Argument Projekt() mit ein
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -866,23 +560,19 @@ Print( Get Window List() << Get Window Title() );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-Print( Get Window List( Project( project ) ) << Get Window Title() );
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             Print( Get Window List( Project( project ) ) << Get Window Title() );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Window Title() );
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Window Title() );
 
 ```
 
@@ -896,8 +586,7 @@ Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Windo
 
 ```jsl
 
-ex = .6;
-New Window( "Example", Global Box( ex ) );
+ex = .6;New Window( "Example", Global Box( ex ) );
 
 ```
 
@@ -911,14 +600,7 @@ New Window( "Example", Global Box( ex ) );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	));
 
 ```
 
@@ -932,27 +614,7 @@ New Window( "Example",
 
 ```jsl
 
-x3d = Graph 3D Box(
-	framesize( 300, 300 ),
-	Xname( "X Axis" ),
-	Yname( "Y Axis" ),
-	Zname( "Z Axis" )
-);
-New Window( "Graph3DBox Example", x3d );
-x3d << addmarkers( /*x*/[20 20 20 20], /*y*/[20 20 20 20], /*z*/[10 20 30 40] );
-x3d << AddVector(
-	[60 60 60]/*from*/,
-	[90 60 60, 60 90 60, 60 60 90]/*to*/,
-	ShaftThickness( [.1] ),
-	FromThickness( [.2] ),
-	ToThickness( [.3] ),
-	ShaftColor( [-255] ),
-	FromColor( [-16711680] ),
-	ToColor( [-65280] ),
-	Facets( Round ),
-	FromCap( Sphere ),
-	toCap( Point )
-);
+x3d = Graph 3D Box(	framesize( 300, 300 ),	Xname( "X Axis" ),	Yname( "Y Axis" ),	Zname( "Z Axis" ));New Window( "Graph3DBox Example", x3d );x3d << addmarkers( /*x*/[20 20 20 20], /*y*/[20 20 20 20], /*z*/[10 20 30 40] );x3d << AddVector(	[60 60 60]/*from*/,	[90 60 60, 60 90 60, 60 60 90]/*to*/,	ShaftThickness( [.1] ),	FromThickness( [.2] ),	ToThickness( [.3] ),	ShaftColor( [-255] ),	FromColor( [-16711680] ),	ToColor( [-65280] ),	Facets( Round ),	FromCap( Sphere ),	toCap( Point ));
 
 ```
 
@@ -966,14 +628,7 @@ x3d << AddVector(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	));
 
 ```
 
@@ -987,19 +642,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "test",
-	H List Box(
-		V Center Box( Text Box( "V+V" ) ),
-		V List Box(
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			H Center Box( Text Box( "H+H" ) ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )
-		)
-	)
-);
+New Window( "test",	H List Box(		V Center Box( Text Box( "V+V" ) ),		V List Box(			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			H Center Box( Text Box( "H+H" ) ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )		)	));
 
 ```
 
@@ -1013,9 +656,7 @@ New Window( "test",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
-);
+New Window( "Example",	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) ));
 
 ```
 
@@ -1029,21 +670,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		H Scroll Box(
-			Size( 200 ),
-			H List Box(
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		H Scroll Box(			Size( 200 ),			H List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -1057,42 +684,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),
-			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -1106,24 +698,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Splitter",
-	V Splitter Box(
-		Size( 800, 600 ),
-		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),
-		H Splitter Box(
-			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),
-			spacer = Spacer Box(),
-			<<Sizes( {0.4, 0.6} )
-		)
-	)
-);
-graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
-pict << Set Min Size( 100, 100 );
-pict << Set Max Size( 500, 500 );
-pict << Set Stretch( "Window", "Window" );
-spacer << Set Fill( 1 );
-spacer << Color( "Red" );
-spacer << Set Stretch( "Window", "Window" );
+New Window( "Splitter",	V Splitter Box(		Size( 800, 600 ),		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),		H Splitter Box(			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),			spacer = Spacer Box(),			<<Sizes( {0.4, 0.6} )		)	));graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );pict << Set Min Size( 100, 100 );pict << Set Max Size( 500, 500 );pict << Set Stretch( "Window", "Window" );spacer << Set Fill( 1 );spacer << Color( "Red" );spacer << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -1137,15 +712,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-New Window( "Example",
-	Hier Box(
-		Text Edit Box( "Cause 1" ),
-		Hier Box( Text Edit Box( "Subcause 1.1" ), <<direction( 1 ) ),
-		Hier Box( Text Box( "Subcause 1.2" ) ),
-		<<Change Type( Fishbone ),
-		<<direction( 1 )
-	)
-);
+New Window( "Example",	Hier Box(		Text Edit Box( "Cause 1" ),		Hier Box( Text Edit Box( "Subcause 1.1" ), <<direction( 1 ) ),		Hier Box( Text Box( "Subcause 1.2" ) ),		<<Change Type( Fishbone ),		<<direction( 1 )	));
 
 ```
 
@@ -1159,17 +726,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-rows = N Row( xx );
-New Window( "Hist Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, .2 ),
-		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, .2 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));
 
 ```
 
@@ -1181,25 +738,15 @@ New Window( "Hist Seg Example",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-New Window( "Example",
-	ex1 = Icon Box( "Popup" ),
-	ex2 = Icon Box( "Locked" ),
-	ex3 = Icon Box( "Labeled" ),
-	ex4 = Icon Box( "Sub" ),
-	ex5 = Icon Box( "Excluded" ),
-	ex6 = Icon Box( "Hidden" ),
-	ex7 = Icon Box( "Continuous" ),
-	ex8 = Icon Box( "Nominal" ),
-	ex9 = Icon Box( "Ordinal" )
-);
+New Window( "Example",	ex1 = Icon Box( "Popup" ),	ex2 = Icon Box( "Locked" ),	ex3 = Icon Box( "Labeled" ),	ex4 = Icon Box( "Sub" ),	ex5 = Icon Box( "Excluded" ),	ex6 = Icon Box( "Hidden" ),	ex7 = Icon Box( "Continuous" ),	ex8 = Icon Box( "Nominal" ),	ex9 = Icon Box( "Ordinal" ));
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
@@ -1217,15 +764,7 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```jsl
 
-New Window( "Example",
-	H List Box(
-		englishBox = If Box( 1, Text Box( "Good day" ) ),
-		frenchBox = If Box( 0, Text Box( "Bon Jour" ) )
-	)
-);
-Wait( 5 );
-englishBox << Set( 0 );
-frenchBox << Set( 1 );
+New Window( "Example",	H List Box(		englishBox = If Box( 1, Text Box( "Good day" ) ),		frenchBox = If Box( 0, Text Box( "Bon Jour" ) )	));Wait( 5 );englishBox << Set( 0 );frenchBox << Set( 1 );
 
 ```
 
@@ -1239,37 +778,7 @@ frenchBox << Set( 1 );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-
-```
-
-### JSS Context Box
-
-**Syntax:** y = JSS Context Box( displayBox )
-
-**JMP Version hinzugefügt:** 19
-
-```jsl
-
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel", Text Box( "Hi" ), Button Box( "Press Me" ), ),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) ) << Background Color( "Blue" );
-			)
-		)
-	)
-);
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));
 
 ```
 
@@ -1283,13 +792,7 @@ New Window( "JSS Context",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-sample = Distribution( Y( :height ) );
-sampjourn = sample << Get Journal;
-New Window( "Distribution of Height",
-	Text Box( "Here is the result of the distribution platform for Height." ),
-	Journal Box( sampjourn )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );sample = Distribution( Y( :height ) );sampjourn = sample << Get Journal;New Window( "Distribution of Height",	Text Box( "Here is the result of the distribution platform for Height." ),	Journal Box( sampjourn ));
 
 ```
 
@@ -1301,43 +804,27 @@ New Window( "Distribution of Height",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y, RowStates( dt ) ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y, RowStates( dt ) ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example",
-	g = Graph Box( Line Seg( x, y, RowStates( dt, {1, 3, 5} ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example",	g = Graph Box( Line Seg( x, y, RowStates( dt, {1, 3, 5} ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
@@ -1351,10 +838,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Lines Seg" ));
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Lines Seg" ));
 
 ```
 
@@ -1368,14 +852,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ), spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),
-			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -1389,30 +866,7 @@ New Window( "Example",
 
 ```jsl
 
-
-New Window( "Lineup Ruler",
-	lrb = Lineup Ruler Box(
-		Widths( {120, 200} ),
-		Outline Box( "Customer 1",
-			Lineup Box( N Col( 2 ),
-				Text Box( "First Name:" ),
-				Text Edit Box(),
-				Text Box( "Last Name:" ),
-				Text Edit Box(), 
-
-			)
-		),
-		Outline Box( "Customer 2",
-			Lineup Box( N Col( 2 ),
-				Text Box( "First Name:" ),
-				Text Edit Box(),
-				Text Box( "Last Name:" ),
-				Text Edit Box(), 
-
-			)
-		)
-	)
-);
+New Window( "Lineup Ruler",	lrb = Lineup Ruler Box(		Widths( {120, 200} ),		Outline Box( "Customer 1",			Lineup Box( N Col( 2 ),				Text Box( "First Name:" ),				Text Edit Box(),				Text Box( "Last Name:" ),				Text Edit Box(), 			)		),		Outline Box( "Customer 2",			Lineup Box( N Col( 2 ),				Text Box( "First Name:" ),				Text Edit Box(),				Text Box( "Last Name:" ),				Text Edit Box(), 			)		)	));
 
 ```
 
@@ -1424,7 +878,7 @@ New Window( "Lineup Ruler",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -1432,18 +886,11 @@ New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-New Window( "Example",
-	lb = List Box(
-		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item", "nominal"}},
-		width( 200 ),
-		max selected( 2 ),
-		nlines( 6 )
-	)
-);
+New Window( "Example",	lb = List Box(		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item", "nominal"}},		width( 200 ),		max selected( 2 ),		nlines( 6 )	));
 
 ```
 
@@ -1455,110 +902,43 @@ New Window( "Example",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-sz = Column( "age" ) << get values;
-aa = [=> 0];
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ), sizes( sz ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;sz = Column( "age" ) << get values;aa = [=> 0];yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ), sizes( sz ) )	));
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt, {3, 4, 11, 7, 13} ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt, {3, 4, 11, 7, 13} ) )	));
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt, 11 :: 15 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt, 11 :: 15 ) )	));
 
 ```
 
-#### Beispiel 4
+**Beispiel 4**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg(
-			xx,
-			yy,
-			Row States( dt, {{1, 2, 3}, {4, 5}, {6}, {7, 12, 15, 9}, {21, 8}} )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg(			xx,			yy,			Row States( dt, {{1, 2, 3}, {4, 5}, {6}, {7, 12, 15, 9}, {21, 8}} )		)	));
 
 ```
 
-#### Beispiel 5
+**Beispiel 5**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg(
-			xx,
-			yy,
-			Row States(
-				{Color State( "Blue" ), Color State( "Orange" ), Color State( "Green" ),
-				Color State( "Purple" ), Color State( "Red" )}
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg(			xx,			yy,			Row States(				{Color State( "Blue" ), Color State( "Orange" ), Color State( "Green" ),				Color State( "Purple" ), Color State( "Red" )}			)		)	));
 
 ```
 
@@ -1586,44 +966,7 @@ New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "S
 
 ```jsl
 
-New Window( "Example",
-	MouseBox(/*first sibling*/Text Box( "drag from here" ),
-		<<setDragText( "hello" ),
-		<<setTooltip( "source" ),
-		<<setDragEnable( 1 ),
-		<<setDragBegin(/* decide if a drag is allowed */
-			Function( {this, clickpt},
-				"magic text";/* 0.0 to prevent the drag.  1.0 is the same as 'this<<getDragText' */
-			)
-		),
-		<<setDragEnd(/* clean up after a drag finishes or cancels */
-			Function( {this, clickpt, how}, /* how=move,copy,ignore */
-				If(
-					how != "ignore" & !Is Empty( this << getDestBox ) & this << getDestBox
-					 == this << sib, /* the getDestBox check makes sure the destination of the drag-and-drop was my sibling and not some other program beyond our control */
-					(this << child) << setText(
-						"done!" /* 'move' suggests clearing the source */
-					)
-				)
-			)
-		)
-	),
-	MouseBox(/*second sibling*/Text Box( "drag to here" ),
-		<<setTooltip( "destination" ),
-		<<setDropEnable( 1 ),
-		<<setDropTrack(/* decide if dropping is allowed, before the drop.  The getSourceBox check makes sure the source of the drag-and-drop is my sibling, and not some other program */
-			Function( {this, clickpt},
-				If( !Is Empty( this << getSourceBox ) & this == (this << getSourceBox) << sib,
-					1, /*else*/0
-				)
-			)
-		),
-		<<setDropCommit(/* accept the drop */Function( {this, clickpt, text},
-				(this << child) << setText( text )
-			)
-		)
-	)
-);
+New Window( "Example",	MouseBox(/*first sibling*/Text Box( "drag from here" ),		<<setDragText( "hello" ),		<<setTooltip( "source" ),		<<setDragEnable( 1 ),		<<setDragBegin(/* decide if a drag is allowed */			Function( {this, clickpt},				"magic text";/* 0.0 to prevent the drag.  1.0 is the same as 'this<<getDragText' */			)		),		<<setDragEnd(/* clean up after a drag finishes or cancels */			Function( {this, clickpt, how}, /* how=move,copy,ignore */				If(					how != "ignore" & !Is Empty( this << getDestBox ) & this << getDestBox					 == this << sib, /* the getDestBox check makes sure the destination of the drag-and-drop was my sibling and not some other program beyond our control */					(this << child) << setText(						"done!" /* 'move' suggests clearing the source */					)				)			)		)	),	MouseBox(/*second sibling*/Text Box( "drag to here" ),		<<setTooltip( "destination" ),		<<setDropEnable( 1 ),		<<setDropTrack(/* decide if dropping is allowed, before the drop.  The getSourceBox check makes sure the source of the drag-and-drop is my sibling, and not some other program */			Function( {this, clickpt},				If( !Is Empty( this << getSourceBox ) & this == (this << getSourceBox) << sib,					1, /*else*/0				)			)		),		<<setDropCommit(/* accept the drop */Function( {this, clickpt, text},				(this << child) << setText( text )			)		)	));
 
 ```
 
@@ -1635,69 +978,51 @@ New Window( "Example",
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-report = dt << Run Script( "Bivariate" );
-                              
-project = New Project();
-                              
-Move to Project( destination( project ), windows( {report} ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );report = dt << Run Script( "Bivariate" );                              project = New Project();                              Move to Project( destination( project ), windows( {report} ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-Move to Project( Source( project ) );
-project << Close Window();
+project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );Move to Project( Source( project ) );project << Close Window();
 
 ```
 
 ### New Image
 
-**Syntax:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntax:** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Beschreibung:** Gibt ein neues Bild zurück, das dann über JSL-Befehle bearbeitet werden kann. Wenn ein Pfad zu einer vorhandenen Bilddatei angegeben ist, muss es sich um eine Datei vom Typ .JPG, .PNG, .GIF, .BMP oder .TIF handeln.
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-image = New Image( "$SAMPLE_IMAGES/windmap.png" );
-New Window( "new image", image );
+image = New Image( "$SAMPLE_IMAGES/windmap.png" );New Window( "new image", image );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
-image2 = New Image( pic );
-New Window( "new image", image2 );
+pic = Open( "$SAMPLE_IMAGES/windmap.png", png );image2 = New Image( pic );New Window( "new image", image2 );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-image3 = New Image();
-mat = J( 256, 256 );
-For( y = 0, y < 256, y++,
-	For( x = 0, x < 256, x++,
-		mat[y * 256 + x] = RGB Color( y / 255.0, 0.0, x / 255.0 )
-	)
-);
-image3 << Set Pixels( mat );
-New Window( "image", image3 );
+image3 = New Image();mat = J( 256, 256 );For( y = 0, y < 256, y++,	For( x = 0, x < 256, x++,		mat[y * 256 + x] = RGB Color( y / 255.0, 0.0, x / 255.0 )	));image3 << Set Pixels( mat );New Window( "image", image3 );
 
 ```
 
@@ -1709,7 +1034,7 @@ New Window( "image", image3 );
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -1717,70 +1042,35 @@ project = New Project();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-project = New Project(
-	Run Script(
-		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-		dt << Run Script( "Bivariate" );
-	)
-);
+project = New Project(	Run Script(		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );		dt << Run Script( "Bivariate" );	));
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-project = New Project(
-	Run Script(
-		Open( "$SAMPLE_DATA/Big Class.jmp" );
-		New Window( "Big Class - Bivariate of weight by height",
-			Bivariate( Y( :weight ), X( :height ) )
-		);
-	)
-);
+project = New Project(	Run Script(		Open( "$SAMPLE_DATA/Big Class.jmp" );		New Window( "Big Class - Bivariate of weight by height",			Bivariate( Y( :weight ), X( :height ) )		);	));
 
 ```
 
-#### Beispiel 4
+**Beispiel 4**
 
 ```jsl
 
-project = New Project(
-	Set Bookmarks(
-		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}
-	),
-	Run Script(
-		Open( "$SAMPLE_DATA/Big Class.jmp" );
-		New Window( "Big Class - Bivariate of weight by height",
-			Bivariate( Y( :weight ), X( :height ) )
-		);
-	)
-);
+project = New Project(	Set Bookmarks(		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}	),	Run Script(		Open( "$SAMPLE_DATA/Big Class.jmp" );		New Window( "Big Class - Bivariate of weight by height",			Bivariate( Y( :weight ), X( :height ) )		);	));
 
 ```
 
-#### Beispiel 5
+**Beispiel 5**
 
 ```jsl
 
-project = New Project(
-	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),
-	Set Layout(
-		H Splitter Box(
-			<<Set Sizes( {0.15, 0.85} ),
-			Tab Page Box( Title( "Window List" ), Window ID( "Windows" ) ),
-			V Splitter Box(
-				<<Set Sizes( {0.7, 0.3} ),
-				Tab Page Box( Title( "demoCorr" ), Window ID( "demoCorr" ) ),
-				Tab Page Box( Title( "Log" ), Window ID( "Log" ) )
-			)
-		)
-	)
-);
+project = New Project(	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),	Set Layout(		H Splitter Box(			<<Set Sizes( {0.15, 0.85} ),			Tab Page Box( Title( "Window List" ), Window ID( "Windows" ) ),			V Splitter Box(				<<Set Sizes( {0.7, 0.3} ),				Tab Page Box( Title( "demoCorr" ), Window ID( "demoCorr" ) ),				Tab Page Box( Title( "Log" ), Window ID( "Log" ) )			)		)	));
 
 ```
 
@@ -1796,22 +1086,7 @@ project = New Project(
 
 ```jsl
 
-// Compare settings for toolbars and menus
-// Suppress AutoHide is Windows only
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-New Window( "Default - menu and toolbars", g );
-New Window( "Menu, no toolbars, suppress autohide",
-	Suppress AutoHide( 1 ),
-	Show Toolbars( 0 ),
-	g
-);
-New Window( "Toolbars, no menu", Show Menu( 0 ), g );
-New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
+// Compare settings for toolbars and menus// Suppress AutoHide is Windows onlyg = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););New Window( "Default - menu and toolbars", g );New Window( "Menu, no toolbars, suppress autohide",	Suppress AutoHide( 1 ),	Show Toolbars( 0 ),	g);New Window( "Toolbars, no menu", Show Menu( 0 ), g );New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```
 
@@ -1819,13 +1094,7 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```jsl
 
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-New Window( "My Window's Title", g );
+g = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););New Window( "My Window's Title", g );
 
 ```
 
@@ -1833,16 +1102,7 @@ New Window( "My Window's Title", g );
 
 ```jsl
 
-
-ex = New Window( "Dialog example",
-	<<Type( "Dialog" ),
-	V List Box(
-		Panel Box( "Sample data dialog",
-			Button Box( "Open Sample Data", Open( "$SAMPLE_DATA/Big Class.jmp" ) )
-		),
-		H List Box( Button Box( "Close", Try( ex << CloseWindow ) ) )
-	)
-);
+ex = New Window( "Dialog example",	<<Type( "Dialog" ),	V List Box(		Panel Box( "Sample data dialog",			Button Box( "Open Sample Data", Open( "$SAMPLE_DATA/Big Class.jmp" ) )		),		H List Box( Button Box( "Close", Try( ex << CloseWindow ) ) )	));
 
 ```
 
@@ -1850,18 +1110,7 @@ ex = New Window( "Dialog example",
 
 ```jsl
 
-
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-w = New Window( "My Window's Title", <<WindowView( "Invisible" ), g );
-p = w << Get Picture();
-w << Close Window;
-psize = p << Size;
-New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
+g = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););w = New Window( "My Window's Title", <<WindowView( "Invisible" ), g );p = w << Get Picture();w << Close Window;psize = p << Size;New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```
 
@@ -1869,37 +1118,7 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```jsl
 
-
-ex = New Window( "Modal Dialog example",
-	<<Type( "Modal Dialog" ),
-	<<Return Result,
-	<<On Validate(
-		num = myEditBox << Get;
-		If( num >= 1 & num <= 100, // in range
-			myEditBox << Background Color( "Background" ); // this field does not need attention
-			1; //the number is good, validate
-		, // else out of range
-			myEditBox << Background Color( "Light Yellow" ); // this field needs attention
-			0; // the number is bad, do not validate
-		) // the result of this if(...) is the OnValidate( ) answer, 0 or 1
-		;
-	),
-	V List Box(
-		Text Box( "Enter a value between [1,100]:" ),
-		H List Box( myEditBox = Number Edit Box( 42 ) ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)
-);
-
-//  the Modal window must be closed before the following code runs
-
-If(
-	ex["button"] == 1 // not canceled
-, // then show the value
-	Write( ex["myEditBox"] ); // note: myEditBox is the name of the variable holding the text edit box
-, // else report no selection
-	Write( "CANCEL" ); // cancel button or red X was pressed
-);
+ex = New Window( "Modal Dialog example",	<<Type( "Modal Dialog" ),	<<Return Result,	<<On Validate(		num = myEditBox << Get;		If( num >= 1 & num <= 100, // in range			myEditBox << Background Color( "Background" ); // this field does not need attention			1; //the number is good, validate		, // else out of range			myEditBox << Background Color( "Light Yellow" ); // this field needs attention			0; // the number is bad, do not validate		) // the result of this if(...) is the OnValidate( ) answer, 0 or 1		;	),	V List Box(		Text Box( "Enter a value between [1,100]:" ),		H List Box( myEditBox = Number Edit Box( 42 ) ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	));//  the Modal window must be closed before the following code runsIf(	ex["button"] == 1 // not canceled, // then show the value	Write( ex["myEditBox"] ); // note: myEditBox is the name of the variable holding the text edit box, // else report no selection	Write( "CANCEL" ); // cancel button or red X was pressed);
 
 ```
 
@@ -1907,9 +1126,7 @@ If(
 
 ```jsl
 
-pyscript = "\[import numpy as np
-a = np.arange(15).reshape(3, 5)]\";
-ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
+pyscript = "\[import numpy as npa = np.arange(15).reshape(3, 5)]\";ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
 
 ```
 
@@ -1917,11 +1134,7 @@ ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), p
 
 ```jsl
 
-script = JSL Quote(Names Default To Here(1);
-dt=Open("$SAMPLE_DATA/Big Class.jmp");
-dt << Run Script("Bivariate");
-);
-ex = New Window( "Script example", <<Type( "Script" ), script );
+script = JSL Quote(Names Default To Here(1);dt=Open("$SAMPLE_DATA/Big Class.jmp");dt << Run Script("Bivariate"););ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```
 
@@ -1935,15 +1148,7 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -1957,12 +1162,7 @@ New Window( "Example",
 
 ```jsl
 
-x = y = z = 0;
-New Window( "Example",
-	Modal,
-	<<Return Result,
-	Outline Box( "Table", Table Box( neb = Number Col Edit Box( "values", {x, y, z} ) ) )
-);
+x = y = z = 0;New Window( "Example",	Modal,	<<Return Result,	Outline Box( "Table", Table Box( neb = Number Col Edit Box( "values", {x, y, z} ) ) ));
 
 ```
 
@@ -1976,8 +1176,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example", neb = Number Edit Box( 5 ) );
-x = neb << get;
+New Window( "Example", neb = Number Edit Box( 5 ) );x = neb << get;
 
 ```
 
@@ -1991,12 +1190,7 @@ x = neb << get;
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		{"Show label value", Show( teb << get text )},
-		H List Box( Text Box( "Label:" ), teb = Text Edit Box( Char( 213 ) ) )
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		{"Show label value", Show( teb << get text )},		H List Box( Text Box( "Label:" ), teb = Text Edit Box( Char( 213 ) ) )	));
 
 ```
 
@@ -2010,21 +1204,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	),
-	Page Break Box(),
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [77 44 11], [75 25 50] );
-		Pen Color( "Red" );
-		Line( [70 30 10], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	),	Page Break Box(),	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [77 44 11], [75 25 50] );		Pen Color( "Red" );		Line( [70 30 10], [88 22 44] );	));
 
 ```
 
@@ -2038,14 +1218,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Panel Box( "panel", Text Box( "text" ) ),
-		"beta",
-		Popup Box( {"x", ex = 1, "y", ex = 2} )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Panel Box( "panel", Text Box( "text" ) ),		"beta",		Popup Box( {"x", ex = 1, "y", ex = 2} )	));
 
 ```
 
@@ -2057,22 +1230,19 @@ New Window( "Example",
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-New Window( "Example",
-	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
-);
+New Window( "Example",	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) ));
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
-New Window( "Example", Picture Box( pict ) );
+pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );New Window( "Example", Picture Box( pict ) );
 
 ```
 
@@ -2086,14 +1256,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
-New Window( "Pie Seg",
-	Graph Box(
-		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
-		Pie Seg( {75, 50}, .25, sumWt )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));
 
 ```
 
@@ -2107,19 +1270,7 @@ New Window( "Pie Seg",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Platform example",
-	H List Box(
-		Platform(
-			dt,
-			Bubble Plot( X( :weight ), Y( :height ), Sizes( :age ), Title Position( 0, 0 ) )
-		),
-		Platform(
-			dt,
-			Bubble Plot( X( :weight ), Y( :age ), Sizes( :height ), Title Position( 0, 0 ) )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Platform example",	H List Box(		Platform(			dt,			Bubble Plot( X( :weight ), Y( :height ), Sizes( :age ), Title Position( 0, 0 ) )		),		Platform(			dt,			Bubble Plot( X( :weight ), Y( :age ), Sizes( :height ), Title Position( 0, 0 ) )		)	));
 
 ```
 
@@ -2133,15 +1284,7 @@ New Window( "Platform example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -2155,11 +1298,7 @@ New Window( "Example",
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Poly Seg" ));
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Poly Seg" ));
 
 ```
 
@@ -2173,14 +1312,7 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Popup Box( {"x", ex = 1, "y", ex = 2} ),
-		"beta",
-		Panel Box( "panel", Text Box( "text" ) )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Popup Box( {"x", ex = 1, "y", ex = 2} ),		"beta",		Panel Box( "panel", Text Box( "text" ) )	));
 
 ```
 
@@ -2194,9 +1326,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
-);
+New Window( "Example",	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) ));
 
 ```
 
@@ -2210,22 +1340,7 @@ New Window( "Example",
 
 ```jsl
 
-sliderLowerValue = .5;
-sliderUpperValue = .7;
-New Window( "Example",
-	Panel Box( "Range Slider",
-		tb1 = Text Box( "Low Value: " || Char( sliderLowerValue ) ),
-		tb2 = Text Box( "High Value: " || Char( sliderUpperValue ) ),
-		sb = Range Slider Box(
-			0,
-			1,
-			sliderLowerValue,
-			sliderUpperValue,
-			tb1 << Set Text( "Low Value: " || Char( sliderLowerValue ) );
-			tb2 << Set Text( "High Value: " || Char( sliderUpperValue ) );
-		)
-	)
-);
+sliderLowerValue = .5;sliderUpperValue = .7;New Window( "Example",	Panel Box( "Range Slider",		tb1 = Text Box( "Low Value: " || Char( sliderLowerValue ) ),		tb2 = Text Box( "High Value: " || Char( sliderUpperValue ) ),		sb = Range Slider Box(			0,			1,			sliderLowerValue,			sliderUpperValue,			tb1 << Set Text( "Low Value: " || Char( sliderLowerValue ) );			tb2 << Set Text( "High Value: " || Char( sliderUpperValue ) );		)	));
 
 ```
 
@@ -2239,8 +1354,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```
 
@@ -2254,17 +1368,7 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```jsl
 
-Scene = Scene Box( 600, 600 );
-Scene << backgroundcolor( 0 );
-Scene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", Scene );
-Scene << perspective( 45, .2, 20 );
-Scene << Translate( 0.0, 0.0, -4.5 );
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-Scene << arcball( ex, 1.5 );
-Scene << update;
+Scene = Scene Box( 600, 600 );Scene << backgroundcolor( 0 );Scene << showarcball( always );New Window( "See HelloWorld.jsl in sample scripts", Scene );Scene << perspective( 45, .2, 20 );Scene << Translate( 0.0, 0.0, -4.5 );ex = Scene Display List();ex << color( .9, .9, .9 );ex << Text( center, middle, .3, "Hello World" );Scene << arcball( ex, 1.5 );Scene << update;
 
 ```
 
@@ -2278,17 +1382,7 @@ Scene << update;
 
 ```jsl
 
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-exScene = Scene Box( 600, 600 );
-exScene << backgroundcolor( 0 );
-exScene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", exScene );
-exScene << perspective( 45, .2, 20 );
-exScene << Translate( 0.0, 0.0, -4.5 );
-exScene << arcball( ex, 1.5 );
-exScene << update;
+ex = Scene Display List();ex << color( .9, .9, .9 );ex << Text( center, middle, .3, "Hello World" );exScene = Scene Box( 600, 600 );exScene << backgroundcolor( 0 );exScene << showarcball( always );New Window( "See HelloWorld.jsl in sample scripts", exScene );exScene << perspective( 45, .2, 20 );exScene << Translate( 0.0, 0.0, -4.5 );exScene << arcball( ex, 1.5 );exScene << update;
 
 ```
 
@@ -2304,8 +1398,7 @@ exScene << update;
 
 ```jsl
 
-Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
-New Window( "This is a script box", Script );
+Script = Script Box( "// This window is editable.", "JSL", 300, 100 );New Window( "This is a script box", Script );
 
 ```
 
@@ -2313,10 +1406,7 @@ New Window( "This is a script box", Script );
 
 ```jsl
 
-pyscript = "\[import numpy as np
-a = np.arange(15).reshape(3, 5)]\";
-Script = Script Box( pyscript, "Python", 300, 100 );
-New Window( "This is a python script box", Script );
+pyscript = "\[import numpy as npa = np.arange(15).reshape(3, 5)]\";Script = Script Box( pyscript, "Python", 300, 100 );New Window( "This is a python script box", Script );
 
 ```
 
@@ -2330,21 +1420,7 @@ New Window( "This is a python script box", Script );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		Scroll Box(
-			Size( 200, 100 ),
-			V List Box(
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		Scroll Box(			Size( 200, 100 ),			V List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -2358,14 +1434,7 @@ New Window( "Example",
 
 ```jsl
 
-Set Global Window Handler(
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
-New Window( "My Window" );
-Clear Global Window Handler();
+Set Global Window Handler(	Function( {window},		Print( window << get window title() );		window << close window();	));New Window( "My Window" );Clear Global Window Handler();
 
 ```
 
@@ -2379,14 +1448,7 @@ Clear Global Window Handler();
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
+New Window( "Shape Seg Example",	Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));
 
 ```
 
@@ -2400,42 +1462,7 @@ New Window( "Shape Seg Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),
-			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -2449,18 +1476,7 @@ New Window( "Example",
 
 ```jsl
 
-sliderValue = .6;
-New Window( "Example",
-	Panel Box( "Slider Box",
-		tb = Text Box( "Value: " || Char( sliderValue ) ),
-		sb = Slider Box(
-			0,
-			1,
-			sliderValue,
-			tb << Set Text( "Value: " || Char( sliderValue ) )
-		)
-	)
-);
+sliderValue = .6;New Window( "Example",	Panel Box( "Slider Box",		tb = Text Box( "Value: " || Char( sliderValue ) ),		sb = Slider Box(			0,			1,			sliderValue,			tb << Set Text( "Value: " || Char( sliderValue ) )		)	));
 
 ```
 
@@ -2474,15 +1490,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 3 ),
-		Text Box( "a" ),
-		Spacer Box(),
-		Text Box( "b" ),
-		Spacer Box(),
-		Text Edit Box( "Under Spacer Box" )
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 3 ),		Text Box( "a" ),		Spacer Box(),		Text Box( "b" ),		Spacer Box(),		Text Edit Box( "Under Spacer Box" )	));
 
 ```
 
@@ -2496,14 +1504,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box(
-		2,
-		nb = Number Edit Box( 3 ),
-		sb = Spin Box( Function( {value}, nb << Increment( value ) ) )
-	)
-);
-nb << Set Increment( 1 );
+New Window( "Example",	Lineup Box(		2,		nb = Number Edit Box( 3 ),		sb = Spin Box( Function( {value}, nb << Increment( value ) ) )	));nb << Set Increment( 1 );
 
 ```
 
@@ -2517,15 +1518,7 @@ nb << Set Increment( 1 );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -2539,12 +1532,7 @@ New Window( "Example",
 
 ```jsl
 
-a = b = c = "";
-New Window( "Example",
-	Modal,
-	<<Return Result,
-	Outline Box( "Table", Table Box( seb = String Col Edit Box( "names", {a, b, c} ) ) )
-);
+a = b = c = "";New Window( "Example",	Modal,	<<Return Result,	Outline Box( "Table", Table Box( seb = String Col Edit Box( "names", {a, b, c} ) ) ));
 
 ```
 
@@ -2558,14 +1546,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Panel Box( "panel", Text Box( "text" ) ),
-		"beta",
-		Popup Box( {"x", ex = 1, "y", ex = 2} )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Panel Box( "panel", Text Box( "text" ) ),		"beta",		Popup Box( {"x", ex = 1, "y", ex = 2} )	));
 
 ```
 
@@ -2579,12 +1560,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),
-		Tab Page Box( Title( "beta" ), Popup Box( {"x", ex = 1, "y", ex = 2} ) )
-	)
-);
+New Window( "Example",	Tab Box(		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),		Tab Page Box( Title( "beta" ), Popup Box( {"x", ex = 1, "y", ex = 2} ) )	));
 
 ```
 
@@ -2598,15 +1574,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -2620,31 +1588,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Justification Example",
-	Outline Box( "text",
-		V List Box(
-			Text Box( "Text implicitly justified over multiple lines:", <<Set Wrap( 100 ) ),
-			Text Box( " " ),
-			Text Box(
-				"Text left justified over multiple lines:",
-				<<Justify Text( "left" ),
-				<<Set Wrap( 100 )
-			),
-			Text Box( " " ),
-			Text Box(
-				"Text center justified over multiple lines:",
-				<<Justify Text( "center" ),
-				<<Set Wrap( 100 )
-			),
-			Text Box( " " ),
-			Text Box(
-				"Text right justified over multiple lines:",
-				<<Justify Text( "right" ),
-				<<Set Wrap( 100 )
-			)
-		)
-	)
-);
+New Window( "Justification Example",	Outline Box( "text",		V List Box(			Text Box( "Text implicitly justified over multiple lines:", <<Set Wrap( 100 ) ),			Text Box( " " ),			Text Box(				"Text left justified over multiple lines:",				<<Justify Text( "left" ),				<<Set Wrap( 100 )			),			Text Box( " " ),			Text Box(				"Text center justified over multiple lines:",				<<Justify Text( "center" ),				<<Set Wrap( 100 )			),			Text Box( " " ),			Text Box(				"Text right justified over multiple lines:",				<<Justify Text( "right" ),				<<Set Wrap( 100 )			)		)	));
 
 ```
 
@@ -2658,20 +1602,7 @@ New Window( "Justification Example",
 
 ```jsl
 
-New Window( "Example: Text Edit Box",
-	Outline Box( "Picker Example",
-		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
-	),
-	Outline Box( "Text Edit Box with password style Example",
-		H List Box(
-			Text Box( "Enter password:    " ),
-			exq = Text Edit Box( "", Password Style( 1 ), Set Script( Print( "changed!" ) ) )
-		),
-		Button Box( "print to log", Set Script( Print( exq << Get Text() ) ) ),
-		Button Box( "hide password", Set Script( exq << Password Style( 1 ) ) ),
-		Button Box( "show password", Set Script( exq << Password Style( 0 ) ) )
-	)
-); // "look in the log window"
+New Window( "Example: Text Edit Box",	Outline Box( "Picker Example",		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )	),	Outline Box( "Text Edit Box with password style Example",		H List Box(			Text Box( "Enter password:    " ),			exq = Text Edit Box( "", Password Style( 1 ), Set Script( Print( "changed!" ) ) )		),		Button Box( "print to log", Set Script( Print( exq << Get Text() ) ) ),		Button Box( "hide password", Set Script( exq << Password Style( 1 ) ) ),		Button Box( "show password", Set Script( exq << Password Style( 0 ) ) )	)); // "look in the log window"
 
 ```
 
@@ -2683,8 +1614,7 @@ New Window( "Example: Text Edit Box",
 
 ```jsl
 
-w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
-w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
+w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
 ```
 
@@ -2698,10 +1628,7 @@ w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom l
 
 ```jsl
 
-If(
-	Is Empty( This Project() ), Print( "Project: (none)" ),
-	Print( "Project: " || (This Project() << Get Window Title()) ),
-);
+If(	Is Empty( This Project() ), Print( "Project: (none)" ),	Print( "Project: " || (This Project() << Get Window Title()) ),);
 
 ```
 
@@ -2715,20 +1642,7 @@ If(
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-                                        
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-                                        
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-                                        
-New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );                                        c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );                                        root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );                                        New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```
 
@@ -2742,20 +1656,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-                                        
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-                                        
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-                                        
-New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );                                        c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );                                        root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );                                        New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```
 
@@ -2767,16 +1668,15 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 **JMP Version hinzugefügt:** Vor Version 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
@@ -2794,16 +1694,7 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
-New Window( "unlineup",
-	Lineup Box( N Col( 2 ),
-		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),
-		Button Box( "First Section 1" ),
-		Button Box( "First Section 2" ),
-		Unlineup Box( Text Box( "Second Section", <<Justify Text( "Center" ) ) ),
-		Button Box( "Second Section 1" ),
-		Button Box( "Second Section 2" )
-	)
-);
+New Window( "unlineup",	Lineup Box( N Col( 2 ),		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),		Button Box( "First Section 1" ),		Button Box( "First Section 2" ),		Unlineup Box( Text Box( "Second Section", <<Justify Text( "Center" ) ) ),		Button Box( "Second Section 1" ),		Button Box( "Second Section 2" )	));
 
 ```
 
@@ -2817,19 +1708,7 @@ New Window( "unlineup",
 
 ```jsl
 
-New Window( "test",
-	H List Box(
-		V Center Box( Text Box( "V+V" ) ),
-		V List Box(
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			H Center Box( Text Box( "H+H" ) ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )
-		)
-	)
-);
+New Window( "test",	H List Box(		V Center Box( Text Box( "V+V" ) ),		V List Box(			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			H Center Box( Text Box( "H+H" ) ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )		)	));
 
 ```
 
@@ -2843,9 +1722,7 @@ New Window( "test",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
-);
+New Window( "Example",	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) ));
 
 ```
 
@@ -2859,23 +1736,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		V Scroll Box(
-			Size( 100 ),
-			V List Box(
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),
-				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		V Scroll Box(			Size( 100 ),			V List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -2889,42 +1750,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),
-			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -2938,24 +1764,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Splitter",
-	V Splitter Box(
-		Size( 800, 600 ),
-		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),
-		H Splitter Box(
-			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),
-			spacer = Spacer Box(),
-			<<Sizes( {0.4, 0.6} )
-		)
-	)
-);
-graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
-pict << Set Min Size( 100, 100 );
-pict << Set Max Size( 500, 500 );
-pict << Set Stretch( "Window", "Window" );
-spacer << Set Fill( 1 );
-spacer << Color( "Red" );
-spacer << Set Stretch( "Window", "Window" );
+New Window( "Splitter",	V Splitter Box(		Size( 800, 600 ),		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),		H Splitter Box(			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),			spacer = Spacer Box(),			<<Sizes( {0.4, 0.6} )		)	));graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );pict << Set Min Size( 100, 100 );pict << Set Max Size( 500, 500 );pict << Set Stretch( "Window", "Window" );spacer << Set Fill( 1 );spacer << Color( "Red" );spacer << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -2969,10 +1778,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );
-wb << Navigate( "http://www.jmp.com" );
-wb << Set Stretch( "Window", "Window" );
-wb << Set Max Size( 10000, 10000 );
+New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );
 
 ```
 
@@ -3000,13 +1806,7 @@ Window( "Big Class" );
 
 ```jsl
 
-With Window Handler(
-	New Window( "My Window" ),
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
+With Window Handler(	New Window( "My Window" ),	Function( {window},		Print( window << get window title() );		window << close window();	));
 
 ```
 
@@ -3020,14 +1820,7 @@ With Window Handler(
 
 ```jsl
 
-New Window( "WrapListBox",
-	Wrap List Box(
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "2" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "3" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "4" ) )
-	)
-);
+New Window( "WrapListBox",	Wrap List Box(		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "2" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "3" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "4" ) )	));
 
 ```
 

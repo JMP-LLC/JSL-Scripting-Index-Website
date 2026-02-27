@@ -6,17 +6,13 @@
 
 ### Run Program
 
-**语法:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
+**语法:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
 
 **说明:** 使用 stdin 和 stdout 控制外部程序。
 
 ```jsl
 
-RP = Run Program(
-	Executable( "PING.EXE"/*path probably not needed*/ ),
-	Options( {"-n 5", "localhost"} ),
-	ReadFunction( Function( {this}, Write( this << read ) ) )
-);
+RP = Run Program(	Executable( "PING.EXE"/*path probably not needed*/ ),	Options( {"-n 5", "localhost"} ),	ReadFunction( Function( {this}, Write( this << read ) ) ));
 
 ```
 
@@ -30,11 +26,7 @@ RP = Run Program(
 
 ```jsl
 
-
-value = "";
-rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );
-While( !(rp << Is Read EOF), If( rp << Can Read, value ||= rp << Read, Wait( 0.01 ) ) );
-Show( value );
+value = "";rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );While( !(rp << Is Read EOF), If( rp << Can Read, value ||= rp << Read, Wait( 0.01 ) ) );Show( value );
 
 ```
 
@@ -52,11 +44,7 @@ Show( value );
 
 ```jsl
 
-
-value = "";
-rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );
-While( !(rp << Is Read EOF), If( rp << Can Read, value ||= rp << Read, Wait( 0.01 ) ) );
-Show( value );
+value = "";rp = Run Program( Executable( "ping.exe" ), Options( {"-n 5", "localhost"} ) );While( !(rp << Is Read EOF), If( rp << Can Read, value ||= rp << Read, Wait( 0.01 ) ) );Show( value );
 
 ```
 
@@ -68,18 +56,7 @@ Show( value );
 
 ```jsl
 
-
-value = "";
-rp = Run Program(
-	Executable( "ping.exe" ),
-	Options( {"-n 5", "localhost"} ),
-	ReadFunction(
-		Function( {this},
-			value ||= this << read;
-			Show( value );
-		)
-	)
-);
+value = "";rp = Run Program(	Executable( "ping.exe" ),	Options( {"-n 5", "localhost"} ),	ReadFunction(		Function( {this},			value ||= this << read;			Show( value );		)	));
 
 ```
 

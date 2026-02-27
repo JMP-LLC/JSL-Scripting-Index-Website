@@ -12,14 +12,7 @@
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));
 
 ```
 
@@ -33,15 +26,7 @@ Add Class:append = Function( {a, b},
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Contains( "nObs" );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Contains( "nObs" );
 
 ```
 
@@ -55,16 +40,7 @@ result = nsref << Contains( "nObs" );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-nsref << Delete Namespace;
-Show( nsref );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));nsref << Delete Namespace;Show( nsref );
 
 ```
 
@@ -76,15 +52,7 @@ Show( nsref );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << First;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << First;
 
 ```
 
@@ -96,15 +64,7 @@ result = nsref << First;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Get Contents;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Get Contents;
 
 ```
 
@@ -116,15 +76,7 @@ result = nsref << Get Contents;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Get Keys;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Get Keys;
 
 ```
 
@@ -136,15 +88,7 @@ result = nsref << Get Keys;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-space name = nsref << Get Name;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));space name = nsref << Get Name;
 
 ```
 
@@ -156,15 +100,7 @@ space name = nsref << Get Name;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Get Value( "nObs" );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Get Value( "nObs" );
 
 ```
 
@@ -176,15 +112,7 @@ result = nsref << Get Value( "nObs" );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Get Values;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Get Values;
 
 ```
 
@@ -196,16 +124,7 @@ result = nsref << Get Values;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-nsref << Insert( "X", 25 );
-Show( nsref );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));nsref << Insert( "X", 25 );Show( nsref );
 
 ```
 
@@ -219,16 +138,7 @@ Show( nsref );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-nsref << Lock Namespace;
-Try( Add Class:nObs = 40, "Add Class is locked." );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));nsref << Lock Namespace;Try( Add Class:nObs = 40, "Add Class is locked." );
 
 ```
 
@@ -240,15 +150,7 @@ Try( Add Class:nObs = 40, "Add Class is locked." );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-n = nsref << N Items;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));n = nsref << N Items;
 
 ```
 
@@ -260,15 +162,7 @@ n = nsref << N Items;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Next( "addition" );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Next( "addition" );
 
 ```
 
@@ -280,16 +174,7 @@ result = nsref << Next( "addition" );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-nsref << Remove( "nObs" );
-Show( nsref );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));nsref << Remove( "nObs" );Show( nsref );
 
 ```
 
@@ -301,15 +186,7 @@ Show( nsref );
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-result = nsref << Show Contents;
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));result = nsref << Show Contents;
 
 ```
 
@@ -323,19 +200,7 @@ result = nsref << Show Contents;
 
 ```jsl
 
-nsref = New Namespace(
-	"Add Class"
-);
-Add Class:nObs = 20;
-Add Class:addition = Function( {x, y}, x + y );
-Add Class:append = Function( {a, b},
-	Char( a ) || " + " || Char( b )
-);
-nsref << Lock Namespace( "nObs" );
-Try( Add Class:nObs = 30, Show( "Add Class is locked." ) ); 
-//Try again after unlocking. 
-nsref << Unlock Namespace( "nObs" );
-Try( Add Class:nObs = 40, Show( "Add Class is locked." ) );
+nsref = New Namespace(	"Add Class");Add Class:nObs = 20;Add Class:addition = Function( {x, y}, x + y );Add Class:append = Function( {a, b},	Char( a ) || " + " || Char( b ));nsref << Lock Namespace( "nObs" );Try( Add Class:nObs = 30, Show( "Add Class is locked." ) ); //Try again after unlocking. nsref << Unlock Namespace( "nObs" );Try( Add Class:nObs = 40, Show( "Add Class is locked." ) );
 
 ```
 

@@ -12,12 +12,7 @@
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ```
 
@@ -31,13 +26,7 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Append( Lines Seg( [5 50 95 50] ) );
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ```
 
@@ -49,13 +38,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Child; // not many segs support children
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Child; // not many segs support children
 
 ```
 
@@ -67,13 +50,7 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Class Name;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Class Name;
 
 ```
 
@@ -87,22 +64,7 @@ seg << Class Name;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-Wait( 2 );
-cs << Clip Shape( Boundaries( "US States" ) );
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -114,44 +76,19 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Delete;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Delete;
 
 ```
 
 ### Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
@@ -163,13 +100,7 @@ New Window( "enabled",
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Frame;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Frame;
 
 ```
 
@@ -181,15 +112,7 @@ seg << Frame;
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << get;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << get;
 
 ```
 
@@ -203,23 +126,7 @@ seg << get;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-cs << Clip Shape( Boundaries( "US States" ) );
-Wait( 2 );
-cs << Get Clip Shape();
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
 
 ```
 
@@ -231,44 +138,19 @@ cs << Get Clip Shape();
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << get description();
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << get description();
 
 ```
 
 ### Get Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
@@ -280,12 +162,7 @@ New Window( "enabled",
 
 ```jsl
 
-//This message applies to all display objects
-x = 1;
-w = New Window( "Test", b = Button Box( "Press me" ) );
-b:x = 2;
-ns = b << GetNamespace();
-Show( ns:x, x );
+//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
 
 ```
 
@@ -297,8 +174,7 @@ Show( ns:x, x );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Properties;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
 
 ```
 
@@ -310,8 +186,7 @@ bb << Get Properties;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property( "Enabled" );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
 
 ```
 
@@ -323,8 +198,7 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property List;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
 
 ```
 
@@ -338,13 +212,7 @@ bb << Get Property List;
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Parent;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Parent;
 
 ```
 
@@ -356,18 +224,7 @@ seg << Parent;
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-Wait( .5 );
-seg << set( 0 );
-Wait( .5 );
-seg << set( 1 );
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));Wait( .5 );seg << set( 0 );Wait( .5 );seg << set( 1 );
 
 ```
 
@@ -379,13 +236,7 @@ seg << set( 1 );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << set description( "my seg" );
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << set description( "my seg" );
 
 ```
 
@@ -397,8 +248,7 @@ seg << set description( "my seg" );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Set Property( "Enabled", 0 );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -410,13 +260,7 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-seg << Sib;
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));seg << Sib;
 
 ```
 
@@ -428,31 +272,7 @@ seg << Sib;
 
 ```jsl
 
-win = New Window( "World",
-	gb = Graph(
-		FrameSize( 800, 400 ),
-		X Scale( -180, 180 ),
-		Y Scale( -90, 90 ),
-		<<Background Map( Images( "Simple Earth" ) )
-	)
-);
-imgBox = win[framebox( 1 )];
-mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
-mapSeg << Transparency( 0.5 );
-Try(
-	xAxis = gb[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = gb[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -464,26 +284,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( If Seg( 1 ) ));
-Try(
-	xAxis = g[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = g[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( If Seg( 1 ) ));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 

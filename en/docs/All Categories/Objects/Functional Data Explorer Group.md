@@ -6,7 +6,7 @@
 
 ### Functional Data Explorer Group
 
-**Syntax:** Functional Data Explorer Group( model1, model2, ... )Functional Data Explorer Group( model1; model2; ... )
+**Syntax:** Functional Data Explorer Group( model1, model2, ... ) Functional Data Explorer Group( model1; model2; ... )
 
 **Description:** Groups Functional Data Explorer models for multiple Y in the Stacked data format.
 
@@ -22,15 +22,21 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	B Splines( AICc )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	B Splines( AICc ));
 
 ```
+
+### ARWLS Save Baselines
+
+**Syntax:** obj &lt;&lt; ARWLS Save Baselines
+
+**JMP Version Added:** 19
+
+### ARWLS Save Corrected
+
+**Syntax:** obj &lt;&lt; ARWLS Save Corrected
+
+**JMP Version Added:** 19
 
 ### Align 0 to 1
 
@@ -42,13 +48,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Align 0 to 1 )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Align 0 to 1 ));
 
 ```
 
@@ -62,13 +62,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Align Maximum )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Align Maximum ));
 
 ```
 
@@ -82,13 +76,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Align Minimum )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Align Minimum ));
 
 ```
 
@@ -102,13 +90,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Align by Function )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Align by Function ));
 
 ```
 
@@ -122,13 +104,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	B Splines
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	B Splines);
 
 ```
 
@@ -142,13 +118,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	B Splines Model Controls
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	B Splines Model Controls);
 
 ```
 
@@ -162,51 +132,15 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	P Splines( BIC )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	P Splines( BIC ));
 
 ```
 
 ### Baseline Correction
 
-**Syntax:** obj &lt;&lt; Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
+**Syntax:** obj &lt;&lt; Baseline Correction
 
-**Description:** Fits and removes a baseline model from each function. You can specify the baseline model, correction region, baseline regions, and the anchor points.
-
-**JMP Version Added:** 17
-
-**Example 1**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Baseline Correction )
-);
-
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Baseline Correction( Model( Quadratic ) ) )
-);
-
-```
+**JMP Version Added:** 19
 
 ### Center
 
@@ -218,15 +152,15 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Center )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Center ));
 
 ```
+
+### Custom Save Corrected
+
+**Syntax:** obj &lt;&lt; Custom Save Corrected
+
+**JMP Version Added:** 19
 
 ### Direct Functional PCA
 
@@ -238,14 +172,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Formulation for Homogeneity DOE.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Homogeneity Grade ),
-	X( :T ),
-	ID( :Formulation ),
-	Z( :Solvent, :Active, :Water ),
-	Direct Functional PCA
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Formulation for Homogeneity DOE.jmp" );obj = dt << Functional Data Explorer(	Y( :Homogeneity Grade ),	X( :T ),	ID( :Formulation ),	Z( :Solvent, :Active, :Water ),	Direct Functional PCA);
 
 ```
 
@@ -259,13 +186,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Ethanol ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Dynamic Time Warping( Reference( 1 ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Ethanol ),	X( :Time ),	ID( :BatchID ),	Data Processing( Dynamic Time Warping( Reference( 1 ) ) ));
 
 ```
 
@@ -279,13 +200,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :pH ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Exp )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :pH ),	X( :Time ),	ID( :BatchID ),	Data Processing( Exp ));
 
 ```
 
@@ -299,9 +214,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-obj << Data Processing( Filter X( [5, 50] ) );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );obj << Data Processing( Filter X( [5, 50] ) );
 
 ```
 
@@ -315,9 +228,7 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-obj << Data Processing( Filter Y( [., 100] ) );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );obj << Data Processing( Filter Y( [., 100] ) );
 
 ```
 
@@ -331,13 +242,7 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Fourier Basis
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Fourier Basis);
 
 ```
 
@@ -351,13 +256,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Fourier Basis Model Controls
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Fourier Basis Model Controls);
 
 ```
 
@@ -371,13 +270,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Fourier Basis( GCV )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Fourier Basis( GCV ));
 
 ```
 
@@ -391,13 +284,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :ID ),
-	Data Processing( Load Targets( "Bristol, TN" ) )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :ID ),	Data Processing( Load Targets( "Bristol, TN" ) ));
 
 ```
 
@@ -411,13 +298,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Air ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Log )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Air ),	X( :Time ),	ID( :BatchID ),	Data Processing( Log ));
 
 ```
 
@@ -431,13 +312,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Air ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Log X )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Air ),	X( :Time ),	ID( :BatchID ),	Data Processing( Log X ));
 
 ```
 
@@ -451,14 +326,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Range 0 to 1 ),
-	Data Processing( Logit )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Range 0 to 1 ),	Data Processing( Logit ));
 
 ```
 
@@ -472,13 +340,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
-obj = dt << Functional Data Explorer(
-	Data Format( Row ),
-	Y( Column Group( "NMR Spectra" ) ),
-	ID( :NMR ID ),
-	Data Processing( MSC )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );obj = dt << Functional Data Explorer(	Data Format( Row ),	Y( Column Group( "NMR Spectra" ) ),	ID( :NMR ID ),	Data Processing( MSC ));
 
 ```
 
@@ -500,13 +362,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Negation )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Negation ));
 
 ```
 
@@ -528,13 +384,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	P Splines
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	P Splines);
 
 ```
 
@@ -548,15 +398,21 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	P Splines Model Controls
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	P Splines Model Controls);
 
 ```
+
+### Parametric Save Baselines
+
+**Syntax:** obj &lt;&lt; Parametric Save Baselines
+
+**JMP Version Added:** 19
+
+### Parametric Save Corrected
+
+**Syntax:** obj &lt;&lt; Parametric Save Corrected
+
+**JMP Version Added:** 19
 
 ### Peak Finding
 
@@ -592,10 +448,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
-obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );
-Wait( 1 );
-obj << Plot Mean Function( 0 );
+dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );Wait( 1 );obj << Plot Mean Function( 0 );
 
 ```
 
@@ -609,13 +462,7 @@ obj << Plot Mean Function( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Temperature ),
-	X( :Month ),
-	ID( :Year ),
-	Plot Median Function( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );obj = dt << Functional Data Explorer(	Y( :Temperature ),	X( :Month ),	ID( :Year ),	Plot Median Function( 1 ));
 
 ```
 
@@ -629,10 +476,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );
-obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );
-Wait( 1 );
-obj << Plot Standard Deviation Function( 0 );
+dt = Open( "$SAMPLE_DATA/Time Series/Raleigh Temps.jmp" );obj = dt << Functional Data Explorer( Y( :Temperature ), X( :Month ), ID( :Year ) );Wait( 1 );obj << Plot Standard Deviation Function( 0 );
 
 ```
 
@@ -646,13 +490,7 @@ obj << Plot Standard Deviation Function( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Range 0 to 1 )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Range 0 to 1 ));
 
 ```
 
@@ -666,9 +504,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-obj << Data Processing( Reduce( Thin( 2 ) ) );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 ```
 
@@ -688,11 +524,7 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-dt << Select Where( :STATION == "USW00024024" );
-Wait( 1 );
-obj << Data Processing( Remove Selected );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );dt << Select Where( :STATION == "USW00024024" );Wait( 1 );obj << Data Processing( Remove Selected );
 
 ```
 
@@ -706,11 +538,7 @@ obj << Data Processing( Remove Selected );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-dt << Select Where( :STATION != "USW00024024" );
-Wait( 1 );
-obj << Data Processing( Remove Unselected );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );dt << Select Where( :STATION != "USW00024024" );Wait( 1 );obj << Data Processing( Remove Unselected );
 
 ```
 
@@ -724,10 +552,7 @@ obj << Data Processing( Remove Unselected );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );
-Wait( 1 );
-obj << Data Processing( Remove Value( 30 ) );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ) );Wait( 1 );obj << Data Processing( Remove Value( 30 ) );
 
 ```
 
@@ -741,13 +566,7 @@ obj << Data Processing( Remove Value( 30 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Ethanol ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Remove Zeros )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Ethanol ),	X( :Time ),	ID( :BatchID ),	Data Processing( Remove Zeros ));
 
 ```
 
@@ -761,15 +580,21 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Row Alignment )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Row Alignment ));
 
 ```
+
+### SNIP Save Baselines
+
+**Syntax:** obj &lt;&lt; SNIP Save Baselines
+
+**JMP Version Added:** 19
+
+### SNIP Save Corrected
+
+**Syntax:** obj &lt;&lt; SNIP Save Corrected
+
+**JMP Version Added:** 19
 
 ### SNV
 
@@ -781,13 +606,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
-obj = dt << Functional Data Explorer(
-	Data Format( Row ),
-	Y( Column Group( "NMR Spectra" ) ),
-	ID( :NMR ID ),
-	Data Processing( SNV )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );obj = dt << Functional Data Explorer(	Data Format( Row ),	Y( Column Group( "NMR Spectra" ) ),	ID( :NMR ID ),	Data Processing( SNV ));
 
 ```
 
@@ -801,14 +620,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Ethanol, :Temp, :Molasses Feed ),
-	X( :Time ),
-	ID( :BatchID ),
-	B Splines
-);
-obj << Save Data;
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Ethanol, :Temp, :Molasses Feed ),	X( :Time ),	ID( :BatchID ),	B Splines);obj << Save Data;
 
 ```
 
@@ -822,14 +634,7 @@ obj << Save Data;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :Ethanol, :Temp, :Molasses Feed ),
-	X( :Time ),
-	ID( :BatchID ),
-	B Splines
-);
-obj << Save Summaries;
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :Ethanol, :Temp, :Molasses Feed ),	X( :Time ),	ID( :BatchID ),	B Splines);obj << Save Summaries;
 
 ```
 
@@ -843,13 +648,7 @@ obj << Save Summaries;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
-obj = dt << Functional Data Explorer(
-	Data Format( Row ),
-	Y( Column Group( "NMR Spectra" ) ),
-	ID( :NMR ID ),
-	Data Processing( "Savitzky-Golay Filter"n )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );obj = dt << Functional Data Explorer(	Data Format( Row ),	Y( Column Group( "NMR Spectra" ) ),	ID( :NMR ID ),	Data Processing( "Savitzky-Golay Filter"n ));
 
 ```
 
@@ -863,13 +662,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
-obj = dt << Functional Data Explorer(
-	Data Format( Row ),
-	Y( Column Group( "NMR Spectra" ) ),
-	ID( :NMR ID ),
-	Data Processing( "Savitzky-Golay First Derivative"n )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );obj = dt << Functional Data Explorer(	Data Format( Row ),	Y( Column Group( "NMR Spectra" ) ),	ID( :NMR ID ),	Data Processing( "Savitzky-Golay First Derivative"n ));
 
 ```
 
@@ -883,13 +676,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );
-obj = dt << Functional Data Explorer(
-	Data Format( Row ),
-	Y( Column Group( "NMR Spectra" ) ),
-	ID( :NMR ID ),
-	Data Processing( "Savitzky-Golay Second Derivative"n )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/NMR DoE.jmp" );obj = dt << Functional Data Explorer(	Data Format( Row ),	Y( Column Group( "NMR Spectra" ) ),	ID( :NMR ID ),	Data Processing( "Savitzky-Golay Second Derivative"n ));
 
 ```
 
@@ -903,13 +690,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :pH ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Square )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :pH ),	X( :Time ),	ID( :BatchID ),	Data Processing( Square ));
 
 ```
 
@@ -923,13 +704,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :pH ),
-	X( :Time ),
-	ID( :BatchID ),
-	Data Processing( Square Root )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Fermentation Process.jmp" );obj = dt << Functional Data Explorer(	Y( :pH ),	X( :Time ),	ID( :BatchID ),	Data Processing( Square Root ));
 
 ```
 
@@ -943,13 +718,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer(
-	Y( :TMAX ),
-	X( :Week of Year ),
-	ID( :NAME ),
-	Data Processing( Standardize )
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer(	Y( :TMAX ),	X( :Week of Year ),	ID( :NAME ),	Data Processing( Standardize ));
 
 ```
 
@@ -971,8 +740,7 @@ obj = dt << Functional Data Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ), Wavelets );
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME ), Wavelets );
 
 ```
 
@@ -986,12 +754,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1007,13 +770,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1021,10 +778,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1032,10 +786,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1047,8 +798,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1060,12 +810,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1103,9 +848,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1119,8 +862,7 @@ biv << Get By Levels;
 
 ```jsl
 
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1128,27 +870,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1160,8 +882,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1173,8 +894,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-t = obj << Get Script;
-Show( t );
+t = obj << Get Script;Show( t );
 
 ```
 
@@ -1186,8 +906,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Script With Data Table;
-Show( t );
+t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1199,8 +918,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Timing;
-Show( t );
+t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1212,10 +930,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1229,10 +944,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1244,13 +956,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1262,14 +968,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1283,9 +982,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1297,15 +994,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1341,14 +1030,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1360,30 +1042,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report;Report( obj )
+**Syntax:** obj &lt;&lt; Report; Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1489,15 +1160,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1509,20 +1172,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1534,12 +1184,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1551,11 +1196,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1579,9 +1220,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1593,9 +1232,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 

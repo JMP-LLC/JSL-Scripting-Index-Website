@@ -10,14 +10,7 @@
 
 ```jsl
 
-
-jslPhrase =
-"The JSL to do this is :\[
-a = "hello";
-b = a|| " world.";
-show(b);
-]\ and you use the Submit command to run it.";
-Show( jslPhrase );
+jslPhrase ="The JSL to do this is :\[a = "hello";b = a|| " world.";show(b);]\ and you use the Submit command to run it.";Show( jslPhrase );
 
 ```
 
@@ -73,10 +66,7 @@ Pi() + 10;
 
 ```jsl
 
-Add Color Theme(
-	{"Yellow To Blue", 0, {{255, 255, 0},
-	{0, 0, 255}}, {0.0, 1.0}}
-);
+Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
 
@@ -84,14 +74,7 @@ Add Color Theme(
 
 ```jsl
 
-Add Color Theme(
-	{"Black To Red To White",
-	{"Continuous", "Categorical",
-	"Diverging"}, {{0, 0, 0}, {255, 0, 0
-	}, {255, 255, 255},
-	Missing( "Green" )}, {"Full Color",
-	"Tritanopia", "Tritanomaly"}}
-);
+Add Color Theme(	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0,	0}, {255, 255, 255}, Missing( "Green" )}, {"Full Color", "Tritanopia", "Tritanomaly"}});
 
 ```
 
@@ -105,19 +88,7 @@ Add Color Theme(
 
 ```jsl
 
-myAdd =
-New Custom Function(
-	"custom",
-	"Add",
-	Function( {x, y}, x + y - 1 )
-);
-mySub =
-New Custom Function(
-	"custom",
-	"Sub",
-	Function( {x, y}, x - y + 1 )
-);
-Add Custom Functions( {myAdd, mySub} );
+myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );Add Custom Functions( {myAdd, mySub} );
 
 ```
 
@@ -131,9 +102,7 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
-ex = 1;
-ex += 2;
-ex;
+ex = 1;ex += 2;ex;
 
 ```
 
@@ -145,10 +114,7 @@ ex;
 
 ```jsl
 
-x = [1, 2, 3, 4];
-y = [5, 6, 7, 8];
-alpha = 0.5;
-z = Add Vectors BLAS( x, y, alpha );
+x = [1, 2, 3, 4];y = [5, 6, 7, 8];alpha = 0.5;z = Add Vectors BLAS( x, y, alpha );
 
 ```
 
@@ -162,58 +128,7 @@ z = Add Vectors BLAS( x, y, alpha );
 
 ```jsl
 
-
-New Window( "Crosstab",
-	Alignment Grid Box(
-		Alignment Cell Box(
-			0,
-			1,
-			1,
-			1,
-			ColSpan( [3] ),
-			{"sex"}
-		),
-		Alignment Cell Box(
-			1,
-			1,
-			1,
-			3,
-			{"F", "M", "Total"}
-		),
-		Alignment Cell Box(
-			3,
-			0,
-			1,
-			1,
-			Sides( 0 ),
-			ColSpan( [4] ),
-			{"age"}
-		),
-		Alignment Cell Box(
-			4,
-			0,
-			6,
-			1,
-			{"  12", "  13", "  14",
-			"  15", "  16", "  17"}
-		),
-		Alignment Cell Box(
-			4,
-			1,
-			6,
-			3,
-			{"5 (28%)", "3 (14%)",
-			"8 (20%)", "3 (17%)",
-			"4 (18%)", "7 (18%)",
-			"5 (28%)", "7 (32%)",
-			"12 (30%)", "2 (11%)",
-			"5 (23%)", "7 (18%)",
-			"2 (11%)", "1 (5%)",
-			"3 (8%)", "1 (6%)", "2 (9%)",
-			"3 (8%)"}
-		)
-	)
-);
+New Window( "Crosstab",	Alignment Grid Box(		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),		Alignment Cell Box(			4,			1,			6,			3,			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}		)	));
 
 ```
 
@@ -227,58 +142,7 @@ New Window( "Crosstab",
 
 ```jsl
 
-
-New Window( "Crosstab",
-	Alignment Grid Box(
-		Alignment Cell Box(
-			0,
-			1,
-			1,
-			1,
-			ColSpan( [3] ),
-			{"sex"}
-		),
-		Alignment Cell Box(
-			1,
-			1,
-			1,
-			3,
-			{"F", "M", "Total"}
-		),
-		Alignment Cell Box(
-			3,
-			0,
-			1,
-			1,
-			Sides( 0 ),
-			ColSpan( [4] ),
-			{"age"}
-		),
-		Alignment Cell Box(
-			4,
-			0,
-			6,
-			1,
-			{"  12", "  13", "  14",
-			"  15", "  16", "  17"}
-		),
-		Alignment Cell Box(
-			4,
-			1,
-			6,
-			3,
-			{"5 (28%)", "3 (14%)",
-			"8 (20%)", "3 (17%)",
-			"4 (18%)", "7 (18%)",
-			"5 (28%)", "7 (32%)",
-			"12 (30%)", "2 (11%)",
-			"5 (23%)", "7 (18%)",
-			"2 (11%)", "1 (5%)",
-			"3 (8%)", "1 (6%)", "2 (9%)",
-			"3 (8%)"}
-		)
-	)
-);
+New Window( "Crosstab",	Alignment Grid Box(		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),		Alignment Cell Box( 1, 1, 1, 3, {"F", "M", "Total"} ),		Alignment Cell Box( 3, 0, 1, 1, Sides( 0 ), ColSpan( [4] ), {"age"} ),		Alignment Cell Box( 4, 0, 6, 1, {"  12", "  13", "  14", "  15", "  16", "  17"} ),		Alignment Cell Box(			4,			1,			6,			3,			{"5 (28%)", "3 (14%)", "8 (20%)", "3 (17%)", "4 (18%)", "7 (18%)", "5 (28%)",			"7 (32%)", "12 (30%)", "2 (11%)", "5 (23%)", "7 (18%)", "2 (11%)", "1 (5%)",			"3 (8%)", "1 (6%)", "2 (9%)", "3 (8%)"}		)	));
 
 ```
 
@@ -292,76 +156,7 @@ New Window( "Crosstab",
 
 ```jsl
 
-
-New Window( "Alignment MultiBox",
-	Border Box( Top( 15 ), Left( 15 ),
-		Right( 15 ), Bottom( 15 ),
-		Alignment Grid Box(
-			Alignment Multi Box(
-				0,
-				1,
-				1,
-				1,
-				2,
-				{},
-				{{"Freq"}, {"Share"}}
-			),
-			Alignment Cell Box(
-				0,
-				2,
-				1,
-				1,
-				ColSpan( [2] ),
-				{"sex"}
-			),
-			Alignment Cell Box(
-				1,
-				2,
-				1,
-				2,
-				ColSpan( [1, 1] ),
-				{"F", "M"}
-			),
-			Alignment Cell Box(
-				2,
-				0,
-				1,
-				1,
-				RowSpan( [7] ),
-				{"age"}
-			),
-			Alignment Cell Box(
-				2,
-				1,
-				7,
-				1,
-				{"12", "13", "14", "15",
-				"16", "17",
-				"Total Responses"}
-			),
-			Alignment Multi Box(
-				2,
-				2,
-				6,
-				2,
-				2,
-				{[5 3, 5 2, 2 1, 3 4, 7
-				5, 1 2], [0.277 0.167,
-				0.278 0.111, 0.111 0.055,
-				0.136 0.181, 0.318 0.227,
-				0.045 0.090]},
-				{Empty(), Empty()}
-			),
-			Alignment Cell Box(
-				8,
-				2,
-				1,
-				2,
-				[18 22]
-			)
-		)
-	)
-);
+New Window( "Alignment MultiBox",	Border Box( Top( 15 ), Left( 15 ), Right( 15 ), Bottom( 15 ),		Alignment Grid Box(			Alignment Multi Box( 0, 1, 1, 1, 2, {}, {{"Freq"}, {"Share"}} ),			Alignment Cell Box( 0, 2, 1, 1, ColSpan( [2] ), {"sex"} ),			Alignment Cell Box( 1, 2, 1, 2, ColSpan( [1, 1] ), {"F", "M"} ),			Alignment Cell Box( 2, 0, 1, 1, RowSpan( [7] ), {"age"} ),			Alignment Cell Box(				2,				1,				7,				1,				{"12", "13", "14", "15", "16", "17", "Total Responses"}			),			Alignment Multi Box(				2,				2,				6,				2,				2,				{[5 3, 5 2, 2 1, 3 4, 7 5, 1 2], [0.277 0.167, 0.278 0.111, 0.111 0.055,				0.136 0.181, 0.318 0.227, 0.045 0.090]},				{Empty(), Empty()}			),			Alignment Cell Box( 8, 2, 1, 2, [18 22] )		)	));
 
 ```
 
@@ -389,10 +184,7 @@ All( [1 2 3] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang =
-Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = Alpha Shape( triang );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = Alpha Shape( triang );
 
 ```
 
@@ -442,18 +234,13 @@ Any( [1 0 2] );
 
 **Syntaxe :** Arc( left, top, right, bottom, startAngle, endAngle )
 
-**Description :** Dessine un arc d&apos;ovale.
+**Description :** Dessine un arc d&apos;ovale. Les angles sont en degrés, avec 0 degré à 12 h et 90 degrés à 3 h. Pour les aligner avec les valeurs en radians utilisées par sin() et cos(), vous devez inverser la rotation et ajouter le décalage de phase de 90 degrés. Par exemple, radians = 2 * pi() * (90 - degrés) / 360. Les arcs se tracent dans le sens des aiguilles d&apos;une montre en partant du début.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "red" );
-		Arc( 10, 80, 70, 30, 0, 90 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "red" );		Arc( 10, 80, 70, 30, 0, 90 );	));
 
 ```
 
@@ -467,37 +254,7 @@ New Window( "Example",
 
 ```jsl
 
-
-dt = Open(
-	"$SAMPLE_DATA/Wafer Stacked.jmp"
-);
-Arc Finder(
-	Group( :Lot, :Wafer ),
-	X( :X_Die ),
-	Y( :Y_Die ),
-	Min Distance( 12 ), // minimum distance among 3 points to seed an arc
-	Min Radius( 15 ), // minimum radius of the acceptable arc
-	Max Radius( 2000 ), // maximum radius of acceptable arc
-	Max Radius Error( 2 ), // how close a point needs to be added
-	Min Arc Points( 5 ), // how many points to define an arc
-	Number of Searches( 500 ), // how many random probes of data
-	Max Number Arcs( 3 ) // number of arcs searched for
-);
-dt <<
-Color or Mark by Column( :Arc Number );
-dt <<
-Graph Builder(
-	Size( 1539, 921 ),
-	Variables(
-		X( :X_Die ),
-		Y( :Y_Die ),
-		Wrap( :Lot_Wafer Label ),
-		Color( :Arc Number )
-	),
-	Elements(
-		Points( X, Y, Legend( 6 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );Arc Finder(	Group( :Lot, :Wafer ),	X( :X_Die ),	Y( :Y_Die ),	Min Distance( 12 ), // minimum distance among 3 points to seed an arc	Min Radius( 15 ), // minimum radius of the acceptable arc	Max Radius( 2000 ), // maximum radius of acceptable arc	Max Radius Error( 2 ), // how close a point needs to be added	Min Arc Points( 5 ), // how many points to define an arc	Number of Searches( 500 ), // how many random probes of data	Max Number Arcs( 3 ) // number of arcs searched for);dt << Color or Mark by Column( :Arc Number );dt << Graph Builder(	Size( 1539, 921 ),	Variables( X( :X_Die ), Y( :Y_Die ), Wrap( :Lot_Wafer Label ), Color( :Arc Number ) ),	Elements( Points( X, Y, Legend( 6 ) ) ));
 
 ```
 
@@ -639,8 +396,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-// See Example 2 for the deprecated Arg Expr() equivalent
-Arg( Expr( Sum( a, b, c ) ), 2 );
+// See Example 2 for the deprecated Arg Expr() equivalentArg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
 
@@ -648,8 +404,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-// Deprecated
-Arg Expr( Sum( a, b, c ), 2 );
+// DeprecatedArg Expr( Sum( a, b, c ), 2 );
 
 ```
 
@@ -663,23 +418,7 @@ Arg Expr( Sum( a, b, c ), 2 );
 
 ```jsl
 
-Open(
-	"$SAMPLE_DATA/Time Series/Steel Shipments.jmp"
-);
-ARIMA Forecast(
-	:Steel Shipments,
-	96,
-	ARIMA( 1, 0, 1 ),
-	{
-	AR Coefficients(
-		{0.900397691783565}
-	),
-	MA Coefficients(
-		{0.483316746530245}
-	), Intercept( 6466.03264802329 )},
-	1,
-	2
-);
+Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );ARIMA Forecast(	:Steel Shipments,	96,	ARIMA( 1, 0, 1 ),	{AR Coefficients( {0.900397691783565} ), MA Coefficients( {0.483316746530245} ),	Intercept( 6466.03264802329 )},	1,	2);
 
 ```
 
@@ -721,12 +460,7 @@ Arrhenius Inv( 100 );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Size( 4 );
-		Arrow( [10 30 90], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Size( 4 );		Arrow( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -754,9 +488,7 @@ ArcSine( 0.5 );
 
 ```jsl
 
-x = 45;
-b = As Boolean( x > 2 );
-Show( b );
+x = 45;b = As Boolean( x > 2 );Show( b );
 
 ```
 
@@ -770,21 +502,13 @@ Show( b );
 
 ```jsl
 
-As C Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
+As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
 ### As Column
 
-**Syntaxe :** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
+**Syntaxe :** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
 
 **Description :** Accède à la colonne spécifiée dans la table de données indiquée ou en cours. Une erreur est lancée si aucune colonne ou table de données de ce type n&apos;est trouvée.
 
@@ -792,10 +516,7 @@ As C Expr(
 
 ```jsl
 
-exdt =
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt:height[1] + :height[2]
-+As Column( "height" )[3];
+exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 ```
 
@@ -811,19 +532,7 @@ exdt:height[1] + :height[2]
 
 ```jsl
 
-New Table( "As Constant Demo Table 1",
-	Add Rows( 10 ),
-	New Column( "Non-Constant",
-		Formula( Random Uniform() )
-	),
-	New Column( "Constant",
-		Formula(
-			As Constant(
-				Random Uniform()
-			)
-		)
-	)
-);
+New Table( "As Constant Demo Table 1",	Add Rows( 10 ),	New Column( "Non-Constant", Formula( Random Uniform() ) ),	New Column( "Constant", Formula( As Constant( Random Uniform() ) ) ));
 
 ```
 
@@ -831,26 +540,7 @@ New Table( "As Constant Demo Table 1",
 
 ```jsl
 
-New Table( "As Constant Demo Table 2",
-	Add Rows( 1000 ),
-	New Column(
-		"What's on Your Desktop?",
-		"character",
-		Formula(
-			As Constant(
-				xFiles =
-				Files In Directory(
-					"$Desktop"
-				)
-			);
-			iR = Row();
-			If( iR <= N Items( xFiles ),
-				xFiles[iR],
-				"---"
-			);
-		)
-	)
-);
+New Table( "As Constant Demo Table 2",	Add Rows( 1000 ),	New Column( "What's on Your Desktop?",		"character",		Formula(			As Constant( xFiles = Files In Directory( "$Desktop" ) );			iR = Row();			If( iR <= N Items( xFiles ),				xFiles[iR],				"---"			);		)	));
 
 ```
 
@@ -858,14 +548,7 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	x = 2;
-	y = 100;
-	z = As Constant( x + y );
-	x *= i;
-	y /= i;
-	Show( i, x + y, z );
-);
+For( i = 1, i <= 10, i++,	x = 2;	y = 100;	z = As Constant( x + y );	x *= i;	y /= i;	Show( i, x + y, z ););
 
 ```
 
@@ -893,12 +576,7 @@ As Date( Today() );
 
 ```jsl
 
-::ex = 23;
-Local( {ex = 12},
-	Eval List(
-		{ex, ::ex, As Global( "ex" )}
-	)
-);
+::ex = 23;Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 ```
 
@@ -912,15 +590,7 @@ Local( {ex = 12},
 
 ```jsl
 
-As JavaScript Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
+As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
@@ -934,15 +604,7 @@ As JavaScript Expr(
 
 ```jsl
 
-As JSON Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
+As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
@@ -970,10 +632,7 @@ As List( [11 22 33, 44 55 66] );
 
 ```jsl
 
-dt = Open(
-	"$SAMPLE_DATA/Big Class.jmp"
-);
-dt:(As Name( "height" ))[3];
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:(As Name( "height" ))[3];
 
 ```
 
@@ -987,11 +646,7 @@ dt:(As Name( "height" ))[3];
 
 ```jsl
 
-ns =
-New Namespace(
-	"complex"
-);
-As Namespace( ns );
+ns = New Namespace(	"complex");As Namespace( ns );
 
 ```
 
@@ -1005,15 +660,7 @@ As Namespace( ns );
 
 ```jsl
 
-As Python Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
+As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
@@ -1027,12 +674,7 @@ As Python Expr(
 
 ```jsl
 
-::: ex = 23;
-Local( {ex = 12},
-	Eval List(
-		{ex, ::: ex, As Global( "ex" )}
-	)
-);
+::: ex = 23;Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 ```
 
@@ -1046,16 +688,7 @@ Local( {ex = 12},
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row(
-	Row State() =
-	As Row State(
-		(:sex == "F") * 2 + (:sex == "M"
-		) * 4 + ((:sex == "F") * 2 + (
-		:sex == "M") * 6) * 16 + (:age
-		 - 11) * 256
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row(	Row State() = As Row State(		(:sex == "F") * 2 + (:sex == "M") * 4 + ((:sex == "F") * 2 + (:sex == "M") * 6) * 16		 + (:age - 11) * 256	));
 
 ```
 
@@ -1069,15 +702,7 @@ For Each Row(
 
 ```jsl
 
-As SAS Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
+As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
@@ -1091,8 +716,7 @@ As SAS Expr(
 
 ```jsl
 
-Here:z = 23.5;
-As Scoped( Here, z );
+Here:z = 23.5;As Scoped( Here, z );
 
 ```
 
@@ -1106,16 +730,7 @@ As Scoped( Here, z );
 
 ```jsl
 
-As SQL Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	),
-	"MySQL"
-);
+As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
 
@@ -1143,14 +758,13 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
-{ex1, ex2} = {Pi(), 1};
-ex1 + ex1;
+{ex1, ex2} = {Pi(), 1};ex1 + ex1;
 
 ```
 
 ### Associative Array
 
-**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
+**Syntaxe :** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
 
 **Description :** Crée un tableau associatif, également appelé dictionnaire ou table de hachage. Sous la forme à deux arguments, les codes et valeurs peuvent être une liste, une matrice ou une colonne de table de données.
 
@@ -1158,13 +772,7 @@ ex1 + ex1;
 
 ```jsl
 
-ex =
-Associative Array(
-	{"red", "blue"},
-	{1, 2}
-);
-ex["green"] = 3;
-ex << get contents;
+ex = Associative Array( {"red", "blue"}, {1, 2} );ex["green"] = 3;ex << get contents;
 
 ```
 
@@ -1194,14 +802,7 @@ ex << get contents;
 
 ```jsl
 
-B Spline Coef(
-	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-	2
-);
-B Spline Coef(
-	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-	[3, 7]
-);
+B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```
 
@@ -1209,14 +810,7 @@ B Spline Coef(
 
 ```jsl
 
-xx = (0 :: 10)`;
-yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
-designMat = B Spline Coef( xx, 2 );
-Linear Regression(
-	yy,
-	designMat,
-	<<nointercept
-);
+xx = (0 :: 10)`;yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];designMat = B Spline Coef( xx, 2 );Linear Regression( yy, designMat, <<nointercept );
 
 ```
 
@@ -1230,16 +824,7 @@ Linear Regression(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Back Color( "red" );
-		Text(
-			Erased,
-			{50, 20},
-			"Hello"
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Back Color( "red" );		Text( Erased, {50, 20}, "Hello" );	));
 
 ```
 
@@ -1267,13 +852,7 @@ Beep();
 
 ```jsl
 
-/*Example for Continuous X and Continuous Y*/Best Partition(
-	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
-	[11.2, 11.5, 11.8, 100.5, 100.7,
-	100.8],
-	<<ContinuousX,
-	<<ContinuousY
-);
+/*Example for Continuous X and Continuous Y*/Best Partition(	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],	[11.2, 11.5, 11.8, 100.5, 100.7, 100.8],	<<ContinuousX,	<<ContinuousY);
 
 ```
 
@@ -1301,76 +880,7 @@ Beta( 5, 4 );
 
 ```jsl
 
-p = 0.5;
-n = 25;
-delta = 0;
-New Window(
-	"Example: BetaBinomial Distribution",
-	y =
-	Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, n + 1 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= n, k++,
-			H Line(
-				k,
-				k + 1,
-				Beta Binomial Distribution(
-					k,
-					p,
-					n,
-					delta
-				)
-			);
-			V Line(
-				k + 1,
-				Beta Binomial Distribution(
-					k,
-					p,
-					n,
-					delta
-				),
-				Beta Binomial Distribution(
-					k + 1,
-					p,
-					n,
-					delta
-				)
-			);
-		);
-		Text(
-			{15, 0.1},
-			"n=",
-			Round( n ),
-			" p=",
-			Round( p, 2 )
-		);
-		Text(
-			{15, 0.04},
-			"Dispersion=",
-			Round( delta, 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			0.01,
-			0.99,
-			p,
-			y << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			-0.01,
-			0.99,
-			delta,
-			y << reshow
-		),
-		Text Box( " Dispersion" )
-	)
-);
+p = 0.5;n = 25;delta = 0;New Window( "Example: BetaBinomial Distribution",	y = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, n + 1 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= n, k++,			H Line( k, k + 1, Beta Binomial Distribution( k, p, n, delta ) );			V Line(				k + 1,				Beta Binomial Distribution( k, p, n, delta ),				Beta Binomial Distribution( k + 1, p, n, delta )			);		);		Text( {15, 0.1}, "n=", Round( n ), " p=", Round( p, 2 ) );		Text( {15, 0.04}, "Dispersion=", Round( delta, 2 ) );	),	H List Box( Slider Box( 0.01, 0.99, p, y << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( -0.01, 0.99, delta, y << reshow ), Text Box( " Dispersion" ) ));
 
 ```
 
@@ -1384,71 +894,7 @@ New Window(
 
 ```jsl
 
-n = 25;
-p = 0.5;
-delta = 0;
-New Window(
-	"Binomial and BetaBinomial Probabilities",
-	clty =
-	Graph Box(
-		Y Scale( 0, 0.3 ),
-		X Scale( -1, n + 1 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( x = 0, x <= n, x++,
-			Pen Color( "red" );
-			V Line(
-				x,
-				0,
-				Binomial Probability(
-					p,
-					n,
-					x
-				)
-			);
-			Pen Color( "blue" );
-			V Line(
-				x + 0.35,
-				0,
-				Beta Binomial Probability(
-					x,
-					p,
-					n,
-					delta
-				)
-			);
-		);
-		Text(
-			{1, 0.25},
-			"p=",
-			Round( p, 8 ),
-			" Dispersion=",
-			Round( delta, 8 )
-		);
-		Text(
-			{0, 0.28},
-			"Red = Binomial, Blue = BetaBinomial"
-		);
-	),
-	H List Box(
-		Slider Box(
-			0.2,
-			0.8,
-			p,
-			clty << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			-0.05,
-			0.999,
-			delta,
-			clty << reshow
-		),
-		Text Box( " Dispersion" )
-	)
-);
+n = 25;p = 0.5;delta = 0;New Window( "Binomial and BetaBinomial Probabilities",	clty = Graph Box(		Y Scale( 0, 0.3 ),		X Scale( -1, n + 1 ),		Pen Color( "red" ),		Pen Size( 2 );		For( x = 0, x <= n, x++,			Pen Color( "red" );			V Line( x, 0, Binomial Probability( p, n, x ) );			Pen Color( "blue" );			V Line( x + 0.35, 0, Beta Binomial Probability( x, p, n, delta ) );		);		Text( {1, 0.25}, "p=", Round( p, 8 ), " Dispersion=", Round( delta, 8 ) );		Text( {0, 0.28}, "Red = Binomial, Blue = BetaBinomial" );	),	H List Box( Slider Box( 0.2, 0.8, p, clty << reshow ), Text Box( " p" ) ),	H List Box(		Slider Box( -0.05, 0.999, delta, clty << reshow ),		Text Box( " Dispersion" )	));
 
 ```
 
@@ -1462,119 +908,7 @@ New Window(
 
 ```jsl
 
-qbinexp = 0.3;
-qbinexn = 20;
-qbinexq = 0.5;
-delta = 0;
-New Window(
-	"Example: BetaBinomial Quantile",
-	qbinexy =
-	Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qbinexk = 0,
-			qbinexk < Round( qbinexn ),
-			qbinexk++,
-			H Line(
-				qbinexk,
-				qbinexk + 1,
-				Beta Binomial Distribution(
-					qbinexk,
-					qbinexp,
-					Round( qbinexn ),
-					delta
-				)
-			);
-			V Line(
-				qbinexk + 1,
-				Beta Binomial Distribution(
-					qbinexk,
-					qbinexp,
-					Round( qbinexn ),
-					delta
-				),
-				Beta Binomial Distribution(
-					qbinexk + 1,
-					qbinexp,
-					Round( qbinexn ),
-					delta
-				)
-			);
-		);
-		Pen Color( "blue" );
-		V Line(
-			Beta Binomial Quantile(
-				qbinexp,
-				Round( qbinexn ),
-				delta,
-				qbinexq
-			),
-			0,
-			1
-		);
-		Text(
-			{6, 0.17},
-			"n=",
-			Round( qbinexn ),
-			" p=",
-			Round( qbinexp, 2 ),
-			" Disp.=",
-			Round( Delta, 2 ),
-			" q=",
-			Round( qbinexq, 2 )
-		);
-		Text(
-			{6, 0.1},
-			"quantile=",
-			Round(
-				Beta Binomial Quantile(
-					qbinexp,
-					Round( qbinexn ),
-					delta,
-					qbinexq
-				)
-			)
-		);
-	),
-	H List Box(
-		Slider Box(
-			0,
-			0.99,
-			qbinexp,
-			qbinexy << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			40,
-			qbinexn,
-			qbinexy << reshow
-		),
-		Text Box( " n" )
-	),
-	H List Box(
-		Slider Box(
-			-0.01,
-			0.99,
-			delta,
-			qbinexy << reshow
-		),
-		Text Box( " Dispersion" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			1,
-			qbinexq,
-			qbinexy << reshow
-		),
-		Text Box( " q" )
-	)
-);
+qbinexp = 0.3;qbinexn = 20;qbinexq = 0.5;delta = 0;New Window( "Example: BetaBinomial Quantile",	qbinexy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qbinexk = 0, qbinexk < Round( qbinexn ), qbinexk++,			H Line(				qbinexk,				qbinexk + 1,				Beta Binomial Distribution( qbinexk, qbinexp, Round( qbinexn ), delta )			);			V Line(				qbinexk + 1,				Beta Binomial Distribution( qbinexk, qbinexp, Round( qbinexn ), delta ),				Beta Binomial Distribution( qbinexk + 1, qbinexp, Round( qbinexn ), delta )			);		);		Pen Color( "blue" );		V Line( Beta Binomial Quantile( qbinexp, Round( qbinexn ), delta, qbinexq ), 0, 1 );		Text(			{6, 0.17},			"n=",			Round( qbinexn ),			" p=",			Round( qbinexp, 2 ),			" Disp.=",			Round( Delta, 2 ),			" q=",			Round( qbinexq, 2 )		);		Text(			{6, 0.1},			"quantile=",			Round( Beta Binomial Quantile( qbinexp, Round( qbinexn ), delta, qbinexq ) )		);	),	H List Box( Slider Box( 0, 0.99, qbinexp, qbinexy << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( 0, 40, qbinexn, qbinexy << reshow ), Text Box( " n" ) ),	H List Box(		Slider Box( -0.01, 0.99, delta, qbinexy << reshow ),		Text Box( " Dispersion" )	),	H List Box( Slider Box( 0, 1, qbinexq, qbinexy << reshow ), Text Box( " q" ) ));
 
 ```
 
@@ -1588,50 +922,7 @@ New Window(
 
 ```jsl
 
-alpha = 0.5;
-beta = 0.5;
-New Window( "Example: Beta Density",
-	y =
-	Graph Box(
-		Y Scale( 0, 2.5 ),
-		X Scale( 0, 1 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Beta Density(
-				q,
-				alpha,
-				beta
-			),
-			q
-		);
-		Text(
-			{0.55, 2.2},
-			"\!U03B1=",
-			Round( alpha, 2 ),
-			" \!U03B2=",
-			Round( beta, 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			0,
-			10,
-			alpha,
-			y << reshow
-		),
-		Text Box( " \!U03B1" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			10,
-			beta,
-			y << reshow
-		),
-		Text Box( " \!U03B2" )
-	)
-);
+alpha = 0.5;beta = 0.5;New Window( "Example: Beta Density",	y = Graph Box(		Y Scale( 0, 2.5 ),		X Scale( 0, 1 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Beta Density( q, alpha, beta ), q );		Text( {0.55, 2.2}, "\!U03B1=", Round( alpha, 2 ), " \!U03B2=", Round( beta, 2 ) );	),	H List Box( Slider Box( 0, 10, alpha, y << reshow ), Text Box( " \!U03B1" ) ),	H List Box( Slider Box( 0, 10, beta, y << reshow ), Text Box( " \!U03B2" ) ));
 
 ```
 
@@ -1645,50 +936,7 @@ New Window( "Example: Beta Density",
 
 ```jsl
 
-alpha = 0.5;
-beta = 0.5;
-New Window( "Example: Beta Distribution",
-	y =
-	Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 1 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Beta Distribution(
-				q,
-				alpha,
-				beta
-			),
-			q
-		);
-		Text(
-			{0.1, 0.9},
-			"\!U03B1=",
-			Round( alpha, 2 ),
-			" \!U03B2=",
-			Round( beta, 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			0,
-			10,
-			alpha,
-			y << reshow
-		),
-		Text Box( " \!U03B1" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			10,
-			beta,
-			y << reshow
-		),
-		Text Box( " \!U03B2" )
-	)
-);
+alpha = 0.5;beta = 0.5;New Window( "Example: Beta Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 1 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Beta Distribution( q, alpha, beta ), q );		Text( {0.1, 0.9}, "\!U03B1=", Round( alpha, 2 ), " \!U03B2=", Round( beta, 2 ) );	),	H List Box( Slider Box( 0, 10, alpha, y << reshow ), Text Box( " \!U03B1" ) ),	H List Box( Slider Box( 0, 10, beta, y << reshow ), Text Box( " \!U03B2" ) ));
 
 ```
 
@@ -1716,67 +964,7 @@ Beta Quantile( 0.95, 2, 5 );
 
 ```jsl
 
-p = 0.5;
-n = 30;
-New Window(
-	"Example: Binomial Distribution",
-	y =
-	Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 31 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= n, k++,
-			H Line(
-				k,
-				k + 1,
-				Binomial Distribution(
-					p,
-					n,
-					k
-				)
-			);
-			V Line(
-				k + 1,
-				Binomial Distribution(
-					p,
-					n,
-					k
-				),
-				Binomial Distribution(
-					p,
-					n,
-					k + 1
-				)
-			);
-		);
-		Text(
-			{20, 0.1},
-			"n=",
-			Round( n ),
-			" p=",
-			Round( p, 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			0,
-			1,
-			p,
-			y << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			30,
-			n,
-			y << reshow
-		),
-		Text Box( " n" )
-	)
-);
+p = 0.5;n = 30;New Window( "Example: Binomial Distribution",	y = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 31 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= n, k++,			H Line( k, k + 1, Binomial Distribution( p, n, k ) );			V Line(				k + 1,				Binomial Distribution( p, n, k ),				Binomial Distribution( p, n, k + 1 )			);		);		Text( {20, 0.1}, "n=", Round( n ), " p=", Round( p, 2 ) );	),	H List Box( Slider Box( 0, 1, p, y << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( 0, 30, n, y << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -1790,57 +978,7 @@ New Window(
 
 ```jsl
 
-cltp = 0.03;
-cltn = 30;
-New Window(
-	"Example: Binomial Probability and Central Limit Theorem",
-	clty =
-	Graph Box(
-		Y Scale( 0, 0.3 ),
-		X Scale( -1, 60 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( cltk = 0, cltk <= cltn,
-			cltk++,
-			V Line(
-				cltk,
-				0,
-				Binomial Probability(
-					cltp,
-					cltn,
-					cltk
-				)
-			)
-		);
-		Text(
-			{15, 0.09},
-			"n=",
-			Round( cltn ),
-			" p=",
-			Round( cltp, 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			0.01,
-			0.99,
-			cltp,
-			clty << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			2000,
-			cltn,
-			clty << reshow
-		),
-		Text Box(
-			" n ( Drag me and see Central Limit Theorem )"
-		)
-	)
-);
+cltp = 0.03;cltn = 30;New Window( "Example: Binomial Probability and Central Limit Theorem",	clty = Graph Box(		Y Scale( 0, 0.3 ),		X Scale( -1, 60 ),		Pen Color( "red" ),		Pen Size( 2 );		For( cltk = 0, cltk <= cltn, cltk++,			V Line( cltk, 0, Binomial Probability( cltp, cltn, cltk ) )		);		Text( {15, 0.09}, "n=", Round( cltn ), " p=", Round( cltp, 2 ) );	),	H List Box( Slider Box( 0.01, 0.99, cltp, clty << reshow ), Text Box( " p" ) ),	H List Box(		Slider Box( 0, 2000, cltn, clty << reshow ),		Text Box( " n ( Drag me and see Central Limit Theorem )" )	));
 
 ```
 
@@ -1854,98 +992,7 @@ New Window(
 
 ```jsl
 
-qbinexp = 0.3;
-qbinexn = 20;
-qbinexq = 0.5;
-New Window( "Example: Binomial Quantile",
-	qbinexy =
-	Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qbinexk = 0,
-			qbinexk < Round( qbinexn ),
-			qbinexk++,
-			H Line(
-				qbinexk,
-				qbinexk + 1,
-				Binomial Distribution(
-					qbinexp,
-					Round( qbinexn ),
-					qbinexk
-				)
-			);
-			V Line(
-				qbinexk + 1,
-				Binomial Distribution(
-					qbinexp,
-					Round( qbinexn ),
-					qbinexk
-				),
-				Binomial Distribution(
-					qbinexp,
-					Round( qbinexn ),
-					qbinexk + 1
-				)
-			);
-		);
-		Pen Color( "blue" );
-		V Line(
-			Binomial Quantile(
-				qbinexp,
-				Round( qbinexn ),
-				qbinexq
-			),
-			0,
-			1.0
-		);
-		Text(
-			{6, 0.17},
-			"n=",
-			Round( qbinexn ),
-			" p=",
-			Round( qbinexp, 2 ),
-			" q=",
-			Round( qbinexq, 2 ),
-			" quantile=",
-			Round(
-				Binomial Quantile(
-					qbinexp,
-					Round( qbinexn ),
-					qbinexq
-				)
-			)
-		);
-	),
-	H List Box(
-		Slider Box(
-			0,
-			1,
-			qbinexp,
-			qbinexy << reshow
-		),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			40,
-			qbinexn,
-			qbinexy << reshow
-		),
-		Text Box( " n" )
-	),
-	H List Box(
-		Slider Box(
-			0,
-			1,
-			qbinexq,
-			qbinexy << reshow
-		),
-		Text Box( " q" )
-	)
-);
+qbinexp = 0.3;qbinexn = 20;qbinexq = 0.5;New Window( "Example: Binomial Quantile",	qbinexy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qbinexk = 0, qbinexk < Round( qbinexn ), qbinexk++,			H Line(				qbinexk,				qbinexk + 1,				Binomial Distribution( qbinexp, Round( qbinexn ), qbinexk )			);			V Line(				qbinexk + 1,				Binomial Distribution( qbinexp, Round( qbinexn ), qbinexk ),				Binomial Distribution( qbinexp, Round( qbinexn ), qbinexk + 1 )			);		);		Pen Color( "blue" );		V Line( Binomial Quantile( qbinexp, Round( qbinexn ), qbinexq ), 0, 1.0 );		Text(			{6, 0.17},			"n=",			Round( qbinexn ),			" p=",			Round( qbinexp, 2 ),			" q=",			Round( qbinexq, 2 ),			" quantile=",			Round( Binomial Quantile( qbinexp, Round( qbinexn ), qbinexq ) )		);	),	H List Box( Slider Box( 0, 1, qbinexp, qbinexy << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( 0, 40, qbinexn, qbinexy << reshow ), Text Box( " n" ) ),	H List Box( Slider Box( 0, 1, qbinexq, qbinexy << reshow ), Text Box( " q" ) ));
 
 ```
 
@@ -1985,12 +1032,7 @@ Blend Colors( "red", "blue", "lRGB" );
 
 ```jsl
 
-Blend Colors(
-	"red",
-	"blue",
-	0.5,
-	"LUV"
-);
+Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```
 
@@ -1998,12 +1040,7 @@ Blend Colors(
 
 ```jsl
 
-Blend Colors(
-	"red",
-	"blue",
-	0.75,
-	"HLS"
-);
+Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
 
@@ -2011,64 +1048,7 @@ Blend Colors(
 
 ```jsl
 
-c1 = "red";
-c2 = "blue";
-steps = 20;
-New Window( "HLS Radial Color Blending",
-	Graph(
-		frameSize( 290, 110 ),
-		X Scale( 0, 150 ),
-		Y Scale( 0, 55 ),
-		Suppress Axes,
-		Text( {2, 47}, "Short" ),
-		Text( {2, 32}, "Long" ),
-		Text( {2, 17}, "Positive" ),
-		Text( {2, 2}, "Negative" ),
-		For( i = 0, i < steps, i += 1,
-			x = i * 6 + 30;
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HLS",
-					"Short"
-				)
-			);
-			Rect( x, 45, x + 5, 55, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HLS",
-					"Long"
-				)
-			);
-			Rect( x, 30, x + 5, 40, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HLS",
-					"Positive"
-				)
-			);
-			Rect( x, 15, x + 5, 25, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HLS",
-					"Negative"
-				)
-			);
-			Rect( x, 0, x + 5, 10, 1 );
-		)
-	)
-);
+c1 = "red";c2 = "blue";steps = 20;New Window( "HLS Radial Color Blending",	Graph(		frameSize( 290, 110 ),		X Scale( 0, 150 ),		Y Scale( 0, 55 ),		Suppress Axes,		Text( {2, 47}, "Short" ),		Text( {2, 32}, "Long" ),		Text( {2, 17}, "Positive" ),		Text( {2, 2}, "Negative" ),		For( i = 0, i < steps, i += 1,			x = i * 6 + 30;			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HLS", "Short" ) );			Rect( x, 45, x + 5, 55, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HLS", "Long" ) );			Rect( x, 30, x + 5, 40, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HLS", "Positive" ) );			Rect( x, 15, x + 5, 25, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HLS", "Negative" ) );			Rect( x, 0, x + 5, 10, 1 );		)	));
 
 ```
 
@@ -2076,65 +1056,7 @@ New Window( "HLS Radial Color Blending",
 
 ```jsl
 
-c1 = "blue";
-c2 = "red";
-steps = 20;
-New Window(
-	"HCLuv Radial Color Blending",
-	Graph(
-		frameSize( 290, 110 ),
-		X Scale( 0, 150 ),
-		Y Scale( 0, 55 ),
-		Suppress Axes,
-		Text( {2, 47}, "Short" ),
-		Text( {2, 32}, "Long" ),
-		Text( {2, 17}, "Positive" ),
-		Text( {2, 2}, "Negative" ),
-		For( i = 0, i < steps, i += 1,
-			x = i * 6 + 30;
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HCLuv",
-					"Short"
-				)
-			);
-			Rect( x, 45, x + 5, 55, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HCLuv",
-					"Long"
-				)
-			);
-			Rect( x, 30, x + 5, 40, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HCLuv",
-					"Positive"
-				)
-			);
-			Rect( x, 15, x + 5, 25, 1 );
-			Fill Color(
-				Blend Colors(
-					c1,
-					c2,
-					i / (steps - 1),
-					"HCLuv",
-					"Negative"
-				)
-			);
-			Rect( x, 0, x + 5, 10, 1 );
-		)
-	)
-);
+c1 = "blue";c2 = "red";steps = 20;New Window( "HCLuv Radial Color Blending",	Graph(		frameSize( 290, 110 ),		X Scale( 0, 150 ),		Y Scale( 0, 55 ),		Suppress Axes,		Text( {2, 47}, "Short" ),		Text( {2, 32}, "Long" ),		Text( {2, 17}, "Positive" ),		Text( {2, 2}, "Negative" ),		For( i = 0, i < steps, i += 1,			x = i * 6 + 30;			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HCLuv", "Short" ) );			Rect( x, 45, x + 5, 55, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HCLuv", "Long" ) );			Rect( x, 30, x + 5, 40, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HCLuv", "Positive" ) );			Rect( x, 15, x + 5, 25, 1 );			Fill Color( Blend Colors( c1, c2, i / (steps - 1), "HCLuv", "Negative" ) );			Rect( x, 0, x + 5, 10, 1 );		)	));
 
 ```
 
@@ -2148,16 +1070,7 @@ New Window(
 
 ```jsl
 
-Hex(/* make it printable */
-	Blob MD5(/* get the hash */
-		Load Text File(/* a file from the samples */
-			"$SAMPLE_IMPORT_DATA/animals.txt",
-			BLOB/* the result is a BLOB, not a string */
-		)
-	)
-) == "763D3C9F5F3E92951B3A3DC965084DAC" /* benchmark hash value */
-/* the result is 1 if the benchmark matches */
-;
+Hex(/* make it printable */ Blob MD5(/* get the hash */		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",			BLOB/* the result is a BLOB, not a string */		)	)) == "763D3C9F5F3E92951B3A3DC965084DAC" /* benchmark hash value */ /* the result is 1 if the benchmark matches */;
 
 ```
 
@@ -2171,13 +1084,7 @@ Hex(/* make it printable */
 
 ```jsl
 
-Blob Peek(
-	Char To Blob(
-		"Quick Bob, eat your lunch!"
-	),
-	6 /*Zero based!*/,
-	3
-);
+Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
 
@@ -2191,13 +1098,7 @@ Blob Peek(
 
 ```jsl
 
-Blob To Char(
-	Hex To Blob( "436166C3A9" )
-) ||
-Blob To Char(
-	Hex To Blob( "436166C3A9" ),
-	"ascii~hex"
-);
+Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(	Hex To Blob( "436166C3A9" ),	"ascii~hex");
 
 ```
 
@@ -2211,13 +1112,7 @@ Blob To Char(
 
 ```jsl
 
-Blob To Matrix(
-	Hex To Blob( "00010002FFFFFFFE" ),
-	"int",
-	2,
-	"big",
-	2
-);
+Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
 
@@ -2231,25 +1126,7 @@ Blob To Matrix(
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ),
-		spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ),
-			Right( 10 ), bottom( 10 ),
-			top( 10 ), sides( 15 ),
-			Expr As Picture(
-				Expr(
-					(-b
-					+Sqrt(
-						b ^ 2 - 4 * a *
-						c
-					)) / (2 * a)
-				)
-			)
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -2291,17 +1168,7 @@ Box Cox Transform( 3, 2 );
 
 ```jsl
 
-New Window( "Box Plot Seg Example",
-	g =
-	Graph Box(
-		Frame Size( 40, 180 ),
-		Y Scale( 0, 5 ),
-		Box Plot Seg( [1, 2, 3, 4] )
-	)
-);
-g[AxisBox( 2 )] << delete;
-seg = (g[FrameBox( 1 )] <<
-Find Seg( "Box Plot Seg" ));
+New Window( "Box Plot Seg Example",	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) ));g[AxisBox( 2 )] << delete;seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```
 
@@ -2315,10 +1182,7 @@ Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i == 5, Break() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i == 5, Break() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -2346,9 +1210,7 @@ Build Information();
 
 ```jsl
 
-New Window( "Example",
-	Busy Light( <<automatic )
-);
+New Window( "Example", Busy Light( <<automatic ) );
 
 ```
 
@@ -2362,11 +1224,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Button Box( "Press Me",
-		Print( "Pressed." )
-	)
-);
+New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
 
@@ -2380,9 +1238,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Calendar Box Example",
-	Calendar Box()
-);
+New Window( "Calendar Box Example", Calendar Box() );
 
 ```
 
@@ -2398,15 +1254,7 @@ New Window( "Calendar Box Example",
 
 ```jsl
 
-Caption(
-	{100, 200},
-	"explanation",
-	Font( "Arial Black" ),
-	Font Size( 16 ),
-	Text Color( "blue" ),
-	Back Color( "yellow" ),
-	Spoken( 1 )
-);
+Caption(	{100, 200},	"explanation",	Font( "Arial Black" ),	Font Size( 16 ),	Text Color( "blue" ),	Back Color( "yellow" ),	Spoken( 1 ));
 
 ```
 
@@ -2414,9 +1262,7 @@ Caption(
 
 ```jsl
 
-Caption( "explanation" );
-Wait( 2 );
-Caption( remove );
+Caption( "explanation" );Wait( 2 );Caption( remove );
 
 ```
 
@@ -2430,14 +1276,7 @@ Caption( remove );
 
 ```jsl
 
-
-url = "http://myCasURL";
-cas = CAS Connect(
-	URL( url ),
-	Username( "myCas_user" ),
-	Prompt( Always ),
-	Certificates( "c:\mycerts.crt" )
-);
+url = "http://myCasURL";cas = CAS Connect(	URL( url ),	Username( "myCas_user" ),	Prompt( Always ),	Certificates( "c:\mycerts.crt" ));
 
 ```
 
@@ -2451,14 +1290,7 @@ cas = CAS Connect(
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-CAS Export Data(
-	Open( "$SAMPLE_DATA\Big Class.jmp" ),
-	"Casuser",
-	"Big Class"
-);
-CAS Delete Table( "Casuser", "Big Class" );
+CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Delete Table( "Casuser", "Big Class" );
 
 ```
 
@@ -2472,14 +1304,7 @@ CAS Delete Table( "Casuser", "Big Class" );
 
 ```jsl
 
-
-url = "http://myCasURL";
-cas = CAS Connect(
-	URL( url ),
-	Username( "myCas_user" ),
-	Prompt( Always )
-);
-CAS Disconnect();
+url = "http://myCasURL";cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ) );CAS Disconnect();
 
 ```
 
@@ -2493,13 +1318,7 @@ CAS Disconnect();
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-CAS Export Data(
-	Open( "$SAMPLE_DATA\Big Class.jmp" ),
-	"CASUSER",
-	"Big Class"
-);
+CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ```
 
@@ -2513,19 +1332,7 @@ CAS Export Data(
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data(
-	Open( "$SAMPLE_DATA\Big Class.jmp" ),
-	"Casuser",
-	"Big Class",
-	Save( 1 )
-);
-datasets = CAS Get Data Sets( "casuser" );
-Show( datasets );
-cas << Delete Table( "Casuser", "Big Class" );
-datasets = CAS Get Data Sets( "casuser" );
-Show( datasets );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );datasets = CAS Get Data Sets( "casuser" );Show( datasets );cas << Delete Table( "Casuser", "Big Class" );datasets = CAS Get Data Sets( "casuser" );Show( datasets );
 
 ```
 
@@ -2539,10 +1346,7 @@ Show( datasets );
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-libraries = CAS Get Libraries();
-Show( libraries );
+CAS Connect( Prompt( ifNeeded ) );libraries = CAS Get Libraries();Show( libraries );
 
 ```
 
@@ -2556,14 +1360,7 @@ Show( libraries );
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-CAS Export Data(
-	Open( "$SAMPLE_DATA\Big Class.jmp" ),
-	"Casuser",
-	"Big Class"
-);
-CAS Import Data( "Casuser.Big Class" );
+CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Import Data( "Casuser.Big Class" );
 
 ```
 
@@ -2577,9 +1374,7 @@ CAS Import Data( "Casuser.Big Class" );
 
 ```jsl
 
-
-connected = CAS Is Connected();
-Show( connected );
+connected = CAS Is Connected();Show( connected );
 
 ```
 
@@ -2593,14 +1388,7 @@ Show( connected );
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-CAS Export Data(
-	Open( "$SAMPLE_DATA\Big Class.jmp" ),
-	"Casuser",
-	"Big Class"
-);
-CAS Remove Table( "Casuser", "Big Class" );
+CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Remove Table( "Casuser", "Big Class" );
 
 ```
 
@@ -2614,223 +1402,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ```jsl
 
-
-json =
-"\[
-{
-  "_ctb": true,
-  "label": "Selected Rows from Table BIG CLASS",
-  "name": "Fetch",
-  "title": "Selected Rows from Table BIG CLASS",
-  "schema": [
-    {
-      "format": "",
-      "label": "",
-      "name": "_Index_",
-      "type": "int",
-      "width": 4
-    },
-    {
-      "format": "",
-      "label": "",
-      "name": "name",
-      "type": "string",
-      "width": 9
-    },
-    {
-      "format": "",
-      "label": "",
-      "name": "age",
-      "type": "double",
-      "width": 8
-    },
-    {
-      "format": "",
-      "label": "",
-      "name": "sex",
-      "type": "string",
-      "width": 1
-    },
-    {
-      "format": "",
-      "label": "",
-      "name": "height",
-      "type": "double",
-      "width": 8
-    },
-    {
-      "format": "",
-      "label": "",
-      "name": "weight",
-      "type": "double",
-      "width": 8
-    }
-  ],
-  "rows": [
-    [
-      1,
-      "KATIE",
-      12,
-      "F",
-      59,
-      95
-    ],
-    [
-      2,
-      "LOUISE",
-      12,
-      "F",
-      61,
-      123
-    ],
-    [
-      3,
-      "JANE",
-      12,
-      "F",
-      55,
-      74
-    ],
-    [
-      4,
-      "JACLYN",
-      12,
-      "F",
-      66,
-      145
-    ],
-    [
-      5,
-      "LILLIE",
-      12,
-      "F",
-      52,
-      64
-    ],
-    [
-      6,
-      "TIM",
-      12,
-      "M",
-      60,
-      84
-    ],
-    [
-      7,
-      "JAMES",
-      12,
-      "M",
-      61,
-      128
-    ],
-    [
-      8,
-      "ROBERT",
-      12,
-      "M",
-      51,
-      79
-    ],
-    [
-      9,
-      "BARBARA",
-      13,
-      "F",
-      60,
-      112
-    ],
-    [
-      10,
-      "ALICE",
-      13,
-      "F",
-      61,
-      107
-    ],
-    [
-      11,
-      "SUSAN",
-      13,
-      "F",
-      56,
-      67
-    ],
-    [
-      12,
-      "JOHN",
-      13,
-      "M",
-      65,
-      98
-    ],
-    [
-      13,
-      "JOE",
-      13,
-      "M",
-      63,
-      105
-    ],
-    [
-      14,
-      "MICHAEL",
-      13,
-      "M",
-      58,
-      95
-    ],
-    [
-      15,
-      "DAVID",
-      13,
-      "M",
-      59,
-      79
-    ],
-    [
-      16,
-      "JUDY",
-      14,
-      "F",
-      61,
-      81
-    ],
-    [
-      17,
-      "ELIZABETH",
-      14,
-      "F",
-      62,
-      91
-    ],
-    [
-      18,
-      "LESLIE",
-      14,
-      "F",
-      65,
-      142
-    ],
-    [
-      19,
-      "CAROL",
-      14,
-      "F",
-      63,
-      84
-    ],
-    [
-      20,
-      "PATTY",
-      14,
-      "F",
-      62,
-      85
-    ]
-  ]
-}
-]\";
-dt = CAS Table To Data Table( json );
+json ="\[{  "_ctb": true,  "label": "Selected Rows from Table BIG CLASS",  "name": "Fetch",  "title": "Selected Rows from Table BIG CLASS",  "schema": [    {      "format": "",      "label": "",      "name": "_Index_",      "type": "int",      "width": 4    },    {      "format": "",      "label": "",      "name": "name",      "type": "string",      "width": 9    },    {      "format": "",      "label": "",      "name": "age",      "type": "double",      "width": 8    },    {      "format": "",      "label": "",      "name": "sex",      "type": "string",      "width": 1    },    {      "format": "",      "label": "",      "name": "height",      "type": "double",      "width": 8    },    {      "format": "",      "label": "",      "name": "weight",      "type": "double",      "width": 8    }  ],  "rows": [    [      1,      "KATIE",      12,      "F",      59,      95    ],    [      2,      "LOUISE",      12,      "F",      61,      123    ],    [      3,      "JANE",      12,      "F",      55,      74    ],    [      4,      "JACLYN",      12,      "F",      66,      145    ],    [      5,      "LILLIE",      12,      "F",      52,      64    ],    [      6,      "TIM",      12,      "M",      60,      84    ],    [      7,      "JAMES",      12,      "M",      61,      128    ],    [      8,      "ROBERT",      12,      "M",      51,      79    ],    [      9,      "BARBARA",      13,      "F",      60,      112    ],    [      10,      "ALICE",      13,      "F",      61,      107    ],    [      11,      "SUSAN",      13,      "F",      56,      67    ],    [      12,      "JOHN",      13,      "M",      65,      98    ],    [      13,      "JOE",      13,      "M",      63,      105    ],    [      14,      "MICHAEL",      13,      "M",      58,      95    ],    [      15,      "DAVID",      13,      "M",      59,      79    ],    [      16,      "JUDY",      14,      "F",      61,      81    ],    [      17,      "ELIZABETH",      14,      "F",      62,      91    ],    [      18,      "LESLIE",      14,      "F",      65,      142    ],    [      19,      "CAROL",      14,      "F",      63,      84    ],    [      20,      "PATTY",      14,      "F",      62,      85    ]  ]}]\";dt = CAS Table To Data Table( json );
 
 ```
 
@@ -2844,9 +1416,7 @@ dt = CAS Table To Data Table( json );
 
 ```jsl
 
-
-CAS Connect( Prompt( ifNeeded ) );
-CAS Terminate Sessions();
+CAS Connect( Prompt( ifNeeded ) );CAS Terminate Sessions();
 
 ```
 
@@ -2860,15 +1430,7 @@ CAS Terminate Sessions();
 
 ```jsl
 
-New Window( "Example: Cauchy Density",
-	y = Graph Box(
-		Y Scale( 0, .4 ),
-		X Scale( -6, 6 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Density( q ), q );
-	)
-);
+New Window( "Example: Cauchy Density",	y = Graph Box(		Y Scale( 0, .4 ),		X Scale( -6, 6 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Cauchy Density( q ), q );	));
 
 ```
 
@@ -2882,15 +1444,7 @@ New Window( "Example: Cauchy Density",
 
 ```jsl
 
-New Window( "Example: Cauchy Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -6, 6 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Distribution( q ), q );
-	)
-);
+New Window( "Example: Cauchy Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( -6, 6 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Cauchy Distribution( q ), q );	));
 
 ```
 
@@ -2904,15 +1458,7 @@ New Window( "Example: Cauchy Distribution",
 
 ```jsl
 
-New Window( "Example: Cauchy Quantile",
-	Graph Box(
-		Y Scale( -6, 6 ),
-		X Scale( 0, 1 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Quantile( p ), p );
-	)
-);
+New Window( "Example: Cauchy Quantile",	Graph Box(		Y Scale( -6, 6 ),		X Scale( 0, 1 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Cauchy Quantile( p ), p );	));
 
 ```
 
@@ -2926,36 +1472,7 @@ New Window( "Example: Cauchy Quantile",
 
 ```jsl
 
-/* Generate random values, Normal(0,1) */
-Y = J( 150, 1, Random Normal() );
-
-/* CDF function */
-{Quant, CumProb} = CDF( Y ); 
-
-/* Draw empirical and theorical CDF */
-New Window( "Empirical CDF",
-	Graph Box(
-		X Scale( -3, 3 ),
-		Y Scale( 0, 1 ),
-		Pen Color( "red" );
-		For( i = 2, i <= N Row( Quant ), i++,
-			H Line(
-				Quant[i - 1],
-				Quant[i],
-				CumProb[i]
-			);
-			V Line(
-				Quant[i - 1],
-				CumProb[i - 1],
-				CumProb[i]
-			);
-		);
-		i = N Row( Quant );
-		V Line( Quant[i], CumProb[i], 1 );
-		Pen Color( "blue" );
-		Y Function( Normal Distribution( q ), q );
-	)
-);
+/* Generate random values, Normal(0,1) */Y = J( 150, 1, Random Normal() );/* CDF function */{Quant, CumProb} = CDF( Y ); /* Draw empirical and theorical CDF */New Window( "Empirical CDF",	Graph Box(		X Scale( -3, 3 ),		Y Scale( 0, 1 ),		Pen Color( "red" );		For( i = 2, i <= N Row( Quant ), i++,			H Line( Quant[i - 1], Quant[i], CumProb[i] );			V Line( Quant[i - 1], CumProb[i - 1], CumProb[i] );		);		i = N Row( Quant );		V Line( Quant[i], CumProb[i], 1 );		Pen Color( "blue" );		Y Function( Normal Distribution( q ), q );	));
 
 ```
 
@@ -2985,10 +1502,7 @@ Ceiling( 1.2 );
 
 ```jsl
 
-Show(
-	Char( 88.54 ),
-	Char( 88.54, <<Full Precision( 1 ) )
-);
+Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
 
@@ -3032,8 +1546,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ```jsl
 
-Hex( 1024, "integer" ) || " " ||
-Hex( "Café", "utf-16be" );
+Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```
 
@@ -3047,11 +1560,7 @@ Hex( "Café", "utf-16be" );
 
 ```jsl
 
-Show(
-	Char To Path(
-		"M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z"
-	)
-);
+Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
 
@@ -3065,12 +1574,21 @@ Show(
 
 ```jsl
 
-New Window( "Example",
-	cb = Check Box(
-		{"Good"},
-		Show( cb << Get() )
-	)
-);
+New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
+
+```
+
+### Check MATLAB Dependencies
+
+**Syntaxe :** Check MATLAB Dependencies()
+
+**Description :** Vérifie si les dépendances MATLAB sont installées.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+If( !Check MATLAB Dependencies(),	Install MATLAB Dependencies();	Print( "Dependencies are installed" );,	Print( "Dependencies are installed" ));
 
 ```
 
@@ -3084,34 +1602,7 @@ New Window( "Example",
 
 ```jsl
 
-cdedf = 2;
-New Window( "Example: ChiSquare Density",
-	cdey =
-	Graph Box(
-		Y Scale( 0, 0.4 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Density( cdeq, cdedf ),
-			cdeq
-		);
-		Text(
-			{7, 0.35},
-			"df=",
-			Round( cdedf, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box(
-			0.5,
-			10,
-			cdedf,
-			cdey << reshow
-		)
-	)
-);
+cdedf = 2;New Window( "Example: ChiSquare Density",	cdey = Graph Box(		Y Scale( 0, 0.4 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Density( cdeq, cdedf ), cdeq );		Text( {7, 0.35}, "df=", Round( cdedf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 0.5, 10, cdedf, cdey << reshow ) ));
 
 ```
 
@@ -3125,34 +1616,7 @@ New Window( "Example: ChiSquare Density",
 
 ```jsl
 
-cdidf = 2;
-New Window( "Example: ChiSquare Distribution",
-	cdiy =
-	Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Distribution( cdiq, cdidf ),
-			cdiq
-		);
-		Text(
-			{1, 0.9},
-			"df=",
-			Round( cdidf, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box(
-			0.5,
-			10,
-			cdidf,
-			cdiy << reshow
-		)
-	)
-);
+cdidf = 2;New Window( "Example: ChiSquare Distribution",	cdiy = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Distribution( cdiq, cdidf ), cdiq );		Text( {1, 0.9}, "df=", Round( cdidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 0.5, 10, cdidf, cdiy << reshow ) ));
 
 ```
 
@@ -3166,38 +1630,7 @@ New Window( "Example: ChiSquare Distribution",
 
 ```jsl
 
-clcdidf = 2;
-New Window(
-	"Example: ChiSquare Log CDistribution",
-	clcdiy =
-	Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Log CDistribution(
-				clcdiq,
-				clcdidf
-			),
-			clcdiq
-		);
-		Text(
-			{1, -0.9},
-			"df=",
-			Round( clcdidf, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box(
-			1,
-			10,
-			clcdidf,
-			clcdiy << reshow
-		)
-	)
-);
+clcdidf = 2;New Window( "Example: ChiSquare Log CDistribution",	clcdiy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Log CDistribution( clcdiq, clcdidf ), clcdiq );		Text( {1, -0.9}, "df=", Round( clcdidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, clcdidf, clcdiy << reshow ) ));
 
 ```
 
@@ -3211,37 +1644,7 @@ New Window(
 
 ```jsl
 
-cldedf = 1;
-New Window( "Example: ChiSquare Log Density",
-	cldey =
-	Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Log Density(
-				cldeq,
-				cldedf
-			),
-			cldeq
-		);
-		Text(
-			{7, -0.35},
-			"df=",
-			Round( cldedf, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box(
-			0.5,
-			10,
-			cldedf,
-			cldey << reshow
-		)
-	)
-);
+cldedf = 1;New Window( "Example: ChiSquare Log Density",	cldey = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Log Density( cldeq, cldedf ), cldeq );		Text( {7, -0.35}, "df=", Round( cldedf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 0.5, 10, cldedf, cldey << reshow ) ));
 
 ```
 
@@ -3255,37 +1658,7 @@ New Window( "Example: ChiSquare Log Density",
 
 ```jsl
 
-cldidf = 2;
-New Window( "Example: ChiSquare Log Distribution",
-	cldiy =
-	Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Log Distribution(
-				cldiq,
-				cldidf
-			),
-			cldiq
-		);
-		Text(
-			{1, -0.9},
-			"df=",
-			Round( cldidf, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box(
-			1,
-			10,
-			cldidf,
-			cldiy << reshow
-		)
-	)
-);
+cldidf = 2;New Window( "Example: ChiSquare Log Distribution",	cldiy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Log Distribution( cldiq, cldidf ), cldiq );		Text( {1, -0.9}, "df=", Round( cldidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, cldidf, cldiy << reshow ) ));
 
 ```
 
@@ -3299,28 +1672,7 @@ New Window( "Example: ChiSquare Log Distribution",
 
 ```jsl
 
-New Window( "Example: ChiSquare Noncentrality",
-	chincgr =
-	Graph Box(
-		Y Scale( 0.01, 0.99 ),
-		X Scale( 0.01, 0.99 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			ChiSquare Noncentrality(
-				3,
-				2,
-				ChiSquare Distribution( 3, 2, q )
-			),
-			q
-		);
-	)
-);
-ChiSquare Noncentrality(
-	3,
-	2,
-	ChiSquare Distribution( 3, 2, 0.5 )
-);
+New Window( "Example: ChiSquare Noncentrality",	chincgr = Graph Box(		Y Scale( 0.01, 0.99 ),		X Scale( 0.01, 0.99 ),		XName( "q" ),		Pen Color( "red" );		Y Function( ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, q ) ), q );	));ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ```
 
@@ -3348,34 +1700,7 @@ ChiSquare Quantile( 0.15, 5 );
 
 ```jsl
 
-/* The inner product of a design matrix */
-exS = [16 1 0 11 -1 12,
-1 11 -1 1 -1 1,
-0 -1 12 -1 1 0,
-11 1 -1 11 -1 9,
--1 -1 1 -1 9 -1,
-12 1 0 9 -1 12];
-/* Conduct the Cholesky decomposition */
-exAchol = Cholesky( exS );
-
-/* Two column vectors to be applied to change the design matrix */
-exV = [1 1, 0 0, 0 1, 0 0, 0 0, 0 1];
-
-/* The first column vector is added to one of the rows in the design matrix */
-/* The second column vector is subtracted from one of the rows in the design matrix */
-exC = [1 0, 0 -1];
-
-/* Update the Cholesky decomposition manually */
-exAnew = exS + exV * exC * exV`;
-exAcholnew = Cholesky( exAnew );
-
-/* Update the Cholesky decomposition more efficiently */
-exAcholnew_test =
-Chol Update( exAchol, exV, exC );
-
-/* Results are the same */
-Show( exAcholnew_test );
-Show( exAcholnew );
+/* The inner product of a design matrix */exS = [16 1 0 11 -1 12,1 11 -1 1 -1 1,0 -1 12 -1 1 0,11 1 -1 11 -1 9,-1 -1 1 -1 9 -1,12 1 0 9 -1 12];/* Conduct the Cholesky decomposition */exAchol = Cholesky( exS );/* Two column vectors to be applied to change the design matrix */exV = [1 1, 0 0, 0 1, 0 0, 0 0, 0 1];/* The first column vector is added to one of the rows in the design matrix *//* The second column vector is subtracted from one of the rows in the design matrix */exC = [1 0, 0 -1];/* Update the Cholesky decomposition manually */exAnew = exS + exV * exC * exV`;exAcholnew = Cholesky( exAnew );/* Update the Cholesky decomposition more efficiently */exAcholnew_test = Chol Update( exAchol, exV, exC );/* Results are the same */Show( exAcholnew_test );Show( exAcholnew );
 
 ```
 
@@ -3403,11 +1728,7 @@ Cholesky( [1 2, 2 13] );
 
 ```jsl
 
-Choose( Random Integer( 1, 5 ),
-	"red",
-	"blue",
-	"other"
-);
+Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
 ```
 
@@ -3471,12 +1792,7 @@ Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```jsl
 
-Choose Closest(
-	"MARTHA",
-	{"Martha"},
-	Ignore Case( 0 ),
-	Unmatched()
-);
+Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```
 
@@ -3490,29 +1806,7 @@ Choose Closest(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "red" );
-		Circle(
-			{20, 20},
-			4,
-			7,
-			10/* no fill for concentric circles */
-		);
-		Fill Color( "blue" );
-		Transparency( .25 );/* transparent fill for concentric circles */
-		Circle( {60, 20}, 4, 7, 10, "FILL" );
-		Fill Color( "green" );
-		Transparency( 1 );/* solid fill */
-		Circle(
-			PixelRadius( 18 ),
-			{40, 20},
-			{40, 50},
-			{40, 80},
-			"FILL"
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "red" );		Circle( {20, 20}, 4, 7, 10/* no fill for concentric circles */ );		Fill Color( "blue" );		Transparency( .25 );/* transparent fill for concentric circles */		Circle( {60, 20}, 4, 7, 10, "FILL" );		Fill Color( "green" );		Transparency( 1 );/* solid fill */Circle(			PixelRadius( 18 ),			{40, 20},			{40, 50},			{40, 80},			"FILL"		);	));
 
 ```
 
@@ -3526,53 +1820,7 @@ New Window( "Example",
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-clexists = Class Exists( cl );
-Show( clexists );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );clexists = Class Exists( cl );Show( clexists );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -3586,14 +1834,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
-Set Global Window Handler(
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
-New Window( "My Window" );
-Clear Global Window Handler();
+Set Global Window Handler(	Function( {window},		Print( window << get window title() );		window << close window();	));New Window( "My Window" );Clear Global Window Handler();
 
 ```
 
@@ -3639,27 +1880,6 @@ Clear Symbols();
 
 ```
 
-### Clipboard Capture
-
-**Syntaxe :** clp = Clipboard Capture( box &lt;&lt; Copy )
-
-**Description :** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "in" );
-clp = Clipboard Capture(
-	dt << Select Columns( :height ) << Copy Column Properties
-);
-Show( Get Clipboard() );
-Show( clp << Get Flavor Data( "Text", <<Text ) );
-
-```
-
 ### Close
 
 **Syntaxe :** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
@@ -3678,9 +1898,7 @@ Le deuxième argument est utilisé pour enregistrer la table de données. Utilis
 
 ```jsl
 
-exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 3 );
-Close( exdt, NoSave );
+exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 3 );Close( exdt, NoSave );
 
 ```
 
@@ -3698,10 +1916,7 @@ Seules les fenêtres du projet actif (sauf si le script n&apos;est pas exécuté
 
 ```jsl
 
-exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
-Wait( 3 );
-Close All( Data Tables, NoSave );
+exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );Wait( 3 );Close All( Data Tables, NoSave );
 
 ```
 
@@ -3729,8 +1944,7 @@ Close Database Connection( databaseConnectionHandle );
 
 ```jsl
 
-Close Log();
-Show( Is Log Open() );
+Close Log();Show( Is Log Open() );
 
 ```
 
@@ -3744,16 +1958,7 @@ Show( Is Log Open() );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "Lag Height by Sex",
-	Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) )
-);
-New Column( "Relative to First Height",
-	Formula( :height / Col At( :height, 1, :sex ) )
-);
-New Column( "Relative to Last Height",
-	Formula( :height / Col At( :height, -1, :sex ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );New Column( "Relative to First Height", Formula( :height / Col At( :height, 1, :sex ) ) );New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :sex ) ) );
 
 ```
 
@@ -3767,20 +1972,7 @@ New Column( "Relative to Last Height",
 
 ```jsl
 
-dt = New Window( "Example",
-	exx = 1;
-	exy = 4;
-	exz = 8;
-	Table Box(
-		String Col Box( "strings", {"x", "y", "z"} ),
-		Col Box(
-			"boxes",
-			Slider Box( 0, 10, exx, Show( exx ) ),
-			Slider Box( 0, 10, exy, Show( exy ) ),
-			Slider Box( 0, 10, exz, Show( exz ) )
-		)
-	);
-);
+dt = New Window( "Example",	exx = 1;	exy = 4;	exz = 8;	Table Box(		String Col Box( "strings", {"x", "y", "z"} ),		Col Box(			"boxes",			Slider Box( 0, 10, exx, Show( exx ) ),			Slider Box( 0, 10, exy, Show( exy ) ),			Slider Box( 0, 10, exz, Show( exz ) )		)	););
 
 ```
 
@@ -3796,9 +1988,7 @@ dt = New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 40;
-Col Cumulative Sum( :height, :sex );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 40;Col Cumulative Sum( :height, :sex );
 
 ```
 
@@ -3806,22 +1996,7 @@ Col Cumulative Sum( :height, :sex );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Cumulative Sum for each Sex",
-	Formula( Col Cumulative Sum( :height, :sex ) )
-);
-dt << New Column(
-	"Col Cumulative Sum for each Sex grouped by Excluded",
-	Formula(
-		Col Cumulative Sum(
-			:height,
-			:sex,
-			Excluded( Row State() )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Cumulative Sum for each Sex",	Formula( Col Cumulative Sum( :height, :sex ) ));dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",	Formula( Col Cumulative Sum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -3829,23 +2004,13 @@ dt << New Column(
 
 **Syntaxe :** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
-**Description :** Renvoie une valeur interpolée dans yCol, correspondant à la position de v, où xCol]. Values outside the range of xCol seront manquantes, sauf si extrapolate est activé, et dans ce cas la valeur yCol la plus proche sera renvoyée.
+**Description :** Renvoie une valeur interpolée dans yCol, correspondant à la position de v avec xCol. Les valeurs hors de la plage de xCol seront manquantes, sauf si extrapolate est activé, et dans ce cas la valeur yCol la plus proche sera renvoyée.
 
 **JMP Version ajoutée :** 19
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
-dt << New Column( "date30", Formula( :date + 30 ) );
-dt << New Column( "gnp30",
-	Formula(
-		Col Interpolate(
-			:date30,
-			:date,
-			:"gross national product ($billions)"n
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );dt << New Column( "date30", Formula( :date + 30 ) );dt << New Column( "gnp30",	Formula( Col Interpolate( :date30, :date, :"gross national product ($billions)"n ) ));
 
 ```
 
@@ -3861,10 +2026,7 @@ dt << New Column( "gnp30",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 1",
-	Col List Box( all, width( 250 ), maxSelected( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
 ```
 
@@ -3872,15 +2034,7 @@ New Window( "Col List Box Example 1",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 2",
-	Col List Box(
-		all,
-		<<Set Data Type( "numeric" ),
-		width( 250 ),
-		maxSelected( 1 )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 2",	Col List Box( all, <<Set Data Type( "numeric" ), width( 250 ), maxSelected( 1 ) ));
 
 ```
 
@@ -3888,21 +2042,7 @@ New Window( "Col List Box Example 2",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example 3",
-	H List Box(
-		ll1 = Col List Box( all ),
-		Button Box( "Add",
-			ll2 << append( ll1 << get selected )
-		),
-		ll2 = Col List Box(
-			"numeric",
-			MaxItems( 1 ),
-			nlines( 1 )
-		),
-		Button Box( "Remove", ll2 << remove selected )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example 3",	H List Box(		ll1 = Col List Box( all ),		Button Box( "Add", ll2 << append( ll1 << get selected ) ),		ll2 = Col List Box( "numeric", MaxItems( 1 ), nlines( 1 ) ),		Button Box( "Remove", ll2 << remove selected )	));
 
 ```
 
@@ -3918,8 +2058,7 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Maximum( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Maximum( :height );
 
 ```
 
@@ -3927,8 +2066,7 @@ Col Maximum( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Maximum( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```
 
@@ -3936,10 +2074,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Maximum Value for Each Age and Sex Group",
-	Formula( Col Maximum( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Maximum Value for Each Age and Sex Group",	Formula( Col Maximum( :height, :age, :sex ) ));
 
 ```
 
@@ -3947,17 +2082,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Max for each Sex",
-	Formula( Col Maximum( :height, :sex ) )
-);
-dt << New Column( "Col Max for each Sex grouped by Excluded",
-	Formula(
-		Col Maximum( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );dt << New Column( "Col Max for each Sex grouped by Excluded",	Formula( Col Maximum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -3973,8 +2098,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Maximum( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Maximum( :height );
 
 ```
 
@@ -3982,8 +2106,7 @@ Col Maximum( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Maximum( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```
 
@@ -3991,10 +2114,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Maximum Value for Each Age and Sex Group",
-	Formula( Col Maximum( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Maximum Value for Each Age and Sex Group",	Formula( Col Maximum( :height, :age, :sex ) ));
 
 ```
 
@@ -4002,17 +2122,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Max for each Sex",
-	Formula( Col Maximum( :height, :sex ) )
-);
-dt << New Column( "Col Max for each Sex grouped by Excluded",
-	Formula(
-		Col Maximum( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Max for each Sex", Formula( Col Maximum( :height, :sex ) ) );dt << New Column( "Col Max for each Sex grouped by Excluded",	Formula( Col Maximum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4028,8 +2138,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Mean( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Mean( :height );
 
 ```
 
@@ -4037,8 +2146,7 @@ Col Mean( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Mean( :height, <<Freq( :weight ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Mean( :height, <<Freq( :weight ) );
 
 ```
 
@@ -4046,8 +2154,7 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Mean( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```
 
@@ -4055,10 +2162,7 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Mean for Each Age and Sex Group",
-	Formula( Col Mean( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Mean for Each Age and Sex Group",	Formula( Col Mean( :height, :age, :sex ) ));
 
 ```
 
@@ -4066,17 +2170,7 @@ dt << New Column( "Mean for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Mean for each Sex",
-	Formula( Col Mean( :height, :sex ) )
-);
-dt << New Column( "Col Mean for each Sex grouped by Excluded",
-	Formula(
-		Col Mean( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Mean for each Sex", Formula( Col Mean( :height, :sex ) ) );dt << New Column( "Col Mean for each Sex grouped by Excluded",	Formula( Col Mean( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4092,17 +2186,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Col Median Height",
-	numeric,
-	continuous,
-	formula( Col Median( :height ) )
-);
-dt << New Column( "Col Median Height by Age",
-	numeric,
-	continuous,
-	formula( Col Median( :height, :age ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Col Median Height",	numeric,	continuous,	formula( Col Median( :height ) ));dt << New Column( "Col Median Height by Age",	numeric,	continuous,	formula( Col Median( :height, :age ) ));
 
 ```
 
@@ -4110,11 +2194,7 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 1;
-Show( Col Median( :height ) );
-Row() = 1;
-Show( Col Median( :height, :age ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 1;Show( Col Median( :height ) );Row() = 1;Show( Col Median( :height, :age ) );
 
 ```
 
@@ -4122,17 +2202,7 @@ Show( Col Median( :height, :age ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Median for each Sex",
-	Formula( Col Median( :height, :sex ) )
-);
-dt << New Column( "Col Median for each Sex grouped by Excluded",
-	Formula(
-		Col Median( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Median for each Sex", Formula( Col Median( :height, :sex ) ) );dt << New Column( "Col Median for each Sex grouped by Excluded",	Formula( Col Median( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4148,8 +2218,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Minimum( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Minimum( :height );
 
 ```
 
@@ -4157,8 +2226,7 @@ Col Minimum( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Minimum( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```
 
@@ -4166,10 +2234,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Minimum Value for Each Age and Sex Group",
-	Formula( Col Minimum( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Minimum Value for Each Age and Sex Group",	Formula( Col Minimum( :height, :age, :sex ) ));
 
 ```
 
@@ -4177,17 +2242,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Min for each Sex",
-	Formula( Col Minimum( :height, :sex ) )
-);
-dt << New Column( "Col Min for each Sex grouped by Excluded",
-	Formula(
-		Col Minimum( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );dt << New Column( "Col Min for each Sex grouped by Excluded",	Formula( Col Minimum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4203,8 +2258,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Minimum( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Minimum( :height );
 
 ```
 
@@ -4212,8 +2266,7 @@ Col Minimum( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Minimum( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```
 
@@ -4221,10 +2274,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Minimum Value for Each Age and Sex Group",
-	Formula( Col Minimum( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Minimum Value for Each Age and Sex Group",	Formula( Col Minimum( :height, :age, :sex ) ));
 
 ```
 
@@ -4232,17 +2282,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Min for each Sex",
-	Formula( Col Minimum( :height, :sex ) )
-);
-dt << New Column( "Col Min for each Sex grouped by Excluded",
-	Formula(
-		Col Minimum( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Min for each Sex", Formula( Col Minimum( :height, :sex ) ) );dt << New Column( "Col Min for each Sex grouped by Excluded",	Formula( Col Minimum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4258,8 +2298,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Mode( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Mode( :height );
 
 ```
 
@@ -4267,8 +2306,7 @@ Col Mode( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Mode( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```
 
@@ -4276,10 +2314,7 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Mode for Each Age and Sex Group",
-	Formula( Col Mode( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Mode for Each Age and Sex Group",	Formula( Col Mode( :height, :age, :sex ) ));
 
 ```
 
@@ -4287,17 +2322,7 @@ dt << New Column( "Mode for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Mode for each Sex",
-	Formula( Col Mode( :height, :sex ) )
-);
-dt << New Column( "Col Mode for each Sex grouped by Excluded",
-	Formula(
-		Col Mode( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Mode for each Sex", Formula( Col Mode( :height, :sex ) ) );dt << New Column( "Col Mode for each Sex grouped by Excluded",	Formula( Col Mode( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4313,9 +2338,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 40;
-Col Moving Average( :height, 1, 5, 0, :sex );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 40;Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```
 
@@ -4323,22 +2346,7 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Moving Average for each Sex",
-	Formula( Col Moving Average( :height, :sex ) )
-);
-dt << New Column(
-	"Col Moving Average for each Sex grouped by Excluded",
-	Formula(
-		Col Moving Average(
-			:height,
-			:sex,
-			Excluded( Row State() )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Moving Average for each Sex",	Formula( Col Moving Average( :height, :sex ) ));dt << New Column( "Col Moving Average for each Sex grouped by Excluded",	Formula( Col Moving Average( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4354,8 +2362,7 @@ dt << New Column(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col N Missing( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col N Missing( :height );
 
 ```
 
@@ -4363,8 +2370,7 @@ Col N Missing( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col N Missing( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```
 
@@ -4372,11 +2378,7 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column(
-	"Number of Missing Values for Each Age and Sex Group",
-	Formula( Col N Missing( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Number of Missing Values for Each Age and Sex Group",	Formula( Col N Missing( :height, :age, :sex ) ));
 
 ```
 
@@ -4384,19 +2386,7 @@ dt << New Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:height[10] = .;
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col N Missing for each Sex",
-	Formula( Col N Missing( :height, :sex ) )
-);
-dt << New Column(
-	"Col N Missing for each Sex grouped by Excluded",
-	Formula(
-		Col N Missing( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:height[10] = .;dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col N Missing for each Sex", Formula( Col N Missing( :height, :sex ) ) );dt << New Column( "Col N Missing for each Sex grouped by Excluded",	Formula( Col N Missing( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4410,13 +2400,7 @@ dt << New Column(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "N unique age by sex",
-	Formula( Col N Unique( :age, :sex ) )
-);
-New Column( "N unique height by age",
-	Formula( Col N Unique( :height, :age ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
 
 ```
 
@@ -4432,8 +2416,7 @@ New Column( "N unique height by age",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Number( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Number( :height );
 
 ```
 
@@ -4441,8 +2424,7 @@ Col Number( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Number( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```
 
@@ -4450,11 +2432,7 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column(
-	"Number of Nonmissing Values for Each Age and Sex Group",
-	Formula( Col Number( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",	Formula( Col Number( :height, :age, :sex ) ));
 
 ```
 
@@ -4462,18 +2440,7 @@ dt << New Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:height[10] = .;
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Number for each Sex",
-	Formula( Col Number( :height, :sex ) )
-);
-dt << New Column( "Col Number for each Sex grouped by Excluded",
-	Formula(
-		Col Number( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:height[10] = .;dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Number for each Sex", Formula( Col Number( :height, :sex ) ) );dt << New Column( "Col Number for each Sex grouped by Excluded",	Formula( Col Number( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4489,17 +2456,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Col Quantile Height",
-	numeric,
-	continuous,
-	formula( Col Quantile( :height, 0.5 ) )
-);
-dt << New Column( "Col Quantile Height by Age",
-	numeric,
-	continuous,
-	formula( Col Quantile( :height, 0.5, :age ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Col Quantile Height",	numeric,	continuous,	formula( Col Quantile( :height, 0.5 ) ));dt << New Column( "Col Quantile Height by Age",	numeric,	continuous,	formula( Col Quantile( :height, 0.5, :age ) ));
 
 ```
 
@@ -4507,11 +2464,7 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 1;
-Show( Col Quantile( :height, 0.5 ) );
-Row() = 1;
-Show( Col Quantile( :height, 0.5, :age ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 1;Show( Col Quantile( :height, 0.5 ) );Row() = 1;Show( Col Quantile( :height, 0.5, :age ) );
 
 ```
 
@@ -4519,23 +2472,7 @@ Show( Col Quantile( :height, 0.5, :age ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Quantile for each Sex",
-	Formula( Col Quantile( :height, 0.5, :sex ) )
-);
-dt << New Column(
-	"Col Quantile for each Sex grouped by Excluded",
-	Formula(
-		Col Quantile(
-			:height,
-			0.5,
-			:sex,
-			Excluded( Row State() )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Quantile for each Sex",	Formula( Col Quantile( :height, 0.5, :sex ) ));dt << New Column( "Col Quantile for each Sex grouped by Excluded",	Formula( Col Quantile( :height, 0.5, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4551,13 +2488,7 @@ dt << New Column(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "Rank Height",
-	Formula( Col Rank( :height, <<tie( "average" ) ) )
-);
-New Column( "Rank Height by age",
-	Formula( Col Rank( :height, :age ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 
 ```
 
@@ -4565,17 +2496,7 @@ New Column( "Rank Height by age",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Rank for each Sex",
-	Formula( Col Rank( :height, :sex ) )
-);
-dt << New Column( "Col Rank for each Sex grouped by Excluded",
-	Formula(
-		Col Rank( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Rank for each Sex", Formula( Col Rank( :height, :sex ) ) );dt << New Column( "Col Rank for each Sex grouped by Excluded",	Formula( Col Rank( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4589,11 +2510,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "Score Height", Formula( Col Score( :height ) ) );
-New Column( "Score Height by age",
-	Formula( Col Score( :height, :age ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "Score Height", Formula( Col Score( :height ) ) );New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ```
 
@@ -4607,19 +2524,7 @@ New Column( "Score Height by age",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
-New Column( "Alternate within sex",
-	Formula( Col Sequence( :sex, <<Sequence( 1, 2 ) ) )
-);
-New Column( "Row within sex, 60+",
-	Formula(
-		Col Sequence(
-			:sex,
-			<<skip missing( Sqrt( :height - 60 ) )
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );New Column( "Alternate within sex", Formula( Col Sequence( :sex, <<Sequence( 1, 2 ) ) ) );New Column( "Row within sex, 60+",	Formula( Col Sequence( :sex, <<skip missing( Sqrt( :height - 60 ) ) ) ));
 
 ```
 
@@ -4635,17 +2540,7 @@ New Column( "Row within sex, 60+",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Shuffle 1",
-	Numeric,
-	Continuous,
-	Set Formula( Col Shuffle() )
-);
-dt << New Column( "Shuffle 2",
-	Numeric,
-	Continuous,
-	Set Formula( Col Shuffle() )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 
 ```
 
@@ -4653,12 +2548,7 @@ dt << New Column( "Shuffle 2",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Shuffle",
-	Numeric,
-	Continuous,
-	Set Formula( Col Shuffle( :age ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
 ```
 
@@ -4666,17 +2556,7 @@ dt << New Column( "Shuffle",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Shuffle for each Sex",
-	Formula( Col Shuffle( :height, :sex ) )
-);
-dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
-	Formula(
-		Col Shuffle( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Shuffle for each Sex", Formula( Col Shuffle( :height, :sex ) ) );dt << New Column( "Col Shuffle for each Sex grouped by Excluded",	Formula( Col Shuffle( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4690,9 +2570,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
-Row() = 40;
-Col Simple Exponential Smoothing( :Column1, .7 );
+Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );Row() = 40;Col Simple Exponential Smoothing( :Column1, .7 );
 
 ```
 
@@ -4706,15 +2584,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ```jsl
 
-New Window( "test",
-	Table Box(
-		Col Span Box(
-			"Col Span",
-			String Col Box( "col 1", {"A", "B", "C"} ),
-			Number Col Box( "col2", {1, 2, 3} )
-		)
-	)
-);
+New Window( "test",	Table Box(		Col Span Box(			"Col Span",			String Col Box( "col 1", {"A", "B", "C"} ),			Number Col Box( "col2", {1, 2, 3} )		)	));
 
 ```
 
@@ -4730,9 +2600,7 @@ New Window( "test",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 1;
-Col Standardize( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 1;Col Standardize( :height );
 
 ```
 
@@ -4740,8 +2608,7 @@ Col Standardize( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Standardize( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```
 
@@ -4749,22 +2616,7 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Standardize for each Sex",
-	Formula( Col Standardize( :height, :sex ) )
-);
-dt << New Column(
-	"Col Standardize for each Sex grouped by Excluded",
-	Formula(
-		Col Standardize(
-			:height,
-			:sex,
-			Excluded( Row State() )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Standardize for each Sex",	Formula( Col Standardize( :height, :sex ) ));dt << New Column( "Col Standardize for each Sex grouped by Excluded",	Formula( Col Standardize( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4780,8 +2632,7 @@ dt << New Column(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Std Dev( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Std Dev( :height );
 
 ```
 
@@ -4789,8 +2640,7 @@ Col Std Dev( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Std Dev( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```
 
@@ -4798,10 +2648,7 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row(
-	Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
 ```
 
@@ -4809,11 +2656,7 @@ For Each Row(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column(
-	"Standard Deviation for Each Age and Sex Group",
-	Formula( Col Std Dev( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Standard Deviation for Each Age and Sex Group",	Formula( Col Std Dev( :height, :age, :sex ) ));
 
 ```
 
@@ -4821,18 +2664,7 @@ dt << New Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Standard Deviation for each Sex",
-	Formula( Col Std Dev( :height, :sex ) )
-);
-dt << New Column(
-	"Col Standard Deviation for each Sex grouped by Excluded",
-	Formula(
-		Col Std Dev( :height, :sex, Excluded( Row State() ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Standard Deviation for each Sex",	Formula( Col Std Dev( :height, :sex ) ));dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",	Formula( Col Std Dev( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -4846,13 +2678,7 @@ dt << New Column(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Equity.jmp" );
-:JOB << Set Property( "Missing Value Codes", {"Other"} );
-y1 = Col Stored Value( :JOB, 10 );
-y2 = Col Stored Value( :JOB, 11 );
-y3 = Col Stored Value( :JOB, 14 );
-y4 = Col Stored Value( :JOB, 15 );
-Show( y1, y2, y3, y4 );
+Open( "$SAMPLE_DATA/Equity.jmp" );:JOB << Set Property( "Missing Value Codes", {"Other"} );y1 = Col Stored Value( :JOB, 10 );y2 = Col Stored Value( :JOB, 11 );y3 = Col Stored Value( :JOB, 14 );y4 = Col Stored Value( :JOB, 15 );Show( y1, y2, y3, y4 );
 
 ```
 
@@ -4868,8 +2694,7 @@ Show( y1, y2, y3, y4 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Sum( :height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Sum( :height );
 
 ```
 
@@ -4877,8 +2702,7 @@ Col Sum( :height );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Col Sum( :height, <<Freq( :weight ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Col Sum( :height, <<Freq( :weight ) );
 
 ```
 
@@ -4886,8 +2710,7 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( Show( Col Sum( :height, :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```
 
@@ -4895,10 +2718,7 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Sum for Each Age and Sex Group",
-	Formula( Col Sum( :height, :age, :sex ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Sum for Each Age and Sex Group",	Formula( Col Sum( :height, :age, :sex ) ));
 
 ```
 
@@ -4906,15 +2726,7 @@ dt << New Column( "Sum for Each Age and Sex Group",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Row States << Select Rows( Index( 1, 10 ) ) <<
-Exclude;
-dt << New Column( "Col Sum for each Sex",
-	Formula( Col Sum( :height, :sex ) )
-);
-dt << New Column( "Col Sum for each Sex grouped by Excluded",
-	Formula( Col Sum( :height, :sex, Excluded( Row State() ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;dt << New Column( "Col Sum for each Sex", Formula( Col Sum( :height, :sex ) ) );dt << New Column( "Col Sum for each Sex grouped by Excluded",	Formula( Col Sum( :height, :sex, Excluded( Row State() ) ) ));
 
 ```
 
@@ -5006,11 +2818,7 @@ Color Difference( "red", "blue", "dEok" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" ) <<
-Color By Column( :height );
-Color To RGB( Color Of( Row State( 3 ) ) );
-Row() = 3;
-Color To RGB( Color Of() );
+Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );Color To RGB( Color Of( Row State( 3 ) ) );Row() = 3;Color To RGB( Color Of() );
 
 ```
 
@@ -5024,9 +2832,7 @@ Color To RGB( Color Of() );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Color State( {1, 0.5, 1} );
-Color To RGB( Color Of( Row State( 3 ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Color State( {1, 0.5, 1} );Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```
 
@@ -5060,7 +2866,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Column
 
-**Syntaxe :** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Syntaxe :** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description :** Renvoie une référence à la colonne de la table de données spécifiée. Le mot clé "formatée" permet d&apos;accéder aux données formatées, comme l&apos;étiquette de valeur.
 
@@ -5070,10 +2876,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-col4 = Column( 4 );
-ht = Column( "height" );
-col4[1] + ht[2];
+Open( "$SAMPLE_DATA/Big Class.jmp" );col4 = Column( 4 );ht = Column( "height" );col4[1] + ht[2];
 
 ```
 
@@ -5081,13 +2884,7 @@ col4[1] + ht[2];
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << run script( "Set Sex Value Labels" );
-col = Column( dt, "sex", "formatted" );
-Write( "\!n", col[5] );
-Write(
-	"\!nData value returned is the formatted value of row 5."
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << run script( "Set Sex Value Labels" );col = Column( dt, "sex", "formatted" );Write( "\!n", col[5] );Write( "\!nData value returned is the formatted value of row 5." );
 
 ```
 
@@ -5101,39 +2898,7 @@ Write(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-Column Dialog(
-	ex y = ColList( "Y",
-		Min Col( 1 ),
-		Max Col( 2 ),
-		Data Type( "Numeric" )
-	),
-	ex x = ColList( "X",
-		Max Col( 1 ),
-		Modeling Type( {"Continuous", "Multiple Response"} )
-	),
-	Line Up( 2,
-		Text Box( "Alpha" ), ex = EditNumber( .05 ),
-		Text Box( "Beta" ), ey = EditText( "xyz" )
-	),
-	HList( cb = Check Box( "check", 1 ) ),
-	HList( combo = Combo Box( "option1", "option2" ) ),
-	HList( rb = RadioButtons( "a", "b" ) ),
-	Window Title( "Custom Launch Dialog" ),
-	Window Icon( "RowState" ), //icon string can be a full path file name of an image file.
-	Dialog Description(
-		"The dialog before a groundbreaking discovery!"
-	),
-	Recall Script(
-		Function( {dlgBox},
-			dlgBox[list box box( 2 )] << remove all;
-			dlgBox[list box box( 1 )] << clear selection;
-			dlgBox[list box box( 1 )] << set selected( 3 );
-			dlgBox[Button Box( 2 )] << click;
-		)
-	),
-	Help Script( Web( "http://www.jmp.com/" ) )
-);
+Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Column Dialog(	ex y = ColList( "Y", Min Col( 1 ), Max Col( 2 ), Data Type( "Numeric" ) ),	ex x = ColList( "X", Max Col( 1 ), Modeling Type( {"Continuous", "Multiple Response"} ) ),	Line Up( 2,		Text Box( "Alpha" ), ex = EditNumber( .05 ),		Text Box( "Beta" ), ey = EditText( "xyz" )	),	HList( cb = Check Box( "check", 1 ) ),	HList( combo = Combo Box( "option1", "option2" ) ),	HList( rb = RadioButtons( "a", "b" ) ),	Window Title( "Custom Launch Dialog" ),	Window Icon( "RowState" ), //icon string can be a full path file name of an image file.	Dialog Description( "The dialog before a groundbreaking discovery!" ),	Recall Script(		Function( {dlgBox},			dlgBox[list box box( 2 )] << remove all;			dlgBox[list box box( 1 )] << clear selection;			dlgBox[list box box( 1 )] << set selected( 3 );			dlgBox[Button Box( 2 )] << click;		)	),	Help Script( Web( "http://www.jmp.com/" ) ));
 
 ```
 
@@ -5147,8 +2912,7 @@ Column Dialog(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Column Name( 4 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Column Name( 4 );
 
 ```
 
@@ -5162,11 +2926,7 @@ Column Name( 4 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Combine States(
-	Hue State( 5 ),
-	Shade State( 1 )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```
 
@@ -5180,12 +2940,7 @@ Row State( 3 ) = Combine States(
 
 ```jsl
 
-New Window( "Example",
-	cb = Combo Box(
-		{"single", "double", "triple"("tool tip")},
-		Show( cb << Get() )
-	)
-);
+New Window( "Example",	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) ));
 
 ```
 
@@ -5227,8 +2982,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
-ex = "hello ";
-ex ||= "world";
+ex = "hello ";ex ||= "world";
 
 ```
 
@@ -5244,20 +2998,7 @@ ex ||= "world";
 
 ```jsl
 
-/*Simple Example*/
-f = Expr(
-	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
-);
-A = [1 1, 1 5];
-b = [2, 5];
-minFun = Constrained Maximize(
-	f,
-	{x1( 0, 5 ), x2( 0, 5 )},
-	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/
-,
-	<<StartingValues( [1, .5] )
-);
-Eval List( {x1, x2, minFun} );
+/*Simple Example*/f = Expr(	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2);A = [1 1, 1 5];b = [2, 5];minFun = Constrained Maximize(	f,	{x1( 0, 5 ), x2( 0, 5 )},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	<<StartingValues( [1, .5] ));Eval List( {x1, x2, minFun} );
 
 ```
 
@@ -5265,27 +3006,7 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-/*Simple Example with optional parameters included*/ 
-x = [., .];
-f = Expr(
-	-2 * x[1] ^ 2 - 2 * x[2] ^ 2 + 2 * x[1] * x[2] + 4 * x[1]
-	+6 * x[2]
-);
-A = [1 1, 1 5];
-b = [2, 5];
-{objVal, iters, gradient, hessian} =
-Constrained Maximize(
-	f,
-	{x},
-	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/
-,
-	MaxIter( 250 ),
-	<<tolerance( 1e-5 ),
-	<<showDetails( True ),
-	<<StartingValues( [1, .5] ),
-	<<setVariableLimit( {[0, 0], [5, 5]} )
-);
-Show( x, objVal, iters, gradient, hessian );
+/*Simple Example with optional parameters included*/ x = [., .];f = Expr(	-2 * x[1] ^ 2 - 2 * x[2] ^ 2 + 2 * x[1] * x[2] + 4 * x[1] + 6 * x[2]);A = [1 1, 1 5];b = [2, 5];{objVal, iters, gradient, hessian} = Constrained Maximize(	f,	{x},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	MaxIter( 250 ),	<<tolerance( 1e-5 ),	<<showDetails( True ),	<<StartingValues( [1, .5] ),	<<setVariableLimit( {[0, 0], [5, 5]} ));Show( x, objVal, iters, gradient, hessian );
 
 ```
 
@@ -5301,20 +3022,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
-/*Simple Example*/
-f = Expr(
-	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
-);
-A = [1 1, 1 5];
-b = [2, 5];
-minFun = Constrained Minimize(
-	f,
-	{x1( 0, 5 ), x2( 0, 5 )},
-	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/
-,
-	<<StartingValues( [1, .5] )
-);
-Eval List( {x1, x2, minFun} );
+/*Simple Example*/f = Expr(	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2);A = [1 1, 1 5];b = [2, 5];minFun = Constrained Minimize(	f,	{x1( 0, 5 ), x2( 0, 5 )},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	<<StartingValues( [1, .5] ));Eval List( {x1, x2, minFun} );
 
 ```
 
@@ -5322,27 +3030,7 @@ Eval List( {x1, x2, minFun} );
 
 ```jsl
 
-/*Simple Example with optional parameters included*/ 
-x = [., .];
-f = Expr(
-	2 * x[1] ^ 2 + 2 * x[2] ^ 2 - 2 * x[1] * x[2] - 4 * x[1] - 6
-	 * x[2]
-);
-A = [1 1, 1 5];
-b = [2, 5];
-{objVal, iters, gradient, hessian} =
-Constrained Minimize(
-	f,
-	{x},
-	<<lessthanEQ( {A, b} ) /*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/
-,
-	MaxIter( 250 ),
-	<<tolerance( 1e-5 ),
-	<<showDetails( True ),
-	<<StartingValues( [1, .5] ),
-	<<setVariableLimit( {[0, 0], [5, 5]} )
-);
-Show( x, objVal, iters, gradient, hessian );
+/*Simple Example with optional parameters included*/ x = [., .];f = Expr(	2 * x[1] ^ 2 + 2 * x[2] ^ 2 - 2 * x[1] * x[2] - 4 * x[1] - 6 * x[2]);A = [1 1, 1 5];b = [2, 5];{objVal, iters, gradient, hessian} = Constrained Minimize(	f,	{x},	<<lessthanEQ( {A, b} ) /*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	MaxIter( 250 ),	<<tolerance( 1e-5 ),	<<showDetails( True ),	<<StartingValues( [1, .5] ),	<<setVariableLimit( {[0, 0], [5, 5]} ));Show( x, objVal, iters, gradient, hessian );
 
 ```
 
@@ -5356,8 +3044,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
-Show( Contains( "redreed", "re", -1 ) );
-Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
+Show( Contains( "redreed", "re", -1 ) );Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ```
 
@@ -5381,13 +3068,7 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
-dt << New Column( "Cheese",
-	numeric,
-	continuous,
-	Formula( Contains Item( dt:Item Name, "Cheese", ", " ) )
-);
-dt << Distribution( Column( :Cheese ) );
+dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );dt << New Column( "Cheese",	numeric,	continuous,	Formula( Contains Item( dt:Item Name, "Cheese", ", " ) ));dt << Distribution( Column( :Cheese ) );
 
 ```
 
@@ -5395,12 +3076,7 @@ dt << Distribution( Column( :Cheese ) );
 
 ```jsl
 
-//find repeated character c in cdcef
-Contains Item(
-	"abcde,bcdef,cdcef",
-	Pat Regex( "(.).*?\1" ),
-	","
-);
+//find repeated character c in cdcefContains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
 ```
 
@@ -5414,16 +3090,7 @@ Contains Item(
 
 ```jsl
 
-New Window( "Example",
-	Context Box(
-		Outline Box( "Picker",
-			V List Box(
-				Text Box( "Label:" ),
-				Text Edit Box( Char( 213 ) )
-			)
-		)
-	)
-);
+New Window( "Example",	Context Box(		Outline Box( "Picker",			V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )		)	));
 
 ```
 
@@ -5437,10 +3104,7 @@ New Window( "Example",
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i < 2, Continue() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i < 2, Continue() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -5454,65 +3118,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-
-New Window( "Example",
-	H List Box(
-		Outline Box( "Line",
-			Graph Box(
-				Contour(
-					1 :: 100,
-					1 :: 100,
-					(1 :: 100)` * (1 :: 100),
-					7 ^ (0 :: 4)
-				)
-			)
-		),
-		Outline Box( "Line Colors",
-			Graph Box(
-				Contour(
-					1 :: 100,
-					1 :: 100,
-					(1 :: 100)` * (1 :: 100),
-					7 ^ (0 :: 4),
-					<<zColor( {"Blue", "Red"} )
-				)
-			)
-		)
-	),
-	H List Box(
-		Outline Box( "Fill Cycle",
-			Graph Box(
-				Contour(
-					1 :: 100,
-					1 :: 100,
-					(1 :: 100)` * (1 :: 100),
-					7 ^ (0 :: 4),
-					<<zColor(
-						{RGB Color( 218, 218, 255 ),
-						RGB Color( 255, 218, 218 )},
-						"Cycle Colors"
-					),
-					fill
-				)
-			)
-		),
-		Outline Box( "Fill Interpolate",
-			Graph Box(
-				Contour(
-					1 :: 100,
-					1 :: 100,
-					(1 :: 100)` * (1 :: 100),
-					7 ^ (0 :: 4),
-					<<zColor(
-						{"Blue", "Red"},
-						"Interpolate Colors"
-					),
-					fill
-				)
-			)
-		)
-	)
-);
+New Window( "Example",	H List Box(		Outline Box( "Line",			Graph Box(				Contour( 1 :: 100, 1 :: 100, (1 :: 100)` * (1 :: 100), 7 ^ (0 :: 4) )			)		),		Outline Box( "Line Colors",			Graph Box(				Contour(					1 :: 100,					1 :: 100,					(1 :: 100)` * (1 :: 100),					7 ^ (0 :: 4),					<<zColor( {"Blue", "Red"} )				)			)		)	),	H List Box(		Outline Box( "Fill Cycle",			Graph Box(				Contour(					1 :: 100,					1 :: 100,					(1 :: 100)` * (1 :: 100),					7 ^ (0 :: 4),					<<zColor(						{RGB Color( 218, 218, 255 ), RGB Color( 255, 218, 218 )},						"Cycle Colors"					),					fill				)			)		),		Outline Box( "Fill Interpolate",			Graph Box(				Contour(					1 :: 100,					1 :: 100,					(1 :: 100)` * (1 :: 100),					7 ^ (0 :: 4),					<<zColor( {"Blue", "Red"}, "Interpolate Colors" ),					fill				)			)		)	));
 
 ```
 
@@ -5528,18 +3134,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Contour Function(
-			Log( a * a + b * b ),
-			a,
-			b,
-			1 :: 10,
-			<<ZColor( {"blue", "green", "red"}, "Cycle Colors" ),
-			Transparency( 0.9 )
-		)
-	)
-);
+New Window( "Example",	Graph Box(		Contour Function(			Log( a * a + b * b ),			a,			b,			1 :: 10,			<<ZColor( {"blue", "green", "red"}, "Cycle Colors" ),			Transparency( 0.9 )		)	));
 
 ```
 
@@ -5547,21 +3142,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Contour Function(
-			Log( a * a + b * b ),
-			a,
-			b,
-			1 :: 10,
-			<<Filled,
-			<<ZColor(
-				{{1, 0.1, 0.1}, {0.1, 1, 0.1}, {0.1, 0.1, 1}},
-				"Interpolate Colors"
-			)
-		)
-	)
-);
+New Window( "Example",	Graph Box(		Contour Function(			Log( a * a + b * b ),			a,			b,			1 :: 10,			<<Filled,			<<ZColor( {{1, 0.1, 0.1}, {0.1, 1, 0.1}, {0.1, 0.1, 1}}, "Interpolate Colors" )		)	));
 
 ```
 
@@ -5575,21 +3156,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-{xx, yy} = tri << Get Points();
-New Window( "Contour Seg Example",
-	g = Graph Box(
-		X Scale( Min( xx ) - .1, Max( xx ) + .1 ),
-		Y Scale( Min( yy ) - .1, Max( yy ) + .1 ),
-		Contour Seg(
-			tri,
-			[0, 400, 1000, 2000, 9000],
-			zColor( 5 + [64 32 0 16 48] ),
-			Transparency( [1, 1, 1, 1, 1] )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );{xx, yy} = tri << Get Points();New Window( "Contour Seg Example",	g = Graph Box(		X Scale( Min( xx ) - .1, Max( xx ) + .1 ),		Y Scale( Min( yy ) - .1, Max( yy ) + .1 ),		Contour Seg(			tri,			[0, 400, 1000, 2000, 9000],			zColor( 5 + [64 32 0 16 48] ),			Transparency( [1, 1, 1, 1, 1] )		)	));
 
 ```
 
@@ -5603,15 +3170,7 @@ New Window( "Contour Seg Example",
 
 ```jsl
 
-For Each( {pv},
-	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA",
-	"SAMPLE_SCRIPTS", "SAMPLE_IMAGES", "USER_APPDATA",
-	"USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
-	Write(
-		pv || Repeat( " ", 20 - Length( pv ) ) || " => " ||
-		Convert File Path( "$" || pv ) || "\!N"
-	)
-);
+For Each( {pv},	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},	Write(		pv || Repeat( " ", 20 - Length( pv ) ) || " => " || Convert File Path( "$" || pv )		 || "\!N"	));
 
 ```
 
@@ -5625,17 +3184,7 @@ For Each( {pv},
 
 ```jsl
 
-rc0 = Copy Directory(
-	"$SAMPLE_DATA/Loss Function Templates",
-	"$TEMP"
-);/* creates $TEMP/Loss Function Templates */ 
-rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc3 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc4 = Delete Directory( "$TEMP/Loss Function Templates" );
-rc5 = Directory Exists( "$TEMP/Loss Function Templates" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
- || Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
+rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );rc3 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );rc4 = Delete Directory( "$TEMP/Loss Function Templates" );rc5 = Directory Exists( "$TEMP/Loss Function Templates" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 ```
 
@@ -5649,16 +3198,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-rc0 = File Exists( "$TEMP/x.jmp" );
-rc1 = Copy File(
-	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
-	"$TEMP/x.jmp"
-);
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = Delete File( "$TEMP/x.jmp" );
-rc4 = File Exists( "$TEMP/x.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
- || Char( rc3 ) || " " || Char( rc4 );/* 0 1 1 1 0 */
+rc0 = File Exists( "$TEMP/x.jmp" );rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = Delete File( "$TEMP/x.jmp" );rc4 = File Exists( "$TEMP/x.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 );/* 0 1 1 1 0 */
 
 ```
 
@@ -5728,16 +3268,7 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
-New Table( "Count Example",
-	Add Rows( 12 ),
-	New Column( "Count1" ),
-	New Column( "Count2" ),
-	New Column( "Count3", Set Formula( Count( 0, 6, 4, 1 ) ) )
-);
-For Each Row(
-	:Count1[Row()] = Count( 0, 6, 4, 1 );
-	:Count2[Row()] = Count( 0, 6, 3, 2 );
-);
+New Table( "Count Example",	Add Rows( 12 ),	New Column( "Count1" ),	New Column( "Count2" ),	New Column( "Count3", Set Formula( Count( 0, 6, 4, 1 ) ) ));For Each Row(	:Count1[Row()] = Count( 0, 6, 4, 1 );	:Count2[Row()] = Count( 0, 6, 3, 2 ););
 
 ```
 
@@ -5765,9 +3296,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```jsl
 
-dbc = Create Database Connection(
-	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
-);
+dbc = Create Database Connection(	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;");
 
 ```
 
@@ -5781,17 +3310,7 @@ dbc = Create Database Connection(
 
 ```jsl
 
-Delete Directory( "$TEMP/sub1" );
-rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
-Save Text File(
-	"$TEMP/sub1/sub2/sub3/temp.txt",
-	"example text"
-);
-date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );
-rc1 = Delete Directory( "$TEMP/sub1" );
-rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
- || Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
+Delete Directory( "$TEMP/sub1" );rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );rc1 = Delete Directory( "$TEMP/sub1" );rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```
 
@@ -5807,13 +3326,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
-Create Excel Workbook(
-	"$TEMP/MyWorkbook.xlsx",
-	{dt1, dt2},
-	{"Big", "Abrasive"}
-);
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
 
 ```
 
@@ -5821,13 +3334,7 @@ Create Excel Workbook(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Abrasion.jmp" );
-Create Excel Workbook(
-	"$TEMP/MyWorkbook.xlsx",
-	{"Big Class", "Abrasion"},
-	{"Big", "Abrasive"}
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Abrasion.jmp" );Create Excel Workbook(	"$TEMP/MyWorkbook.xlsx",	{"Big Class", "Abrasion"},	{"Big", "Abrasive"});
 
 ```
 
@@ -5841,10 +3348,7 @@ Create Excel Workbook(
 
 ```jsl
 
-Format(
-	Creation Date( "$SAMPLE_DATA/Big Class.jmp" ),
-	"ddmonyyyy:h:m:s"
-);
+Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
 
@@ -5872,9 +3376,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```jsl
 
-
-connection = Current CAS Connection();
-Show( connection );
+connection = Current CAS Connection();Show( connection );
 
 ```
 
@@ -5892,8 +3394,7 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Current Data Table() << Get Column Names;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Current Data Table() << Get Column Names;
 
 ```
 
@@ -5951,12 +3452,7 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Example Outline",
-		Text Box( "Example Text" ),
-		Button Box( "Close", Current Window() << Close Window )
-	)
-);
+New Window( "Example",	Outline Box( "Example Outline",		Text Box( "Example Text" ),		Button Box( "Close", Current Window() << Close Window )	));
 
 ```
 
@@ -5998,8 +3494,7 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
-
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```
 
@@ -6013,35 +3508,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Shared Local Filter",
-	Data Filter Context Box(
-		H List Box(
-			dt << Data Filter(
-				Local,
-				Add Filter(
-					columns( :sex ),
-					Where( :sex == "F" )
-				)
-			),
-			dt << Bubble Plot(
-				X( :weight ),
-				Y( :height ),
-				Fit To Window( "On" ),
-				Sizes( :age ),
-				Title Position( 0, 0 )
-			),
-			dt << Graph Builder(
-				Size( 525, 456 ),
-				Show Control Panel( 0 ),
-				Fit To Window( "On" ),
-				Variables( X( :weight ), Y( :age ) ),
-				Elements( Box Plot( X, Y, Legend( 4 ) ) ),
-
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Shared Local Filter",	Data Filter Context Box(		H List Box(			dt << Data Filter( Local, Add Filter( columns( :sex ), Where( :sex == "F" ) ) ),			dt << Bubble Plot(				X( :weight ),				Y( :height ),				Fit To Window( "On" ),				Sizes( :age ),				Title Position( 0, 0 )			),			dt << Graph Builder(				Size( 525, 456 ),				Show Control Panel( 0 ),				Fit To Window( "On" ),				Variables( X( :weight ), Y( :age ) ),				Elements( Box Plot( X, Y, Legend( 4 ) ) ),			)		)	));
 
 ```
 
@@ -6055,37 +3522,7 @@ New Window( "Shared Local Filter",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Selection Filter",
-	Data Filter Context Box(
-		H List Box(
-			Data Filter Source Box(
-				Graph Builder(
-					Size( 208, 207 ),
-					Show Control Panel( 0 ),
-					Show Legend( 0 ),
-					Variables( X( :age ) ),
-					Elements( Bar( X, Legend( 3 ) ) ),
-					SendToReport(
-						Dispatch( {}, "Graph Builder",
-							OutlineBox,
-							{Set Title( "Filter" )}
-						)
-					)
-				)
-			),
-			Platform(
-				Current Data Table(),
-				Bubble Plot(
-					X( :weight ),
-					Y( :height ),
-					Sizes( :age ),
-					Title Position( 0, 0 )
-				)
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Selection Filter",	Data Filter Context Box(		H List Box(			Data Filter Source Box(				Graph Builder(					Size( 208, 207 ),					Show Control Panel( 0 ),					Show Legend( 0 ),					Variables( X( :age ) ),					Elements( Bar( X, Legend( 3 ) ) ),					SendToReport(						Dispatch( {}, "Graph Builder", OutlineBox, {Set Title( "Filter" )} )					)				)			),			Platform(				Current Data Table(),				Bubble Plot(					X( :weight ),					Y( :height ),					Sizes( :age ),					Title Position( 0, 0 )				)			)		)	));
 
 ```
 
@@ -6099,9 +3536,7 @@ New Window( "Selection Filter",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example", x = Data Grid Box() );
-x << Set Data Table( dt );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example", x = Data Grid Box() );x << Set Data Table( dt );
 
 ```
 
@@ -6115,9 +3550,7 @@ x << Set Data Table( dt );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Data Table( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Data Table( 1 );
 
 ```
 
@@ -6131,8 +3564,7 @@ Data Table( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example", Data Table Box( dt ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example", Data Table Box( dt ) );
 
 ```
 
@@ -6146,13 +3578,7 @@ New Window( "Example", Data Table Box( dt ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	Table Box(
-		Data Table Col Box( :name ),
-		Data Table Col Box( :height )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	Table Box( Data Table Col Box( :name ), Data Table Col Box( :height ) ));
 
 ```
 
@@ -6166,13 +3592,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	Table Box(
-		Data Table Plot Col Box( :weight ),
-		Data Table Plot Col Box( :height )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) ));
 
 ```
 
@@ -6186,16 +3606,7 @@ New Window( "Example",
 
 ```jsl
 
-exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
-	Set Script(
-		ex = exfeed << getLine;
-		Show( ex );
-	)
-);
-For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/
-	exfeed << Queue Line( Char( exi ) );
-	Wait( .5 );
-);
+exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/	Set Script(		ex = exfeed << getLine;		Show( ex );	));For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
 
 ```
 
@@ -6211,12 +3622,7 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
-Date Difference(
-	Date DMY( 31, 1, 2015 ),
-	Date DMY( 1, 3, 2015 ),
-	"Month",
-	"start"
-);
+Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
 
@@ -6224,12 +3630,7 @@ Date Difference(
 
 ```jsl
 
-Date Difference(
-	Date DMY( 31, 1, 2015 ),
-	Date DMY( 1, 3, 2015 ),
-	"Month",
-	"actual"
-);
+Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
 
@@ -6237,12 +3638,7 @@ Date Difference(
 
 ```jsl
 
-Date Difference(
-	Date DMY( 31, 1, 2015 ),
-	Date DMY( 1, 3, 2015 ),
-	"Month",
-	"fractional"
-);
+Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
 ```
 
@@ -6372,13 +3768,7 @@ v = Days In Month( 2016, 2 );
 
 ```jsl
 
-// Right-click and select Debug.
-// In the JSL Debugger, click Run.
-x = 5;
-y = 8;
-Debug Break();
-z = x + yy;
-Show( z );
+// Right-click and select Debug.// In the JSL Debugger, click Run.x = 5;y = 8;Debug Break();z = x + yy;Show( z );
 
 ```
 
@@ -6392,8 +3782,7 @@ Show( z );
 
 ```jsl
 
-
-Decode URI( "Foo%20Bar" );
+Decode URI( "Foo%20Bar" );
 
 ```
 
@@ -6435,51 +3824,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( complex );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( complex );
 
 ```
 
@@ -6493,24 +3838,7 @@ Delete Classes( complex );
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Classes();
-Show( lcl );
-Show Classes();
-Clear Symbols( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
-Show Classes();
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Classes();Show( lcl );Show Classes();Clear Symbols( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );Show Classes();
 
 ```
 
@@ -6524,17 +3852,7 @@ Show Classes();
 
 ```jsl
 
-Delete Directory( "$TEMP/sub1" );
-rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
-Save Text File(
-	"$TEMP/sub1/sub2/sub3/temp.txt",
-	"example text"
-);
-date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );
-rc1 = Delete Directory( "$TEMP/sub1" );
-rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
- || Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
+Delete Directory( "$TEMP/sub1" );rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );rc1 = Delete Directory( "$TEMP/sub1" );rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```
 
@@ -6548,15 +3866,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ```jsl
 
-rc0 = Copy File(
-	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
-	"$TEMP/x.jmp"
-);
-rc1 = File Exists( "$TEMP/x.jmp" );
-rc2 = Delete File( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/x.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
- || Char( rc3 ) /* 1 1 1 0 */;
+rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = File Exists( "$TEMP/x.jmp" );rc2 = Delete File( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/x.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /* 1 1 1 0 */;
 
 ```
 
@@ -6584,22 +3894,7 @@ Delete Globals();
 
 ```jsl
 
-
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-Show Namespaces();
-Delete Namespaces( nsaa, nsbb );
-Show Namespaces();
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});Show Namespaces();Delete Namespaces( nsaa, nsbb );Show Namespaces();
 
 ```
 
@@ -6641,21 +3936,7 @@ Derivative( Sin( x ), x );
 
 ```jsl
 
-/* example that Design(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design( exLevels ) );
-/* Also see DesignNom, DesignOrd */
-
-/* example that Design(...) takes two arguments */
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design(...) takes three arguments */
-Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design( exLevels ) );/* Also see DesignNom, DesignOrd *//* example that Design(...) takes two arguments */Show( Design( 3, {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design( exLevels, {1, 2, 3} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design(...) takes three arguments */Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -6669,30 +3950,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Last(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Last( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that Design Last(...) takes two arguments */
-Show( Design Last( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design Last( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Last( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design Last( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design Last(...) takes three arguments */
-Show(
-	Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing )
-);
-Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Last(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Last( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that Design Last(...) takes two arguments */Show( Design Last( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( Design Last( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Last( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( Design Last( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design Last(...) takes three arguments */Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -6706,30 +3964,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Nom(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Nom( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that Design Nom(...) takes two arguments */
-Show( Design Nom( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design Nom( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Nom( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
- /* example that Design Nom(...) takes three arguments */
-Show(
-	Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing )
-);
-Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Nom(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Nom( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that Design Nom(...) takes two arguments */Show( Design Nom( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( Design Nom( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Nom( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) ); /* example that Design Nom(...) takes three arguments */Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -6743,30 +3978,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Ord(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Ord( exLevels ) );
-/* see what is different from Design Nom(...) */
-Show( Design Nom( exLevels ) );
-
-/* Also see Design, Design Nom */
-
-/* example that Design Ord(...) takes two arguments */
-Show( Design Ord( 3, {1, 2, 3} ) );
-Show( Design Nom( 3, {1, 2, 3} ) );
-Show( Design Ord( [1 2], {1, 2, 3} ) );
-Show( Design Nom( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Ord( exLevels, {1, 2, 3} ) );
-Show( Design Nom( exLevels, {1, 2, 3} ) );
-Show( Design Ord( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design Ord(...) takes three arguments */
-Show(
-	Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing )
-);
-Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Ord(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Ord( exLevels ) );/* see what is different from Design Nom(...) */Show( Design Nom( exLevels ) );/* Also see Design, Design Nom *//* example that Design Ord(...) takes two arguments */Show( Design Ord( 3, {1, 2, 3} ) );Show( Design Nom( 3, {1, 2, 3} ) );Show( Design Ord( [1 2], {1, 2, 3} ) );Show( Design Nom( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Ord( exLevels, {1, 2, 3} ) );Show( Design Nom( exLevels, {1, 2, 3} ) );Show( Design Ord( {"a", "b"}, {"a", "b", "c"} ) );Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design Ord(...) takes three arguments */Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -6780,28 +3992,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that DesignF(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( DesignF( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that DesignF(...) takes two arguments */
-Show( DesignF( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( DesignF( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( DesignF( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( DesignF( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that DesignF(...) takes three arguments */
-Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that DesignF(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( DesignF( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that DesignF(...) takes two arguments */Show( DesignF( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( DesignF( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( DesignF( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( DesignF( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that DesignF(...) takes three arguments */Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -6815,17 +4006,7 @@ Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-dvec = [0.1 0.9 0.1];
-yvec = [1 5 10];
-New Window( "Desirability",
-	Graph Box(
-		X Scale( 0, 12 ),
-		Y Scale( 0, 1 ),
-		Frame Size( 500, 400 ),
-		Drag Marker( yvec, dvec );
-		Y Function( Desirability( yvec, dvec, x ), x );
-	)
-);
+dvec = [0.1 0.9 0.1];yvec = [1 5 10];New Window( "Desirability",	Graph Box(		X Scale( 0, 12 ),		Y Scale( 0, 1 ),		Frame Size( 500, 400 ),		Drag Marker( yvec, dvec );		Y Function( Desirability( yvec, dvec, x ), x );	));
 
 ```
 
@@ -6869,27 +4050,7 @@ Diag( [11 22] );
 
 ```jsl
 
-// See Example 2 for the deprecated Dialog equivalent
-If(
-	ex = New Window( "Dialog() example",
-		<<Modal,
-		<<Return Result,
-		V List Box(
-			H List Box(
-				"Set this value",
-				variable = Number Edit Box( 42 )
-			),
-			H List Box(
-				Button Box( "OK" ),
-				Button Box( "Cancel" )
-			)
-		)
-	);
-	ex["button"] == 1;
-,
-	ex["variable"],
-	"CANCEL"
-);
+// See Example 2 for the deprecated Dialog equivalentIf(	ex = New Window( "Dialog() example",		<<Modal,		<<Return Result,		V List Box(			H List Box( "Set this value", variable = Number Edit Box( 42 ) ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	);	ex["button"] == 1;,	ex["variable"],	"CANCEL");
 
 ```
 
@@ -6897,22 +4058,7 @@ If(
 
 ```jsl
 
-// Deprecated
-If(
-	ex = Dialog(
-		Title( " Dialog() example" ),
-		vlist(
-			hlist(
-				"Set this value", variable = EditNumber( 42 )
-			),
-			hlist( Button( "OK" ), Button( "Cancel" ) )
-		)
-	);
-	ex["button"] == 1;
-,
-	ex["variable"],
-	"CANCEL"
-);
+// DeprecatedIf(	ex = Dialog(		Title( " Dialog() example" ),		vlist(			hlist( "Set this value", variable = EditNumber( 42 ) ),			hlist( Button( "OK" ), Button( "Cancel" ) )		)	);	ex["button"] == 1;,	ex["variable"],	"CANCEL");
 
 ```
 
@@ -6926,9 +4072,7 @@ If(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-Dif( :height, 2 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;Dif( :height, 2 );
 
 ```
 
@@ -6970,18 +4114,7 @@ Dim( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [1 1 1, 2 2 2, 3 3 3];
-exProd = Direct Product( exA, exB );
-Show( exProd );
-
-/* verify results */
-Show( exProd[1 :: 3, 1 :: 3] == exB );
-Show( exProd[4 :: 6, 1 :: 3] == (exB * 3) );
-Show( exProd[1 :: 3, 4 :: 6] == (exB * 2) );
-Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
-
-/* Also see H Direct Product */
+exA = [1 2, 3 4];exB = [1 1 1, 2 2 2, 3 3 3];exProd = Direct Product( exA, exB );Show( exProd );/* verify results */Show( exProd[1 :: 3, 1 :: 3] == exB );Show( exProd[4 :: 6, 1 :: 3] == (exB * 3) );Show( exProd[1 :: 3, 4 :: 6] == (exB * 2) );Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );/* Also see H Direct Product */
 
 ```
 
@@ -6995,10 +4128,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ```jsl
 
-If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
-	"ok",
-	"missing!"
-);
+If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),	"ok",	"missing!");
 
 ```
 
@@ -7012,8 +4142,7 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 ```jsl
 
-
-Disable JMP Live URL( "*public.jmp.com" );
+Disable JMP Live URL( "*public.jmp.com" );
 
 ```
 
@@ -7027,8 +4156,7 @@ Disable JMP Live URL( "*public.jmp.com" );
 
 ```jsl
 
-
-Disable Proxy Settings( 1 );
+Disable Proxy Settings( 1 );
 
 ```
 
@@ -7042,71 +4170,7 @@ Disable Proxy Settings( 1 );
 
 ```jsl
 
-/*1-D example*/
-exX1 = [1, 2, 3, 4];
-exX2 = [2, 4, 6, 8]; 
-/*Compute squared Euclidean distance*/
-exD = Distance( exX1, exX2 ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum(
-			(exX1[exi, 0] - exX2[exj, 0]) ^ 2
-		)
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance*/
-exD = Distance( exX1, exX2 ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum(
-			(exX1[exi, 0] - exX2[exj, 0]) ^ 2
-		)
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance, with a scaler [0.5 2.0]*/
-exD = Distance( exX1, exX2, [0.5 2.0] ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum(
-			[0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) ^ 2
-			)
-		)
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance, with scalers [0.5 2.0] and powers [1.5 2.0]*/
-exD = Distance( exX1, exX2, [0.5 2.0], [1.5 2.0] ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum(
-			[0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) :^
-			[1.5 2.0])
-		)
-	)
-);
-Show( exDm == exD );
+/*1-D example*/exX1 = [1, 2, 3, 4];exX2 = [2, 4, 6, 8]; /*Compute squared Euclidean distance*/exD = Distance( exX1, exX2 ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance*/exD = Distance( exX1, exX2 ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance, with a scaler [0.5 2.0]*/exD = Distance( exX1, exX2, [0.5 2.0] ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( [0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) ^ 2) )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance, with scalers [0.5 2.0] and powers [1.5 2.0]*/exD = Distance( exX1, exX2, [0.5 2.0], [1.5 2.0] ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum(			[0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) :^ [1.5 2.0])		)	));Show( exDm == exD );
 
 ```
 
@@ -7122,9 +4186,7 @@ Show( exDm == exD );
 
 ```jsl
 
-x = Divide( 5 );
-y = 1 / 5;
-Show( x, y );
+x = Divide( 5 );y = 1 / 5;Show( x, y );
 
 ```
 
@@ -7146,9 +4208,7 @@ Show( x, y );
 
 ```jsl
 
-ex = 1;
-ex /= 2;
-ex;
+ex = 1;ex /= 2;ex;
 
 ```
 
@@ -7176,14 +4236,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 ```jsl
 
-New Window( "Example",
-	exx = [11 33 77];
-	exy = [88 22 44];,
-	Graph Box(
-		Drag Line( exx, exy );
-		Line( exx, exy );
-	)
-);
+New Window( "Example",	exx = [11 33 77];	exy = [88 22 44];,	Graph Box(		Drag Line( exx, exy );		Line( exx, exy );	));
 
 ```
 
@@ -7197,14 +4250,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	exx = [11 33 77];
-	exy = [88 22 44];,
-	Graph Box(
-		Drag Marker( exx, exy );
-		Line( exx, exy );
-	)
-);
+New Window( "Example",	exx = [11 33 77];	exy = [88 22 44];,	Graph Box(		Drag Marker( exx, exy );		Line( exx, exy );	));
 
 ```
 
@@ -7218,14 +4264,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	exx = [11 33 77];
-	exy = [88 22 44];,
-	Graph Box(
-		Drag Polygon( exx, exy );
-		Line( exx, exy );
-	)
-);
+New Window( "Example",	exx = [11 33 77];	exy = [88 22 44];,	Graph Box(		Drag Polygon( exx, exy );		Line( exx, exy );	));
 
 ```
 
@@ -7239,14 +4278,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	exx = [11 33];
-	exy = [88 22];,
-	Graph Box(
-		Drag Rect( exx, exy );
-		Line( exx, exy );
-	)
-);
+New Window( "Example",	exx = [11 33];	exy = [88 22];,	Graph Box(		Drag Rect( exx, exy );		Line( exx, exy );	));
 
 ```
 
@@ -7260,14 +4292,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	exx = [11 33 77];
-	exy = [88 22 44];,
-	Graph Box(
-		Drag Text( exx, exy, "hello" );
-		Line( exx, exy );
-	)
-);
+New Window( "Example",	exx = [11 33 77];	exy = [88 22 44];,	Graph Box(		Drag Text( exx, exy, "hello" );		Line( exx, exy );	));
 
 ```
 
@@ -7379,9 +4404,7 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
-X = [11 22, 22 33];
-{M, E} = Eigen( X );
-E * Diag( M ) * E`;
+X = [11 22, 22 33];{M, E} = Eigen( X );E * Diag( M ) * E`;
 
 ```
 
@@ -7393,8 +4416,7 @@ E * Diag( M ) * E`;
 
 ```jsl
 
-X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
-{M1, E1} = Eigen BLAS( X );
+X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];{M1, E1} = Eigen BLAS( X );
 
 ```
 
@@ -7422,8 +4444,7 @@ Empty();
 
 ```jsl
 
-
-Enable JMP Live URL( "https://public.jmp.com" );
+Enable JMP Live URL( "https://public.jmp.com" );
 
 ```
 
@@ -7437,8 +4458,7 @@ Enable JMP Live URL( "https://public.jmp.com" );
 
 ```jsl
 
-
-Enable Proxy Settings( 0 );
+Enable Proxy Settings( 0 );
 
 ```
 
@@ -7452,8 +4472,7 @@ Enable Proxy Settings( 0 );
 
 ```jsl
 
-
-Encode URI( "Foo Bar" );
+Encode URI( "Foo Bar" );
 
 ```
 
@@ -7523,21 +4542,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
-Estimate Bartlett Factor Score(
-	[2 2 0],
-	[2.085 2.76 1.56],
-	[0],
-	[1 0 0 0 0,
-	0 0.684181992749 0 0 0,
-	0 0 1.19686444665695 0 0,
-	0 0 0 0.875198112795068 0,
-	0 0 0 0 0.953592961124492],
-	[0 0 0 0 0,
-	2.085 0 0 0 1,
-	2.76 0 0 0 0.61913203807175,
-	1.56 0 0 0 0.710365935511608,
-	0 0 0 0 0]
-);
+Estimate Bartlett Factor Score(	[2 2 0],	[2.085 2.76 1.56],	[0],	[1 0 0 0 0,	0 0.684181992749 0 0 0,	0 0 1.19686444665695 0 0,	0 0 0 0.875198112795068 0,	0 0 0 0 0.953592961124492],	[0 0 0 0 0,	2.085 0 0 0 1,	2.76 0 0 0 0.61913203807175,	1.56 0 0 0 0.710365935511608,	0 0 0 0 0]);
 
 ```
 
@@ -7551,19 +4556,7 @@ Estimate Bartlett Factor Score(
 
 ```jsl
 
-Estimate Factor Score(
-	[7 10 5 2 2 0],
-	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
-	0.45 1.22 0.44 -0.44 -0.33 -0.38 0.45 -0.44,
-	0.58 0.44 1.88 -0.57 -0.43 -0.49 0.58 -0.57,
-	-0.58 -0.44 -0.57 1.64 0.57 0.65 -0.58 0.76,
-	-0.44 -0.33 -0.43 0.57 1.56 0.49 -0.44 0.57,
-	-0.5 -0.38 -0.49 0.65 0.49 1.36 -0.5 0.65,
-	0.59 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
-	-0.58 -0.44 -0.57 0.76 0.57 0.65 -0.58 0.76],
-	[6.59, 8.81, 2.92, 2.09, 2.76, 1.56],
-	[0, 0]
-);
+Estimate Factor Score(	[7 10 5 2 2 0],	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,	0.45 1.22 0.44 -0.44 -0.33 -0.38 0.45 -0.44,	0.58 0.44 1.88 -0.57 -0.43 -0.49 0.58 -0.57,	-0.58 -0.44 -0.57 1.64 0.57 0.65 -0.58 0.76,	-0.44 -0.33 -0.43 0.57 1.56 0.49 -0.44 0.57,	-0.5 -0.38 -0.49 0.65 0.49 1.36 -0.5 0.65,	0.59 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,	-0.58 -0.44 -0.57 0.76 0.57 0.65 -0.58 0.76],	[6.59, 8.81, 2.92, 2.09, 2.76, 1.56],	[0, 0]);
 
 ```
 
@@ -7619,9 +4612,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ```jsl
 
-ex = "Today is ^As Date( Today())^";
-Eval Insert Into( ex );
-ex;
+ex = "Today is ^As Date( Today())^";Eval Insert Into( ex );ex;
 
 ```
 
@@ -7645,9 +4636,7 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-x = 5;
-y = 10;
-Eval List( {x, y} );
+x = 5;y = 10;Eval List( {x, y} );
 
 ```
 
@@ -7661,56 +4650,7 @@ Eval List( {x, y} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold(
-			Bivariate( Y( :weight ), X( :height ), Fit Line() )
-		),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"weight by height",
-				Excerpt Box( 1, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height",
-				Excerpt Box( 2, {Picture Box( 1 )} )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"",
-				Excerpt Box( 3, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height by weight",
-				Excerpt Box( 4, {Picture Box( 1 )} )
-			)
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -7724,11 +4664,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Excluded State( 1 );
-Excluded( Row State( 3 ) );
-Row() = 3;
-Excluded();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Excluded State( 1 );Excluded( Row State( 3 ) );Row() = 3;Excluded();
 
 ```
 
@@ -7742,9 +4678,7 @@ Excluded();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Excluded State( 1 );
-Excluded( Row State( 3 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Excluded State( 1 );Excluded( Row State( 3 ) );
 
 ```
 
@@ -7760,11 +4694,7 @@ Excluded( Row State( 3 ) );
 
 ```jsl
 
-dt = Execute SQL(
-	databaseConnectionHandle,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass",
-	"NewTable"
-);
+dt = Execute SQL(	databaseConnectionHandle,	"SELECT HEIGHT, WEIGHT FROM Bigclass",	"NewTable");
 
 ```
 
@@ -7772,8 +4702,7 @@ dt = Execute SQL(
 
 ```jsl
 
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```
 
@@ -7781,12 +4710,7 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
 ```jsl
 
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-resultList = Execute SQL(
-	dc,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",
-	Batch Submit( 1 )
-);
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );resultList = Execute SQL(	dc,	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",	Batch Submit( 1 ));
 
 ```
 
@@ -7800,15 +4724,7 @@ resultList = Execute SQL(
 
 ```jsl
 
-New Window( "Example: ExGaussian Density",
-	y = Graph Box(
-		Y Scale( 0, .2 ),
-		X Scale( -2, 15 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( ExGaussian Density( x, 0, .5, .25 ), x );
-	)
-);
+New Window( "Example: ExGaussian Density",	y = Graph Box(		Y Scale( 0, .2 ),		X Scale( -2, 15 ),		XName( "x" ),		Pen Color( "red" );		Y Function( ExGaussian Density( x, 0, .5, .25 ), x );	));
 
 ```
 
@@ -7822,18 +4738,7 @@ New Window( "Example: ExGaussian Density",
 
 ```jsl
 
-New Window( "Example: ExGaussian Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -2, 15 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function(
-			ExGaussian Distribution( x, 0, .5, .25 ),
-			x
-		);
-	)
-);
+New Window( "Example: ExGaussian Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( -2, 15 ),		XName( "x" ),		Pen Color( "red" );		Y Function( ExGaussian Distribution( x, 0, .5, .25 ), x );	));
 
 ```
 
@@ -7847,15 +4752,7 @@ New Window( "Example: ExGaussian Distribution",
 
 ```jsl
 
-New Window( "Example: ExGaussian Quantile",
-	Graph Box(
-		Y Scale( -2, 15 ),
-		X Scale( 0, 1 ),
-		XName( "p" ),
-		Pen Color( "red" );
-		Y Function( ExGaussian Quantile( p, 0, .5, .25 ), p );
-	)
-);
+New Window( "Example: ExGaussian Quantile",	Graph Box(		Y Scale( -2, 15 ),		X Scale( 0, 1 ),		XName( "p" ),		Pen Color( "red" );		Y Function( ExGaussian Quantile( p, 0, .5, .25 ), p );	));
 
 ```
 
@@ -7869,14 +4766,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ```jsl
 
-If(
-	New Window( "Exit() example",
-		<<Type( "Modal" ),
-		Text Box( "Shut down JMP?" ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)["Button"] == 1, /*OK==1*/Exit(), /*cancel==-1*/
-	"Good choice."
-);
+If(	New Window( "Exit() example",		<<Type( "Modal" ),		Text Box( "Shut down JMP?" ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	)["Button"] == 1, /*OK==1*/Exit(), /*cancel==-1*/"Good choice.");
 
 ```
 
@@ -7904,15 +4794,7 @@ Round( Exp( 1 ), 5 );
 
 ```jsl
 
-New Window( "Example: Exp Density",
-	y = Graph Box(
-		Y Scale( 0, 0.45 ),
-		X Scale( 0, 4 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Exp Density( x, 2 ), x );
-	)
-);
+New Window( "Example: Exp Density",	y = Graph Box(		Y Scale( 0, 0.45 ),		X Scale( 0, 4 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Exp Density( x, 2 ), x );	));
 
 ```
 
@@ -7926,15 +4808,7 @@ New Window( "Example: Exp Density",
 
 ```jsl
 
-New Window( "Example: Exp Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 4 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Exp Distribution( x, 2 ), x );
-	)
-);
+New Window( "Example: Exp Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 4 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Exp Distribution( x, 2 ), x );	));
 
 ```
 
@@ -7948,14 +4822,7 @@ New Window( "Example: Exp Distribution",
 
 ```jsl
 
-New Window( "Example: Exp Quantile",
-	y = Graph Box(
-		Y Scale( 0, 4 ),
-		X Scale( 0, 1 ),
-		Pen Color( "red" );
-		Y Function( Exp Quantile( qq, 2 ), qq );
-	)
-);
+New Window( "Example: Exp Quantile",	y = Graph Box(		Y Scale( 0, 4 ),		X Scale( 0, 1 ),		Pen Color( "red" );		Y Function( Exp Quantile( qq, 2 ), qq );	));
 
 ```
 
@@ -7983,15 +4850,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-New Window( "Example: Exponential Density",
-	y = Graph Box(
-		Y Scale( 0, 0.45 ),
-		X Scale( 0, 4 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Exponential Density( x, 2 ), x );
-	)
-);
+New Window( "Example: Exponential Density",	y = Graph Box(		Y Scale( 0, 0.45 ),		X Scale( 0, 4 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Exponential Density( x, 2 ), x );	));
 
 ```
 
@@ -8005,15 +4864,7 @@ New Window( "Example: Exponential Density",
 
 ```jsl
 
-New Window( "Example: Exponential Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 4 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Exponential Distribution( x, 2 ), x );
-	)
-);
+New Window( "Example: Exponential Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 4 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Exponential Distribution( x, 2 ), x );	));
 
 ```
 
@@ -8027,14 +4878,7 @@ New Window( "Example: Exponential Distribution",
 
 ```jsl
 
-New Window( "Example: Exponential Quantile",
-	y = Graph Box(
-		Y Scale( 0, 4 ),
-		X Scale( 0, 1 ),
-		Pen Color( "red" );
-		Y Function( Exponential Quantile( qq, 2 ), qq );
-	)
-);
+New Window( "Example: Exponential Quantile",	y = Graph Box(		Y Scale( 0, 4 ),		X Scale( 0, 1 ),		Pen Color( "red" );		Y Function( Exponential Quantile( qq, 2 ), qq );	));
 
 ```
 
@@ -8062,19 +4906,7 @@ Expr( x + y );
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ), spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ),
-			top( 10 ), sides( 15 ),
-			Expr As Picture(
-				Expr(
-					(-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a)
-				)
-			)
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -8102,32 +4934,7 @@ Extract Expr( a + b * c, Wild() * Wild() );
 
 ```jsl
 
-fdedfn = 2;
-fdedfd = 2;
-New Window( "Example: F Density",
-	fdey = Graph Box(
-		Y Scale( 0, 0.8 ),
-		X Scale( 0, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( F Density( fdeq, fdedfn, fdedfd ), fdeq );
-		Text(
-			{2.5, 0.7},
-			"dfn=",
-			Round( fdedfn, 2 ),
-			" dfd=",
-			Round( fdedfd, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "dfn " ),
-		Slider Box( 1, 10, fdedfn, fdey << reshow )
-	),
-	H List Box(
-		Text Box( "dfd " ),
-		Slider Box( 1, 10, fdedfd, fdey << reshow )
-	)
-);
+fdedfn = 2;fdedfd = 2;New Window( "Example: F Density",	fdey = Graph Box(		Y Scale( 0, 0.8 ),		X Scale( 0, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Density( fdeq, fdedfn, fdedfd ), fdeq );		Text( {2.5, 0.7}, "dfn=", Round( fdedfn, 2 ), " dfd=", Round( fdedfd, 2 ) );	),	H List Box( Text Box( "dfn " ), Slider Box( 1, 10, fdedfn, fdey << reshow ) ),	H List Box( Text Box( "dfd " ), Slider Box( 1, 10, fdedfd, fdey << reshow ) ));
 
 ```
 
@@ -8141,35 +4948,7 @@ New Window( "Example: F Density",
 
 ```jsl
 
-fdidfn = 5;
-fdidfd = 5;
-New Window( "Example: F Distribution",
-	fdiy = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			F Distribution( fdiq, fdidfn, fdidfd ),
-			fdiq
-		);
-		Text(
-			{0.5, 0.9},
-			"dfn=",
-			Round( fdidfn, 2 ),
-			" dfd=",
-			Round( fdidfd, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "dfn " ),
-		Slider Box( 0.5, 10, fdidfn, fdiy << reshow )
-	),
-	H List Box(
-		Text Box( "dfd " ),
-		Slider Box( 0.5, 10, fdidfd, fdiy << reshow )
-	)
-);
+fdidfn = 5;fdidfd = 5;New Window( "Example: F Distribution",	fdiy = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Distribution( fdiq, fdidfn, fdidfd ), fdiq );		Text( {0.5, 0.9}, "dfn=", Round( fdidfn, 2 ), " dfd=", Round( fdidfd, 2 ) );	),	H List Box( Text Box( "dfn " ), Slider Box( 0.5, 10, fdidfn, fdiy << reshow ) ),	H List Box( Text Box( "dfd " ), Slider Box( 0.5, 10, fdidfd, fdiy << reshow ) ));
 
 ```
 
@@ -8183,35 +4962,7 @@ New Window( "Example: F Distribution",
 
 ```jsl
 
-flcddfn = 5;
-flcddfd = 5;
-New Window( "Example: F Log CDistribution",
-	flcdy = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			F Log CDistribution( flcdq, flcddfn, flcddfd ),
-			flcdq
-		);
-		Text(
-			{0.5, -0.9},
-			"dfn=",
-			Round( flcddfn, 2 ),
-			" dfd=",
-			Round( flcddfd, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "dfn " ),
-		Slider Box( 1, 10, flcddfn, flcdy << reshow )
-	),
-	H List Box(
-		Text Box( "dfd " ),
-		Slider Box( 1, 30, flcddfd, flcdy << reshow )
-	)
-);
+flcddfn = 5;flcddfd = 5;New Window( "Example: F Log CDistribution",	flcdy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Log CDistribution( flcdq, flcddfn, flcddfd ), flcdq );		Text( {0.5, -0.9}, "dfn=", Round( flcddfn, 2 ), " dfd=", Round( flcddfd, 2 ) );	),	H List Box( Text Box( "dfn " ), Slider Box( 1, 10, flcddfn, flcdy << reshow ) ),	H List Box( Text Box( "dfd " ), Slider Box( 1, 30, flcddfd, flcdy << reshow ) ));
 
 ```
 
@@ -8225,35 +4976,7 @@ New Window( "Example: F Log CDistribution",
 
 ```jsl
 
-fldedfn = 1;
-fldedfd = 1;
-New Window( "Example: F Log Density",
-	fldey = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			F Log Density( fldeq, fldedfn, fldedfd ),
-			fldeq
-		);
-		Text(
-			{2.5, -0.7},
-			"dfn=",
-			Round( fldedfn, 2 ),
-			" dfd=",
-			Round( fldedfd, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "dfn " ),
-		Slider Box( 1, 10, fldedfn, fldey << reshow )
-	),
-	H List Box(
-		Text Box( "dfd " ),
-		Slider Box( 1, 10, fldedfd, fldey << reshow )
-	)
-);
+fldedfn = 1;fldedfd = 1;New Window( "Example: F Log Density",	fldey = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Log Density( fldeq, fldedfn, fldedfd ), fldeq );		Text( {2.5, -0.7}, "dfn=", Round( fldedfn, 2 ), " dfd=", Round( fldedfd, 2 ) );	),	H List Box( Text Box( "dfn " ), Slider Box( 1, 10, fldedfn, fldey << reshow ) ),	H List Box( Text Box( "dfd " ), Slider Box( 1, 10, fldedfd, fldey << reshow ) ));
 
 ```
 
@@ -8267,35 +4990,7 @@ New Window( "Example: F Log Density",
 
 ```jsl
 
-flddfn = 5;
-flddfd = 5;
-New Window( "Example: F Log Distribution",
-	fldy = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 10 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			F Log Distribution( fldq, flddfn, flddfd ),
-			fldq
-		);
-		Text(
-			{0.5, -0.9},
-			"dfn=",
-			Round( flddfn, 2 ),
-			" dfd=",
-			Round( flddfd, 2 )
-		);
-	),
-	H List Box(
-		Text Box( "dfn " ),
-		Slider Box( 1, 10, flddfn, fldy << reshow )
-	),
-	H List Box(
-		Text Box( "dfd " ),
-		Slider Box( 1, 30, flddfd, fldy << reshow )
-	)
-);
+flddfn = 5;flddfd = 5;New Window( "Example: F Log Distribution",	fldy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 10 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Log Distribution( fldq, flddfn, flddfd ), fldq );		Text( {0.5, -0.9}, "dfn=", Round( flddfn, 2 ), " dfd=", Round( flddfd, 2 ) );	),	H List Box( Text Box( "dfn " ), Slider Box( 1, 10, flddfn, fldy << reshow ) ),	H List Box( Text Box( "dfd " ), Slider Box( 1, 30, flddfd, fldy << reshow ) ));
 
 ```
 
@@ -8309,24 +5004,7 @@ New Window( "Example: F Log Distribution",
 
 ```jsl
 
-New Window( "Example: F Noncentrality",
-	fncgr = Graph Box(
-		Y Scale( 0.01, 0.99 ),
-		X Scale( 0.01, 0.99 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			F Noncentrality(
-				3,
-				2,
-				5,
-				F Distribution( 3, 2, 5, q )
-			),
-			q
-		);
-	)
-);
-F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
+New Window( "Example: F Noncentrality",	fncgr = Graph Box(		Y Scale( 0.01, 0.99 ),		X Scale( 0.01, 0.99 ),		XName( "q" ),		Pen Color( "red" );		Y Function( F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, q ) ), q );	));F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 ```
 
@@ -8340,26 +5018,7 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 
 ```jsl
 
-alpha = 0.05;
-obs = 25;
-dfh = 5;
-dfm = 5;
-d = 1;
-New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
-	fpdigr = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( 0, 1 ),
-		YName( "Power" ),
-		XName( "d" ),
-		Pen Color( "red" );
-		Y Function( F Power( alpha, dfh, dfm, d, obs ), d );
-		Text( {0.75, 0.1}, "obs=", Round( obs ) );
-	),
-	H List Box(
-		Text Box( "obs" ),
-		Slider Box( 10, 100, obs, fpdigr << reshow )
-	)
-);
+alpha = 0.05;obs = 25;dfh = 5;dfm = 5;d = 1;New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",	fpdigr = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( 0, 1 ),		YName( "Power" ),		XName( "d" ),		Pen Color( "red" );		Y Function( F Power( alpha, dfh, dfm, d, obs ), d );		Text( {0.75, 0.1}, "obs=", Round( obs ) );	),	H List Box( Text Box( "obs" ), Slider Box( 10, 100, obs, fpdigr << reshow ) ));
 
 ```
 
@@ -8387,29 +5046,7 @@ F Quantile( 0.7, 5, 3 );
 
 ```jsl
 
-alpha = 0.05;
-pow = 0.6;
-dfh = 5;
-dfm = 5;
-d = 1;
-New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
-	fpdigr = Graph Box(
-		Y Scale( 0, 50 ),
-		X Scale( 0.5, 5 ),
-		YName( "Sample Size" ),
-		XName( "d" ),
-		Pen Color( "red" );
-		Y Function(
-			F Sample Size( alpha, dfh, dfm, d, pow ),
-			d
-		);
-		Text( {0.75, 0.2}, "power=", Round( pow, 2 ) );
-	),
-	H List Box(
-		Text Box( "power" ),
-		Slider Box( 0.2, 0.95, pow, fpdigr << reshow )
-	)
-);
+alpha = 0.05;pow = 0.6;dfh = 5;dfm = 5;d = 1;New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",	fpdigr = Graph Box(		Y Scale( 0, 50 ),		X Scale( 0.5, 5 ),		YName( "Sample Size" ),		XName( "d" ),		Pen Color( "red" );		Y Function( F Sample Size( alpha, dfh, dfm, d, pow ), d );		Text( {0.75, 0.2}, "power=", Round( pow, 2 ) );	),	H List Box( Text Box( "power" ), Slider Box( 0.2, 0.95, pow, fpdigr << reshow ) ));
 
 ```
 
@@ -8437,9 +5074,7 @@ Factorial( 5 );
 
 ```jsl
 
-A = Faure Quasi Random Sequence( 3, 100 );
-As Table( A );
-Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
+A = Faure Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```
 
@@ -8467,67 +5102,7 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```jsl
 
-FFT(
-	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3
-	]}
-);
-A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
-res = FFT( {A} );
-res = FFT( {A}, <<Inverse( 1 ) );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-B = FFT( {A} );
-FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]
-);
-FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3
-	]}
-);
-FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4,
-6 7, 6 4, 2 7, 2 4, 2 6, 3 5, 3 6, 3 1];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );
-res = FFT(
-	FFT( {A}, <<multivariate( 1 ) ),
-	<<multivariate( 1 ),
-	<<Inverse( 1 ),
-	<<scale( 1 / 20 )
-);
-A = [1 3 1,
-2 4 3,
-3 1 2,
-4 3 3,
-4 5 9,
-5 2 8,
-5 7 6,
-6 9 5,
-7 5 3,
-7 3 2,
-2 7 1,
-3 4 3,
-6 7 3,
-6 4 2,
-2 7 4,
-2 4 1,
-2 6 5,
-3 5 1,
-3 6 2,
-3 1 9];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );
-fin = FFT(
-	FFT( {A}, <<multivariate( 1 ) ),
-	<<Inverse( 1 ),
-	<<multivariate( 1 ),
-	<<scale( 1 / 20 )
-);
-Show( fin );
+FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];res = FFT( {A} );res = FFT( {A}, <<Inverse( 1 ) );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );B = FFT( {A} );FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]);FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]});FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5,3 6, 3 1];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );res = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<multivariate( 1 ),	<<Inverse( 1 ),	<<scale( 1 / 20 ));A = [1 3 1,2 4 3,3 1 2,4 3 3,4 5 9,5 2 8,5 7 6,6 9 5,7 5 3,7 3 2,2 7 1,3 4 3,6 7 3,6 4 2,2 7 4,2 4 1,2 6 5,3 5 1,3 6 2,3 1 9];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );fin = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<Inverse( 1 ),	<<multivariate( 1 ),	<<scale( 1 / 20 ));Show( fin );
 
 ```
 
@@ -8541,10 +5116,7 @@ Show( fin );
 
 ```jsl
 
-If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
-	"ok",
-	"missing!"
-);
+If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),	"ok",	"missing!");
 
 ```
 
@@ -8582,10 +5154,7 @@ Files In Directory( "$HOME" );
 
 ```jsl
 
-Filter Each( {fn},
-	Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
-	Contains( Lowercase( fn ), "stacked" )
-);
+Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),	Contains( Lowercase( fn ), "stacked" ));
 
 ```
 
@@ -8599,12 +5168,7 @@ Filter Each( {fn},
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( {1, 1, .5} );
-		Polygon( [10 30 90], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( {1, 1, .5} );		Polygon( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -8620,14 +5184,7 @@ New Window( "Example",
 
 ```jsl
 
-
-image = New Image( "$SAMPLE_IMAGES/pi.gif" );
-New Window( "Example",
-	Graph Box(
-		Fill Pattern( image );
-		Polygon( [10 30 90], [88 22 44] );
-	)
-);
+image = New Image( "$SAMPLE_IMAGES/pi.gif" );New Window( "Example",	Graph Box(		Fill Pattern( image );		Polygon( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -8635,14 +5192,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Pattern(
-			[1 0.5 0 0, 0.5 0 0 1, 0 0 1 0.5, 0 1 0.5 0]
-		);
-		Polygon( [10 30 90], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Pattern( [1 0.5 0 0, 0.5 0 0 1, 0 0 1 0.5, 0 1 0.5 0] );		Polygon( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -8656,10 +5206,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Col List Box Example",
-	fontobj = lb = Filter Col Selector( width( 250 ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
 ```
 
@@ -8675,11 +5222,7 @@ New Window( "Col List Box Example",
 
 ```jsl
 
-values = Filter Each( {{key, value}},
-	["A" => 8, "B" => 6, "C" => 10],
-	value > 6
-);
-Show( values );
+values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );Show( values );
 
 ```
 
@@ -8687,10 +5230,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ),
-	Mod( value, 2 ) == 0
-);
-Show( values );
+values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );Show( values );
 
 ```
 
@@ -8698,8 +5238,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
-Show( values );
+values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );Show( values );
 
 ```
 
@@ -8707,8 +5246,7 @@ Show( values );
 
 ```jsl
 
-values = Filter Each( {x, i}, 100 :: 120, i > 10 );
-Show( values );
+values = Filter Each( {x, i}, 100 :: 120, i > 10 );Show( values );
 
 ```
 
@@ -8726,13 +5264,7 @@ Seules les fenêtres du projet en cours (sauf si le script n&apos;est pas exécu
 
 ```jsl
 
-
-exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
-windows = Find All( Data Tables );
-For( i = 1, i <= N Items( windows ), i++,
-	Write( Char( windows[i] << Get Window Title ) || "\!N" )
-);
+exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );windows = Find All( Data Tables );For( i = 1, i <= N Items( windows ), i++,	Write( Char( windows[i] << Get Window Title ) || "\!N" ));
 
 ```
 
@@ -8760,14 +5292,7 @@ First( 11, 22 );
 
 ```jsl
 
-result = Fit Censored(
-	Distribution( "Weibull" ),
-	Y(
-		[142, 156, 163, 198, 204, 205, 232, 239, 240, 261, 280,
-		296, 323, 344]
-	)
-);
-Show( result );
+result = Fit Censored(	Distribution( "Weibull" ),	Y( [142, 156, 163, 198, 204, 205, 232, 239, 240, 261, 280, 296, 323, 344] ));Show( result );
 
 ```
 
@@ -8781,18 +5306,7 @@ Show( result );
 
 ```jsl
 
-x = [68, 77, 85, 88, 93, 93, 95, 98];
-y = [1, 9, 18, 94, 35, 82, 40, 59];
-result = Fit Circle( x, y );
-New Window( "Fit Circle",
-	Graph Box(
-		X Scale( -50, 100 ),
-		Y Scale( -20, 130 ),
-		FrameSize( 300, 300 ),
-		Marker( x, y );
-		Circle( {result[1], result[2]}, result[3] );
-	)
-);
+x = [68, 77, 85, 88, 93, 93, 95, 98];y = [1, 9, 18, 94, 35, 82, 40, 59];result = Fit Circle( x, y );New Window( "Fit Circle",	Graph Box(		X Scale( -50, 100 ),		Y Scale( -20, 130 ),		FrameSize( 300, 300 ),		Marker( x, y );		Circle( {result[1], result[2]}, result[3] );	));
 
 ```
 
@@ -8806,26 +5320,7 @@ New Window( "Fit Circle",
 
 ```jsl
 
-datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647,
--6.9470789, -17.237024, -19.470857, -6.1855986, 2.16525629,
--30.990061];
-freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
-As Table( datavec || freqvec );
-Column( 1 ) << set name( "x" );
-Column( 2 ) << set name( "freq vec" );
-Distribution(
-	Freq( :freq vec ),
-	Continuous Distribution(
-		Column( :x ),
-		Fit Distribution( GLog )
-	)
-);
-results = Fit Transform To Normal(
-	Distribution( "glog" ),
-	Y( datavec ),
-	freq( freqvec )
-);
-Show( results );
+datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,-6.1855986, 2.16525629, -30.990061];freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];As Table( datavec || freqvec );Column( 1 ) << set name( "x" );Column( 2 ) << set name( "freq vec" );Distribution(	Freq( :freq vec ),	Continuous Distribution( Column( :x ), Fit Distribution( GLog ) ));results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );Show( results );
 
 ```
 
@@ -8853,11 +5348,7 @@ Floor( 1.2 );
 
 ```jsl
 
-s = "";
-For( i = 1, i < 10, i++,
-	s ||= " " || Char( i )
-);
-Trim( s );
+s = "";For( i = 1, i < 10, i++,	s ||= " " || Char( i ));Trim( s );
 
 ```
 
@@ -8873,15 +5364,7 @@ Trim( s );
 
 ```jsl
 
-
-// Across multiple containers
-x = {1, 3};
-y = {2, 4};
-For Each( {{a, b}, index}, Across( x, y ), Show( a, b, index ) );
-
-// Across list of containers
-xy = {{1, 3}, {2, 4}};
-For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
+// Across multiple containersx = {1, 3};y = {2, 4};For Each( {{a, b}, index}, Across( x, y ), Show( a, b, index ) );// Across list of containersxy = {{1, 3}, {2, 4}};For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```
 
@@ -8889,34 +5372,7 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 
 ```jsl
 
-
-list1 = {1, 3, 5, 7, 9};
-list2 = {2, 4}; 
-
-Write( "\!N===Longest [default]===" );
-For Each( {{l1, l2}}, Across( list1, list2, Count( "Longest" ) ),
-	Show( l1, l2 )
-);
-
-Write( "\!N===Shortest===" );
-For Each( {{s1, s2}},
-	Across( list1, list2, Count( "Shortest" ) ),
-	Show( s1, s2 )
-);
-
-Write( "\!N===N===" );
-For Each( {{n1, n2}}, Across( list1, list2, Count( 7 ) ),
-	Show( n1, n2 )
-);
-
-Write( "\!N===Enforce Equal===" );
-Try(
-	For Each( {values},
-		Across( list1, list2, Count( "Enforce Equal" ) ),
-		Show( values )
-	),
-	Print( "Error occurred" )
-);
+list1 = {1, 3, 5, 7, 9};list2 = {2, 4}; Write( "\!N===Longest [default]===" );For Each( {{l1, l2}}, Across( list1, list2, Count( "Longest" ) ), Show( l1, l2 ) );Write( "\!N===Shortest===" );For Each( {{s1, s2}}, Across( list1, list2, Count( "Shortest" ) ), Show( s1, s2 ) );Write( "\!N===N===" );For Each( {{n1, n2}}, Across( list1, list2, Count( 7 ) ), Show( n1, n2 ) );Write( "\!N===Enforce Equal===" );Try(	For Each( {values}, Across( list1, list2, Count( "Enforce Equal" ) ), Show( values ) ),	Print( "Error occurred" ));
 
 ```
 
@@ -8924,9 +5380,7 @@ Try(
 
 ```jsl
 
-For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
-	Show( key, value, index )
-);
+For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
 
@@ -8934,9 +5388,7 @@ For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10],
 
 ```jsl
 
-For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ),
-	Show( value )
-);
+For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```
 
@@ -8960,9 +5412,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```jsl
 
-For Each( {element, {row, col}}, 10 :: 15,
-	Show( element, row, col )
-);
+For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```
 
@@ -8976,18 +5426,13 @@ For Each( {element, {row, col}}, 10 :: 15,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For Each Row( :height = -:height );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For Each Row( :height = -:height );
 
 ```
 
-### Force Action Notes
-
-**JMP Version ajoutée :** 16
-
 ### Format
 
-**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -8997,10 +5442,7 @@ For Each Row( :height = -:height );
 
 ```jsl
 
-Print(
-	Format( Today(), "yyyyQq" ),
-	Format( Today(), "m/d/y h:m" )
-);
+Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
@@ -9008,13 +5450,7 @@ Print(
 
 ```jsl
 
-Print(
-	Format(
-		Today(),
-		"Format Pattern",
-		"<YYYY></><MM></><DD> <hh24><:><mm><:><ss>"
-	)
-);
+Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
 
@@ -9022,9 +5458,7 @@ Print(
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -9032,16 +5466,13 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-Show(
-	Format( 88.54, "Best" ),
-	Format( 88.54, "Best", "Full Precision" )
-);
+Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
 
 ### Format Date
 
-**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -9051,10 +5482,7 @@ Show(
 
 ```jsl
 
-Print(
-	Format( Today(), "yyyyQq" ),
-	Format( Today(), "m/d/y h:m" )
-);
+Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
@@ -9062,13 +5490,7 @@ Print(
 
 ```jsl
 
-Print(
-	Format(
-		Today(),
-		"Format Pattern",
-		"<YYYY></><MM></><DD> <hh24><:><mm><:><ss>"
-	)
-);
+Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
 
@@ -9076,15 +5498,13 @@ Print(
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
 ### Format Pattern
 
-**Syntaxe :** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**Syntaxe :** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description :** Les configurations de format sont des chaînes qui définissent un format de date et heure, comme « <YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm> ». Les parties de la configuration entre <> sont appelées des descripteurs de champ. Ils représentent une valeur (comme « <YYYY> » pour l&apos;année à quatre chiffres) ou un autre texte de date et heure (comme « </> » qui est le séparateur local de date). Une configuration de format vous permet de créer des formats non fournis dans JMP. Ces formats peuvent être utilisés pour le formatage et l&apos;entrée de données.
 
@@ -9092,106 +5512,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-s = Format(
-	Today(),
-	"Format Pattern",
-	"<YYYY></><MM></><DD> <hh24><:><mm>"
-);
-x = Informat(
-	"2020/02/10 14:54",
-	"Format Pattern",
-	"<YYYY></><MM></><DD> <hh24><:><mm>"
-);
-Show( s, x );
-                                                /*
-Descripteurs de champ
-
-Dates
-(ne peut pas être utilisé avec les descripteurs de champ de durée)
-================================================================================
-<YYYY>        Année à quatre chiffres. (Accepte de 1 à 4 chiffres en entrée.)
-<YY>          Année à deux chiffres
-<yyyy>        Année ISO à quatre chiffres ; correspond aux semaines ISO.
-              (Accepte 1 à 4 chiffres en entrée.)
-<yy>          Année ISO à deux chiffres ; correspond aux semaines ISO.
-<YYYY.>       Année avec une année fractionnelle. Décrit complètement la date et
-              l'heure.
-<M>           Numéro du mois (1 à 12)
-<MM>          Numéro du mois, précédé par un zéro (01 à 12)
-<Month>       Nom long du mois
-<Mmm>         Nom court du mois
-<MMM>         Nom du mois « en ligne ». Toujours trois lettres.
-<WW1>         Numéro de semaine à deux chiffres, précédé par un zéro. La semaine
-              2 commence le premier dimanche de l'année. La semaine 1 comprend
-              les jours avant le premier dimanche. (01 à 54)
-<WW2>         Numéro de semaine à deux chiffres, précédé par un zéro. La semaine
-              1 commence le premier dimanche de l'année. La semaine 0 comprend
-              les jours avant le premier dimanche. (00 à 53)
-<ww>          Numéro de semaine ISO à deux chiffres, précédé par un zéro. Les
-              semaines commencent le lundi. La semaine 1 est la première semaine
-              de l'année ayant 4 jours ou plus. Aucune semaine partielle. La
-              première ou la dernière semaine de l'année déborde sur l'année
-              précédente ou suivante, respectivement. (01 à 53)
-<D>           Jour du mois (1 à 31)
-<DD>          Jour du mois, précédé par un zéro (01 à 31)
-<Q>           Trimestre de l'année (1 à 4)
-<Q#>          « T » suivi du trimestre de l'année (1 à 4)
-<DayOfWeek>   Nom du jour de la semaine
-<DW>          Numéro représentant le jour de la semaine. 1 = dimanche, 7 =
-              samedi
-<dw>          Numéro représentant le jour de la semaine. 1 = lundi, 7 = dimanche
-</>           Le séparateur de date régional . (Accepte la plupart des
-              séparateurs courants en entrée.)
-<->           Le séparateur de date ISO « - ». (Accepte la plupart des
-              séparateurs courants en entrée.)
-</?>          Séparateur de date facultatif pour la saisie de la date. Le
-              séparateur n'est jamais écrit en sortie.
-<'T'>         Le « T » dans les dates ISO
-
-Temps
-(peut parfois être utilisé avec les descripteurs de champ de durée)
-================================================================================
-<hh>          Heure formatée selon les paramètres régionaux actuels. Si un
-              descripteur <ampm> est présent, utilisera une horloge à 12 ou 24
-              heures selon la région. Si un descripteur <AMPM> est présent,
-              utilisera une horloge à 12 heures. Sinon, utilisera une horloge à
-              24 heures. (Ne peut pas être utilisé avec les descripteurs de
-              champ de durée.)
-<zhh>         Heure formatée selon les paramètres régionaux actuels et précédée
-              par un zéro. Si un descripteur <ampm> est présent, utilisera une
-              horloge à 12 ou 24 heures selon la région. Si un descripteur
-              <AMPM> est présent, utilisera une horloge à 12 heures. Sinon,
-              utilisera une horloge à 24 heures. (Ne peut pas être utilisé avec
-              les descripteurs de champ de durée.)
-<hh24>        Heure au format 24 heures précédé par un zéro (00 à 23)
-<mm>          Minute, précédée par un zéro (00 à 59)
-<ss>          Seconde, précédée par un zéro (00 à 59)
-<ampm>        Symbole Matin / Après-midi pour les paramètres régionaux actuels.
-              (Ne peut pas être utilisé avec les descripteurs de champ de
-              durée.)
-<AMPM>        Symbole matin/après-midi « AM » ou « PM » indépendant des
-              paramètres régionaux. (Ne peut pas être utilisé avec les
-              descripteurs de champ de durée.)
-<:>           Le séparateur de temps régional.
-<::>          Le séparateur de temps ISO « : ». (Accepte également le séparateur
-              de temps régional en entrée.)
-<:?>          Séparateur d'heure facultatif pour la saisie de la date. Le
-              séparateur n'est jamais écrit en sortie.
-
-Durées
-(ne peut pas être utilisé avec les descripteurs de champ de date)
-================================================================================
-<Day>         Nombre de jour. Utilisé comme champ le plus significatif dans les
-              durées. Ne peut être utilisé avec aucun autre « count ».
-<Hour>        Nombre d'heure. Utilisé comme champ le plus significatif dans les
-              durées. Ne peut être utilisé avec aucun autre « count ».
-<Minute>      Nombre de minute. Utilisé comme champ le plus significatif dans
-              les durées. Ne peut être utilisé avec aucun autre « count ».
-
-Autre
-================================================================================
-<<>           Remplacé par « < »
-*/
+s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );Show( s, x );                                                /*Descripteurs de champDates(ne peut pas être utilisé avec les descripteurs de champ de durée)================================================================================<YYYY>        Année à quatre chiffres. (Accepte de 1 à 4 chiffres en entrée.)<YY>          Année à deux chiffres<yyyy>        Année ISO à quatre chiffres ; correspond aux semaines ISO.              (Accepte 1 à 4 chiffres en entrée.)<yy>          Année ISO à deux chiffres ; correspond aux semaines ISO.<YYYY.>       Année avec une année fractionnelle. Décrit complètement la date et              l'heure.<M>           Numéro du mois (1 à 12)<MM>          Numéro du mois, précédé par un zéro (01 à 12)<Month>       Nom long du mois<Mmm>         Nom court du mois<MMM>         Nom du mois « en ligne ». Toujours trois lettres.<WW1>         Numéro de semaine à deux chiffres, précédé par un zéro. La semaine              2 commence le premier dimanche de l'année. La semaine 1 comprend              les jours avant le premier dimanche. (01 à 54)<WW2>         Numéro de semaine à deux chiffres, précédé par un zéro. La semaine              1 commence le premier dimanche de l'année. La semaine 0 comprend              les jours avant le premier dimanche. (00 à 53)<ww>          Numéro de semaine ISO à deux chiffres, précédé par un zéro. Les              semaines commencent le lundi. La semaine 1 est la première semaine              de l'année ayant 4 jours ou plus. Aucune semaine partielle. La              première ou la dernière semaine de l'année déborde sur l'année              précédente ou suivante, respectivement. (01 à 53)<D>           Jour du mois (1 à 31)<DD>          Jour du mois, précédé par un zéro (01 à 31)<Q>           Trimestre de l'année (1 à 4)<Q#>          « T » suivi du trimestre de l'année (1 à 4)<DayOfWeek>   Nom du jour de la semaine<DW>          Numéro représentant le jour de la semaine. 1 = dimanche, 7 =              samedi<dw>          Numéro représentant le jour de la semaine. 1 = lundi, 7 = dimanche</>           Le séparateur de date régional . (Accepte la plupart des              séparateurs courants en entrée.)<->           Le séparateur de date ISO « - ». (Accepte la plupart des              séparateurs courants en entrée.)</?>          Séparateur de date facultatif pour la saisie de la date. Le              séparateur n'est jamais écrit en sortie.<'T'>         Le « T » dans les dates ISOTemps(peut parfois être utilisé avec les descripteurs de champ de durée)================================================================================<hh>          Heure formatée selon les paramètres régionaux actuels. Si un              descripteur <ampm> est présent, utilisera une horloge à 12 ou 24              heures selon la région. Si un descripteur <AMPM> est présent,              utilisera une horloge à 12 heures. Sinon, utilisera une horloge à              24 heures. (Ne peut pas être utilisé avec les descripteurs de              champ de durée.)<zhh>         Heure formatée selon les paramètres régionaux actuels et précédée              par un zéro. Si un descripteur <ampm> est présent, utilisera une              horloge à 12 ou 24 heures selon la région. Si un descripteur              <AMPM> est présent, utilisera une horloge à 12 heures. Sinon,              utilisera une horloge à 24 heures. (Ne peut pas être utilisé avec              les descripteurs de champ de durée.)<hh24>        Heure au format 24 heures précédé par un zéro (00 à 23)<mm>          Minute, précédée par un zéro (00 à 59)<ss>          Seconde, précédée par un zéro (00 à 59)<ampm>        Symbole Matin / Après-midi pour les paramètres régionaux actuels.              (Ne peut pas être utilisé avec les descripteurs de champ de              durée.)<AMPM>        Symbole matin/après-midi « AM » ou « PM » indépendant des              paramètres régionaux. (Ne peut pas être utilisé avec les              descripteurs de champ de durée.)<:>           Le séparateur de temps régional.<::>          Le séparateur de temps ISO « : ». (Accepte également le séparateur              de temps régional en entrée.)<:?>          Séparateur d'heure facultatif pour la saisie de la date. Le              séparateur n'est jamais écrit en sortie.Durées(ne peut pas être utilisé avec les descripteurs de champ de date)================================================================================<Day>         Nombre de jour. Utilisé comme champ le plus significatif dans les              durées. Ne peut être utilisé avec aucun autre « count ».<Hour>        Nombre d'heure. Utilisé comme champ le plus significatif dans les              durées. Ne peut être utilisé avec aucun autre « count ».<Minute>      Nombre de minute. Utilisé comme champ le plus significatif dans              les durées. Ne peut être utilisé avec aucun autre « count ».Autre================================================================================<<>           Remplacé par « < »*/
 
 ```
 
@@ -9205,12 +5526,7 @@ Autre
 
 ```jsl
 
-Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
-Fourier Basis Coef(
-	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10,
-	2,
-	2
-);
+Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
 ```
 
@@ -9224,27 +5540,7 @@ Fourier Basis Coef(
 
 ```jsl
 
-mu = 0;
-sig = .5;
-New Window( "Example: Frechet Density",
-	y = Graph Box(
-		Y Scale( 0, .06 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Frechet Density( x, mu, sig ), x );
-		Text( {0, .055}, "mu=", Round( mu, 2 ) );
-		Text( {0, .045}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( "mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 0;sig = .5;New Window( "Example: Frechet Density",	y = Graph Box(		Y Scale( 0, .06 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Frechet Density( x, mu, sig ), x );		Text( {0, .055}, "mu=", Round( mu, 2 ) );		Text( {0, .045}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -9258,26 +5554,7 @@ New Window( "Example: Frechet Density",
 
 ```jsl
 
-mu = 0;
-sig = .5;
-New Window( "Example: Frechet Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Frechet Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 0;sig = .5;New Window( "Example: Frechet Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Frechet Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -9291,40 +5568,7 @@ New Window( "Example: Frechet Distribution",
 
 ```jsl
 
-mu = 0;
-sig = .5;
-qq = .5;
-New Window( "Example: Frechet Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Frechet Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( Frechet Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 0;sig = .5;qq = .5;New Window( "Example: Frechet Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Frechet Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( Frechet Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -9340,8 +5584,7 @@ New Window( "Example: Frechet Quantile",
 
 ```jsl
 
-exsqr = Function( {x}, x * x );
-exsqr( 5 );
+exsqr = Function( {x}, x * x );exsqr( 5 );
 
 ```
 
@@ -9349,11 +5592,7 @@ exsqr( 5 );
 
 ```jsl
 
-// y is an optional argument
-exmul = Function( {x, y = 3}, x * y );
-a = exmul( 5 );
-b = exmul( 5, 10 );
-Show( a, b );
+// y is an optional argumentexmul = Function( {x, y = 3}, x * y );a = exmul( 5 );b = exmul( 5, 10 );Show( a, b );
 
 ```
 
@@ -9361,15 +5600,7 @@ Show( a, b );
 
 ```jsl
 
-posorneg = Function( {x},
-	{},
-	If(
-		x > 0, Return( "positive" ),
-		x == 0, Return( "zero" ),
-		Return( "negative" )
-	)
-);
-posorneg( -5.5 );
+posorneg = Function( {x},	{},	If(		x > 0, Return( "positive" ),		x == 0, Return( "zero" ),		Return( "negative" )	));posorneg( -5.5 );
 
 ```
 
@@ -9425,33 +5656,7 @@ Gamma( 5 );
 
 ```jsl
 
-gdealpha = Log( 1.5 );
-New Window( "Example: Gamma Density",
-	gdey = Graph Box(
-		Y Scale( 0, 0.5 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Density( gdeq, Exp( gdealpha ) ),
-			gdeq
-		);
-		Text(
-			{9, 0.45},
-			"\!U03B1=",
-			Round( Exp( gdealpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gdealpha,
-			gdey << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+gdealpha = Log( 1.5 );New Window( "Example: Gamma Density",	gdey = Graph Box(		Y Scale( 0, 0.5 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Density( gdeq, Exp( gdealpha ) ), gdeq );		Text( {9, 0.45}, "\!U03B1=", Round( Exp( gdealpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), gdealpha, gdey << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -9465,33 +5670,7 @@ New Window( "Example: Gamma Density",
 
 ```jsl
 
-gdialpha = Log( 1.5 );
-New Window( "Example: Gamma Distribution",
-	gdiy = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Distribution( gdiq, Exp( gdialpha ) ),
-			gdiq
-		);
-		Text(
-			{1, 0.9},
-			"\!U03B1=",
-			Round( Exp( gdialpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gdialpha,
-			gdiy << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+gdialpha = Log( 1.5 );New Window( "Example: Gamma Distribution",	gdiy = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Distribution( gdiq, Exp( gdialpha ) ), gdiq );		Text( {1, 0.9}, "\!U03B1=", Round( Exp( gdialpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), gdialpha, gdiy << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -9505,33 +5684,7 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
-glcdialpha = Log( 1.5 );
-New Window( "Example: Gamma Log CDistribution",
-	glcdiy = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Log CDistribution( glcdiq, Exp( glcdialpha ) ),
-			glcdiq
-		);
-		Text(
-			{1, -0.9},
-			"\!U03B1=",
-			Round( Exp( glcdialpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			glcdialpha,
-			glcdiy << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+glcdialpha = Log( 1.5 );New Window( "Example: Gamma Log CDistribution",	glcdiy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Log CDistribution( glcdiq, Exp( glcdialpha ) ), glcdiq );		Text( {1, -0.9}, "\!U03B1=", Round( Exp( glcdialpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), glcdialpha, glcdiy << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -9545,33 +5698,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ```jsl
 
-gldealpha = Log( 1.5 );
-New Window( "Example: Gamma Log Density",
-	gldey = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Log Density( gldeq, Exp( gldealpha ) ),
-			gldeq
-		);
-		Text(
-			{9, -0.45},
-			"\!U03B1=",
-			Round( Exp( gldealpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gldealpha,
-			gldey << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+gldealpha = Log( 1.5 );New Window( "Example: Gamma Log Density",	gldey = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Log Density( gldeq, Exp( gldealpha ) ), gldeq );		Text( {9, -0.45}, "\!U03B1=", Round( Exp( gldealpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), gldealpha, gldey << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -9585,33 +5712,7 @@ New Window( "Example: Gamma Log Density",
 
 ```jsl
 
-gldialpha = Log( 1.5 );
-New Window( "Example: Gamma Log Distribution",
-	gldiy = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Log Distribution( gldiq, Exp( gldialpha ) ),
-			gldiq
-		);
-		Text(
-			{1, -0.9},
-			"\!U03B1=",
-			Round( Exp( gldialpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gldialpha,
-			gldiy << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+gldialpha = Log( 1.5 );New Window( "Example: Gamma Log Distribution",	gldiy = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Log Distribution( gldiq, Exp( gldialpha ) ), gldiq );		Text( {1, -0.9}, "\!U03B1=", Round( Exp( gldialpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), gldialpha, gldiy << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -9625,42 +5726,7 @@ New Window( "Example: Gamma Log Distribution",
 
 ```jsl
 
-lambda = 20;
-sigma = 2;
-New Window( "Example: Gamma Poisson Distribution",
-	ppy = Graph Box(
-		Y Scale( 0, 1.01 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= 40, k++,
-			H Line(
-				k,
-				k + 1,
-				Gamma Poisson Distribution( k, lambda, sigma )
-			);
-			V Line(
-				k + 1,
-				Gamma Poisson Distribution( k, lambda, sigma ),
-				Gamma Poisson Distribution(
-					k + 1,
-					lambda,
-					sigma
-				)
-			);
-		);
-		Text( {2, 0.95}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {2, 0.87}, "\!U03C3=", Round( sigma, 2 ) );
-	),
-	H List Box(
-		Slider Box( 3, 40, lambda, ppy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 1, 5, sigma, ppy << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+lambda = 20;sigma = 2;New Window( "Example: Gamma Poisson Distribution",	ppy = Graph Box(		Y Scale( 0, 1.01 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= 40, k++,			H Line( k, k + 1, Gamma Poisson Distribution( k, lambda, sigma ) );			V Line(				k + 1,				Gamma Poisson Distribution( k, lambda, sigma ),				Gamma Poisson Distribution( k + 1, lambda, sigma )			);		);		Text( {2, 0.95}, "\!U03BB=", Round( lambda, 2 ) );		Text( {2, 0.87}, "\!U03C3=", Round( sigma, 2 ) );	),	H List Box( Slider Box( 3, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 1, 5, sigma, ppy << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -9674,42 +5740,7 @@ New Window( "Example: Gamma Poisson Distribution",
 
 ```jsl
 
-lambda = 5;
-sigma = 2;
-New Window( "Poisson and Gamma Poisson",
-	clty = Graph Box(
-		Y Scale( 0, 0.3 ),
-		X Scale( -1, 20.5 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( x = 0, x <= 20, x++,
-			Pen Color( "red" );
-			V Line( x, 0, Poisson Probability( lambda, x ) );
-			Pen Color( "blue" );
-			V Line(
-				x + 0.35,
-				0,
-				Gamma Poisson Probability( x, lambda, sigma )
-			);
-		);
-		Text(
-			{1, 0.25},
-			"\!U03BB=",
-			Round( lambda, 8 ),
-			" \!U03C3=",
-			Round( sigma, 8 )
-		);
-		Text( {0, 0.28}, "Red = Poisson, Blue = Gamma Poisson" );
-	),
-	H List Box(
-		Slider Box( 3, 10, lambda, clty << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 1, 5, sigma, clty << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+lambda = 5;sigma = 2;New Window( "Poisson and Gamma Poisson",	clty = Graph Box(		Y Scale( 0, 0.3 ),		X Scale( -1, 20.5 ),		Pen Color( "red" ),		Pen Size( 2 );		For( x = 0, x <= 20, x++,			Pen Color( "red" );			V Line( x, 0, Poisson Probability( lambda, x ) );			Pen Color( "blue" );			V Line( x + 0.35, 0, Gamma Poisson Probability( x, lambda, sigma ) );		);		Text( {1, 0.25}, "\!U03BB=", Round( lambda, 8 ), " \!U03C3=", Round( sigma, 8 ) );		Text( {0, 0.28}, "Red = Poisson, Blue = Gamma Poisson" );	),	H List Box( Slider Box( 3, 10, lambda, clty << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 1, 5, sigma, clty << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -9723,76 +5754,7 @@ New Window( "Poisson and Gamma Poisson",
 
 ```jsl
 
-qexpl = 20;
-qexps = 2;
-qexpn = 40;
-qexpq = 0.5;
-New Window( "Example: Gamma Poisson Quantile",
-	qexpy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,
-			H Line(
-				qexpk,
-				qexpk + 1,
-				Gamma Poisson Distribution(
-					qexpk,
-					qexpl,
-					qexps
-				)
-			);
-			V Line(
-				qexpk + 1,
-				Gamma Poisson Distribution(
-					qexpk,
-					qexpl,
-					qexps
-				),
-				Gamma Poisson Distribution(
-					qexpk + 1,
-					qexpl,
-					qexps
-				)
-			);
-		);
-		Pen Color( "blue" );
-		V Line(
-			Gamma Poisson Quantile( qexpl, qexps, qexpq ),
-			0,
-			1
-		);
-		Text(
-			{1, 0.9},
-			" \!U03BB=",
-			Round( qexpl, 2 ),
-			" \!U03C3=",
-			Round( qexps, 2 )
-		);
-		Text(
-			{1, 0.8},
-			" q=",
-			Round( qexpq, 2 ),
-			" quantile=",
-			Round(
-				Gamma Poisson Quantile( qexpl, qexps, qexpq )
-			)
-		);
-	),
-	H List Box(
-		Slider Box( 3, 40, qexpl, qexpy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 1, 5, qexps, qexpy << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 1, qexpq, qexpy << reshow ),
-		Text Box( " q" )
-	)
-);
+qexpl = 20;qexps = 2;qexpn = 40;qexpq = 0.5;New Window( "Example: Gamma Poisson Quantile",	qexpy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,			H Line( qexpk, qexpk + 1, Gamma Poisson Distribution( qexpk, qexpl, qexps ) );			V Line(				qexpk + 1,				Gamma Poisson Distribution( qexpk, qexpl, qexps ),				Gamma Poisson Distribution( qexpk + 1, qexpl, qexps )			);		);		Pen Color( "blue" );		V Line( Gamma Poisson Quantile( qexpl, qexps, qexpq ), 0, 1 );		Text( {1, 0.9}, " \!U03BB=", Round( qexpl, 2 ), " \!U03C3=", Round( qexps, 2 ) );		Text(			{1, 0.8},			" q=",			Round( qexpq, 2 ),			" quantile=",			Round( Gamma Poisson Quantile( qexpl, qexps, qexpq ) )		);	),	H List Box( Slider Box( 3, 40, qexpl, qexpy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 1, 5, qexps, qexpy << reshow ), Text Box( " \!U03C3" ) ),	H List Box( Slider Box( 0, 1, qexpq, qexpy << reshow ), Text Box( " q" ) ));
 
 ```
 
@@ -9820,41 +5782,7 @@ Gamma Quantile( 0.75, 4 );
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: GenGamma Density",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -5, 10 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GenGamma Density( y, mu, sigma, lambda ),
-			y
-		);
-		Text(
-			{-4, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-4, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: GenGamma Density",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -5, 10 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GenGamma Density( y, mu, sigma, lambda ), y );		Text( {-4, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-4, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ));
 
 ```
 
@@ -9868,41 +5796,7 @@ New Window( "Example: GenGamma Density",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: GenGamma Distribution",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GenGamma Distribution( y, mu, sigma, lambda ),
-			y
-		);
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: GenGamma Distribution",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GenGamma Distribution( y, mu, sigma, lambda ), y );		Text( {-9, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ));
 
 ```
 
@@ -9916,62 +5810,7 @@ New Window( "Example: GenGamma Distribution",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-p = 0.4;
-New Window( "Example: GenGamma Quantile",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GenGamma Distribution( x, mu, sigma, lambda ),
-			x
-		);
-		Pen Color( "Blue" );
-		V Line(
-			GenGamma Quantile( p, mu, sigma, lambda ),
-			0,
-			1
-		);
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 ),
-			" \!U03BB=",
-			Round( lambda, 4 )
-		);
-		Text( {-9, 0.8}, "p=", Round( p, 3 ) );
-		Text(
-			{-9, 0.7},
-			"quantile= ",
-			Round(
-				GenGamma Quantile( p, mu, sigma, lambda ),
-				2
-			)
-		);
-	),
-	H List Box(
-		Slider Box( -2, 2, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, p, gdey << reshow ),
-		Text Box( " p" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;p = 0.4;New Window( "Example: GenGamma Quantile",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GenGamma Distribution( x, mu, sigma, lambda ), x );		Pen Color( "Blue" );		V Line( GenGamma Quantile( p, mu, sigma, lambda ), 0, 1 );		Text(			{-9, 0.9},			"\!U03BC=",			Round( mu, 4 ),			" \!U03C3=",			Round( sigma, 4 ),			" \!U03BB=",			Round( lambda, 4 )		);		Text( {-9, 0.8}, "p=", Round( p, 3 ) );		Text(			{-9, 0.7},			"quantile= ",			Round( GenGamma Quantile( p, mu, sigma, lambda ), 2 )		);	),	H List Box( Slider Box( -2, 2, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ),	H List Box( Slider Box( 0.01, 0.99, p, gdey << reshow ), Text Box( " p" ) ));
 
 ```
 
@@ -9999,9 +5838,7 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-addins = Get Addins();
-addin ids = Get Addins() << id;
-Show( addins, addin ids );
+addins = Get Addins();addin ids = Get Addins() << id;Show( addins, addin ids );
 
 ```
 
@@ -10029,21 +5866,7 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Class Names();
-Show( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Class Names();Show( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );
 
 ```
 
@@ -10057,22 +5880,7 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Classes();
-Show( lcl );
-Clear Symbols( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Classes();Show( lcl );Clear Symbols( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );
 
 ```
 
@@ -10170,9 +5978,7 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Get Data Table( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Get Data Table( 1 );
 
 ```
 
@@ -10196,9 +6002,7 @@ Pour spécifier un projet, utilisez l&apos;argument facultatif Project() avec un
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Get Data Table List();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Get Data Table List();
 
 ```
 
@@ -10206,8 +6010,7 @@ Get Data Table List();
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-Get Data Table List( Project( project ) );
+project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );Get Data Table List( Project( project ) );
 
 ```
 
@@ -10221,9 +6024,7 @@ Get Data Table List( Project( project ) );
 
 ```jsl
 
-Show( Get Default Directory() );
-Set Default Directory( "$SAMPLE_DATA" );
-Show( Get Default Directory() );
+Show( Get Default Directory() );Set Default Directory( "$SAMPLE_DATA" );Show( Get Default Directory() );
 
 ```
 
@@ -10255,53 +6056,7 @@ Get Environment Variable( "PATH" );
 
 ```jsl
 
-sheetList = Get Excel Worksheets(
-	"$SAMPLE_IMPORT_DATA\Team Results.xlsx"
-);
-Show( sheetList );
-
-```
-
-### Get Expr Location
-
-**Syntaxe :** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
-
-**Description :** Récupère les emplacements du token supérieur dans une expression analysée. L&apos;appel par défaut renvoie {le fichier source, TokenStartLine, TokenStartCol, TokenLength}.
-
-**JMP Version ajoutée :** 17
-
-**Remplacer une sous-chaîne**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-data = " :height + 20 ";
-e = Parse( data );
-positions = Get Expr Location(
-	Arg( e, 2 ),
-	{"TreeStart", "TreeLength"}
-);
-Munger( data, positions[1], positions[2], "45" );
-
-```
-
-**Sélectionner la sortie**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( " :height + 20 " );
-Get Expr Location( e, {"TreeStart", "TreeEnd"} );
-
-```
-
-**Sortie par défaut**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( ":height + 20" );
-Get Expr Location( e );
+sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );Show( sheetList );
 
 ```
 
@@ -10343,9 +6098,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ```jsl
 
-all contents = Get Log();
-headcontents = Get Log( 10 );
-tailcontents = Get Log( -5 );
+all contents = Get Log();headcontents = Get Log( 10 );tailcontents = Get Log( -5 );
 
 ```
 
@@ -10373,22 +6126,7 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-lns = Get Namespace Names();
-Show( lns );
-nsaa << Delete;
-nsbb << Delete;
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});lns = Get Namespace Names();Show( lns );nsaa << Delete;nsbb << Delete;
 
 ```
 
@@ -10402,23 +6140,7 @@ nsbb << Delete;
 
 ```jsl
 
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-lns = Get Namespaces();
-Show( lns );
-Clear Symbols( lns );
-nsaa << Delete;
-nsbb << Delete;
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});lns = Get Namespaces();Show( lns );Clear Symbols( lns );nsaa << Delete;nsbb << Delete;
 
 ```
 
@@ -10440,12 +6162,7 @@ nsbb << Delete;
 
 ```jsl
 
-
-/*
-https://oauth.net/2/grant-types/
-*/
-grant_types = Get OAuth2 Grant Types();
-Show( grant_types );
+/*https://oauth.net/2/grant-types/*/grant_types = Get OAuth2 Grant Types();Show( grant_types );
 
 ```
 
@@ -10455,11 +6172,7 @@ Show( grant_types );
 
 ```jsl
 
-
-url =
-"https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
-aa = Get OpenID Connect Discovery( url );
-Show( aa );
+url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";aa = Get OpenID Connect Discovery( url );Show( aa );
 
 ```
 
@@ -10479,10 +6192,7 @@ Show( aa );
 
 ```jsl
 
-Get Path Variable( "SAMPLE_DATA" );
-/* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
-See full listing of Path Variables in the other example
-See also Convert File Path() and Set Path Variable() */
+Get Path Variable( "SAMPLE_DATA" );/* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTSSee full listing of Path Variables in the other exampleSee also Convert File Path() and Set Path Variable() */
 
 ```
 
@@ -10490,57 +6200,7 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
-// Run for a Path Variable listing
-path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS",
-"TEMP", "HOME", "USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS",
-"SAMPLE_APPS", "SAMPLE_DASHBOARDS", "SAMPLE_IMAGES",
-"SAMPLE_IMPORT_DATA", "SAMPLE_PROJECTS", "SAMPLE_SCRIPTS"};
-path vars ||= Transform Each( {id}, Get Addins() << ID,
-	Eval Insert( "ADDIN_HOME(^id^)" )
-);
-path vars = Filter Each( {var}, path vars,
-	Directory Exists( Get Path Variable( var ) )
-);
-
-New Window( "Path Variables",
-	<<Type( "Dialog" ),
-	Outline Box( "Path Variables",
-		H List Box(
-			Button Box( "Open Paths",
-				For Each( {row}, tbl << Get Selected Rows,
-					{path},
-					path = tbl[String Col Box( 2 )] <<
-					Get( row );
-					Open( path );
-				)
-			),
-			Button Box( "Copy Paths",
-				If( N Items( tbl << Get Selected Rows ),
-					Set Clipboard(
-						Concat Items(
-							Transform Each( {row},
-								tbl << Get Selected Rows,
-								Output( "List" ),
-								tbl[String Col Box( 2 )] <<
-								Get( row )
-							),
-							"\!N"
-						)
-					)
-				)
-			)
-		),
-		window:tbl = Table Box(
-			String Col Box( "Variable", path vars ),
-			String Col Box( "Path",
-				Transform Each( {var}, path vars,
-					Get Path Variable( var )
-				)
-			),
-			<<Set Selectable Rows
-		)
-	)
-);
+// Run for a Path Variable listingpath vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME","USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS","SAMPLE_IMAGES", "SAMPLE_IMPORT_DATA", "SAMPLE_PROJECTS", "SAMPLE_SCRIPTS"};path vars ||= Transform Each( {id}, Get Addins() << ID, Eval Insert( "ADDIN_HOME(^id^)" ) );path vars = Filter Each( {var}, path vars, Directory Exists( Get Path Variable( var ) ) );New Window( "Path Variables",	<<Type( "Dialog" ),	Outline Box( "Path Variables",		H List Box(			Button Box( "Open Paths",				For Each( {row}, tbl << Get Selected Rows, {path},					path = tbl[String Col Box( 2 )] << Get( row );					Open( path );				)			),			Button Box( "Copy Paths",				If( N Items( tbl << Get Selected Rows ),					Set Clipboard(						Concat Items(							Transform Each( {row}, tbl << Get Selected Rows, Output( "List" ),								tbl[String Col Box( 2 )] << Get( row )							),							"\!N"						)					)				)			)		),		window:tbl = Table Box(			String Col Box( "Variable", path vars ),			String Col Box( "Path",				Transform Each( {var}, path vars, Get Path Variable( var ) )			),			<<Set Selectable Rows		)	));
 
 ```
 
@@ -10586,12 +6246,6 @@ Get Policies();
 
 ```
 
-### Get Policy
-
-**Syntaxe :** Get Policy( "PolicyName" )
-
-**JMP Version ajoutée :** 18
-
 ### Get Preference
 
 **Syntaxe :** Get Preferences( pref1, ... )
@@ -10632,10 +6286,7 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-                             
-Print( Get Project( 2 ) << Get Window Title() );
+Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );                             Print( Get Project( 2 ) << Get Window Title() );
 
 ```
 
@@ -10643,10 +6294,7 @@ Print( Get Project( 2 ) << Get Window Title() );
 
 ```jsl
 
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-                             
-project = Get Project( "Big Class" );
+Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );                             project = Get Project( "Big Class" );
 
 ```
 
@@ -10660,10 +6308,7 @@ project = Get Project( "Big Class" );
 
 ```jsl
 
-New Project();
-Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
-                              
-Print( Get Project List() << Get Window Title() );
+New Project();Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );                              Print( Get Project List() << Get Window Title() );
 
 ```
 
@@ -10703,11 +6348,7 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```jsl
 
-Collapse Whitespace(
-	Substitute( "This...string..has..dots",
-		Items( Get Punctuation Characters(), "" ), " "
-	)
-);
+Collapse Whitespace(	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " ));
 
 ```
 
@@ -10721,10 +6362,7 @@ Collapse Whitespace(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << RunScript( "Bivariate" );
-Get Session Script( Report( biv ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << RunScript( "Bivariate" );Get Session Script( Report( biv ) );
 
 ```
 
@@ -10766,9 +6404,7 @@ Utilisez l&apos;argument facultatif Type() avec "Data Tables", "Journals", "Repo
 
 ```jsl
 
-Open( "$SAMPLE_DATA\Big Class.jmp" );
-                                        
-window = Get Window( "Big Class" );
+Open( "$SAMPLE_DATA\Big Class.jmp" );                                        window = Get Window( "Big Class" );
 
 ```
 
@@ -10776,9 +6412,7 @@ window = Get Window( "Big Class" );
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-window = Get Window( Project( project ), "Big Class" );
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             window = Get Window( Project( project ), "Big Class" );
 
 ```
 
@@ -10814,11 +6448,7 @@ Print( Get Window List() << Get Window Title() );
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-Print(
-	Get Window List( Project( project ) ) << Get Window Title()
-);
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             Print( Get Window List( Project( project ) ) << Get Window Title() );
 
 ```
 
@@ -10826,12 +6456,7 @@ Print(
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
-                             
-Print(
-	Get Window List( Project( project ), Type( "Data Tables" ) )
-	 << Get Window Title()
-);
+project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );                             Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Window Title() );
 
 ```
 
@@ -10845,8 +6470,7 @@ Print(
 
 ```jsl
 
-ex = .6;
-New Window( "Example", Global Box( ex ) );
+ex = .6;New Window( "Example", Global Box( ex ) );
 
 ```
 
@@ -10860,38 +6484,7 @@ New Window( "Example", Global Box( ex ) );
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: GLog Density",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 10 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function( GLog Density( y, mu, sigma, lambda ), y );
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: GLog Density",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 10 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GLog Density( y, mu, sigma, lambda ), y );		Text( {-9, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( " \!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( " \!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( " \!U03BB" ) ));
 
 ```
 
@@ -10905,41 +6498,7 @@ New Window( "Example: GLog Density",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: Glog Distribution",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GLog Distribution( y, mu, sigma, lambda ),
-			y
-		);
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: Glog Distribution",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -20, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GLog Distribution( y, mu, sigma, lambda ), y );		Text( {-9, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( " \!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( " \!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( " \!U03BB" ) ));
 
 ```
 
@@ -10953,55 +6512,7 @@ New Window( "Example: Glog Distribution",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-p = 0.4;
-New Window( "Example: GLog Quantile",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GLog Distribution( x, mu, sigma, lambda ),
-			x
-		);
-		Pen Color( "Blue" );
-		V Line( GLog Quantile( p, mu, sigma, lambda ), 0, 1 );
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 ),
-			" \!U03BB=",
-			Round( lambda, 4 )
-		);
-		Text( {-9, 0.8}, "p=", Round( p, 3 ) );
-		Text(
-			{-9, 0.7},
-			"quantile= ",
-			Round( GLog Quantile( p, mu, sigma, lambda ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box( -2, 2, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, p, gdey << reshow ),
-		Text Box( " p" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;p = 0.4;New Window( "Example: GLog Quantile",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -20, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( GLog Distribution( x, mu, sigma, lambda ), x );		Pen Color( "Blue" );		V Line( GLog Quantile( p, mu, sigma, lambda ), 0, 1 );		Text(			{-9, 0.9},			"\!U03BC=",			Round( mu, 4 ),			" \!U03C3=",			Round( sigma, 4 ),			" \!U03BB=",			Round( lambda, 4 )		);		Text( {-9, 0.8}, "p=", Round( p, 3 ) );		Text( {-9, 0.7}, "quantile= ", Round( GLog Quantile( p, mu, sigma, lambda ), 2 ) );	),	H List Box( Slider Box( -2, 2, mu, gdey << reshow ), Text Box( " \!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( " \!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 0.01, 0.99, p, gdey << reshow ), Text Box( " p" ) ));
 
 ```
 
@@ -11015,8 +6526,7 @@ New Window( "Example: GLog Quantile",
 
 ```jsl
 
-ex1 = 1;
-ex2 = 2;
+ex1 = 1;ex2 = 2;
 
 ```
 
@@ -11030,14 +6540,7 @@ ex2 = 2;
 
 ```jsl
 
-email = "youremail@gmail.com"; //Replace this with your email
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Google Sheet Export(
-	dt,
-	Email( email ),
-	New Spreadsheet( "JSL Example" ),
-	Sheet Name( "Example 1" )
-);
+email = "youremail@gmail.com"; //Replace this with your emaildt = Open( "$SAMPLE_DATA/Big Class.jmp" );Google Sheet Export(	dt,	Email( email ),	New Spreadsheet( "JSL Example" ),	Sheet Name( "Example 1" ));
 
 ```
 
@@ -11051,22 +6554,7 @@ Google Sheet Export(
 
 ```jsl
 
-email = "youremail@gmail.com"; //Replace this with your email
-spreadsheet =
-"https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
-                                        
-Google Sheet Import(
-	Email( email ),
-	Spreadsheet( spreadsheet ),
-	Sheets( "Sheet1", "Sheet2" ),
-	Sheet Settings(
-		Has Column Headers( 0 ),
-		Data Starts on Row( 1 ),
-		Cell Range( "A1:C2" ),
-		Import Cell Colors( 0 ),
-		Suppress Empty Columns( 1 )
-	)
-);
+email = "youremail@gmail.com"; //Replace this with your emailspreadsheet ="https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/";                                         Google Sheet Import(	Email( email ),	Spreadsheet( spreadsheet ),	Sheets( "Sheet1", "Sheet2" ),	Sheet Settings(		Has Column Headers( 0 ),		Data Starts on Row( 1 ),		Cell Range( "A1:C2" ),		Import Cell Colors( 0 ),		Suppress Empty Columns( 1 )	));
 
 ```
 
@@ -11080,17 +6568,7 @@ Google Sheet Import(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Gradient Function(
-			Log( a * a + b * b ),
-			a,
-			b,
-			[2 10],
-			Z Color( {"Green", "Orange"} )
-		)
-	)
-);
+New Window( "Example",	Graph Box(		Gradient Function(			Log( a * a + b * b ),			a,			b,			[2 10],			Z Color( {"Green", "Orange"} )		)	));
 
 ```
 
@@ -11104,14 +6582,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	));
 
 ```
 
@@ -11125,29 +6596,7 @@ New Window( "Example",
 
 ```jsl
 
-x3d = Graph 3D Box(
-	framesize( 300, 300 ),
-	Xname( "X Axis" ),
-	Yname( "Y Axis" ),
-	Zname( "Z Axis" )
-);
-New Window( "Graph3DBox Example", x3d );
-x3d << addmarkers(/*x*/[20 20 20 20], /*y*/[20 20 20 20], /*z*/[
-	10 20 30 40]
-);
-x3d << AddVector(
-	[60 60 60]/*from*/,
-	[90 60 60, 60 90 60, 60 60 90]/*to*/,
-	ShaftThickness( [.1] ),
-	FromThickness( [.2] ),
-	ToThickness( [.3] ),
-	ShaftColor( [-255] ),
-	FromColor( [-16711680] ),
-	ToColor( [-65280] ),
-	Facets( Round ),
-	FromCap( Sphere ),
-	toCap( Point )
-);
+x3d = Graph 3D Box(	framesize( 300, 300 ),	Xname( "X Axis" ),	Yname( "Y Axis" ),	Zname( "Z Axis" ));New Window( "Graph3DBox Example", x3d );x3d << addmarkers( /*x*/[20 20 20 20], /*y*/[20 20 20 20], /*z*/[10 20 30 40] );x3d << AddVector(	[60 60 60]/*from*/,	[90 60 60, 60 90 60, 60 60 90]/*to*/,	ShaftThickness( [.1] ),	FromThickness( [.2] ),	ToThickness( [.3] ),	ShaftColor( [-255] ),	FromColor( [-16711680] ),	ToColor( [-65280] ),	Facets( Round ),	FromCap( Sphere ),	toCap( Point ));
 
 ```
 
@@ -11161,14 +6610,7 @@ x3d << AddVector(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	));
 
 ```
 
@@ -11210,11 +6652,7 @@ New Window( "Example",
 
 ```jsl
 
-Gzip Compress(
-	Char To Blob(
-		"random data does not usually compress well and may get larger"
-	)
-);
+Gzip Compress(	Char To Blob( "random data does not usually compress well and may get larger" ));
 
 ```
 
@@ -11228,12 +6666,7 @@ Gzip Compress(
 
 ```jsl
 
-Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
-	Char To Blob(
-		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
-		"ascii~hex"
-	)
-);
+Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/	Char To Blob(		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",		"ascii~hex"	));
 
 ```
 
@@ -11247,19 +6680,7 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 ```jsl
 
-New Window( "test",
-	H List Box(
-		V Center Box( Text Box( "V+V" ) ),
-		V List Box(
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			H Center Box( Text Box( "H+H" ) ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )
-		)
-	)
-);
+New Window( "test",	H List Box(		V Center Box( Text Box( "V+V" ) ),		V List Box(			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			H Center Box( Text Box( "H+H" ) ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )		)	));
 
 ```
 
@@ -11273,20 +6694,7 @@ New Window( "test",
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [1 1 1, 2 2 2];
-exProd = H Direct Product( exA, exB );
-Show( exProd );
-
-/* verify result */
-Show(
-	exProd[1, 1 :: 6] ==
-	Direct Product( exA[1, 1 :: 2], exB[1, 1 :: 3] )
-);
-Show(
-	exProd[2, 1 :: 6] ==
-	Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] )
-);
+exA = [1 2, 3 4];exB = [1 1 1, 2 2 2];exProd = H Direct Product( exA, exB );Show( exProd );/* verify result */Show( exProd[1, 1 :: 6] == Direct Product( exA[1, 1 :: 2], exB[1, 1 :: 3] ) );Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ```
 
@@ -11300,12 +6708,7 @@ Show(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Size( 2 );
-		H Line( 10, 50, 20 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Size( 2 );		H Line( 10, 50, 20 );	));
 
 ```
 
@@ -11319,14 +6722,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		H List Box(
-			Text Box( "Label:" ),
-			Text Edit Box( Char( 213 ) )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) ));
 
 ```
 
@@ -11340,36 +6736,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		H Scroll Box(
-			Size( 200 ),
-			H List Box(
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				)
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		H Scroll Box(			Size( 200 ),			H List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -11383,56 +6750,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold(
-			Bivariate( Y( :weight ), X( :height ), Fit Line() )
-		),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"weight by height",
-				Excerpt Box( 1, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height",
-				Excerpt Box( 2, {Picture Box( 1 )} )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"",
-				Excerpt Box( 3, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height by weight",
-				Excerpt Box( 4, {Picture Box( 1 )} )
-			)
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -11446,12 +6764,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Size( H Size() / 20 );
-		Line( [10 30 90], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Size( H Size() / 20 );		Line( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -11465,30 +6778,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Splitter",
-	V Splitter Box(
-		Size( 800, 600 ),
-		H Splitter Box(
-			graph = Graph Box(),
-			Script Box(),
-			<<Sizes( {0.6, 0.4} )
-		),
-		H Splitter Box(
-			pict = Picture Box(
-				Open( "$SAMPLE_IMAGES/tile.jpg", jpg )
-			),
-			spacer = Spacer Box(),
-			<<Sizes( {0.4, 0.6} )
-		)
-	)
-);
-graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
-pict << Set Min Size( 100, 100 );
-pict << Set Max Size( 500, 500 );
-pict << Set Stretch( "Window", "Window" );
-spacer << Set Fill( 1 );
-spacer << Color( "Red" );
-spacer << Set Stretch( "Window", "Window" );
+New Window( "Splitter",	V Splitter Box(		Size( 800, 600 ),		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),		H Splitter Box(			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),			spacer = Spacer Box(),			<<Sizes( {0.4, 0.6} )		)	));graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );pict << Set Min Size( 100, 100 );pict << Set Max Size( 500, 500 );pict << Set Stretch( "Window", "Window" );spacer << Set Fill( 1 );spacer << Color( "Red" );spacer << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -11516,20 +6806,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```jsl
 
-New Window( "Example",
-	exx = 20;
-	exy = 50;,
-	Graph Box(
-		Frame Size( 200, 200 ),
-		Handle(
-			exx,
-			exy,
-			exx = x;
-			exy = y;
-		);
-		Circle( {0, 0}, Sqrt( exx * exx + exy * exy ) );
-	)
-);
+New Window( "Example",	exx = 20;	exy = 50;,	Graph Box(		Frame Size( 200, 200 ),		Handle(			exx,			exy,			exx = x;			exy = y;		);		Circle( {0, 0}, Sqrt( exx * exx + exy * exy ) );	));
 
 ```
 
@@ -11559,8 +6836,7 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated Head Expr() equivalent
-Head( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated Head Expr() equivalentHead( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -11568,8 +6844,7 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// Deprecated
-Head Expr( Sum( a, b, c ) );
+// DeprecatedHead Expr( Sum( a, b, c ) );
 
 ```
 
@@ -11599,8 +6874,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated Head Name Expr() equivalent
-Head Name( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated Head Name Expr() equivalentHead Name( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -11608,8 +6882,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// Deprecated
-Head Name Expr( Sum( a, b, c ) );
+// DeprecatedHead Name Expr( Sum( a, b, c ) );
 
 ```
 
@@ -11623,17 +6896,7 @@ Head Name Expr( Sum( a, b, c ) );
 
 ```jsl
 
-New Window( "Color Bar",
-	Graph(
-		For( z = 0, z < 1, z += .1,
-			x = 10 + 80 * z;
-			Fill Color(
-				Heat Color( z, <<"Green to Black to Red" )
-			);
-			Rect( x - 5, 45, x + 5, 55, 1 );
-		)
-	)
-);
+New Window( "Color Bar",	Graph(		For( z = 0, z < 1, z += .1,			x = 10 + 80 * z;			Fill Color( Heat Color( z, <<"Green to Black to Red" ) );			Rect( x - 5, 45, x + 5, 55, 1 );		)	));
 
 ```
 
@@ -11647,8 +6910,7 @@ New Window( "Color Bar",
 
 ```jsl
 
-Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) ||
-" " || Hex( 11, Base( 2 ), Pad To( 8 ) );
+Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```
 
@@ -11676,8 +6938,7 @@ Hex To Blob( "FF78CE" );
 
 ```jsl
 
-Hex To Char( "436166C3A9" ) ||
-Hex To Char( "00430061006600E9", "utf-16be" );
+Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```
 
@@ -11705,11 +6966,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Hidden State( 1 );
-Hidden( Row State( 3 ) );
-Row() = 3;
-Hidden();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Hidden State( 1 );Hidden( Row State( 3 ) );Row() = 3;Hidden();
 
 ```
 
@@ -11723,9 +6980,7 @@ Hidden();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Hidden State( 1 );
-Hidden( Row State( 3 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Hidden State( 1 );Hidden( Row State( 3 ) );
 
 ```
 
@@ -11739,18 +6994,7 @@ Hidden( Row State( 3 ) );
 
 ```jsl
 
-New Window( "Example",
-	Hier Box(
-		Text Edit Box( "Cause 1" ),
-		Hier Box(
-			Text Edit Box( "Subcause 1.1" ),
-			<<direction( 1 )
-		),
-		Hier Box( Text Box( "Subcause 1.2" ) ),
-		<<Change Type( Fishbone ),
-		<<direction( 1 )
-	)
-);
+New Window( "Example",	Hier Box(		Text Edit Box( "Cause 1" ),		Hier Box( Text Edit Box( "Subcause 1.1" ), <<direction( 1 ) ),		Hier Box( Text Box( "Subcause 1.2" ) ),		<<Change Type( Fishbone ),		<<direction( 1 )	));
 
 ```
 
@@ -11764,19 +7008,7 @@ New Window( "Example",
 
 ```jsl
 
-exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
-ex = exdt << get as matrix();
-exhc = Hierarchical Cluster(
-	Y( Eval( exdt << Get Column Names ) ),
-	Method( Ward ),
-	Standardize( 0 ),
-	Dendrogram Scale( Even Spacing ),
-	Number of Clusters( 3 )
-);
-Report( exhc )["Dendrogram"] << Close( 1 );
-Report( exhc )["Clustering History"] << Close( 0 );
-exhistory = Hier Clust( ex );
-exhistory[3, 1];
+exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );ex = exdt << get as matrix();exhc = Hierarchical Cluster(	Y( Eval( exdt << Get Column Names ) ),	Method( Ward ),	Standardize( 0 ),	Dendrogram Scale( Even Spacing ),	Number of Clusters( 3 ));Report( exhc )["Dendrogram"] << Close( 1 );Report( exhc )["Clustering History"] << Close( 0 );exhistory = Hier Clust( ex );exhistory[3, 1];
 
 ```
 
@@ -11790,23 +7022,7 @@ exhistory[3, 1];
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-rows = N Row( xx );
-New Window( "Hist Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, .2 ),
-		Hist Seg(
-			xx,
-			J( rows, 1 ),
-			J( rows, 1 ),
-			1,
-			Row States( dt )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, .2 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));
 
 ```
 
@@ -11820,17 +7036,7 @@ New Window( "Hist Seg Example",
 
 ```jsl
 
-New Window( "Color Wheel",
-	Graph(
-		frameSize( 200, 200 ),
-		For( hue = 0, hue < 360, hue += 30,
-			y = 50 - 40 * Cos( hue * 2 * Pi() / 360 );
-			x = 50 + 40 * Sin( hue * 2 * Pi() / 360 );
-			Fill Color( HLS Color( hue / 360, 0.5, 1 ) );
-			Oval( x - 10, y - 10, x + 10, y + 10, 1 );
-		)
-	)
-);
+New Window( "Color Wheel",	Graph(		frameSize( 200, 200 ),		For( hue = 0, hue < 360, hue += 30,			y = 50 - 40 * Cos( hue * 2 * Pi() / 360 );			x = 50 + 40 * Sin( hue * 2 * Pi() / 360 );			Fill Color( HLS Color( hue / 360, 0.5, 1 ) );			Oval( x - 10, y - 10, x + 10, y + 10, 1 );		)	));
 
 ```
 
@@ -11844,17 +7050,7 @@ New Window( "Color Wheel",
 
 ```jsl
 
-If( Host is( "Mac" ),
-	Show( "On Mac" ),
-	Show( "Not on Mac" )
-);
-If( Host is( "Bits64" ),
-	Show( "64 bit" )
-);
-If(
-	Host is( "x86_64" ), Show( "On x86_64" ),
-	Host is( "arm64" ), Show( "On arm64" )
-);
+If( Host is( "Mac" ),	Show( "On Mac" ),	Show( "Not on Mac" ));If( Host is( "Bits64" ),	Show( "64 bit" ));If(	Host is( "x86_64" ), Show( "On x86_64" ),	Host is( "arm64" ), Show( "On arm64" ));
 
 ```
 
@@ -11870,49 +7066,7 @@ If(
 
 ```jsl
 
-xx = .4;
-yy = .4;
-angleDegrees = (1 :: 180)`;
-angle = Pi() * angleDegrees / (180);
-New Window( "Hough Transform Demo 1",
-	Border Box( Left( 20 ), Top( 20 ), Right( 15 ), Bottom( 15 ),
-		V List Box(
-			Text Box(
-				"Click and drag the circle in a straight line."
-			),
-			Graph Box(
-				X Scale( -1, 1 ),
-				Y Scale( -1, 1 ),
-				Circle( {xx, yy}, .05 );
-				Text(
-					{xx + .1, yy + .1},
-					Char( xx, 4 ) || " " || Char( yy, 4 )
-				);
-				Mousetrap(
-					xx = x;
-					yy = y;
-					gb << reshow;
-				);
-			),
-			Text Box(
-				"For angle 1 to 180 , x*Cos(angle)+y*Sin(angle)"
-			),
-			Text Box(
-				"What position stays constant as you move?"
-			),
-			gb = Graph Box(
-				X Scale( 0, 180 ),
-				XName( "Angle" ),
-				Y Scale( -1.5, 1.5 ),
-				YName( "Distance to Line" ),
-				Line(
-					angleDegrees,
-					xx * Cos( angle ) + yy * Sin( angle )
-				)
-			)
-		)
-	)
-);
+xx = .4;yy = .4;angleDegrees = (1 :: 180)`;angle = Pi() * angleDegrees / (180);New Window( "Hough Transform Demo 1",	Border Box( Left( 20 ), Top( 20 ), Right( 15 ), Bottom( 15 ),		V List Box(			Text Box( "Click and drag the circle in a straight line." ),			Graph Box(				X Scale( -1, 1 ),				Y Scale( -1, 1 ),				Circle( {xx, yy}, .05 );				Text( {xx + .1, yy + .1}, Char( xx, 4 ) || " " || Char( yy, 4 ) );				Mousetrap(					xx = x;					yy = y;					gb << reshow;				);			),			Text Box( "For angle 1 to 180 , x*Cos(angle)+y*Sin(angle)" ),			Text Box( "What position stays constant as you move?" ),			gb = Graph Box(				X Scale( 0, 180 ),				XName( "Angle" ),				Y Scale( -1.5, 1.5 ),				YName( "Distance to Line" ),				Line( angleDegrees, xx * Cos( angle ) + yy * Sin( angle ) )			)		)	));
 
 ```
 
@@ -11920,127 +7074,7 @@ New Window( "Hough Transform Demo 1",
 
 ```jsl
 
-nRow = 35;
-nCol = 35;
-
-// Make a wafer template missing outside a radius
-waferTemplate = J( nRow, nCol, 0 );
-If( 0,
-	For( i = 1, i <= nRow, i++,
-		For( j = 1, j <= nCol, j++,
-			If(
-				(i - nrow / 2) ^ 2 + (j - nCol / 2) ^ 2 > ((nRow
-				 + nCol) / 4) ^ 2,
-				waferTemplate[i, j] = .
-			)
-		)
-	)
-);
-wafer = waferTemplate;
-wafer[5, 22] = 1;
-lightGray = RGB Color( .9, .9, .9 );
-showWafer = Expr(
-	For( i = 1, i <= nRow, i++,
-		For( j = 1, j <= nCol, j++,
-			z = wafer[i, j];
-			If( Is Missing( z ),
-				Continue()
-			);
-			Fill Color( If( z == 0, lightGray, 3 ) );
-			Rect(
-				i - nrow / 2,
-				j - nCol / 2,
-				i - nrow / 2 - 1,
-				j - nCol / 2 + 1,
-				1
-			);
-		)
-	)
-);
-showHough = Expr(
-	accum = Hough Line Transform( wafer );
-	maxAccum = Max( Max( accum ), 1 );
-	accumHeat = Heat Color( accum / maxAccum );
-	nr = N Row( accum );
-	nc = N Col( accum );
-	For( i = 1, i <= nr, i++,
-		For( j = 1, j <= nc, j++,
-			z = accumHeat[i, j];
-			Fill Color( z );
-			Rect( j - 1, nr - i, j, nr - i + 1, 1 );
-		)
-	);
-    //Marginals
-	radiusDensity = V Max( accum` );
-	radiusScale = 3 * Max( radiusDensity ) /
-	Mean( radiusDensity );
-	radiusColor = Heat Color( radiusDensity / radiusScale );
-	If( 1,
-		angleDensity = V Max( accum );
-		angleScale = 3 * Max( angleDensity ) /
-		Mean( angleDensity );
-		angleColor = Heat Color( angleDensity / angleScale );
-	,
-		angle1 = angleDensity - Mean( angleDensity );
-		angle1 = angle1 :* (angle1 > 0);
-		angleColor = Heat Color( angle1 / Max( angle1 ) );
-	);
-	For( j = 1, j <= nc, j++,
-		Fill Color( angleColor[j] );
-		Rect( j - 1, -5, j, -8, 1 );
-	);
-	For( i = 1, i <= nr, i++,
-		Fill Color( radiusColor[i] );
-		Rect( 185, nr - i, 190, nr - i + 1, 1 );
-	);
-);
-mouseAction = Expr(
-	i = Floor( x + nrow / 2 + .5 );
-	j = Floor( y + ncol / 2 + .5 );
-	If( i > 0 & i <= nRow & j > 0 & j <= nCol,
-		wafer[i, j]
-		++);
-	bothBox << reshow;
-);
-New Window( "Hough Transform Demo 2",
-	Border Box( Left( 15 ), Top( 15 ), Right( 10 ), Bottom( 10 ),
-		bothBox = V List Box(
-			Text Box(
-				"Click to add points in the top frame along a slanted line."
-			),
-			Text Box(
-				"The Hough transform is shown below with marginal densities."
-			),
-			Text Box( "" ),
-			H List Box(
-				Button Box( "Clear",
-					wafer = waferTemplate;
-					bothBox << Reshow;
-				),
-				Button Box( "Add Random",
-					wafer = wafer |
-					J( nRow, nCol, Random Uniform() < .05 );
-					bothBox << Reshow;
-				)
-			),
-			waferBox = Graph Box(
-				X Scale( -18, 18 ),
-				Y Scale( -18, 18 ),
-				FrameSize( 300, 300 ),
-				XName( "Angle" ),
-				YName( "Radius" ),
-				Mousetrap( mouseAction ),
-				showWafer
-			),
-			houghBox = Graph Box(
-				X Scale( 0, 190 ),
-				Y Scale( -10, 50 ),
-				FrameSize( 500, 200 ),
-				showHough
-			)
-		)
-	)
-);
+nRow = 35;nCol = 35;// Make a wafer template missing outside a radiuswaferTemplate = J( nRow, nCol, 0 );If( 0,	For( i = 1, i <= nRow, i++,		For( j = 1, j <= nCol, j++,			If( (i - nrow / 2) ^ 2 + (j - nCol / 2) ^ 2 > ((nRow + nCol) / 4) ^ 2,				waferTemplate[i, j] = .			)		)	));wafer = waferTemplate;wafer[5, 22] = 1;lightGray = RGB Color( .9, .9, .9 );showWafer = Expr(	For( i = 1, i <= nRow, i++,		For( j = 1, j <= nCol, j++,			z = wafer[i, j];			If( Is Missing( z ),				Continue()			);			Fill Color( If( z == 0, lightGray, 3 ) );			Rect( i - nrow / 2, j - nCol / 2, i - nrow / 2 - 1, j - nCol / 2 + 1, 1 );		)	));showHough = Expr(	accum = Hough Line Transform( wafer );	maxAccum = Max( Max( accum ), 1 );	accumHeat = Heat Color( accum / maxAccum );	nr = N Row( accum );	nc = N Col( accum );	For( i = 1, i <= nr, i++,		For( j = 1, j <= nc, j++,			z = accumHeat[i, j];			Fill Color( z );			Rect( j - 1, nr - i, j, nr - i + 1, 1 );		)	);    //Marginals	radiusDensity = V Max( accum` );	radiusScale = 3 * Max( radiusDensity ) / Mean( radiusDensity );	radiusColor = Heat Color( radiusDensity / radiusScale );	If( 1,		angleDensity = V Max( accum );		angleScale = 3 * Max( angleDensity ) / Mean( angleDensity );		angleColor = Heat Color( angleDensity / angleScale );	,		angle1 = angleDensity - Mean( angleDensity );		angle1 = angle1 :* (angle1 > 0);		angleColor = Heat Color( angle1 / Max( angle1 ) );	);	For( j = 1, j <= nc, j++,		Fill Color( angleColor[j] );		Rect( j - 1, -5, j, -8, 1 );	);	For( i = 1, i <= nr, i++,		Fill Color( radiusColor[i] );		Rect( 185, nr - i, 190, nr - i + 1, 1 );	););mouseAction = Expr(	i = Floor( x + nrow / 2 + .5 );	j = Floor( y + ncol / 2 + .5 );	If( i > 0 & i <= nRow & j > 0 & j <= nCol,		wafer[i, j]		++);	bothBox << reshow;);New Window( "Hough Transform Demo 2",	Border Box( Left( 15 ), Top( 15 ), Right( 10 ), Bottom( 10 ),		bothBox = V List Box(			Text Box( "Click to add points in the top frame along a slanted line." ),			Text Box( "The Hough transform is shown below with marginal densities." ),			Text Box( "" ),			H List Box(				Button Box( "Clear",					wafer = waferTemplate;					bothBox << Reshow;				),				Button Box( "Add Random",					wafer = wafer | J( nRow, nCol, Random Uniform() < .05 );					bothBox << Reshow;				)			),			waferBox = Graph Box(				X Scale( -18, 18 ),				Y Scale( -18, 18 ),				FrameSize( 300, 300 ),				XName( "Angle" ),				YName( "Radius" ),				Mousetrap( mouseAction ),				showWafer			),			houghBox = Graph Box(				X Scale( 0, 190 ),				Y Scale( -10, 50 ),				FrameSize( 500, 200 ),				showHough			)		)	));
 
 ```
 
@@ -12068,11 +7102,7 @@ Hour( Today() );
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -12086,11 +7116,7 @@ Show( it );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Combine States(
-	Hue State( 5 ),
-	Shade State( 1 )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```
 
@@ -12104,60 +7130,7 @@ Row State( 3 ) = Combine States(
 
 ```jsl
 
-exhdK = 10;
-exhdn = 10;
-New Window( "Example: Hypergeometric Distribution",
-	exy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 21 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( exhdx = 0, exhdx < Round( exhdn ), exhdx++,
-			H Line(
-				exhdx,
-				exhdx + 1,
-				Hypergeometric Distribution(
-					20,
-					Round( exhdK ),
-					Round( exhdn ),
-					exhdx
-				)
-			);
-			V Line(
-				exhdx + 1,
-				Hypergeometric Distribution(
-					20,
-					Round( exhdK ),
-					Round( exhdn ),
-					exhdx
-				),
-				Hypergeometric Distribution(
-					20,
-					Round( exhdK ),
-					Round( exhdn ),
-					exhdx + 1
-				)
-			);
-		);
-		Text(
-			{10, 0.17},
-			"N=",
-			20,
-			" K=",
-			Round( exhdK ),
-			" n=",
-			Round( exhdn )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 20, exhdK, exy << reshow ),
-		Text Box( " K" )
-	),
-	H List Box(
-		Slider Box( 0, 20, exhdn, exy << reshow ),
-		Text Box( " n" )
-	)
-);
+exhdK = 10;exhdn = 10;New Window( "Example: Hypergeometric Distribution",	exy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 21 ),		Pen Color( "red" ),		Pen Size( 2 );		For( exhdx = 0, exhdx < Round( exhdn ), exhdx++,			H Line(				exhdx,				exhdx + 1,				Hypergeometric Distribution( 20, Round( exhdK ), Round( exhdn ), exhdx )			);			V Line(				exhdx + 1,				Hypergeometric Distribution( 20, Round( exhdK ), Round( exhdn ), exhdx ),				Hypergeometric Distribution( 20, Round( exhdK ), Round( exhdn ), exhdx + 1 )			);		);		Text( {10, 0.17}, "N=", 20, " K=", Round( exhdK ), " n=", Round( exhdn ) );	),	H List Box( Slider Box( 0, 20, exhdK, exy << reshow ), Text Box( " K" ) ),	H List Box( Slider Box( 0, 20, exhdn, exy << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -12171,45 +7144,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ```jsl
 
-exhdK = 10;
-exhdn = 10;
-New Window( "Example: Hypergeometric Probability",
-	exhdy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 21 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( exhdx = 0, exhdx <= Round( exhdn ), exhdx++,
-			V Line(
-				exhdx,
-				0,
-				Hypergeometric Probability(
-					20,
-					Round( exhdK ),
-					Round( exhdn ),
-					exhdx
-				)
-			)
-		);
-		Text(
-			{10, 0.17},
-			"N=",
-			20,
-			" K=",
-			Round( exhdK ),
-			" n=",
-			Round( exhdn )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 20, exhdK, exhdy << reshow ),
-		Text Box( " K" )
-	),
-	H List Box(
-		Slider Box( 0, 20, exhdn, exhdy << reshow ),
-		Text Box( " n" )
-	)
-);
+exhdK = 10;exhdn = 10;New Window( "Example: Hypergeometric Probability",	exhdy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 21 ),		Pen Color( "red" ),		Pen Size( 2 );		For( exhdx = 0, exhdx <= Round( exhdn ), exhdx++,			V Line(				exhdx,				0,				Hypergeometric Probability( 20, Round( exhdK ), Round( exhdn ), exhdx )			)		);		Text( {10, 0.17}, "N=", 20, " K=", Round( exhdK ), " n=", Round( exhdn ) );	),	H List Box( Slider Box( 0, 20, exhdK, exhdy << reshow ), Text Box( " K" ) ),	H List Box( Slider Box( 0, 20, exhdn, exhdy << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -12225,17 +7160,7 @@ New Window( "Example: Hypergeometric Probability",
 
 ```jsl
 
-New Window( "Example",
-	ex1 = Icon Box( "Popup" ),
-	ex2 = Icon Box( "Locked" ),
-	ex3 = Icon Box( "Labeled" ),
-	ex4 = Icon Box( "Sub" ),
-	ex5 = Icon Box( "Excluded" ),
-	ex6 = Icon Box( "Hidden" ),
-	ex7 = Icon Box( "Continuous" ),
-	ex8 = Icon Box( "Nominal" ),
-	ex9 = Icon Box( "Ordinal" )
-);
+New Window( "Example",	ex1 = Icon Box( "Popup" ),	ex2 = Icon Box( "Locked" ),	ex3 = Icon Box( "Labeled" ),	ex4 = Icon Box( "Sub" ),	ex5 = Icon Box( "Excluded" ),	ex6 = Icon Box( "Hidden" ),	ex7 = Icon Box( "Continuous" ),	ex8 = Icon Box( "Nominal" ),	ex9 = Icon Box( "Ordinal" ));
 
 ```
 
@@ -12243,9 +7168,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example with Path",
-	ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" )
-);
+New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
 
@@ -12273,10 +7196,7 @@ Identity( 2 );
 
 ```jsl
 
-If( Random Uniform() < 0.5,
-	"heads",
-	"tails"
-);
+If( Random Uniform() < 0.5,	"heads",	"tails");
 
 ```
 
@@ -12290,15 +7210,7 @@ If( Random Uniform() < 0.5,
 
 ```jsl
 
-New Window( "Example",
-	H List Box(
-		englishBox = If Box( 1, Text Box( "Good day" ) ),
-		frenchBox = If Box( 0, Text Box( "Bon Jour" ) )
-	)
-);
-Wait( 5 );
-englishBox << Set( 0 );
-frenchBox << Set( 1 );
+New Window( "Example",	H List Box(		englishBox = If Box( 1, Text Box( "Good day" ) ),		frenchBox = If Box( 0, Text Box( "Bon Jour" ) )	));Wait( 5 );englishBox << Set( 0 );frenchBox << Set( 1 );
 
 ```
 
@@ -12312,12 +7224,7 @@ frenchBox << Set( 1 );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box(
-		If Seg( true, <<append( Lines Seg( lines ) ) )
-	)
-);
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example",	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) ));
 
 ```
 
@@ -12331,18 +7238,7 @@ New Window( "Lines Seg Example",
 
 ```jsl
 
-TomScore = 45;
-JonScore = 47;
-TimScore = 46;
-highestScorer = IfMax(
-	TomScore,
-	"Tom",
-	JonScore,
-	"Jon",
-	TimScore,
-	"Tim",
-	"Noone"
-);
+TomScore = 45;JonScore = 47;TimScore = 46;highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone" );
 
 ```
 
@@ -12356,18 +7252,7 @@ highestScorer = IfMax(
 
 ```jsl
 
-TomScore = 45;
-JonScore = 47;
-TimScore = 46;
-lowestScorer = IfMin(
-	TomScore,
-	"Tom",
-	JonScore,
-	"Jon",
-	TimScore,
-	"Tim",
-	"Noone"
-);
+TomScore = 45;JonScore = 47;TimScore = 46;lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone" );
 
 ```
 
@@ -12381,12 +7266,7 @@ lowestScorer = IfMin(
 
 ```jsl
 
-x = 1;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( If( x == 1, 10, x == 2, 20, 30 ) );
+x = 1;Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );x = .;Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );x = .;Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```
 
@@ -12400,33 +7280,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ```jsl
 
-gdialpha = Log( 1.5 );
-New Window( "Example: Gamma Distribution",
-	gdiy = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Distribution( gdiq, Exp( gdialpha ) ),
-			gdiq
-		);
-		Text(
-			{1, 0.9},
-			"\!U03B1=",
-			Round( Exp( gdialpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gdialpha,
-			gdiy << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
+gdialpha = Log( 1.5 );New Window( "Example: Gamma Distribution",	gdiy = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 12 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Gamma Distribution( gdiq, Exp( gdialpha ) ), gdiq );		Text( {1, 0.9}, "\!U03B1=", Round( Exp( gdialpha ), 2 ) );	),	H List Box(		Slider Box( Log( 0.1 ), Log( 12 ), gdialpha, gdiy << reshow ),		Text Box( " \!U03B1" )	));
 
 ```
 
@@ -12482,27 +7336,7 @@ In Minutes( 1 );
 
 ```jsl
 
-
-New Window( "Example",
-	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";
-	Graph Box(
-		Fill Color( "light blue" );
-		Path( window:p, 1 );
-		For Each( {x}, 5 :: 55 :: 5,
-			For Each( {y}, 5 :: 55 :: 5,
-				Marker(
-					Marker State(
-						If( In Path( x, y, window:p ),
-							"x",
-							"circle"
-						)
-					),
-					{x, y}
-				)
-			)
-		);
-	);
-);
+New Window( "Example",	window:p = "M10 10 L52 10 L37 52 Z M20 16 L40 20 L35 40 Z";	Graph Box(		Fill Color( "light blue" );		Path( window:p, 1 );		For Each( {x}, 5 :: 55 :: 5,			For Each( {y}, 5 :: 55 :: 5,				Marker(					Marker State( If( In Path( x, y, window:p ), "x", "circle" ) ),					{x, y}				)			)		);	););
 
 ```
 
@@ -12592,7 +7426,7 @@ y = Include File List();
 
 ### Informat
 
-**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -12634,12 +7468,7 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -12651,9 +7480,7 @@ Show(
 
 ```jsl
 
-a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
-b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
-y = Inner Product BLAS( a, b );
+a = [1, 2, 3, -2, 0, -1, 0, 1, 1];b = [4, 5, 6, -2, 0, -1, 0, 7, 2];y = Inner Product BLAS( a, b );
 
 ```
 
@@ -12667,8 +7494,7 @@ y = Inner Product BLAS( a, b );
 
 ```jsl
 
-z = {11, 22, 33};
-z = Insert( z, 99, 2 );
+z = {11, 22, 33};z = Insert( z, 99, 2 );
 
 ```
 
@@ -12684,9 +7510,7 @@ z = Insert( z, 99, 2 );
 
 ```jsl
 
-ex = {11, 22, 33};
-Insert Into( ex, 99 );
-ex;
+ex = {11, 22, 33};Insert Into( ex, 99 );ex;
 
 ```
 
@@ -12694,9 +7518,7 @@ ex;
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, => 0];
-Insert Into( ex, "c", 12 );
-ex;
+ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
 
 ```
 
@@ -12704,11 +7526,21 @@ ex;
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
-);
-Wait( 1 );
-Insert Into( hlist, Button Box( "c" ) );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );Wait( 1 );Insert Into( hlist, Button Box( "c" ) );
+
+```
+
+### Install MATLAB Dependencies
+
+**Syntaxe :** Install MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Description :** Installe les dépendances MATLAB requises.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+If( !Check MATLAB Dependencies(),	Install MATLAB Dependencies(),	Print( "Dependencies are installed" ));
 
 ```
 
@@ -12732,8 +7564,7 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```jsl
 
-x = 100;
-Integrate( Normal Density( x - 100 ), x, ., . );
+x = 100;Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```
 
@@ -12747,9 +7578,7 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -12763,17 +7592,13 @@ Payment( .05 / 12, 30 * 12, 100000 )
 
 ```jsl
 
-Interest Rate(
-	30 * 12,
-	Payment( .05 / 12, 30 * 12, 100000 ),
-	100000
-);
+Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**Syntaxe :** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie représentée par les chiffres dans l’argument values. Équivalent à la fonction IRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -12781,14 +7606,13 @@ Interest Rate(
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );
-Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Interpolate
 
-**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Description :** Trouve les arguments xi qui comprennent x et interpole linéairement les arguments yi correspondants. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
@@ -12798,17 +7622,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-
-New Window( "Interpolate",
-	window:x = (2 :: 9) * 10;
-	window:y = 50 + Sin( (2 :: 9) ) * 40;
-	Graph Box(
-		Pen Color( "blue" );
-		Marker( window:x, window:y );
-		Y Function( Interpolate( a, window:x, window:y ), a );
-	);
-)
-;
+New Window( "Interpolate",	window:x = (2 :: 9) * 10;	window:y = 50 + Sin( (2 :: 9) ) * 40;	Graph Box(		Pen Color( "blue" );		Marker( window:x, window:y );		Y Function( Interpolate( a, window:x, window:y ), a );	););
 
 ```
 
@@ -12832,25 +7646,7 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```jsl
 
-
-xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
-yd = Sin( xd );
-                                    
-xd2 = xd + 0.15;
-yd2 = Interpolate( xd2, xd, yd );
-                                    
-New Window( "Interpolated values are blue",
-	Graph Box(
-		X Scale( 1, 6 * Pi() ),
-		Y Scale( -1, 1 ),
-		For( i = 0, i < N Rows( xd ), i++,
-			Pen Color( "red" );
-			Circle( {xd[i], yd[i]}, 0.01 );
-			Pen Color( "blue" );
-			Circle( {xd2[i], yd2[i]}, 0.01 );
-		)
-	)
-);
+xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );yd = Sin( xd );                                    xd2 = xd + 0.15;yd2 = Interpolate( xd2, xd, yd );                                    New Window( "Interpolated values are blue",	Graph Box(		X Scale( 1, 6 * Pi() ),		Y Scale( -1, 1 ),		For( i = 0, i < N Rows( xd ), i++,			Pen Color( "red" );			Circle( {xd[i], yd[i]}, 0.01 );			Pen Color( "blue" );			Circle( {xd2[i], yd2[i]}, 0.01 );		)	));
 
 ```
 
@@ -12878,50 +7674,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
-/* Generate a design matrix */
-exX = [1 0 4 2,
-1 0 5 1,
-1 0 2 4,
-5 4 4 5,
-0 1 4 3,
-0 1 9 1,
-0 1 2 4,
-0 1 1 9,
-0 1 5 2,
-0 1 2 1,
-0 1 4 5];
-S = Inverse( exX` * exX );
-Show( "----------Adding Rows (w=1) --------" );
-X = [5 4 3 3, 4 3 2 1, 9 1 2 5];
-w = 1;
-y = Inv Update( S, X, w );
-Show( "Result of Inv Update" );
-Show( y );
-Show( "Result of updating formula" );
-Show(
-	S - w * S * X` * Inv(
-		Identity( N Row( X ) ) + w * X * S * X`
-	) * X * S
-);
-Show( "Result of direct calculation" );
-Show( Inverse( (exX |/ X)` * (exX |/ X) ) );
-Show( "----------Deleting Rows (w=-1) --------" );
-X = [0 1 5 2, 0 1 2 1, 0 1 4 5];
-w = -1;
-y = Inv Update( S, X, w );
-Show( "Result of Inv Update" );
-Show( y );
-Show( "Result of updating formula" );
-Show(
-	S - w * S * X` * Inv(
-		Identity( N Row( X ) ) + w * X * S * X`
-	) * X * S
-);
-Show( "Result of direct calculation" );
-p = N Row( exX ) - 3;
-Show(
-	Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] )
-);
+/* Generate a design matrix */exX = [1 0 4 2,1 0 5 1,1 0 2 4,5 4 4 5,0 1 4 3,0 1 9 1,0 1 2 4,0 1 1 9,0 1 5 2,0 1 2 1,0 1 4 5];S = Inverse( exX` * exX );Show( "----------Adding Rows (w=1) --------" );X = [5 4 3 3, 4 3 2 1, 9 1 2 5];w = 1;y = Inv Update( S, X, w );Show( "Result of Inv Update" );Show( y );Show( "Result of updating formula" );Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );Show( "Result of direct calculation" );Show( Inverse( (exX |/ X)` * (exX |/ X) ) );Show( "----------Deleting Rows (w=-1) --------" );X = [0 1 5 2, 0 1 2 1, 0 1 4 5];w = -1;y = Inv Update( S, X, w );Show( "Result of Inv Update" );Show( y );Show( "Result of updating formula" );Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );Show( "Result of direct calculation" );p = N Row( exX ) - 3;Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
 
 ```
 
@@ -12965,13 +7718,7 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
-obj = dt << Item Analysis(
-	Y( :Q1, :Q2, :Q3, :Q4, :Q5 ),
-	Model( "Logistic 2PL" )
-);
-obj << Save Ability Formula;
-Column( dt, N Cols( dt ) ) << Get Formula;
+dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );obj << Save Ability Formula;Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```
 
@@ -12979,21 +7726,7 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
-mth = (dt << get as matrix)[0, Index( 2, 6 )];
-mthlst = {};
-i = Floor( Random Uniform( 1, N Rows( mth ) ) );
-mthlst[1] = mth[i, 1] |/ mth[i, 2] |/ mth[i, 3] |/ mth[i, 4] |/
-mth[i, 5];
-mthlst[2] = IRT Ability(
-	mth[i, 1],
-	mth[i, 2],
-	mth[i, 3],
-	mth[i, 4],
-	mth[i, 5],
-	[0.28 1.93 1.9 1.67 1, -0.06 -0.55 0.5 -1.89 0.04]
-);
-mthlst;
+dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );mth = (dt << get as matrix)[0, Index( 2, 6 )];mthlst = {};i = Floor( Random Uniform( 1, N Rows( mth ) ) );mthlst[1] = mth[i, 1] |/ mth[i, 2] |/ mth[i, 3] |/ mth[i, 4] |/ mth[i, 5];mthlst[2] = IRT Ability(	mth[i, 1],	mth[i, 2],	mth[i, 3],	mth[i, 4],	mth[i, 5],	[0.28 1.93 1.9 1.67 1, -0.06 -0.55 0.5 -1.89 0.04]);mthlst;
 
 ```
 
@@ -13007,21 +7740,7 @@ mthlst;
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Control Key(),
-			Text( {60, 50}, "Control Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13049,53 +7768,7 @@ Is Associative Array( [1 => 2] );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-iscl = Is Class( cl );
-Show( iscl );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );iscl = Is Class( cl );Show( iscl );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -13109,21 +7782,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Command Key(),
-			Text( {60, 50}, "Command Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Command Key(),			Text( {60, 50}, "Command Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13137,21 +7796,7 @@ New Window( "Show me the key",
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Context Key(),
-			Text( {60, 50}, "Context Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Context Key(),			Text( {60, 50}, "Context Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13165,21 +7810,7 @@ New Window( "Show me the key",
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Control Key(),
-			Text( {60, 50}, "Control Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13193,9 +7824,7 @@ New Window( "Show me the key",
 
 ```jsl
 
-rc0 = Is Directory( "$SAMPLE_DATA" );
-rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
-Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
+rc0 = Is Directory( "$SAMPLE_DATA" );rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 ```
 
@@ -13233,8 +7862,7 @@ Is Empty( x );
 
 ```jsl
 
-x = Empty();
-Is Empty( x );
+x = Empty();Is Empty( x );
 
 ```
 
@@ -13242,20 +7870,7 @@ Is Empty( x );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 1 );
-If( Is Empty( dt ),
-	Print( "There is no open data table." ),
-	Print( "This data table is open: " || (dt << Get Name()) )
-);
-Wait( 1 );
-Close( DT, "nosave" );
-Wait( 1 );
-If( Is Empty( dt ),
-	Print( "There is no open data table." ),
-	Print( "This data table is open: " || (dt << Get Name()) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );If( Is Empty( dt ),	Print( "There is no open data table." ),	Print( "This data table is open: " || (dt << Get Name()) ));Wait( 1 );Close( DT, "nosave" );Wait( 1 );If( Is Empty( dt ),	Print( "There is no open data table." ),	Print( "This data table is open: " || (dt << Get Name()) ));
 
 ```
 
@@ -13283,9 +7898,7 @@ Is Expr( Expr( x ) );
 
 ```jsl
 
-rc0 = Is File( "$SAMPLE_DATA" );
-rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
-Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
+rc0 = Is File( "$SAMPLE_DATA" );rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```
 
@@ -13313,9 +7926,7 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-
-url = "http://public.jmp.com";
-Show( Is JMP Live URL Enabled( url ) );
+url = "http://public.jmp.com";Show( Is JMP Live URL Enabled( url ) );
 
 ```
 
@@ -13359,9 +7970,7 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
-If( Is Log Open(),
-	Close Log()
-);
+If( Is Log Open(),	Close Log());
 
 ```
 
@@ -13369,9 +7978,7 @@ If( Is Log Open(),
 
 ```jsl
 
-If( !Is Log Open(),
-	Open Log()
-);
+If( !Is Log Open(),	Open Log());
 
 ```
 
@@ -13427,35 +8034,7 @@ Is Name( Name Expr( n ) );
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-isns = Is Namespace( ns );
-Show( isns );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});isns = Is Namespace( ns );Show( isns );ns << Delete;
 
 ```
 
@@ -13483,21 +8062,7 @@ Is Number( 213 );
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Option Key(),
-			Text( {60, 50}, "Option Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Option Key(),			Text( {60, 50}, "Option Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13551,8 +8116,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 ```
 
@@ -13566,21 +8130,7 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
 ```jsl
 
-New Window( "Show me the key",
-	Graph Box(
-		Rect( 45, 55, 55, 45, 1 );
-		If( Is Shift Key(),
-			Text( {50, 60}, "Shift Key" )
-		);
-		If( Is Control Key(),
-			Text( {60, 50}, "Control Key" )
-		);
-		If( Is Alt Key(),
-			Text( {50, 35}, "Alt Key" )
-		);
-		Mousetrap( {} );
-	)
-);
+New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
 
 ```
 
@@ -13640,11 +8190,7 @@ Item( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Item(
-	4,
-	"Apple+Banana Tree,,Pear,,Peach,,Grape",
-	Get Punctuation Characters()
-);
+Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
@@ -13684,9 +8230,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```jsl
 
-Eval List(
-	{Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )}
-);
+Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
 
@@ -13694,10 +8238,7 @@ Eval List(
 
 ```jsl
 
-Items(
-	",Apple,Banana Tree,Peach",
-	Get Punctuation Characters()
-);
+Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
@@ -13705,11 +8246,7 @@ Items(
 
 ```jsl
 
-Items(
-	",Apple,Banana Tree,Peach",
-	Get Punctuation Characters(),
-	Include Boundary Delimiters
-);
+Items(	",Apple,Banana Tree,Peach",	Get Punctuation Characters(),	Include Boundary Delimiters);
 
 ```
 
@@ -13717,11 +8254,7 @@ Items(
 
 ```jsl
 
-Items(
-	[1 2],
-	",Apple,Banana Tree,Peach",
-	Get Punctuation Characters()
-);
+Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
 
@@ -13735,31 +8268,7 @@ Items(
 
 ```jsl
 
-
-// Produce a 2x3 matrix, filled with 15.
-m = J( 2, 3, 15 );
-// Produce a default 4x4 matrix, filled with 1.
-m = J( 4 );
-// Produce a 2x3 matrix, filled with a number determined by a variable.
-a = 3.14;
-m = J( 2, 3, a );
-// Produce a vector of random numbers from the Uniform distribution.
-m = J( 1, 100, Random Uniform() );
-// Produce a 2x3 matrix, filled with a sequence of integers.
-a = 0;
-m = J( 2, 3, a = a + 1 );
-// This is a fun example to illustrate what is possible for the third argument.
-i = 1;
-J(
-	10,
-	1,
-	Print(
-		Eval Insert(
-			"For the ^i^^if(i < 4, words(\!"st,nd,rd\!",\!",\!")[i], \!"th\!")^ time, I'm not a loop!"
-		)
-	);
-	Round( 1 / Sqrt( 5 ) * ((1 + Sqrt( 5 )) / 2) ^ i++ );
-);
+// Produce a 2x3 matrix, filled with 15.m = J( 2, 3, 15 );// Produce a default 4x4 matrix, filled with 1.m = J( 4 );// Produce a 2x3 matrix, filled with a number determined by a variable.a = 3.14;m = J( 2, 3, a );// Produce a vector of random numbers from the Uniform distribution.m = J( 1, 100, Random Uniform() );// Produce a 2x3 matrix, filled with a sequence of integers.a = 0;m = J( 2, 3, a = a + 1 );// This is a fun example to illustrate what is possible for the third argument.i = 1;J(	10,	1,	Print(		Eval Insert(			"For the ^i^^if(i < 4, words(\!"st,nd,rd\!",\!",\!")[i], \!"th\!")^ time, I'm not a loop!"		)	);	Round( 1 / Sqrt( 5 ) * ((1 + Sqrt( 5 )) / 2) ^ i++ ););
 
 ```
 
@@ -13801,49 +8310,7 @@ JMP Version();
 
 ```jsl
 
-gamma = 0.5;
-delta = 0.5;
-theta = 0.5;
-sigma = 1;
-New Window( "Example: Johnson Sb Density",
-	jsbp = Graph Box(
-		Y Scale( 0, 5.5 ),
-		X Scale( 0.2, 1.8 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Sb Density( q, gamma, delta, theta, sigma ),
-			q
-		);
-		Text(
-			{0.5, 4.5},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 ),
-			" \!U03C3=",
-			Round( sigma, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, gamma, jsbp << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 2, delta, jsbp << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( -2, 2, theta, jsbp << reshow ),
-		Text Box( " \!U03B8" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sigma, jsbp << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+gamma = 0.5;delta = 0.5;theta = 0.5;sigma = 1;New Window( "Example: Johnson Sb Density",	jsbp = Graph Box(		Y Scale( 0, 5.5 ),		X Scale( 0.2, 1.8 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Sb Density( q, gamma, delta, theta, sigma ), q );		Text(			{0.5, 4.5},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 ),			" \!U03C3=",			Round( sigma, 2 )		);	),	H List Box( Slider Box( 0, 1, gamma, jsbp << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 2, delta, jsbp << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( -2, 2, theta, jsbp << reshow ), Text Box( " \!U03B8" ) ),	H List Box( Slider Box( 0, 10, sigma, jsbp << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -13857,55 +8324,7 @@ New Window( "Example: Johnson Sb Density",
 
 ```jsl
 
-gamma = 0.5;
-delta = 0.5;
-theta = 0.5;
-sigma = 3;
-New Window( "Example: Johnson Sb Distribution",
-	jsbc = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0.2, 3.8 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Sb Distribution(
-				q,
-				gamma,
-				delta,
-				theta,
-				sigma
-			),
-			q
-		);
-		Text(
-			{0.3, 0.8},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 ),
-			" \!U03C3=",
-			Round( sigma, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, gamma, jsbc << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 1, delta, jsbc << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( 0, 1, theta, jsbc << reshow ),
-		Text Box( " \!U03B8" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, jsbc << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+gamma = 0.5;delta = 0.5;theta = 0.5;sigma = 3;New Window( "Example: Johnson Sb Distribution",	jsbc = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0.2, 3.8 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Sb Distribution( q, gamma, delta, theta, sigma ), q );		Text(			{0.3, 0.8},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 ),			" \!U03C3=",			Round( sigma, 2 )		);	),	H List Box( Slider Box( 0, 1, gamma, jsbc << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 1, delta, jsbc << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( 0, 1, theta, jsbc << reshow ), Text Box( " \!U03B8" ) ),	H List Box( Slider Box( 0, 4, sigma, jsbc << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -13933,49 +8352,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-gamma = 0.5;
-delta = 1;
-theta = 0;
-sigma = 1;
-New Window( "Example: Johnson Sl Density",
-	jslp = Graph Box(
-		Y Scale( 0, 1.5 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Sl Density( q, gamma, delta, theta, sigma ),
-			q
-		);
-		Text(
-			{-1, 1.1},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 )
-		);
-	),
-	jslpcb = Check Box(
-		{"\!U03C3 = +1 (Note: When unchecked \!U03C3 = -1)"},
-		<<set( 1 ),
-		sigma = [-1, 1][((jslpcb << get()) + 1)];
-		jslp << reshow;
-	),
-	H List Box(
-		Slider Box( -15, 15, gamma, jslp << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, delta, jslp << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( -5, 5, theta, jslp << reshow ),
-		Text Box( " \!U03B8" )
-	)
-);
+gamma = 0.5;delta = 1;theta = 0;sigma = 1;New Window( "Example: Johnson Sl Density",	jslp = Graph Box(		Y Scale( 0, 1.5 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Sl Density( q, gamma, delta, theta, sigma ), q );		Text(			{-1, 1.1},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 )		);	),	jslpcb = Check Box(		{"\!U03C3 = +1 (Note: When unchecked \!U03C3 = -1)"},		<<set( 1 ),		sigma = [-1, 1][((jslpcb << get()) + 1)];		jslp << reshow;	),	H List Box( Slider Box( -15, 15, gamma, jslp << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 10, delta, jslp << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( -5, 5, theta, jslp << reshow ), Text Box( " \!U03B8" ) ));
 
 ```
 
@@ -13989,55 +8366,7 @@ New Window( "Example: Johnson Sl Density",
 
 ```jsl
 
-gamma = 0.5;
-delta = 1;
-theta = 0;
-sigma = 1;
-New Window( "Example: Johnson Sl Distribution",
-	jslc = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Sl Distribution(
-				q,
-				gamma,
-				delta,
-				theta,
-				sigma
-			),
-			q
-		);
-		Text(
-			{-1, 0.9},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 )
-		);
-	),
-	jslccb = Check Box(
-		{"\!U03C3 = +1 (Note: When unchecked \!U03C3 = -1)"},
-		<<set( 1 ),
-		sigma = [-1, 1][((jslccb << get()) + 1)];
-		jslc << reshow;
-	),
-	H List Box(
-		Slider Box( -15, 15, gamma, jslc << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, delta, jslc << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( -5, 5, theta, jslc << reshow ),
-		Text Box( " \!U03B8" )
-	)
-);
+gamma = 0.5;delta = 1;theta = 0;sigma = 1;New Window( "Example: Johnson Sl Distribution",	jslc = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Sl Distribution( q, gamma, delta, theta, sigma ), q );		Text(			{-1, 0.9},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 )		);	),	jslccb = Check Box(		{"\!U03C3 = +1 (Note: When unchecked \!U03C3 = -1)"},		<<set( 1 ),		sigma = [-1, 1][((jslccb << get()) + 1)];		jslc << reshow;	),	H List Box( Slider Box( -15, 15, gamma, jslc << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 10, delta, jslc << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( -5, 5, theta, jslc << reshow ), Text Box( " \!U03B8" ) ));
 
 ```
 
@@ -14065,49 +8394,7 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-gamma = 0.5;
-delta = 1;
-theta = 1;
-sigma = 1;
-New Window( "Example: Johnson Su Density",
-	y = Graph Box(
-		Y Scale( 0, 1.5 ),
-		X Scale( -2, 2 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Su Density( q, gamma, delta, theta, sigma ),
-			q
-		);
-		Text(
-			{-1, 1.3},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 ),
-			" \!U03C3=",
-			Round( sigma, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, gamma, y << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 2, delta, y << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( 0, 2, theta, y << reshow ),
-		Text Box( " \!U03B8" )
-	),
-	H List Box(
-		Slider Box( 0, 2, sigma, y << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+gamma = 0.5;delta = 1;theta = 1;sigma = 1;New Window( "Example: Johnson Su Density",	y = Graph Box(		Y Scale( 0, 1.5 ),		X Scale( -2, 2 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Su Density( q, gamma, delta, theta, sigma ), q );		Text(			{-1, 1.3},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 ),			" \!U03C3=",			Round( sigma, 2 )		);	),	H List Box( Slider Box( 0, 1, gamma, y << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 2, delta, y << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( 0, 2, theta, y << reshow ), Text Box( " \!U03B8" ) ),	H List Box( Slider Box( 0, 2, sigma, y << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -14121,55 +8408,7 @@ New Window( "Example: Johnson Su Density",
 
 ```jsl
 
-gamma = 0.5;
-delta = 1;
-theta = 1;
-sigma = 1;
-New Window( "Example: Johnson Su Distribution",
-	jsuc = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -2, 2 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Johnson Su Distribution(
-				q,
-				gamma,
-				delta,
-				theta,
-				sigma
-			),
-			q
-		);
-		Text(
-			{-1, 0.9},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 ),
-			" \!U03C3=",
-			Round( sigma, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, gamma, jsuc << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 2, delta, jsuc << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( 0, 2, theta, jsuc << reshow ),
-		Text Box( " \!U03B8" )
-	),
-	H List Box(
-		Slider Box( 0, 2, sigma, jsuc << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+gamma = 0.5;delta = 1;theta = 1;sigma = 1;New Window( "Example: Johnson Su Distribution",	jsuc = Graph Box(		Y Scale( 0, 1 ),		X Scale( -2, 2 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Johnson Su Distribution( q, gamma, delta, theta, sigma ), q );		Text(			{-1, 0.9},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 ),			" \!U03C3=",			Round( sigma, 2 )		);	),	H List Box( Slider Box( 0, 1, gamma, jsuc << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 2, delta, jsuc << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( 0, 2, theta, jsuc << reshow ), Text Box( " \!U03B8" ) ),	H List Box( Slider Box( 0, 2, sigma, jsuc << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -14197,15 +8436,7 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-sample = Distribution( Y( :height ) );
-sampjourn = sample << Get Journal;
-New Window( "Distribution of Height",
-	Text Box(
-		"Here is the result of the distribution platform for Height."
-	),
-	Journal Box( sampjourn )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );sample = Distribution( Y( :height ) );sampjourn = sample << Get Journal;New Window( "Distribution of Height",	Text Box( "Here is the result of the distribution platform for Height." ),	Journal Box( sampjourn ));
 
 ```
 
@@ -14219,9 +8450,7 @@ New Window( "Distribution of Height",
 
 ```jsl
 
-JSL Encrypted(
-	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
-);
+JSL Encrypted(	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*");
 
 ```
 
@@ -14235,15 +8464,7 @@ JSL Encrypted(
 
 ```jsl
 
-
-x = JSL Quote(/* Begin quote. */
-    For (i = 1, i <= 5, i++,
-        // Print the value of i.
-        Print(i);
-    );
-    // End expression.
-);
-New Window( "editor", Script Box( x ) );
+x = JSL Quote(/* Begin quote. */    For (i = 1, i <= 5, i++,        // Print the value of i.        Print(i);    );    // End expression.);New Window( "editor", Script Box( x ) );
 
 ```
 
@@ -14257,16 +8478,7 @@ New Window( "editor", Script Box( x ) );
 
 ```jsl
 
-
-myJSON =
-"{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
-parsed = Parse JSON( myJSON );
-x = parsed["myBool"];
-Show( x );
-If( x == JSON Literal( true ),
-	Show( "Worked" ),
-	Show( "Didn't work" )
-);
+myJSON ="{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";parsed = Parse JSON( myJSON );x = parsed["myBool"];Show( x );If( x == JSON Literal( true ),	Show( "Worked" ),	Show( "Didn't work" ));
 
 ```
 
@@ -14280,9 +8492,7 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
-dt = JSON To Data Table(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
+dt = JSON To Data Table(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");
 
 ```
 
@@ -14296,42 +8506,7 @@ dt = JSON To Data Table(
 
 ```jsl
 
-l = JSON To List(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-Show( l );
-
-```
-
-### JSS Context Box
-
-**Syntaxe :** y = JSS Context Box( displayBox )
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel",
-				Text Box( "Hi" ),
-				Button Box( "Press Me" ),
-
-			),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) )
-				 << Background Color( "Blue" );
-			)
-		)
-	)
-);
+l = JSON To List(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");Show( l );
 
 ```
 
@@ -14345,69 +8520,7 @@ New Window( "JSS Context",
 
 ```jsl
 
-// generate sample dataset from a mixture of 3 normal distributions
-ndata3 = 25;
-Random Reset( 113 );
-channel = J( 1, ndata3 * 3, 0 );
-For( i = 1, i <= ndata3, i++,
-	channel[1, i] = Random Normal() - 3;
-	channel[1, ndata3 + i] = Random Normal() / 2;
-	channel[1, ndata3 + ndata3 + i] = Random Normal() + 3;
-);
-
-// use kernel density estimator to estimate the underlying distribution
-bw = .; // automatic bandwidth
-bscl = 1; // bandwidth multiplier
-bsel = 0; // Sheather and Jones bandwith selection
-
-// Create data table with estimates from all smoothing KDEs and Bins
-dt = New Table( "KDE Smoothing",
-	New Column( "Kernel", "Character" ),
-	New Column( "Bin" ),
-	New Column( "Density Estimate" ),
-	New Column( "Counts" )
-);
-
-kernels = {"Gaussian", "Epanechnikov", "Biweight", "Triangular",
-"Rectangular"};
-For( kernel = 0, kernel < N Items( kernels ), kernel++,
-	res = KDE(
-		channel,
-		<<bandwidth( bw ),
-		<<bandwidth scale( bscl ),
-		<<bandwidth selection( bsel ),
-		<<kernel( kernel )
-	);
-	nbin = N Items( res["Bins"] );
-	rows = (N Rows( dt ) + 1) :: (N Rows( dt ) + nbin);
-	dt << Add Rows( nbin );
-	dt[rows, "Kernel"] = kernels[kernel + 1];
-	dt[rows, "Bin"] = res["Bins"]`;
-	dt[rows, "Density Estimate"] = res["Estimates"]`;
-	dt[rows, "Counts"] = res["Counts"]`;
-);
-
-dt << Graph Builder(
-	Size( 1000, 376 ),
-	Show Control Panel( 0 ),
-	Legend Position( "Bottom" ),
-	Variables(
-		X( :Bin ),
-		Y( :Density Estimate, Side( "Right" ) ),
-		Y( :Counts, Position( 1 ) ),
-		Overlay( :Kernel )
-	),
-	Elements(
-		Bar(
-			X,
-			Y( 2 ),
-			Overlay( 0 ),
-			Legend( 2 ),
-			Bar Style( "Needle" )
-		),
-		Line( X, Y( 1 ), Legend( 3 ) )
-	)
-);
+// generate sample dataset from a mixture of 3 normal distributionsndata3 = 25;Random Reset( 113 );channel = J( 1, ndata3 * 3, 0 );For( i = 1, i <= ndata3, i++,	channel[1, i] = Random Normal() - 3;	channel[1, ndata3 + i] = Random Normal() / 2;	channel[1, ndata3 + ndata3 + i] = Random Normal() + 3;);// use kernel density estimator to estimate the underlying distributionbw = .; // automatic bandwidthbscl = 1; // bandwidth multiplierbsel = 0; // Sheather and Jones bandwith selection// Create data table with estimates from all smoothing KDEs and Binsdt = New Table( "KDE Smoothing",	New Column( "Kernel", "Character" ),	New Column( "Bin" ),	New Column( "Density Estimate" ),	New Column( "Counts" ));kernels = {"Gaussian", "Epanechnikov", "Biweight", "Triangular", "Rectangular"};For( kernel = 0, kernel < N Items( kernels ), kernel++,	res = KDE(		channel,		<<bandwidth( bw ),		<<bandwidth scale( bscl ),		<<bandwidth selection( bsel ),		<<kernel( kernel )	);	nbin = N Items( res["Bins"] );	rows = (N Rows( dt ) + 1) :: (N Rows( dt ) + nbin);	dt << Add Rows( nbin );	dt[rows, "Kernel"] = kernels[kernel + 1];	dt[rows, "Bin"] = res["Bins"]`;	dt[rows, "Density Estimate"] = res["Estimates"]`;	dt[rows, "Counts"] = res["Counts"]`;);dt << Graph Builder(	Size( 1000, 376 ),	Show Control Panel( 0 ),	Legend Position( "Bottom" ),	Variables(		X( :Bin ),		Y( :Density Estimate, Side( "Right" ) ),		Y( :Counts, Position( 1 ) ),		Overlay( :Kernel )	),	Elements(		Bar( X, Y( 2 ), Overlay( 0 ), Legend( 2 ), Bar Style( "Needle" ) ),		Line( X, Y( 1 ), Legend( 3 ) )	));
 
 ```
 
@@ -14421,9 +8534,7 @@ dt << Graph Builder(
 
 ```jsl
 
-tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tab << K nearest rows( 2, 1 );
-"2 nearest rows to row 1 are " || Char( rows );
+tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tab << K nearest rows( 2, 1 );"2 nearest rows to row 1 are " || Char( rows );
 
 ```
 
@@ -14437,11 +8548,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Labeled State( 1 );
-Labeled( Row State( 3 ) );
-Row() = 3;
-Labeled();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Labeled State( 1 );Labeled( Row State( 3 ) );Row() = 3;Labeled();
 
 ```
 
@@ -14455,9 +8562,7 @@ Labeled();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Labeled State( 1 );
-Labeled( Row State( 3 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Labeled State( 1 );Labeled( Row State( 3 ) );
 
 ```
 
@@ -14471,9 +8576,7 @@ Labeled( Row State( 3 ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-Lag( :height, 2 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;Lag( :height, 2 );
 
 ```
 
@@ -14487,10 +8590,7 @@ Lag( :height, 2 );
 
 ```jsl
 
-Format(
-	Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ),
-	"ddmonyyyy:h:m:s"
-);
+Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
 
@@ -14504,10 +8604,7 @@ Format(
 
 ```jsl
 
-/*Simple Linear Regression*/
-y = [3, 5, 7, 5];
-X = [1, 2, 3, 4];
-{Beta, VarBeta} = Least Squares Solve( y, X );
+/*Simple Linear Regression*/y = [3, 5, 7, 5];X = [1, 2, 3, 4];{Beta, VarBeta} = Least Squares Solve( y, X );
 
 ```
 
@@ -14521,8 +8618,7 @@ X = [1, 2, 3, 4];
 
 ```jsl
 
-exurl = "http://www.jmp.com";
-Left( exurl, Contains( exurl, ":" ) - 1 );
+exurl = "http://www.jmp.com";Left( exurl, Contains( exurl, ":" ) - 1 );
 
 ```
 
@@ -14576,9 +8672,7 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Eval List(
-	{LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )}
-);
+Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
 
@@ -14648,27 +8742,7 @@ Eval List(
 
 ```jsl
 
-mu = 10;
-sig = 5;
-New Window( "Example: LEV Density",
-	y = Graph Box(
-		Y Scale( 0, .08 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( LEV Density( x, mu, sig ), x );
-		Text( {0, .055}, "mu=", Round( mu, 2 ) );
-		Text( {0, .045}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 100, mu, y << reshow ),
-		Text Box( "mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 10;sig = 5;New Window( "Example: LEV Density",	y = Graph Box(		Y Scale( 0, .08 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( LEV Density( x, mu, sig ), x );		Text( {0, .055}, "mu=", Round( mu, 2 ) );		Text( {0, .045}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 100, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -14682,26 +8756,7 @@ New Window( "Example: LEV Density",
 
 ```jsl
 
-mu = 10;
-sig = 5;
-New Window( "Example: LEV Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( LEV Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 100, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 10;sig = 5;New Window( "Example: LEV Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( LEV Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 100, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -14715,40 +8770,7 @@ New Window( "Example: LEV Distribution",
 
 ```jsl
 
-mu = 10;
-sig = 5;
-qq = .5;
-New Window( "Example: LEV Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( LEV Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( LEV Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 80, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 10;sig = 5;qq = .5;New Window( "Example: LEV Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( LEV Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( LEV Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( 0, 80, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -14762,16 +8784,7 @@ New Window( "Example: LEV Quantile",
 
 ```jsl
 
-New Window( "Color Bar",
-	Graph(
-		For( x = 1, x <= 100, x += 5,
-			Fill Color(
-				Level Color( x, 100, "Green to Black to Red" )
-			);
-			Rect( x - 5, 45, x + 5, 55, 1 );
-		)
-	)
-);
+New Window( "Color Bar",	Graph(		For( x = 1, x <= 100, x += 5,			Fill Color( Level Color( x, 100, "Green to Black to Red" ) );			Rect( x - 5, 45, x + 5, 55, 1 );		)	));
 
 ```
 
@@ -14801,27 +8814,7 @@ LGamma( 5 );
 
 ```jsl
 
-New Window( "Constrained smoothing",
-	Graph Box(
-		Pen Color( "gray" );
-		H Line( 90 );
-		H Line( 92 );
-		H Line( 10 );
-		H Line( 8 );
-		Pen Color( "red" );
-		Line(
-			Index( 10, 90, 10 ),
-			[20 10 90 90 60 70 10 10 40],
-			<<Smooth( . )
-		);
-		Pen Color( "blue" );
-		Line(
-			Index( 10, 90, 10 ),
-			[20 10 90 90 60 70 10 10 40],
-			<<Smooth( ., "X", 8, 92 )
-		);
-	)
-);
+New Window( "Constrained smoothing",	Graph Box(		Pen Color( "gray" );		H Line( 90 );		H Line( 92 );		H Line( 10 );		H Line( 8 );		Pen Color( "red" );		Line( Index( 10, 90, 10 ), [20 10 90 90 60 70 10 10 40], <<Smooth( . ) );		Pen Color( "blue" );		Line( Index( 10, 90, 10 ), [20 10 90 90 60 70 10 10 40], <<Smooth( ., "X", 8, 92 ) );	));
 
 ```
 
@@ -14829,9 +8822,7 @@ New Window( "Constrained smoothing",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box( Line( [10 30 90], [88 22 44] ) )
-);
+New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
 
@@ -14839,21 +8830,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Smoothing",
-	Graph Box(
-		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),
-		YAxis( Min( -1.1 ), Max( 1.1 ), Inc( 1 ) ),
-		Pen Color( "gray" );
-		H Line( 1 );
-		H Line( -1 );
-		H Line( 0 );
-		Line( 0 :: 10, Sin( 0 :: 10 ) );
-		Pen Color( "red" );
-		Line( 0 :: 10, Sin( 0 :: 10 ), <<Smooth( . ) );
-		Pen Color( "blue" );
-		Line( 0 :: 10, Sin( 0 :: 10 ), <<Smooth( 0.25 ) );
-	)
-);
+New Window( "Smoothing",	Graph Box(		XAxis( Min( 0 ), Max( 10 ), Inc( 2 ) ),		YAxis( Min( -1.1 ), Max( 1.1 ), Inc( 1 ) ),		Pen Color( "gray" );		H Line( 1 );		H Line( -1 );		H Line( 0 );		Line( 0 :: 10, Sin( 0 :: 10 ) );		Pen Color( "red" );		Line( 0 :: 10, Sin( 0 :: 10 ), <<Smooth( . ) );		Pen Color( "blue" );		Line( 0 :: 10, Sin( 0 :: 10 ), <<Smooth( 0.25 ) );	));
 
 ```
 
@@ -14861,13 +8838,7 @@ New Window( "Smoothing",
 
 ```jsl
 
-New Window( "Interpolate in value space",
-	Graph Box(
-		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
-		YAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
-		Line( [10 30 90], [88 22 44], <<Value Space( 1 ) )
-	)
-);
+New Window( "Interpolate in value space",	Graph Box(		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),		YAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),		Line( [10 30 90], [88 22 44], <<Value Space( 1 ) )	));
 
 ```
 
@@ -14883,13 +8854,7 @@ New Window( "Interpolate in value space",
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example",
-	g = Graph Box( Line Seg( x, y ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
@@ -14897,14 +8862,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example",
-	g = Graph Box( Line Seg( x, y, RowStates( dt ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y, RowStates( dt ) ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
@@ -14912,16 +8870,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example",
-	g = Graph Box(
-		Line Seg( x, y, RowStates( dt, {1, 3, 5} ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Line Seg" ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example",	g = Graph Box( Line Seg( x, y, RowStates( dt, {1, 3, 5} ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Line Seg" ));
 
 ```
 
@@ -14935,27 +8884,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 
 ```jsl
 
-New Window( "Line Style Example",
-	Graph Box(
-		Frame Size( 500, 400 ),
-		named line styles = {"Solid", "Dotted", "Dashed",
-		"Dash Dot", "Dash Dot Dot", "Dash Dash Dot",
-		"Dash Dash Dot Dot", "Long Dash", "Long Dash Dash",
-		"Dense Dash", "Sparse Dash", "Sparse Dot",
-		"Sparse Dash Dot"};
-		For Each( {istyle, i}, named line styles,
-			{x = 5 :: 75, y = 12 * Sin( x / 12 )},
-			Text(
-				{x[N Items( x )] + 1, y[N Items( y )] + 92 - 6
-				 * i - 1.5},
-				istyle
-			);
-			Line Style( istyle );
-			Pen Size( 2 );
-			Line( x, y + 92 - 6 * i );
-		);
-	)
-);
+New Window( "Line Style Example",	Graph Box(		Frame Size( 500, 400 ),		named line styles = {"Solid", "Dotted", "Dashed", "Dash Dot", "Dash Dot Dot",		"Dash Dash Dot", "Dash Dash Dot Dot", "Long Dash", "Long Dash Dash", "Dense Dash",		"Sparse Dash", "Sparse Dot", "Sparse Dash Dot"};		For Each( {istyle, i}, named line styles, {x = 5 :: 75, y = 12 * Sin( x / 12 )},			Text( {x[N Items( x )] + 1, y[N Items( y )] + 92 - 6 * i - 1.5}, istyle );			Line Style( istyle );			Pen Size( 2 );			Line( x, y + 92 - 6 * i );		);	));
 
 ```
 
@@ -14971,17 +8900,7 @@ New Window( "Line Style Example",
 
 ```jsl
 
-/*Simple Linear Regression: y = intercept + beta * x + error*/
-y = [3, 5, 7, 5];
-X = [1, 2, 3, 4];
-{Estimates, Std_Error, Diagnostics} =
-Linear Regression( y, X, <<printToLog ); 
-/*
-t_ratio = Diagnostics["t_ratio"]; 
-p_value = Diagnostics["p_value"]; 
-RSquare = Diagnostics["RSquare"]; 
-RSquare Adj = Diagnostics["RSquare Adj"];
-*/
+/*Simple Linear Regression: y = intercept + beta * x + error*/y = [3, 5, 7, 5];X = [1, 2, 3, 4];{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<printToLog ); /*t_ratio = Diagnostics["t_ratio"]; p_value = Diagnostics["p_value"]; RSquare = Diagnostics["RSquare"]; RSquare Adj = Diagnostics["RSquare Adj"];*/
 
 ```
 
@@ -14989,11 +8908,7 @@ RSquare Adj = Diagnostics["RSquare Adj"];
 
 ```jsl
 
-/*Model: y = beta_1*x + beta_2*x^2 + error*/
-y = [3, 5, 7, 5];
-X = [1 1, 2 4, 3 9, 4 16];
-{Estimates, Std_Error, Diagnostics} =
-Linear Regression( y, X, <<noIntercept, <<printToLog );
+/*Model: y = beta_1*x + beta_2*x^2 + error*/y = [3, 5, 7, 5];X = [1 1, 2 4, 3 9, 4 16];{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<noIntercept, <<printToLog );
 
 ```
 
@@ -15001,14 +8916,7 @@ Linear Regression( y, X, <<noIntercept, <<printToLog );
 
 ```jsl
 
-/*Categorical Variable Example*/
-/*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
-y = [3, 5, 7, 5];
-x = [1, 2, 3, 4];
-gender = {"boy", "girl", "girl", "boy"};
-designMat = Design( gender ) || x;
-{Estimates, Std_Error, Diagnostics} =
-Linear Regression( y, designMat, <<noIntercept, <<printToLog );
+/*Categorical Variable Example*//*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/y = [3, 5, 7, 5];x = [1, 2, 3, 4];gender = {"boy", "girl", "girl", "boy"};designMat = Design( gender ) || x;{Estimates, Std_Error, Diagnostics} = Linear Regression(	y,	designMat,	<<noIntercept,	<<printToLog);
 
 ```
 
@@ -15022,12 +8930,7 @@ Linear Regression( y, designMat, <<noIntercept, <<printToLog );
 
 ```jsl
 
-lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
-New Window( "Lines Seg Example",
-	g = Graph Box( Lines Seg( lines ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Lines Seg" ));
+lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Lines Seg" ));
 
 ```
 
@@ -15041,19 +8944,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 1 ), spacing( 10 ),
-		Text Box( "Quadratic Formula" ),
-		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ),
-			top( 10 ), sides( 15 ),
-			Expr As Picture(
-				Expr(
-					(-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a)
-				)
-			)
-		)
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 1 ), spacing( 10 ),		Text Box( "Quadratic Formula" ),		Border Box( Left( 10 ), Right( 10 ), bottom( 10 ), top( 10 ), sides( 15 ),			Expr As Picture( Expr( (-b + Sqrt( b ^ 2 - 4 * a * c )) / (2 * a) ) )		)	));
 
 ```
 
@@ -15067,30 +8958,7 @@ New Window( "Example",
 
 ```jsl
 
-
-New Window( "Lineup Ruler",
-	lrb = Lineup Ruler Box(
-		Widths( {120, 200} ),
-		Outline Box( "Customer 1",
-			Lineup Box( N Col( 2 ),
-				Text Box( "First Name:" ),
-				Text Edit Box(),
-				Text Box( "Last Name:" ),
-				Text Edit Box(), 
-
-			)
-		),
-		Outline Box( "Customer 2",
-			Lineup Box( N Col( 2 ),
-				Text Box( "First Name:" ),
-				Text Edit Box(),
-				Text Box( "Last Name:" ),
-				Text Edit Box(), 
-
-			)
-		)
-	)
-);
+New Window( "Lineup Ruler",	lrb = Lineup Ruler Box(		Widths( {120, 200} ),		Outline Box( "Customer 1",			Lineup Box( N Col( 2 ),				Text Box( "First Name:" ),				Text Edit Box(),				Text Box( "Last Name:" ),				Text Edit Box(), 			)		),		Outline Box( "Customer 2",			Lineup Box( N Col( 2 ),				Text Box( "First Name:" ),				Text Edit Box(),				Text Box( "Last Name:" ),				Text Edit Box(), 			)		)	));
 
 ```
 
@@ -15120,9 +8988,7 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
-New Window( "Example",
-	b = List Box( {"single", "double", "triple"}, nlines( 10 ) )
-);
+New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
 
@@ -15130,15 +8996,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	lb = List Box(
-		{{"First Item", "continuous"}, {"Second Item", "ordinal"
-		}, {"Third Item", "nominal"}},
-		width( 200 ),
-		max selected( 2 ),
-		nlines( 6 )
-	)
-);
+New Window( "Example",	lb = List Box(		{{"First Item", "continuous"}, {"Second Item", "ordinal"}, {"Third Item", "nominal"}},		width( 200 ),		max selected( 2 ),		nlines( 6 )	));
 
 ```
 
@@ -15168,12 +9026,7 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
-dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
-// Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
-// Declarations for "irr" and "npv" are auto-loaded
-myirr = dll << irr( 0.1, -51000, 1000, 900, 950 );
-mynpv = dll << npv( 0.05, -51000, 1000, 900, 9500 );
-dll << UnloadDLL();
+dll = Load DLL( Base Name( "/path/to/dll/financial" ) );// Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac// Declarations for "irr" and "npv" are auto-loadedmyirr = dll << irr( 0.1, -51000, 1000, 900, 950 );mynpv = dll << npv( 0.05, -51000, 1000, 900, 9500 );dll << UnloadDLL();
 
 ```
 
@@ -15181,13 +9034,7 @@ dll << UnloadDLL();
 
 ```jsl
 
-If( Host is( "Windows" ),
-	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
-	dll << CallDLL( "MessageBeep", "n", 0 );
-	Wait( 1 );
-	dll << CallDLL( "MessageBeep", "n", 0 );
-	dll << UnloadDLL();
-);
+If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << CallDLL( "MessageBeep", "n", 0 );	Wait( 1 );	dll << CallDLL( "MessageBeep", "n", 0 );	dll << UnloadDLL(););
 
 ```
 
@@ -15201,13 +9048,7 @@ If( Host is( "Windows" ),
 
 ```jsl
 
-ex = Load Text File(
-	Get Path Variable( "sample_import_data" ) || "/animals.txt"
-/*, Charset("ascii")*/
-/*, LineSeparator("\!r\!n")*/
-/*, BLOB*/
-);
-Word( 4, ex, " \!t\!n\!r" );
+ex = Load Text File(	Get Path Variable( "sample_import_data" ) || "/animals.txt"/*, Charset("ascii")*//*, LineSeparator("\!r\!n")*//*, BLOB*/);Word( 4, ex, " \!t\!n\!r" );
 
 ```
 
@@ -15223,10 +9064,7 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
-/*more examples, above*/
-Show( Loc( [1 0 1 0 1 0] ) );
-Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
-Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
+/*more examples, above*/Show( Loc( [1 0 1 0 1 0] ) );Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```
 
@@ -15234,8 +9072,7 @@ Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```jsl
 
-Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/
-;
+Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```
 
@@ -15251,8 +9088,7 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```jsl
 
-Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/
-;
+Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```
 
@@ -15316,11 +9152,7 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```jsl
 
-Show(
-	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
-	Loc Sorted( [11 22 33 44 55], [1] ),
-	Loc Sorted( [11 22 33 44 55], [500] )
-);
+Show(	Loc Sorted( [11 22 33 44 55], [11 33 55] ),	Loc Sorted( [11 22 33 44 55], [1] ),	Loc Sorted( [11 22 33 44 55], [500] ));
 
 ```
 
@@ -15334,10 +9166,7 @@ Show(
 
 ```jsl
 
-Local( {a = 1, b},
-	b = 2;
-	a + b;
-);
+Local( {a = 1, b},	b = 2;	a + b;);
 
 ```
 
@@ -15351,12 +9180,7 @@ Local( {a = 1, b},
 
 ```jsl
 
-y = Local Here(
-	a = 1;
-	b = 2;
-	c = a + b;
-	c;
-);
+y = Local Here(	a = 1;	b = 2;	c = a + b;	c;);
 
 ```
 
@@ -15370,18 +9194,7 @@ y = Local Here(
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -15395,18 +9208,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -15434,69 +9236,7 @@ Log( 256, 2 );
 
 ```jsl
 
-"captured:" || Log Capture(
-	For( i = 1, i <= 3, i++,
-		Write( Char( i ) );
-		Write( " " );
-	)
-);
-
-```
-
-### Log Table Messages
-
-**Syntaxe :** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
-
-**Description :** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
-
-**JMP Version ajoutée :** 17
-
-**Turn off logging**
-
-```jsl
-
-Log Table Messages( Off );
-
-```
-
-**Turn on logging**
-
-```jsl
-
-Log Table Messages( On );
-
-```
-
-**Turn on logging, and include all messages except "DtMsgClose"**
-
-```jsl
-
-Log Table Messages( On, Exclude( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, and include only the "DtMsgClose" message**
-
-```jsl
-
-Log Table Messages( On, Include( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, but ignore column messages**
-
-```jsl
-
-Log Table Messages( On, Disable( "Column" ) );
-
-```
-
-**Turn on logging, but ignore table messages**
-
-```jsl
-
-Log Table Messages( On );
-Log Table Messages( Disable( "Table" ) );
+"captured:" || Log Capture(	For( i = 1, i <= 3, i++,		Write( Char( i ) );		Write( " " );	));
 
 ```
 
@@ -15538,38 +9278,7 @@ Log1P( 1e-6 );
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: LogGenGamma Density",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 10 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function( LogGenGamma Density( y, mu, sigma, lambda ), y );
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: LogGenGamma Density",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 10 ),		XName( "y" ),		Pen Color( "red" );		Y Function( LogGenGamma Density( y, mu, sigma, lambda ), y );		Text( {-9, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ));
 
 ```
 
@@ -15583,41 +9292,7 @@ New Window( "Example: LogGenGamma Density",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: LogGenGamma Distribution",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			LogGenGamma Distribution( y, mu, sigma, lambda ),
-			y
-		);
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;New Window( "Example: LogGenGamma Distribution",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -20, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( LogGenGamma Distribution( y, mu, sigma, lambda ), y );		Text( {-9, 0.9}, "\!U03BC=", Round( mu, 4 ), " \!U03C3=", Round( sigma, 4 ) );		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );	),	H List Box( Slider Box( -5, 5, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ));
 
 ```
 
@@ -15631,55 +9306,7 @@ New Window( "Example: LogGenGamma Distribution",
 
 ```jsl
 
-mu = 0;
-sigma = 1;
-lambda = 1;
-p = 0.4;
-New Window( "Example: LogGenGamma Quantile",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			LogGenGamma Distribution( x, mu, sigma, lambda ),
-			x
-		);
-		Pen Color( "Blue" );
-		V Line( LogGenGamma Quantile( p, mu, sigma, lambda ), 0, 1 );
-		Text(
-			{-19, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 ),
-			" \!U03BB=",
-			Round( lambda, 4 )
-		);
-		Text( {-19, 0.8}, "p=", Round( p, 3 ) );
-		Text(
-			{-19, 0.7},
-			"quantile= ",
-			Round( LogGenGamma Quantile( p, mu, sigma, lambda ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box( -2, 2, mu, gdey << reshow ),
-		Text Box( "\!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( "\!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, p, gdey << reshow ),
-		Text Box( " p" )
-	)
-);
+mu = 0;sigma = 1;lambda = 1;p = 0.4;New Window( "Example: LogGenGamma Quantile",	gdey = Graph Box(		Y Scale( 0, 1 ),		X Scale( -20, 20 ),		XName( "y" ),		Pen Color( "red" );		Y Function( LogGenGamma Distribution( x, mu, sigma, lambda ), x );		Pen Color( "Blue" );		V Line( LogGenGamma Quantile( p, mu, sigma, lambda ), 0, 1 );		Text(			{-19, 0.9},			"\!U03BC=",			Round( mu, 4 ),			" \!U03C3=",			Round( sigma, 4 ),			" \!U03BB=",			Round( lambda, 4 )		);		Text( {-19, 0.8}, "p=", Round( p, 3 ) );		Text(			{-19, 0.7},			"quantile= ",			Round( LogGenGamma Quantile( p, mu, sigma, lambda ), 2 )		);	),	H List Box( Slider Box( -2, 2, mu, gdey << reshow ), Text Box( "\!U03BC" ) ),	H List Box( Slider Box( 0, 4, sigma, gdey << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, 10, lambda, gdey << reshow ), Text Box( "\!U03BB" ) ),	H List Box( Slider Box( 0.01, 0.99, p, gdey << reshow ), Text Box( " p" ) ));
 
 ```
 
@@ -15721,27 +9348,7 @@ Logist Percent( 10 );
 
 ```jsl
 
-mu = 0;
-sig = .2;
-New Window( "Example: Logistic Density",
-	y = Graph Box(
-		Y Scale( 0, 2 ),
-		X Scale( -10, 10 ),
-		Pen Color( "red" );
-		Y Function( Logistic Density( x, mu, sig ), x );
-		Text( {0, 1.8}, "mu=", Round( mu, 2 ) );
-		Text( {0, 1.6}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( -4, 4, mu, y << reshow ),
-		Text Box( "mu" )
-	),
-	H List Box(
-		Slider Box( 0.01, 2, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 0;sig = .2;New Window( "Example: Logistic Density",	y = Graph Box(		Y Scale( 0, 2 ),		X Scale( -10, 10 ),		Pen Color( "red" );		Y Function( Logistic Density( x, mu, sig ), x );		Text( {0, 1.8}, "mu=", Round( mu, 2 ) );		Text( {0, 1.6}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( -4, 4, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0.01, 2, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -15755,26 +9362,7 @@ New Window( "Example: Logistic Density",
 
 ```jsl
 
-mu = 0;
-sig = .2;
-New Window( "Example: Logistic Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 10 ),
-		Pen Color( "red" );
-		Y Function( Logistic Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( -4, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0.01, 2, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 0;sig = .2;New Window( "Example: Logistic Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 10 ),		Pen Color( "red" );		Y Function( Logistic Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( -4, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0.01, 2, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -15788,40 +9376,7 @@ New Window( "Example: Logistic Distribution",
 
 ```jsl
 
-mu = 0;
-sig = .2;
-qq = .5;
-New Window( "Example: Logistic Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 10 ),
-		Pen Color( "red" );
-		Y Function( Logistic Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( Logistic Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( -4, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0.01, 2, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 0;sig = .2;qq = .5;New Window( "Example: Logistic Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( -10, 10 ),		Pen Color( "red" );		Y Function( Logistic Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( Logistic Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( -4, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0.01, 2, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -15863,24 +9418,7 @@ Logit Percent( 95.0 );
 
 ```jsl
 
-mu = 0;
-sig = .2;
-New Window( "Example: Loglogistic Density",
-	y = Graph Box(
-		Y Scale( 0, .06 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Loglogistic Density( x, mu, sig ), x );
-		Text( {0, .055}, "mu=", Round( mu, 2 ) );
-		Text( {0, .045}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( "mu" ) ),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 0;sig = .2;New Window( "Example: Loglogistic Density",	y = Graph Box(		Y Scale( 0, .06 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Loglogistic Density( x, mu, sig ), x );		Text( {0, .055}, "mu=", Round( mu, 2 ) );		Text( {0, .045}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -15894,26 +9432,7 @@ New Window( "Example: Loglogistic Density",
 
 ```jsl
 
-mu = 0;
-sig = .2;
-New Window( "Example: Loglogistic Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Loglogistic Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 0;sig = .2;New Window( "Example: Loglogistic Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Loglogistic Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -15927,40 +9446,7 @@ New Window( "Example: Loglogistic Distribution",
 
 ```jsl
 
-mu = 0;
-sig = .2;
-qq = .5;
-New Window( "Example: Loglogistic Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Loglogistic Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( Loglogistic Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 0;sig = .2;qq = .5;New Window( "Example: Loglogistic Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Loglogistic Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( Loglogistic Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -15974,24 +9460,7 @@ New Window( "Example: Loglogistic Quantile",
 
 ```jsl
 
-mu = 0;
-sig = 1;
-New Window( "Example: Lognormal Density",
-	y = Graph Box(
-		Y Scale( 0, .15 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Lognormal Density( x, mu, sig ), x );
-		Text( {0, .14}, "mu=", Round( mu, 2 ) );
-		Text( {0, .12}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( "mu" ) ),
-	H List Box(
-		Slider Box( 0, 2, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 0;sig = 1;New Window( "Example: Lognormal Density",	y = Graph Box(		Y Scale( 0, .15 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Lognormal Density( x, mu, sig ), x );		Text( {0, .14}, "mu=", Round( mu, 2 ) );		Text( {0, .12}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0, 2, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -16005,26 +9474,7 @@ New Window( "Example: Lognormal Density",
 
 ```jsl
 
-mu = 0;
-sig = 1;
-New Window( "Example: Lognormal Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Lognormal Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 2, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 0;sig = 1;New Window( "Example: Lognormal Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Lognormal Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 2, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -16038,40 +9488,7 @@ New Window( "Example: Lognormal Distribution",
 
 ```jsl
 
-mu = 0;
-sig = 1;
-qq = .5;
-New Window( "Example: Lognormal Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( Lognormal Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( Lognormal Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 4, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 3, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 0;sig = 1;qq = .5;New Window( "Example: Lognormal Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( Lognormal Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( Lognormal Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( 0, 4, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 3, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -16097,10 +9514,7 @@ Long Date( Today() );
 
 ```jsl
 
-A = [2 0, 0 2];
-U = [2 4, 3 5];
-s = 2.5;
-AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
+A = [2 0, 0 2];U = [2 4, 3 5];s = 2.5;AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ```
 
@@ -16128,13 +9542,7 @@ Lowercase( "CAFÉ #23" );
 
 ```jsl
 
-A = [5 -2 6, 2 4 0, 3 8 -4];
-b = [17, 19, 14];
-c = [9 6 -4];
-L = [. 0 .];
-U = [0 . .];
-{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );
-Show( x, z );
+A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0 . .];{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );Show( x, z );
 
 ```
 
@@ -16148,12 +9556,7 @@ Show( x, z );
 
 ```jsl
 
-Mail(
-	"test@example.com",
-	"revelation",
-	"JMP is great.",
-	"$SAMPLE_DATA/Big Class.jmp"
-);
+Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
 
@@ -16193,12 +9596,7 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "KFold Validation",
-	"Numeric",
-	"Nominal",
-	Formula( Make KFold Formula( 5, <<Y Columns( :height ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "KFold Validation",	"Numeric",	"Nominal",	Formula( Make KFold Formula( 5, <<Y Columns( :height ) ) ));
 
 ```
 
@@ -16206,18 +9604,7 @@ dt << New Column( "KFold Validation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Stratified KFold",
-	"Numeric",
-	"Nominal",
-	Formula(
-		Make KFold Formula(
-			4,
-			<<Y Columns( :height ),
-			<<Stratification Columns( :sex )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Stratified KFold",	"Numeric",	"Nominal",	Formula(		Make KFold Formula( 4, <<Y Columns( :height ), <<Stratification Columns( :sex ) )	));
 
 ```
 
@@ -16233,13 +9620,7 @@ dt << New Column( "Stratified KFold",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Validation",
-	"Numeric",
-	"Nominal",
-	Formula( Make Validation Formula( [.6, .4, 0] ) ),
-	Set Property( "Value Labels", {0 = "Training", 1 = "Validation"} )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Validation",	"Numeric",	"Nominal",	Formula( Make Validation Formula( [.6, .4, 0] ) ),	Set Property( "Value Labels", {0 = "Training", 1 = "Validation"} ));
 
 ```
 
@@ -16247,21 +9628,7 @@ dt << New Column( "Validation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "Validation",
-	"Numeric",
-	"Nominal",
-	Formula(
-		Make Validation Formula(
-			[.6, .2, .2],
-			<<Stratification Columns( :age )
-		)
-	),
-	Set Property(
-		"Value Labels",
-		{0 = "Training", 1 = "Validation", 2 = "Test"}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Validation",	"Numeric",	"Nominal",	Formula( Make Validation Formula( [.6, .2, .2], <<Stratification Columns( :age ) ) ),	Set Property( "Value Labels", {0 = "Training", 1 = "Validation", 2 = "Test"} ));
 
 ```
 
@@ -16269,23 +9636,7 @@ dt << New Column( "Validation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
-dt << New Column( "Validation",
-	"Numeric",
-	"Nominal",
-	Formula(
-		Make Validation Formula(
-			[20, 10, 4],
-			<<Cutpoint Column( :Week of Year ),
-			<<Cutpoint Batch ID( :ID ),
-			<<Determine cutpoints using( "Numbers of Rows" )
-		)
-	),
-	Set Property(
-		"Value Labels",
-		{0 = "Training", 1 = "Validation", 2 = "Test"}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );dt << New Column( "Validation",	"Numeric",	"Nominal",	Formula(		Make Validation Formula(			[20, 10, 4],			<<Cutpoint Column( :Week of Year ),			<<Cutpoint Batch ID( :ID ),			<<Determine cutpoints using( "Numbers of Rows" )		)	),	Set Property( "Value Labels", {0 = "Training", 1 = "Validation", 2 = "Test"} ));
 
 ```
 
@@ -16299,58 +9650,7 @@ dt << New Column( "Validation",
 
 ```jsl
 
-grid = 50;
-rmax = 0/*zero for smooth*/;
-nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set 
-New Window( "Mandelbrot - use magnifier to zoom in",
-	g = Graph Box(
-		X Scale( -3, 3 ),
-		Y Scale( -2, 2 ),
-		framesize( 600, 400 ),
-		Gradient Function(
-			Mandelbrot( nmax, rmax, a, b ), // return value: number of iterations before something interesting happened
-			a, // standard GradientFunction stuff...
-			b,
-			Matrix( {0, nmax} ), // range to map the colors onto
-			Z Color(
-				{RGB Color( 0, 0, 0 ), RGB Color( 1, 0, 0 ),
-				RGB Color( 1, 1, 0 ), RGB Color( 0, 1, 0 ),
-				RGB Color( 0, 1, 1 ), RGB Color( 0, 0, 1 ),
-				RGB Color( .3, .3, .4 )}
-			),
-			<<xgrid(
-				X Origin(), X Origin() + X Range(),
-				X Range() / (Floor( grid * H Size() / V Size() ))
-			),
-			<<ygrid(
-				Y Origin(), Y Origin() + Y Range(),
-				Y Range() / (Floor( grid ))
-			), 
-
-		)
-	),
-	H List Box(
-		Slider Box( 2, 500, nmax, g << reshow ),
-		Global Box( nmax )
-	),
-	H List Box(
-		Slider Box( 0, 5, rmax, g << reshow ),
-		Global Box( rmax )
-	),
-	H List Box(
-		Slider Box( 2, 500, grid, g << reshow ),
-		Global Box( grid )
-	), 
-
-);
-g << Set X Axis(
-	{Format( "Best", 15 ), Show Major Ticks( 0 ),
-	Rotated Labels( "Parallel" )}
-);
-g << Set Y Axis(
-	{Format( "Best", 15 ), Show Major Ticks( 0 ),
-	Rotated Labels( "Parallel" )}
-);
+grid = 50;rmax = 0/*zero for smooth*/;nmax = 50;// http://wikipedia.org/wiki/Mandelbrot_set New Window( "Mandelbrot - use magnifier to zoom in",	g = Graph Box(		X Scale( -3, 3 ),		Y Scale( -2, 2 ),		framesize( 600, 400 ),		Gradient Function(			Mandelbrot( nmax, rmax, a, b ), // return value: number of iterations before something interesting happened			a, // standard GradientFunction stuff...			b,			Matrix( {0, nmax} ), // range to map the colors onto			Z Color(				{RGB Color( 0, 0, 0 ), RGB Color( 1, 0, 0 ), RGB Color( 1, 1, 0 ),				RGB Color( 0, 1, 0 ), RGB Color( 0, 1, 1 ), RGB Color( 0, 0, 1 ),				RGB Color( .3, .3, .4 )}			),			<<xgrid(				X Origin(), X Origin() + X Range(),				X Range() / (Floor( grid * H Size() / V Size() ))			),			<<ygrid( Y Origin(), Y Origin() + Y Range(), Y Range() / (Floor( grid )) ), 		)	),	H List Box( Slider Box( 2, 500, nmax, g << reshow ), Global Box( nmax ) ),	H List Box( Slider Box( 0, 5, rmax, g << reshow ), Global Box( rmax ) ),	H List Box( Slider Box( 2, 500, grid, g << reshow ), Global Box( grid ) ), );g << Set X Axis(	{Format( "Best", 15 ), Show Major Ticks( 0 ), Rotated Labels( "Parallel" )});g << Set Y Axis(	{Format( "Best", 15 ), Show Major Ticks( 0 ), Rotated Labels( "Parallel" )});
 
 ```
 
@@ -16404,9 +9704,7 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) )
-);
+New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
 
@@ -16420,11 +9718,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Marker State( 5 );
-Marker Of( Row State( 3 ) );
-Row() = 3;
-Marker Of();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Marker State( 5 );Marker Of( Row State( 3 ) );Row() = 3;Marker Of();
 
 ```
 
@@ -16440,23 +9734,7 @@ Marker Of();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-sz = Column( "age" ) << get values;
-aa = [=> 0];
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ), sizes( sz ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;sz = Column( "age" ) << get values;aa = [=> 0];yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ), sizes( sz ) )	));
 
 ```
 
@@ -16464,17 +9742,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt, {3, 4, 11, 7, 13} ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt, {3, 4, 11, 7, 13} ) )	));
 
 ```
 
@@ -16482,17 +9750,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt, 11 :: 15 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt, 11 :: 15 ) )	));
 
 ```
 
@@ -16500,23 +9758,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg(
-			xx,
-			yy,
-			Row States(
-				dt, {{1, 2, 3}, {4, 5}, {6}, {7, 12, 15, 9}, {21, 8}}
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg(			xx,			yy,			Row States( dt, {{1, 2, 3}, {4, 5}, {6}, {7, 12, 15, 9}, {21, 8}} )		)	));
 
 ```
 
@@ -16524,25 +9766,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = [1 2 3 4 5];
-yy = [2 3 4 5 6];
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg(
-			xx,
-			yy,
-			Row States(
-				{Color State( "Blue" ), Color State( "Orange" ),
-				Color State( "Green" ), Color State( "Purple" ),
-				Color State( "Red" )}
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = [1 2 3 4 5];yy = [2 3 4 5 6];New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg(			xx,			yy,			Row States(				{Color State( "Blue" ), Color State( "Orange" ), Color State( "Green" ),				Color State( "Purple" ), Color State( "Red" )}			)		)	));
 
 ```
 
@@ -16556,12 +9780,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Marker Size( 5 );
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	)
-);
+New Window( "Example",	Graph Box(		Marker Size( 5 );		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	));
 
 ```
 
@@ -16575,9 +9794,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Marker State( 5 );
-Marker Of( Row State( 3 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Marker State( 5 );Marker Of( Row State( 3 ) );
 
 ```
 
@@ -16591,12 +9808,7 @@ Marker Of( Row State( 3 ) );
 
 ```jsl
 
-Match( Year( Today() ),
-	2013, "snake",
-	2014, "horse",
-	2015, "goat",
-	"other"
-);
+Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
 
@@ -16610,18 +9822,223 @@ Match( Year( Today() ),
 
 ```jsl
 
-MatchMZ( Year( Today() ),
-	2013, "snake",
-	2014, "horse",
-	2015, "goat",
-	"other"
-);
+MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
+
+```
+
+### MATLAB Connect
+
+**Syntaxe :** MATLABConnection = MATLAB Connect(&lt;Echo(0|1)&gt;)
+
+**Description :** Renvoie un objet scriptable de connexion à MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLABConnection = MATLAB Connect();x = MatlabConnection << Is Connected;Show( x );
+
+```
+
+### MATLAB Control
+
+**Syntaxe :** MATLAB Control( Echo(bool) )
+
+**Description :** Change les options de contrôle pour MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init( Echo( true ) );MATLAB Control( Echo( false ) );MATLAB Submit(	"\[	v = [9 8 7, 6 5 4, 3 2 1];	m = [1 2 3, 4 5 6, 7 8 9];	rowjoin = [v ; m]	coljoin = [v , m]]\");MATLAB Term();
+
+```
+
+### MATLAB Execute
+
+**Syntaxe :** MATLAB Execute( { list of Inputs }, { list of Outputs }, statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description :** Envoie une liste d&apos;entrées, exécute des instructions et renvoie une liste de sorties.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();a = "abcdef";d = 3.141;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4 5 6, 7 8 9];ml = MATLAB Execute(	{v, m, a, d},	{x, z, a, d},	"\[a = v * m; % matrix productd = v / m; % = v * inv(m) called Right divisionz = m \ v; % = m * inv(v) called Left divisionx = m .* v; % element-wise product]\");Show( v, m, ml, x, z, a, d );MATLAB Term();
+
+```
+
+### MATLAB Get
+
+**Syntaxe :** y = MATLAB Get( name )
+
+**Description :** Renvoie les données de MATLAB, où l&apos;argument name peut représenter l&apos;un des types de données MATLAB suivants : numérique, chaîne, matrice, liste, ou cadre de données.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();x1 = [1, 2, 3];MATLAB Send( x1 );x2 = MATLAB Get( x1 );Show( x1, x2 );dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send( dt1 );dt2 = MATLAB Get( dt1 );dt2 << New Data View;Close( dt1 );MATLAB Term();
+
+```
+
+### MATLAB Get Graphics
+
+**Syntaxe :** MATLAB graphics = MATLAB Get Graphics( format )
+
+**Description :** Renvoie le dernier objet graphique écrit dans la fenêtre d&apos;affichage graphique de MATLAB dans un format graphique spécifié par l&apos;argument format.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();ml = MATLAB Submit( "\[plot(1:10)]\" );plot = MATLAB Get Graphics( png );pngJMP = New Window( "Plot", Picture Box( plot ) );pngJMP << Close Window;MATLAB Submit( "close" );//Needed this command to close the figure generated from MatlabMATLAB Term();
+
+```
+
+### MATLAB Get Version
+
+**Syntaxe :** version = MATLAB Get Version()
+
+**Description :** Renvoie le numéro de la version MATLAB utilisée avec les interfaces MATLAB JMP.
+
+**JMP Version ajoutée :** 14
+
+```jsl
+
+MATLAB Init();version = MATLAB Get Version();Show( version );MATLAB Term();
+
+```
+
+### MATLAB Init
+
+**Syntaxe :** MATLAB Init(&lt;Echo(0|1)&gt;)
+
+**Description :** Initialise les interfaces MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = MATLAB Get( str );Show( getStr );MATLAB Term();
+
+```
+
+### MATLAB Is Connected
+
+**Syntaxe :** connected = MATLAB Is Connected()
+
+**Description :** Renvoie 1 si une connexion MATLAB est active, 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();x = MATLAB Is Connected();Show( x );MATLAB Term();
+
+```
+
+### MATLAB JMP Name to MATLAB Name
+
+**Syntaxe :** MATLAB name = MATLAB JMP Name To MATLAB Name( JMP name )
+
+**Description :** Convertit un nom de variable MATLAB en un nom de variable Python à l&apos;aide des règles de nommage des variables MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );Show( MATLAB name );MATLAB Term();
+
+```
+
+### MATLAB Load
+
+**Syntaxe :** MATLAB Load( path )
+
+**Description :** Charge des variables dans MATLAB à partir d&apos;un fichier .mat et renvoie les variables dans un tableau associatif JSL.
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+MATLAB Init();// if .mat file contained: x = 40; y = 'hello';vars = MATLAB Load( "path/to/.mat" );Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );MATLAB Term();
+
+```
+
+### MATLAB Send
+
+**Syntaxe :** MATLAB Send( name, &lt;MATLAB Name( name )&gt;, &lt;Named Arguments&gt; )
+
+**Description :** Envoie des données à MATLAB, où l&apos;argument name peut représenter l&apos;un des types de données JMP suivants : numérique, chaîne, matrice, liste, ou table de données.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();x = [1, 2, 3];MATLAB Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send( dt );Close( dt );MATLAB Submit( "x" );MATLAB Submit( "dt" );MATLAB Term();
+
+```
+
+### MATLAB Send File
+
+**Syntaxe :** MATLAB Send File( filename, &lt;MATLAB Name( name )&gt; )
+
+**Description :** Envoie un fichier de données à MATLAB, où l&apos;argument filename est une chaîne qui indique un chemin d&apos;accès vers le fichier à envoyer à MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );MATLAB Submit( "BigClass" );MATLAB Submit( "Baseball" );MATLAB Term();
+
+```
+
+### MATLAB Submit
+
+**Syntaxe :** MATLAB Submit( statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description :** Soumet les instructions à MATLAB. Les instructions peuvent être sous forme d&apos;une valeur de chaîne ou d&apos;une liste de valeurs de chaînes.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';a = 200;]\" );getStr = MATLAB Get( str );getNum = MATLAB Get( a );Show( getStr, getNum );MATLAB Term();
+
+```
+
+### MATLAB Submit File
+
+**Syntaxe :** MATLAB Submit File( path, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description :** Soumet les instructions à MATLAB au moyen d&apos;un fichier pointé par l&apos;argument path.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB Submit File( "file containing MATLAB source.m" );MATLAB Term();
+
+```
+
+### MATLAB Term
+
+**Syntaxe :** MATLAB Term()
+
+**Description :** Termine les interfaces MATLAB.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = MATLAB Get( str );Show( getStr );MATLAB Term();
 
 ```
 
 ### Matrix
 
-**Syntaxe :** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
+**Syntaxe :** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
 
 **Description :** Construit une matrice n en fonction de m. Si vous spécifiez une liste de n listes n contenant chacune m valeurs de ligne, la matrice est formée par concaténation verticale des listes évaluées. Si vous spécifiez une seule liste de n éléments, la valeur de renvoi est un vecteur colonne n en fonction de 1. Si vous spécifiez deux arguments entiers, la valeur de renvoi est une matrice de zéros contenant n lignes et m colonnes.
 
@@ -16669,9 +10086,7 @@ Matrix( 2, 3 );
 
 ```jsl
 
-New Window( "Example",
-	Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) )
-);
+New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) ) );
 
 ```
 
@@ -16685,15 +10100,7 @@ New Window( "Example",
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatB = [1 2, 1 2, 1 2];
-exMatM1 = exMatA * exMatB;
-exMatM2 = Matrix Mult( exMatA, exMatB );
-exMatC = [1 2, 1 2];
-exMatM3 = Matrix Mult( exMatA, exMatB, exMatC );
-Show( exMatM1 );
-Show( exMatM2 );
-Show( exMatM3 );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatB = [1 2, 1 2, 1 2];exMatM1 = exMatA * exMatB;exMatM2 = Matrix Mult( exMatA, exMatB );exMatC = [1 2, 1 2];exMatM3 = Matrix Mult( exMatA, exMatB, exMatC );Show( exMatM1 );Show( exMatM2 );Show( exMatM3 );
 
 ```
 
@@ -16707,9 +10114,7 @@ Show( exMatM3 );
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatB = [1 2, 1 2, 1 2];
-exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatB = [1 2, 1 2, 1 2];exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 ```
 
@@ -16757,7 +10162,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ### Maximize
 
-**Syntaxe :** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntaxe :** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui maximisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction concave, Maximize pourrait trouver un maximum local au lieu du maximum global. Si cela pose problème, essayez plusieurs valeurs de départ. Maximize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Maximize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -16767,11 +10172,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```jsl
 
-/*Simple example*/ 
-x = 0;
-y = 0;
-maxf = Maximize( ((2 * x ^ 2 + 12 * x * y - y * 3)), {x, y} );
-Eval List( {x, y, maxf} );
+/*Simple example*/ x = 0;y = 0;maxf = Maximize( ((2 * x ^ 2 + 12 * x * y - y * 3)), {x, y} );Eval List( {x, y, maxf} );
 
 ```
 
@@ -16779,17 +10180,7 @@ Eval List( {x, y, maxf} );
 
 ```jsl
 
-/*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
-x = [3 4 5]; /* observed values*/ 
-n = 3;
-logDens = Expr(
-	(-n / 2) * Log( 2 * Pi() * sigSq )
-	-Summation( i = 1, 3, ((x[i] - mu) ^ 2) ) / (2 * sigSq)
-);
-mu = 3;
-sigSq = 1;/*initial values*/ 
-{maxReached, iters, gradient, hessian} =
-Maximize( logDens, {mu, sigSq( 0, . )}, <<details( both ) );
+/*Find the MLE for a Normal Distribution with a random sample of 3 observations*/x = [3 4 5]; /* observed values*/ n = 3;logDens = Expr(	(-n / 2) * Log( 2 * Pi() * sigSq ) - Summation( i = 1, 3, ((x[i] - mu) ^ 2) ) / (2 *	sigSq));mu = 3;sigSq = 1;/*initial values*/ {maxReached, iters, gradient, hessian} = Maximize(	logDens,	{mu, sigSq( 0, . )},	<<details( both ));
 
 ```
 
@@ -16797,17 +10188,7 @@ Maximize( logDens, {mu, sigSq( 0, . )}, <<details( both ) );
 
 ```jsl
 
-/*Simple example with all optional arguments*/ 
-x = 0;
-y = 0;
-{objVal, iters, gradient, hessian} =
-Maximize(
-	((2 * x ^ 2 + 12 * x * y - y * 3)),
-	{x( -1, 1 ), y( -1, 1 )},
-	<<maxIter( 200 ),
-	<<tolerance( 10 ^ -6 ),
-	<<details( both )
-);
+/*Simple example with all optional arguments*/ x = 0;y = 0;{objVal, iters, gradient, hessian} = Maximize(	((2 * x ^ 2 + 12 * x * y - y * 3)),	{x( -1, 1 ), y( -1, 1 )},	<<maxIter( 200 ),	<<tolerance( 10 ^ -6 ),	<<details( both ));
 
 ```
 
@@ -16877,70 +10258,7 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( "complex" );
-
-```
-
-### Mimic
-
-**Syntaxe :** mimic obj = Mimic(Box|PlatformRef)
-
-**Description :** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :age ) );
-outline = Report( obj )[Outline Box( 1 )];
-mc = Mimic( obj );
-mc << Mark( outline );
-mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -16960,7 +10278,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Minimize
 
-**Syntaxe :** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntaxe :** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui minimisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction convexe, Minimize pourrait trouver un minimum local au lieu du minimum global. Si cela pose problème, essayez plusieurs valeurs de départ. Minimize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Minimize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -16970,11 +10288,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
-/*Simple Example*/
-x = 0;
-y = 0;
-minFun = Minimize( (y * 3 - 2 * x ^ 2 - 12 * x * y), {x, y} );
-Eval List( {x, y, minFun} );
+/*Simple Example*/x = 0;y = 0;minFun = Minimize( (y * 3 - 2 * x ^ 2 - 12 * x * y), {x, y} );Eval List( {x, y, minFun} );
 
 ```
 
@@ -16982,21 +10296,7 @@ Eval List( {x, y, minFun} );
 
 ```jsl
 
-/*Nonlinear Sums of Squares Example*/
-x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
-y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
-sseExpr = Expr(
-	Summation( i = 1, 6, (y[i] - b1 * x[i] ^ b2) ^ 2 )
-);
-b1 = 1;
-b2 = 5;
-{objVal, iters, gradient, hessian} =
-Minimize(
-	sseExpr,
-	{b1, b2},
-	<<details( both ),
-	<<tolerance( 10 ^ -16 )
-);
+/*Nonlinear Sums of Squares Example*/x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];sseExpr = Expr(	Summation( i = 1, 6, (y[i] - b1 * x[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;{objVal, iters, gradient, hessian} = Minimize(	sseExpr,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -16 ));
 
 ```
 
@@ -17004,17 +10304,7 @@ Minimize(
 
 ```jsl
 
-/*Simple example with some optional arguments*/
-x = 0;
-y = 0;
-{objVal, iters, gradient, hessian} =
-Minimize(
-	((2 * x ^ 2 + 12 * x * y - y * 3)),
-	{x( -1, 1 ), y( -1, 1 )},
-	<<maxIter( 200 ),
-	<<tolerance( 10 ^ -6 ),
-	<<details( both )
-);
+/*Simple example with some optional arguments*/x = 0;y = 0;{objVal, iters, gradient, hessian} = Minimize(	((2 * x ^ 2 + 12 * x * y - y * 3)),	{x( -1, 1 ), y( -1, 1 )},	<<maxIter( 200 ),	<<tolerance( 10 ^ -6 ),	<<details( both ));
 
 ```
 
@@ -17022,47 +10312,7 @@ Minimize(
 
 ```jsl
 
-/*Example with gradient, hessian, and method(nr) options*/
-xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
-yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
-tmp3 = Expr(
-	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 )
-);
-b1 = 1;
-b2 = 5;
-Minimize(
-	tmp3,
-	{b1, b2},
-	<<details( both ),
-	<<tolerance( 10 ^ -10 ),
-	<<Method( nr ),
-	<<gradient(
-		{Summation(
-			i = 1,
-			6,
-			-2 * xx[i] ^ b2 * (yy[i] - b1 * xx[i] ^ b2)
-		), Summation(
-			i = 1,
-			6,
-			2 * (b1 * Ln( xx[i] ) * xx[i] ^ b2) * (b1 * xx[i] ^ b2 - yy
-			[i])
-		)}
-	),
-	<<hessian(
-		{{Summation( i = 1, 6, 2 * xx[i] ^ (2 * b2) ),
-		Summation(
-			i = 1,
-			6,
-			2 * Ln( xx[i] ) * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i]
-			)
-		)}, {Summation(
-			i = 1,
-			6,
-			2 * b1 * Ln( xx[i] ) ^ 2 * xx[i] ^ b2 * (2 * b1 * xx[i] ^
-			b2 - yy[i])
-		)}}
-	)
-);
+/*Example with gradient, hessian, and method(nr) options*/xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];tmp3 = Expr(	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;Minimize(	tmp3,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -10 ),	<<Method( nr ),	<<gradient(		{Summation( i = 1, 6, -2 * xx[i] ^ b2 * (yy[i] - b1 * xx[i] ^ b2) ),		Summation(			i = 1,			6,			2 * (b1 * Ln( xx[i] ) * xx[i] ^ b2) * (b1 * xx[i] ^ b2 - yy[i])		)}	),	<<hessian(		{{Summation( i = 1, 6, 2 * xx[i] ^ (2 * b2) ),		Summation( i = 1, 6, 2 * Ln( xx[i] ) * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i]) )},		{Summation(			i = 1,			6,			2 * b1 * Ln( xx[i] ) ^ 2 * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i])		)}}	));
 
 ```
 
@@ -17070,23 +10320,7 @@ Minimize(
 
 ```jsl
 
-/*Example with usNumericDeriv and method(sr1) options*/
-xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
-yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
-tmp3 = Expr(
-	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 )
-);
-b1 = 1;
-b2 = 5;
-{objValue, iter, gradient, hessian} =
-Minimize(
-	tmp3,
-	{b1, b2},
-	<<details( both ),
-	<<tolerance( 10 ^ -16 ),
-	<<Method( sr1 ),
-	<<useNumericDeriv( True )
-);
+/*Example with usNumericDeriv and method(sr1) options*/xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];tmp3 = Expr(	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;{objValue, iter, gradient, hessian} = Minimize(	tmp3,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -16 ),	<<Method( sr1 ),	<<useNumericDeriv( True ));
 
 ```
 
@@ -17162,7 +10396,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ### Modified Internal Rate of Return
 
-**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie en fonction du coût de l&apos;investissement et de l&apos;intérêt sur le réinvestissement des liquidités. Équivalent à la fonction MIRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -17170,8 +10404,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
-Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
@@ -17213,48 +10446,7 @@ Month( Today() );
 
 ```jsl
 
-New Window( "Example",
-	MouseBox(/*first sibling*/Text Box( "drag from here" ),
-		<<setDragText( "hello" ),
-		<<setTooltip( "source" ),
-		<<setDragEnable( 1 ),
-		<<setDragBegin(/* decide if a drag is allowed */
-			Function( {this, clickpt},
-				"magic text";/* 0.0 to prevent the drag.  1.0 is the same as 'this<<getDragText' */
-			)
-		),
-		<<setDragEnd(/* clean up after a drag finishes or cancels */
-			Function( {this, clickpt, how}, /* how=move,copy,ignore */
-				If(
-					how != "ignore" & !Is Empty( this << getDestBox )
-					 & this << getDestBox == this << sib, /* the getDestBox check makes sure the destination of the drag-and-drop was my sibling and not some other program beyond our control */
-					(this << child) <<
-					setText(
-						"done!" /* 'move' suggests clearing the source */
-					)
-				)
-			)
-		)
-	),
-	MouseBox(/*second sibling*/Text Box( "drag to here" ),
-		<<setTooltip( "destination" ),
-		<<setDropEnable( 1 ),
-		<<setDropTrack(/* decide if dropping is allowed, before the drop.  The getSourceBox check makes sure the source of the drag-and-drop is my sibling, and not some other program */
-			Function( {this, clickpt},
-				If(
-					!Is Empty( this << getSourceBox ) & this == (this
-					 << getSourceBox) << sib,
-					1, /*else*/0
-				)
-			)
-		),
-		<<setDropCommit(/* accept the drop */
-			Function( {this, clickpt, text},
-				(this << child) << setText( text )
-			)
-		)
-	)
-);
+New Window( "Example",	MouseBox(/*first sibling*/Text Box( "drag from here" ),		<<setDragText( "hello" ),		<<setTooltip( "source" ),		<<setDragEnable( 1 ),		<<setDragBegin(/* decide if a drag is allowed */			Function( {this, clickpt},				"magic text";/* 0.0 to prevent the drag.  1.0 is the same as 'this<<getDragText' */			)		),		<<setDragEnd(/* clean up after a drag finishes or cancels */			Function( {this, clickpt, how}, /* how=move,copy,ignore */				If(					how != "ignore" & !Is Empty( this << getDestBox ) & this << getDestBox					 == this << sib, /* the getDestBox check makes sure the destination of the drag-and-drop was my sibling and not some other program beyond our control */					(this << child) << setText(						"done!" /* 'move' suggests clearing the source */					)				)			)		)	),	MouseBox(/*second sibling*/Text Box( "drag to here" ),		<<setTooltip( "destination" ),		<<setDropEnable( 1 ),		<<setDropTrack(/* decide if dropping is allowed, before the drop.  The getSourceBox check makes sure the source of the drag-and-drop is my sibling, and not some other program */			Function( {this, clickpt},				If( !Is Empty( this << getSourceBox ) & this == (this << getSourceBox) << sib,					1, /*else*/0				)			)		),		<<setDropCommit(/* accept the drop */Function( {this, clickpt, text},				(this << child) << setText( text )			)		)	));
 
 ```
 
@@ -17268,18 +10460,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	exx = 20;
-	exy = 50;,
-	Graph Box(
-		Frame Size( 200, 200 ),
-		Mousetrap(
-			exx = x;
-			exy = y;
-		);
-		Circle( {0, 0}, Sqrt( exx * exx + exy * exy ) );
-	)
-);
+New Window( "Example",	exx = 20;	exy = 50;,	Graph Box(		Frame Size( 200, 200 ),		Mousetrap(			exx = x;			exy = y;		);		Circle( {0, 0}, Sqrt( exx * exx + exy * exy ) );	));
 
 ```
 
@@ -17293,17 +10474,7 @@ New Window( "Example",
 
 ```jsl
 
-Delete Directory( "$TEMP/subB" );
-Delete Directory( "$TEMP/Loss Function Templates" );
-rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
-Create Directory( "$TEMP/subB" );
-rc1 = Move Directory( "$TEMP/Loss Function Templates", "$TEMP/subB" );
-rc2 = Directory Exists( "$TEMP/Loss Function Templates" );
-rc3 = Directory Exists( "$TEMP/subB" );
-rc4 = Delete Directory( "$TEMP/subB" );
-rc5 = Directory Exists( "$TEMP/subB" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+Delete Directory( "$TEMP/subB" );Delete Directory( "$TEMP/Loss Function Templates" );rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );Create Directory( "$TEMP/subB" );rc1 = Move Directory( "$TEMP/Loss Function Templates", "$TEMP/subB" );rc2 = Directory Exists( "$TEMP/Loss Function Templates" );rc3 = Directory Exists( "$TEMP/subB" );rc4 = Delete Directory( "$TEMP/subB" );rc5 = Directory Exists( "$TEMP/subB" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -17317,20 +10488,7 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-If( File Exists( "$TEMP/y.jmp" ),
-	Delete File( "$TEMP/y.jmp" )
-);
-rc0 = Copy File(
-	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
-	"$TEMP/x.jmp"
-);
-rc1 = Move File( "$TEMP/x.jmp", "$TEMP/y.jmp" );
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/y.jmp" );
-rc4 = Delete File( "$TEMP/y.jmp" );
-rc5 = File Exists( "$TEMP/y.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+If( File Exists( "$TEMP/y.jmp" ),	Delete File( "$TEMP/y.jmp" ));rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = Move File( "$TEMP/x.jmp", "$TEMP/y.jmp" );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/y.jmp" );rc4 = Delete File( "$TEMP/y.jmp" );rc5 = File Exists( "$TEMP/y.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -17346,12 +10504,7 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-report = dt << Run Script( "Bivariate" );
-                              
-project = New Project();
-                              
-Move to Project( destination( project ), windows( {report} ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );report = dt << Run Script( "Bivariate" );                              project = New Project();                              Move to Project( destination( project ), windows( {report} ) );
 
 ```
 
@@ -17359,9 +10512,7 @@ Move to Project( destination( project ), windows( {report} ) );
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-Move to Project( Source( project ) );
-project << Close Window();
+project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );Move to Project( Source( project ) );project << Close Window();
 
 ```
 
@@ -17375,12 +10526,7 @@ project << Close Window();
 
 ```jsl
 
-Eval List(
-	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
-	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),
-	Moving Average( [1 2 1 2 . 4 9 9 9 9 9], 1, 1, 1, 1 ),
-	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0.5 )}
-);
+Eval List(	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0, 2, 2 ),	Moving Average( [1 2 1 2 . 4 9 9 9 9 9], 1, 1, 1, 1 ),	Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 0.5 )});
 
 ```
 
@@ -17396,12 +10542,7 @@ Eval List(
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
-mfi << Set Name Filter( "*.txt" );
-mfi << Set Name Enable( 1 );
-tables = mfi << Import Data();
+mfi = Multiple File Import();mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );mfi << Set Name Filter( "*.txt" );mfi << Set Name Enable( 1 );tables = mfi << Import Data();
 
 ```
 
@@ -17409,14 +10550,7 @@ tables = mfi << Import Data();
 
 ```jsl
 
-// use the save-script-to-script-window button 
-// in the MFI dialog to see more messages
-// for filtering files and controlling the import
-Multiple File Import(
-	<<Set Folder( "$DESKTOP" ),
-	<<Set Name Filter( "*.csv;" ),
-	<<Set Name Enable( 1 )
-) << Create Window;
+// use the save-script-to-script-window button // in the MFI dialog to see more messages// for filtering files and controlling the importMultiple File Import(	<<Set Folder( "$DESKTOP" ),	<<Set Name Filter( "*.csv;" ),	<<Set Name Enable( 1 )) << Create Window;
 
 ```
 
@@ -17444,9 +10578,7 @@ Multiple File Import(
 
 ```jsl
 
-ex = 3;
-ex *= 2;
-ex;
+ex = 3;ex *= 2;ex;
 
 ```
 
@@ -17460,24 +10592,7 @@ ex;
 
 ```jsl
 
-mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
-. -0.687720061441453 0.29665732536624 -1.94898001941576,
--0.0425472526673373 0.463229145080277 0.635619352779951 .];
-cov = Covariance( mat, <<"Pairwise"/*, <<"shrink"*/ );
-colMean = V Mean( mat );
-colMin = V Min( mat );
-colMax = V Max( mat );
-For( it = 1, it <= N Row( mat ), it++,
-	mat[it, 0] =
-	Multivariate Normal Impute(
-		mat[it, 0],
-		colMean,
-		cov,
-		colMin,
-		colMax
-	)`
-);
-Print( mat );
+mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,. -0.687720061441453 0.29665732536624 -1.94898001941576,-0.0425472526673373 0.463229145080277 0.635619352779951 .];cov = Covariance( mat, <<"Pairwise"/*, <<"shrink"*/ );colMean = V Mean( mat );colMin = V Min( mat );colMax = V Max( mat );For( it = 1, it <= N Row( mat ), it++,	mat[it, 0] = Multivariate Normal Impute( mat[it, 0], colMean, cov, colMin, colMax )`);Print( mat );
 
 ```
 
@@ -17491,10 +10606,7 @@ Print( mat );
 
 ```jsl
 
-Eval List(
-	{Munger( "over there", 1, "t", "" ),
-	Munger( "17 June 2000", 4, 4, "March" )}
-);
+Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
 
@@ -17524,8 +10636,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated N Arg Expr() equivalent
-N Arg( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated N Arg Expr() equivalentN Arg( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -17533,8 +10644,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// Deprecated
-N Arg Expr( Sum( a, b, c ) );
+// DeprecatedN Arg Expr( Sum( a, b, c ) );
 
 ```
 
@@ -17608,10 +10718,7 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box( Button Box( "a" ), Button Box( "b" ) )
-);
-N Items( hlist );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );N Items( hlist );
 
 ```
 
@@ -17669,8 +10776,7 @@ N Rows( [11 22, 33 44] );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-N Table();
+Open( "$SAMPLE_DATA/Big Class.jmp" );N Table();
 
 ```
 
@@ -17678,14 +10784,7 @@ N Table();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Open( "$SAMPLE_DATA/Solubility.jmp" );
-d = {};
-For( i = 1, i <= N Table(), i++,
-	d[i] = Data Table( i ) << GetName
-);
-d;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Open( "$SAMPLE_DATA/Solubility.jmp" );d = {};For( i = 1, i <= N Table(), i++,	d[i] = Data Table( i ) << GetName);d;
 
 ```
 
@@ -17699,9 +10798,7 @@ d;
 
 ```jsl
 
-Name( "taxable income(2011)" ) = 456000;
-tax = .25;
-Print( tax * Name( "taxable income(2011)" ) );
+Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable income(2011)" ) );
 
 ```
 
@@ -17715,8 +10812,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ```jsl
 
-ex = Expr( 1 + 2 );
-Eval List( {ex, Name Expr( ex )} );
+ex = Expr( 1 + 2 );Eval List( {ex, Name Expr( ex )} );
 
 ```
 
@@ -17730,8 +10826,7 @@ Eval List( {ex, Name Expr( ex )} );
 
 ```jsl
 
-/* Variable x will be stored in the Here: namespace by default */x = 1;
-Show( x );
+/* Variable x will be stored in the Here: namespace by default */x = 1;Show( x );
 
 ```
 
@@ -17745,35 +10840,7 @@ Show( x );
 
 ```jsl
 
-New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-ns = Namespace( "complex" );
-Show( ns );
-ns << Delete;
+New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});ns = Namespace( "complex" );Show( ns );ns << Delete;
 
 ```
 
@@ -17787,35 +10854,7 @@ ns << Delete;
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-nsexists = Namespace Exists( ns );
-Show( nsexists );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});nsexists = Namespace Exists( ns );Show( nsexists );ns << Delete;
 
 ```
 
@@ -17843,55 +10882,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ```jsl
 
-exnbdp = 0.5;
-exnbdn = 10;
-New Window( "Example: Neg Binomial Distribution",
-	exnbdy = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( exnbdk = 0, exnbdk < 100, exnbdk++,
-			H Line(
-				exnbdk,
-				exnbdk + 1,
-				Neg Binomial Distribution(
-					exnbdp,
-					Round( exnbdn ),
-					exnbdk
-				)
-			);
-			V Line(
-				exnbdk + 1,
-				Neg Binomial Distribution(
-					exnbdp,
-					Round( exnbdn ),
-					exnbdk
-				),
-				Neg Binomial Distribution(
-					exnbdp,
-					Round( exnbdn ),
-					exnbdk + 1
-				)
-			);
-		);
-		Text(
-			{30, 0.07},
-			"n=",
-			Round( exnbdn ),
-			" p=",
-			Round( exnbdp, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, exnbdp, exnbdy << reshow ),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box( 1, 20, exnbdn, exnbdy << reshow ),
-		Text Box( " n" )
-	)
-);
+exnbdp = 0.5;exnbdn = 10;New Window( "Example: Neg Binomial Distribution",	exnbdy = Graph Box(		Y Scale( 0, 1 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( exnbdk = 0, exnbdk < 100, exnbdk++,			H Line(				exnbdk,				exnbdk + 1,				Neg Binomial Distribution( exnbdp, Round( exnbdn ), exnbdk )			);			V Line(				exnbdk + 1,				Neg Binomial Distribution( exnbdp, Round( exnbdn ), exnbdk ),				Neg Binomial Distribution( exnbdp, Round( exnbdn ), exnbdk + 1 )			);		);		Text( {30, 0.07}, "n=", Round( exnbdn ), " p=", Round( exnbdp, 2 ) );	),	H List Box( Slider Box( 0, 1, exnbdp, exnbdy << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( 1, 20, exnbdn, exnbdy << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -17905,38 +10896,7 @@ New Window( "Example: Neg Binomial Distribution",
 
 ```jsl
 
-exnbpp = 0.5;
-exnbpn = 10;
-New Window( "Example: Neg Binomial Probability",
-	exnbpy = Graph Box(
-		Y Scale( 0, 0.3 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( exnbpk = 0, exnbpk < 100, exnbpk++,
-			V Line(
-				exnbpk,
-				0,
-				Neg Binomial Probability( exnbpp, exnbpn, exnbpk )
-			)
-		);
-		Text(
-			{30, 0.27},
-			"n=",
-			Round( exnbpn ),
-			" p=",
-			Round( exnbpp, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, exnbpp, exnbpy << reshow ),
-		Text Box( " p" )
-	),
-	H List Box(
-		Slider Box( 0, 40, exnbpn, exnbpy << reshow ),
-		Text Box( " n" )
-	)
-);
+exnbpp = 0.5;exnbpn = 10;New Window( "Example: Neg Binomial Probability",	exnbpy = Graph Box(		Y Scale( 0, 0.3 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( exnbpk = 0, exnbpk < 100, exnbpk++,			V Line( exnbpk, 0, Neg Binomial Probability( exnbpp, exnbpn, exnbpk ) )		);		Text( {30, 0.27}, "n=", Round( exnbpn ), " p=", Round( exnbpp, 2 ) );	),	H List Box( Slider Box( 0, 1, exnbpp, exnbpy << reshow ), Text Box( " p" ) ),	H List Box( Slider Box( 0, 40, exnbpn, exnbpy << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -17950,38 +10910,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ```jsl
 
-lambda = 20;
-sigma = 2;
-New Window( "Example: Negative Binomial Distribution",
-	ppy = Graph Box(
-		Y Scale( 0, 1.01 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= 40, k++,
-			H Line(
-				k,
-				k + 1,
-				Negative Binomial Distribution( k, lambda, sigma )
-			);
-			V Line(
-				k + 1,
-				Negative Binomial Distribution( k, lambda, sigma ),
-				Negative Binomial Distribution( k + 1, lambda, sigma )
-			);
-		);
-		Text( {2, 0.95}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {2, 0.87}, "\!U03C3=", Round( sigma, 2 ) );
-	),
-	H List Box(
-		Slider Box( 3, 40, lambda, ppy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( .01, 5, sigma, ppy << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+lambda = 20;sigma = 2;New Window( "Example: Negative Binomial Distribution",	ppy = Graph Box(		Y Scale( 0, 1.01 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= 40, k++,			H Line( k, k + 1, Negative Binomial Distribution( k, lambda, sigma ) );			V Line(				k + 1,				Negative Binomial Distribution( k, lambda, sigma ),				Negative Binomial Distribution( k + 1, lambda, sigma )			);		);		Text( {2, 0.95}, "\!U03BB=", Round( lambda, 2 ) );		Text( {2, 0.87}, "\!U03C3=", Round( sigma, 2 ) );	),	H List Box( Slider Box( 3, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( .01, 5, sigma, ppy << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -17995,42 +10924,7 @@ New Window( "Example: Negative Binomial Distribution",
 
 ```jsl
 
-lambda = 5;
-sigma = 2;
-New Window( "Poisson and Negative Binomial",
-	clty = Graph Box(
-		Y Scale( 0, 0.3 ),
-		X Scale( -1, 20.5 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( x = 0, x <= 20, x++,
-			Pen Color( "red" );
-			V Line( x, 0, Poisson Probability( lambda, x ) );
-			Pen Color( "blue" );
-			V Line(
-				x + 0.35,
-				0,
-				Negative Binomial Probability( x, lambda, sigma )
-			);
-		);
-		Text(
-			{1, 0.25},
-			"\!U03BB=",
-			Round( lambda, 8 ),
-			" \!U03C3=",
-			Round( sigma, 8 )
-		);
-		Text( {0, 0.28}, "Red = Poisson, Blue = Negative Binomial" );
-	),
-	H List Box(
-		Slider Box( 3, 10, lambda, clty << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( .01, 5, sigma, clty << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+lambda = 5;sigma = 2;New Window( "Poisson and Negative Binomial",	clty = Graph Box(		Y Scale( 0, 0.3 ),		X Scale( -1, 20.5 ),		Pen Color( "red" ),		Pen Size( 2 );		For( x = 0, x <= 20, x++,			Pen Color( "red" );			V Line( x, 0, Poisson Probability( lambda, x ) );			Pen Color( "blue" );			V Line( x + 0.35, 0, Negative Binomial Probability( x, lambda, sigma ) );		);		Text( {1, 0.25}, "\!U03BB=", Round( lambda, 8 ), " \!U03C3=", Round( sigma, 8 ) );		Text( {0, 0.28}, "Red = Poisson, Blue = Negative Binomial" );	),	H List Box( Slider Box( 3, 10, lambda, clty << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( .01, 5, sigma, clty << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -18044,72 +10938,13 @@ New Window( "Poisson and Negative Binomial",
 
 ```jsl
 
-qexpl = 20;
-qexps = 2;
-qexpn = 40;
-qexpq = 0.5;
-New Window( "Example: Negative Binomial Quantile",
-	qexpy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,
-			H Line(
-				qexpk,
-				qexpk + 1,
-				Negative Binomial Distribution( qexpk, qexpl, qexps )
-			);
-			V Line(
-				qexpk + 1,
-				Negative Binomial Distribution( qexpk, qexpl, qexps ),
-				Negative Binomial Distribution(
-					qexpk + 1,
-					qexpl,
-					qexps
-				)
-			);
-		);
-		Pen Color( "blue" );
-		V Line(
-			Negative Binomial Quantile( qexpl, qexps, qexpq ),
-			0,
-			1
-		);
-		Text(
-			{1, 0.9},
-			" \!U03BB=",
-			Round( qexpl, 2 ),
-			" \!U03C3=",
-			Round( qexps, 2 )
-		);
-		Text(
-			{1, 0.8},
-			" q=",
-			Round( qexpq, 2 ),
-			" quantile=",
-			Round( Negative Binomial Quantile( qexpl, qexps, qexpq ) )
-		);
-	),
-	H List Box(
-		Slider Box( 3, 40, qexpl, qexpy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( .01, 5, qexps, qexpy << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 1, qexpq, qexpy << reshow ),
-		Text Box( " q" )
-	)
-);
+qexpl = 20;qexps = 2;qexpn = 40;qexpq = 0.5;New Window( "Example: Negative Binomial Quantile",	qexpy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,			H Line( qexpk, qexpk + 1, Negative Binomial Distribution( qexpk, qexpl, qexps ) );			V Line(				qexpk + 1,				Negative Binomial Distribution( qexpk, qexpl, qexps ),				Negative Binomial Distribution( qexpk + 1, qexpl, qexps )			);		);		Pen Color( "blue" );		V Line( Negative Binomial Quantile( qexpl, qexps, qexpq ), 0, 1 );		Text( {1, 0.9}, " \!U03BB=", Round( qexpl, 2 ), " \!U03C3=", Round( qexps, 2 ) );		Text(			{1, 0.8},			" q=",			Round( qexpq, 2 ),			" quantile=",			Round( Negative Binomial Quantile( qexpl, qexps, qexpq ) )		);	),	H List Box( Slider Box( 3, 40, qexpl, qexpy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( .01, 5, qexps, qexpy << reshow ), Text Box( " \!U03C3" ) ),	H List Box( Slider Box( 0, 1, qexpq, qexpy << reshow ), Text Box( " q" ) ));
 
 ```
 
 ### Net Present Value
 
-**Syntaxe :** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie la valeur actuelle nette d&apos;un investissement calculée en fonction d’un taux d’escompte et d’une série de débits (valeurs négatives) et de crédits (valeurs positives) futurs. L’argument values est une matrice unidimensionnelle. Équivalent à la fonction NPV de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -18117,8 +10952,7 @@ New Window( "Example: Negative Binomial Quantile",
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );
-Net Present Value( .05, -10000, 1000, 900, 9500 );
+Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -18132,12 +10966,7 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```jsl
 
-
-echo = [=> ];
-echo["a"] = 1;
-echo["b"] = JSON Literal( true );
-echo["c"] = 3.141559;
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
+echo = [=> ];echo["a"] = 1;echo["b"] = JSON Literal( true );echo["c"] = 3.141559;action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 ```
 
@@ -18151,18 +10980,7 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );
 
 ```
 
@@ -18176,26 +10994,7 @@ cas << Submit( action );
 
 ```jsl
 
-
-url = "http://myCasURL";
-cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
-
-```
-
-### New Clipboard
-
-**Syntaxe :** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
-
-**Description :** Creates a new Clipboard, either empty or with access to the OS clipboard.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-
-clp = New Clipboard( <<Get From OS );
-New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
-;
+url = "http://myCasURL";cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ```
 
@@ -18211,8 +11010,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "like name", Like( :name ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "like name", Like( :name ) );
 
 ```
 
@@ -18220,13 +11018,7 @@ New Column( "like name", Like( :name ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "example",
-	"Numeric",
-	"Continuous",
-	Width( 5 ),
-	<<Set Each Value( 100 )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
 ```
 
@@ -18240,17 +11032,7 @@ New Column( "example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-New Column by Text Matching(
-	Column( :Narrative Cause ),
-	Set Regex(
-		Library( "Words" ),
-		Library( "Time" ),
-		Library( "Units" )
-	),
-	Output Column Name( "Match Output" ),
-	Use Result( 1 )
-);
+Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );New Column by Text Matching(	Column( :Narrative Cause ),	Set Regex( Library( "Words" ), Library( "Time" ), Library( "Units" ) ),	Output Column Name( "Match Output" ),	Use Result( 1 ));
 
 ```
 
@@ -18266,13 +11048,7 @@ New Column by Text Matching(
 
 ```jsl
 
-myAdd = New Custom Function(
-	"custom",
-	"Add",
-	Function( {x, y = 1},
-		x + y - 1
-	)
-);
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
 
@@ -18280,18 +11056,7 @@ myAdd = New Custom Function(
 
 ```jsl
 
-/*Create a custom function that can be used as a format*/
-Add Custom Functions(
-	{New Custom Function(
-		"custom",
-		"User Defined Format Function",
-		Function( {inches},
-			Char( inches ) || " in"
-		),
-		<<Custom Format Category( "Custom" ), 
-
-	)}
-);
+/*Create a custom function that can be used as a format*/Add Custom Functions(	{New Custom Function(		"custom",		"User Defined Format Function",		Function( {inches},			Char( inches ) || " in"		),		<<Custom Format Category( "Custom" ), 	)});
 
 ```
 
@@ -18299,18 +11064,7 @@ Add Custom Functions(
 
 ```jsl
 
-/*Create a custom function that can be used as a transform*/
-Add Custom Functions(
-	{New Custom Function(
-		"custom",
-		"User Defined Transform Function",
-		Function( {inches},
-			inches * 2.54
-		),
-		<<Transform Category( "Custom" ), 
-
-	)}
-);
+/*Create a custom function that can be used as a transform*/Add Custom Functions(	{New Custom Function(		"custom",		"User Defined Transform Function",		Function( {inches},			inches * 2.54		),		<<Transform Category( "Custom" ), 	)});
 
 ```
 
@@ -18326,18 +11080,7 @@ Add Custom Functions(
 
 ```jsl
 
-
-// Create a data connector from scratch
-dc = New Data Connector(
-	Type( "ODBC" ),
-	Database( "foo" ),
-	Server( "bar.example.com" )
-);
-Show( dc << Get( Database ) );  // Overridden database value "foo"
-Show( dc << Get( Driver ) );  // Default driver value . (missing)
-dc << Set( Database( "foo2" ), Driver( "SQL Server" ) );
-Show( dc << Get( Database ) );  // New database value "foo2"
-Show( dc << Get( Driver ) );  // New driver value "SQL Server"
+// Create a data connector from scratchdc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );Show( dc << Get( Database ) );  // Overridden database value "foo"Show( dc << Get( Driver ) );  // Default driver value . (missing)dc << Set( Database( "foo2" ), Driver( "SQL Server" ) );Show( dc << Get( Database ) );  // New database value "foo2"Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```
 
@@ -18345,17 +11088,7 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 
 ```jsl
 
-
-// Launch Query Builder from a SQL Server data source
-dc = New Data Connector(
-	ID( "com.jmp.sql_server" ), 
-    // All these example values need to be replaced with real ones
-	Server( "database.example.com" ),
-	Database( "MainDatabase" ),
-	User( "username" ),
-	Password( "password" )
-);
-New SQL Query( Connection( dc ) ) << Modify;
+// Launch Query Builder from a SQL Server data sourcedc = New Data Connector(	ID( "com.jmp.sql_server" ),     // All these example values need to be replaced with real ones	Server( "database.example.com" ),	Database( "MainDatabase" ),	User( "username" ),	Password( "password" ));New SQL Query( Connection( dc ) ) << Modify;
 
 ```
 
@@ -18369,43 +11102,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ```jsl
 
-
-nx = 20; // data is this size
-ny = 15;
-data = J( ny, nx, Random Normal() ); // ny=rows, nx=cols
-// create a magnified matrix for seeing each value
-magnify = 10;
-big data = J( N Rows( data ) * magnify, N Cols( data ) * magnify );
-big data = Transform Each( {z, {row, col}}, big data, 
-	// and filling each value with one from the small matrix
-	data[Floor( (row - 1) / magnify ) + 1, Floor( (col - 1) / magnify )
-	 + 1]
-);
-New Window( "small and big",
-	Lineup Box( N Col( 3 ),
-		New Heat Image(
-			data,
-			gradient(
-				{Color Theme( "Blue To Gray To Orange" ),
-				Scale Type( "Standard Deviation" )}
-			)
-		),
-		New Heat Image(
-			big data,
-			gradient(
-				{Color Theme( "Blue To Gray To Orange" ),
-				Scale Type( "Standard Deviation" )}
-			)
-		),
-		New Heat Image(
-			Abs( big data ),
-			gradient(
-				{Color Theme( "White to Black" ), Scale Values( [0 2] ),
-				Reverse Gradient( 1 )}
-			)
-		)
-	)
-);
+nx = 20; // data is this sizeny = 15;data = J( ny, nx, Random Normal() ); // ny=rows, nx=cols// create a magnified matrix for seeing each valuemagnify = 10;big data = J( N Rows( data ) * magnify, N Cols( data ) * magnify );big data = Transform Each( {z, {row, col}}, big data, 	// and filling each value with one from the small matrix	data[Floor( (row - 1) / magnify ) + 1, Floor( (col - 1) / magnify ) + 1]);New Window( "small and big",	Lineup Box( N Col( 3 ),		New Heat Image(			data,			gradient(				{Color Theme( "Blue To Gray To Orange" ), Scale Type( "Standard Deviation" )}			)		),		New Heat Image(			big data,			gradient(				{Color Theme( "Blue To Gray To Orange" ), Scale Type( "Standard Deviation" )}			)		),		New Heat Image(			Abs( big data ),			gradient(				{Color Theme( "White to Black" ), Scale Values( [0 2] ),				Reverse Gradient( 1 )}			)		)	));
 
 ```
 
@@ -18419,62 +11116,13 @@ New Window( "small and big",
 
 ```jsl
 
-
-getSentiment = Function( {text},
-	{Default Local},
-	fields = Associative Array();
-	fields["text"] = text;
-	s = New HTTP Request(
-		URL( "http://text-processing.com/api/sentiment/" ),
-		Method( "POST" ),
-		Form( Fields( fields ) ),
-		Headers( {"Accept: application/json"} )
-	) << Send;
-	sAsList = Parse JSON( s );
-	retval = Associative Array();
-	retval["pos"] = sAsList["probability"]["pos"];
-	retval["neg"] = sAsList["probability"]["neg"];
-	retval["neutral"] = sAsList["probability"]["neutral"];
-	retval["label"] = sAsList["label"];
-	retval;
-);
-                         
-addSentimentColumns = Function( {dt, colname, bLabel, bValues},
-	{Default Local},
-	col = Column( dt, colname );
-	colLabel = "Sentiment_Label(" || colname || ")";
-	colValPos = "Sentiment_Pos(" || colname || ")";
-	colValNeg = "Sentiment_Neg(" || colname || ")";
-	colValNeutral = "Sentiment_Neutral(" || colname || ")";
-	If( bLabel,
-		dt << New Column( colLabel, Character )
-	);
-	If( bValues,
-		dt << New Column( colValPos, Numeric );
-		dt << New Column( colValNeg, Numeric );
-		dt << New Column( colValNeutral, Numeric );
-	);
-	For( i = 1, i <= N Rows( dt ), i++,
-		sentiment = getSentiment( col[i] );
-		If( bLabel,
-			Column( dt, colLabel )[i] = sentiment["label"]
-		);
-		If( bValues,
-			Column( dt, colValPos )[i] = sentiment["pos"];
-			Column( dt, colValNeg )[i] = sentiment["neg"];
-			Column( dt, colValNeutral )[i] = sentiment["neutral"];
-		);
-	);
-);
-                         
-dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );
-addSentimentColumns( dt2, "Name", 1, 1 );
+getSentiment = Function( {text},	{Default Local},	fields = Associative Array();	fields["text"] = text;	s = New HTTP Request(		URL( "http://text-processing.com/api/sentiment/" ),		Method( "POST" ),		Form( Fields( fields ) ),		Headers( {"Accept: application/json"} )	) << Send;	sAsList = Parse JSON( s );	retval = Associative Array();	retval["pos"] = sAsList["probability"]["pos"];	retval["neg"] = sAsList["probability"]["neg"];	retval["neutral"] = sAsList["probability"]["neutral"];	retval["label"] = sAsList["label"];	retval;);                         addSentimentColumns = Function( {dt, colname, bLabel, bValues},	{Default Local},	col = Column( dt, colname );	colLabel = "Sentiment_Label(" || colname || ")";	colValPos = "Sentiment_Pos(" || colname || ")";	colValNeg = "Sentiment_Neg(" || colname || ")";	colValNeutral = "Sentiment_Neutral(" || colname || ")";	If( bLabel,		dt << New Column( colLabel, Character )	);	If( bValues,		dt << New Column( colValPos, Numeric );		dt << New Column( colValNeg, Numeric );		dt << New Column( colValNeutral, Numeric );	);	For( i = 1, i <= N Rows( dt ), i++,		sentiment = getSentiment( col[i] );		If( bLabel,			Column( dt, colLabel )[i] = sentiment["label"]		);		If( bValues,			Column( dt, colValPos )[i] = sentiment["pos"];			Column( dt, colValNeg )[i] = sentiment["neg"];			Column( dt, colValNeutral )[i] = sentiment["neutral"];		);	););                         dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```
 
 ### New Image
 
-**Syntaxe :** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntaxe :** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Description :** Renvoie une nouvelle image éditable ultérieurement à l’aide des commandes JSL. Si le chemin spécifié pointe vers un fichier image existant, ce fichier doit être de type .JPG, .PNG, .GIF, .BMP ou .TIF.
 
@@ -18484,8 +11132,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```jsl
 
-image = New Image( "$SAMPLE_IMAGES/windmap.png" );
-New Window( "new image", image );
+image = New Image( "$SAMPLE_IMAGES/windmap.png" );New Window( "new image", image );
 
 ```
 
@@ -18493,9 +11140,7 @@ New Window( "new image", image );
 
 ```jsl
 
-pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
-image2 = New Image( pic );
-New Window( "new image", image2 );
+pic = Open( "$SAMPLE_IMAGES/windmap.png", png );image2 = New Image( pic );New Window( "new image", image2 );
 
 ```
 
@@ -18503,15 +11148,7 @@ New Window( "new image", image2 );
 
 ```jsl
 
-image3 = New Image();
-mat = J( 256, 256 );
-For( y = 0, y < 256, y++,
-	For( x = 0, x < 256, x++,
-		mat[y * 256 + x] = RGB Color( y / 255.0, 0.0, x / 255.0 )
-	)
-);
-image3 << Set Pixels( mat );
-New Window( "image", image3 );
+image3 = New Image();mat = J( 256, 256 );For( y = 0, y < 256, y++,	For( x = 0, x < 256, x++,		mat[y * 256 + x] = RGB Color( y / 255.0, 0.0, x / 255.0 )	));image3 << Set Pixels( mat );New Window( "image", image3 );
 
 ```
 
@@ -18522,6 +11159,22 @@ New Window( "image", image3 );
 **Description :** Crée une nouvelle instance de client IP21 qui peut être utilisée pour importer les données depuis un serveur AspenTech IP.21.
 
 **JMP Version ajoutée :** 19
+
+**Exemple 1**
+
+```jsl
+
+/* Import actual (raw) data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Actual" ));importer << Run;
+
+```
+
+**Exemple 2**
+
+```jsl
+
+/* Import interpolated data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Interpolated" ),	Period( Minute( 30 ) ), 	/* Every half hour */);importer << Run;
+
+```
 
 ### New JMP Live
 
@@ -18551,10 +11204,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```jsl
 
-jmplive = New JMP Live(
-	Connection( "MyJMPLive" ),
-	Prompt( If Needed )
-);
+jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```
 
@@ -18580,28 +11230,7 @@ jmplive = New JMP Live(
 
 ```jsl
 
-bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dist = bc << Run Script( "Distribution" );
-
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection <<
-Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Sample Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	dist,
-	Title( "Distribution Web Report" ),
-	Description(
-		"This report was created with the sample found in the Scripting Index"
-	),
-	Publish Data( 1 ),
-	Optimization( "Interactivity" )
-);
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+bc = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = bc << Run Script( "Distribution" );liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Sample Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	dist,	Title( "Distribution Web Report" ),	Description( "This report was created with the sample found in the Scripting Index" ),	Publish Data( 1 ),	Optimization( "Interactivity" ));jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
@@ -18609,23 +11238,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection <<
-Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Data Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content(
-	Data( "$SAMPLE_DATA/Big Class.jmp" ),
-	Title( "Big Class Sample Table" ),
-	Description(
-		"This data table was published with the sample found in the Scripting Index"
-	)
-);
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Data Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content(	Data( "$SAMPLE_DATA/Big Class.jmp" ),	Title( "Big Class Sample Table" ),	Description(		"This data table was published with the sample found in the Scripting Index"	));jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
@@ -18633,17 +11246,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection <<
-Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Map Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-content = New JMP Live Content( Map( "$SAMPLE_DATA/S4-XY.jmp" ) );
-
-jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Map Content" ));folder = jmpliveresult << As Scriptable;content = New JMP Live Content( Map( "$SAMPLE_DATA/S4-XY.jmp" ) );jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```
 
@@ -18651,22 +11254,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection <<
-Create Folder(
-	Parent Folder( "~" ),
-	Title( "Folder for Image Content" )
-);
-folder = jmpliveresult << As Scriptable;
-
-imageContent = New JMP Live Content(
-	Image( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),
-	Title( "Rhino Footprint" ),
-	Description( "An image of a rhino footprint from the Sample Data" )
-);
-
-jmpliveresult = liveconnection <<
-Publish( imageContent, Folder( folder ) );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Folder for Image Content" ));folder = jmpliveresult << As Scriptable;imageContent = New JMP Live Content(	Image( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),	Title( "Rhino Footprint" ),	Description( "An image of a rhino footprint from the Sample Data" ));jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
 
 ```
 
@@ -18680,31 +11268,7 @@ Publish( imageContent, Folder( folder ) );
 
 ```jsl
 
-
-requests = New Multi HTTP Request();
-requests << Add(
-	New HTTP Request(
-		Method( "GET" ),
-		URL(
-			"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso"
-		)
-	)
-);
-
-requests << Add(
-	New HTTP Request(
-		Method( "GET" ),
-		URL(
-			"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso"
-		)
-	)
-);
-
-data = requests << Download( "show progress", "detailed" );
-http_requests = requests << Get Requests();
-For( i = 1, i <= N Items( http_requests ), i++,
-	Show( http_requests[i] << Get Mime Type() )
-);
+requests = New Multi HTTP Request();requests << Add(	New HTTP Request(		Method( "GET" ),		URL(			"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso"		)	));requests << Add(	New HTTP Request(		Method( "GET" ),		URL(			"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso"		)	));data = requests << Download( "show progress", "detailed" );http_requests = requests << Get Requests();For( i = 1, i <= N Items( http_requests ), i++,	Show( http_requests[i] << Get Mime Type() ));
 
 ```
 
@@ -18718,34 +11282,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-Show( ns );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});Show( ns );ns << Delete;
 
 ```
 
@@ -18759,45 +11296,7 @@ ns << Delete;
 
 ```jsl
 
-
-/*
-https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
-*/
-
-/*
-Note: the "code" parameter is set automatically after the redirect occurs
-*/
-auth_url =
-"https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
-token_url =
-"https://login.microsoftonline.com/common/oauth2/v2.0/token";
-redirect_url = "http://localhost/myapp/";
-client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
-client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
-scope = "openid offline_access https://graph.microsoft.com/user.read";
-auth_fields = [=> ];
-token_fields = [=> ];
-                                          
-oauth2 = New OAuth2();
-oauth2 << Grant Type( "Authorization Code" );
-oauth2 << Auth URL( auth_url );
-oauth2 << Token URL( token_url );
-oauth2 << Redirect URL( redirect_url );
-                                          
-auth_fields["scope"] = scope;
-auth_fields["client_id"] = client_id;
-token_fields["client_secret"] = client_secret;
-                                          
-oauth2 << Auth Fields( auth_fields );
-oauth2 << Token Fields( token_fields );
-                                          
-auth_header = oauth2 << Get Auth Header();
-request = New HTTP Request(
-	URL( "https://graph.microsoft.com/v1.0/me" ),
-	Headers( {auth_header} ),
-	Method( "GET" )
-);
-data = request << Send;
+/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";redirect_url = "http://localhost/myapp/";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";client_secret = "JqQX2PNo9bpM0uEihUPzyrh";scope = "openid offline_access https://graph.microsoft.com/user.read";auth_fields = [=> ];token_fields = [=> ];                                          oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );                                          auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;                                          oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );                                          auth_header = oauth2 << Get Auth Header();request = New HTTP Request(	URL( "https://graph.microsoft.com/v1.0/me" ),	Headers( {auth_header} ),	Method( "GET" ));data = request << Send;
 
 ```
 
@@ -18811,13 +11310,7 @@ data = request << Send;
 
 ```jsl
 
-token = New OAuth2 Token(
-	Account( "jmpgoogldev@gmail.com" ),
-	Client ID( "test" ),
-	Client Secret( "test 2" ),
-	Refresh Token( "" ),
-	Token URL( "" )
-);
+token = New OAuth2 Token(	Account( "jmpgoogldev@gmail.com" ),	Client ID( "test" ),	Client Secret( "test 2" ),	Refresh Token( "" ),	Token URL( "" ));
 
 ```
 
@@ -18831,51 +11324,7 @@ token = New OAuth2 Token(
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -18891,27 +11340,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
-/* Import raw data */
-client = New PI Client(
-	URL( "https://myserver.com/piwebapi" ),
-	Authentication Method( "basic" ),
-	Username( "myuserid" ),
-	Password( "mypassword" )
-);
-importer = client << Importer(
-	AF Path(
-		"\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A"
-	), /* Asset Framework path */
-	Series( "raw" ),
-	Start Time( "*-1d" ), /* PI time string */
-	End Time( "*" ),      /* PI time string */
-	Boundary Type( "inside" ), /* choices are "inside", "outside", "interpolated" */
-	UTC( 0 ), /* whether specified start/end times are based on UTC - default is zero */
-	Max Count( 5000 ), /* Max. number of values to fetch - default is 5000 */
-	Filter( "" ), /* Optional filter */
-	Retrieve Attribute Status( 0 ) /* Whether to retrieve value attributes (i.e. "good", "questionable", "substituted", "annotated") - default is 0 */
-);
-importer << Run;
+/* Import raw data */client = New PI Client(	URL( "https://myserver.com/piwebapi" ),	Authentication Method( "basic" ),	Username( "myuserid" ),	Password( "mypassword" ));importer = client << Importer(	AF Path( "\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A" ), /* Asset Framework path */	Series( "raw" ),	Start Time( "*-1d" ), /* PI time string */	End Time( "*" ),      /* PI time string */	Boundary Type( "inside" ), /* choices are "inside", "outside", "interpolated" */	UTC( 0 ), /* whether specified start/end times are based on UTC - default is zero */	Max Count( 5000 ), /* Max. number of values to fetch - default is 5000 */	Filter( "" ), /* Optional filter */	Retrieve Attribute Status( 0 ) /* Whether to retrieve value attributes (i.e. "good", "questionable", "substituted", "annotated") - default is 0 */);importer << Run;
 
 ```
 
@@ -18919,22 +11348,7 @@ importer << Run;
 
 ```jsl
 
-/* Import plot data using Kerberos for authentication */
-client = New PI Client(
-	URL( "https://myserver.com/piwebapi" ),
-	Authentication Method( "kerberos" )
-);
-importer = client << Importer(
-	AF Path(
-		"\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A"
-	),
-	Series( "plot" ),
-	Start Time( "*-1d" ),
-	End Time( "*" ),
-	UTC( 0 ),
-	Intervals( 24 )
-); /* No of time intervals to fetch*/
-importer << Run;
+/* Import plot data using Kerberos for authentication */client = New PI Client(	URL( "https://myserver.com/piwebapi" ),	Authentication Method( "kerberos" ));importer = client << Importer(	AF Path( "\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A" ),	Series( "plot" ),	Start Time( "*-1d" ),	End Time( "*" ),	UTC( 0 ),	Intervals( 24 )); /* No of time intervals to fetch*/importer << Run;
 
 ```
 
@@ -18942,25 +11356,7 @@ importer << Run;
 
 ```jsl
 
-/* Import interpolated data from a server that does not require authentication */
-client = New PI Client(
-	URL( "https://myserver.com/piwebapi" ),
-	Authentication Method( "none" )
-);
-importer = client << Importer(
-	AF Path(
-		"\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A"
-	),
-	Series( "interpolated" ),
-	Start Time( "*-1d" ),
-	End Time( "*" ),
-	UTC( 0 ),
-	Sync Time Boundary Type( "inside" ),   /*  choices are "inside", "outside" */
-	Interval( "1h" ),            /* interval period */
-	Sync Time( "01JUL2021" ),    /* optional sync point - ie. intervals begin from this point */
-	Filter( "" )
-);
-importer << Run;
+/* Import interpolated data from a server that does not require authentication */client = New PI Client(	URL( "https://myserver.com/piwebapi" ),	Authentication Method( "none" ));importer = client << Importer(	AF Path( "\\myserver\PIData\Atlanta Data Center\Server Rack1\ION 6200 Power Meter1|I A" ),	Series( "interpolated" ),	Start Time( "*-1d" ),	End Time( "*" ),	UTC( 0 ),	Sync Time Boundary Type( "inside" ),   /*  choices are "inside", "outside" */	Interval( "1h" ),            /* interval period */	Sync Time( "01JUL2021" ),    /* optional sync point - ie. intervals begin from this point */	Filter( "" ));importer << Run;
 
 ```
 
@@ -18984,12 +11380,7 @@ project = New Project();
 
 ```jsl
 
-project = New Project(
-	Run Script(
-		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-		dt << Run Script( "Bivariate" );
-	)
-);
+project = New Project(	Run Script(		dt = Open( "$SAMPLE_DATA/Big Class.jmp" );		dt << Run Script( "Bivariate" );	));
 
 ```
 
@@ -18997,14 +11388,7 @@ project = New Project(
 
 ```jsl
 
-project = New Project(
-	Run Script(
-		Open( "$SAMPLE_DATA/Big Class.jmp" );
-		New Window( "Big Class - Bivariate of weight by height",
-			Bivariate( Y( :weight ), X( :height ) )
-		);
-	)
-);
+project = New Project(	Run Script(		Open( "$SAMPLE_DATA/Big Class.jmp" );		New Window( "Big Class - Bivariate of weight by height",			Bivariate( Y( :weight ), X( :height ) )		);	));
 
 ```
 
@@ -19012,18 +11396,7 @@ project = New Project(
 
 ```jsl
 
-project = New Project(
-	Set Bookmarks(
-		{File( "$SAMPLE_DATA/Animals.jmp" ),
-		File( "$SAMPLE_DATA/Big Class.jmp" )}
-	),
-	Run Script(
-		Open( "$SAMPLE_DATA/Big Class.jmp" );
-		New Window( "Big Class - Bivariate of weight by height",
-			Bivariate( Y( :weight ), X( :height ) )
-		);
-	)
-);
+project = New Project(	Set Bookmarks(		{File( "$SAMPLE_DATA/Animals.jmp" ), File( "$SAMPLE_DATA/Big Class.jmp" )}	),	Run Script(		Open( "$SAMPLE_DATA/Big Class.jmp" );		New Window( "Big Class - Bivariate of weight by height",			Bivariate( Y( :weight ), X( :height ) )		);	));
 
 ```
 
@@ -19031,32 +11404,7 @@ project = New Project(
 
 ```jsl
 
-project = New Project(
-	Run Script(
-		Open(
-			"$SAMPLE_SCRIPTS/demoCorr.jsl",
-			Set Window ID( "demoCorr" ),
-			Script
-		)
-	),
-	Set Layout(
-		H Splitter Box(
-			<<Set Sizes( {0.15, 0.85} ),
-			Tab Page Box(
-				Title( "Window List" ),
-				Window ID( "Windows" )
-			),
-			V Splitter Box(
-				<<Set Sizes( {0.7, 0.3} ),
-				Tab Page Box(
-					Title( "demoCorr" ),
-					Window ID( "demoCorr" )
-				),
-				Tab Page Box( Title( "Log" ), Window ID( "Log" ) )
-			)
-		)
-	)
-);
+project = New Project(	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),	Set Layout(		H Splitter Box(			<<Set Sizes( {0.15, 0.85} ),			Tab Page Box( Title( "Window List" ), Window ID( "Windows" ) ),			V Splitter Box(				<<Set Sizes( {0.7, 0.3} ),				Tab Page Box( Title( "demoCorr" ), Window ID( "demoCorr" ) ),				Tab Page Box( Title( "Log" ), Window ID( "Log" ) )			)		)	));
 
 ```
 
@@ -19070,12 +11418,7 @@ project = New Project(
 
 ```jsl
 
-
-obj = New SQL Query(
-	Connection( "ODBC:DSN=mydsn" ),
-	Select(),
-	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) )
-);
+obj = New SQL Query(	Connection( "ODBC:DSN=mydsn" ),	Select(),	From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ));
 
 ```
 
@@ -19089,16 +11432,7 @@ obj = New SQL Query(
 
 ```jsl
 
-New Table( "Little Class",
-	Add Rows( 3 ),
-	New Column( "name",
-		Character,
-		Nominal,
-		Set Values( {"KATIE", "LOUISE", "JANE"} )
-	),
-	New Column( "age", Nominal, Set Values( [12, 13, 13] ) ),
-	New Column( "weight", Continuous, Set Values( [95, 123, 74] ) )
-);
+New Table( "Little Class",	Add Rows( 3 ),	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),	New Column( "age", Nominal, Set Values( [12, 13, 13] ) ),	New Column( "weight", Continuous, Set Values( [95, 123, 74] ) ));
 
 ```
 
@@ -19112,34 +11446,7 @@ New Table( "Little Class",
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-webreport = New Web Report(
-	Add Report(
-		Distribution(
-			Continuous Distribution( Column( :weight ) ),
-			Nominal Distribution( Column( :age ) )
-		),
-		Title( "Distribution Web Report" ),
-		Description(
-			"This report was created with the sample found in the Scripting Index"
-		)
-	),
-	Add Report(
-		Bivariate(
-			Y( :weight ),
-			X( :height ),
-			Automatic Recalc( 1 ),
-			Fit Line( {Line Color( {213, 72, 87} )} ),
-			Local Data Filter( Add Filter( columns( :sex ) ) )
-		)
-	)
-);
-webreport << Index( Title( "Big Class Report" ) );
-file = webreport << Save( "$TEMP" );
-If( !Is Empty( file ),
-	Web( file )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );webreport = New Web Report(	Add Report(		Distribution(			Continuous Distribution( Column( :weight ) ),			Nominal Distribution( Column( :age ) )		),		Title( "Distribution Web Report" ),		Description( "This report was created with the sample found in the Scripting Index" )	),	Add Report(		Bivariate(			Y( :weight ),			X( :height ),			Automatic Recalc( 1 ),			Fit Line( {Line Color( {213, 72, 87} )} ),			Local Data Filter( Add Filter( columns( :sex ) ) )		)	));webreport << Index( Title( "Big Class Report" ) );file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
 
 ```
 
@@ -19155,26 +11462,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
-// Compare settings for toolbars and menus
-// Suppress AutoHide is Windows only
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-New Window( "Default - menu and toolbars", g );
-New Window( "Menu, no toolbars, suppress autohide",
-	Suppress AutoHide( 1 ),
-	Show Toolbars( 0 ),
-	g
-);
-New Window( "Toolbars, no menu", Show Menu( 0 ), g );
-New Window( "No menu, no toolbars",
-	Show Menu( 0 ),
-	Show Toolbars( 0 ),
-	g
-);
+// Compare settings for toolbars and menus// Suppress AutoHide is Windows onlyg = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););New Window( "Default - menu and toolbars", g );New Window( "Menu, no toolbars, suppress autohide",	Suppress AutoHide( 1 ),	Show Toolbars( 0 ),	g);New Window( "Toolbars, no menu", Show Menu( 0 ), g );New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 
 ```
 
@@ -19182,18 +11470,7 @@ New Window( "No menu, no toolbars",
 
 ```jsl
 
-
-ex = New Window( "Dialog example",
-	<<Type( "Dialog" ),
-	V List Box(
-		Panel Box( "Sample data dialog",
-			Button Box( "Open Sample Data",
-				Open( "$SAMPLE_DATA/Big Class.jmp" )
-			)
-		),
-		H List Box( Button Box( "Close", Try( ex << CloseWindow ) ) )
-	)
-);
+ex = New Window( "Dialog example",	<<Type( "Dialog" ),	V List Box(		Panel Box( "Sample data dialog",			Button Box( "Open Sample Data", Open( "$SAMPLE_DATA/Big Class.jmp" ) )		),		H List Box( Button Box( "Close", Try( ex << CloseWindow ) ) )	));
 
 ```
 
@@ -19201,37 +11478,7 @@ ex = New Window( "Dialog example",
 
 ```jsl
 
-
-ex = New Window( "Modal Dialog example",
-	<<Type( "Modal Dialog" ),
-	<<Return Result,
-	<<On Validate(
-		num = myEditBox << Get;
-		If( num >= 1 & num <= 100, // in range
-			myEditBox << Background Color( "Background" ); // this field does not need attention
-			1; //the number is good, validate
-		, // else out of range
-			myEditBox << Background Color( "Light Yellow" ); // this field needs attention
-			0; // the number is bad, do not validate
-		) // the result of this if(...) is the OnValidate( ) answer, 0 or 1
-		;
-	),
-	V List Box(
-		Text Box( "Enter a value between [1,100]:" ),
-		H List Box( myEditBox = Number Edit Box( 42 ) ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)
-);
-
-//  the Modal window must be closed before the following code runs
-
-If(
-	ex["button"] == 1 // not canceled
-, // then show the value
-	Write( ex["myEditBox"] ); // note: myEditBox is the name of the variable holding the text edit box
-, // else report no selection
-	Write( "CANCEL" ); // cancel button or red X was pressed
-);
+ex = New Window( "Modal Dialog example",	<<Type( "Modal Dialog" ),	<<Return Result,	<<On Validate(		num = myEditBox << Get;		If( num >= 1 & num <= 100, // in range			myEditBox << Background Color( "Background" ); // this field does not need attention			1; //the number is good, validate		, // else out of range			myEditBox << Background Color( "Light Yellow" ); // this field needs attention			0; // the number is bad, do not validate		) // the result of this if(...) is the OnValidate( ) answer, 0 or 1		;	),	V List Box(		Text Box( "Enter a value between [1,100]:" ),		H List Box( myEditBox = Number Edit Box( 42 ) ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	));//  the Modal window must be closed before the following code runsIf(	ex["button"] == 1 // not canceled, // then show the value	Write( ex["myEditBox"] ); // note: myEditBox is the name of the variable holding the text edit box, // else report no selection	Write( "CANCEL" ); // cancel button or red X was pressed);
 
 ```
 
@@ -19239,20 +11486,7 @@ If(
 
 ```jsl
 
-
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-w = New Window( "My Window's Title", <<WindowView( "Invisible" ), g );
-p = w << Get Picture();
-w << Close Window;
-psize = p << Size;
-New Window( "picture",
-	Outline Box( "picture size: " || Char( psize ), p )
-);
+g = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););w = New Window( "My Window's Title", <<WindowView( "Invisible" ), g );p = w << Get Picture();w << Close Window;psize = p << Size;New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```
 
@@ -19260,13 +11494,7 @@ New Window( "picture",
 
 ```jsl
 
-g = Graph Box(
-	Frame Size( 300, 300 ),
-	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-	Pen Color( "Blue" );
-	Line( [10 30 70], [88 22 44] );
-);
-New Window( "My Window's Title", g );
+g = Graph Box(	Frame Size( 300, 300 ),	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );	Pen Color( "Blue" );	Line( [10 30 70], [88 22 44] ););New Window( "My Window's Title", g );
 
 ```
 
@@ -19274,11 +11502,7 @@ New Window( "My Window's Title", g );
 
 ```jsl
 
-script = JSL Quote(Names Default To Here(1);
-dt=Open("$SAMPLE_DATA/Big Class.jmp");
-dt << Run Script("Bivariate");
-);
-ex = New Window( "Script example", <<Type( "Script" ), script );
+script = JSL Quote(Names Default To Here(1);dt=Open("$SAMPLE_DATA/Big Class.jmp");dt << Run Script("Bivariate"););ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```
 
@@ -19286,13 +11510,7 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```jsl
 
-pyscript = "\[import numpy as np
-a = np.arange(15).reshape(3, 5)]\";
-ex = New Window( "Script example",
-	<<Type( "Script" ),
-	<<Language( "Python" ),
-	pyscript
-);
+pyscript = "\[import numpy as npa = np.arange(15).reshape(3, 5)]\";ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
 
 ```
 
@@ -19320,20 +11538,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "blue" );
-		Normal Contour( 0.95, [40 40], [15 5], [0.5], Empty(), 0.1 );,
-		Normal Contour(
-			0.95,
-			[40 40, 60 50],
-			[15 5, 10 10],
-			[-0.9, -0.5],
-			Matrix( {RGB Color( {0.1, 0.9, 0.1} ), 3} ),
-			0.2
-		)
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "blue" );		Normal Contour( 0.95, [40 40], [15 5], [0.5], Empty(), 0.1 );,		Normal Contour(			0.95,			[40 40, 60 50],			[15 5, 10 10],			[-0.9, -0.5],			Matrix( {RGB Color( {0.1, 0.9, 0.1} ), 3} ),			0.2		)	));
 
 ```
 
@@ -19347,15 +11552,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example: Normal Density",
-	y = Graph Box(
-		Y Scale( 0, 0.45 ),
-		X Scale( -4, 4 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Normal Density( q ), q );
-	)
-);
+New Window( "Example: Normal Density",	y = Graph Box(		Y Scale( 0, 0.45 ),		X Scale( -4, 4 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Normal Density( q ), q );	));
 
 ```
 
@@ -19369,15 +11566,7 @@ New Window( "Example: Normal Density",
 
 ```jsl
 
-New Window( "Example: Normal Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -4, 4 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Normal Distribution( q ), q );
-	)
-);
+New Window( "Example: Normal Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( -4, 4 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Normal Distribution( q ), q );	));
 
 ```
 
@@ -19391,14 +11580,7 @@ New Window( "Example: Normal Distribution",
 
 ```jsl
 
-Normal Integrate(
-	J( 3, 1, 0 ),
-	Identity( 3 ),
-	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,
-	ex,
-	2,
-	5000
-);
+Normal Integrate(	J( 3, 1, 0 ),	Identity( 3 ),	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,	ex,	2,	5000);
 
 ```
 
@@ -19412,15 +11594,7 @@ Normal Integrate(
 
 ```jsl
 
-New Window( "Example: Normal Log CDistribution",
-	nlcdiy = Graph Box(
-		Y Scale( -10, 0.05 ),
-		X Scale( -4, 4 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Normal Log CDistribution( q ), q );
-	)
-);
+New Window( "Example: Normal Log CDistribution",	nlcdiy = Graph Box(		Y Scale( -10, 0.05 ),		X Scale( -4, 4 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Normal Log CDistribution( q ), q );	));
 
 ```
 
@@ -19434,15 +11608,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ```jsl
 
-New Window( "Example: Normal Log Density",
-	nldey = Graph Box(
-		Y Scale( -9, 0.05 ),
-		X Scale( -4, 4 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Normal Log Density( q ), q );
-	)
-);
+New Window( "Example: Normal Log Density",	nldey = Graph Box(		Y Scale( -9, 0.05 ),		X Scale( -4, 4 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Normal Log Density( q ), q );	));
 
 ```
 
@@ -19456,15 +11622,7 @@ New Window( "Example: Normal Log Density",
 
 ```jsl
 
-New Window( "Example: Normal Log Distribution",
-	nldiy = Graph Box(
-		Y Scale( -10, 0.05 ),
-		X Scale( -4, 4 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Normal Log Distribution( q ), q );
-	)
-);
+New Window( "Example: Normal Log Distribution",	nldiy = Graph Box(		Y Scale( -10, 0.05 ),		X Scale( -4, 4 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Normal Log Distribution( q ), q );	));
 
 ```
 
@@ -19478,61 +11636,7 @@ New Window( "Example: Normal Log Distribution",
 
 ```jsl
 
-mu1 = -2;
-mu2 = 2;
-sigma1 = 1;
-sigma2 = 4;
-p1 = .5;
-t1 = mu1 |/ mu2;
-t2 = sigma1 |/ sigma2;
-t3 = p1 |/ (1 - p1);
-New Window( "Univariate Normal Mixture Density",
-	clty = Graph Box(
-		Y Scale( 0, 0.4 ),
-		X Scale( -8, 8 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		t1 = mu1 |/ mu2;
-		t2 = sigma1 |/ sigma2;
-		t3 = p1 |/ (1 - p1);
-		Y Function(
-			Normal Mixture Density(
-				y,
-				mu1 |/ mu2,
-				sigma1 |/ sigma2,
-				p1 |/ (1 - p1)
-			),
-			y
-		);
-		Text( {-7, .37}, "Mean1=", Round( mu1, 2 ) );
-		Text( {-2, .37}, "Mean2=", Round( mu2, 2 ) );
-		Text( {-7, .34}, "SD1=", Round( sigma1, 2 ) );
-		Text( {-2, .34}, "SD2=", Round( sigma2, 2 ) );
-		Text( {-7, .31}, "P1=", Round( p1, 2 ) );
-		Text( {-2, .31}, "P2=", Round( 1 - p1, 2 ) );
-	),
-	H List Box(
-		Slider Box( -3, 3, mu1, clty << reshow ),
-		Text Box( " Mean 1" )
-	),
-	H List Box(
-		Slider Box( -3, 3, mu2, clty << reshow ),
-		Text Box( " Mean 2" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma1, clty << reshow ),
-		Text Box( " Std Dev 1" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma2, clty << reshow ),
-		Text Box( " Std Dev 2" )
-	),
-	H List Box(
-		Slider Box( 0, 1, p1, clty << reshow ),
-		Text Box( " P 1" )
-	), 
-
-);
+mu1 = -2;mu2 = 2;sigma1 = 1;sigma2 = 4;p1 = .5;t1 = mu1 |/ mu2;t2 = sigma1 |/ sigma2;t3 = p1 |/ (1 - p1);New Window( "Univariate Normal Mixture Density",	clty = Graph Box(		Y Scale( 0, 0.4 ),		X Scale( -8, 8 ),		Pen Color( "red" ),		Pen Size( 2 );		t1 = mu1 |/ mu2;		t2 = sigma1 |/ sigma2;		t3 = p1 |/ (1 - p1);		Y Function(			Normal Mixture Density( y, mu1 |/ mu2, sigma1 |/ sigma2, p1 |/ (1 - p1) ),			y		);		Text( {-7, .37}, "Mean1=", Round( mu1, 2 ) );		Text( {-2, .37}, "Mean2=", Round( mu2, 2 ) );		Text( {-7, .34}, "SD1=", Round( sigma1, 2 ) );		Text( {-2, .34}, "SD2=", Round( sigma2, 2 ) );		Text( {-7, .31}, "P1=", Round( p1, 2 ) );		Text( {-2, .31}, "P2=", Round( 1 - p1, 2 ) );	),	H List Box( Slider Box( -3, 3, mu1, clty << reshow ), Text Box( " Mean 1" ) ),	H List Box( Slider Box( -3, 3, mu2, clty << reshow ), Text Box( " Mean 2" ) ),	H List Box( Slider Box( .1, 9, sigma1, clty << reshow ), Text Box( " Std Dev 1" ) ),	H List Box( Slider Box( .1, 9, sigma2, clty << reshow ), Text Box( " Std Dev 2" ) ),	H List Box( Slider Box( 0, 1, p1, clty << reshow ), Text Box( " P 1" ) ), );
 
 ```
 
@@ -19546,55 +11650,7 @@ New Window( "Univariate Normal Mixture Density",
 
 ```jsl
 
-mu1 = -2;
-mu2 = 2;
-sigma1 = 1;
-sigma2 = 4;
-p1 = .5;
-New Window( "Univariate Normal Mixture Distribution",
-	clty = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -8, 8 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		Y Function(
-			Normal Mixture Distribution(
-				y,
-				mu1 |/ mu2,
-				sigma1 |/ sigma2,
-				p1 |/ (1 - p1)
-			),
-			y
-		);
-		Text( {-7, .95}, "Mean1=", Round( mu1, 2 ) );
-		Text( {-2, .95}, "Mean2=", Round( mu2, 2 ) );
-		Text( {-7, .85}, "SD1=", Round( sigma1, 2 ) );
-		Text( {-2, .85}, "SD2=", Round( sigma2, 2 ) );
-		Text( {-7, .75}, "P1=", Round( p1, 2 ) );
-		Text( {-2, .75}, "P2=", Round( 1 - p1, 2 ) );
-	),
-	H List Box(
-		Slider Box( -3, 3, mu1, clty << reshow ),
-		Text Box( " Mean 1" )
-	),
-	H List Box(
-		Slider Box( -3, 3, mu2, clty << reshow ),
-		Text Box( " Mean 2" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma1, clty << reshow ),
-		Text Box( " Std Dev 1" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma2, clty << reshow ),
-		Text Box( " Std Dev 2" )
-	),
-	H List Box(
-		Slider Box( 0, 1, p1, clty << reshow ),
-		Text Box( " P 1" )
-	), 
-
-);
+mu1 = -2;mu2 = 2;sigma1 = 1;sigma2 = 4;p1 = .5;New Window( "Univariate Normal Mixture Distribution",	clty = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -8, 8 ),		Pen Color( "red" ),		Pen Size( 2 );		Y Function(			Normal Mixture Distribution( y, mu1 |/ mu2, sigma1 |/ sigma2, p1 |/ (1 - p1) ),			y		);		Text( {-7, .95}, "Mean1=", Round( mu1, 2 ) );		Text( {-2, .95}, "Mean2=", Round( mu2, 2 ) );		Text( {-7, .85}, "SD1=", Round( sigma1, 2 ) );		Text( {-2, .85}, "SD2=", Round( sigma2, 2 ) );		Text( {-7, .75}, "P1=", Round( p1, 2 ) );		Text( {-2, .75}, "P2=", Round( 1 - p1, 2 ) );	),	H List Box( Slider Box( -3, 3, mu1, clty << reshow ), Text Box( " Mean 1" ) ),	H List Box( Slider Box( -3, 3, mu2, clty << reshow ), Text Box( " Mean 2" ) ),	H List Box( Slider Box( .1, 9, sigma1, clty << reshow ), Text Box( " Std Dev 1" ) ),	H List Box( Slider Box( .1, 9, sigma2, clty << reshow ), Text Box( " Std Dev 2" ) ),	H List Box( Slider Box( 0, 1, p1, clty << reshow ), Text Box( " P 1" ) ), );
 
 ```
 
@@ -19608,68 +11664,7 @@ New Window( "Univariate Normal Mixture Distribution",
 
 ```jsl
 
-extqdf = 1;
-extqqq = 0.5;
-mu1 = -1;
-mu2 = 1;
-sigma1 = 1;
-sigma2 = 4;
-p1 = .3;
-New Window( "Example: Normal Mixture Quantile",
-	extqgr = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Pen Size( 2 );
-		Y Function(
-			Normal Mixture Distribution(
-				q,
-				mu1 |/ mu2,
-				sigma1 |/ sigma2,
-				p1 |/ (1 - p1)
-			),
-			q
-		);
-		Pen Color( "blue" );
-		V Line(
-			Normal Mixture Quantile(
-				extqqq,
-				mu1 |/ mu2,
-				sigma1 |/ sigma2,
-				p1 |/ (1 - p1)
-			),
-			0,
-			1
-		);
-		Text( {-4.5, 0.9}, " quantile=", Round( extqqq, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ),
-		Text Box( " quantile" )
-	),
-	H List Box(
-		Slider Box( -3, 3, mu1, extqgr << reshow ),
-		Text Box( " Mean 1" )
-	),
-	H List Box(
-		Slider Box( -3, 3, mu2, extqgr << reshow ),
-		Text Box( " Mean 2" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma1, extqgr << reshow ),
-		Text Box( " Std Dev 1" )
-	),
-	H List Box(
-		Slider Box( .1, 9, sigma2, extqgr << reshow ),
-		Text Box( " Std Dev 2" )
-	),
-	H List Box(
-		Slider Box( 0, 1, p1, extqgr << reshow ),
-		Text Box( " P 1" )
-	), 
-
-);
+extqdf = 1;extqqq = 0.5;mu1 = -1;mu2 = 1;sigma1 = 1;sigma2 = 4;p1 = .3;New Window( "Example: Normal Mixture Quantile",	extqgr = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Pen Size( 2 );		Y Function(			Normal Mixture Distribution( q, mu1 |/ mu2, sigma1 |/ sigma2, p1 |/ (1 - p1) ),			q		);		Pen Color( "blue" );		V Line(			Normal Mixture Quantile( extqqq, mu1 |/ mu2, sigma1 |/ sigma2, p1 |/ (1 - p1) ),			0,			1		);		Text( {-4.5, 0.9}, " quantile=", Round( extqqq, 2 ) );	),	H List Box( Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ), Text Box( " quantile" ) ),	H List Box( Slider Box( -3, 3, mu1, extqgr << reshow ), Text Box( " Mean 1" ) ),	H List Box( Slider Box( -3, 3, mu2, extqgr << reshow ), Text Box( " Mean 2" ) ),	H List Box( Slider Box( .1, 9, sigma1, extqgr << reshow ), Text Box( " Std Dev 1" ) ),	H List Box( Slider Box( .1, 9, sigma2, extqgr << reshow ), Text Box( " Std Dev 2" ) ),	H List Box( Slider Box( 0, 1, p1, extqgr << reshow ), Text Box( " P 1" ) ), );
 
 ```
 
@@ -19697,22 +11692,7 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-n = 15;
-New Window( "Example: Tolerance Factor()",
-	tdig = Graph Box(
-		Y Scale( 0, 5 ),
-		X Scale( 0.05, 0.95 ),
-		Yname( "Tolerance Factor" ),
-		Xname( "p" ),
-		Pen Color( "red" );
-		Y Function( Normal Tolerance Factor( 0.95, p, n ), p );
-		Text( {0.1, 4}, "n=", Round( n ) );
-	),
-	H List Box(
-		Text Box( "n" ),
-		Slider Box( 5, 25, n, tdig << reshow )
-	)
-);
+n = 15;New Window( "Example: Tolerance Factor()",	tdig = Graph Box(		Y Scale( 0, 5 ),		X Scale( 0.05, 0.95 ),		Yname( "Tolerance Factor" ),		Xname( "p" ),		Pen Color( "red" );		Y Function( Normal Tolerance Factor( 0.95, p, n ), p );		Text( {0.1, 4}, "n=", Round( n ) );	),	H List Box( Text Box( "n" ), Slider Box( 5, 25, n, tdig << reshow ) ));
 
 ```
 
@@ -19786,12 +11766,7 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```jsl
 
-Show(
-	Num( "3.1e6", <<Restrict ),
-	Num( "1989-10-04", <<Restrict ),
-	Num( "5%", <<Restrict ),
-	Num( "£23", <<Restrict )
-);
+Show(	Num( "3.1e6", <<Restrict ),	Num( "1989-10-04", <<Restrict ),	Num( "5%", <<Restrict ),	Num( "£23", <<Restrict ));
 
 ```
 
@@ -19805,9 +11780,7 @@ Show(
 
 ```jsl
 
-f = Function( {x, y}, x ^ 2 + y );
-Num Deriv( f( 2, 1 ) );
-Num Deriv( f( 2, 1 ), 2 );
+f = Function( {x, y}, x ^ 2 + y );Num Deriv( f( 2, 1 ) );Num Deriv( f( 2, 1 ), 2 );
 
 ```
 
@@ -19821,8 +11794,7 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
-f = Function( {x}, x ^ 3 );
-Num Deriv2( f( 2 ) );
+f = Function( {x}, x ^ 3 );Num Deriv2( f( 2 ) );
 
 ```
 
@@ -19836,9 +11808,7 @@ Num Deriv2( f( 2 ) );
 
 ```jsl
 
-Eval List(
-	{Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )}
-);
+Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
 
@@ -19852,15 +11822,7 @@ Eval List(
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -19874,14 +11836,7 @@ New Window( "Example",
 
 ```jsl
 
-x = y = z = 0;
-New Window( "Example",
-	Modal,
-	<<Return Result,
-	Outline Box( "Table",
-		Table Box( neb = Number Col Edit Box( "values", {x, y, z} ) )
-	)
-);
+x = y = z = 0;New Window( "Example",	Modal,	<<Return Result,	Outline Box( "Table", Table Box( neb = Number Col Edit Box( "values", {x, y, z} ) ) ));
 
 ```
 
@@ -19895,8 +11850,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example", neb = Number Edit Box( 5 ) );
-x = neb << get;
+New Window( "Example", neb = Number Edit Box( 5 ) );x = neb << get;
 
 ```
 
@@ -19926,15 +11880,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-/* Installing Add-In:
-Open( Add-In to open,
-    <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
-    <Update Prompt(0|1)>) // whether or not the add-in will silently update or prompt first */
-Open(
-	"$downloads\test.jmpaddin",
-	Check For Updates( "always" ),
-	Update Prompt( 1 )
-);
+/* Installing Add-In:Open( Add-In to open,    <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running    <Update Prompt(0|1)>) // whether or not the add-in will silently update or prompt first */Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 1 ) );
 
 ```
 
@@ -19942,67 +11888,7 @@ Open(
 
 ```jsl
 
-/* Other options:
-   SAS File imported as a data table:
-   Open( sasFilePath,
-     <Invisible | Private>,
-     <Use Labels for Var Names(0|1)>,
-     <Password( "password" )>
-   )
-   
-   SAS Transport File imported as a data table, members are separate tables within the larger file:
-   Open( sasTransportFilePath,
-     <Use Labels for Var Names(0|1)>,
-     <Members({"Table1", "Table2"})>
-   )
-   
-   HTML file imported as a data table:
-   Open( htmlFilePath,
-     <Invisible | Private>,
-     <HTML Table(n, <ColumnNames(n)>, DataStarts(n)>)>
-   )
-   
-   Get column names as a list for a JMP Data Table without opening the table:
-   Open( jmpDataTableFilePath, 
-     "Column Names Only"
-   )
-   
-   esriShapeFile opened for use as a map shape data table:
-   Open( esriShapeFilePath,
-     <Invisible | Private>,
-     Columns( Shape=numeric(n),
-     Part=numeric(n),
-     X=numeric(n),
-     Y=numeric(n) ),
-              Polygon Import Options(Simplification Factor(f), Geodesic(g))
-   )
-*/
-//SAS Example:
-dt1 = Open(
-	"$SAMPLE_IMPORT_DATA/Bigclass.sas7bdat",
-	Use Labels for Var Names( 1 )
-);
-
-// HTML Example:
-dt2 = Open(
-	"https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina)",
-	HTML Table( 3, Column Names( 1 ), Data Starts( 2 ) )
-);
-
-// Column Names Only Example: 
-colNames = Open(
-	"$SAMPLE_DATA/Semiconductor Capability.jmp",
-	"Column Names Only"
-);
-
-// SHP Shapefile Example with polygon simplification: 
-Open(
-	"$SAMPLE_IMPORT_DATA/parishes.shp",
-	Polygon Import Options(
-		Simplification Factor( 200 ),
-		Geodesic( 1 )
-	)
-);
+/* Other options:   SAS File imported as a data table:   Open( sasFilePath,     <Invisible | Private>,     <Use Labels for Var Names(0|1)>,     <Password( "password" )>   )      SAS Transport File imported as a data table, members are separate tables within the larger file:   Open( sasTransportFilePath,     <Use Labels for Var Names(0|1)>,     <Members({"Table1", "Table2"})>   )      HTML file imported as a data table:   Open( htmlFilePath,     <Invisible | Private>,     <HTML Table(n, <ColumnNames(n)>, DataStarts(n)>)>   )      Get column names as a list for a JMP Data Table without opening the table:   Open( jmpDataTableFilePath,      "Column Names Only"   )      esriShapeFile opened for use as a map shape data table:   Open( esriShapeFilePath,     <Invisible | Private>,     Columns( Shape=numeric(n),     Part=numeric(n),     X=numeric(n),     Y=numeric(n) ),              Polygon Import Options(Simplification Factor(f), Geodesic(g))   )*///SAS Example:dt1 = Open( "$SAMPLE_IMPORT_DATA/Bigclass.sas7bdat", Use Labels for Var Names( 1 ) );// HTML Example:dt2 = Open(	"https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina)",	HTML Table( 3, Column Names( 1 ), Data Starts( 2 ) ));// Column Names Only Example: colNames = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp", "Column Names Only" );// SHP Shapefile Example with polygon simplification: Open(	"$SAMPLE_IMPORT_DATA/parishes.shp",	Polygon Import Options( Simplification Factor( 200 ), Geodesic( 1 ) ));
 
 ```
 
@@ -20010,41 +11896,7 @@ Open(
 
 ```jsl
 
-/* Excel files imported into a data table:
-   Open( excelFilePath,
-     <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
-     <Use for all sheets(0|1)>,
-     <Concatenate Worksheets(0|1)>,
-     <Create Concatenation Column(0|1)>,
-     <Worksheet Settings( 0|1,
-       Has Column Headers(0|1),
-       Number of Rows in Headers(n),
-       Headers Start on Row(n),
-       Data Starts on Row(n),
-       Data Starts on Column(n),
-       Data Ends on Row(n),
-       Data Ends on Column(n),
-       Replicated Spanned Rows(0|1),
-       Suppress Hidden Rows(0|1),
-       Suppress Hidden Columns(0|1),
-       Treat as Hierarchy(0|1)
-     )>,
-     <Invisible | Private>
-   )
-*/
-
-/* Using the Excel Wizard dialog:
-   Open("$SAMPLE_IMPORT_DATA/Bigclass.xlsx", "Excel Wizard");  
-*/
-
-dt = Open(
-	"$SAMPLE_IMPORT_DATA/Team Results.xlsx",
-	Worksheets( "Ungrouped Team Results" ),
-	Worksheet Settings(
-		Headers Start on Row( 3 ),
-		Data Starts on Row( 4 )
-	)
-);
+/* Excel files imported into a data table:   Open( excelFilePath,     <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,     <Use for all sheets(0|1)>,     <Concatenate Worksheets(0|1)>,     <Create Concatenation Column(0|1)>,     <Worksheet Settings( 0|1,       Has Column Headers(0|1),       Number of Rows in Headers(n),       Headers Start on Row(n),       Data Starts on Row(n),       Data Starts on Column(n),       Data Ends on Row(n),       Data Ends on Column(n),       Replicated Spanned Rows(0|1),       Suppress Hidden Rows(0|1),       Suppress Hidden Columns(0|1),       Treat as Hierarchy(0|1)     )>,     <Invisible | Private>   )*//* Using the Excel Wizard dialog:   Open("$SAMPLE_IMPORT_DATA/Bigclass.xlsx", "Excel Wizard");  */dt = Open(	"$SAMPLE_IMPORT_DATA/Team Results.xlsx",	Worksheets( "Ungrouped Team Results" ),	Worksheet Settings( Headers Start on Row( 3 ), Data Starts on Row( 4 ) ));
 
 ```
 
@@ -20052,8 +11904,7 @@ dt = Open(
 
 ```jsl
 
-/* Open of folder launches file browser */
-Open( "$SAMPLE_DATA" );
+/* Open of folder launches file browser */Open( "$SAMPLE_DATA" );
 
 ```
 
@@ -20061,9 +11912,7 @@ Open( "$SAMPLE_DATA" );
 
 ```jsl
 
-/* Picture file imported as a picture object */
-pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
+/* Picture file imported as a picture object */pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```
 
@@ -20071,29 +11920,7 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```jsl
 
-/* PDF file imported as one or multiple data tables
-open(pdfFilePath,
-    PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
-    PDF All Tables(< Combine(All | Matching Headers | None)>, <Minimum Rows(n)>, <Minimum Columns(n)>) |
-    PDF Text(<Pages(n, ...)>, <sort>) |
-    PDF Wizard
-);*/
-dt = Open( "$SAMPLE_DATA\big class.jmp" );
-w = New Window( "test", Data Table Box( dt ) );
-w << save picture( "$DOCUMENTS\test.pdf", pdf );
-pdftable = Open(
-	"$DOCUMENTS\test.pdf",
-	PDF All Tables( Combine( all ) )
-); // just some of the rows
-pdftable2 = Open(
-	"$DOCUMENTS\test.pdf",
-	PDF Tables(
-		Table(
-			Table Name( "test" ),
-			Add Rows( Page( 1 ), Rect( 0, 0, 5, 3 ) )
-		)
-	)
-);
+/* PDF file imported as one or multiple data tablesopen(pdfFilePath,    PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |    PDF All Tables(< Combine(All | Matching Headers | None)>, <Minimum Rows(n)>, <Minimum Columns(n)>) |    PDF Text(<Pages(n, ...)>, <sort>) |    PDF Wizard);*/dt = Open( "$SAMPLE_DATA\big class.jmp" );w = New Window( "test", Data Table Box( dt ) );w << save picture( "$DOCUMENTS\test.pdf", pdf );pdftable = Open( "$DOCUMENTS\test.pdf", PDF All Tables( Combine( all ) ) ); // just some of the rowspdftable2 = Open(	"$DOCUMENTS\test.pdf",	PDF Tables( Table( Table Name( "test" ), Add Rows( Page( 1 ), Rect( 0, 0, 5, 3 ) ) ) ));
 
 ```
 
@@ -20101,25 +11928,7 @@ pdftable2 = Open(
 
 ```jsl
 
-/* Data tables, other JMP files, external files:
-   Open( filePath,
-     <Invisible | Private>,
-     <Select Columns( "col", ... )>,
-     <Ignore Columns( "col", ... )>,
-     <Add to Recent Files(bool)>,
-     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>
-     <Force Refresh>,
-     <Enable Filter Views(bool)>,
-     <"file type">
-   )
-*/
-//Basic data table open
-dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-//Data table open with some options
-dt2 = Open(
-	"$SAMPLE_DATA/Fitness.jmp",
-	Select Columns( "Name", "Sex", "Age", "Weight" )
-);
+/* Data tables, other JMP files, external files:   Open( filePath,     <Invisible | Private>,     <Select Columns( "col", ... )>,     <Ignore Columns( "col", ... )>,     <Add to Recent Files(bool)>,     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>     <Force Refresh>,     <Enable Filter Views(bool)>,     <"file type">   )*///Basic data table opendt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );//Data table open with some optionsdt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "Weight" ) );
 
 ```
 
@@ -20127,34 +11936,7 @@ dt2 = Open(
 
 ```jsl
 
-/* Text files imported into a data table:
-   Open( textFilePath,
-     <Invisible | Private>,
-     CharSet("option") // "Best Guess", "utf-8", "utf-16", "us-ascii", "windows-1252", "x-max-roman", "x-mac-japanese", "shift-jis", "euc-jp", "utf-16be", "gb2312"
-     <Number of Columns(n)>,
-     <Columns(colName=colType(colWidth),... )>,// colType is Character|Numeric and colWidth is an integer specifying the width of the column
-     <End Of Field (Tab|Space|Comma|Semicolon|Other|None)>,
-     <EOF Other ("char")>,
-     <End Of Line (CRLF|CR|LF|Semicolon|Other)>,
-     <EOL Other ("char")>,
-     <Strip Quotes|Strip Enclosing Quotes (0|1)>,
-     <Labels|Table Contains Column Headers (0|1)>,
-     <Year Rule|Two digit year rule ("decade start")>, // For example, if the earliest date is 1979, use "1970". If the earliest date is 2001, use "20xx".
-     Treat Empty Columns as Numeric(0|1)
-     Scan Whole File(0|1) // 1 means scan the whole file and 0 means scan for 5 seconds.
-     <Column Names Start|Column Names are on line (n)>,
-     <Data Starts|Data starts on line (n)>,
-     <Lines to Read>, // a number
-     <Use Apostrophe as Quotation Mark>,
-     <CompressNumericColumns(0|1)>,
-     <CompressCharacterColumns(0|1)>,
-     <CompressAllowListCheck(0|1)>
-   )
-*/
-dt = Open(
-	"$SAMPLE_IMPORT_DATA/EOF_comma.txt",
-	Table Contains Column Headers( 0 )
-);
+/* Text files imported into a data table:   Open( textFilePath,     <Invisible | Private>,     CharSet("option") // "Best Guess", "utf-8", "utf-16", "us-ascii", "windows-1252", "x-max-roman", "x-mac-japanese", "shift-jis", "euc-jp", "utf-16be", "gb2312"     <Number of Columns(n)>,     <Columns(colName=colType(colWidth),... )>,// colType is Character|Numeric and colWidth is an integer specifying the width of the column     <End Of Field (Tab|Space|Comma|Semicolon|Other|None)>,     <EOF Other ("char")>,     <End Of Line (CRLF|CR|LF|Semicolon|Other)>,     <EOL Other ("char")>,     <Strip Quotes|Strip Enclosing Quotes (0|1)>,     <Labels|Table Contains Column Headers (0|1)>,     <Year Rule|Two digit year rule ("decade start")>, // For example, if the earliest date is 1979, use "1970". If the earliest date is 2001, use "20xx".     Treat Empty Columns as Numeric(0|1)     Scan Whole File(0|1) // 1 means scan the whole file and 0 means scan for 5 seconds.     <Column Names Start|Column Names are on line (n)>,     <Data Starts|Data starts on line (n)>,     <Lines to Read>, // a number     <Use Apostrophe as Quotation Mark>,     <CompressNumericColumns(0|1)>,     <CompressCharacterColumns(0|1)>,     <CompressAllowListCheck(0|1)>   )*/dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0 ) );
 
 ```
 
@@ -20168,11 +11950,7 @@ dt = Open(
 
 ```jsl
 
-Open Database(
-	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
-	"SELECT HEIGHT, WEIGHT FROM Bigclass",
-	"hw"
-);
+Open Database(	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",	"SELECT HEIGHT, WEIGHT FROM Bigclass",	"hw");
 
 ```
 
@@ -20186,16 +11964,7 @@ Open Database(
 
 ```jsl
 
-exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
-	Set Script(
-		ex = exfeed << getLine;
-		Show( ex );
-	)
-);
-For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/
-	exfeed << Queue Line( Char( exi ) );
-	Wait( .5 );
-);
+exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/	Set Script(		ex = exfeed << getLine;		Show( ex );	));For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
 
 ```
 
@@ -20219,14 +11988,7 @@ Open Help( "Help" );
 
 ```jsl
 
-Open Help(
-	"Scripting Index",
-	Search(
-		Term( "Open" ),
-		Match( {"Contains Terms", "Match All Terms", "Ignore Case"} )
-	),
-	IndexContext( Category( "Functions" ) )
-);
+Open Help(	"Scripting Index",	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),	IndexContext( Category( "Functions" ) ));
 
 ```
 
@@ -20234,18 +11996,7 @@ Open Help(
 
 ```jsl
 
-Open Help(
-	"Scripting Index",
-	Search(
-		Term( "alpha" ),
-		Match( {"Contains Terms", "Match All Terms", "Ignore Case"} )
-	),
-	IndexContext(
-		Category( "All Categories" ),
-		Object( "Search results" ),
-		Method( "Get Alpha" )
-	)
-);
+Open Help(	"Scripting Index",	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),	IndexContext(		Category( "All Categories" ),		Object( "Search results" ),		Method( "Get Alpha" )	));
 
 ```
 
@@ -20261,8 +12012,7 @@ Open Help(
 
 ```jsl
 
-Open Log();
-Show( Is Log Open() );
+Open Log();Show( Is Log Open() );
 
 ```
 
@@ -20270,9 +12020,7 @@ Show( Is Log Open() );
 
 ```jsl
 
-/* Bring Log Windows to the Top */
-Open Log( 1 );
-Show( Is Log Open() );
+/* Bring Log Windows to the Top */Open Log( 1 );Show( Is Log Open() );
 
 ```
 
@@ -20306,7 +12054,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Ortho
 
-**Syntaxe :** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
+**Syntaxe :** L = Ortho( A, &lt;Centered( 1 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Description :** Orthogonalise les colonnes d&apos;une matrice. L&apos;option « Centré » conduit à une somme nulle des éléments de la colonne. L&apos;option « Normalisation » conduit à une norme unité des vecteurs correspondant aux colonnes.
 
@@ -20342,15 +12090,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		{"Show label value", Show( teb << get text )},
-		H List Box(
-			Text Box( "Label:" ),
-			teb = Text Edit Box( Char( 213 ) )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		{"Show label value", Show( teb << get text )},		H List Box( Text Box( "Label:" ), teb = Text Edit Box( Char( 213 ) ) )	));
 
 ```
 
@@ -20364,15 +12104,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "Green" );
-		Pen Size( 2 );
-		Fill Color( "Red" );
-		Oval( 15, 75, 65, 55, 1 );
-		Oval( 10, 80, 70, 50 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "Green" );		Pen Size( 2 );		Fill Color( "Red" );		Oval( 15, 75, 65, 55, 1 );		Oval( 10, 80, 70, 50 );	));
 
 ```
 
@@ -20386,8 +12118,7 @@ New Window( "Example",
 
 ```jsl
 
-P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
-P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
+P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```
 
@@ -20401,21 +12132,7 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( "Blue" );
-		Line( [10 30 70], [88 22 44] );
-	),
-	Page Break Box(),
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [77 44 11], [75 25 50] );
-		Pen Color( "Red" );
-		Line( [70 30 10], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( "Blue" );		Line( [10 30 70], [88 22 44] );	),	Page Break Box(),	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [77 44 11], [75 25 50] );		Pen Color( "Red" );		Line( [70 30 10], [88 22 44] );	));
 
 ```
 
@@ -20429,14 +12146,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Panel Box( "panel", Text Box( "text" ) ),
-		"beta",
-		Popup Box( {"x", ex = 1, "y", ex = 2} )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Panel Box( "panel", Text Box( "text" ) ),		"beta",		Popup Box( {"x", ex = 1, "y", ex = 2} )	));
 
 ```
 
@@ -20450,15 +12160,7 @@ New Window( "Example",
 
 ```jsl
 
-m = J( 3, 2, -1 );
-If(
-	Parallel Assign(
-		{/*no locals */ },
-		m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b
-	) == 0,
-	Throw( "thread failed" )
-);
-m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
+m = J( 3, 2, -1 );If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,	Throw( "thread failed" ));m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```
 
@@ -20492,7 +12194,7 @@ Parse( "x+y" );
 
 ### Parse Date
 
-**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -20534,12 +12236,7 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -20553,10 +12250,7 @@ Show(
 
 ```jsl
 
-l = Parse JSON(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-Show( l );
+l = Parse JSON(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");Show( l );
 
 ```
 
@@ -20572,20 +12266,7 @@ Show( l );
 
 ```jsl
 
-/*See example two for more details*/
-ex =
-"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
-Parse XML( ex,
-	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
-	On Element(
-		"col",
-		End Tag(
-			New Column( XML Attr( "name" ),
-				Set Values( Parse( XML Text() ) )
-			)
-		)
-	)
-);
+/*See example two for more details*/ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
 
 ```
 
@@ -20593,52 +12274,7 @@ Parse XML( ex,
 
 ```jsl
 
-
-doc =
-"
-<a title='one'>
-    WWWa
-    <b>BB<c>ZZZ</c>B1</b>
-    XXXa
-    <b>BBB2</b>
-    YYYa
-    <c>CCC</c>
-</a>";
-// doc, above, has tags a, b, and c. The c tags are not handled by the parser, below,
-// to show why text should be collected by Text(...) and then processed by EndTag(...)
-// Text(...) captures the BB ZZZ B1 while using EndTag(...) only captures the final snippet.
-docname = "undefined";
-doctext = "";
-recordtext = "";
-records = {};
-NestLevel = 0; // not really used here, but shows how to use Start/End Tag to track nesting level
-Parse XML( doc,
-	On Element(
-		"a",
-		Start Tag(
-			docname = XML Attr( "title" );
-			NestLevel++;
-		), 
-        // decide here to trim the CRLF and blanks and use a single blank
-		Text( doctext = doctext || Trim( XML Text() ) || " " ),
-		End Tag( NestLevel-- )
-	),
-	On Element(
-		"b",
-		Start Tag( NestLevel++ ), 
-        // comment out the next line and...
-		Text( recordtext = recordtext || Trim( XML Text() ) || " " ),
-		End Tag(
-            // ...uncomment the next line and observe the "B1" vs "BB ZZZ B1 " value in records
-			// recordtext = XMLText();
-			Insert Into( records, recordtext );
-			recordtext = "";
-			NestLevel--;
-		)
-	)
-);
-
-Show( docname, doctext, records, NestLevel );
+doc ="<a title='one'>    WWWa    <b>BB<c>ZZZ</c>B1</b>    XXXa    <b>BBB2</b>    YYYa    <c>CCC</c></a>";// doc, above, has tags a, b, and c. The c tags are not handled by the parser, below,// to show why text should be collected by Text(...) and then processed by EndTag(...)// Text(...) captures the BB ZZZ B1 while using EndTag(...) only captures the final snippet.docname = "undefined";doctext = "";recordtext = "";records = {};NestLevel = 0; // not really used here, but shows how to use Start/End Tag to track nesting levelParse XML( doc,	On Element(		"a",		Start Tag(			docname = XML Attr( "title" );			NestLevel++;		),         // decide here to trim the CRLF and blanks and use a single blank		Text( doctext = doctext || Trim( XML Text() ) || " " ),		End Tag( NestLevel-- )	),	On Element(		"b",		Start Tag( NestLevel++ ),         // comment out the next line and...		Text( recordtext = recordtext || Trim( XML Text() ) || " " ),		End Tag(            // ...uncomment the next line and observe the "B1" vs "BB ZZZ B1 " value in records			// recordtext = XMLText();			Insert Into( records, recordtext );			recordtext = "";			NestLevel--;		)	));Show( docname, doctext, records, NestLevel );
 
 ```
 
@@ -20652,18 +12288,7 @@ Show( docname, doctext, records, NestLevel );
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs
-+Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -20677,12 +12302,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Pat Match(
-	"123456789",
-	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")
-	) >> result
-);
-result;
+Pat Match(	"123456789",	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result);result;
 
 ```
 
@@ -20696,10 +12316,7 @@ result;
 
 ```jsl
 
-operators = Pat Any( "*+-/" );
-text = "abc+def";
-Pat Match( text, operators >> op );
-op;
+operators = Pat Any( "*+-/" );text = "abc+def";Pat Match( text, operators >> op );op;
 
 ```
 
@@ -20713,12 +12330,7 @@ op;
 
 ```jsl
 
-Pat Match(
-	"123nonnumeric456",
-	Pat Span( "0123456789" ) + Pat Arb() >> result
-	+Pat Span( "0123456789" )
-);
-result;
+Pat Match(	"123nonnumeric456",	Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" ));result;
 
 ```
 
@@ -20732,12 +12344,7 @@ result;
 
 ```jsl
 
-Pat Match(
-	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
-	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@"
-	+Pat Arb No( "c" ) >> c
-);
-" a=" || a || " b=" || b || " c=" || c;
+Pat Match(	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c);" a=" || a || " b=" || b || " c=" || c;
 
 ```
 
@@ -20751,8 +12358,7 @@ Pat Match(
 
 ```jsl
 
-Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
-result;
+Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );result;
 
 ```
 
@@ -20766,12 +12372,7 @@ result;
 
 ```jsl
 
-b = "- ";
-Pat Match(
-	"one two three-",
-	Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) )
-);
-word;
+b = "- ";Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );word;
 
 ```
 
@@ -20785,10 +12386,7 @@ word;
 
 ```jsl
 
-num = Pat Break( "," );
-sep = ",";
-Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
-result;
+num = Pat Break( "," );sep = ",";Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );result;
 
 ```
 
@@ -20802,10 +12400,7 @@ result;
 
 ```jsl
 
-a = "unchanged";
-b = "unchanged";
-Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
-" a=" || a || " b=" || b;
+a = "unchanged";b = "unchanged";Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );" a=" || a || " b=" || b;
 
 ```
 
@@ -20819,18 +12414,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs
-+Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -20844,11 +12428,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-rc = Pat Match(
-	"123456789",
-	(Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3"
-);
-"rc=" || Char( rc ) || " result=" || result;
+rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );"rc=" || Char( rc ) || " result=" || result;
 
 ```
 
@@ -20862,10 +12442,7 @@ rc = Pat Match(
 
 ```jsl
 
-a = "unchanged";
-b = "unchanged";
-Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
-" a=" || a || " b=" || b;
+a = "unchanged";b = "unchanged";Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );" a=" || a || " b=" || b;
 
 ```
 
@@ -20879,8 +12456,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
-Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
-result;
+Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );result;
 
 ```
 
@@ -20896,11 +12472,7 @@ result;
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, "s" + Pat Look Ahead( "'" ), "z" ), /* find an s that IS followed by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		"s" + Pat Look Ahead( "'" ),		"z"	), /* find an s that IS followed by an apostrophe and replace it with z */	Print( test ));
 
 ```
 
@@ -20908,11 +12480,7 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, "s" + Pat Look Ahead( "'", 1 ), "z" ), /* find an s that is NOT followed by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		"s" + Pat Look Ahead( "'", 1 ),		"z"	), /* find an s that is NOT followed by an apostrophe and replace it with z */	Print( test ));
 
 ```
 
@@ -20920,19 +12488,7 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Test = "a bb ccc dddd";
-While( /* keep repeating the match until it won't match */
-	Pat Match(
-		Test,
-		Pat Len( 1 ) >> xxx/* find any character */
-		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */
-		+ Pat Look Ahead(
-			Expr( xxx ) /* and look ahead one position */
-		),
-		"@" /* replacement for the middle character of a triple */
-	),
-	Print( test ) /* show each intermediate result */
-);
+Test = "a bb ccc dddd";While( /* keep repeating the match until it won't match */	Pat Match(		Test,		Pat Len( 1 ) >> xxx/* find any character */		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),		"@" /* replacement for the middle character of a triple */	),	Print( test ) /* show each intermediate result */);
 
 ```
 
@@ -20948,11 +12504,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, Pat Look Behind( "'" ) + "s", "z" ), /* find an s that IS preceded by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		Pat Look Behind( "'" ) + "s",		"z"	), /* find an s that IS preceded by an apostrophe and replace it with z */Print( test ));
 
 ```
 
@@ -20960,11 +12512,7 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, Pat Look Behind( "'", 1 ) + "s", "z" ), /* find an s that is NOT preceded by an apostrophe and replace it with a z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		Pat Look Behind( "'", 1 ) + "s",		"z"	), /* find an s that is NOT preceded by an apostrophe and replace it with a z */	Print( test ));
 
 ```
 
@@ -20972,19 +12520,7 @@ While( /* repeat the match until it fails */
 
 ```jsl
 
-Test = "a bb ccc dddd";
-While( /* keep repeating the match until it won't match */
-	Pat Match(
-		Test,
-		Pat Len( 1 ) >> xxx/* find any character */
-		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */
-		+ Pat Look Ahead(
-			Expr( xxx ) /* and look ahead one position */
-		),
-		"@" /* replacement for the middle character of a triple */
-	),
-	Print( test ) /* show each intermediate result */
-);
+Test = "a bb ccc dddd";While( /* keep repeating the match until it won't match */	Pat Match(		Test,		Pat Len( 1 ) >> xxx/* find any character */		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),		"@" /* replacement for the middle character of a triple */	),	Print( test ) /* show each intermediate result */);
 
 ```
 
@@ -20998,13 +12534,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-string = "John Smith";
-Pat Match(
-	string,
-	Pat Break( " " ) >> first + Pat Span( " " ) + Pat Rem() >> last,
-	last || ", " || first
-);
-string;
+string = "John Smith";Pat Match(	string,	Pat Break( " " ) >> first + Pat Span( " " ) + Pat Rem() >> last,	last || ", " || first);string;
 
 ```
 
@@ -21018,14 +12548,7 @@ string;
 
 ```jsl
 
-delimiter = ";,-";
-text = "fish,dog,cat,";
-Pat Match(
-	text,
-	Pat Repeat( Pat Not Any( delimiter ) ) >> word
-	+Pat Any( delimiter )
-);
-word;
+delimiter = ";,-";text = "fish,dog,cat,";Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );word;
 
 ```
 
@@ -21039,13 +12562,7 @@ word;
 
 ```jsl
 
-Pat Match(
-	"ab3defghi",
-	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )
-	+Pat Pos( /* no argument returns current position = 6 */ ) >>
-	result
-);
-result;
+Pat Match(	"ab3defghi",	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )	+Pat Pos( /* no argument returns current position = 6 */ ) >> result);result;
 
 ```
 
@@ -21059,8 +12576,7 @@ result;
 
 ```jsl
 
-Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
-result;
+Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );result;
 
 ```
 
@@ -21074,8 +12590,7 @@ result;
 
 ```jsl
 
-Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
-result;
+Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );result;
 
 ```
 
@@ -21089,9 +12604,7 @@ result;
 
 ```jsl
 
-string = "John Smith";
-Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
-string;
+string = "John Smith";Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );string;
 
 ```
 
@@ -21105,8 +12618,7 @@ string;
 
 ```jsl
 
-Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
-result;
+Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );result;
 
 ```
 
@@ -21120,12 +12632,7 @@ result;
 
 ```jsl
 
-Pat Match(
-	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
-	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" )
-	 >> c
-);
-" a=" || a || " b=" || b || " c=" || c;
+Pat Match(	"xyz aaaaabbbbbbccc 3 c is matched because greedy",	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c);" a=" || a || " b=" || b || " c=" || c;
 
 ```
 
@@ -21139,9 +12646,7 @@ Pat Match(
 
 ```jsl
 
-sp = Pat Span( "0123456789.-" );
-Pat Match( "junk=-33.44e33", sp >> result );
-result;
+sp = Pat Span( "0123456789.-" );Pat Match( "junk=-33.44e33", sp >> result );result;
 
 ```
 
@@ -21155,12 +12660,7 @@ result;
 
 ```jsl
 
-x = Pat String( "a" || "b" );
-Pat Match(
-	"acbdbababc",
-	Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Rem() >> after
-);
-"before=" || before || " match=" || match || " after=" || after;
+x = Pat String( "a" || "b" );Pat Match(	"acbdbababc",	Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Rem() >> after);"before=" || before || " match=" || match || " after=" || after;
 
 ```
 
@@ -21174,18 +12674,7 @@ Pat Match(
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs
-+Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -21199,8 +12688,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
-result;
+Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );result;
 
 ```
 
@@ -21214,18 +12702,7 @@ result;
 
 ```jsl
 
-nCats = 0;
-whichCat = 3;
-string = "catch a catnapping cat in a catsup factory";
-rc = Pat Match(
-	string,
-	"cat" + Pat Test(
-		nCats = nCats + 1;
-		nCats == whichCat;
-	),
-	"dog"
-);
-string;
+nCats = 0;whichCat = 3;string = "catch a catnapping cat in a catsup factory";rc = Pat Match(	string,	"cat" + Pat Test(		nCats = nCats + 1;		nCats == whichCat;	),	"dog");string;
 
 ```
 
@@ -21239,13 +12716,7 @@ string;
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "blue" );
-		Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3], 1 );
-		Path( "M20,20 C20,60 60,60 60,20 Z", 0 );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "blue" );		Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3], 1 );		Path( "M20,20 C20,60 60,60 60,20 Z", 0 );	));
 
 ```
 
@@ -21273,9 +12744,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -21303,12 +12772,7 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( {.3, .5, .7} );
-		Circle( {20, 20}, 10 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( {.3, .5, .7} );		Circle( {20, 20}, 10 );	));
 
 ```
 
@@ -21322,12 +12786,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Size( 4 );
-		Line( [10 30 90], [88 22 44] );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Size( 4 );		Line( [10 30 90], [88 22 44] );	));
 
 ```
 
@@ -21355,15 +12814,7 @@ Char( Pi(), 5 );
 
 ```jsl
 
-pickedColor = Pick Color( "Pick a Line Color", "Red" );
-New Window( "Example",
-	Graph Box(
-		Frame Size( 300, 300 ),
-		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
-		Pen Color( pickedColor );
-		Line( [10 30 70], [88 22 44] );
-	)
-);
+pickedColor = Pick Color( "Pick a Line Color", "Red" );New Window( "Example",	Graph Box(		Frame Size( 300, 300 ),		Marker( Marker State( 3 ), [11 44 77], [75 25 50] );		Pen Color( pickedColor );		Line( [10 30 70], [88 22 44] );	));
 
 ```
 
@@ -21379,20 +12830,7 @@ New Window( "Example",
 
 ```jsl
 
-
-theme = Pick Color Theme(
-	"Choose a color theme",
-	Type( "Bad to Good" )
-);
-dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
-gb = dt << Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( Color( :SAT Math ), Shape( :State ) ),
-	Elements( Map Shapes( Legend( 2 ) ) )
-);
-server = gb << Get Legend Server;
-item = server << Get Legend Item( 2, 1 );
-item << Set Properties( {Gradient( {Color Theme( theme )} )} );
+theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables( Color( :SAT Math ), Shape( :State ) ),	Elements( Map Shapes( Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 2, 1 );item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```
 
@@ -21400,11 +12838,7 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 
 ```jsl
 
-
-pickedTheme = Pick Color Theme( "Pick a Color Theme" );
-biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );
-Report( biv )[FrameBox( 1 )] <<
-Row Legend( "age", Color Theme( pickedTheme ) );
+pickedTheme = Pick Color Theme( "Pick a Color Theme" );biv = Open( "$SAMPLE_DATA/Big Class.jmp" ) << Run Script( "Bivariate" );Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 ```
 
@@ -21444,14 +12878,7 @@ Pick Directory( "Select a directory" );
 
 ```jsl
 
-Pick File(
-	"Select JMP File",
-	"$DOCUMENTS",
-	{"JMP Files|jmp;jsl;jrn", "All Files|*"},
-	1,
-	0,
-	"newJmpFile.jmp"
-);
+Pick File(	"Select JMP File",	"$DOCUMENTS",	{"JMP Files|jmp;jsl;jrn", "All Files|*"},	1,	0,	"newJmpFile.jmp");
 
 ```
 
@@ -21459,18 +12886,7 @@ Pick File(
 
 ```jsl
 
-Files = Pick File(
-	"Select JMP File",
-	"$SAMPLE_DATA",
-	{"JMP Files|jmp;jsl;jrn", "All Files|*"},
-	1,
-	0,
-	"",
-	"multiple"
-);
-For( i = 1, i <= N Items( Files ), i++,
-	Try( Open( Files[i] ) )
-);
+Files = Pick File(	"Select JMP File",	"$SAMPLE_DATA",	{"JMP Files|jmp;jsl;jrn", "All Files|*"},	1,	0,	"",	"multiple");For( i = 1, i <= N Items( Files ), i++,	Try( Open( Files[i] ) ));
 
 ```
 
@@ -21478,18 +12894,7 @@ For( i = 1, i <= N Items( Files ), i++,
 
 ```jsl
 
-filename = Pick File(
-	"Save As Text",
-	"$DOCUMENTS",
-	{"Text File|txt"},
-	1,
-	1, // Save Flag
-	"export.txt"
-);
-If( Is Missing( filename ),
-	Print( "Canceled" ),
-	Save Text File( filename, "The quick brown fox" )
-);
+filename = Pick File(	"Save As Text",	"$DOCUMENTS",	{"Text File|txt"},	1,	1, // Save Flag	"export.txt");If( Is Missing( filename ),	Print( "Canceled" ),	Save Text File( filename, "The quick brown fox" ));
 
 ```
 
@@ -21505,11 +12910,7 @@ If( Is Missing( filename ),
 
 ```jsl
 
-New Window( "Example",
-	Picture Box(
-		Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg )
-	)
-);
+New Window( "Example",	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) ));
 
 ```
 
@@ -21517,8 +12918,7 @@ New Window( "Example",
 
 ```jsl
 
-pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
-New Window( "Example", Picture Box( pict ) );
+pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );New Window( "Example", Picture Box( pict ) );
 
 ```
 
@@ -21532,12 +12932,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "red" );
-		Pie( 10, 80, 70, 40, 0, 90 );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "red" );		Pie( 10, 80, 70, 40, 0, 90 );	));
 
 ```
 
@@ -21551,19 +12946,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Summarize(
-	a = by( :age ),
-	c = count,
-	sumHt = Sum( :height ),
-	sumWt = Sum( :weight )
-);
-New Window( "Pie Seg",
-	Graph Box(
-		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
-		Pie Seg( {75, 50}, .25, sumWt )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));
 
 ```
 
@@ -21577,18 +12960,7 @@ New Window( "Pie Seg",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pixel Origin( 50, 50 ); // in axis coordinates
-		// others are pixels, relative to pixel origin
-		Pixel Move To( 0, 0 );
-		Pixel Line To( 0, 80 );
-		Pixel Move To( 2, 0 );
-		Pixel Line To( 2, 40 );
-		Pixel Move To( 4, 0 );
-		Pixel Line To( 4, 20 );
-	)
-);
+New Window( "Example",	Graph Box(		Pixel Origin( 50, 50 ); // in axis coordinates		// others are pixels, relative to pixel origin		Pixel Move To( 0, 0 );		Pixel Line To( 0, 80 );		Pixel Move To( 2, 0 );		Pixel Line To( 2, 40 );		Pixel Move To( 4, 0 );		Pixel Line To( 4, 20 );	));
 
 ```
 
@@ -21602,18 +12974,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pixel Origin( 50, 50 ); // in axis coordinates
-		// others are pixels, relative to pixel origin
-		Pixel Move To( 0, 0 );
-		Pixel Line To( 0, 80 );
-		Pixel Move To( 2, 0 );
-		Pixel Line To( 2, 40 );
-		Pixel Move To( 4, 0 );
-		Pixel Line To( 4, 20 );
-	)
-);
+New Window( "Example",	Graph Box(		Pixel Origin( 50, 50 ); // in axis coordinates		// others are pixels, relative to pixel origin		Pixel Move To( 0, 0 );		Pixel Line To( 0, 80 );		Pixel Move To( 2, 0 );		Pixel Line To( 2, 40 );		Pixel Move To( 4, 0 );		Pixel Line To( 4, 20 );	));
 
 ```
 
@@ -21627,18 +12988,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pixel Origin( 50, 50 ); // in axis coordinates
-		// others are pixels, relative to pixel origin
-		Pixel Move To( 0, 0 );
-		Pixel Line To( 0, 80 );
-		Pixel Move To( 2, 0 );
-		Pixel Line To( 2, 40 );
-		Pixel Move To( 4, 0 );
-		Pixel Line To( 4, 20 );
-	)
-);
+New Window( "Example",	Graph Box(		Pixel Origin( 50, 50 ); // in axis coordinates		// others are pixels, relative to pixel origin		Pixel Move To( 0, 0 );		Pixel Line To( 0, 80 );		Pixel Move To( 2, 0 );		Pixel Line To( 2, 40 );		Pixel Move To( 4, 0 );		Pixel Line To( 4, 20 );	));
 
 ```
 
@@ -21652,33 +13002,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "blue" );
-		angle = 45 * Pi() / 180; // 45 deg in radians
-		Pixel Origin( 20, 80 );
-		Pixel Path(
-			0,
-			0, // offset from pixel origin in pixels
-			[-10 -10 1,
-			10 -10 0,
-			20 20 0,
-			-10 20 -3],
-			1, // fill
-			2.0, // scale
-			{Sin( angle ), Cos( angle )} // clockwise rotation
-		);
-		Pixel Origin( 80, 20 );
-		Pixel Path(
-			0,
-			0,
-			"M-10,-10 C10,-10 20,20 -10,20 Z",
-			0,
-			1.0,
-			{Sin( -angle ), Cos( -angle )}
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "blue" );		angle = 45 * Pi() / 180; // 45 deg in radians		Pixel Origin( 20, 80 );		Pixel Path(			0,			0, // offset from pixel origin in pixels			[-10 -10 1,			10 -10 0,			20 20 0,			-10 20 -3],			1, // fill			2.0, // scale			{Sin( angle ), Cos( angle )} // clockwise rotation		);		Pixel Origin( 80, 20 );		Pixel Path(			0,			0,			"M-10,-10 C10,-10 20,20 -10,20 Z",			0,			1.0,			{Sin( -angle ), Cos( -angle )}		);	));
 
 ```
 
@@ -21692,28 +13016,7 @@ New Window( "Example",
 
 ```jsl
 
-
-New Window( "Example",
-	Graph Box(
-		Pixel Origin( 10, 80 ); // in axis coordinates
-		Pixel Move To( 0, 0 );
-		Pixel Line To( 160, 140 ); // in pixels from pixel origin
-		Pixel Text( {0, 0}, "default" );
-		Pixel Text(
-			Erased,
-			Boxed,
-			Clockwise,
-			{75, 75},
-			"Erased Boxed Clockwise"
-		);
-		Pixel Text(
-			Center Justified,
-			Bottom Align,
-			{160, 140},  // in pixels from pixel origin
-			"Bottom Align\!NCenter Justified"
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Pixel Origin( 10, 80 ); // in axis coordinates		Pixel Move To( 0, 0 );		Pixel Line To( 160, 140 ); // in pixels from pixel origin		Pixel Text( {0, 0}, "default" );		Pixel Text( Erased, Boxed, Clockwise, {75, 75}, "Erased Boxed Clockwise" );		Pixel Text(			Center Justified,			Bottom Align,			{160, 140},  // in pixels from pixel origin			"Bottom Align\!NCenter Justified"		);	));
 
 ```
 
@@ -21727,29 +13030,7 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Platform example",
-	H List Box(
-		Platform(
-			dt,
-			Bubble Plot(
-				X( :weight ),
-				Y( :height ),
-				Sizes( :age ),
-				Title Position( 0, 0 )
-			)
-		),
-		Platform(
-			dt,
-			Bubble Plot(
-				X( :weight ),
-				Y( :age ),
-				Sizes( :height ),
-				Title Position( 0, 0 )
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Platform example",	H List Box(		Platform(			dt,			Bubble Plot( X( :weight ), Y( :height ), Sizes( :age ), Title Position( 0, 0 ) )		),		Platform(			dt,			Bubble Plot( X( :weight ), Y( :age ), Sizes( :height ), Title Position( 0, 0 ) )		)	));
 
 ```
 
@@ -21791,15 +13072,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -21813,28 +13086,7 @@ New Window( "Example",
 
 ```jsl
 
-lambda = 4;
-New Window( "Example: Poisson Distribution",
-	ppy = Graph Box(
-		Y Scale( 0, 1.01 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= 40, k++,
-			H Line( k, k + 1, Poisson Distribution( lambda, k ) );
-			V Line(
-				k + 1,
-				Poisson Distribution( lambda, k ),
-				Poisson Distribution( lambda, k + 1 )
-			);
-		);
-		Text( {2, 0.9}, "\!U03BB=", Round( lambda, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 40, lambda, ppy << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
+lambda = 4;New Window( "Example: Poisson Distribution",	ppy = Graph Box(		Y Scale( 0, 1.01 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= 40, k++,			H Line( k, k + 1, Poisson Distribution( lambda, k ) );			V Line(				k + 1,				Poisson Distribution( lambda, k ),				Poisson Distribution( lambda, k + 1 )			);		);		Text( {2, 0.9}, "\!U03BB=", Round( lambda, 2 ) );	),	H List Box( Slider Box( 0, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ));
 
 ```
 
@@ -21848,23 +13100,7 @@ New Window( "Example: Poisson Distribution",
 
 ```jsl
 
-lambda = 4;
-New Window( "Example: Poisson Probability",
-	pdy = Graph Box(
-		Y Scale( 0, 0.20 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( k = 0, k <= 40, k++,
-			V Line( k, 0, Poisson Probability( lambda, k ) )
-		);
-		Text( {30, 0.18}, "\!U03BB=", Round( lambda, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 40, lambda, pdy << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
+lambda = 4;New Window( "Example: Poisson Probability",	pdy = Graph Box(		Y Scale( 0, 0.20 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 2 );		For( k = 0, k <= 40, k++,			V Line( k, 0, Poisson Probability( lambda, k ) )		);		Text( {30, 0.18}, "\!U03BB=", Round( lambda, 2 ) );	),	H List Box( Slider Box( 0, 40, lambda, pdy << reshow ), Text Box( " \!U03BB" ) ));
 
 ```
 
@@ -21878,48 +13114,7 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-qexpl = 20;
-qexpn = 40;
-qexpq = 0.5;
-New Window( "Example: Poisson Quantile",
-	qexpy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,
-			H Line(
-				qexpk,
-				qexpk + 1,
-				Poisson Distribution( qexpl, qexpk )
-			);
-			V Line(
-				qexpk + 1,
-				Poisson Distribution( qexpl, qexpk ),
-				Poisson Distribution( qexpl, qexpk + 1 )
-			);
-		);
-		Pen Color( "blue" );
-		V Line( Poisson Quantile( qexpl, qexpq ), 0, 1.0 );
-		Text(
-			{6, 0.17},
-			" \!U03BB=",
-			Round( qexpl, 2 ),
-			" q=",
-			Round( qexpq, 2 ),
-			" quantile=",
-			Round( Poisson Quantile( qexpl, qexpq ) )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 40, qexpl, qexpy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0, 1, qexpq, qexpy << reshow ),
-		Text Box( " q" )
-	)
-);
+qexpl = 20;qexpn = 40;qexpq = 0.5;New Window( "Example: Poisson Quantile",	qexpy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,			H Line( qexpk, qexpk + 1, Poisson Distribution( qexpl, qexpk ) );			V Line(				qexpk + 1,				Poisson Distribution( qexpl, qexpk ),				Poisson Distribution( qexpl, qexpk + 1 )			);		);		Pen Color( "blue" );		V Line( Poisson Quantile( qexpl, qexpq ), 0, 1.0 );		Text(			{6, 0.17},			" \!U03BB=",			Round( qexpl, 2 ),			" q=",			Round( qexpq, 2 ),			" quantile=",			Round( Poisson Quantile( qexpl, qexpq ) )		);	),	H List Box( Slider Box( 0, 40, qexpl, qexpy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 0, 1, qexpq, qexpy << reshow ), Text Box( " q" ) ));
 
 ```
 
@@ -21933,11 +13128,7 @@ New Window( "Example: Poisson Quantile",
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( "Poly Seg" ));
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( "Poly Seg" ));
 
 ```
 
@@ -21951,19 +13142,13 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "gray" );
-		Polygon( [10 30 90], [88 22 44] );
-		Polygon( [10 10, 50 80, 80 20, 50 50], <<Fill( 0 ) );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "gray" );		Polygon( [10 30 90], [88 22 44] );		Polygon( [10 10, 50 80, 80 20, 50 50], <<Fill( 0 ) );	));
 
 ```
 
 ### Polygon Area
 
-**Syntaxe :** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
+**Syntaxe :** area = Polygon Area( {x1, y1}, {x2, y2}, ... ); area = Polygon Area( xMatrix, yMatrix )
 
 **Description :** Calcule la surface du polygone spécifié.
 
@@ -21987,7 +13172,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**Syntaxe :** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
+**Syntaxe :** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... ); centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Description :** Calcule le centroïde du polygone spécifié.
 
@@ -22021,18 +13206,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "cyan" );
-		xx = 18 * [1 1 1 1 1 2 3 4 5 5 5 5 5 4 3 2]
-		+J( 1, 16, Random Uniform( -5, 5 ) );
-		yy = 18 * [1 2 3 4 5 5 5 5 5 4 3 2 1 1 1 1]
-		+J( 1, 16, Random Uniform( -5, 5 ) );
-		Polygon( xx, yy );
-		rows = Polygon Simplify( xx, yy, <<detail factor( 10 ) );
-		Polygon( xx[rows], yy[rows], <<Fill( 0 ) );
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "cyan" );		xx = 18 * [1 1 1 1 1 2 3 4 5 5 5 5 5 4 3 2] + J( 1, 16, Random Uniform( -5, 5 ) );		yy = 18 * [1 2 3 4 5 5 5 5 5 4 3 2 1 1 1 1] + J( 1, 16, Random Uniform( -5, 5 ) );		Polygon( xx, yy );		rows = Polygon Simplify( xx, yy, <<detail factor( 10 ) );		Polygon( xx[rows], yy[rows], <<Fill( 0 ) );	));
 
 ```
 
@@ -22040,85 +13214,31 @@ New Window( "Example",
 
 ```jsl
 
-dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
-rows = Where( dt, 4 <= :Shape <= 7 );
-polys = dt[rows, {"X", "Y"}];
-ids = dt[rows, {"Shape"}] * 100 + dt[rows, {"Part"}];
-Close( dt, NoSave );
-
-simple rows = Polygon Simplify(
-	polys,
-	<<detail factor( 500 ),
-	<<multiple( ids ),
-	<<geodesic( 1 )
-);
-unique ids = Associative Array( ids );
-
-minx = Min( polys[0, 1] );
-maxx = Max( polys[0, 1] );
-sx = maxx - minx;
-miny = Min( polys[0, 2] );
-maxy = Max( polys[0, 2] );
-sy = maxy - miny;
-
-New Window( "Parishes",
-	Graph Box(
-		Frame Size( 600, 600 ),
-		X Scale( minx - sx * 0.02, maxx + sx * 0.02 ),
-		Y Scale( miny - sy * 0.02, maxy + sy * 0.02 ), 
-		
-		For Each( {id}, unique ids, 
-
-			rows = simple rows[Loc( ids[simple rows] == id )];
-			Pen Color( "light red" );
-			Pen Size( 4 );
-			Polygon( polys[rows, 0], <<Fill( 0 ) );
-
-			rows = Loc( ids == id );
-			Pen Color( "black" );
-			Pen Size( 1 );
-			Polygon( polys[rows, 0], <<Fill( 0 ) );
-			
-			{cx, cy} = Polygon Centroid( polys[rows, 0] );
-			Text( Center Justified, {cx, cy}, Char( id ) );
-		)
-	)
-);
+dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );rows = Where( dt, 4 <= :Shape <= 7 );polys = dt[rows, {"X", "Y"}];ids = dt[rows, {"Shape"}] * 100 + dt[rows, {"Part"}];Close( dt, NoSave );simple rows = Polygon Simplify(	polys,	<<detail factor( 500 ),	<<multiple( ids ),	<<geodesic( 1 ));unique ids = Associative Array( ids );minx = Min( polys[0, 1] );maxx = Max( polys[0, 1] );sx = maxx - minx;miny = Min( polys[0, 2] );maxy = Max( polys[0, 2] );sy = maxy - miny;New Window( "Parishes",	Graph Box(		Frame Size( 600, 600 ),		X Scale( minx - sx * 0.02, maxx + sx * 0.02 ),		Y Scale( miny - sy * 0.02, maxy + sy * 0.02 ), 				For Each( {id}, unique ids, 			rows = simple rows[Loc( ids[simple rows] == id )];			Pen Color( "light red" );			Pen Size( 4 );			Polygon( polys[rows, 0], <<Fill( 0 ) );			rows = Loc( ids == id );			Pen Color( "black" );			Pen Size( 1 );			Polygon( polys[rows, 0], <<Fill( 0 ) );						{cx, cy} = Polygon Centroid( polys[rows, 0] );			Text( Center Justified, {cx, cy}, Char( id ) );		)	));
 
 ```
 
 ### Polytope Uniform Random
 
-**Syntaxe :** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
+**Syntaxe :** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
 
-**Description :** Génère aléatoirement des points répartis uniformément sur un polytope convexe. L’argument numSamples spécifie le nombre de points aléatoires à générer. L’argument A est la matrice des coefficients de contrainte. L’argument B représente les valeurs des contraintes de droite. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables. Les arguments neq, mle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales. L’argument nwarm est le nombre de répétitions warm-up avant que les points ne soient écrits dans la matrice de sortie. L’argument nstride est le nombre de répétitions entre chaque point, qui est écrit dans la matrice de sortie. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
+**Description :** Génère un échantillon aléatoire soumis à des contraintes linéaires, des contraintes de bornes sur les variables et des contraintes de cardinalité sur des sous-groupes de variables spécifiés. L&apos;argument numSamples spécifie le nombre de points aléatoires à générer. L&apos;argument A est la matrice des coefficients de contrainte linéaire. L&apos;argument b représente les valeurs des contraintes linéaires de droite. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables Les arguments neq, nle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales L&apos;argument nwarm est le nombre de répétitions warm-up avant que les points ne soient écrits dans la matrice de sortie. L&apos;argument nstride est le nombre de répétitions entre chaque point, qui est écrit dans la matrice de sortie. L’argument tol est la tolérance. L&apos;argument G est un vecteur d&apos;indices qui affecte les variables à des sous-groupes de composants contraints, où les valeurs manquantes ou nulles n&apos;appartiennent pas à un sous-groupe contraint. Les arguments LC et UC sont respectivement les contraintes de cardinalité minimum et maximum pour les sous-groupes de composants contraints. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
 
 **JMP Version ajoutée :** Avant la version 14
 
+**Exemple 1**
+
 ```jsl
 
-A = [1 1 1, 1 2 0];
-b = [1, 0.5];
-L = [0, 0, 0.1];
-U = [1, 1, 1];
-points = Polytope Uniform Random( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
-dt = As Table( points );
-tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );
-tfr = tobj[scalebox( 1 )] << clone box;
-New Window( "Example: Polytope Uniform Random",
-	Outline Box( "Points on a Ternary Plot", tfr ),
-	Outline Box( "Constraints",
-		Text Box( "X1 + x2 + x3 = 1" ),
-		Text Box( "X2 + 2*x2 >= 0.5" )
-	),
-	Outline Box( "Variable Bounds",
-		Text Box( "0 <= x1 <= 1" ),
-		Text Box( "0 <= x2 <= 1" ),
-		Text Box( ".1 < x3 <= 1" )
-	)
-);
-Close( dt, no save );
-Show( "see new window for example output" );
+A = [1 1 1, 1 2 0];b = [1, 0.5];L = [0, 0, 0.1];U = [1, 1, 1];points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );dt = As Table( points );tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );tfr = tobj[scalebox( 1 )] << clone box;New Window( "Example: Random Linearly Constrained Uniform",	Outline Box( "Points on a Ternary Plot", tfr ),	Outline Box( "Constraints",		Text Box( "X1 + x2 + x3 = 1" ),		Text Box( "X2 + 2*x2 >= 0.5" )	),	Outline Box( "Variable Bounds",		Text Box( "0 <= x1 <= 1" ),		Text Box( "0 <= x2 <= 1" ),		Text Box( ".1 < x3 <= 1" )	));Close( dt, no save );Show( "see new window for example output" );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];b = [100];L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];nwarm = 100;nstride = 100;tol = 1e-8;// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];// Lower cardinality constraints for the constrained subgroupsLC = [1 1];// Upper cardinality constraints for the constrained subgroupsUC = [3 5];points = Random Linearly Constrained Uniform(	100,	A,	b,	L,	U,	1,	0,	0,	nwarm,	nstride,	tol,	G,	LC,	UC);dt = As Table( points );
 
 ```
 
@@ -22132,14 +13252,7 @@ Show( "see new window for example output" );
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Popup Box( {"x", ex = 1, "y", ex = 2} ),
-		"beta",
-		Panel Box( "panel", Text Box( "text" ) )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Popup Box( {"x", ex = 1, "y", ex = 2} ),		"beta",		Panel Box( "panel", Text Box( "text" ) )	));
 
 ```
 
@@ -22153,9 +13266,7 @@ New Window( "Example",
 
 ```jsl
 
-ex = 1;
-ex--;
-ex;
+ex = 1;ex--;ex;
 
 ```
 
@@ -22169,9 +13280,7 @@ ex;
 
 ```jsl
 
-ex = 1;
-ex++;
-ex;
+ex = 1;ex++;ex;
 
 ```
 
@@ -22269,9 +13378,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -22299,17 +13406,7 @@ Print( 355 / 113, Pi() );
 
 ```jsl
 
-A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
-Print Matrix( A );
-Print Matrix( A, <<ignore locale( 1 ) );
-Print Matrix( A, <<style( "latex" ) );
-Print Matrix(
-	A,
-	<<style( "other" ),
-	<<line begin( "| " ),
-	<<line end( " |" ),
-	<<separate( " | " )
-);
+A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];Print Matrix( A );Print Matrix( A, <<ignore locale( 1 ) );Print Matrix( A, <<style( "latex" ) );Print Matrix(	A,	<<style( "other" ),	<<line begin( "| " ),	<<line end( " |" ),	<<separate( " | " ));
 
 ```
 
@@ -22351,9 +13448,7 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
-PythonConnection = Python Connect();
-version = PythonConnection << Get Version;
-Show( version );
+PythonConnection = Python Connect();version = PythonConnection << Get Version;Show( version );
 
 ```
 
@@ -22377,9 +13472,7 @@ Python Create JPIP CMD();
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Create JPIP CMD();
+conn = Python Connect();conn << Create JPIP CMD();
 
 ```
 
@@ -22387,7 +13480,7 @@ conn << Create JPIP CMD();
 
 **Syntaxe :** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
-**Description :** Envoie une liste des entrées, exécute les instructions et renvoie une liste des sorties. Le paramètre facultatif echo() est défini par défaut sur Vrai. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 supprime l&apos;affichage dans le log.
+**Description :** Envoie une liste d&apos;entrées, exécute des instructions et renvoie une liste de sorties. Le paramètre facultatif echo() est défini par défaut sur Vrai. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 le désactive.
 
 **JMP Version ajoutée :** 14
 
@@ -22395,28 +13488,7 @@ conn << Create JPIP CMD();
 
 ```jsl
 
-
-a = "abcdef";
-d = 3.141;
-x = 0;
-z = 0;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m, a, d},
-	{x, z, a, d},
-	"\[
-import numpy as np
-a = np.multiply(v, m) # matrix product
-d = np.divide(v, m) # matrix division
-z = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left division
-x = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division
-]\"
-);
-Show( v, m, ml, x, z, a, d );
+a = "abcdef";d = 3.141;x = 0;z = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m, a, d},	{x, z, a, d},	"\[import numpy as npa = np.multiply(v, m) # matrix productd = np.divide(v, m) # matrix divisionz = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left divisionx = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division]\");Show( v, m, ml, x, z, a, d );
 
 ```
 
@@ -22424,38 +13496,7 @@ Show( v, m, ml, x, z, a, d );
 
 ```jsl
 
-
-x1 = 1;
-x2 = 2;
-y1 = 1;
-y2 = 2;
-z1 = 1;
-z2 = 2;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m},
-	{x1, x2, y1, y2, z1, z2},
-	"\[
-import numpy as np
-x1 = np.multiply(v, m) # matrix product
-print('x1=', x1)
-x2 = np.divide(v, m) # matrix division
-print('x2=', x2)
-y1 = np.dot(v, m) # dot product of v and m
-print('y1=', y1)
-y2 = np.dot(m, v) # dot product of m and v
-print('y2=', y2)
-z1 = np.inner(v, m) # inner product of v and m
-print('z1=', z1)
-z2 = np.inner(m, v) # innder product of m and v
-print('z2=', z2)
-]\"
-);
-Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
+x1 = 1;x2 = 2;y1 = 1;y2 = 2;z1 = 1;z2 = 2;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m},	{x1, x2, y1, y2, z1, z2},	"\[import numpy as npx1 = np.multiply(v, m) # matrix productprint('x1=', x1)x2 = np.divide(v, m) # matrix divisionprint('x2=', x2)y1 = np.dot(v, m) # dot product of v and mprint('y1=', y1)y2 = np.dot(m, v) # dot product of m and vprint('y2=', y2)z1 = np.inner(v, m) # inner product of v and mprint('z1=', z1)z2 = np.inner(m, v) # innder product of m and vprint('z2=', z2)]\");Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```
 
@@ -22471,11 +13512,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```jsl
 
-
-date1 = As Date( Today() );
-Python Send( date1 );
-date2 = Python Get( date1 );
-Show( date1, date2 );
+date1 = As Date( Today() );Python Send( date1 );date2 = Python Get( date1 );Show( date1, date2 );
 
 ```
 
@@ -22483,11 +13520,7 @@ Show( date1, date2 );
 
 ```jsl
 
-
-x1 = {1, 2, 3};
-Python Send( x1 );
-x2 = Python Get( x1 );
-Show( x1, x2 );
+x1 = {1, 2, 3};Python Send( x1 );x2 = Python Get( x1 );Show( x1, x2 );
 
 ```
 
@@ -22495,12 +13528,7 @@ Show( x1, x2 );
 
 ```jsl
 
-
-Python Install Packages( "numpy" );
-Python Submit( "import numpy as np" );
-Python Submit( "datetime64 = np.datetime64('1989-10-05')" );
-numpy_datetime = Python Get( datetime64 );
-Show( numpy_datetime );
+Python Install Packages( "numpy" );Python Submit( "import numpy as np" );Python Submit( "datetime64 = np.datetime64('1989-10-05')" );numpy_datetime = Python Get( datetime64 );Show( numpy_datetime );
 
 ```
 
@@ -22514,8 +13542,7 @@ Show( numpy_datetime );
 
 ```jsl
 
-version = Python Get Version();
-Show( version );
+version = Python Get Version();Show( version );
 
 ```
 
@@ -22531,15 +13558,7 @@ Show( version );
 
 ```jsl
 
-
-Python Init();
-Python Submit(
-	"\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\"
-);
-getStr = Python Get( str );
-Show( getStr );
+Python Init();Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
@@ -22547,15 +13566,7 @@ Show( getStr );
 
 ```jsl
 
-
-PythonConnection = Python Init();
-PythonConnection << Submit(
-	"\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\"
-);
-getStr = Python Get( str );
-Show( getStr );
+PythonConnection = Python Init();PythonConnection << Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
@@ -22571,8 +13582,7 @@ Show( getStr );
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( "numpy pandas" );
+// install numpy and pandas packagesPython Install Packages( "numpy pandas" );
 
 ```
 
@@ -22580,8 +13590,7 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( {"numpy", "pandas"} );
+// install numpy and pandas packagesPython Install Packages( {"numpy", "pandas"} );
 
 ```
 
@@ -22589,9 +13598,7 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Install Packages( "numpy pandas" );
+// install numpy and pandas packagesconn = Python Connect();conn << Install Packages( "numpy pandas" );
 
 ```
 
@@ -22605,8 +13612,7 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-x = Python Is Connected();
-Show( x );
+x = Python Is Connected();Show( x );
 
 ```
 
@@ -22620,8 +13626,7 @@ Show( x );
 
 ```jsl
 
-Python name = Python JMP Name to Python Name( a b c );
-Show( Python name );
+Python name = Python JMP Name to Python Name( a b c );Show( Python name );
 
 ```
 
@@ -22629,26 +13634,21 @@ Show( Python name );
 
 **Syntaxe :** Python Reset()
 
-**Description :** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**Description :** Réinitialise l&apos;environnement Python partagé, en effaçant principalement toutes les références à des objets. Cette opération ne modifie pas le cache d&apos;importation des modules importés. Il s&apos;agit d&apos;une limitation de l&apos;environnement Python. Les modules qui chargent des bibliothèques partagées ne peuvent pas être déchargés par le processus en cours d&apos;exécution. Pour recharger du code Python pur, consultez la documentation Python.org sur la fonction importlib reload().
 
 **JMP Version ajoutée :** 19
 
 ```jsl
 
-pi = 3.1415927;
-Python Send( pi );
-Python Submit( "print(pi)" );
-Python Reset();
-// will show error, pi not defined
-Python Submit( "print(pi)" );
+pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();// will show error, pi not definedPython Submit( "print(pi)" );
 
 ```
 
 ### Python Send
 
-**Syntaxe :** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
+**Syntaxe :** Python Send( name, &lt;Python Name( name )&gt; )
 
-**Description :** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
+**Description :** Envoie des données à Python, où l&apos;argument name peut représenter l&apos;un des types de données JMP suivants : numérique, chaîne, matrice, liste, table de données, colonne de table de données ou date.
 
 **JMP Version ajoutée :** 14
 
@@ -22656,10 +13656,7 @@ Python Submit( "print(pi)" );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt:weight );
-Python Submit( "print(weight)" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt:weight );Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -22667,10 +13664,7 @@ Python Submit( "print(weight)" );
 
 ```jsl
 
-
-date = As Date( Today() );
-Python Send( date );
-Python Submit( "print(date)" );
+date = As Date( Today() );Python Send( date );Python Submit( "print(date)" );
 
 ```
 
@@ -22678,13 +13672,7 @@ Python Submit( "print(date)" );
 
 ```jsl
 
-
-x = {1, 2, 3};
-Python Send( x );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt );
-Python Submit( "print(x)" );
-Python Submit( "print(dt)" );
+x = {1, 2, 3};Python Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt );Python Submit( "print(x)" );Python Submit( "print(dt)" );
 
 ```
 
@@ -22698,11 +13686,7 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-
-Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
-Python Submit( "print(Big_Class)" );
-Python Submit( "print(Baseball)" );
+Python Send File( "$SAMPLE_DATA/Big Class.jmp" );Python Send File( "$SAMPLE_DATA/Baseball.jmp" );Python Submit( "print(Big_Class)" );Python Submit( "print(Baseball)" );
 
 ```
 
@@ -22716,14 +13700,7 @@ Python Submit( "print(Baseball)" );
 
 ```jsl
 
-Python Submit(
-	"\[
-str = 'The quick brown fox jumps over the lazy dog'
-a = 200]\"
-);
-getStr = Python Get( str );
-getNum = Python Get( a );
-Show( getStr, getNum );
+Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog'a = 200]\" );getStr = Python Get( str );getNum = Python Get( a );Show( getStr, getNum );
 
 ```
 
@@ -22785,9 +13762,7 @@ QR LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-A = [2 0, 0 2];
-x = [2, 3];
-y = Quadratic Form BLAS( A, x );
+A = [2 0, 0 2];x = [2, 3];y = Quadratic Form BLAS( A, x );
 
 ```
 
@@ -22801,25 +13776,7 @@ y = Quadratic Form BLAS( A, x );
 
 ```jsl
 
-Eval List(
-	{Quantile(
-		0.75,
-		0,
-		100,
-		200,
-		300,
-		400,
-		500,
-		600,
-		700,
-		800,
-		900,
-		1000
-	), Quantile(
-		0.5,
-		[1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000]
-	)}
-);
+Eval List(	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),	Quantile( 0.5, [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] )});
 
 ```
 
@@ -22847,33 +13804,7 @@ Quarter( Today() );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-Query(
-	dt,
-	"SELECT name, age, height FROM 'Big Class'
-         WHERE age > 14; "
-);
-
-		// Using aliases, performing a join
-dtSAT = Open( "$SAMPLE_DATA/SATByYear.jmp", Invisible );
-dtUS = Open( "$SAMPLE_DATA/US Demographics.jmp", Invisible );
-Query(
-	Table( dtSAT, "t1" ),
-	Table( dtUS, "t2" ), 
-
-	"\[SELECT t1.State, t1."SAT Math", t2."College Degrees",
-            t2."Eighth Grade Math"
-       FROM t1
-       LEFT OUTER JOIN t2
-           ON t1.State = t2.State
-       WHERE t1.'SAT Math' > 550;
-      ]\"
-);
-
-		// Query that returns a scalar value
-retval = Query( Scalar, dt, "SELECT AVG(height) from 'Big Class';" );
-// Query with no tables
-retval = Query( Scalar, "SELECT SQRT(152399025);" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );Query( dt, "SELECT name, age, height FROM 'Big Class'         WHERE age > 14; " );		// Using aliases, performing a joindtSAT = Open( "$SAMPLE_DATA/SATByYear.jmp", Invisible );dtUS = Open( "$SAMPLE_DATA/US Demographics.jmp", Invisible );Query(	Table( dtSAT, "t1" ),	Table( dtUS, "t2" ), 	"\[SELECT t1.State, t1."SAT Math", t2."College Degrees",            t2."Eighth Grade Math"       FROM t1       LEFT OUTER JOIN t2           ON t1.State = t2.State       WHERE t1.'SAT Math' > 550;      ]\");		// Query that returns a scalar valueretval = Query( Scalar, dt, "SELECT AVG(height) from 'Big Class';" );// Query with no tablesretval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```
 
@@ -22887,13 +13818,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
-If(
-	New Window( "Quit() example",
-		<<Type( "Modal" ),
-		Text Box( "Shut down JMP?" ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)["Button"] == 1, /*OK==1*/Quit(), /*cancel==-1*/"Good choice."
-);
+If(	New Window( "Quit() example",		<<Type( "Modal" ),		Text Box( "Shut down JMP?" ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	)["Button"] == 1, /*OK==1*/Quit(), /*cancel==-1*/"Good choice.");
 
 ```
 
@@ -22921,9 +13846,7 @@ RConnection = R Connect();
 
 ```jsl
 
-R Init( Echo( true ) );
-R Control( Echo( false ) );
-R Submit( "Add R code" );
+R Init( Echo( true ) );R Control( Echo( false ) );R Submit( "Add R code" );
 
 ```
 
@@ -22937,22 +13860,7 @@ R Submit( "Add R code" );
 
 ```jsl
 
-R Init();
-a = "abcdef";
-d = 3.141;
-x = 0;
-z = 0;
-v = [9 8 7, 6 5 4, 3 2 1];
-m = [1 2 3, 4 5 6, 7 8 9];
-rc = R Execute(
-	{v, m, a, d},
-	{x, z, a, d},
-	"\[
-x <- rnorm(5)
-z <- v * m
-]\"
-);
-Show( v, m, rc, x, z, a, d );
+R Init();a = "abcdef";d = 3.141;x = 0;z = 0;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4 5 6, 7 8 9];rc = R Execute( {v, m, a, d}, {x, z, a, d}, "\[x <- rnorm(5)z <- v * m]\" );Show( v, m, rc, x, z, a, d );
 
 ```
 
@@ -22966,15 +13874,7 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
-R Init();
-x1 = [1, 2, 3];
-R Send( x1 );
-x2 = R Get( x1 );
-Show( x1, x2 );
-dt1 = New Table( "Test", New Column( "Col", Values( [10, 20, 30] ) ) );
-R Send( dt1 );
-dt2 = R Get( dt1 );
-Close( dt1, No Save );
+R Init();x1 = [1, 2, 3];R Send( x1 );x2 = R Get( x1 );Show( x1, x2 );dt1 = New Table( "Test", New Column( "Col", Values( [10, 20, 30] ) ) );R Send( dt1 );dt2 = R Get( dt1 );Close( dt1, No Save );
 
 ```
 
@@ -22988,15 +13888,7 @@ Close( dt1, No Save );
 
 ```jsl
 
-R Init();
-img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
-R Execute( {img_path}, {}, "\[
-png(img_path)
-plot(1:10)
-dev.off()
-]\" );
-plot = Open( img_path );
-rc = Delete File( img_path );
+R Init();img_path = Get Path Variable( "TEMP" ) || "r_plot.png";R Execute( {img_path}, {}, "\[png(img_path)plot(1:10)dev.off()]\" );plot = Open( img_path );rc = Delete File( img_path );
 
 ```
 
@@ -23010,9 +13902,7 @@ rc = Delete File( img_path );
 
 ```jsl
 
-R Init();
-version = R Get Version();
-Show( version );
+R Init();version = R Get Version();Show( version );
 
 ```
 
@@ -23040,8 +13930,7 @@ R Init();
 
 ```jsl
 
-R Init();
-connected = R Is Connected();
+R Init();connected = R Is Connected();
 
 ```
 
@@ -23071,11 +13960,7 @@ R name = R JMP Name to R Name( a b c );
 
 ```jsl
 
-R Init();
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-R Send( dt:weight );
-Close( dt );
-w = R Get( "weight" );
+R Init();dt = Open( "$SAMPLE_DATA/Big Class.jmp" );R Send( dt:weight );Close( dt );w = R Get( "dt.weight" );
 
 ```
 
@@ -23083,14 +13968,7 @@ w = R Get( "weight" );
 
 ```jsl
 
-R Init();
-x = [1, 2, 3];
-R Send( x, "x1" );
-rx = R Get( "x1" );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-R Send( dt );
-Close( dt );
-R Submit( "dt" );
+R Init();x = [1, 2, 3];R Send( x, "x1" );rx = R Get( "x1" );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );R Send( dt );Close( dt );R Submit( "dt" );
 
 ```
 
@@ -23104,11 +13982,7 @@ R Submit( "dt" );
 
 ```jsl
 
-R Init();
-R Send File( "$SAMPLE_DATA/Big Class.jmp" );
-R Send File( "$SAMPLE_DATA/Baseball.jmp" );
-R Submit( "Big.Class" );
-R Submit( "Baseball" );
+R Init();R Send File( "$SAMPLE_DATA/Big Class.jmp" );R Send File( "$SAMPLE_DATA/Baseball.jmp" );R Submit( "Big.Class" );R Submit( "Baseball" );
 
 ```
 
@@ -23122,26 +13996,7 @@ R Submit( "Baseball" );
 
 ```jsl
 
-
-R Init();
-img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
-code =
-"\[
-x <- rnorm(1000)
-hx <- hist(x, breaks=100, plot=FALSE)
-png("IMG_PATH")
-plot(hx, col=ifelse(abs(hx$breaks) < 1.669, 4, 2))
-dev.off()
-x <- rnorm (100)
-y <- x**2 + rnorm (100)
-summary(y)
-]\";
-// substitue portable path into R code
-r_code = Substitute( code, "IMG_PATH", img_path );
-R Submit( r_code );
-Wait( 3 );
-plot = Open( img_path );
-rc = Delete File( img_path );
+R Init();img_path = Get Path Variable( "TEMP" ) || "r_plot.png";code ="\[x <- rnorm(1000)hx <- hist(x, breaks=100, plot=FALSE)png("IMG_PATH")plot(hx, col=ifelse(abs(hx$breaks) < 1.669, 4, 2))dev.off()x <- rnorm (100)y <- x**2 + rnorm (100)summary(y)]\";// substitue portable path into R coder_code = Substitute( code, "IMG_PATH", img_path );R Submit( r_code );Wait( 3 );plot = Open( img_path );rc = Delete File( img_path );
 
 ```
 
@@ -23155,10 +14010,7 @@ rc = Delete File( img_path );
 
 ```jsl
 
-
-R Init();
-file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
-R Submit File( file_path );
+R Init();file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";R Submit File( file_path );
 
 ```
 
@@ -23172,8 +14024,7 @@ R Submit File( file_path );
 
 ```jsl
 
-R Init();
-R Term();
+R Init();R Term();
 
 ```
 
@@ -23187,12 +14038,7 @@ R Term();
 
 ```jsl
 
-New Window( "Example",
-	rb = Radio Box(
-		{"single", "double", "triple"},
-		Show( rb << Get() )
-	)
-);
+New Window( "Example",	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) ));
 
 ```
 
@@ -23206,13 +14052,7 @@ New Window( "Example",
 
 ```jsl
 
-
-//produce a single random number
-x = Random Beta( 1, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Beta( 1, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Beta( 1, 1 );//produce a vector of random numbersv = J( 1, 10, Random Beta( 1, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23226,13 +14066,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Beta Binomial( 14, .5, .2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Beta Binomial( 14, .5, .2 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Beta Binomial( 14, .5, .2 );//produce a vector of random numbersv = J( 1, 10, Random Beta Binomial( 14, .5, .2 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23246,78 +14080,7 @@ Show( x, v );
 
 ```jsl
 
-exrbinp = 0.5;
-exrbinn = 40;
-exrbinlsz = Log( 1000 );
-New Window( "Example: Random Binomial and Empirical Distribution",
-	exrbiny = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( 0, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		exrbinsz = Round( Exp( exrbinlsz ) );
-		exrbinsamp = J( Round( exrbinsz ), 1, . );
-		exrbinfreq = J( Round( exrbinn + 1 ), 1, . );
-		For( exrbink = 1, exrbink <= Round( exrbinsz ), exrbink++,
-			exrbinsamp[exrbink] = Random Binomial( exrbinn, exrbinp )
-		);
-		For( exrbink = 0, exrbink <= Round( exrbinn ), exrbink++,
-			exrbinfreq[exrbink + 1] = Sum( exrbinsamp <= exrbink ) /
-			Round( exrbinsz )
-		);
-		For( exrbink = 0, exrbink < Round( exrbinn ), exrbink++,
-			H Line(
-				exrbink,
-				exrbink + 1,
-				Binomial Distribution(
-					exrbinp,
-					Round( exrbinn ),
-					exrbink
-				)
-			);
-			V Line(
-				exrbink + 1,
-				Binomial Distribution(
-					exrbinp,
-					Round( exrbinn ),
-					exrbink
-				),
-				Binomial Distribution(
-					exrbinp,
-					Round( exrbinn ),
-					exrbink + 1
-				)
-			);
-		);
-		Pen Color( "blue" );
-		For( exrbink = 1, exrbink <= Round( exrbinn ), exrbink++,
-			H Line( exrbink - 1, exrbink, exrbinfreq[exrbink] );
-			V Line(
-				exrbink,
-				exrbinfreq[exrbink],
-				exrbinfreq[exrbink + 1]
-			);
-		);
-		Text(
-			{0.5, 0.9},
-			"n=",
-			Round( exrbinn ),
-			" p=",
-			Round( exrbinp, 2 ),
-			" size=",
-			Round( exrbinsz )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 10 ),
-			Log( 5000 ),
-			exrbinlsz,
-			exrbiny << reshow
-		),
-		Text Box( " random sample size" )
-	)
-);
+exrbinp = 0.5;exrbinn = 40;exrbinlsz = Log( 1000 );New Window( "Example: Random Binomial and Empirical Distribution",	exrbiny = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( 0, 40 ),		Pen Color( "red" ),		Pen Size( 2 );		exrbinsz = Round( Exp( exrbinlsz ) );		exrbinsamp = J( Round( exrbinsz ), 1, . );		exrbinfreq = J( Round( exrbinn + 1 ), 1, . );		For( exrbink = 1, exrbink <= Round( exrbinsz ), exrbink++,			exrbinsamp[exrbink] = Random Binomial( exrbinn, exrbinp )		);		For( exrbink = 0, exrbink <= Round( exrbinn ), exrbink++,			exrbinfreq[exrbink + 1] = Sum( exrbinsamp <= exrbink ) / Round( exrbinsz )		);		For( exrbink = 0, exrbink < Round( exrbinn ), exrbink++,			H Line(				exrbink,				exrbink + 1,				Binomial Distribution( exrbinp, Round( exrbinn ), exrbink )			);			V Line(				exrbink + 1,				Binomial Distribution( exrbinp, Round( exrbinn ), exrbink ),				Binomial Distribution( exrbinp, Round( exrbinn ), exrbink + 1 )			);		);		Pen Color( "blue" );		For( exrbink = 1, exrbink <= Round( exrbinn ), exrbink++,			H Line( exrbink - 1, exrbink, exrbinfreq[exrbink] );			V Line( exrbink, exrbinfreq[exrbink], exrbinfreq[exrbink + 1] );		);		Text(			{0.5, 0.9},			"n=",			Round( exrbinn ),			" p=",			Round( exrbinp, 2 ),			" size=",			Round( exrbinsz )		);	),	H List Box(		Slider Box( Log( 10 ), Log( 5000 ), exrbinlsz, exrbiny << reshow ),		Text Box( " random sample size" )	));
 
 ```
 
@@ -23345,13 +14108,7 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Cauchy();
-//produce a vector of random numbers
-v = J( 1, 10, Random Cauchy() );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Cauchy();//produce a vector of random numbersv = J( 1, 10, Random Cauchy() );//show resultsShow( x, v );
 
 ```
 
@@ -23365,13 +14122,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random ChiSquare( 2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random ChiSquare( 2 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random ChiSquare( 2 );//produce a vector of random numbersv = J( 1, 10, Random ChiSquare( 2 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23385,13 +14136,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random ExGaussian( 0, .5, .25 );
-//produce a vector of random numbers
-v = J( 1, 10, Random ExGaussian( 0, .5, .25 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random ExGaussian( 0, .5, .25 );//produce a vector of random numbersv = J( 1, 10, Random ExGaussian( 0, .5, .25 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23405,13 +14150,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Exp();
-//produce a vector of random numbers
-v = J( 1, 10, Random Exp() );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Exp();//produce a vector of random numbersv = J( 1, 10, Random Exp() );//show resultsShow( x, v );
 
 ```
 
@@ -23425,13 +14164,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random F( 2, 2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random F( 2, 2 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random F( 2, 2 );//produce a vector of random numbersv = J( 1, 10, Random F( 2, 2 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23445,13 +14178,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Frechet( 10, 5 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Frechet( 10, 5 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Frechet( 10, 5 );//produce a vector of random numbersv = J( 1, 10, Random Frechet( 10, 5 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23465,13 +14192,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Gamma( 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Gamma( 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Gamma( 1 );//produce a vector of random numbersv = J( 1, 10, Random Gamma( 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23485,13 +14206,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Gamma Poisson( 3, 2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Gamma Poisson( 3, 2 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Gamma Poisson( 3, 2 );//produce a vector of random numbersv = J( 1, 10, Random Gamma Poisson( 3, 2 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23505,13 +14220,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random GenGamma( 2, 1.25 );
-//produce a vector of random numbers
-v = J( 1, 10, Random GenGamma( 2, 1.25 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random GenGamma( 2, 1.25 );//produce a vector of random numbersv = J( 1, 10, Random GenGamma( 2, 1.25 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23525,59 +14234,7 @@ Show( x, v );
 
 ```jsl
 
-exrgeop = 0.1;
-exrgeolsz = Log( 300 );
-New Window( "Example: Random Geometric and Empirical Distribution",
-	exrgeoy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 50 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		exrgeosz = Round( Exp( exrgeolsz ) );
-		exrgeosamp = J( Round( exrgeosz ), 1, . );
-		exrgeofreq = J( Round( 50 + 1 ), 1, . );
-		For( exrgeok = 1, exrgeok <= Round( exrgeosz ), exrgeok++,
-			exrgeosamp[exrgeok] = Random Geometric( exrgeop )
-		);
-		For( exrgeok = 0, exrgeok <= 50, exrgeok++,
-			exrgeofreq[exrgeok + 1] = Sum( exrgeosamp <= exrgeok ) /
-			Round( exrgeosz )
-		);
-		exrgeotmp1 = 0;
-		exrgeotmp2 = 0;
-		For( exrgeok = 0, exrgeok < 50, exrgeok++,
-			exrgeotmp2 = exrgeotmp2 + (1 - exrgeop) ^ exrgeok * exrgeop;
-			H Line( exrgeok, exrgeok + 1, exrgeotmp2 );
-			V Line( exrgeok, exrgeotmp1, exrgeotmp2 );
-			exrgeotmp1 = exrgeotmp2;
-		);
-		Pen Color( "blue" );
-		For( exrgeok = 0, exrgeok < 50, exrgeok++,
-			H Line( exrgeok, exrgeok + 1, exrgeofreq[exrgeok + 1] );
-			V Line(
-				exrgeok + 1,
-				exrgeofreq[exrgeok + 1],
-				exrgeofreq[exrgeok + 2]
-			);
-		);
-		Text(
-			{10, 0.2},
-			" p=",
-			Round( exrgeop, 2 ),
-			" sample size=",
-			Round( exrgeosz )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 10 ),
-			Log( 5000 ),
-			exrgeolsz,
-			exrgeoy << reshow
-		),
-		Text Box( " random sample size" )
-	)
-);
+exrgeop = 0.1;exrgeolsz = Log( 300 );New Window( "Example: Random Geometric and Empirical Distribution",	exrgeoy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 50 ),		Pen Color( "red" ),		Pen Size( 1 );		exrgeosz = Round( Exp( exrgeolsz ) );		exrgeosamp = J( Round( exrgeosz ), 1, . );		exrgeofreq = J( Round( 50 + 1 ), 1, . );		For( exrgeok = 1, exrgeok <= Round( exrgeosz ), exrgeok++,			exrgeosamp[exrgeok] = Random Geometric( exrgeop )		);		For( exrgeok = 0, exrgeok <= 50, exrgeok++,			exrgeofreq[exrgeok + 1] = Sum( exrgeosamp <= exrgeok ) / Round( exrgeosz )		);		exrgeotmp1 = 0;		exrgeotmp2 = 0;		For( exrgeok = 0, exrgeok < 50, exrgeok++,			exrgeotmp2 = exrgeotmp2 + (1 - exrgeop) ^ exrgeok * exrgeop;			H Line( exrgeok, exrgeok + 1, exrgeotmp2 );			V Line( exrgeok, exrgeotmp1, exrgeotmp2 );			exrgeotmp1 = exrgeotmp2;		);		Pen Color( "blue" );		For( exrgeok = 0, exrgeok < 50, exrgeok++,			H Line( exrgeok, exrgeok + 1, exrgeofreq[exrgeok + 1] );			V Line( exrgeok + 1, exrgeofreq[exrgeok + 1], exrgeofreq[exrgeok + 2] );		);		Text( {10, 0.2}, " p=", Round( exrgeop, 2 ), " sample size=", Round( exrgeosz ) );	),	H List Box(		Slider Box( Log( 10 ), Log( 5000 ), exrgeolsz, exrgeoy << reshow ),		Text Box( " random sample size" )	));
 
 ```
 
@@ -23591,13 +14248,7 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 ```jsl
 
-
-//produce a single random number
-x = Random GLog( 4, 1, 0.1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random GLog( 4, 1, 0.1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random GLog( 4, 1, 0.1 );//produce a vector of random numbersv = J( 1, 10, Random GLog( 4, 1, 0.1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23625,13 +14276,7 @@ Random Index( 100, 5 );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Integer( 1, 10 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Integer( 1, 10 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Integer( 1, 10 );//produce a vector of random numbersv = J( 1, 10, Random Integer( 1, 10 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23645,13 +14290,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Johnson Sb( 0.5, 1, 1, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Johnson Sb( 0.5, 1, 1, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Johnson Sb( 0.5, 1, 1, 1 );//produce a vector of random numbersv = J( 1, 10, Random Johnson Sb( 0.5, 1, 1, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23665,13 +14304,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Johnson Sl( 0.5, 1, 1, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Johnson Sl( 0.5, 1, 1, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Johnson Sl( 0.5, 1, 1, 1 );//produce a vector of random numbersv = J( 1, 10, Random Johnson Sl( 0.5, 1, 1, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23685,13 +14318,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Johnson Su( 0.5, 1, 1, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Johnson Su( 0.5, 1, 1, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Johnson Su( 0.5, 1, 1, 1 );//produce a vector of random numbersv = J( 1, 10, Random Johnson Su( 0.5, 1, 1, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23705,13 +14332,31 @@ Show( x, v );
 
 ```jsl
 
+//produce a single random numberx = Random LEV( 10, 5 );//produce a vector of random numbersv = J( 1, 10, Random LEV( 10, 5 ) );//show resultsShow( x, v );
 
-//produce a single random number
-x = Random LEV( 10, 5 );
-//produce a vector of random numbers
-v = J( 1, 10, Random LEV( 10, 5 ) );
-//show results
-Show( x, v );
+```
+
+### Random Linearly Constrained Uniform
+
+**Syntaxe :** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
+
+**Description :** Génère un échantillon aléatoire soumis à des contraintes linéaires, des contraintes de bornes sur les variables et des contraintes de cardinalité sur des sous-groupes de variables spécifiés. L&apos;argument numSamples spécifie le nombre de points aléatoires à générer. L&apos;argument A est la matrice des coefficients de contrainte linéaire. L&apos;argument b représente les valeurs des contraintes linéaires de droite. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables Les arguments neq, nle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales L&apos;argument nwarm est le nombre de répétitions warm-up avant que les points ne soient écrits dans la matrice de sortie. L&apos;argument nstride est le nombre de répétitions entre chaque point, qui est écrit dans la matrice de sortie. L’argument tol est la tolérance. L&apos;argument G est un vecteur d&apos;indices qui affecte les variables à des sous-groupes de composants contraints, où les valeurs manquantes ou nulles n&apos;appartiennent pas à un sous-groupe contraint. Les arguments LC et UC sont respectivement les contraintes de cardinalité minimum et maximum pour les sous-groupes de composants contraints. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
+
+**JMP Version ajoutée :** 20
+
+**Exemple 1**
+
+```jsl
+
+A = [1 1 1, 1 2 0];b = [1, 0.5];L = [0, 0, 0.1];U = [1, 1, 1];points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );dt = As Table( points );tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );tfr = tobj[scalebox( 1 )] << clone box;New Window( "Example: Random Linearly Constrained Uniform",	Outline Box( "Points on a Ternary Plot", tfr ),	Outline Box( "Constraints",		Text Box( "X1 + x2 + x3 = 1" ),		Text Box( "X2 + 2*x2 >= 0.5" )	),	Outline Box( "Variable Bounds",		Text Box( "0 <= x1 <= 1" ),		Text Box( "0 <= x2 <= 1" ),		Text Box( ".1 < x3 <= 1" )	));Close( dt, no save );Show( "see new window for example output" );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+  A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];b = [100];L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];nwarm = 100;nstride = 100;tol = 1e-8;// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];// Lower cardinality constraints for the constrained subgroupsLC = [1 1];// Upper cardinality constraints for the constrained subgroupsUC = [3 5];points = Random Linearly Constrained Uniform(	100,	A,	b,	L,	U,	1,	0,	0,	nwarm,	nstride,	tol,	G,	LC,	UC);dt = As Table( points );
 
 ```
 
@@ -23725,13 +14370,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random LogGenGamma( 2, 1.25 );
-//produce a vector of random numbers
-v = J( 1, 10, Random LogGenGamma( 2, 1.25 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random LogGenGamma( 2, 1.25 );//produce a vector of random numbersv = J( 1, 10, Random LogGenGamma( 2, 1.25 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23745,13 +14384,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Logistic( 15, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Logistic( 15, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Logistic( 15, 1 );//produce a vector of random numbersv = J( 1, 10, Random Logistic( 15, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23765,13 +14398,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Loglogistic( 15, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Loglogistic( 15, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Loglogistic( 15, 1 );//produce a vector of random numbersv = J( 1, 10, Random Loglogistic( 15, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23787,13 +14414,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Lognormal( -1, 1.5 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Lognormal( -1, 1.5 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Lognormal( -1, 1.5 );//produce a vector of random numbersv = J( 1, 10, Random Lognormal( -1, 1.5 ) );//show resultsShow( x, v );
 
 ```
 
@@ -23801,35 +14422,7 @@ Show( x, v );
 
 ```jsl
 
-exrlnn = 30;
-New Window( "Example: Random Lognormal and Empirical Distribution",
-	exrlny = Graph Box(
-		Y Scale( -0.05, 1.05 ),
-		X Scale( -.05, 10 ),
-		Pen Color( "red" );
-		exranlnorm = J( Round( exrlnn ), 1, . );
-		For( k = 1, k <= Round( exrlnn ), k++,
-			exranlnorm[k] = Random Lognormal( -1, 1.5 )
-		);
-		exranlnorm = Sort Ascending( exranlnorm );
-		H Line( 0, exranlnorm[1], 0 );
-		For( k = 2, k <= Round( exrlnn ), k++,
-			H Line(
-				exranlnorm[k - 1],
-				exranlnorm[k],
-				(k - 1) / Round( exrlnn )
-			)
-		);
-		H Line( exranlnorm[Round( exrlnn )], 10, 1.0 );
-		Pen Color( "blue" );
-		Y Function( Normal Distribution( Log( tdeq ), -1, 1.5 ), tdeq );
-		Text( {-4, 0.8}, " n=", Round( exrlnn ) );
-	),
-	H List Box(
-		Slider Box( 10, 2000, exrlnn, exrlny << reshow ),
-		Text Box( " n" )
-	)
-);
+exrlnn = 30;New Window( "Example: Random Lognormal and Empirical Distribution",	exrlny = Graph Box(		Y Scale( -0.05, 1.05 ),		X Scale( -.05, 10 ),		Pen Color( "red" );		exranlnorm = J( Round( exrlnn ), 1, . );		For( k = 1, k <= Round( exrlnn ), k++,			exranlnorm[k] = Random Lognormal( -1, 1.5 )		);		exranlnorm = Sort Ascending( exranlnorm );		H Line( 0, exranlnorm[1], 0 );		For( k = 2, k <= Round( exrlnn ), k++,			H Line( exranlnorm[k - 1], exranlnorm[k], (k - 1) / Round( exrlnn ) )		);		H Line( exranlnorm[Round( exrlnn )], 10, 1.0 );		Pen Color( "blue" );		Y Function( Normal Distribution( Log( tdeq ), -1, 1.5 ), tdeq );		Text( {-4, 0.8}, " n=", Round( exrlnn ) );	),	H List Box( Slider Box( 10, 2000, exrlnn, exrlny << reshow ), Text Box( " n" ) ));
 
 ```
 
@@ -23843,10 +14436,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ```jsl
 
-meanvec = 1 :: 3;
-covar = [1 .6 .6, .6 1 .6, .6 .6 1];
-randmvnRow = Random Multivariate Normal( meanvec, covar );
-randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
+meanvec = 1 :: 3;covar = [1 .6 .6, .6 1 .6, .6 .6 1];randmvnRow = Random Multivariate Normal( meanvec, covar );randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 ```
 
@@ -23860,54 +14450,7 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 
 ```jsl
 
-exnbpp = 0.3;
-exnbpn = 20;
-exnbrn = Random Negative Binomial( 20, 0.3 );
-New Window( "Example: Neg Binomial Probability",
-	exnbpy = Graph Box(
-		Y Scale( 0, 0.04 ),
-		X Scale( -1, 100 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( exnbpk = 0, exnbpk < 1000, exnbpk++,
-			V Line(
-				exnbpk,
-				0,
-				Neg Binomial Probability( exnbpp, exnbpn, exnbpk )
-			)
-		);
-		Pen Color( "blue" );,
-		Pen Size( 4 ),
-		V Line(
-			exnbrn,
-			0,
-			Neg Binomial Probability( exnbpp, exnbpn, exnbrn )
-		);
-		Text(
-			{1, 0.035},
-			"n=",
-			Round( exnbpn ),
-			" p=",
-			Round( exnbpp, 2 )
-		);
-		Text(
-			{1, 0.030},
-			"x=",
-			Round( exnbrn, 2 ),
-			" Prob=",
-			Round(
-				Neg Binomial Probability( exnbpp, exnbpn, exnbrn ),
-				2
-			)
-		);
-	),
-	H List Box(
-		Button Box( "Generate a Random Negative Binomial Number",
-			exnbrn = Random Negative Binomial( 20, 0.3 );
-			exnbpy << reshow;
-		)
-	)
-);
+exnbpp = 0.3;exnbpn = 20;exnbrn = Random Negative Binomial( 20, 0.3 );New Window( "Example: Neg Binomial Probability",	exnbpy = Graph Box(		Y Scale( 0, 0.04 ),		X Scale( -1, 100 ),		Pen Color( "red" ),		Pen Size( 2 );		For( exnbpk = 0, exnbpk < 1000, exnbpk++,			V Line( exnbpk, 0, Neg Binomial Probability( exnbpp, exnbpn, exnbpk ) )		);		Pen Color( "blue" );,		Pen Size( 4 ),		V Line( exnbrn, 0, Neg Binomial Probability( exnbpp, exnbpn, exnbrn ) );		Text( {1, 0.035}, "n=", Round( exnbpn ), " p=", Round( exnbpp, 2 ) );		Text(			{1, 0.030},			"x=",			Round( exnbrn, 2 ),			" Prob=",			Round( Neg Binomial Probability( exnbpp, exnbpn, exnbrn ), 2 )		);	),	H List Box(		Button Box( "Generate a Random Negative Binomial Number",			exnbrn = Random Negative Binomial( 20, 0.3 );			exnbpy << reshow;		)	));
 
 ```
 
@@ -23923,13 +14466,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ```jsl
 
-
-//produce a single random number
-x = Random Normal();
-//produce a vector of random numbers
-v = J( 1, 10, Random Normal() );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Normal();//produce a vector of random numbersv = J( 1, 10, Random Normal() );//show resultsShow( x, v );
 
 ```
 
@@ -23937,39 +14474,7 @@ Show( x, v );
 
 ```jsl
 
-exGcoordX = J( 50, 1, . );
-exGcoordY = J( 50, 1, . );
-For( k = 1, k <= 50, k++,
-	exGcoordX[k] = Random Uniform( -5, 5 )
-);
-For( k = 1, k <= 50, k++,
-	exGcoordY[k] = exGcoordX[k] + Random Normal()
-);
-New Window( "Random Normal, Linear Regression, and Outlier",
-	V List Box(
-		Graph Box(
-			framesize( 600, 300 ),
-			X Scale( -10, 10 ),
-			Y Scale( 1.5 * Min( exGcoordY ), 1.5 * Max( exGcoordY ) ),
-			double buffer,
-			exsx = Sum( exGcoordX ),
-			exsy = Sum( exGcoordY ),
-			exsxx = Sum( (exGcoordX) ^ 2 );
-			exsxy = Sum( exGcoordX :* exGcoordY );
-			exbeta1 = (100 * exsxy - exsx * exsy) / (100 * exsxx - exsx
-			 * exsx);
-			exbeta0 = (exsy - exbeta1 * exsx) / 100;
-			exx1 = Min( exGcoordX );
-			exy1 = exbeta0 + exbeta1 * Min( exGcoordX );
-			exx2 = Max( exGcoordX );
-			exy2 = exbeta0 + exbeta1 * Max( exGcoordX );
-			Line( {exx1, exy1}, {exx2, exy2} );
-			Marker Size( 5 );
-			Drag Marker( exGcoordX, exGcoordY );
-			Drag Text( [-7], [-5], "drag any marker" );
-		)
-	)
-);
+exGcoordX = J( 50, 1, . );exGcoordY = J( 50, 1, . );For( k = 1, k <= 50, k++,	exGcoordX[k] = Random Uniform( -5, 5 ));For( k = 1, k <= 50, k++,	exGcoordY[k] = exGcoordX[k] + Random Normal());New Window( "Random Normal, Linear Regression, and Outlier",	V List Box(		Graph Box(			framesize( 600, 300 ),			X Scale( -10, 10 ),			Y Scale( 1.5 * Min( exGcoordY ), 1.5 * Max( exGcoordY ) ),			double buffer,			exsx = Sum( exGcoordX ),			exsy = Sum( exGcoordY ),			exsxx = Sum( (exGcoordX) ^ 2 );			exsxy = Sum( exGcoordX :* exGcoordY );			exbeta1 = (100 * exsxy - exsx * exsy) / (100 * exsxx - exsx * exsx);			exbeta0 = (exsy - exbeta1 * exsx) / 100;			exx1 = Min( exGcoordX );			exy1 = exbeta0 + exbeta1 * Min( exGcoordX );			exx2 = Max( exGcoordX );			exy2 = exbeta0 + exbeta1 * Max( exGcoordX );			Line( {exx1, exy1}, {exx2, exy2} );			Marker Size( 5 );			Drag Marker( exGcoordX, exGcoordY );			Drag Text( [-7], [-5], "drag any marker" );		)	));
 
 ```
 
@@ -23983,17 +14488,7 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 ```jsl
 
-dt = New Table( "Example",
-	New Column( "Rand NM",
-		set formula(
-			Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] )
-		)
-	)
-);
-dt << add rows( 1000 );
-Distribution(
-	Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) )
-);
+dt = New Table( "Example",	New Column( "Rand NM",		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )	));dt << add rows( 1000 );Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 
 ```
 
@@ -24007,65 +14502,7 @@ Distribution(
 
 ```jsl
 
-exrpoilambda = 20;
-exrpoilsz = Log( 300 );
-New Window( "Example: Random Poisson and Empirical Distribution",
-	exrpoiy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 50 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		exrpoisz = Round( Exp( exrpoilsz ) );
-		exrpoisamp = J( Round( exrpoisz ), 1, . );
-		exrpoifreq = J( Round( 50 + 1 ), 1, . );
-		For( exrpoik = 1, exrpoik <= Round( exrpoisz ), exrpoik++,
-			exrpoisamp[exrpoik] = Random Poisson( exrpoilambda )
-		);
-		For( exrpoik = 0, exrpoik <= 50, exrpoik++,
-			exrpoifreq[exrpoik + 1] = Sum( exrpoisamp <= exrpoik ) /
-			Round( exrpoisz )
-		);
-		exrpoitmp1 = 0;
-		exrpoitmp2 = 0;
-		For( exrpoik = 0, exrpoik < 50, exrpoik++,
-			H Line(
-				exrpoik,
-				exrpoik + 1,
-				Poisson Distribution( exrpoilambda, exrpoik )
-			);
-			V Line(
-				exrpoik + 1,
-				Poisson Distribution( exrpoilambda, exrpoik ),
-				Poisson Distribution( exrpoilambda, exrpoik + 1 )
-			);
-		);
-		Pen Color( "blue" );
-		For( exrpoik = 0, exrpoik < 50, exrpoik++,
-			H Line( exrpoik, exrpoik + 1, exrpoifreq[exrpoik + 1] );
-			V Line(
-				exrpoik + 1,
-				exrpoifreq[exrpoik + 1],
-				exrpoifreq[exrpoik + 2]
-			);
-		);
-		Text(
-			{10, 0.2},
-			" \!U03BB=",
-			Round( exrpoilambda, 2 ),
-			" sample size=",
-			Round( exrpoisz )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 10 ),
-			Log( 5000 ),
-			exrpoilsz,
-			exrpoiy << reshow
-		),
-		Text Box( " random sample size" )
-	)
-);
+exrpoilambda = 20;exrpoilsz = Log( 300 );New Window( "Example: Random Poisson and Empirical Distribution",	exrpoiy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 50 ),		Pen Color( "red" ),		Pen Size( 1 );		exrpoisz = Round( Exp( exrpoilsz ) );		exrpoisamp = J( Round( exrpoisz ), 1, . );		exrpoifreq = J( Round( 50 + 1 ), 1, . );		For( exrpoik = 1, exrpoik <= Round( exrpoisz ), exrpoik++,			exrpoisamp[exrpoik] = Random Poisson( exrpoilambda )		);		For( exrpoik = 0, exrpoik <= 50, exrpoik++,			exrpoifreq[exrpoik + 1] = Sum( exrpoisamp <= exrpoik ) / Round( exrpoisz )		);		exrpoitmp1 = 0;		exrpoitmp2 = 0;		For( exrpoik = 0, exrpoik < 50, exrpoik++,			H Line( exrpoik, exrpoik + 1, Poisson Distribution( exrpoilambda, exrpoik ) );			V Line(				exrpoik + 1,				Poisson Distribution( exrpoilambda, exrpoik ),				Poisson Distribution( exrpoilambda, exrpoik + 1 )			);		);		Pen Color( "blue" );		For( exrpoik = 0, exrpoik < 50, exrpoik++,			H Line( exrpoik, exrpoik + 1, exrpoifreq[exrpoik + 1] );			V Line( exrpoik + 1, exrpoifreq[exrpoik + 1], exrpoifreq[exrpoik + 2] );		);		Text(			{10, 0.2},			" \!U03BB=",			Round( exrpoilambda, 2 ),			" sample size=",			Round( exrpoisz )		);	),	H List Box(		Slider Box( Log( 10 ), Log( 5000 ), exrpoilsz, exrpoiy << reshow ),		Text Box( " random sample size" )	));
 
 ```
 
@@ -24079,8 +14516,7 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 ```jsl
 
-Random Reset( 1 );
-Random Normal();
+Random Reset( 1 );Random Normal();
 
 ```
 
@@ -24094,8 +14530,7 @@ Random Normal();
 
 ```jsl
 
-r = Random Seed State();
-Random Seed State( r );
+r = Random Seed State();Random Seed State( r );
 
 ```
 
@@ -24109,13 +14544,7 @@ Random Seed State( r );
 
 ```jsl
 
-
-//produce a single random number
-x = Random SEV( 50, 5 );
-//produce a vector of random numbers
-v = J( 1, 10, Random SEV( 50, 5 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random SEV( 50, 5 );//produce a vector of random numbersv = J( 1, 10, Random SEV( 50, 5 ) );//show resultsShow( x, v );
 
 ```
 
@@ -24131,13 +14560,7 @@ Show( x, v );
 
 ```jsl
 
-
-//produce a single random number
-x = Random SHASH( 0, 1, 0, 1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random SHASH( 0, 1, 0, 1 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random SHASH( 0, 1, 0, 1 );//produce a vector of random numbersv = J( 1, 10, Random SHASH( 0, 1, 0, 1 ) );//show resultsShow( x, v );
 
 ```
 
@@ -24145,14 +14568,7 @@ Show( x, v );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -24166,8 +14582,7 @@ Show( result1, result2 );
 
 ```jsl
 
-exA = [1 2 6, 3 5 8];
-Random Shuffle( exA );
+exA = [1 2 6, 3 5 8];Random Shuffle( exA );
 
 ```
 
@@ -24195,19 +14610,13 @@ Random SVD( [11 22, 33 44], 1 );
 
 ```jsl
 
-
-//produce a single random number
-x = Random t( 2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random t( 2 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random t( 2 );//produce a vector of random numbersv = J( 1, 10, Random t( 2 ) );//show resultsShow( x, v );
 
 ```
 
 ### Random Triangular
 
-**Syntaxe :** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
+**Syntaxe :** y = Random Triangular( a, b, c ); y = Random Triangular( b, c ); y = Random Triangular( b )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution triangulaire avec une limite inférieure a, le mode b, et une limite supérieure c. Random Triangular(b,c) équivaut à Random Triangular(0,b,c). Random Triangular(b) équivaut à Random Triangular(0,b,1).
 
@@ -24215,11 +14624,7 @@ Show( x, v );
 
 ```jsl
 
-Random Reset( 13579 );
-x = Random Triangular( 0.8 );
-Random Reset( 13579 );
-y = Random Triangular( 0, 0.8, 1 );
-Show( x, y );
+Random Reset( 13579 );x = Random Triangular( 0.8 );Random Reset( 13579 );y = Random Triangular( 0, 0.8, 1 );Show( x, y );
 
 ```
 
@@ -24235,13 +14640,7 @@ Show( x, y );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Uniform( 1, 10 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Uniform( 1, 10 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Uniform( 1, 10 );//produce a vector of random numbersv = J( 1, 10, Random Uniform( 1, 10 ) );//show resultsShow( x, v );
 
 ```
 
@@ -24263,13 +14662,7 @@ Random Uniform( 1, 10 );
 
 ```jsl
 
-
-//produce a single random number
-x = Random Weibull( 3, 20 );
-//produce a vector of random numbers
-v = J( 1, 10, Random Weibull( 3, 20 ) );
-//show results
-Show( x, v );
+//produce a single random numberx = Random Weibull( 3, 20 );//produce a vector of random numbersv = J( 1, 10, Random Weibull( 3, 20 ) );//show resultsShow( x, v );
 
 ```
 
@@ -24285,57 +14678,7 @@ Show( x, v );
 
 ```jsl
 
-exnbpp = 0.3;
-exnbpn = 20;
-rnb = Random ZI Negative Binomial( 25, .5, .05 );
-New Window( "Example: Zero Inflated Negative Binomial",
-	exnbpy = Graph Box(
-		Y Scale( 0, 0.075 ),
-		X Scale( -1, 100 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( i = 0, i < 100, i++,
-			V Line(
-				i,
-				0,
-				ZI Negative Binomial Probability( i, 25, .5, .05 )
-			)
-		);
-		Pen Color( "blue" );,
-		Pen Size( 4 ),
-		V Line(
-			rnb,
-			0,
-			ZI Negative Binomial Probability( rnb, 25, .5, .05 )
-		);
-		Text(
-			{25, 0.06},
-			"lambda=",
-			Round( 25 ),
-			", sigma=",
-			Round( .5, 2 ),
-			", pi=",
-			Round( .05, 2 )
-		);
-		Text(
-			{25, 0.05},
-			"x=",
-			Round( rnb, 2 ),
-			", Prob=",
-			Round(
-				ZI Negative Binomial Probability( rnb, 25, .5, .05 ),
-				4
-			)
-		);
-	),
-	H List Box(
-		Button Box(
-			"Generate a Random Zero Inflated Negative Binomial Number",
-			rnb = Random ZI Negative Binomial( 25, .5, .05 );
-			exnbpy << reshow;
-		)
-	)
-);
+exnbpp = 0.3;exnbpn = 20;rnb = Random ZI Negative Binomial( 25, .5, .05 );New Window( "Example: Zero Inflated Negative Binomial",	exnbpy = Graph Box(		Y Scale( 0, 0.075 ),		X Scale( -1, 100 ),		Pen Color( "red" ),		Pen Size( 2 );		For( i = 0, i < 100, i++,			V Line( i, 0, ZI Negative Binomial Probability( i, 25, .5, .05 ) )		);		Pen Color( "blue" );,		Pen Size( 4 ),		V Line( rnb, 0, ZI Negative Binomial Probability( rnb, 25, .5, .05 ) );		Text(			{25, 0.06},			"lambda=",			Round( 25 ),			", sigma=",			Round( .5, 2 ),			", pi=",			Round( .05, 2 )		);		Text(			{25, 0.05},			"x=",			Round( rnb, 2 ),			", Prob=",			Round( ZI Negative Binomial Probability( rnb, 25, .5, .05 ), 4 )		);	),	H List Box(		Button Box( "Generate a Random Zero Inflated Negative Binomial Number",			rnb = Random ZI Negative Binomial( 25, .5, .05 );			exnbpy << reshow;		)	));
 
 ```
 
@@ -24343,17 +14686,7 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
-Random Reset( 19 );
-dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
-Column( 1 ) << set name( "Random ZiNB" );
-dt << Distribution(
-	Continuous Distribution(
-		Column( :Random ZiNB ),
-		Vertical( 0 ),
-		Fit ZI Negative Binomial,
-		CDF Plot( 1 )
-	)
-);
+Random Reset( 19 );dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );Column( 1 ) << set name( "Random ZiNB" );dt << Distribution(	Continuous Distribution(		Column( :Random ZiNB ),		Vertical( 0 ),		Fit ZI Negative Binomial,		CDF Plot( 1 )	));
 
 ```
 
@@ -24369,43 +14702,7 @@ dt << Distribution(
 
 ```jsl
 
-exnbpp = 0.3;
-exnbpn = 20;
-rp = Random ZI Poisson( 20, .05 );
-New Window( "Example: Zero Inflated Poisson",
-	exnbpy = Graph Box(
-		Y Scale( 0, 0.1 ),
-		X Scale( -1, 60 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( i = 0, i < 100, i++,
-			V Line( i, 0, ZI Poisson Probability( i, 20, .05 ) )
-		);
-		Pen Color( "blue" );,
-		Pen Size( 4 ),
-		V Line( rp, 0, ZI Poisson Probability( rp, 20, .05 ) );
-		Text(
-			{30, 0.06},
-			"lambda=",
-			Round( 20 ),
-			", pi=",
-			Round( .05, 2 )
-		);
-		Text(
-			{30, 0.05},
-			"x=",
-			Round( rp, 2 ),
-			", Prob=",
-			Round( ZI Poisson Probability( rp, 20, .05 ), 4 )
-		);
-	),
-	H List Box(
-		Button Box( "Generate a Random Zero Inflated Poisson Number",
-			rp = Random ZI Poisson( 20, .05 );
-			exnbpy << reshow;
-		)
-	)
-);
+exnbpp = 0.3;exnbpn = 20;rp = Random ZI Poisson( 20, .05 );New Window( "Example: Zero Inflated Poisson",	exnbpy = Graph Box(		Y Scale( 0, 0.1 ),		X Scale( -1, 60 ),		Pen Color( "red" ),		Pen Size( 2 );		For( i = 0, i < 100, i++,			V Line( i, 0, ZI Poisson Probability( i, 20, .05 ) )		);		Pen Color( "blue" );,		Pen Size( 4 ),		V Line( rp, 0, ZI Poisson Probability( rp, 20, .05 ) );		Text( {30, 0.06}, "lambda=", Round( 20 ), ", pi=", Round( .05, 2 ) );		Text(			{30, 0.05},			"x=",			Round( rp, 2 ),			", Prob=",			Round( ZI Poisson Probability( rp, 20, .05 ), 4 )		);	),	H List Box(		Button Box( "Generate a Random Zero Inflated Poisson Number",			rp = Random ZI Poisson( 20, .05 );			exnbpy << reshow;		)	));
 
 ```
 
@@ -24413,17 +14710,7 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
-Random Reset( 19 );
-dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
-Column( 1 ) << set name( "Random ZIP" );
-dt << Distribution(
-	Continuous Distribution(
-		Column( :Random ZIP ),
-		Vertical( 0 ),
-		Fit ZI Poisson,
-		CDF Plot( 1 )
-	)
-);
+Random Reset( 19 );dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );Column( 1 ) << set name( "Random ZIP" );dt << Distribution(	Continuous Distribution(		Column( :Random ZIP ),		Vertical( 0 ),		Fit ZI Poisson,		CDF Plot( 1 )	));
 
 ```
 
@@ -24451,26 +14738,7 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```jsl
 
-sliderLowerValue = .5;
-sliderUpperValue = .7;
-New Window( "Example",
-	Panel Box( "Range Slider",
-		tb1 = Text Box( "Low Value: " || Char( sliderLowerValue ) ),
-		tb2 = Text Box( "High Value: " || Char( sliderUpperValue ) ),
-		sb = Range Slider Box(
-			0,
-			1,
-			sliderLowerValue,
-			sliderUpperValue,
-			tb1 << Set Text(
-				"Low Value: " || Char( sliderLowerValue )
-			);
-			tb2 << Set Text(
-				"High Value: " || Char( sliderUpperValue )
-			);
-		)
-	)
-);
+sliderLowerValue = .5;sliderUpperValue = .7;New Window( "Example",	Panel Box( "Range Slider",		tb1 = Text Box( "Low Value: " || Char( sliderLowerValue ) ),		tb2 = Text Box( "High Value: " || Char( sliderUpperValue ) ),		sb = Range Slider Box(			0,			1,			sliderLowerValue,			sliderUpperValue,			tb1 << Set Text( "Low Value: " || Char( sliderLowerValue ) );			tb2 << Set Text( "High Value: " || Char( sliderUpperValue ) );		)	));
 
 ```
 
@@ -24512,8 +14780,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
-Ranking( [33, 22, 44, 11, 33] );
-Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
+Ranking( [33, 22, 44, 11, 33] );Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ```
 
@@ -24549,11 +14816,7 @@ Les variables JSL spéciales sont remplies à l&apos;exécution de la commande 
 
 ```jsl
 
-Recode(
-	"27513-0000",
-	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ),
-	Num( _rcNow )}
-);
+Recode(	"27513-0000",	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )});
 
 ```
 
@@ -24561,15 +14824,7 @@ Recode(
 
 ```jsl
 
-Recode(
-	"A B C",
-	{Map Value(
-		_rcNow,
-		{"A", "Apple", "B", "Banana"},
-		Unmatched( "Unknown fruit" )
-	)},
-	By Word
-);
+Recode(	"A B C",	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )},	By Word);
 
 ```
 
@@ -24583,15 +14838,7 @@ Recode(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "Green" );
-		Pen Size( 2 );
-		Fill Color( "Red" );
-		Rect( 15, 75, 65, 55, 1 );
-		Rect( 10, 80, 70, 50 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "Green" );		Pen Size( 2 );		Fill Color( "Red" );		Rect( 15, 75, 65, 55, 1 );		Rect( 10, 80, 70, 50 );	));
 
 ```
 
@@ -24605,13 +14852,7 @@ New Window( "Example",
 
 ```jsl
 
-ex rev = Function( {s},
-	If( Length( s ) <= 1,
-		s,
-		Recurse( Substr( s, 2 ) ) || Left( s, 1 )
-	)
-);
-ex rev( "abcd" );
+ex rev = Function( {s},	If( Length( s ) <= 1,		s,		Recurse( Substr( s, 2 ) ) || Left( s, 1 )	));ex rev( "abcd" );
 
 ```
 
@@ -24625,11 +14866,7 @@ ex rev( "abcd" );
 
 ```jsl
 
-Regex(
-	"   Are you there Alice?, asked Jerry.",
-	" (here|there) (\w+).+(said|asked) (\w+)\.",
-	"  I am \1, \4, replied \2."
-);
+Regex(	"   Are you there Alice?, asked Jerry.",	" (here|there) (\w+).+(said|asked) (\w+)\.",	"  I am \1, \4, replied \2.");
 
 ```
 
@@ -24643,55 +14880,23 @@ Regex(
 
 ```jsl
 
-
-source = "believe";
-// [aeiou] matches exactly one vowel
-// .*? is a reluctant (vs greedy) match. try it without the ? to see the greedy behavior
-// \1 is a back reference to the first ( group -- [aeiou] is inside the first ( group
-matches = Regex Match(
-	source, // a variable allows updating some text
-	"([aeiou])(.*?)(\1)", // a regex with parens makes back references
-	">\2<" // the match is replaced by text that uses a back reference
-);
-Show( source, matches );
-// results:
-// source = "b>li<ve";
-// matches = {"elie", "e", "li", "e"};
-// notes:
-// matches[1] is the entire match AND the part that will be replaced
-// matches[2] is back ref \1  this is the letter e matched by [aeiou]
-// matches[3] is back ref \2  this is the letter li matched by .*?
-// matches[4] is back ref \3  this is another letter e match by \1, which was an e
-//
-// the * operator is greedy by default, taking as many characters as it can, and
-// only backing up if required. Adding the ? makes it reluctant, taking characters
-// one at a time and allowing the remaining pattern to have a chance earlier.
+source = "believe";// [aeiou] matches exactly one vowel// .*? is a reluctant (vs greedy) match. try it without the ? to see the greedy behavior// \1 is a back reference to the first ( group -- [aeiou] is inside the first ( groupmatches = Regex Match(	source, // a variable allows updating some text	"([aeiou])(.*?)(\1)", // a regex with parens makes back references	">\2<" // the match is replaced by text that uses a back reference);Show( source, matches );// results:// source = "b>li<ve";// matches = {"elie", "e", "li", "e"};// notes:// matches[1] is the entire match AND the part that will be replaced// matches[2] is back ref \1  this is the letter e matched by [aeiou]// matches[3] is back ref \2  this is the letter li matched by .*?// matches[4] is back ref \3  this is another letter e match by \1, which was an e//// the * operator is greedy by default, taking as many characters as it can, and// only backing up if required. Adding the ? makes it reluctant, taking characters// one at a time and allowing the remaining pattern to have a chance earlier.
 
 ```
 
 ### Register Addin
 
-**Syntaxe :** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
+**Syntaxe :** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;AutoLoad(0|1)&gt; )
 
-**Description :** Enregistre un complément
+**Description :** Register an add-in. An Autoload value of 1 forces the add-in to load when registered. A value of 0 leaves the add-in unloaded. If AutoLoad is not specified the addin.def setting will be used if found otherwise the default will be for the add-in to be loaded.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
-Register Addin(
-	"com.mycompany.myaddin",
-	"$DOCUMENTS/myaddin",
-	displayname( "Sample Addin" )
-);
+Register Addin(	"com.mycompany.myaddin",	"$DOCUMENTS/myaddin",	displayname( "Sample Addin" ));
 
 ```
-
-### Reload Policies
-
-**Syntaxe :** Reload Policies()
-
-**JMP Version ajoutée :** 18
 
 ### Remove
 
@@ -24747,9 +14952,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Remove From( ex, 3, 2 );
-ex;
+ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
 
 ```
 
@@ -24757,9 +14960,7 @@ ex;
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
-Remove From( ex, "c" );
-ex;
+ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
 
 ```
 
@@ -24767,15 +14968,7 @@ ex;
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Remove From( hlist, 1 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Remove From( hlist, 1 );
 
 ```
 
@@ -24789,19 +14982,7 @@ Remove From( hlist, 1 );
 
 ```jsl
 
-Delete Directory( "$TEMP/subD" );
-Delete Directory( "$TEMP/Loss Function Templates" );
-rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
-rc1 = Rename Directory(
-	"$TEMP/Loss Function Templates",
-	"subD" /* NO PATH */
-);
-rc2 = Directory Exists( "$TEMP/Loss Function Templates" );
-rc3 = Directory Exists( "$TEMP/subD" );
-rc4 = Delete Directory( "$TEMP/subD" );
-rc5 = Directory Exists( "$TEMP/subD" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+Delete Directory( "$TEMP/subD" );Delete Directory( "$TEMP/Loss Function Templates" );rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );rc1 = Rename Directory( "$TEMP/Loss Function Templates", "subD" /* NO PATH */ );rc2 = Directory Exists( "$TEMP/Loss Function Templates" );rc3 = Directory Exists( "$TEMP/subD" );rc4 = Delete Directory( "$TEMP/subD" );rc5 = Directory Exists( "$TEMP/subD" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -24815,17 +14996,7 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
-rc0 = Copy File(
-	"$SAMPLE_DATA/Loss Function Templates/Normal.jmp",
-	"$TEMP/x.jmp"
-);
-rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/y.jmp" );
-rc4 = Delete File( "$TEMP/y.jmp" );
-rc5 = File Exists( "$TEMP/y.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/y.jmp" );rc4 = Delete File( "$TEMP/y.jmp" );rc5 = File Exists( "$TEMP/y.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -24853,8 +15024,7 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```
 
@@ -24868,30 +15038,7 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "Freq", numeric, formula( Resample Freq() ) );
-New Window( "w", theBox = V List Box() );
-For( i = 1, i <= 30, i++,
-	Column( "Freq" ) << EvalFormula;
-	theBox << append(
-		V List Box(
-			Bivariate(
-				Y( :height ),
-				X( :weight ),
-				Freq( :Freq ),
-				Fit Line( 1 )
-			)
-		)
-	);
-);
-newDt = theBox["Parameter Estimates", Table Box( 1 )] <<
-MakeCombinedDataTable;
-newDt << Distribution(
-	Y( :Estimate ),
-	By( :Term ),
-	Horizontal Layout( 1 )
-);
-theBox << CloseWindow;
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "Freq", numeric, formula( Resample Freq() ) );New Window( "w", theBox = V List Box() );For( i = 1, i <= 30, i++,	Column( "Freq" ) << EvalFormula;	theBox << append(		V List Box( Bivariate( Y( :height ), X( :weight ), Freq( :Freq ), Fit Line( 1 ) ) )	););newDt = theBox["Parameter Estimates", Table Box( 1 )] << MakeCombinedDataTable;newDt << Distribution( Y( :Estimate ), By( :Term ), Horizontal Layout( 1 ) );theBox << CloseWindow;
 
 ```
 
@@ -24907,25 +15054,7 @@ theBox << CloseWindow;
 
 ```jsl
 
-vr = Function( {},
-	x = 2;
-	y = 4;
-	Return( Char( x * y ) );
-);
-lvr = Function( {},
-	x = 2;
-	y = 4;
-	For( i = 1, i < 5, i++,
-		If( i == 3,
-			Return( i * x * y )
-		)
-	);
-);
-nr = Function( {}, Return() );
-vrv = vr();
-lvrv = lvr();
-nrv = nr();
-Show( vrv, lvrv, nrv );
+vr = Function( {},	x = 2;	y = 4;	Return( Char( x * y ) ););lvr = Function( {},	x = 2;	y = 4;	For( i = 1, i < 5, i++,		If( i == 3,			Return( i * x * y )		)	););nr = Function( {}, Return() );vrv = vr();lvrv = lvr();nrv = nr();Show( vrv, lvrv, nrv );
 
 ```
 
@@ -24933,12 +15062,7 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
-f = Function( {a, b},
-	Return( a - b, a + b )
-);
-{lo, hi} = f( 10, 1 );
-Show( lo, hi );
-Show( f( 7, 15 ) );
+f = Function( {a, b},	Return( a - b, a + b ));{lo, hi} = f( 10, 1 );Show( lo, hi );Show( f( 7, 15 ) );
 
 ```
 
@@ -24968,9 +15092,7 @@ Reverse( {11, 22, 33, 44, 55} );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Reverse Into( ex );
-ex;
+ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
 
 ```
 
@@ -24978,15 +15100,7 @@ ex;
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Reverse Into( hlist );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Reverse Into( hlist );
 
 ```
 
@@ -25014,32 +15128,7 @@ Reverse Into( hlist );
 
 ```jsl
 
-New Window( "RGB Color Example", 
-    /* 1 through 16 are good */ 
-	division = 6;
-	blocks = division + 1;
-	ysize = 400 / Sqrt( division );
-	xsize = ysize * blocks;
-	fract = 1 / division;
-    /* 100 is default axis range */
-	yBlockSize = 100 / blocks;
-	xBlockSize = 100 / (blocks * blocks);
-	Graph(
-		frameSize( xsize, ysize ),
-		For( blue = 0, blue <= 1, blue += fract,
-			For( red = 0, red <= 1, red += fract,
-				For( green = 0, green <= 1, green += fract,
-					y = red / fract * yBlockSize;
-					x = green / fract * xBlockSize + blue / fract *
-					xBlockSize * blocks;
-                    /* here's the example */
-					Fill Color( RGB Color( red, green, blue ) );
-					Rect( x, y, x + xBlockSize, y + yBlockSize, 1 );
-				)
-			)
-		)
-	);
-);
+New Window( "RGB Color Example",     /* 1 through 16 are good */ 	division = 6;	blocks = division + 1;	ysize = 400 / Sqrt( division );	xsize = ysize * blocks;	fract = 1 / division;    /* 100 is default axis range */	yBlockSize = 100 / blocks;	xBlockSize = 100 / (blocks * blocks);	Graph(		frameSize( xsize, ysize ),		For( blue = 0, blue <= 1, blue += fract,			For( red = 0, red <= 1, red += fract,				For( green = 0, green <= 1, green += fract,					y = red / fract * yBlockSize;					x = green / fract * xBlockSize + blue / fract * xBlockSize * blocks;                    /* here's the example */					Fill Color( RGB Color( red, green, blue ) );					Rect( x, y, x + xBlockSize, y + yBlockSize, 1 );				)			)		)	););
 
 ```
 
@@ -25067,10 +15156,7 @@ Right( "http://www.jmp.com", 3 );
 
 ```jsl
 
-X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1,
-4 5 -4 -3 1];
-X[2, 3] += 15;
-Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
+X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];X[2, 3] += 15;Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ```
 
@@ -25114,9 +15200,7 @@ Round( 213, -1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-:height * :weight;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;:height * :weight;
 
 ```
 
@@ -25124,10 +15208,7 @@ Row() = 3;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Add Rows( 5 );
-Show( Row() );
-Row() = 0;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Add Rows( 5 );Show( Row() );Row() = 0;
 
 ```
 
@@ -25141,60 +15222,13 @@ Row() = 0;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Color State( {1, .5, 1} );
-Color To RGB( Color Of( Row State( 3 ) ) );
-
-```
-
-### Rummage
-
-**Syntaxe :** treasures = Rummage( box, query )
-
-**JMP Version ajoutée :** 17
-
-**Exemple 1**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Rummage( Window( dt ), "Wilcox" ) << title;
-
-```
-
-**Exemple 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Rummage( Report( obj ), "Wilcox" ) << details;
-
-```
-
-**Exemple 3**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Show(
-	Rummage(
-		Window( dt ),
-		"graph builder",
-		Algorithm( "FilterUtility" ),
-		Match All Terms( 0 )
-	)[1 :: 5] << Title
-);
-Show(
-	Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1
-	 :: 3] << Title
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Color State( {1, .5, 1} );Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```
 
 ### Run Program
 
-**Syntaxe :** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
+**Syntaxe :** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
 
 **Description :** Contrôler un programme externe à l&apos;aide de stdin et stdout.
 
@@ -25204,11 +15238,7 @@ Show(
 
 ```jsl
 
-RP = Run Program(
-	Executable( "PING.EXE"/*path probably not needed*/ ),
-	Options( {"-n 5", "localhost"} ),
-	ReadFunction( Function( {this}, Write( this << read ) ) )
-);
+RP = Run Program(	Executable( "PING.EXE"/*path probably not needed*/ ),	Options( {"-n 5", "localhost"} ),	ReadFunction( Function( {this}, Write( this << read ) ) ));
 
 ```
 
@@ -25216,11 +15246,7 @@ RP = Run Program(
 
 ```jsl
 
-RP = Run Program(
-	Executable( "CMD.EXE"/*path probably not needed*/ ),
-	Options( {"/a", "/q", "/c dir"} ),
-	ReadFunction( Function( {this}, Write( this << read ) ) )
-);
+RP = Run Program(	Executable( "CMD.EXE"/*path probably not needed*/ ),	Options( {"/a", "/q", "/c dir"} ),	ReadFunction( Function( {this}, Write( this << read ) ) ));
 
 ```
 
@@ -25228,30 +15254,7 @@ RP = Run Program(
 
 ```jsl
 
-commands = {"echo this is a test\!n", "ping -n 1 localhost\!n",
-"exit\!n"};
-icommand = 0;
-RP = Run Program(
-	Executable( "CMD.EXE" ),
-	Options( {"/a", "/q"} ),
-	ReadFunction( Function( {this}, Write( this << Read ) ) ),
-	WriteFunction(
-		Function( {this},
-			icommand++;
-			If( icommand <= N Items( commands ),
-				this << Write( commands[icommand] );
-				Show( commands[icommand] );
-			,
-				this << WriteEOF;
-				Show(
-					this << CanRead,
-					this << CanWrite,
-					this << isReadEOF
-				);
-			);
-		)
-	)
-);
+commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};icommand = 0;RP = Run Program(	Executable( "CMD.EXE" ),	Options( {"/a", "/q"} ),	ReadFunction( Function( {this}, Write( this << Read ) ) ),	WriteFunction(		Function( {this},			icommand++;			If( icommand <= N Items( commands ),				this << Write( commands[icommand] );				Show( commands[icommand] );			,				this << WriteEOF;				Show( this << CanRead, this << CanWrite, this << isReadEOF );			);		)	));
 
 ```
 
@@ -25293,9 +15296,7 @@ SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```jsl
 
-Save Log( "$TEMP/log.txt" );
-exlogText = Load Text File( "$TEMP/log.txt" );
-Substr( exlogText, 1, 30 );
+Save Log( "$TEMP/log.txt" );exlogText = Load Text File( "$TEMP/log.txt" );Substr( exlogText, 1, 30 );
 
 ```
 
@@ -25309,8 +15310,7 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
-Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
-Load Text File( "$TEMP/DeleteMe.txt" );
+Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```
 
@@ -25352,17 +15352,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```jsl
 
-Scene = Scene Box( 600, 600 );
-Scene << backgroundcolor( 0 );
-Scene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", Scene );
-Scene << perspective( 45, .2, 20 );
-Scene << Translate( 0.0, 0.0, -4.5 );
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-Scene << arcball( ex, 1.5 );
-Scene << update;
+Scene = Scene Box( 600, 600 );Scene << backgroundcolor( 0 );Scene << showarcball( always );New Window( "See HelloWorld.jsl in sample scripts", Scene );Scene << perspective( 45, .2, 20 );Scene << Translate( 0.0, 0.0, -4.5 );ex = Scene Display List();ex << color( .9, .9, .9 );ex << Text( center, middle, .3, "Hello World" );Scene << arcball( ex, 1.5 );Scene << update;
 
 ```
 
@@ -25376,17 +15366,7 @@ Scene << update;
 
 ```jsl
 
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-exScene = Scene Box( 600, 600 );
-exScene << backgroundcolor( 0 );
-exScene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", exScene );
-exScene << perspective( 45, .2, 20 );
-exScene << Translate( 0.0, 0.0, -4.5 );
-exScene << arcball( ex, 1.5 );
-exScene << update;
+ex = Scene Display List();ex << color( .9, .9, .9 );ex << Text( center, middle, .3, "Hello World" );exScene = Scene Box( 600, 600 );exScene << backgroundcolor( 0 );exScene << showarcball( always );New Window( "See HelloWorld.jsl in sample scripts", exScene );exScene << perspective( 45, .2, 20 );exScene << Translate( 0.0, 0.0, -4.5 );exScene << arcball( ex, 1.5 );exScene << update;
 
 ```
 
@@ -25400,11 +15380,7 @@ exScene << update;
 
 ```jsl
 
-Schedule(
-	10,
-	Beep();
-	Print( "Time's up!" );
-);
+Schedule(	10,	Beep();	Print( "Time's up!" ););
 
 ```
 
@@ -25432,12 +15408,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```jsl
 
-Scoring Impute(
-	[1 2 3 . 4 .],
-	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
-	[0, 0, 0, 0, 0, 0],
-	[1, 1, 1, 1, 1, 1]
-);
+Scoring Impute(	[1 2 3 . 4 .],	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],	[0, 0, 0, 0, 0, 0],	[1, 1, 1, 1, 1, 1]);
 
 ```
 
@@ -25453,8 +15424,7 @@ Scoring Impute(
 
 ```jsl
 
-Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
-New Window( "This is a script box", Script );
+Script = Script Box( "// This window is editable.", "JSL", 300, 100 );New Window( "This is a script box", Script );
 
 ```
 
@@ -25462,10 +15432,7 @@ New Window( "This is a script box", Script );
 
 ```jsl
 
-pyscript = "\[import numpy as np
-a = np.arange(15).reshape(3, 5)]\";
-Script = Script Box( pyscript, "Python", 300, 100 );
-New Window( "This is a python script box", Script );
+pyscript = "\[import numpy as npa = np.arange(15).reshape(3, 5)]\";Script = Script Box( pyscript, "Python", 300, 100 );New Window( "This is a python script box", Script );
 
 ```
 
@@ -25479,36 +15446,7 @@ New Window( "This is a python script box", Script );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		Scroll Box(
-			Size( 200, 100 ),
-			V List Box(
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				)
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		Scroll Box(			Size( 200, 100 ),			V List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -25536,11 +15474,7 @@ Second( Today() );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Selected State( 1 );
-Selected( Row State( 3 ) );
-Row() = 3;
-Selected();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Selected State( 1 );Selected( Row State( 3 ) );Row() = 3;Selected();
 
 ```
 
@@ -25554,9 +15488,7 @@ Selected();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Selected State( 1 );
-Selected( Row State( 3 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Selected State( 1 );Selected( Row State( 3 ) );
 
 ```
 
@@ -25570,8 +15502,7 @@ Selected( Row State( 3 ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ```
 
@@ -25585,8 +15516,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ```jsl
 
-Row() = 3;
-Sequence( 1, 9, 2 );
+Row() = 3;Sequence( 1, 9, 2 );
 
 ```
 
@@ -25614,8 +15544,7 @@ Set Clipboard( "example" );
 
 ```jsl
 
-Set Default Directory( "$SAMPLE_DATA" );
-Open( "Big Class.jmp" );
+Set Default Directory( "$SAMPLE_DATA" );Open( "Big Class.jmp" );
 
 ```
 
@@ -25629,8 +15558,7 @@ Open( "Big Class.jmp" );
 
 ```jsl
 
-Show( Set Difference( {1, 3}, {3, 2} ) );
-Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```
 
@@ -25662,14 +15590,7 @@ Set Environment Variable( "PATH", "some path to a directory" );
 
 ```jsl
 
-Set File Search Path(
-	{Convert File Path( "$SAMPLE_DATA/" ),
-	Convert File Path( "$SAMPLE_DATA/Time Series/" )}
-);
-Show( Get File Search Path() );
-Show( Convert File Path( "Air.jmp", search ) );
-Show( Convert File Path( "Full of Air.jmp", search ) );
-Show( Convert File Path( "Iris.jmp", search ) );
+Set File Search Path(	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )});Show( Get File Search Path() );Show( Convert File Path( "Air.jmp", search ) );Show( Convert File Path( "Full of Air.jmp", search ) );Show( Convert File Path( "Iris.jmp", search ) );
 
 ```
 
@@ -25683,14 +15604,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ```jsl
 
-Set Global Window Handler(
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
-New Window( "My Window" );
-Clear Global Window Handler();
+Set Global Window Handler(	Function( {window},		Print( window << get window title() );		window << close window();	));New Window( "My Window" );Clear Global Window Handler();
 
 ```
 
@@ -25704,10 +15618,7 @@ Clear Global Window Handler();
 
 ```jsl
 
-Show( Set Intersection( {1, 3}, {3, 2} ) );
-Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```
 
@@ -25753,12 +15664,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
 
-### Set Policy
-
-**Syntaxe :** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
-
-**JMP Version ajoutée :** 18
-
 ### Set Preference
 
 **Syntaxe :** Preferences( pref1( value1 ), ... )
@@ -25799,18 +15704,7 @@ Renvoie 1 en cas de succès, 0 en cas d&apos;échec.
 
 ```jsl
 
-
-// Make the Analyze toolbar visible in Script windows
-Set Toolbar Visibility( "Analyze", Script, true );
-
-// Make the Analyze toolbar visible in all classes of windows
-Set Toolbar Visibility( "Analyze", All, true );
-
-// Revert Script windows to the default toolbar set for Script windows
-Set Toolbar Visibility( Default, Script );
-
-// Revert all windows to their default toolbar set
-Set Toolbar Visibility( Default, All );
+// Make the Analyze toolbar visible in Script windowsSet Toolbar Visibility( "Analyze", Script, true );// Make the Analyze toolbar visible in all classes of windowsSet Toolbar Visibility( "Analyze", All, true );// Revert Script windows to the default toolbar set for Script windowsSet Toolbar Visibility( Default, Script );// Revert all windows to their default toolbar setSet Toolbar Visibility( Default, All );
 
 ```
 
@@ -25824,13 +15718,7 @@ Set Toolbar Visibility( Default, All );
 
 ```jsl
 
-Show( Set Union( {1, 3}, {3, 2} ) );
-Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-all = {};
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-For Each Row( all = Set Union( all, :sports ) );
-all = Set Unique( all );
-Show( all );
+Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );all = {};Open( "$SAMPLE_DATA/Big Class Families.jmp" );For Each Row( all = Set Union( all, :sports ) );all = Set Unique( all );Show( all );
 
 ```
 
@@ -25844,11 +15732,7 @@ Show( all );
 
 ```jsl
 
-Show( Set Unique( {1, 3, 2} ) );
-Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-Row() = 1;
-Show( Set Unique( :sports ) );
+Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );Open( "$SAMPLE_DATA/Big Class Families.jmp" );Row() = 1;Show( Set Unique( :sports ) );
 
 ```
 
@@ -25862,27 +15746,7 @@ Show( Set Unique( :sports ) );
 
 ```jsl
 
-mu = 50;
-sig = 5;
-New Window( "Example: SEV Density",
-	y = Graph Box(
-		Y Scale( 0, .06 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( SEV Density( x, mu, sig ), x );
-		Text( {0, .055}, "mu=", Round( mu, 2 ) );
-		Text( {0, .045}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 100, mu, y << reshow ),
-		Text Box( "mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( "sig" )
-	), 
-
-);
+mu = 50;sig = 5;New Window( "Example: SEV Density",	y = Graph Box(		Y Scale( 0, .06 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( SEV Density( x, mu, sig ), x );		Text( {0, .055}, "mu=", Round( mu, 2 ) );		Text( {0, .045}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 100, mu, y << reshow ), Text Box( "mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( "sig" ) ), );
 
 ```
 
@@ -25896,26 +15760,7 @@ New Window( "Example: SEV Density",
 
 ```jsl
 
-mu = 50;
-sig = 5;
-New Window( "Example: SEV Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( SEV Distribution( x, mu, sig ), x );
-		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );
-		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 100, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	)
-);
+mu = 50;sig = 5;New Window( "Example: SEV Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( SEV Distribution( x, mu, sig ), x );		Text( {0.1, 0.9}, "mu=", Round( mu, 2 ) );		Text( {0.1, 0.8}, "sig=", Round( sig, 2 ) );	),	H List Box( Slider Box( 0, 100, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ));
 
 ```
 
@@ -25929,40 +15774,7 @@ New Window( "Example: SEV Distribution",
 
 ```jsl
 
-mu = 50;
-sig = 5;
-qq = .5;
-New Window( "Example: SEV Quantile",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 60 ),
-		Pen Color( "red" );
-		Y Function( SEV Distribution( qq, mu, sig ), qq );
-		Pen Color( "blue" );
-		V Line( SEV Quantile( qq, mu, sig ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" mu=",
-			Round( mu, 2 ),
-			" sig=",
-			Round( sig, 2 ),
-			" quantile=",
-			Round( qq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 80, mu, y << reshow ),
-		Text Box( " mu" )
-	),
-	H List Box(
-		Slider Box( 0, 10, sig, y << reshow ),
-		Text Box( " sig" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, qq, y << reshow ),
-		Text Box( " quantile" )
-	)
-);
+mu = 50;sig = 5;qq = .5;New Window( "Example: SEV Quantile",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 60 ),		Pen Color( "red" );		Y Function( SEV Distribution( qq, mu, sig ), qq );		Pen Color( "blue" );		V Line( SEV Quantile( qq, mu, sig ), 0, 1 );		Text(			{0.1, 0.9},			" mu=",			Round( mu, 2 ),			" sig=",			Round( sig, 2 ),			" quantile=",			Round( qq, 2 )		);	),	H List Box( Slider Box( 0, 80, mu, y << reshow ), Text Box( " mu" ) ),	H List Box( Slider Box( 0, 10, sig, y << reshow ), Text Box( " sig" ) ),	H List Box( Slider Box( 0.01, 0.99, qq, y << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -25976,8 +15788,7 @@ New Window( "Example: SEV Quantile",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```
 
@@ -25991,10 +15802,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ```jsl
 
-Eval List(
-	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ),
-	Shape( [11 22, 33 44], ., 4 )}
-);
+Eval List(	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )	});
 
 ```
 
@@ -26008,14 +15816,7 @@ Eval List(
 
 ```jsl
 
-New Window( "Shape Seg Example",
-	Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
+New Window( "Shape Seg Example",	Graph Box(		Shape Seg(			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),			Path( "M20,20 C20,60 60,60 60,20 Z" )}		)	));
 
 ```
 
@@ -26039,14 +15840,7 @@ SHASH Density( 0, -1, 2, -2, 3 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -26062,49 +15856,7 @@ Show( result1, result2 );
 
 ```jsl
 
-gamma = 0.5;
-delta = 1;
-theta = 1;
-sigma = 1;
-New Window( "Example: SHASH Distribution",
-	jsuc = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -2, 2 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			SHASH Distribution( q, gamma, delta, theta, sigma ),
-			q
-		);
-		Text(
-			{-1, 0.9},
-			"\!U03B3=",
-			Round( gamma, 2 ),
-			" \!U03B4=",
-			Round( delta, 2 ),
-			" \!U03B8=",
-			Round( theta, 2 ),
-			" \!U03C3=",
-			Round( sigma, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 1, gamma, jsuc << reshow ),
-		Text Box( " \!U03B3" )
-	),
-	H List Box(
-		Slider Box( 0, 2, delta, jsuc << reshow ),
-		Text Box( " \!U03B4" )
-	),
-	H List Box(
-		Slider Box( 0, 2, theta, jsuc << reshow ),
-		Text Box( " \!U03B8" )
-	),
-	H List Box(
-		Slider Box( 0, 2, sigma, jsuc << reshow ),
-		Text Box( " \!U03C3" )
-	)
-);
+gamma = 0.5;delta = 1;theta = 1;sigma = 1;New Window( "Example: SHASH Distribution",	jsuc = Graph Box(		Y Scale( 0, 1 ),		X Scale( -2, 2 ),		XName( "q" ),		Pen Color( "red" );		Y Function( SHASH Distribution( q, gamma, delta, theta, sigma ), q );		Text(			{-1, 0.9},			"\!U03B3=",			Round( gamma, 2 ),			" \!U03B4=",			Round( delta, 2 ),			" \!U03B8=",			Round( theta, 2 ),			" \!U03C3=",			Round( sigma, 2 )		);	),	H List Box( Slider Box( 0, 1, gamma, jsuc << reshow ), Text Box( " \!U03B3" ) ),	H List Box( Slider Box( 0, 2, delta, jsuc << reshow ), Text Box( " \!U03B4" ) ),	H List Box( Slider Box( 0, 2, theta, jsuc << reshow ), Text Box( " \!U03B8" ) ),	H List Box( Slider Box( 0, 2, sigma, jsuc << reshow ), Text Box( " \!U03C3" ) ));
 
 ```
 
@@ -26112,14 +15864,7 @@ New Window( "Example: SHASH Distribution",
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -26143,14 +15888,7 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -26164,15 +15902,7 @@ Show( result1, result2 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-x1 = SHASHInv( result1, gamma, delta, theta, sigma );
-x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;
-Show( x1, x2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );x1 = SHASHInv( result1, gamma, delta, theta, sigma );x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;Show( x1, x2 );
 
 ```
 
@@ -26186,14 +15916,7 @@ Show( x1, x2 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -26207,51 +15930,7 @@ Show( result1, result2 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"weight by height",
-				Excerpt Box( 1, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height",
-				Excerpt Box( 2, {Picture Box( 1 )} )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part(
-				"height by weight",
-				Excerpt Box( 4, {Picture Box( 1 )} )
-			)
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -26281,9 +15960,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};
-Shift Into( ex, -2 );
-ex;
+ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
 
 ```
 
@@ -26291,15 +15968,7 @@ ex;
 
 ```jsl
 
-New Window( "boxes",
-	hlist = H List Box(
-		Button Box( "a" ),
-		Button Box( "b" ),
-		Button Box( "c" )
-	)
-);
-Wait( 1 );
-Shift Into( hlist, -2 );
+New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Shift Into( hlist, -2 );
 
 ```
 
@@ -26327,17 +15996,7 @@ Short Date( Today() );
 
 ```jsl
 
-editList = Shortest Edit Script(
-	"time flies like an arrow",
-	"fruit flies like a banana"
-);
-common = "";/* assemble a longest common subsequence */
-For( i = 1, i <= N Items( editList ), i++,
-	If( editList[i][1] == "Common", /* or Insert or Remove */common =
-		common || editList[i][2] /* the snippet */
-	)
-);
-common;
+editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),	i++,	If( editList[i][1] == "Common", /* or Insert or Remove */common = common || editList[i][2		] /* the snippet */	));common;
 
 ```
 
@@ -26393,49 +16052,7 @@ Show Addins Dialog();
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex(
-				real * y:real - imag * y:imag,
-				imag * y:real + real * y:imag
-			)
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-Show Classes();
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);Show Classes();
 
 ```
 
@@ -26477,34 +16094,7 @@ Show Globals();
 
 ```jsl
 
-New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-Show Namespaces( "complex" );
-Delete Namespaces( "complex" );
+New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});Show Namespaces( "complex" );Delete Namespaces( "complex" );
 
 ```
 
@@ -26616,18 +16206,7 @@ SinH( 1 );
 
 ```jsl
 
-sliderValue = .6;
-New Window( "Example",
-	Panel Box( "Slider Box",
-		tb = Text Box( "Value: " || Char( sliderValue ) ),
-		sb = Slider Box(
-			0,
-			1,
-			sliderValue,
-			tb << Set Text( "Value: " || Char( sliderValue ) )
-		)
-	)
-);
+sliderValue = .6;New Window( "Example",	Panel Box( "Slider Box",		tb = Text Box( "Value: " || Char( sliderValue ) ),		sb = Slider Box(			0,			1,			sliderValue,			tb << Set Text( "Value: " || Char( sliderValue ) )		)	));
 
 ```
 
@@ -26669,9 +16248,7 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```jsl
 
-A = Sobol Quasi Random Sequence( 3, 100 );
-As Table( A );
-Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
+A = Sobol Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```
 
@@ -26685,37 +16262,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
-
-// see the socket's OBJECT messages in the scripting index for better examples
-tCall = Socket();
-tcall << Ioctl( FIONBIO, 1 );
-rc = tCall << connect( "www.jmp.com", "80" );
-If( rc[2] == "ok",
-	tCall << <<Char To Blob(
-		"GET /en_us/home.html HTTP/1.1~0d~0aHost: www.jmp.com~0d~0aConnection: Close~0d~0a~0d~0a",
-		"ASCII~HEX"
-	);
-	While( 1,
-		tMessage = tCall << Recv( 100000 );
-		If(
-			tMessage[2] == "ok",
-				Show( Length( tMessage[3] ) ); //typically about six chunks of around 5-20K bytes
-		,
-			Starts With( tMessage[2], "WOULDBLOCK" ),
-				Show( "waiting" ) // sometimes data might not be available yet
-		,
-			Starts With( tMessage[2], "CLOSED" ),
-				Break(); // this is the desired result
-		, // else
-			Show( tMessage );
-			Stop();
-		);
-	);
-	tCall << Close();// done
-, // else
-	Show( rc );
-	Stop();
-);
+// see the socket's OBJECT messages in the scripting index for better examplestCall = Socket();tcall << Ioctl( FIONBIO, 1 );rc = tCall << connect( "www.jmp.com", "80" );If( rc[2] == "ok",	tCall << <<Char To Blob(		"GET /en_us/home.html HTTP/1.1~0d~0aHost: www.jmp.com~0d~0aConnection: Close~0d~0a~0d~0a",		"ASCII~HEX"	);	While( 1,		tMessage = tCall << Recv( 100000 );		If(			tMessage[2] == "ok",				Show( Length( tMessage[3] ) ); //typically about six chunks of around 5-20K bytes		,			Starts With( tMessage[2], "WOULDBLOCK" ),				Show( "waiting" ) // sometimes data might not be available yet		,			Starts With( tMessage[2], "CLOSED" ),				Break(); // this is the desired result		, // else			Show( tMessage );			Stop();		);	);	tCall << Close();// done, // else	Show( rc );	Stop(););
 
 ```
 
@@ -26785,9 +16332,7 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-ex = {111, 212, 133, 114, 55};
-Sort List Into( ex );
-ex;
+ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
 
 ```
 
@@ -26801,15 +16346,7 @@ ex;
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box( N Col( 3 ),
-		Text Box( "a" ),
-		Spacer Box(),
-		Text Box( "b" ),
-		Spacer Box(),
-		Text Edit Box( "Under Spacer Box" )
-	)
-);
+New Window( "Example",	Lineup Box( N Col( 3 ),		Text Box( "a" ),		Spacer Box(),		Text Box( "b" ),		Spacer Box(),		Text Edit Box( "Under Spacer Box" )	));
 
 ```
 
@@ -26841,6 +16378,78 @@ Speak( "Hello" );
 
 ```
 
+### spectris:Area Gaussian
+
+**Syntaxe :** spectris:Area Gaussian(x, area, center, hwhm)
+
+**Description :** A Gaussian (normal or bell curve) peak shape that fits to the area of the peak.
+
+### spectris:Area Lorentzian
+
+**Syntaxe :** spectris:Area Lorentzian(x, area, center, hwhm)
+
+**Description :** A Lorentzian peak shape.
+
+### spectris:Area PearsonVII
+
+**Syntaxe :** spectris:Area PearsonVII(x, area, center, hwhm, shape)
+
+**Description :** A PearsonVII peak shape.
+
+### spectris:Area PseudoVoigt
+
+**Syntaxe :** spectris:Area PseudoVoigt(x, area, center, hwhm, shape)
+
+**Description :** A PseudoVoigt peak shape.
+
+### spectris:Gaussian
+
+**Syntaxe :** spectris:Gaussian(x, height, center, hwhm)
+
+**Description :** A Gaussian (normal or bell curve) peak shape.
+
+### spectris:Lorentzian
+
+**Syntaxe :** spectris:Lorentzian(x, height, center, hwhm)
+
+**Description :** A Lorentzian peak shape.
+
+### spectris:PearsonVII
+
+**Syntaxe :** spectris:PearsonVII(x, height, center, hwhm, shape)
+
+**Description :** A PearsonVII peak shape.
+
+### spectris:PseudoVoigt
+
+**Syntaxe :** spectris:PseudoVoigt(x, height, center, hwhm, shape)
+
+**Description :** A PseudoVoigt peak shape.
+
+### spectris:Split Gaussian
+
+**Syntaxe :** spectris:SplitGaussian(x, height, center, hwhm1, hwhm2)
+
+**Description :** A two-piece Gaussian peak shape with the same height and center, but different HWHM&apos;s.
+
+### spectris:Split Lorentzian
+
+**Syntaxe :** spectris:SplitLorentzian(x, height, center, hwhm1, hwhm2)
+
+**Description :** A two-piece Lorentzian peak shape with the same height and center, but different HWHM&apos;s.
+
+### spectris:Split PearsonVII
+
+**Syntaxe :** spectris:SplitPearsonVII(x, height, center, hwhm1, hwhm2, shape1, shape2 )
+
+**Description :** A two-piece PearsonVII peak shape with the same height and center, but different HWHM&apos;s.
+
+### spectris:Split PseudoVoigt
+
+**Syntaxe :** spectris:SplitPseudoVoigt(x, height, center, hwhm1, hwhm2, shape1, shape2 )
+
+**Description :** A two-piece PseudoVoigt peak shape with the same height and center, but different HWHM&apos;s.
+
 ### Spin Box
 
 **Syntaxe :** y = Spin Box( &lt;script&gt; )
@@ -26851,14 +16460,7 @@ Speak( "Hello" );
 
 ```jsl
 
-New Window( "Example",
-	Lineup Box(
-		2,
-		nb = Number Edit Box( 3 ),
-		sb = Spin Box( Function( {value}, nb << Increment( value ) ) )
-	)
-);
-nb << Set Increment( 1 );
+New Window( "Example",	Lineup Box(		2,		nb = Number Edit Box( 3 ),		sb = Spin Box( Function( {value}, nb << Increment( value ) ) )	));nb << Set Increment( 1 );
 
 ```
 
@@ -26866,7 +16468,7 @@ nb << Set Increment( 1 );
 
 **Syntaxe :** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
-**Description :** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**Description :** Renvoie une matrice à cinq colonnes de coefficients dans l&apos;ordre suivant : knots||a||b||c||dpour chacune des valeurs uniques dans x. Le paramètre de lissage lambda doit être une valeur positive, des valeurs plus élevées de lambda produisant une spline plus rigide. Le vecteur optionnel weights spécifie un poids pour chaque valeur dans x. Un poids de zéro supprime le point correspondant de l&apos;ajustement par spline.
 
 **JMP Version ajoutée :** Avant la version 14
 
@@ -26886,28 +16488,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```jsl
 
-
-New Window( "Spline Fit",
-	window:x = 20 :: 80;
-	window:y = 50 + Sin( (20 :: 80) / 10 ) * 40
-	+J( 1, N Col( window:x ), Random Normal( 0, 10 ) );
-	window:loglambda = 2;
-	window:g = Graph Box(
-		Pen Color( "blue" );
-		window:m = Spline Coef(
-			window:x,
-			window:y,
-			Power( 10, window:loglambda )
-		);
-		Marker( window:x, window:y );
-		Y Function( Spline Eval( a, window:m, 0.05 ), a );
-	);,
-	H List Box(
-		Text Box( "Lambda: " ),
-		Slider Box( -2, 5, window:loglambda, window:g << reshow )
-	)
-)
-;
+New Window( "Spline Fit",	window:x = 20 :: 80;	window:y = 50 + Sin( (20 :: 80) / 10 ) * 40 + J(		1,		N Col( window:x ),		Random Normal( 0, 10 )	);	window:loglambda = 2;	window:g = Graph Box(		Pen Color( "blue" );		window:m = Spline Coef( window:x, window:y, Power( 10, window:loglambda ) );		Marker( window:x, window:y );		Y Function( Spline Eval( a, window:m, 0.05 ), a );	);,	H List Box(		Text Box( "Lambda: " ),		Slider Box( -2, 5, window:loglambda, window:g << reshow )	));
 
 ```
 
@@ -26915,7 +16496,7 @@ New Window( "Spline Fit",
 
 **Syntaxe :** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
-**Description :** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**Description :** Renvoie les valeurs prévues lissées issues d&apos;un ajustement par spline. Le paramètre de lissage lambda doit être une valeur positive, des valeurs plus élevées de lambda produisant une spline plus rigide. Le vecteur optionnel weights spécifie un poids pour chaque valeur dans x. Un poids de zéro supprime le point correspondant de l&apos;ajustement par spline.
 
 **JMP Version ajoutée :** Avant la version 14
 
@@ -27025,7 +16606,7 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ### Step
 
-**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Description :** Renvoie l’argument yi correspondant à la valeur la plus grande de xi telle que xi est supérieur ou égal à l’argument x. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
@@ -27034,6 +16615,370 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 ```jsl
 
 Step( 2.5, [1 2 3], [15, 20, 30] );
+
+```
+
+### STK:ArchSpiral
+
+**Syntaxe :** STK:ArchSpiral(t, &lt;a = 1&gt;, &lt;n = 1&gt;)
+
+**Description :** Takes in a given angle t (in radians) and returns the x,y coordinate pair as a matrix for location on the Archimedean Spiral, given scaling parameter, "a" and the "n"-th root
+
+**Exemple 1**
+
+```jsl
+
+STK:ArchSpiral( 3, 1, 1 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
+
+```
+
+### STK:arctan2
+
+**Syntaxe :** STK:arctan2(x,y)
+
+**Description :** The arctangent function that takes in 2 arguments. See https://en.wikipedia.org/wiki/Atan2 for motivation and details.
+
+**Exemple 1**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+### STK:Cart2Polar
+
+**Syntaxe :** STK:Cart2Polar(x,y)
+
+**Description :** Runs both the Radius() and Theta() in one function, returning the pair in a matrix.
+
+**Exemple 1**
+
+```jsl
+
+STK:Cart2Polar( 3, 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+x = [1, -1, 1, -1];y = [1, 1, -1, -1];For Each( {{a, b}, index}, Across( x, y ), Show( STK:Cart2Polar( a, b ) ) );
+
+```
+
+### STK:deg2rad
+
+**Syntaxe :** STK:deg2rad(d)
+
+**Description :** Converts a value from degrees to radians
+
+**Exemple 1**
+
+```jsl
+
+STK:deg2rad( 45 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:um2mm( 45 );
+
+```
+
+### STK:DieIndex
+
+**Syntaxe :** STK:DieIndex(x,y)
+
+**Description :** Combines the x- and y-die coordinate columns into a single text column. For use with the STK generated wafer shapefiles.
+
+**Exemple 1**
+
+```jsl
+
+STK:DieIndex( 3, 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+Example;
+
+```
+
+### STK:LPCVDSim
+
+**Syntaxe :** STK:LPCVDSim(x, y, &lt;time = 30&gt;, &lt;temp = 600&gt;, &lt;press = 20&gt;, &lt;flow = 2&gt;, &lt;gas1 = 1&gt;, &lt;gas2 = 1&gt;, &lt;r = 150&gt;, &lt;tbase = 200&gt;)
+
+**Description :** A simulation of a hypothetical LPCVD profile. Optional parameters include Deposition Time (time = 30), Deposition Temperature (temp = 600), Total Chamber Pressure (press = 20), Gas Flow Rate (flow = 2), Reagent Gas 1 Flow (gas1 = 1), Reagent Gas 2 Flow (gas2 = 1), Wafer Radius (r = 150), Baseline Film Thickness (tbase = 200).
+
+
+
+NOTE: This simulator is entirely empirical and for demonstration, teaching, or testing purposes only.
+
+**Exemple 1**
+
+```jsl
+
+STK:LPCVDSim( 0, 0 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:LPCVDSim( 0, 0, 100 );
+
+```
+
+### STK:mm2um
+
+**Syntaxe :** STK:mm2um(x)
+
+**Description :** Converts a value from millimeters (mm) to microns (um).
+
+**Exemple 1**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+### STK:MShape
+
+**Syntaxe :** STK:MShape( m )
+
+**Description :** Returns the shape of the matrix as a [nCols nRows] vector.
+
+**Exemple 1**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+### STK:Polar2Cart
+
+**Syntaxe :** STK:Polar2Cart(x,y)
+
+**Description :** Runs both the xCart() and yCart() in one function, returning the pair in a matrix. Assumes theta is in radians.
+
+**Exemple 1**
+
+```jsl
+
+STK:Polar2Cart( 1, Pi() / 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+x = [1, -1, 1, -1];y = [1, 1, -1, -1];For Each( {{a, b}, index}, Across( x, y ),	p = STK:Cart2Polar( a, b );	c = STK:Polar2Cart( p[1], p[2] );	Show( p, c ););
+
+```
+
+### STK:ProcessSim
+
+**Syntaxe :** STK:ProcessSim(n, &lt;radius = 150&gt;, &lt;stat = "Mean"&gt;, &lt;result = "summary"&gt;)
+
+**Description :** A simulation of a hypothetical Process based on the LPCVDSim Function. Returns a single value by default using any desired statistic JMP provides directly. A matrix of the measurement coordinates and result value are optional by providing "full" as the final argument
+
+**Exemple 1**
+
+```jsl
+
+STK:ProcessSim( 13 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:ProcessSim( 13, 150 );
+
+```
+
+**Exemple 3**
+
+```jsl
+
+STK:ProcessSim( 100, 150, "Std Dev", "full" );
+
+```
+
+### STK:rad2deg
+
+**Syntaxe :** STK:rad2deg(r)
+
+**Description :** Converts a value from radians to degrees
+
+**Exemple 1**
+
+```jsl
+
+STK:rad2deg( 0.79 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:um2mm( 0.79 );
+
+```
+
+### STK:Radius
+
+**Syntaxe :** STK:Radius(x,y)
+
+**Description :** Uses the Pythagorean Transform to convert X,Y data pairs to a radius.
+
+**Exemple 1**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+### STK:Theta
+
+**Syntaxe :** STK:Theta(x,y)
+
+**Description :** Uses the arccosine function to return the angle of an X,Y data pair in radians.
+
+**Exemple 1**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+### STK:um2mm
+
+**Syntaxe :** STK:um2mm(x)
+
+**Description :** Converts a value from microns to millimeters.
+
+**Exemple 1**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+### STK:xCart
+
+**Syntaxe :** STK:xCart(r,t)
+
+**Description :** Takes in a radius and angle (in radians) and returns the x-component of the cartesian coordinate pair.
+
+**Exemple 1**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+### STK:yCart
+
+**Syntaxe :** STK:yCart(r,t)
+
+**Description :** Takes in a radius and angle (in radians) and returns the y-component of the cartesian coordinate pair
+
+**Exemple 1**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
 
 ```
 
@@ -27047,10 +16992,7 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	If( i == 7, Stop() );
-	Print( "i=" || Char( i ) );
-);
+For( i = 1, i <= 10, i++,	If( i == 7, Stop() );	Print( "i=" || Char( i ) ););
 
 ```
 
@@ -27078,15 +17020,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -27100,14 +17034,7 @@ New Window( "Example",
 
 ```jsl
 
-a = b = c = "";
-New Window( "Example",
-	Modal,
-	<<Return Result,
-	Outline Box( "Table",
-		Table Box( seb = String Col Edit Box( "names", {a, b, c} ) )
-	)
-);
+a = b = c = "";New Window( "Example",	Modal,	<<Return Result,	Outline Box( "Table", Table Box( seb = String Col Edit Box( "names", {a, b, c} ) ) ));
 
 ```
 
@@ -27121,27 +17048,7 @@ New Window( "Example",
 
 ```jsl
 
-tdedf = 1;
-New Window( "Example: Students t Density",
-	tdegr = Graph Box(
-		Y Scale( -.05, 0.45 ),
-		X Scale( -8, 8 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );
-		H Line( 2, 3, 0.3 );
-		Pen Color( "blue" );
-		Y Function( Normal Density( tdeq ), tdeq );
-		H Line( 2, 3, 0.25 );
-		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );
-		Text( {3.5, 0.3}, "Student t" );
-		Text( {3.5, 0.25}, "Normal" );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )
-	)
-);
+tdedf = 1;New Window( "Example: Students t Density",	tdegr = Graph Box(		Y Scale( -.05, 0.45 ),		X Scale( -8, 8 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );		H Line( 2, 3, 0.3 );		Pen Color( "blue" );		Y Function( Normal Density( tdeq ), tdeq );		H Line( 2, 3, 0.25 );		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );		Text( {3.5, 0.3}, "Student t" );		Text( {3.5, 0.25}, "Normal" );	),	H List Box(		Text Box( "df " ),		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )	));
 
 ```
 
@@ -27155,21 +17062,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-tdidf = 1;
-New Window( "Example: Students t Distribution",
-	tdigr = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( tdiq, tdidf ), tdiq );
-		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tdidf, tdigr << reshow )
-	)
-);
+tdidf = 1;New Window( "Example: Students t Distribution",	tdigr = Graph Box(		Y Scale( 0, 1 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Distribution( tdiq, tdidf ), tdiq );		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, tdidf, tdigr << reshow ) ));
 
 ```
 
@@ -27183,35 +17076,7 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-extqdf = 1;
-extqqq = 0.5;
-New Window( "Example: Students t Quantile",
-	extqgr = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( q, Round( extqdf ) ), q );
-		Pen Color( "blue" );
-		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );
-		Text(
-			{-4.5, 0.9},
-			"df=",
-			Round( extqdf, 2 ),
-			" quantile=",
-			Round( extqqq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 1, 30, extqdf, extqgr << reshow ),
-		Text Box( " df" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ),
-		Text Box( " quantile" )
-	), 
-
-);
+extqdf = 1;extqqq = 0.5;New Window( "Example: Students t Quantile",	extqgr = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Distribution( q, Round( extqdf ) ), q );		Pen Color( "blue" );		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );		Text( {-4.5, 0.9}, "df=", Round( extqdf, 2 ), " quantile=", Round( extqqq, 2 ) );	),	H List Box( Slider Box( 1, 30, extqdf, extqgr << reshow ), Text Box( " df" ) ),	H List Box( Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ), Text Box( " quantile" ) ), );
 
 ```
 
@@ -27227,21 +17092,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );
 
 ```
 
@@ -27249,20 +17100,7 @@ Close( dt );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab, b},
-	dtname = (dtab << getname());
-	Print( "renaming ", b, " to ", dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnRename( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-dt << setname( "xxx" );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab, b},	dtname = (dtab << getname());	Print( "renaming ", b, " to ", dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnRename( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );dt << setname( "xxx" );
 
 ```
 
@@ -27282,7 +17120,7 @@ dt << setname( "xxx" );
 
 ### Substitute
 
-**Syntaxe :** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntaxe :** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description :** Renvoie une copie de la chaîne, de la liste ou de l&apos;expression x, en remplaçant les instances de chaque expression de configuration par l&apos;expression de remplacement correspondante. L&apos;argument facultatif <<IGNORECASE active la correspondance non sensible à la casse si x est une chaîne.
 
@@ -27308,8 +17146,7 @@ Substitute( "All things considered", "All", "Some" );
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute( lst, "a", "A" );
+lst = {"a", "b", "c"};Substitute( lst, "a", "A" );
 
 ```
 
@@ -27317,9 +17154,7 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
-Substitute( "All things considered",
-	{"things", "All"}, {"ideas", "Some"}
-);
+Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
 
@@ -27327,9 +17162,7 @@ Substitute( "All things considered",
 
 ```jsl
 
-Substitute( "Apple,orange,banana-grape",
-	Items( Get Punctuation Characters() || "-'", "" ), " "
-);
+Substitute( "Apple,orange,banana-grape",	Items( Get Punctuation Characters() || "-'", "" ), " ");
 
 ```
 
@@ -27343,7 +17176,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntaxe :** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntaxe :** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description :** Modifie la chaîne, la liste ou l&apos;expression x, en remplaçant les instances de chaque expression de configuration par l&apos;expression de remplacement correspondante. Notez que l&apos;argument x doit être une variable. L&apos;argument facultatif <<IGNORECASE active la correspondance non sensible à la casse si x est une chaîne.
 
@@ -27353,9 +17186,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```jsl
 
-ex = Expr( a + Sqrt( a ) );
-Substitute Into( ex, Expr( a ), Expr( b ) );
-Name Expr( ex );
+ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Expr( ex );
 
 ```
 
@@ -27363,9 +17194,7 @@ Name Expr( ex );
 
 ```jsl
 
-ex = "All things considered";
-Substitute Into( ex, "All", "Some" );
-Show( ex );
+ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
 
 ```
 
@@ -27373,9 +17202,7 @@ Show( ex );
 
 ```jsl
 
-lst = {"a", "b", "c"};
-Substitute Into( lst, "a", "A" );
-Show( lst );
+lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
 
 ```
 
@@ -27383,9 +17210,7 @@ Show( lst );
 
 ```jsl
 
-s = "Apple,APPLE,apple";
-Substitute Into( s, "apple", "orange", <<IGNORECASE );
-Show( s );
+s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );Show( s );
 
 ```
 
@@ -27399,9 +17224,7 @@ Show( s );
 
 ```jsl
 
-Eval List(
-	{Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )}
-);
+Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
 
@@ -27429,9 +17252,7 @@ Eval List(
 
 ```jsl
 
-ex = 1;
-ex -= 2;
-ex;
+ex = 1;ex -= 2;ex;
 
 ```
 
@@ -27487,9 +17308,7 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Summarize( exg = By( :sex ), exm = Mean( :height ) );
-Eval List( {exg, Round( exm, 1 )} );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( exg = By( :sex ), exm = Mean( :height ) );Eval List( {exg, Round( exm, 1 )} );
 
 ```
 
@@ -27503,8 +17322,7 @@ Eval List( {exg, Round( exm, 1 )} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 ```
 
@@ -27588,11 +17406,7 @@ SVD LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
-exMatswp = Sweep( exMat, [1, 2, 3, 4] );
-exMatinv = Inverse( exMat );
-Show( exMatswp );
-Show( exMatinv );
+exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];exMatswp = Sweep( exMat, [1, 2, 3, 4] );exMatinv = Inverse( exMat );Show( exMatswp );Show( exMatinv );
 
 ```
 
@@ -27606,10 +17420,7 @@ Show( exMatinv );
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatA = exMatA` * exMatA;
-exMatB = [1 2, 1 2, 1 2];
-exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatA = exMatA` * exMatA;exMatB = [1 2, 1 2, 1 2];exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 ```
 
@@ -27623,27 +17434,7 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 ```jsl
 
-tdedf = 1;
-New Window( "Example: Students t Density",
-	tdegr = Graph Box(
-		Y Scale( -.05, 0.45 ),
-		X Scale( -8, 8 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );
-		H Line( 2, 3, 0.3 );
-		Pen Color( "blue" );
-		Y Function( Normal Density( tdeq ), tdeq );
-		H Line( 2, 3, 0.25 );
-		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );
-		Text( {3.5, 0.3}, "Student t" );
-		Text( {3.5, 0.25}, "Normal" );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )
-	)
-);
+tdedf = 1;New Window( "Example: Students t Density",	tdegr = Graph Box(		Y Scale( -.05, 0.45 ),		X Scale( -8, 8 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );		H Line( 2, 3, 0.3 );		Pen Color( "blue" );		Y Function( Normal Density( tdeq ), tdeq );		H Line( 2, 3, 0.25 );		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );		Text( {3.5, 0.3}, "Student t" );		Text( {3.5, 0.25}, "Normal" );	),	H List Box(		Text Box( "df " ),		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )	));
 
 ```
 
@@ -27657,21 +17448,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
-tdidf = 1;
-New Window( "Example: Students t Distribution",
-	tdigr = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( tdiq, tdidf ), tdiq );
-		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tdidf, tdigr << reshow )
-	)
-);
+tdidf = 1;New Window( "Example: Students t Distribution",	tdigr = Graph Box(		Y Scale( 0, 1 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Distribution( tdiq, tdidf ), tdiq );		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, tdidf, tdigr << reshow ) ));
 
 ```
 
@@ -27685,21 +17462,7 @@ New Window( "Example: Students t Distribution",
 
 ```jsl
 
-tlcdidf = 1;
-New Window( "Example: Students t Log CDistribution",
-	tlcdigr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log CDistribution( tlcdiq, tlcdidf ), tlcdiq );
-		Text( {-4.5, -0.9}, "df=", Round( tlcdidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tlcdidf, tlcdigr << reshow )
-	)
-);
+tlcdidf = 1;New Window( "Example: Students t Log CDistribution",	tlcdigr = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Log CDistribution( tlcdiq, tlcdidf ), tlcdiq );		Text( {-4.5, -0.9}, "df=", Round( tlcdidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, tlcdidf, tlcdigr << reshow ) ));
 
 ```
 
@@ -27713,21 +17476,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ```jsl
 
-tldedf = 1;
-New Window( "Example: Students t Log Density",
-	tldegr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log Density( tldeq, tldedf ), tldeq );
-		Text( {2.5, -0.35}, "df=", Round( tldedf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 0.5, 10, tldedf, tldegr << reshow )
-	)
-);
+tldedf = 1;New Window( "Example: Students t Log Density",	tldegr = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Log Density( tldeq, tldedf ), tldeq );		Text( {2.5, -0.35}, "df=", Round( tldedf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 0.5, 10, tldedf, tldegr << reshow ) ));
 
 ```
 
@@ -27741,21 +17490,7 @@ New Window( "Example: Students t Log Density",
 
 ```jsl
 
-tldidf = 1;
-New Window( "Example: Students t Log Distribution",
-	tldigr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log Distribution( tldiq, tldidf ), tldiq );
-		Text( {-4.5, -0.9}, "df=", Round( tldidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tldidf, tldigr << reshow )
-	)
-);
+tldidf = 1;New Window( "Example: Students t Log Distribution",	tldigr = Graph Box(		Y Scale( -4, 0.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Log Distribution( tldiq, tldidf ), tldiq );		Text( {-4.5, -0.9}, "df=", Round( tldidf, 2 ) );	),	H List Box( Text Box( "df " ), Slider Box( 1, 10, tldidf, tldigr << reshow ) ));
 
 ```
 
@@ -27769,19 +17504,7 @@ New Window( "Example: Students t Log Distribution",
 
 ```jsl
 
-New Window( "Example: t Noncentrality",
-	tncgr = Graph Box(
-		Y Scale( 0.01, 0.99 ),
-		X Scale( 0.01, 0.99 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			t Distribution( 3, 2, t Noncentrality( 3, 2, q ) ),
-			q
-		);
-	)
-);
-t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
+New Window( "Example: t Noncentrality",	tncgr = Graph Box(		Y Scale( 0.01, 0.99 ),		X Scale( 0.01, 0.99 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Distribution( 3, 2, t Noncentrality( 3, 2, q ) ), q );	));t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ```
 
@@ -27795,35 +17518,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ```jsl
 
-extqdf = 1;
-extqqq = 0.5;
-New Window( "Example: Students t Quantile",
-	extqgr = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( q, Round( extqdf ) ), q );
-		Pen Color( "blue" );
-		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );
-		Text(
-			{-4.5, 0.9},
-			"df=",
-			Round( extqdf, 2 ),
-			" quantile=",
-			Round( extqqq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 1, 30, extqdf, extqgr << reshow ),
-		Text Box( " df" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ),
-		Text Box( " quantile" )
-	), 
-
-);
+extqdf = 1;extqqq = 0.5;New Window( "Example: Students t Quantile",	extqgr = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -5, 5 ),		XName( "q" ),		Pen Color( "red" );		Y Function( t Distribution( q, Round( extqdf ) ), q );		Pen Color( "blue" );		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );		Text( {-4.5, 0.9}, "df=", Round( extqdf, 2 ), " quantile=", Round( extqqq, 2 ) );	),	H List Box( Slider Box( 1, 30, extqdf, extqgr << reshow ), Text Box( " df" ) ),	H List Box( Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ), Text Box( " quantile" ) ), );
 
 ```
 
@@ -27837,14 +17532,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		"alpha",
-		Panel Box( "panel", Text Box( "text" ) ),
-		"beta",
-		Popup Box( {"x", ex = 1, "y", ex = 2} )
-	)
-);
+New Window( "Example",	Tab Box(		"alpha",		Panel Box( "panel", Text Box( "text" ) ),		"beta",		Popup Box( {"x", ex = 1, "y", ex = 2} )	));
 
 ```
 
@@ -27858,18 +17546,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Tab Box(
-		tp = Tab Page Box(
-			Title( "alpha" ),
-			Panel Box( "panel", Text Box( "text" ) )
-		),
-		Tab Page Box(
-			Title( "beta" ),
-			Popup Box( {"x", ex = 1, "y", ex = 2} )
-		)
-	)
-);
+New Window( "Example",	Tab Box(		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),		Tab Page Box( Title( "beta" ), Popup Box( {"x", ex = 1, "y", ex = 2} ) )	));
 
 ```
 
@@ -27883,15 +17560,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Table",
-		Table Box(
-			String Col Box( "names", {"x", "y", "z"} ),
-			Number Col Box( "values", {11, 22, 33} ),
-			Plot Col Box( "values", {11, 22, 33} )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Table",		Table Box(			String Col Box( "names", {"x", "y", "z"} ),			Number Col Box( "values", {11, 22, 33} ),			Plot Col Box( "values", {11, 22, 33} )		)	));
 
 ```
 
@@ -27937,17 +17606,9 @@ TanH( 1 );
 
 ```
 
-### Test Promise Error After
-
-**JMP Version ajoutée :** 17
-
-### Test Promise Result After
-
-**JMP Version ajoutée :** 17
-
 ### Text
 
-**Syntaxe :** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
+**Syntaxe :** Text( &lt;properties&gt;, {x, y}, text, ... ) Text( {left, top, right, bottom}, text )
 
 **Description :** Se déplace vers la position {x, y} et écrit le texte spécifié par l&apos;argument text. Les arguments de propriété nommés sont : Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. Les arguments de position, les arguments nommés et les chaînes peuvent être mélangés dans un ordre quelconque. Vous pouvez aussi utiliser quatre coordonnées x, y pour décrire un boîte dans laquelle écrire le texte. Dans ce cas, les propriétés ne sont pas utilisées.
 
@@ -27957,12 +17618,7 @@ TanH( 1 );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Text Color( "red" );
-		Text( Center Justified, {50, 20}, "centered" );
-	)
-);
+New Window( "Example",	Graph Box(		Text Color( "red" );		Text( Center Justified, {50, 20}, "centered" );	));
 
 ```
 
@@ -27970,12 +17626,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Text Color( "blue" );
-		Text( {20, 80, 40, 70}, "some text" );
-	)
-);
+New Window( "Example",	Graph Box(		Text Color( "blue" );		Text( {20, 80, 40, 70}, "some text" );	));
 
 ```
 
@@ -27989,34 +17640,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Justification Example",
-	Outline Box( "text",
-		V List Box(
-			Text Box(
-				"Text implicitly justified over multiple lines:",
-				<<Set Wrap( 100 )
-			),
-			Text Box( " " ),
-			Text Box(
-				"Text left justified over multiple lines:",
-				<<Justify Text( "left" ),
-				<<Set Wrap( 100 )
-			),
-			Text Box( " " ),
-			Text Box(
-				"Text center justified over multiple lines:",
-				<<Justify Text( "center" ),
-				<<Set Wrap( 100 )
-			),
-			Text Box( " " ),
-			Text Box(
-				"Text right justified over multiple lines:",
-				<<Justify Text( "right" ),
-				<<Set Wrap( 100 )
-			)
-		)
-	)
-);
+New Window( "Justification Example",	Outline Box( "text",		V List Box(			Text Box( "Text implicitly justified over multiple lines:", <<Set Wrap( 100 ) ),			Text Box( " " ),			Text Box(				"Text left justified over multiple lines:",				<<Justify Text( "left" ),				<<Set Wrap( 100 )			),			Text Box( " " ),			Text Box(				"Text center justified over multiple lines:",				<<Justify Text( "center" ),				<<Set Wrap( 100 )			),			Text Box( " " ),			Text Box(				"Text right justified over multiple lines:",				<<Justify Text( "right" ),				<<Set Wrap( 100 )			)		)	));
 
 ```
 
@@ -28030,12 +17654,7 @@ New Window( "Justification Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Text Color( "red" );
-		Text( {50, 20}, "label" );
-	)
-);
+New Window( "Example",	Graph Box(		Text Color( "red" );		Text( {50, 20}, "label" );	));
 
 ```
 
@@ -28049,32 +17668,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example: Text Edit Box",
-	Outline Box( "Picker Example",
-		H List Box(
-			Text Box( "Label:" ),
-			Text Edit Box( Char( 213 ) )
-		)
-	),
-	Outline Box( "Text Edit Box with password style Example",
-		H List Box(
-			Text Box( "Enter password:    " ),
-			exq = Text Edit Box( "",
-				Password Style( 1 ),
-				Set Script( Print( "changed!" ) )
-			)
-		),
-		Button Box( "print to log",
-			Set Script( Print( exq << Get Text() ) )
-		),
-		Button Box( "hide password",
-			Set Script( exq << Password Style( 1 ) )
-		),
-		Button Box( "show password",
-			Set Script( exq << Password Style( 0 ) )
-		)
-	)
-); // "look in the log window"
+New Window( "Example: Text Edit Box",	Outline Box( "Picker Example",		H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )	),	Outline Box( "Text Edit Box with password style Example",		H List Box(			Text Box( "Enter password:    " ),			exq = Text Edit Box( "", Password Style( 1 ), Set Script( Print( "changed!" ) ) )		),		Button Box( "print to log", Set Script( Print( exq << Get Text() ) ) ),		Button Box( "hide password", Set Script( exq << Password Style( 1 ) ) ),		Button Box( "show password", Set Script( exq << Password Style( 0 ) ) )	)); // "look in the log window"
 
 ```
 
@@ -28088,38 +17682,7 @@ New Window( "Example: Text Edit Box",
 
 ```jsl
 
-New Window( "Degrees",
-	Graph Box(
-		FrameSize( 400, 400 ),
-		X Scale( -100, 100 ),
-		Y Scale( -100, 100 ),
-		Local( {fname, fsize, fstyle, fangle, i, a},
-			{fname, fsize, fstyle, fangle} = Text Font();
-			Text Font(
-				If( Host is( "Mac" ),
-					"Helvetica",
-					"Arial"
-				),
-				30,
-				"Italic Bold"
-			);
-			Text( Center Justified, {0, -10}, "JMP" );
-			For( i = 0, i < 360, i += 15,
-				Text Font( {fname, 10, "plain", -i + 90} );
-				a = i * Pi() / 180;
-				Text(
-					Center Justified,
-					{80 * Cos( a ), 80 * Sin( a )},
-					Char( i )
-				);
-				Line(
-					{70 * Cos( a ), 70 * Sin( a )},
-					{76 * Cos( a ), 76 * Sin( a )}
-				);
-			);
-		)
-	)
-);
+New Window( "Degrees",	Graph Box(		FrameSize( 400, 400 ),		X Scale( -100, 100 ),		Y Scale( -100, 100 ),		Local( {fname, fsize, fstyle, fangle, i, a},			{fname, fsize, fstyle, fangle} = Text Font();			Text Font( If( Host is( "Mac" ), "Helvetica", "Arial" ), 30, "Italic Bold" );			Text( Center Justified, {0, -10}, "JMP" );			For( i = 0, i < 360, i += 15,				Text Font( {fname, 10, "plain", -i + 90} );				a = i * Pi() / 180;				Text( Center Justified, {80 * Cos( a ), 80 * Sin( a )}, Char( i ) );				Line( {70 * Cos( a ), 70 * Sin( a )}, {76 * Cos( a ), 76 * Sin( a )} );			);		)	));
 
 ```
 
@@ -28133,13 +17696,7 @@ New Window( "Degrees",
 
 ```jsl
 
-score = Text Score(
-	"over the lazy dogs back",
-	["lazy" => 1, "dogs" => 2],
-	"Count",
-	[1 0, 0 1]
-);
-Show( score );
+score = Text Score(	"over the lazy dogs back",	["lazy" => 1, "dogs" => 2],	"Count",	[1 0, 0 1]);Show( score );
 
 ```
 
@@ -28151,10 +17708,7 @@ Show( score );
 
 ```jsl
 
-w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
-w[FrameBox( 1 )] << append seg(
-	ts1 = Text Seg( "default location fixed bottom left" )
-);
+w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
 ```
 
@@ -28168,12 +17722,7 @@ w[FrameBox( 1 )] << append seg(
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Text Size( 20 );
-		Text( {50, 20}, "label" );
-	)
-);
+New Window( "Example",	Graph Box(		Text Size( 20 );		Text( {50, 20}, "label" );	));
 
 ```
 
@@ -28187,10 +17736,7 @@ New Window( "Example",
 
 ```jsl
 
-If(
-	Is Empty( This Project() ), Print( "Project: (none)" ),
-	Print( "Project: " || (This Project() << Get Window Title()) ),
-);
+If(	Is Empty( This Project() ), Print( "Project: (none)" ),	Print( "Project: " || (This Project() << Get Window Title()) ),);
 
 ```
 
@@ -28206,12 +17752,7 @@ If(
 
 ```jsl
 
-
-Try(
-	Throw( "!This is a fatal error" ),
-	Print( "CATCH message not reached" )
-);
-Print( "AFTER TRY message not reached" );
+Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );Print( "AFTER TRY message not reached" );
 
 ```
 
@@ -28241,10 +17782,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -28304,10 +17842,7 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```jsl
 
-To Color Space(
-	{0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061},
-	"HLS"
-);
+To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```
 
@@ -28351,11 +17886,7 @@ Trace( [11 22, 33 44] );
 
 ```jsl
 
-values = Transform Each( {{key, value}},
-	["A" => 8, "B" => 6, "C" => 10],
-	value + 1
-);
-Show( values );
+values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );Show( values );
 
 ```
 
@@ -28363,8 +17894,7 @@ Show( values );
 
 ```jsl
 
-ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
-Show( ex );
+ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );Show( ex );
 
 ```
 
@@ -28372,25 +17902,7 @@ Show( ex );
 
 ```jsl
 
-// Find Functions defined in a script
-parsedScript = Include(
-	"$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl",
-	<<ParseOnly
-);
-functionNames = Transform Each( {statement}, Name Expr( parsedScript ),
-	Output( "List" ), {lhs, rhs},
-	If( Head( statement ) == Expr( Assign() ),
-		rhs = Arg( statement, 2 );
-		If( !Is Empty( rhs ) & Contains( {Function()}, Head( rhs ) ),
-			Head Name( Arg( statement, 1 ) ),
-			Empty()
-		);
-	,
-		Empty()
-	)
-);
-functionNames = Filter Each( {f}, functionNames, !Is Empty( f ) );
-Show( functionNames );
+// Find Functions defined in a scriptparsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );functionNames = Transform Each( {statement}, Name Expr( parsedScript ), Output( "List" ),	{lhs, rhs},	If( Head( statement ) == Expr( Assign() ),		rhs = Arg( statement, 2 );		If( !Is Empty( rhs ) & Contains( {Function()}, Head( rhs ) ),			Head Name( Arg( statement, 1 ) ),			Empty()		);	,		Empty()	));functionNames = Filter Each( {f}, functionNames, !Is Empty( f ) );Show( functionNames );
 
 ```
 
@@ -28398,8 +17910,7 @@ Show( functionNames );
 
 ```jsl
 
-values = Transform Each( {value}, {10, 20, 30}, value + 5 );
-Show( values );
+values = Transform Each( {value}, {10, 20, 30}, value + 5 );Show( values );
 
 ```
 
@@ -28407,8 +17918,7 @@ Show( values );
 
 ```jsl
 
-values = Transform Each( {element}, 10 :: 15, element + 5 );
-Show( values );
+values = Transform Each( {element}, 10 :: 15, element + 5 );Show( values );
 
 ```
 
@@ -28416,32 +17926,7 @@ Show( values );
 
 ```jsl
 
-
-Write( "\!N===List===" );
-lst = Transform Each( {value}, [10, 20, 30], Output( "List" ),
-	value + 1
-);
-Show( lst );
-
-Write( "\!N===Matrix===" );
-mat = Transform Each( {value}, {10, 20, 30}, Output( "Matrix" ),
-	value + 1
-);
-Show( mat );
-
-Write( "\!N===Associative Array===" );
-aa = Transform Each( {value}, {10, 20, 30},
-	Output( "Associative Array" ),
-	value + 1
-);
-Show( aa );
-
-Write( "\!N===Expression===" );
-ex = Transform Each( {value}, {10, 20, 30},
-	Output( "Expression", "My Values" ),
-	value + 1
-);
-Show( ex );
+Write( "\!N===List===" );lst = Transform Each( {value}, [10, 20, 30], Output( "List" ), value + 1 );Show( lst );Write( "\!N===Matrix===" );mat = Transform Each( {value}, {10, 20, 30}, Output( "Matrix" ), value + 1 );Show( mat );Write( "\!N===Associative Array===" );aa = Transform Each( {value}, {10, 20, 30}, Output( "Associative Array" ), value + 1 );Show( aa );Write( "\!N===Expression===" );ex = Transform Each( {value}, {10, 20, 30}, Output( "Expression", "My Values" ), value + 1 );Show( ex );
 
 ```
 
@@ -28455,18 +17940,7 @@ Show( ex );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Frame Size( 500, 500 ),
-		X Scale( -3, 3 ),
-		Y Scale( -3, 3 ),
-		Transparency( .1 );
-		Fill Color( RGB Color( 1/*red*/, 0/*green*/, 0/*blue*/ ) );
-		For( i = 0, i < 10000, i++,
-			Circle( {Random Normal(), Random Normal()}, 0.05, "FILL" )
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Frame Size( 500, 500 ),		X Scale( -3, 3 ),		Y Scale( -3, 3 ),		Transparency( .1 );		Fill Color( RGB Color( 1/*red*/, 0/*green*/, 0/*blue*/ ) );		For( i = 0, i < 10000, i++,			Circle( {Random Normal(), Random Normal()}, 0.05, "FILL" )		);	));
 
 ```
 
@@ -28494,22 +17968,7 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-                                        
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-                                        
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-                                        
-New Window( "TreeBox",
-	tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
-);
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );                                        c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );                                        root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );                                        New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```
 
@@ -28523,22 +17982,7 @@ New Window( "TreeBox",
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-                                        
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-                                        
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-                                        
-New Window( "TreeBox Nodes",
-	tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
-);
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );                                        c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );                                        root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );                                        New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ```
 
@@ -28554,8 +17998,7 @@ New Window( "TreeBox Nodes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```
 
@@ -28619,8 +18062,7 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
-TripleS Import(); //To get a file dialog to select the XML file
-TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
+TripleS Import(); //To get a file dialog to select the XML fileTripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ```
 
@@ -28680,26 +18122,7 @@ Notez que q est la valeur critique ajustée de Tukey, qui est le quantile de la 
 
 ```jsl
 
-alpha = 0.05;
-dfe = 5;
-Tukey HSD Quantile( 1 - alpha, 20, dfe );
-New Window( "Example: Tukey HSD Quantile",
-	tdigr = Graph Box(
-		Y Scale( 2, 8 ),
-		X Scale( 2.5, 15.5 ),
-		YName( "Tukey HSD Quantile" ),
-		XName( "Groups" ),
-		Pen Color( "red" );
-		For( i = 3, i <= 15, i++,
-			V Line( i, 0, Tukey HSD Quantile( 1 - alpha, i, dfe ) )
-		);
-		Text( {3, 7}, "dfe=", Round( dfe, 2 ) );
-	),
-	H List Box(
-		Text Box( "dfe" ),
-		Slider Box( 3, 10, dfe, tdigr << reshow )
-	)
-);
+alpha = 0.05;dfe = 5;Tukey HSD Quantile( 1 - alpha, 20, dfe );New Window( "Example: Tukey HSD Quantile",	tdigr = Graph Box(		Y Scale( 2, 8 ),		X Scale( 2.5, 15.5 ),		YName( "Tukey HSD Quantile" ),		XName( "Groups" ),		Pen Color( "red" );		For( i = 3, i <= 15, i++,			V Line( i, 0, Tukey HSD Quantile( 1 - alpha, i, dfe ) )		);		Text( {3, 7}, "dfe=", Round( dfe, 2 ) );	),	H List Box( Text Box( "dfe" ), Slider Box( 3, 10, dfe, tdigr << reshow ) ));
 
 ```
 
@@ -28717,10 +18140,6 @@ Type( [1 2 3] );
 
 ```
 
-### Unit Test
-
-**JMP Version ajoutée :** Avant la version 14
-
 ### Unlineup Box
 
 **Syntaxe :** y = UnLineup Box(displayBoxArgs, ... )
@@ -28731,20 +18150,7 @@ Type( [1 2 3] );
 
 ```jsl
 
-New Window( "unlineup",
-	Lineup Box( N Col( 2 ),
-		Unlineup Box(
-			Text Box( "First Section", <<Justify Text( "Center" ) )
-		),
-		Button Box( "First Section 1" ),
-		Button Box( "First Section 2" ),
-		Unlineup Box(
-			Text Box( "Second Section", <<Justify Text( "Center" ) )
-		),
-		Button Box( "Second Section 1" ),
-		Button Box( "Second Section 2" )
-	)
-);
+New Window( "unlineup",	Lineup Box( N Col( 2 ),		Unlineup Box( Text Box( "First Section", <<Justify Text( "Center" ) ) ),		Button Box( "First Section 1" ),		Button Box( "First Section 2" ),		Unlineup Box( Text Box( "Second Section", <<Justify Text( "Center" ) ) ),		Button Box( "Second Section 1" ),		Button Box( "Second Section 2" )	));
 
 ```
 
@@ -28758,18 +18164,7 @@ New Window( "unlineup",
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -28783,18 +18178,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -28824,23 +18208,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
-Unsubscribe to Data Table List( aSub, "on close" );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );Unsubscribe to Data Table List( aSub, "on close" );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
 
@@ -28848,25 +18216,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
-Unsubscribe to Data Table List( aSub, "all" );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );Unsubscribe to Data Table List( aSub, "all" );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );
+
+```
+
+### Update MATLAB Dependencies
+
+**Syntaxe :** Update MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Description :** Met à jour les dépendances MATLAB requises.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+If( Check MATLAB Dependencies(),	Update MATLAB Dependencies(),	Print( "Dependencies are updated" ));
 
 ```
 
@@ -28894,19 +18258,7 @@ Uppercase( "Café #23" );
 
 ```jsl
 
-New Window( "test",
-	H List Box(
-		V Center Box( Text Box( "V+V" ) ),
-		V List Box(
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			H Center Box( Text Box( "H+H" ) ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),
-			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )
-		)
-	)
-);
+New Window( "test",	H List Box(		V Center Box( Text Box( "V+V" ) ),		V List Box(			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			H Center Box( Text Box( "H+H" ) ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" ),			Text Box( "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" )		)	));
 
 ```
 
@@ -28934,14 +18286,7 @@ New Window( "test",
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [5 6, 7 8, 9 10];
-exC = [1, 1, 1, 1, 1];
-exD = V Concat To( exA, exB );
-exE = Concat( exD, exC );
-/* exA is changed and exD is not. */
-Show( exA, exB, exC, exD, exE );
-/* Also see ConcatTo(), VConcat() */
+exA = [1 2, 3 4];exB = [5 6, 7 8, 9 10];exC = [1, 1, 1, 1, 1];exD = V Concat To( exA, exB );exE = Concat( exD, exC );/* exA is changed and exD is not. */Show( exA, exB, exC, exD, exE );/* Also see ConcatTo(), VConcat() */
 
 ```
 
@@ -28955,12 +18300,7 @@ Show( exA, exB, exC, exD, exE );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Size( 2 );
-		V Line( 20, 10, 50 );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Size( 2 );		V Line( 20, 10, 50 );	));
 
 ```
 
@@ -28974,14 +18314,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		V List Box(
-			Text Box( "Label:" ),
-			Text Edit Box( Char( 213 ) )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) ));
 
 ```
 
@@ -29079,44 +18412,7 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```jsl
 
-New Window( "Example",
-	Outline Box( "Picker",
-		V Scroll Box(
-			Size( 100 ),
-			V List Box(
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				)
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
+New Window( "Example",	Outline Box( "Picker",		V Scroll Box(			Size( 100 ),			V List Box(				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ),				H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) )			),			<<Set Stretch( "Window", "Window" )		)	));
 
 ```
 
@@ -29130,51 +18426,7 @@ New Window( "Example",
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"weight by height",
-				Excerpt Box( 1, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height",
-				Excerpt Box( 2, {Picture Box( 1 )} )
-			)
-		),
-		H Sheet Box(
-			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),
-			Sheet Part(
-				"height by weight",
-				Excerpt Box( 4, {Picture Box( 1 )} )
-			)
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Example",	V Sheet Box(		<<Hold( Bivariate( Y( :weight ), X( :height ), Fit Line() ) ),		<<Hold(			Distribution(				Automatic Recalc( 1 ),				Continuous Distribution(					Column( :height ),					Horizontal Layout( 1 ),					Vertical( 0 ),					Outlier Box Plot( 0 )				)			)		),		<<Hold( Treemap( Categories( :age ) ) ),		<<Hold(			Bubble Plot(				X( :height ),				Y( :weight ),				Sizes( :age ),				Coloring( :sex ),				Circle Size( 6.226 ),				All Labels( 0 )			)		),		H Sheet Box(			Sheet Part( "weight by height", Excerpt Box( 1, {Picture Box( 1 )} ) ),			Sheet Part( "height", Excerpt Box( 2, {Picture Box( 1 )} ) )		),		H Sheet Box(			Sheet Part( "", Excerpt Box( 3, {Picture Box( 1 )} ) ),			Sheet Part( "height by weight", Excerpt Box( 4, {Picture Box( 1 )} ) )		)	));
 
 ```
 
@@ -29188,12 +18440,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Text Size( V Size() / 4 );
-		Text( {50, 20}, "label" );
-	)
-);
+New Window( "Example",	Graph Box(		Text Size( V Size() / 4 );		Text( {50, 20}, "label" );	));
 
 ```
 
@@ -29207,30 +18454,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Splitter",
-	V Splitter Box(
-		Size( 800, 600 ),
-		H Splitter Box(
-			graph = Graph Box(),
-			Script Box(),
-			<<Sizes( {0.6, 0.4} )
-		),
-		H Splitter Box(
-			pict = Picture Box(
-				Open( "$SAMPLE_IMAGES/tile.jpg", jpg )
-			),
-			spacer = Spacer Box(),
-			<<Sizes( {0.4, 0.6} )
-		)
-	)
-);
-graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
-pict << Set Min Size( 100, 100 );
-pict << Set Max Size( 500, 500 );
-pict << Set Stretch( "Window", "Window" );
-spacer << Set Fill( 1 );
-spacer << Color( "Red" );
-spacer << Set Stretch( "Window", "Window" );
+New Window( "Splitter",	V Splitter Box(		Size( 800, 600 ),		H Splitter Box( graph = Graph Box(), Script Box(), <<Sizes( {0.6, 0.4} ) ),		H Splitter Box(			pict = Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) ),			spacer = Spacer Box(),			<<Sizes( {0.4, 0.6} )		)	));graph[FrameBox( 1 )] << Set Stretch( "Window", "Window" );pict << Set Min Size( 100, 100 );pict << Set Max Size( 500, 500 );pict << Set Stretch( "Window", "Window" );spacer << Set Fill( 1 );spacer << Color( "Red" );spacer << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -29314,9 +18538,7 @@ Vec Diag( [11 22, 33 44] );
 
 ```jsl
 
-exS = [1 3 5, 3 2 6, 5 6 1];
-exX = [1 3 5, 2 4 6];
-Vec Quadratic( exS, exX );
+exS = [1 3 5, 3 2 6, 5 6 1];exX = [1 3 5, 2 4 6];Vec Quadratic( exS, exX );
 
 ```
 
@@ -29330,9 +18552,7 @@ Vec Quadratic( exS, exX );
 
 ```jsl
 
-tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
-"2 nearest rows to [1.1 .9 1] are " || Char( rows );
+tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );"2 nearest rows to [1.1 .9 1] are " || Char( rows );
 
 ```
 
@@ -29378,16 +18598,7 @@ Wait( 1.5 );
 
 ```jsl
 
-x = 1;
-y = 2;
-z = "abc";
-w = Watch( all );
-Wait( 5 );
-x = x * 5;
-y = y / 25;
-z = z || "def";
-Wait( 5 );
-w << close Window();
+x = 1;y = 2;z = "abc";w = Watch( all );Wait( 5 );x = x * 5;y = y / 25;z = z || "def";Wait( 5 );w << close Window();
 
 ```
 
@@ -29417,29 +18628,7 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```jsl
 
-//Making a clickable link show up in a formula column
-New Table( "Example",
-	Add Rows( 2 ),
-	New Column( "URL",
-		"Character",
-		"Nominal",
-		Formula( "https://www.jmp.com/" || :Page ),
-		Set Property(
-			"Event Handler",
-			Event Handler(
-				Click(JSL Quote( Function( {dt, col, row}, Web( dt:col[row] ) ) )
-				)
-			)
-		)
-	),
-	New Column( "Page",
-		"Character",
-		"Nominal",
-		Set Values(
-			{"support/knowledge_base.shtml", "en_us/about.html"}
-		)
-	)
-);
+//Making a clickable link show up in a formula columnNew Table( "Example",	Add Rows( 2 ),	New Column( "URL",		"Character",		"Nominal",		Formula( "https://www.jmp.com/" || :Page ),		Set Property(			"Event Handler",			Event Handler(				Click( JSL Quote( Function( {dt, col, row}, Web( dt:col[row] ) ) ) )			)		)	),	New Column( "Page",		"Character",		"Nominal",		Set Values( {"support/knowledge_base.shtml", "en_us/about.html"} )	));
 
 ```
 
@@ -29461,10 +18650,7 @@ Web( "http://www.jmp.com/" );
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );
-wb << Navigate( "http://www.jmp.com" );
-wb << Set Stretch( "Window", "Window" );
-wb << Set Max Size( 10000, 10000 );
+New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );
 
 ```
 
@@ -29488,11 +18674,7 @@ Week Of Year( Today() );
 
 ```jsl
 
-Show(
-	Week Of Year( 01jan2012, 1 ),
-	Week Of Year( 01jan2012, 2 ),
-	Week Of Year( 01jan2012, 3 )
-);
+Show(	Week Of Year( 01jan2012, 1 ),	Week Of Year( 01jan2012, 2 ),	Week Of Year( 01jan2012, 3 ));
 
 ```
 
@@ -29506,21 +18688,7 @@ Show(
 
 ```jsl
 
-shape = 0.5;
-New Window( "Example: Weibull Density",
-	y = Graph Box(
-		Y Scale( 0, 2 ),
-		X Scale( 0, 1.5 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Weibull Density( x, shape ), x );
-		Text( {1.1, 1.8}, " shape=", Round( shape, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 5, shape, y << reshow ),
-		Text Box( " shape" )
-	)
-);
+shape = 0.5;New Window( "Example: Weibull Density",	y = Graph Box(		Y Scale( 0, 2 ),		X Scale( 0, 1.5 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Weibull Density( x, shape ), x );		Text( {1.1, 1.8}, " shape=", Round( shape, 2 ) );	),	H List Box( Slider Box( 0, 5, shape, y << reshow ), Text Box( " shape" ) ));
 
 ```
 
@@ -29534,21 +18702,7 @@ New Window( "Example: Weibull Density",
 
 ```jsl
 
-shape = 2;
-New Window( "Example: Weibull Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 2 ),
-		XName( "x" ),
-		Pen Color( "red" );
-		Y Function( Weibull Distribution( x, shape ), x );
-		Text( {0.1, 0.9}, " shape=", Round( shape, 2 ) );
-	),
-	H List Box(
-		Slider Box( 0, 5, shape, y << reshow ),
-		Text Box( " shape" )
-	)
-);
+shape = 2;New Window( "Example: Weibull Distribution",	y = Graph Box(		Y Scale( 0, 1 ),		X Scale( 0, 2 ),		XName( "x" ),		Pen Color( "red" );		Y Function( Weibull Distribution( x, shape ), x );		Text( {0.1, 0.9}, " shape=", Round( shape, 2 ) );	),	H List Box( Slider Box( 0, 5, shape, y << reshow ), Text Box( " shape" ) ));
 
 ```
 
@@ -29562,34 +18716,7 @@ New Window( "Example: Weibull Distribution",
 
 ```jsl
 
-exwqbeta = 2;
-exwqqq = 0.5;
-New Window( "Example: Weibull Quantile",
-	exwqy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( 0, 2 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Weibull Distribution( exwqq, exwqbeta ), exwqq );
-		Pen Color( "blue" );
-		V Line( Weibull Quantile( exwqqq, exwqbeta ), 0, 1 );
-		Text(
-			{0.1, 0.9},
-			" \!U03B2=",
-			Round( exwqbeta, 2 ),
-			" quantile=",
-			Round( exwqqq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 5, exwqbeta, exwqy << reshow ),
-		Text Box( " \!U03B2" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, exwqqq, exwqy << reshow ),
-		Text Box( " quantile" )
-	)
-);
+exwqbeta = 2;exwqqq = 0.5;New Window( "Example: Weibull Quantile",	exwqy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( 0, 2 ),		XName( "q" ),		Pen Color( "red" );		Y Function( Weibull Distribution( exwqq, exwqbeta ), exwqq );		Pen Color( "blue" );		V Line( Weibull Quantile( exwqqq, exwqbeta ), 0, 1 );		Text(			{0.1, 0.9},			" \!U03B2=",			Round( exwqbeta, 2 ),			" quantile=",			Round( exwqqq, 2 )		);	),	H List Box( Slider Box( 0, 5, exwqbeta, exwqy << reshow ), Text Box( " \!U03B2" ) ),	H List Box( Slider Box( 0.01, 0.99, exwqqq, exwqy << reshow ), Text Box( " quantile" ) ));
 
 ```
 
@@ -29605,12 +18732,7 @@ New Window( "Example: Weibull Quantile",
 
 ```jsl
 
-xs = [10 20 30 . 50];
-ys = [0 0 0 1 1];
-Where( xs > 20 & ys );
-
-xs = {{10}, {20}, {15}};
-Where( xs[1] < 18 );
+xs = [10 20 30 . 50];ys = [0 0 0 1 1];Where( xs > 20 & ys );xs = {{10}, {20}, {15}};Where( xs[1] < 18 );
 
 ```
 
@@ -29618,10 +18740,7 @@ Where( xs[1] < 18 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Get Rows Where( :sex == "M" );
-Where( :sex == "M" );
-Where( dt, :sex == "M" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Get Rows Where( :sex == "M" );Where( :sex == "M" );Where( dt, :sex == "M" );
 
 ```
 
@@ -29629,10 +18748,7 @@ Where( dt, :sex == "M" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Select Rows( [2 4 6] ) << Exclude( 1 );
-Where( Excluded() );
-Where( !Excluded() );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Select Rows( [2 4 6] ) << Exclude( 1 );Where( Excluded() );Where( !Excluded() );
 
 ```
 
@@ -29640,13 +18756,7 @@ Where( !Excluded() );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Select << Select Rows(
-	Where( Col Max( :height, :age ) >= 68 )
-);
-dt << Clear Select << Select Rows(
-	Where( :height == Col Max( :height, :age ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
 
 ```
 
@@ -29654,11 +18764,7 @@ dt << Clear Select << Select Rows(
 
 ```jsl
 
-xs = [10 20 30 . 50];
-xs[Where( xs >= 20 )];
-xs[Where( !Is Missing( xs ) )];
-ys = {10, 20, "30", ., 50};
-ys[Where( ys >= 20 )];
+xs = [10 20 30 . 50];xs[Where( xs >= 20 )];xs[Where( !Is Missing( xs ) )];ys = {10, 20, "30", ., 50};ys[Where( ys >= 20 )];
 
 ```
 
@@ -29672,13 +18778,7 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
-i = 1;
-s = "";
-While( i < 1000,
-	s ||= " " || Char( i );
-	i *= 2;
-);
-s;
+i = 1;s = "";While( i < 1000,	s ||= " " || Char( i );	i *= 2;);s;
 
 ```
 
@@ -29692,14 +18792,7 @@ s;
 
 ```jsl
 
-extestexpr = Expr(
-	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
-	Show( "END" );
-);
-Extract Expr(
-	extestexpr,
-	For( i = 1, Wild(), i++, Print( "YES!!!" ) )
-);
+extestexpr = Expr(	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );	Show( "END" ););Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 ```
 
@@ -29713,14 +18806,7 @@ Extract Expr(
 
 ```jsl
 
-extestexpr = Expr(
-	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
-	Show( "END" );
-);
-Extract Expr(
-	extestexpr,
-	For( i = 1, Wild List(), Print( "YES!!!" ) )
-);
+extestexpr = Expr(	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );	Show( "END" ););Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 ```
 
@@ -29738,29 +18824,6 @@ Window( "Big Class" );
 
 ```
 
-### With Clipboard
-
-**Syntaxe :** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
-
-**Description :** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "HELLO" );
-clp = Clipboard Capture(
-	dt << Select Columns( :height ) << Copy Column Properties
-);
-With Clipboard(
-	clp,
-	dt << Select Columns( :weight ) << Paste Column Properties
-);
-
-```
-
 ### With Window Handler
 
 **Syntaxe :** With Window Handler( JSL Code, Handler Function )
@@ -29771,13 +18834,7 @@ With Clipboard(
 
 ```jsl
 
-With Window Handler(
-	New Window( "My Window" ),
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
+With Window Handler(	New Window( "My Window" ),	Function( {window},		Print( window << get window title() );		window << close window();	));
 
 ```
 
@@ -29809,11 +18866,7 @@ Word( [2 -1], "This is a sentence" );
 
 ```jsl
 
-Word(
-	4,
-	"Apple+Banana Tree,,Pear,,Peach,,Grape",
-	Get Punctuation Characters()
-);
+Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
 
@@ -29845,9 +18898,7 @@ Word( 2, "abcd", "" );
 
 ```jsl
 
-Eval List(
-	{Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )}
-);
+Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
 
@@ -29877,14 +18928,7 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-New Window( "WrapListBox",
-	Wrap List Box(
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "2" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "3" ) ),
-		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "4" ) )
-	)
-);
+New Window( "WrapListBox",	Wrap List Box(		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "1" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "2" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "3" ) ),		Graph Box( framesize( 150, 100 ), Text( {50, 50}, "4" ) )	));
 
 ```
 
@@ -29912,12 +18956,7 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "red" );
-		X Function( 20 + 40 * Sin( a / 30 ), a );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "red" );		X Function( 20 + 40 * Sin( a / 30 ), a );	));
 
 ```
 
@@ -29931,18 +18970,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "red" );
-		Oval(
-			X Origin() + 10,
-			Y Origin() + Y Range() - 10,
-			X Origin() + X Range() - 10,
-			Y Origin() + 10,
-			1
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "red" );		Oval(			X Origin() + 10,			Y Origin() + Y Range() - 10,			X Origin() + X Range() - 10,			Y Origin() + 10,			1		);	));
 
 ```
 
@@ -29956,18 +18984,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "red" );
-		Oval(
-			X Origin() + 10,
-			Y Origin() + Y Range() - 10,
-			X Origin() + X Range() - 10,
-			Y Origin() + 10,
-			1
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "red" );		Oval(			X Origin() + 10,			Y Origin() + Y Range() - 10,			X Origin() + X Range() - 10,			Y Origin() + 10,			1		);	));
 
 ```
 
@@ -29981,20 +18998,7 @@ New Window( "Example",
 
 ```jsl
 
-/* Default value for X Scale() is (0,100). */
-New Window( "Example",
-	Graph Box(
-		Y Scale( -10, 90 ),
-		X Scale( -10, 90 ),
-		Oval(
-			X Origin() + 10,
-			(Y Origin() + Y Range()) - 10,
-			(X Origin() + X Range()) - 10,
-			Y Origin() + 10,
-			1
-		)
-	)
-);
+/* Default value for X Scale() is (0,100). */New Window( "Example",	Graph Box(		Y Scale( -10, 90 ),		X Scale( -10, 90 ),		Oval(			X Origin() + 10,			(Y Origin() + Y Range()) - 10,			(X Origin() + X Range()) - 10,			Y Origin() + 10,			1		)	));
 
 ```
 
@@ -30008,19 +19012,7 @@ New Window( "Example",
 
 ```jsl
 
-ex =
-"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
-Parse XML( ex,
-	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
-	On Element(
-		"col",
-		End Tag(
-			New Column( XML Attr( "name" ),
-				Set Values( Parse( XML Text() ) )
-			)
-		)
-	)
-);
+ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
 
 ```
 
@@ -30034,9 +19026,7 @@ Parse XML( ex,
 
 ```jsl
 
-text = XML Decode(
-	"isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;"
-);
+text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
 
@@ -30064,19 +19054,7 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```jsl
 
-ex =
-"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
-Parse XML( ex,
-	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
-	On Element(
-		"col",
-		End Tag(
-			New Column( XML Attr( "name" ),
-				Set Values( Parse( XML Text() ) )
-			)
-		)
-	)
-);
+ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
 
 ```
 
@@ -30090,10 +19068,7 @@ Parse XML( ex,
 
 ```jsl
 
-result = XPath Query(
-	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
-	"//color/text()"
-);
+result = XPath Query(	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",	"//color/text()");
 
 ```
 
@@ -30107,26 +19082,7 @@ result = XPath Query(
 
 ```jsl
 
-New Window( "Spiral",
-	Graph Box(
-		Pen Color( "red" );
-		xCenter = 50;
-		yCenter = 50;
-		minAngle = 0;
-		maxAngle = Pi() * 2 * 20;
-		XY Function(
-			xCenter + ((ta / 3) * Cos( ta )),
-			yCenter + ((ta / 3) * Sin( ta )),
-			ta,
-			Min( minAngle ),
-			Max( maxAngle ),
-			inc( Pi() / 100 )
-		);
-	)
-);
-/* sin() and cos() use ta as an argument (rotates)
-   AND as a factor (expands) in this example.
-   (sin and cos use radians, not degrees.) */
+New Window( "Spiral",	Graph Box(		Pen Color( "red" );		xCenter = 50;		yCenter = 50;		minAngle = 0;		maxAngle = Pi() * 2 * 20;		XY Function(			xCenter + ((ta / 3) * Cos( ta )),			yCenter + ((ta / 3) * Sin( ta )),			ta,			Min( minAngle ),			Max( maxAngle ),			inc( Pi() / 100 )		);	));/* sin() and cos() use ta as an argument (rotates)   AND as a factor (expands) in this example.   (sin and cos use radians, not degrees.) */
 
 ```
 
@@ -30140,12 +19096,7 @@ New Window( "Spiral",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Pen Color( "red" );
-		Y Function( 20 + 40 * Sin( a / 30 ), a );
-	)
-);
+New Window( "Example",	Graph Box(		Pen Color( "red" );		Y Function( 20 + 40 * Sin( a / 30 ), a );	));
 
 ```
 
@@ -30159,18 +19110,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "red" );
-		Oval(
-			X Origin() + 10,
-			Y Origin() + Y Range() - 10,
-			X Origin() + X Range() - 10,
-			Y Origin() + 10,
-			1
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "red" );		Oval(			X Origin() + 10,			Y Origin() + Y Range() - 10,			X Origin() + X Range() - 10,			Y Origin() + 10,			1		);	));
 
 ```
 
@@ -30184,18 +19124,7 @@ New Window( "Example",
 
 ```jsl
 
-New Window( "Example",
-	Graph Box(
-		Fill Color( "red" );
-		Oval(
-			X Origin() + 10,
-			Y Origin() + Y Range() - 10,
-			X Origin() + X Range() - 10,
-			Y Origin() + 10,
-			1
-		);
-	)
-);
+New Window( "Example",	Graph Box(		Fill Color( "red" );		Oval(			X Origin() + 10,			Y Origin() + Y Range() - 10,			X Origin() + X Range() - 10,			Y Origin() + 10,			1		);	));
 
 ```
 
@@ -30209,20 +19138,7 @@ New Window( "Example",
 
 ```jsl
 
-/* Default value for Y Scale() is (0,100).*/
-New Window( "Example",
-	Graph Box(
-		Y Scale( -10, 90 ),
-		X Scale( -10, 90 ),
-		Oval(
-			X Origin() + 10,
-			(Y Origin() + Y Range()) - 10,
-			(X Origin() + X Range()) - 10,
-			Y Origin() + 10,
-			1
-		)
-	)
-);
+/* Default value for Y Scale() is (0,100).*/New Window( "Example",	Graph Box(		Y Scale( -10, 90 ),		X Scale( -10, 90 ),		Oval(			X Origin() + 10,			(Y Origin() + Y Range()) - 10,			(X Origin() + X Range()) - 10,			Y Origin() + 10,			1		)	));
 
 ```
 
@@ -30264,62 +19180,7 @@ Zero Or Missing( 1 < 2 );
 
 ```jsl
 
-lambda = 4;
-sigma = .5;
-p = .2;
-New Window( "Example: Zero Inflated Negative Binomial Distribution",
-	ppy = Graph Box(
-		Y Scale( 0, 1.01 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= 40, k++,
-			H Line(
-				k,
-				k + 1,
-				ZI Negative Binomial Distribution(
-					k,
-					lambda,
-					sigma,
-					p
-				)
-			);
-			V Line(
-				k + 1,
-				ZI Negative Binomial Distribution(
-					k,
-					lambda,
-					sigma,
-					p
-				),
-				ZI Negative Binomial Distribution(
-					k + 1,
-					lambda,
-					sigma,
-					p
-				)
-			);
-		);
-		Text( {30, 0.3}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {30, .2}, "\!U03C3=", Round( sigma, 2 ) );
-		Text( {30, .1}, "\!U03C0=", Round( p, 2 ) );
-	),
-	V List Box(
-		H List Box(
-			Slider Box( 0.01, 40, lambda, ppy << reshow ),
-			Text Box( " \!U03BB" )
-		),
-		H List Box(
-			Slider Box( 0.001, 2, sigma, ppy << reshow ),
-			Text Box( "\!U03C3" )
-		),
-		H List Box(
-			Slider Box( 0, .99, p, ppy << reshow ),
-			Text Box( " \!U03C0" )
-		),
-
-	)
-);
+lambda = 4;sigma = .5;p = .2;New Window( "Example: Zero Inflated Negative Binomial Distribution",	ppy = Graph Box(		Y Scale( 0, 1.01 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= 40, k++,			H Line( k, k + 1, ZI Negative Binomial Distribution( k, lambda, sigma, p ) );			V Line(				k + 1,				ZI Negative Binomial Distribution( k, lambda, sigma, p ),				ZI Negative Binomial Distribution( k + 1, lambda, sigma, p )			);		);		Text( {30, 0.3}, "\!U03BB=", Round( lambda, 2 ) );		Text( {30, .2}, "\!U03C3=", Round( sigma, 2 ) );		Text( {30, .1}, "\!U03C0=", Round( p, 2 ) );	),	V List Box(		H List Box( Slider Box( 0.01, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),		H List Box( Slider Box( 0.001, 2, sigma, ppy << reshow ), Text Box( "\!U03C3" ) ),		H List Box( Slider Box( 0, .99, p, ppy << reshow ), Text Box( " \!U03C0" ) ),	));
 
 ```
 
@@ -30333,41 +19194,7 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 ```jsl
 
-lambda = 4;
-sigma = .5;
-p = .1;
-New Window( "Example: Zero Inflated Negative Binomial Probability",
-	ppy = Graph Box(
-		Y Scale( 0, .4 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( k = 0, k <= 40, k++,
-			V Line(
-				k,
-				0,
-				ZI Negative Binomial Probability( k, lambda, sigma, p )
-			)
-		);
-		Text( {30, 0.3}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {30, .25}, "\!U03C3=", Round( sigma, 2 ) );
-		Text( {30, .2}, "\!U03C0=", Round( p, 2 ) );
-	),
-	V List Box(
-		H List Box(
-			Slider Box( .01, 40, lambda, ppy << reshow ),
-			Text Box( " \!U03BB" )
-		),
-		H List Box(
-			Slider Box( 0.001, 2, sigma, ppy << reshow ),
-			Text Box( "\!U03C3" )
-		),
-		H List Box(
-			Slider Box( 0, .25, p, ppy << reshow ),
-			Text Box( " \!U03C0" )
-		)
-	)
-);
+lambda = 4;sigma = .5;p = .1;New Window( "Example: Zero Inflated Negative Binomial Probability",	ppy = Graph Box(		Y Scale( 0, .4 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 2 );		For( k = 0, k <= 40, k++,			V Line( k, 0, ZI Negative Binomial Probability( k, lambda, sigma, p ) )		);		Text( {30, 0.3}, "\!U03BB=", Round( lambda, 2 ) );		Text( {30, .25}, "\!U03C3=", Round( sigma, 2 ) );		Text( {30, .2}, "\!U03C0=", Round( p, 2 ) );	),	V List Box(		H List Box( Slider Box( .01, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),		H List Box( Slider Box( 0.001, 2, sigma, ppy << reshow ), Text Box( "\!U03C3" ) ),		H List Box( Slider Box( 0, .25, p, ppy << reshow ), Text Box( " \!U03C0" ) )	));
 
 ```
 
@@ -30381,96 +19208,7 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 
 ```jsl
 
-qexpl = 20;
-qexpsig = .5;
-qexpp = .2;
-qexpn = 40;
-qexpq = 0.5;
-New Window( "Example: ZI Negative Binomial Quantile",
-	qexpy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,
-			H Line(
-				qexpk,
-				qexpk + 1,
-				ZI Negative Binomial Distribution(
-					qexpk,
-					qexpl,
-					qexpsig,
-					qexpp
-				)
-			);
-			V Line(
-				qexpk + 1,
-				ZI Negative Binomial Distribution(
-					qexpk,
-					qexpl,
-					qexpsig,
-					qexpp
-				),
-				ZI Negative Binomial Distribution(
-					qexpk + 1,
-					qexpl,
-					qexpsig,
-					qexpp
-				)
-			);
-		);
-		Pen Color( "blue" );
-		V Line(
-			ZI Negative Binomial Quantile(
-				qexpl,
-				qexpsig,
-				qexpp,
-				qexpq
-			),
-			0,
-			1.0
-		);
-		Text(
-			{2, 0.9},
-			" \!U03BB=",
-			Round( qexpl, 2 ),
-			" \!U03C3=",
-			Round( qexpsig, 2 ),
-			" \!U03C0=",
-			Round( qexpp, 2 )
-		);
-		Text(
-			{2, 0.8},
-			" q=",
-			Round( qexpq, 2 ),
-			" quantile=",
-			Round(
-				ZI Negative Binomial Quantile(
-					qexpl,
-					qexpsig,
-					qexpp,
-					qexpq
-				)
-			)
-		);
-	),
-	H List Box(
-		Slider Box( 0.001, 40, qexpl, qexpy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0.001, 2, qexpsig, qexpy << reshow ),
-		Text Box( "\!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, .99, qexpp, qexpy << reshow ),
-		Text Box( " \!U03C0" )
-	),
-	H List Box(
-		Slider Box( 0.001, .999, qexpq, qexpy << reshow ),
-		Text Box( " q" )
-	)
-);
+qexpl = 20;qexpsig = .5;qexpp = .2;qexpn = 40;qexpq = 0.5;New Window( "Example: ZI Negative Binomial Quantile",	qexpy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,			H Line(				qexpk,				qexpk + 1,				ZI Negative Binomial Distribution( qexpk, qexpl, qexpsig, qexpp )			);			V Line(				qexpk + 1,				ZI Negative Binomial Distribution( qexpk, qexpl, qexpsig, qexpp ),				ZI Negative Binomial Distribution( qexpk + 1, qexpl, qexpsig, qexpp )			);		);		Pen Color( "blue" );		V Line( ZI Negative Binomial Quantile( qexpl, qexpsig, qexpp, qexpq ), 0, 1.0 );		Text(			{2, 0.9},			" \!U03BB=",			Round( qexpl, 2 ),			" \!U03C3=",			Round( qexpsig, 2 ),			" \!U03C0=",			Round( qexpp, 2 )		);		Text(			{2, 0.8},			" q=",			Round( qexpq, 2 ),			" quantile=",			Round( ZI Negative Binomial Quantile( qexpl, qexpsig, qexpp, qexpq ) )		);	),	H List Box( Slider Box( 0.001, 40, qexpl, qexpy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 0.001, 2, qexpsig, qexpy << reshow ), Text Box( "\!U03C3" ) ),	H List Box( Slider Box( 0, .99, qexpp, qexpy << reshow ), Text Box( " \!U03C0" ) ),	H List Box( Slider Box( 0.001, .999, qexpq, qexpy << reshow ), Text Box( " q" ) ));
 
 ```
 
@@ -30484,37 +19222,7 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 ```jsl
 
-lambda = 4;
-p = .2;
-New Window( "Example: Zero Inflated Poisson Distribution",
-	ppy = Graph Box(
-		Y Scale( 0, 1.01 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 1 );
-		For( k = 0, k <= 40, k++,
-			H Line( k, k + 1, ZI Poisson Distribution( k, lambda, p ) );
-			V Line(
-				k + 1,
-				ZI Poisson Distribution( k, lambda, p ),
-				ZI Poisson Distribution( k + 1, lambda, p )
-			);
-		);
-		Text( {30, 0.2}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {30, .1}, "\!U03C0=", Round( p, 2 ) );
-	),
-	V List Box(
-		H List Box(
-			Slider Box( 0, 40, lambda, ppy << reshow ),
-			Text Box( " \!U03BB" )
-		),
-		H List Box(
-			Slider Box( 0, .99, p, ppy << reshow ),
-			Text Box( " \!U03C0" )
-		),
-
-	)
-);
+lambda = 4;p = .2;New Window( "Example: Zero Inflated Poisson Distribution",	ppy = Graph Box(		Y Scale( 0, 1.01 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 1 );		For( k = 0, k <= 40, k++,			H Line( k, k + 1, ZI Poisson Distribution( k, lambda, p ) );			V Line(				k + 1,				ZI Poisson Distribution( k, lambda, p ),				ZI Poisson Distribution( k + 1, lambda, p )			);		);		Text( {30, 0.2}, "\!U03BB=", Round( lambda, 2 ) );		Text( {30, .1}, "\!U03C0=", Round( p, 2 ) );	),	V List Box(		H List Box( Slider Box( 0, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),		H List Box( Slider Box( 0, .99, p, ppy << reshow ), Text Box( " \!U03C0" ) ),	));
 
 ```
 
@@ -30528,32 +19236,7 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 ```jsl
 
-lambda = 4;
-p = .2;
-New Window( "Example: Poisson Probability",
-	ppy = Graph Box(
-		Y Scale( 0, .6 ),
-		X Scale( -1, 40 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( k = 0, k <= 40, k++,
-			V Line( k, 0, ZI Poisson Probability( k, lambda, p ) )
-		);
-		Text( {30, 0.5}, "\!U03BB=", Round( lambda, 2 ) );
-		Text( {30, .4}, "\!U03C0=", Round( p, 2 ) );
-	),
-	V List Box(
-		H List Box(
-			Slider Box( 0, 40, lambda, ppy << reshow ),
-			Text Box( " \!U03BB" )
-		),
-		H List Box(
-			Slider Box( 0, .99, p, ppy << reshow ),
-			Text Box( " \!U03C0" )
-		),
-
-	)
-);
+lambda = 4;p = .2;New Window( "Example: Poisson Probability",	ppy = Graph Box(		Y Scale( 0, .6 ),		X Scale( -1, 40 ),		Pen Color( "red" ),		Pen Size( 2 );		For( k = 0, k <= 40, k++,			V Line( k, 0, ZI Poisson Probability( k, lambda, p ) )		);		Text( {30, 0.5}, "\!U03BB=", Round( lambda, 2 ) );		Text( {30, .4}, "\!U03C0=", Round( p, 2 ) );	),	V List Box(		H List Box( Slider Box( 0, 40, lambda, ppy << reshow ), Text Box( " \!U03BB" ) ),		H List Box( Slider Box( 0, .99, p, ppy << reshow ), Text Box( " \!U03C0" ) ),	));
 
 ```
 
@@ -30567,58 +19250,7 @@ New Window( "Example: Poisson Probability",
 
 ```jsl
 
-qexpl = 20;
-qexpp = .2;
-qexpn = 40;
-qexpq = 0.5;
-New Window( "Example: ZI Poisson Quantile",
-	qexpy = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -1, 41 ),
-		Pen Color( "red" ),
-		Pen Size( 2 );
-		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,
-			H Line(
-				qexpk,
-				qexpk + 1,
-				ZI Poisson Distribution( qexpk, qexpl, qexpp )
-			);
-			V Line(
-				qexpk + 1,
-				ZI Poisson Distribution( qexpl, qexpp, qexpk ),
-				ZI Poisson Distribution( qexpl, qexpp, qexpk + 1 )
-			);
-		);
-		Pen Color( "blue" );
-		V Line( ZI Poisson Quantile( qexpl, qexpp, qexpq ), 0, 1.0 );
-		Text(
-			{2, 0.9},
-			" \!U03BB=",
-			Round( qexpl, 2 ),
-			" \!U03C0=",
-			Round( qexpp, 2 )
-		);
-		Text(
-			{2, 0.8},
-			" q=",
-			Round( qexpq, 2 ),
-			" quantile=",
-			Round( ZI Poisson Quantile( qexpl, qexpp, qexpq ) )
-		);
-	),
-	H List Box(
-		Slider Box( 0, 40, qexpl, qexpy << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0, .99, qexpp, qexpy << reshow ),
-		Text Box( " \!U03C0" )
-	),
-	H List Box(
-		Slider Box( 0, 1, qexpq, qexpy << reshow ),
-		Text Box( " q" )
-	)
-);
+qexpl = 20;qexpp = .2;qexpn = 40;qexpq = 0.5;New Window( "Example: ZI Poisson Quantile",	qexpy = Graph Box(		Y Scale( 0, 1.05 ),		X Scale( -1, 41 ),		Pen Color( "red" ),		Pen Size( 2 );		For( qexpk = 0, qexpk < Round( qexpn ), qexpk++,			H Line( qexpk, qexpk + 1, ZI Poisson Distribution( qexpk, qexpl, qexpp ) );			V Line(				qexpk + 1,				ZI Poisson Distribution( qexpl, qexpp, qexpk ),				ZI Poisson Distribution( qexpl, qexpp, qexpk + 1 )			);		);		Pen Color( "blue" );		V Line( ZI Poisson Quantile( qexpl, qexpp, qexpq ), 0, 1.0 );		Text( {2, 0.9}, " \!U03BB=", Round( qexpl, 2 ), " \!U03C0=", Round( qexpp, 2 ) );		Text(			{2, 0.8},			" q=",			Round( qexpq, 2 ),			" quantile=",			Round( ZI Poisson Quantile( qexpl, qexpp, qexpq ) )		);	),	H List Box( Slider Box( 0, 40, qexpl, qexpy << reshow ), Text Box( " \!U03BB" ) ),	H List Box( Slider Box( 0, .99, qexpp, qexpy << reshow ), Text Box( " \!U03C0" ) ),	H List Box( Slider Box( 0, 1, qexpq, qexpy << reshow ), Text Box( " q" ) ));
 
 ```
 

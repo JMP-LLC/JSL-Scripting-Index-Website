@@ -1,0 +1,563 @@
+# PictSeg
+
+
+
+## Item Messages
+
+### Bounds
+
+**Syntax:** obj &lt;&lt; Bounds( left(value), right(value), top(value), bottom(value) )
+
+**Description:** Sets the boundaries of the PictSeg in axes coordinates.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ) );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage( Image( img ) );
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
+{l, r, t, b} = imgSeg << getBounds;
+
+```
+
+### Contrast
+
+**Syntax:** obj &lt;&lt; filter("contrast")
+
+**Description:** Applies contrast to the image in the PictSeg. A positive value makes the image brighter, a negative value makes the image darker. Useful value is -10 to 10.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "contrast", 3 );
+
+```
+
+### Crop
+
+**Syntax:** obj &lt;&lt; Crop
+
+**Description:** Crops the PictSeg to the specified size, removing any portion of the image outside the specified bounds. The order is implied as left, top, right, bottom. This might cause the image to be distorted as the aspect ratio is not preserved.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 451, 451 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+Wait( 1 );
+imgSeg << Crop( 10, 90, 90, 10 );
+
+```
+
+### Despeckle
+
+**Syntax:** obj &lt;&lt; filter("despeckle")
+
+**Description:** Applies a despeckling filter to the image in the PictSeg, to remove noise.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "despeckle" );
+
+```
+
+### Edge
+
+**Syntax:** obj &lt;&lt; filter("edge")
+
+**Description:** Applies an edge detection filter to the image in the PictSeg. Edges are drawn as black, everything else becomes white.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "edge" );
+
+```
+
+### Enhance
+
+**Syntax:** obj &lt;&lt; filter("enhance")
+
+**Description:** Applies an enhancement filter to the image in the PictSeg, making the image appear crisper.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "enhance" );
+
+```
+
+### Fill Graph
+
+**Syntax:** obj &lt;&lt; Fill Graph
+
+**Description:** Sets the bounds to be the extents of the axes, causing the PictSeg to fill the graph. This might cause the image to be distorted as the aspect ratio is not preserved.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage( Image( img ), bounds( Left( 0 ), Right( 50 ), top( 50 ), bottom( 0 ) ) );
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+Wait( 1 );
+imgSeg << fill graph;
+
+```
+
+### Flip both
+
+**Syntax:** obj &lt;&lt; flip both
+
+**Description:** Flips the image in the PictSeg in both a vertical and horizontal direction.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << flip both;
+
+```
+
+### Flip horizontal
+
+**Syntax:** obj &lt;&lt; flip horizontal
+
+**Description:** Flips the image in the PictSeg in a horizontal direction.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << flip horizontal;
+
+```
+
+### Flip vertical
+
+**Syntax:** obj &lt;&lt; flip vertical
+
+**Description:** Flips the image in the PictSeg in a vertical direction.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << flip vertical;
+
+```
+
+### Gamma
+
+**Syntax:** obj &lt;&lt; filter("gamma")
+
+**Description:** Adjusts the gamma in the image in the PictSeg. Useful range is 0 to 10. A value of 0 to 1, decreases the gamma. A value greater than 1 increases the gamma.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "gamma", 1.5 );
+
+```
+
+### Gaussian Blur
+
+**Syntax:** obj &lt;&lt; filter("gaussian blur", radius, sigma)
+
+**Description:** Applies a blur to the image in the PictSeg. Useful range for radius is 0 to 5.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
+
+```
+
+### Get Bounds
+
+**Syntax:** {left, right, top, bottom} = obj &lt;&lt; Get Bounds
+
+**Description:** Returns the boundaries of the PictSeg in axes coordinates in the order of left, right, top and bottom.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ) );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+{l, r, t, b} = imgSeg << getBounds;
+
+```
+
+### Get Size
+
+**Syntax:** {width, height} = obj &lt;&lt; Get Size
+
+**Description:** Returns the size of the PictSeg in pixel coordinates as width and height.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+{w, h} = imgSeg << getSize;
+
+```
+
+### Lock
+
+**Syntax:** obj &lt;&lt; Lock( state=0|1 )
+
+**Description:** Locks the image in the PictSeg in place, preventing it from being moved, resized or rotated interactively.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << lock( 1 );
+
+```
+
+### Median
+
+**Syntax:** obj &lt;&lt; filter("median")
+
+**Description:** Applies a median filter to the image in the PictSeg. This replaces each pixel value with the median average of the surrounding pixels.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "median" );
+
+```
+
+### Move
+
+**Syntax:** obj &lt;&lt; Move( xcenter, ycenter )
+
+**Description:** Moves the center of the image to the specified x,y location, where xcenter and ycenter are expressed in axes coordinates.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage( Open( "$SAMPLE_IMAGES/tile.jpg" ) );
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Move( 75, 75 );
+
+```
+
+### Negate
+
+**Syntax:** obj &lt;&lt; filter("negate")
+
+**Description:** Applies a filter to the image in the PictSeg which reverses the colors. Red, green, blue becomes cyan, yellow magenta, white becomes black, etc.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "negate" );
+
+```
+
+### Normalize
+
+**Syntax:** obj &lt;&lt; filter("normalize")
+
+**Description:** Applies a normalization filter to the image in the PictSeg. This takes the range of the pixel values in the image and stretches them out across the color range, creating a wider contrast of colors.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "normalize" );
+
+```
+
+### Open
+
+**Syntax:** obj &lt;&lt; Open( filename )
+
+**Description:** Opens an image file and adds the image to the PictSeg.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Open( "$SAMPLE_IMAGES/tile.jpg" ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+
+```
+
+### Reduce Noise
+
+**Syntax:** obj &lt;&lt; filter("reduce noise", radius)
+
+**Description:** Applies a noise reduction filter to the image in the PictSeg. This averages a pixel with its neighbors, based on the radius. Useful range is 0 to 5.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "reduce noise", 2.0 );
+
+```
+
+### Remove
+
+**Syntax:** obj &lt;&lt; Remove
+
+**Description:** Removes the PictSeg from the display box.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+Wait( 1 );
+imgSeg << remove;
+
+```
+
+### Rotate
+
+**Syntax:** obj &lt;&lt; Rotate( degrees )
+
+**Description:** Rotates the PictSeg in a clockwise direction by the specified number of degrees.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << rotate( 45 );
+
+```
+
+### SetSize
+
+**Syntax:** obj &lt;&lt; SetSize( {width, height} )
+
+**Description:** Sets the size of the PictSeg in pixel coordinates as width and height.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << setSize( {300, 500} );
+{w, h} = imgSeg << getSize;
+
+```
+
+### Sharpen
+
+**Syntax:** obj &lt;&lt; filter("sharpen")
+
+**Description:** Applies a sharpening filter to the image in the PictSeg, making the image appear crisper.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Filter( "sharpen" );
+
+```
+
+### Specify Size
+
+**Syntax:** obj &lt;&lt; Specify Size
+
+**Description:** Sets the bounds of the PictSeg. Similar to set bounds except the order is implied as left, top, right, bottom. This might cause the image to be distorted as the aspect ratio is not preserved.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage( Image( img ) );
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+Wait( 1 );
+imgSeg << Specify Size( 0, 100, 100, 0 );
+
+```
+
+### Transparency
+
+**Syntax:** obj &lt;&lt; Transparency( transparency )
+
+**Description:** Sets the transparency for the PictSeg where 0.0 is completely transparent and 1.0 is completely opaque.
+
+```jsl
+
+imgBox = Graph Box( frameSize( 150, 150 ), SuppressAxes );
+win = New Window( "Image", imgBox );
+img = New Image( "$SAMPLE_IMAGES/tile.jpg" );
+imgBox = win[framebox( 1 )];
+imgBox << AddImage(
+	Image( img ),
+	bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) )
+);
+imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
+imgSeg << Transparency( 0.5 );
+
+```
+

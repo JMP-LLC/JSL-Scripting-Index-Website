@@ -6,7 +6,7 @@
 
 ### Reliability Growth
 
-**Sintaxis:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
+**Sintaxis:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; ); obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; ); obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; ) obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **Descripción:** Modela el cambio de confiabilidad de un único sistema reparable con el tiempo a medida que se incorporan mejoras a su diseño. La plataforma acepta varios formatos de entrada. Consulte cada formato para detalles de especificación.
 
@@ -14,12 +14,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));
 
 ```
 
@@ -27,14 +22,7 @@ obj = dt << Reliability Growth(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Concurrent Systems.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Concurrent Systems ),
-	Time to Event( :Prototype 1, :Prototype 2 ),
-	System ID( :Failed System ),
-
-);
-obj << Crow AMSAA;
+dt = Open( "$SAMPLE_DATA/Reliability/Concurrent Systems.jmp" );obj = dt << Reliability Growth(	Input Format( Concurrent Systems ),	Time to Event( :Prototype 1, :Prototype 2 ),	System ID( :Failed System ),);obj << Crow AMSAA;
 
 ```
 
@@ -42,15 +30,7 @@ obj << Crow AMSAA;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Fixes ),
-	System ID( :System ID ),
-	Phase( :Phase )
-);
-obj << Piecewise Weibull NHPP with Different Intercepts;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Fixes ),	System ID( :System ID ),	Phase( :Phase ));obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ```
 
@@ -58,9 +38,7 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;
 
 ```
 
@@ -74,9 +52,7 @@ obj << Crow AMSAA;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;
 
 ```
 
@@ -88,9 +64,7 @@ obj << Crow AMSAA;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA with Modified MLE;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA with Modified MLE;
 
 ```
 
@@ -102,15 +76,7 @@ obj << Crow AMSAA with Modified MLE;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Fixes ),
-	System ID( :System ID ),
-	Phase( :Phase )
-);
-obj << Distinct Phase Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Fixes ),	System ID( :System ID ),	Phase( :Phase ));obj << Distinct Phase Weibull NHPP;
 
 ```
 
@@ -122,14 +88,7 @@ obj << Distinct Phase Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Repairs ),
-	System ID( :System ID )
-);
-obj << Distinct System Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Repairs ),	System ID( :System ID ));obj << Distinct System Weibull NHPP;
 
 ```
 
@@ -141,15 +100,7 @@ obj << Distinct System Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Fixes ),
-	System ID( :System ID ),
-	Phase( :Phase )
-);
-obj << Distinct Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Fixes ),	System ID( :System ID ),	Phase( :Phase ));obj << Distinct Weibull NHPP;
 
 ```
 
@@ -161,9 +112,7 @@ obj << Distinct Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
 
 ```
 
@@ -175,10 +124,7 @@ obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-Show( obj << Get Results );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;Show( obj << Get Results );
 
 ```
 
@@ -190,14 +136,7 @@ Show( obj << Get Results );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Repairs ),
-	System ID( :System ID )
-);
-obj << Identical System Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Repairs ),	System ID( :System ID ));obj << Identical System Weibull NHPP;
 
 ```
 
@@ -209,14 +148,7 @@ obj << Identical System Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-obj << Piecewise Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));obj << Piecewise Weibull NHPP;
 
 ```
 
@@ -228,13 +160,7 @@ obj << Piecewise Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
-obj << Piecewise Weibull NHPP Change Point Detection;
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));obj << Piecewise Weibull NHPP Change Point Detection;
 
 ```
 
@@ -246,15 +172,7 @@ obj << Piecewise Weibull NHPP Change Point Detection;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Parallel Systems ),
-	Time to Event( :Hours ),
-	Event Count( :Fixes ),
-	System ID( :System ID ),
-	Phase( :Phase )
-);
-obj << Piecewise Weibull NHPP with Different Intercepts;
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );obj = dt << Reliability Growth(	Input Format( Parallel Systems ),	Time to Event( :Hours ),	Event Count( :Fixes ),	System ID( :System ID ),	Phase( :Phase ));obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ```
 
@@ -266,14 +184,7 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours of Operation ),
-	Event Count( :Fixes ),
-	Phase( :Design Stage )
-);
-obj << Reinitialized Weibull NHPP;
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours of Operation ),	Event Count( :Fixes ),	Phase( :Design Stage ));obj << Reinitialized Weibull NHPP;
 
 ```
 
@@ -287,12 +198,7 @@ obj << Reinitialized Weibull NHPP;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -308,10 +214,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -319,10 +222,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -330,13 +230,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -348,11 +242,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -364,12 +254,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -381,10 +266,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Copy Script;
 
 ```
 
@@ -396,10 +278,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Data Table Window;
 
 ```
 
@@ -413,9 +292,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -429,11 +306,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -441,27 +314,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -473,11 +326,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -489,11 +338,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;t = obj << Get Script;Show( t );
 
 ```
 
@@ -505,11 +350,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -521,11 +362,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;t = obj << Get Timing;Show( t );
 
 ```
 
@@ -537,10 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -554,10 +388,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -569,13 +400,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -587,32 +412,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -626,9 +426,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -640,15 +438,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -660,10 +450,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Redo Analysis;
 
 ```
 
@@ -675,10 +462,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Relaunch Analysis;
 
 ```
 
@@ -690,14 +474,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -709,49 +486,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -763,10 +510,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Report View( "Summary" );
 
 ```
 
@@ -778,10 +522,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Save Script for All Objects;
 
 ```
 
@@ -791,43 +532,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours ),
-	By( _bycol )
-);
-obj << Crow AMSAA;
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Crow AMSAA;obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours ),
-	By( _bycol )
-);
-obj << Crow AMSAA;
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Crow AMSAA;obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -839,10 +556,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -854,10 +568,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Save Script to Journal;
 
 ```
 
@@ -869,10 +580,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Save Script to Report;
 
 ```
 
@@ -884,10 +592,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Save Script to Script Window;
 
 ```
 
@@ -899,15 +604,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -919,20 +616,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -944,12 +628,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -961,11 +640,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -977,10 +652,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;obj << Title( "My Platform" );
 
 ```
 
@@ -992,12 +664,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1009,9 +676,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -1027,11 +692,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Achieved MTBF( .01 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Achieved MTBF( .01 );
 
 ```
 
@@ -1043,11 +704,7 @@ report << Achieved MTBF( .01 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Goodness of Fit( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Goodness of Fit( 1 );
 
 ```
 
@@ -1059,11 +716,7 @@ report << Goodness of Fit( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Cumulative Events Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Cumulative Events Plot( 1 );
 
 ```
 
@@ -1075,11 +728,7 @@ report << Show Cumulative Events Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Intensity Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Intensity Plot( 1 );
 
 ```
 
@@ -1091,11 +740,7 @@ report << Show Intensity Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show MTBF Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show MTBF Plot( 0 );
 
 ```
 
@@ -1107,11 +752,7 @@ report << Show MTBF Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Profilers( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Profilers( 1 );
 
 ```
 
@@ -1121,17 +762,13 @@ report << Show Profilers( 1 );
 
 #### Cumulative Events Plot
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( ... );scrobj = obj &lt;&lt; Cumulative Events Plot
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( ... ); scrobj = obj &lt;&lt; Cumulative Events Plot
 
 **Descripción:** Le permite mostrar u ocultar modelos en el gráfico de sucesos acumulativos. Si se especifica sin ningún argumento, esta opción devuelve una referencia al gráfico que admite scripts.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-plot = obj << Cumulative Events Plot;
-plot << Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;plot = obj << Cumulative Events Plot;plot << Crow AMSAA( 0 );
 
 ```
 
@@ -1139,7 +776,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) ); scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1147,13 +784,7 @@ plot << Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA;
-Wait( 1 );
-obj << Cumulative Events Plot( Crow AMSAA( 0 ) );
-obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA;Wait( 1 );obj << Cumulative Events Plot( Crow AMSAA( 0 ) );obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
 
 ```
 
@@ -1161,21 +792,13 @@ obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Crow AMSAA( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Crow AMSAA( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Crow AMSAA( 0 );
 
 ```
 
 #### Crow AMSAA with Modified MLE
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) ); scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA con corrección de sesgo para beta en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1183,13 +806,7 @@ mtbf << Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA with Modified MLE;
-Wait( 1 );
-obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA with Modified MLE;Wait( 1 );obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
 
 ```
 
@@ -1197,21 +814,13 @@ obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA with Modified MLE;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Crow AMSAA with Modified MLE( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Crow AMSAA with Modified MLE( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA with Modified MLE;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Crow AMSAA with Modified MLE( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Crow AMSAA with Modified MLE( 0 );
 
 ```
 
 #### Fixed Parameter Crow AMSAA
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) ); scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA de parámetro fijo en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1219,13 +828,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Fixed Parameter Crow AMSAA;
-Wait( 1 );
-obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Fixed Parameter Crow AMSAA;Wait( 1 );obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
 
 ```
 
@@ -1233,21 +836,13 @@ obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Fixed Parameter Crow AMSAA;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Fixed Parameter Crow AMSAA( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Fixed Parameter Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Fixed Parameter Crow AMSAA;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Fixed Parameter Crow AMSAA( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 ```
 
 #### Piecewise Weibull NHPP
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) ); scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP por tramos en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1255,18 +850,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP;
-Wait( 1 );
-obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP;Wait( 1 );obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
 
 ```
 
@@ -1274,26 +858,13 @@ obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Piecewise Weibull NHPP( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Piecewise Weibull NHPP( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Piecewise Weibull NHPP( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Piecewise Weibull NHPP( 0 );
 
 ```
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) ); scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP reinicializado en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1301,17 +872,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP Change Point Detection;
-Wait( 1 );
-obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP Change Point Detection;Wait( 1 );obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
 
 ```
 
@@ -1319,25 +880,13 @@ obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Dete
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP Change Point Detection;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Piecewise Weibull NHPP Change Point Detection( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP Change Point Detection;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Piecewise Weibull NHPP Change Point Detection( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 ```
 
 #### Reinitialized Weibull NHPP
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) ); scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP reinicializado en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1345,18 +894,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours of Operation ),
-	Event Count( :Fixes ),
-	Phase( :Design Stage )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Reinitialized Weibull NHPP;
-Wait( 1 );
-obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours of Operation ),	Event Count( :Fixes ),	Phase( :Design Stage ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Reinitialized Weibull NHPP;Wait( 1 );obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
 
 ```
 
@@ -1364,20 +902,7 @@ obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours of Operation ),
-	Event Count( :Fixes ),
-	Phase( :Design Stage )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Reinitialized Weibull NHPP;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Reinitialized Weibull NHPP( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Reinitialized Weibull NHPP( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours of Operation ),	Event Count( :Fixes ),	Phase( :Design Stage ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Reinitialized Weibull NHPP;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Reinitialized Weibull NHPP( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Reinitialized Weibull NHPP( 0 );
 
 ```
 
@@ -1393,11 +918,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Cumulative Events Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Cumulative Events Plot( 1 );
 
 ```
 
@@ -1409,11 +930,7 @@ report << Show Cumulative Events Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Intensity Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Intensity Plot( 1 );
 
 ```
 
@@ -1425,11 +942,7 @@ report << Show Intensity Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show MTBF Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show MTBF Plot( 0 );
 
 ```
 
@@ -1441,11 +954,7 @@ report << Show MTBF Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Profilers( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Profilers( 1 );
 
 ```
 
@@ -1457,11 +966,7 @@ report << Show Profilers( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-obj << Fixed Parameter Crow AMSAA( Beta( 0.8 ) );
-Report( obj )["Crow-AMSAA"] << Close( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );obj << Fixed Parameter Crow AMSAA( Beta( 0.8 ) );Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 ```
 
@@ -1473,11 +978,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-obj << Fixed Parameter Crow AMSAA( lambda( 0.02 ) );
-Report( obj )["Crow-AMSAA"] << Close( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );obj << Fixed Parameter Crow AMSAA( lambda( 0.02 ) );Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 ```
 
@@ -1487,18 +988,13 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### Mean Time Between Failures Plot
 
-**Sintaxis:** obj &lt;&lt; Mean Time Between Failures Plot( ... );scrobj = obj &lt;&lt; Mean Time Between Failures Plot
+**Sintaxis:** obj &lt;&lt; Mean Time Between Failures Plot( ... ); scrobj = obj &lt;&lt; Mean Time Between Failures Plot
 
 **Descripción:** Le permite mostrar u ocultar modelos en el gráfico de tiempo medio entre fallas. Si se especifica sin ningún argumento, esta opción devuelve una referencia al gráfico que admite scripts.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Crow AMSAA;
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-plot = obj << Mean Time Between Failures Plot;
-plot << Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Crow AMSAA;Report( obj )["Mean Time Between Failures"] << Close( 0 );plot = obj << Mean Time Between Failures Plot;plot << Crow AMSAA( 0 );
 
 ```
 
@@ -1506,7 +1002,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) ); scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1514,13 +1010,7 @@ plot << Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA;
-Wait( 1 );
-obj << Cumulative Events Plot( Crow AMSAA( 0 ) );
-obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA;Wait( 1 );obj << Cumulative Events Plot( Crow AMSAA( 0 ) );obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
 
 ```
 
@@ -1528,21 +1018,13 @@ obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Crow AMSAA( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Crow AMSAA( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Crow AMSAA( 0 );
 
 ```
 
 #### Crow AMSAA with Modified MLE
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) ); scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA con corrección de sesgo para beta en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1550,13 +1032,7 @@ mtbf << Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA with Modified MLE;
-Wait( 1 );
-obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA with Modified MLE;Wait( 1 );obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
 
 ```
 
@@ -1564,21 +1040,13 @@ obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Crow AMSAA with Modified MLE;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Crow AMSAA with Modified MLE( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Crow AMSAA with Modified MLE( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Crow AMSAA with Modified MLE;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Crow AMSAA with Modified MLE( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Crow AMSAA with Modified MLE( 0 );
 
 ```
 
 #### Customize Average MTBF
 
-**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
+**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) ); scrobj &lt;&lt; Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
 
 **Descripción:** Especifica un conjunto de intervalos disjuntos que se utilizan para calcular el tiempo medio entre fallas (MTBF).
 
@@ -1586,15 +1054,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-obj << Mean Time Between Failures Plot(
-	Options(
-		Sample MTBF Type( "Customized Average MTBF" ),
-		Customize Average MTBF( [2500, 5000, 7500, 11000] )
-	)
-);
-(obj << report)["Mean Time Between Failures"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );obj << Mean Time Between Failures Plot(	Options(		Sample MTBF Type( "Customized Average MTBF" ),		Customize Average MTBF( [2500, 5000, 7500, 11000] )	));(obj << report)["Mean Time Between Failures"] << Close( 0 );
 
 ```
 
@@ -1602,20 +1062,13 @@ obj << Mean Time Between Failures Plot(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-plot = obj << Mean Time Between Failures Plot;
-plot << Options(
-	Sample MTBF Type( "Customized Average MTBF" ),
-	Customize Average MTBF( [2500, 5000, 7500, 11000] )
-);
-(obj << report)["Mean Time Between Failures"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );plot = obj << Mean Time Between Failures Plot;plot << Options(	Sample MTBF Type( "Customized Average MTBF" ),	Customize Average MTBF( [2500, 5000, 7500, 11000] ));(obj << report)["Mean Time Between Failures"] << Close( 0 );
 
 ```
 
 #### Fixed Parameter Crow AMSAA
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) ); scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Crow AMSAA de parámetro fijo en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1623,13 +1076,7 @@ plot << Options(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Fixed Parameter Crow AMSAA;
-Wait( 1 );
-obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Fixed Parameter Crow AMSAA;Wait( 1 );obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
 
 ```
 
@@ -1637,21 +1084,13 @@ obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Fixed Parameter Crow AMSAA;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Fixed Parameter Crow AMSAA( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Fixed Parameter Crow AMSAA( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Fixed Parameter Crow AMSAA;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Fixed Parameter Crow AMSAA( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 ```
 
 #### Interval Size
 
-**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
+**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) ); scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
 
 **Descripción:** Especifica el tamaño del intervalo que se utiliza para calcular el tiempo medio entre fallas (MTBF).
 
@@ -1659,12 +1098,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Mean Time Between Failures Plot(
-	Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Mean Time Between Failures Plot(	Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) ));
 
 ```
 
@@ -1672,17 +1106,13 @@ obj << Mean Time Between Failures Plot(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-plot = obj << Mean Time Between Failures Plot;
-plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Mean Time Between Failures"] << Close( 0 );plot = obj << Mean Time Between Failures Plot;plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) );
 
 ```
 
 #### Options
 
-**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( ... ) );scrobj &lt;&lt; Options( ... )
+**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( ... ) ); scrobj &lt;&lt; Options( ... )
 
 **Descripción:** Le permite configurar el gráfico de tiempo medio entre fallas.
 
@@ -1690,17 +1120,7 @@ plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Siz
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Mean Time Between Failures Plot(
-	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Mean Time Between Failures Plot(	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) ));
 
 ```
 
@@ -1708,22 +1128,13 @@ obj << Mean Time Between Failures Plot(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 ```
 
 #### Piecewise Weibull NHPP
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) ); scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP por tramos en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1731,18 +1142,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP;
-Wait( 1 );
-obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP;Wait( 1 );obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
 
 ```
 
@@ -1750,26 +1150,13 @@ obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Piecewise Weibull NHPP( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Piecewise Weibull NHPP( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Piecewise Weibull NHPP( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Piecewise Weibull NHPP( 0 );
 
 ```
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) ); scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP reinicializado en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1777,17 +1164,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP Change Point Detection;
-Wait( 1 );
-obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP Change Point Detection;Wait( 1 );obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
 
 ```
 
@@ -1795,25 +1172,13 @@ obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Dete
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Dates ),
-	Timestamp( :Date ),
-	Event Count( :Fixes )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Piecewise Weibull NHPP Change Point Detection;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Piecewise Weibull NHPP Change Point Detection( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );obj = dt << Reliability Growth(	Input Format( Dates ),	Timestamp( :Date ),	Event Count( :Fixes ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Piecewise Weibull NHPP Change Point Detection;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Piecewise Weibull NHPP Change Point Detection( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 ```
 
 #### Reinitialized Weibull NHPP
 
-**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) ); obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) ); scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **Descripción:** Muestra u oculta el modelo Weibull NHPP reinicializado en el gráfico Sucesos acumulativos o Tiempo medio entre fallas. Opción activada de forma predeterminada.
 
@@ -1821,18 +1186,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours of Operation ),
-	Event Count( :Fixes ),
-	Phase( :Design Stage )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Reinitialized Weibull NHPP;
-Wait( 1 );
-obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours of Operation ),	Event Count( :Fixes ),	Phase( :Design Stage ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Reinitialized Weibull NHPP;Wait( 1 );obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
 
 ```
 
@@ -1840,26 +1194,13 @@ obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Hours of Operation ),
-	Event Count( :Fixes ),
-	Phase( :Design Stage )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Reinitialized Weibull NHPP;
-Wait( 1 );
-cep = obj << Cumulative Events Plot;
-cep << Reinitialized Weibull NHPP( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Reinitialized Weibull NHPP( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Hours of Operation ),	Event Count( :Fixes ),	Phase( :Design Stage ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Reinitialized Weibull NHPP;Wait( 1 );cep = obj << Cumulative Events Plot;cep << Reinitialized Weibull NHPP( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Reinitialized Weibull NHPP( 0 );
 
 ```
 
 #### Sample MTBF Type
 
-**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
+**Sintaxis:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) ); scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
 
 **Descripción:** Especifica el método de cálculo para el gráfico de tiempo medio entre fallas.
 
@@ -1867,17 +1208,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-obj << Mean Time Between Failures Plot(
-	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );obj << Mean Time Between Failures Plot(	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) ));
 
 ```
 
@@ -1885,16 +1216,7 @@ obj << Mean Time Between Failures Plot(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
-obj = dt << Reliability Growth(
-	Input Format( Time to Event ),
-	Time to Event( :Day ),
-	Event Count( :Fixes ),
-	Phase( :Design Phase )
-);
-Report( obj )["Mean Time Between Failures"] << Close( 0 );
-mtbf = obj << Mean Time Between Failures Plot;
-mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );obj = dt << Reliability Growth(	Input Format( Time to Event ),	Time to Event( :Day ),	Event Count( :Fixes ),	Phase( :Design Phase ));Report( obj )["Mean Time Between Failures"] << Close( 0 );mtbf = obj << Mean Time Between Failures Plot;mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 ```
 
@@ -1910,11 +1232,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Cumulative Events Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Cumulative Events Plot( 1 );
 
 ```
 
@@ -1926,11 +1244,7 @@ report << Show Cumulative Events Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Intensity Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Intensity Plot( 1 );
 
 ```
 
@@ -1942,11 +1256,7 @@ report << Show Intensity Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show MTBF Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show MTBF Plot( 0 );
 
 ```
 
@@ -1958,11 +1268,7 @@ report << Show MTBF Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
-obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
-Report( obj )["Observed Data"] << Close( 1 );
-report = obj << Crow AMSAA;
-report << Show Profilers( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );Report( obj )["Observed Data"] << Close( 1 );report = obj << Crow AMSAA;report << Show Profilers( 1 );
 
 ```
 

@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,13 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -47,10 +36,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -58,10 +44,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -75,12 +58,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -92,12 +70,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -109,14 +82,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -128,9 +94,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Copy Script;
 
 ```
 
@@ -142,9 +106,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Data Table Window;
 
 ```
 
@@ -158,9 +120,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -172,15 +132,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -194,27 +146,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -222,10 +154,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -237,10 +166,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -252,11 +178,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -268,10 +190,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );t = obj << Get Script;Show( t );
 
 ```
 
@@ -283,10 +202,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -298,10 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -313,10 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -330,10 +240,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -345,13 +252,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -363,32 +264,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**语法:** New JSL Preset( preset )
-
-**说明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -402,9 +278,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -416,15 +290,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -436,28 +302,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**语法:** obj &lt;&lt; Redo ByGroup Analysis
-
-**说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Redo Analysis;
 
 ```
 
@@ -469,28 +314,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**语法:** obj &lt;&lt; Relaunch ByGroup
-
-**说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Relaunch Analysis;
 
 ```
 
@@ -502,14 +326,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -521,48 +338,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**语法:** Render Preset( preset )
-
-**说明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report;Report( obj )
+**语法:** obj &lt;&lt; Report; Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -574,9 +362,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Report View( "Summary" );
 
 ```
 
@@ -588,14 +374,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -607,14 +386,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -626,14 +398,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -645,9 +410,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Save Script for All Objects;
 
 ```
 
@@ -657,33 +420,19 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -695,9 +444,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -709,9 +456,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Save Script to Journal;
 
 ```
 
@@ -723,9 +468,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Save Script to Report;
 
 ```
 
@@ -737,9 +480,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Save Script to Script Window;
 
 ```
 
@@ -751,15 +492,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -771,20 +504,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -796,12 +516,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -813,11 +528,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -829,9 +540,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );obj << Title( "My Platform" );
 
 ```
 
@@ -843,11 +552,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -863,11 +568,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -879,27 +580,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**语法:** obj = Nonlinear(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -913,8 +606,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```
 
@@ -922,139 +614,109 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### By
 
-**语法:** obj = Nonlinear(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;By( column(s) )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 为指定列的每个水平执行单独的分析。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Nonlinear(	Y( :pop ),	X( :"X-formula"n ),	Finish(),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
 ### Freq
 
-**语法:** obj = Nonlinear(...&lt;Freq( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Freq( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个频数。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Freq( _freqcol ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Freq( :_freqcol ) );
 
 ```
 
 ### Group
 
-**语法:** obj = Nonlinear(...&lt;Group( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Group( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定分组变量。拟合模型对分组变量的每个水平都有单独的参数。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << Run Script( "Fit Curve" );					 
-
-obj = dt << Nonlinear(
-	Y( :Toxicity ),
-	X( :Toxicity Predictor Formula ),
-	Group( :Formulation ),
-	Newton,
-	Finish
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << Run Script( "Fit Curve" );					 obj = dt << Nonlinear(	Y( :Toxicity ),	X( :Toxicity Predictor Formula ),	Group( :Formulation ),	Newton,	Finish);
 
 ```
 
 ### Loss
 
-**语法:** obj = Nonlinear(...&lt;Loss( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Loss( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含损失函数的公式列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Ship Damage.jmp" );
-obj = dt << Nonlinear(
-	X( :model ),
-	Loss( :Poisson ),
-	Loss is Neg LogLikelihood( 1 ),
-	Newton,
-	Finish
-);
+dt = Open( "$SAMPLE_DATA/Ship Damage.jmp" );obj = dt << Nonlinear(	X( :model ),	Loss( :Poisson ),	Loss is Neg LogLikelihood( 1 ),	Newton,	Finish);
 
 ```
 
 ### Predictor Formula
 
-**语法:** obj = Nonlinear(...&lt;Predictor Formula( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Predictor Formula( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含 X 变量或带参数的模型公式的列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```
 
 ### Response
 
-**语法:** obj = Nonlinear(...&lt;Response( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Response( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定响应变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```
 
 ### Weight
 
-**语法:** obj = Nonlinear(...&lt;Weight( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Weight( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个权重。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Weight( _weightcol ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Weight( :_weightcol ) );
 
 ```
 
 ### X
 
-**语法:** obj = Nonlinear(...&lt;X( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;X( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含 X 变量或带参数的模型公式的列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```
 
 ### Y
 
-**语法:** obj = Nonlinear(...&lt;Y( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Nonlinear(...&lt;Y( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定响应变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```
 
@@ -1068,10 +730,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Parameter Bounds( B0( 15, . ) ) );
-obj << Finish;
-obj << Accept Current Estimates;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Parameter Bounds( B0( 15, . ) ) );obj << Finish;obj << Accept Current Estimates;
 
 ```
 
@@ -1083,10 +742,7 @@ obj << Accept Current Estimates;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << CL Alpha( .01 );
-obj << Confidence Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << CL Alpha( .01 );obj << Confidence Limits;
 
 ```
 
@@ -1098,10 +754,7 @@ obj << Confidence Limits;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << CL Limit( .002 );
-obj << Confidence Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << CL Limit( .002 );obj << Confidence Limits;
 
 ```
 
@@ -1113,9 +766,7 @@ obj << Confidence Limits;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Confidence Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Confidence Limits;
 
 ```
 
@@ -1127,10 +778,7 @@ obj << Confidence Limits;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 0 );
-obj << Contour Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 0 );obj << Contour Profiler( 1 );
 
 ```
 
@@ -1142,9 +790,7 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-obj << Custom Estimate( B0 + A + D );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );obj << Custom Estimate( B0 + A + D );
 
 ```
 
@@ -1156,32 +802,7 @@ obj << Custom Estimate( B0 + A + D );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logistic w Loss.jmp" );
-obj = dt << Nonlinear(
-	Loss( :Loss ),
-	Expand Intermediate Formulas( 1 ),
-	Loss is Neg LogLikelihood( 1 ),
-	Newton,
-	Finish,
-	Plot( 0 ),
-	Custom Estimation Profiler(
-		Custom Estimation( {x = 30}, 1 / (1 + Exp( b0 + b1 * x )) ),
-		Transformation( "Logit" ),
-		Profiler(
-			1,
-			Confidence Intervals( 1 ),
-			Term Value(
-				x(
-					140,
-					Min( -37.4344314814814 ),
-					Max( 392.622262689059 ),
-					Lock( 0 ),
-					Show( 1 )
-				)
-			)
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logistic w Loss.jmp" );obj = dt << Nonlinear(	Loss( :Loss ),	Expand Intermediate Formulas( 1 ),	Loss is Neg LogLikelihood( 1 ),	Newton,	Finish,	Plot( 0 ),	Custom Estimation Profiler(		Custom Estimation( {x = 30}, 1 / (1 + Exp( b0 + b1 * x )) ),		Transformation( "Logit" ),		Profiler(			1,			Confidence Intervals( 1 ),			Term Value(				x(					140,					Min( -37.4344314814814 ),					Max( 392.622262689059 ),					Lock( 0 ),					Show( 1 )				)			)		)	));
 
 ```
 
@@ -1193,10 +814,7 @@ obj = dt << Nonlinear(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-Wait( 0 );
-obj << Custom Inverse Prediction( Response( 100, 150, 200 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );Wait( 0 );obj << Custom Inverse Prediction( Response( 100, 150, 200 ) );
 
 ```
 
@@ -1208,11 +826,7 @@ obj << Custom Inverse Prediction( Response( 100, 150, 200 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Numeric Derivatives Only( 1 );
-obj << Delta( 0.2 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Numeric Derivatives Only( 1 );obj << Delta( 0.2 );obj << Finish;
 
 ```
 
@@ -1224,13 +838,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );
-obj = dt << Nonlinear(
-	Loss( :Loss ),
-	Show Prediction Expression( 1 ),
-	Expand Intermediate Formulas( 1 ),
-	Finish
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );obj = dt << Nonlinear(	Loss( :Loss ),	Show Prediction Expression( 1 ),	Expand Intermediate Formulas( 1 ),	Finish);
 
 ```
 
@@ -1242,10 +850,7 @@ obj = dt << Nonlinear(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Finish;
-obj << Profiler;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Finish;obj << Profiler;
 
 ```
 
@@ -1257,11 +862,7 @@ obj << Profiler;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Confidence Limits;
-G = obj << Get CI;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Confidence Limits;G = obj << Get CI;Show( G );
 
 ```
 
@@ -1273,10 +874,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get Corr;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get Corr;Show( G );
 
 ```
 
@@ -1290,10 +888,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get Cov;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get Cov;Show( G );
 
 ```
 
@@ -1305,10 +900,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get Estimates;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get Estimates;Show( G );
 
 ```
 
@@ -1320,10 +912,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get Parameter Names;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get Parameter Names;Show( G );
 
 ```
 
@@ -1335,10 +924,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get SSE;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get SSE;Show( G );
 
 ```
 
@@ -1350,10 +936,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-G = obj << Get Std Errors;
-Show( G );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );G = obj << Get Std Errors;Show( G );
 
 ```
 
@@ -1365,9 +948,7 @@ Show( G );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Go;
 
 ```
 
@@ -1379,10 +960,7 @@ obj << Go;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Gradient Limit( 0.0002 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Gradient Limit( 0.0002 );obj << Finish;
 
 ```
 
@@ -1394,10 +972,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Iteration Limit( 10 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Iteration Limit( 10 );obj << Finish;
 
 ```
 
@@ -1409,12 +984,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Iteration Log( 1 );
-obj << Finish;
-obj << Plot( 0 );
-Report( obj )["Iterations"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Iteration Log( 1 );obj << Finish;obj << Plot( 0 );Report( obj )["Iterations"] << Close( 0 );
 
 ```
 
@@ -1426,11 +996,7 @@ Report( obj )["Iterations"] << Close( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Set Parameter( B0 = 0.2 );
-obj << Lock Parameter( B0 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Set Parameter( B0 = 0.2 );obj << Lock Parameter( B0 );obj << Finish;
 
 ```
 
@@ -1442,14 +1008,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );
-obj = dt << Nonlinear(
-	Loss( :Loss ),
-	Show Prediction Expression( 1 ),
-	Expand Intermediate Formulas( 1 )
-);
-obj << Loss is Neg LogLikelihood( 0 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );obj = dt << Nonlinear(	Loss( :Loss ),	Show Prediction Expression( 1 ),	Expand Intermediate Formulas( 1 ));obj << Loss is Neg LogLikelihood( 0 );obj << Finish;
 
 ```
 
@@ -1461,10 +1020,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Newton;
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Newton;obj << Finish;
 
 ```
 
@@ -1484,10 +1040,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Numeric Derivatives Only( 1 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Numeric Derivatives Only( 1 );obj << Finish;
 
 ```
 
@@ -1499,10 +1052,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Obj Change Limit( 1e-10 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Obj Change Limit( 1e-10 );obj << Finish;
 
 ```
 
@@ -1514,10 +1064,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Parameter Bounds( B0( 0, . ) );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Parameter Bounds( B0( 0, . ) );obj << Finish;
 
 ```
 
@@ -1529,10 +1076,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 0 );
-obj << Parameter Contour Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 0 );obj << Parameter Contour Profiler( 1 );
 
 ```
 
@@ -1544,10 +1088,7 @@ obj << Parameter Contour Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 0 );
-obj << Parameter Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 0 );obj << Parameter Profiler( 1 );
 
 ```
 
@@ -1559,10 +1100,7 @@ obj << Parameter Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 0 );
-obj << Parameter Surface Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 0 );obj << Parameter Surface Profiler( 1 );
 
 ```
 
@@ -1574,11 +1112,7 @@ obj << Parameter Surface Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-Wait( 1 );
-obj << Plot( 0 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );Wait( 1 );obj << Plot( 0 );obj << Finish;
 
 ```
 
@@ -1590,28 +1124,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Reliability/Fan.jmp" );
-dt << New Column( "Unconstrained Weibull Loss",
-	formula(
-		Parameter(
-			{mu = 10, logSigma = 0},
-			If(
-				Censor == 0, -Log( Weibull Density( Time, 1 / Exp( logSigma ), Exp( mu ) ) ),
-				Censor == 1,
-					-Log( 1 - Weibull Distribution( Time, 1 / Exp( logSigma ), Exp( mu ) ) )
-			)
-		)
-	)
-);
-obj = dt << Nonlinear(
-	Loss( :Unconstrained Weibull Loss ),
-	Numeric Derivatives Only( 1 ),
-	Loss is Neg LogLikelihood( 1 ),
-	Newton,
-	Finish
-);
-Wait( 0 );
-obj << Profile Likelihood( 1 );
+dt = Open( "$Sample_Data/Reliability/Fan.jmp" );dt << New Column( "Unconstrained Weibull Loss",	formula(		Parameter(			{mu = 10, logSigma = 0},			If(				Censor == 0, -Log( Weibull Density( Time, 1 / Exp( logSigma ), Exp( mu ) ) ),				Censor == 1,					-Log( 1 - Weibull Distribution( Time, 1 / Exp( logSigma ), Exp( mu ) ) )			)		)	));obj = dt << Nonlinear(	Loss( :Unconstrained Weibull Loss ),	Numeric Derivatives Only( 1 ),	Loss is Neg LogLikelihood( 1 ),	Newton,	Finish);Wait( 0 );obj << Profile Likelihood( 1 );
 
 ```
 
@@ -1623,32 +1136,7 @@ obj << Profile Likelihood( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Reliability/Fan.jmp" );
-dt << New Column( "Partial Unconstrained DS Weibull Loss",
-	formula(
-		Parameter(
-			{mu = 10, logSigma = 0, p = 0.5},
-			If(
-				p < 0 | p > 1, .,
-				Censor == 0,
-					-Log( p * Weibull Density( Time, 1 / Exp( logSigma ), Exp( mu ) ) ),
-				Censor == 1,
-					-Log(
-						1 - p * Weibull Distribution( Time, 1 / Exp( logSigma ), Exp( mu ) )
-					)
-			)
-		)
-	)
-);
-obj = dt << Nonlinear(
-	Loss( :Partial Unconstrained DS Weibull Loss ),
-	Numeric Derivatives Only( 1 ),
-	Loss is Neg LogLikelihood( 1 ),
-	Newton,
-	Finish
-);
-Wait( 0 );
-obj << Profile Likelihood Contour( 1 );
+dt = Open( "$Sample_Data/Reliability/Fan.jmp" );dt << New Column( "Partial Unconstrained DS Weibull Loss",	formula(		Parameter(			{mu = 10, logSigma = 0, p = 0.5},			If(				p < 0 | p > 1, .,				Censor == 0,					-Log( p * Weibull Density( Time, 1 / Exp( logSigma ), Exp( mu ) ) ),				Censor == 1,					-Log(						1 - p * Weibull Distribution( Time, 1 / Exp( logSigma ), Exp( mu ) )					)			)		)	));obj = dt << Nonlinear(	Loss( :Partial Unconstrained DS Weibull Loss ),	Numeric Derivatives Only( 1 ),	Loss is Neg LogLikelihood( 1 ),	Newton,	Finish);Wait( 0 );obj << Profile Likelihood Contour( 1 );
 
 ```
 
@@ -1660,9 +1148,7 @@ obj << Profile Likelihood Contour( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-obj << Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );obj << Profiler( 1 );
 
 ```
 
@@ -1674,10 +1160,7 @@ obj << Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << QuasiNewton BFGS;
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << QuasiNewton BFGS;obj << Finish;
 
 ```
 
@@ -1689,10 +1172,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << QuasiNewton SR1;
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << QuasiNewton SR1;obj << Finish;
 
 ```
 
@@ -1704,10 +1184,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Relative Gradient( 0.0001 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Relative Gradient( 0.0001 );obj << Finish;
 
 ```
 
@@ -1719,9 +1196,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-obj << Remember Solution( "New Model" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );obj << Remember Solution( "New Model" );
 
 ```
 
@@ -1733,12 +1208,7 @@ obj << Remember Solution( "New Model" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Set Parameter( B0 = 0.2 );
-obj << Finish;
-Wait( 2 );
-obj << Reset;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Set Parameter( B0 = 0.2 );obj << Finish;Wait( 2 );obj << Reset;
 
 ```
 
@@ -1750,10 +1220,7 @@ obj << Reset;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 1 );
-obj << Revert to Original Parameters;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 1 );obj << Revert to Original Parameters;
 
 ```
 
@@ -1765,9 +1232,7 @@ obj << Revert to Original Parameters;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-obj << SSE Grid;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );obj << SSE Grid;
 
 ```
 
@@ -1779,10 +1244,7 @@ obj << SSE Grid;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-Wait( 1 );
-obj << Save Estimates;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );Wait( 1 );obj << Save Estimates;
 
 ```
 
@@ -1796,9 +1258,7 @@ obj << Save Estimates;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Estimates To Table;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Estimates To Table;
 
 ```
 
@@ -1810,9 +1270,7 @@ obj << Save Estimates To Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Indiv Confid Limit Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Indiv Confid Limit Formula;
 
 ```
 
@@ -1824,9 +1282,7 @@ obj << Save Indiv Confid Limit Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Indiv Confid Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Indiv Confid Limits;
 
 ```
 
@@ -1838,9 +1294,7 @@ obj << Save Indiv Confid Limits;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Inverse Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Inverse Prediction Formula;
 
 ```
 
@@ -1852,9 +1306,7 @@ obj << Save Inverse Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Pred Confid Limit Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Pred Confid Limit Formula;
 
 ```
 
@@ -1866,9 +1318,7 @@ obj << Save Pred Confid Limit Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Pred Confid Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Pred Confid Limits;
 
 ```
 
@@ -1880,9 +1330,7 @@ obj << Save Pred Confid Limits;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Prediction Formula;
 
 ```
 
@@ -1894,9 +1342,7 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Residual Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Residual Formula;
 
 ```
 
@@ -1906,33 +1352,27 @@ obj << Save Residual Formula;
 
 **说明:** 将新公式列保存至数据表。新列包含在给定响应变量和数据中的其他 X 值或常数的情况下，计算 X 变量的预测和标准误差的公式。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Specific Solving Formula;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Specific Solving Formula;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Specific Solving Formula( :year, {:pop = 200}, Save Formula for Std Error Mean );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Specific Solving Formula( :year, {:pop = 200}, Save Formula for Std Error Mean );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Specific Solving Formula( :pop, Save Formula for Std Error Individual );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Specific Solving Formula( :pop, Save Formula for Std Error Individual );
 
 ```
 
@@ -1944,9 +1384,7 @@ obj << Save Specific Solving Formula( :pop, Save Formula for Std Error Individua
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Std Error of Individual;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Std Error of Individual;
 
 ```
 
@@ -1958,9 +1396,7 @@ obj << Save Std Error of Individual;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );
-obj << Save Std Error of Predicted;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish );obj << Save Std Error of Predicted;
 
 ```
 
@@ -1972,8 +1408,7 @@ obj << Save Std Error of Predicted;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Second Deriv Method( 1 ), Finish );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Second Deriv Method( 1 ), Finish );
 
 ```
 
@@ -1985,11 +1420,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Second Deriv Method( 1 ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Set Parameter( B0 = 0.2 );
-Wait( 2 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Set Parameter( B0 = 0.2 );Wait( 2 );obj << Finish;
 
 ```
 
@@ -2001,9 +1432,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );
-obj << Show Derivatives;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ) );obj << Show Derivatives;
 
 ```
 
@@ -2015,13 +1444,7 @@ obj << Show Derivatives;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );
-obj = dt << Nonlinear(
-	Loss( :Loss ),
-	Show Prediction Expression( 1 ),
-	Expand Intermediate Formulas( 1 ),
-	Finish
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Logit Model w Loss1.jmp" );obj = dt << Nonlinear(	Loss( :Loss ),	Show Prediction Expression( 1 ),	Expand Intermediate Formulas( 1 ),	Finish);
 
 ```
 
@@ -2033,11 +1456,7 @@ obj = dt << Nonlinear(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Step;
-Wait( 1 );
-obj << Step;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Step;Wait( 1 );obj << Step;
 
 ```
 
@@ -2049,10 +1468,7 @@ obj << Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Go;
-obj << Stop;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Go;obj << Stop;
 
 ```
 
@@ -2064,10 +1480,7 @@ obj << Stop;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );
-Wait( 0 );
-obj << Surface Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ), Finish );Wait( 0 );obj << Surface Profiler( 1 );
 
 ```
 
@@ -2079,14 +1492,7 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );
-obj << Set Parameter( B0 = 0.2 );
-obj << Lock Parameter( B0, A, D );
-obj << Finish;
-Wait( 2 );
-obj << Unlock Parameter( B0, A );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Nonlinear( Y( :"log($ value)"n ), X( :Model ) );obj << Set Parameter( B0 = 0.2 );obj << Lock Parameter( B0, A, D );obj << Finish;Wait( 2 );obj << Unlock Parameter( B0, A );obj << Finish;
 
 ```
 
@@ -2098,10 +1504,7 @@ obj << Finish;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );
-obj = dt << Nonlinear( Y( :Algae density ), X( :Mitscherlich ) );
-obj << Unthreaded( 1 );
-obj << Finish;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );obj = dt << Nonlinear( Y( :Algae density ), X( :Mitscherlich ) );obj << Unthreaded( 1 );obj << Finish;
 
 ```
 
