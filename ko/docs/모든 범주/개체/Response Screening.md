@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -73,13 +56,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -93,9 +70,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -107,9 +82,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -121,18 +94,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -144,12 +106,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Copy Script;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Copy Script;
 
 ```
 
@@ -161,12 +118,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Data Table Window;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Data Table Window;
 
 ```
 
@@ -180,9 +132,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -194,19 +144,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -220,13 +158,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -234,27 +166,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -266,13 +178,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -284,11 +190,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -300,13 +202,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -318,13 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -336,13 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -354,10 +238,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -371,10 +252,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -386,13 +264,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -404,32 +276,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**구문:** New JSL Preset( preset )
-
-**설명:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -443,9 +290,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -457,13 +302,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -475,35 +314,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**구문:** obj &lt;&lt; Redo ByGroup Analysis
-
-**설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Redo Analysis;
 
 ```
 
@@ -515,35 +326,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**구문:** obj &lt;&lt; Relaunch ByGroup
-
-**설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Relaunch Analysis;
 
 ```
 
@@ -555,11 +338,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -571,51 +350,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**구문:** Render Preset( preset )
-
-**설명:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report;Report( obj )
+**구문:** obj &lt;&lt; Report; Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -627,12 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Report View( "Summary" );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Report View( "Summary" );
 
 ```
 
@@ -644,18 +386,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -667,18 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -690,18 +410,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -713,12 +422,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Save Script for All Objects;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Save Script for All Objects;
 
 ```
 
@@ -728,41 +432,19 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -774,12 +456,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -791,12 +468,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Save Script to Journal;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Save Script to Journal;
 
 ```
 
@@ -808,12 +480,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Save Script to Report;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Save Script to Report;
 
 ```
 
@@ -825,12 +492,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Save Script to Script Window;
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Save Script to Script Window;
 
 ```
 
@@ -842,12 +504,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -859,19 +516,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -883,12 +528,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -900,11 +540,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -916,12 +552,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-obj << Title( "My Platform" );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );obj << Title( "My Platform" );
 
 ```
 
@@ -933,14 +564,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -956,11 +580,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -972,27 +592,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**구문:** obj = Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1004,24 +616,59 @@ New Window( "Bivariate Equation",
 
 **설명:** 여러 반응에 대해 선형 모형 효과의 검정 수행 과정을 자동화합니다. 검정 결과와 요약 통계량은 데이터 테이블과 그림에 제공됩니다. FDR(False Discovery Rate)은 유의성이 잘못 선언되지 않도록 보호합니다. 로버스트 추정 방법은 이상치에 대한 검정 민감도를 줄입니다.
 
-#### 예제 1
+#### 4개 반응과 26개 예측 변수를 사용한 반응 변수 선별
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
+dt = Open( "$SAMPLE_DATA/Baltic.jmp" );obj = dt << Response Screening( Y( :ls, :ha, :dt ), X( Column Group( "Intensities" ) ) );
 
 ```
 
-#### 예제 2
+#### 그룹에 포함된 여러 열 반응 변수 선별
 
 ```jsl
 
-dt = Open( "$Sample_Data/Probe.jmp" );
-obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );obj = dt << Response Screening(	Y( Column Group( "Markers" ) ),	X( :Trait1, :Trait2, :Trait3, :Trait4 ),	Grouping( "Sex" ));
+
+```
+
+#### 네 개의 각 예측 변수에 대한 여러 열 반응 변수 선별
+
+```jsl
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );obj = dt << Response Screening( Y( Column Group( "Markers" ) ), X( :Trait1, :Trait2, :Trait3, :Trait4 ) );
+
+```
+
+#### 로버스트 적합을 사용한 반응 변수 선별
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = dt << Response Screening( Y( Column Group( "Responses" ) ), X( :Process ), Robust( 1 ) );
+
+```
+
+#### 열 번호로 지정된 반응 변수 선별
+
+```jsl
+
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
+
+```
+
+#### 평균 차이 화산 그림을 사용한 여러 열 반응 변수 선별
+
+```jsl
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );obj = dt << Response Screening(	Y( Column Group( "Markers" ) ),	X( :Father, :Mother, :Sex, :Disease Status ),	Common Y Scale( 1 ),	Volcano Plots Use FDR Axis( 1 ),	SendToReport(		Dispatch( {}, "", TabListBox( 1 ), {Set Selected( 4 )} ),		Dispatch( {}, "", TabListBox( 2 ), {Set Selected( 2 )} )	));
+
+```
+
+#### 화산 그림이 선택된 부분군의 반응 변수 선별
+
+```jsl
+
+dt = Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );obj = dt << Response Screening(	Y( :Trait1, :Trait2, :Trait3, :Trait4 ),	X( :Father, :Mother, :Sex, :Disease Status ),	Subgroup( Column Group( "Markers" ) ),	Common Y Scale( 1 ),	SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) ));
 
 ```
 
@@ -1029,133 +676,97 @@ obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ### By
 
-**구문:** obj = Response Screening(...&lt;By( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...&lt;By( column(s) )&gt;...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 지정된 열의 각 수준에 대해 별도의 분석을 수행합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	By( _bycol )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 108 ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
 ### Freq
 
-**구문:** obj = Response Screening(...&lt;Freq( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...&lt;Freq( column )&gt;...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석을 위해 각 행에 빈도를 할당하는 값이 들어 있는 열을 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	Freq( _freqcol )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ), Freq( :_freqcol ) );
 
 ```
 
 ### Grouping
 
-**구문:** obj = Response Screening(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...&lt;Grouping( column(s) )&gt;...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 범주형 열을 그룹화 변수로 지정합니다. 지정된 열의 각 수준에 할당된 행이 개별적으로 분석됩니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Grouping( :Site ) );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Grouping( :Site ) );
 
 ```
 
 ### Response
 
-**구문:** obj = Response Screening(...Response( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Response( column(s) )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석할 측정값을 포함하는 반응 변수를 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ```
 
 ### Subgroup
 
-**구문:** obj = Response Screening(...&lt;Subgroup( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...&lt;Subgroup( column(s) )&gt;...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 하나 이상의 부분군 변수를 지정합니다. 부분군 변수가 정의되면 부분군 변수의 각 범주에 대해 추가 적합이 수행됩니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Subgroup( :Site ) );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Subgroup( :Site ) );
 
 ```
 
 ### Weight
 
-**구문:** obj = Response Screening(...&lt;Weight( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...&lt;Weight( column )&gt;...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석을 위해 각 행에 가중치를 할당하는 값이 들어 있는 열을 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	Weight( _weightcol )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ), Weight( :_weightcol ) );
 
 ```
 
 ### X
 
-**구문:** obj = Response Screening(...X( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...X( column(s) )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 예측 변수를 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ```
 
 ### Y
 
-**구문:** obj = Response Screening(...Y( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Y( column(s) )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석할 측정값을 포함하는 반응 변수를 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ```
 
@@ -1163,48 +774,37 @@ obj = dt << Response Screening(
 
 ### Cauchy
 
-**구문:** obj = Response Screening(...Cauchy( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Cauchy( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 최대 가능도와 Cauchy 연결 함수를 사용하여 모수를 추정합니다. 이 추정 방법은 오차가 Cauchy 분포를 따른다고 가정합니다. Cauchy 분포는 정규 분포보다 꼬리가 더 두꺼우므로 이 방법을 사용하면 이상치의 영향이 줄어듭니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Eval( 8 :: 48 ) ), Cauchy( 1 ) );
+dt = Open( "$Sample_Data/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Eval( 8 :: 48 ) ), Cauchy( 1 ) );
 
 ```
 
 ### Common X Scale
 
-**구문:** obj = Response Screening(...Common X Scale( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Common X Scale( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모든 연속형 X 변수의 척도가 동일하다는 것을 플랫폼에 알립니다. 이는 여러 X 변수의 기울기를 비교하는 데 필요합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Iris.jmp" );
-dt << Response Screening(
-	Y( :Sepal length, :Sepal width ),
-	X( :Petal length, :Petal width ),
-	Common X Scale
-);
+dt = Open( "$Sample_Data/Iris.jmp" );dt << Response Screening(	Y( :Sepal length, :Sepal width ),	X( :Petal length, :Petal width ),	Common X Scale);
 
 ```
 
 ### Common Y Scale
 
-**구문:** obj = Response Screening(...Common Y Scale( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Common Y Scale( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모든 연속형 반응의 척도가 동일하다는 것을 플랫폼에 알립니다. 이는 평균 차이 또는 기울기를 비교하는 데 필요합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Iris.jmp" );
-dt << Response Screening(
-	X( :Species ),
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Common Y Scale
-);
+dt = Open( "$Sample_Data/Iris.jmp" );dt << Response Screening(	X( :Species ),	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Common Y Scale);
 
 ```
 
@@ -1212,7 +812,7 @@ dt << Response Screening(
 
 **구문:** obj = Response Screening(...Comparisons( "각 수준과 대조군"|"모든 조합" )...)
 
-**설명:** Specifies the method for comparing means or rates. You can compare each level with a control group level or compare all possible level combinations.
+**설명:** 평균 또는 비율을 비교하는 방법을 지정합니다. 각 수준을 대조군 수준과 비교하거나 가능한 모든 수준 조합을 비교할 수 있습니다.
 
 **JMP추가된 버전:** 19
 
@@ -1220,48 +820,31 @@ dt << Response Screening(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Response Screening(
-	X( :Age Group ),
-	Y( :Single Status, :Gender, :I am working on my career ),
-	Comparisons( "All combinations" ),
-	Name( "2 by M Table" )(1)
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Response Screening(	X( :Age Group ),	Y( :Single Status, :Gender, :I am working on my career ),	Comparisons( "All combinations" ),	Name( "2 by M Table" )(1));
 
 ```
 
 ### Corr
 
-**구문:** obj = Response Screening(...Corr( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Corr( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 값 순서화로 정의된 인덱스에 따라 Pearson 곱적률 상관계수를 계산합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Consumer Preferences.jmp" );
-dt << Response Screening(
-	X( :Employee Tenure, :Position Tenure, :Age Group ),
-	Y( :Job Satisfaction ),
-	Corr( 1 )
-);
+dt = Open( "$Sample_Data/Consumer Preferences.jmp" );dt << Response Screening(	X( :Employee Tenure, :Position Tenure, :Age Group ),	Y( :Job Satisfaction ),	Corr( 1 ));
 
 ```
 
 ### Empirical Bayes Shrinkage
 
-**구문:** obj = Response Screening(...Empirical Bayes Shrinkage( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Empirical Bayes Shrinkage( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 잔차 분산 추정값을 추정된 사전 최빈값으로 축소, 모든 추정값에서 강도 차용(borrowing strength). 이는 공통 척도를 사용하는 많은 연속형 Y 변수를 선별할 때 유용합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Probe.jmp" );
-dt << Response Screening(
-	X( :Process ),
-	Y( Eval( 8 :: 88 ) ),
-	Common Y Scale,
-	Empirical Bayes Shrinkage( 1 )
-);
+dt = Open( "$Sample_Data/Probe.jmp" );dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 88 ) ),	Common Y Scale,	Empirical Bayes Shrinkage( 1 ));
 
 ```
 
@@ -1273,66 +856,55 @@ dt << Response Screening(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );
-obj << Select Where( FDR Logworth > 200 );
-obj << Fit Selected Items;
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );obj << Select Where( FDR Logworth > 200 );obj << Fit Selected Items;
 
 ```
 
 ### Force X Categorical
 
-**구문:** obj = Response Screening(...Force X Categorical( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Force X Categorical( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모델링 유형을 무시하고 모든 X 열을 범주형 열로 처리합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( X( :height, :sex ), Y( :age, :weight ), Force X Categorical( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( X( :height, :sex ), Y( :age, :weight ), Force X Categorical( 1 ) );
 
 ```
 
 ### Force X Continuous
 
-**구문:** obj = Response Screening(...Force X Continuous( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Force X Continuous( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모델링 유형을 무시하고 모든 X 열을 연속형 열로 처리합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Consumer Preferences.jmp" );
-dt << Response Screening(
-	X( :Age Group, :Job Satisfaction ),
-	Y( :Gender, :Single Status ),
-	Force X Continuous( 1 )
-);
+dt = Open( "$Sample_Data/Consumer Preferences.jmp" );dt << Response Screening(	X( :Age Group, :Job Satisfaction ),	Y( :Gender, :Single Status ),	Force X Continuous( 1 ));
 
 ```
 
 ### Force Y Categorical
 
-**구문:** obj = Response Screening(...Force Y Categorical( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Force Y Categorical( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모델링 유형을 무시하고 모든 Y 열을 범주형 열로 처리합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( Y( :height, :sex ), X( :age, :weight ), Force Y Categorical( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( Y( :height, :sex ), X( :age, :weight ), Force Y Categorical( 1 ) );
 
 ```
 
 ### Force Y Continuous
 
-**구문:** obj = Response Screening(...Force Y Continuous( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Force Y Continuous( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모델링 유형을 무시하고 모든 Y 열을 연속형 열로 처리합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( Y( :age ), X( :height, :weight ), Force Y Continuous( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( Y( :age ), X( :height, :weight ), Force Y Continuous( 1 ) );
 
 ```
 
@@ -1360,105 +932,91 @@ dt << Response Screening( Y( :age ), X( :height, :weight ), Force Y Continuous( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Outlier Indicator );
-pvals = obj << Get PValues;
-Show( pvals );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Outlier Indicator );pvals = obj << Get PValues;Show( pvals );
 
 ```
 
 ### Kappa
 
-**구문:** obj = Response Screening(...Kappa( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Kappa( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** "카파"라는 새 열을 결과 테이블에 추가합니다. 카파는 Y와 X 간의 합치도 측도입니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Mail Messages.jmp" );
-dt << Response Screening( X( :From ), Y( :To ), Kappa( 1 ) );
+dt = Open( "$Sample_Data/Mail Messages.jmp" );dt << Response Screening( X( :From ), Y( :To ), Kappa( 1 ) );
 
 ```
 
 ### Kruskal Wallis Test
 
-**구문:** obj = Response Screening(...Kruskal Wallis Test( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Kruskal Wallis Test( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** Kruskal-Wallis 검정을 계산합니다. 이 검정은 연속형 Y 대 범주형 X에 대한 비모수 Wilcoxon 순위 기반 검정입니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( X( :sex ), Y( :height, :weight ), Kruskal Wallis Test( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( X( :sex ), Y( :height, :weight ), Kruskal Wallis Test( 1 ) );
 
 ```
 
 ### Max Comparison Levels
 
-**구문:** obj = Response Screening(...Max Comparison Levels( number=100 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Max Comparison Levels( number=100 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 비교에 지원되는 수준 수를 지정합니다. 기본값은 "100"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Wafer Number ), Y( Column Group( "Responses" ) ), Max Comparison Levels( 24 ) );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Wafer Number ), Y( Column Group( "Responses" ) ), Max Comparison Levels( 24 ) );
 
 ```
 
 ### Max Logworth
 
-**구문:** obj = Response Screening(...Max Logworth( number )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Max Logworth( number )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** LogWorth 값을 포함하는 그림의 척도를 제어합니다. 지정된 값을 초과하는 LogWorth 값은 지정된 값으로 표시되어 LogWorth 그림에서 극단 척도를 방지합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Max Logworth( 1000 ) );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Max Logworth( 1000 ) );
 
 ```
 
 ### Missing is Category
 
-**구문:** obj = Response Screening(...Missing is Category( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Missing is Category( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 범주형 변수의 결측값을 별도의 범주로 처리합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-Row() = 1;
-:age = .;
-Row() = 8;
-:age = .;
-dt << Response Screening( X( :age ), Y( :sex ), Missing is Category( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );Row() = 1;:age = .;Row() = 8;:age = .;dt << Response Screening( X( :age ), Y( :sex ), Missing is Category( 1 ) );
 
 ```
 
 ### Negative Binomial Y
 
-**구문:** obj = Response Screening(...Negative Binomial Y( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Negative Binomial Y( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 각 Y 반응을 음이항 분포를 따르는 개수로 적합시킵니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Failure2.jmp" );
-dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Negative Binomial Y( 1 ) );
+dt = Open( "$Sample_Data/Quality Control/Failure2.jmp" );dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Negative Binomial Y( 1 ) );
 
 ```
 
 ### No Report
 
-**구문:** obj = Response Screening(...No Report( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...No Report( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서 창을 표시하지 않습니다. 이 옵션을 사용하면 보고서 창을 나타내지 않고 저장 명령을 실행하여 결과를 얻을 수 있습니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save PValues, No Report( 1 ) );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save PValues, No Report( 1 ) );
 
 ```
 
@@ -1474,34 +1032,31 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust, PValues Table on Launch( 1 ) );
+dt = Open( "$Sample_Data/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust, PValues Table on Launch( 1 ) );
 
 ```
 
 ### Paired X and Y
 
-**구문:** obj = Response Screening(...Paired X and Y( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Paired X and Y( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 시작 창에 표시된 순서에 따라 X 열과 쌍을 이룬 Y 열에 대해서만 검정을 수행합니다. 예를 들어 Y1은 X1과 쌍이 되고 Y2는 X2와 쌍이 됩니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( X( :age, :sex ), Y( :height, :weight ), Paired X and Y( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( X( :age, :sex ), Y( :height, :weight ), Paired X and Y( 1 ) );
 
 ```
 
 ### Poisson Y
 
-**구문:** obj = Response Screening(...Poisson Y( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Poisson Y( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 각 Y 반응을 Poisson 분포를 따르는 개수로 적합시킵니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Failure2.jmp" );
-dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Poisson Y( 1 ) );
+dt = Open( "$Sample_Data/Quality Control/Failure2.jmp" );dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Poisson Y( 1 ) );
 
 ```
 
@@ -1513,13 +1068,7 @@ dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Poisson Y(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening(
-	X( :Process ),
-	Y( Eval( 8 :: 48 ) ),
-	Practical Difference Portion( .2 ),
-	Save Compare Means
-);
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 48 ) ),	Practical Difference Portion( .2 ),	Save Compare Means);
 
 ```
 
@@ -1531,14 +1080,13 @@ dt << Response Screening(
 
 ### Quartiles per Group
 
-**구문:** obj = Response Screening(...Quartiles per Group( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Quartiles per Group( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 연속형 Y 대 범주형 X에 대한 각 그룹의 사분위수와 범위를 계산합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( X( :sex ), Y( :height, :weight ), Quartiles per Group( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( X( :sex ), Y( :height, :weight ), Quartiles per Group( 1 ) );
 
 ```
 
@@ -1554,26 +1102,19 @@ dt << Response Screening( X( :sex ), Y( :height, :weight ), Quartiles per Group(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Response Screening(
-	X( :Age Group ),
-	Y( :Single Status, :Gender, :I am working on my career ),
-	Ratio Adjustment( "Add 0.5 Always" ),
-	Name( "2 by M Table" )(1)
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Response Screening(	X( :Age Group ),	Y( :Single Status, :Gender, :I am working on my career ),	Ratio Adjustment( "Add 0.5 Always" ),	Name( "2 by M Table" )(1));
 
 ```
 
 ### Robust
 
-**구문:** obj = Response Screening(...Robust( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Robust( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 이상치의 영향을 받지 않는 Huber M 추정 방법을 사용하여 회귀 및 ANOVA 모형을 적합시킵니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust( 1 ) );
+dt = Open( "$Sample_Data/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust( 1 ) );
 
 ```
 
@@ -1583,25 +1124,19 @@ dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust( 1 ) );
 
 **설명:** 2 x M 결과 보고서의 정보와 기타 검정 통계량을 새 데이터 테이블에 저장합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Response Screening( X( :Age Group ), Y( :Single Status, :Gender, :I am working on my career ) );
-obj << Name( "2 by M Table" )(1);
-obj << Name( "Save 2 by M Table" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Response Screening( X( :Age Group ), Y( :Single Status, :Gender, :I am working on my career ) );obj << Name( "2 by M Table" )(1);obj << Name( "Save 2 by M Table" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Response Screening( X( :Age Group ), Y( :Single Status, :Gender, :I am working on my career ) );
-obj << "2 by M Table"n( 1 );
-obj << "Save 2 by M Table"n;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Response Screening( X( :Age Group ), Y( :Single Status, :Gender, :I am working on my career ) );obj << "2 by M Table"n( 1 );obj << "Save 2 by M Table"n;
 
 ```
 
@@ -1613,8 +1148,7 @@ obj << "Save 2 by M Table"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Compare Means );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Compare Means );
 
 ```
 
@@ -1626,8 +1160,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Means );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Means );
 
 ```
 
@@ -1639,8 +1172,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Means Differences );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Means Differences );
 
 ```
 
@@ -1652,8 +1184,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Outlier Indicator );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Outlier Indicator );
 
 ```
 
@@ -1665,8 +1196,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save PValues );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save PValues );
 
 ```
 
@@ -1678,8 +1208,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Std Residuals );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save Std Residuals );
 
 ```
 
@@ -1691,10 +1220,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );
-obj << Select Where( FDR Logworth > 200 );
-obj << Select Columns;
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );obj << Select Where( FDR Logworth > 200 );obj << Select Columns;
 
 ```
 
@@ -1708,9 +1234,7 @@ obj << Select Columns;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );
-obj << Select Where( FDR Logworth > 200 );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );obj << Select Where( FDR Logworth > 200 );
 
 ```
 
@@ -1730,18 +1254,7 @@ obj << Select Where( FDR Logworth > 200 );
 
 ```jsl
 
-
-Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
-Response Screening(
-	Y( Column Group( "Markers" ) ),
-	X( :Sex, :Disease Status ),
-	Common Y Scale( 1 ),
-	Show Means Differences( 1 ),
-	SendToReport(
-		Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ),
-		Dispatch( {}, "", TabListBox( 2 ), {Set Selected( 2 )} )
-	)
-);
+Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );Response Screening(	Y( Column Group( "Markers" ) ),	X( :Sex, :Disease Status ),	Common Y Scale( 1 ),	Show Means Differences( 1 ),	SendToReport(		Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ),		Dispatch( {}, "", TabListBox( 2 ), {Set Selected( 2 )} )	));
 
 ```
 
@@ -1755,9 +1268,7 @@ Response Screening(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );
-obj << Show Result Tables( 0 );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );obj << Show Result Tables( 0 );
 
 ```
 
@@ -1771,9 +1282,7 @@ obj << Show Result Tables( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );
-obj << Show Result Tables( 0 );
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );obj = Response Screening( X( :Process ), Y( Column Group( "Responses" ) ) );obj << Show Result Tables( 0 );
 
 ```
 
@@ -1785,14 +1294,7 @@ obj << Show Result Tables( 0 );
 
 ```jsl
 
-
-Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
-Response Screening(
-	Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
-	X( Column Group( "Markers" ) ),
-	Show Slopes( 1 ),
-	SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) )
-);
+Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );Response Screening(	Y( :Trait1, :Trait2, :Trait3, :Trait4 ),	X( Column Group( "Markers" ) ),	Show Slopes( 1 ),	SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) ));
 
 ```
 
@@ -1804,26 +1306,19 @@ Response Screening(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening(
-	X( :Process ),
-	Y( Eval( 8 :: 48 ) ),
-	Practical Difference Portion( .2 ),
-	Save Compare Means
-);
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening(	X( :Process ),	Y( Eval( 8 :: 48 ) ),	Practical Difference Portion( .2 ),	Save Compare Means);
 
 ```
 
 ### Subgroup Twoway
 
-**구문:** obj = Response Screening(...Subgroup Twoway( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Subgroup Twoway( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 모든 이원 부분군 조합을 적합시킵니다. 이 옵션은 하나 이상의 부분군 변수가 정의된 경우에만 사용할 수 있습니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class.jmp" );
-dt << Response Screening( X( :height ), Y( :weight ), Subgroup( :age, :sex ), Subgroup Twoway( 1 ) );
+dt = Open( "$Sample_Data/Big Class.jmp" );dt << Response Screening( X( :height ), Y( :weight ), Subgroup( :age, :sex ), Subgroup Twoway( 1 ) );
 
 ```
 
@@ -1837,18 +1332,13 @@ dt << Response Screening( X( :height ), Y( :weight ), Subgroup( :age, :sex ), Su
 
 ### Unthreaded
 
-**구문:** obj = Response Screening(...Unthreaded( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Response Screening(...Unthreaded( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 멀티스레딩을 제한합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Probe.jmp" );
-dt << Response Screening(
-	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),
-	X( :Process ),
-	Unthreaded( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Probe.jmp" );dt << Response Screening(	Y( :DELL_RPNBR, :DELL_RPPBR, :DELW_M1, :DELW_M2, :DELW_NBASE ),	X( :Process ),	Unthreaded( 1 ));
 
 ```
 
@@ -1864,16 +1354,7 @@ dt << Response Screening(
 
 ```jsl
 
-
-Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );
-Response Screening(
-	Y( :Trait1, :Trait2, :Trait3, :Trait4 ),
-	X( Column Group( "Markers" ) ),
-	Common Y Scale( 1 ),
-	Common X Scale( 1 ),
-	Volcano Plots Use FDR Axis( 1 ),
-	SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) )
-);
+Open( "$Sample_Data/Life Sciences/Genotypes Pedigree.jmp" );Response Screening(	Y( :Trait1, :Trait2, :Trait3, :Trait4 ),	X( Column Group( "Markers" ) ),	Common Y Scale( 1 ),	Common X Scale( 1 ),	Volcano Plots Use FDR Axis( 1 ),	SendToReport( Dispatch( {}, "", TabListBox, {Set Selected( 4 )} ) ));
 
 ```
 

@@ -12,9 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
 
 ```
 
@@ -28,10 +26,7 @@ obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-how = (obj << Are Data Different);
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );how = (obj << Are Data Different);
 
 ```
 
@@ -45,10 +40,7 @@ how = (obj << Are Data Different);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Auto Compare( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Auto Compare( 1 );
 
 ```
 
@@ -60,10 +52,7 @@ obj << Auto Compare( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << close;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << close;
 
 ```
 
@@ -77,10 +66,7 @@ obj << close;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Compare();
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Compare();
 
 ```
 
@@ -92,10 +78,7 @@ obj << Compare();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << compare column attributes and properties( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << compare column attributes and properties( 1 );
 
 ```
 
@@ -107,10 +90,7 @@ obj << compare column attributes and properties( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << compare data( 0 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << compare data( 0 );
 
 ```
 
@@ -122,10 +102,7 @@ obj << compare data( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << compare table properties;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << compare table properties;
 
 ```
 
@@ -137,10 +114,7 @@ obj << compare table properties;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-obj = dt << Compare Data Tables();
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-same = obj << compare with( dt2 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );obj = dt << Compare Data Tables();dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );same = obj << compare with( dt2 );
 
 ```
 
@@ -152,10 +126,7 @@ same = obj << compare with( dt2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Copy Script;
 
 ```
 
@@ -167,10 +138,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << fuzzy compare( relative error( 0.0001 ) );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << fuzzy compare( relative error( 0.0001 ) );
 
 ```
 
@@ -182,10 +150,7 @@ obj << fuzzy compare( relative error( 0.0001 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-attribDiff = (obj << Get columns attributes differences( :name ));
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );attribDiff = (obj << Get columns attributes differences( :name ));
 
 ```
 
@@ -197,10 +162,7 @@ attribDiff = (obj << Get columns attributes differences( :name ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-propDiff = (obj << Get columns properties differences( :name ));
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );propDiff = (obj << Get columns properties differences( :name ));
 
 ```
 
@@ -212,11 +174,7 @@ propDiff = (obj << Get columns properties differences( :name ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-colDiff = (obj << Get columns list( differed in attributes ));
-Show( colDiff );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );colDiff = (obj << Get columns list( differed in attributes ));Show( colDiff );
 
 ```
 
@@ -228,10 +186,7 @@ Show( colDiff );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-mtx = (obj << Get Difference Summary matrix);
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );mtx = (obj << Get Difference Summary matrix);
 
 ```
 
@@ -243,10 +198,7 @@ mtx = (obj << Get Difference Summary matrix);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-scriptDiff = (obj << Get table scripts difference list);
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );scriptDiff = (obj << Get table scripts difference list);
 
 ```
 
@@ -258,10 +210,7 @@ scriptDiff = (obj << Get table scripts difference list);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-tvdiff = (obj << Get table variables difference list);
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );tvdiff = (obj << Get table variables difference list);
 
 ```
 
@@ -273,10 +222,7 @@ tvdiff = (obj << Get table variables difference list);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-colDiff = (obj << Get unmatched columns list);
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );colDiff = (obj << Get unmatched columns list);
 
 ```
 
@@ -290,10 +236,7 @@ colDiff = (obj << Get unmatched columns list);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Hide column properties with no differences( 0 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Hide column properties with no differences( 0 );
 
 ```
 
@@ -307,10 +250,7 @@ obj << Hide column properties with no differences( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Hide columns with no differences( 0 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Hide columns with no differences( 0 );
 
 ```
 
@@ -324,10 +264,7 @@ obj << Hide columns with no differences( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Hide rows with no differences( 0 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Hide rows with no differences( 0 );
 
 ```
 
@@ -341,10 +278,7 @@ obj << Hide rows with no differences( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Hide table properties with no differences( 0 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Hide table properties with no differences( 0 );
 
 ```
 
@@ -358,10 +292,7 @@ obj << Hide table properties with no differences( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Ignore Case( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Ignore Case( 1 );
 
 ```
 
@@ -375,10 +306,7 @@ obj << Ignore Case( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Ignore Missing( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Ignore Missing( 1 );
 
 ```
 
@@ -392,10 +320,7 @@ obj << Ignore Missing( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Ignore Whitespace( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Ignore Whitespace( 1 );
 
 ```
 
@@ -407,10 +332,7 @@ obj << Ignore Whitespace( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << limit( 100 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << limit( 100 );
 
 ```
 
@@ -424,10 +346,7 @@ obj << limit( 100 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Link( {:age, :weight}, );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Link( {:age, :weight}, );
 
 ```
 
@@ -439,10 +358,7 @@ obj << Link( {:age, :weight}, );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Relative Error( 0.00001 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Relative Error( 0.00001 );
 
 ```
 
@@ -454,12 +370,7 @@ obj << Relative Error( 0.00001 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -479,10 +390,7 @@ ID 열 사용: 지정된 ID 열을 사용하여 각 행의 키를 생성합니�
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Row Alignment( "By Row" );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Row Alignment( "By Row" );
 
 ```
 
@@ -494,10 +402,7 @@ obj << Row Alignment( "By Row" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-summaryDT = (obj << save difference summary( invisible ));
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );summaryDT = (obj << save difference summary( invisible ));
 
 ```
 
@@ -509,10 +414,7 @@ summaryDT = (obj << save difference summary( invisible ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Save Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Save Script to Data Table;
 
 ```
 
@@ -524,10 +426,7 @@ obj << Save Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Save Script to Journal;
 
 ```
 
@@ -539,10 +438,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Save Script to Script Window;
 
 ```
 
@@ -554,10 +450,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << show window( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << show window( 1 );
 
 ```
 
@@ -571,10 +464,7 @@ obj << show window( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Show Fuzzy Differences( 1 );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Show Fuzzy Differences( 1 );
 
 ```
 
@@ -588,10 +478,7 @@ obj << Show Fuzzy Differences( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Unlink( {"a", "b"} );
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Unlink( {"a", "b"} );
 
 ```
 
@@ -605,10 +492,7 @@ obj << Unlink( {"a", "b"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Students1.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );
-obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
-obj << Unlink All;
+dt = Open( "$SAMPLE_DATA/Students1.jmp" );dt2 = Open( "$SAMPLE_DATA/Students2.jmp" );obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );obj << Unlink All;
 
 ```
 

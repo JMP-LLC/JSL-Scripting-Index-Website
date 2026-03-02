@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -75,9 +58,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -89,9 +70,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -103,20 +82,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -128,14 +94,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Copy Script;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Copy Script;
 
 ```
 
@@ -147,14 +106,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Data Table Window;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Data Table Window;
 
 ```
 
@@ -168,9 +120,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -182,21 +132,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -210,15 +146,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -226,27 +154,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -258,15 +166,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -278,11 +178,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -294,15 +190,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -314,15 +202,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -334,15 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -354,10 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -371,10 +240,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -386,13 +252,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -404,32 +264,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**구문:** New JSL Preset( preset )
-
-**설명:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -443,9 +278,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -457,13 +290,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -475,39 +302,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**구문:** obj &lt;&lt; Redo ByGroup Analysis
-
-**설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
-
-```jsl
-
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Redo Analysis;
 
 ```
 
@@ -519,39 +314,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**구문:** obj &lt;&lt; Relaunch ByGroup
-
-**설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
-
-```jsl
-
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Relaunch Analysis;
 
 ```
 
@@ -563,11 +326,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -579,53 +338,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**구문:** Render Preset( preset )
-
-**설명:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report;Report( obj )
+**구문:** obj &lt;&lt; Report; Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -637,14 +362,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Report View( "Summary" );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Report View( "Summary" );
 
 ```
 
@@ -656,20 +374,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -681,20 +386,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -706,20 +398,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -731,14 +410,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Script for All Objects;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Script for All Objects;
 
 ```
 
@@ -748,45 +420,19 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -798,14 +444,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -817,14 +456,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Script to Journal;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Script to Journal;
 
 ```
 
@@ -836,14 +468,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Script to Report;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Script to Report;
 
 ```
 
@@ -855,14 +480,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Script to Script Window;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Script to Script Window;
 
 ```
 
@@ -874,12 +492,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -891,19 +504,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -915,12 +516,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -932,11 +528,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -948,14 +540,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Title( "My Platform" );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Title( "My Platform" );
 
 ```
 
@@ -967,16 +552,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -992,11 +568,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1008,27 +580,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**구문:** obj = Uplift(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Uplift(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1040,39 +604,19 @@ New Window( "Bivariate Equation",
 
 **설명:** 처리 차이를 최대화하기 위한 분할을 선택하는 재귀 분할 트리를 적합시킵니다. 이 모형은 처리에 반응할 확률이 가장 높은 개인 그룹을 식별합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 3 ));
 
 ```
 
@@ -1082,21 +626,11 @@ obj = dt << Uplift(
 
 **구문:** obj &lt;&lt; By( column(s) )
 
+**설명:** 지정된 열의 각 수준에 대해 별도의 분석을 수행합니다.
+
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	By( _bycol )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -1106,13 +640,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1120,17 +648,11 @@ obj = Uplift(
 
 **구문:** obj &lt;&lt; Freq( column )
 
+**설명:** 분석을 위해 각 행에 빈도를 할당하는 값이 들어 있는 열을 지정합니다.
+
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	Freq( _freqcol )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	Freq( :_freqcol ));
 
 ```
 
@@ -1140,13 +662,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1156,13 +672,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1172,13 +682,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1186,17 +690,11 @@ obj = Uplift(
 
 **구문:** obj &lt;&lt; Weight( column )
 
+**설명:** 분석을 위해 각 행에 가중치를 할당하는 값이 들어 있는 열을 지정합니다.
+
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 ),
-	Weight( _weightcol )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ),	Weight( :_weightcol ));
 
 ```
 
@@ -1206,13 +704,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1222,13 +714,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));
 
 ```
 
@@ -1242,14 +728,7 @@ obj = Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Color Points;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Color Points;
 
 ```
 
@@ -1261,14 +740,7 @@ obj << Color Points;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Column Contributions( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Column Contributions( 1 );
 
 ```
 
@@ -1278,78 +750,35 @@ obj << Column Contributions( 1 );
 
 **설명:** 테스트 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
@@ -1359,64 +788,35 @@ Show( aabs );
 
 **설명:** 훈련 데이터 집합의 평균 절대 편차 통계량을 반환합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
@@ -1426,68 +826,35 @@ Show( aabs );
 
 **설명:** 검증 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
@@ -1497,79 +864,35 @@ Show( aabs );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 테스트 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
@@ -1579,64 +902,35 @@ Show( avg );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 훈련 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 3 )
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 3 ));avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
@@ -1646,69 +940,35 @@ Show( avg );
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 검증 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
@@ -1718,78 +978,35 @@ Show( avg );
 
 **설명:** 테스트 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
@@ -1799,70 +1016,35 @@ Show( cm );
 
 **설명:** 훈련 데이터 집합에 대한 혼동 행렬을 반환합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
@@ -1872,71 +1054,35 @@ Show( cm );
 
 **설명:** 검증 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
@@ -1946,78 +1092,35 @@ Show( cm );
 
 **설명:** 테스트 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
@@ -2027,70 +1130,35 @@ Show( cr );
 
 **설명:** 훈련 데이터 집합에 대한 혼동 비율을 반환합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
@@ -2100,71 +1168,35 @@ Show( cr );
 
 **설명:** 검증 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
@@ -2176,14 +1208,7 @@ Show( cr );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Get Difference Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Get Difference Formula;
 
 ```
 
@@ -2193,78 +1218,35 @@ obj << Get Difference Formula;
 
 **설명:** 테스트 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
@@ -2274,70 +1256,35 @@ Show( r );
 
 **설명:** 훈련 데이터 집합에 대한 일반화 R²을 반환합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
@@ -2347,71 +1294,35 @@ Show( r );
 
 **설명:** 검증 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
@@ -2425,14 +1336,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Get Measures;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Get Measures;
 
 ```
 
@@ -2444,15 +1348,7 @@ obj << Get Measures;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-time = obj << Get Microseconds;
-Show( time );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));time = obj << Get Microseconds;Show( time );
 
 ```
 
@@ -2462,78 +1358,35 @@ Show( time );
 
 **설명:** 테스트 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
@@ -2543,65 +1396,35 @@ Show( rate );
 
 **설명:** 훈련 데이터 집합에 대한 오분류 비율을 반환합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Method( "Decision Tree" )
-);
-obj << Split Best( 2 );
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Method( "Decision Tree" ));obj << Split Best( 2 );rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
@@ -2611,72 +1434,35 @@ Show( rate );
 
 **설명:** 검증 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Method( "Decision Tree" ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Method( "Decision Tree" ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
@@ -2686,58 +1472,27 @@ Show( rate );
 
 **설명:** 테스트 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
@@ -2747,54 +1502,27 @@ Show( area );
 
 **설명:** 훈련 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
@@ -2804,55 +1532,27 @@ Show( area );
 
 **설명:** 검증 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
@@ -2864,14 +1564,7 @@ Show( area );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Get Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Get Prediction Formula;
 
 ```
 
@@ -2883,15 +1576,7 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-rms = obj << Get RMS Error Test;
-Show( rms );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));rms = obj << Get RMS Error Test;Show( rms );
 
 ```
 
@@ -2903,15 +1588,7 @@ Show( rms );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-rms = obj << Get RMS Error Training;
-Show( rms );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));rms = obj << Get RMS Error Training;Show( rms );
 
 ```
 
@@ -2923,15 +1600,7 @@ Show( rms );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-rms = obj << Get RMS Error Validation;
-Show( rms );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));rms = obj << Get RMS Error Validation;Show( rms );
 
 ```
 
@@ -2941,58 +1610,27 @@ Show( rms );
 
 **설명:** 테스트 데이터의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
@@ -3002,54 +1640,27 @@ Show( area );
 
 **설명:** 훈련 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
@@ -3059,55 +1670,27 @@ Show( area );
 
 **설명:** 검증 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
@@ -3119,15 +1702,7 @@ Show( area );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-r = obj << Get RSquare Test;
-Show( r );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));r = obj << Get RSquare Test;Show( r );
 
 ```
 
@@ -3139,15 +1714,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-r = obj << Get RSquare Training;
-Show( r );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));r = obj << Get RSquare Training;Show( r );
 
 ```
 
@@ -3159,15 +1726,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-r = obj << Get RSquare Validation;
-Show( r );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));r = obj << Get RSquare Validation;Show( r );
 
 ```
 
@@ -3179,15 +1738,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-time = obj << Get Seconds;
-Show( time );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));time = obj << Get Seconds;Show( time );
 
 ```
 
@@ -3199,14 +1750,7 @@ Show( time );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Get Tolerant Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Get Tolerant Prediction Formula;
 
 ```
 
@@ -3218,63 +1762,45 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
-obj << K Fold Crossvalidation( 5 );
-obj << Go;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );obj << K Fold Crossvalidation( 5 );obj << Go;
 
 ```
 
 ### Informative Missing
 
-**구문:** obj = Uplift(...Informative Missing( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Uplift(...Informative Missing( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 범주형 변수의 경우 결측값을 범주로 처리합니다. 연속형 변수의 경우 결측값을 낮음 또는 높음으로 처리합니다(둘 중 더 적합한 것으로). 기본적으로 설정되어 있습니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
-obj << Split Best( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );obj << Split Best( 1 );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt:Age[3] = .;
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Informative Missing( 0 ),
-	Split Best( 3 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt:Age[3] = .;obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Informative Missing( 0 ),	Split Best( 3 ));
 
 ```
 
@@ -3286,15 +1812,7 @@ obj = dt << Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Show Tree( 0 );
-obj << Leaf Report( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Show Tree( 0 );obj << Leaf Report( 1 );
 
 ```
 
@@ -3304,37 +1822,19 @@ obj << Leaf Report( 1 );
 
 **설명:** 지정된 열을 잠가 분할에 사용되지 않도록 합니다.
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
-obj << Lock Columns( 1, :age, :size );
-(obj << report)[CheckboxBox( 1 )] << Select;
-Wait( .5 );
-obj << Lock Columns( 0 );
-Wait( .5 );
-obj << Lock Columns( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );obj << Lock Columns( 1, :age, :size );(obj << report)[CheckboxBox( 1 )] << Select;Wait( .5 );obj << Lock Columns( 0 );Wait( .5 );obj << Lock Columns( 1 );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion )
-);
-obj << Lock Columns( 1, :Age, :Hair Color );
-(obj << report)[CheckboxBox( 1 )] << Select;
-Wait( .5 );
-obj << Lock Columns( 0 );
-Wait( .5 );
-obj << Lock Columns( 1 );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ));obj << Lock Columns( 1, :Age, :Hair Color );(obj << report)[CheckboxBox( 1 )] << Select;Wait( .5 );obj << Lock Columns( 0 );Wait( .5 );obj << Lock Columns( 1 );
 
 ```
 
@@ -3346,10 +1846,7 @@ obj << Lock Columns( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
-obj << Minimum Size Split( 15 );
-obj << Split Best( 4 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );obj << Minimum Size Split( 15 );obj << Split Best( 4 );
 
 ```
 
@@ -3359,94 +1856,65 @@ obj << Split Best( 4 );
 
 **설명:** 계산을 컴퓨터의 사용 가능한 스레드 간에 분산합니다. 기본적으로 설정되어 있습니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Split Best( 2 ));
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
 
 ```
 
 ### Ordinal Restricts Order
 
-**구문:** obj = Uplift(...Ordinal Restricts Order( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Uplift(...Ordinal Restricts Order( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 순서형 열의 경우 순서를 유지하는 분할만 고려합니다. 기본적으로 설정되어 있습니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
-obj << Split Best( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );obj << Split Best( 3 );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Ordinal Restricts Order( 1 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Ordinal Restricts Order( 1 ),	Split Best( 2 ));
 
 ```
 
@@ -3458,13 +1926,7 @@ obj = dt << Uplift(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 3 )
-);
-obj << Plot Actual By Predicted;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 3 ));obj << Plot Actual By Predicted;
 
 ```
 
@@ -3476,14 +1938,7 @@ obj << Plot Actual By Predicted;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Profiler( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Profiler( 1 );
 
 ```
 
@@ -3495,16 +1950,7 @@ obj << Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Prune Worst;
-Wait( .5 );
-obj << Prune Worst;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Prune Worst;Wait( .5 );obj << Prune Worst;
 
 ```
 
@@ -3516,14 +1962,7 @@ obj << Prune Worst;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Publish Difference Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Publish Difference Formula;
 
 ```
 
@@ -3535,14 +1974,7 @@ obj << Publish Difference Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Publish Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Publish Prediction Formula;
 
 ```
 
@@ -3554,14 +1986,7 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Publish Tolerant Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Publish Tolerant Prediction Formula;
 
 ```
 
@@ -3573,14 +1998,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Difference;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Difference;
 
 ```
 
@@ -3592,14 +2010,7 @@ obj << Save Difference;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Difference Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Difference Formula;
 
 ```
 
@@ -3611,14 +2022,7 @@ obj << Save Difference Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Leaf Label Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Leaf Label Formula;
 
 ```
 
@@ -3630,14 +2034,7 @@ obj << Save Leaf Label Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Leaf Labels;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Leaf Labels;
 
 ```
 
@@ -3649,14 +2046,7 @@ obj << Save Leaf Labels;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Leaf Number Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Leaf Number Formula;
 
 ```
 
@@ -3668,14 +2058,7 @@ obj << Save Leaf Number Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Leaf Numbers;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Leaf Numbers;
 
 ```
 
@@ -3687,14 +2070,7 @@ obj << Save Leaf Numbers;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Predicteds;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Predicteds;
 
 ```
 
@@ -3706,14 +2082,7 @@ obj << Save Predicteds;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Prediction Formula;
 
 ```
 
@@ -3725,14 +2094,7 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Residuals;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Residuals;
 
 ```
 
@@ -3744,14 +2106,7 @@ obj << Save Residuals;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Save Tolerant Prediction Formula;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Save Tolerant Prediction Formula;
 
 ```
 
@@ -3761,60 +2116,35 @@ obj << Save Tolerant Prediction Formula;
 
 **설명:** 이후 플랫폼 실행에 대한 결과를 재현하는 데 사용할 난수 시드값을 지정합니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Split Best( 2 ));
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Set Random Seed( 1234 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Set Random Seed( 1234 ),	Split Best( 2 ));
 
 ```
 
@@ -3826,15 +2156,7 @@ obj = dt << Uplift(
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Show Tree( 0 );
-obj << Show Fit Details( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Show Tree( 0 );obj << Show Fit Details( 1 );
 
 ```
 
@@ -3846,16 +2168,7 @@ obj << Show Fit Details( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << ShowGraph( 0 );
-Wait( .5 );
-obj << ShowGraph( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << ShowGraph( 0 );Wait( .5 );obj << ShowGraph( 1 );
 
 ```
 
@@ -3867,16 +2180,7 @@ obj << ShowGraph( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << ShowPoints( 0 );
-Wait( .5 );
-obj << ShowPoints( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << ShowPoints( 0 );Wait( .5 );obj << ShowPoints( 1 );
 
 ```
 
@@ -3888,15 +2192,7 @@ obj << ShowPoints( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Show Split Candidates( 1 );
-(obj << Report)["Candidates"] << Close( 0 ) << select;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Show Split Candidates( 1 );(obj << Report)["Candidates"] << Close( 0 ) << select;
 
 ```
 
@@ -3908,16 +2204,7 @@ obj << Show Split Candidates( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Show Split Stats( 0 );
-Wait( .5 );
-obj << Show Split Stats( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Show Split Stats( 0 );Wait( .5 );obj << Show Split Stats( 1 );
 
 ```
 
@@ -3929,14 +2216,7 @@ obj << Show Split Stats( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << ShowTree( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << ShowTree( 1 );
 
 ```
 
@@ -3948,14 +2228,7 @@ obj << ShowTree( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-obj << Small Tree View( 1 );
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));obj << Small Tree View( 1 );
 
 ```
 
@@ -3967,16 +2240,7 @@ obj << Small Tree View( 1 );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Hair Care Product.jmp" );
-obj = Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 3 )
-);
-(obj << Report)["Candidates"] << Close( 0 ) << select;
-Wait( 1 );
-obj << Sort Split Candidates;
+dt = Open( "$Sample_Data/Hair Care Product.jmp" );obj = Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 3 ));(obj << Report)["Candidates"] << Close( 0 ) << select;Wait( 1 );obj << Sort Split Candidates;
 
 ```
 
@@ -3986,31 +2250,19 @@ obj << Sort Split Candidates;
 
 **설명:** 트리를 최적 분할 지점에서 분할합니다.
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
-obj << Split Best;
-Wait( .5 );
-obj << Split Best( 2 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );obj << Split Best;Wait( .5 );obj << Split Best( 2 );
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion )
-);
-obj << Split Best;
-Wait( 1 );
-obj << Split Best( 2 );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ));obj << Split Best;Wait( 1 );obj << Split Best( 2 );
 
 ```
 
@@ -4020,31 +2272,19 @@ obj << Split Best( 2 );
 
 **설명:** 각 분할을 X 축에 나타내고 모형에 대한 해당 R² 값을 Y 축에 나타내는 그래프를 표시하거나 숨깁니다.
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );
-obj << Split Best( 5 );
-obj << Show Tree( 0 );
-obj << Split History;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition( Y( :country ), X( :sex, :marital status, :age, :type, :size ) );obj << Split Best( 5 );obj << Show Tree( 0 );obj << Split History;
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion )
-);
-obj << Split Best( 2 );
-obj << Show Tree( 0 );
-obj << Split History;
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ));obj << Split Best( 2 );obj << Show Tree( 0 );obj << Split History;
 
 ```
 
@@ -4056,14 +2296,7 @@ obj << Split History;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion )
-);
-obj << Split Best( 2 );
-obj << Uplift Graph;
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ));obj << Split Best( 2 );obj << Uplift Graph;
 
 ```
 
@@ -4077,127 +2310,73 @@ obj << Uplift Graph;
 
 <b>실행기 항목: 예</b>
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Partition(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 )
-);
-obj << Split Best( 5 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Partition(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ));obj << Split Best( 5 );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Bootstrap Forest(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Use Excluded Rows for Validation( 1 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Use Excluded Rows for Validation( 1 ),	Split Best( 2 ));
 
 ```
 
 ### Validation Portion
 
-**구문:** obj = Uplift(...Validation Portion( fraction=0 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Uplift(...Validation Portion( fraction=0 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 무작위로 행을 선택하여 검증 데이터 집합을 구성합니다. 각 행이 선택될 확률은 p(분수)입니다. 기본값은 "0"입니다.
 
-#### 부스티드 트리 예제
+**부스티드 트리 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :country, :age, :type, :size ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :country, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
 
 ```
 
-#### 분할 예제
+**분할 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation Portion( 0.2 )
-);
-obj << Split Best( 2 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ));obj << Split Best( 2 );
 
 ```
 
-#### 붓스트랩 포레스트 예제
+**붓스트랩 포레스트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
 
 ```
 
-#### 업리프트 예제
+**업리프트 예제**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation Portion( 0.2 ),	Go);
 
 ```
 

@@ -6,268 +6,157 @@
 
 ### By
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;By( column(s) )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;By( column(s) )&gt;...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Produire plusieurs rapports, un pour chaque niveau de la ou des variables.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
-EMP Measurement Systems Analysis(
-	Y( :new Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( Crossed ),
-	Dispersion Chart Type( Range ),
-	By( :Instrument )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );EMP Measurement Systems Analysis(	Y( :new Y ),	X( :Operator ),	Part( :Part ),	Model( Crossed ),	Dispersion Chart Type( Range ),	By( :Instrument ));
 
 ```
 
 ### Grouping
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;Grouping( column(s) )&gt;...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la ou les colonnes catégorielles comme variables de regroupement.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	Grouping( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	Grouping( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### Measurement
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la ou les colonnes continues des mesures.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Measurement( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Measurement( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### Part
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Part( column )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Part( column )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la colonne catégorielle qui désigne la pièce ou l&apos;unité.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Sample ID( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Sample ID( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### Sample ID
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Sample ID( column )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Sample ID( column )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la colonne catégorielle qui désigne la pièce ou l&apos;unité.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Sample ID( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Sample ID( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### Standard
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;Standard( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;Standard( column )&gt;...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie une colonne standard ou de référence qui contient les valeurs connues pour la partie mesurée.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Response ),
-	Part( :Part ),
-	Standard( :Standard ),
-	Model( "Main" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Response ),	Part( :Part ),	Standard( :Standard ),	Model( "Main" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### X
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;X( column(s) )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...&lt;X( column(s) )&gt;...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la ou les colonnes catégorielles comme variables de regroupement.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	Grouping( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	Grouping( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
 ### Y
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Y( column(s) )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Y( column(s) )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la ou les colonnes continues des mesures.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Measurement( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Measurement( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));
 
 ```
 
@@ -279,16 +168,91 @@ obj = dt << EMP Measurement Systems Analysis(
 
 **Description :** Lance la méthode d&apos;évaluation du processus de mesure (EMP) pour l’analyse des systèmes de mesure. Les graphiques des moyennes et de dispersion (étendue ou écart-type) sont affichés par défaut.
 
+#### Modèle à effets croisés avec interactions à deux facteurs, Graphique des écarts-types
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :new Y ),	X( :Operator, :Instrument ),	Part( :Part ),	Model( "Crossed with Two Factor Interactions" ),	Dispersion Chart Type( "Standard Deviation" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets croisés puis imbriqués, Graphique d'étendue
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",	Add Rows( 81 ),	New Column( "Operator",		Character( 7 ),		"Nominal",		Set Values(			{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane"}		),		Set Display Width( 0 )	),	New Column( "Instrument",		Character( 1 ),		"Nominal",		Set Values(			{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",			"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",			"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",			"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",			"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",			"C"}		),		Set Display Width( 0 )	),	New Column( "Part",		Numeric,		"Nominal",		Format( "Best", 8 ),		Set Values(			[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,			10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,			16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,			23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]		),		Set Display Width( 0 )	),	New Column( "Y",		Numeric,		"Continuous",		Format( "Best", 8 ),		Set Values(			[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,			0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,			0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,			1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,			0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]		),		Set Display Width( 68 )	));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator, :Instrument ),	Part( :Part ),	Model( "Crossed then Nested (3 Factors Only)"n ),	Dispersion Chart Type( Range ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets croisés, Graphique des écarts-types
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets croisés, Graphique d'étendue
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets imbriqués puis croisés, Graphique des écarts-types
+
+```jsl
+
+dt = New Table( "3 Factors Crossed then Nested",	Add Rows( 81 ),	New Column( "Operator",		Character( 7 ),		"Nominal",		Set Values(			{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane"}		),		Set Display Width( 0 )	),	New Column( "Instrument",		Character( 1 ),		"Nominal",		Set Values(			{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",			"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",			"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",			"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",			"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",			"C"}		),		Set Display Width( 0 )	),	New Column( "Part",		Numeric,		"Nominal",		Format( "Best", 8 ),		Set Values(			[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,			10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,			16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,			23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]		),		Set Display Width( 0 )	),	New Column( "Y",		Numeric,		"Continuous",		Format( "Best", 8 ),		Set Values(			[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,			0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,			0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,			1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,			0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]		),		Set Display Width( 68 )	));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator, :Instrument ),	Part( :Part ),	Model( "Crossed then Nested (3 Factors Only)"n ),	Dispersion Chart Type( "Standard Deviation" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets imbriqués puis croisés, Graphique d'étendue
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator, :Instrument ),	Part( :Part ),	Model( "Nested then Crossed (3 Factors Only)"n ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets imbriqués, Graphique des écarts-types
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Nested" ),	Dispersion Chart Type( "Standard Deviation" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets imbriqués, Graphique d'étendue
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Nested" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets principaux, Graphique des écarts-types
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Main" ),	Dispersion Chart Type( "Standard Deviation" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle à effets principaux, Graphique d'étendue
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Main" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));
+
+```
+
+#### Modèle croisé avec interactions à deux facteurs, Graphique d'étendue
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :new Y ),	X( :Operator, :Instrument ),	Part( :Part ),	Model( "Crossed with Two Factor Interactions" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));
 
 ```
 
@@ -302,17 +266,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << Select Rows( 5 ) << Exclude( 1 );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	Conv Limit( 1e-7 )
-);
-obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << Select Rows( 5 ) << Exclude( 1 );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	Conv Limit( 1e-7 ));obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -324,20 +278,7 @@ obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	EMP MSA Analysis(
-		"Y",
-		EMP Results( 1 ),
-		Variance Components( 1 ),
-		"EMP Gauge R&R Results"n( 1 )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	EMP MSA Analysis(		"Y",		EMP Results( 1 ),		Variance Components( 1 ),		"EMP Gauge R&R Results"n( 1 )	));
 
 ```
 
@@ -349,18 +290,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	EMP MSA Analysis( "Y", Dispersion Chart( 0 ), "AIAG Gauge R&R Results"n( 1 ) )
-);
-Wait( 1 );
-obj << Edit MSA Metadata( :Y( Lower Tolerance( 130 ), Upper Tolerance( 230 ) ) );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	EMP MSA Analysis( "Y", Dispersion Chart( 0 ), "AIAG Gauge R&R Results"n( 1 ) ));Wait( 1 );obj << Edit MSA Metadata( :Y( Lower Tolerance( 130 ), Upper Tolerance( 230 ) ) );
 
 ```
 
@@ -374,16 +304,7 @@ obj << Edit MSA Metadata( :Y( Lower Tolerance( 130 ), Upper Tolerance( 230 ) ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	Include Interactions in Reproducibility( 1 )
-);
-obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Include Interactions in Reproducibility( 1 ));obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 ```
 
@@ -395,17 +316,7 @@ obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << Select Rows( 5 ) << Exclude( 1 );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	Max Iter( 200 )
-);
-obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << Select Rows( 5 ) << Exclude( 1 );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	Max Iter( 200 ));obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -417,16 +328,7 @@ obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save All Metadata to Table;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << Save All Metadata to Table;
 
 ```
 
@@ -438,79 +340,43 @@ obj << Save All Metadata to Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Metadata as Column Properties;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << Save Metadata as Column Properties;
 
 ```
 
 ### Set Alpha Level
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le niveau alpha utilisé pour les rapports de comparaison avec le biais et de comparaison avec l&apos;erreur de test-retest. "0.05" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	Set Alpha Level( .01 )
-);
-obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Set Alpha Level( .01 ));obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 ```
 
 ### Set Random Seed
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit une valeur spécifique pour la graine aléatoire en assurant ainsi que toutes les exécutions successives utilisant la même graine aléatoire sont reproductibles.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	Set Random Seed( 12345 )
-);
-obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	Set Random Seed( 12345 ));obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 ```
 
 ### Sigma Multiplier
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie une valeur constante qui est multipliée par sigma. "6" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	Sigma Multiplier( 5.15 ),
-	EMP MSA Analysis( "Y", "AIAG Gauge R&R Results"n( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Sigma Multiplier( 5.15 ),	EMP MSA Analysis( "Y", "AIAG Gauge R&R Results"n( 1 ) ));
 
 ```
 
@@ -524,12 +390,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -545,13 +406,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -559,10 +414,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -570,10 +422,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -585,16 +434,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -608,12 +448,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -625,12 +460,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -642,21 +472,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -668,15 +484,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Copy Script;
 
 ```
 
@@ -688,15 +496,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Data Table Window;
 
 ```
 
@@ -710,9 +510,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -724,22 +522,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -753,16 +536,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -770,29 +544,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -804,16 +556,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -825,11 +568,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -841,16 +580,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -862,16 +592,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -883,16 +604,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -904,10 +616,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -921,14 +630,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -940,13 +642,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -958,32 +654,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -997,9 +668,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1011,15 +680,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1031,41 +692,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Redo Analysis;
 
 ```
 
@@ -1077,41 +704,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
-
-**Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Relaunch Analysis;
 
 ```
 
@@ -1123,14 +716,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1142,54 +728,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1201,15 +752,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Report View( "Summary" );
 
 ```
 
@@ -1221,21 +764,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1247,21 +776,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1273,21 +788,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1299,15 +800,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Save Script for All Objects;
 
 ```
 
@@ -1317,47 +810,19 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1369,15 +834,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1389,15 +846,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Save Script to Journal;
 
 ```
 
@@ -1409,15 +858,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Save Script to Report;
 
 ```
 
@@ -1429,15 +870,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Save Script to Script Window;
 
 ```
 
@@ -1449,15 +882,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1469,23 +894,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value(
-				Time( 6000, Lock( 0 ), Show( 1 ) )
-			)}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1497,14 +906,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1516,11 +918,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1532,15 +930,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));obj << Title( "My Platform" );
 
 ```
 
@@ -1552,17 +942,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	Variance Components( 1 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1578,11 +958,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1594,34 +970,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Syntaxe :** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1637,15 +998,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, AIAG Labels( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, AIAG Labels( 0 ) ));
 
 ```
 
@@ -1657,16 +1010,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, AIAG Labels( 0 ) ))
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] <<
-"AIAG Gauge R&R Results"n( 1, Discrimination Ratio( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, Discrimination Ratio( 1 ) ));
 
 ```
 
@@ -1682,15 +1026,7 @@ obj << (EMP MSA Analysis[1] <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Connected Means( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Connected Means( 0 ) ));
 
 ```
 
@@ -1702,15 +1038,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Connected Means( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits( 0 ) ));
 
 ```
 
@@ -1722,15 +1050,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits Shading( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits Shading( 0 ) ));
 
 ```
 
@@ -1742,15 +1062,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits Shading( 0 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Data( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Data( 1 ) ));
 
 ```
 
@@ -1762,15 +1074,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Data( 1 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Grand Mean( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Grand Mean( 0 ) ));
 
 ```
 
@@ -1782,15 +1086,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Grand Mean( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Separators( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Separators( 0 ) ));
 
 ```
 
@@ -1806,15 +1102,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Separators( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Average Dispersion( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Average Dispersion( 0 ) ));
 
 ```
 
@@ -1826,15 +1114,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Average Dispersion( 0 )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Connected Points( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Connected Points( 0 ) ));
 
 ```
 
@@ -1846,15 +1126,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Connected Points( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits( 0 ) ));
 
 ```
 
@@ -1866,18 +1138,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart(
-	1,
-	Show Control Limits Shading( 0 )
-));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits Shading( 0 ) ));
 
 ```
 
@@ -1889,15 +1150,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Separators( 0 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Separators( 0 ) ));
 
 ```
 
@@ -1913,24 +1166,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Separators( 0 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) )
-);
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Avg Bias Points( 1 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Avg Bias Points( 0 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Avg Bias Points( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Avg Bias Points( 1 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Avg Bias Points( 0 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Avg Bias Points( 1 ) ));
 
 ```
 
@@ -1942,24 +1178,7 @@ Linearity and Bias Results( 1, Show Avg Bias Points( 1 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) )
-);
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 1 ) )
-);
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 0 ) )
-);
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 1 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 0 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 1 ) ));
 
 ```
 
@@ -1971,24 +1190,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) )
-);
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Fit Confidence Curves( 1 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Fit Confidence Curves( 0 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Fit Confidence Curves( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Fit Confidence Curves( 1 )));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Fit Confidence Curves( 0 )));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Fit Confidence Curves( 1 )));
 
 ```
 
@@ -2000,24 +1202,7 @@ Linearity and Bias Results( 1, Show Fit Confidence Curves( 1 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) )
-);
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 1 ) )
-);
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 0 ) )
-);
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 1 ) )
-);
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 1 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 0 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 1 ) ));
 
 ```
 
@@ -2029,24 +1214,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" ),
-	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) )
-);
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Overall Avg Bias Line( 1 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Overall Avg Bias Line( 0 ) ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] <<
-Linearity and Bias Results( 1, Show Overall Avg Bias Line( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ),	EMP MSA Analysis( :Measurement, Average Chart( 0 ), Dispersion Chart( 0 ) ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Overall Avg Bias Line( 1 )));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Overall Avg Bias Line( 0 )));Wait( 1 );obj << (EMP MSA Analysis[1] << Linearity and Bias Results(	1,	Show Overall Avg Bias Line( 1 )));
 
 ```
 
@@ -2062,23 +1230,7 @@ Linearity and Bias Results( 1, Show Overall Avg Bias Line( 1 ) ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	MSA Metadata(
-		:Y(
-			Lower Tolerance( 120 ),
-			Upper Tolerance( 240 ),
-			Tolerance Range( 120 ),
-			Historical Process Sigma( 25 )
-		)
-	),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	MSA Metadata(		:Y(			Lower Tolerance( 120 ),			Upper Tolerance( 240 ),			Tolerance Range( 120 ),			Historical Process Sigma( 25 )		)	),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1 ));
 
 ```
 
@@ -2092,33 +1244,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
-obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
-obj << (EMP MSA Analysis[1] << Dispersion Chart(
-	1,
-	Show Control Limits Shading( 0 )
-));
-preset = obj << (EMP MSA Analysis[1] << New Preset);
-dt2 = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj2 = dt2 << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	MSA Metadata( :Measurement( Historical Process Sigma( 0.25 ) ) ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" )
-);
-Wait( 1 );
-obj2 << (EMP MSA Analysis[1] << Apply Preset( preset ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 0 ));obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits Shading( 0 ) ));preset = obj << (EMP MSA Analysis[1] << New Preset);dt2 = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj2 = dt2 << EMP Measurement Systems Analysis(	Y( :Measurement ),	MSA Metadata( :Measurement( Historical Process Sigma( 0.25 ) ) ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ));Wait( 1 );obj2 << (EMP MSA Analysis[1] << Apply Preset( preset ));
 
 ```
 
@@ -2130,15 +1256,7 @@ obj2 << (EMP MSA Analysis[1] << Apply Preset( preset ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
 
 ```
 
@@ -2150,15 +1268,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 ```
 
@@ -2170,15 +1280,7 @@ obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Dispersion Chart( 0 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 0 ));
 
 ```
 
@@ -2190,15 +1292,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
 
 ```
 
@@ -2210,21 +1304,7 @@ obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" ),
-	EMP MSA Analysis( "Y", Misclassification Probabilities( 1 ) )
-);
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Edit MSA Metadata(
-	Lower Tolerance( 120 ),
-	Upper Tolerance( 240 )
-));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ),	EMP MSA Analysis( "Y", Misclassification Probabilities( 1 ) ));Wait( 1 );obj << (EMP MSA Analysis[1] << Edit MSA Metadata(	Lower Tolerance( 120 ),	Upper Tolerance( 240 )));
 
 ```
 
@@ -2236,15 +1316,7 @@ obj << (EMP MSA Analysis[1] << Edit MSA Metadata(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
 
 ```
 
@@ -2256,17 +1328,7 @@ obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Measurement ),
-	MSA Metadata( :Measurement( Historical Process Sigma( 0.25 ) ) ),
-	X( :Operator ),
-	Part( :part# ),
-	Standard( :Standard ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Standard Deviation" )
-);
-obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Measurement ),	MSA Metadata( :Measurement( Historical Process Sigma( 0.25 ) ) ),	X( :Operator ),	Part( :part# ),	Standard( :Standard ),	Model( "Crossed" ),	Dispersion Chart Type( "Standard Deviation" ));obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1 ));
 
 ```
 
@@ -2278,16 +1340,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Misclassification Probabilities( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	MSA Metadata( :Y( Lower Tolerance( 140 ), Upper Tolerance( 220 ) ) ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Misclassification Probabilities( 1 ));
 
 ```
 
@@ -2301,21 +1354,7 @@ obj << (EMP MSA Analysis[1] << Misclassification Probabilities( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
-obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
-obj << (EMP MSA Analysis[1] << Dispersion Chart(
-	1,
-	Show Control Limits Shading( 0 )
-));
-preset = obj << (EMP MSA Analysis[1] << New Preset);
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Average Chart( 0 ));obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits Shading( 0 ) ));preset = obj << (EMP MSA Analysis[1] << New Preset);
 
 ```
 
@@ -2327,15 +1366,7 @@ preset = obj << (EMP MSA Analysis[1] << New Preset);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Parallelism Plots( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Parallelism Plots( 1 ));
 
 ```
 
@@ -2347,15 +1378,7 @@ obj << (EMP MSA Analysis[1] << Parallelism Plots( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 ```
 
@@ -2367,15 +1390,7 @@ obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
 
 ```
 
@@ -2387,17 +1402,7 @@ obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Show Monitor Classification Legend( 0 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << EMP Results( 1 ));Wait( 1 );obj << (EMP MSA Analysis[1] << Show Monitor Classification Legend( 0 ));
 
 ```
 
@@ -2409,15 +1414,7 @@ obj << (EMP MSA Analysis[1] << Show Monitor Classification Legend( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Show Part Legend( 0 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Show Part Legend( 0 ));
 
 ```
 
@@ -2429,17 +1426,7 @@ obj << (EMP MSA Analysis[1] << Show Part Legend( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
-Wait( 1 );
-obj << (EMP MSA Analysis[1] << Show Shift Detection Profiler Legend( 0 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));Wait( 1 );obj << (EMP MSA Analysis[1] << Show Shift Detection Profiler Legend( 0 ));
 
 ```
 
@@ -2451,15 +1438,7 @@ obj << (EMP MSA Analysis[1] << Show Shift Detection Profiler Legend( 0 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 ```
 
@@ -2471,15 +1450,7 @@ obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );
-obj = dt << EMP Measurement Systems Analysis(
-	Y( :Y ),
-	X( :Operator ),
-	Part( :Part ),
-	Model( "Crossed" ),
-	Dispersion Chart Type( "Range" )
-);
-obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
+dt = Open( "$SAMPLE_DATA/Variability Data/Gasket.jmp" );obj = dt << EMP Measurement Systems Analysis(	Y( :Y ),	X( :Operator ),	Part( :Part ),	Model( "Crossed" ),	Dispersion Chart Type( "Range" ));obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ```
 

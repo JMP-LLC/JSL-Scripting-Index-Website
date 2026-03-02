@@ -8,13 +8,11 @@
 
 **Sintaxis:** obj &lt;&lt; By( column(s) )
 
+**Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Where( :species == "setosa" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :species ));
 
 ```
 
@@ -24,8 +22,7 @@ obj = dt << Normalization(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -35,8 +32,7 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method(		"Read/Fragment Per Kilobase of Transcript Per Million Mapped Reads/Fragments (RPKM/FPKM)"	),	Length( :Sepal length ));
 
 ```
 
@@ -46,8 +42,7 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	X( :Petal length, :Petal width ));
 
 ```
 
@@ -57,8 +52,7 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -68,14 +62,13 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 **Sintaxis:** Normalization( Y( columns ) )
 
-**Descripción:** Adjusts for technical biases and improves suitability for subsequent analysis
+**Descripción:** Ajusta los sesgos técnicos y mejora la idoneidad para el análisis posterior.
 
-**JMP Versión agregada:** 18
+**JMP Versión agregada:** 19
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -83,145 +76,109 @@ obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal
 
 ### A Threshold
 
-**Sintaxis:** Mean Expression Threshold ( number = 0.05 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Mean Expression Threshold ( number = 0.05 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Umbral para el eje X (valores A) en el gráfico MA "0.05" de forma predeterminada.
+**Descripción:** Umbral para el eje X (valores A) en el gráfico MA: método TMM | KDMM "0.05" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	A Threshold( 0.1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	A Threshold( 0.1 ));
 
 ```
 
 ### Create New Tables for Results
 
-**Sintaxis:** Create New Tables for Results ( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Create New Tables for Results ( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Create New Tables for Results
+**Descripción:** Crear nuevas tablas para los resultados
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Create New Tables for Results( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Create New Tables for Results( 1 ));
 
 ```
 
 ### Interpolated Quantiles
 
-**Sintaxis:** Interpolated Quantiles( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Interpolated Quantiles( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Cuantiles interpolados para determinar la columna de referencia en la normalización TMM
+**Descripción:** Cuantiles interpolados para determinar la columna de referencia en el método TMM | KDMM
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << normalization(
-	y( :sepal length, :sepal width, :petal length, :petal width ),
-	interpolated quantiles( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << normalization(	y( :sepal length, :sepal width, :petal length, :petal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	Interpolated Quantiles( 1 ));
 
 ```
 
 ### Log Transformed
 
-**Sintaxis:** Log Transformation( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Log Transformation( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Log Transformation of TMM Method
+**Descripción:** Transformación logarítmica del método TMM | KDMM
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Log Transformed( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	Log Transformed( 1 ));
 
 ```
 
 ### M Threshold
 
-**Sintaxis:** Logratio Threshold ( number = 0.3 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Logratio Threshold ( number = 0.3 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Umbral para el eje Y (valores M) en el gráfico MA "0.3" de forma predeterminada.
+**Descripción:** Umbral para el eje Y (valores M) en el gráfico MA: método TMM | KDMM "0.3" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	M Threshold( 0.15 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	M Threshold( 0.15 ));
 
 ```
 
 ### Method
 
-**Sintaxis:** Method( "Row Standardize" | "Wrench" )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Method( "Row Standardize | Relative Abundance Percentage (RAP) | Relative Abundance Ratio (RAR) | Centered Log Ratio (CLR) | Count/Read Per Million (CPM/RPM) | Read/Fragment Per Kilobase of Transcript Per Million Mapped Reads/Fragments (RPKM/FPKM) | Transcript Per Million (TPM) | Trimmed Mean of M-Values (TMM) | Kernel Density Mean of M-Component (KDMM)" ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Specifies the normalization method.
+**Descripción:** Especifica el método de normalización.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Method( "Row Standardize" )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "Centered Log Ratio (CLR)"	));
 
 ```
 
 ### Missing Value Imputation
 
-**Sintaxis:** Missing Value Imputation( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Missing Value Imputation( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que los valores faltantes en los datos se imputan mediante una técnica de descomposición en valores singulares (SVD) multivariantes.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Missing Value Imputation( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Missing Value Imputation( 1 ));
 
 ```
 
 ### Prior Count
 
-**Sintaxis:** Total Prior Count ( number = 0.25 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Total Prior Count ( number = 0.25 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
-**Descripción:** Conteo previo total para ajustar el tamaño de las bibliotecas "0.25" de forma predeterminada.
+**Descripción:** Recuento previo para todas las muestras con el fin de ajustar los tamaños de la librería: método TMM | KDMM "0.25" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Prior Count( 1.0 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "Trimmed Mean of M-Values (TMM)"	),	Prior Count( 1.0 ));
 
 ```
 
 ### Replace Y Data
 
-**Sintaxis:** Replace Y Data( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Replace Y Data( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que los datos de las variables Y se reemplazan en la tabla de datos.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Replace Y Data( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Replace Y Data( 1 ));
 
 ```
 
@@ -235,12 +192,7 @@ obj = dt << Normalization(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -256,10 +208,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -267,10 +216,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -278,13 +224,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -296,10 +236,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -313,12 +250,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -330,12 +262,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -347,17 +274,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -369,9 +286,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Copy Script;
 
 ```
 
@@ -383,9 +298,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Data Table Window;
 
 ```
 
@@ -399,9 +312,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -413,18 +324,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -438,10 +338,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -449,27 +346,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -481,10 +358,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -496,11 +370,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -512,10 +382,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -527,10 +394,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -542,10 +406,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -557,10 +418,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -574,10 +432,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -589,13 +444,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -607,32 +456,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -646,9 +470,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -660,15 +482,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -680,31 +494,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Redo Analysis;
 
 ```
 
@@ -716,31 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
-
-**Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Relaunch Analysis;
 
 ```
 
@@ -752,14 +518,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -771,48 +530,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -824,9 +554,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Report View( "Summary" );
 
 ```
 
@@ -838,17 +566,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -860,17 +578,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -882,17 +590,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -904,9 +602,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script for All Objects;
 
 ```
 
@@ -916,39 +612,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Normalization(
-	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Normalization(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -960,9 +636,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -974,9 +648,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Journal;
 
 ```
 
@@ -988,9 +660,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Report;
 
 ```
 
@@ -1002,9 +672,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Script Window;
 
 ```
 
@@ -1016,15 +684,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1036,20 +696,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1061,12 +708,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1078,11 +720,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1094,9 +732,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Title( "My Platform" );
 
 ```
 
@@ -1108,11 +744,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Normalization( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1128,11 +760,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1144,27 +772,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintaxis:** obj = Normalization(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Normalization(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

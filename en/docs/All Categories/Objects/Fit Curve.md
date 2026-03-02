@@ -8,103 +8,73 @@
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = dt << Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Point Options( "Show Only Points" ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Point Options( "Show Connected Points" );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Set Alpha Level( 0.1 ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Set Alpha Level( 0.05 );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall mean) on the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = dt << Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Show Center Line( 0 ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Show Center Line( 1 );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = dt << Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Show Decision Limit Shading( 0 ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Show Decision Limit Shading( 1 );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = dt << Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Show Decision Limits( 0 ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Show Decision Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group means and the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-obj = dt << Oneway( Y( :y ), X( :Drug ) );
-obj << ANOM( 1, Show Summary Report( 1 ) );
-Wait( 2 );
-scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
-scrobj << Show Summary Report( 0 );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -118,9 +88,7 @@ scrobj << Show Summary Report( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -134,14 +102,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;
 
 ```
 
@@ -153,15 +114,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Fit Curve(
-	Y( :Toxicity ),
-	X( :log Conc ),
-	Group( :formulation ),
-	Freq( _freqcol )
-);
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	Freq( :_freqcol ));obj << Fit Logistic 4P;
 
 ```
 
@@ -173,9 +126,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -187,9 +138,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -201,9 +150,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -217,9 +164,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ), Z( :sex ) );
-obj << Fit Cubic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ), Z( :sex ) );obj << Fit Cubic;
 
 ```
 
@@ -231,15 +176,7 @@ obj << Fit Cubic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Fit Curve(
-	Y( :Toxicity ),
-	X( :log Conc ),
-	Group( :formulation ),
-	Weight( _weightcol )
-);
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	Weight( :_weightcol ));obj << Fit Logistic 4P;
 
 ```
 
@@ -251,9 +188,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -265,9 +200,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -281,9 +214,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ), Z( :sex ) );
-obj << Fit Cubic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ), Z( :sex ) );obj << Fit Cubic;
 
 ```
 
@@ -297,19 +228,7 @@ obj << Fit Cubic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force )
-);
-obj << F1 Analysis(
-	Alpha( 0.05 ),
-	Reference Level( "R01" ),
-	Bootstrap Samples( 2000 ),
-	Random Seed( 1234 )
-);
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ));obj << F1 Analysis(	Alpha( 0.05 ),	Reference Level( "R01" ),	Bootstrap Samples( 2000 ),	Random Seed( 1234 ));
 
 ```
 
@@ -321,19 +240,7 @@ obj << F1 Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force )
-);
-obj << F2 Analysis(
-	Alpha( 0.1 ),
-	Reference Level( "R01" ),
-	Bootstrap Samples( 3000 ),
-	Random Seed( 4321 )
-);
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ));obj << F2 Analysis(	Alpha( 0.1 ),	Reference Level( "R01" ),	Bootstrap Samples( 3000 ),	Random Seed( 4321 ));
 
 ```
 
@@ -345,9 +252,7 @@ obj << F2 Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );
-obj = dt << Fit Curve( Y( :Algae Density ), X( :Days ), Group( :Treatment ) );
-obj << Fit Antoine Equation;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Algae Mitscherlich.jmp" );obj = dt << Fit Curve( Y( :Algae Density ), X( :Days ), Group( :Treatment ) );obj << Fit Antoine Equation;
 
 ```
 
@@ -363,17 +268,7 @@ obj << Fit Antoine Equation;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];
-yd = J( 11, 1, . );
-For( i = 1, i <= 11, i++,
-	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal()
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit Biexponential 4P;
+Random Reset( 7483 );xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];yd = J( 11, 1, . );For( i = 1, i <= 11, i++,	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal());dt = As Table( xd || yd );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit Biexponential 4P;
 
 ```
 
@@ -385,17 +280,7 @@ obj << Fit Biexponential 4P;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];
-yd = J( 11, 1, . );
-For( i = 1, i <= 11, i++,
-	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal()
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit Biexponential 5P;
+Random Reset( 7483 );xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];yd = J( 11, 1, . );For( i = 1, i <= 11, i++,	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal());dt = As Table( xd || yd );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit Biexponential 5P;
 
 ```
 
@@ -407,17 +292,7 @@ obj << Fit Biexponential 5P;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-yd = J( 12, 1, . );
-For( i = 1, i <= 12, i++,
-	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "x" );
-Column( dt, 2 ) << set name( "y" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit Cell Growth 4P;
+Random Reset( 7483 );xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];yd = J( 12, 1, . );For( i = 1, i <= 12, i++,	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1);dt = As Table( xd || yd );Column( dt, 1 ) << set name( "x" );Column( dt, 2 ) << set name( "y" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit Cell Growth 4P;
 
 ```
 
@@ -429,9 +304,7 @@ obj << Fit Cell Growth 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Cubic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Cubic;
 
 ```
 
@@ -443,17 +316,7 @@ obj << Fit Cubic;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-yd = J( 12, 1, . );
-For( i = 1, i <= 12, i++,
-	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "x" );
-Column( dt, 2 ) << set name( "y" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit ExGaussian Peak;
+Random Reset( 7483 );xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];yd = J( 12, 1, . );For( i = 1, i <= 12, i++,	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1);dt = As Table( xd || yd );Column( dt, 1 ) << set name( "x" );Column( dt, 2 ) << set name( "y" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit ExGaussian Peak;
 
 ```
 
@@ -465,9 +328,7 @@ obj << Fit ExGaussian Peak;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Fit Curve( Y( :pop ), X( :year ) );
-obj << Fit Exponential 2P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Fit Curve( Y( :pop ), X( :year ) );obj << Fit Exponential 2P;
 
 ```
 
@@ -479,9 +340,7 @@ obj << Fit Exponential 2P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );
-obj = dt << Fit Curve( Y( :pop ), X( :year ) );
-obj << Fit Exponential 3P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/US Population.jmp" );obj = dt << Fit Curve( Y( :pop ), X( :year ) );obj << Fit Exponential 3P;
 
 ```
 
@@ -493,9 +352,7 @@ obj << Fit Exponential 3P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit First Order Rate;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit First Order Rate;
 
 ```
 
@@ -507,9 +364,7 @@ obj << Fit First Order Rate;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit First Order with Equilibrium;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit First Order with Equilibrium;
 
 ```
 
@@ -521,9 +376,7 @@ obj << Fit First Order with Equilibrium;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit First Order with Limits;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit First Order with Limits;
 
 ```
 
@@ -535,17 +388,7 @@ obj << Fit First Order with Limits;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-yd = J( 12, 1, . );
-For( i = 1, i <= 12, i++,
-	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "x" );
-Column( dt, 2 ) << set name( "y" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit Gaussian Peak;
+Random Reset( 7483 );xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];yd = J( 12, 1, . );For( i = 1, i <= 12, i++,	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1);dt = As Table( xd || yd );Column( dt, 1 ) << set name( "x" );Column( dt, 2 ) << set name( "y" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit Gaussian Peak;
 
 ```
 
@@ -557,19 +400,7 @@ obj << Fit Gaussian Peak;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dat = dt << get as matrix;
-maxy = Max( dat[0, 3] );
-newy = dat[0, 3] / maxy;
-form = Column( 3 ) << get values;
-Close( dt, no save );
-newtab = As Table( dat[0, 2] || newy );
-Column( 1 ) << set name( "log conc" );
-Column( 2 ) << set name( "toxicity" );
-New Column( "formulation", character, nominal );
-Column( 3 ) << set values( form );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Gompertz 3P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dat = dt << get as matrix;maxy = Max( dat[0, 3] );newy = dat[0, 3] / maxy;form = Column( 3 ) << get values;Close( dt, no save );newtab = As Table( dat[0, 2] || newy );Column( 1 ) << set name( "log conc" );Column( 2 ) << set name( "toxicity" );New Column( "formulation", character, nominal );Column( 3 ) << set values( form );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Gompertz 3P;
 
 ```
 
@@ -581,9 +412,7 @@ obj << Fit Gompertz 3P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Gompertz 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Gompertz 4P;
 
 ```
 
@@ -595,13 +424,7 @@ obj << Fit Gompertz 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << Fit Higuchi;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << Fit Higuchi;
 
 ```
 
@@ -613,13 +436,7 @@ obj << Fit Higuchi;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << Fit Higuchi with Burst;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << Fit Higuchi with Burst;
 
 ```
 
@@ -631,13 +448,7 @@ obj << Fit Higuchi with Burst;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << Fit Higuchi with Lag;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << Fit Higuchi with Lag;
 
 ```
 
@@ -649,13 +460,7 @@ obj << Fit Higuchi with Lag;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << "Fit Hixson-Crowell"n;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << "Fit Hixson-Crowell"n;
 
 ```
 
@@ -667,13 +472,7 @@ obj << "Fit Hixson-Crowell"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << "Fit Hixson-Crowell with Lag"n;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << "Fit Hixson-Crowell with Lag"n;
 
 ```
 
@@ -685,9 +484,7 @@ obj << "Fit Hixson-Crowell with Lag"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Negative Exponential.jmp" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit Hybrid Exponential;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Negative Exponential.jmp" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit Hybrid Exponential;
 
 ```
 
@@ -699,9 +496,7 @@ obj << Fit Hybrid Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit Inverse Michaelis Menten;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit Inverse Michaelis Menten;
 
 ```
 
@@ -713,13 +508,7 @@ obj << Fit Inverse Michaelis Menten;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << "Fit Korsmeyer-Peppas"n;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << "Fit Korsmeyer-Peppas"n;
 
 ```
 
@@ -731,13 +520,7 @@ obj << "Fit Korsmeyer-Peppas"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << "Fit Korsmeyer-Peppas with Burst"n;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << "Fit Korsmeyer-Peppas with Burst"n;
 
 ```
 
@@ -749,13 +532,7 @@ obj << "Fit Korsmeyer-Peppas with Burst"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << "Fit Korsmeyer-Peppas with Lag"n;
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << "Fit Korsmeyer-Peppas with Lag"n;
 
 ```
 
@@ -767,9 +544,7 @@ obj << "Fit Korsmeyer-Peppas with Lag"n;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Linear;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Linear;
 
 ```
 
@@ -781,20 +556,7 @@ obj << Fit Linear;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dat = dt << get as matrix;
-miny = Min( dat[0, 3] );
-maxy = Max( dat[0, 3] );
-newy = (dat[0, 3] - miny) / (maxy - miny);
-form = Column( 3 ) << get values;
-Close( dt, no save );
-newtab = As Table( dat[0, 2] || newy );
-Column( 1 ) << set name( "log conc" );
-Column( 2 ) << set name( "toxicity" );
-New Column( "formulation", character, nominal );
-Column( 3 ) << set values( form );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Logistic 2P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dat = dt << get as matrix;miny = Min( dat[0, 3] );maxy = Max( dat[0, 3] );newy = (dat[0, 3] - miny) / (maxy - miny);form = Column( 3 ) << get values;Close( dt, no save );newtab = As Table( dat[0, 2] || newy );Column( 1 ) << set name( "log conc" );Column( 2 ) << set name( "toxicity" );New Column( "formulation", character, nominal );Column( 3 ) << set values( form );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Logistic 2P;
 
 ```
 
@@ -806,19 +568,7 @@ obj << Fit Logistic 2P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dat = dt << get as matrix;
-maxy = Max( dat[0, 3] );
-newy = dat[0, 3] / maxy;
-form = Column( 3 ) << get values;
-Close( dt, no save );
-newtab = As Table( dat[0, 2] || newy );
-Column( 1 ) << set name( "log conc" );
-Column( 2 ) << set name( "toxicity" );
-New Column( "formulation", character, nominal );
-Column( 3 ) << set values( form );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Logistic 3P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dat = dt << get as matrix;maxy = Max( dat[0, 3] );newy = dat[0, 3] / maxy;form = Column( 3 ) << get values;Close( dt, no save );newtab = As Table( dat[0, 2] || newy );Column( 1 ) << set name( "log conc" );Column( 2 ) << set name( "toxicity" );New Column( "formulation", character, nominal );Column( 3 ) << set values( form );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Logistic 3P;
 
 ```
 
@@ -830,9 +580,7 @@ obj << Fit Logistic 3P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;
 
 ```
 
@@ -844,9 +592,7 @@ obj << Fit Logistic 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P Hill;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P Hill;
 
 ```
 
@@ -858,9 +604,7 @@ obj << Fit Logistic 4P Hill;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :Concentration ), Group( :formulation ) );
-obj << Fit Logistic 4P Rodbard;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :Concentration ), Group( :formulation ) );obj << Fit Logistic 4P Rodbard;
 
 ```
 
@@ -872,9 +616,7 @@ obj << Fit Logistic 4P Rodbard;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 5P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 5P;
 
 ```
 
@@ -886,17 +628,7 @@ obj << Fit Logistic 5P;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-yd = J( 12, 1, . );
-For( i = 1, i <= 12, i++,
-	yd[i] = 10 * (5 / ((xd[i] - 6) ^ 2 + 25)) + Random Normal() * .1
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "x" );
-Column( dt, 2 ) << set name( "y" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit Lorentzian Peak;
+Random Reset( 7483 );xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];yd = J( 12, 1, . );For( i = 1, i <= 12, i++,	yd[i] = 10 * (5 / ((xd[i] - 6) ^ 2 + 25)) + Random Normal() * .1);dt = As Table( xd || yd );Column( dt, 1 ) << set name( "x" );Column( dt, 2 ) << set name( "y" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit Lorentzian Peak;
 
 ```
 
@@ -908,9 +640,7 @@ obj << Fit Lorentzian Peak;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Corn.jmp" );
-obj = dt << Fit Curve( Y( :yield ), X( :nitrate ) );
-obj << Fit Mechanistic Growth;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Corn.jmp" );obj = dt << Fit Curve( Y( :yield ), X( :nitrate ) );obj << Fit Mechanistic Growth;
 
 ```
 
@@ -922,9 +652,7 @@ obj << Fit Mechanistic Growth;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit Michaelis Menten;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit Michaelis Menten;
 
 ```
 
@@ -936,13 +664,7 @@ obj << Fit Michaelis Menten;
 
 ```jsl
 
-dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 12
-3.01, 24.3 .9];
-dt = As Table( dat );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit One Compartment Oral Dose;
+dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 123.01, 24.3 .9];dt = As Table( dat );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit One Compartment Oral Dose;
 
 ```
 
@@ -958,9 +680,7 @@ obj << Fit One Compartment Oral Dose;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Power Model;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Power Model;
 
 ```
 
@@ -972,20 +692,7 @@ obj << Fit Power Model;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dat = dt << get as matrix;
-miny = Min( dat[0, 3] );
-maxy = Max( dat[0, 3] );
-newy = (dat[0, 3] - miny) / (maxy - miny);
-form = Column( 3 ) << get values;
-Close( dt, no save );
-newtab = As Table( dat[0, 2] || newy );
-Column( 1 ) << set name( "log conc" );
-Column( 2 ) << set name( "toxicity" );
-New Column( "formulation", character, nominal );
-Column( 3 ) << set values( form );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Probit 2P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dat = dt << get as matrix;miny = Min( dat[0, 3] );maxy = Max( dat[0, 3] );newy = (dat[0, 3] - miny) / (maxy - miny);form = Column( 3 ) << get values;Close( dt, no save );newtab = As Table( dat[0, 2] || newy );Column( 1 ) << set name( "log conc" );Column( 2 ) << set name( "toxicity" );New Column( "formulation", character, nominal );Column( 3 ) << set values( form );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Probit 2P;
 
 ```
 
@@ -997,19 +704,7 @@ obj << Fit Probit 2P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dat = dt << get as matrix;
-maxy = Max( dat[0, 3] );
-newy = dat[0, 3] / maxy;
-form = Column( 3 ) << get values;
-Close( dt, no save );
-newtab = As Table( dat[0, 2] || newy );
-Column( 1 ) << set name( "log conc" );
-Column( 2 ) << set name( "toxicity" );
-New Column( "formulation", character, nominal );
-Column( 3 ) << set values( form );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Probit 3P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dat = dt << get as matrix;maxy = Max( dat[0, 3] );newy = dat[0, 3] / maxy;form = Column( 3 ) << get values;Close( dt, no save );newtab = As Table( dat[0, 2] || newy );Column( 1 ) << set name( "log conc" );Column( 2 ) << set name( "toxicity" );New Column( "formulation", character, nominal );Column( 3 ) << set values( form );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Probit 3P;
 
 ```
 
@@ -1021,9 +716,7 @@ obj << Fit Probit 3P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );
-obj << Fit Probit 4P;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = Fit Curve( Y( :toxicity ), X( :log conc ), Group( :formulation ) );obj << Fit Probit 4P;
 
 ```
 
@@ -1039,9 +732,7 @@ obj << Fit Probit 4P;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Quadratic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Quadratic;
 
 ```
 
@@ -1053,9 +744,7 @@ obj << Fit Quadratic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Quartic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Quartic;
 
 ```
 
@@ -1067,9 +756,7 @@ obj << Fit Quartic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Fit Curve( Y( :height ), X( :weight ) );
-obj << Fit Quintic;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Fit Curve( Y( :height ), X( :weight ) );obj << Fit Quintic;
 
 ```
 
@@ -1081,9 +768,7 @@ obj << Fit Quintic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit Second Order;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit Second Order;
 
 ```
 
@@ -1095,9 +780,7 @@ obj << Fit Second Order;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
-obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );
-obj << Fit Second Order with Two Components;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Fit Curve( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Fit Second Order with Two Components;
 
 ```
 
@@ -1113,17 +796,7 @@ obj << Fit Second Order with Two Components;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];
-yd = J( 11, 1, . );
-For( i = 1, i <= 11, i++,
-	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal()
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit Two Compartment IV Bolus Dose;
+Random Reset( 7483 );xd = [.25, .5, .75, 1, 1.5, 2, 3, 4, 6, 12, 24];yd = J( 11, 1, . );For( i = 1, i <= 11, i++,	yd[i] = 170 * Exp( -.15 * xd[i] ) + 80 * Exp( -1.4 * xd[i] ) + .1 * Random Normal());dt = As Table( xd || yd );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit Two Compartment IV Bolus Dose;
 
 ```
 
@@ -1137,9 +810,7 @@ obj << Fit Two Compartment IV Bolus Dose;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :Concentration ), Group( :formulation ) );
-obj << Fit Weibull Growth;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :Concentration ), Group( :formulation ) );obj << Fit Weibull Growth;
 
 ```
 
@@ -1151,14 +822,7 @@ obj << Fit Weibull Growth;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force )
-);
-obj << Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) );
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ));obj << Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) );
 
 ```
 
@@ -1170,14 +834,7 @@ obj << Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force )
-);
-obj << T2EQ( Alpha( 0.05 ), Reference Level( "R01" ) );
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ));obj << T2EQ( Alpha( 0.05 ), Reference Level( "R01" ) );
 
 ```
 
@@ -1191,12 +848,7 @@ obj << T2EQ( Alpha( 0.05 ), Reference Level( "R01" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1212,13 +864,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1226,10 +872,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1237,10 +880,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1254,12 +894,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1271,12 +906,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1288,15 +918,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -1308,10 +930,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Copy Script;
 
 ```
 
@@ -1323,10 +942,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Data Table Window;
 
 ```
 
@@ -1340,9 +956,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1354,16 +968,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1377,11 +982,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1389,27 +990,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1421,11 +1002,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1437,11 +1014,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1453,11 +1026,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;t = obj << Get Script;Show( t );
 
 ```
 
@@ -1469,11 +1038,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1485,11 +1050,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1501,10 +1062,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1518,10 +1076,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1533,13 +1088,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1551,14 +1100,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1572,9 +1114,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1586,15 +1126,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1606,30 +1138,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Redo Analysis;
 
 ```
 
@@ -1641,30 +1150,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Syntax:** obj &lt;&lt; Relaunch ByGroup
-
-**Description:** Opens the platform launch window and recalls the settings that were used to create the report.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Relaunch Analysis;
 
 ```
 
@@ -1676,14 +1162,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1695,33 +1174,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report;Report( obj )
+**Syntax:** obj &lt;&lt; Report; Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1733,10 +1198,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Report View( "Summary" );
 
 ```
 
@@ -1748,15 +1210,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1768,15 +1222,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1788,15 +1234,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1808,10 +1246,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Save Script for All Objects;
 
 ```
 
@@ -1825,15 +1260,7 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1841,15 +1268,7 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ), By( _bycol ) );
-obj << Fit Logistic 4P;
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj << Fit Logistic 4P;obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1861,10 +1280,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1876,10 +1292,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Save Script to Journal;
 
 ```
 
@@ -1891,10 +1304,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Save Script to Report;
 
 ```
 
@@ -1906,10 +1316,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Save Script to Script Window;
 
 ```
 
@@ -1921,15 +1328,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1941,20 +1340,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1966,12 +1352,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1983,11 +1364,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1999,10 +1376,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;obj << Title( "My Platform" );
 
 ```
 
@@ -2014,12 +1388,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2033,11 +1402,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2049,9 +1414,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -2063,13 +1426,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -2087,16 +1444,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) ),
-		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) ),
-		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) ),		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) ),		Equivalence with Ratios( 1, Set Alpha Level( 0.1 ) )	));
 
 ```
 
@@ -2110,16 +1458,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) ),
-		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) ),
-		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) ),		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) ),		Equivalence with Ratios( 1, Set Decision Lines( 0.9, 1.1 ) )	));
 
 ```
 
@@ -2133,16 +1472,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Show Center Line( 0 ) ),
-		Equivalence with Ratios( 1, Show Center Line( 1 ) ),
-		Equivalence with Ratios( 1, Show Center Line( 0 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Show Center Line( 0 ) ),		Equivalence with Ratios( 1, Show Center Line( 1 ) ),		Equivalence with Ratios( 1, Show Center Line( 0 ) )	));
 
 ```
 
@@ -2156,16 +1486,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Show Decision Limit Shading( 0 ) ),
-		Equivalence with Ratios( 1, Show Decision Limit Shading( 1 ) ),
-		Equivalence with Ratios( 1, Show Decision Limit Shading( 0 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Show Decision Limit Shading( 0 ) ),		Equivalence with Ratios( 1, Show Decision Limit Shading( 1 ) ),		Equivalence with Ratios( 1, Show Decision Limit Shading( 0 ) )	));
 
 ```
 
@@ -2179,16 +1500,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Show Decision Limits( 0 ) ),
-		Equivalence with Ratios( 1, Show Decision Limits( 1 ) ),
-		Equivalence with Ratios( 1, Show Decision Limits( 0 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Show Decision Limits( 0 ) ),		Equivalence with Ratios( 1, Show Decision Limits( 1 ) ),		Equivalence with Ratios( 1, Show Decision Limits( 0 ) )	));
 
 ```
 
@@ -2202,16 +1514,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P(
-	Equivalence Test(
-		Reference Group( "Standard" ),
-		Equivalence with Ratios( 1, Show Summary Report( 1 ) ),
-		Equivalence with Ratios( 1, Show Summary Report( 1 ) ),
-		Equivalence with Ratios( 1, Show Summary Report( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P(	Equivalence Test(		Reference Group( "Standard" ),		Equivalence with Ratios( 1, Show Summary Report( 1 ) ),		Equivalence with Ratios( 1, Show Summary Report( 1 ) ),		Equivalence with Ratios( 1, Show Summary Report( 1 ) )	));
 
 ```
 
@@ -2229,27 +1532,7 @@ obj << Fit Logistic 4P(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
-Report( obj )["CDOE Fit"] << Close( 0 );
-Wait( 2 );
-scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);
-scrobj << CDOE Fit Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));Report( obj )["CDOE Fit"] << Close( 0 );Wait( 2 );scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);scrobj << CDOE Fit Plot( 0 );
 
 ```
 
@@ -2261,26 +1544,7 @@ scrobj << CDOE Fit Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
-Wait( 2 );
-scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);
-scrobj << CDOE Profiler( 0 );
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));Wait( 2 );scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);scrobj << CDOE Profiler( 0 );
 
 ```
 
@@ -2294,27 +1558,7 @@ scrobj << CDOE Profiler( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
-Report( obj )["Diagnostic Plots"] << Close( 0 );
-Wait( 2 );
-scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);
-scrobj << Diagnostic Plots( 0 );
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));Report( obj )["Diagnostic Plots"] << Close( 0 );Wait( 2 );scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);scrobj << Diagnostic Plots( 0 );
 
 ```
 
@@ -2328,27 +1572,7 @@ scrobj << Diagnostic Plots( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
-Report( obj )["Generalized Regression for Model Parameters"] << Close( 0 );
-Wait( 2 );
-scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);
-scrobj << Generalized Regression for Model Parameters( 0 );
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));Report( obj )["Generalized Regression for Model Parameters"] << Close( 0 );Wait( 2 );scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);scrobj << Generalized Regression for Model Parameters( 0 );
 
 ```
 
@@ -2362,25 +1586,7 @@ scrobj << Generalized Regression for Model Parameters( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
-scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);
-scrobj << Save Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));scrobj = (Report( obj )["Curve DOE Analysis"] << get scriptable object);scrobj << Save Prediction Formula;
 
 ```
 
@@ -2396,17 +1602,7 @@ scrobj << Save Prediction Formula;
 
 ```jsl
 
-Random Reset( 7483 );
-xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-yd = J( 12, 1, . );
-For( i = 1, i <= 12, i++,
-	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1
-);
-dt = As Table( xd || yd );
-Column( dt, 1 ) << set name( "x" );
-Column( dt, 2 ) << set name( "y" );
-obj = dt << Fit Curve( Y( :Y ), X( :X ) );
-obj << Fit Gaussian Peak( Area Under Curve( 1 ) );
+Random Reset( 7483 );xd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];yd = J( 12, 1, . );For( i = 1, i <= 12, i++,	yd[i] = 10 * Normal Density( (xd[i] - 6) / 2 ) + Random Normal() * .1);dt = As Table( xd || yd );Column( dt, 1 ) << set name( "x" );Column( dt, 2 ) << set name( "y" );obj = dt << Fit Curve( Y( :Y ), X( :X ) );obj << Fit Gaussian Peak( Area Under Curve( 1 ) );
 
 ```
 
@@ -2418,9 +1614,7 @@ obj << Fit Gaussian Peak( Area Under Curve( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Compare Parameter Estimates( 1 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Compare Parameter Estimates( 1 ) );
 
 ```
 
@@ -2436,21 +1630,7 @@ obj << Fit Logistic 4P( Compare Parameter Estimates( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ),
-	Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) ),
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Multivariate Distance"}, "Comparisons", OutlineBox,
-			{Close( 1 )}
-		)
-	)
-);
-obj << (fit[1] << Curve DOE Analysis( 1 ));
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ),	Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) ),	SendToReport(		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Multivariate Distance"}, "Comparisons", OutlineBox,			{Close( 1 )}		)	));obj << (fit[1] << Curve DOE Analysis( 1 ));
 
 ```
 
@@ -2458,23 +1638,7 @@ obj << (fit[1] << Curve DOE Analysis( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );
-obj = Fit Curve(
-	Y( :"Size/nm"n ),
-	X( :Time ),
-	Group( :Batch ),
-	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),
-	Fit Biexponential 5P,
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,
-			{Close( 1 )}
-		),
-		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
+dt = Open( "$SAMPLE_DATA/Functional Data/Mill DOE.jmp" );obj = Fit Curve(	Y( :"Size/nm"n ),	X( :Time ),	Group( :Batch ),	Z( :"%Beads"n, :"%Strength"n, :"Flow(g/min)"n ),	Fit Biexponential 5P,	SendToReport(		Dispatch( {"Fit Curve"}, "Model Comparison", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Group Summary", OutlineBox,			{Close( 1 )}		),		Dispatch( {"Fit Curve", "Biexponential 5P"}, "Plot", OutlineBox, {Close( 1 )} )	));obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
 
 ```
 
@@ -2486,9 +1650,7 @@ obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Custom Inverse Prediction( Response( 0.9 ) ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Custom Inverse Prediction( Response( 0.9 ) ) );
 
 ```
 
@@ -2500,9 +1662,7 @@ obj << Fit Logistic 4P( Custom Inverse Prediction( Response( 0.9 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Equivalence Test( Reference Group( "Standard" ) ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Equivalence Test( Reference Group( "Standard" ) ) );
 
 ```
 
@@ -2514,9 +1674,7 @@ obj << Fit Logistic 4P( Equivalence Test( Reference Group( "Standard" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 5P( Inflection Point( 1 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 5P( Inflection Point( 1 ) );
 
 ```
 
@@ -2528,9 +1686,7 @@ obj << Fit Logistic 5P( Inflection Point( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Make Parameter Table );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Make Parameter Table );
 
 ```
 
@@ -2544,13 +1700,7 @@ obj << Fit Logistic 4P( Make Parameter Table );
 
 ```jsl
 
-dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 12
-3.01, 24.3 .9];
-dt = As Table( dat );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit One Compartment Oral Dose( Peak Response( 1 ) );
+dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 123.01, 24.3 .9];dt = As Table( dat );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit One Compartment Oral Dose( Peak Response( 1 ) );
 
 ```
 
@@ -2562,9 +1712,7 @@ obj << Fit One Compartment Oral Dose( Peak Response( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-fc = Fit Curve( Y( :weight ), X( :height ), Fit Linear() );
-fc << (fit[1] << Plot Actual by Predicted( 1 ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );fc = Fit Curve( Y( :weight ), X( :height ), Fit Linear() );fc << (fit[1] << Plot Actual by Predicted( 1 ));
 
 ```
 
@@ -2576,9 +1724,7 @@ fc << (fit[1] << Plot Actual by Predicted( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-fc = Fit Curve( Y( :weight ), X( :height ), Fit Linear() );
-fc << (fit[1] << Plot Residual by Predicted( 1 ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );fc = Fit Curve( Y( :weight ), X( :height ), Fit Linear() );fc << (fit[1] << Plot Residual by Predicted( 1 ));
 
 ```
 
@@ -2590,14 +1736,7 @@ fc << (fit[1] << Plot Residual by Predicted( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve(
-	Y( :Toxicity ),
-	X( :log Conc ),
-	Group( :formulation ),
-	Fit Logistic 4P
-);
-obj << (Fit["Logistic 4P"] << Profiler( 1 ));
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	Fit Logistic 4P);obj << (Fit["Logistic 4P"] << Profiler( 1 ));
 
 ```
 
@@ -2609,11 +1748,7 @@ obj << (Fit["Logistic 4P"] << Profiler( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P;
-Wait( 2 );
-obj << (Fit[1] << Remove Fit);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P;Wait( 2 );obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -2625,24 +1760,7 @@ obj << (Fit[1] << Remove Fit);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),
-	Group( :Batch ),
-	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ),
-	F2 Analysis(
-		Alpha( 0.1 ),
-		Reference Level( "R01" ),
-		Bootstrap Samples( 2500 ),
-		Random Seed( 1234 )
-	),
-	SendToReport(
-		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),
-		Dispatch( {"Fit Curve", "F2 Analysis"}, "Comparisons", OutlineBox, {Close( 1 )} )
-	)
-);
-obj << (fit[1] << Save Bootstrap Results);
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, Dissolution 360 ),	Group( :Batch ),	Z( :Polymer A, :Polymer B, :Total Polymer, :Compression Force ),	F2 Analysis(		Alpha( 0.1 ),		Reference Level( "R01" ),		Bootstrap Samples( 2500 ),		Random Seed( 1234 )	),	SendToReport(		Dispatch( {"Fit Curve"}, "Plot", OutlineBox, {Close( 1 )} ),		Dispatch( {"Fit Curve", "F2 Analysis"}, "Comparisons", OutlineBox, {Close( 1 )} )	));obj << (fit[1] << Save Bootstrap Results);
 
 ```
 
@@ -2654,9 +1772,7 @@ obj << (fit[1] << Save Bootstrap Results);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save First Derivative );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save First Derivative );
 
 ```
 
@@ -2668,9 +1784,7 @@ obj << Fit Logistic 4P( Save First Derivative );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save Inverse Prediction Formula );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save Inverse Prediction Formula );
 
 ```
 
@@ -2682,14 +1796,7 @@ obj << Fit Logistic 4P( Save Inverse Prediction Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve(
-	Y( :Toxicity ),
-	X( :log Conc ),
-	Group( :formulation ),
-	Fit Logistic 4P
-);
-obj << (Fit["Logistic 4P"] << Save Parametric Prediction Formula);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	Fit Logistic 4P);obj << (Fit["Logistic 4P"] << Save Parametric Prediction Formula);
 
 ```
 
@@ -2701,14 +1808,7 @@ obj << (Fit["Logistic 4P"] << Save Parametric Prediction Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve(
-	Y( :Toxicity ),
-	X( :log Conc ),
-	Group( :formulation ),
-	Fit Logistic 4P
-);
-obj << (Fit[1] << Save Prediction Formula);
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve(	Y( :Toxicity ),	X( :log Conc ),	Group( :formulation ),	Fit Logistic 4P);obj << (Fit[1] << Save Prediction Formula);
 
 ```
 
@@ -2720,9 +1820,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save Residual Formula );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save Residual Formula );
 
 ```
 
@@ -2734,13 +1832,7 @@ obj << Fit Logistic 4P( Save Residual Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );
-obj = dt << Fit Curve(
-	Data Format( Row ),
-	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),
-	Group( :Batch )
-);
-obj << Fit Higuchi( Save Stacked Data );
+dt = Open( "$SAMPLE_DATA/Dissolution DoE.jmp" );obj = dt << Fit Curve(	Data Format( Row ),	Y( :Dissolution 60, :Dissolution 120, :Dissolution 240, :Dissolution 360 ),	Group( :Batch ));obj << Fit Higuchi( Save Stacked Data );
 
 ```
 
@@ -2752,9 +1844,7 @@ obj << Fit Higuchi( Save Stacked Data );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save First Derivative, Save Std Error of First Derivative );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save First Derivative, Save Std Error of First Derivative );
 
 ```
 
@@ -2766,9 +1856,7 @@ obj << Fit Logistic 4P( Save First Derivative, Save Std Error of First Derivativ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save Prediction Formula, Save Std Error of Predicted );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save Prediction Formula, Save Std Error of Predicted );
 
 ```
 
@@ -2780,9 +1868,7 @@ obj << Fit Logistic 4P( Save Prediction Formula, Save Std Error of Predicted );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Save Studentized Residual Formula );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Save Studentized Residual Formula );
 
 ```
 
@@ -2794,9 +1880,7 @@ obj << Fit Logistic 4P( Save Studentized Residual Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );
-obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );
-obj << Fit Logistic 4P( Test Parallelism( 1 ) );
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Bioassay.jmp" );obj = dt << Fit Curve( Y( :Toxicity ), X( :log Conc ), Group( :formulation ) );obj << Fit Logistic 4P( Test Parallelism( 1 ) );
 
 ```
 
@@ -2810,13 +1894,7 @@ obj << Fit Logistic 4P( Test Parallelism( 1 ) );
 
 ```jsl
 
-dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 12
-3.01, 24.3 .9];
-dt = As Table( dat );
-Column( dt, 1 ) << set name( "time" );
-Column( dt, 2 ) << set name( "concentration" );
-obj = dt << Fit Curve( Y( :concentration ), X( :time ) );
-obj << Fit One Compartment Oral Dose( Time to Peak Response( 1 ) );
+dat = [0 0, .27 1.72, .52 7.91, 1 8.31, 1.92 8.33, 3.5 6.85, 5.02 6.08, 7.03 5.4, 9 4.55, 123.01, 24.3 .9];dt = As Table( dat );Column( dt, 1 ) << set name( "time" );Column( dt, 2 ) << set name( "concentration" );obj = dt << Fit Curve( Y( :concentration ), X( :time ) );obj << Fit One Compartment Oral Dose( Time to Peak Response( 1 ) );
 
 ```
 

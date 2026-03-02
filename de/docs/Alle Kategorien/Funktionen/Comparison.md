@@ -66,7 +66,7 @@ Is Missing( . );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -74,7 +74,7 @@ Is Same Color( "black", 0 );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
@@ -82,7 +82,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
@@ -90,7 +90,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
 
-#### Beispiel 4
+**Beispiel 4**
 
 ```jsl
 

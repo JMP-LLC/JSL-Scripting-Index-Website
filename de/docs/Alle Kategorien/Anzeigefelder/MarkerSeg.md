@@ -12,14 +12,7 @@
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-For( i = 1, i <= 40, i++,
-	Labeled( Row State( i ) ) = 1
-);
-r = Bivariate( Y( :weight ), X( :height ) ) << Report();
-frame = r[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
+Open( "$SAMPLE_DATA/Big Class.jmp" );For( i = 1, i <= 40, i++,	Labeled( Row State( i ) ) = 1);r = Bivariate( Y( :weight ), X( :height ) ) << Report();frame = r[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
 
 ```
 
@@ -31,26 +24,7 @@ seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Child; // not many segs support children
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Child; // not many segs support children
 
 ```
 
@@ -62,26 +36,7 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Class Name;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Class Name;
 
 ```
 
@@ -95,22 +50,7 @@ seg << Class Name;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-Wait( 2 );
-cs << Clip Shape( Boundaries( "US States" ) );
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -122,26 +62,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Color( "Green" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Color( "Green" );
 
 ```
 
@@ -157,26 +78,7 @@ seg << Color( "Green" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Delete;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Delete;
 
 ```
 
@@ -190,26 +92,7 @@ seg << Delete;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Density Gradient( "Fade to Gray" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Density Gradient( "Fade to Gray" );
 
 ```
 
@@ -221,26 +104,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Frame;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Frame;
 
 ```
 
@@ -254,23 +118,7 @@ seg << Frame;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-cs << Clip Shape( Boundaries( "US States" ) );
-Wait( 2 );
-cs << Get Clip Shape();
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
 
 ```
 
@@ -282,26 +130,7 @@ cs << Get Clip Shape();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Color;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Color;
 
 ```
 
@@ -313,26 +142,7 @@ seg << Get Color;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Colors;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Colors;
 
 ```
 
@@ -346,26 +156,7 @@ seg << Get Colors;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Density Gradient;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Density Gradient;
 
 ```
 
@@ -377,26 +168,7 @@ seg << Get Density Gradient;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << get description();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << get description();
 
 ```
 
@@ -416,26 +188,7 @@ seg << get description();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient;
 
 ```
 
@@ -449,26 +202,7 @@ seg << Get Gradient;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Color Theme;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Color Theme;
 
 ```
 
@@ -482,26 +216,7 @@ seg << Get Gradient Color Theme;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Discrete Colors;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Discrete Colors;
 
 ```
 
@@ -515,11 +230,7 @@ seg << Get Gradient Discrete Colors;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Fill;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Fill;
 
 ```
 
@@ -533,26 +244,7 @@ seg << Get Gradient Fill;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Label Count;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Label Count;
 
 ```
 
@@ -564,28 +256,19 @@ seg << Get Gradient Label Count;
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -599,26 +282,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Legend Horizontal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Legend Horizontal;
 
 ```
 
@@ -632,26 +296,7 @@ seg << Get Gradient Legend Horizontal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Legend Label Format;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Legend Label Format;
 
 ```
 
@@ -665,26 +310,7 @@ seg << Get Gradient Legend Label Format;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Legend Label Width;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Legend Label Width;
 
 ```
 
@@ -698,26 +324,7 @@ seg << Get Gradient Legend Label Width;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Legend Show Labels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Legend Show Labels;
 
 ```
 
@@ -731,26 +338,7 @@ seg << Get Gradient Legend Show Labels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Levels;
 
 ```
 
@@ -764,26 +352,7 @@ seg << Get Gradient Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Lightness Range;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Lightness Range;
 
 ```
 
@@ -797,11 +366,7 @@ seg << Get Gradient Lightness Range;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Range;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Range;
 
 ```
 
@@ -815,26 +380,7 @@ seg << Get Gradient Range;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Reverse Color Order;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Reverse Color Order;
 
 ```
 
@@ -848,26 +394,7 @@ seg << Get Gradient Reverse Color Order;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Reverse Label Order;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Reverse Label Order;
 
 ```
 
@@ -881,11 +408,7 @@ seg << Get Gradient Reverse Label Order;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale;
 
 ```
 
@@ -897,28 +420,19 @@ seg << Get Gradient Scale;
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -932,26 +446,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Show Missing;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Show Missing;
 
 ```
 
@@ -965,26 +460,7 @@ seg << Get Gradient Show Missing;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Gradient Transparency;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Gradient Transparency;
 
 ```
 
@@ -994,26 +470,7 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Random Reset( 1111111 );
-n = 1000;
-T1 = J( n, 1, Random Normal() );
-T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;
-dt = New Table( "Test",
-	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "T1", Values( T1 ) ),
-
-);
-obj = dt << Graph Builder(
-	Size( 531, 456 ),
-	Show Control Panel( 0 ),
-	Variables( X( :X ), Y( :Y ), Color( :T1 ) ),
-	Elements( Points( X, Y, Legend( 16 ) ) )
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Hide Missing Color;
+Random Reset( 1111111 );n = 1000;T1 = J( n, 1, Random Normal() );T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;dt = New Table( "Test",	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "T1", Values( T1 ) ),);obj = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :X ), Y( :Y ), Color( :T1 ) ),	Elements( Points( X, Y, Legend( 16 ) ) ));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Hide Missing Color;
 
 ```
 
@@ -1023,26 +480,7 @@ seg << Get Hide Missing Color;
 
 ```jsl
 
-Random Reset( 1111111 );
-n = 1000;
-T1 = J( n, 1, Random Normal() );
-T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;
-dt = New Table( "Test",
-	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "T1", Values( T1 ) ),
-
-);
-obj = dt << Graph Builder(
-	Size( 531, 456 ),
-	Show Control Panel( 0 ),
-	Variables( X( :X ), Y( :Y ), Size( :T1 ) ),
-	Elements( Points( X, Y, Legend( 16 ) ) )
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Hide Missing Size;
+Random Reset( 1111111 );n = 1000;T1 = J( n, 1, Random Normal() );T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;dt = New Table( "Test",	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "T1", Values( T1 ) ),);obj = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :X ), Y( :Y ), Size( :T1 ) ),	Elements( Points( X, Y, Legend( 16 ) ) ));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Hide Missing Size;
 
 ```
 
@@ -1056,12 +494,7 @@ seg << Get Hide Missing Size;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-{method, axis, limit, spacing, seed, side, overlap, grid offset, smoothing, max error,
-bandwidth} = seg << Get Jitter();
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));{method, axis, limit, spacing, seed, side, overlap, grid offset, smoothing, max error,bandwidth} = seg << Get Jitter();
 
 ```
 
@@ -1073,19 +506,7 @@ bandwidth} = seg << Get Jitter();
 
 ```jsl
 
-x = J( 1, 100, Random Normal() );
-y = J( 1, 100, 0 );
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		X Scale( -4, 4 ),
-		Y Scale( -0.5, 0.5 ),
-		Frame Size( 300, 200 ),
-		Marker Seg( x, y, <<Set Marker Size( 5 ), <<Set Jitter( {"Grid", "Y"} ) )
-	)
-);
-seg = (g[FrameBox( 1 )] << Find Seg( Marker Seg( 1 ) ));
-jitter = seg << Get Jitter Offsets;
-avg = Mean( jitter[0, 1] );
+x = J( 1, 100, Random Normal() );y = J( 1, 100, 0 );New Window( "Marker Seg Example",	g = Graph Box(		X Scale( -4, 4 ),		Y Scale( -0.5, 0.5 ),		Frame Size( 300, 200 ),		Marker Seg( x, y, <<Set Marker Size( 5 ), <<Set Jitter( {"Grid", "Y"} ) )	));seg = (g[FrameBox( 1 )] << Find Seg( Marker Seg( 1 ) ));jitter = seg << Get Jitter Offsets;avg = Mean( jitter[0, 1] );
 
 ```
 
@@ -1113,26 +534,7 @@ avg = Mean( jitter[0, 1] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Marker;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Marker;
 
 ```
 
@@ -1146,12 +548,7 @@ seg << Get Marker;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Column( :picture );
-ex = seg << Get Marker Draw Column();
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Column( :picture );ex = seg << Get Marker Draw Column();
 
 ```
 
@@ -1165,12 +562,7 @@ ex = seg << Get Marker Draw Column();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
-ex = seg << Get Marker Draw Expr();
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );ex = seg << Get Marker Draw Expr();
 
 ```
 
@@ -1182,26 +574,7 @@ ex = seg << Get Marker Draw Expr();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Marker Size;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Marker Size;
 
 ```
 
@@ -1213,26 +586,7 @@ seg << Get Marker Size;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Markers;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Markers;
 
 ```
 
@@ -1242,12 +596,7 @@ seg << Get Markers;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
-rep = op << report;
-frame = rep[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Overlay Color( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );rep = op << report;frame = rep[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Overlay Color( 1 );
 
 ```
 
@@ -1257,12 +606,7 @@ seg << Get Overlay Color( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
-rep = op << report;
-frame = rep[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Overlay Count;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );rep = op << report;frame = rep[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Overlay Count;
 
 ```
 
@@ -1272,12 +616,7 @@ seg << Get Overlay Count;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
-rep = op << report;
-frame = rep[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Overlay Marker( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );rep = op << report;frame = rep[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Overlay Marker( 1 );
 
 ```
 
@@ -1289,26 +628,7 @@ seg << Get Overlay Marker( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Point( 2 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Point( 2 );
 
 ```
 
@@ -1320,26 +640,7 @@ seg << Get Point( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Point Count;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Point Count;
 
 ```
 
@@ -1351,15 +652,7 @@ seg << Get Point Count;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-x = [10 50 70];
-y = [60 50 10];
-New Window( "Marker Seg Example",
-	g = Graph Box( Marker Seg( x, y, Row States( dt, [5 7 9] ) ) )
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Row Numbers;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );x = [10 50 70];y = [60 50 10];New Window( "Marker Seg Example",	g = Graph Box( Marker Seg( x, y, Row States( dt, [5 7 9] ) ) ));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Row Numbers;
 
 ```
 
@@ -1371,26 +664,7 @@ seg << Get Row Numbers;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Sizes;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Sizes;
 
 ```
 
@@ -1402,26 +676,7 @@ seg << Get Sizes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Transparency;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Transparency;
 
 ```
 
@@ -1441,26 +696,7 @@ seg << Get Transparency;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get X Values;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get X Values;
 
 ```
 
@@ -1472,57 +708,19 @@ seg << Get X Values;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Get Y Values;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Get Y Values;
 
 ```
 
 ### Gradient
 
-**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1536,26 +734,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1569,11 +748,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1587,12 +762,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1606,26 +776,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1639,11 +790,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1657,26 +804,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1690,26 +818,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1723,26 +832,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1756,26 +846,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1789,26 +860,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1820,84 +872,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -1911,11 +906,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -1929,26 +920,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -1962,26 +934,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -1995,11 +948,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -2013,11 +962,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -2031,14 +976,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -2052,26 +990,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Gradient Transparency( "None" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Gradient Transparency( "None" );
 
 ```
 
@@ -2083,13 +1002,7 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Labeled( Row State( 5 ) ) = 1;
-Labeled( Row State( 8 ) ) = 1;
-dist = Distribution( Continuous Distribution( Column( :height ) ) );
-frame = (dist << report)[FrameBox( 2 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << label offset( {0, -20, -10}, {1, -20, -30} );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Labeled( Row State( 5 ) ) = 1;Labeled( Row State( 8 ) ) = 1;dist = Distribution( Continuous Distribution( Column( :height ) ) );frame = (dist << report)[FrameBox( 2 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << label offset( {0, -20, -10}, {1, -20, -30} );
 
 ```
 
@@ -2101,26 +1014,7 @@ seg << label offset( {0, -20, -10}, {1, -20, -30} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Marker( "Square" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Marker( "Square" );
 
 ```
 
@@ -2132,28 +1026,7 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Marker Size( "XL" );
-Wait( 1 );
-seg << Set Marker Size( "dot" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Marker Size( "XL" );Wait( 1 );seg << Set Marker Size( "dot" );
 
 ```
 
@@ -2165,26 +1038,7 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Parent;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Parent;
 
 ```
 
@@ -2196,29 +1050,7 @@ seg << Parent;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-Wait( 1 );
-seg << Set Color( "Red" );
-Wait( 1 );
-seg << Revert;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));Wait( 1 );seg << Set Color( "Red" );Wait( 1 );seg << Revert;
 
 ```
 
@@ -2230,26 +1062,7 @@ seg << Revert;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Color( "Green" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Color( "Green" );
 
 ```
 
@@ -2261,26 +1074,7 @@ seg << Color( "Green" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << set description( "my seg" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << set description( "my seg" );
 
 ```
 
@@ -2294,52 +1088,19 @@ seg << set description( "my seg" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate(
-	Y( :weight ),
-	X( :height ),
-	SendToReport(
-		Dispatch( {}, "Bivar Plot", FrameBox,
-			{DispatchSeg(
-				Marker Seg( 1 ),
-				Set Force Labels( "Label by Value" ),
-				Set Label Value Axis( "X" ),
-				Set Label Value Format( "Fixed", 1 )
-			)}
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			{DispatchSeg(				Marker Seg( 1 ),				Set Force Labels( "Label by Value" ),				Set Label Value Axis( "X" ),				Set Label Value Format( "Fixed", 1 )			)}		)	));
 
 ```
 
 ### Set Gradient
 
-**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -2353,26 +1114,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -2386,26 +1128,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```
 
@@ -2419,11 +1142,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -2437,12 +1156,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -2456,26 +1170,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -2489,11 +1184,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -2507,26 +1198,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -2540,26 +1212,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -2573,26 +1226,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -2606,26 +1240,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -2639,26 +1254,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -2670,84 +1266,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -2761,11 +1300,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -2779,26 +1314,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -2812,26 +1328,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -2845,11 +1342,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -2863,11 +1356,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -2881,14 +1370,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -2898,26 +1380,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Random Reset( 1111111 );
-n = 1000;
-T1 = J( n, 1, Random Normal() );
-T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;
-dt = New Table( "Test",
-	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "T1", Values( T1 ) ),
-
-);
-obj = dt << Graph Builder(
-	Size( 531, 456 ),
-	Show Control Panel( 0 ),
-	Variables( X( :X ), Y( :Y ), Color( :T1 ) ),
-	Elements( Points( X, Y, Legend( 16 ) ) )
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Hide Missing Color( true );
+Random Reset( 1111111 );n = 1000;T1 = J( n, 1, Random Normal() );T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;dt = New Table( "Test",	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "T1", Values( T1 ) ),);obj = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :X ), Y( :Y ), Color( :T1 ) ),	Elements( Points( X, Y, Legend( 16 ) ) ));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Hide Missing Color( true );
 
 ```
 
@@ -2927,26 +1390,7 @@ seg << Set Hide Missing Color( true );
 
 ```jsl
 
-Random Reset( 1111111 );
-n = 1000;
-T1 = J( n, 1, Random Normal() );
-T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;
-dt = New Table( "Test",
-	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),
-	New Column( "T1", Values( T1 ) ),
-
-);
-obj = dt << Graph Builder(
-	Size( 531, 456 ),
-	Show Control Panel( 0 ),
-	Variables( X( :X ), Y( :Y ), Size( :T1 ) ),
-	Elements( Points( X, Y, Legend( 16 ) ) )
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Hide Missing Size( true );
+Random Reset( 1111111 );n = 1000;T1 = J( n, 1, Random Normal() );T1[Loc( J( n, 1, Random Integer( 0, 1 ) ) )] = .;dt = New Table( "Test",	New Column( "X", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "Y", Values( J( n, 1, Random Uniform() ) ) ),	New Column( "T1", Values( T1 ) ),);obj = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :X ), Y( :Y ), Size( :T1 ) ),	Elements( Points( X, Y, Legend( 16 ) ) ));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Hide Missing Size( true );
 
 ```
 
@@ -2960,11 +1404,7 @@ seg << Set Hide Missing Size( true );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Oneway( Y( :height ), X( :sex ), Means( 1 ), MeanDiamonds( 1 ), XAxisProportional( 0 ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
 
 ```
 
@@ -2978,21 +1418,7 @@ seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate(
-	Y( :weight ),
-	X( :height ),
-	SendToReport(
-		Dispatch( {}, "Bivar Plot", FrameBox,
-			{DispatchSeg(
-				Marker Seg( 1 ),
-				Set Force Labels( "Label by Value" ),
-				Set Label Value Axis( "X" ),
-				Set Label Value Format( "Fixed", 1 )
-			)}
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			{DispatchSeg(				Marker Seg( 1 ),				Set Force Labels( "Label by Value" ),				Set Label Value Axis( "X" ),				Set Label Value Format( "Fixed", 1 )			)}		)	));
 
 ```
 
@@ -3006,21 +1432,7 @@ Bivariate(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate(
-	Y( :weight ),
-	X( :height ),
-	SendToReport(
-		Dispatch( {}, "Bivar Plot", FrameBox,
-			{DispatchSeg(
-				Marker Seg( 1 ),
-				Set Force Labels( "Label by Value" ),
-				Set Label Value Axis( "X" ),
-				Set Label Value Format( "Fixed", 1 )
-			)}
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			{DispatchSeg(				Marker Seg( 1 ),				Set Force Labels( "Label by Value" ),				Set Label Value Axis( "X" ),				Set Label Value Format( "Fixed", 1 )			)}		)	));
 
 ```
 
@@ -3040,26 +1452,7 @@ Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Marker( "Square" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Marker( "Square" );
 
 ```
 
@@ -3073,14 +1466,7 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-Wait( 2 );
-seg << Set Marker Draw Column( :sex );
-Wait( 2 );
-seg << Set Marker Draw Column( :picture );
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));Wait( 2 );seg << Set Marker Draw Column( :sex );Wait( 2 );seg << Set Marker Draw Column( :picture );
 
 ```
 
@@ -3096,23 +1482,7 @@ seg << Set Marker Draw Column( :picture );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Expr(
-	Function( {this seg, this row, x, y, size, row state},
-		If( Mod( this row, 2 ) == 1,
-			Line(
-				Eval List( {x, y} ),
-				Eval List( {:weight[this row + 1], :height[this row + 1]} )
-			);
-			"A";
-		,
-			"B"
-		)
-	)
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Expr(	Function( {this seg, this row, x, y, size, row state},		If( Mod( this row, 2 ) == 1,			Line(				Eval List( {x, y} ),				Eval List( {:weight[this row + 1], :height[this row + 1]} )			);			"A";		,			"B"		)	));
 
 ```
 
@@ -3120,11 +1490,7 @@ seg << Set Marker Draw Expr(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Expr( Expr( Arc( -2, -:age / 3, 2, :age / 3, -90, 90 ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Expr( Expr( Arc( -2, -:age / 3, 2, :age / 3, -90, 90 ) ) );
 
 ```
 
@@ -3132,11 +1498,7 @@ seg << Set Marker Draw Expr( Expr( Arc( -2, -:age / 3, 2, :age / 3, -90, 90 ) ) 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
 
 ```
 
@@ -3144,11 +1506,7 @@ seg << Set Marker Draw Expr( [-1 0, 0 2, 1 0, 0 1, -1 0] );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-r = Bivariate( Y( :height ), X( :weight ) );
-frame = (r << report)[FrameBox( 1 )];
-seg = (frame << FindSeg( Marker Seg( 1 ) ));
-seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );r = Bivariate( Y( :height ), X( :weight ) );frame = (r << report)[FrameBox( 1 )];seg = (frame << FindSeg( Marker Seg( 1 ) ));seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
 
 ```
 
@@ -3160,28 +1518,7 @@ seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Marker Size( "XL" );
-Wait( 1 );
-seg << Set Marker Size( "dot" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Marker Size( "XL" );Wait( 1 );seg << Set Marker Size( "dot" );
 
 ```
 
@@ -3191,12 +1528,7 @@ seg << Set Marker Size( "dot" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
-rep = op << report;
-frame = rep[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Overlay Color( 1, "Green" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );rep = op << report;frame = rep[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Overlay Color( 1, "Green" );
 
 ```
 
@@ -3206,12 +1538,7 @@ seg << Set Overlay Color( 1, "Green" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );
-rep = op << report;
-frame = rep[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Overlay Marker( 1, "Star" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );op = dt << Overlay Plot( X( :age ), Y( :height, :weight ) );rep = op << report;frame = rep[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Overlay Marker( 1, "Star" );
 
 ```
 
@@ -3223,26 +1550,7 @@ seg << Set Overlay Marker( 1, "Star" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Transparency( .3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 
@@ -3254,26 +1562,7 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Sib;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Sib;
 
 ```
 
@@ -3285,31 +1574,7 @@ seg << Sib;
 
 ```jsl
 
-win = New Window( "World",
-	gb = Graph(
-		FrameSize( 800, 400 ),
-		X Scale( -180, 180 ),
-		Y Scale( -90, 90 ),
-		<<Background Map( Images( "Simple Earth" ) )
-	)
-);
-imgBox = win[framebox( 1 )];
-mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
-mapSeg << Transparency( 0.5 );
-Try(
-	xAxis = gb[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = gb[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -3321,39 +1586,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-Try(
-	xAxis = g[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = g[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -3365,26 +1598,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
-seg << Set Transparency( .3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 
@@ -3392,63 +1606,25 @@ seg << Set Transparency( .3 );
 
 ### Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
 ### Get Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
@@ -3460,12 +1636,7 @@ New Window( "enabled",
 
 ```jsl
 
-//This message applies to all display objects
-x = 1;
-w = New Window( "Test", b = Button Box( "Press me" ) );
-b:x = 2;
-ns = b << GetNamespace();
-Show( ns:x, x );
+//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
 
 ```
 
@@ -3477,8 +1648,7 @@ Show( ns:x, x );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Properties;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
 
 ```
 
@@ -3490,8 +1660,7 @@ bb << Get Properties;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property( "Enabled" );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
 
 ```
 
@@ -3503,8 +1672,7 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property List;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
 
 ```
 
@@ -3516,8 +1684,7 @@ bb << Get Property List;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Set Property( "Enabled", 0 );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -3531,25 +1698,7 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-xx = Column( "height" ) << Get Values;
-aa = [=> 0];
-sz = Column( "age" ) << get values;
-yy = J( N Rows( xx ), 1, 0 );
-For( ii = 1, ii <= N Rows( xx ), ii++,
-	aa[xx[ii]]++;
-	yy[ii] = aa[xx[ii]];
-);
-New Window( "Marker Seg Example",
-	g = Graph Box(
-		Frame Size( 300, 120 ),
-		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
-		Y Scale( 0, 10 ),
-		Marker Seg( xx, yy, Row States( dt ) )
-	)
-);
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Marker Seg( 1 ) ));
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;aa = [=> 0];sz = Column( "age" ) << get values;yy = J( N Rows( xx ), 1, 0 );For( ii = 1, ii <= N Rows( xx ), ii++,	aa[xx[ii]]++;	yy[ii] = aa[xx[ii]];);New Window( "Marker Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Y Scale( 0, 10 ),		Marker Seg( xx, yy, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Marker Seg( 1 ) ));
 
 ```
 

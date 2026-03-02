@@ -8,15 +8,11 @@
 
 **语法:** Schedule( seconds, script )
 
-**说明:** 计划一个事件，在经过 sec 秒后运行 scpt 脚本参数。 注意: 调度程序仅在空闲时段内运行。
+**说明:** Programa un evento que ejecuta el argumento de script scpt transcurridos sec segundos. Nota: el programador sólo funciona durante periodos de inactividad.
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););
 
 ```
 
@@ -30,12 +26,7 @@ s = Schedule(
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-s << Clear Schedule;
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Clear Schedule;
 
 ```
 
@@ -47,13 +38,7 @@ s << Clear Schedule;
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-Wait( 2 );
-s << Close;
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););Wait( 2 );s << Close;
 
 ```
 
@@ -65,13 +50,7 @@ s << Close;
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-t = s << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););t = s << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -83,14 +62,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-s << Stop;
-Wait( 2 );
-s << Restart;
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;Wait( 2 );s << Restart;
 
 ```
 
@@ -102,12 +74,7 @@ s << Restart;
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-s << Show Schedule;
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Show Schedule;
 
 ```
 
@@ -119,12 +86,7 @@ s << Show Schedule;
 
 ```jsl
 
-s = Schedule(
-	10,
-	Beep();
-	Print( "Hello World!" );
-);
-s << Stop;
+s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;
 
 ```
 

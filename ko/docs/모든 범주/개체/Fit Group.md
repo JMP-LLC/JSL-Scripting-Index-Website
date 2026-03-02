@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -73,22 +56,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -100,9 +68,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -114,21 +80,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Copy Script;
 
 ```
 
@@ -140,21 +92,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Data Table Window;
 
 ```
 
@@ -168,9 +106,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -184,22 +120,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -207,27 +128,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -239,22 +140,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -266,22 +152,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -293,22 +164,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -320,22 +176,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -347,10 +188,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -364,10 +202,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -379,13 +214,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -397,32 +226,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**구문:** New JSL Preset( preset )
-
-**설명:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -436,9 +240,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -450,13 +252,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -468,21 +264,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Redo Analysis;
 
 ```
 
@@ -494,21 +276,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Relaunch Analysis;
 
 ```
 
@@ -520,11 +288,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -536,60 +300,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**구문:** Render Preset( preset )
-
-**설명:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report;Report( obj )
+**구문:** obj &lt;&lt; Report; Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -601,21 +324,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Report View( "Summary" );
 
 ```
 
@@ -627,21 +336,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Save Script for All Objects;
 
 ```
 
@@ -651,59 +346,19 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -715,21 +370,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -741,21 +382,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Save Script to Journal;
 
 ```
 
@@ -767,21 +394,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Save Script to Report;
 
 ```
 
@@ -793,21 +406,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Save Script to Script Window;
 
 ```
 
@@ -819,12 +418,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -836,19 +430,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -860,12 +442,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -877,11 +454,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -893,21 +466,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Title( "My Platform" );
 
 ```
 
@@ -919,23 +478,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -947,9 +490,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -957,26 +498,13 @@ xml = obj << View Web XML;
 
 ### Fit Group
 
-**구문:** Fit Group( model1, model2, ... );Fit Group( model1; model2; ... )
+**구문:** Fit Group( model1, model2, ... ); Fit Group( model1; model2; ... )
 
 **설명:** 공유 프로파일러를 사용하여 동일한 출력 창에 별도의 수행된 최소 제곱, 비선형, 신경망, 가우시안 공정 및 혼합 모형 적합을 그룹화합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));
 
 ```
 
@@ -990,22 +518,7 @@ obj = dt << Fit Group(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-Wait( 1 );
-obj << Arrange in Rows( 2 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));Wait( 1 );obj << Arrange in Rows( 2 );
 
 ```
 
@@ -1017,21 +530,7 @@ obj << Arrange in Rows( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Contour Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Contour Profiler( 1 );
 
 ```
 
@@ -1043,22 +542,7 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Bivariate( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Fit Line( 1 ) ),
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	)
-);
-Wait( 1 );
-obj << Order by Goodness of Fit;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Bivariate( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Fit Line( 1 ) ),	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	));Wait( 1 );obj << Order by Goodness of Fit;
 
 ```
 
@@ -1070,21 +554,7 @@ obj << Order by Goodness of Fit;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Profiler( 1 );
 
 ```
 
@@ -1096,21 +566,7 @@ obj << Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Fit Group(
-	Fit Model(
-		Y( :ABRASION ),
-		Effects(
-			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,
-			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR
-		),
-		Personality( "Standard Least Squares" ),
-		Emphasis( "Minimal Report" ),
-		Run
-	),
-	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) )
-);
-obj << Surface Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Fit Group(	Fit Model(		Y( :ABRASION ),		Effects(			:SILICA & RS, :SILANE & RS, :SULFUR & RS, :SILICA * :SILICA, :SILICA * :SILANE, :SILANE * :SILANE,			:SILICA * :SULFUR, :SILANE * :SULFUR, :SULFUR * :SULFUR		),		Personality( "Standard Least Squares" ),		Emphasis( "Minimal Report" ),		Run	),	Gaussian Process( Y( :HARDNESS ), X( :SILICA, :SILANE, :SULFUR ), Set Correlation Function( "Cubic" ) ));obj << Surface Profiler( 1 );
 
 ```
 

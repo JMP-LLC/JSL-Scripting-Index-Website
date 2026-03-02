@@ -12,12 +12,7 @@
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Arrowhead( "Both" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Arrowhead( "Both" );
 
 ```
 
@@ -29,12 +24,7 @@ seg << Set Arrowhead( "Both" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Child; // not many segs support children
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Child; // not many segs support children
 
 ```
 
@@ -46,12 +36,7 @@ seg << Child; // not many segs support children
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Class Name;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Class Name;
 
 ```
 
@@ -65,22 +50,7 @@ seg << Class Name;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-Wait( 2 );
-cs << Clip Shape( Boundaries( "US States" ) );
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -96,12 +66,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Delete;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Delete;
 
 ```
 
@@ -115,12 +80,7 @@ seg << Delete;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Density Gradient( "Fade to Gray" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Density Gradient( "Fade to Gray" );
 
 ```
 
@@ -134,15 +94,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Set Error Bar Cap( "Large" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap( "Large" );
 
 ```
 
@@ -156,15 +108,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Set Error Bar Cap Shape( "Line", "Arrow" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```
 
@@ -182,12 +126,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Frame;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Frame;
 
 ```
 
@@ -199,13 +138,7 @@ seg << Frame;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Arrowhead( "Both" );
-Show( seg << Get Arrowhead );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Arrowhead( "Both" );Show( seg << Get Arrowhead );
 
 ```
 
@@ -219,23 +152,7 @@ Show( seg << Get Arrowhead );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );
-gb = Graph Builder(
-	Size( 653, 396 ),
-	Show Control Panel( 0 ),
-	Variables( X( :Longitude ), Y( :Latitude ) ),
-	Elements( Contour( X, Y, Legend( 2 ) ) ),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
-			Reference Line Order( 3 )}
-		)
-	)
-);
-cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
-cs << Clip Shape( Boundaries( "US States" ) );
-Wait( 2 );
-cs << Get Clip Shape();
+Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
 
 ```
 
@@ -247,12 +164,7 @@ cs << Get Clip Shape();
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-Show( seg << Get Connect Missing() );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));Show( seg << Get Connect Missing() );
 
 ```
 
@@ -266,12 +178,7 @@ Show( seg << Get Connect Missing() );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Density Gradient;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Density Gradient;
 
 ```
 
@@ -283,12 +190,7 @@ seg << Get Density Gradient;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << get description();
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << get description();
 
 ```
 
@@ -302,15 +204,7 @@ seg << get description();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Get Error Bar Cap();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Error Bar Cap();
 
 ```
 
@@ -324,15 +218,7 @@ seg << Get Error Bar Cap();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Get Error Bar Cap Shape();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Error Bar Cap Shape();
 
 ```
 
@@ -344,12 +230,7 @@ seg << Get Error Bar Cap Shape();
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient;
 
 ```
 
@@ -363,12 +244,7 @@ seg << Get Gradient;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Color Theme;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Color Theme;
 
 ```
 
@@ -382,12 +258,7 @@ seg << Get Gradient Color Theme;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Discrete Colors;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Discrete Colors;
 
 ```
 
@@ -401,11 +272,7 @@ seg << Get Gradient Discrete Colors;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Fill;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Fill;
 
 ```
 
@@ -419,12 +286,7 @@ seg << Get Gradient Fill;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Label Count;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Label Count;
 
 ```
 
@@ -436,28 +298,19 @@ seg << Get Gradient Label Count;
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -471,12 +324,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Legend Horizontal;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Legend Horizontal;
 
 ```
 
@@ -490,12 +338,7 @@ seg << Get Gradient Legend Horizontal;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Legend Label Format;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Legend Label Format;
 
 ```
 
@@ -509,12 +352,7 @@ seg << Get Gradient Legend Label Format;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Legend Label Width;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Legend Label Width;
 
 ```
 
@@ -528,12 +366,7 @@ seg << Get Gradient Legend Label Width;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Legend Show Labels;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Legend Show Labels;
 
 ```
 
@@ -547,12 +380,7 @@ seg << Get Gradient Legend Show Labels;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Levels;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Levels;
 
 ```
 
@@ -566,12 +394,7 @@ seg << Get Gradient Levels;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Lightness Range;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Lightness Range;
 
 ```
 
@@ -585,11 +408,7 @@ seg << Get Gradient Lightness Range;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Range;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Range;
 
 ```
 
@@ -603,12 +422,7 @@ seg << Get Gradient Range;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Reverse Color Order;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Reverse Color Order;
 
 ```
 
@@ -622,12 +436,7 @@ seg << Get Gradient Reverse Color Order;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Reverse Label Order;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Reverse Label Order;
 
 ```
 
@@ -641,11 +450,7 @@ seg << Get Gradient Reverse Label Order;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale;
 
 ```
 
@@ -657,28 +462,19 @@ seg << Get Gradient Scale;
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
-seg << Get Gradient Scale Values;
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
 
 ```
 
@@ -692,12 +488,7 @@ seg << Get Gradient Scale Values;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Show Missing;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Show Missing;
 
 ```
 
@@ -711,12 +502,7 @@ seg << Get Gradient Show Missing;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Gradient Transparency;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Gradient Transparency;
 
 ```
 
@@ -730,31 +516,7 @@ seg << Get Gradient Transparency;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :age ), Y( :weight ) ),
-	Elements(
-		Points(
-			X,
-			Y,
-			Legend( 3 ),
-			Summary Statistic( "Mean" ),
-			Error Interval( "Standard Deviation" )
-		)
-	),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Reference Line Order( 3 ), DispatchSeg(
-				BarSeg( 1 ),
-				{Set Interval Draw Directions( "Upper" )}
-			)}
-		)
-	)
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Get Interval Draw Directions;
+Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age ), Y( :weight ) ),	Elements(		Points(			X,			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Standard Deviation" )		)	),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Reference Line Order( 3 ), DispatchSeg(				BarSeg( 1 ),				{Set Interval Draw Directions( "Upper" )}			)}		)	));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Interval Draw Directions;
 
 ```
 
@@ -766,12 +528,7 @@ seg << Get Interval Draw Directions;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Line Color;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Line Color;
 
 ```
 
@@ -785,12 +542,7 @@ seg << Get Line Color;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Line Style;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Line Style;
 
 ```
 
@@ -804,12 +556,7 @@ seg << Get Line Style;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Line Width;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Line Width;
 
 ```
 
@@ -821,17 +568,7 @@ seg << Get Line Width;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-
-// Change Y Axis scale to Log
-g[AxisBox( 1 )] << Scale( "Log" );
-
-seg << Set Log Curve( 1 );
-seg << Get Log Curve;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));// Change Y Axis scale to Logg[AxisBox( 1 )] << Scale( "Log" );seg << Set Log Curve( 1 );seg << Get Log Curve;
 
 ```
 
@@ -845,12 +582,7 @@ seg << Get Log Curve;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Marker;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Marker;
 
 ```
 
@@ -864,12 +596,7 @@ seg << Get Marker;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Marker Size;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Marker Size;
 
 ```
 
@@ -881,12 +608,7 @@ seg << Get Marker Size;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Point( 2 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Point( 2 );
 
 ```
 
@@ -898,12 +620,7 @@ seg << Get Point( 2 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Point Count;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Point Count;
 
 ```
 
@@ -915,12 +632,7 @@ seg << Get Point Count;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Row Numbers;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Row Numbers;
 
 ```
 
@@ -932,13 +644,7 @@ seg << Get Row Numbers;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Smooth( 1 );
-seg << Get Smooth;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Smooth( 1 );seg << Get Smooth;
 
 ```
 
@@ -950,13 +656,7 @@ seg << Get Smooth;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Smoothness( 0.5 );
-seg << Get Smoothness;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Smoothness( 0.5 );seg << Get Smoothness;
 
 ```
 
@@ -968,12 +668,7 @@ seg << Get Smoothness;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-Show( seg << Get Unconnected Marker() );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));Show( seg << Get Unconnected Marker() );
 
 ```
 
@@ -985,12 +680,7 @@ Show( seg << Get Unconnected Marker() );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get X Values;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get X Values;
 
 ```
 
@@ -1002,12 +692,7 @@ seg << Get X Values;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get Y Values;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get Y Values;
 
 ```
 
@@ -1019,29 +704,19 @@ seg << Get Y Values;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Get halfpoint is unbounded line;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Get halfpoint is unbounded line;
 
 ```
 
 ### Gradient
 
-**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1055,12 +730,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1074,11 +744,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1092,12 +758,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1111,12 +772,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1130,11 +786,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1148,12 +800,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1167,12 +814,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1186,12 +828,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1205,12 +842,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1224,12 +856,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1241,42 +868,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -1290,11 +902,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -1308,12 +916,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -1327,12 +930,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -1346,11 +944,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -1364,11 +958,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1382,14 +972,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -1403,12 +986,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Gradient Transparency( "None" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Gradient Transparency( "None" );
 
 ```
 
@@ -1432,12 +1010,7 @@ seg << Gradient Transparency( "None" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Color( "Green" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Color( "Green" );
 
 ```
 
@@ -1451,12 +1024,7 @@ seg << Set Line Color( "Green" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Style( "Dotted" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -1470,12 +1038,7 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Width( 3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Width( 3 );
 
 ```
 
@@ -1489,12 +1052,7 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Marker( "Square" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Marker( "Square" );
 
 ```
 
@@ -1508,13 +1066,7 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Marker( "Square" );
-seg << Set Marker Size( "XL" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Marker( "Square" );seg << Set Marker Size( "XL" );
 
 ```
 
@@ -1544,12 +1096,7 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Parent;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Parent;
 
 ```
 
@@ -1561,12 +1108,7 @@ seg << Parent;
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Arrowhead( "Both" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Arrowhead( "Both" );
 
 ```
 
@@ -1578,12 +1120,7 @@ seg << Set Arrowhead( "Both" );
 
 ```jsl
 
-x = (1 :: 9) * 10;
-y = [10, 20, ., 60, ., 40, 30, ., 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Connect Missing( "Connect Faded" );
+x = (1 :: 9) * 10;y = [10, 20, ., 60, ., 40, 30, ., 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Connect Missing( "Connect Faded" );
 
 ```
 
@@ -1595,12 +1132,7 @@ seg << Set Connect Missing( "Connect Faded" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << set description( "my seg" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << set description( "my seg" );
 
 ```
 
@@ -1614,15 +1146,7 @@ seg << set description( "my seg" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Set Error Bar Cap( "Large" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap( "Large" );
 
 ```
 
@@ -1636,32 +1160,19 @@ seg << Set Error Bar Cap( "Large" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :Age ), Y( :Height ) ),
-	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
-
-);
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Set Error Bar Cap Shape( "Line", "Arrow" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```
 
 ### Set Gradient
 
-**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1675,12 +1186,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Color Theme( "Viridis" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1694,12 +1200,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```
 
@@ -1713,11 +1214,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Marker Seg( 1 ) );
-seg << Set Gradient Discrete Colors( 1 );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1731,12 +1228,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Middle 90%" );
-seg << Set Gradient Fill( "Between" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1750,12 +1242,7 @@ seg << Set Gradient Fill( "Between" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Label Count( 8 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1769,11 +1256,7 @@ seg << Set Gradient Label Count( 8 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1787,12 +1270,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Horizontal( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1806,12 +1284,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1825,12 +1298,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Label Width( 4 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1844,12 +1312,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Legend Show Labels( 0 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1863,12 +1326,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Levels( 7 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1880,42 +1338,27 @@ seg << Set Gradient Levels( 7 );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( 0.25, 0.75 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Lightness Range( ., 0.75 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -1929,11 +1372,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Range( "Exact Data Range" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -1947,12 +1386,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Reverse Color Order( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -1966,12 +1400,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Gradient Reverse Label Order( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -1985,11 +1414,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale( "Quantile" );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -2003,11 +1428,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );
-gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Contour Seg( 1 ) );
-seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -2021,14 +1442,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );
-gb = Graph Builder(
-	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
-	Elements( Bar( X, Y ) )
-);
-frame = (gb << Report)[FrameBox( 1 )];
-seg = frame << Find Seg( Bar Seg( 1 ) );
-seg << Set Gradient Show Missing( "Off" );
+dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -2042,31 +1456,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Graph Builder(
-	Variables( X( :age ), Y( :weight ) ),
-	Elements(
-		Points(
-			X,
-			Y,
-			Legend( 3 ),
-			Summary Statistic( "Mean" ),
-			Error Interval( "Standard Deviation" )
-		)
-	),
-	SendToReport(
-		Dispatch( {}, "Graph Builder", FrameBox,
-			{Reference Line Order( 3 ), DispatchSeg(
-				BarSeg( 1 ),
-				{Set Interval Draw Directions( "Upper" )}
-			)}
-		)
-	)
-);
-
-frame = Report( obj )[FrameBox( 1 )];
-seg = (frame << Find Seg( "Bar Seg" ));
-seg << Set Interval Draw Directions( "Lower" );
+Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age ), Y( :weight ) ),	Elements(		Points(			X,			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Standard Deviation" )		)	),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Reference Line Order( 3 ), DispatchSeg(				BarSeg( 1 ),				{Set Interval Draw Directions( "Upper" )}			)}		)	));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Interval Draw Directions( "Lower" );
 
 ```
 
@@ -2078,12 +1468,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Color( "Green" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Color( "Green" );
 
 ```
 
@@ -2097,12 +1482,7 @@ seg << Set Line Color( "Green" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Style( "Dotted" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -2116,12 +1496,7 @@ seg << Set Line Style( "Dotted" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Line Width( 3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Line Width( 3 );
 
 ```
 
@@ -2133,16 +1508,7 @@ seg << Set Line Width( 3 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-
-// Change Y Axis scale to Log
-g[AxisBox( 1 )] << Scale( "Log" );
-
-seg << Set Log Curve( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));// Change Y Axis scale to Logg[AxisBox( 1 )] << Scale( "Log" );seg << Set Log Curve( 1 );
 
 ```
 
@@ -2156,12 +1522,7 @@ seg << Set Log Curve( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Marker( "Square" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Marker( "Square" );
 
 ```
 
@@ -2175,13 +1536,7 @@ seg << Set Marker( "Square" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Marker( "Square" );
-seg << Set Marker Size( "XL" );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Marker( "Square" );seg << Set Marker Size( "XL" );
 
 ```
 
@@ -2193,12 +1548,7 @@ seg << Set Marker Size( "XL" );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Smooth( 1 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Smooth( 1 );
 
 ```
 
@@ -2210,12 +1560,7 @@ seg << Set Smooth( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Smoothness( 0.5 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Smoothness( 0.5 );
 
 ```
 
@@ -2229,12 +1574,7 @@ seg << Set Smoothness( 0.5 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Transparency( .3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 
@@ -2246,12 +1586,7 @@ seg << Set Transparency( .3 );
 
 ```jsl
 
-x = (1 :: 9) * 10;
-y = [10, 20, ., 60, ., 40, 30, ., 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Unconnected Marker( "diamond" );
+x = (1 :: 9) * 10;y = [10, 20, ., 60, ., 40, 30, ., 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Unconnected Marker( "diamond" );
 
 ```
 
@@ -2263,12 +1598,7 @@ seg << Set Unconnected Marker( "diamond" );
 
 ```jsl
 
-x = [.];
-y = [30];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set halfpoint is unbounded line( 1 );
+x = [.];y = [30];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set halfpoint is unbounded line( 1 );
 
 ```
 
@@ -2280,12 +1610,7 @@ seg << Set halfpoint is unbounded line( 1 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Sib;
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Sib;
 
 ```
 
@@ -2297,31 +1622,7 @@ seg << Sib;
 
 ```jsl
 
-win = New Window( "World",
-	gb = Graph(
-		FrameSize( 800, 400 ),
-		X Scale( -180, 180 ),
-		Y Scale( -90, 90 ),
-		<<Background Map( Images( "Simple Earth" ) )
-	)
-);
-imgBox = win[framebox( 1 )];
-mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
-mapSeg << Transparency( 0.5 );
-Try(
-	xAxis = gb[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = gb[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -2333,25 +1634,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-Try(
-	xAxis = g[AxisBox( 2 )];
-	xMin = (xAxis << get min);
-	xMax = (xAxis << get max);
-,
-	xMin = 0;
-	xMax = 100;
-);
-yAxis = g[AxisBox( 1 )];
-yMin = (yAxis << get min);
-yMax = (yAxis << get max);
-xval = Matrix( {xmin, xmax} );
-yval = Matrix( {ymin, ymax} );
-seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -2365,12 +1648,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
-seg << Set Transparency( .3 );
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));seg << Set Transparency( .3 );
 
 ```
 
@@ -2378,63 +1656,25 @@ seg << Set Transparency( .3 );
 
 ### Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
 ### Get Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objects
-New Window( "enabled",
-	V List Box(
-		check = Check Box(
-			{"Use Password"},
-			ptext << Enabled( check << Get( 1 ) );
-			pvalue << Enabled( check << Get( 1 ) );
-		),
-		Lineup Box( N Col( 2 ),
-			Text Box( "Username:" ),
-			Text Edit Box( "", <<Set Width( 100 ) ),
-			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
-			pvalue = Text Edit Box( "",
-				<<Password Style( 1 ),
-				<<Set Width( 20 ),
-				<<Enabled( 0 )
-			)
-		)
-	)
-);
+//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
 
 ```
 
@@ -2446,12 +1686,7 @@ New Window( "enabled",
 
 ```jsl
 
-//This message applies to all display objects
-x = 1;
-w = New Window( "Test", b = Button Box( "Press me" ) );
-b:x = 2;
-ns = b << GetNamespace();
-Show( ns:x, x );
+//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
 
 ```
 
@@ -2463,8 +1698,7 @@ Show( ns:x, x );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Properties;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
 
 ```
 
@@ -2476,8 +1710,7 @@ bb << Get Properties;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property( "Enabled" );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
 
 ```
 
@@ -2489,8 +1722,7 @@ bb << Get Property( "Enabled" );
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Get Property List;
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
 
 ```
 
@@ -2502,8 +1734,7 @@ bb << Get Property List;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
-bb << Set Property( "Enabled", 0 );
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -2517,11 +1748,7 @@ bb << Set Property( "Enabled", 0 );
 
 ```jsl
 
-x = [10, 50, 90];
-y = [10, 90, 10];
-New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
-frame = g[FrameBox( 1 )];
-seg = (frame << Find Seg( Line Seg( 1 ) ));
+x = [10, 50, 90];y = [10, 90, 10];New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Line Seg( 1 ) ));
 
 ```
 

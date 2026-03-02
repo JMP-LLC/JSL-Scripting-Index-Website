@@ -66,7 +66,7 @@ Floor( 1.2 );
 
 **JMP추가된 버전:** 버전 14 이전
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -74,12 +74,11 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-x = 100;
-Integrate( Normal Density( x - 100 ), x, ., . );
+x = 100;Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```
 
@@ -149,9 +148,7 @@ Normal Integrate( J( 3, 1, 0 ), Identity( 3 ), ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2
 
 ```jsl
 
-f = Function( {x, y}, x ^ 2 + y );
-Num Deriv( f( 2, 1 ) );
-Num Deriv( f( 2, 1 ), 2 );
+f = Function( {x, y}, x ^ 2 + y );Num Deriv( f( 2, 1 ) );Num Deriv( f( 2, 1 ), 2 );
 
 ```
 
@@ -165,8 +162,7 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
-f = Function( {x}, x ^ 3 );
-Num Deriv2( f( 2 ) );
+f = Function( {x}, x ^ 3 );Num Deriv2( f( 2 ) );
 
 ```
 

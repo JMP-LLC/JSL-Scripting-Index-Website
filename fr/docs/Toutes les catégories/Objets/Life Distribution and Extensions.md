@@ -14,6 +14,8 @@
 
 **Syntaxe :** obj &lt;&lt; Freq( column )
 
+**Description :** Spécifie une colonne dont les valeurs assignent une fréquence à chaque ligne pour l&apos;analyse.
+
 #### Grouping
 
 **Syntaxe :** obj &lt;&lt; Grouping( column(s) )
@@ -40,15 +42,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Select Distribution( Distribution, Exponential )
-);
-obj << Change Confidence Level( 0.99 );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Select Distribution( Distribution, Exponential ));obj << Change Confidence Level( 0.99 );
 
 ```
 
@@ -64,16 +58,7 @@ obj << Change Confidence Level( 0.99 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Select Distribution( Distribution, Exponential )
-);
-obj << Estimate Probability( 1 );
-obj << Estimate Probability( Compute( [1000] ) );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Select Distribution( Distribution, Exponential ));obj << Estimate Probability( 1 );obj << Estimate Probability( Compute( [1000] ) );
 
 ```
 
@@ -85,17 +70,7 @@ obj << Estimate Probability( Compute( [1000] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Show Quantile Functions( 1 )
-);
-obj << Select Distribution( Quantile, Exponential );
-obj << Estimate Quantile( 1 );
-obj << Estimate Quantile( Compute( [.1] ) );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Show Quantile Functions( 1 ));obj << Select Distribution( Quantile, Exponential );obj << Estimate Quantile( 1 );obj << Estimate Quantile( Compute( [.1] ) );
 
 ```
 
@@ -107,14 +82,7 @@ obj << Estimate Quantile( Compute( [.1] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor )
-);
-obj << Fit Distribution( "Loglogistic" );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ));obj << Fit Distribution( "Loglogistic" );
 
 ```
 
@@ -126,15 +94,7 @@ obj << Fit Distribution( "Loglogistic" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor )
-);
-Wait( 1 );
-obj << Interval Type( "Pointwise" );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ));Wait( 1 );obj << Interval Type( "Pointwise" );
 
 ```
 
@@ -146,14 +106,7 @@ obj << Interval Type( "Pointwise" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor )
-);
-obj << Select Distribution( Distribution, Weibull );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ));obj << Select Distribution( Distribution, Weibull );
 
 ```
 
@@ -165,14 +118,7 @@ obj << Select Distribution( Distribution, Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor )
-);
-obj << Select Scale( Normal );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ));obj << Select Scale( Normal );
 
 ```
 
@@ -184,16 +130,7 @@ obj << Select Scale( Normal );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Select Distribution( Distribution, Exponential )
-);
-Wait( 1 );
-obj << Show Confidence Area( 0 );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Select Distribution( Distribution, Exponential ));Wait( 1 );obj << Show Confidence Area( 0 );
 
 ```
 
@@ -205,15 +142,7 @@ obj << Show Confidence Area( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Show Density Functions( 1 )
-);
-obj << Select Distribution( Density, Weibull );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Show Density Functions( 1 ));obj << Select Distribution( Density, Weibull );
 
 ```
 
@@ -225,15 +154,7 @@ obj << Select Distribution( Density, Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Show Hazard Functions( 1 )
-);
-obj << Select Distribution( Hazard, Weibull );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Show Hazard Functions( 1 ));obj << Select Distribution( Hazard, Weibull );
 
 ```
 
@@ -245,15 +166,7 @@ obj << Select Distribution( Hazard, Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor )
-);
-Wait( 1 );
-obj << Show Points( 0 );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ));Wait( 1 );obj << Show Points( 0 );
 
 ```
 
@@ -265,15 +178,7 @@ obj << Show Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Show Quantile Functions( 1 )
-);
-obj << Select Distribution( Quantile, Weibull );
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Show Quantile Functions( 1 ));obj << Select Distribution( Quantile, Weibull );
 
 ```
 
@@ -285,14 +190,7 @@ obj << Select Distribution( Quantile, Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Show Survival Curve( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Show Survival Curve( 1 ));
 
 ```
 
@@ -304,14 +202,7 @@ obj = Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Rats.jmp" );
-obj = Life Distribution(
-	Perspective( Compare Groups ),
-	Y( :days ),
-	Grouping( :Group ),
-	Censor( :Censor ),
-	Tabbed Report( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Rats.jmp" );obj = Life Distribution(	Perspective( Compare Groups ),	Y( :days ),	Grouping( :Group ),	Censor( :Censor ),	Tabbed Report( 1 ));
 
 ```
 
@@ -325,12 +216,7 @@ obj = Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -346,13 +232,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -360,10 +240,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -371,10 +248,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -386,8 +260,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -401,12 +274,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -418,12 +286,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -473,9 +336,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -487,8 +348,7 @@ biv << Get By Levels;
 
 ```jsl
 
-t = obj[1] << Get ByGroup Script;
-Show( t );
+t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -502,8 +362,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -511,29 +370,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -545,8 +382,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -558,11 +394,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -574,8 +406,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-t = obj << Get Script;
-Show( t );
+t = obj << Get Script;Show( t );
 
 ```
 
@@ -587,8 +418,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Script With Data Table;
-Show( t );
+t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -600,8 +430,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Timing;
-Show( t );
+t = obj << Get Timing;Show( t );
 
 ```
 
@@ -613,10 +442,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -630,14 +456,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -649,13 +468,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -667,32 +480,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-#### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -706,9 +494,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -720,15 +506,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -744,18 +522,6 @@ obj << Redo Analysis;
 
 ```
 
-#### Redo ByGroup Analysis
-
-**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
-
-```jsl
-
-obj[1] << Redo ByGroup Analysis;
-
-```
-
 #### Relaunch Analysis
 
 **Syntaxe :** obj &lt;&lt; Relaunch Analysis
@@ -768,18 +534,6 @@ obj << Relaunch Analysis;
 
 ```
 
-#### Relaunch ByGroup
-
-**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
-
-**Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
-
-```jsl
-
-obj[1] << Relaunch ByGroup;
-
-```
-
 #### Remove Column Switcher
 
 **Syntaxe :** obj &lt;&lt; Remove Column Switcher
@@ -788,14 +542,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -807,46 +554,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -988,15 +708,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1008,23 +720,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value(
-				Time( 6000, Lock( 0 ), Show( 1 ) )
-			)}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1036,14 +732,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1055,11 +744,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1083,9 +768,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1101,11 +784,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1117,34 +796,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 #### Window View
 
-**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1160,16 +824,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Mean Remaining Life(
-	Configuration( 1, 100, 1000, 333 ),
-	Compute( [1000 2000] )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Mean Remaining Life( Configuration( 1, 100, 1000, 333 ), Compute( [1000 2000] ) );
 
 ```
 
@@ -1181,16 +836,7 @@ obj << Mean Remaining Life(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Mean Remaining Life(
-	Configuration( 1, 100, 1000, 333 ),
-	Compute( [1000 2000] )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Mean Remaining Life( Configuration( 1, 100, 1000, 333 ), Compute( [1000 2000] ) );
 
 ```
 
@@ -1202,17 +848,7 @@ obj << Mean Remaining Life(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Mean Remaining Life(
-	Configuration( 1, 100, 1000, 333 ),
-	Compute( [1000 2000] )
-);
-obj << Mean Remaining Life( Get Results );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Mean Remaining Life( Configuration( 1, 100, 1000, 333 ), Compute( [1000 2000] ) );obj << Mean Remaining Life( Get Results );
 
 ```
 
@@ -1223,6 +859,8 @@ obj << Mean Remaining Life( Get Results );
 #### By
 
 **Syntaxe :** obj &lt;&lt; By( column(s) )
+
+**Description :** Lance une analyse distincte pour chaque niveau de la colonne spécifiée.
 
 #### Censor
 
@@ -1235,6 +873,8 @@ obj << Mean Remaining Life( Get Results );
 #### Freq
 
 **Syntaxe :** obj &lt;&lt; Freq( column )
+
+**Description :** Spécifie une colonne dont les valeurs assignent une fréquence à chaque ligne pour l&apos;analyse.
 
 #### Label
 
@@ -1258,19 +898,7 @@ obj << Mean Remaining Life( Get Results );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull ),
-	Allow failure mode to use Bayesian models( 1 ),
-	Fit Model(
-		{{"0", Bayesian Lognormal, 0}, {"1", Weibull, 1}, {"10", Weibull, 0}, {"15",
-		Weibull, 0}, {"2", Weibull, 0}, {"5", Weibull, 0}, {"6", Weibull, 0}, {"9",
-		Weibull, 0}}
-	)
-);
-obj << Bootstrap Sample Size( 1000 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ),	Allow failure mode to use Bayesian models( 1 ),	Fit Model(		{{"0", Bayesian Lognormal, 0}, {"1", Weibull, 1}, {"10", Weibull, 0}, {"15", Weibull,		0}, {"2", Weibull, 0}, {"5", Weibull, 0}, {"6", Weibull, 0}, {"9", Weibull, 0}}	));obj << Bootstrap Sample Size( 1000 );
 
 ```
 
@@ -1282,14 +910,7 @@ obj << Bootstrap Sample Size( 1000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Show Remaining Life Distribution( 1 );
-p = obj << Compute Remaining Life Distribution( 2000, 4000 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Show Remaining Life Distribution( 1 );p = obj << Compute Remaining Life Distribution( 2000, 4000 );
 
 ```
 
@@ -1301,13 +922,7 @@ p = obj << Compute Remaining Life Distribution( 2000, 4000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-d = obj << Density( .5 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));d = obj << Density( .5 );
 
 ```
 
@@ -1319,19 +934,7 @@ d = obj << Density( .5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull ),
-	Allow failure mode to use Bayesian models( 1 ),
-	Fit Model(
-		{{"0", Bayesian Lognormal, 0}, {"1", Weibull, 1}, {"10", Weibull, 0}, {"15",
-		Weibull, 0}, {"2", Weibull, 0}, {"5", Weibull, 0}, {"6", Weibull, 0}, {"9",
-		Weibull, 0}}
-	)
-);
-obj << Export Bootstrap Results( 15000 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ),	Allow failure mode to use Bayesian models( 1 ),	Fit Model(		{{"0", Bayesian Lognormal, 0}, {"1", Weibull, 1}, {"10", Weibull, 0}, {"15", Weibull,		0}, {"2", Weibull, 0}, {"5", Weibull, 0}, {"6", Weibull, 0}, {"9", Weibull, 0}}	));obj << Export Bootstrap Results( 15000 );
 
 ```
 
@@ -1343,14 +946,7 @@ obj << Export Bootstrap Results( 15000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull ),
-	Allow failure mode to use Bayesian models( 1 )
-);
-dt = obj << Export Lifetime Data for Individual Causes();
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ),	Allow failure mode to use Bayesian models( 1 ));dt = obj << Export Lifetime Data for Individual Causes();
 
 ```
 
@@ -1362,16 +958,7 @@ dt = obj << Export Lifetime Data for Individual Causes();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Fit Model(
-	{{"0", Weibull, 1}, {"10", Weibull, 0}, {"15", Weibull, 0}, {"2", Weibull, 0},
-	{"5", Weibull, 0}, {"6", Weibull, 0}, {"9", Weibull, 0}}
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Fit Model(	{{"0", Weibull, 1}, {"10", Weibull, 0}, {"15", Weibull, 0}, {"2", Weibull, 0}, {"5",	Weibull, 0}, {"6", Weibull, 0}, {"9", Weibull, 0}});
 
 ```
 
@@ -1383,13 +970,7 @@ obj << Fit Model(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-lst = obj << Get Causes;
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));lst = obj << Get Causes;
 
 ```
 
@@ -1401,13 +982,7 @@ lst = obj << Get Causes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-res = obj << Get Estimates;
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));res = obj << Get Estimates;
 
 ```
 
@@ -1419,13 +994,7 @@ res = obj << Get Estimates;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-ld = (obj << Get Life Distribution( 1 ));
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));ld = (obj << Get Life Distribution( 1 ));
 
 ```
 
@@ -1437,13 +1006,7 @@ ld = (obj << Get Life Distribution( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-spec = obj << Get Model Specification;
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));spec = obj << Get Model Specification;
 
 ```
 
@@ -1455,19 +1018,13 @@ spec = obj << Get Model Specification;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-h = obj << Hazard( 2500 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));h = obj << Hazard( 2500 );
 
 ```
 
 #### Mean Remaining Life
 
-**Syntaxe :** obj &lt;&lt; Mean Remaining Life( state=0|1 )obj &lt;&lt; Mean Remaining Life( Configuration(), Compute(), Get Results )
+**Syntaxe :** obj &lt;&lt; Mean Remaining Life( state=0|1 ) obj &lt;&lt; Mean Remaining Life( Configuration(), Compute(), Get Results )
 
 **Description :** Affiche ou masque le Calculateur de la durée de vie résiduelle moyenne, qui vous permet d&apos;estimer la durée de vie résiduelle moyenne d&apos;une unité à un temps de survie donné. Vous pouvez également utiliser cette option pour envoyer des messages à l&apos;objet Calculateur de la durée de vie résiduelle moyenne.
 
@@ -1475,13 +1032,7 @@ h = obj << Hazard( 2500 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Mean Remaining Life( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Mean Remaining Life( 1 );
 
 ```
 
@@ -1489,16 +1040,7 @@ obj << Mean Remaining Life( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Mean Remaining Life(
-	Configuration( 1, 100, 1000, 333 ),
-	Compute( [1000 2000] )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Mean Remaining Life( Configuration( 1, 100, 1000, 333 ), Compute( [1000 2000] ) );
 
 ```
 
@@ -1510,14 +1052,7 @@ obj << Mean Remaining Life(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-Wait( 1 );
-obj << Omit( 1, 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));Wait( 1 );obj << Omit( 1, 1 );
 
 ```
 
@@ -1529,13 +1064,7 @@ obj << Omit( 1, 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-p = obj << Probability( 2500 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));p = obj << Probability( 2500 );
 
 ```
 
@@ -1547,13 +1076,7 @@ p = obj << Probability( 2500 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-q = obj << Quantile( .5 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));q = obj << Quantile( .5 );
 
 ```
 
@@ -1565,14 +1088,7 @@ q = obj << Quantile( .5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-Wait( 1 );
-obj << Set Scale( Weibull );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));Wait( 1 );obj << Set Scale( Weibull );
 
 ```
 
@@ -1584,14 +1100,7 @@ obj << Set Scale( Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-Wait( 1 );
-obj << Show Points( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));Wait( 1 );obj << Show Points( 0 );
 
 ```
 
@@ -1603,13 +1112,7 @@ obj << Show Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Show Remaining Life Distribution( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Show Remaining Life Distribution( 1 );
 
 ```
 
@@ -1621,13 +1124,7 @@ obj << Show Remaining Life Distribution( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Show Subdistributions( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Show Subdistributions( 1 );
 
 ```
 
@@ -1639,14 +1136,7 @@ obj << Show Subdistributions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull )
-);
-obj << Show Subdistributions( 1 );
-obj << Subdistribution( Cause( 2 ), Compute( [5000, 10000] ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ));obj << Show Subdistributions( 1 );obj << Subdistribution( Cause( 2 ), Compute( [5000, 10000] ) );
 
 ```
 
@@ -1658,13 +1148,7 @@ obj << Subdistribution( Cause( 2 ), Compute( [5000, 10000] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull ),
-	Tabbed Report( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ),	Tabbed Report( 1 ));
 
 ```
 
@@ -1676,13 +1160,7 @@ obj = dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	Failure Cause( :Cause Code ),
-	Failure Distribution by Cause( Weibull ),
-	Tabbed Report for Individual Causes( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Appliance.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	Failure Cause( :Cause Code ),	Failure Distribution by Cause( Weibull ),	Tabbed Report for Individual Causes( 1 ));
 
 ```
 
@@ -1696,12 +1174,7 @@ obj = dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1717,13 +1190,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1731,10 +1198,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1742,10 +1206,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1757,8 +1218,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1772,12 +1232,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1789,12 +1244,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1844,9 +1294,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1858,8 +1306,7 @@ biv << Get By Levels;
 
 ```jsl
 
-t = obj[1] << Get ByGroup Script;
-Show( t );
+t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1873,8 +1320,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1882,29 +1328,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1916,8 +1340,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1929,11 +1352,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1945,8 +1364,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-t = obj << Get Script;
-Show( t );
+t = obj << Get Script;Show( t );
 
 ```
 
@@ -1958,8 +1376,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Script With Data Table;
-Show( t );
+t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1971,8 +1388,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Timing;
-Show( t );
+t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1984,10 +1400,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -2001,14 +1414,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -2020,13 +1426,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -2038,32 +1438,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-#### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -2077,9 +1452,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -2091,15 +1464,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -2115,18 +1480,6 @@ obj << Redo Analysis;
 
 ```
 
-#### Redo ByGroup Analysis
-
-**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
-
-```jsl
-
-obj[1] << Redo ByGroup Analysis;
-
-```
-
 #### Relaunch Analysis
 
 **Syntaxe :** obj &lt;&lt; Relaunch Analysis
@@ -2139,18 +1492,6 @@ obj << Relaunch Analysis;
 
 ```
 
-#### Relaunch ByGroup
-
-**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
-
-**Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
-
-```jsl
-
-obj[1] << Relaunch ByGroup;
-
-```
-
 #### Remove Column Switcher
 
 **Syntaxe :** obj &lt;&lt; Remove Column Switcher
@@ -2159,14 +1500,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -2178,46 +1512,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2359,15 +1666,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -2379,23 +1678,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value(
-				Time( 6000, Lock( 0 ), Show( 1 ) )
-			)}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -2407,14 +1690,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -2426,11 +1702,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -2454,9 +1726,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2472,11 +1742,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2488,34 +1754,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 #### Window View
 
-**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -2527,15 +1778,11 @@ New Window( "Bivariate Equation",
 
 **Syntaxe :** obj &lt;&lt; By( column(s) )
 
+**Description :** Lance une analyse distincte pour chaque niveau de la colonne spécifiée.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -2545,8 +1792,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2556,8 +1802,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2565,15 +1810,11 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 **Syntaxe :** obj &lt;&lt; Freq( column )
 
+**Description :** Spécifie une colonne dont les valeurs assignent une fréquence à chaque ligne pour l&apos;analyse.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_freqcol",
-	Numeric,
-	Continuous,
-	Formula( Random Integer( 1, 5 ) )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Freq( _freqcol ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Freq( :_freqcol ) );
 
 ```
 
@@ -2583,8 +1824,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Freq( _freqcol ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2594,8 +1834,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2605,8 +1844,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2620,8 +1858,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```
 
@@ -2635,14 +1872,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Life Distribution(
-	Y( :Hours ),
-	Censor( :Status ),
-	Freq( :Weight ),
-	Censor Code( "Censored" )
-);
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Life Distribution(	Y( :Hours ),	Censor( :Status ),	Freq( :Weight ),	Censor Code( "Censored" ));obj << Fit Lognormal;
 
 ```
 
@@ -2654,9 +1884,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Change Confidence Level( 0.99 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Change Confidence Level( 0.99 );
 
 ```
 
@@ -2668,10 +1896,7 @@ obj << Change Confidence Level( 0.99 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit All Distributions;
-obj << Comparison Criterion( BIC );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit All Distributions;obj << Comparison Criterion( BIC );
 
 ```
 
@@ -2683,15 +1908,7 @@ obj << Comparison Criterion( BIC );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Life Distribution(
-	Y( :Hours ),
-	Censor( :Status ),
-	Freq( :Weight ),
-	Censor Code( "Censored" ),
-	Confidence Interval Method( "Likelihood" )
-);
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Life Distribution(	Y( :Hours ),	Censor( :Status ),	Freq( :Weight ),	Censor Code( "Censored" ),	Confidence Interval Method( "Likelihood" ));obj << Fit Lognormal;
 
 ```
 
@@ -2703,16 +1920,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Blenders.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	By( :Group ),
-	Censor( :Censor ),
-	Fit Exponential
-);
-obj[2] << Fit Weibull;
-Wait( 1 );
-obj[2] << Do Same Analyses For All Groups;
+dt = Open( "$SAMPLE_DATA/Reliability/Blenders.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	By( :Group ),	Censor( :Censor ),	Fit Exponential);obj[2] << Fit Weibull;Wait( 1 );obj[2] << Do Same Analyses For All Groups;
 
 ```
 
@@ -2724,9 +1932,7 @@ obj[2] << Do Same Analyses For All Groups;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit All DS Distributions;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit All DS Distributions;
 
 ```
 
@@ -2738,9 +1944,7 @@ obj << Fit All DS Distributions;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit All Distributions;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit All Distributions;
 
 ```
 
@@ -2752,9 +1956,7 @@ obj << Fit All Distributions;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit All Nonnegative;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit All Nonnegative;
 
 ```
 
@@ -2766,17 +1968,7 @@ obj << Fit All Nonnegative;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Life Distribution(
-	Y( :Hours ),
-	Censor( :Status ),
-	Censor Code( "Censored" ),
-	Freq( :Weight ),
-	<<Fit Lognormal
-);
-obj << Fit Competing Risk Mixture(
-	Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) )
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Life Distribution(	Y( :Hours ),	Censor( :Status ),	Censor Code( "Censored" ),	Freq( :Weight ),	<<Fit Lognormal);obj << Fit Competing Risk Mixture(	Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) ));
 
 ```
 
@@ -2788,9 +1980,7 @@ obj << Fit Competing Risk Mixture(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit DS Frechet;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit DS Frechet;
 
 ```
 
@@ -2802,9 +1992,7 @@ obj << Fit DS Frechet;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit DS Loglogistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit DS Loglogistic;
 
 ```
 
@@ -2816,9 +2004,7 @@ obj << Fit DS Loglogistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit DS Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit DS Lognormal;
 
 ```
 
@@ -2830,9 +2016,7 @@ obj << Fit DS Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit DS Weibull;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit DS Weibull;
 
 ```
 
@@ -2844,9 +2028,7 @@ obj << Fit DS Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Exponential;
 
 ```
 
@@ -2858,9 +2040,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Frechet;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Frechet;
 
 ```
 
@@ -2872,9 +2052,7 @@ obj << Fit Frechet;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit GenGamma;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit GenGamma;
 
 ```
 
@@ -2886,9 +2064,7 @@ obj << Fit GenGamma;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit LEV;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit LEV;
 
 ```
 
@@ -2900,9 +2076,7 @@ obj << Fit LEV;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit LogGenGamma;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit LogGenGamma;
 
 ```
 
@@ -2914,9 +2088,7 @@ obj << Fit LogGenGamma;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Logistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Logistic;
 
 ```
 
@@ -2928,9 +2100,7 @@ obj << Fit Logistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Loglogistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Loglogistic;
 
 ```
 
@@ -2942,9 +2112,7 @@ obj << Fit Loglogistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Lognormal;
 
 ```
 
@@ -2956,15 +2124,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );
-obj = dt << Life Distribution(
-	Y( :Hours ),
-	Censor( :Status ),
-	Censor Code( "Censored" ),
-	Freq( :Weight ),
-	<<Fit Lognormal
-);
-obj << Fit Mixture( Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Devalt.jmp" );obj = dt << Life Distribution(	Y( :Hours ),	Censor( :Status ),	Censor Code( "Censored" ),	Freq( :Weight ),	<<Fit Lognormal);obj << Fit Mixture( Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) ) );
 
 ```
 
@@ -2976,9 +2136,7 @@ obj << Fit Mixture( Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Normal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Normal;
 
 ```
 
@@ -2990,9 +2148,7 @@ obj << Fit Normal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit SEV;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit SEV;
 
 ```
 
@@ -3004,9 +2160,7 @@ obj << Fit SEV;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit TH Frechet;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit TH Frechet;
 
 ```
 
@@ -3018,9 +2172,7 @@ obj << Fit TH Frechet;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit TH Loglogistic;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit TH Loglogistic;
 
 ```
 
@@ -3032,9 +2184,7 @@ obj << Fit TH Loglogistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit TH Lognormal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit TH Lognormal;
 
 ```
 
@@ -3046,9 +2196,7 @@ obj << Fit TH Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit TH Weibull;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit TH Weibull;
 
 ```
 
@@ -3060,9 +2208,7 @@ obj << Fit TH Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Fit Weibull;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Fit Weibull;
 
 ```
 
@@ -3074,9 +2220,7 @@ obj << Fit Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Spring.jmp" );
-obj = dt << Life Distribution( Y( :Precip ) );
-obj << Fit ZI Frechet;
+dt = Open( "$SAMPLE_DATA/Spring.jmp" );obj = dt << Life Distribution( Y( :Precip ) );obj << Fit ZI Frechet;
 
 ```
 
@@ -3088,9 +2232,7 @@ obj << Fit ZI Frechet;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Spring.jmp" );
-obj = dt << Life Distribution( Y( :Precip ) );
-obj << Fit ZI Loglogistic;
+dt = Open( "$SAMPLE_DATA/Spring.jmp" );obj = dt << Life Distribution( Y( :Precip ) );obj << Fit ZI Loglogistic;
 
 ```
 
@@ -3102,9 +2244,7 @@ obj << Fit ZI Loglogistic;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Spring.jmp" );
-obj = dt << Life Distribution( Y( :Precip ) );
-obj << Fit ZI Lognormal;
+dt = Open( "$SAMPLE_DATA/Spring.jmp" );obj = dt << Life Distribution( Y( :Precip ) );obj << Fit ZI Lognormal;
 
 ```
 
@@ -3116,9 +2256,7 @@ obj << Fit ZI Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Spring.jmp" );
-obj = dt << Life Distribution( Y( :Precip ) );
-obj << Fit ZI Weibull;
+dt = Open( "$SAMPLE_DATA/Spring.jmp" );obj = dt << Life Distribution( Y( :Precip ) );obj << Fit ZI Weibull;
 
 ```
 
@@ -3130,15 +2268,7 @@ obj << Fit ZI Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Fit Exponential,
-	Set Scale( Exponential )
-);
-estimate = obj << Get Estimates;
-Show( estimate );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Fit Exponential,	Set Scale( Exponential ));estimate = obj << Get Estimates;Show( estimate );
 
 ```
 
@@ -3150,15 +2280,7 @@ Show( estimate );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Fit Exponential,
-	Set Scale( Exponential )
-);
-formula = obj << Get Formula;
-Show( formula );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Fit Exponential,	Set Scale( Exponential ));formula = obj << Get Formula;Show( formula );
 
 ```
 
@@ -3170,15 +2292,7 @@ Show( formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Fit Exponential,
-	Set Scale( Exponential )
-);
-r = obj << Get Results;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Fit Exponential,	Set Scale( Exponential ));r = obj << Get Results;Show( r );
 
 ```
 
@@ -3190,9 +2304,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Interval Type( "Pointwise" );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Interval Type( "Pointwise" );
 
 ```
 
@@ -3204,10 +2316,7 @@ obj << Interval Type( "Pointwise" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-Wait( 1 );
-obj << Nonparametric Estimate Plot Options( "Step Function" );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );Wait( 1 );obj << Nonparametric Estimate Plot Options( "Step Function" );
 
 ```
 
@@ -3227,14 +2336,7 @@ obj << Nonparametric Estimate Plot Options( "Step Function" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Blenders.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time Cycles ),
-	By( :Group ),
-	Censor( :Censor ),
-	Fit Exponential
-);
-obj[1] << Save By Group Results;
+dt = Open( "$SAMPLE_DATA/Reliability/Blenders.jmp" );obj = dt << Life Distribution(	Y( :Time Cycles ),	By( :Group ),	Censor( :Censor ),	Fit Exponential);obj[1] << Save By Group Results;
 
 ```
 
@@ -3246,9 +2348,7 @@ obj[1] << Save By Group Results;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Set Scale( Exponential );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Set Scale( Exponential );
 
 ```
 
@@ -3260,10 +2360,7 @@ obj << Set Scale( Exponential );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-Wait( 1 );
-obj << Show Confidence Area( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );Wait( 1 );obj << Show Confidence Area( 0 );
 
 ```
 
@@ -3275,11 +2372,7 @@ obj << Show Confidence Area( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Microprocessor Data.jmp" );
-obj = dt << Life Distribution( Y( :start time, end time ), Freq( :count ) );
-Report( obj )["Event Plot"] << Close( 0 );
-Wait( 1 );
-obj << Show Event Plot Frequency Label( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Microprocessor Data.jmp" );obj = dt << Life Distribution( Y( :start time, end time ), Freq( :count ) );Report( obj )["Event Plot"] << Close( 0 );Wait( 1 );obj << Show Event Plot Frequency Label( 0 );
 
 ```
 
@@ -3291,9 +2384,7 @@ obj << Show Event Plot Frequency Label( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Show Hazard Functions( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Show Hazard Functions( 1 );
 
 ```
 
@@ -3305,10 +2396,7 @@ obj << Show Hazard Functions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-Wait( 1 );
-obj << Show Points( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );Wait( 1 );obj << Show Points( 0 );
 
 ```
 
@@ -3320,9 +2408,7 @@ obj << Show Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Show Quantile Functions( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Show Quantile Functions( 1 );
 
 ```
 
@@ -3334,10 +2420,7 @@ obj << Show Quantile Functions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-Wait( 1 );
-obj << Show Statistics( 0 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );Wait( 1 );obj << Show Statistics( 0 );
 
 ```
 
@@ -3349,13 +2432,7 @@ obj << Show Statistics( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Show Survival Curve( 1 ),
-	Fit Exponential
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Show Survival Curve( 1 ),	Fit Exponential);
 
 ```
 
@@ -3367,15 +2444,7 @@ obj = dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution(
-	Y( :Time ),
-	Fit Weibull,
-	Fit Lognormal,
-	Set Scale( Weibull )
-);
-Wait( 2 );
-obj << Suppress Plot( Lognormal );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Fit Weibull, Fit Lognormal, Set Scale( Weibull ) );Wait( 2 );obj << Suppress Plot( Lognormal );
 
 ```
 
@@ -3387,9 +2456,7 @@ obj << Suppress Plot( Lognormal );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );
-obj << Tabbed Report( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Fit Exponential );obj << Tabbed Report( 1 );
 
 ```
 
@@ -3403,12 +2470,7 @@ obj << Tabbed Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -3424,13 +2486,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -3438,10 +2494,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -3449,10 +2502,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -3464,10 +2514,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -3481,12 +2528,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -3498,12 +2540,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -3515,14 +2552,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -3534,9 +2564,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Copy Script;
 
 ```
 
@@ -3548,9 +2576,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Data Table Window;
 
 ```
 
@@ -3564,9 +2590,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -3578,15 +2602,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -3600,10 +2616,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -3611,29 +2624,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -3645,10 +2636,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -3660,11 +2648,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -3676,10 +2660,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -3691,10 +2672,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -3706,10 +2684,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -3721,10 +2696,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -3738,14 +2710,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -3757,13 +2722,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -3775,32 +2734,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-#### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -3814,9 +2748,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -3828,15 +2760,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -3848,28 +2772,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Redo Analysis;
-
-```
-
-#### Redo ByGroup Analysis
-
-**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Redo Analysis;
 
 ```
 
@@ -3881,28 +2784,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Relaunch Analysis;
-
-```
-
-#### Relaunch ByGroup
-
-**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
-
-**Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Relaunch Analysis;
 
 ```
 
@@ -3914,14 +2796,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -3933,48 +2808,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-#### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -3986,9 +2832,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Report View( "Summary" );
 
 ```
 
@@ -4000,14 +2844,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -4019,14 +2856,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -4038,14 +2868,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -4057,9 +2880,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Save Script for All Objects;
 
 ```
 
@@ -4073,14 +2894,7 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
@@ -4088,14 +2902,7 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -4107,9 +2914,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -4121,9 +2926,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Save Script to Journal;
 
 ```
 
@@ -4135,9 +2938,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Save Script to Report;
 
 ```
 
@@ -4149,9 +2950,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Save Script to Script Window;
 
 ```
 
@@ -4163,15 +2962,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -4183,23 +2974,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value(
-				Time( 6000, Lock( 0 ), Show( 1 ) )
-			)}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -4211,14 +2986,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -4230,11 +2998,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -4246,9 +3010,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );obj << Title( "My Platform" );
 
 ```
 
@@ -4260,11 +3022,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -4280,11 +3038,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -4296,34 +3050,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 #### Window View
 
-**Syntaxe :** obj = Life Distribution(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Life Distribution(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

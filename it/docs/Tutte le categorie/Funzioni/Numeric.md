@@ -66,7 +66,7 @@ Floor( 1.2 );
 
 **JMP Versione aggiunta:** prima della versione 14
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
@@ -74,12 +74,11 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-x = 100;
-Integrate( Normal Density( x - 100 ), x, ., . );
+x = 100;Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```
 
@@ -135,14 +134,7 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Normal Integrate(
-	J( 3, 1, 0 ),
-	Identity( 3 ),
-	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,
-	ex,
-	2,
-	5000
-);
+Normal Integrate(	J( 3, 1, 0 ),	Identity( 3 ),	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,	ex,	2,	5000);
 
 ```
 
@@ -156,9 +148,7 @@ Normal Integrate(
 
 ```jsl
 
-f = Function( {x, y}, x ^ 2 + y );
-Num Deriv( f( 2, 1 ) );
-Num Deriv( f( 2, 1 ), 2 );
+f = Function( {x, y}, x ^ 2 + y );Num Deriv( f( 2, 1 ) );Num Deriv( f( 2, 1 ), 2 );
 
 ```
 
@@ -172,8 +162,7 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
-f = Function( {x}, x ^ 3 );
-Num Deriv2( f( 2 ) );
+f = Function( {x}, x ^ 3 );Num Deriv2( f( 2 ) );
 
 ```
 

@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -73,10 +56,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -90,9 +70,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -104,9 +82,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -118,14 +94,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -137,9 +106,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Copy Script;
 
 ```
 
@@ -151,9 +118,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Data Table Window;
 
 ```
 
@@ -167,9 +132,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -181,15 +144,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -203,10 +158,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -214,27 +166,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -246,10 +178,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -261,11 +190,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -277,10 +202,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -292,10 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -307,10 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -322,10 +238,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -339,10 +252,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -354,13 +264,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -372,32 +276,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**구문:** New JSL Preset( preset )
-
-**설명:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -411,9 +290,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -425,13 +302,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -443,28 +314,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**구문:** obj &lt;&lt; Redo ByGroup Analysis
-
-**설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Redo Analysis;
 
 ```
 
@@ -476,28 +326,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**구문:** obj &lt;&lt; Relaunch ByGroup
-
-**설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Relaunch Analysis;
 
 ```
 
@@ -509,11 +338,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -525,48 +350,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**구문:** Render Preset( preset )
-
-**설명:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP추가된 버전:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report;Report( obj )
+**구문:** obj &lt;&lt; Report; Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -578,9 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Report View( "Summary" );
 
 ```
 
@@ -592,14 +386,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -611,14 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -630,14 +410,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -649,9 +422,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Save Script for All Objects;
 
 ```
 
@@ -661,33 +432,19 @@ obj << Save Script for All Objects;
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -699,9 +456,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -713,9 +468,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Save Script to Journal;
 
 ```
 
@@ -727,9 +480,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Save Script to Report;
 
 ```
 
@@ -741,9 +492,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Save Script to Script Window;
 
 ```
 
@@ -755,12 +504,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -772,19 +516,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -796,12 +528,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -813,11 +540,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -829,9 +552,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Title( "My Platform" );
 
 ```
 
@@ -843,11 +564,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -863,11 +580,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -879,27 +592,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**구문:** obj = Text Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -913,8 +618,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```
 
@@ -930,13 +634,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Text Explorer(	Text Columns( :Reasons Not to Floss ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -950,9 +648,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), ID( :School Age Children ) );
-obj << Save Stacked DTM For Association;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), ID( :School Age Children ) );obj << Save Stacked DTM For Association;
 
 ```
 
@@ -966,8 +662,7 @@ obj << Save Stacked DTM For Association;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```
 
@@ -981,13 +676,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Validation( :School Age Children ) );
-obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Validation( :School Age Children ) );obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));
 
 ```
 
@@ -1001,12 +690,7 @@ obj << Latent Class Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Tokenizing( "Basic Words" );
-obj << Show Delimiters( 1 );
-Wait( 1 );
-obj << Add Delimiters( "{}" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Tokenizing( "Basic Words" );obj << Show Delimiters( 1 );Wait( 1 );obj << Add Delimiters( "{}" );
 
 ```
 
@@ -1018,12 +702,7 @@ obj << Add Delimiters( "{}" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Add Phrases( {"twice a day", "every time", "time consuming"} );
-Wait( 1 );
-obj << Add Phrase Exceptions( {"every time"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Add Phrases( {"twice a day", "every time", "time consuming"} );Wait( 1 );obj << Add Phrase Exceptions( {"every time"} );
 
 ```
 
@@ -1035,9 +714,7 @@ obj << Add Phrase Exceptions( {"every time"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Add Phrases( {"twice a day", "every time"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Add Phrases( {"twice a day", "every time"} );
 
 ```
 
@@ -1049,12 +726,7 @@ obj << Add Phrases( {"twice a day", "every time"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );
-obj << Show Recodes( 1 );
-Wait( 1 );
-obj << Add Recode Exceptions( {"neglagent", "negligent"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );obj << Show Recodes( 1 );Wait( 1 );obj << Add Recode Exceptions( {"neglagent", "negligent"} );
 
 ```
 
@@ -1066,10 +738,7 @@ obj << Add Recode Exceptions( {"neglagent", "negligent"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );
-obj << Show Recodes( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Add Recodes( {{"everytime", "every time"}, {"neglagent", "negligent"}} );obj << Show Recodes( 1 );
 
 ```
 
@@ -1081,12 +750,7 @@ obj << Show Recodes( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Stemming( "Stem All Terms" );
-obj << Show Stem Report( 1 );
-Wait( 1 );
-obj << Add Stem Exceptions( {"care", "brush", "like"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Stemming( "Stem All Terms" );obj << Show Stem Report( 1 );Wait( 1 );obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```
 
@@ -1098,13 +762,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Stemming( "Stem All Terms" );
-obj << Show Stem Report( 1 );
-Wait( 1 );
-obj << Add Stem Overrides( {"care"} );
-obj << Add Stem Exceptions( {"care", "brush", "like"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Stemming( "Stem All Terms" );obj << Show Stem Report( 1 );Wait( 1 );obj << Add Stem Overrides( {"care"} );obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```
 
@@ -1116,11 +774,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Stop Words( 1 );
-Wait( 1 );
-obj << Add Stop Word Exceptions( {"again", "are"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Stop Words( 1 );Wait( 1 );obj << Add Stop Word Exceptions( {"again", "are"} );
 
 ```
 
@@ -1132,11 +786,7 @@ obj << Add Stop Word Exceptions( {"again", "are"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Stop Words( 1 );
-Wait( 1 );
-obj << Add Stop Words( {"use", "feel", "like"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Stop Words( 1 );Wait( 1 );obj << Add Stop Words( {"use", "feel", "like"} );
 
 ```
 
@@ -1148,10 +798,7 @@ obj << Add Stop Words( {"use", "feel", "like"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Word Cloud( 1 );
-obj << Cloud Width( 150 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Word Cloud( 1 );obj << Cloud Width( 150 );
 
 ```
 
@@ -1163,10 +810,7 @@ obj << Cloud Width( 150 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Word Cloud( 1 );
-obj << Coloring( "Arbitrary Colors" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Word Cloud( 1 );obj << Coloring( "Arbitrary Colors" );
 
 ```
 
@@ -1180,35 +824,19 @@ obj << Coloring( "Arbitrary Colors" );
 
 ```jsl
 
-//This custom stemmer looks only for words ending in 'ing' and replaces the end with the stemming dot.
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Stemming( "Stem All Terms" );
-obj << Show Stem Report( 1 );
-obj << Custom Stemmer(
-	Function( {string, dot},
-		If( Ends With( string, "ing" ),
-			Substr( string, 1, Length( string ) - 3 ) || dot,
-			string
-		)
-	)
-);
+//This custom stemmer looks only for words ending in 'ing' and replaces the end with the stemming dot.dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Stemming( "Stem All Terms" );obj << Show Stem Report( 1 );obj << Custom Stemmer(	Function( {string, dot},		If( Ends With( string, "ing" ),			Substr( string, 1, Length( string ) - 3 ) || dot,			string		)	));
 
 ```
 
 ### Customize Regex
 
-**구문:** obj = Text Explorer(...Customize Regex( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Customize Regex( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 정규 표현식 설정을 수정하기 위한 텍스트 탐색기 정규 표현식 편집기를 엽니다. 이 옵션은 정규 표현식 토큰화 방법에서만 사용할 수 있습니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Tokenizing( "Regex" );
-obj << Customize Regex();
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Tokenizing( "Regex" );obj << Customize Regex();
 
 ```
 
@@ -1222,16 +850,7 @@ obj << Customize Regex();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Discriminant Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Column( :Gender )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Discriminant Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Column( :Gender ));
 
 ```
 
@@ -1243,10 +862,7 @@ obj << Discriminant Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Word Cloud( 1 );
-obj << Font( "Arial Narrow", 11, "Plain" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Word Cloud( 1 );obj << Font( "Arial Narrow", 11, "Plain" );
 
 ```
 
@@ -1258,10 +874,7 @@ obj << Font( "Arial Narrow", 11, "Plain" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Include Builtin Phrases( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Include Builtin Phrases( 0 );
 
 ```
 
@@ -1273,23 +886,19 @@ obj << Include Builtin Phrases( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Include Builtin Stop Words( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Include Builtin Stop Words( 0 );
 
 ```
 
 ### Language
 
-**구문:** obj = Text Explorer(...Language( "표시 언어"|"영어"|"독일어"|"스페인어"|"프랑스어"|"이탈리아어"|"일본어"|"중국어(간체)"|"중국어(번체)"|"한국어" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Language( "표시 언어"|"영어"|"독일어"|"스페인어"|"프랑스어"|"이탈리아어"|"일본어"|"중국어(간체)"|"중국어(번체)"|"한국어" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 텍스트 처리에 사용되는 언어를 지정합니다. 이 설정은 어간 추출과 기본 제공되는 중지 단어, 재코딩 및 구에 영향을 줍니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "German" ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "German" ) );
 
 ```
 
@@ -1301,14 +910,7 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "Germ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));
 
 ```
 
@@ -1318,37 +920,19 @@ obj << Latent Class Analysis(
 
 **설명:** 문서 용어 행렬의 희소 특이값 분해를 수행합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << SVD(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << SVD(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));
 
 ```
 
@@ -1360,62 +944,55 @@ obj << SVD(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Word Cloud( 1 );
-obj << Layout( "Alphabetical" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Word Cloud( 1 );obj << Layout( "Alphabetical" );
 
 ```
 
 ### Maximum Characters per Word
 
-**구문:** obj = Text Explorer(...Maximum Characters per Word( number=50 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Maximum Characters per Word( number=50 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석에 용어로 포함되기 위해 단어가 포함할 수 있는 최대 문자 수를 number개로 지정합니다. 기본값은 "50"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Characters per Word( 15 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Characters per Word( 15 ) );
 
 ```
 
 ### Maximum Number of Phrases
 
-**구문:** obj = Text Explorer(...Maximum Number of Phrases( number=5000 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Maximum Number of Phrases( number=5000 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 구 목록에 나타나는 최대 구 수(number)를 지정합니다. 기본값은 "5000"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Number of Phrases( 50 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Number of Phrases( 50 ) );
 
 ```
 
 ### Maximum Words per Phrase
 
-**구문:** obj = Text Explorer(...Maximum Words per Phrase( number=4 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Maximum Words per Phrase( number=4 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석에서 구로 포함되기 위해 구에 포함할 수 있는 최대 단어 수를 number개로 지정합니다. 기본값은 "4"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Words per Phrase( 2 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Maximum Words per Phrase( 2 ) );
 
 ```
 
 ### Minimum Characters per Word
 
-**구문:** obj = Text Explorer(...Minimum Characters per Word( number=1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Minimum Characters per Word( number=1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석에 용어로 포함되기 위해 단어가 포함해야 하는 문자를 number개로 지정합니다. 기본값은 "1"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Minimum Characters per Word( 3 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Minimum Characters per Word( 3 ) );
 
 ```
 
@@ -1427,9 +1004,7 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Minimum Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Minimum Frequency for Phrase( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Minimum Frequency for Phrase( 5 );
 
 ```
 
@@ -1441,9 +1016,7 @@ obj << Minimum Frequency for Phrase( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Phrases Alphabetical( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Phrases Alphabetical( 1 );
 
 ```
 
@@ -1453,45 +1026,19 @@ obj << Phrases Alphabetical( 1 );
 
 **설명:** 문서 용어 행렬에 대한 Varimax 회전 특이값 분해를 수행하여 주제라는 용어 그룹을 생성합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-
-obj << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-
-obj << Rotated SVD( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj << Rotated SVD( Number of Topics( 5 ) );
 
 ```
 
@@ -1501,37 +1048,19 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 **설명:** 문서 용어 행렬의 희소 특이값 분해를 수행합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << SVD(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << SVD(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));
 
 ```
 
@@ -1543,10 +1072,7 @@ obj << SVD(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Save DTM Formula( Maximum Number of Terms( 10 ), Minimum Term Frequency( 4 ), Weighting( "TF IDF" ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Save DTM Formula( Maximum Number of Terms( 10 ), Minimum Term Frequency( 4 ), Weighting( "TF IDF" ) );
 
 ```
 
@@ -1558,14 +1084,7 @@ obj << Save DTM Formula( Maximum Number of Terms( 10 ), Minimum Term Frequency( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Save Document Term Matrix(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Save Document Term Matrix(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ));
 
 ```
 
@@ -1577,10 +1096,7 @@ obj << Save Document Term Matrix(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Save Stacked DTM For Association;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Save Stacked DTM For Association;
 
 ```
 
@@ -1592,10 +1108,7 @@ obj << Save Stacked DTM For Association;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Save Term Table;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Save Term Table;
 
 ```
 
@@ -1607,23 +1120,7 @@ obj << Save Term Table;
 
 ```jsl
 
- 
-dt = New Table( "WordTable",
-	New Column( "Original Words",
-		Character,
-		"Nominal",
-		Set Values( {"Quick brown", "foxes jumped", "over the", "lazy dog."} )
-	)
-);
-dt << Text Explorer(
-	Text Columns( :Original Words ), 
-// the regex: [a-z]*? means 0 or more letters, reluctantly. [aeiou] means one vowel.	
-	// {2} means repeat twice. 
-	// [a-z]* means 0 or more letters, greedily. (the rest of the word)
-	Set Regex( Custom( Title( "Two Vowels" ), Regex( "(([a-z]*?[aeiou]){2}[a-z]*)" ), Result( "\[\1]\" ), ) ),
-	Include Builtin Stop Words( 0 ), // "over" is a stop word, but we want to see it
-	SaveRegexColumn( "Poly Vowel Words" )
-);
+ dt = New Table( "WordTable",	New Column( "Original Words",		Character,		"Nominal",		Set Values( {"Quick brown", "foxes jumped", "over the", "lazy dog."} )	));dt << Text Explorer(	Text Columns( :Original Words ), // the regex: [a-z]*? means 0 or more letters, reluctantly. [aeiou] means one vowel.		// {2} means repeat twice. 	// [a-z]* means 0 or more letters, greedily. (the rest of the word)	Set Regex( Custom( Title( "Two Vowels" ), Regex( "(([a-z]*?[aeiou]){2}[a-z]*)" ), Result( "\[\1]\" ), ) ),	Include Builtin Stop Words( 0 ), // "over" is a stop word, but we want to see it	SaveRegexColumn( "Poly Vowel Words" ));
 
 ```
 
@@ -1635,10 +1132,7 @@ dt << Text Explorer(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Score Terms By Column( :Salary );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Score Terms By Column( :Salary );
 
 ```
 
@@ -1652,9 +1146,7 @@ obj << Score Terms By Column( :Salary );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );
 
 ```
 
@@ -1666,11 +1158,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Tokenizing( "Basic Words" );
-obj << Show Delimiters( 1 );
-obj << Set Delimiters( " " );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Tokenizing( "Basic Words" );obj << Show Delimiters( 1 );obj << Set Delimiters( " " );
 
 ```
 
@@ -1682,9 +1170,7 @@ obj << Set Delimiters( " " );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Set Regex( Library( "Words" ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Set Regex( Library( "Words" ) );
 
 ```
 
@@ -1696,11 +1182,7 @@ obj << Set Regex( Library( "Words" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Tokenizing( "Basic Words" );
-Wait( 1 );
-obj << Show Delimiters( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Tokenizing( "Basic Words" );Wait( 1 );obj << Show Delimiters( 1 );
 
 ```
 
@@ -1714,10 +1196,7 @@ obj << Show Delimiters( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Filters for All Tables( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Filters for All Tables( 1 );
 
 ```
 
@@ -1729,12 +1208,7 @@ obj << Show Filters for All Tables( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Show Word Cloud( 1 );
-obj << Coloring( "Arbitrary Colors" );
-Wait( 1 );
-obj << Show Legend( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Show Word Cloud( 1 );obj << Coloring( "Arbitrary Colors" );Wait( 1 );obj << Show Legend( 0 );
 
 ```
 
@@ -1746,10 +1220,7 @@ obj << Show Legend( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Phrase List( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Phrase List( 0 );
 
 ```
 
@@ -1761,12 +1232,7 @@ obj << Show Phrase List( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Add Recodes( {{"flossing", "floss"}} );
-Wait( 1 );
-obj << Show Recodes( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Add Recodes( {{"flossing", "floss"}} );Wait( 1 );obj << Show Recodes( 1 );
 
 ```
 
@@ -1778,11 +1244,7 @@ obj << Show Recodes( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-Current Data Table() << Select Rows( [1 2 3 4] );
-obj << Show Selected Rows( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );Current Data Table() << Select Rows( [1 2 3 4] );obj << Show Selected Rows( 1 );
 
 ```
 
@@ -1794,11 +1256,7 @@ obj << Show Selected Rows( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Specified Phrases( 1 );
-Report( obj )["Specified Phrases"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Specified Phrases( 1 );Report( obj )["Specified Phrases"] << Close( 0 );
 
 ```
 
@@ -1810,10 +1268,7 @@ Report( obj )["Specified Phrases"] << Close( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Stem Exceptions( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Stem Exceptions( 1 );
 
 ```
 
@@ -1825,11 +1280,7 @@ obj << Show Stem Exceptions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Stemming( "Stem for Combining" );
-obj << Show Stem Report( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Stemming( "Stem for Combining" );obj << Show Stem Report( 1 );
 
 ```
 
@@ -1841,10 +1292,7 @@ obj << Show Stem Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Stop Words( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Stop Words( 1 );
 
 ```
 
@@ -1856,10 +1304,7 @@ obj << Show Stop Words( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Summary Counts( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Summary Counts( 0 );
 
 ```
 
@@ -1871,10 +1316,7 @@ obj << Show Summary Counts( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Term List( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Term List( 0 );
 
 ```
 
@@ -1886,10 +1328,7 @@ obj << Show Term List( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Term and Phrase Options( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Term and Phrase Options( 1 );
 
 ```
 
@@ -1901,25 +1340,19 @@ obj << Show Term and Phrase Options( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Show Word Cloud( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Show Word Cloud( 1 );
 
 ```
 
 ### Stemming
 
-**구문:** obj = Text Explorer(...Stemming( "어간 추출 안 함"|"결합 가능한 경우 어간 추출"|"모든 용어의 어간 추출" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Stemming( "어간 추출 안 함"|"결합 가능한 경우 어간 추출"|"모든 용어의 어간 추출" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 시작 문자는 유사하지만 종료 문자는 다른 용어를 결합하는 방법을 지정합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Stemming( "Stem All Terms" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Stemming( "Stem All Terms" );
 
 ```
 
@@ -1933,50 +1366,7 @@ obj << Stemming( "Stem All Terms" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));
 
 ```
 
@@ -1988,24 +1378,19 @@ term = obj << Term Selection(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Terms Alphabetical( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Terms Alphabetical( 1 );
 
 ```
 
 ### Tokenizing
 
-**구문:** obj = Text Explorer(...Tokenizing( "정규 표현식"|"기본 단어" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Tokenizing( "정규 표현식"|"기본 단어" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 텍스트를 용어 또는 토큰으로 파싱하기 위한 방법을 지정합니다. 사용 가능한 방법은 정규 표현식 및 기본 단어입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Tokenizing( "Basic Words" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Tokenizing( "Basic Words" );
 
 ```
 
@@ -2015,61 +1400,31 @@ obj << Tokenizing( "Basic Words" );
 
 **설명:** 문서 용어 행렬에 대한 Varimax 회전 특이값 분해를 수행하여 주제라는 용어 그룹을 생성합니다.
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-
-obj << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 10 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-
-obj << Rotated SVD( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );obj << Latent Semantic Analysis(	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 10 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj << Rotated SVD( Number of Topics( 5 ) );
 
 ```
 
 ### Treat Numbers as Words
 
-**구문:** obj = Text Explorer(...Treat Numbers as Words( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Text Explorer(...Treat Numbers as Words( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 전체가 숫자로만 구성된 단어를 토큰으로 간주합니다. 기본 단어 토큰화 방법과 함께 사용되어야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
-Wait( 1 );
-obj << Tokenizing( "Basic Words" );
-obj << Treat Numbers as Words( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );Wait( 1 );obj << Tokenizing( "Basic Words" );obj << Treat Numbers as Words( 1 );
 
 ```
 
@@ -2085,15 +1440,7 @@ obj << Treat Numbers as Words( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));
 
 ```
 
@@ -2109,16 +1456,7 @@ obj2 = obj << Discriminant Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
-obj2 << Canonical Plot( 1, N Canon( 3 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));obj2 << Canonical Plot( 1, N Canon( 3 ) );
 
 ```
 
@@ -2132,17 +1470,7 @@ obj2 << Canonical Plot( 1, N Canon( 3 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
-Wait( 1 );
-obj2 << Remove;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));Wait( 1 );obj2 << Remove;
 
 ```
 
@@ -2156,16 +1484,7 @@ obj2 << Remove;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
-obj2 << Save Canonical Scores( N Canon( 3 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));obj2 << Save Canonical Scores( N Canon( 3 ) );
 
 ```
 
@@ -2179,16 +1498,7 @@ obj2 << Save Canonical Scores( N Canon( 3 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
-obj2 << Save Probabilities;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));obj2 << Save Probabilities;
 
 ```
 
@@ -2202,16 +1512,7 @@ obj2 << Save Probabilities;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Discriminant Analysis(
-	Maximum Number of Terms( 20 ),
-	Minimum Term Frequency( 3 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 15 ),
-	Column( :Floss )
-);
-obj2 << Save Probability Formulas;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Discriminant Analysis(	Maximum Number of Terms( 20 ),	Minimum Term Frequency( 3 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 15 ),	Column( :Floss ));obj2 << Save Probability Formulas;
 
 ```
 
@@ -2227,13 +1528,7 @@ obj2 << Save Probability Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));
 
 ```
 
@@ -2249,15 +1544,7 @@ obj2 = obj << Latent Class Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Cluster Mixture Probabilities( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Cluster Mixture Probabilities( 0 );
 
 ```
 
@@ -2269,15 +1556,7 @@ obj2 << Cluster Mixture Probabilities( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Cluster Probabilities by row( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Cluster Probabilities by row( 0 );
 
 ```
 
@@ -2289,14 +1568,7 @@ obj2 << Cluster Probabilities by row( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-obj2 << Color by Cluster;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));obj2 << Color by Cluster;
 
 ```
 
@@ -2308,15 +1580,7 @@ obj2 << Color by Cluster;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << MDS Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << MDS Plot( 0 );
 
 ```
 
@@ -2328,15 +1592,7 @@ obj2 << MDS Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Remove;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Remove;
 
 ```
 
@@ -2350,15 +1606,7 @@ obj2 << Remove;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 ```
 
@@ -2370,14 +1618,7 @@ obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-obj2 << Save Probabilities;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));obj2 << Save Probabilities;
 
 ```
 
@@ -2389,14 +1630,7 @@ obj2 << Save Probabilities;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-obj2 << Save Probability Formulas;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));obj2 << Save Probability Formulas;
 
 ```
 
@@ -2410,14 +1644,7 @@ obj2 << Save Probability Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 ),
-	Set Random Seed( 1234 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ),	Set Random Seed( 1234 ));
 
 ```
 
@@ -2429,15 +1656,7 @@ obj2 = obj << Latent Class Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Term Probabilities by Cluster( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Term Probabilities by Cluster( 0 );
 
 ```
 
@@ -2451,15 +1670,7 @@ obj2 << Term Probabilities by Cluster( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-Wait( 1 );
-obj2 << Top Terms by Cluster( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));Wait( 1 );obj2 << Top Terms by Cluster( 0 );
 
 ```
 
@@ -2473,14 +1684,7 @@ obj2 << Top Terms by Cluster( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Class Analysis(
-	Number of Clusters( 5 ),
-	Maximum Number of Terms( 10 ),
-	Minimum Term Frequency( 2 )
-);
-obj2 << Word Clouds by Cluster( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Class Analysis(	Number of Clusters( 5 ),	Maximum Number of Terms( 10 ),	Minimum Term Frequency( 2 ));obj2 << Word Clouds by Cluster( 1 );
 
 ```
 
@@ -2496,21 +1700,7 @@ obj2 << Word Clouds by Cluster( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
@@ -2522,21 +1712,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
@@ -2552,23 +1728,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Remove;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Remove;
 
 ```
 
@@ -2582,23 +1742,7 @@ obj3 << Remove;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
 
 ```
 
@@ -2612,23 +1756,7 @@ obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj3 << Rotation Matrix( 1 );
-Report( obj )["Rotation Matrix"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj3 << Rotation Matrix( 1 );Report( obj )["Rotation Matrix"] << Close( 0 );
 
 ```
 
@@ -2642,22 +1770,7 @@ Report( obj )["Rotation Matrix"] << Close( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj3 << Save Document Topic Vectors;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj3 << Save Document Topic Vectors;
 
 ```
 
@@ -2671,22 +1784,7 @@ obj3 << Save Document Topic Vectors;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj3 << Save Item Topic Vectors;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj3 << Save Item Topic Vectors;
 
 ```
 
@@ -2700,23 +1798,7 @@ obj3 << Save Item Topic Vectors;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj << Save Term Table;
-obj3 << Save Term Topic Vectors;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj << Save Term Table;obj3 << Save Term Topic Vectors;
 
 ```
 
@@ -2730,22 +1812,7 @@ obj3 << Save Term Topic Vectors;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj3 << Save Topic Vector Formula;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj3 << Save Topic Vector Formula;
 
 ```
 
@@ -2759,22 +1826,7 @@ obj3 << Save Topic Vector Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-obj3 << Save Transaction Topic Vectors;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );obj3 << Save Transaction Topic Vectors;
 
 ```
 
@@ -2788,23 +1840,7 @@ obj3 << Save Transaction Topic Vectors;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Top Loadings by Topic( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Top Loadings by Topic( 0 );
 
 ```
 
@@ -2818,24 +1854,7 @@ obj3 << Top Loadings by Topic( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Report( obj )["Topic Loadings"] << Close( 0 );
-Wait( 1 );
-obj3 << Topic Loadings( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Report( obj )["Topic Loadings"] << Close( 0 );Wait( 1 );obj3 << Topic Loadings( 0 );
 
 ```
 
@@ -2849,23 +1868,7 @@ obj3 << Topic Loadings( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Topic Scatterplot Matrix( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Topic Scatterplot Matrix( 1 );
 
 ```
 
@@ -2879,24 +1882,7 @@ obj3 << Topic Scatterplot Matrix( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Report( obj )["Topic Scores"] << Close( 0 );
-Wait( 1 );
-obj3 << Topic Scores( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Report( obj )["Topic Scores"] << Close( 0 );Wait( 1 );obj3 << Topic Scores( 0 );
 
 ```
 
@@ -2910,24 +1896,7 @@ obj3 << Topic Scores( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Report( obj )["Topic Scores Plots"] << Close( 0 );
-Wait( 1 );
-obj3 << Topic Scores Plots( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Report( obj )["Topic Scores Plots"] << Close( 0 );Wait( 1 );obj3 << Topic Scores Plots( 0 );
 
 ```
 
@@ -2941,24 +1910,7 @@ obj3 << Topic Scores Plots( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Variance Explained by Each Topic( 1 );
-Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Variance Explained by Each Topic( 1 );Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
 
 ```
 
@@ -2972,24 +1924,7 @@ Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer(
-	TextColumns( :Reasons Not to Floss ),
-	Show Term List( 0 ),
-	Show Phrase List( 0 ),
-	Show Summary Counts( 0 )
-);
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
-Wait( 1 );
-obj3 << Word Clouds by Topic( 1 );
-Report( obj )["Word Clouds by Topic"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer(	TextColumns( :Reasons Not to Floss ),	Show Term List( 0 ),	Show Phrase List( 0 ),	Show Summary Counts( 0 ));obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );Wait( 1 );obj3 << Word Clouds by Topic( 1 );Report( obj )["Word Clouds by Topic"] << Close( 0 );
 
 ```
 
@@ -3005,15 +1940,7 @@ Report( obj )["Word Clouds by Topic"] << Close( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));
 
 ```
 
@@ -3025,15 +1952,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));
 
 ```
 
@@ -3049,16 +1968,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Cluster Documents( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Cluster Documents( 1 );
 
 ```
 
@@ -3072,11 +1982,7 @@ obj2 << Cluster Documents( 1 );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );
-obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
-obj2 = obj << SVD( Number of Singular Vectors( 20 ) );
-obj2 << Cluster Items( 1 );
+dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );obj2 = obj << SVD( Number of Singular Vectors( 20 ) );obj2 << Cluster Items( 1 );
 
 ```
 
@@ -3090,16 +1996,7 @@ obj2 << Cluster Items( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << obj << Cluster Terms( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << obj << Cluster Terms( 1 );
 
 ```
 
@@ -3113,11 +2010,7 @@ obj2 << obj << Cluster Terms( 1 );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );
-obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );
-obj2 = obj << SVD( Number of Singular Vectors( 20 ) );
-obj2 << Cluster Transactions( 1 );
+dt = Open( "$SAMPLE_DATA\Grocery Purchases.jmp" );obj = dt << Association Analysis( Item( :Product ), ID( :Customer ID ) );obj2 = obj << SVD( Number of Singular Vectors( 20 ) );obj2 << Cluster Transactions( 1 );
 
 ```
 
@@ -3131,17 +2024,7 @@ obj2 << Cluster Transactions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-Wait( 1 );
-obj2 << Remove;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));Wait( 1 );obj2 << Remove;
 
 ```
 
@@ -3155,19 +2038,7 @@ obj2 << Remove;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-obj2 << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
@@ -3181,16 +2052,7 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
 
 ```
 
@@ -3204,16 +2066,7 @@ obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Document Singular Vectors( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Document Singular Vectors( 5 );
 
 ```
 
@@ -3227,16 +2080,7 @@ obj2 << Save Document Singular Vectors( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Item SVD( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Item SVD( 5 );
 
 ```
 
@@ -3250,16 +2094,7 @@ obj2 << Save Item SVD( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Item Singular Vectors( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Item Singular Vectors( 5 );
 
 ```
 
@@ -3273,16 +2108,7 @@ obj2 << Save Item Singular Vectors( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Singular Vector Formula;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Singular Vector Formula;
 
 ```
 
@@ -3296,16 +2122,7 @@ obj2 << Save Singular Vector Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Term Singular Vectors( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Term Singular Vectors( 5 );
 
 ```
 
@@ -3319,16 +2136,7 @@ obj2 << Save Term Singular Vectors( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Transaction SVD( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Transaction SVD( 5 );
 
 ```
 
@@ -3342,16 +2150,7 @@ obj2 << Save Transaction SVD( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj2 << Save Transaction Singular Vectors( 5 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj2 << Save Transaction Singular Vectors( 5 );
 
 ```
 
@@ -3365,17 +2164,7 @@ obj2 << Save Transaction Singular Vectors( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-dt << Select Rows( [102, 237] );
-obj2 << Select Near Neighbors( 8 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));dt << Select Rows( [102, 237] );obj2 << Select Near Neighbors( 8 );
 
 ```
 
@@ -3389,19 +2178,7 @@ obj2 << Select Near Neighbors( 8 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );
-obj2 = obj << Latent Semantic Analysis(
-	Maximum Number of Terms( 100 ),
-	Minimum Term Frequency( 4 ),
-	Weighting( "TF IDF" ),
-	Number of Singular Vectors( 50 ),
-	Centering and Scaling( "Centered" )
-);
-obj << Show Term List( 0 );
-obj << Show Phrase List( 0 );
-obj << Show Summary Counts( 0 );
-obj2 << Topic Analysis( Number of Topics( 5 ) );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Text Explorer( TextColumns( :Reasons Not to Floss ) );obj2 = obj << Latent Semantic Analysis(	Maximum Number of Terms( 100 ),	Minimum Term Frequency( 4 ),	Weighting( "TF IDF" ),	Number of Singular Vectors( 50 ),	Centering and Scaling( "Centered" ));obj << Show Term List( 0 );obj << Show Phrase List( 0 );obj << Show Summary Counts( 0 );obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```
 
@@ -3419,9 +2196,7 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );
 
 ```
 
@@ -3437,10 +2212,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-sent << Add Feature Words( {"floss"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );sent << Add Feature Words( {"floss"} );
 
 ```
 
@@ -3454,11 +2226,7 @@ sent << Add Feature Words( {"floss"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Intensifier Exception Words( {"almost"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Intensifier Exception Words( {"almost"} );
 
 ```
 
@@ -3472,11 +2240,7 @@ sent << Add Intensifier Exception Words( {"almost"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
 
 ```
 
@@ -3490,11 +2254,7 @@ sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Negation Exception Words( {"without"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Negation Exception Words( {"without"} );
 
 ```
 
@@ -3508,11 +2268,7 @@ sent << Add Negation Exception Words( {"without"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Negation Words( {"dont"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Negation Words( {"dont"} );
 
 ```
 
@@ -3526,11 +2282,7 @@ sent << Add Negation Words( {"dont"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Sentiment Exception Words( {"easy"} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Sentiment Exception Words( {"easy"} );
 
 ```
 
@@ -3544,11 +2296,7 @@ sent << Add Sentiment Exception Words( {"easy"} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
 
 ```
 
@@ -3562,11 +2310,7 @@ sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Include Builtin Intensifier Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Include Builtin Intensifier Terms( 0 );
 
 ```
 
@@ -3580,11 +2324,7 @@ sent << Include Builtin Intensifier Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Include Builtin Negation Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Include Builtin Negation Terms( 0 );
 
 ```
 
@@ -3598,11 +2338,7 @@ sent << Include Builtin Negation Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Include Builtin Sentiment Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Include Builtin Sentiment Terms( 0 );
 
 ```
 
@@ -3616,11 +2352,7 @@ sent << Include Builtin Sentiment Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Parse Documents( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Parse Documents( 0 );
 
 ```
 
@@ -3634,10 +2366,7 @@ sent << Parse Documents( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-sent << Save Count of Sentiment Scores by Document;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );sent << Save Count of Sentiment Scores by Document;
 
 ```
 
@@ -3651,10 +2380,7 @@ sent << Save Count of Sentiment Scores by Document;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-sent << Save Document Scores;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );sent << Save Document Scores;
 
 ```
 
@@ -3668,10 +2394,7 @@ sent << Save Document Scores;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-sent << Score Column( :Gender );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );sent << Score Column( :Gender );
 
 ```
 
@@ -3685,11 +2408,7 @@ sent << Score Column( :Gender );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Wait( 1 );
-sent << Scoring( "Min Max" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Wait( 1 );sent << Scoring( "Min Max" );
 
 ```
 
@@ -3703,12 +2422,7 @@ sent << Scoring( "Min Max" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Report( obj )["Features"] << Close( 0 );
-Wait( 2 );
-sent << Show Feature Finder( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Report( obj )["Features"] << Close( 0 );Wait( 2 );sent << Show Feature Finder( 0 );
 
 ```
 
@@ -3722,12 +2436,7 @@ sent << Show Feature Finder( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Report( obj )["Intensifier Terms"] << Close( 0 );
-Wait( 2 );
-sent << Show Intensifier Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Report( obj )["Intensifier Terms"] << Close( 0 );Wait( 2 );sent << Show Intensifier Terms( 0 );
 
 ```
 
@@ -3741,12 +2450,7 @@ sent << Show Intensifier Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Report( obj )["Negation Terms"] << Close( 0 );
-Wait( 2 );
-sent << Show Negation Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Report( obj )["Negation Terms"] << Close( 0 );Wait( 2 );sent << Show Negation Terms( 0 );
 
 ```
 
@@ -3760,10 +2464,7 @@ sent << Show Negation Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-sent << Show Sentiment Cloud( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );sent << Show Sentiment Cloud( 1 );
 
 ```
 
@@ -3777,12 +2478,7 @@ sent << Show Sentiment Cloud( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-sent = obj << Sentiment Analysis( 1 );
-Report( obj )["Sentiment Terms"] << Close( 0 );
-Wait( 2 );
-sent << Show Sentiment Terms( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );sent = obj << Sentiment Analysis( 1 );Report( obj )["Sentiment Terms"] << Close( 0 );Wait( 2 );sent << Show Sentiment Terms( 0 );
 
 ```
 
@@ -3800,50 +2496,7 @@ sent << Show Sentiment Terms( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));
 
 ```
 
@@ -3859,50 +2512,7 @@ term = obj << Term Selection(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));
 
 ```
 
@@ -3916,50 +2526,7 @@ term = obj << Term Selection(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));
 
 ```
 
@@ -3973,52 +2540,7 @@ term = obj << Term Selection(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
-Wait( 1 );
-term << Remove;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));Wait( 1 );term << Remove;
 
 ```
 
@@ -4032,51 +2554,7 @@ term << Remove;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
-term << Save Document Scores;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));term << Save Document Scores;
 
 ```
 
@@ -4090,51 +2568,7 @@ term << Save Document Scores;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
-term << Save Prediction Formulas;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));term << Save Prediction Formulas;
 
 ```
 
@@ -4148,51 +2582,7 @@ term << Save Prediction Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
-term << Save Term Score DTM;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));term << Save Term Score DTM;
 
 ```
 
@@ -4206,51 +2596,7 @@ term << Save Term Score DTM;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );
-term = obj << Term Selection(
-	Models(
-		Model(
-			Response Column( :Gender ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Elastic Net ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Model(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) ),
-			Fits(
-				First Fit(
-					Fit(
-						Estimation Method( Lasso ),
-						Validation Method( AICc ),
-						Early Stopping,
-						Model Summary( 0 ),
-						Parameter Estimates for Original Predictors( 0 ),
-						Effect Tests( 0 )
-					)
-				)
-			)
-		),
-		Current Model Settings(
-			Response Column( :Single Status ),
-			Target Levels( Target Number( 1 ), Target String( "1" ) ),
-			Fit Settings( Estimation Method( Lasso ) )
-		)
-	),
-	Model Choice( 2 )
-);
-term << Show Term Cloud;
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), Language( "English" ) );term = obj << Term Selection(	Models(		Model(			Response Column( :Gender ),			Fits(				First Fit(					Fit(						Estimation Method( Elastic Net ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Model(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) ),			Fits(				First Fit(					Fit(						Estimation Method( Lasso ),						Validation Method( AICc ),						Early Stopping,						Model Summary( 0 ),						Parameter Estimates for Original Predictors( 0 ),						Effect Tests( 0 )					)				)			)		),		Current Model Settings(			Response Column( :Single Status ),			Target Levels( Target Number( 1 ), Target String( "1" ) ),			Fit Settings( Estimation Method( Lasso ) )		)	),	Model Choice( 2 ));term << Show Term Cloud;
 
 ```
 

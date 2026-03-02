@@ -12,17 +12,7 @@
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -36,12 +26,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Pat Match(
-	"123456789",
-	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >>
-	result
-);
-result;
+Pat Match(	"123456789",	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result);result;
 
 ```
 
@@ -55,10 +40,7 @@ result;
 
 ```jsl
 
-operators = Pat Any( "*+-/" );
-text = "abc+def";
-Pat Match( text, operators >> op );
-op;
+operators = Pat Any( "*+-/" );text = "abc+def";Pat Match( text, operators >> op );op;
 
 ```
 
@@ -72,11 +54,7 @@ op;
 
 ```jsl
 
-Pat Match(
-	"123nonnumeric456",
-	Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" )
-);
-result;
+Pat Match(	"123nonnumeric456",	Pat Span( "0123456789" ) + Pat Arb() >> result + Pat Span( "0123456789" ));result;
 
 ```
 
@@ -84,18 +62,13 @@ result;
 
 **Sintaxis:** Pat Arb No( pattern )
 
-**Descripción:** Genera un valor de patrón que coincide con su argumento cero o más veces. Lo mismo que patRepeat(pattern,0,infinity,RELUCTANT); (*? en regex).
+**Descripción:** Genera un valor de patrón que coincide con su argumento cero o más veces. Lo mismo que patRepeat(pattern,0,infinity,RELUCTANT); (\*? en regex).
 
 **JMP Versión agregada:** Antes de la versión 14
 
 ```jsl
 
-Pat Match(
-	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
-	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" )
-	 >> c
-);
-" a=" || a || " b=" || b || " c=" || c;
+Pat Match(	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c);" a=" || a || " b=" || b || " c=" || c;
 
 ```
 
@@ -109,8 +82,7 @@ Pat Match(
 
 ```jsl
 
-Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
-result;
+Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );result;
 
 ```
 
@@ -124,12 +96,7 @@ result;
 
 ```jsl
 
-b = "- ";
-Pat Match(
-	"one two three-",
-	Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) )
-);
-word;
+b = "- ";Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );word;
 
 ```
 
@@ -143,10 +110,7 @@ word;
 
 ```jsl
 
-num = Pat Break( "," );
-sep = ",";
-Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );
-result;
+num = Pat Break( "," );sep = ",";Pat Match( "1.3,7.9,8.66", num + sep + num >> result + sep + num );result;
 
 ```
 
@@ -160,10 +124,7 @@ result;
 
 ```jsl
 
-a = "unchanged";
-b = "unchanged";
-Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
-" a=" || a || " b=" || b;
+a = "unchanged";b = "unchanged";Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );" a=" || a || " b=" || b;
 
 ```
 
@@ -177,17 +138,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -201,11 +152,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-rc = Pat Match(
-	"123456789",
-	(Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3"
-);
-"rc=" || Char( rc ) || " result=" || result;
+rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );"rc=" || Char( rc ) || " result=" || result;
 
 ```
 
@@ -219,10 +166,7 @@ rc = Pat Match(
 
 ```jsl
 
-a = "unchanged";
-b = "unchanged";
-Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
-" a=" || a || " b=" || b;
+a = "unchanged";b = "unchanged";Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );" a=" || a || " b=" || b;
 
 ```
 
@@ -236,8 +180,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
-Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
-result;
+Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );result;
 
 ```
 
@@ -249,45 +192,27 @@ result;
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, "s" + Pat Look Ahead( "'" ), "z" ), /* find an s that IS followed by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		"s" + Pat Look Ahead( "'" ),		"z"	), /* find an s that IS followed by an apostrophe and replace it with z */	Print( test ));
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, "s" + Pat Look Ahead( "'", 1 ), "z" ), /* find an s that is NOT followed by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		"s" + Pat Look Ahead( "'", 1 ),		"z"	), /* find an s that is NOT followed by an apostrophe and replace it with z */	Print( test ));
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-Test = "a bb ccc dddd";
-While( /* keep repeating the match until it won't match */
-	Pat Match(
-		Test,
-		Pat Len( 1 ) >> xxx/* find any character */
-		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */
-		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),
-		"@" /* replacement for the middle character of a triple */
-	),
-	Print( test ) /* show each intermediate result */
-);
+Test = "a bb ccc dddd";While( /* keep repeating the match until it won't match */	Pat Match(		Test,		Pat Len( 1 ) >> xxx/* find any character */		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),		"@" /* replacement for the middle character of a triple */	),	Print( test ) /* show each intermediate result */);
 
 ```
 
@@ -299,45 +224,27 @@ While( /* keep repeating the match until it won't match */
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, Pat Look Behind( "'" ) + "s", "z" ), /* find an s that IS preceded by an apostrophe and replace it with z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		Pat Look Behind( "'" ) + "s",		"z"	), /* find an s that IS preceded by an apostrophe and replace it with z */Print( test ));
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-Test = "These are Bob's sons' nails.";
-While( /* repeat the match until it fails */
-	Pat Match( Test, Pat Look Behind( "'", 1 ) + "s", "z" ), /* find an s that is NOT preceded by an apostrophe and replace it with a z */
-	Print( test )
-);
+Test = "These are Bob's sons' nails.";While( /* repeat the match until it fails */Pat Match(		Test,		Pat Look Behind( "'", 1 ) + "s",		"z"	), /* find an s that is NOT preceded by an apostrophe and replace it with a z */	Print( test ));
 
 ```
 
-#### Ejemplo 3
+**Ejemplo 3**
 
 ```jsl
 
-Test = "a bb ccc dddd";
-While( /* keep repeating the match until it won't match */
-	Pat Match(
-		Test,
-		Pat Len( 1 ) >> xxx/* find any character */
-		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */
-		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),
-		"@" /* replacement for the middle character of a triple */
-	),
-	Print( test ) /* show each intermediate result */
-);
+Test = "a bb ccc dddd";While( /* keep repeating the match until it won't match */	Pat Match(		Test,		Pat Len( 1 ) >> xxx/* find any character */		+ Pat Look Behind( Expr( xxx ) + Expr( xxx ) ) /* back up 2 positions, which includes the character just found */		+ Pat Look Ahead( Expr( xxx ) /* and look ahead one position */ ),		"@" /* replacement for the middle character of a triple */	),	Print( test ) /* show each intermediate result */);
 
 ```
 
@@ -351,13 +258,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
-string = "John Smith";
-Pat Match(
-	string,
-	Pat Break( " " ) >> first + Pat Span( " " ) + Pat Rem() >> last,
-	last || ", " || first
-);
-string;
+string = "John Smith";Pat Match(	string,	Pat Break( " " ) >> first + Pat Span( " " ) + Pat Rem() >> last,	last || ", " || first);string;
 
 ```
 
@@ -371,13 +272,7 @@ string;
 
 ```jsl
 
-delimiter = ";,-";
-text = "fish,dog,cat,";
-Pat Match(
-	text,
-	Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter )
-);
-word;
+delimiter = ";,-";text = "fish,dog,cat,";Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );word;
 
 ```
 
@@ -391,12 +286,7 @@ word;
 
 ```jsl
 
-Pat Match(
-	"ab3defghi",
-	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )
-	+Pat Pos( /* no argument returns current position = 6 */ ) >> result
-);
-result;
+Pat Match(	"ab3defghi",	Pat Pos( 2 ) + Pat Len( 1 ) >> v/*v=3*/+ Expr( Pat Len( v ) )	+Pat Pos( /* no argument returns current position = 6 */ ) >> result);result;
 
 ```
 
@@ -410,8 +300,7 @@ result;
 
 ```jsl
 
-Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
-result;
+Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );result;
 
 ```
 
@@ -425,8 +314,7 @@ result;
 
 ```jsl
 
-Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
-result;
+Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );result;
 
 ```
 
@@ -440,9 +328,7 @@ result;
 
 ```jsl
 
-string = "John Smith";
-Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
-string;
+string = "John Smith";Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );string;
 
 ```
 
@@ -456,8 +342,7 @@ string;
 
 ```jsl
 
-Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
-result;
+Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );result;
 
 ```
 
@@ -471,11 +356,7 @@ result;
 
 ```jsl
 
-Pat Match(
-	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
-	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c
-);
-" a=" || a || " b=" || b || " c=" || c;
+Pat Match(	"xyz aaaaabbbbbbccc 3 c is matched because greedy",	Pat Repeat( "a" ) >> a + Pat Repeat( "b" ) >> b + Pat Repeat( "c" ) >> c);" a=" || a || " b=" || b || " c=" || c;
 
 ```
 
@@ -489,9 +370,7 @@ Pat Match(
 
 ```jsl
 
-sp = Pat Span( "0123456789.-" );
-Pat Match( "junk=-33.44e33", sp >> result );
-result;
+sp = Pat Span( "0123456789.-" );Pat Match( "junk=-33.44e33", sp >> result );result;
 
 ```
 
@@ -505,12 +384,7 @@ result;
 
 ```jsl
 
-x = Pat String( "a" || "b" );
-Pat Match(
-	"acbdbababc",
-	Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Rem() >> after
-);
-"before=" || before || " match=" || match || " after=" || after;
+x = Pat String( "a" || "b" );Pat Match(	"acbdbababc",	Pat Arb() >> before + Pat Repeat( x ) >> match + Pat Rem() >> after);"before=" || before || " match=" || match || " after=" || after;
 
 ```
 
@@ -524,17 +398,7 @@ Pat Match(
 
 ```jsl
 
-source = "xxxxx";
-n = 0;
-pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
-	Show( xs );
-	n = n + 1;
-	If( n > 16,
-		Pat Abort(),
-		Pat Fail()
-	);
-);
-rc = Pat Match( source, pattern, NULL, FULLSCAN );
+source = "xxxxx";n = 0;pattern = Pat Succeed() + Pat Arb() >> xs + Expr(	Show( xs );	n = n + 1;	If( n > 16,		Pat Abort(),		Pat Fail()	););rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```
 
@@ -548,8 +412,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
-Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
-result;
+Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );result;
 
 ```
 
@@ -563,18 +426,7 @@ result;
 
 ```jsl
 
-nCats = 0;
-whichCat = 3;
-string = "catch a catnapping cat in a catsup factory";
-rc = Pat Match(
-	string,
-	"cat" + Pat Test(
-		nCats = nCats + 1;
-		nCats == whichCat;
-	),
-	"dog"
-);
-string;
+nCats = 0;whichCat = 3;string = "catch a catnapping cat in a catsup factory";rc = Pat Match(	string,	"cat" + Pat Test(		nCats = nCats + 1;		nCats == whichCat;	),	"dog");string;
 
 ```
 
@@ -588,29 +440,7 @@ string;
 
 ```jsl
 
-
-source = "believe";
-// [aeiou] matches exactly one vowel
-// .*? is a reluctant (vs greedy) match. try it without the ? to see the greedy behavior
-// \1 is a back reference to the first ( group -- [aeiou] is inside the first ( group
-matches = Regex Match(
-	source, // a variable allows updating some text
-	"([aeiou])(.*?)(\1)", // a regex with parens makes back references
-	">\2<" // the match is replaced by text that uses a back reference
-);
-Show( source, matches );
-// results:
-// source = "b>li<ve";
-// matches = {"elie", "e", "li", "e"};
-// notes:
-// matches[1] is the entire match AND the part that will be replaced
-// matches[2] is back ref \1  this is the letter e matched by [aeiou]
-// matches[3] is back ref \2  this is the letter li matched by .*?
-// matches[4] is back ref \3  this is another letter e match by \1, which was an e
-//
-// the * operator is greedy by default, taking as many characters as it can, and
-// only backing up if required. Adding the ? makes it reluctant, taking characters
-// one at a time and allowing the remaining pattern to have a chance earlier.
+source = "believe";// [aeiou] matches exactly one vowel// .*? is a reluctant (vs greedy) match. try it without the ? to see the greedy behavior// \1 is a back reference to the first ( group -- [aeiou] is inside the first ( groupmatches = Regex Match(	source, // a variable allows updating some text	"([aeiou])(.*?)(\1)", // a regex with parens makes back references	">\2<" // the match is replaced by text that uses a back reference);Show( source, matches );// results:// source = "b>li<ve";// matches = {"elie", "e", "li", "e"};// notes:// matches[1] is the entire match AND the part that will be replaced// matches[2] is back ref \1  this is the letter e matched by [aeiou]// matches[3] is back ref \2  this is the letter li matched by .*?// matches[4] is back ref \3  this is another letter e match by \1, which was an e//// the * operator is greedy by default, taking as many characters as it can, and// only backing up if required. Adding the ? makes it reluctant, taking characters// one at a time and allowing the remaining pattern to have a chance earlier.
 
 ```
 

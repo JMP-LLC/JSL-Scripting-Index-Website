@@ -12,9 +12,7 @@
 
 ```jsl
 
-PythonConnection = Python Connect();
-version = PythonConnection << Get Version;
-Show( version );
+PythonConnection = Python Connect();version = PythonConnection << Get Version;Show( version );
 
 ```
 
@@ -26,7 +24,7 @@ Show( version );
 
 **JMP추가된 버전:** 18
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
@@ -34,13 +32,11 @@ Python Create JPIP CMD();
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Create JPIP CMD();
+conn = Python Connect();conn << Create JPIP CMD();
 
 ```
 
@@ -48,75 +44,23 @@ conn << Create JPIP CMD();
 
 **구문:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
-**설명:** 입력 목록을 보내고 명령문을 실행하고 출력 목록을 반환합니다. 선택적 echo() 파라미터의 기본값은 True입니다. echo 파라미터는 Python 소스의 로그 출력을 제어합니다. 논리적 True(1)는 소스를 로그에 출력하고 0은 로그에 출력하지 않습니다.
+**설명:** 입력 목록을 보내고 명령문을 실행한 후 출력 목록을 반환합니다. 선택적 echo() 파라미터의 기본값은 True입니다. echo 파라미터는 Python 소스의 로그 출력을 제어합니다. 논리적 True(1)는 소스를 로그에 출력하고 0은 로그에 출력하지 않습니다.
 
 **JMP추가된 버전:** 14
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-
-a = "abcdef";
-d = 3.141;
-x = 0;
-z = 0;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m, a, d},
-	{x, z, a, d},
-	"\[
-import numpy as np
-a = np.multiply(v, m) # matrix product
-d = np.divide(v, m) # matrix division
-z = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left division
-x = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division
-]\"
-);
-Show( v, m, ml, x, z, a, d );
+a = "abcdef";d = 3.141;x = 0;z = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m, a, d},	{x, z, a, d},	"\[import numpy as npa = np.multiply(v, m) # matrix productd = np.divide(v, m) # matrix divisionz = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left divisionx = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division]\");Show( v, m, ml, x, z, a, d );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-
-x1 = 1;
-x2 = 2;
-y1 = 1;
-y2 = 2;
-z1 = 1;
-z2 = 2;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m},
-	{x1, x2, y1, y2, z1, z2},
-	"\[
-import numpy as np
-x1 = np.multiply(v, m) # matrix product
-print('x1=', x1)
-x2 = np.divide(v, m) # matrix division
-print('x2=', x2)
-y1 = np.dot(v, m) # dot product of v and m
-print('y1=', y1)
-y2 = np.dot(m, v) # dot product of m and v
-print('y2=', y2)
-z1 = np.inner(v, m) # inner product of v and m
-print('z1=', z1)
-z2 = np.inner(m, v) # innder product of m and v
-print('z2=', z2)
-]\"
-);
-Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
+x1 = 1;x2 = 2;y1 = 1;y2 = 2;z1 = 1;z2 = 2;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m},	{x1, x2, y1, y2, z1, z2},	"\[import numpy as npx1 = np.multiply(v, m) # matrix productprint('x1=', x1)x2 = np.divide(v, m) # matrix divisionprint('x2=', x2)y1 = np.dot(v, m) # dot product of v and mprint('y1=', y1)y2 = np.dot(m, v) # dot product of m and vprint('y2=', y2)z1 = np.inner(v, m) # inner product of v and mprint('z1=', z1)z2 = np.inner(m, v) # innder product of m and vprint('z2=', z2)]\");Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```
 
@@ -132,11 +76,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```jsl
 
-
-date1 = As Date( Today() );
-Python Send( date1 );
-date2 = Python Get( date1 );
-Show( date1, date2 );
+date1 = As Date( Today() );Python Send( date1 );date2 = Python Get( date1 );Show( date1, date2 );
 
 ```
 
@@ -144,24 +84,15 @@ Show( date1, date2 );
 
 ```jsl
 
-
-Python Install Packages( "numpy" );
-Python Submit( "import numpy as np" );
-Python Submit( "datetime64 = np.datetime64('1989-10-05')" );
-numpy_datetime = Python Get( datetime64 );
-Show( numpy_datetime );
+Python Install Packages( "numpy" );Python Submit( "import numpy as np" );Python Submit( "datetime64 = np.datetime64('1989-10-05')" );numpy_datetime = Python Get( datetime64 );Show( numpy_datetime );
 
 ```
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-
-x1 = {1, 2, 3};
-Python Send( x1 );
-x2 = Python Get( x1 );
-Show( x1, x2 );
+x1 = {1, 2, 3};Python Send( x1 );x2 = Python Get( x1 );Show( x1, x2 );
 
 ```
 
@@ -175,8 +106,7 @@ Show( x1, x2 );
 
 ```jsl
 
-version = Python Get Version();
-Show( version );
+version = Python Get Version();Show( version );
 
 ```
 
@@ -188,31 +118,19 @@ Show( version );
 
 **JMP추가된 버전:** 14
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-
-Python Init();
-Python Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\" );
-getStr = Python Get( str );
-Show( getStr );
+Python Init();Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-
-PythonConnection = Python Init();
-PythonConnection << Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\" );
-getStr = Python Get( str );
-Show( getStr );
+PythonConnection = Python Init();PythonConnection << Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
@@ -224,31 +142,27 @@ Show( getStr );
 
 **JMP추가된 버전:** 18
 
-#### 예제 1
+**예제 1**
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( "numpy pandas" );
+// install numpy and pandas packagesPython Install Packages( "numpy pandas" );
 
 ```
 
-#### 예제 2
+**예제 2**
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( {"numpy", "pandas"} );
+// install numpy and pandas packagesPython Install Packages( {"numpy", "pandas"} );
 
 ```
 
-#### 예제 3
+**예제 3**
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Install Packages( "numpy pandas" );
+// install numpy and pandas packagesconn = Python Connect();conn << Install Packages( "numpy pandas" );
 
 ```
 
@@ -262,8 +176,7 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-x = Python Is Connected();
-Show( x );
+x = Python Is Connected();Show( x );
 
 ```
 
@@ -277,8 +190,7 @@ Show( x );
 
 ```jsl
 
-Python name = Python JMP Name to Python Name( a b c );
-Show( Python name );
+Python name = Python JMP Name to Python Name( a b c );Show( Python name );
 
 ```
 
@@ -286,26 +198,21 @@ Show( Python name );
 
 **구문:** Python Reset()
 
-**설명:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**설명:** 공유 Python 환경을 재설정하며 주로 개체에 대한 모든 참조를 제거합니다. 단, 가져온 모듈의 가져오기 캐시는 변경되지 않습니다. 이는 Python 환경 자체의 제한 사항입니다. 공유 라이브러리를 로드하는 모듈은 실행 중인 프로세스에서 언로드할 수 없습니다. 순수형 Python 코드를 다시 로드하려면 Python.org 문서에서 importlib reload()를 검색하여 참조하십시오.
 
 **JMP추가된 버전:** 19
 
 ```jsl
 
-pi = 3.1415927;
-Python Send( pi );
-Python Submit( "print(pi)" );
-Python Reset();
-// will show error, pi not defined
-Python Submit( "print(pi)" );
+pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();// will show error, pi not definedPython Submit( "print(pi)" );
 
 ```
 
 ### Python Send
 
-**구문:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
+**구문:** Python Send( name, &lt;Python Name( name )&gt; )
 
-**설명:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
+**설명:** 데이터를 Python으로 보냅니다. name 인수는 JMP 데이터 유형(숫자 | 문자열 | 행렬 | 목록 | 데이터 테이블| 데이터 테이블 열 | 날짜) 중 하나를 나타낼 수 있습니다.
 
 **JMP추가된 버전:** 14
 
@@ -313,10 +220,7 @@ Python Submit( "print(pi)" );
 
 ```jsl
 
-
-date = As Date( Today() );
-Python Send( date );
-Python Submit( "print(date)" );
+date = As Date( Today() );Python Send( date );Python Submit( "print(date)" );
 
 ```
 
@@ -324,13 +228,7 @@ Python Submit( "print(date)" );
 
 ```jsl
 
-
-x = {1, 2, 3};
-Python Send( x );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt );
-Python Submit( "print(x)" );
-Python Submit( "print(dt)" );
+x = {1, 2, 3};Python Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt );Python Submit( "print(x)" );Python Submit( "print(dt)" );
 
 ```
 
@@ -338,10 +236,7 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt:weight );
-Python Submit( "print(weight)" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt:weight );Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -355,11 +250,7 @@ Python Submit( "print(weight)" );
 
 ```jsl
 
-
-Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
-Python Submit( "print(Big_Class)" );
-Python Submit( "print(Baseball)" );
+Python Send File( "$SAMPLE_DATA/Big Class.jmp" );Python Send File( "$SAMPLE_DATA/Baseball.jmp" );Python Submit( "print(Big_Class)" );Python Submit( "print(Baseball)" );
 
 ```
 
@@ -373,12 +264,7 @@ Python Submit( "print(Baseball)" );
 
 ```jsl
 
-Python Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog'
-a = 200]\" );
-getStr = Python Get( str );
-getNum = Python Get( a );
-Show( getStr, getNum );
+Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog'a = 200]\" );getStr = Python Get( str );getNum = Python Get( a );Show( getStr, getNum );
 
 ```
 

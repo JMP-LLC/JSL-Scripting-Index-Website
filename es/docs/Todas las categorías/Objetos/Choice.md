@@ -6,423 +6,197 @@
 
 ### Choice Set ID
 
-**Sintaxis:** Choice( Choice Set ID( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Choice Set ID( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que identifica el conjunto de elecciones que se presentaron al sujeto para una determinación de preferencia dada en la situación de una tabla de datos.
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Profile Effects
 
-**Sintaxis:** obj = Choice(...&lt;Profile Effects( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...&lt;Profile Effects( column )&gt;...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una o más columnas que contienen los valores de efecto o factor en la tabla de datos del perfil.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Profile Grouping
 
-**Sintaxis:** Choice( Profile Grouping( column(s) ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Profile Grouping( column(s) ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que, cuando se utiliza con la columna ID de perfil, únicamente designa cada conjunto de elecciones.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Profile ID
 
-**Sintaxis:** Choice( Profile ID( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Profile ID( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que contiene el ID en la tabla de datos del perfil.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Response Freq
 
-**Sintaxis:** Choice( Response Freq( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Freq( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una columna cuyos valores asignan una frecuencia a cada fila del análisis.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Response Grouping
 
-**Sintaxis:** Choice( Response Grouping( column(s) ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Grouping( column(s) ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que, cuando se utiliza con la columna ID de perfil seleccionado, únicamente designa cada conjunto de elecciones.
 
 ```jsl
 
-Open( "$Sample_Data/Laptop Profile.jmp" );
-Open( "$Sample_Data/Laptop Runs.jmp" );
-Choice(
-	Response Data Table( Data Table( "Laptop Runs" ) ),
-	Profile DataTable( Data Table( "Laptop Profile" ) ),
-	Response Grouping( :Survey, :Choice Set ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :Choice ID ),
-	Profile Grouping( :Survey, :Choice Set ),
-	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),
-	"Firth Bias-Adjusted Estimates"n( 1 ),
-	Response Profile ID Chosen( :Response ),
-	Likelihood Ratio Tests( 1 ),
-	Willingness to Pay(
-		Hard Disk( Feature Factor, "40 GB" ),
-		Speed( Feature Factor, "1.5 GHz" ),
-		Battery Life( Feature Factor, "4 hours" ),
-		Price( Price Factor, 1000 )
-	)
-);
+Open( "$Sample_Data/Laptop Profile.jmp" );Open( "$Sample_Data/Laptop Runs.jmp" );Choice(	Response Data Table( Data Table( "Laptop Runs" ) ),	Profile DataTable( Data Table( "Laptop Profile" ) ),	Response Grouping( :Survey, :Choice Set ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :Choice ID ),	Profile Grouping( :Survey, :Choice Set ),	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),	"Firth Bias-Adjusted Estimates"n( 1 ),	Response Profile ID Chosen( :Response ),	Likelihood Ratio Tests( 1 ),	Willingness to Pay(		Hard Disk( Feature Factor, "40 GB" ),		Speed( Feature Factor, "1.5 GHz" ),		Battery Life( Feature Factor, "4 hours" ),		Price( Price Factor, 1000 )	));
 
 ```
 
 ### Response Profile ID Choices
 
-**Sintaxis:** Choice( Response Profile ID Choice( columns ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Profile ID Choice( columns ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Al menos dos columnas que contienen las elecciones posibles disponibles como respuestas.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Response Profile ID Chosen
 
-**Sintaxis:** Choice( Response Profile ID Chosen( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Profile ID Chosen( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que contiene el ID del perfil que representa el perfil seleccionado del sujeto.
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Response Subject ID
 
-**Sintaxis:** Choice( Response Subject ID( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Subject ID( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que identifica al participante del estudio en la tabla de datos de respuestas.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Response Weight
 
-**Sintaxis:** Choice( Response Weight( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Weight( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una columna cuyos valores asignan un peso a cada fila del análisis.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Subject Effects
 
-**Sintaxis:** obj = Choice(...&lt;Subject Effects( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...&lt;Subject Effects( column )&gt;...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una o más columnas que contienen los valores de efecto o factor en la tabla de datos de sujetos.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Subject ID
 
-**Sintaxis:** Choice( Subject ID( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Subject ID( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que identifica al participante del estudio en la tabla de datos de sujetos o en la situación de una tabla de datos.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );
-obj = Choice(
-	One Table( 1 ),
-	Subject ID( :Subject ),
-	Choice Set ID( :Trial ),
-	Profile ID( :Indicator ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );obj = Choice(	One Table( 1 ),	Subject ID( :Subject ),	Choice Set ID( :Trial ),	Profile ID( :Indicator ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Subject Subject ID
 
-**Sintaxis:** Choice( Subject Subject ID( column ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Subject Subject ID( column ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Una columna que identifica al participante del estudio en la tabla de datos de sujetos.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
@@ -434,36 +208,19 @@ obj = Choice(
 
 **Descripción:** Modela datos de un experimento de elección que estudia las preferencias de los clientes. Estima la probabilidad de que se prefiera una configuración específica mediante un tipo de regresión logística condicional.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );
-obj = Choice(
-	One Table( 1 ),
-	Profile DataTable( dt ),
-	Profile ID( :Indicator ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Profile Grouping( :Subject, :Trial )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );obj = Choice(	One Table( 1 ),	Profile DataTable( dt ),	Profile ID( :Indicator ),	Profile Effects( :Crust, :Cheese, :Topping ),	Profile Grouping( :Subject, :Trial ));
 
 ```
 
@@ -477,21 +234,7 @@ obj = Choice(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Comparisons(
-	{Crust( "Thick" ), Cheese( "Jack" ), Topping( "Pepperoni" )},
-	{Crust( "Thin" ), Cheese( "Mozzarella" ), Topping( "None" )}
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Comparisons(	{Crust( "Thick" ), Cheese( "Jack" ), Topping( "Pepperoni" )},	{Crust( "Thin" ), Cheese( "Mozzarella" ), Topping( "None" )});
 
 ```
 
@@ -503,19 +246,7 @@ obj << Comparisons(
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Confidence Intervals( 1, 0.01 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Confidence Intervals( 1, 0.01 );
 
 ```
 
@@ -529,7 +260,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Convergence Criterion
 
-**Sintaxis:** obj = Choice(...Convergence Criterion( number )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Convergence Criterion( number )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el criterio aceptable de convergencia al realizar la estimación de los parámetros.
 
@@ -541,19 +272,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Correlation of Estimates( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Correlation of Estimates( 1 );
 
 ```
 
@@ -565,71 +284,35 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Effect Marginals( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Effect Marginals( 1 );
 
 ```
 
 ### Firth Bias-Adjusted Estimates
 
-**Sintaxis:** obj = Choice(...Firth Bias-Adjusted Estimates( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Firth Bias-Adjusted Estimates( state=0|1 )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Calcula las estimaciones de la máxima verosimilitud (MLE) corregidas por sesgo que producen mejores estimaciones y pruebas que las MLE sin corrección por sesgo. Estas estimaciones también mejoran los problemas de separación que suelen ocurrir en los modelos logísticos. Opción activada de forma predeterminada.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
-Report( obj )["Parameter Estimates"] << Close( 0 );
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));Report( obj )["Parameter Estimates"] << Close( 0 );
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Hierarchical Bayes
 
-**Sintaxis:** obj = Choice(...Hierarchical Bayes( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Hierarchical Bayes( state=0|1 )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Utiliza un enfoque bayesiano para estimar los parámetros específicos del sujeto.
 
@@ -641,23 +324,7 @@ obj = Choice(
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
-obj << Joint Factor Tests( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));obj << Joint Factor Tests( 1 );
 
 ```
 
@@ -669,19 +336,7 @@ obj << Joint Factor Tests( 1 );
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Likelihood Ratio Tests( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Likelihood Ratio Tests( 1 );
 
 ```
 
@@ -693,18 +348,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Model Dialog;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Model Dialog;
 
 ```
 
@@ -716,25 +360,13 @@ obj << Model Dialog;
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Multiple Choice Profiler( 1, N Choices( 3 ) );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Multiple Choice Profiler( 1, N Choices( 3 ) );
 
 ```
 
 ### Number of Bayesian Iterations
 
-**Sintaxis:** obj = Choice(...Number of Bayesian Iterations( number )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Number of Bayesian Iterations( number )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 ### Number of Burn In Iterations
 
@@ -742,23 +374,13 @@ obj << Multiple Choice Profiler( 1, N Choices( 3 ) );
 
 ### One Table
 
-**Sintaxis:** obj = Choice(...One Table...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...One Table...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que los datos están en formato apilado en una tabla de datos.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
@@ -770,135 +392,67 @@ obj = dt << Choice(
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Probability Profiler( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Probability Profiler( 1 );
 
 ```
 
 ### Profile DataTable
 
-**Sintaxis:** Choice( Profile Data Table( table ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Profile Data Table( table ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Identifica la tabla de datos del perfil.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Remove Subject Effects
 
-**Sintaxis:** obj = Choice(...Remove Subject Effects...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Remove Subject Effects...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 ### Respondents Are Allowed to Choose None
 
-**Sintaxis:** Choice( Respondents Are Allowed to Choose None( state=0|1 ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Respondents Are Allowed to Choose None( state=0|1 ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se incluye un indicador de no elección en el modelo para las filas de respuesta que contengan valores faltantes.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Combined No Choice.jmp" );
-obj = Choice(
-	One Table( 1 ),
-	Response Subject ID( :Subject ),
-	Profile ID( :Indicator ),
-	Profile Grouping( :Subject, :Trial ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	"Firth Bias-adjusted Estimates"n( 1 ),
-	Respondents Are Allowed to Choose None( 1 ),
-	Likelihood Ratio Tests( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Combined No Choice.jmp" );obj = Choice(	One Table( 1 ),	Response Subject ID( :Subject ),	Profile ID( :Indicator ),	Profile Grouping( :Subject, :Trial ),	Profile Effects( :Crust, :Cheese, :Topping ),	"Firth Bias-adjusted Estimates"n( 1 ),	Respondents Are Allowed to Choose None( 1 ),	Likelihood Ratio Tests( 1 ));
 
 ```
 
 ### Response Data Table
 
-**Sintaxis:** Choice( Response Data Table( table ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Response Data Table( table ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Identifica la tabla de datos de respuesta.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
@@ -914,18 +468,7 @@ obj = Choice(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Gradients by Subject;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Gradients by Subject;
 
 ```
 
@@ -941,19 +484,7 @@ obj << Save Gradients by Subject;
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Utility Formula;
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Utility Formula;
 
 ```
 
@@ -965,72 +496,29 @@ obj << Save Utility Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Hierarchical Bayes( 1 )
-);
-obj << Show MLE Parameter Estimates( 1 );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Hierarchical Bayes( 1 ));obj << Show MLE Parameter Estimates( 1 );
 
 ```
 
 ### Subject DataTable
 
-**Sintaxis:** Choice( Subject Data Table( table ), ... )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Choice( Subject Data Table( table ), ... ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Identifica la tabla de datos del individuo.
 
-#### Ejemplo de diferencia máxima
+**Ejemplo de diferencia máxima**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### Ejemplo de elección
+**Ejemplo de elección**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
@@ -1046,19 +534,7 @@ obj = Choice(
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Utility Profiler( 1 );
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Utility Profiler( 1 );
 
 ```
 
@@ -1070,26 +546,7 @@ obj << Utility Profiler( 1 );
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Laptop Profile.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Laptop Runs.jmp" );
-Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Grouping( :Survey, :Choice Set ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :Choice ID ),
-	Profile Grouping( :Survey, :Choice Set ),
-	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),
-	"Firth Bias-Adjusted Estimates"n( 1 ),
-	Response Profile ID Chosen( :Response ),
-	Likelihood Ratio Tests( 1 ),
-	Willingness to Pay(
-		Hard Disk( Feature Factor, "40 GB" ),
-		Speed( Feature Factor, "1.5 GHz" ),
-		Battery Life( Feature Factor, "4 hours" ),
-		Price( Price Factor, 1000 )
-	)
-);
+dt1 = Open( "$SAMPLE_DATA/Laptop Profile.jmp" );dt2 = Open( "$SAMPLE_DATA/Laptop Runs.jmp" );Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Grouping( :Survey, :Choice Set ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :Choice ID ),	Profile Grouping( :Survey, :Choice Set ),	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),	"Firth Bias-Adjusted Estimates"n( 1 ),	Response Profile ID Chosen( :Response ),	Likelihood Ratio Tests( 1 ),	Willingness to Pay(		Hard Disk( Feature Factor, "40 GB" ),		Speed( Feature Factor, "1.5 GHz" ),		Battery Life( Feature Factor, "4 hours" ),		Price( Price Factor, 1000 )	));
 
 ```
 
@@ -1103,12 +560,7 @@ Choice(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1124,10 +576,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1135,10 +584,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1146,13 +592,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -1166,12 +606,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1183,12 +618,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1200,29 +630,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -1234,18 +642,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Copy Script;
 
 ```
 
@@ -1257,18 +654,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Data Table Window;
 
 ```
 
@@ -1282,9 +668,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1296,30 +680,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1333,19 +694,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1353,29 +702,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1387,19 +714,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1411,11 +726,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1427,19 +738,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -1451,19 +750,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1475,19 +762,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1499,10 +774,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1516,14 +788,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1535,13 +800,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1553,32 +812,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Sintaxis:** New JSL Preset( preset )
-
-**Descripción:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1592,9 +826,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1606,15 +838,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1626,52 +850,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Redo Analysis;
 
 ```
 
@@ -1683,52 +862,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
-
-**Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Relaunch Analysis;
 
 ```
 
@@ -1740,14 +874,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1759,57 +886,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintaxis:** Render Preset( preset )
-
-**Descripción:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versión agregada:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report;Report( obj )
+**Sintaxis:** obj &lt;&lt; Report; Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1821,18 +910,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Report View( "Summary" );
 
 ```
 
@@ -1844,29 +922,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1878,29 +934,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1912,29 +946,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1946,18 +958,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Script for All Objects;
 
 ```
 
@@ -1967,63 +968,19 @@ obj << Save Script for All Objects;
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -2035,20 +992,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Script to Data Table(
-	"My Analysis", <<Prompt( 0 ), <<Replace( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -2060,18 +1004,7 @@ obj << Save Script to Data Table(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Script to Journal;
 
 ```
 
@@ -2083,18 +1016,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Script to Report;
 
 ```
 
@@ -2106,18 +1028,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Save Script to Script Window;
 
 ```
 
@@ -2129,18 +1040,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup(
-		{:sex == "M"},
-		Continuous Distribution( Column( :weight ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -2152,22 +1052,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ),
-			Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -2179,16 +1064,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox,
-			{Frame Size( 178, 318 )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -2200,11 +1076,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -2216,18 +1088,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));obj << Title( "My Platform" );
 
 ```
 
@@ -2239,20 +1100,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = dt << Choice(
-	Response Data Table( Data Table( "Pizza Responses" ) ),
-	Profile DataTable( Data Table( "Pizza Profiles" ) ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = dt << Choice(	Response Data Table( Data Table( "Pizza Responses" ) ),	Profile DataTable( Data Table( "Pizza Profiles" ) ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2268,15 +1116,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column(
-		"age^2",
-		Format( "Fixed Dec", 5, 0 ),
-		Formula( :age * :age )
-	),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2288,34 +1128,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintaxis:** obj = Choice(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Choice(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate(
-	Window View( "Private" ),
-	Y( :weight ),
-	X( :height ),
-	Fit Line
-);
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit",
-		Text Box( eqn, <<Set Base Font( "Title" ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

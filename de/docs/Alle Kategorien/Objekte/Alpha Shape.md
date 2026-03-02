@@ -12,10 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-ashape << Get Alpha();
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );ashape << Get Alpha();
 
 ```
 
@@ -27,10 +24,7 @@ ashape << Get Alpha();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Edges;
 
 ```
 
@@ -42,10 +36,7 @@ tri << Get Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Hull Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Hull Edges;
 
 ```
 
@@ -57,10 +48,7 @@ tri << Get Hull Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Hull Path;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Hull Path;
 
 ```
 
@@ -72,10 +60,7 @@ tri << Get Hull Path;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Hull Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Hull Points;
 
 ```
 
@@ -87,10 +72,7 @@ tri << Get Hull Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get NEdges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get NEdges;
 
 ```
 
@@ -102,10 +84,7 @@ tri << Get NEdges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get N Hull Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get N Hull Edges;
 
 ```
 
@@ -117,10 +96,7 @@ tri << Get N Hull Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get N Hull Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get N Hull Points;
 
 ```
 
@@ -132,10 +108,7 @@ tri << Get N Hull Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get N Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get N Points;
 
 ```
 
@@ -147,10 +120,7 @@ tri << Get N Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get N Triangles;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get N Triangles;
 
 ```
 
@@ -162,10 +132,7 @@ tri << Get N Triangles;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Points;
 
 ```
 
@@ -177,10 +144,7 @@ tri << Get Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-ashape << Get Tri Alpha();
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );ashape << Get Tri Alpha();
 
 ```
 
@@ -192,10 +156,7 @@ ashape << Get Tri Alpha();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Triangles;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Triangles;
 
 ```
 
@@ -207,10 +168,7 @@ tri << Get Triangles;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-tri << Get Y;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );tri << Get Y;
 
 ```
 
@@ -222,12 +180,7 @@ tri << Get Y;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-Show( tri << Get N Triangles );
-tri2 = tri << Peel;
-Show( tri2 << Get N Triangles );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );Show( tri << Get N Triangles );tri2 = tri << Peel;Show( tri2 << Get N Triangles );
 
 ```
 
@@ -239,10 +192,7 @@ Show( tri2 << Get N Triangles );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-ashape << Set Alpha( 0.5 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );ashape << Set Alpha( 0.5 );
 
 ```
 
@@ -254,12 +204,7 @@ ashape << Set Alpha( 0.5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
-Show( tri << Get N Triangles );
-tri2 = tri << Subset( tri << Get Hull Points );
-Show( tri2 << Get N Triangles );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );Show( tri << Get N Triangles );tri2 = tri << Subset( tri << Get Hull Points );Show( tri2 << Get N Triangles );
 
 ```
 
@@ -273,9 +218,7 @@ Show( tri2 << Get N Triangles );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-triang = Triangulation( X( :X, :Y ), Y( :POP ) );
-ashape = tri = Alpha Shape( triang );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );triang = Triangulation( X( :X, :Y ), Y( :POP ) );ashape = tri = Alpha Shape( triang );
 
 ```
 

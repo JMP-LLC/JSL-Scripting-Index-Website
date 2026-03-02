@@ -12,13 +12,7 @@
 
 ```jsl
 
-Local(
-	{rhymes = ["mouse" => "house",
-	"car" => "star",
-	"orange" => ""], words = ["mouse" => 42,
-	"car" => 54]},
-	rhymes << Contains( words )
-);
+Local(	{rhymes = ["mouse" => "house",	"car" => "star",	"orange" => ""], words = ["mouse" => 42,	"car" => 54]},	rhymes << Contains( words ));
 
 ```
 
@@ -30,9 +24,7 @@ Local(
 
 ```jsl
 
-Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
-	rhymes << Contains Item( "car" )
-);
+Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},	rhymes << Contains Item( "car" ));
 
 ```
 
@@ -44,14 +36,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ```jsl
 
-Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
-	x = aa << First;
-	While( !Is Empty( x ),
-		words = words || aa[x];
-		x = aa << Next( x );
-	);
-	words;
-);
+Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},	x = aa << First;	While( !Is Empty( x ),		words = words || aa[x];		x = aa << Next( x );	);	words;);
 
 ```
 
@@ -75,13 +60,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ```jsl
 
-Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
-	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
-	aa << Insert( "set item" ); /* used for sets, value is 1 */
-	aa << Set Default Value( (aa << Get Default Value) - 1 ); /* new default is one less than old default */
-	v2 = aa[876]; /* v2 is 98 because the key 876 is STILL not found */
-	Char( v1 ) || " " || Char( v2 ) || " " || Char( aa );
-);
+Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */	aa << Insert( "set item" ); /* used for sets, value is 1 */	aa << Set Default Value( (aa << Get Default Value) - 1 ); /* new default is one less than old default */	v2 = aa[876]; /* v2 is 98 because the key 876 is STILL not found */	Char( v1 ) || " " || Char( v2 ) || " " || Char( aa ););
 
 ```
 
@@ -105,9 +84,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ```jsl
 
-Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"orange", .75}} )},
-	prices << getvalue( "orange" ) /* or prices["orange"] */
-);
+Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"orange", .75}} )},	prices << getvalue( "orange" ) /* or prices["orange"] */);
 
 ```
 
@@ -131,10 +108,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ```jsl
 
-Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." => "c"]},
-	decode << Insert( others );
-	decode["-.-."] || decode[".-"] || decode["-..."] || decode["..."];
-);
+Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." => "c"]},	decode << Insert( others );	decode["-.-."] || decode[".-"] || decode["-..."] || decode["..."];);
 
 ```
 
@@ -146,10 +120,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ```jsl
 
-Local( {decode = [".-" => "a", "-..." => "b"]},
-	decode << insertitem( "-.-.", "c" );/* or decode["-.-."]="c"*/
-	decode["-.-."] || decode[".-"] || decode["-..."];
-);
+Local( {decode = [".-" => "a", "-..." => "b"]},	decode << insertitem( "-.-.", "c" );/* or decode["-.-."]="c"*/	decode["-.-."] || decode[".-"] || decode["-..."];);
 
 ```
 
@@ -159,42 +130,19 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 **Beschreibung:** Behandelt ein assoziatives Array als Objektsatz. Die Werte müssen für Objekte im Satz 1 sein. Der Standardwert muss 0 sein. Der aktuelle Satz wird durch die Schnittmenge mit dem Satz in der Meldung ersetzt.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be zero for intersect to work */
-	red things << Insert( "apple" ) << Insert( "blood" ) << Insert( "stop light" ) <<
-	Insert( "mars" );
-	round things << Insert( "earth" ) << Insert( "mars" ) << Insert( "apple" ) <<
-	Insert( "orange" );
-	red and round = red things;
-	red and round << Intersect( round things );
-	red and round << Get Keys;
-);
+Local( {red things = [=> 0], round things = [=> 0]},  /* default values must be zero for intersect to work */	red things << Insert( "apple" ) << Insert( "blood" ) << Insert( "stop light" ) <<	Insert( "mars" );	round things << Insert( "earth" ) << Insert( "mars" ) << Insert( "apple" ) <<	Insert( "orange" );	red and round = red things;	red and round << Intersect( round things );	red and round << Get Keys;);
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" ); 
-
-// select where could be used with :age<=12 & :sex=="M" in one step.  this is a demo of set operations with associative arrays.
-// associative array([2,4,7]) builds a set containing keys 2,4,7 with a value of 1 and all other possible keys have a value of 0
-
-dt << Select Where( :age <= 12 );
-preteen = Associative Array( dt << Get Selected Rows ); // get selected rows returns an array
-
-dt << SelectWhere( :sex == "M" );
-male = Associative Array( dt << GetSelectedRows ); // the array creates a "set" of items
-
-desiredSelection = preteen; // copy the set because the following <<intersect happens in-place
-desiredSelection << intersect( male ); // two sets can be intersected, producing the items that are in set1 AND set2
-
-dt << clear select; // clear, because <<SelectRows extends an existing selection
-dt << selectrows( desiredSelection << getkeys ); // males <= 12
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" ); // select where could be used with :age<=12 & :sex=="M" in one step.  this is a demo of set operations with associative arrays.// associative array([2,4,7]) builds a set containing keys 2,4,7 with a value of 1 and all other possible keys have a value of 0dt << Select Where( :age <= 12 );preteen = Associative Array( dt << Get Selected Rows ); // get selected rows returns an arraydt << SelectWhere( :sex == "M" );male = Associative Array( dt << GetSelectedRows ); // the array creates a "set" of itemsdesiredSelection = preteen; // copy the set because the following <<intersect happens in-placedesiredSelection << intersect( male ); // two sets can be intersected, producing the items that are in set1 AND set2dt << clear select; // clear, because <<SelectRows extends an existing selectiondt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ```
 
@@ -206,14 +154,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ```jsl
 
-Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},
-	x = aa << First;
-	While( !Is Empty( x ),
-		words = words || aa[x];
-		x = aa << Next( x );
-	);
-	words;
-);
+Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""},	x = aa << First;	While( !Is Empty( x ),		words = words || aa[x];		x = aa << Next( x );	);	words;);
 
 ```
 
@@ -225,10 +166,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ```jsl
 
-Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1]},
-	primes << Remove( [4 => 1, 6 => 1, 8 => 1, 9 => 1] );
-	primes << GetKeys; /* retrieve a list of remaining keys */
-);
+Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1]},	primes << Remove( [4 => 1, 6 => 1, 8 => 1, 9 => 1] );	primes << GetKeys; /* retrieve a list of remaining keys */);
 
 ```
 
@@ -240,26 +178,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ```jsl
 
-Local(
-	{primes = [2 => 1,
-	3 => 1,
-	4 => 1,
-	5 => 1,
-	6 => 1,
-	7 => 1,
-	8 => 1,
-	9 => 1] /* all the values are 1; they are not actually used */
-	, p, test},
-	p = primes << First; /* iterate through keys */
-	While( !Is Empty( p ), /* empty key means finished iterating */
-		test = p; /* remember the key before advancing */
-		p = primes << Next( p ); /* advance to next key before removing this key */
-		If( test == 4 | test == 6 | test > 7, /* not the most sophisticated way to make primes */
-			primes << Remove Item( test ) /* here it is! remove a key from the Associative Array */
-		);
-	);
-	primes << GetKeys; /* retrieve a list of remaining keys */
-);
+Local(	{primes = [2 => 1,	3 => 1,	4 => 1,	5 => 1,	6 => 1,	7 => 1,	8 => 1,	9 => 1] /* all the values are 1; they are not actually used */	, p, test},	p = primes << First; /* iterate through keys */	While( !Is Empty( p ), /* empty key means finished iterating */		test = p; /* remember the key before advancing */		p = primes << Next( p ); /* advance to next key before removing this key */		If( test == 4 | test == 6 | test > 7, /* not the most sophisticated way to make primes */			primes << Remove Item( test ) /* here it is! remove a key from the Associative Array */		);	);	primes << GetKeys; /* retrieve a list of remaining keys */);
 
 ```
 
@@ -271,13 +190,7 @@ Local(
 
 ```jsl
 
-Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */
-	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */
-	aa << Insert( "set item" ); /* used for sets, value is 1 */
-	aa << Set Default Value( (aa << Get Default Value) - 1 ); /* new default is one less than old default */
-	v2 = aa[876]; /* v2 is 98 because the key 876 is STILL not found */
-	Char( v1 ) || " " || Char( v2 ) || " " || Char( aa );
-);
+Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 */	v1 = aa[876]; /* v1 is 99 because the key 876 is not found */	aa << Insert( "set item" ); /* used for sets, value is 1 */	aa << Set Default Value( (aa << Get Default Value) - 1 ); /* new default is one less than old default */	v2 = aa[876]; /* v2 is 98 because the key 876 is STILL not found */	Char( v1 ) || " " || Char( v2 ) || " " || Char( aa ););
 
 ```
 
@@ -285,15 +198,13 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
 
 **Beschreibung:** Erstellt ein assoziatives Array, das auch als Wörterbuch oder Hashmap bekannt ist. Im Format mit zwei Argumenten können Schlüssel und Werte eine Liste, eine Matrix oder eine Spalte in einer Datentabelle sein.
 
 ```jsl
 
-ex = Associative Array( {"red", "blue"}, {1, 2} );
-ex["green"] = 3;
-ex << get contents;
+ex = Associative Array( {"red", "blue"}, {1, 2} );ex["green"] = 3;ex << get contents;
 
 ```
 

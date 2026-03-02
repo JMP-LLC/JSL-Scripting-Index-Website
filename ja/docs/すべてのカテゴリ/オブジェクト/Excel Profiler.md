@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,12 +56,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -90,8 +68,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Copy Script;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Copy Script;
 
 ```
 
@@ -103,8 +80,7 @@ obj << Copy Script;
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Data Table Window;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Data Table Window;
 
 ```
 
@@ -118,9 +94,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -134,27 +108,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -162,9 +116,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -176,9 +128,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -190,9 +140,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-t = obj << Get Script;
-Show( t );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -204,9 +152,7 @@ Show( t );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-t = obj << Get Script With Data Table;
-Show( t );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -218,9 +164,7 @@ Show( t );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-t = obj << Get Timing;
-Show( t );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -232,10 +176,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -249,10 +190,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -264,31 +202,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
-
-```
-
-### New JSL Preset
-
-**構文:** New JSL Preset( preset )
-
-**説明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -302,9 +216,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -316,8 +228,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Redo Analysis;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Redo Analysis;
 
 ```
 
@@ -329,8 +240,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Relaunch Analysis;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Relaunch Analysis;
 
 ```
 
@@ -342,45 +252,19 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
-
-```
-
-### Render Preset
-
-**構文:** Render Preset( preset )
-
-**説明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
 ### Report
 
-**構文:** obj &lt;&lt; Report;Report( obj )
+**構文:** obj &lt;&lt; Report; Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -392,8 +276,7 @@ Show( t );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Report View( "Summary" );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Report View( "Summary" );
 
 ```
 
@@ -405,8 +288,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Save Script for All Objects;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Save Script for All Objects;
 
 ```
 
@@ -416,21 +298,19 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table;
+obj = Excel Profiler(	Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+obj = Excel Profiler(	Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -442,8 +322,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -455,8 +334,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Save Script to Journal;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Save Script to Journal;
 
 ```
 
@@ -468,8 +346,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Save Script to Report;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Save Script to Report;
 
 ```
 
@@ -481,8 +358,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Save Script to Script Window;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Save Script to Script Window;
 
 ```
 
@@ -494,15 +370,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -514,20 +382,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -539,12 +394,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -556,8 +406,7 @@ dt << Distribution(
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Title( "My Platform" );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Title( "My Platform" );
 
 ```
 
@@ -569,10 +418,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -584,9 +430,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -598,48 +442,27 @@ xml = obj << View Web XML;
 
 **説明:** 応答の計算式に含まれている入力変数のうち、誤差因子である列を指定する。誤差因子は、誤差因子のばらつきに対するするロバスト性(平坦性)を調べるために使用される。作成されるプロファイルには、誤差因子で応答の計算式を微分したものも描かれる。
 
-#### プロファイルの例
+**プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
-#### 等高線プロファイルの例
+**等高線プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Contour Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Contour Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
-#### 配合プロファイルの例
+**配合プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Custom Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Custom Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
@@ -691,8 +514,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Formulas for OPTMODEL;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Formulas for OPTMODEL;
 
 ```
 
@@ -716,8 +538,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), Model( "Dem
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Prediction Profiler( 1 );
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Prediction Profiler( 1 );
 
 ```
 
@@ -729,9 +550,7 @@ obj << Prediction Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
-obj << Save Expanded Formulas;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );obj << Save Expanded Formulas;
 
 ```
 
@@ -743,8 +562,7 @@ obj << Save Expanded Formulas;
 
 ```jsl
 
-obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
-obj << Show Formulas;
+obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );obj << Show Formulas;
 
 ```
 

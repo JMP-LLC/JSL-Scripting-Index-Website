@@ -12,8 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
@@ -21,107 +20,101 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Censor
 
-**Syntax:** obj &lt;&lt; Censor( column )
+**Syntax:** obj = XGBoost(...&lt;Censor( column )&gt;...)
 
 **JMP Version Added:** 17
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Factor
 
-**Syntax:** obj &lt;&lt; Factor( column(s) )
+**Syntax:** obj = XGBoost(...Factor( column(s) )...)
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Freq
 
-**Syntax:** obj &lt;&lt; Freq( column )
+**Syntax:** obj = XGBoost(...&lt;Freq( column )&gt;...)
+
+**Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
 **JMP Version Added:** 16
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Response
 
-**Syntax:** obj &lt;&lt; Response( column(s) )
+**Syntax:** obj = XGBoost(...Response( column(s) )...)
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Validation
 
-**Syntax:** obj &lt;&lt; Validation( column(s) )
+**Syntax:** obj = XGBoost(...&lt;Validation( column(s) )&gt;...)
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Weight
 
-**Syntax:** obj &lt;&lt; Weight( column )
+**Syntax:** obj = XGBoost(...&lt;Weight( column )&gt;...)
+
+**Description:** Specifies a column whose values assign a weight to each row for the analysis.
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### X
 
-**Syntax:** obj &lt;&lt; X( column(s) )
+**Syntax:** obj = XGBoost(...X( column(s) )...)
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
 ### Y
 
-**Syntax:** obj &lt;&lt; Y( column(s) )
+**Syntax:** obj = XGBoost(...Y( column(s) )...)
 
 **JMP Version Added:** 15
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
@@ -145,9 +138,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit( Objective( 0 ) ) );
-obj << Compare( Correlation( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit( Objective( 0 ) ) );obj << Compare( Correlation( 1 ) );
 
 ```
 
@@ -161,8 +152,7 @@ obj << Compare( Correlation( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```
 
@@ -171,6 +161,20 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 **Syntax:** obj &lt;&lt; Get Measures
 
 **JMP Version Added:** 16
+
+### Method
+
+**Syntax:** obj &lt;&lt; Method( "xgboost"|"lightgbm"="xgboost" )
+
+**Description:** Select either XGBoost or LightGBM as a method for gradient boosting fitting. "xgboost" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost(	Y( :Weight ),	X( :Height ),	Fit( Method( "lightgbm" ), objective( "regression" ) ));
+
+```
 
 ### Redo Analysis
 
@@ -182,9 +186,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Redo Analysis;
 
 ```
 
@@ -198,9 +200,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Relaunch Analysis;
 
 ```
 
@@ -214,8 +214,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Show Details( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Show Details( 1 ) );
 
 ```
 
@@ -229,12 +228,7 @@ XGBoost( Y( :Weight ), X( :Height ), Show Details( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -250,13 +244,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -264,10 +252,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -275,10 +260,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -290,14 +272,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -309,9 +284,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Copy Script;
 
 ```
 
@@ -325,9 +298,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -339,15 +310,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -361,10 +324,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -372,27 +332,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -404,10 +344,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -419,10 +356,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj << Get Script;Show( t );
 
 ```
 
@@ -434,10 +368,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -449,10 +380,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -464,10 +392,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -481,10 +406,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -496,13 +418,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -516,25 +432,19 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report;Report( obj )
+**Syntax:** obj &lt;&lt; Report; Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -546,14 +456,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -565,14 +468,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -584,14 +480,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -603,9 +492,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Save Script for All Objects;
 
 ```
 
@@ -619,14 +506,7 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
@@ -634,14 +514,7 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -653,9 +526,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -667,9 +538,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Save Script to Journal;
 
 ```
 
@@ -681,9 +550,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Save Script to Report;
 
 ```
 
@@ -695,9 +562,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Save Script to Script Window;
 
 ```
 
@@ -709,15 +574,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -729,20 +586,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -754,12 +598,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -771,9 +610,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );obj << Title( "My Platform" );
 
 ```
 
@@ -785,11 +622,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << XGBoost( Y( :Weight ), X( :Height ), Fit );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -801,9 +634,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -1053,9 +884,9 @@ xml = obj << View Web XML;
 
 #### Autotune
 
-**Syntax:** obj &lt;&lt; Autotune
+**Syntax:** obj &lt;&lt; Autotune( state=0 )
 
-**Description:** Creates a fast flexible filling design within min and max parameter settings to fit n models, where n is Number of Runs.
+**Description:** Creates a fast flexible filling design within min and max parameter settings to fit n models, where n is Number of Runs. "0" by default.
 
 **JMP Version Added:** 17
 
@@ -1069,13 +900,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << XGBoost(
-	Y( :Species ),
-	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Fit
-);
-obj << (fit[1] << Confusion Matrices( 1 ));
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << XGBoost(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);obj << (fit[1] << Confusion Matrices( 1 ));
 
 ```
 
@@ -1145,8 +970,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Design Points( 10 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Design Points( 10 ) ) );
 
 ```
 
@@ -1160,23 +984,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Design Points( 10 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Inner Folds( 2 ) ) );
-
-```
-
-#### Objective
-
-**Syntax:** obj &lt;&lt; Objective( "reg:squarederror"|"binary:logistic"|"binary:hinge"|"count:poisson"|"multi:softprob"|"rank:pairwise"|"rank:ndcg"|"rank:map"|"reg:gamma"|"reg:logistic"|"reg:pseudohubererror"|"reg:squaredlogerror"|"reg:tweedie"|"survival:cox"="reg:squarederror" )
-
-**Description:** Specifies the function to be optimized for model fitting. The function must be consistent with the modeling type of the response. "reg:squarederror" by default.
-
-**JMP Version Added:** 15
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Inner Folds( 2 ) ) );
 
 ```
 
@@ -1222,14 +1030,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << XGBoost(
-	Y( :Species ),
-	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Fit
-);
-Wait( 2 );
-obj << (Fit[1] << Remove All But This Fit);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << XGBoost(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);Wait( 2 );obj << (Fit[1] << Remove All But This Fit);
 
 ```
 
@@ -1243,14 +1044,7 @@ obj << (Fit[1] << Remove All But This Fit);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );
-obj = dt << XGBoost(
-	Y( :Species ),
-	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
-	Fit
-);
-Wait( 2 );
-obj << (Fit[1] << Remove Fit);
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << XGBoost(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);Wait( 2 );obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -1277,6 +1071,14 @@ obj << (Fit[1] << Remove Fit);
 **Description:** Saves Shapley values to the data table. These values break down predictions into components for each predictor.
 
 **JMP Version Added:** 17
+
+#### Set Random Seed
+
+**Syntax:** obj &lt;&lt; Set Random Seed( number=0 )
+
+**Description:** Sets the random seed to a specific value assuring that all subsequent runs using the same seed are reproducible. "0" by default.
+
+**JMP Version Added:** 19
 
 #### Surface Profiler
 
@@ -1312,8 +1114,7 @@ obj << (Fit[1] << Remove Fit);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( alpha( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( alpha( 0.0 ) ) );
 
 ```
 
@@ -1327,8 +1128,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha( 0.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_max( 2.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_max( 2.0 ) ) );
 
 ```
 
@@ -1342,10 +1142,69 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_max( 2.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_min( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_min( 0.0 ) ) );
 
 ```
+
+#### bagging_by_query
+
+**Syntax:** obj &lt;&lt; bagging_by_query( state=0 )
+
+**Description:** Specifies whether to force rowwise histogram building. Enabling this option reduces memory cost, especially for data that have many samples and are associated with small bagging fraction or GOSS sample strategy. This option cannot be used together with force columnwise. "0" by default.
+
+**JMP Version Added:** 19
+
+#### bagging_fraction
+
+**Syntax:** obj &lt;&lt; bagging_fraction( number=1 )
+
+**Description:** Specifies the proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "1" by default.
+
+**JMP Version Added:** 19
+
+#### bagging_fraction_max
+
+**Syntax:** obj &lt;&lt; bagging_fraction_max( number=1.0 )
+
+**Description:** Specifies the maximum proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "1.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( bagging_fraction_max( 1.0 ) ) );
+
+```
+
+#### bagging_fraction_min
+
+**Syntax:** obj &lt;&lt; bagging_fraction_min( number=0.3 )
+
+**Description:** Specifies the minimum proportion of rows to sample during each iteration. This value must be between 0 and 1. This is a type of bagging. "0.3" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( bagging_fraction_min( 0.3 ) ) );
+
+```
+
+#### bagging_freq
+
+**Syntax:** obj &lt;&lt; bagging_freq( number=0 )
+
+**Description:** Specifies the frequency of bagging. This value determines the number of iterations at which a new random sample of training data is drawn to train the model. "0" by default.
+
+**JMP Version Added:** 19
+
+#### bagging_seed
+
+**Syntax:** obj &lt;&lt; bagging_seed( number=3 )
+
+**Description:** Specifies the seed that is used for the bagging random number generator. "3" by default.
+
+**JMP Version Added:** 19
 
 #### base_score
 
@@ -1357,10 +1216,25 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_min( 0.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( base_score( 0.5 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( base_score( 0.5 ) ) );
 
 ```
+
+#### bin_construct_sample_cnt
+
+**Syntax:** obj &lt;&lt; bin_construct_sample_cnt( number=200000 )
+
+**Description:** Specifies the number of observations that are sampled to construct feature discrete bins. If this option is set to small values, you might encounter unexpected errors and poor accuracy. "200000" by default.
+
+**JMP Version Added:** 19
+
+#### boost_from_average
+
+**Syntax:** obj &lt;&lt; boost_from_average( state=1 )
+
+**Description:** Specifies whether the initial prediction is set to the average of the response variable or to a constant zero. This option is used only in regression, binary, multiclass, and cross-entropy objectives. On by default.
+
+**JMP Version Added:** 19
 
 #### booster
 
@@ -1372,10 +1246,77 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( base_score( 0.5 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gbtree" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gbtree" ) ) );
 
 ```
+
+#### boosting
+
+**Syntax:** obj &lt;&lt; boosting( "gbdt"|"rf"|"dart"="gbdt" )
+
+**Description:** Specifies the boosting strategy that is used during model training. "gbdt" by default.
+
+**JMP Version Added:** 19
+
+#### cat_l2
+
+**Syntax:** obj &lt;&lt; cat_l2( number=10 )
+
+**Description:** Specifies the L2 regularization value for categorical features. "10" by default.
+
+**JMP Version Added:** 19
+
+#### cat_l2_max
+
+**Syntax:** obj &lt;&lt; cat_l2_max( number=15 )
+
+**Description:** Specifies the maximum L2 regularization value for categorical features. "15" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( cat_l2_max( 2.0 ) ) );
+
+```
+
+#### cat_l2_min
+
+**Syntax:** obj &lt;&lt; cat_l2_min( number=5 )
+
+**Description:** Specifies the minimum L2 regularization value for categorical features. "5" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( cat_l2_min( 0.0 ) ) );
+
+```
+
+#### cat_smooth
+
+**Syntax:** obj &lt;&lt; cat_smooth( number=10 )
+
+**Description:** Specifies the regularization value that is used to reduce the impact of noise in categorical features, especially for those categories with few observations. "10" by default.
+
+**JMP Version Added:** 19
+
+#### cegb_penalty_split
+
+**Syntax:** obj &lt;&lt; cegb_penalty_split( number=0 )
+
+**Description:** "0" by default.
+
+**JMP Version Added:** 19
+
+#### cegb_tradeoff
+
+**Syntax:** obj &lt;&lt; cegb_tradeoff( number=1 )
+
+**Description:** "1" by default.
+
+**JMP Version Added:** 19
 
 #### colsample_bylevel
 
@@ -1387,8 +1328,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gbtree" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bylevel( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bylevel( 1.0 ) ) );
 
 ```
 
@@ -1402,8 +1342,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bylevel( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bynode( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bynode( 1.0 ) ) );
 
 ```
 
@@ -1417,8 +1356,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bynode( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree( 1.0 ) ) );
 
 ```
 
@@ -1432,8 +1370,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_max( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_max( 1.0 ) ) );
 
 ```
 
@@ -1447,10 +1384,89 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_max( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_min( 0.3 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_min( 0.3 ) ) );
 
 ```
+
+#### data_random_seed
+
+**Syntax:** obj &lt;&lt; data_random_seed( number=1 )
+
+**Description:** Specifies the seed that is used for the random number generator when sampling data to construct histogram bins. "1" by default.
+
+**JMP Version Added:** 19
+
+#### data_sample_strategy
+
+**Syntax:** obj &lt;&lt; data_sample_strategy( "bagging"|"goss"="bagging" )
+
+**Description:** Specifies the strategy for drawing samples for usage on each boosting iteration. "bagging" by default.
+
+**JMP Version Added:** 19
+
+#### deterministic
+
+**Syntax:** obj &lt;&lt; deterministic( state=0 )
+
+**Description:** Specifies that results can be reproduced. Setting this option to true ensures stable results when using different numbers of threads for the same data samples and parameters. This option is useful for reproducibility. "0" by default.
+
+**JMP Version Added:** 19
+
+#### device_type
+
+**Syntax:** obj &lt;&lt; device_type( "cpu"|"gpu"="cpu" )
+
+**Description:** Specifies whether to use the CPU or GPU device. "cpu" by default.
+
+**JMP Version Added:** 19
+
+#### drop_rate
+
+**Syntax:** obj &lt;&lt; drop_rate( number=0.1 )
+
+**Description:** Specifies the fraction of previous trees to drop during the dropout for DART boosting. "0.1" by default.
+
+**JMP Version Added:** 19
+
+#### drop_seed
+
+**Syntax:** obj &lt;&lt; drop_seed( number=4 )
+
+**Description:** Specifies the seed that is used for the dropout procedure in DART boosting. "4" by default.
+
+**JMP Version Added:** 19
+
+#### early_stopping_min_delta
+
+**Syntax:** obj &lt;&lt; early_stopping_min_delta( number=0 )
+
+**Description:** Specifies the minimum value by which the training metric must improve on each iteration. Otherwise, the training process stops when using an early stopping round. "0" by default.
+
+**JMP Version Added:** 19
+
+#### early_stopping_round
+
+**Syntax:** obj &lt;&lt; early_stopping_round( number=0 )
+
+**Description:** Specifies the maximum number of iterations for which to continue training while the training metric does not improve. A value of zero means no early stopping. "0" by default.
+
+**JMP Version Added:** 19
+
+#### enable_bundle
+
+**Syntax:** obj &lt;&lt; enable_bundle( state=1 )
+
+**Description:** Specifies whether to use exclusive feature bundling. If this option is set to false, the training speed might be slow for sparse data sets. On by default.
+
+**JMP Version Added:** 19
+
+#### eval_at
+
+**Syntax:** obj &lt;&lt; eval_at( text=1,2,3,4,5 )
+
+**Description:** Specifies the cutoff points when ranking models with either of the NDGG or MAP metrics. "1,2,3,4,5" by default.
+
+**JMP Version Added:** 19
 
 #### eval_metric
 
@@ -1462,10 +1478,93 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_min( 0.3 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( eval_metric( rmse ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( eval_metric( rmse ) ) );
 
 ```
+
+#### extra_seed
+
+**Syntax:** obj &lt;&lt; extra_seed( number=6 )
+
+**Description:** Specifies the seed that is used for selecting thresholds when the extra trees option is specified. "6" by default.
+
+**JMP Version Added:** 19
+
+#### extra_trees
+
+**Syntax:** obj &lt;&lt; extra_trees( state=0 )
+
+**Description:** Specifies whether to use extremely randomized trees. Instead of evaluating all possible split points for each feature to find the optimal split, this option randomly selects a subset of features at each node. For each selected feature, this option randomly chooses one threshold to evaluate for the splitting node. "0" by default.
+
+**JMP Version Added:** 19
+
+#### fair_c
+
+**Syntax:** obj &lt;&lt; fair_c( number=1 )
+
+**Description:** Specifies the parameter that controls the smoothness of the fair objective loss. "1" by default.
+
+**JMP Version Added:** 19
+
+#### feature_fraction
+
+**Syntax:** obj &lt;&lt; feature_fraction( number=1 )
+
+**Description:** Specifies the proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "1" by default.
+
+**JMP Version Added:** 19
+
+#### feature_fraction_bynode
+
+**Syntax:** obj &lt;&lt; feature_fraction_bynode( number=1 )
+
+**Description:** Specifies the fraction of features that are randomly selected during training. A value of 0.75 means 75% of features are randomly selected for training. "1" by default.
+
+**JMP Version Added:** 19
+
+#### feature_fraction_max
+
+**Syntax:** obj &lt;&lt; feature_fraction_max( number=1.0 )
+
+**Description:** Specifies the maximum proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "1.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( feature_fraction_max( 1.0 ) ) );
+
+```
+
+#### feature_fraction_min
+
+**Syntax:** obj &lt;&lt; feature_fraction_min( number=0.2 )
+
+**Description:** Specifies the minimum proportion of columns to sample when constructing each tree. Sampling occurs once for each tree. This value must be between 0 and 1. "0.2" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( feature_fraction_min( 0.2 ) ) );
+
+```
+
+#### feature_fraction_seed
+
+**Syntax:** obj &lt;&lt; feature_fraction_seed( number=2 )
+
+**Description:** Specifies the seed that is used for the feature fraction random number generator. "2" by default.
+
+**JMP Version Added:** 19
+
+#### feature_pre_filter
+
+**Syntax:** obj &lt;&lt; feature_pre_filter( state=1 )
+
+**Description:** Specifies whether to ignore features that are not splittable based on the specified value for minimum observations in each leaf. If this option is set to false, the training speed might be slow. On by default.
+
+**JMP Version Added:** 19
 
 #### feature_selector
 
@@ -1477,15 +1576,25 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( eval_metric( rmse ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost(
-	Y( :Weight ),
-	X( :Height ),
-	Booster( "gblinear" ),
-	Fit( feature_selector( "cyclic" ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost(	Y( :Weight ),	X( :Height ),	Booster( "gblinear" ),	Fit( feature_selector( "cyclic" ) ));
 
 ```
+
+#### force_col_wise
+
+**Syntax:** obj &lt;&lt; force_col_wise( state=0 )
+
+**Description:** Specifies whether to force columnwise histogram building. Enabling this option reduces memory cost, especially for data that have many features. This option cannot be used together with force rowwise. "0" by default.
+
+**JMP Version Added:** 19
+
+#### force_row_wise
+
+**Syntax:** obj &lt;&lt; force_row_wise( state=0 )
+
+**Description:** "0" by default.
+
+**JMP Version Added:** 19
 
 #### gamma
 
@@ -1497,10 +1606,33 @@ XGBoost(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( Gamma( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( Gamma( 0.0 ) ) );
 
 ```
+
+#### gpu_device_id
+
+**Syntax:** obj &lt;&lt; gpu_device_id( number=-1 )
+
+**Description:** Specifies the device number when using the GPU. "-1" by default.
+
+**JMP Version Added:** 19
+
+#### gpu_platform_id
+
+**Syntax:** obj &lt;&lt; gpu_platform_id( number=-1 )
+
+**Description:** Specifies the platform number when using the GPU. "-1" by default.
+
+**JMP Version Added:** 19
+
+#### gpu_use_dp
+
+**Syntax:** obj &lt;&lt; gpu_use_dp( state=0 )
+
+**Description:** Specifies whether to use double precision math on the GPU. "0" by default.
+
+**JMP Version Added:** 19
 
 #### grow_policy
 
@@ -1512,10 +1644,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Gamma( 0.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( grow_policy( "depthwise" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( grow_policy( "depthwise" ) ) );
 
 ```
+
+#### histogram_pool_size
+
+**Syntax:** obj &lt;&lt; histogram_pool_size( number=-1 )
+
+**Description:** Specifies the maximum memory size in megabytes for the historical histogram. "-1" by default.
+
+**JMP Version Added:** 19
 
 #### interaction_constraints
 
@@ -1527,11 +1666,25 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( grow_policy( "depthwise" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:Age << Set Modeling Type( "Continuous" );
-XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( interaction_constraints( "[[0,1]]" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );:Age << Set Modeling Type( "Continuous" );dt << XGBoost(	Y( :Weight ),	X( :Age, :Height ),	Fit( interaction_constraints( "[[0,1]]" ) ));
 
 ```
+
+#### is_enable_sparse
+
+**Syntax:** obj &lt;&lt; is_enable_sparse( state=1 )
+
+**Description:** Specifies whether to enable sparse optimization. On by default.
+
+**JMP Version Added:** 19
+
+#### is_unbalance
+
+**Syntax:** obj &lt;&lt; is_unbalance( state=0 )
+
+**Description:** Specifies whether the training data set is unbalanced in binary and multiclass regression. "0" by default.
+
+**JMP Version Added:** 19
 
 #### iterations
 
@@ -1543,8 +1696,7 @@ XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( interaction_constraints( "[[0,1]
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( iterations( 100 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( iterations( 100 ) ) );
 
 ```
 
@@ -1558,8 +1710,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations( 100 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_max( 300 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_max( 300 ) ) );
 
 ```
 
@@ -1573,8 +1724,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_max( 300 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_min( 20 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_min( 20 ) ) );
 
 ```
 
@@ -1588,8 +1738,79 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_min( 20 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( lambda( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda( 1.0 ) ) );
+
+```
+
+#### lambda_l1
+
+**Syntax:** obj &lt;&lt; lambda_l1( number=0 )
+
+**Description:** Specifies the L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0" by default.
+
+**JMP Version Added:** 19
+
+#### lambda_l1_max
+
+**Syntax:** obj &lt;&lt; lambda_l1_max( number=2.0 )
+
+**Description:** Specifies the maximum L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "2.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_l1_max( 2.0 ) ) );
+
+```
+
+#### lambda_l1_min
+
+**Syntax:** obj &lt;&lt; lambda_l1_min( number=0.0 )
+
+**Description:** Specifies the minimum L1 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_l1_min( 0.0 ) ) );
+
+```
+
+#### lambda_l2
+
+**Syntax:** obj &lt;&lt; lambda_l2( number=0 )
+
+**Description:** Specifies the L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0" by default.
+
+**JMP Version Added:** 19
+
+#### lambda_l2_max
+
+**Syntax:** obj &lt;&lt; lambda_l2_max( number=2.0 )
+
+**Description:** Specifies the maximum L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "2.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_l2_max( 2.0 ) ) );
+
+```
+
+#### lambda_l2_min
+
+**Syntax:** obj &lt;&lt; lambda_l2_min( number=0.0 )
+
+**Description:** Specifies the minimum L2 regularization term on weights. Increasing this value makes the model more conservative. This value must be nonnegative. "0.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_l2_min( 0.0 ) ) );
 
 ```
 
@@ -1603,8 +1824,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_max( 2.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_max( 2.0 ) ) );
 
 ```
 
@@ -1618,10 +1838,33 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_max( 2.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_min( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_min( 0.0 ) ) );
 
 ```
+
+#### lambdarank_norm
+
+**Syntax:** obj &lt;&lt; lambdarank_norm( state=1 )
+
+**Description:** Specifies whether to normalize the lambdas for different queries and improve performance in unbalanced data. On by default.
+
+**JMP Version Added:** 19
+
+#### lambdarank_position_bias_regularization
+
+**Syntax:** obj &lt;&lt; lambdarank_position_bias_regularization( number=0 )
+
+**Description:** Specifies the value that controls position information bias for the LambdaRank objective. Larger values reduce inferred position biased factors. "0" by default.
+
+**JMP Version Added:** 19
+
+#### lambdarank_truncation_level
+
+**Syntax:** obj &lt;&lt; lambdarank_truncation_level( number=30 )
+
+**Description:** Specifies the parameter that controls the number of top results on which the model should focus during training for the LambdaRank objective. "30" by default.
+
+**JMP Version Added:** 19
 
 #### learning_rate
 
@@ -1633,8 +1876,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_min( 0.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate( 0.3 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate( 0.3 ) ) );
 
 ```
 
@@ -1648,8 +1890,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate( 0.3 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_max( 0.4 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_max( 0.4 ) ) );
 
 ```
 
@@ -1663,10 +1904,25 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_max( 0.4 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_min( 0.05 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_min( 0.05 ) ) );
 
 ```
+
+#### linear_lambda
+
+**Syntax:** obj &lt;&lt; linear_lambda( number=0.0 )
+
+**Description:** Specifies the regularization parameter for linear trees. "0.0" by default.
+
+**JMP Version Added:** 19
+
+#### linear_tree
+
+**Syntax:** obj &lt;&lt; linear_tree( state=0 )
+
+**Description:** Specifies whether to fit piecewise linear gradient boosting tree. The splits are chosen in the usual manner, but the model is linear at each leaf instead of constant. "0" by default.
+
+**JMP Version Added:** 19
 
 #### max_bin
 
@@ -1678,10 +1934,33 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_min( 0.05 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_bin( 256 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_bin( 256 ) ) );
 
 ```
+
+#### max_bin_by_feature
+
+**Syntax:** obj &lt;&lt; max_bin_by_feature( text )
+
+**Description:** Specifies the maximum number of bins for each feature.
+
+**JMP Version Added:** 19
+
+#### max_cat_threshold
+
+**Syntax:** obj &lt;&lt; max_cat_threshold( number=32 )
+
+**Description:** Specifies the threshold for maximum number of unique categories to consider when splitting categorical features. Larger values result in a more exhaustive search for optimal categorical splits at the expense of longer training time. "32" by default.
+
+**JMP Version Added:** 19
+
+#### max_cat_to_onehot
+
+**Syntax:** obj &lt;&lt; max_cat_to_onehot( number=4 )
+
+**Description:** Specifies the maximum number of categories that a categorical feature can have to use the one-vs-other split algorithm. Categorical features with more than the maximum number of categories are handled by a different algorithm. "4" by default.
+
+**JMP Version Added:** 19
 
 #### max_delta_step
 
@@ -1693,8 +1972,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_bin( 256 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_delta_step( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_delta_step( 0.0 ) ) );
 
 ```
 
@@ -1708,8 +1986,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_delta_step( 0.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth( 6 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth( 6 ) ) );
 
 ```
 
@@ -1723,8 +2000,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth( 6 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_max( 9 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_max( 9 ) ) );
 
 ```
 
@@ -1738,10 +2014,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_max( 9 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_min( 3 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_min( 3 ) ) );
 
 ```
+
+#### max_drop
+
+**Syntax:** obj &lt;&lt; max_drop( number=50 )
+
+**Description:** Specifies the maximum number of dropped trees on each DART boosting iteration. "50" by default.
+
+**JMP Version Added:** 19
 
 #### max_leaves
 
@@ -1753,10 +2036,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_min( 3 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( max_leaves( 0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( max_leaves( 0 ) ) );
 
 ```
+
+#### metric
+
+**Syntax:** obj &lt;&lt; metric( "default"|"l1"|"l2"|"rmse"|"quantile"|"mape"|"huber"|"fair"|"poisson"|"gamma"|"gamma_deviance"|"tweedie"|"ndcg"|"map"|"auc"|"average_precision"|"binary_logloss"|"binary_error"|"auc_mu"|"multi_logloss"|"multi_error"|"cross_entropy"|"cross_entropy_lambda"|"kulback_leibler"="default" )
+
+**Description:** Specifies the metric that is evaluated in both training and validation sets. "default" by default.
+
+**JMP Version Added:** 19
 
 #### min_child_weight
 
@@ -1768,8 +2058,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_leaves( 0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight( 1.0 ) ) );
 
 ```
 
@@ -1783,8 +2072,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_max( 10.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_max( 10.0 ) ) );
 
 ```
 
@@ -1798,26 +2086,123 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_max( 10.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_min( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_min( 1.0 ) ) );
+
+```
+
+#### min_data_in_bin
+
+**Syntax:** obj &lt;&lt; min_data_in_bin( number=3 )
+
+**Description:** Specifies the minimum number of observations that are included in each bin. "3" by default.
+
+**JMP Version Added:** 19
+
+#### min_data_in_leaf
+
+**Syntax:** obj &lt;&lt; min_data_in_leaf( number=20 )
+
+**Description:** Specifies the minimum number of observations in each leaf. "20" by default.
+
+**JMP Version Added:** 19
+
+#### min_data_per_group
+
+**Syntax:** obj &lt;&lt; min_data_per_group( number=100 )
+
+**Description:** Specifies the minimum number of observations per categorical group on categorical features. "100" by default.
+
+**JMP Version Added:** 19
+
+#### min_gain_to_split
+
+**Syntax:** obj &lt;&lt; min_gain_to_split( number=0 )
+
+**Description:** Specifies the maximum depth of the tree. This value must be an integer. Complexity increases as depth increases. Models with larger max_depth have a higher risk of overfitting. "0" by default.
+
+**JMP Version Added:** 19
+
+#### min_sum_hessian_in_leaf
+
+**Syntax:** obj &lt;&lt; min_sum_hessian_in_leaf( number=0.001 )
+
+**Description:** Specifies the minimum sum of instance weight (Hessian) needed in a child. This value is the minimum size of each leaf. "0.001" by default.
+
+**JMP Version Added:** 19
+
+#### min_sum_hessian_in_leaf_max
+
+**Syntax:** obj &lt;&lt; min_sum_hessian_in_leaf_max( number=10.0 )
+
+**Description:** Specifies the maximum sum of instance weight (Hessian) needed in a child. This value is the maximum size of each leaf. "10.0" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( min_sum_hessian_in_leaf_max( 10.0 ) ) );
+
+```
+
+#### min_sum_hessian_in_leaf_min
+
+**Syntax:** obj &lt;&lt; min_sum_hessian_in_leaf_min( number=0.5 )
+
+**Description:** Specifies the minimum sum of instance weight (Hessian) needed in a child. This value is the minimum size of each leaf. "0.5" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( min_sum_hessian_in_leaf_min( 0.5 ) ) );
 
 ```
 
 #### monotone_constraints
 
-**Syntax:** obj &lt;&lt; monotone_constraints( text )
+**Syntax:** obj &lt;&lt; monotone_constraints( text=None )
 
-**Description:** Specifies monotonicity constraints for each feature. The constraints must be specified using a comma-separated list of values within parentheses, where -1 indicates negative, 1 indicates positive, and 0 indicates no constraint.
+**Description:** Specifies monotonicity constraints for each feature. The constraints must be specified using a comma-separated list of values within parentheses, where -1 indicates negative, 1 indicates positive, and 0 indicates no constraint. "None" by default.
 
 **JMP Version Added:** 17
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:Age << Set Modeling Type( "Continuous" );
-XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( monotone_constraints( "(1,1)" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );:Age << Set Modeling Type( "Continuous" );dt << XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( monotone_constraints( "(1,1)" ) ) );
 
 ```
+
+#### monotone_constraints_method
+
+**Syntax:** obj &lt;&lt; monotone_constraints_method( "basic"|"intermediate"|"advanced"="basic" )
+
+**Description:** Specifies the method for the monotone constraint when a constraint is set to be enforced. "basic" by default.
+
+**JMP Version Added:** 19
+
+#### monotone_penalty
+
+**Syntax:** obj &lt;&lt; monotone_penalty( number=0 )
+
+**Description:** Specifies the strictness of the monotone constraint when a constraint is set to be enforced. A specified value of K forbids any monotone splits on the first K levels of the tree. Larger values result in more penalization in the early tree building process. "0" by default.
+
+**JMP Version Added:** 19
+
+#### multi_error_top_k
+
+**Syntax:** obj &lt;&lt; multi_error_top_k( number=1 )
+
+**Description:** Specifies the threshold for the top-k multierror metric in multiclass classification. "1" by default.
+
+**JMP Version Added:** 19
+
+#### neg_bagging_fraction
+
+**Syntax:** obj &lt;&lt; neg_bagging_fraction( number=1 )
+
+**Description:** Specifies the value by which to adjust the process of drawing negative samples in unbalanced binary regression. "1" by default.
+
+**JMP Version Added:** 19
 
 #### normalize_type
 
@@ -1829,8 +2214,7 @@ XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( monotone_constraints( "(1,1)" ) 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( normalize_type( "tree" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost(	Y( :Weight ),	X( :Height ),	Booster( "dart" ),	Fit( normalize_type( "tree" ) ));
 
 ```
 
@@ -1844,10 +2228,69 @@ XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( normalize_type( "tr
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( nthread( 8 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( nthread( 8 ) ) );
 
 ```
+
+#### num_grad_quant_bins
+
+**Syntax:** obj &lt;&lt; num_grad_quant_bins( number=4 )
+
+**Description:** Specifies the number of bins for the quantization gradients and Hessian matrices when using the quantized gradient. Larger values produce quantized training that is closer to full precision training. "4" by default.
+
+**JMP Version Added:** 19
+
+#### num_iteration_predict
+
+**Syntax:** obj &lt;&lt; num_iteration_predict( number=-1 )
+
+**Description:** Specifies the number of iterations for which to make predictions. "-1" by default.
+
+**JMP Version Added:** 19
+
+#### num_iterations
+
+**Syntax:** obj &lt;&lt; num_iterations( number=100 )
+
+**Description:** Specifies the number of boosting iterations. "100" by default.
+
+**JMP Version Added:** 19
+
+#### num_iterations_max
+
+**Syntax:** obj &lt;&lt; num_iterations_max( number=100 )
+
+**Description:** Specifies the maximum number of boosting iterations. "100" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( num_iterations_max( 100 ) ) );
+
+```
+
+#### num_iterations_min
+
+**Syntax:** obj &lt;&lt; num_iterations_min( number=20 )
+
+**Description:** Specifies the minimum number of boosting iterations. "20" by default.
+
+**JMP Version Added:** 19
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( num_iterations_min( 20 ) ) );
+
+```
+
+#### num_leaves
+
+**Syntax:** obj &lt;&lt; num_leaves( number=31 )
+
+**Description:** Specifies the maximum number of leaves on each tree. "31" by default.
+
+**JMP Version Added:** 19
 
 #### num_parallel_tree
 
@@ -1859,10 +2302,39 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( nthread( 8 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( num_parallel_tree( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( num_parallel_tree( 1 ) ) );
 
 ```
+
+#### num_threads
+
+**Syntax:** obj &lt;&lt; num_threads( number=0 )
+
+**Description:** Specifies the number of threads. For the best speed, set this to the number of core CPUs. "0" by default.
+
+**JMP Version Added:** 19
+
+#### objective
+
+**Syntax:** obj &lt;&lt; objective( "reg:squarederror"|"binary:logistic"|"binary:hinge"|"count:poisson"|"multi:softprob"|"rank:pairwise"|"rank:ndcg"|"rank:map"|"reg:gamma"|"reg:logistic"|"reg:pseudohubererror"|"reg:squaredlogerror"|"reg:tweedie"|"survival:cox"="reg:squarederror" )
+
+**Description:** Specifies the function to be optimized for model fitting. The function must be consistent with the modeling type of the response. "reg:squarederror" by default.
+
+**JMP Version Added:** 15
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
+
+```
+
+#### objective_seed
+
+**Syntax:** obj &lt;&lt; objective_seed( number=5 )
+
+**Description:** Specifies the seed that is used in the random number generator for the objective parameter. "5" by default.
+
+**JMP Version Added:** 19
 
 #### one_drop
 
@@ -1874,10 +2346,73 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( num_parallel_tree( 1 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), one_drop( 0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), one_drop( 0 ) ) );
 
 ```
+
+#### other_rate
+
+**Syntax:** obj &lt;&lt; other_rate( number=0.1 )
+
+**Description:** Specifies the retain ratio of small gradient data for the GOSS data sampling strategy. "0.1" by default.
+
+**JMP Version Added:** 19
+
+#### path_smooth
+
+**Syntax:** obj &lt;&lt; path_smooth( number=0 )
+
+**Description:** "0" by default.
+
+**JMP Version Added:** 19
+
+#### poisson_max_delta_step
+
+**Syntax:** obj &lt;&lt; poisson_max_delta_step( number=0.7 )
+
+**Description:** Specifies a value that serves to limit the maximum prediction contribution of leaves for the Poisson model. "0.7" by default.
+
+**JMP Version Added:** 19
+
+#### pos_bagging_fraction
+
+**Syntax:** obj &lt;&lt; pos_bagging_fraction( number=1 )
+
+**Description:** Specifies the value by which to adjust the process of drawing positive samples in unbalanced binary regression. "1" by default.
+
+**JMP Version Added:** 19
+
+#### pred_early_stop
+
+**Syntax:** obj &lt;&lt; pred_early_stop( state=0 )
+
+**Description:** Specifies whether to enforce prediction early stopping in classification and ranking applications. If this option is set to true, prediction can be faster, but accuracy might be affected. "0" by default.
+
+**JMP Version Added:** 19
+
+#### pred_early_stop_freq
+
+**Syntax:** obj &lt;&lt; pred_early_stop_freq( number=10 )
+
+**Description:** Specifies the frequency of checking prediction early stopping when prediction early stopping is specified. "10" by default.
+
+**JMP Version Added:** 19
+
+#### pred_early_stop_margin
+
+**Syntax:** obj &lt;&lt; pred_early_stop_margin( number=10 )
+
+**Description:** Specifies the threshold margin in prediction early stopping when prediction early stopping is specified. This parameter enables the prediction process to stop early if the margin is far enough from the threshold. "10" by default.
+
+**JMP Version Added:** 19
+
+#### predict_disable_shape_check
+
+**Syntax:** obj &lt;&lt; predict_disable_shape_check( state=0 )
+
+**Description:** Specifies whether to raise the error when predicting on data that have different numbers of features than the training data. "0" by default.
+
+**JMP Version Added:** 19
 
 #### predictor
 
@@ -1889,8 +2424,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), one_drop( 0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( predictor( "cpu_predictor" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( predictor( "cpu_predictor" ) ) );
 
 ```
 
@@ -1904,10 +2438,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( predictor( "cpu_predictor" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( process_type( "default" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( process_type( "default" ) ) );
 
 ```
+
+#### quant_train_renew_leaf
+
+**Syntax:** obj &lt;&lt; quant_train_renew_leaf( state=0 )
+
+**Description:** Specifies whether to renew the leaf values with original gradients when quantized training is in effect. This option can improve the accuracy of the ranking objectives in quantized training. "0" by default.
+
+**JMP Version Added:** 19
 
 #### rate_drop
 
@@ -1919,8 +2460,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( process_type( "default" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), rate_drop( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), rate_drop( 0.0 ) ) );
 
 ```
 
@@ -1934,10 +2474,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), rate_drop( 0.0 ) ) 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( refresh_leaf( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( refresh_leaf( 1 ) ) );
 
 ```
+
+#### reg_sqrt
+
+**Syntax:** obj &lt;&lt; reg_sqrt( state=0 )
+
+**Description:** Specifies whether to fit the square root of the response variable rather than the original values for regression models. "0" by default.
+
+**JMP Version Added:** 19
 
 #### sample_type
 
@@ -1949,8 +2496,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( refresh_leaf( 1 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( sample_type( "uniform" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost(	Y( :Weight ),	X( :Height ),	Booster( "dart" ),	Fit( sample_type( "uniform" ) ));
 
 ```
 
@@ -1964,8 +2510,7 @@ XGBoost( Y( :Weight ), X( :Height ), Booster( "dart" ), Fit( sample_type( "unifo
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( scale_posweight( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( scale_posweight( 1.0 ) ) );
 
 ```
 
@@ -1979,10 +2524,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( scale_posweight( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( seed( 0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( seed( 0 ) ) );
 
 ```
+
+#### sigmoid
+
+**Syntax:** obj &lt;&lt; sigmoid( number=1 )
+
+**Description:** Specifies the parameter for the sigmoid function in binary and multiclass models. "1" by default.
+
+**JMP Version Added:** 19
 
 #### sketch_eps
 
@@ -1994,8 +2546,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( seed( 0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( sketch_eps( 0.03 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( sketch_eps( 0.03 ) ) );
 
 ```
 
@@ -2009,10 +2560,25 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( sketch_eps( 0.03 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), skip_drop( 0.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), skip_drop( 0.0 ) ) );
 
 ```
+
+#### start_iteration_predict
+
+**Syntax:** obj &lt;&lt; start_iteration_predict( number=0 )
+
+**Description:** Specifies the starting iteration for which to make predictions. "0" by default.
+
+**JMP Version Added:** 19
+
+#### stochastic_rounding
+
+**Syntax:** obj &lt;&lt; stochastic_rounding( state=1 )
+
+**Description:** Specifies whether to use stochastic rounding in gradient quantization. On by default.
+
+**JMP Version Added:** 19
 
 #### subsample
 
@@ -2024,8 +2590,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), skip_drop( 0.0 ) ) 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( subsample( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( subsample( 1.0 ) ) );
 
 ```
 
@@ -2039,8 +2604,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_max( 1.0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_max( 1.0 ) ) );
 
 ```
 
@@ -2054,8 +2618,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_max( 1.0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_min( 0.3 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_min( 0.3 ) ) );
 
 ```
 
@@ -2069,10 +2632,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_min( 0.3 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gblinear" ), top_k( 0 ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gblinear" ), top_k( 0 ) ) );
 
 ```
+
+#### top_rate
+
+**Syntax:** obj &lt;&lt; top_rate( number=0.2 )
+
+**Description:** Specifies the retain ratio of large gradient data for the GOSS data sampling strategy. "0.2" by default.
+
+**JMP Version Added:** 19
 
 #### tree_method
 
@@ -2084,8 +2654,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gblinear" ), top_k( 0 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( tree_method( "auto" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( tree_method( "auto" ) ) );
 
 ```
 
@@ -2099,14 +2668,17 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( tree_method( "auto" ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost(
-	Y( :Weight ),
-	X( :Height ),
-	Fit( objective( "reg:tweedie" ), tweedie_variance_power( 1.5 ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost(	Y( :Weight ),	X( :Height ),	Fit( objective( "reg:tweedie" ), tweedie_variance_power( 1.5 ) ));
 
 ```
+
+#### uniform_drop
+
+**Syntax:** obj &lt;&lt; uniform_drop( state=0 )
+
+**Description:** Specifies whether to select trees for dropping in DART boosting using uniform probability. "0" by default.
+
+**JMP Version Added:** 19
 
 #### updater
 
@@ -2118,8 +2690,39 @@ XGBoost(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-XGBoost( Y( :Weight ), X( :Height ), Fit( updater( "grow_colmaker" ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << XGBoost( Y( :Weight ), X( :Height ), Fit( updater( "grow_colmaker" ) ) );
 
 ```
+
+#### use_missing
+
+**Syntax:** obj &lt;&lt; use_missing( state=1 )
+
+**Description:** Specifies whether to enforce special handling of missing values. On by default.
+
+**JMP Version Added:** 19
+
+#### use_quantized_grad
+
+**Syntax:** obj &lt;&lt; use_quantized_grad( state=0 )
+
+**Description:** Specifies whether to use gradient quantization when training. Enabling this option discretizes the gradients and Hessian matrices into bins, which can accelerate training with little loss in accuracy in most cases. "0" by default.
+
+**JMP Version Added:** 19
+
+#### xgboost_dart_mode
+
+**Syntax:** obj &lt;&lt; xgboost_dart_mode( state=0 )
+
+**Description:** Specifies whether to use XGBoost DART mode. "0" by default.
+
+**JMP Version Added:** 19
+
+#### zero_as_missing
+
+**Syntax:** obj &lt;&lt; zero_as_missing( state=0 )
+
+**Description:** Specifies whether to treat all zero values as missing values. "0" by default.
+
+**JMP Version Added:** 19
 

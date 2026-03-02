@@ -8,127 +8,255 @@
 
 **Syntaxe :** obj &lt;&lt; Iteration( column )
 
+**Description :** Spécifie une colonne d&apos;étiquette de batch. lot Les batchs doivent être étiquetés 0, 1, 2,…, où le batch 0 indique les données d&apos;apprentissage d&apos;origine.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_itercol",	Numeric,	Ordinal,	set values( V Concat( (Repeat( 0, N Rows( dt ) - 10 )), Repeat( 1, 10 ) ) ));obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Iteration( _itercol ));
+
+```
+
 ### Run Order
 
 **Syntaxe :** obj &lt;&lt; Run Order( column )
+
+**Description :** Spécifie une colonne de permutation contenant les numéros de lignes indiquant l&apos;ordre des observations.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_runorder", Numeric, Ordinal, set values( 1 :: (N Rows( dt )) ) );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Run Order( _runorder ));
+
+```
 
 ### X
 
 **Syntaxe :** obj &lt;&lt; X( column(s) )
 
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));
+
+```
+
 ### Y
 
 **Syntaxe :** obj &lt;&lt; Y( column(s) )
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));
+
+```
 
 ## Constructeurs associés
 
 ### Bayesian Optimization
 
-**Syntaxe :** Bayesian Optimization
+**Syntaxe :** Bayesian Optimization( Y( columns ), X( columns ) )
 
-**Description :** Recommends factor settings to optimize responses by augmenting the data table.
+**Description :** Recommande les opérations sur les facteurs pour optimiser les réponses en augmentant la table de données.
 
 **JMP Version ajoutée :** 19
 
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));
+
+```
+
 ## Messages d'éléments
+
+### Automatically Generate a Batch
+
+**Syntaxe :** obj &lt;&lt; Automatically Generate a Batch( state=0|1 )
+
+**Description :** Indique s&apos;il faut exécuter la génération automatique de l&apos;ensemble des candidats et la sélection par batchs. Vous pouvez éventuellement spécifier quelle méthode utiliser pour sélectionner les batchs. Cette option équivaut à activer simultanément Générer l&apos;ensemble des candidats et Sélection automatique par batchs.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Automatically Generate a Batch( 1 ));
+
+```
+
+### Autoselect Batch
+
+**Syntaxe :** obj &lt;&lt; Autoselect Batch( state=0|1 )
+
+**Description :** Sélectionne un batch à partir de l&apos;ensemble des candidats actuellement chargé. Si aucun ensemble de candidats n&apos;est chargé, un ensemble de remplissage des espaces de taille égale à 1000 fois le nombre de variables d&apos;entrée est généré. Cette option peut également désactiver la sélection automatique par lots au lancement.
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Generate Candidate Set(		Candidate Set Size( 10 ),		Include Runs that Do Not Conform to Constraints( 0 )	),	Autoselect Batch( Batch Size( 1 ), Minimum RSquare( 0.5 ) ));
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Generate Candidate Set(		Candidate Set Size( 10 ),		Include Runs that Do Not Conform to Constraints( 0 )	),	Autoselect Batch( 0 ));
+
+```
+
+**Exemple 3**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Automatically Generate a Batch( 0 ));obj << Autoselect Batch( Batch Size( 5 ), Augmentation Method( Space Filling Exploration ) );
+
+```
 
 ### Batch Size
 
 **Syntaxe :** obj &lt;&lt; Batch Size( number )
 
+**Description :** Spécifie la taille du batchà sélectionner automatiquement au lancement.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Batch Size( 5 ));
+
+```
+
 ### Candidate Set Size
 
 **Syntaxe :** obj &lt;&lt; Candidate Set Size( number )
 
+**Description :** Spécifie la taille souhaitée de l&apos;ensemble de candidats à générer.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Candidate Set Size( 10 ));
+
+```
+
 ### Continuous Correlation Type
 
-**Syntaxe :** obj &lt;&lt; Continuous Correlation Type( "Gaussien"|"Matern 3/2"|"Matern 5/2"|"Exponentielle"="Matern 5/2" )
+**Syntaxe :** obj &lt;&lt; Continuous Correlation Type( "Gaussien"|"Matern 3/2"|"Matern 5/2"|"Exponentielle" )
 
-**Description :** "Matern 5/2" par défaut.
+**Description :** Spécifie le noyau souhaité pour les variables d&apos;entrée continues.
 
-### Copy All Model Fits Script
+```jsl
 
-**Syntaxe :** obj &lt;&lt; Copy All Model Fits Script
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Continuous Correlation Type( "Matern 5/2" ));
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
+```
 
-### Copy Startup Script
+### Generate Candidate Set
 
-**Syntaxe :** obj &lt;&lt; Copy Startup Script
+**Syntaxe :** obj &lt;&lt; Generate Candidate Set( Candidate Set Size( number ), &lt;Include Runs that Do Not Conform to Constraints( state = 0|1 )&gt; )
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
+**Description :** Génère un ensemble de candidats. Vous pouvez fournir la taille de l&apos;ensemble des candidats et indiquer s&apos;il faut autoriser les points qui enfreignent les contraintes linéaires dans la table de données.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Generate Candidate Set(		Candidate Set Size( 10 ),		Include Runs that Do Not Conform to Constraints( 0 )	));
+
+```
+
+### Include Runs that Do Not Conform to Constraints
+
+**Syntaxe :** obj &lt;&lt; Include Runs that Do Not Conform to Constraints( state=0|1 )
+
+**Description :** Spécifie s&apos;il faut inclure les points qui enfreignent les contraintes linéaires dans la table de données lors de la génération ou du chargement d&apos;un ensemble des candidats.
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Include Runs that Do Not Conform to Constraints( 0 ));
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dtCand = New Table( "Tiretread Candidate Set",	Add Rows( 15 ),	New Column( "SILICA",		Continuous,		Set Values(			[1.2, 1.60825, 0.79175, 0.995875, 1.812375, 1.404125, 0.587625, 0.6896875,			1.5061875, 1.9144375, 1.0979375, 0.8938125, 1.7103125, 1.3020625, 0.4855625]		)	),	New Column( "SILANE",		Continuous,		Set Values(			[50, 41.835, 58.165, 45.9175, 62.2475, 37.7525, 54.0825, 43.87625, 60.20625,			35.71125, 52.04125, 39.79375, 56.12375, 47.95875, 64.28875]		)	),	New Column( "SULFUR",		Continuous,		Set Values(			[2.3, 1.89175, 2.70825, 2.504125, 1.687625, 2.912375, 2.095875, 3.0144375,			2.1979375, 2.6061875, 1.7896875, 1.9938125, 2.8103125, 1.5855625, 2.4020625]		)	));dt << New Script( "Constraint", {:SILICA + :SULFUR <= 3} );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Include Runs that Do Not Conform to Constraints( 0 ),	Load Candidate Set from Data Table( dtCand ));
+
+```
 
 ### Minimum RSquare
 
 **Syntaxe :** obj &lt;&lt; Minimum RSquare( number )
 
-### Model Based Augmentation RSquare Threshold
+**Description :** Spécifie la métrique R-carré minimum requise pour l&apos;algorithme de sélection automatique par lots. Dans la fenêtre de lancement de la plate-forme d&apos;optimisation bayésienne, cette option est appelée Seuil du R carré de l&apos;augmentation basée sur les modèles.
 
-**Syntaxe :** obj &lt;&lt; Model Based Augmentation RSquare Threshold( number )
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Minimum RSquare( 0.25 ));
+
+```
 
 ### Nominal Correlation Type
 
-**Syntaxe :** obj &lt;&lt; Nominal Correlation Type( "Corrélations égales"|"Unequal Correlations"="Corrélations égales" )
+**Syntaxe :** obj &lt;&lt; Nominal Correlation Type( "Corrélations égales"|"Corrélations inégales" )
 
-**Description :** "Corrélations égales" par défaut.
+**Description :** Spécifie le noyau souhaité pour les variables d&apos;entrée nominales.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Nominal Correlation Type( "Equal Correlations" ));
+
+```
 
 ### Ordinal Correlation Type
 
-**Syntaxe :** obj &lt;&lt; Ordinal Correlation Type( "Corrélations égales"|"Unequal Correlations"|"Latent Variable"="Corrélations égales" )
+**Syntaxe :** obj &lt;&lt; Ordinal Correlation Type( "Corrélations égales"|"Corrélations inégales"|"Variable latente" )
 
-**Description :** "Corrélations égales" par défaut.
+**Description :** Spécifie le noyau souhaité pour les variables d&apos;entrée ordinales.
 
-### Save All Model Fits Script to Data Table
+```jsl
 
-**Syntaxe :** obj &lt;&lt; Save All Model Fits Script to Data Table
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Ordinal Correlation Type( "Equal Correlations" ));
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
+```
 
-### Save All Model Fits Script to Journal
+### Save Prediction Formula
 
-**Syntaxe :** obj &lt;&lt; Save All Model Fits Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Prediction Formula
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
+**Description :** Enregistre la formule de régression dans une nouvelle colonne de la table de données.
 
-### Save All Model Fits Script to Report
+**Exemple 1**
 
-**Syntaxe :** obj &lt;&lt; Save All Model Fits Script to Report
+```jsl
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Prediction Formula;
 
-### Save All Model Fits Script to Script Window
+```
 
-**Syntaxe :** obj &lt;&lt; Save All Model Fits Script to Script Window
+**Exemple 2**
 
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
+```jsl
 
-### Save Startup Script to Data Table
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Prediction Formula( Elong );
 
-**Syntaxe :** obj &lt;&lt; Save Startup Script to Data Table
-
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
-
-### Save Startup Script to Journal
-
-**Syntaxe :** obj &lt;&lt; Save Startup Script to Journal
-
-**Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
-
-### Save Startup Script to Report
-
-**Syntaxe :** obj &lt;&lt; Save Startup Script to Report
-
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
-
-### Save Startup Script to Script Window
-
-**Syntaxe :** obj &lt;&lt; Save Startup Script to Script Window
-
-**Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
+```
 
 ### Set Tab
 
 **Syntaxe :** obj &lt;&lt; Set Tab( number )
+
+**Description :** Spécifie l&apos;onglet actuel. L&apos;argument interprète 0 comme l&apos;onglet Résumé du modèle, 1 comme Sélection par lots, et ainsi de suite, selon l&apos;ordre d&apos;apparition des onglets dans la fenêtre de rapport.
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << set tab( 1 );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << set tab( "ABRASION" );
+
+```
 
 ## Messages d'éléments partagés
 
@@ -140,12 +268,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -161,13 +284,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -175,14 +292,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset(
-	"Sample Presets",
-	"t-Tests",
-	Folder( "Compare Means" )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -190,10 +300,7 @@ obj << Apply Preset(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -205,8 +312,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -218,10 +324,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj <<
-Column Switcher( :marital status, {:sex, :country, :marital status} );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -233,7 +336,7 @@ Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```jsl
 
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Copy Script;
 
 ```
 
@@ -245,7 +348,7 @@ obj << Copy Script;
 
 ```jsl
 
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Data Table Window;
 
 ```
 
@@ -259,9 +362,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -275,8 +376,7 @@ biv << Get By Levels;
 
 ```jsl
 
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -284,32 +384,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements(
-		Points( X, Y, Legend( 1 ) ),
-		Smoother( X, Y, Legend( 2 ) )
-	),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container",
-			(gb << Get Container) << Get Picture
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -321,8 +396,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -334,8 +408,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -347,8 +420,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -360,8 +432,7 @@ Show( t );
 
 ```jsl
 
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -373,10 +444,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -390,14 +458,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate(
-	X( :height ),
-	Y( :weight ),
-	Where( :age < 14 & :height > 60 )
-);
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -409,13 +470,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -427,34 +482,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**Syntaxe :** New JSL Preset( preset )
-
-**Description :** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset(
-	Oneway( Y( :A ), X( :B ), Each Pair( 1 ) )
-);
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -468,9 +496,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -482,15 +508,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -502,7 +520,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Redo Analysis;
 
 ```
 
@@ -514,7 +532,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Relaunch Analysis;
 
 ```
 
@@ -526,12 +544,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj <<
-Column Switcher( :marital status, {:sex, :country, :marital status} );
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -543,50 +556,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Syntaxe :** Render Preset( preset )
-
-**Description :** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset(
-	Expr(
-		Oneway( Y( :A ), X( :B ), Each Pair( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntaxe :** obj &lt;&lt; Report;Report( obj )
+**Syntaxe :** obj &lt;&lt; Report; Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -598,7 +580,7 @@ Show( t );
 
 ```jsl
 
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Report View( "Summary" );
 
 ```
 
@@ -610,7 +592,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Script for All Objects;
 
 ```
 
@@ -620,19 +602,19 @@ obj << Save Script for All Objects;
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -644,9 +626,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-obj << Save Script to Data Table(
-	"My Analysis", <<Prompt( 0 ), <<Replace( 0 )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -658,7 +638,7 @@ obj << Save Script to Data Table(
 
 ```jsl
 
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Script to Journal;
 
 ```
 
@@ -670,7 +650,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Script to Report;
 
 ```
 
@@ -682,7 +662,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Save Script to Script Window;
 
 ```
 
@@ -694,21 +674,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution(
-			Column( :weight ),
-			Normal Quantile Plot( 1 )
-		)
-	),
-	SendToByGroup(
-		{:sex == "M"},
-		Continuous Distribution( Column( :weight ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -720,22 +686,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
-			"Density Profiler"},
-			{1, Confidence Intervals( 0 ),
-			Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -747,16 +698,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport(
-		Dispatch( "age", "Distrib Nom Hist", FrameBox,
-			{Frame Size( 178, 318 )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -768,11 +710,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -784,7 +722,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Title( "My Platform" );
 
 ```
 
@@ -796,9 +734,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -810,9 +746,347 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+```
+
+## Bayesian Optimization Batch Customizer > Candidate Set View
+
+### Messages d'éléments
+
+#### Export Candidate Set to Data Table
+
+**Syntaxe :** obj &lt;&lt; Export Candidate Set to Data Table
+
+**Description :** Exporte l&apos;ensemble des candidats actuellement chargé vers une nouvelle table de données. Vous pouvez spécifier les groupes de colonnes souhaités comme arguments. Cette option exporte les opérations sur les facteurs par défaut si aucun groupe de colonnes n&apos;est fourni. Si aucun argument n&apos;est spécifié, une fenêtre apparaît pour définir les options.
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Export Candidate Set to Data Table( Go );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Export Candidate Set to Data Table();
+
+```
+
+**Exemple 3**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Export Candidate Set to Data Table(	Order Added, Factor Settings, Bayesian Desirability, Bayesian Desirability Std Dev,	Multimodel Prediction Std Dev, MaxPro Space Filling Criterion,	Bayesian Desirability Expected Improvement, Bayesian Desirability Upper Confidence Bound,	Training Response Predictions, Augmented Response Prediction Std Dev,	Augmented Response Prediction Confidence Intervals);
+
+```
+
+#### Select Runs
+
+**Syntaxe :** obj &lt;&lt; Select Runs( Row Index( [ numbers ] ), &lt;Order Added( [ numbers ]&gt;, &lt;Reason Added( { text } )&gt;, &lt;Replace( 0|1 )&gt; )
+
+**Description :** Sélectionne des lignes de la table de données de l&apos;ensemble des candidats pour les ajouter au lot actuel.
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Select Runs(		Row Index( [3 5] ),		Order Added( [1 2] ),		Reason Added( {"Custom Reason", "Custom Reason"} ),		Replace( 1 )	));
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	autoselect batch( 0 ));obj << Select Runs(	Row Index( [3 5] ),	Order Added( [1 2] ),	Reason Added( {"Custom Reason", "Custom Reason"} ),	Replace( 0 ));
+
+```
+
+#### Show Table Columns
+
+**Syntaxe :** obj &lt;&lt; Show Table Columns( &lt;"Column Group Name"&gt;,... )
+
+**Description :** Spécifie quels groupes de colonnes sont visibles dans la table de données de l&apos;ensemble des candidats.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Show Table Columns( Order Added, Factor Settings, Bayesian Desirability ));
+
+```
+
+## Bayesian Optimization Batch Customizer
+
+### Messages d'éléments
+
+#### Add Current Profiler Settings to Batch
+
+**Syntaxe :** obj &lt;&lt; Add Current Profiler Settings to Batch
+
+**Description :** Ajoute les paramètres actuels du profileur à l&apos;ensemble de candidats et le sélectionne pour l&apos;inclusion comme essai dans le lot d&apos;augmentation suivant.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Add Current Profiler Settings to Batch;
+
+```
+
+#### Augmented Acquisition Functions Profiler
+
+**Syntaxe :** obj &lt;&lt; Augmented Acquisition Functions Profiler( state=0|1 )
+
+**Description :** Affiche ou masque un profileur permettant d&apos;explorer les modifications de chaque fonction d&apos;acquisition par rapport aux modifications de chaque valeur de facteur. Les fonctions reposent sur l&apos;hypothèse que les points du batch actuel seront échantillonnés. Ce profileur reflète les modifications des niveaux de facteurs et des fonctions de désirabilité effectuées dans le Profileur de prévision augmenté.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Augmented Acquisition Functions Profiler( 0 );
+
+```
+
+#### Augmented Prediction Profiler
+
+**Syntaxe :** obj &lt;&lt; Augmented Prediction Profiler( state=0|1 )
+
+**Description :** Affiche ou masque un profileur permettant d&apos;explorer les modifications de chaque colonne par rapport aux modifications dans chaque valeur de facteur entre les modèles. Les prévisions reposent sur l&apos;hypothèse que les points du batch actuel seront échantillonnés.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Augmented Prediction Profiler( 0 );
+
+```
+
+#### Deselect All
+
+**Syntaxe :** obj &lt;&lt; Deselect All
+
+**Description :** Deselect all points in current batch.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Deselect All;
+
+```
+
+#### Load Candidate Set from Data Table
+
+**Syntaxe :** obj &lt;&lt; Load Candidate Set from Data Table
+
+**Exemple 1**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Load Candidate Set from Data Table());
+
+```
+
+**Exemple 2**
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Borehole Latin Hypercube.jmp" );:log y << Set Property( "Response Limits", {Goal( maximize ), Importance( 1 )} );obj = dt << Bayesian Optimization(	Y( :log y ),	X( :log10 Rw, :log10 R, :Tu, :Tl, :Hu, :Hl, :L, :Kw ));dt_candidate = Open( "$SAMPLE_DATA/Design Experiment/Borehole Uniform.jmp" );obj << Load Candidate Set from Data Table( dt_candidate );
+
+```
+
+#### Make Table
+
+**Syntaxe :** obj &lt;&lt; Make Table
+
+**Description :** Export currently selected batch points to data table based on current settings.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Make Table;
+
+```
+
+#### Make Table Options
+
+**Syntaxe :** obj &lt;&lt; Make Table Options( &lt;Location( state = 0|1 )&gt;, &lt;Randomize Runs( state = 0|1 )&gt;, &lt; "Include Option Name"( state = 0|1 ) &gt; , ... )
+
+**Description :** Permet de sélectionner les paramètres utilisés lors de l&apos;export du lot sélectionné vers une table de données. Notez que l&apos;entrée de syntaxe "Inclure le nom de l&apos;option" fait référence à l&apos;une des options du menu Inclure des options.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Make Table Options(		Location( 1 ),		Randomize Runs( 0 ),		Save desirability function values to columns( 1 ),		Save startup script for next batch selection to data table( 1 ),		Include observed desirabilities( 1 ),		Include original candidate set row indices( 1 ),		Include reason added column( 1 ),		Include predicted response values( 1 ),		Include prediction standard deviations( 1 ),		Include Bayesian desirability expected improvement column( 1 )	));
+
+```
+
+#### Maximize Bayesian Desirability
+
+**Syntaxe :** obj &lt;&lt; Maximize Bayesian Desirability
+
+**Description :** Recherche les opérations sur les facteurs qui maximisent la moyenne a posteriori de la distribution de la désirabilité.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Bayesian Desirability;
+
+```
+
+#### Maximize Bayesian Desirability Std Dev
+
+**Syntaxe :** obj &lt;&lt; Maximize Bayesian Desirability Std Dev
+
+**Description :** Recherche les opérations sur les facteurs qui maximisent la déviation a posteriori de la distribution de la désirabilité.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Bayesian Desirability Std Dev;
+
+```
+
+#### Maximize Expected Improvement
+
+**Syntaxe :** obj &lt;&lt; Maximize Expected Improvement
+
+**Description :** Recherche les opérations sur les facteurs avec la plus grande amélioration attendue mesurée par la désirabilité bayésienne.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Expected Improvement;
+
+```
+
+#### Maximize MaxPro Criterion
+
+**Syntaxe :** obj &lt;&lt; Maximize MaxPro Criterion
+
+**Description :** Recherche les opérations sur les facteurs qui remplissent au plus les espaces à l&apos;aide du critère ProMax.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize MaxPro Criterion;
+
+```
+
+#### Maximize Multimodel Std Dev
+
+**Syntaxe :** obj &lt;&lt; Maximize Multimodel Std Dev
+
+**Description :** Recherche les opérations sur les facteurs qui maximisent l&apos;écart-type de la prédiction à réponses multiples.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Multimodel Std Dev;
+
+```
+
+#### Maximize Upper Confidence Bound
+
+**Syntaxe :** obj &lt;&lt; Maximize Upper Confidence Bound
+
+**Description :** Recherche les opérations sur les facteurs pour la prévision de la désirabilité bayésienne avec la borne supérieure de l&apos;intervalle de confiance la plus élevée. C&apos;est ce qu&apos;on appelle souvent le critère UCB.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Upper Confidence Bound;
+
+```
+
+#### Restore Best Training Point
+
+**Syntaxe :** obj &lt;&lt; Restore Best Training Point
+
+**Description :** Renvoie les opérations sur les facteurs aux lignes d&apos;apprentissage ayant la désirabilité observée la plus élevée.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ));obj << Maximize Bayesian Desirability;obj << Add Current Profiler Settings to Batch;obj << Restore Best Training Point;
+
+```
+
+## Bayesian Optimization Model Summary
+
+### Messages d'éléments
+
+#### All Responses Profiler
+
+**Syntaxe :** obj &lt;&lt; All Responses Profiler( state=0|1 )
+
+**Description :** Explore les modifications de chaque colonne par rapport aux modifications dans chaque valeur de facteur entre les modèles.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	All Responses Profiler( 1 ));
+
+```
+
+## Gaussian Process Model
+
+### Messages d'éléments
+
+#### Intercept
+
+**Syntaxe :** obj &lt;&lt; Intercept( number )
+
+**Description :** Spécifie la valeur du paramètre constant pour ajuster un modèle de processus gaussien. Si toutes les valeurs thêta, nugget, résidu et constante sont fournies, elles sont traitées comme des valeurs fixes. Si un ensemble partiel de valeurs est fourni, ces valeurs sont traitées comme des valeurs de démarrage.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab(		Y( :ABRASION ),		Theta Values( {0.5, 0.5, 0.5} ),		Nugget( 0.05 ),		Residual( 500 ),		Intercept( 100 )	));
+
+```
+
+#### Nugget
+
+**Syntaxe :** obj &lt;&lt; Nugget( number )
+
+**Description :** Spécifie la valeur du paramètre nugget pour ajuster un modèle de processus gaussien. Si toutes les valeurs thêta, nugget, résidu et constante sont fournies, elles sont traitées comme des valeurs fixes. Si un ensemble partiel de valeurs est fourni, ces valeurs sont traitées comme des valeurs de démarrage.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab(		Y( :ABRASION ),		Theta Values( {0.5, 0.5, 0.5} ),		Nugget( 0.05 ),		Residual( 500 ),		Intercept( 100 )	));
+
+```
+
+#### Profiler
+
+**Syntaxe :** obj &lt;&lt; Profiler( state=0|1 )
+
+**Description :** Explore les modifications de chaque colonne par rapport aux modifications dans chaque valeur de facteur entre les modèles.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab( Y( :MODULUS ), Profiler( 0 ) ));
+
+```
+
+#### Residual
+
+**Syntaxe :** obj &lt;&lt; Residual( number )
+
+**Description :** Spécifie la valeur du paramètre résiduel pour ajuster un modèle de processus gaussien. Si toutes les valeurs thêta, nugget, résidu et constante sont fournies, elles sont traitées comme des valeurs fixes. Si un ensemble partiel de valeurs est fourni, ces valeurs sont traitées comme des valeurs de démarrage.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab(		Y( :ABRASION ),		Theta Values( {0.5, 0.5, 0.5} ),		Nugget( 0.05 ),		Residual( 500 ),		Intercept( 100 )	));
+
+```
+
+#### Starting Values
+
+**Syntaxe :** obj &lt;&lt; Starting Values( number )
+
+**Description :** Spécifie les valeurs initiales à utiliser pour ajuster un modèle de processus gaussien.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab(		Y( :ABRASION ),		Starting Values(			Theta Values( {0.5, 0.5, 0.5} ),			Nugget( 0.05 ),			Residual( 500 ),			Intercept( 100 )		)	));
+
+```
+
+#### Theta Values
+
+**Syntaxe :** obj &lt;&lt; Theta Values( number )
+
+**Description :** Spécifie les valeurs à utiliser comme paramètres thêta pour ajuster un modèle de processus gaussien. Si toutes les valeurs thêta, nugget, résidu et constante sont fournies, elles sont traitées comme des valeurs fixes. Si un ensemble partiel de valeurs est fourni, ces valeurs sont traitées comme des valeurs de démarrage.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );Bayesian Optimization(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Response Model Tab(		Y( :ABRASION ),		Theta Values( {0.5, 0.5, 0.5} ),		Nugget( 0.05 ),		Residual( 500 ),		Intercept( 100 )	));
 
 ```
 

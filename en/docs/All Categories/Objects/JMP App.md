@@ -12,17 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dist = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-biv = Bivariate( Y( :weight ), X( :height ) );
-app = JMP App();
-app << Set Name( "Instant App" );
-app << Combine Windows( {dist << Report, biv << Report} );
-(app << Get Modules)[1] << Set Window Title( "My Report" );
-app << Run;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));biv = Bivariate( Y( :weight ), X( :height ) );app = JMP App();app << Set Name( "Instant App" );app << Combine Windows( {dist << Report, biv << Report} );(app << Get Modules)[1] << Set Window Title( "My Report" );app << Run;
 
 ```
 
@@ -34,9 +24,7 @@ app << Run;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Launcher with Report.jmpappsource" );
-app << Debug;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Launcher with Report.jmpappsource" );app << Debug;
 
 ```
 
@@ -48,9 +36,7 @@ app << Debug;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;
 
 ```
 
@@ -62,10 +48,7 @@ app << Edit;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit Application;
-app << Get Modules();
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit Application;app << Get Modules();
 
 ```
 
@@ -77,8 +60,7 @@ app << Get Modules();
 
 ```jsl
 
-app = JMP App();
-(app << Get Namespace) << Show Contents;
+app = JMP App();(app << Get Namespace) << Show Contents;
 
 ```
 
@@ -94,11 +76,7 @@ app = JMP App();
 
 ```jsl
 
-app = JMP App();
-Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Historical.jmp" );
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Run;
-app << Get Windows();
+app = JMP App();Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Historical.jmp" );app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run;app << Get Windows();
 
 ```
 
@@ -106,13 +84,7 @@ app << Get Windows();
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Graph Launcher.jmpappsource" );
-app << Run;
-launcher = (app << Get Windows())[1];
-launcher[Button Box( 1 )] << Click;
-launcher[Button Box( 1 )] << Click;
-app << Get Windows();
+app = JMP App();app << Open File( "$SAMPLE_APPS/Graph Launcher.jmpappsource" );app << Run;launcher = (app << Get Windows())[1];launcher[Button Box( 1 )] << Click;launcher[Button Box( 1 )] << Click;app << Get Windows();
 
 ```
 
@@ -124,9 +96,7 @@ app << Get Windows();
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-box = app << Edit Application;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );box = app << Edit Application;
 
 ```
 
@@ -138,10 +108,7 @@ box = app << Edit Application;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
-app << Relaunch Analysis;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;app << Relaunch Analysis;
 
 ```
 
@@ -153,9 +120,7 @@ app << Relaunch Analysis;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Run;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run;
 
 ```
 
@@ -167,9 +132,7 @@ app << Run;
 
 ```jsl
 
-app = Include( "$SAMPLE_DASHBOARDS/Six Quality Graphs Dashboard.jmpappsource" );
-app << Run;
-app << Save Script for All Objects;
+app = Include( "$SAMPLE_DASHBOARDS/Six Quality Graphs Dashboard.jmpappsource" );app << Run;app << Save Script for All Objects;
 
 ```
 
@@ -181,10 +144,7 @@ app << Save Script for All Objects;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
-app << "Save Script to Add-In";
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;app << "Save Script to Add-In";
 
 ```
 
@@ -196,10 +156,7 @@ app << "Save Script to Add-In";
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
-app << Save Script to Data Table;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;app << Save Script to Data Table;
 
 ```
 
@@ -211,10 +168,7 @@ app << Save Script to Data Table;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
-app << Save Script to Journal;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;app << Save Script to Journal;
 
 ```
 
@@ -226,10 +180,7 @@ app << Save Script to Journal;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Edit;
-app << Save Script to Script Window;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Edit;app << Save Script to Script Window;
 
 ```
 

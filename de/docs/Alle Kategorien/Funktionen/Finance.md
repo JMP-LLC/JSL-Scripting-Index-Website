@@ -40,8 +40,7 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -61,7 +60,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den internen Ertragssatz für eine Folge von Zahlungsflüssen zurück, die von den Zahlen im Argument values dargestellt werden. Entspricht der IRR-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -69,14 +68,13 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );
-Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den geänderten internen Ertragssatz für eine Folge regelmäßiger Zahlungsflüsse zurück, wobei die Investitionskosten sowie die bei der Wiederanlage von Kapital erhaltenen Zinsen berücksichtigt werden. Entspricht der MIRR-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -84,14 +82,13 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
-Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**Syntax:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den aktuellen Nettowert einer Annuität zurück, wobei ein Diskontsatz und eine Reihe künftiger Auszahlungen (negative Werte) und Einzahlungen (positive Werte) berücksichtigt werden. Das Argument values ist eine eindimensionale Matrix. Entspricht der NPV-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -99,8 +96,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );
-Net Present Value( .05, -10000, 1000, 900, 9500 );
+Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -128,8 +124,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -157,8 +152,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 

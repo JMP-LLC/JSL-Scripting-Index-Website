@@ -14,27 +14,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));
 
 ```
 
@@ -50,33 +30,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -90,29 +44,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	Freq( _freqcol )
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	Freq( :_freqcol ));
 
 ```
 
@@ -126,15 +58,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Wine ),
-	MFA Blocks(
-		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Wine ),	MFA Blocks(		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness}	));
 
 ```
 
@@ -148,15 +72,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Wine ),
-	MFA Blocks(
-		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Wine ),	MFA Blocks(		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness}	));
 
 ```
 
@@ -170,16 +86,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Wine ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Wine ),	Z( :Region ),	MFA Blocks(		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness}	));
 
 ```
 
@@ -193,29 +100,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	Weight( _weightcol )
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	Weight( :_weightcol ));
 
 ```
 
@@ -229,16 +114,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Wine ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Wine ),	Z( :Region ),	MFA Blocks(		{"Susan", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness}	));
 
 ```
 
@@ -254,15 +130,7 @@ dt << Multiple Factor Analysis(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Arrow Lines( 0 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Arrow Lines( 0 );
 
 ```
 
@@ -276,15 +144,7 @@ obj << Arrow Lines( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Biplot( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Biplot( 1 );
 
 ```
 
@@ -298,15 +158,7 @@ obj << Biplot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Biplot Select Component( 1, 3 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Biplot Select Component( 1, 3 );
 
 ```
 
@@ -320,15 +172,7 @@ obj << Biplot Select Component( 1, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Block Partial Contributions( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Block Partial Contributions( 1 );
 
 ```
 
@@ -342,15 +186,7 @@ obj << Block Partial Contributions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Block Partial Inertias( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Block Partial Inertias( 1 );
 
 ```
 
@@ -364,15 +200,7 @@ obj << Block Partial Inertias( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Block Partial and Consensus Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Block Partial and Consensus Correlations( 1 );
 
 ```
 
@@ -386,15 +214,7 @@ obj << Block Partial and Consensus Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Block Squared Cosines( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Block Squared Cosines( 1 );
 
 ```
 
@@ -408,15 +228,7 @@ obj << Block Squared Cosines( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Block Weights( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Block Weights( 1 );
 
 ```
 
@@ -430,15 +242,7 @@ obj << Block Weights( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Consensus Map( 0 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Consensus Map( 0 );
 
 ```
 
@@ -452,15 +256,7 @@ obj << Consensus Map( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Consensus Map Select Component( 1, 3 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Consensus Map Select Component( 1, 3 );
 
 ```
 
@@ -474,15 +270,7 @@ obj << Consensus Map Select Component( 1, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Eigenvalues( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Eigenvalues( 1 );
 
 ```
 
@@ -496,15 +284,7 @@ obj << Eigenvalues( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Eigenvectors( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Eigenvectors( 1 );
 
 ```
 
@@ -518,16 +298,7 @@ obj << Eigenvectors( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	),
-	Consensus Map( 1 )
-);
-obj << Highlight Product( "Small Inertia", 4 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	),	Consensus Map( 1 ));obj << Highlight Product( "Small Inertia", 4 );
 
 ```
 
@@ -541,15 +312,7 @@ obj << Highlight Product( "Small Inertia", 4 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Lg Coefficients( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Lg Coefficients( 1 );
 
 ```
 
@@ -563,15 +326,7 @@ obj << Lg Coefficients( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Partial Axes Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Partial Axes Plot( 1 );
 
 ```
 
@@ -585,16 +340,7 @@ obj << Partial Axes Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	),
-	Partial Axes Plot( 1 )
-);
-obj << Partial Axes Plot Select component( 1, 3 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	),	Partial Axes Plot( 1 ));obj << Partial Axes Plot Select component( 1, 3 );
 
 ```
 
@@ -608,15 +354,7 @@ obj << Partial Axes Plot Select component( 1, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << RV Correlations( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << RV Correlations( 1 );
 
 ```
 
@@ -630,15 +368,7 @@ obj << RV Correlations( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Save Block Partial Scores();
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Save Block Partial Scores();
 
 ```
 
@@ -652,15 +382,7 @@ obj << Save Block Partial Scores();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Save Individual Partial Contributions();
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Save Individual Partial Contributions();
 
 ```
 
@@ -674,15 +396,7 @@ obj << Save Individual Partial Contributions();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Save Individual Scores();
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Save Individual Scores();
 
 ```
 
@@ -696,15 +410,7 @@ obj << Save Individual Scores();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Save Individual Squared Cosines();
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Save Individual Squared Cosines();
 
 ```
 
@@ -718,15 +424,7 @@ obj << Save Individual Squared Cosines();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Save Partial Axes Coordinates();
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Save Partial Axes Coordinates();
 
 ```
 
@@ -740,15 +438,7 @@ obj << Save Partial Axes Coordinates();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Show Labels( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Show Labels( 1 );
 
 ```
 
@@ -762,15 +452,7 @@ obj << Show Labels( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Summary Plot Select Component( 1, 3 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Summary Plot Select Component( 1, 3 );
 
 ```
 
@@ -784,15 +466,7 @@ obj << Summary Plot Select Component( 1, 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Summary Plots( 0 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Summary Plots( 0 );
 
 ```
 
@@ -806,15 +480,7 @@ obj << Summary Plots( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Variable Loadings( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Variable Loadings( 1 );
 
 ```
 
@@ -828,15 +494,7 @@ obj << Variable Loadings( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Variable Partial Contributions( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Variable Partial Contributions( 1 );
 
 ```
 
@@ -850,15 +508,7 @@ obj << Variable Partial Contributions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-obj = dt << Multiple Factor Analysis(
-	MFA Blocks(
-		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,
-		:Carolyn Berry Notes},
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}
-	)
-);
-obj << Variable Squared Cosines( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );obj = dt << Multiple Factor Analysis(	MFA Blocks(		{"Carolyn Peppery etc.", :Carolyn Peppery, :Carolyn Tannic, :Carolyn Aromatic,		:Carolyn Berry Notes},		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness}	));obj << Variable Squared Cosines( 1 );
 
 ```
 
@@ -872,12 +522,7 @@ obj << Variable Squared Cosines( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -893,13 +538,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -907,10 +546,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -918,10 +554,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -933,29 +566,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -969,12 +580,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -986,12 +592,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -1003,34 +604,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -1042,28 +616,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Copy Script;
 
 ```
 
@@ -1075,28 +628,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Data Table Window;
 
 ```
 
@@ -1110,9 +642,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -1124,35 +654,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -1166,29 +668,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1196,27 +676,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1228,29 +688,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1262,11 +700,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1278,29 +712,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));t = obj << Get Script;Show( t );
 
 ```
 
@@ -1312,29 +724,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1346,29 +736,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1380,10 +748,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1397,10 +762,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1412,13 +774,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1430,14 +786,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1451,9 +800,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1465,15 +812,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1485,67 +824,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Redo Analysis;
 
 ```
 
@@ -1557,67 +836,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Syntax:** obj &lt;&lt; Relaunch ByGroup
-
-**Description:** Opens the platform launch window and recalls the settings that were used to create the report.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Relaunch Analysis;
 
 ```
 
@@ -1629,14 +848,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1648,51 +860,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report;Report( obj )
+**Syntax:** obj &lt;&lt; Report; Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1704,28 +884,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Report View( "Summary" );
 
 ```
 
@@ -1737,34 +896,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1776,34 +908,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1815,34 +920,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1854,28 +932,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Save Script for All Objects;
 
 ```
 
@@ -1889,34 +946,7 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1924,34 +954,7 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1963,28 +966,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1996,28 +978,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Save Script to Journal;
 
 ```
 
@@ -2029,28 +990,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Save Script to Report;
 
 ```
 
@@ -2062,28 +1002,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Save Script to Script Window;
 
 ```
 
@@ -2095,15 +1014,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -2115,20 +1026,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -2140,12 +1038,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -2157,11 +1050,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -2173,28 +1062,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));obj << Title( "My Platform" );
 
 ```
 
@@ -2206,30 +1074,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );
-dt << Multiple Factor Analysis(
-	Product ID( :Vineyard ),
-	Z( :Region ),
-	MFA Blocks(
-		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},
-		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,
-		:Florence Savory, :Florence Lightness},
-		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,
-		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},
-		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,
-		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness
-		},
-		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,
-		:Paula Tannin, :Paula Savory},
-		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,
-		:Monica Alcohol, :Monica Savory, :Monica Lightness},
-		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,
-		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}
-	)
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Wine Sensory Data.jmp" );dt << Multiple Factor Analysis(	Product ID( :Vineyard ),	Z( :Region ),	MFA Blocks(		{"Susan Fruity etc.", :Susan Fruity, :Susan Flowery, :Susan Spicy, :Susan Crispness},		{"Florence Flowery etc.", :Florence Flowery, :Florence Crispness, :Florence Tannin,		:Florence Savory, :Florence Lightness},		{"Xavier Fruity etc.", :Xavier Fruity, :Xavier Spicy, :Xavier Crispness,		:Xavier Alcohol, :Xavier Savory, :Xavier Lightness},		{"Robert Fruity etc.", :Robert Fruity, :Robert Flowery, :Robert Spicy,		:Robert Crispness, :Robert Tannin, :Robert Alcohol, :Robert Savory, :Robert Lightness		},		{"Paula Fruity etc.", :Paula Fruity, :Paula Flowery, :Paula Spicy, :Paula Crispness,		:Paula Tannin, :Paula Savory},		{"Monica Fruity etc.", :Monica Fruity, :Monica Flowery, :Monica Spicy, :Monica Tannin,		:Monica Alcohol, :Monica Savory, :Monica Lightness},		{"Frank Fruity etc.", :Frank Fruity, :Frank Flowery, :Frank Spicy, :Frank Crispness,		:Frank Tannin, :Frank Alcohol, :Frank Savory, :Frank Lightness}	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2243,11 +1088,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2259,9 +1100,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -2273,13 +1112,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

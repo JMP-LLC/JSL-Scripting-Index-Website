@@ -16,14 +16,7 @@
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = [=> ];
-echo["a"] = 1;
-echo["b"] = JSON Literal( true );
-echo["c"] = 3.141559;
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-rc = cas << Submit( action );
+cas = Current CAS Connection();echo = [=> ];echo["a"] = 1;echo["b"] = JSON Literal( true );echo["c"] = 3.141559;action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );rc = cas << Submit( action );
 
 ```
 
@@ -37,9 +30,7 @@ rc = cas << Submit( action );
 
 ```jsl
 
-
-action = New CAS Action();
-action << Action Set( "builtins" );
+action = New CAS Action();action << Action Set( "builtins" );
 
 ```
 
@@ -53,18 +44,7 @@ action << Action Set( "builtins" );
 
 ```jsl
 
-
-code =
-"\[
-  data temp;
-  x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-  A = "SAS"; B = "Statistics";
-  put _ALL_;              /* display all variables and values */
-  run;
-  ]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Authorization( 1 ) );
+code ="\[  data temp;  x = 9.1; y = 6; z = sqrt(x**2 + y**2);  A = "SAS"; B = "Statistics";  put _ALL_;              /* display all variables and values */  run;  ]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Authorization( 1 ) );
 
 ```
 
@@ -78,18 +58,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Authoriz
 
 ```jsl
 
-
-code =
-"\[
-  data temp;
-  x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-  A = "SAS"; B = "Statistics";
-  put _ALL_;              /* display all variables and values */
-  run;
-  ]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Connection( 1 ) );
+code ="\[  data temp;  x = 9.1; y = 6; z = sqrt(x**2 + y**2);  A = "SAS"; B = "Statistics";  put _ALL_;              /* display all variables and values */  run;  ]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Connection( 1 ) );
 
 ```
 
@@ -103,9 +72,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Connecti
 
 ```jsl
 
-
-action = New CAS Action();
-action << Endpoint( "/cas/sessions" );
+action = New CAS Action();action << Endpoint( "/cas/sessions" );
 
 ```
 
@@ -119,31 +86,7 @@ action << Endpoint( "/cas/sessions" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-args =
-"\[
-{
-	"casout": {
-		"caslib": "casuser",
-		"name": "UN Malaria 2012",
-		"replace":true
-	},
-	"importOptions": {
-		"fileType": "CSV"
-	}
-}
-]\";
-
-action = New CAS Action(
-	Action( "table.upload" ),
-	File( "$SAMPLE_IMPORT_DATA\UN Malaria 2012.csv" ),
-	JSON( args )
-);
-rc = cas << Submit( action );
-If( rc,
-	Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" )
-);
+cas = Current CAS Connection();args ="\[{	"casout": {		"caslib": "casuser",		"name": "UN Malaria 2012",		"replace":true	},	"importOptions": {		"fileType": "CSV"	}}]\";action = New CAS Action(	Action( "table.upload" ),	File( "$SAMPLE_IMPORT_DATA\UN Malaria 2012.csv" ),	JSON( args ));rc = cas << Submit( action );If( rc,	Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" ));
 
 ```
 
@@ -157,22 +100,7 @@ If( rc,
 
 ```jsl
 
-
-cas = Current CAS Connection();
-dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
-cas << Export Data( dt, "CASUSER.Animals" );
-Close( dt, NOSAVE );
-aa_json = [=> ];
-aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];
-aa_json["class"] = {"species", "subject", "season"};
-aa_json["model"] = ["depVar" => "miles",
-"effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),
-"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];
-aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};
-aa_json["method"] = "REML";
-action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );
-cas << Submit( action );
-Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!n" );
+cas = Current CAS Connection();dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );cas << Export Data( dt, "CASUSER.Animals" );Close( dt, NOSAVE );aa_json = [=> ];aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];aa_json["class"] = {"species", "subject", "season"};aa_json["model"] = ["depVar" => "miles","effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};aa_json["method"] = "REML";action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );cas << Submit( action );Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!n" );
 
 ```
 
@@ -186,22 +114,7 @@ Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!
 
 ```jsl
 
-
-cas = Current CAS Connection();
-dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
-cas << Export Data( dt, "CASUSER.Animals" );
-Close( dt, NOSAVE );
-aa_json = [=> ];
-aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];
-aa_json["class"] = {"species", "subject", "season"};
-aa_json["model"] = ["depVar" => "miles",
-"effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),
-"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];
-aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};
-aa_json["method"] = "REML";
-action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );
-cas << Submit( action );
-Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
+cas = Current CAS Connection();dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );cas << Export Data( dt, "CASUSER.Animals" );Close( dt, NOSAVE );aa_json = [=> ];aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];aa_json["class"] = {"species", "subject", "season"};aa_json["model"] = ["depVar" => "miles","effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};aa_json["method"] = "REML";action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );cas << Submit( action );Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```
 
@@ -215,18 +128,7 @@ Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = "\[
-{
-	"a": 1,
-	"b": true,
-	"c": 3.141559
-}
-]\";
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-cas << Submit( action );
-Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
+cas = Current CAS Connection();echo = "\[{	"a": 1,	"b": true,	"c": 3.141559}]\";action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );cas << Submit( action );Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```
 
@@ -240,18 +142,7 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = "\[
-{
-	"a": 1,
-	"b": true,
-	"c": 3.141559
-}
-]\";
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-cas << Submit( action );
-Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
+cas = Current CAS Connection();echo = "\[{	"a": 1,	"b": true,	"c": 3.141559}]\";action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );cas << Submit( action );Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
 
 ```
 
@@ -265,18 +156,7 @@ Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = "\[
-{
-	"a": 1,
-	"b": true,
-	"c": 3.141559
-}
-]\";
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-cas << Submit( action );
-Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
+cas = Current CAS Connection();echo = "\[{	"a": 1,	"b": true,	"c": 3.141559}]\";action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );cas << Submit( action );Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```
 
@@ -290,22 +170,7 @@ Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
-cas << Export Data( dt, "CASUSER.Animals" );
-Close( dt, NOSAVE );
-aa_json = [=> ];
-aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];
-aa_json["class"] = {"species", "subject", "season"};
-aa_json["model"] = ["depVar" => "miles",
-"effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),
-"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];
-aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};
-aa_json["method"] = "REML";
-action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );
-cas << Submit( action );
-Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
+cas = Current CAS Connection();dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );cas << Export Data( dt, "CASUSER.Animals" );Close( dt, NOSAVE );aa_json = [=> ];aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];aa_json["class"] = {"species", "subject", "season"};aa_json["model"] = ["depVar" => "miles","effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};aa_json["method"] = "REML";action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );cas << Submit( action );Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```
 
@@ -319,22 +184,7 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );
-cas << Export Data( dt, "CASUSER.Animals" );
-Close( dt, NOSAVE );
-aa_json = [=> ];
-aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];
-aa_json["class"] = {"species", "subject", "season"};
-aa_json["model"] = ["depVar" => "miles",
-"effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),
-"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];
-aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};
-aa_json["method"] = "REML";
-action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );
-cas << Submit( action );
-Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
+cas = Current CAS Connection();dt = Open( "$SAMPLE_DATA/Animals.jmp", invisible );cas << Export Data( dt, "CASUSER.Animals" );Close( dt, NOSAVE );aa_json = [=> ];aa_json["table"] = ["name" => "Animals", "caslib" => "CASUSER"];aa_json["class"] = {"species", "subject", "season"};aa_json["model"] = ["depVar" => "miles","effects" => {["vars" => {"species", "season"}, "interaction" => "BAR"]}, "printsol" => JSON Literal( true ),"cl" => JSON Literal( false ), "dfmethod" => "RESIDUAL"];aa_json["random"] = {["depVars" => "miles", "effects" => {["vars" => {"subject"}, "nest" => {"species"}]}]};aa_json["method"] = "REML";action = New CAS Action( Action( "mixed.mixed" ), JSON( aa_json ) );cas << Submit( action );Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
 
 ```
 
@@ -348,17 +198,7 @@ Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = "\[
-{
-	"a": 1,
-	"b": true,
-	"c": 3.141559
-}
-]\";
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-rc = cas << Submit( action );
+cas = Current CAS Connection();echo = "\[{	"a": 1,	"b": true,	"c": 3.141559}]\";action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );rc = cas << Submit( action );
 
 ```
 
@@ -372,31 +212,7 @@ rc = cas << Submit( action );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-args =
-"\[
-{
-	"casout": {
-		"caslib": "casuser",
-		"name": "UN Malaria 2012",
-		"replace":true
-	},
-	"importOptions": {
-		"fileType": "CSV"
-	}
-}
-]\";
-
-action = New CAS Action(
-	Action( "table.upload" ),
-	File( "$SAMPLE_IMPORT_DATA\UN Malaria 2012.csv" ),
-	JSON Parameters( args )
-);
-rc = cas << Submit( action );
-If( rc,
-	Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" )
-);
+cas = Current CAS Connection();args ="\[{	"casout": {		"caslib": "casuser",		"name": "UN Malaria 2012",		"replace":true	},	"importOptions": {		"fileType": "CSV"	}}]\";action = New CAS Action(	Action( "table.upload" ),	File( "$SAMPLE_IMPORT_DATA\UN Malaria 2012.csv" ),	JSON Parameters( args ));rc = cas << Submit( action );If( rc,	Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" ));
 
 ```
 
@@ -410,18 +226,7 @@ If( rc,
 
 ```jsl
 
-
-code =
-"\[
-  data temp;
-  x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-  A = "SAS"; B = "Statistics";
-  put _ALL_;              /* display all variables and values */
-  run;
-  ]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1 ) );
+code ="\[  data temp;  x = 9.1; y = 6; z = sqrt(x**2 + y**2);  A = "SAS"; B = "Statistics";  put _ALL_;              /* display all variables and values */  run;  ]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1 ) );
 
 ```
 
@@ -435,21 +240,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-data temp;
-x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-A = "SAS"; B = "Statistics";
-put _ALL_;              /* display all variables and values */
-run;
-]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ) );
-cas << Submit( action );
-action << Make Report();
+cas = Current CAS Connection();code ="\[data temp;x = 9.1; y = 6; z = sqrt(x**2 + y**2);A = "SAS"; B = "Statistics";put _ALL_;              /* display all variables and values */run;]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ) );cas << Submit( action );action << Make Report();
 
 ```
 
@@ -463,9 +254,7 @@ action << Make Report();
 
 ```jsl
 
-
-action = New CAS Action();
-action << Method( "PUT" );
+action = New CAS Action();action << Method( "PUT" );
 
 ```
 
@@ -479,18 +268,7 @@ action << Method( "PUT" );
 
 ```jsl
 
-
-code =
-"\[
-  data temp;
-  x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-  A = "SAS"; B = "Statistics";
-  put _ALL_;              /* display all variables and values */
-  run;
-  ]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Session( 1 ) );
+code ="\[  data temp;  x = 9.1; y = 6; z = sqrt(x**2 + y**2);  A = "SAS"; B = "Statistics";  put _ALL_;              /* display all variables and values */  run;  ]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Session( 1 ) );
 
 ```
 
@@ -504,22 +282,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Session(
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-data temp;
-x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-A = "SAS"; B = "Statistics";
-put _ALL_;              /* display all variables and values */
-run;
-]\";
-runCode = [=> ];
-runCode["code"] = code;
-action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ) );
-action << Timeout( 120 );
-cas << Submit( action );
-action << Make Report();
+cas = Current CAS Connection();code ="\[data temp;x = 9.1; y = 6; z = sqrt(x**2 + y**2);A = "SAS"; B = "Statistics";put _ALL_;              /* display all variables and values */run;]\";runCode = [=> ];runCode["code"] = code;action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ) );action << Timeout( 120 );cas << Submit( action );action << Make Report();
 
 ```
 
@@ -537,19 +300,7 @@ action << Make Report();
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );
 
 ```
 
@@ -563,21 +314,7 @@ cas << Submit( action );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-filename = "$TEMP/Cas DataStep Action.sas";
-file = Save Text File( filename, code, "replace" );
-action = New CAS DATA Step action( File( filename ) );
-cas << Submit( action );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";filename = "$TEMP/Cas DataStep Action.sas";file = Save Text File( filename, code, "replace" );action = New CAS DATA Step action( File( filename ) );cas << Submit( action );
 
 ```
 
@@ -591,20 +328,7 @@ cas << Submit( action );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!Get Changed Resources: " || Char( action << Get Changed Resources ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!Get Changed Resources: " || Char( action << Get Changed Resources ) || "\!n" );
 
 ```
 
@@ -618,20 +342,7 @@ Write( "\!Get Changed Resources: " || Char( action << Get Changed Resources ) ||
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```
 
@@ -645,20 +356,7 @@ Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```
 
@@ -672,20 +370,7 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
 
 ```
 
@@ -699,20 +384,7 @@ Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```
 
@@ -726,20 +398,7 @@ Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```
 
@@ -753,21 +412,7 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-output_ds = action << Get Output Data Sets;
-Show( output_ds );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );output_ds = action << Get Output Data Sets;Show( output_ds );
 
 ```
 
@@ -781,20 +426,7 @@ Show( output_ds );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
 
 ```
 
@@ -808,21 +440,7 @@ Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-	data temp;
-	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-	A = "SAS"; B = "Statistics";
-	put _ALL_;              /* display all variables and values */
-	run;
-]\";
-
-action = New CAS DATA Step action( Code( code ) );
-cas << Submit( action );
-has_output = action << Has Output Data Sets;
-Show( has_output );
+cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );has_output = action << Has Output Data Sets;Show( has_output );
 
 ```
 
@@ -836,19 +454,7 @@ Show( has_output );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
- data temp;
- x = 9.1; y = 6; z = sqrt(x**2 + y**2);
- A = "SAS"; B = "Statistics";
- put _ALL_;              /* display all variables and values */
- run;
- ]\";
-	 
-action = New CAS DATA Step action( Code( code ), NThreads( 2 ) );
-cas << Submit( action );
+cas = Current CAS Connection();code ="\[ data temp; x = 9.1; y = 6; z = sqrt(x**2 + y**2); A = "SAS"; B = "Statistics"; put _ALL_;              /* display all variables and values */ run; ]\";	 action = New CAS DATA Step action( Code( code ), NThreads( 2 ) );cas << Submit( action );
 
 ```
 
@@ -862,19 +468,7 @@ cas << Submit( action );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-code =
-"\[
-data temp;
-x = 9.1; y = 6; z = sqrt(x**2 + y**2);
-A = "SAS"; B = "Statistics";
-put _ALL_;              /* display all variables and values */
-run;
-]\";
-
-action = New CAS DATA Step action( Code( code ), Single( "YES" ) );
-cas << Submit( action );
+cas = Current CAS Connection();code ="\[data temp;x = 9.1; y = 6; z = sqrt(x**2 + y**2);A = "SAS"; B = "Statistics";put _ALL_;              /* display all variables and values */run;]\";action = New CAS DATA Step action( Code( code ), Single( "YES" ) );cas << Submit( action );
 
 ```
 
@@ -892,13 +486,7 @@ cas << Submit( action );
 
 ```jsl
 
-
-cas = New CAS Server();
-url = "http://myCasURL";
-cas << Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
-session_id = cas << Get Session;
-cas << Disconnect( NoTerminate ); //disconnect CAS without terminating
-cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), Session( session_id ) ); //reconnect to the session
+cas = New CAS Server();url = "http://myCasURL";cas << Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );session_id = cas << Get Session;cas << Disconnect( NoTerminate ); //disconnect CAS without terminatingcas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), Session( session_id ) ); //reconnect to the session
 
 ```
 
@@ -912,10 +500,7 @@ cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), 
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
-cas << Delete Table( "Casuser", "Big Class" );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );cas << Delete Table( "Casuser", "Big Class" );
 
 ```
 
@@ -929,11 +514,7 @@ cas << Delete Table( "Casuser", "Big Class" );
 
 ```jsl
 
-
-cas = New CAS Server();
-url = "http://myCasURL";
-cas << Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
-cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
+cas = New CAS Server();url = "http://myCasURL";cas << Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
 
 ```
 
@@ -947,9 +528,7 @@ cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
 
 ```
 
@@ -963,14 +542,7 @@ cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class"
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
-datasets = cas << Get Data Sets( "casuser" );
-Show( datasets );
-cas << Delete Table( "Casuser", "Big Class" );
-datasets = cas << Get Data Sets( "casuser" );
-Show( datasets );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );datasets = cas << Get Data Sets( "casuser" );Show( datasets );cas << Delete Table( "Casuser", "Big Class" );datasets = cas << Get Data Sets( "casuser" );Show( datasets );
 
 ```
 
@@ -984,10 +556,7 @@ Show( datasets );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-libraries = cas << Get Libraries();
-Show( libraries );
+cas = Current CAS Connection();libraries = cas << Get Libraries();Show( libraries );
 
 ```
 
@@ -1001,12 +570,7 @@ Show( libraries );
 
 ```jsl
 
-
-url = "http://myCasURL";
-cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
-session_id = cas << Get Session;
-cas << Disconnect( NoTerminate ); //disconnect CAS without terminating
-cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), Session( session_id ) ); //reconnect to the session
+url = "http://myCasURL";cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );session_id = cas << Get Session;cas << Disconnect( NoTerminate ); //disconnect CAS without terminatingcas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), Session( session_id ) ); //reconnect to the session
 
 ```
 
@@ -1020,11 +584,7 @@ cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ), 
 
 ```jsl
 
-
-url = "http://myCasURL";
-cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );
-session_ids = cas << Get Sessions();
-Show( session_ids );
+url = "http://myCasURL";cas = CAS Connect( URL( url ), Username( "my_username" ), Prompt( "IfNeeded" ) );session_ids = cas << Get Sessions();Show( session_ids );
 
 ```
 
@@ -1038,10 +598,7 @@ Show( session_ids );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
-cas << Import Data( "Casuser.Big Class" );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );cas << Import Data( "Casuser.Big Class" );
 
 ```
 
@@ -1055,10 +612,7 @@ cas << Import Data( "Casuser.Big Class" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-connected = cas << Is Connected();
-Show( connected );
+cas = Current CAS Connection();connected = cas << Is Connected();Show( connected );
 
 ```
 
@@ -1072,10 +626,7 @@ Show( connected );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
-cas << Remove Table( "Casuser", "Big Class" );
+cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );cas << Remove Table( "Casuser", "Big Class" );
 
 ```
 
@@ -1089,15 +640,7 @@ cas << Remove Table( "Casuser", "Big Class" );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-echo = [=> ];
-echo["a"] = 1;
-echo["b"] = JSON Literal( true );
-echo["c"] = 3.141559;
-action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
-cas = Current CAS Connection();
-rc = cas << Submit( action );
+cas = Current CAS Connection();echo = [=> ];echo["a"] = 1;echo["b"] = JSON Literal( true );echo["c"] = 3.141559;action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );cas = Current CAS Connection();rc = cas << Submit( action );
 
 ```
 
@@ -1111,12 +654,7 @@ rc = cas << Submit( action );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-session_id = cas << Get Session();
-cas << Disconnect( NoTerminate );
-cas = CAS Connect( Prompt( IfNeeded ) );
-cas << Terminate( session_id );
+cas = Current CAS Connection();session_id = cas << Get Session();cas << Disconnect( NoTerminate );cas = CAS Connect( Prompt( IfNeeded ) );cas << Terminate( session_id );
 
 ```
 
@@ -1130,9 +668,7 @@ cas << Terminate( session_id );
 
 ```jsl
 
-
-cas = Current CAS Connection();
-cas << Terminate Sessions();
+cas = Current CAS Connection();cas << Terminate Sessions();
 
 ```
 

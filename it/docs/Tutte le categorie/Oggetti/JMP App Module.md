@@ -12,11 +12,7 @@
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Run Application;
-modules = app << Get Modules;
-modules[1] << Create Instance;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run Application;modules = app << Get Modules;modules[1] << Create Instance;
 
 ```
 
@@ -28,11 +24,7 @@ modules[1] << Create Instance;
 
 ```jsl
 
-app = JMP App();
-app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
-app << Run Application;
-modules = app << Get Modules;
-modules[1] << Get Application;
+app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run Application;modules = app << Get Modules;modules[1] << Get Application;
 
 ```
 

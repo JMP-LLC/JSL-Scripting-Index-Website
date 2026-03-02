@@ -40,9 +40,7 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -62,7 +60,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**Syntaxe :** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie représentée par les chiffres dans l’argument values. Équivalent à la fonction IRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -70,14 +68,13 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );
-Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie en fonction du coût de l&apos;investissement et de l&apos;intérêt sur le réinvestissement des liquidités. Équivalent à la fonction MIRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -85,14 +82,13 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
-Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**Syntaxe :** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntaxe :** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie la valeur actuelle nette d&apos;un investissement calculée en fonction d’un taux d’escompte et d’une série de débits (valeurs négatives) et de crédits (valeurs positives) futurs. L’argument values est une matrice unidimensionnelle. Équivalent à la fonction NPV de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -100,8 +96,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );
-Net Present Value( .05, -10000, 1000, 900, 9500 );
+Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -129,9 +124,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -159,9 +152,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 )
--Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
--Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 

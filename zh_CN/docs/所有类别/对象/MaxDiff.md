@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,13 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -47,10 +36,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -58,10 +44,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,19 +56,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -99,12 +70,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -116,12 +82,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -133,24 +94,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -162,18 +106,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Copy Script;
 
 ```
 
@@ -185,18 +118,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Data Table Window;
 
 ```
 
@@ -210,9 +132,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -224,25 +144,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -256,27 +158,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -284,19 +166,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -308,19 +178,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -332,11 +190,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -348,19 +202,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -372,19 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -396,19 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -420,10 +238,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -437,10 +252,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -452,13 +264,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -470,32 +276,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**语法:** New JSL Preset( preset )
-
-**说明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -509,9 +290,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -523,15 +302,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -543,47 +314,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**语法:** obj &lt;&lt; Redo ByGroup Analysis
-
-**说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Redo Analysis;
 
 ```
 
@@ -595,47 +326,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**语法:** obj &lt;&lt; Relaunch ByGroup
-
-**说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Relaunch Analysis;
 
 ```
 
@@ -647,14 +338,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -666,57 +350,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**语法:** Render Preset( preset )
-
-**说明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP添加的版本:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report;Report( obj )
+**语法:** obj &lt;&lt; Report; Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -728,18 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Report View( "Summary" );
 
 ```
 
@@ -751,24 +386,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -780,24 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -809,24 +410,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -838,18 +422,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Script for All Objects;
 
 ```
 
@@ -859,53 +432,19 @@ obj << Save Script for All Objects;
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -917,18 +456,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -940,18 +468,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Script to Journal;
 
 ```
 
@@ -963,18 +480,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Script to Report;
 
 ```
 
@@ -986,18 +492,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Script to Script Window;
 
 ```
 
@@ -1009,15 +504,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1029,20 +516,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1054,12 +528,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1071,11 +540,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1087,18 +552,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Title( "My Platform" );
 
 ```
 
@@ -1110,20 +564,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1139,11 +580,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1155,27 +592,19 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**语法:** obj = MaxDiff(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1189,17 +618,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
@@ -1207,452 +626,209 @@ obj = dt << MaxDiff(
 
 ### Choice Set ID
 
-**语法:** Choice( Choice Set ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Choice Set ID( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在一个数据表的情况下标识特定选择集的列，该选择集针对给定的偏好决定而提供给测试对象。
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Profile Effects
 
-**语法:** obj = MaxDiff(...&lt;Profile Effects( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...&lt;Profile Effects( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在特征数据表中包含效应或因子值的一列或多列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Profile Grouping
 
-**语法:** Choice( Profile Grouping( column(s) ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Profile Grouping( column(s) ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 与“特征 ID”列一起使用时，唯一指定每个选择集的列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Profile ID
 
-**语法:** Choice( Profile ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Profile ID( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在特征数据表中包含 ID 的列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Response Best Option
 
-**语法:** MaxDiff( Response Best Option( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** MaxDiff( Response Best Option( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 响应数据表中的一列，其中包含研究参与者指定为“最佳”的特征的“特征 ID”。
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
 ### Response Freq
 
-**语法:** Choice( Response Freq( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Freq( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个频数。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Response Grouping
 
-**语法:** Choice( Response Grouping( column(s) ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Grouping( column(s) ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 与“已选择的特征 ID”列一起使用时，唯一指定每个选择集的列。
 
 ```jsl
 
-Open( "$Sample_Data/Laptop Profile.jmp" );
-Open( "$Sample_Data/Laptop Runs.jmp" );
-Choice(
-	Response Data Table( Data Table( "Laptop Runs" ) ),
-	Profile DataTable( Data Table( "Laptop Profile" ) ),
-	Response Grouping( :Survey, :Choice Set ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :Choice ID ),
-	Profile Grouping( :Survey, :Choice Set ),
-	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),
-	"Firth Bias-Adjusted Estimates"n( 1 ),
-	Response Profile ID Chosen( :Response ),
-	Likelihood Ratio Tests( 1 ),
-	Willingness to Pay(
-		Hard Disk( Feature Factor, "40 GB" ),
-		Speed( Feature Factor, "1.5 GHz" ),
-		Battery Life( Feature Factor, "4 hours" ),
-		Price( Price Factor, 1000 )
-	)
-);
+Open( "$Sample_Data/Laptop Profile.jmp" );Open( "$Sample_Data/Laptop Runs.jmp" );Choice(	Response Data Table( Data Table( "Laptop Runs" ) ),	Profile DataTable( Data Table( "Laptop Profile" ) ),	Response Grouping( :Survey, :Choice Set ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :Choice ID ),	Profile Grouping( :Survey, :Choice Set ),	Profile Effects( :Hard Disk, :Speed, :Battery Life, :Price ),	"Firth Bias-Adjusted Estimates"n( 1 ),	Response Profile ID Chosen( :Response ),	Likelihood Ratio Tests( 1 ),	Willingness to Pay(		Hard Disk( Feature Factor, "40 GB" ),		Speed( Feature Factor, "1.5 GHz" ),		Battery Life( Feature Factor, "4 hours" ),		Price( Price Factor, 1000 )	));
 
 ```
 
 ### Response Profile ID Choices
 
-**语法:** Choice( Response Profile ID Choice( columns ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Profile ID Choice( columns ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 至少两列，它们包含可作为响应的可能选择。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Response Subject ID
 
-**语法:** Choice( Response Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Subject ID( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在响应数据表中标识研究参与者的列。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Response Weight
 
-**语法:** Choice( Response Weight( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Weight( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个权重。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Response Worst Option
 
-**语法:** MaxDiff( Response Worst Option( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** MaxDiff( Response Worst Option( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 响应数据表中的一列，其中包含研究参与者指定为“最差”的特征的“特征 ID”。
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
 ### Subject Effects
 
-**语法:** obj = MaxDiff(...&lt;Subject Effects( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...&lt;Subject Effects( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表中包含效应或因子值的一列或多列。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
 ### Subject ID
 
-**语法:** Choice( Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Subject ID( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表或在一个数据表的情况下标识测试对象的列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );
-obj = Choice(
-	One Table( 1 ),
-	Subject ID( :Subject ),
-	Choice Set ID( :Trial ),
-	Profile ID( :Indicator ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt = Open( "$SAMPLE_DATA/Pizza Combined.jmp" );obj = Choice(	One Table( 1 ),	Subject ID( :Subject ),	Choice Set ID( :Trial ),	Profile ID( :Indicator ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Subject Subject ID
 
-**语法:** Choice( Subject Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Subject Subject ID( column ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表中标识研究参与者的列。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 
@@ -1666,18 +842,7 @@ obj = Choice(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << All Levels Comparison Report( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << All Levels Comparison Report( 1 );
 
 ```
 
@@ -1695,19 +860,7 @@ obj << All Levels Comparison Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-Report( obj )["Parameter Estimates"] << Close( 0 );
-obj << Confidence Intervals( 1, 0.01 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));Report( obj )["Parameter Estimates"] << Close( 0 );obj << Confidence Intervals( 1, 0.01 );
 
 ```
 
@@ -1721,7 +874,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Convergence Criterion
 
-**语法:** obj = MaxDiff(...Convergence Criterion( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Convergence Criterion( number )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在估计参数时，设置可接受的收敛准则。
 
@@ -1733,18 +886,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Correlation of Estimates( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Correlation of Estimates( 1 );
 
 ```
 
@@ -1756,70 +898,35 @@ obj << Correlation of Estimates( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Effect Marginals( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Effect Marginals( 1 );
 
 ```
 
 ### Firth Bias-Adjusted Estimates
 
-**语法:** obj = MaxDiff(...Firth Bias-Adjusted Estimates( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Firth Bias-Adjusted Estimates( state=0|1 )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 计算修正偏倚的最大似然估计值 (MLE)，以便生成比没有修正偏倚的 MLE 更准确的估计值和检验。这些估计值还可缓解 Logistic 模型中常见的分离问题。 默认开启。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
-Report( obj )["Parameter Estimates"] << Close( 0 );
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));Report( obj )["Parameter Estimates"] << Close( 0 );
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Hierarchical Bayes
 
-**语法:** obj = MaxDiff(...Hierarchical Bayes( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Hierarchical Bayes( state=0|1 )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 使用 Bayes 方法估计特定于测试对象的参数。
 
@@ -1831,18 +938,7 @@ obj = Choice(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Joint Factor Tests( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Joint Factor Tests( 1 );
 
 ```
 
@@ -1854,18 +950,7 @@ obj << Joint Factor Tests( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Likelihood Ratio Tests( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Likelihood Ratio Tests( 1 );
 
 ```
 
@@ -1877,24 +962,13 @@ obj << Likelihood Ratio Tests( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Model Dialog;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Model Dialog;
 
 ```
 
 ### Number of Bayesian Iterations
 
-**语法:** obj = MaxDiff(...Number of Bayesian Iterations( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Number of Bayesian Iterations( number )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 ### Number of Burn In Iterations
 
@@ -1902,161 +976,85 @@ obj << Model Dialog;
 
 ### One Table
 
-**语法:** obj = MaxDiff(...One Table...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...One Table...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定数据在一个数据表中以堆叠格式存储。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Profile DataTable
 
-**语法:** Choice( Profile Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Profile Data Table( table ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识特征数据表。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Remove Subject Effects
 
-**语法:** obj = MaxDiff(...Remove Subject Effects...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = MaxDiff(...Remove Subject Effects...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 ### Response Data Table
 
-**语法:** Choice( Response Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Response Data Table( table ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识响应数据表。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ));
 
 ```
 
 ### Response Value Indicates Best
 
-**语法:** MaxDiff( Response Value Indicates Best( value ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** MaxDiff( Response Value Indicates Best( value ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定代表该研究参与者指定为“最佳”的特征的“特征 ID”的值。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
 ### Response Value Indicates Worst
 
-**语法:** MaxDiff( Response Value Indicates Worst( value ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** MaxDiff( Response Value Indicates Worst( value ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定代表该研究参与者指定为“最差”的特征的“特征 ID”的值。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));
 
 ```
 
@@ -2072,18 +1070,7 @@ obj = dt << MaxDiff(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Gradients by Subject;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Gradients by Subject;
 
 ```
 
@@ -2099,18 +1086,7 @@ obj << Save Gradients by Subject;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 )
-);
-obj << Save Utility Formula;
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ));obj << Save Utility Formula;
 
 ```
 
@@ -2122,72 +1098,29 @@ obj << Save Utility Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );
-obj = dt << MaxDiff(
-	One Table( 1 ),
-	Subject ID( :Respondent ),
-	Choice Set ID( :Choice Set ID ),
-	Profile ID( :Response ),
-	Profile Grouping( :Survey ID ),
-	Profile Effects( :Profile ID ),
-	Response Value Indicates Best( 1 ),
-	Response Value Indicates Worst( -1 ),
-	Hierarchical Bayes( 1 )
-);
-obj << Show MLE Parameter Estimates( 1 );
+dt = Open( "$SAMPLE_DATA/Potato Chip Combined.jmp" );obj = dt << MaxDiff(	One Table( 1 ),	Subject ID( :Respondent ),	Choice Set ID( :Choice Set ID ),	Profile ID( :Response ),	Profile Grouping( :Survey ID ),	Profile Effects( :Profile ID ),	Response Value Indicates Best( 1 ),	Response Value Indicates Worst( -1 ),	Hierarchical Bayes( 1 ));obj << Show MLE Parameter Estimates( 1 );
 
 ```
 
 ### Subject DataTable
 
-**语法:** Choice( Subject Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** Choice( Subject Data Table( table ), ... ) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识测试对象数据表。
 
-#### MaxDiff 示例
+**MaxDiff 示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );
-obj = MaxDiff(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Subject ID( :Respondent ),
-	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),
-	Profile ID( :Profile ID ),
-	Profile Effects( :Flavor ),
-	Subject Subject ID( :Respondent ),
-	Subject Effects( :Citizenship, :Gender ),
-	Response Best Option( :Best Profile ),
-	Response Worst Option( :Worst Profile )
-);
+dt1 = Open( "$SAMPLE_DATA/Potato Chip Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Potato Chip Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Potato Chip Subjects.jmp" );obj = MaxDiff(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Subject ID( :Respondent ),	Response Profile ID Choices( :Choice 1, :Choice 2, :Choice 3 ),	Profile ID( :Profile ID ),	Profile Effects( :Flavor ),	Subject Subject ID( :Respondent ),	Subject Effects( :Citizenship, :Gender ),	Response Best Option( :Best Profile ),	Response Worst Option( :Worst Profile ));
 
 ```
 
-#### 选择示例
+**选择示例**
 
 ```jsl
 
-
-dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );
-dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );
-obj = Choice(
-	Response Data Table( dt2 ),
-	Profile DataTable( dt1 ),
-	Subject DataTable( dt3 ),
-	Response Profile ID Chosen( :Choice ),
-	Response Subject ID( :Subject ),
-	Response Profile ID Choices( :Choice1, :Choice2 ),
-	Profile ID( :ID ),
-	Profile Effects( :Crust, :Cheese, :Topping ),
-	Subject Subject ID( :Subject ),
-	Subject Effects( :Gender )
-);
+dt1 = Open( "$SAMPLE_DATA/Pizza Profiles.jmp" );dt2 = Open( "$SAMPLE_DATA/Pizza Responses.jmp" );dt3 = Open( "$SAMPLE_DATA/Pizza Subjects.jmp" );obj = Choice(	Response Data Table( dt2 ),	Profile DataTable( dt1 ),	Subject DataTable( dt3 ),	Response Profile ID Chosen( :Choice ),	Response Subject ID( :Subject ),	Response Profile ID Choices( :Choice1, :Choice2 ),	Profile ID( :ID ),	Profile Effects( :Crust, :Cheese, :Topping ),	Subject Subject ID( :Subject ),	Subject Effects( :Gender ));
 
 ```
 

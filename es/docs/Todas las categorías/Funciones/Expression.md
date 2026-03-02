@@ -24,21 +24,19 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-// See Example 2 for the deprecated Arg Expr() equivalent
-Arg( Expr( Sum( a, b, c ) ), 2 );
+// See Example 2 for the deprecated Arg Expr() equivalentArg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-// Deprecated
-Arg Expr( Sum( a, b, c ), 2 );
+// DeprecatedArg Expr( Sum( a, b, c ), 2 );
 
 ```
 
@@ -106,21 +104,19 @@ Head( Expr( Sum( a, b, c ) ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-// See Example 2 for the deprecated Head Expr() equivalent
-Head( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated Head Expr() equivalentHead( Expr( Sum( a, b, c ) ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-// Deprecated
-Head Expr( Sum( a, b, c ) );
+// DeprecatedHead Expr( Sum( a, b, c ) );
 
 ```
 
@@ -146,21 +142,19 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-// See Example 2 for the deprecated Head Name Expr() equivalent
-Head Name( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated Head Name Expr() equivalentHead Name( Expr( Sum( a, b, c ) ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-// Deprecated
-Head Name Expr( Sum( a, b, c ) );
+// DeprecatedHead Name Expr( Sum( a, b, c ) );
 
 ```
 
@@ -186,21 +180,19 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 **JMP Versión agregada:** Antes de la versión 14
 
-#### Ejemplo 1
+**Ejemplo 1**
 
 ```jsl
 
-// See Example 2 for the deprecated N Arg Expr() equivalent
-N Arg( Expr( Sum( a, b, c ) ) );
+// See Example 2 for the deprecated N Arg Expr() equivalentN Arg( Expr( Sum( a, b, c ) ) );
 
 ```
 
-#### Ejemplo 2
+**Ejemplo 2**
 
 ```jsl
 
-// Deprecated
-N Arg Expr( Sum( a, b, c ) );
+// DeprecatedN Arg Expr( Sum( a, b, c ) );
 
 ```
 
@@ -214,8 +206,7 @@ N Arg Expr( Sum( a, b, c ) );
 
 ```jsl
 
-ex = Expr( 1 + 2 );
-Eval List( {ex, Name Expr( ex )} );
+ex = Expr( 1 + 2 );Eval List( {ex, Name Expr( ex )} );
 
 ```
 

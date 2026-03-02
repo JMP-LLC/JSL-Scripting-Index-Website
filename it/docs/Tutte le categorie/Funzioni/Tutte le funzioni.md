@@ -315,7 +315,7 @@ Any( [1 0 2] );
 
 **Sintassi:** Arc( left, top, right, bottom, startAngle, endAngle )
 
-**Descrizione:** Disegna un arco di un ovale.
+**Descrizione:** Disegna un arco di un ovale. Gli angoli sono espressi in gradi, specificati con 0 gradi a ore 12:00 e 90 gradi a ore 3:00. Per allinearli con i valori radianti utilizzati da sin() e cos() è necessario invertire la rotazione e aggiungere lo shift di 90 gradi. Ad esempio, radianti = 2 * pi() * (90 - gradi)/360. Gli archi si muovono in senso orario dall&apos;inizio alla fine.
 
 **JMP Versione aggiunta:** prima della versione 14
 
@@ -631,7 +631,7 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ### As Column
 
-**Sintassi:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
+**Sintassi:** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
 
 **Descrizione:** Accede alla colonna specifica nella tabella di dati specificata o corrente. Viene generato un errore se non viene trovata la colonna o la tabella di dati.
 
@@ -926,7 +926,7 @@ ex1 + ex1;
 
 ### Associative Array
 
-**Sintassi:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
+**Sintassi:** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
 
 **Descrizione:** Crea un array associativo, noto anche come dizionario o mappa hash. Nel form a due argomenti, chiavi e valori devono essere un elenco, una matrice o una colonna di una tabella di dati.
 
@@ -2330,6 +2330,26 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
 
+### Check MATLAB Dependencies
+
+**Sintassi:** Check MATLAB Dependencies()
+
+**Descrizione:** Controlla se le dipendenze MATLAB sono installate.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies();
+	Print( "Dependencies are installed" );
+,
+	Print( "Dependencies are installed" )
+);
+
+```
+
 ### ChiSquare Density
 
 **Sintassi:** p = ChiSquare Density( q, df, &lt;nonCentrality=0&gt; )
@@ -2772,25 +2792,6 @@ Clear Symbols();
 
 ```
 
-### Clipboard Capture
-
-**Sintassi:** clp = Clipboard Capture( box &lt;&lt; Copy )
-
-**Descrizione:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
-
-**JMP Versione aggiunta:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "in" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-Show( Get Clipboard() );
-Show( clp << Get Flavor Data( "Text", <<Text ) );
-
-```
-
 ### Close
 
 **Sintassi:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
@@ -2946,7 +2947,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 **Sintassi:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
-**Descrizione:** Restituisce un valore interpolato all&apos;interno di yCol, corrispondente alla posizione di v con xCol]. Values outside the range of xCol mancanti a meno che extrapolate non sia attivo, nel qual caso verrà restituito il valore yCol più prossimo.
+**Descrizione:** Restituisce un valore interpolato all&apos;interno di yCol, corrispondente alla posizione di v con xCol. I valori al di fuori del range di xCol saranno mancanti a meno che extrapolate non sia attivo, nel qual caso verrà restituito il valore yCol più prossimo.
 
 **JMP Versione aggiunta:** 19
 
@@ -4035,7 +4036,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Column
 
-**Sintassi:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Sintassi:** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Descrizione:** Restituisce un riferimento alla colonna della tabella di dati specificata. La parola chiave "formattato" consente l&apos;accesso ai dati formattati, come l’etichetta del valore.
 
@@ -7678,13 +7679,9 @@ For Each Row( :height = -:height );
 
 ```
 
-### Force Action Notes
-
-**JMP Versione aggiunta:** 16
-
 ### Format
 
-**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -7726,7 +7723,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ### Format Date
 
-**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -7760,7 +7757,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Pattern
 
-**Sintassi:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**Sintassi:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Descrizione:** I pattern di formato sono stringhe che definiscono un formato di data e ora come, ad esempio, “<AAAA></><MM></><GG> <hh><:><mm><:><ss><ampm>". Le parti del pattern tra parentesi angolari sono dette descrittori di campo. I descrittori di campo rappresentano un valore (come "<AAAA>", che è un anno a quattro cifre) o un altro testo di data e ora (come "</>", che è un separatore di data specifico locale). Un pattern di formato permette di costruire formati che non sono forniti da JMP. Questi formati possono essere utilizzati sia per la formattazione sia per l&apos;input dei dati.
 
@@ -8715,46 +8712,6 @@ Show( sheetList );
 
 ```
 
-### Get Expr Location
-
-**Sintassi:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
-
-**Descrizione:** Recupera le posizioni del primo token in un&apos;espressione analizzata. L&apos;invocazione di default restituisce {il file di origine, InizioLineaToken, InizioColToken, LunghezzaToken}.
-
-**JMP Versione aggiunta:** 17
-
-**Output di default**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( ":height + 20" );
-Get Expr Location( e );
-
-```
-
-**Seleziona l'output**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-e = Parse( " :height + 20 " );
-Get Expr Location( e, {"TreeStart", "TreeEnd"} );
-
-```
-
-**Sostituisce una sottostringa**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-data = " :height + 20 ";
-e = Parse( data );
-positions = Get Expr Location( Arg( e, 2 ), {"TreeStart", "TreeLength"} );
-Munger( data, positions[1], positions[2], "45" );
-
-```
-
 ### Get File Search Path
 
 **Sintassi:** y = Get File Search Path()
@@ -9022,12 +8979,6 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 Get Policies();
 
 ```
-
-### Get Policy
-
-**Sintassi:** Get Policy( "PolicyName" )
-
-**JMP Versione aggiunta:** 18
 
 ### Get Preference
 
@@ -10793,7 +10744,7 @@ y = Include File List();
 
 ### Informat
 
-**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -10911,6 +10862,24 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
+### Install MATLAB Dependencies
+
+**Sintassi:** Install MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Descrizione:** Installa le dipendenze MATLAB necessarie.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies(),
+	Print( "Dependencies are installed" )
+);
+
+```
+
 ### Integrate
 
 **Sintassi:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
@@ -10967,7 +10936,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno per una serie di flussi di cassa rappresentati dai numeri nell&apos;argomento values. Equivalente alla funzione IRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -10982,7 +10951,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Interpolate
 
-**Sintassi:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Sintassi:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Descrizione:** Trova gli argomenti xi tra i quali si trova x e interpola linearmente i corrispondenti argomenti yi. Nota: gli argomenti xi devono essere specificati in ordine.
 
@@ -12361,33 +12330,6 @@ Show( l );
 
 ```
 
-### JSS Context Box
-
-**Sintassi:** y = JSS Context Box( displayBox )
-
-**JMP Versione aggiunta:** 19
-
-```jsl
-
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel", Text Box( "Hi" ), Button Box( "Press Me" ), ),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) ) << Background Color( "Blue" );
-			)
-		)
-	)
-);
-
-```
-
 ### KDE
 
 **Sintassi:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
@@ -13428,63 +13370,6 @@ Log( 256, 2 );
 
 ```
 
-### Log Table Messages
-
-**Sintassi:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
-
-**Descrizione:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
-
-**JMP Versione aggiunta:** 17
-
-**Turn off logging**
-
-```jsl
-
-Log Table Messages( Off );
-
-```
-
-**Turn on logging**
-
-```jsl
-
-Log Table Messages( On );
-
-```
-
-**Turn on logging, and include all messages except "DtMsgClose"**
-
-```jsl
-
-Log Table Messages( On, Exclude( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, and include only the "DtMsgClose" message**
-
-```jsl
-
-Log Table Messages( On, Include( "DtMsgClose" ) );
-
-```
-
-**Turn on logging, but ignore column messages**
-
-```jsl
-
-Log Table Messages( On, Disable( "Column" ) );
-
-```
-
-**Turn on logging, but ignore table messages**
-
-```jsl
-
-Log Table Messages( On );
-Log Table Messages( Disable( "Table" ) );
-
-```
-
 ### Log10
 
 **Sintassi:** y = Log10( x )
@@ -14449,9 +14334,314 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
 
+### MATLAB Connect
+
+**Sintassi:** MATLABConnection = MATLAB Connect(&lt;Echo(0|1)&gt;)
+
+**Descrizione:** Restituisce un oggetto connessione MATLAB che supporta script.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLABConnection = MATLAB Connect();
+x = MatlabConnection << Is Connected;
+Show( x );
+
+```
+
+### MATLAB Control
+
+**Sintassi:** MATLAB Control( Echo(bool) )
+
+**Descrizione:** Cambia le opzioni di controllo per MATLAB
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+
+MATLAB Init( Echo( true ) );
+MATLAB Control( Echo( false ) );
+MATLAB Submit(
+	"\[
+	v = [9 8 7, 6 5 4, 3 2 1];
+	m = [1 2 3, 4 5 6, 7 8 9];
+	rowjoin = [v ; m]
+	coljoin = [v , m]
+]\"
+);
+MATLAB Term();
+
+```
+
+### MATLAB Execute
+
+**Sintassi:** MATLAB Execute( { list of Inputs }, { list of Outputs }, statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Descrizione:** Invia un elenco di input, esegue istruzioni e restituisce un elenco di output.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+a = "abcdef";
+d = 3.141;
+v = [9 8 7, 6 5 4, 3 2 1];
+m = [1 2 3, 4 5 6, 7 8 9];
+ml = MATLAB Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+a = v * m; % matrix product
+d = v / m; % = v * inv(m) called Right division
+z = m \ v; % = m * inv(v) called Left division
+x = m .* v; % element-wise product
+]\"
+);
+Show( v, m, ml, x, z, a, d );
+MATLAB Term();
+
+```
+
+### MATLAB Get
+
+**Sintassi:** y = MATLAB Get( name )
+
+**Descrizione:** Restituisce dati da MATLAB, dove l&apos;argomento name può rappresentare uno qualsiasi dei seguenti tipi di dati MATLAB (numerico | stringa | matrice | elenco | frame di dati).
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+x1 = [1, 2, 3];
+MATLAB Send( x1 );
+x2 = MATLAB Get( x1 );
+Show( x1, x2 );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt1 );
+dt2 = MATLAB Get( dt1 );
+dt2 << New Data View;
+Close( dt1 );
+MATLAB Term();
+
+```
+
+### MATLAB Get Graphics
+
+**Sintassi:** MATLAB graphics = MATLAB Get Graphics( format )
+
+**Descrizione:** Restituisce l&apos;ultimo oggetto grafico scritto nella finestra di visualizzazione del grafico MATLAB in un formato grafico specificato dall&apos;argomento format.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+ml = MATLAB Submit( "\[
+plot(1:10)
+]\" );
+plot = MATLAB Get Graphics( png );
+pngJMP = New Window( "Plot", Picture Box( plot ) );
+pngJMP << Close Window;
+MATLAB Submit( "close" );//Needed this command to close the figure generated from Matlab
+MATLAB Term();
+
+```
+
+### MATLAB Get Version
+
+**Sintassi:** version = MATLAB Get Version()
+
+**Descrizione:** Restituisce il numero di versione di MATLAB utilizzato con le interfacce JMP MATLAB.
+
+**JMP Versione aggiunta:** 14
+
+```jsl
+
+MATLAB Init();
+version = MATLAB Get Version();
+Show( version );
+MATLAB Term();
+
+```
+
+### MATLAB Init
+
+**Sintassi:** MATLAB Init(&lt;Echo(0|1)&gt;)
+
+**Descrizione:** Inizializza le interfacce MATLAB.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
+
+```
+
+### MATLAB Is Connected
+
+**Sintassi:** connected = MATLAB Is Connected()
+
+**Descrizione:** Restituisce 1 se esiste una connessione MATLAB attiva, in caso contrario 0.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+x = MATLAB Is Connected();
+Show( x );
+MATLAB Term();
+
+```
+
+### MATLAB JMP Name to MATLAB Name
+
+**Sintassi:** MATLAB name = MATLAB JMP Name To MATLAB Name( JMP name )
+
+**Descrizione:** Associa il nome di una variabile JMP a un nome di variabile MATLAB utilizzando le regole di assegnazione dei nomi alle variabili di MATLAB.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );
+Show( MATLAB name );
+MATLAB Term();
+
+```
+
+### MATLAB Load
+
+**Sintassi:** MATLAB Load( path )
+
+**Descrizione:** Carica variabili da un file ".mat" in MATLAB e restituisce le variabili in un array associativo JSL.
+
+**JMP Versione aggiunta:** 19
+
+```jsl
+
+MATLAB Init();
+// if .mat file contained: x = 40; y = 'hello';
+vars = MATLAB Load( "path/to/.mat" );
+Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );
+MATLAB Term();
+
+```
+
+### MATLAB Send
+
+**Sintassi:** MATLAB Send( name, &lt;MATLAB Name( name )&gt;, &lt;Named Arguments&gt; )
+
+**Descrizione:** Invia dati a MATLAB, dove l&apos;argomento name può rappresentare uno qualsiasi dei seguenti tipi di dati JMP (numerico | stringa | matrice | elenco | tabella di dati).
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+x = [1, 2, 3];
+MATLAB Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt );
+Close( dt );
+MATLAB Submit( "x" );
+MATLAB Submit( "dt" );
+MATLAB Term();
+
+```
+
+### MATLAB Send File
+
+**Sintassi:** MATLAB Send File( filename, &lt;MATLAB Name( name )&gt; )
+
+**Descrizione:** Invia un file di dati a MATLAB, dove l&apos;argomento filename è una stringa che specifica il nome del percorso del file da inviare a MATLAB.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );
+MATLAB Submit( "BigClass" );
+MATLAB Submit( "Baseball" );
+MATLAB Term();
+
+```
+
+### MATLAB Submit
+
+**Sintassi:** MATLAB Submit( statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Descrizione:** Invia istruzioni a MATLAB. Le istruzioni possono essere sotto forma di valore stringa o elenco di valori stringa.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+a = 200;
+]\" );
+getStr = MATLAB Get( str );
+getNum = MATLAB Get( a );
+Show( getStr, getNum );
+MATLAB Term();
+
+```
+
+### MATLAB Submit File
+
+**Sintassi:** MATLAB Submit File( path, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Descrizione:** Invia istruzioni a MATLAB mediante un file specificato dall&apos;argomento path.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit File( "file containing MATLAB source.m" );
+MATLAB Term();
+
+```
+
+### MATLAB Term
+
+**Sintassi:** MATLAB Term()
+
+**Descrizione:** Termina le interfacce MATLAB.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
+
+```
+
 ### Matrix
 
-**Sintassi:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
+**Sintassi:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
 
 **Descrizione:** Costruisce una matrice n-per-m. Se si specifica un elenco di n elenchi ognuno contenente m valori di riga, la matrice è formata concatenando verticalmente gli elenchi valutati. Se si specifica un singolo elenco di n elementi, il valore di ritorno è un vettore di colonna n-per-1. Se si specificano due argomenti interi, il valore di ritorno è una matrice di zeri contenente n righe e m colonne.
 
@@ -14585,7 +14775,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ### Maximize
 
-**Sintassi:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Sintassi:** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descrizione:** Trova valori per gli argomenti della funzione, specificati nell&apos;elenco {x1, x2, ...}, che massimizzano l&apos;espressione expr. È possibile specificare i limiti inferiori e superiori per ciascun argomento tra parentesi dopo il nome dell&apos;argomento. Se expr non è una funzione concava, Maximize potrebbe trovare un massimo locale invece del massimo globale. Se è un problema, provare più valori di partenza. Inoltre, Maximize funziona meglio per le funzioni con una derivata seconda continua. Ulteriori argomenti per la funzione Maximize consentono di impostare il numero massimo di interazioni, la tolleranza per la convergenza e di visualizzare ulteriori dettagli sull&apos;ottimizzazione. Per ulteriori informazioni sugli argomenti opzionali. fare clic sul pulsante della guida dell&apos;argomento.
 
@@ -14750,25 +14940,6 @@ Delete Classes( "complex" );
 
 ```
 
-### Mimic
-
-**Sintassi:** mimic obj = Mimic(Box|PlatformRef)
-
-**Descrizione:** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :age ) );
-outline = Report( obj )[Outline Box( 1 )];
-mc = Mimic( obj );
-mc << Mark( outline );
-mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
-
-```
-
 ### Min
 
 **Sintassi:** y = Min( x1, ... ); y = Minimum( x1, ... )
@@ -14785,7 +14956,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Minimize
 
-**Sintassi:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Sintassi:** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descrizione:** Trova valori per gli argomenti della funzione, specificati nell&apos;elenco {x1, x2, ...}, che riducono al minimo l&apos;espressione expr. È possibile specificare i limiti inferiori e superiori per ciascun argomento tra parentesi dopo il nome dell&apos;argomento. Se expr non è una funzione convessa, Minimize potrebbe trovare un minimo locale invece del minimo globale. Se è un problema, provare più valori di partenza. Inoltre, Minimize funziona meglio per le funzioni con una derivata seconda continua. Ulteriori argomenti per la funzione Minimize consentono di impostare il numero massimo di interazioni, la tolleranza per la convergenza e di visualizzare ulteriori dettagli sull&apos;ottimizzazione. Per ulteriori informazioni sugli argomenti facoltativi, fare clic sul pulsante della guida dell&apos;argomento.
 
@@ -14975,7 +15146,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ### Modified Internal Rate of Return
 
-**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno modificato per una serie di flussi di cassa periodici prendendo in considerazione sia il costo dell&apos;investimento sia l&apos;interesse ricevuto sul reinvestimento di cassa. Equivalente alla funzione MIRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -15810,7 +15981,7 @@ New Window( "Example: Negative Binomial Quantile",
 
 ### Net Present Value
 
-**Sintassi:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il valore attuale netto di un investimento mediante un tasso di sconto e una serie di pagamenti (valori negativi) e reddito (valori positivi) futuri. L&apos;argomento values è una matrice monodimensionale. Equivalente alla funzione NPV in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -15880,23 +16051,6 @@ cas << Submit( action );
 
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
-
-```
-
-### New Clipboard
-
-**Sintassi:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
-
-**Descrizione:** Creates a new Clipboard, either empty or with access to the OS clipboard.
-
-**JMP Versione aggiunta:** 19
-
-```jsl
-
-
-clp = New Clipboard( <<Get From OS );
-New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
-;
 
 ```
 
@@ -16153,7 +16307,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ### New Image
 
-**Sintassi:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Sintassi:** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Descrizione:** Restituisce una nuova immagine che potrà quindi essere modificata mediante comandi JSL. Se viene specificato un percorso a un file di immagine esistente, il file deve essere in formato .JPG, .PNG, .GIF, .BMP o .TIF.
 
@@ -16201,6 +16355,59 @@ New Window( "image", image3 );
 **Descrizione:** Crea una nuova istanza del client IP21 che può essere utilizzata per importare dati da un server IP.21 AspenTech.
 
 **JMP Versione aggiunta:** 19
+
+**Esempio 1**
+
+```jsl
+
+/* Import actual (raw) data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Actual" )
+);
+importer << Run;
+
+```
+
+**Esempio 2**
+
+```jsl
+
+/* Import interpolated data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Interpolated" ),
+	Period( Minute( 30 ) ), 	/* Every half hour */
+);
+importer << Run;
+
+```
 
 ### New JMP Live
 
@@ -17820,7 +18027,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Ortho
 
-**Sintassi:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
+**Sintassi:** L = Ortho( A, &lt;Centered( 1 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Descrizione:** Ortogonalizza le colonne di una matrice. L&apos;opzione Centro conduce a una somma zero. L&apos;opzione Scala conduce alla lunghezza dell&apos;unità.
 
@@ -17999,7 +18206,7 @@ Parse( "x+y" );
 
 ### Parse Date
 
-**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -19411,7 +19618,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
+**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... ); area = Polygon Area( xMatrix, yMatrix )
 
 **Descrizione:** Calcola l&apos;area del poligono specificato.
 
@@ -19435,7 +19642,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
+**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... ); centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Descrizione:** Calcola il centroide del poligono specificato.
 
@@ -19535,11 +19742,13 @@ New Window( "Parishes",
 
 ### Polytope Uniform Random
 
-**Sintassi:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
+**Sintassi:** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
 
-**Descrizione:** Genera punti uniformi casuali su un politopo convesso. L&apos;argomento numSamples specifica il numero di punti casuali da generare. L&apos;argomento A è la matrice di coefficienti del vincolo. L&apos;argomento B sono i valori sul lato destro dei vincoli. Gli argomenti L e U sono rispettivamente i limiti inferiore e superiore per le variabili. Gli argomenti neq, mle e nge sono rispettivamente il numero dei vincoli di uguaglianza, il numero delle disuguaglianze minori o uguali e il numero delle disuguaglianze maggiori o uguali. L&apos;argomento nwarm è il numero di ripetizioni di warm-up prima di scrivere i punti nella matrice di output. L&apos;argomento nstride è il numero di ripetizioni tra ogni punto che è scritto nella matrice di output. Si noti che i vincoli devono essere elencati inizialmente come uguaglianze, poi come disuguaglianze minori o uguali e infine come disuguaglianze maggiori o uguali.
+**Descrizione:** Genera un campione casuale soggetto a vincoli lineari, vincoli di limite variabile e vincoli di cardinalità su variabili di sottogruppi di componenti specificati. L&apos;argomento numSamples specifica il numero di punti casuali da generare. L&apos;argomento A è la matrice dei coefficienti del vincolo lineare. L&apos;argomento b è il vettore dei valori sul lato destro dei vincoli lineari. Gli argomenti L e U sono rispettivamente i vettori dei limiti inferiore e superiore per le variabili. Gli argomenti neq, nle e nge sono rispettivamente il numero dei vincoli di uguaglianza, il numero delle disuguaglianze minori o uguali e il numero delle disuguaglianze maggiori o uguali. L&apos;argomento nwarm è il numero di ripetizioni di warm-up prima di scrivere i punti nella matrice di output. L&apos;argomentonstride è il numero di ripetizioni tra ogni punto che viene scritto nella matrice di output. L&apos;argomento tol è la tolleranza. L&apos;argomento G è un vettore di indici che assegna le variabili a sottogruppi di componenti vincolati in cui i valori mancanti o pari a zero non appartengono a un sottogruppo vincolato. Gli argomentiLC e UCsono rispettivamente i vincoli di cardinalità inferiore e superiore per i sottogruppi di componenti vincolati. Si noti che i vincoli devono essere elencati inizialmente come uguaglianze, poi come disuguaglianze minori o uguali e infine come disuguaglianze maggiori o uguali.
 
 **JMP Versione aggiunta:** prima della versione 14
+
+**Esempio 1**
 
 ```jsl
 
@@ -19547,11 +19756,11 @@ A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
 U = [1, 1, 1];
-points = Polytope Uniform Random( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
+points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
 dt = As Table( points );
 tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );
 tfr = tobj[scalebox( 1 )] << clone box;
-New Window( "Example: Polytope Uniform Random",
+New Window( "Example: Random Linearly Constrained Uniform",
 	Outline Box( "Points on a Ternary Plot", tfr ),
 	Outline Box( "Constraints",
 		Text Box( "X1 + x2 + x3 = 1" ),
@@ -19565,6 +19774,44 @@ New Window( "Example: Polytope Uniform Random",
 );
 Close( dt, no save );
 Show( "see new window for example output" );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+
+A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+b = [100];
+L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
+U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];
+nwarm = 100;
+nstride = 100;
+tol = 1e-8;
+// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.
+G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];
+// Lower cardinality constraints for the constrained subgroups
+LC = [1 1];
+// Upper cardinality constraints for the constrained subgroups
+UC = [3 5];
+points = Random Linearly Constrained Uniform(
+	100,
+	A,
+	b,
+	L,
+	U,
+	1,
+	0,
+	0,
+	nwarm,
+	nstride,
+	tol,
+	G,
+	LC,
+	UC
+);
+dt = As Table( points );
 
 ```
 
@@ -19822,7 +20069,7 @@ Python Create JPIP CMD();
 
 ```jsl
 
-// install numpy and pandas packages
+
 conn = Python Connect();
 conn << Create JPIP CMD();
 
@@ -19832,7 +20079,7 @@ conn << Create JPIP CMD();
 
 **Sintassi:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
-**Descrizione:** Invia un elenco di input, esegue le istruzioni e restituisce un elenco di output. Il parametro opzionale echo() è di default Vero. Il parametro echo controlla l&apos;eco del sorgente Python nel log. Il valore Vero logico (1) abilita l&apos;eco del sorgente, mentre 0 sopprime l&apos;eco nel log.
+**Descrizione:** Invia un elenco di input, esegue le istruzioni e restituisce un elenco di output. Il parametro opzionale echo() è di default Vero. Il parametro echo controlla l&apos;eco dell&apos;origine Python nel log. Il valore Vero logico (1) abilita l&apos;eco dell&apos;origine, mentre 0 sopprime l&apos;eco nel log.
 
 **JMP Versione aggiunta:** 14
 
@@ -20070,7 +20317,7 @@ Show( Python name );
 
 **Sintassi:** Python Reset()
 
-**Descrizione:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**Descrizione:** Reimposta l&apos;ambiente Python condiviso, cancellando principalmente tutti i riferimenti agli oggetti. Questo non modifica la cache di importazione dei moduli importati. Si tratta di una limitazione dell&apos;ambiente Python stesso. I moduli che caricano librerie condivise non possono essere scaricati dal processo in esecuzione. Per ricaricare il codice Python puro, vedere la documentazione di Python.org su importlib reload().
 
 **JMP Versione aggiunta:** 19
 
@@ -20087,9 +20334,9 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Sintassi:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
+**Sintassi:** Python Send( name, &lt;Python Name( name )&gt; )
 
-**Descrizione:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
+**Descrizione:** Invia dati a Python, dove l&apos;argomento name può rappresentare uno qualsiasi dei seguenti tipi di dati JMP (numerico | stringa | matrice | elenco | tabella di dati | colonna della tabella di dati | data).
 
 **JMP Versione aggiunta:** 14
 
@@ -20100,7 +20347,7 @@ Python Submit( "print(pi)" );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
-Python Submit( "print(weight)" );
+Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -20492,7 +20739,7 @@ R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
 Close( dt );
-w = R Get( "weight" );
+w = R Get( "dt.weight" );
 
 ```
 
@@ -21091,6 +21338,81 @@ Show( x, v );
 
 ```
 
+### Random Linearly Constrained Uniform
+
+**Sintassi:** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
+
+**Descrizione:** Genera un campione casuale soggetto a vincoli lineari, vincoli di limite variabile e vincoli di cardinalità su variabili di sottogruppi di componenti specificati. L&apos;argomento numSamples specifica il numero di punti casuali da generare. L&apos;argomento A è la matrice dei coefficienti del vincolo lineare. L&apos;argomento b è il vettore dei valori sul lato destro dei vincoli lineari. Gli argomenti L e U sono rispettivamente i vettori dei limiti inferiore e superiore per le variabili. Gli argomenti neq, nle e nge sono rispettivamente il numero dei vincoli di uguaglianza, il numero delle disuguaglianze minori o uguali e il numero delle disuguaglianze maggiori o uguali. L&apos;argomento nwarm è il numero di ripetizioni di warm-up prima di scrivere i punti nella matrice di output. L&apos;argomentonstride è il numero di ripetizioni tra ogni punto che viene scritto nella matrice di output. L&apos;argomento tol è la tolleranza. L&apos;argomento G è un vettore di indici che assegna le variabili a sottogruppi di componenti vincolati in cui i valori mancanti o pari a zero non appartengono a un sottogruppo vincolato. Gli argomentiLC e UCsono rispettivamente i vincoli di cardinalità inferiore e superiore per i sottogruppi di componenti vincolati. Si noti che i vincoli devono essere elencati inizialmente come uguaglianze, poi come disuguaglianze minori o uguali e infine come disuguaglianze maggiori o uguali.
+
+**JMP Versione aggiunta:** 20
+
+**Esempio 1**
+
+```jsl
+
+A = [1 1 1, 1 2 0];
+b = [1, 0.5];
+L = [0, 0, 0.1];
+U = [1, 1, 1];
+points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
+dt = As Table( points );
+tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );
+tfr = tobj[scalebox( 1 )] << clone box;
+New Window( "Example: Random Linearly Constrained Uniform",
+	Outline Box( "Points on a Ternary Plot", tfr ),
+	Outline Box( "Constraints",
+		Text Box( "X1 + x2 + x3 = 1" ),
+		Text Box( "X2 + 2*x2 >= 0.5" )
+	),
+	Outline Box( "Variable Bounds",
+		Text Box( "0 <= x1 <= 1" ),
+		Text Box( "0 <= x2 <= 1" ),
+		Text Box( ".1 < x3 <= 1" )
+	)
+);
+Close( dt, no save );
+Show( "see new window for example output" );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+  
+A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+b = [100];
+L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
+U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];
+nwarm = 100;
+nstride = 100;
+tol = 1e-8;
+// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.
+G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];
+// Lower cardinality constraints for the constrained subgroups
+LC = [1 1];
+// Upper cardinality constraints for the constrained subgroups
+UC = [3 5];
+points = Random Linearly Constrained Uniform(
+	100,
+	A,
+	b,
+	L,
+	U,
+	1,
+	0,
+	0,
+	nwarm,
+	nstride,
+	tol,
+	G,
+	LC,
+	UC
+);
+dt = As Table( points );
+
+```
+
 ### Random LogGenGamma
 
 **Sintassi:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
@@ -21540,7 +21862,7 @@ Show( x, v );
 
 ### Random Triangular
 
-**Sintassi:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
+**Sintassi:** y = Random Triangular( a, b, c ); y = Random Triangular( b, c ); y = Random Triangular( b )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione triangolare con limite inferiore a, moda b e limite superiore c. Random Triangular(b,c) è equivalente a Random Triangular(0,b,c). Random Triangular(b) è equivalente a Random Triangular(0,b,1).
 
@@ -21977,9 +22299,9 @@ Show( source, matches );
 
 ### Register Addin
 
-**Sintassi:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
+**Sintassi:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;AutoLoad(0|1)&gt; )
 
-**Descrizione:** Registra un add-in
+**Descrizione:** Register an add-in. An Autoload value of 1 forces the add-in to load when registered. A value of 0 leaves the add-in unloaded. If AutoLoad is not specified the addin.def setting will be used if found otherwise the default will be for the add-in to be loaded.
 
 **JMP Versione aggiunta:** prima della versione 14
 
@@ -21992,12 +22314,6 @@ Register Addin(
 );
 
 ```
-
-### Reload Policies
-
-**Sintassi:** Reload Policies()
-
-**JMP Versione aggiunta:** 18
 
 ### Remove
 
@@ -22425,51 +22741,9 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```
 
-### Rummage
-
-**Sintassi:** treasures = Rummage( box, query )
-
-**JMP Versione aggiunta:** 17
-
-**Esempio 1**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Rummage( Window( dt ), "Wilcox" ) << title;
-
-```
-
-**Esempio 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Rummage( Report( obj ), "Wilcox" ) << details;
-
-```
-
-**Esempio 3**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Show(
-	Rummage(
-		Window( dt ),
-		"graph builder",
-		Algorithm( "FilterUtility" ),
-		Match All Terms( 0 )
-	)[1 :: 5] << Title
-);
-Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << Title );
-
-```
-
 ### Run Program
 
-**Sintassi:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
+**Sintassi:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
 
 **Descrizione:** Controlla un programma esterno mediante stdin e stdout.
 
@@ -23006,12 +23280,6 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
-
-### Set Policy
-
-**Sintassi:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
-
-**JMP Versione aggiunta:** 18
 
 ### Set Preference
 
@@ -24063,7 +24331,7 @@ nb << Set Increment( 1 );
 
 **Sintassi:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
-**Descrizione:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**Descrizione:** Restituisce una matrice a cinque colonne di coefficienti nel seguente ordine: knots||a||b||c||d per ciascuno dei valori univoci in x. Il parametro di smoothinglambda deve essere un valore positivo, dove valori maggiori di lambda comportano una maggiore rigidità della spline. Il vettore opzionale weights specifica un peso per ogni valore in x. Un peso pari a zero elimina il punto corrispondente dalla stima della spline.
 
 **JMP Versione aggiunta:** prima della versione 14
 
@@ -24111,7 +24379,7 @@ New Window( "Spline Fit",
 
 **Sintassi:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
-**Descrizione:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**Descrizione:** Restituisce i valori previsti con smoothing da una stima spline. Il parametro di smoothinglambda deve essere un valore positivo, dove valori maggiori di lambda comportano una maggiore rigidità della spline. Il vettore opzionale weights specifica un peso per ogni valore in x. Un peso pari a zero elimina il punto corrispondente dalla stima della spline.
 
 **JMP Versione aggiunta:** prima della versione 14
 
@@ -24221,7 +24489,7 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ### Step
 
-**Sintassi:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Sintassi:** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Descrizione:** Restituisce l&apos;argomento yi corrispondente al più grande valore xi che soddisfa xi minore o uguale all&apos;argomento x. Nota: gli argomenti xi devono essere specificati in ordine.
 
@@ -24230,6 +24498,382 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 ```jsl
 
 Step( 2.5, [1 2 3], [15, 20, 30] );
+
+```
+
+### STK:ArchSpiral
+
+**Sintassi:** STK:ArchSpiral(t, &lt;a = 1&gt;, &lt;n = 1&gt;)
+
+**Descrizione:** Takes in a given angle t (in radians) and returns the x,y coordinate pair as a matrix for location on the Archimedean Spiral, given scaling parameter, "a" and the "n"-th root
+
+**Esempio 1**
+
+```jsl
+
+STK:ArchSpiral( 3, 1, 1 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
+
+```
+
+### STK:arctan2
+
+**Sintassi:** STK:arctan2(x,y)
+
+**Descrizione:** The arctangent function that takes in 2 arguments. See https://en.wikipedia.org/wiki/Atan2 for motivation and details.
+
+**Esempio 1**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+### STK:Cart2Polar
+
+**Sintassi:** STK:Cart2Polar(x,y)
+
+**Descrizione:** Runs both the Radius() and Theta() in one function, returning the pair in a matrix.
+
+**Esempio 1**
+
+```jsl
+
+STK:Cart2Polar( 3, 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+
+x = [1, -1, 1, -1];
+y = [1, 1, -1, -1];
+
+For Each( {{a, b}, index}, Across( x, y ), Show( STK:Cart2Polar( a, b ) ) );
+
+```
+
+### STK:deg2rad
+
+**Sintassi:** STK:deg2rad(d)
+
+**Descrizione:** Converts a value from degrees to radians
+
+**Esempio 1**
+
+```jsl
+
+STK:deg2rad( 45 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:um2mm( 45 );
+
+```
+
+### STK:DieIndex
+
+**Sintassi:** STK:DieIndex(x,y)
+
+**Descrizione:** Combines the x- and y-die coordinate columns into a single text column. For use with the STK generated wafer shapefiles.
+
+**Esempio 1**
+
+```jsl
+
+STK:DieIndex( 3, 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+Example;
+
+```
+
+### STK:LPCVDSim
+
+**Sintassi:** STK:LPCVDSim(x, y, &lt;time = 30&gt;, &lt;temp = 600&gt;, &lt;press = 20&gt;, &lt;flow = 2&gt;, &lt;gas1 = 1&gt;, &lt;gas2 = 1&gt;, &lt;r = 150&gt;, &lt;tbase = 200&gt;)
+
+**Descrizione:** A simulation of a hypothetical LPCVD profile. Optional parameters include Deposition Time (time = 30), Deposition Temperature (temp = 600), Total Chamber Pressure (press = 20), Gas Flow Rate (flow = 2), Reagent Gas 1 Flow (gas1 = 1), Reagent Gas 2 Flow (gas2 = 1), Wafer Radius (r = 150), Baseline Film Thickness (tbase = 200).
+
+
+
+NOTE: This simulator is entirely empirical and for demonstration, teaching, or testing purposes only.
+
+**Esempio 1**
+
+```jsl
+
+STK:LPCVDSim( 0, 0 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:LPCVDSim( 0, 0, 100 );
+
+```
+
+### STK:mm2um
+
+**Sintassi:** STK:mm2um(x)
+
+**Descrizione:** Converts a value from millimeters (mm) to microns (um).
+
+**Esempio 1**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+### STK:MShape
+
+**Sintassi:** STK:MShape( m )
+
+**Descrizione:** Returns the shape of the matrix as a [nCols nRows] vector.
+
+**Esempio 1**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+### STK:Polar2Cart
+
+**Sintassi:** STK:Polar2Cart(x,y)
+
+**Descrizione:** Runs both the xCart() and yCart() in one function, returning the pair in a matrix. Assumes theta is in radians.
+
+**Esempio 1**
+
+```jsl
+
+STK:Polar2Cart( 1, Pi() / 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+
+x = [1, -1, 1, -1];
+y = [1, 1, -1, -1];
+
+For Each( {{a, b}, index}, Across( x, y ),
+	p = STK:Cart2Polar( a, b );
+	c = STK:Polar2Cart( p[1], p[2] );
+	Show( p, c );
+);
+
+```
+
+### STK:ProcessSim
+
+**Sintassi:** STK:ProcessSim(n, &lt;radius = 150&gt;, &lt;stat = "Mean"&gt;, &lt;result = "summary"&gt;)
+
+**Descrizione:** A simulation of a hypothetical Process based on the LPCVDSim Function. Returns a single value by default using any desired statistic JMP provides directly. A matrix of the measurement coordinates and result value are optional by providing "full" as the final argument
+
+**Esempio 1**
+
+```jsl
+
+STK:ProcessSim( 13 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:ProcessSim( 13, 150 );
+
+```
+
+**Esempio 3**
+
+```jsl
+
+STK:ProcessSim( 100, 150, "Std Dev", "full" );
+
+```
+
+### STK:rad2deg
+
+**Sintassi:** STK:rad2deg(r)
+
+**Descrizione:** Converts a value from radians to degrees
+
+**Esempio 1**
+
+```jsl
+
+STK:rad2deg( 0.79 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:um2mm( 0.79 );
+
+```
+
+### STK:Radius
+
+**Sintassi:** STK:Radius(x,y)
+
+**Descrizione:** Uses the Pythagorean Transform to convert X,Y data pairs to a radius.
+
+**Esempio 1**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+### STK:Theta
+
+**Sintassi:** STK:Theta(x,y)
+
+**Descrizione:** Uses the arccosine function to return the angle of an X,Y data pair in radians.
+
+**Esempio 1**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+### STK:um2mm
+
+**Sintassi:** STK:um2mm(x)
+
+**Descrizione:** Converts a value from microns to millimeters.
+
+**Esempio 1**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+### STK:xCart
+
+**Sintassi:** STK:xCart(r,t)
+
+**Descrizione:** Takes in a radius and angle (in radians) and returns the x-component of the cartesian coordinate pair.
+
+**Esempio 1**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+### STK:yCart
+
+**Sintassi:** STK:yCart(r,t)
+
+**Descrizione:** Takes in a radius and angle (in radians) and returns the y-component of the cartesian coordinate pair
+
+**Esempio 1**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
+
+```
+
+**Esempio 2**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
 
 ```
 
@@ -24461,7 +25105,7 @@ dt << setname( "xxx" );
 
 ### Substitute
 
-**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Restituisce una copia di stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -24520,7 +25164,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Modifica la stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. Nota: l&apos;argomento x deve essere una variabile. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -25079,17 +25723,9 @@ TanH( 1 );
 
 ```
 
-### Test Promise Error After
-
-**JMP Versione aggiunta:** 17
-
-### Test Promise Result After
-
-**JMP Versione aggiunta:** 17
-
 ### Text
 
-**Sintassi:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
+**Sintassi:** Text( &lt;properties&gt;, {x, y}, text, ... ) Text( {left, top, right, bottom}, text )
 
 **Descrizione:** Si sposta in posizione {x, y} e disegna il testo specificato dall&apos;argomento  text. Gli argomenti delle proprietà con nome possono essere Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. Argomenti di posizione, argomenti con nome e stringhe possono essere mescolati in qualsiasi ordine. È anche possibile usare quattro coordinate x, y per descrivere un riquadro entro cui disegnare il testo. In tal caso le proprietà non vengono usate.
 
@@ -25799,10 +26435,6 @@ Type( [1 2 3] );
 
 ```
 
-### Unit Test
-
-**JMP Versione aggiunta:** prima della versione 14
-
 ### Unlineup Box
 
 **Sintassi:** y = UnLineup Box(displayBoxArgs, ... )
@@ -25945,6 +26577,24 @@ Unsubscribe to Data Table List( aSub, "all" );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 Close( dt );
+
+```
+
+### Update MATLAB Dependencies
+
+**Sintassi:** Update MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Descrizione:** Aggiorna le dipendenze MATLAB necessarie.
+
+**JMP Versione aggiunta:** prima della versione 14
+
+```jsl
+
+
+If( Check MATLAB Dependencies(),
+	Update MATLAB Dependencies(),
+	Print( "Dependencies are updated" )
+);
 
 ```
 
@@ -26747,24 +27397,6 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 ```jsl
 
 Window( "Big Class" );
-
-```
-
-### With Clipboard
-
-**Sintassi:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
-
-**Descrizione:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
-
-**JMP Versione aggiunta:** 19
-
-```jsl
-
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-:height << Set Property( "Units", "HELLO" );
-clp = Clipboard Capture( dt << Select Columns( :height ) << Copy Column Properties );
-With Clipboard( clp, dt << Select Columns( :weight ) << Paste Column Properties );
 
 ```
 

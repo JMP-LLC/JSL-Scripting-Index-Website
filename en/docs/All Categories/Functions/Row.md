@@ -26,19 +26,13 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Equity.jmp" );
-:JOB << Set Property( "Missing Value Codes", {"Other"} );
-y1 = Col Stored Value( :JOB, 10 );
-y2 = Col Stored Value( :JOB, 11 );
-y3 = Col Stored Value( :JOB, 14 );
-y4 = Col Stored Value( :JOB, 15 );
-Show( y1, y2, y3, y4 );
+Open( "$SAMPLE_DATA/Equity.jmp" );:JOB << Set Property( "Missing Value Codes", {"Other"} );y1 = Col Stored Value( :JOB, 10 );y2 = Col Stored Value( :JOB, 11 );y3 = Col Stored Value( :JOB, 14 );y4 = Col Stored Value( :JOB, 15 );Show( y1, y2, y3, y4 );
 
 ```
 
 ### Column
 
-**Syntax:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Syntax:** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
@@ -48,10 +42,7 @@ Show( y1, y2, y3, y4 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-col4 = Column( 4 );
-ht = Column( "height" );
-col4[1] + ht[2];
+Open( "$SAMPLE_DATA/Big Class.jmp" );col4 = Column( 4 );ht = Column( "height" );col4[1] + ht[2];
 
 ```
 
@@ -59,11 +50,7 @@ col4[1] + ht[2];
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << run script( "Set Sex Value Labels" );
-col = Column( dt, "sex", "formatted" );
-Write( "\!n", col[5] );
-Write( "\!nData value returned is the formatted value of row 5." );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << run script( "Set Sex Value Labels" );col = Column( dt, "sex", "formatted" );Write( "\!n", col[5] );Write( "\!nData value returned is the formatted value of row 5." );
 
 ```
 
@@ -77,8 +64,7 @@ Write( "\!nData value returned is the formatted value of row 5." );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Column Name( 4 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Column Name( 4 );
 
 ```
 
@@ -92,16 +78,7 @@ Column Name( 4 );
 
 ```jsl
 
-New Table( "Count Example",
-	Add Rows( 12 ),
-	New Column( "Count1" ),
-	New Column( "Count2" ),
-	New Column( "Count3", Set Formula( Count( 0, 6, 4, 1 ) ) )
-);
-For Each Row(
-	:Count1[Row()] = Count( 0, 6, 4, 1 );
-	:Count2[Row()] = Count( 0, 6, 3, 2 );
-);
+New Table( "Count Example",	Add Rows( 12 ),	New Column( "Count1" ),	New Column( "Count2" ),	New Column( "Count3", Set Formula( Count( 0, 6, 4, 1 ) ) ));For Each Row(	:Count1[Row()] = Count( 0, 6, 4, 1 );	:Count2[Row()] = Count( 0, 6, 3, 2 ););
 
 ```
 
@@ -119,8 +96,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Current Data Table() << Get Column Names;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Current Data Table() << Get Column Names;
 
 ```
 
@@ -134,9 +110,7 @@ Current Data Table() << Get Column Names;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Data Table( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Data Table( 1 );
 
 ```
 
@@ -150,9 +124,7 @@ Data Table( 1 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-Dif( :height, 2 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;Dif( :height, 2 );
 
 ```
 
@@ -188,9 +160,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Get Data Table( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Get Data Table( 1 );
 
 ```
 
@@ -214,9 +184,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Get Data Table List();
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Get Data Table List();
 
 ```
 
@@ -224,8 +192,7 @@ Get Data Table List();
 
 ```jsl
 
-project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
-Get Data Table List( Project( project ) );
+project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );Get Data Table List( Project( project ) );
 
 ```
 
@@ -239,9 +206,7 @@ Get Data Table List( Project( project ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-Lag( :height, 2 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;Lag( :height, 2 );
 
 ```
 
@@ -285,8 +250,7 @@ N Rows( [11 22, 33 44] );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-N Table();
+Open( "$SAMPLE_DATA/Big Class.jmp" );N Table();
 
 ```
 
@@ -294,14 +258,7 @@ N Table();
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Cars.jmp" );
-Open( "$SAMPLE_DATA/Solubility.jmp" );
-d = {};
-For( i = 1, i <= N Table(), i++,
-	d[i] = Data Table( i ) << GetName
-);
-d;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Cars.jmp" );Open( "$SAMPLE_DATA/Solubility.jmp" );d = {};For( i = 1, i <= N Table(), i++,	d[i] = Data Table( i ) << GetName);d;
 
 ```
 
@@ -317,8 +274,7 @@ d;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "like name", Like( :name ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "like name", Like( :name ) );
 
 ```
 
@@ -326,8 +282,7 @@ New Column( "like name", Like( :name ) );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
+Open( "$SAMPLE_DATA/Big Class.jmp" );New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
 ```
 
@@ -341,13 +296,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-New Column by Text Matching(
-	Column( :Narrative Cause ),
-	Set Regex( Library( "Words" ), Library( "Time" ), Library( "Units" ) ),
-	Output Column Name( "Match Output" ),
-	Use Result( 1 )
-);
+Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );New Column by Text Matching(	Column( :Narrative Cause ),	Set Regex( Library( "Words" ), Library( "Time" ), Library( "Units" ) ),	Output Column Name( "Match Output" ),	Use Result( 1 ));
 
 ```
 
@@ -361,12 +310,7 @@ New Column by Text Matching(
 
 ```jsl
 
-New Table( "Little Class",
-	Add Rows( 3 ),
-	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),
-	New Column( "age", Nominal, Set Values( [12, 13, 13] ) ),
-	New Column( "weight", Continuous, Set Values( [95, 123, 74] ) )
-);
+New Table( "Little Class",	Add Rows( 3 ),	New Column( "name", Character, Nominal, Set Values( {"KATIE", "LOUISE", "JANE"} ) ),	New Column( "age", Nominal, Set Values( [12, 13, 13] ) ),	New Column( "weight", Continuous, Set Values( [95, 123, 74] ) ));
 
 ```
 
@@ -382,10 +326,7 @@ New Table( "Little Class",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Add Rows( 5 );
-Show( Row() );
-Row() = 0;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Add Rows( 5 );Show( Row() );Row() = 0;
 
 ```
 
@@ -393,9 +334,7 @@ Row() = 0;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-:height * :weight;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Row() = 3;:height * :weight;
 
 ```
 
@@ -409,8 +348,7 @@ Row() = 3;
 
 ```jsl
 
-Row() = 3;
-Sequence( 1, 9, 2 );
+Row() = 3;Sequence( 1, 9, 2 );
 
 ```
 
@@ -426,21 +364,7 @@ Sequence( 1, 9, 2 );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );
 
 ```
 
@@ -448,20 +372,7 @@ Close( dt );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab, b},
-	dtname = (dtab << getname());
-	Print( "renaming ", b, " to ", dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnRename( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-dt << setname( "xxx" );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab, b},	dtname = (dtab << getname());	Print( "renaming ", b, " to ", dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnRename( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );dt << setname( "xxx" );
 
 ```
 
@@ -505,23 +416,7 @@ Suppress Formula Eval( 1 );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
-Unsubscribe to Data Table List( aSub, "on close" );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );Unsubscribe to Data Table List( aSub, "on close" );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
 
@@ -529,25 +424,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-f1 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "opening" );
-	Print( dtname );
-);
-f2 = Function( {dtab},
-	dtname = (dtab << getname());
-	Print( "closing" );
-	Print( dtname );
-);
-aSub = Subscribe to Data Table List( , OnOpen( f1 ) );
-Subscribe to Data Table List( aSub, OnClose( f2 ) );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
-Unsubscribe to Data Table List( aSub, "all" );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 2 );
-Close( dt );
+f1 = Function( {dtab},	dtname = (dtab << getname());	Print( "opening" );	Print( dtname ););f2 = Function( {dtab},	dtname = (dtab << getname());	Print( "closing" );	Print( dtname ););aSub = Subscribe to Data Table List( , OnOpen( f1 ) );Subscribe to Data Table List( aSub, OnClose( f2 ) );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );Unsubscribe to Data Table List( aSub, "all" );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );Close( dt );
 
 ```
 

@@ -12,12 +12,7 @@
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
-Wait( 1 );
-feed << Close;
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));Wait( 1 );feed << Close;
 
 ```
 
@@ -29,10 +24,7 @@ feed << Close;
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));
 
 ```
 
@@ -44,11 +36,7 @@ feed = Open Datafeed(
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
-feed << Disconnect;
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));feed << Disconnect;
 
 ```
 
@@ -60,20 +48,7 @@ feed << Disconnect;
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-);
-exfeed << EOL( "CRLF" );
-For( exi = 0, exi < 5, exi++, 
-    /* Example to test a feed when the real data source is not available.*/    
-	exfeed << Queue Line( Char( exi ) );
-	exfeed << EOL;
-	Wait( .5 );
-);
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	));exfeed << EOL( "CRLF" );For( exi = 0, exi < 5, exi++,     /* Example to test a feed when the real data source is not available.*/    	exfeed << Queue Line( Char( exi ) );	exfeed << EOL;	Wait( .5 ););
 
 ```
 
@@ -85,12 +60,7 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << getLine ) )
-);
-t = feed << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << getLine ) ));t = feed << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -102,13 +72,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-);
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	));
 
 ```
 
@@ -120,18 +84,7 @@ exfeed = Open Datafeed(
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Lines;
-		Show( ex );
-	)
-);
-For( exi = 0, exi < 5, exi++, 
-    /* Example to test a feed when the real data source is not available.*/    
-	exfeed << Queue Line( Char( exi ) );
-	Wait( .5 );
-);
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Lines;		Show( ex );	));For( exi = 0, exi < 5, exi++,     /* Example to test a feed when the real data source is not available.*/    	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
 
 ```
 
@@ -143,11 +96,7 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-exfeed = Open Datafeed( /*no JSL to consume queue for this example*/ );
-For( exi = 1, exi <= 5, exi++,
-	exfeed << Queue Line( {"alice", "chuck", "ralph", "susan", "bobby"}[exi] )
-);
-exfeed << print queue;/* or red triangle menu item */;
+exfeed = Open Datafeed( /*no JSL to consume queue for this example*/ );For( exi = 1, exi <= 5, exi++,	exfeed << Queue Line( {"alice", "chuck", "ralph", "susan", "bobby"}[exi] ));exfeed << print queue;/* or red triangle menu item */;
 
 ```
 
@@ -159,18 +108,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-);
-For( exi = 0, exi < 5, exi++, 
-    /* Example to test a feed when the real data source is not available.*/    
-	exfeed << Queue Line( Char( exi ) );
-	Wait( .5 );
-);
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	));For( exi = 0, exi < 5, exi++,     /* Example to test a feed when the real data source is not available.*/    	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
 
 ```
 
@@ -182,13 +120,7 @@ For( exi = 0, exi < 5, exi++,
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
-feed << Stop;
-Wait( 1 );
-feed << Restart;
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));feed << Stop;Wait( 1 );feed << Restart;
 
 ```
 
@@ -200,10 +132,7 @@ feed << Restart;
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));
 
 ```
 
@@ -215,11 +144,7 @@ feed = Open Datafeed(
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << Get Line ) )
-);
-feed << Stop;
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << Get Line ) ));feed << Stop;
 
 ```
 
@@ -233,15 +158,7 @@ feed << Stop;
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-); 
-/* Example - send a message to external device over the serial port to trigger data messages. This can be used to send control messages to a sensor or other attached device.*/
-exfeed << Write( "Ready" );
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	)); /* Example - send a message to external device over the serial port to trigger data messages. This can be used to send control messages to a sensor or other attached device.*/exfeed << Write( "Ready" );
 
 ```
 
@@ -255,15 +172,7 @@ exfeed << Write( "Ready" );
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-); 
-/* Example - send a message to external device over the serial port to trigger data messages.*/
-exfeed << Write Line( "Ready" );
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	)); /* Example - send a message to external device over the serial port to trigger data messages.*/exfeed << Write Line( "Ready" );
 
 ```
 
@@ -277,15 +186,7 @@ exfeed << Write Line( "Ready" );
 
 ```jsl
 
-exfeed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script(
-		ex = exfeed << Get Line;
-		Show( ex );
-	)
-); 
-/* Example - send a message to external device over the serial port.*/
-exfeed << Write Lines( {"Ready", "Set", "Go"} );
+exfeed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script(		ex = exfeed << Get Line;		Show( ex );	)); /* Example - send a message to external device over the serial port.*/exfeed << Write Lines( {"Ready", "Set", "Go"} );
 
 ```
 
@@ -299,10 +200,7 @@ exfeed << Write Lines( {"Ready", "Set", "Go"} );
 
 ```jsl
 
-feed = Open Datafeed(
-	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),
-	Set Script( Print( feed << getLine ) )
-);
+feed = Open Datafeed(	Connect( Port( "com1" ), Baud rate( 4800 ), Parity( even ), DataBits( 8 ) ),	Set Script( Print( feed << getLine ) ));
 
 ```
 

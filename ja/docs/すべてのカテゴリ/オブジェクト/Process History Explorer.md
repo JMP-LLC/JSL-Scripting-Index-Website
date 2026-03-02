@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,18 +56,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -98,12 +70,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -115,12 +82,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -132,28 +94,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -165,17 +106,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Copy Script;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Copy Script;
 
 ```
 
@@ -187,17 +118,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Data Table Window;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Data Table Window;
 
 ```
 
@@ -211,9 +132,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -225,29 +144,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -261,27 +158,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -289,18 +166,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -312,18 +178,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -335,11 +190,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -351,18 +202,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -374,18 +214,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -397,18 +226,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -420,10 +238,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -437,10 +252,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -452,13 +264,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -470,32 +276,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**構文:** New JSL Preset( preset )
-
-**説明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -509,9 +290,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -523,15 +302,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -543,50 +314,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**構文:** obj &lt;&lt; Redo ByGroup Analysis
-
-**説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
-
-```jsl
-
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Redo Analysis;
 
 ```
 
@@ -598,50 +326,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**構文:** obj &lt;&lt; Relaunch ByGroup
-
-**説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
-
-```jsl
-
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Relaunch Analysis;
 
 ```
 
@@ -653,14 +338,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -672,56 +350,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**構文:** Render Preset( preset )
-
-**説明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**構文:** obj &lt;&lt; Report;Report( obj )
+**構文:** obj &lt;&lt; Report; Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -733,17 +374,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Report View( "Summary" );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Report View( "Summary" );
 
 ```
 
@@ -755,28 +386,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -788,28 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -821,28 +410,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -854,17 +422,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Script for All Objects;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Script for All Objects;
 
 ```
 
@@ -874,61 +432,19 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -940,17 +456,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -962,17 +468,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Script to Journal;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Script to Journal;
 
 ```
 
@@ -984,17 +480,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Script to Report;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Script to Report;
 
 ```
 
@@ -1006,17 +492,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Script to Script Window;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Script to Script Window;
 
 ```
 
@@ -1028,15 +504,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1048,20 +516,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1073,12 +528,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1090,11 +540,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1106,17 +552,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Title( "My Platform" );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Title( "My Platform" );
 
 ```
 
@@ -1128,19 +564,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1154,11 +578,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1170,9 +590,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -1184,13 +602,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1200,31 +612,13 @@ New Window( "Bivariate Equation",
 
 **構文:** obj &lt;&lt; By( column(s) )
 
+**説明:** 指定された列の各水準に対して、個別に分析を実行する。
+
 **JMP追加されたバージョン:** 14
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	By( _bycol )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -1236,16 +630,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1257,16 +642,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1278,16 +654,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1299,16 +666,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1320,16 +678,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1341,16 +690,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1364,16 +704,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1389,17 +720,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" ),
-	Goal is to Minimize Y( 1 )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ),	Goal is to Minimize Y( 1 ));
 
 ```
 
@@ -1413,17 +734,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Levels with Lowest Yield( 1 );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Levels with Lowest Yield( 1 );
 
 ```
 
@@ -1437,17 +748,7 @@ obj << Levels with Lowest Yield( 1 );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Levels with Lowest Yield with Time Filter( 1 );
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Levels with Lowest Yield with Time Filter( 1 );
 
 ```
 
@@ -1469,17 +770,7 @@ obj << Levels with Lowest Yield with Time Filter( 1 );
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Count Table;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Count Table;
 
 ```
 
@@ -1493,17 +784,7 @@ obj << Save Count Table;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Save Log Count Table;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Save Log Count Table;
 
 ```
 
@@ -1517,18 +798,7 @@ obj << Save Log Count Table;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Waiting Time Analysis;
-obj << Save Waiting Time;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Waiting Time Analysis;obj << Save Waiting Time;
 
 ```
 
@@ -1542,22 +812,7 @@ obj << Save Waiting Time;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Stepwise Regression(
-	Goal( "Biggest Total Difference" ),
-	Time Filtering( "Starting Time" ),
-	X Transform( "None" ),
-	N Steps( 10 )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Stepwise Regression(	Goal( "Biggest Total Difference" ),	Time Filtering( "Starting Time" ),	X Transform( "None" ),	N Steps( 10 ));
 
 ```
 
@@ -1571,20 +826,7 @@ obj << Stepwise Regression(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Transition Analysis(
-	Route,
-	{"Dep2Route001", "Dep2Route002", "Dep2Route003", "Dep2Route004", "Dep2Route005"}
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Transition Analysis(	Route,	{"Dep2Route001", "Dep2Route002", "Dep2Route003", "Dep2Route004", "Dep2Route005"});
 
 ```
 
@@ -1604,17 +846,7 @@ obj << Transition Analysis(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
-obj << Waiting Time Analysis;
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));obj << Waiting Time Analysis;
 
 ```
 
@@ -1628,16 +860,7 @@ obj << Waiting Time Analysis;
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 
@@ -1651,16 +874,7 @@ obj = dt << Process History Explorer(
 
 ```jsl
 
-dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );
-dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );
-obj = dt << Process History Explorer(
-	ID( :Lot, :Wafer ),
-	X( :Tool, :Route ),
-	Step( :Layer, :Operation ),
-	Timestamp( :TimeIn, :TimeOut ),
-	Yield Table( "Lot Wafer Yield" ),
-	Yield Columns( "Yield" )
-);
+dt = Open( "$sample_data\Quality Control\Lot Wafer History.jmp" );dt2 = Open( "$sample_data\Quality Control\Lot Wafer Yield.jmp" );obj = dt << Process History Explorer(	ID( :Lot, :Wafer ),	X( :Tool, :Route ),	Step( :Layer, :Operation ),	Timestamp( :TimeIn, :TimeOut ),	Yield Table( "Lot Wafer Yield" ),	Yield Columns( "Yield" ));
 
 ```
 

@@ -6,106 +6,91 @@
 
 ### By
 
-**Sintassi:** obj = Distribution(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...&lt;By( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Esegue un&apos;analisi separata per ogni livello della colonna specificata.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
 ### Column
 
-**Sintassi:** obj = Distribution(...&lt;Column( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...&lt;Column( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );
 
 ```
 
 ### Columns
 
-**Sintassi:** obj = Distribution(...Columns( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...Columns( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne categoriche o continue da analizzare.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Columns( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Columns( :Age, :Weight ) );
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Y( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Y( :Age, :Weight ) );
 
 ```
 
 ### Freq
 
-**Sintassi:** obj = Distribution(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...&lt;Freq( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Distribution( Column( :Age, :Weight ), Freq( _freqcol ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Distribution( Column( :Age, :Weight ), Freq( :_freqcol ) );
 
 ```
 
 ### Weight
 
-**Sintassi:** obj = Distribution(...&lt;Weight( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...&lt;Weight( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano un peso a ogni riga per l&apos;analisi.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Distribution( Column( :Age, :Weight ), Weight( _weightcol ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Distribution( Column( :Age, :Weight ), Weight( :_weightcol ) );
 
 ```
 
 ### Y
 
-**Sintassi:** obj = Distribution(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...Y( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne categoriche o continue da analizzare.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Columns( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Columns( :Age, :Weight ) );
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Y( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Y( :Age, :Weight ) );
 
 ```
 
@@ -117,25 +102,19 @@ obj = dt << Distribution( Y( :Age, :Weight ) );
 
 **Descrizione:** Mostra statistiche di distribuzione e di riepilogo univariate per ogni variabile. I risultati e le opzioni dipendono dal tipo di modellizzazione di ogni variabile. Alcune opzioni includono istogrammi, box plot, diagrammi dei quantili, stima di distribuzioni e analisi di capability.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-colref = Column( "age" );
-// Correct way to use the colref
-Distribution( Column( colref ) );
-// This will not work
-Distribution( colref );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );colref = Column( "age" );// Correct way to use the colrefDistribution( Column( colref ) );// This will not workDistribution( colref );
 
 ```
 
@@ -149,12 +128,7 @@ Distribution( colref );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -170,19 +144,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-obj2 = dt2 << Distribution(
-	Nominal Distribution( Column( :Aircraft Damage ) ),
-	Continuous Distribution( Column( :Total Minor Injuries ) )
-);
-Wait( 1 );
-obj2[2] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );obj2 = dt2 << Distribution(	Nominal Distribution( Column( :Aircraft Damage ) ),	Continuous Distribution( Column( :Total Minor Injuries ) ));Wait( 1 );obj2[2] << Apply Preset( preset );
 
 ```
 
@@ -190,13 +152,7 @@ obj2[2] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Wait( 1 );obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```
 
@@ -208,9 +164,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
-obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );
-obj << ArrangeInRows( 3 );
+dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );obj << ArrangeInRows( 3 );
 
 ```
 
@@ -222,10 +176,7 @@ obj << ArrangeInRows( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -237,9 +188,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ), Horizontal Layout( 1 ), Count Axis( 1 ) );
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ), Horizontal Layout( 1 ), Count Axis( 1 ) );obj << Axes on Left( 1 );
 
 ```
 
@@ -253,12 +202,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -270,9 +214,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << CDF Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << CDF Plot( 1 );
 
 ```
 
@@ -284,9 +226,7 @@ obj << CDF Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
-obj = dt << Distribution( Column( :Weight ) );
-obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );obj = dt << Distribution( Column( :Weight ) );obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ```
 
@@ -298,12 +238,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -315,13 +250,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Confidence Interval( 0.98 ); 
-
-obj << Confidence Interval( 0.95, Lower ); 
-
-obj << Confidence Interval( 0.95, Sigma( 4 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Confidence Interval( 0.98 ); obj << Confidence Interval( 0.95, Lower ); obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ```
 
@@ -333,14 +262,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -352,9 +274,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Copy Script;
 
 ```
 
@@ -366,9 +286,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Count Axis( 1 );
 
 ```
 
@@ -380,9 +298,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ```
 
@@ -394,9 +310,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```
 
@@ -408,9 +322,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Data Table Window;
 
 ```
 
@@ -422,9 +334,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Density Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Density Axis( 1 );
 
 ```
 
@@ -438,9 +348,7 @@ obj << Density Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit All;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit All;
 
 ```
 
@@ -454,9 +362,7 @@ obj << Fit All;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :OZONE ) );
-obj << Fit Beta;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :OZONE ) );obj << Fit Beta;
 
 ```
 
@@ -468,23 +374,19 @@ obj << Fit Beta;
 
 **JMP Versione aggiunta:** 15
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Beta Binomial( Sample Size( 10 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Beta Binomial( Sample Size( 10 ) );
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Beta Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -498,9 +400,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -514,14 +414,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-Random Reset( 15 );
-d = J( 75, 1, Random Normal() );
-d[1] = 10;
-d[2] = 9;
-d[3] = 8;
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit Normal, Fit Cauchy );
+Random Reset( 15 );d = J( 75, 1, Random Normal() );d[1] = 10;d[2] = 9;d[3] = 8;As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 ```
 
@@ -531,25 +424,19 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 **Descrizione:** Stima una distribuzione gaussiana modificata esponenzialmente sui dati.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit ExGaussian;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit ExGaussian;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit ExGaussian;
-obj << Fit Normal;
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit ExGaussian;obj << Fit Normal;obj << Fit Exponential;
 
 ```
 
@@ -563,9 +450,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :POP ) );
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :POP ) );obj << Fit Exponential;
 
 ```
 
@@ -579,9 +464,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :Max deg. F Jan ) );
-obj << Fit Gamma;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :Max deg. F Jan ) );obj << Fit Gamma;
 
 ```
 
@@ -593,12 +476,7 @@ obj << Fit Gamma;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Lognormal;
-obj << Fit Weibull;
-obj << (Fit Handle[2] << Goodness of Fit( 1 ));
-obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Lognormal;obj << Fit Weibull;obj << (Fit Handle[2] << Goodness of Fit( 1 ));obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 ```
 
@@ -610,23 +488,19 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 **JMP Versione aggiunta:** 15
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit Johnson;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit Johnson;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Johnson;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Johnson;
 
 ```
 
@@ -640,9 +514,7 @@ obj << Fit Johnson;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Largest Extreme Value;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Largest Extreme Value;
 
 ```
 
@@ -656,9 +528,7 @@ obj << Fit Largest Extreme Value;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Lognormal;
 
 ```
 
@@ -672,9 +542,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );
-obj = dt << Distribution( Column( :Delay ) );
-obj << Fit Negative Binomial;
+dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );obj = dt << Distribution( Column( :Delay ) );obj << Fit Negative Binomial;
 
 ```
 
@@ -688,9 +556,7 @@ obj << Fit Negative Binomial;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Weight ) );
-obj << Fit Normal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Weight ) );obj << Fit Normal;
 
 ```
 
@@ -704,9 +570,7 @@ obj << Fit Normal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Distribution( Column( :CD8 ) );
-obj << Fit Normal 2 Mixture;
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Distribution( Column( :CD8 ) );obj << Fit Normal 2 Mixture;
 
 ```
 
@@ -720,9 +584,7 @@ obj << Fit Normal 2 Mixture;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Distribution( Column( :CD8 ) );
-obj << Fit Normal 3 Mixture;
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Distribution( Column( :CD8 ) );obj << Fit Normal 3 Mixture;
 
 ```
 
@@ -736,9 +598,7 @@ obj << Fit Normal 3 Mixture;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );
-obj = dt << Distribution( Column( :Delay ) );
-obj << Fit Poisson;
+dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );obj = dt << Distribution( Column( :Delay ) );obj << Fit Poisson;
 
 ```
 
@@ -752,9 +612,7 @@ obj << Fit Poisson;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Shash;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Shash;
 
 ```
 
@@ -768,9 +626,7 @@ obj << Fit Shash;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Smallest Extreme Value;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Smallest Extreme Value;
 
 ```
 
@@ -782,23 +638,19 @@ obj << Fit Smallest Extreme Value;
 
 **JMP Versione aggiunta:** 15
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :SO2 ) );
-obj << Fit Smooth Curve;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :SO2 ) );obj << Fit Smooth Curve;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :SO2 ) );
-obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :SO2 ) );obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ```
 
@@ -812,14 +664,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ```jsl
 
-Random Reset( 15 );
-d = J( 75, 1, Random Normal() );
-d[1] = 10;
-d[2] = 9;
-d[3] = 8;
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit Normal, Fit Student's t );
+Random Reset( 15 );d = J( 75, 1, Random Normal() );d[1] = 10;d[2] = 9;d[3] = 8;As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ```
 
@@ -833,9 +678,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Weibull;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Weibull;
 
 ```
 
@@ -849,9 +692,7 @@ obj << Fit Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -865,9 +706,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit ZI Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -881,8 +720,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
-dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
+dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ```
 
@@ -896,8 +734,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
-dt << Distribution( Column( :satell ), Fit ZI Poisson );
+dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ```
 
@@ -909,16 +746,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ```jsl
 
-Random Reset( 18 );
-d = J( 250, 1, Random SHASH( 0, 1, 3, 5 ) );
-For( i = 1, i <= 250, i++,
-	If( Random Uniform() < .2,
-		d[i] = 0
-	)
-);
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
+Random Reset( 18 );d = J( 250, 1, Random SHASH( 0, 1, 3, 5 ) );For( i = 1, i <= 250, i++,	If( Random Uniform() < .2,		d[i] = 0	));As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 ```
 
@@ -928,25 +756,19 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 **Descrizione:** Mostra o nasconde il report Frequenze, che elenca i conteggi e le probabilità per ogni livello. Per impostazione predefinita l&apos;opzione è attivata.
 
-#### Esempio di distribuzione nominale
+**Esempio di distribuzione nominale**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
-#### Esempio di distribuzione risposte multiple
+**Esempio di distribuzione risposte multiple**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
@@ -960,9 +782,7 @@ obj << Frequencies( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -974,15 +794,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -996,10 +808,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1007,27 +816,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1039,10 +828,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1054,11 +840,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1070,10 +852,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );t = obj << Get Script;Show( t );
 
 ```
 
@@ -1085,10 +864,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -1100,10 +876,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );t = obj << Get Timing;Show( t );
 
 ```
 
@@ -1115,10 +888,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -1132,10 +902,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1147,10 +914,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -1162,9 +926,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Histogram Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Histogram Color( "Red" );
 
 ```
 
@@ -1176,9 +938,7 @@ obj << Histogram Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Horizontal Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -1190,13 +950,7 @@ obj << Horizontal Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -1208,14 +962,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -1229,32 +976,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Mosaic Plot( 1 );
-
-```
-
-### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Mosaic Plot( 1 );
 
 ```
 
@@ -1268,12 +990,7 @@ obj[1] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();
 
 ```
 
@@ -1285,9 +1002,7 @@ preset = obj[1] << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Normal Quantile Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Normal Quantile Plot( 1 );
 
 ```
 
@@ -1299,9 +1014,7 @@ obj << Normal Quantile Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Order By( "Count Descending" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Order By( "Count Descending" );
 
 ```
 
@@ -1313,10 +1026,7 @@ obj << Order By( "Count Descending" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Outlier Box Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Outlier Box Plot( 0 );
 
 ```
 
@@ -1328,9 +1038,7 @@ obj << Outlier Box Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Seasonal Flu.jmp" );
-obj = dt << Distribution( Column( :Flu Cases ) );
-obj << Outlier Box Plot Row Cutoff( 10000 );
+dt = Open( "$SAMPLE_DATA/Seasonal Flu.jmp" );obj = dt << Distribution( Column( :Flu Cases ) );obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ```
 
@@ -1342,15 +1050,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1362,10 +1062,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :PM10 ) );
-obj << PpK Capability Labeling( 0 );
-obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :PM10 ) );obj << PpK Capability Labeling( 0 );obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```
 
@@ -1377,9 +1074,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Prediction Interval( 0.95, 20 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Prediction Interval( 0.95, 20 );
 
 ```
 
@@ -1391,9 +1086,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Prob Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -1407,9 +1100,7 @@ obj << Prob Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :PM10 ) );
-obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :PM10 ) );obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```
 
@@ -1421,10 +1112,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Outlier Box Plot( 0 );
-obj << Quantile Box Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Outlier Box Plot( 0 );obj << Quantile Box Plot( 1 );
 
 ```
 
@@ -1436,10 +1124,7 @@ obj << Quantile Box Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Quantiles( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Quantiles( 0 );
 
 ```
 
@@ -1451,28 +1136,7 @@ obj << Quantiles( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Redo Analysis;
 
 ```
 
@@ -1484,28 +1148,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintassi:** obj &lt;&lt; Relaunch ByGroup
-
-**Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Relaunch Analysis;
 
 ```
 
@@ -1517,14 +1160,7 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -1536,55 +1172,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintassi:** obj &lt;&lt; Report;Report( obj )
+**Sintassi:** obj &lt;&lt; Report; Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1596,9 +1196,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Report View( "Summary" );
 
 ```
 
@@ -1610,9 +1208,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Save( "Ranks" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Save( "Ranks" );
 
 ```
 
@@ -1624,14 +1220,7 @@ obj << Save( "Ranks" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1643,14 +1232,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1662,14 +1244,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1681,9 +1256,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Save Script for All Objects;
 
 ```
 
@@ -1693,33 +1266,19 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Distribution(	Column( :Age, :Weight ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1731,9 +1290,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1745,9 +1302,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Save Script to Journal;
 
 ```
 
@@ -1759,9 +1314,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Save Script to Report;
 
 ```
 
@@ -1773,9 +1326,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Save Script to Script Window;
 
 ```
 
@@ -1787,15 +1338,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1807,20 +1350,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1832,12 +1362,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1847,23 +1372,19 @@ dt << Distribution(
 
 **Descrizione:** Aggiunge spazio tra le barre dell&apos;istogramma. Questa opzione è disponibile solo per le variabili categoriche.
 
-#### Esempio di distribuzione nominale
+**Esempio di distribuzione nominale**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Separate Bars( 1 );
 
 ```
 
-#### Esempio di distribuzione risposte multiple
+**Esempio di distribuzione risposte multiple**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Separate Bars( 1 );
 
 ```
 
@@ -1875,9 +1396,7 @@ obj << Separate Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Set Bin Width( 5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Set Bin Width( 5 );
 
 ```
 
@@ -1889,11 +1408,7 @@ obj << Set Bin Width( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Set Quantile Increment( 0.05 );
-Wait( 1 );
-obj << Set Quantile Increment( "revert to default quantiles" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Set Quantile Increment( 0.05 );Wait( 1 );obj << Set Quantile Increment( "revert to default quantiles" );
 
 ```
 
@@ -1905,9 +1420,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Shadowgram( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Shadowgram( 1 );
 
 ```
 
@@ -1919,9 +1432,7 @@ obj << Shadowgram( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Show Counts( 1 );
 
 ```
 
@@ -1933,9 +1444,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Show Percents( 1 );
 
 ```
 
@@ -1947,9 +1456,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
-obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );
-obj << Stack( 1 );
+dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );obj << Stack( 1 );
 
 ```
 
@@ -1961,9 +1468,7 @@ obj << Stack( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Std Error Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Std Error Bars( 1 );
 
 ```
 
@@ -1975,9 +1480,7 @@ obj << Std Error Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Stem and Leaf( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Stem and Leaf( 1 );
 
 ```
 
@@ -1989,10 +1492,7 @@ obj << Stem and Leaf( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Summary Statistics( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Summary Statistics( 0 );
 
 ```
 
@@ -2004,11 +1504,7 @@ obj << Summary Statistics( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -2020,9 +1516,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.95 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.95 ) );
 
 ```
 
@@ -2034,13 +1528,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Mean( 60 ); 
-
-obj << Test Mean( 60, Sigma( 4 ) ); 
-
-obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Mean( 60 ); obj << Test Mean( 60, Sigma( 4 ) ); obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 ```
 
@@ -2050,41 +1538,27 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 **Descrizione:** Esegue il test sulle probabilità stimate dei livelli di una variabile categorica, rispetto alle probabilità ipotizzate specificate (p1, p2, p3, ecc.). Per variabili con due livelli, usare l&apos;opzione Test per specificare il segno dell&apos;ipotesi alternativa del test. Per variabili con più di due livelli, usare l&apos;opzione Fisso per specificare come vengono gestiti i valori ipotizzati mancanti. Si noti che f è un argomento facoltativo che specifica che il livello precedente è trattato come fisso.
 
-#### Esempio di due livelli, bilaterale
+**Esempio di due livelli, bilaterale**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ```
 
-#### Esempio di due livelli, unilaterale
+**Esempio di due livelli, unilaterale**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
 
 ```
 
-#### Esempio di livelli multipli
+**Esempio di livelli multipli**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );
-obj << Test Probabilities(
-	Test( Hypothesized ),
-	0.8,
-	0.04375,
-	0.075,
-	0.04375,
-	0.01875,
-	0.01875
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );obj << Test Probabilities(	Test( Hypothesized ),	0.8,	0.04375,	0.075,	0.04375,	0.01875,	0.01875);
 
 ```
 
@@ -2096,9 +1570,7 @@ obj << Test Probabilities(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Std Dev( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Std Dev( 3 );
 
 ```
 
@@ -2110,9 +1582,7 @@ obj << Test Std Dev( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );obj << Title( "My Platform" );
 
 ```
 
@@ -2124,12 +1594,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.85 ) );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Lower );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Upper, Lognormal );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametric );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.85 ) );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Lower );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Upper, Lognormal );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametric );
 
 ```
 
@@ -2141,11 +1606,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Age, :Weight ) );
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Age, :Weight ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -2161,11 +1622,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -2177,9 +1634,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
-obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );
-obj << Uniform Scaling( 1 );
+dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );obj = dt << Distribution( Column( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W ) );obj << Uniform Scaling( 1 );
 
 ```
 
@@ -2191,9 +1646,7 @@ obj << Uniform Scaling( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Vertical( 0 );
 
 ```
 
@@ -2205,27 +1658,19 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintassi:** obj = Distribution(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Distribution(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -2241,9 +1686,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
-obj = Distribution( Column( :Weight ) );
-obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Capability Animation );
+dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );obj = Distribution( Column( :Weight ) );obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Capability Animation );
 
 ```
 
@@ -2255,9 +1698,23 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Capability Anima
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
-obj = Distribution( Column( :Weight ) );
-obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Z Bench( 1 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );obj = Distribution( Column( :Weight ) );obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Z Bench( 1 ) );
+
+```
+
+## Confidence Interval
+
+### Messaggi degli elementi
+
+#### Remove
+
+**Sintassi:** obj &lt;&lt; Remove
+
+**Descrizione:** Rimuove il report Intervallo di confidenza.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Confidence Interval( 0.98 );Wait( 2 );scrobj = (Report( obj )["Confidence Intervals"] << get scriptable object);scrobj << Remove;
 
 ```
 
@@ -2267,14 +1724,11 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Z Bench( 1 ) );
 
 #### Column
 
-**Sintassi:** obj = Quantiles(...&lt;Column( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Quantiles(...&lt;Column( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Quantiles( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Quantiles( 0 );
 
 ```
 
@@ -2292,19 +1746,7 @@ obj << Quantiles( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-obj2 = dt2 << Distribution(
-	Nominal Distribution( Column( :Aircraft Damage ) ),
-	Continuous Distribution( Column( :Total Minor Injuries ) )
-);
-Wait( 1 );
-obj2[2] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );obj2 = dt2 << Distribution(	Nominal Distribution( Column( :Aircraft Damage ) ),	Continuous Distribution( Column( :Total Minor Injuries ) ));Wait( 1 );obj2[2] << Apply Preset( preset );
 
 ```
 
@@ -2312,13 +1754,7 @@ obj2[2] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Wait( 1 );obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```
 
@@ -2330,9 +1766,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ), Horizontal Layout( 1 ), Count Axis( 1 ) );
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ), Horizontal Layout( 1 ), Count Axis( 1 ) );obj << Axes on Left( 1 );
 
 ```
 
@@ -2344,9 +1778,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << CDF Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << CDF Plot( 1 );
 
 ```
 
@@ -2358,9 +1790,7 @@ obj << CDF Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );
-obj = dt << Distribution( Column( :Weight ) );
-obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Coating.jmp" );obj = dt << Distribution( Column( :Weight ) );obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ```
 
@@ -2372,13 +1802,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Confidence Interval( 0.98 ); 
-
-obj << Confidence Interval( 0.95, Lower ); 
-
-obj << Confidence Interval( 0.95, Sigma( 4 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Confidence Interval( 0.98 ); obj << Confidence Interval( 0.95, Lower ); obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ```
 
@@ -2390,9 +1814,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Count Axis( 1 );
 
 ```
 
@@ -2404,9 +1826,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ```
 
@@ -2418,9 +1838,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```
 
@@ -2432,9 +1850,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Density Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Density Axis( 1 );
 
 ```
 
@@ -2448,9 +1864,7 @@ obj << Density Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit All;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit All;
 
 ```
 
@@ -2464,9 +1878,7 @@ obj << Fit All;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :OZONE ) );
-obj << Fit Beta;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :OZONE ) );obj << Fit Beta;
 
 ```
 
@@ -2482,9 +1894,7 @@ obj << Fit Beta;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Beta Binomial( Sample Size( 10 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Beta Binomial( Sample Size( 10 ) );
 
 ```
 
@@ -2492,9 +1902,7 @@ obj << Fit Beta Binomial( Sample Size( 10 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Beta Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -2508,9 +1916,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -2524,14 +1930,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-Random Reset( 15 );
-d = J( 75, 1, Random Normal() );
-d[1] = 10;
-d[2] = 9;
-d[3] = 8;
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit Normal, Fit Cauchy );
+Random Reset( 15 );d = J( 75, 1, Random Normal() );d[1] = 10;d[2] = 9;d[3] = 8;As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 ```
 
@@ -2545,9 +1944,7 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit ExGaussian;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit ExGaussian;
 
 ```
 
@@ -2555,11 +1952,7 @@ obj << Fit ExGaussian;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit ExGaussian;
-obj << Fit Normal;
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit ExGaussian;obj << Fit Normal;obj << Fit Exponential;
 
 ```
 
@@ -2573,9 +1966,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :POP ) );
-obj << Fit Exponential;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :POP ) );obj << Fit Exponential;
 
 ```
 
@@ -2589,9 +1980,7 @@ obj << Fit Exponential;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :Max deg. F Jan ) );
-obj << Fit Gamma;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :Max deg. F Jan ) );obj << Fit Gamma;
 
 ```
 
@@ -2603,12 +1992,7 @@ obj << Fit Gamma;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Lognormal;
-obj << Fit Weibull;
-obj << (Fit Handle[2] << Goodness of Fit( 1 ));
-obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Lognormal;obj << Fit Weibull;obj << (Fit Handle[2] << Goodness of Fit( 1 ));obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 ```
 
@@ -2624,9 +2008,7 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit Johnson;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit Johnson;
 
 ```
 
@@ -2634,9 +2016,7 @@ obj << Fit Johnson;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Johnson;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Johnson;
 
 ```
 
@@ -2650,9 +2030,7 @@ obj << Fit Johnson;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Largest Extreme Value;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Largest Extreme Value;
 
 ```
 
@@ -2666,9 +2044,7 @@ obj << Fit Largest Extreme Value;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Lognormal;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Lognormal;
 
 ```
 
@@ -2682,9 +2058,7 @@ obj << Fit Lognormal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );
-obj = dt << Distribution( Column( :Delay ) );
-obj << Fit Negative Binomial;
+dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );obj = dt << Distribution( Column( :Delay ) );obj << Fit Negative Binomial;
 
 ```
 
@@ -2698,9 +2072,7 @@ obj << Fit Negative Binomial;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Weight ) );
-obj << Fit Normal;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Weight ) );obj << Fit Normal;
 
 ```
 
@@ -2714,9 +2086,7 @@ obj << Fit Normal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Distribution( Column( :CD8 ) );
-obj << Fit Normal 2 Mixture;
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Distribution( Column( :CD8 ) );obj << Fit Normal 2 Mixture;
 
 ```
 
@@ -2730,9 +2100,7 @@ obj << Fit Normal 2 Mixture;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
-obj = dt << Distribution( Column( :CD8 ) );
-obj << Fit Normal 3 Mixture;
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Distribution( Column( :CD8 ) );obj << Fit Normal 3 Mixture;
 
 ```
 
@@ -2746,9 +2114,7 @@ obj << Fit Normal 3 Mixture;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );
-obj = dt << Distribution( Column( :Delay ) );
-obj << Fit Poisson;
+dt = Open( "$SAMPLE_DATA/Quality Control/Airport.jmp" );obj = dt << Distribution( Column( :Delay ) );obj << Fit Poisson;
 
 ```
 
@@ -2762,9 +2128,7 @@ obj << Fit Poisson;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :CO ) );
-obj << Fit Shash;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :CO ) );obj << Fit Shash;
 
 ```
 
@@ -2778,9 +2142,7 @@ obj << Fit Shash;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Smallest Extreme Value;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Smallest Extreme Value;
 
 ```
 
@@ -2796,9 +2158,7 @@ obj << Fit Smallest Extreme Value;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :SO2 ) );
-obj << Fit Smooth Curve;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :SO2 ) );obj << Fit Smooth Curve;
 
 ```
 
@@ -2806,9 +2166,7 @@ obj << Fit Smooth Curve;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :SO2 ) );
-obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :SO2 ) );obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ```
 
@@ -2822,14 +2180,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ```jsl
 
-Random Reset( 15 );
-d = J( 75, 1, Random Normal() );
-d[1] = 10;
-d[2] = 9;
-d[3] = 8;
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit Normal, Fit Student's t );
+Random Reset( 15 );d = J( 75, 1, Random Normal() );d[1] = 10;d[2] = 9;d[3] = 8;As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ```
 
@@ -2843,9 +2194,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :NO ) );
-obj << Fit Weibull;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :NO ) );obj << Fit Weibull;
 
 ```
 
@@ -2859,9 +2208,7 @@ obj << Fit Weibull;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -2875,9 +2222,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );
-obj = dt << Distribution( Column( :"# Defects"n ) );
-obj << Fit ZI Binomial( Sample Size( :Box Size ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Shirts.jmp" );obj = dt << Distribution( Column( :"# Defects"n ) );obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ```
 
@@ -2891,8 +2236,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
-dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
+dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ```
 
@@ -2906,8 +2250,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
-dt << Distribution( Column( :satell ), Fit ZI Poisson );
+dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ```
 
@@ -2919,16 +2262,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ```jsl
 
-Random Reset( 18 );
-d = J( 250, 1, Random SHASH( 0, 1, 3, 5 ) );
-For( i = 1, i <= 250, i++,
-	If( Random Uniform() < .2,
-		d[i] = 0
-	)
-);
-As Table( d );
-Column( 1 ) << set name( "X" );
-Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
+Random Reset( 18 );d = J( 250, 1, Random SHASH( 0, 1, 3, 5 ) );For( i = 1, i <= 250, i++,	If( Random Uniform() < .2,		d[i] = 0	));As Table( d );Column( 1 ) << set name( "X" );Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 ```
 
@@ -2940,10 +2274,7 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -2955,9 +2286,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Histogram Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Histogram Color( "Red" );
 
 ```
 
@@ -2969,32 +2298,7 @@ obj << Histogram Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Horizontal Layout( 1 );
-
-```
-
-#### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -3008,12 +2312,7 @@ obj[1] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();
 
 ```
 
@@ -3025,9 +2324,7 @@ preset = obj[1] << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Normal Quantile Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Normal Quantile Plot( 1 );
 
 ```
 
@@ -3039,10 +2336,7 @@ obj << Normal Quantile Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Outlier Box Plot( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Outlier Box Plot( 0 );
 
 ```
 
@@ -3054,9 +2348,7 @@ obj << Outlier Box Plot( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Seasonal Flu.jmp" );
-obj = dt << Distribution( Column( :Flu Cases ) );
-obj << Outlier Box Plot Row Cutoff( 10000 );
+dt = Open( "$SAMPLE_DATA/Seasonal Flu.jmp" );obj = dt << Distribution( Column( :Flu Cases ) );obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ```
 
@@ -3068,10 +2360,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :PM10 ) );
-obj << PpK Capability Labeling( 0 );
-obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :PM10 ) );obj << PpK Capability Labeling( 0 );obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```
 
@@ -3083,9 +2372,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Prediction Interval( 0.95, 20 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Prediction Interval( 0.95, 20 );
 
 ```
 
@@ -3097,9 +2384,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Prob Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -3113,9 +2398,7 @@ obj << Prob Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :PM10 ) );
-obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :PM10 ) );obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```
 
@@ -3127,10 +2410,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Outlier Box Plot( 0 );
-obj << Quantile Box Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Outlier Box Plot( 0 );obj << Quantile Box Plot( 1 );
 
 ```
 
@@ -3142,33 +2422,7 @@ obj << Quantile Box Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Quantiles( 0 );
-
-```
-
-#### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Quantiles( 0 );
 
 ```
 
@@ -3180,9 +2434,7 @@ obj[1] << Render Preset(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Save( "Ranks" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Save( "Ranks" );
 
 ```
 
@@ -3194,9 +2446,7 @@ obj << Save( "Ranks" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Set Bin Width( 5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Set Bin Width( 5 );
 
 ```
 
@@ -3208,11 +2458,7 @@ obj << Set Bin Width( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Set Quantile Increment( 0.05 );
-Wait( 1 );
-obj << Set Quantile Increment( "revert to default quantiles" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Set Quantile Increment( 0.05 );Wait( 1 );obj << Set Quantile Increment( "revert to default quantiles" );
 
 ```
 
@@ -3224,9 +2470,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Shadowgram( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Shadowgram( 1 );
 
 ```
 
@@ -3238,9 +2482,7 @@ obj << Shadowgram( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Show Counts( 1 );
 
 ```
 
@@ -3252,9 +2494,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Show Percents( 1 );
 
 ```
 
@@ -3266,9 +2506,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Std Error Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Std Error Bars( 1 );
 
 ```
 
@@ -3280,9 +2518,7 @@ obj << Std Error Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Stem and Leaf( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Stem and Leaf( 1 );
 
 ```
 
@@ -3294,10 +2530,7 @@ obj << Stem and Leaf( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-Wait( 1 );
-obj << Summary Statistics( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );Wait( 1 );obj << Summary Statistics( 0 );
 
 ```
 
@@ -3309,9 +2542,7 @@ obj << Summary Statistics( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.95 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.95 ) );
 
 ```
 
@@ -3323,13 +2554,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Mean( 60 ); 
-
-obj << Test Mean( 60, Sigma( 4 ) ); 
-
-obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Mean( 60 ); obj << Test Mean( 60, Sigma( 4 ) ); obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 ```
 
@@ -3341,9 +2566,7 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Test Std Dev( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Std Dev( 3 );
 
 ```
 
@@ -3355,12 +2578,7 @@ obj << Test Std Dev( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.85 ) );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Lower );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Upper, Lognormal );
-obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametric );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.85 ) );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Lower );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.9 ), Upper, Lognormal );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametric );
 
 ```
 
@@ -3372,9 +2590,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Vertical( 0 );
 
 ```
 
@@ -3392,9 +2608,7 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Density Curve( 0 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Density Curve( 0 ) );
 
 ```
 
@@ -3408,9 +2622,7 @@ obj << Fit Lognormal( Density Curve( 0 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Distribution Profiler( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Distribution Profiler( 1 ) );
 
 ```
 
@@ -3424,9 +2636,7 @@ obj << Fit Lognormal( Distribution Profiler( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Fitted CDF( [5 8 11] ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Fitted CDF( [5 8 11] ) );
 
 ```
 
@@ -3440,9 +2650,7 @@ obj << Fit Lognormal( Fitted CDF( [5 8 11] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Fitted Quantiles( [.9 .95 .99] ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Fitted Quantiles( [.9 .95 .99] ) );
 
 ```
 
@@ -3456,9 +2664,7 @@ obj << Fit Lognormal( Fitted Quantiles( [.9 .95 .99] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Normal( Fix Parameters( [. 2.8] ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Normal( Fix Parameters( [. 2.8] ) );
 
 ```
 
@@ -3472,9 +2678,7 @@ obj << Fit Normal( Fix Parameters( [. 2.8] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Goodness of Fit( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Goodness of Fit( 1 ) );
 
 ```
 
@@ -3488,9 +2692,7 @@ obj << Fit Lognormal( Goodness of Fit( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit Gamma( PP Plot( 1 ) );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit Gamma( PP Plot( 1 ) );
 
 ```
 
@@ -3504,9 +2706,7 @@ obj << Fit Gamma( PP Plot( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Distribution( Column( :OZONE ) );
-obj << Fit Lognormal( Process Capability( LSL( .03 ), Target( .15 ), USL( .27 ) ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Distribution( Column( :OZONE ) );obj << Fit Lognormal( Process Capability( LSL( .03 ), Target( .15 ), USL( .27 ) ) );
 
 ```
 
@@ -3520,9 +2720,7 @@ obj << Fit Lognormal( Process Capability( LSL( .03 ), Target( .15 ), USL( .27 ) 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Distribution( Column( :Y ) );
-obj << Fit Gamma( QQ Plot( 1 ) );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Distribution( Column( :Y ) );obj << Fit Gamma( QQ Plot( 1 ) );
 
 ```
 
@@ -3536,9 +2734,7 @@ obj << Fit Gamma( QQ Plot( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Quantile Profiler( 1 ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Quantile Profiler( 1 ) );
 
 ```
 
@@ -3552,12 +2748,7 @@ obj << Fit Lognormal( Quantile Profiler( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Weibull;
-obj << Fit Lognormal;
-Wait( 1 );
-obj << (Fit Handle[1] << Remove Fit);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Weibull;obj << Fit Lognormal;Wait( 1 );obj << (Fit Handle[1] << Remove Fit);
 
 ```
 
@@ -3571,9 +2762,7 @@ obj << (Fit Handle[1] << Remove Fit);
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Save Density Formula );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Save Density Formula );
 
 ```
 
@@ -3587,9 +2776,7 @@ obj << Fit Lognormal( Save Density Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Save Distribution Formula );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Save Distribution Formula );
 
 ```
 
@@ -3603,9 +2790,7 @@ obj << Fit Lognormal( Save Distribution Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Lognormal( Save Simulation Formula );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Lognormal( Save Simulation Formula );
 
 ```
 
@@ -3619,9 +2804,7 @@ obj << Fit Lognormal( Save Simulation Formula );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :CO ) );
-obj << Fit Shash( Save Transformed );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :CO ) );obj << Fit Shash( Save Transformed );
 
 ```
 
@@ -3639,14 +2822,21 @@ obj << Fit Shash( Save Transformed );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Process Capability(
-	LSL( 0.12 ),
-	Target( 0.18 ),
-	USL( 0.24 ),
-	Color Out of Spec Values
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Process Capability(	LSL( 0.12 ),	Target( 0.18 ),	USL( 0.24 ),	Color Out of Spec Values);
+
+```
+
+#### Remove
+
+**Sintassi:** obj &lt;&lt; Remove( LSL, Target, USL )
+
+**Descrizione:** Rimuove l&apos;analisi di capability del processo.
+
+**JMP Versione aggiunta:** 15
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Process Capability( LSL( 0.12 ), Target( 0.18 ), USL( 0.24 ) );Wait( 2 );scrobj = (Report( obj )["Process Capability"] << get scriptable object);scrobj << Remove;
 
 ```
 
@@ -3658,15 +2848,7 @@ obj << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Process Capability(
-	LSL( 0.03 ),
-	Target( 0.15 ),
-	USL( 0.27 ),
-	Dist( Lognormal ),
-	Save Distribution as a Column Property
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Process Capability(	LSL( 0.03 ),	Target( 0.15 ),	USL( 0.27 ),	Dist( Lognormal ),	Save Distribution as a Column Property);
 
 ```
 
@@ -3678,14 +2860,7 @@ obj << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Process Capability(
-	LSL( 0.12 ),
-	Target( 0.18 ),
-	USL( 0.24 ),
-	Save In Spec Indicator Formula
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Process Capability(	LSL( 0.12 ),	Target( 0.18 ),	USL( 0.24 ),	Save In Spec Indicator Formula);
 
 ```
 
@@ -3699,14 +2874,7 @@ obj << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Fit Lognormal(
-	Process Capability(
-		Set Sigma Multiplier for Quantile Spec Limits( 4 ),
-		Save Spec Limits and Distribution to Column Properties without Report
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Fit Lognormal(	Process Capability(		Set Sigma Multiplier for Quantile Spec Limits( 4 ),		Save Spec Limits and Distribution to Column Properties without Report	));
 
 ```
 
@@ -3722,16 +2890,7 @@ obj << Fit Lognormal(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Fit Lognormal(
-	Process Capability(
-		LSL( 0.03 ),
-		Target( 0.15 ),
-		USL( 0.27 ),
-		Save Spec Limits as a Column Property
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Fit Lognormal(	Process Capability(		LSL( 0.03 ),		Target( 0.15 ),		USL( 0.27 ),		Save Spec Limits as a Column Property	));
 
 ```
 
@@ -3739,14 +2898,7 @@ obj << Fit Lognormal(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Process Capability(
-	LSL( 0.03 ),
-	Target( 0.15 ),
-	USL( 0.27 ),
-	Save Spec Limits as a Column Property
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Process Capability(	LSL( 0.03 ),	Target( 0.15 ),	USL( 0.27 ),	Save Spec Limits as a Column Property);
 
 ```
 
@@ -3760,17 +2912,7 @@ obj << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Fit Lognormal(
-	Process Capability(
-		Set Probabilities for Quantile Spec Limits(
-			LSL Prob( .0001 ),
-			Target Prob( .5 ),
-			USL Prob( .9999 )
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Fit Lognormal(	Process Capability(		Set Probabilities for Quantile Spec Limits(			LSL Prob( .0001 ),			Target Prob( .5 ),			USL Prob( .9999 )		)	));
 
 ```
 
@@ -3784,11 +2926,7 @@ obj << Fit Lognormal(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = Distribution( Column( :OZONE ) );
-obj << Fit Lognormal(
-	Process Capability( Set Sigma Multiplier for Quantile Spec Limits( 4 ) )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = Distribution( Column( :OZONE ) );obj << Fit Lognormal(	Process Capability( Set Sigma Multiplier for Quantile Spec Limits( 4 ) ));
 
 ```
 
@@ -3804,9 +2942,7 @@ obj << Fit Lognormal(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Distribution( Column( :Height ) );
-obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```
 
@@ -3818,9 +2954,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Distribution( Column( :Height ) );
-obj << Customize Summary Statistics( Mode( 1 ), Show All Modes( 1 ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Customize Summary Statistics( Mode( 1 ), Show All Modes( 1 ) );
 
 ```
 
@@ -3840,19 +2974,7 @@ obj << Customize Summary Statistics( Mode( 1 ), Show All Modes( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-obj2 = dt2 << Distribution(
-	Nominal Distribution( Column( :Aircraft Damage ) ),
-	Continuous Distribution( Column( :Total Minor Injuries ) )
-);
-Wait( 1 );
-obj2[2] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );obj2 = dt2 << Distribution(	Nominal Distribution( Column( :Aircraft Damage ) ),	Continuous Distribution( Column( :Total Minor Injuries ) ));Wait( 1 );obj2[2] << Apply Preset( preset );
 
 ```
 
@@ -3860,13 +2982,7 @@ obj2[2] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Wait( 1 );obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```
 
@@ -3880,11 +2996,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Nominal Distribution( Column( :Age ), Horizontal Layout( 1 ), Count Axis( 1 ) )
-);
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Nominal Distribution( Column( :Age ), Horizontal Layout( 1 ), Count Axis( 1 ) ));obj << Axes on Left( 1 );
 
 ```
 
@@ -3892,15 +3004,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution(
-	Multiple Response Distribution(
-		Column( :Brush Delimited ),
-		Horizontal Layout( 1 ),
-		Count Axis( 1 )
-	)
-);
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution(	Multiple Response Distribution(		Column( :Brush Delimited ),		Horizontal Layout( 1 ),		Count Axis( 1 )	));obj << Axes on Left( 1 );
 
 ```
 
@@ -3912,9 +3016,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Confidence Interval( 0.95 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Confidence Interval( 0.95 );
 
 ```
 
@@ -3928,9 +3030,7 @@ obj << Confidence Interval( 0.95 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Count Axis( 1 );
 
 ```
 
@@ -3938,9 +3038,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Count Axis( 1 );
 
 ```
 
@@ -3952,9 +3050,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Density Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Density Axis( 1 );
 
 ```
 
@@ -3968,10 +3064,7 @@ obj << Density Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
@@ -3979,10 +3072,7 @@ obj << Frequencies( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
@@ -3996,10 +3086,7 @@ obj << Frequencies( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -4007,10 +3094,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -4024,9 +3108,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Histogram Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Histogram Color( "Red" );
 
 ```
 
@@ -4034,9 +3116,7 @@ obj << Histogram Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Histogram Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Histogram Color( "Blue" );
 
 ```
 
@@ -4050,9 +3130,7 @@ obj << Histogram Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Horizontal Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -4060,9 +3138,7 @@ obj << Horizontal Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Horizontal Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -4074,32 +3150,7 @@ obj << Horizontal Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Mosaic Plot( 1 );
-
-```
-
-#### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Mosaic Plot( 1 );
 
 ```
 
@@ -4113,12 +3164,7 @@ obj[1] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();
 
 ```
 
@@ -4130,9 +3176,7 @@ preset = obj[1] << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Order By( "Count Descending" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Order By( "Count Descending" );
 
 ```
 
@@ -4146,9 +3190,7 @@ obj << Order By( "Count Descending" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Prob Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -4156,32 +3198,7 @@ obj << Prob Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Prob Axis( 1 );
-
-```
-
-#### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -4193,9 +3210,7 @@ obj[1] << Render Preset(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Save( "Level Numbers" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Save( "Level Numbers" );
 
 ```
 
@@ -4209,9 +3224,7 @@ obj << Save( "Level Numbers" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Separate Bars( 1 );
 
 ```
 
@@ -4219,9 +3232,7 @@ obj << Separate Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Separate Bars( 1 );
 
 ```
 
@@ -4235,9 +3246,7 @@ obj << Separate Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Show Counts( 1 );
 
 ```
 
@@ -4245,9 +3254,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Show Counts( 1 );
 
 ```
 
@@ -4261,9 +3268,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Show Percents( 1 );
 
 ```
 
@@ -4271,9 +3276,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Show Percents( 1 );
 
 ```
 
@@ -4285,9 +3288,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Std Error Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Std Error Bars( 1 );
 
 ```
 
@@ -4301,9 +3302,7 @@ obj << Std Error Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ```
 
@@ -4311,9 +3310,7 @@ obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
 
 ```
 
@@ -4321,17 +3318,7 @@ obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );
-obj << Test Probabilities(
-	Test( Hypothesized ),
-	0.8,
-	0.04375,
-	0.075,
-	0.04375,
-	0.01875,
-	0.01875
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );obj << Test Probabilities(	Test( Hypothesized ),	0.8,	0.04375,	0.075,	0.04375,	0.01875,	0.01875);
 
 ```
 
@@ -4345,9 +3332,7 @@ obj << Test Probabilities(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Vertical( 0 );
 
 ```
 
@@ -4355,9 +3340,7 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Vertical( 0 );
 
 ```
 
@@ -4377,19 +3360,7 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
-obj2 = dt2 << Distribution(
-	Nominal Distribution( Column( :Aircraft Damage ) ),
-	Continuous Distribution( Column( :Total Minor Injuries ) )
-);
-Wait( 1 );
-obj2[2] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();dt2 = Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );obj2 = dt2 << Distribution(	Nominal Distribution( Column( :Aircraft Damage ) ),	Continuous Distribution( Column( :Total Minor Injuries ) ));Wait( 1 );obj2[2] << Apply Preset( preset );
 
 ```
 
@@ -4397,13 +3368,7 @@ obj2[2] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Wait( 1 );obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```
 
@@ -4417,11 +3382,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Nominal Distribution( Column( :Age ), Horizontal Layout( 1 ), Count Axis( 1 ) )
-);
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Nominal Distribution( Column( :Age ), Horizontal Layout( 1 ), Count Axis( 1 ) ));obj << Axes on Left( 1 );
 
 ```
 
@@ -4429,15 +3390,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution(
-	Multiple Response Distribution(
-		Column( :Brush Delimited ),
-		Horizontal Layout( 1 ),
-		Count Axis( 1 )
-	)
-);
-obj << Axes on Left( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution(	Multiple Response Distribution(		Column( :Brush Delimited ),		Horizontal Layout( 1 ),		Count Axis( 1 )	));obj << Axes on Left( 1 );
 
 ```
 
@@ -4449,9 +3402,7 @@ obj << Axes on Left( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Confidence Interval( 0.95 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Confidence Interval( 0.95 );
 
 ```
 
@@ -4465,9 +3416,7 @@ obj << Confidence Interval( 0.95 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Count Axis( 1 );
 
 ```
 
@@ -4475,9 +3424,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Count Axis( 1 );
 
 ```
 
@@ -4489,9 +3436,7 @@ obj << Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Density Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Density Axis( 1 );
 
 ```
 
@@ -4505,10 +3450,7 @@ obj << Density Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
@@ -4516,10 +3458,7 @@ obj << Frequencies( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-Wait( 1 );
-obj << Frequencies( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );Wait( 1 );obj << Frequencies( 0 );
 
 ```
 
@@ -4533,10 +3472,7 @@ obj << Frequencies( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -4544,10 +3480,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-Wait( 1 );
-obj << Histogram( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );Wait( 1 );obj << Histogram( 0 );
 
 ```
 
@@ -4561,9 +3494,7 @@ obj << Histogram( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Histogram Color( "Red" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Histogram Color( "Red" );
 
 ```
 
@@ -4571,9 +3502,7 @@ obj << Histogram Color( "Red" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Histogram Color( "Blue" );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Histogram Color( "Blue" );
 
 ```
 
@@ -4587,9 +3516,7 @@ obj << Histogram Color( "Blue" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Horizontal Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -4597,9 +3524,7 @@ obj << Horizontal Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Horizontal Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Horizontal Layout( 1 );
 
 ```
 
@@ -4611,32 +3536,7 @@ obj << Horizontal Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Mosaic Plot( 1 );
-
-```
-
-#### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-preset = obj[1] << New JSL Preset(
-	Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-);
-Wait( 1 );
-obj[1] << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Mosaic Plot( 1 );
 
 ```
 
@@ -4650,12 +3550,7 @@ obj[1] << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),
-	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) )
-);
-preset = obj[1] << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution(	Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ),	Nominal Distribution( Column( :age ), Mosaic Plot( 1 ) ));preset = obj[1] << New Preset();
 
 ```
 
@@ -4667,9 +3562,7 @@ preset = obj[1] << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Order By( "Count Descending" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Order By( "Count Descending" );
 
 ```
 
@@ -4683,9 +3576,7 @@ obj << Order By( "Count Descending" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Prob Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -4693,32 +3584,7 @@ obj << Prob Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Prob Axis( 1 );
-
-```
-
-#### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-obj[1] << Render Preset(
-	Expr(
-		Continuous Distribution( Column( :A ), Normal Quantile Plot( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Prob Axis( 1 );
 
 ```
 
@@ -4730,9 +3596,7 @@ obj[1] << Render Preset(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Save( "Level Numbers" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Save( "Level Numbers" );
 
 ```
 
@@ -4746,9 +3610,7 @@ obj << Save( "Level Numbers" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Separate Bars( 1 );
 
 ```
 
@@ -4756,9 +3618,7 @@ obj << Separate Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Separate Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Separate Bars( 1 );
 
 ```
 
@@ -4772,9 +3632,7 @@ obj << Separate Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Show Counts( 1 );
 
 ```
 
@@ -4782,9 +3640,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Show Counts( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Show Counts( 1 );
 
 ```
 
@@ -4798,9 +3654,7 @@ obj << Show Counts( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Show Percents( 1 );
 
 ```
 
@@ -4808,9 +3662,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Show Percents( 1 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Show Percents( 1 );
 
 ```
 
@@ -4822,9 +3674,7 @@ obj << Show Percents( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Std Error Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Std Error Bars( 1 );
 
 ```
 
@@ -4838,9 +3688,7 @@ obj << Std Error Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ```
 
@@ -4848,9 +3696,7 @@ obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );
-obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :sex ) ) );obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
 
 ```
 
@@ -4858,17 +3704,7 @@ obj << Test Probabilities( Test( Less than ), 0.5, f, 0.5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );
-obj << Test Probabilities(
-	Test( Hypothesized ),
-	0.8,
-	0.04375,
-	0.075,
-	0.04375,
-	0.01875,
-	0.01875
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :age ) ) );obj << Test Probabilities(	Test( Hypothesized ),	0.8,	0.04375,	0.075,	0.04375,	0.01875,	0.01875);
 
 ```
 
@@ -4882,9 +3718,7 @@ obj << Test Probabilities(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Nominal Distribution( Column( :Age ) ) );obj << Vertical( 0 );
 
 ```
 
@@ -4892,9 +3726,41 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
-obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );
-obj << Vertical( 0 );
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Distribution( Multiple Response Distribution( Column( :Brush Delimited ) ) );obj << Vertical( 0 );
+
+```
+
+## Prediction Interval
+
+### Messaggi degli elementi
+
+#### Remove
+
+**Sintassi:** obj &lt;&lt; Remove
+
+**Descrizione:** Rimuove il report Intervallo di previsione.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Prediction Interval( 0.95, 20 );Wait( 2 );scrobj = (Report( obj )["Prediction Interval"] << get scriptable object);scrobj << Remove;
+
+```
+
+## Test Equivalence
+
+### Messaggi degli elementi
+
+#### Remove
+
+**Sintassi:** obj &lt;&lt; Remove
+
+**Descrizione:** Rimuove il report Testa equivalenza.
+
+**JMP Versione aggiunta:** 15
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.95 ) );Wait( 2 );scrobj = (Report( obj )["Test Equivalence"] << get scriptable object);scrobj << Remove;
 
 ```
 
@@ -4910,9 +3776,7 @@ obj << Vertical( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Distribution( Column( :Height ) );
-obj << Test Mean( 60, PValue Animation );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Test Mean( 60, PValue Animation );
 
 ```
 
@@ -4924,15 +3788,37 @@ obj << Test Mean( 60, PValue Animation );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Distribution( Column( :Height ) );
-obj << Test Mean( 60, Power Animation );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Test Mean( 60, Power Animation );
+
+```
+
+#### Remove Test
+
+**Sintassi:** obj &lt;&lt; Remove Test
+
+**Descrizione:** Rimuove il report Test sulla media.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Test Mean( 60 );Wait( 2 );scrobj = (Report( obj )["Test Mean"] << get scriptable object);scrobj << Remove Test;
 
 ```
 
 ## Tolerance Interval
 
 ### Messaggi degli elementi
+
+#### Remove
+
+**Sintassi:** obj &lt;&lt; Remove
+
+**Descrizione:** Rimuove il report Intervallo di tolleranza.
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.85 ) );Wait( 2 );scrobj = (Report( obj )["Normal Distribution Tolerance Intervals"] << get scriptable object);scrobj << Remove;
+
+```
 
 #### Save Distribution as a Column Property
 
@@ -4942,14 +3828,7 @@ obj << Test Mean( 60, Power Animation );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = Distribution( Column( :Height ) );
-obj << Tolerance Interval(
-	Alpha( 0.95 ),
-	Proportion( 0.90 ),
-	Lognormal,
-	Save Distribution as a Column Property
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Distribution( Column( :Height ) );obj << Tolerance Interval(	Alpha( 0.95 ),	Proportion( 0.90 ),	Lognormal,	Save Distribution as a Column Property);
 
 ```
 
@@ -4961,13 +3840,7 @@ obj << Tolerance Interval(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Distribution( Column( :Height ) );
-obj << Tolerance Interval(
-	Alpha( 0.95 ),
-	Proportion( 0.85 ),
-	Save to Spec Limits Column Property
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Distribution( Column( :Height ) );obj << Tolerance Interval(	Alpha( 0.95 ),	Proportion( 0.85 ),	Save to Spec Limits Column Property);
 
 ```
 

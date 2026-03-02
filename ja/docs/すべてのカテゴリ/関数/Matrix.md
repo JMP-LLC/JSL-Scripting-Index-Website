@@ -10,10 +10,7 @@
 
 ```jsl
 
-x = [1, 2, 3, 4];
-y = [5, 6, 7, 8];
-alpha = 0.5;
-z = Add Vectors BLAS( x, y, alpha );
+x = [1, 2, 3, 4];y = [5, 6, 7, 8];alpha = 0.5;z = Add Vectors BLAS( x, y, alpha );
 
 ```
 
@@ -53,23 +50,19 @@ Any( [1 0 2] );
 
 **JMP追加されたバージョン:** 14
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
-B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
+B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-xx = (0 :: 10)`;
-yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
-designMat = B Spline Coef( xx, 2 );
-Linear Regression( yy, designMat, <<nointercept );
+xx = (0 :: 10)`;yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];designMat = B Spline Coef( xx, 2 );Linear Regression( yy, designMat, <<nointercept );
 
 ```
 
@@ -83,28 +76,7 @@ Linear Regression( yy, designMat, <<nointercept );
 
 ```jsl
 
-/* Generate random values, Normal(0,1) */
-Y = J( 150, 1, Random Normal() );
-
-/* CDF function */
-{Quant, CumProb} = CDF( Y ); 
-
-/* Draw empirical and theorical CDF */
-New Window( "Empirical CDF",
-	Graph Box(
-		X Scale( -3, 3 ),
-		Y Scale( 0, 1 ),
-		Pen Color( "red" );
-		For( i = 2, i <= N Row( Quant ), i++,
-			H Line( Quant[i - 1], Quant[i], CumProb[i] );
-			V Line( Quant[i - 1], CumProb[i - 1], CumProb[i] );
-		);
-		i = N Row( Quant );
-		V Line( Quant[i], CumProb[i], 1 );
-		Pen Color( "blue" );
-		Y Function( Normal Distribution( q ), q );
-	)
-);
+/* Generate random values, Normal(0,1) */Y = J( 150, 1, Random Normal() );/* CDF function */{Quant, CumProb} = CDF( Y ); /* Draw empirical and theorical CDF */New Window( "Empirical CDF",	Graph Box(		X Scale( -3, 3 ),		Y Scale( 0, 1 ),		Pen Color( "red" );		For( i = 2, i <= N Row( Quant ), i++,			H Line( Quant[i - 1], Quant[i], CumProb[i] );			V Line( Quant[i - 1], CumProb[i - 1], CumProb[i] );		);		i = N Row( Quant );		V Line( Quant[i], CumProb[i], 1 );		Pen Color( "blue" );		Y Function( Normal Distribution( q ), q );	));
 
 ```
 
@@ -112,39 +84,13 @@ New Window( "Empirical CDF",
 
 **構文:** L2 = Chol Update( L, V, C )
 
-**説明:** 更新されたA+V*C*V&apos;のCholesky根を戻す。ここで、Cはmxm対称行列、Vはnxm行列。引数Lは、nxn行列AのCholesky根でなければならない。
+**説明:** 更新されたA+V\*C\*V&apos;のCholesky根を戻す。ここで、Cはmxm対称行列、Vはnxm行列。引数Lは、nxn行列AのCholesky根でなければならない。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-/* The inner product of a design matrix */
-exS = [16 1 0 11 -1 12,
-1 11 -1 1 -1 1,
-0 -1 12 -1 1 0,
-11 1 -1 11 -1 9,
--1 -1 1 -1 9 -1,
-12 1 0 9 -1 12];
-/* Conduct the Cholesky decomposition */
-exAchol = Cholesky( exS );
-
-/* Two column vectors to be applied to change the design matrix */
-exV = [1 1, 0 0, 0 1, 0 0, 0 0, 0 1];
-
-/* The first column vector is added to one of the rows in the design matrix */
-/* The second column vector is subtracted from one of the rows in the design matrix */
-exC = [1 0, 0 -1];
-
-/* Update the Cholesky decomposition manually */
-exAnew = exS + exV * exC * exV`;
-exAcholnew = Cholesky( exAnew );
-
-/* Update the Cholesky decomposition more efficiently */
-exAcholnew_test = Chol Update( exAchol, exV, exC );
-
-/* Results are the same */
-Show( exAcholnew_test );
-Show( exAcholnew );
+/* The inner product of a design matrix */exS = [16 1 0 11 -1 12,1 11 -1 1 -1 1,0 -1 12 -1 1 0,11 1 -1 11 -1 9,-1 -1 1 -1 9 -1,12 1 0 9 -1 12];/* Conduct the Cholesky decomposition */exAchol = Cholesky( exS );/* Two column vectors to be applied to change the design matrix */exV = [1 1, 0 0, 0 1, 0 0, 0 0, 0 1];/* The first column vector is added to one of the rows in the design matrix *//* The second column vector is subtracted from one of the rows in the design matrix */exC = [1 0, 0 -1];/* Update the Cholesky decomposition manually */exAnew = exS + exV * exC * exV`;exAcholnew = Cholesky( exAnew );/* Update the Cholesky decomposition more efficiently */exAcholnew_test = Chol Update( exAchol, exV, exC );/* Results are the same */Show( exAcholnew_test );Show( exAcholnew );
 
 ```
 
@@ -152,7 +98,7 @@ Show( exAcholnew );
 
 **構文:** L = Cholesky( A )
 
-**説明:** 半正値定符号行列のCholesky分解を戻す。Lは、L*L` = Aとなるような下三角行列。
+**説明:** 半正値定符号行列のCholesky分解を戻す。Lは、L\*L` = Aとなるような下三角行列。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -200,21 +146,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```jsl
 
-/* example that Design(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design( exLevels ) );
-/* Also see DesignNom, DesignOrd */
-
-/* example that Design(...) takes two arguments */
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design(...) takes three arguments */
-Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design( exLevels ) );/* Also see DesignNom, DesignOrd *//* example that Design(...) takes two arguments */Show( Design( 3, {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design( exLevels, {1, 2, 3} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design(...) takes three arguments */Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -228,28 +160,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Last(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Last( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that Design Last(...) takes two arguments */
-Show( Design Last( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design Last( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Last( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design Last( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design Last(...) takes three arguments */
-Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Last(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Last( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that Design Last(...) takes two arguments */Show( Design Last( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( Design Last( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Last( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( Design Last( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design Last(...) takes three arguments */Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -263,28 +174,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Nom(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Nom( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that Design Nom(...) takes two arguments */
-Show( Design Nom( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( Design Nom( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Nom( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
- /* example that Design Nom(...) takes three arguments */
-Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Nom(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Nom( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that Design Nom(...) takes two arguments */Show( Design Nom( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( Design Nom( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Nom( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) ); /* example that Design Nom(...) takes three arguments */Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -298,28 +188,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that Design Ord(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( Design Ord( exLevels ) );
-/* see what is different from Design Nom(...) */
-Show( Design Nom( exLevels ) );
-
-/* Also see Design, Design Nom */
-
-/* example that Design Ord(...) takes two arguments */
-Show( Design Ord( 3, {1, 2, 3} ) );
-Show( Design Nom( 3, {1, 2, 3} ) );
-Show( Design Ord( [1 2], {1, 2, 3} ) );
-Show( Design Nom( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( Design Ord( exLevels, {1, 2, 3} ) );
-Show( Design Nom( exLevels, {1, 2, 3} ) );
-Show( Design Ord( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that Design Ord(...) takes three arguments */
-Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that Design Ord(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( Design Ord( exLevels ) );/* see what is different from Design Nom(...) */Show( Design Nom( exLevels ) );/* Also see Design, Design Nom *//* example that Design Ord(...) takes two arguments */Show( Design Ord( 3, {1, 2, 3} ) );Show( Design Nom( 3, {1, 2, 3} ) );Show( Design Ord( [1 2], {1, 2, 3} ) );Show( Design Nom( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( Design Ord( exLevels, {1, 2, 3} ) );Show( Design Nom( exLevels, {1, 2, 3} ) );Show( Design Ord( {"a", "b"}, {"a", "b", "c"} ) );Show( Design Nom( {"a", "b"}, {"a", "b", "c"} ) );/* example that Design Ord(...) takes three arguments */Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -333,28 +202,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
-/* example that DesignF(...) takes one argument */
-exLevels = [1, 2, 3, 2, 1];
-Show( DesignF( exLevels ) );
-/* see what is different from Design(...) */
-Show( Design( exLevels ) );
-
-/* Also see Design, DesignOrd */
-
-/* example that DesignF(...) takes two arguments */
-Show( DesignF( 3, {1, 2, 3} ) );
-Show( Design( 3, {1, 2, 3} ) );
-Show( DesignF( [1 2], {1, 2, 3} ) );
-Show( Design( [1 2], {1, 2, 3} ) );
-exLevels = [1, 2, 3, 2, 1, 2, 3];
-Show( DesignF( exLevels, {1, 2, 3} ) );
-Show( Design( exLevels, {1, 2, 3} ) );
-Show( DesignF( {"a", "b"}, {"a", "b", "c"} ) );
-Show( Design( {"a", "b"}, {"a", "b", "c"} ) );
-
-/* example that DesignF(...) takes three arguments */
-Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );
-Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
+/* example that DesignF(...) takes one argument */exLevels = [1, 2, 3, 2, 1];Show( DesignF( exLevels ) );/* see what is different from Design(...) */Show( Design( exLevels ) );/* Also see Design, DesignOrd *//* example that DesignF(...) takes two arguments */Show( DesignF( 3, {1, 2, 3} ) );Show( Design( 3, {1, 2, 3} ) );Show( DesignF( [1 2], {1, 2, 3} ) );Show( Design( [1 2], {1, 2, 3} ) );exLevels = [1, 2, 3, 2, 1, 2, 3];Show( DesignF( exLevels, {1, 2, 3} ) );Show( Design( exLevels, {1, 2, 3} ) );Show( DesignF( {"a", "b"}, {"a", "b", "c"} ) );Show( Design( {"a", "b"}, {"a", "b", "c"} ) );/* example that DesignF(...) takes three arguments */Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4}, <<ElseMissing ) );Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```
 
@@ -390,24 +238,13 @@ Diag( [11 22] );
 
 **構文:** y = Direct Product( A, B )
 
-**説明:** 直積(クロネッカー積)を戻す。結果の行列は、可能なすべての積A[i,j]*Bから構成される。
+**説明:** 直積(クロネッカー積)を戻す。結果の行列は、可能なすべての積A[i,j]\*Bから構成される。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [1 1 1, 2 2 2, 3 3 3];
-exProd = Direct Product( exA, exB );
-Show( exProd );
-
-/* verify results */
-Show( exProd[1 :: 3, 1 :: 3] == exB );
-Show( exProd[4 :: 6, 1 :: 3] == (exB * 3) );
-Show( exProd[1 :: 3, 4 :: 6] == (exB * 2) );
-Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
-
-/* Also see H Direct Product */
+exA = [1 2, 3 4];exB = [1 1 1, 2 2 2, 3 3 3];exProd = Direct Product( exA, exB );Show( exProd );/* verify results */Show( exProd[1 :: 3, 1 :: 3] == exB );Show( exProd[4 :: 6, 1 :: 3] == (exB * 3) );Show( exProd[1 :: 3, 4 :: 6] == (exB * 2) );Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );/* Also see H Direct Product */
 
 ```
 
@@ -421,63 +258,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ```jsl
 
-/*1-D example*/
-exX1 = [1, 2, 3, 4];
-exX2 = [2, 4, 6, 8]; 
-/*Compute squared Euclidean distance*/
-exD = Distance( exX1, exX2 ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance*/
-exD = Distance( exX1, exX2 ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance, with a scaler [0.5 2.0]*/
-exD = Distance( exX1, exX2, [0.5 2.0] ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum( [0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) ^ 2) )
-	)
-);
-Show( exDm == exD ); 
-
-/*2-D example*/
-exX1 = [1 1, 2 2, 3 3, 4 4];
-exX2 = [2 1, 4 2, 6 0, 8 7]; 
-/*Compute squared Euclidean distance, with scalers [0.5 2.0] and powers [1.5 2.0]*/
-exD = Distance( exX1, exX2, [0.5 2.0], [1.5 2.0] ); 
-/*Verify result*/
-exDm = J( 4, 4, . );
-For( exi = 1, exi <= 4, exi++,
-	For( exj = 1, exj <= 4, exj++,
-		exDm[exi, exj] = Sum(
-			[0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) :^ [1.5 2.0])
-		)
-	)
-);
-Show( exDm == exD );
+/*1-D example*/exX1 = [1, 2, 3, 4];exX2 = [2, 4, 6, 8]; /*Compute squared Euclidean distance*/exD = Distance( exX1, exX2 ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance*/exD = Distance( exX1, exX2 ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( (exX1[exi, 0] - exX2[exj, 0]) ^ 2 )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance, with a scaler [0.5 2.0]*/exD = Distance( exX1, exX2, [0.5 2.0] ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum( [0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) ^ 2) )	));Show( exDm == exD ); /*2-D example*/exX1 = [1 1, 2 2, 3 3, 4 4];exX2 = [2 1, 4 2, 6 0, 8 7]; /*Compute squared Euclidean distance, with scalers [0.5 2.0] and powers [1.5 2.0]*/exD = Distance( exX1, exX2, [0.5 2.0], [1.5 2.0] ); /*Verify result*/exDm = J( 4, 4, . );For( exi = 1, exi <= 4, exi++,	For( exj = 1, exj <= 4, exj++,		exDm[exi, exj] = Sum(			[0.5 2.0] :* (Abs( exX1[exi, 0] - exX2[exj, 0] ) :^ [1.5 2.0])		)	));Show( exDm == exD );
 
 ```
 
@@ -541,15 +322,13 @@ E Min( [1 22 33], [11 2 3] );
 
 **構文:** {M, E} = Eigen( X )
 
-**説明:** 対称行列Xの固有値分解。E*Diag(M)*E` = Xとなるようなリスト{M, E}を戻す。
+**説明:** 対称行列Xの固有値分解。E\*Diag(M)\*E` = Xとなるようなリスト{M, E}を戻す。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-X = [11 22, 22 33];
-{M, E} = Eigen( X );
-E * Diag( M ) * E`;
+X = [11 22, 22 33];{M, E} = Eigen( X );E * Diag( M ) * E`;
 
 ```
 
@@ -561,8 +340,7 @@ E * Diag( M ) * E`;
 
 ```jsl
 
-X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
-{M1, E1} = Eigen BLAS( X );
+X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];{M1, E1} = Eigen BLAS( X );
 
 ```
 
@@ -576,21 +354,7 @@ X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 
 ```jsl
 
-Estimate Bartlett Factor Score(
-	[2 2 0],
-	[2.085 2.76 1.56],
-	[0],
-	[1 0 0 0 0,
-	0 0.684181992749 0 0 0,
-	0 0 1.19686444665695 0 0,
-	0 0 0 0.875198112795068 0,
-	0 0 0 0 0.953592961124492],
-	[0 0 0 0 0,
-	2.085 0 0 0 1,
-	2.76 0 0 0 0.61913203807175,
-	1.56 0 0 0 0.710365935511608,
-	0 0 0 0 0]
-);
+Estimate Bartlett Factor Score(	[2 2 0],	[2.085 2.76 1.56],	[0],	[1 0 0 0 0,	0 0.684181992749 0 0 0,	0 0 1.19686444665695 0 0,	0 0 0 0.875198112795068 0,	0 0 0 0 0.953592961124492],	[0 0 0 0 0,	2.085 0 0 0 1,	2.76 0 0 0 0.61913203807175,	1.56 0 0 0 0.710365935511608,	0 0 0 0 0]);
 
 ```
 
@@ -604,19 +368,7 @@ Estimate Bartlett Factor Score(
 
 ```jsl
 
-Estimate Factor Score(
-	[7 10 5 2 2 0],
-	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
-	0.45 1.22 0.44 -0.44 -0.33 -0.38 0.45 -0.44,
-	0.58 0.44 1.88 -0.57 -0.43 -0.49 0.58 -0.57,
-	-0.58 -0.44 -0.57 1.64 0.57 0.65 -0.58 0.76,
-	-0.44 -0.33 -0.43 0.57 1.56 0.49 -0.44 0.57,
-	-0.5 -0.38 -0.49 0.65 0.49 1.36 -0.5 0.65,
-	0.59 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
-	-0.58 -0.44 -0.57 0.76 0.57 0.65 -0.58 0.76],
-	[6.59, 8.81, 2.92, 2.09, 2.76, 1.56],
-	[0, 0]
-);
+Estimate Factor Score(	[7 10 5 2 2 0],	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,	0.45 1.22 0.44 -0.44 -0.33 -0.38 0.45 -0.44,	0.58 0.44 1.88 -0.57 -0.43 -0.49 0.58 -0.57,	-0.58 -0.44 -0.57 1.64 0.57 0.65 -0.58 0.76,	-0.44 -0.33 -0.43 0.57 1.56 0.49 -0.44 0.57,	-0.5 -0.38 -0.49 0.65 0.49 1.36 -0.5 0.65,	0.59 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,	-0.58 -0.44 -0.57 0.76 0.57 0.65 -0.58 0.76],	[6.59, 8.81, 2.92, 2.09, 2.76, 1.56],	[0, 0]);
 
 ```
 
@@ -630,8 +382,7 @@ Estimate Factor Score(
 
 ```jsl
 
-Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
-Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
+Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
 ```
 
@@ -659,14 +410,7 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [1 1 1, 2 2 2];
-exProd = H Direct Product( exA, exB );
-Show( exProd );
-
-/* verify result */
-Show( exProd[1, 1 :: 6] == Direct Product( exA[1, 1 :: 2], exB[1, 1 :: 3] ) );
-Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
+exA = [1 2, 3 4];exB = [1 1 1, 2 2 2];exProd = H Direct Product( exA, exB );Show( exProd );/* verify result */Show( exProd[1, 1 :: 6] == Direct Product( exA[1, 1 :: 2], exB[1, 1 :: 3] ) );Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ```
 
@@ -692,154 +436,19 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-xx = .4;
-yy = .4;
-angleDegrees = (1 :: 180)`;
-angle = Pi() * angleDegrees / (180);
-New Window( "Hough Transform Demo 1",
-	Border Box( Left( 20 ), Top( 20 ), Right( 15 ), Bottom( 15 ),
-		V List Box(
-			Text Box( "Click and drag the circle in a straight line." ),
-			Graph Box(
-				X Scale( -1, 1 ),
-				Y Scale( -1, 1 ),
-				Circle( {xx, yy}, .05 );
-				Text( {xx + .1, yy + .1}, Char( xx, 4 ) || " " || Char( yy, 4 ) );
-				Mousetrap(
-					xx = x;
-					yy = y;
-					gb << reshow;
-				);
-			),
-			Text Box( "For angle 1 to 180 , x*Cos(angle)+y*Sin(angle)" ),
-			Text Box( "What position stays constant as you move?" ),
-			gb = Graph Box(
-				X Scale( 0, 180 ),
-				XName( "Angle" ),
-				Y Scale( -1.5, 1.5 ),
-				YName( "Distance to Line" ),
-				Line( angleDegrees, xx * Cos( angle ) + yy * Sin( angle ) )
-			)
-		)
-	)
-);
+xx = .4;yy = .4;angleDegrees = (1 :: 180)`;angle = Pi() * angleDegrees / (180);New Window( "Hough Transform Demo 1",	Border Box( Left( 20 ), Top( 20 ), Right( 15 ), Bottom( 15 ),		V List Box(			Text Box( "Click and drag the circle in a straight line." ),			Graph Box(				X Scale( -1, 1 ),				Y Scale( -1, 1 ),				Circle( {xx, yy}, .05 );				Text( {xx + .1, yy + .1}, Char( xx, 4 ) || " " || Char( yy, 4 ) );				Mousetrap(					xx = x;					yy = y;					gb << reshow;				);			),			Text Box( "For angle 1 to 180 , x*Cos(angle)+y*Sin(angle)" ),			Text Box( "What position stays constant as you move?" ),			gb = Graph Box(				X Scale( 0, 180 ),				XName( "Angle" ),				Y Scale( -1.5, 1.5 ),				YName( "Distance to Line" ),				Line( angleDegrees, xx * Cos( angle ) + yy * Sin( angle ) )			)		)	));
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-nRow = 35;
-nCol = 35;
-
-// Make a wafer template missing outside a radius
-waferTemplate = J( nRow, nCol, 0 );
-If( 0,
-	For( i = 1, i <= nRow, i++,
-		For( j = 1, j <= nCol, j++,
-			If( (i - nrow / 2) ^ 2 + (j - nCol / 2) ^ 2 > ((nRow + nCol) / 4) ^ 2,
-				waferTemplate[i, j] = .
-			)
-		)
-	)
-);
-wafer = waferTemplate;
-wafer[5, 22] = 1;
-lightGray = RGB Color( .9, .9, .9 );
-showWafer = Expr(
-	For( i = 1, i <= nRow, i++,
-		For( j = 1, j <= nCol, j++,
-			z = wafer[i, j];
-			If( Is Missing( z ),
-				Continue()
-			);
-			Fill Color( If( z == 0, lightGray, 3 ) );
-			Rect( i - nrow / 2, j - nCol / 2, i - nrow / 2 - 1, j - nCol / 2 + 1, 1 );
-		)
-	)
-);
-showHough = Expr(
-	accum = Hough Line Transform( wafer );
-	maxAccum = Max( Max( accum ), 1 );
-	accumHeat = Heat Color( accum / maxAccum );
-	nr = N Row( accum );
-	nc = N Col( accum );
-	For( i = 1, i <= nr, i++,
-		For( j = 1, j <= nc, j++,
-			z = accumHeat[i, j];
-			Fill Color( z );
-			Rect( j - 1, nr - i, j, nr - i + 1, 1 );
-		)
-	);
-    //Marginals
-	radiusDensity = V Max( accum` );
-	radiusScale = 3 * Max( radiusDensity ) / Mean( radiusDensity );
-	radiusColor = Heat Color( radiusDensity / radiusScale );
-	If( 1,
-		angleDensity = V Max( accum );
-		angleScale = 3 * Max( angleDensity ) / Mean( angleDensity );
-		angleColor = Heat Color( angleDensity / angleScale );
-	,
-		angle1 = angleDensity - Mean( angleDensity );
-		angle1 = angle1 :* (angle1 > 0);
-		angleColor = Heat Color( angle1 / Max( angle1 ) );
-	);
-	For( j = 1, j <= nc, j++,
-		Fill Color( angleColor[j] );
-		Rect( j - 1, -5, j, -8, 1 );
-	);
-	For( i = 1, i <= nr, i++,
-		Fill Color( radiusColor[i] );
-		Rect( 185, nr - i, 190, nr - i + 1, 1 );
-	);
-);
-mouseAction = Expr(
-	i = Floor( x + nrow / 2 + .5 );
-	j = Floor( y + ncol / 2 + .5 );
-	If( i > 0 & i <= nRow & j > 0 & j <= nCol,
-		wafer[i, j]
-		++);
-	bothBox << reshow;
-);
-New Window( "Hough Transform Demo 2",
-	Border Box( Left( 15 ), Top( 15 ), Right( 10 ), Bottom( 10 ),
-		bothBox = V List Box(
-			Text Box( "Click to add points in the top frame along a slanted line." ),
-			Text Box( "The Hough transform is shown below with marginal densities." ),
-			Text Box( "" ),
-			H List Box(
-				Button Box( "Clear",
-					wafer = waferTemplate;
-					bothBox << Reshow;
-				),
-				Button Box( "Add Random",
-					wafer = wafer | J( nRow, nCol, Random Uniform() < .05 );
-					bothBox << Reshow;
-				)
-			),
-			waferBox = Graph Box(
-				X Scale( -18, 18 ),
-				Y Scale( -18, 18 ),
-				FrameSize( 300, 300 ),
-				XName( "Angle" ),
-				YName( "Radius" ),
-				Mousetrap( mouseAction ),
-				showWafer
-			),
-			houghBox = Graph Box(
-				X Scale( 0, 190 ),
-				Y Scale( -10, 50 ),
-				FrameSize( 500, 200 ),
-				showHough
-			)
-		)
-	)
-);
+nRow = 35;nCol = 35;// Make a wafer template missing outside a radiuswaferTemplate = J( nRow, nCol, 0 );If( 0,	For( i = 1, i <= nRow, i++,		For( j = 1, j <= nCol, j++,			If( (i - nrow / 2) ^ 2 + (j - nCol / 2) ^ 2 > ((nRow + nCol) / 4) ^ 2,				waferTemplate[i, j] = .			)		)	));wafer = waferTemplate;wafer[5, 22] = 1;lightGray = RGB Color( .9, .9, .9 );showWafer = Expr(	For( i = 1, i <= nRow, i++,		For( j = 1, j <= nCol, j++,			z = wafer[i, j];			If( Is Missing( z ),				Continue()			);			Fill Color( If( z == 0, lightGray, 3 ) );			Rect( i - nrow / 2, j - nCol / 2, i - nrow / 2 - 1, j - nCol / 2 + 1, 1 );		)	));showHough = Expr(	accum = Hough Line Transform( wafer );	maxAccum = Max( Max( accum ), 1 );	accumHeat = Heat Color( accum / maxAccum );	nr = N Row( accum );	nc = N Col( accum );	For( i = 1, i <= nr, i++,		For( j = 1, j <= nc, j++,			z = accumHeat[i, j];			Fill Color( z );			Rect( j - 1, nr - i, j, nr - i + 1, 1 );		)	);    //Marginals	radiusDensity = V Max( accum` );	radiusScale = 3 * Max( radiusDensity ) / Mean( radiusDensity );	radiusColor = Heat Color( radiusDensity / radiusScale );	If( 1,		angleDensity = V Max( accum );		angleScale = 3 * Max( angleDensity ) / Mean( angleDensity );		angleColor = Heat Color( angleDensity / angleScale );	,		angle1 = angleDensity - Mean( angleDensity );		angle1 = angle1 :* (angle1 > 0);		angleColor = Heat Color( angle1 / Max( angle1 ) );	);	For( j = 1, j <= nc, j++,		Fill Color( angleColor[j] );		Rect( j - 1, -5, j, -8, 1 );	);	For( i = 1, i <= nr, i++,		Fill Color( radiusColor[i] );		Rect( 185, nr - i, 190, nr - i + 1, 1 );	););mouseAction = Expr(	i = Floor( x + nrow / 2 + .5 );	j = Floor( y + ncol / 2 + .5 );	If( i > 0 & i <= nRow & j > 0 & j <= nCol,		wafer[i, j]		++);	bothBox << reshow;);New Window( "Hough Transform Demo 2",	Border Box( Left( 15 ), Top( 15 ), Right( 10 ), Bottom( 10 ),		bothBox = V List Box(			Text Box( "Click to add points in the top frame along a slanted line." ),			Text Box( "The Hough transform is shown below with marginal densities." ),			Text Box( "" ),			H List Box(				Button Box( "Clear",					wafer = waferTemplate;					bothBox << Reshow;				),				Button Box( "Add Random",					wafer = wafer | J( nRow, nCol, Random Uniform() < .05 );					bothBox << Reshow;				)			),			waferBox = Graph Box(				X Scale( -18, 18 ),				Y Scale( -18, 18 ),				FrameSize( 300, 300 ),				XName( "Angle" ),				YName( "Radius" ),				Mousetrap( mouseAction ),				showWafer			),			houghBox = Graph Box(				X Scale( 0, 190 ),				Y Scale( -10, 50 ),				FrameSize( 500, 200 ),				showHough			)		)	));
 
 ```
 
@@ -847,7 +456,7 @@ New Window( "Hough Transform Demo 2",
 
 **構文:** y = Identity( n )
 
-**説明:** n x nの単位行列を作成する。単位行列とは、1を対角線上、0を非対角線上に配置した行列。
+**説明:** n X nの単位行列を作成する。単位行列とは、1を対角線上、0を非対角線上に配置した行列。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -879,9 +488,7 @@ Identity( 2 );
 
 ```jsl
 
-a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
-b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
-y = Inner Product BLAS( a, b );
+a = [1, 2, 3, -2, 0, -1, 0, 1, 1];b = [4, 5, 6, -2, 0, -1, 0, 7, 2];y = Inner Product BLAS( a, b );
 
 ```
 
@@ -903,46 +510,13 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 **構文:** y = Inv Update( S, X, &lt;w=1&gt; )
 
-**説明:** 更新された逆行列を戻す。第1引数Sは、Xと同じ列数を持つ正値定符号の対称行列。第2引数Xは、追加または削除する行を含む行列。第3引数wは、行を追加するか削除するかを指定する(追加する場合は1を、削除する場合は-1を使用する)。この関数は、S-w*S*X`*Inv(I+w*X*S*X`)*X*Sを戻す。ここで、Iは単位行列、Inv(A)はAの逆行列。
+**説明:** 更新された逆行列を戻す。第1引数Sは、Xと同じ列数を持つ正値定符号の対称行列。第2引数Xは、追加または削除する行を含む行列。第3引数wは、行を追加するか削除するかを指定する(追加する場合は1を、削除する場合は-1を使用する)。この関数は、S-w\*S\*X`\*Inv(I+w\*X\*S\*X`)\*X\*Sを戻す。ここで、Iは単位行列、Inv(A)はAの逆行列。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-/* Generate a design matrix */
-exX = [1 0 4 2,
-1 0 5 1,
-1 0 2 4,
-5 4 4 5,
-0 1 4 3,
-0 1 9 1,
-0 1 2 4,
-0 1 1 9,
-0 1 5 2,
-0 1 2 1,
-0 1 4 5];
-S = Inverse( exX` * exX );
-Show( "----------Adding Rows (w=1) --------" );
-X = [5 4 3 3, 4 3 2 1, 9 1 2 5];
-w = 1;
-y = Inv Update( S, X, w );
-Show( "Result of Inv Update" );
-Show( y );
-Show( "Result of updating formula" );
-Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );
-Show( "Result of direct calculation" );
-Show( Inverse( (exX |/ X)` * (exX |/ X) ) );
-Show( "----------Deleting Rows (w=-1) --------" );
-X = [0 1 5 2, 0 1 2 1, 0 1 4 5];
-w = -1;
-y = Inv Update( S, X, w );
-Show( "Result of Inv Update" );
-Show( y );
-Show( "Result of updating formula" );
-Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );
-Show( "Result of direct calculation" );
-p = N Row( exX ) - 3;
-Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
+/* Generate a design matrix */exX = [1 0 4 2,1 0 5 1,1 0 2 4,5 4 4 5,0 1 4 3,0 1 9 1,0 1 2 4,0 1 1 9,0 1 5 2,0 1 2 1,0 1 4 5];S = Inverse( exX` * exX );Show( "----------Adding Rows (w=1) --------" );X = [5 4 3 3, 4 3 2 1, 9 1 2 5];w = 1;y = Inv Update( S, X, w );Show( "Result of Inv Update" );Show( y );Show( "Result of updating formula" );Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );Show( "Result of direct calculation" );Show( Inverse( (exX |/ X)` * (exX |/ X) ) );Show( "----------Deleting Rows (w=-1) --------" );X = [0 1 5 2, 0 1 2 1, 0 1 4 5];w = -1;y = Inv Update( S, X, w );Show( "Result of Inv Update" );Show( y );Show( "Result of updating formula" );Show( S - w * S * X` * Inv( Identity( N Row( X ) ) + w * X * S * X` ) * X * S );Show( "Result of direct calculation" );p = N Row( exX ) - 3;Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
 
 ```
 
@@ -984,31 +558,7 @@ Is Matrix( [11 22 33] );
 
 ```jsl
 
-
-// Produce a 2x3 matrix, filled with 15.
-m = J( 2, 3, 15 );
-// Produce a default 4x4 matrix, filled with 1.
-m = J( 4 );
-// Produce a 2x3 matrix, filled with a number determined by a variable.
-a = 3.14;
-m = J( 2, 3, a );
-// Produce a vector of random numbers from the Uniform distribution.
-m = J( 1, 100, Random Uniform() );
-// Produce a 2x3 matrix, filled with a sequence of integers.
-a = 0;
-m = J( 2, 3, a = a + 1 );
-// This is a fun example to illustrate what is possible for the third argument.
-i = 1;
-J(
-	10,
-	1,
-	Print(
-		Eval Insert(
-			"For the ^i^^if(i < 4, words(\!"st,nd,rd\!",\!",\!")[i], \!"th\!")^ time, I'm not a loop!"
-		)
-	);
-	Round( 1 / Sqrt( 5 ) * ((1 + Sqrt( 5 )) / 2) ^ i++ );
-);
+// Produce a 2x3 matrix, filled with 15.m = J( 2, 3, 15 );// Produce a default 4x4 matrix, filled with 1.m = J( 4 );// Produce a 2x3 matrix, filled with a number determined by a variable.a = 3.14;m = J( 2, 3, a );// Produce a vector of random numbers from the Uniform distribution.m = J( 1, 100, Random Uniform() );// Produce a 2x3 matrix, filled with a sequence of integers.a = 0;m = J( 2, 3, a = a + 1 );// This is a fun example to illustrate what is possible for the third argument.i = 1;J(	10,	1,	Print(		Eval Insert(			"For the ^i^^if(i < 4, words(\!"st,nd,rd\!",\!",\!")[i], \!"th\!")^ time, I'm not a loop!"		)	);	Round( 1 / Sqrt( 5 ) * ((1 + Sqrt( 5 )) / 2) ^ i++ ););
 
 ```
 
@@ -1022,9 +572,7 @@ J(
 
 ```jsl
 
-tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tab << K nearest rows( 2, 1 );
-"2 nearest rows to row 1 are " || Char( rows );
+tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tab << K nearest rows( 2, 1 );"2 nearest rows to row 1 are " || Char( rows );
 
 ```
 
@@ -1038,10 +586,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
-/*Simple Linear Regression*/
-y = [3, 5, 7, 5];
-X = [1, 2, 3, 4];
-{Beta, VarBeta} = Least Squares Solve( y, X );
+/*Simple Linear Regression*/y = [3, 5, 7, 5];X = [1, 2, 3, 4];{Beta, VarBeta} = Least Squares Solve( y, X );
 
 ```
 
@@ -1049,54 +594,31 @@ X = [1, 2, 3, 4];
 
 **構文:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
-**説明:** y = X * beta + errorというモデルを仮定し、線形回帰をあてはめる。オプションの<<noIntercept引数は、切片なしのモデルをあてはめる。オプションの<<printToLog引数は、ログウィンドウにあてはめの要約を出力する。オプションのweight引数では、重み付き最小2乗法をあてはめるための重みのベクトルを指定する。また、オプションのfreq引数では、度数のベクトルを指定する。戻り値は、推定値のベクトルと標準誤差のベクトルのリスト、および診断統計量のリスト。 診断統計量のリストには、t値のベクトル、推定値のp値のベクトル、R2乗、自由度調整R2乗が含まれる。
+**説明:** y = X \* beta + errorというモデルを仮定し、線形回帰をあてはめる。オプションの<<noIntercept引数は、切片なしのモデルをあてはめる。オプションの<<printToLog引数は、ログウィンドウにあてはめの要約を出力する。オプションのweight引数では、重み付き最小2乗法をあてはめるための重みのベクトルを指定する。また、オプションのfreq引数では、度数のベクトルを指定する。戻り値は、推定値のベクトルと標準誤差のベクトルのリスト、および診断統計量のリスト。 診断統計量のリストには、t値のベクトル、推定値のp値のベクトル、R2乗、自由度調整R2乗が含まれる。
 
 **JMP追加されたバージョン:** 14
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-/*Simple Linear Regression: y = intercept + beta * x + error*/
-y = [3, 5, 7, 5];
-X = [1, 2, 3, 4];
-{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<printToLog ); 
-/*
-t_ratio = Diagnostics["t_ratio"]; 
-p_value = Diagnostics["p_value"]; 
-RSquare = Diagnostics["RSquare"]; 
-RSquare Adj = Diagnostics["RSquare Adj"];
-*/
+/*Simple Linear Regression: y = intercept + beta * x + error*/y = [3, 5, 7, 5];X = [1, 2, 3, 4];{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<printToLog ); /*t_ratio = Diagnostics["t_ratio"]; p_value = Diagnostics["p_value"]; RSquare = Diagnostics["RSquare"]; RSquare Adj = Diagnostics["RSquare Adj"];*/
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-/*Model: y = beta_1*x + beta_2*x^2 + error*/
-y = [3, 5, 7, 5];
-X = [1 1, 2 4, 3 9, 4 16];
-{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<noIntercept, <<printToLog );
+/*Model: y = beta_1*x + beta_2*x^2 + error*/y = [3, 5, 7, 5];X = [1 1, 2 4, 3 9, 4 16];{Estimates, Std_Error, Diagnostics} = Linear Regression( y, X, <<noIntercept, <<printToLog );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
-/*Categorical Variable Example*/
-/*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
-y = [3, 5, 7, 5];
-x = [1, 2, 3, 4];
-gender = {"boy", "girl", "girl", "boy"};
-designMat = Design( gender ) || x;
-{Estimates, Std_Error, Diagnostics} = Linear Regression(
-	y,
-	designMat,
-	<<noIntercept,
-	<<printToLog
-);
+/*Categorical Variable Example*//*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/y = [3, 5, 7, 5];x = [1, 2, 3, 4];gender = {"boy", "girl", "girl", "boy"};designMat = Design( gender ) || x;{Estimates, Std_Error, Diagnostics} = Linear Regression(	y,	designMat,	<<noIntercept,	<<printToLog);
 
 ```
 
@@ -1108,18 +630,15 @@ designMat = Design( gender ) || x;
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-/*more examples, above*/
-Show( Loc( [1 0 1 0 1 0] ) );
-Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
-Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
+/*more examples, above*/Show( Loc( [1 0 1 0 1 0] ) );Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -1127,7 +646,7 @@ Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -1135,7 +654,7 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```
 
-#### 例 4
+**例 4**
 
 ```jsl
 
@@ -1143,7 +662,7 @@ Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```
 
-#### 例 5
+**例 5**
 
 ```jsl
 
@@ -1203,11 +722,7 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```jsl
 
-Show(
-	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
-	Loc Sorted( [11 22 33 44 55], [1] ),
-	Loc Sorted( [11 22 33 44 55], [500] )
-);
+Show(	Loc Sorted( [11 22 33 44 55], [11 33 55] ),	Loc Sorted( [11 22 33 44 55], [1] ),	Loc Sorted( [11 22 33 44 55], [500] ));
 
 ```
 
@@ -1219,22 +734,19 @@ Show(
 
 ```jsl
 
-A = [2 0, 0 2];
-U = [2 4, 3 5];
-s = 2.5;
-AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
+A = [2 0, 0 2];U = [2 4, 3 5];s = 2.5;AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ```
 
 ### Matrix
 
-**構文:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
+**構文:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
 
-**説明:** nxm行列を作成する。m個の要素からなるリストをn個だけ用意し、それらをリストにしたものを引数に指定すると、リスト内の各リストを行にした行列が作成される。n個の要素から成るリストを1つだけ指定すると、nx1の列ベクトルが戻される。整数の引数を2つ指定すると、nxmのゼロ行列が戻される。
+**説明:** nXm行列を作成する。m個の要素からなるリストをn個だけ用意し、それらをリストにしたものを引数に指定すると、リスト内の各リストを行にした行列が作成される。n個の要素から成るリストを1つだけ指定すると、nx1の列ベクトルが戻される。整数の引数を2つ指定すると、nxmのゼロ行列が戻される。
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -1242,7 +754,7 @@ Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -1250,7 +762,7 @@ Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -1258,7 +770,7 @@ Matrix( {2, 3 + 7} );
 
 ```
 
-#### 例 4
+**例 4**
 
 ```jsl
 
@@ -1270,21 +782,13 @@ Matrix( 2, 3 );
 
 **構文:** y = Matrix Mult( A, B, ... ); y = A * B
 
-**説明:** 行列の乗算を実行する。Aの列数とBの行数が一致している、つまりNCol(a)==NRow(b)でなければならない。A * Bでも可。
+**説明:** 行列の乗算を実行する。Aの列数とBの行数が一致している、つまりNCol(a)==NRow(b)でなければならない。A \* Bでも可。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatB = [1 2, 1 2, 1 2];
-exMatM1 = exMatA * exMatB;
-exMatM2 = Matrix Mult( exMatA, exMatB );
-exMatC = [1 2, 1 2];
-exMatM3 = Matrix Mult( exMatA, exMatB, exMatC );
-Show( exMatM1 );
-Show( exMatM2 );
-Show( exMatM3 );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatB = [1 2, 1 2, 1 2];exMatM1 = exMatA * exMatB;exMatM2 = Matrix Mult( exMatA, exMatB );exMatC = [1 2, 1 2];exMatM3 = Matrix Mult( exMatA, exMatB, exMatC );Show( exMatM1 );Show( exMatM2 );Show( exMatM3 );
 
 ```
 
@@ -1298,9 +802,7 @@ Show( exMatM3 );
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatB = [1 2, 1 2, 1 2];
-exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatB = [1 2, 1 2, 1 2];exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 ```
 
@@ -1342,17 +844,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```jsl
 
-mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
-. -0.687720061441453 0.29665732536624 -1.94898001941576,
--0.0425472526673373 0.463229145080277 0.635619352779951 .];
-cov = Covariance( mat, <<"Pairwise"/*, <<"shrink"*/ );
-colMean = V Mean( mat );
-colMin = V Min( mat );
-colMax = V Max( mat );
-For( it = 1, it <= N Row( mat ), it++,
-	mat[it, 0] = Multivariate Normal Impute( mat[it, 0], colMean, cov, colMin, colMax )`
-);
-Print( mat );
+mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,. -0.687720061441453 0.29665732536624 -1.94898001941576,-0.0425472526673373 0.463229145080277 0.635619352779951 .];cov = Covariance( mat, <<"Pairwise"/*, <<"shrink"*/ );colMean = V Mean( mat );colMin = V Min( mat );colMax = V Max( mat );For( it = 1, it <= N Row( mat ), it++,	mat[it, 0] = Multivariate Normal Impute( mat[it, 0], colMean, cov, colMin, colMax )`);Print( mat );
 
 ```
 
@@ -1400,7 +892,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**構文:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
+**構文:** L = Ortho( A, &lt;Centered( 1 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **説明:** 行列の列を直交化する。中心化のオプションCenteredに0を指定すると、直交化後の列の和がゼロに中心化されない。Scaledに0を指定すると、長さが1に尺度化されない。
 
@@ -1436,8 +928,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ```jsl
 
-P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
-P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
+P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```
 
@@ -1451,11 +942,7 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
 ```jsl
 
-m = J( 3, 2, -1 );
-If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,
-	Throw( "thread failed" )
-);
-m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
+m = J( 3, 2, -1 );If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,	Throw( "thread failed" ));m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```
 
@@ -1469,17 +956,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```jsl
 
-A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
-Print Matrix( A );
-Print Matrix( A, <<ignore locale( 1 ) );
-Print Matrix( A, <<style( "latex" ) );
-Print Matrix(
-	A,
-	<<style( "other" ),
-	<<line begin( "| " ),
-	<<line end( " |" ),
-	<<separate( " | " )
-);
+A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];Print Matrix( A );Print Matrix( A, <<ignore locale( 1 ) );Print Matrix( A, <<style( "latex" ) );Print Matrix(	A,	<<style( "other" ),	<<line begin( "| " ),	<<line end( " |" ),	<<separate( " | " ));
 
 ```
 
@@ -1487,7 +964,7 @@ Print Matrix(
 
 **構文:** {Q, R} = QR( X )
 
-**説明:** X = Q * RとなるようなQ (m, m)直交行列およびR (m, n)上三角行列を生成する。引数Xは(m, n)行列。
+**説明:** X = Q \* RとなるようなQ (m, m)直交行列およびR (m, n)上三角行列を生成する。引数Xは(m, n)行列。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1501,7 +978,7 @@ QR( [11 22, 33 44] );
 
 **構文:** {Q, R} = QR LAPACK( X )
 
-**説明:** X = Q * RとなるようなQ (m, k)直交行列およびR (k, n)上三角行列を生成する。引数Xは(m, n)行列。kはmin(m, n)。
+**説明:** X = Q \* RとなるようなQ (m, k)直交行列およびR (k, n)上三角行列を生成する。引数Xは(m, n)行列。kはmin(m, n)。
 
 **JMP追加されたバージョン:** 17
 
@@ -1519,9 +996,7 @@ QR LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-A = [2 0, 0 2];
-x = [2, 3];
-y = Quadratic Form BLAS( A, x );
+A = [2 0, 0 2];x = [2, 3];y = Quadratic Form BLAS( A, x );
 
 ```
 
@@ -1529,7 +1004,7 @@ y = Quadratic Form BLAS( A, x );
 
 **構文:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
-**説明:** ランダム化特異値分解を使用して、行列Xの特異値分解を行う。U*diag(M)*V`がXとなるようなリスト{U, M, V}を戻す。
+**説明:** ランダム化特異値分解を使用して、行列Xの特異値分解を行う。U\*diag(M)\*V`がXとなるようなリスト{U, M, V}を戻す。
 
 **JMP追加されたバージョン:** 17
 
@@ -1577,8 +1052,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
-Ranking( [33, 22, 44, 11, 33] );
-Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
+Ranking( [33, 22, 44, 11, 33] );Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ```
 
@@ -1606,9 +1080,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ```jsl
 
-X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];
-X[2, 3] += 15;
-Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
+X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];X[2, 3] += 15;Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ```
 
@@ -1616,7 +1088,7 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 **構文:** {U, M, V} = SVD( X )
 
-**説明:** 行列Xの特異値分解を行う。U*diag(M)*V`がXとなるようなリスト{U, M, V}を戻す。
+**説明:** 行列Xの特異値分解を行う。U\*diag(M)\*V`がXとなるようなリスト{U, M, V}を戻す。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1630,7 +1102,7 @@ SVD( [11 22, 33 44] );
 
 **構文:** {U, M, V} = SVD LAPACK( X )
 
-**説明:** 行列Xの特異値分解を行う。U*diag(M)*V`がXとなるようなリスト{U, M, V}を戻す。
+**説明:** 行列Xの特異値分解を行う。U\*diag(M)\*V`がXとなるようなリスト{U, M, V}を戻す。
 
 **JMP追加されたバージョン:** 17
 
@@ -1650,12 +1122,7 @@ SVD LAPACK( [11 22, 33 44] );
 
 ```jsl
 
-Scoring Impute(
-	[1 2 3 . 4 .],
-	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
-	[0, 0, 0, 0, 0, 0],
-	[1, 1, 1, 1, 1, 1]
-);
+Scoring Impute(	[1 2 3 . 4 .],	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],	[0, 0, 0, 0, 0, 0],	[1, 1, 1, 1, 1, 1]);
 
 ```
 
@@ -1663,16 +1130,13 @@ Scoring Impute(
 
 **構文:** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
 
-**説明:** nrxncの行列になるように、行列またはスカラーのMを変形する。nrには欠測値も指定できる。Mのデータを、必要に応じて反復しながら、nrxnc行列を埋めていく。オプションの引数<<bycolを指定すると、1列ごとに順にデータを埋めていく。デフォルトでは、1行ごとに順にデータを埋めていく。通常は、ベクトルを行列にする場合や、行列をベクトルにする場合に使う。
+**説明:** nrXncの行列になるように、行列またはスカラーのMを変形する。nrには欠測値も指定できる。Mのデータを、必要に応じて反復しながら、nrxnc行列を埋めていく。オプションの引数<<bycolを指定すると、1列ごとに順にデータを埋めていく。デフォルトでは、1行ごとに順にデータを埋めていく。通常は、ベクトルを行列にする場合や、行列をベクトルにする場合に使う。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-Eval List(
-	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )
-	}
-);
+Eval List(	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )	});
 
 ```
 
@@ -1680,7 +1144,7 @@ Eval List(
 
 **構文:** y = Solve( A, B )
 
-**説明:** xに関する連立一次方程式A*x=Bを解く。Aが正則行列の場合、Solve()関数はInverse(A)*Bと同じ。引数Aは正方行列でなければならない。
+**説明:** xに関する連立一次方程式A\*x=Bを解く。Aが正則行列の場合、Solve()関数はInverse(A)\*Bと同じ。引数Aは正方行列でなければならない。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1722,7 +1186,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 **構文:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
-**説明:** 疎な行列Xの特異値分解を行う。疎な行列に対して、暗黙的なリスタートと部分的な再直交化を用いたLanczos法で特異値分解を行う。U*diag(M)*V`がXとなるような{U, M, V}をリストで戻す。
+**説明:** 疎な行列Xの特異値分解を行う。疎な行列に対して、暗黙的なリスタートと部分的な再直交化を用いたLanczos法で特異値分解を行う。U\*diag(M)\*V`がXとなるような{U, M, V}をリストで戻す。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1736,7 +1200,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 **構文:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
-**説明:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**説明:** 係数を次の順序でまとめた5列の行列を戻す。xにおける一意の各値のknots||a||b||c||d。平滑化パラメータlambdaは正の値を取り、lambdaに大きな値ほどスプライン曲線が硬くなる。オプションのweightsベクトルは、xの各値の重みを指定する。重みがゼロの点は、スプライン曲線のあてはめから除外される。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1756,27 +1220,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```jsl
 
-
-New Window( "Spline Fit",
-	window:x = 20 :: 80;
-	window:y = 50 + Sin( (20 :: 80) / 10 ) * 40 + J(
-		1,
-		N Col( window:x ),
-		Random Normal( 0, 10 )
-	);
-	window:loglambda = 2;
-	window:g = Graph Box(
-		Pen Color( "blue" );
-		window:m = Spline Coef( window:x, window:y, Power( 10, window:loglambda ) );
-		Marker( window:x, window:y );
-		Y Function( Spline Eval( a, window:m, 0.05 ), a );
-	);,
-	H List Box(
-		Text Box( "Lambda: " ),
-		Slider Box( -2, 5, window:loglambda, window:g << reshow )
-	)
-)
-;
+New Window( "Spline Fit",	window:x = 20 :: 80;	window:y = 50 + Sin( (20 :: 80) / 10 ) * 40 + J(		1,		N Col( window:x ),		Random Normal( 0, 10 )	);	window:loglambda = 2;	window:g = Graph Box(		Pen Color( "blue" );		window:m = Spline Coef( window:x, window:y, Power( 10, window:loglambda ) );		Marker( window:x, window:y );		Y Function( Spline Eval( a, window:m, 0.05 ), a );	);,	H List Box(		Text Box( "Lambda: " ),		Slider Box( -2, 5, window:loglambda, window:g << reshow )	));
 
 ```
 
@@ -1784,7 +1228,7 @@ New Window( "Spline Fit",
 
 **構文:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
-**説明:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
+**説明:** スプラインのあてはめから計算した予測値を戻す。平滑化パラメータlambdaは正の値を取り、lambdaに大きな値ほどスプライン曲線が硬くなる。オプションのweightsベクトルは、xの各値の重みを指定する。重みがゼロの点は、スプライン曲線のあてはめから除外される。
 
 **JMP追加されたバージョン:** バージョン14より前
 
@@ -1804,11 +1248,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```jsl
 
-exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
-exMatswp = Sweep( exMat, [1, 2, 3, 4] );
-exMatinv = Inverse( exMat );
-Show( exMatswp );
-Show( exMatinv );
+exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];exMatswp = Sweep( exMat, [1, 2, 3, 4] );exMatinv = Inverse( exMat );Show( exMatswp );Show( exMatinv );
 
 ```
 
@@ -1822,10 +1262,7 @@ Show( exMatinv );
 
 ```jsl
 
-exMatA = [1 2 3, -2 0 -1, 0 1 1];
-exMatA = exMatA` * exMatA;
-exMatB = [1 2, 1 2, 1 2];
-exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
+exMatA = [1 2 3, -2 0 -1, 0 1 1];exMatA = exMatA` * exMatA;exMatB = [1 2, 1 2, 1 2];exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 ```
 
@@ -1881,14 +1318,7 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```jsl
 
-exA = [1 2, 3 4];
-exB = [5 6, 7 8, 9 10];
-exC = [1, 1, 1, 1, 1];
-exD = V Concat To( exA, exB );
-exE = Concat( exD, exC );
-/* exA is changed and exD is not. */
-Show( exA, exB, exC, exD, exE );
-/* Also see ConcatTo(), VConcat() */
+exA = [1 2, 3 4];exB = [5 6, 7 8, 9 10];exC = [1, 1, 1, 1, 1];exD = V Concat To( exA, exB );exE = Concat( exD, exC );/* exA is changed and exD is not. */Show( exA, exB, exC, exD, exE );/* Also see ConcatTo(), VConcat() */
 
 ```
 
@@ -2028,9 +1458,7 @@ V Sum( [11 22, 33 44, 55 66] );
 
 ```jsl
 
-tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
-"2 nearest rows to [1.1 .9 1] are " || Char( rows );
+tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );"2 nearest rows to [1.1 .9 1] are " || Char( rows );
 
 ```
 
@@ -2066,15 +1494,13 @@ Vec Diag( [11 22, 33 44] );
 
 **構文:** Vec Quadratic( S, X )
 
-**説明:** Vec Diag( X * S * X` )を計算する。
+**説明:** Vec Diag( X \* S \* X` )を計算する。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-exS = [1 3 5, 3 2 6, 5 6 1];
-exX = [1 3 5, 2 4 6];
-Vec Quadratic( exS, exX );
+exS = [1 3 5, 3 2 6, 5 6 1];exX = [1 3 5, 2 4 6];Vec Quadratic( exS, exX );
 
 ```
 

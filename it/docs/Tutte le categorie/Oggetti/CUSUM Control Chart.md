@@ -14,8 +14,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-obj = dt << CUSUM Control Chart( Y( :DIAMETER ), X( :DAY ), By( :Phase ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << CUSUM Control Chart( Y( :DIAMETER ), X( :DAY ), By( :Phase ) );
 
 ```
 
@@ -29,17 +28,7 @@ obj = dt << CUSUM Control Chart( Y( :DIAMETER ), X( :DAY ), By( :Phase ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	X( :hour ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	X( :hour ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));
 
 ```
 
@@ -53,16 +42,7 @@ obj = dt << CUSUM Control Chart(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));
 
 ```
 
@@ -78,16 +58,7 @@ obj = dt << CUSUM Control Chart(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));
 
 ```
 
@@ -103,17 +74,7 @@ obj = dt << CUSUM Control Chart(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << ARL Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << ARL Profiler( 1 );
 
 ```
 
@@ -125,12 +86,7 @@ obj << ARL Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -144,28 +100,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Alarm Script(
-		Write(
-			"Out of Control for test ",
-			qc_test,
-			" in column ",
-			qc_col,
-			" in sample ",
-			qc_sample,
-			". \!N"
-		)
-	),
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Test Beyond Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Alarm Script(		Write(			"Out of Control for test ",			qc_test,			" in column ",			qc_col,			" in sample ",			qc_sample,			". \!N"		)	),	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Test Beyond Limits( 1 );
 
 ```
 
@@ -181,10 +116,7 @@ obj << Test Beyond Limits( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -192,13 +124,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -206,10 +132,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -221,18 +144,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -246,12 +158,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -265,18 +172,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-Wait( 1 );
-obj << Control Panel( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));Wait( 1 );obj << Control Panel( 0 );
 
 ```
 
@@ -288,23 +184,7 @@ obj << Control Panel( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -316,17 +196,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Copy Script;
 
 ```
 
@@ -338,17 +208,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Data Table Window;
 
 ```
 
@@ -364,17 +224,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 0.1 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	Data Units( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 0.1 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	Data Units( 1 ));
 
 ```
 
@@ -388,9 +238,7 @@ obj = dt << CUSUM Control Chart(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -402,24 +250,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -433,18 +264,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -452,27 +272,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -484,18 +284,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -507,11 +296,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -525,23 +310,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-limitsTable = New Table( "Cusum Limits",
-	Add Rows( 4 ),
-	New Column( "_LimitsKey", Character, Set Values( {"_H", "_K", "_Std Dev", "_Mean"} ) ),
-	New Column( "weight", Set Values( [4, 0.5, 0.01, 8.1] ) )
-);
-Wait();
-obj << Get Limits( limitsTable );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));limitsTable = New Table( "Cusum Limits",	Add Rows( 4 ),	New Column( "_LimitsKey", Character, Set Values( {"_H", "_K", "_Std Dev", "_Mean"} ) ),	New Column( "weight", Set Values( [4, 0.5, 0.01, 8.1] ) ));Wait();obj << Get Limits( limitsTable );
 
 ```
 
@@ -553,18 +322,7 @@ obj << Get Limits( limitsTable );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -576,18 +334,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -599,18 +346,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -622,10 +358,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -639,10 +372,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -656,17 +386,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << H( 4.5 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << H( 4.5 );
 
 ```
 
@@ -680,17 +400,7 @@ obj << H( 4.5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Head start( 1.0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Head start( 1.0 );
 
 ```
 
@@ -702,13 +412,7 @@ obj << Head start( 1.0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -722,17 +426,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << K( 0.1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << K( 0.1 );
 
 ```
 
@@ -746,39 +440,11 @@ obj << K( 0.1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Lower Side( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Lower Side( 0 );
 
 ```
 
 ### Messaggi degli elementi condivisi
-
-### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
-
-```
 
 ### New Preset
 
@@ -790,9 +456,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -806,17 +470,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Parameters Report( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Parameters Report( 1 );
 
 ```
 
@@ -828,45 +482,7 @@ obj << Parameters Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Redo Analysis;
 
 ```
 
@@ -878,85 +494,19 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Sintassi:** obj &lt;&lt; Relaunch ByGroup
-
-**Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
-
-```
-
-### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Relaunch Analysis;
 
 ```
 
 ### Report
 
-**Sintassi:** obj &lt;&lt; Report;Report( obj )
+**Sintassi:** obj &lt;&lt; Report; Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -968,17 +518,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Report View( "Summary" );
 
 ```
 
@@ -992,19 +532,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << H( 3 );
-Wait( 1 );
-obj << Reset to Defaults();
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << H( 3 );Wait( 1 );obj << Reset to Defaults();
 
 ```
 
@@ -1016,23 +544,7 @@ obj << Reset to Defaults();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1044,23 +556,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1072,23 +568,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1110,20 +590,7 @@ Se è specificato in New Table, i parametri h, k, la deviazione standard, la med
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-Wait();
-obj << Save Limits( "in Column" );
-Wait();
-obj << Save Limits( "in New Table" );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));Wait();obj << Save Limits( "in Column" );Wait();obj << Save Limits( "in New Table" );
 
 ```
 
@@ -1135,17 +602,7 @@ obj << Save Limits( "in New Table" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Script for All Objects;
 
 ```
 
@@ -1155,51 +612,19 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1211,17 +636,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1233,17 +648,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Script to Journal;
 
 ```
 
@@ -1255,17 +660,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Script to Report;
 
 ```
 
@@ -1277,17 +672,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Script to Script Window;
 
 ```
 
@@ -1301,17 +686,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Sigma;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Sigma;
 
 ```
 
@@ -1325,17 +700,7 @@ obj << Save Sigma;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Save Summaries;
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Save Summaries;
 
 ```
 
@@ -1347,15 +712,7 @@ obj << Save Summaries;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1367,20 +724,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1392,12 +736,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1411,17 +750,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Show ARL( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Show ARL( 1 );
 
 ```
 
@@ -1435,17 +764,7 @@ obj << Show ARL( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Show Center Line( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Show Center Line( 0 );
 
 ```
 
@@ -1461,9 +780,7 @@ obj << Show Center Line( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );
-dt << Select Rows( {31, 32, 33, 34, 35, 36, 37, 38, 39, 40} ) << exclude << hide;
-obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Region( 0 ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips1.jmp" );dt << Select Rows( {31, 32, 33, 34, 35, 36, 37, 38, 39, 40} ) << exclude << hide;obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Region( 0 ) );
 
 ```
 
@@ -1477,17 +794,7 @@ obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded R
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Show Limits( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Show Limits( 0 );
 
 ```
 
@@ -1501,18 +808,7 @@ obj << Show Limits( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-Wait( 1 );
-obj << Show Shift Lines( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));Wait( 1 );obj << Show Shift Lines( 0 );
 
 ```
 
@@ -1526,17 +822,7 @@ obj << Show Shift Lines( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Sigma( 2 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Sigma( 2 );
 
 ```
 
@@ -1548,11 +834,7 @@ obj << Sigma( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1566,17 +848,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Target( 9.5 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Target( 9.5 );
 
 ```
 
@@ -1590,17 +862,7 @@ obj << Target( 9.5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Test Beyond Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Test Beyond Limits( 1 );
 
 ```
 
@@ -1612,17 +874,7 @@ obj << Test Beyond Limits( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Title( "My Platform" );
 
 ```
 
@@ -1634,19 +886,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1662,11 +902,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1680,17 +916,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Tune Chart( Min( 8.08, Max( 8.12 ) ) );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Tune Chart( Min( 8.08, Max( 8.12 ) ) );
 
 ```
 
@@ -1704,17 +930,7 @@ obj << Tune Chart( Min( 8.08, Max( 8.12 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );
-obj = dt << CUSUM Control Chart(
-	Y( :weight ),
-	H( 2 ),
-	Lower Side( 1 ),
-	Target( 8.1 ),
-	K( 0.025 ),
-	Sigma( 0.05 ),
-	Head Start( 0.05 )
-);
-obj << Upper Side( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Oil1 Cusum.jmp" );obj = dt << CUSUM Control Chart(	Y( :weight ),	H( 2 ),	Lower Side( 1 ),	Target( 8.1 ),	K( 0.025 ),	Sigma( 0.05 ),	Head Start( 0.05 ));obj << Upper Side( 0 );
 
 ```
 
@@ -1726,27 +942,19 @@ obj << Upper Side( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintassi:** obj = CUSUM Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = CUSUM Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 

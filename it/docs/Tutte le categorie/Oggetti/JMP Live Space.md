@@ -14,13 +14,7 @@
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
-
-spaceList = jmpliveresult << As Scriptable;
-space = spaceList[1];
-
-Write( "Description: ", space << Get Description );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );spaceList = jmpliveresult << As Scriptable;space = spaceList[1];Write( "Description: ", space << Get Description );
 
 ```
 
@@ -34,13 +28,7 @@ Write( "Description: ", space << Get Description );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
-
-spaceList = jmpliveresult << As Scriptable;
-space = spaceList[1];
-
-Write( "Key: ", space << Get Key );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );spaceList = jmpliveresult << As Scriptable;space = spaceList[1];Write( "Key: ", space << Get Key );
 
 ```
 
@@ -54,13 +42,7 @@ Write( "Key: ", space << Get Key );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
-
-spaceList = jmpliveresult << As Scriptable;
-space = spaceList[1];
-
-Write( "Name: ", space << Get Name );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );spaceList = jmpliveresult << As Scriptable;space = spaceList[1];Write( "Name: ", space << Get Name );
 
 ```
 
@@ -74,13 +56,7 @@ Write( "Name: ", space << Get Name );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
-
-spaceList = jmpliveresult << As Scriptable;
-space = spaceList[1];
-
-Write( "Type: ", space << Get Type );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );spaceList = jmpliveresult << As Scriptable;space = spaceList[1];Write( "Type: ", space << Get Type );
 
 ```
 

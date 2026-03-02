@@ -48,11 +48,11 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **语法:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
-**说明:** 返回两个日期/时间值的区间差异。支持的“intervalName”值包括“年”、“季度”、“月”、“周”、“日”、“时”、“分”、“秒”和“数值”。“"Start"”的“alignment”包括完整或不完整区间，而“"Actual"”仅包括完整区间。“"Fractional"”的“alignment”返回小数差异，取“年”、“季度”和“月”区间持续时间的平均值。
+**说明:** Devuelve la diferencia en intervalos de dos valores de fecha/hora. Los valores compatibles de intervalName son "Año", "Trimestre", "Mes", "Semana", "Día", "Hora", "Minuto", "Segundo" y "Numérico". Una alignment de "Start" incluye intervalos parciales o completos, mientras que "Actual" solo incluye intervalos completos. Una alignment de "Fractional" devuelve diferencias fraccionales y utiliza medias para la duración de los intervalos de "Año", "Trimestre" y "Mes".
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -60,7 +60,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -68,7 +68,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -80,11 +80,11 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **语法:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
-**说明:** 通过添加“incr”区间数返回新的日期时间值。支持的“intervalName”值包括“年”、“季度”、“月”、“周”、“日”、“时”、“分”、“秒”和“数值”。使用“alignment”的“"Start"”将在添加增量前截断为最近的区间，而“"Actual"”仍为完整的输入日期/时间。“alignment”的“"Fractional"”允许使用小数“incr”值，取“年”、“季度”和“月”区间持续时间的平均值。
+**说明:** Devuelve un valor de fecha y hora agregando un número de intervalos incr. Los valores compatibles de intervalName son "Año", "Trimestre", "Mes", "Semana", "Día", "Hora", "Minuto", "Segundo" y "Numérico". Una alignment de "Start" trunca el intervalo más cercano antes de agregar el incremento, mientras que "Actual" retiene la fecha y hora de entrada completa. Una alignment de "Fractional" permite valores incr fraccionales y utiliza medias para la duración de los intervalos "Año", "Trimestre" y "Mes".
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -92,7 +92,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -100,7 +100,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -180,7 +180,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**语法:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**语法:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **说明:** 以指定的格式返回数字。格式包括“列信息”对话框中的项，例如“最佳”和“h:m:s”。请参见“主题帮助”获取其他选项的信息，包括 p 值、货币、日期和时间以及地理格式。
 
@@ -214,21 +214,19 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
 ### Format Date
 
-**语法:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**语法:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **说明:** 以指定的格式返回数字。格式包括“列信息”对话框中的项，例如“最佳”和“h:m:s”。请参见“主题帮助”获取其他选项的信息，包括 p 值、货币、日期和时间以及地理格式。
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -236,7 +234,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -244,13 +242,11 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -264,11 +260,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -372,13 +364,13 @@ In Years( 1 );
 
 ### Informat
 
-**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **说明:** 解析给定格式的字符串。若格式是日期时间格式，则该值表示为如同使用 As Date() 括起来，采用 ddMonyyyy 格式返回日期。与“最佳”formatString 一起使用的可选 <<Restrict 仅允许使用整数、小数和科学记数法格式进行转换。
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -386,7 +378,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -394,7 +386,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -402,7 +394,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
@@ -410,16 +402,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 示例 5
+**示例 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -509,13 +496,13 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **说明:** 解析给定格式的字符串。若格式是日期时间格式，则该值表示为如同使用 As Date() 括起来，采用 ddMonyyyy 格式返回日期。与“最佳”formatString 一起使用的可选 <<Restrict 仅允许使用整数、小数和科学记数法格式进行转换。
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -523,7 +510,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -531,7 +518,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -539,7 +526,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 
@@ -547,16 +534,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 示例 5
+**示例 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -612,10 +594,7 @@ Short Date( Today() );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -655,7 +634,7 @@ As Date( Today() );
 
 **JMP添加的版本:** 早于版本 14
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -663,15 +642,11 @@ Week Of Year( Today() );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-Show(
-	Week Of Year( 01jan2012, 1 ),
-	Week Of Year( 01jan2012, 2 ),
-	Week Of Year( 01jan2012, 3 )
-);
+Show(	Week Of Year( 01jan2012, 1 ),	Week Of Year( 01jan2012, 2 ),	Week Of Year( 01jan2012, 3 ));
 
 ```
 

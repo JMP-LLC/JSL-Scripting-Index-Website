@@ -12,12 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -33,10 +28,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,13 +36,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -58,10 +44,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -73,12 +56,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -90,15 +68,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Copy Script;
 
 ```
 
@@ -110,15 +80,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Data Table Window;
 
 ```
 
@@ -132,9 +94,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -148,27 +108,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -176,16 +116,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -197,16 +128,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -218,16 +140,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));t = obj << Get Script;Show( t );
 
 ```
 
@@ -239,16 +152,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -260,16 +164,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -281,10 +176,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -298,10 +190,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -313,13 +202,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -331,32 +214,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-
-```
-
-### New JSL Preset
-
-**構文:** New JSL Preset( preset )
-
-**説明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -370,9 +228,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -384,15 +240,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -404,15 +252,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Redo Analysis;
 
 ```
 
@@ -424,15 +264,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Relaunch Analysis;
 
 ```
 
@@ -444,14 +276,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -463,54 +288,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**構文:** Render Preset( preset )
-
-**説明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP追加されたバージョン:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**構文:** obj &lt;&lt; Report;Report( obj )
+**構文:** obj &lt;&lt; Report; Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -522,15 +312,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Report View( "Summary" );
 
 ```
 
@@ -542,15 +324,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Save Script for All Objects;
 
 ```
 
@@ -560,47 +334,19 @@ obj << Save Script for All Objects;
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 ),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -612,15 +358,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -632,15 +370,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Save Script to Journal;
 
 ```
 
@@ -652,15 +382,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Save Script to Report;
 
 ```
 
@@ -672,15 +394,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Save Script to Script Window;
 
 ```
 
@@ -692,15 +406,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -712,20 +418,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -737,12 +430,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -754,11 +442,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -770,15 +454,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Title( "My Platform" );
 
 ```
 
@@ -790,17 +466,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -812,9 +478,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -826,48 +490,27 @@ xml = obj << View Web XML;
 
 **説明:** 応答の計算式に含まれている入力変数のうち、誤差因子である列を指定する。誤差因子は、誤差因子のばらつきに対するするロバスト性(平坦性)を調べるために使用される。作成されるプロファイルには、誤差因子で応答の計算式を微分したものも描かれる。
 
-#### プロファイルの例
+**プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
-#### 等高線プロファイルの例
+**等高線プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Contour Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Contour Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
-#### 配合プロファイルの例
+**配合プロファイルの例**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Custom Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Noise Factors( :SILANE )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Custom Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
 
 ```
 
@@ -879,14 +522,7 @@ obj = dt << Custom Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));
 
 ```
 
@@ -898,14 +534,7 @@ obj = dt << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));
 
 ```
 
@@ -917,53 +546,27 @@ obj = dt << Profiler(
 
 **説明:** 因子の設定を変えると応答変数の予測値がどうなるかを調べられる、対話的なグラフ。プロファイルには、予測値のトレースが因子ごとに表示され、因子に対する応答変数の変化が一目でわかる。Expand引数は、起動ウィンドウの［中間計算式の展開］オプションに対応する。
 
-#### 例 1
+**例 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );
-colNum = N Items( dt << Get Column Names );
-obj = dt << Fit Model(
-	Validation( :Validation ),
-	Y( :Y ),
-	Effects( :Age, :Gender, :BMI, :BP, :Total Cholesterol ),
-	Personality( "Standard Least Squares" ),
-	Emphasis( "Effect Screening" ),
-	Run()
-);
-obj << Save Columns( Prediction Formula( 1 ), StdErr Pred Formula( 1 ) );
-obj << Close Window( 1 );
-predCol = Column( dt, colNum + 1 );
-stderrCol = Column( dt, colNum + 2 );
-dt << Profiler(
-	Y( predCol, stderrCol ),
-	Profiler( 1, Confidence Intervals( 1 ), ),
-	Use SE Formula( 1 )
-);
+dt = Open( "$Sample_Data/Diabetes.jmp" );colNum = N Items( dt << Get Column Names );obj = dt << Fit Model(	Validation( :Validation ),	Y( :Y ),	Effects( :Age, :Gender, :BMI, :BP, :Total Cholesterol ),	Personality( "Standard Least Squares" ),	Emphasis( "Effect Screening" ),	Run());obj << Save Columns( Prediction Formula( 1 ), StdErr Pred Formula( 1 ) );obj << Close Window( 1 );predCol = Column( dt, colNum + 1 );stderrCol = Column( dt, colNum + 2 );dt << Profiler(	Y( predCol, stderrCol ),	Profiler( 1, Confidence Intervals( 1 ), ),	Use SE Formula( 1 ));
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
-dt = Open( "$Sample_Data/Stochastic Optimization.jmp" );
-dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand );
+dt = Open( "$Sample_Data/Stochastic Optimization.jmp" );dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand );
 
 ```
 
@@ -977,17 +580,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Maximize Desirability;
-Wait( 1 );
-obj << Adapt Y Axis;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Maximize Desirability;Wait( 1 );obj << Adapt Y Axis;
 
 ```
 
@@ -1001,25 +594,7 @@ obj << Adapt Y Axis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Add Shapley graph scripts to data table( 1 ),
-	Save Shapley Values
-));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Add Shapley graph scripts to data table( 1 ),	Save Shapley Values));
 
 ```
 
@@ -1033,17 +608,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Animation( Tour Type( "Sequential" ), Go );
-Wait( 3 );
-obj << Animation( "Stop" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Animation( Tour Type( "Sequential" ), Go );Wait( 3 );obj << Animation( "Stop" );
 
 ```
 
@@ -1055,15 +620,7 @@ obj << Animation( "Stop" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Append Settings to Table;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Append Settings to Table;
 
 ```
 
@@ -1075,16 +632,7 @@ obj << Append Settings to Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-Wait( 2 );
-obj << Arrange in Rows( 2 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));Wait( 2 );obj << Arrange in Rows( 2 );
 
 ```
 
@@ -1098,22 +646,7 @@ obj << Arrange in Rows( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 ),
-	Term Value(
-		SILICA( 1.75, Lock( 0 ), Show( 1 ) ),
-		SILANE( 45.2, Lock( 0 ), Show( 1 ) ),
-		SULFUR( 2.45, Lock( 0 ), Show( 1 ) )
-	)
-);
-obj << Contour Profiler( 1 );
-Wait( 1 );
-obj << Broadcast Factor Settings;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ),	Term Value(		SILICA( 1.75, Lock( 0 ), Show( 1 ) ),		SILANE( 45.2, Lock( 0 ), Show( 1 ) ),		SULFUR( 2.45, Lock( 0 ), Show( 1 ) )	));obj << Contour Profiler( 1 );Wait( 1 );obj << Broadcast Factor Settings;
 
 ```
 
@@ -1125,14 +658,7 @@ obj << Broadcast Factor Settings;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
 
 ```
 
@@ -1144,19 +670,7 @@ obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Uniform Inputs( 1 );
-Wait( 1 );
-subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<
-get scriptable object);
-subobj << Colorize Profiler;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Uniform Inputs( 1 );Wait( 1 );subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<get scriptable object);subobj << Colorize Profiler;
 
 ```
 
@@ -1170,16 +684,7 @@ subobj << Colorize Profiler;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Overlaid Interactions( 1 );
-Wait( 1 );
-obj << Combinations( "Many-Way" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Overlaid Interactions( 1 );Wait( 1 );obj << Combinations( "Many-Way" );
 
 ```
 
@@ -1193,27 +698,7 @@ obj << Combinations( "Many-Way" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-r = dt << Select Rows( [5, 7, 8, 10] );
-r << Exclude;
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Compute Shapley values for all rows( 1 ),
-	Save Shapley Values
-));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );r = dt << Select Rows( [5, 7, 8, 10] );r << Exclude;obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Compute Shapley values for all rows( 1 ),	Save Shapley Values));
 
 ```
 
@@ -1225,9 +710,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Animals.jmp" );
-obj1 = dt << Run Script( "Repeated Measures Model" );
-obj1 << Profiler( Conditional Predictions( 1 ) );
+dt = Open( "$SAMPLE_DATA/Animals.jmp" );obj1 = dt << Run Script( "Repeated Measures Model" );obj1 << Profiler( Conditional Predictions( 1 ) );
 
 ```
 
@@ -1239,18 +722,7 @@ obj1 << Profiler( Conditional Predictions( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj1 = dt << Run Script( "RSM for 4 Responses" );
-obj1 << Prediction Formula;
-obj1 << StdErr Pred Formula;
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION 2, :Pred Formula MODULUS 2, :Pred SE ABRASION,
-		:Pred SE MODULUS
-	)
-);
-Wait( 1 );
-obj << Confidence Intervals( 0 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj1 = dt << Run Script( "RSM for 4 Responses" );obj1 << Prediction Formula;obj1 << StdErr Pred Formula;obj = dt << Profiler(	Y(		:Pred Formula ABRASION 2, :Pred Formula MODULUS 2, :Pred SE ABRASION,		:Pred SE MODULUS	));Wait( 1 );obj << Confidence Intervals( 0 );
 
 ```
 
@@ -1262,15 +734,7 @@ obj << Confidence Intervals( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Contour Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Contour Profiler( 1 );
 
 ```
 
@@ -1282,16 +746,7 @@ obj << Contour Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Converge limit( 0.0001 );
-obj << Optimize;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Converge limit( 0.0001 );obj << Optimize;
 
 ```
 
@@ -1303,23 +758,7 @@ obj << Optimize;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Set to Data in Row( 4 );
-obj << Copy Settings Script;
-obj2 = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-Wait( 1 );
-obj2 << Paste Settings Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Set to Data in Row( 4 );obj << Copy Settings Script;obj2 = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 1 );obj2 << Paste Settings Script;
 
 ```
 
@@ -1331,15 +770,7 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Custom Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Custom Profiler( 1 );
 
 ```
 
@@ -1351,14 +782,7 @@ obj << Custom Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Data Points( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Data Points( 1 );
 
 ```
 
@@ -1370,14 +794,7 @@ obj << Data Points( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Default N Grid Points( 5 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Default N Grid Points( 5 );
 
 ```
 
@@ -1393,15 +810,7 @@ obj << Default N Grid Points( 5 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Dependent Resampled Inputs( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Dependent Resampled Inputs( 1 );
 
 ```
 
@@ -1417,41 +826,7 @@ obj << Dependent Resampled Inputs( 1 );
 
 ```jsl
 
-
-dt = Open( "$Sample_Data/Tiretread.jmp" );
-dt:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 120 ), Show Limits( 1 )} );
-dt:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 1200 ), Show Limits( 1 )} );
-dt:Pred Formula ELONG << Set Property(
-	"Spec Limits",
-	{LSL( 350 ), USL( 500 ), Show Limits( 1 )}
-);
-dt:Pred Formula HARDNESS << Set Property(
-	"Spec Limits",
-	{LSL( 65 ), USL( 75 ), Show Limits( 1 )}
-);
-dt:Pred Formula ABRASION << Set Property(
-	"Predicting",
-	{:ABRASION, Creator( "Fit Least Squares" ), RMSE( 3 )}
-);
-dt:Pred Formula MODULUS << Set Property(
-	"Predicting",
-	{:MODULUS, Creator( "Fit Least Squares" ), RMSE( 100 )}
-);
-dt:Pred Formula ELONG << Set Property(
-	"Predicting",
-	{:ELONG, Creator( "Fit Least Squares" ), RMSE( 10 )}
-);
-dt:Pred Formula HARDNESS << Set Property(
-	"Predicting",
-	{:HARDNESS, Creator( "Fit Least Squares" ), RMSE( .6 )}
-);
-Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Profiler( 1, Desirability Functions( 0 ), Design Space Profiler( 1 ) )
-);
+dt = Open( "$Sample_Data/Tiretread.jmp" );dt:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 120 ), Show Limits( 1 )} );dt:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 1200 ), Show Limits( 1 )} );dt:Pred Formula ELONG << Set Property(	"Spec Limits",	{LSL( 350 ), USL( 500 ), Show Limits( 1 )});dt:Pred Formula HARDNESS << Set Property(	"Spec Limits",	{LSL( 65 ), USL( 75 ), Show Limits( 1 )});dt:Pred Formula ABRASION << Set Property(	"Predicting",	{:ABRASION, Creator( "Fit Least Squares" ), RMSE( 3 )});dt:Pred Formula MODULUS << Set Property(	"Predicting",	{:MODULUS, Creator( "Fit Least Squares" ), RMSE( 100 )});dt:Pred Formula ELONG << Set Property(	"Predicting",	{:ELONG, Creator( "Fit Least Squares" ), RMSE( 10 )});dt:Pred Formula HARDNESS << Set Property(	"Predicting",	{:HARDNESS, Creator( "Fit Least Squares" ), RMSE( .6 )});Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Profiler( 1, Desirability Functions( 0 ), Design Space Profiler( 1 ) ));
 
 ```
 
@@ -1463,14 +838,7 @@ Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );
 
 ```
 
@@ -1482,14 +850,7 @@ obj << Desirability Functions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Edit Constraints;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Edit Constraints;
 
 ```
 
@@ -1503,15 +864,7 @@ obj << Edit Constraints;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
-obj = dt << Fit Model(
-	Y( :Oxy ),
-	Effects( :Age, :Weight, :Runtime, :RunPulse, :RstPulse, :MaxPulse ),
-	Personality( "Standard Least Squares" ),
-	Emphasis( "Minimal Report" ),
-	Run
-);
-obj << Profiler( Extrapolation Control Option( "On" ) );
+dt = Open( "$SAMPLE_DATA/Fitness.jmp" );obj = dt << Fit Model(	Y( :Oxy ),	Effects( :Age, :Weight, :Runtime, :RunPulse, :RstPulse, :MaxPulse ),	Personality( "Standard Least Squares" ),	Emphasis( "Minimal Report" ),	Run);obj << Profiler( Extrapolation Control Option( "On" ) );
 
 ```
 
@@ -1525,15 +878,7 @@ obj << Profiler( Extrapolation Control Option( "On" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Fitness.jmp" );
-obj = dt << Fit Model(
-	Y( :Oxy ),
-	Effects( :Age, :Weight, :Runtime, :RunPulse, :RstPulse, :MaxPulse ),
-	Personality( "Standard Least Squares" ),
-	Emphasis( "Minimal Report" ),
-	Run
-);
-obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 ) );
+dt = Open( "$SAMPLE_DATA/Fitness.jmp" );obj = dt << Fit Model(	Y( :Oxy ),	Effects( :Age, :Weight, :Runtime, :RunPulse, :RstPulse, :MaxPulse ),	Personality( "Standard Least Squares" ),	Emphasis( "Minimal Report" ),	Run);obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 ) );
 
 ```
 
@@ -1551,15 +896,7 @@ obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Formulas for OPTMODEL;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Formulas for OPTMODEL;
 
 ```
 
@@ -1571,12 +908,7 @@ obj << Formulas for OPTMODEL;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
-obj = dt << Profiler(
-	Y( :Pred Formula Y ),
-	Profiler( 1, Profile at Boundary( "Stop at Boundaries" ), )
-);
-obj << Get Constraints;
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Profiler(	Y( :Pred Formula Y ),	Profiler( 1, Profile at Boundary( "Stop at Boundaries" ), ));obj << Get Constraints;
 
 ```
 
@@ -1588,16 +920,7 @@ obj << Get Constraints;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-d = obj << Get Desirability;
-Show( d );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );d = obj << Get Desirability;Show( d );
 
 ```
 
@@ -1609,15 +932,7 @@ Show( d );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Get Factor Settings;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Get Factor Settings;
 
 ```
 
@@ -1629,15 +944,7 @@ obj << Get Factor Settings;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Get Factor Settings Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Get Factor Settings Script;
 
 ```
 
@@ -1649,16 +956,7 @@ obj << Get Factor Settings Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Resampled Inputs( 1 );
-obj << Get Main Indices;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Resampled Inputs( 1 );obj << Get Main Indices;
 
 ```
 
@@ -1670,28 +968,7 @@ obj << Get Main Indices;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ), SILANE << Fixed( 50 ),
-		SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << Add Random Noise( 1 ),
-		Pred Formula HARDNESS << Add Random Weighted Noise( 1 )
-	)
-);
-obj2 = obj << Get Simulator;
-obj2 << Simulation Experiment;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ), SILANE << Fixed( 50 ),		SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << Add Random Noise( 1 ),		Pred Formula HARDNESS << Add Random Weighted Noise( 1 )	));obj2 = obj << Get Simulator;obj2 << Simulation Experiment;
 
 ```
 
@@ -1703,16 +980,7 @@ obj2 << Simulation Experiment;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Resampled Inputs( 1 );
-obj << Get Total Indices;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Resampled Inputs( 1 );obj << Get Total Indices;
 
 ```
 
@@ -1726,16 +994,7 @@ obj << Get Total Indices;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-Wait( 2 );
-obj << Graph Spacing( 20 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));Wait( 2 );obj << Graph Spacing( 20 );
 
 ```
 
@@ -1743,21 +1002,11 @@ obj << Graph Spacing( 20 );
 
 **構文:** obj &lt;&lt; Hide Desirability Row( state=0|1 )
 
-**説明:** Hides or unhides the row of desirability profiles.
+**説明:** 満足度プロファイルの行の表示/非表示を切り替える。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Desirability Functions( 1 );
-Wait( 1 );
-obj << Hide Desirability Row( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Desirability Functions( 1 );Wait( 1 );obj << Hide Desirability Row( 1 );
 
 ```
 
@@ -1771,15 +1020,7 @@ obj << Hide Desirability Row( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-Wait( 0.5 );
-obj << Hide Y Variables( :Pred Formula MODULUS );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 0.5 );obj << Hide Y Variables( :Pred Formula MODULUS );
 
 ```
 
@@ -1791,15 +1032,7 @@ obj << Hide Y Variables( :Pred Formula MODULUS );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Resampled Inputs( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Resampled Inputs( 1 );
 
 ```
 
@@ -1811,15 +1044,7 @@ obj << Independent Resampled Inputs( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Uniform Inputs( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Uniform Inputs( 1 );
 
 ```
 
@@ -1831,14 +1056,7 @@ obj << Independent Uniform Inputs( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Interaction Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Interaction Profiler( 1 );
 
 ```
 
@@ -1850,16 +1068,7 @@ obj << Interaction Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Script( "Constraint", {1 * :LDL + 1 * :HDL <= 250} );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Linearly Constrained Inputs( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Script( "Constraint", {1 * :LDL + 1 * :HDL <= 250} );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Linearly Constrained Inputs( 1 );
 
 ```
 
@@ -1871,19 +1080,7 @@ obj << Linearly Constrained Inputs( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Prediction Profiler( 1 );
-obj << Contour Profiler( 1 );
-obj << Link Profilers( 1 );
-Wait( 1 );
-obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Prediction Profiler( 1 );obj << Contour Profiler( 1 );obj << Link Profilers( 1 );Wait( 1 );obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ```
 
@@ -1891,28 +1088,11 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 **構文:** obj &lt;&lt; Load Constraints from Table
 
-**説明:** Loads linear constraints from a data table.
+**説明:** 線形制約をデータテーブルからロードする。
 
 ```jsl
 
-
-dtlc = New Table( "Linear Constraints",
-	Add Rows( 2 ),
-	New Column( "SILICA", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 2] ) ),
-	New Column( "SILANE", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [0, 0] ) ),
-	New Column( "SULFUR", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 1] ) ),
-	New Column( "Comparison", Character, "Nominal", Set Values( {">=", "<="} ) ),
-	New Column( "RHS", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [3, 6] ) )
-);
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Load Constraints from Table( dtlc );
-obj << Profile at Boundary( "Stop at Boundaries" );
+dtlc = New Table( "Linear Constraints",	Add Rows( 2 ),	New Column( "SILICA", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 2] ) ),	New Column( "SILANE", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [0, 0] ) ),	New Column( "SULFUR", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 1] ) ),	New Column( "Comparison", Character, "Nominal", Set Values( {">=", "<="} ) ),	New Column( "RHS", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [3, 6] ) ));dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Load Constraints from Table( dtlc );obj << Profile at Boundary( "Stop at Boundaries" );
 
 ```
 
@@ -1924,16 +1104,7 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Log Iterations( 1 );
-obj << Optimize;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Log Iterations( 1 );obj << Optimize;
 
 ```
 
@@ -1945,16 +1116,7 @@ obj << Optimize;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Max Cycles( 5 );
-obj << Optimize;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Max Cycles( 5 );obj << Optimize;
 
 ```
 
@@ -1966,16 +1128,7 @@ obj << Optimize;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << MaxIter( 10 );
-obj << Optimize;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << MaxIter( 10 );obj << Optimize;
 
 ```
 
@@ -1987,16 +1140,7 @@ obj << Optimize;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-Wait( 2 );
-obj << Maximize Desirability;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );Wait( 2 );obj << Maximize Desirability;
 
 ```
 
@@ -2008,15 +1152,7 @@ obj << Maximize Desirability;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Maximize and Remember;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Maximize and Remember;
 
 ```
 
@@ -2028,16 +1164,7 @@ obj << Maximize and Remember;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Term Value( SILANE( 60, Lock( 1 ) ) );
-obj << Maximize For Each Grid Point;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Term Value( SILANE( 60, Lock( 1 ) ) );obj << Maximize For Each Grid Point;
 
 ```
 
@@ -2051,16 +1178,7 @@ obj << Maximize For Each Grid Point;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Overlaid Interactions( 1 );
-Wait( 1 );
-obj << Maximum Number of Curves( 100 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Overlaid Interactions( 1 );Wait( 1 );obj << Maximum Number of Curves( 100 );
 
 ```
 
@@ -2076,14 +1194,7 @@ obj << Maximum Number of Curves( 100 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Output Grid Table;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Output Grid Table;
 
 ```
 
@@ -2095,14 +1206,7 @@ obj << Output Grid Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Output Random Table( 1000 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Output Random Table( 1000 );
 
 ```
 
@@ -2114,14 +1218,7 @@ obj << Output Random Table( 1000 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Overlaid Interactions( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Overlaid Interactions( 1 );
 
 ```
 
@@ -2133,23 +1230,7 @@ obj << Overlaid Interactions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Set to Data in Row( 4 );
-obj << Copy Settings Script;
-obj2 = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-Wait( 1 );
-obj2 << Paste Settings Script;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Set to Data in Row( 4 );obj << Copy Settings Script;obj2 = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 1 );obj2 << Paste Settings Script;
 
 ```
 
@@ -2161,20 +1242,7 @@ obj2 << Paste Settings Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-dt2 = dt << Subset(
-	All rows,
-	columns( :SILICA, :SILANE, :SULFUR ),
-	Output Table( "Subset" )
-);
-obj << Predict For Another Table( dt2 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));dt2 = dt << Subset(	All rows,	columns( :SILICA, :SILANE, :SULFUR ),	Output Table( "Subset" ));obj << Predict For Another Table( dt2 );
 
 ```
 
@@ -2186,25 +1254,7 @@ obj << Predict For Another Table( dt2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << Fit Model(
-	Y( :ELONG ),
-	Effects( :SILICA, :SILANE, :SULFUR, :SILANE * :SILANE ),
-	Personality( "Standard Least Squares" ),
-	Emphasis( "Minimal Report" ),
-	Run(
-		Profiler(
-			1,
-			Confidence Intervals( 1 ),
-			Prediction Intervals( 1 ),
-			Desirability Functions( 0 )
-		),
-		:ELONG << {Summary of Fit( 0 ), Analysis of Variance( 0 ), Parameter Estimates( 1 ),
-		Effect Tests( 0 ), Effect Details( 0 ), Lack of Fit( 0 ),
-		Plot Actual by Predicted( 0 ), Plot Regression( 0 ), Plot Residual by Predicted( 0 ),
-		Effect Summary( 0 )}
-	)
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << Fit Model(	Y( :ELONG ),	Effects( :SILICA, :SILANE, :SULFUR, :SILANE * :SILANE ),	Personality( "Standard Least Squares" ),	Emphasis( "Minimal Report" ),	Run(		Profiler(			1,			Confidence Intervals( 1 ),			Prediction Intervals( 1 ),			Desirability Functions( 0 )		),		:ELONG << {Summary of Fit( 0 ), Analysis of Variance( 0 ), Parameter Estimates( 1 ),		Effect Tests( 0 ), Effect Details( 0 ), Lack of Fit( 0 ),		Plot Actual by Predicted( 0 ), Plot Regression( 0 ), Plot Residual by Predicted( 0 ),		Effect Summary( 0 )}	));
 
 ```
 
@@ -2216,15 +1266,7 @@ dt << Fit Model(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Prediction Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Prediction Profiler( 1 );
 
 ```
 
@@ -2236,17 +1278,7 @@ obj << Prediction Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Donev Mixture Data.jmp" );
-obj1 = Fit Model(
-	Y( :Damping ),
-	Effects( :CuSO4 & RS & Mixture, :Na2S2O3 & RS & Mixture, :Glyoxal & RS & Mixture ),
-	Personality( "Standard Least Squares" ),
-	Run Model( 1 )
-);
-obj1 << Prediction Formula;
-obj2 = Profiler( Y( :Pred Formula Damping ) );
-Wait( 1 );
-obj2 << Profile at Boundary( "Stop at Boundaries" );
+dt = Open( "$SAMPLE_DATA/Design Experiment/Donev Mixture Data.jmp" );obj1 = Fit Model(	Y( :Damping ),	Effects( :CuSO4 & RS & Mixture, :Na2S2O3 & RS & Mixture, :Glyoxal & RS & Mixture ),	Personality( "Standard Least Squares" ),	Run Model( 1 ));obj1 << Prediction Formula;obj2 = Profiler( Y( :Pred Formula Damping ) );Wait( 1 );obj2 << Profile at Boundary( "Stop at Boundaries" );
 
 ```
 
@@ -2258,11 +1290,7 @@ obj2 << Profile at Boundary( "Stop at Boundaries" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-:Pred Formula ABRASION << Set Property( Sigma, 5 );
-:Pred Formula MODULUS << Set Property( Sigma, 100 );
-obj = dt << Profiler( Y( :Pred Formula ABRASION, :Pred Formula MODULUS ) );
-obj << Prop of Error Bars( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );:Pred Formula ABRASION << Set Property( Sigma, 5 );:Pred Formula MODULUS << Set Property( Sigma, 100 );obj = dt << Profiler( Y( :Pred Formula ABRASION, :Pred Formula MODULUS ) );obj << Prop of Error Bars( 1 );
 
 ```
 
@@ -2274,15 +1302,7 @@ obj << Prop of Error Bars( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Remember Settings;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Remember Settings;
 
 ```
 
@@ -2296,18 +1316,7 @@ obj << Remember Settings;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
-obj = dt << Run Script( "SEM: Path Analysis w / Latent" );
-rpt = obj << Report();
-rpt["Model Specification"] << Close( 1 );
-obj << Prediction Profiler(
-	1,
-	Confidence Intervals( 1 ),
-	Term Value( Leadership( 0, Lock( 0 ), Show( 1 ) ), Conflict( 0, Lock( 0 ), Show( 1 ) ) ),
-	Y Terms( Conflict, Satisfaction )
-);
-scobj = rpt[Outline Box( "Prediction Profiler" )] << Get Scriptable Object();
-scobj << Remove Profiler;
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis w / Latent" );rpt = obj << Report();rpt["Model Specification"] << Close( 1 );obj << Prediction Profiler(	1,	Confidence Intervals( 1 ),	Term Value( Leadership( 0, Lock( 0 ), Show( 1 ) ), Conflict( 0, Lock( 0 ), Show( 1 ) ) ),	Y Terms( Conflict, Satisfaction ));scobj = rpt[Outline Box( "Prediction Profiler" )] << Get Scriptable Object();scobj << Remove Profiler;
 
 ```
 
@@ -2319,15 +1328,7 @@ scobj << Remove Profiler;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-Wait( 2 );
-obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 2 );obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
 
 ```
 
@@ -2339,17 +1340,7 @@ obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-Wait( 2 );
-obj << Reorder Y Variables(
-	:Pred Formula HARDNESS, :Pred Formula MODULUS, :Pred Formula ELONG
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 2 );obj << Reorder Y Variables(	:Pred Formula HARDNESS, :Pred Formula MODULUS, :Pred Formula ELONG);
 
 ```
 
@@ -2361,19 +1352,7 @@ obj << Reorder Y Variables(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Uniform Inputs( 1 );
-Wait( 1 );
-subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<
-get scriptable object);
-subobj << Reorder factors by main effect importance;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Uniform Inputs( 1 );Wait( 1 );subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<get scriptable object);subobj << Reorder factors by main effect importance;
 
 ```
 
@@ -2385,20 +1364,7 @@ subobj << Reorder factors by main effect importance;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-fit = Neural(
-	Y( :Y ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-fit << Save Formulas;
-obj = Profiler( Y( :Predicted Y ), Expand );
-obj << Independent Uniform Inputs( 1 );
-subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<
-get scriptable object);
-subobj << Reorder factors by main effect importance;
-Wait( 1 );
-subobj << Reorder factors by total importance;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );fit = Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);fit << Save Formulas;obj = Profiler( Y( :Predicted Y ), Expand );obj << Independent Uniform Inputs( 1 );subobj = (Report( obj )["Variable Importance: Independent Uniform Inputs"] <<get scriptable object);subobj << Reorder factors by main effect importance;Wait( 1 );subobj << Reorder factors by total importance;
 
 ```
 
@@ -2420,14 +1386,7 @@ subobj << Reorder factors by total importance;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Reset Factor Grid;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Reset Factor Grid;
 
 ```
 
@@ -2439,18 +1398,7 @@ obj << Reset Factor Grid;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Pred Formula ABRASION << Response Limits(
-		{Lower( 90, 0.9819 ), Middle( 145, 0.5 ), Upper( 200, 0.066 ), Goal( Minimize ),
-		Importance( 1 )}
-	)
-);
-obj << Desirability Functions( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Pred Formula ABRASION << Response Limits(		{Lower( 90, 0.9819 ), Middle( 145, 0.5 ), Upper( 200, 0.066 ), Goal( Minimize ),		Importance( 1 )}	));obj << Desirability Functions( 1 );
 
 ```
 
@@ -2464,16 +1412,7 @@ obj << Desirability Functions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Overlaid Interactions( 1 );
-Wait( 1 );
-obj << Samples per Factor( 10 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Overlaid Interactions( 1 );Wait( 1 );obj << Samples per Factor( 10 );
 
 ```
 
@@ -2485,65 +1424,31 @@ obj << Samples per Factor( 10 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Neural(
-	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),
-	X( :SILICA, :SILANE, :SULFUR ),
-	Crossvalidation( No Crossvalidation ),
-	Go
-);
-obj << Profiler( Save Bagged Predictions( 10 ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Neural(	Y( :ABRASION, :MODULUS, :ELONG, :HARDNESS ),	X( :SILICA, :SILANE, :SULFUR ),	Crossvalidation( No Crossvalidation ),	Go);obj << Profiler( Save Bagged Predictions( 10 ) );
 
 ```
 
-### Save Constraints to Script
+### Save Constraints to New Table
 
-**構文:** obj &lt;&lt; Save Constraints to Script
+**構文:** obj &lt;&lt; Save Constraints to New Table
+
+**説明:** 既存の線形制約を新しいデータテーブルに保存する。
+
+```jsl
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );dt << New Script(	"Constraint",	{1 * :SILICA + 1 * :SULFUR >= 3, 2 * :SILICA + 1 * :SULFUR <= 6});obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Save Constraints to New Table;
+
+```
+
+### Save Constraints to Table Script
+
+**構文:** obj &lt;&lt; Save Constraints to Table Script
 
 **説明:** 既存の線形制約を、「制約」と呼ばれるテーブルスクリプトに保存する。
 
 ```jsl
 
-dtlc = New Table( "Linear Constraints",
-	Add Rows( 2 ),
-	New Column( "SILICA", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 2] ) ),
-	New Column( "SILANE", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [0, 0] ) ),
-	New Column( "SULFUR", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 1] ) ),
-	New Column( "Comparison", Character, "Nominal", Set Values( {">=", "<="} ) ),
-	New Column( "RHS", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [3, 6] ) )
-);
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Load Constraints from Table( dtlc );
-obj << Save Constraints to Script;
-
-```
-
-### Save Constraints to Table
-
-**構文:** obj &lt;&lt; Save Constraints to Table
-
-**説明:** Saves existing linear constraints to a new data table.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-dt << New Script(
-	"Constraint",
-	{1 * :SILICA + 1 * :SULFUR >= 3, 2 * :SILICA + 1 * :SULFUR <= 6}
-);
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Save Constraints to Table;
+dtlc = New Table( "Linear Constraints",	Add Rows( 2 ),	New Column( "SILICA", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 2] ) ),	New Column( "SILANE", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [0, 0] ) ),	New Column( "SULFUR", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [1, 1] ) ),	New Column( "Comparison", Character, "Nominal", Set Values( {">=", "<="} ) ),	New Column( "RHS", Numeric, "Continuous", Format( "Best", 12 ), Set Values( [3, 6] ) ));dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Load Constraints from Table( dtlc );obj << Save Constraints to Table Script;
 
 ```
 
@@ -2555,15 +1460,7 @@ obj << Save Constraints to Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Save Desirabilities;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Save Desirabilities;
 
 ```
 
@@ -2575,15 +1472,7 @@ obj << Save Desirabilities;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Save Desirability Formula;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Save Desirability Formula;
 
 ```
 
@@ -2595,9 +1484,7 @@ obj << Save Desirability Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
-obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
-obj << Save Expanded Formulas;
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );obj << Save Expanded Formulas;
 
 ```
 
@@ -2611,21 +1498,7 @@ obj << Save Expanded Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler( 1, Save Shapley Values ));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler( 1, Save Shapley Values ));
 
 ```
 
@@ -2637,14 +1510,7 @@ obj << (Fit[1] << Profiler( 1, Save Shapley Values ));
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Sensitivity Indicator( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Sensitivity Indicator( 1 );
 
 ```
 
@@ -2656,15 +1522,7 @@ obj << Sensitivity Indicator( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Set Desirabilities;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Set Desirabilities;
 
 ```
 
@@ -2676,17 +1534,7 @@ obj << Set Desirabilities;
 
 ```jsl
 
-ProfileCallbackLog = Function( {arg}, Show( arg ) );
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Set Script( ProfileCallbackLog );
-obj << Term Value( :Silica( 1 ) );
+ProfileCallbackLog = Function( {arg}, Show( arg ) );dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Set Script( ProfileCallbackLog );obj << Term Value( :Silica( 1 ) );
 
 ```
 
@@ -2700,22 +1548,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Neural(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Informative Missing( 0 ),
-	Validation Method( "Holdback", 0.3333 ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Desirability Functions( 1 ),
-	Extrapolation Details( 1 ),
-	Extrapolation Control Option( "Warning On" ),
-	Set Threshold Criterion( General Extrapolation Control Multiplier( 4 ) )
-));
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Informative Missing( 0 ),	Validation Method( "Holdback", 0.3333 ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Desirability Functions( 1 ),	Extrapolation Details( 1 ),	Extrapolation Control Option( "Warning On" ),	Set Threshold Criterion( General Extrapolation Control Multiplier( 4 ) )));
 
 ```
 
@@ -2727,16 +1560,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-Wait( 2 );
-obj << Set to Data in Row( 4 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));Wait( 2 );obj << Set to Data in Row( 4 );
 
 ```
 
@@ -2750,26 +1574,7 @@ obj << Set to Data in Row( 4 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Shapley Background Data Choice( Number of rows of training data set ),
-	Shapley Number of Rows of Training Data( 150 ),
-	Save Shapley Values
-));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Shapley Background Data Choice( Number of rows of training data set ),	Shapley Number of Rows of Training Data( 150 ),	Save Shapley Values));
 
 ```
 
@@ -2783,21 +1588,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shapley Values ));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shapley Values ));
 
 ```
 
@@ -2811,26 +1602,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shaple
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Shapley Background Data Choice( Number of rows of training data set ),
-	Shapley Number of Rows of Training Data( 125 ),
-	Save Shapley Values
-));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Shapley Background Data Choice( Number of rows of training data set ),	Shapley Number of Rows of Training Data( 125 ),	Save Shapley Values));
 
 ```
 
@@ -2844,26 +1616,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler(
-	1,
-	Shapley Background Data Choice( Percent training data set ),
-	Shapley Percent Training Data( 50 ),
-	Save Shapley Values
-));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler(	1,	Shapley Background Data Choice( Percent training data set ),	Shapley Percent Training Data( 50 ),	Save Shapley Values));
 
 ```
 
@@ -2877,21 +1630,7 @@ obj << (Fit[1] << Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );
-obj = dt << Neural(
-	Y( :Percent Body Fat ),
-	X(
-		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,
-		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,
-		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,
-		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,
-		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n
-	),
-	Validation Method( :Validation ),
-	Set Random Seed( 123 ),
-	Fit( NTanH( 3 ) )
-);
-obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Values ));
+dt = Open( "$SAMPLE_DATA/Body Fat.jmp" );obj = dt << Neural(	Y( :Percent Body Fat ),	X(		:"Age (years)"n, :"Weight (lbs)"n, :"Height (inches)"n, :"Neck circumference (cm)"n,		:"Chest circumference (cm)"n, :"Abdomen circumference (cm)"n,		:"Hip circumference (cm)"n, :"Thigh circumference (cm)"n, :"Knee circumference (cm)"n,		:"Ankle circumference (cm)"n, :"Biceps (extended) circumference (cm)"n,		:"Forearm circumference (cm)"n, :"Wrist circumference (cm)"n	),	Validation Method( :Validation ),	Set Random Seed( 123 ),	Fit( NTanH( 3 ) ));obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Values ));
 
 ```
 
@@ -2905,25 +1644,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Va
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );
-fm = dt << Fit Model(
-	Y( :y ),
-	Effects( :Drug, :x, :Drug * :x ),
-	Personality( "Standard Least Squares" ),
-	Emphasis( "Minimal Report" ),
-	Run(
-		:y << {Summary of Fit( 0 ), Analysis of Variance( 0 ), Parameter Estimates( 1 ),
-		Effect Tests( 0 ), Effect Details( 0 ), Lack of Fit( 0 ), Scaled Estimates( 0 ),
-		Plot Actual by Predicted( 0 ), Plot Regression( 0 ), Plot Residual by Predicted( 0 ),
-		Plot Studentized Residuals( 0 ), Plot Effect Leverage( 0 ),
-		Plot Residual by Normal Quantiles( 0 ), Box Cox Y Transformation( 0 )},
-		Effect Summary( 0 )
-	)
-);
-
-predForm = fm << Save Columns( "Prediction Formula" );
-
-Profiler( Y( predForm ), Show Creator( 1 ) );
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );fm = dt << Fit Model(	Y( :y ),	Effects( :Drug, :x, :Drug * :x ),	Personality( "Standard Least Squares" ),	Emphasis( "Minimal Report" ),	Run(		:y << {Summary of Fit( 0 ), Analysis of Variance( 0 ), Parameter Estimates( 1 ),		Effect Tests( 0 ), Effect Details( 0 ), Lack of Fit( 0 ), Scaled Estimates( 0 ),		Plot Actual by Predicted( 0 ), Plot Regression( 0 ), Plot Residual by Predicted( 0 ),		Plot Studentized Residuals( 0 ), Plot Effect Leverage( 0 ),		Plot Residual by Normal Quantiles( 0 ), Box Cox Y Transformation( 0 )},		Effect Summary( 0 )	));predForm = fm << Save Columns( "Prediction Formula" );Profiler( Y( predForm ), Show Creator( 1 ) );
 
 ```
 
@@ -2935,15 +1656,7 @@ Profiler( Y( predForm ), Show Creator( 1 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Show Formulas;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Show Formulas;
 
 ```
 
@@ -2955,15 +1668,7 @@ obj << Show Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Simulator( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Simulator( 1 );
 
 ```
 
@@ -2977,16 +1682,7 @@ obj << Simulator( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Overlaid Interactions( 1 );
-Wait( 1 );
-obj << Spanning Range( "Two Standard Deviations" );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Overlaid Interactions( 1 );Wait( 1 );obj << Spanning Range( "Two Standard Deviations" );
 
 ```
 
@@ -2998,15 +1694,7 @@ obj << Spanning Range( "Two Standard Deviations" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Surface Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Surface Profiler( 1 );
 
 ```
 
@@ -3018,16 +1706,7 @@ obj << Surface Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-Wait( 2 );
-obj << Term Value( SILANE( 60, Lock( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );Wait( 2 );obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```
 
@@ -3039,16 +1718,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Desirability Functions( 1 )
-);
-obj << Trips( 10 );
-obj << Optimize;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ));obj << Trips( 10 );obj << Optimize;
 
 ```
 
@@ -3056,20 +1726,11 @@ obj << Optimize;
 
 **構文:** obj &lt;&lt; Unthreaded( state=0|1 )
 
-**説明:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
+**説明:** プロファイルにおいて、トレース・等高線グリッド・最適化のトリップを実行するときに、マルチスレッド処理をオフにする。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = dt << Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Desirability Functions( 1 );
-obj << Unthreaded( 1 );
-obj << Maximize Desirability;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Unthreaded( 1 );obj << Maximize Desirability;
 
 ```
 
@@ -3085,21 +1746,7 @@ obj << Maximize Desirability;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );
 
 ```
 
@@ -3113,25 +1760,7 @@ obj2 = obj << Design Space Profiler( 1 );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Connect Hide Mode( 1 );
-dt2 = obj2 << Make and Connect Random Table( 10000, Add Random Noise );
-dt2 << Run Script( (dt2 << Get Table Script Names)[1] );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Connect Hide Mode( 1 );dt2 = obj2 << Make and Connect Random Table( 10000, Add Random Noise );dt2 << Run Script( (dt2 << Get Table Script Names)[1] );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```
 
@@ -3143,25 +1772,19 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );dt2 = obj << Output Random Table( 10000, Add Random Noise );dt2 << Run Script( (dt2 << Get Table Script Names)[1] );obj2 << Connect to Table( dt2 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-dt2 = obj << Output Random Table( 10000, Add Random Noise );
-dt2 << Run Script( (dt2 << Get Table Script Names)[1] );
-obj2 << Connect to Table( dt2 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
+```
+
+#### Error StdDev
+
+**構文:** obj &lt;&lt; Error StdDev( Set Error StdDev(colume name(value),...) )
+
+**説明:** 応答変数の誤差標準偏差を設定する。ここで設定した値は、シミュレーションにて応答変数の誤差を生成するのに使われる。
+
+```jsl
+
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Error StdDev( Pred Formula Yield( 2.0 ) );
 
 ```
 
@@ -3173,22 +1796,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Get Midpoints from Profiler( 0.5 );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Get Midpoints from Profiler( 0.5 );
 
 ```
 
@@ -3196,26 +1804,11 @@ obj2 << Get Midpoints from Profiler( 0.5 );
 
 **構文:** obj &lt;&lt; Lock( Lock(colume name(lock_value),...) )
 
-**説明:** Locks the continuous factor at the specified value. This lock is temporary.
+**説明:** 連続尺度の因子を指定された値でロックする。このロックは一時的なものである。
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Lock( Ethanol( 5 ) );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Lock( Ethanol( 5 ) );
 
 ```
 
@@ -3227,28 +1820,7 @@ obj2 << Lock( Ethanol( 5 ) );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-dt2 = obj2 << Make and Connect Random Table(
-	10000,
-	Add Random Noise( 1 ),
-	Embed Factor Space Scatterplots
-);
-Wait( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );dt2 = obj2 << Make and Connect Random Table(	10000,	Add Random Noise( 1 ),	Embed Factor Space Scatterplots);Wait( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```
 
@@ -3268,24 +1840,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Move Inward( 4 );
-Wait( 2 );
-obj2 << Move Outward;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Move Inward( 4 );Wait( 2 );obj2 << Move Outward;
 
 ```
 
@@ -3297,25 +1852,7 @@ obj2 << Move Outward;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
-obj2 << Move Outward( 2 );
-Wait( 2 );
-obj2 << Move Outward;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );obj2 << Move Outward( 2 );Wait( 2 );obj2 << Move Outward;
 
 ```
 
@@ -3327,29 +1864,7 @@ obj2 << Move Outward;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-Wait( 1 );
-obj2 << Reset Factor Space(
-	Butanol( -0.275, 11 ),
-	Ethanol( -0.25, 10.25 ),
-	Methanol( -0.25, 10.25 ),
-	Propanol( -0.25, 10.25 ),
-	Time( 0.95, 3 )
-);
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );Wait( 1 );obj2 << Reset Factor Space(	Butanol( -0.275, 11 ),	Ethanol( -0.25, 10.25 ),	Methanol( -0.25, 10.25 ),	Propanol( -0.25, 10.25 ),	Time( 0.95, 3 ));
 
 ```
 
@@ -3365,23 +1880,7 @@ obj2 << Reset Factor Space(
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
-obj2 << Save X Spec Limits;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );obj2 << Save X Spec Limits;
 
 ```
 
@@ -3393,23 +1892,7 @@ obj2 << Save X Spec Limits;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
-obj2 << Send Limits to Profiler as Constraints;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );obj2 << Send Limits to Profiler as Constraints;
 
 ```
 
@@ -3421,23 +1904,7 @@ obj2 << Send Limits to Profiler as Constraints;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
-obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
 
 ```
 
@@ -3449,23 +1916,7 @@ obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
-obj2 << Send Midpoints to Profiler;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );obj2 << Send Midpoints to Profiler;
 
 ```
 
@@ -3477,22 +1928,7 @@ obj2 << Send Midpoints to Profiler;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```
 
@@ -3504,22 +1940,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Show Corners;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Show Corners;
 
 ```
 
@@ -3531,22 +1952,7 @@ obj2 << Show Corners;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Show Current Profiler Values( 1 );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Show Current Profiler Values( 1 );
 
 ```
 
@@ -3554,26 +1960,11 @@ obj2 << Show Current Profiler Values( 1 );
 
 **構文:** obj &lt;&lt; Show Impact Ratios( state=0|1 )
 
-**説明:** Shows or hides the impact ratios. These ratios show how sensitive changes in each factor, from midpoint to each limit, affect how far the predictions are from their specification limits.
+**説明:** 影響比の表示/非表示を切り替える。影響比は、因子の1つずつにおいて、その因子値を中間値からその因子の仕様限界値へと変更した場合の予測値の変化量を分子に、中間点での予測値と応答変数の仕様限界との差を分子にして計算された指標である。
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Show Impact Ratios;
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 30 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.8 )} ));obj = Profiler( Y( :Pred Formula Yield ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Show Impact Ratios;
 
 ```
 
@@ -3585,32 +1976,7 @@ obj2 << Show Impact Ratios;
 
 ```jsl
 
-
-Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );
-New Column( "Pred Formula Yield",
-	Numeric,
-	Continuous,
-	Formula(
-		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol
-		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *
-		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {LSL( 26 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.1 )} )
-);
-New Column( "Pred Formula Impurities",
-	Numeric,
-	Continuous,
-	Formula(
-		0.3 + -0.08 * :Ethanol + 0.06 * :Propanol + 0.12 * :Time + 0.06 * :Ethanol * :Time
-	),
-	Set Property( "Spec Limits", {USL( 1 ), Show Limits( 1 )} ),
-	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 24642 ), Std Dev( 0.2 )} )
-);
-obj = Profiler( Y( :Pred Formula Yield, :Pred Formula Impurities ) );
-obj2 = obj << Design Space Profiler( 1 );
-obj2 << Show Portion for Each Response( 1 );
-obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
+Open( "$Sample_Data/Design Experiment/Extraction Data.jmp" );New Column( "Pred Formula Yield",	Numeric,	Continuous,	Formula(		42.69 + -0.347 * :Butanol - 6.650 * :Ethanol - 2.286 * :Methanol - 0.326 * :Propanol		 - 10.380 * :Time + 0.415 * :Methanol ^ 2 + 0.0467 * :Butanol * :Methanol + 0.111 *		:Ethanol * :Propanol + 4.313 * :Ethanol * :Time	),	Set Property( "Spec Limits", {LSL( 26 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 12321 ), Std Dev( 2.1 )} ));New Column( "Pred Formula Impurities",	Numeric,	Continuous,	Formula(		0.3 + -0.08 * :Ethanol + 0.06 * :Propanol + 0.12 * :Time + 0.06 * :Ethanol * :Time	),	Set Property( "Spec Limits", {USL( 1 ), Show Limits( 1 )} ),	Set Property( "Predicting", {:Yield, Creator( "DEMO" ), ID( 24642 ), Std Dev( 0.2 )} ));obj = Profiler( Y( :Pred Formula Yield, :Pred Formula Impurities ) );obj2 = obj << Design Space Profiler( 1 );obj2 << Show Portion for Each Response( 1 );obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
 
 ```
 
@@ -3626,24 +1992,7 @@ obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	)
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	));
 
 ```
 
@@ -3659,29 +2008,7 @@ obj << Simulator(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	),
-	Simulate
-);
-simobj = obj << Get Simulator;
-simobj << Automatic Histogram Update( 1 );
-Wait( 1 );
-obj << Term Value( SILANE( 60, Lock( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	),	Simulate);simobj = obj << Get Simulator;simobj << Automatic Histogram Update( 1 );Wait( 1 );obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```
 
@@ -3689,28 +2016,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	),
-	Automatic Histogram Update( 1 ),
-	Simulate
-);
-Wait( 1 );
-obj << Term Value( SILANE( 60, Lock( 1 ) ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	),	Automatic Histogram Update( 1 ),	Simulate);Wait( 1 );obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```
 
@@ -3724,31 +2030,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
-:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Simulator(
-		1,
-		Factors(
-			SILICA << Random( Normal( 1.25, 0.3266 ) ),
-			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-		),
-		Responses(
-			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-		),
-		Defect Profiler( 1 ),
-		Simulate
-	)
-);
-
-simobj = obj << Get Simulator;
-simobj << Defect Parametric Profile( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Simulator(		1,		Factors(			SILICA << Random( Normal( 1.25, 0.3266 ) ),			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )		),		Responses(			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise		),		Defect Profiler( 1 ),		Simulate	));simobj = obj << Get Simulator;simobj << Defect Parametric Profile( 1 );
 
 ```
 
@@ -3756,29 +2038,7 @@ simobj << Defect Parametric Profile( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
-:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Simulator(
-		1,
-		Factors(
-			SILICA << Random( Normal( 1.25, 0.3266 ) ),
-			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-		),
-		Responses(
-			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-		),
-		Defect Profiler( 1 ),
-		Defect Parametric Profile( 1 ),
-		Simulate
-	)
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Simulator(		1,		Factors(			SILICA << Random( Normal( 1.25, 0.3266 ) ),			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )		),		Responses(			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise		),		Defect Profiler( 1 ),		Defect Parametric Profile( 1 ),		Simulate	));
 
 ```
 
@@ -3792,29 +2052,7 @@ obj = Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
-:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Simulator(
-		1,
-		Factors(
-			SILICA << Random( Normal( 1.25, 0.3266 ) ),
-			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-		),
-		Responses(
-			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-		),
-		Simulate
-	)
-);
-simobj = obj << Get Simulator;
-simobj << Defect Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Simulator(		1,		Factors(			SILICA << Random( Normal( 1.25, 0.3266 ) ),			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )		),		Responses(			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise		),		Simulate	));simobj = obj << Get Simulator;simobj << Defect Profiler( 1 );
 
 ```
 
@@ -3822,28 +2060,7 @@ simobj << Defect Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );
-:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	),
-	Simulator(
-		1,
-		Factors(
-			SILICA << Random( Normal( 1.25, 0.3266 ) ),
-			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-		),
-		Responses(
-			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-		),
-		Defect Profiler( 1 ),
-		Simulate
-	)
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );:Pred Formula ABRASION << Set Property( "Spec Limits", {LSL( 110 )} );:Pred Formula MODULUS << Set Property( "Spec Limits", {LSL( 750 ), USL( 1700 )} );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Simulator(		1,		Factors(			SILICA << Random( Normal( 1.25, 0.3266 ) ),			SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )		),		Responses(			Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,			Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise		),		Defect Profiler( 1 ),		Simulate	));
 
 ```
 
@@ -3855,26 +2072,7 @@ obj = Profiler(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	),
-
-);
-obj << Simulator( N Runs( 2500 ), Simulate );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	),);obj << Simulator( N Runs( 2500 ), Simulate );
 
 ```
 
@@ -3886,25 +2084,7 @@ obj << Simulator( N Runs( 2500 ), Simulate );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Simulate
-);
-Wait( 1 );
-obj << Term Value( SILANE( 60, Lock( 1 ) ) );
-simobj = obj << Get Simulator;
-simobj << Resimulate;
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Simulate);Wait( 1 );obj << Term Value( SILANE( 60, Lock( 1 ) ) );simobj = obj << Get Simulator;simobj << Resimulate;
 
 ```
 
@@ -3916,26 +2096,7 @@ simobj << Resimulate;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	),
-
-);
-obj << Simulator( Set Random Seed( 1234 ), Simulate );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	),);obj << Simulator( Set Random Seed( 1234 ), Simulate );
 
 ```
 
@@ -3949,27 +2110,7 @@ obj << Simulator( Set Random Seed( 1234 ), Simulate );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	)
-);
-simobj = obj << Get Simulator;
-simobj << Simulate to table(
-	N Runs( 20 ),
-	SILICA << Sequence Location( .5, 2, 4 ),
-	SILANE << Sequence Location( 35, 65, 4 ),
-	SULFUR << Sequence Location( 1.5, 3, 4 )
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	));simobj = obj << Get Simulator;simobj << Simulate to table(	N Runs( 20 ),	SILICA << Sequence Location( .5, 2, 4 ),	SILANE << Sequence Location( 35, 65, 4 ),	SULFUR << Sequence Location( 1.5, 3, 4 ));
 
 ```
 
@@ -3977,28 +2118,7 @@ simobj << Simulate to table(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	)
-);
-obj << Simulator(
-	Simulate to table(
-		N Runs( 20 ),
-		SILICA << Sequence Location( .5, 2, 4 ),
-		SILANE << Sequence Location( 35, 65, 4 ),
-		SULFUR << Sequence Location( 1.5, 3, 4 )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	));obj << Simulator(	Simulate to table(		N Runs( 20 ),		SILICA << Sequence Location( .5, 2, 4 ),		SILANE << Sequence Location( 35, 65, 4 ),		SULFUR << Sequence Location( 1.5, 3, 4 )	));
 
 ```
 
@@ -4012,26 +2132,7 @@ obj << Simulator(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	)
-);
-simobj = obj << Get Simulator;
-simobj << Simulation Experiment( NRun( 100 ), Portion( 0.6 ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	));simobj = obj << Get Simulator;simobj << Simulation Experiment( NRun( 100 ), Portion( 0.6 ) );
 
 ```
 
@@ -4039,25 +2140,7 @@ simobj << Simulation Experiment( NRun( 100 ), Portion( 0.6 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	)
-);
-obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.0 ), Run ) );
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	));obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.0 ), Run ) );
 
 ```
 
@@ -4069,27 +2152,7 @@ obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Multivariate( 1.2, 0.3266 ), SILANE << Multivariate( 50, 6.532 ),
-		SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
-		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise
-	),
-	Automatic Histogram Update( 1 ),
-	X Correlations( 1, {SILICA, SILANE, SULFUR}, [1 0.3 0, 0.3 1 0, 0 0 1] ),
-	Simulate
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Multivariate( 1.2, 0.3266 ), SILANE << Multivariate( 50, 6.532 ),		SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << No Noise, Pred Formula HARDNESS << No Noise	),	Automatic Histogram Update( 1 ),	X Correlations( 1, {SILICA, SILANE, SULFUR}, [1 0.3 0, 0.3 1 0, 0 0 1] ),	Simulate);
 
 ```
 
@@ -4101,32 +2164,7 @@ obj << Simulator(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
-obj = Profiler(
-	Y(
-		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
-		:Pred Formula HARDNESS
-	)
-);
-obj << Simulator(
-	1,
-	Factors(
-		SILICA << Random( Normal( 1.25, 0.3266 ) ),
-		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )
-	),
-	Responses(
-		Pred Formula ABRASION << Add Multivariate Noise( 1 ),
-		Pred Formula MODULUS << No Noise, Pred Formula ELONG << Add Multivariate Noise( 1 ),
-		Pred Formula HARDNESS << No Noise
-	),
-	Y Correlations(
-		1,
-		{Pred Formula ABRASION, Pred Formula MODULUS, Pred Formula ELONG,
-		Pred Formula HARDNESS},
-		[1 0.15 0.27 0, 0.15 1 0 0, 0.27 0 1 0, 0 0 0 1]
-	),
-	Simulate
-);
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ),		SILANE << Random( Normal weighted( 50, 6.532 ) ), SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << Add Multivariate Noise( 1 ),		Pred Formula MODULUS << No Noise, Pred Formula ELONG << Add Multivariate Noise( 1 ),		Pred Formula HARDNESS << No Noise	),	Y Correlations(		1,		{Pred Formula ABRASION, Pred Formula MODULUS, Pred Formula ELONG,		Pred Formula HARDNESS},		[1 0.15 0.27 0, 0.15 1 0 0, 0.27 0 1 0, 0 0 0 1]	),	Simulate);
 
 ```
 

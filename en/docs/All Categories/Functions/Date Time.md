@@ -180,7 +180,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -214,15 +214,13 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
 ### Format Date
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -248,9 +246,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -264,11 +260,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -372,7 +364,7 @@ In Years( 1 );
 
 ### Informat
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -414,12 +406,7 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -509,7 +496,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -551,12 +538,7 @@ Informat( "123.45%", "Percent" );
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -612,10 +594,7 @@ Short Date( Today() );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -667,11 +646,7 @@ Week Of Year( Today() );
 
 ```jsl
 
-Show(
-	Week Of Year( 01jan2012, 1 ),
-	Week Of Year( 01jan2012, 2 ),
-	Week Of Year( 01jan2012, 3 )
-);
+Show(	Week Of Year( 01jan2012, 1 ),	Week Of Year( 01jan2012, 2 ),	Week Of Year( 01jan2012, 3 ));
 
 ```
 

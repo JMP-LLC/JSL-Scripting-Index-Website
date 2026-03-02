@@ -14,8 +14,7 @@
 
 ```python
 
-import jmp
-print(jmp.ALL_HOME)
+import jmpprint(jmp.ALL_HOME)
 
 ```
 
@@ -29,8 +28,7 @@ print(jmp.ALL_HOME)
 
 ```python
 
-import jmp
-print(jmp.BUILTIN_SCRIPTS)
+import jmpprint(jmp.BUILTIN_SCRIPTS)
 
 ```
 
@@ -44,8 +42,7 @@ print(jmp.BUILTIN_SCRIPTS)
 
 ```python
 
-import jmp
-print(jmp.DESKTOP)
+import jmpprint(jmp.DESKTOP)
 
 ```
 
@@ -59,8 +56,7 @@ print(jmp.DESKTOP)
 
 ```python
 
-import jmp
-print(jmp.DOCUMENTS)
+import jmpprint(jmp.DOCUMENTS)
 
 ```
 
@@ -74,8 +70,7 @@ print(jmp.DOCUMENTS)
 
 ```python
 
-import jmp
-print(jmp.DOWNLOADS)
+import jmpprint(jmp.DOWNLOADS)
 
 ```
 
@@ -89,12 +84,7 @@ print(jmp.DOWNLOADS)
 
 ```python
 
-import jmp
-
-# for the sake of typing
-from jmp import DataType as dType
-print('jmp.DataType members:')
-print( list(map(lambda c: c.name, dType)) )
+import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jmp.DataType members:')print( list(map(lambda c: c.name, dType)) )
 
 ```
 
@@ -108,8 +98,7 @@ print( list(map(lambda c: c.name, dType)) )
 
 ```python
 
-import jmp
-print(jmp.HOME)
+import jmpprint(jmp.HOME)
 
 ```
 
@@ -123,8 +112,7 @@ print(jmp.HOME)
 
 ```python
 
-import jmp
-print(jmp.JMPPRJ)
+import jmpprint(jmp.JMPPRJ)
 
 ```
 
@@ -138,12 +126,7 @@ print(jmp.JMPPRJ)
 
 ```python
 
-import jmp
-
-# for the sake of typing
-from jmp import ModelingType as mType
-print('jmp.ModleingType members:')
-print( list(map(lambda c: c.name, mType)) )
+import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint('jmp.ModleingType members:')print( list(map(lambda c: c.name, mType)) )
 
 ```
 
@@ -157,11 +140,7 @@ print( list(map(lambda c: c.name, mType)) )
 
 ```python
 
-import jmp
-
-import platform
-if platform.system() == "Windows":
-    print(jmp.PYTHONW_EXE)
+import jmpimport platformif platform.system() == "Windows":    print(jmp.PYTHONW_EXE)
 
 ```
 
@@ -175,8 +154,7 @@ if platform.system() == "Windows":
 
 ```python
 
-import jmp
-print(jmp.PYTHON_EXE)
+import jmpprint(jmp.PYTHON_EXE)
 
 ```
 
@@ -190,8 +168,7 @@ print(jmp.PYTHON_EXE)
 
 ```python
 
-import jmp
-print(jmp.PY_USER_APPDIR)
+import jmpprint(jmp.PY_USER_APPDIR)
 
 ```
 
@@ -205,8 +182,7 @@ print(jmp.PY_USER_APPDIR)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_APPS)
+import jmpprint(jmp.SAMPLE_APPS)
 
 ```
 
@@ -220,8 +196,7 @@ print(jmp.SAMPLE_APPS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_DASHBOARDS)
+import jmpprint(jmp.SAMPLE_DASHBOARDS)
 
 ```
 
@@ -235,8 +210,7 @@ print(jmp.SAMPLE_DASHBOARDS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_DATA)
+import jmpprint(jmp.SAMPLE_DATA)
 
 ```
 
@@ -250,8 +224,7 @@ print(jmp.SAMPLE_DATA)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_IMAGES)
+import jmpprint(jmp.SAMPLE_IMAGES)
 
 ```
 
@@ -265,8 +238,7 @@ print(jmp.SAMPLE_IMAGES)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_IMPORT_DATA)
+import jmpprint(jmp.SAMPLE_IMPORT_DATA)
 
 ```
 
@@ -280,8 +252,7 @@ print(jmp.SAMPLE_IMPORT_DATA)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_PROJECTS)
+import jmpprint(jmp.SAMPLE_PROJECTS)
 
 ```
 
@@ -295,8 +266,7 @@ print(jmp.SAMPLE_PROJECTS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_SCRIPTS)
+import jmpprint(jmp.SAMPLE_SCRIPTS)
 
 ```
 
@@ -310,8 +280,7 @@ print(jmp.SAMPLE_SCRIPTS)
 
 ```python
 
-import jmp
-print(jmp.TEMP)
+import jmpprint(jmp.TEMP)
 
 ```
 
@@ -325,8 +294,7 @@ print(jmp.TEMP)
 
 ```python
 
-import jmp
-print(jmp.USER_APPDATA)
+import jmpprint(jmp.USER_APPDATA)
 
 ```
 
@@ -340,8 +308,7 @@ print(jmp.USER_APPDATA)
 
 ```python
 
-import jmp
-print(jmp.__jmp_version__)
+import jmpprint(jmp.__jmp_version__)
 
 ```
 
@@ -355,8 +322,7 @@ print(jmp.__jmp_version__)
 
 ```python
 
-import jmp
-print(jmp.__version__)
+import jmpprint(jmp.__version__)
 
 ```
 
@@ -370,10 +336,7 @@ print(jmp.__version__)
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(jmp.current())
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
 
 ```
 
@@ -387,193 +350,95 @@ print(jmp.current())
 
 ```python
 
-import jmp
-
-from jmp import eval, Expression
-expression = Expression("2 + 2")
-result = eval(expression)
-print(result)
+import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")result = eval(expression)print(result)
 
 ```
 
 ### from_dataframe
 
-**구문:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
+**구문:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;, visibility=&lt;string&gt;)
 
 **설명:** 프로토콜 호환 라이브러리의 데이터 프레임에서 jmp.DataTable 개체를 반환합니다.
 
 **JMP추가된 버전:** 19
 
-#### CSV Fallback
+#### CSV 대체 변환
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas')
-
-import pandas as pd
-
-# Object columns are unsupported with jmp.from_dataframe() 
-df = pd.DataFrame({
-    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
-})
-
-dt = jmp.from_dataframe(df)
-print(dt)
+import jmpimport jmputils        try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe(df)print(dt)
 
 ```
 
-#### Ibis to JMP
+#### Ibis에서 JMP로
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas ibis-framework[duckdb,examples]')
-
-import pandas as pd
-import ibis
-
-pandas_df = pd.DataFrame(
-    [["a", 1, 2], ["b", 3, 4]],
-    columns=["one", "two", "three"],
-)
-t = ibis.memtable(pandas_df, name="t")
-print(t)
-dt = jmp.from_dataframe(t)
-print(dt)
+import jmpimport jmputils try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)    jmputils.jpip('install', 'ibis-framework[duckdb,examples]') except Exception as e:    print(f'Install failed with exception: {e}')          import pandas as pd import ibis  pandas_df = pd.DataFrame(     [["a", 1, 2], ["b", 3, 4]],     columns=["one", "two", "three"], ) t = ibis.memtable(pandas_df, name="t") print(t) dt = jmp.from_dataframe(t) print(dt)
 
 ```
 
-#### JMP to Pandas
+#### JMP에서 Pandas로
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas')
-
-import pandas as pd
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-pandas_df = (pd.api.interchange.from_dataframe(dt))
-print(pandas_df)
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pddt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")pandas_df = (pd.api.interchange.from_dataframe(dt))print(pandas_df)
 
 ```
 
-#### JMP to Polars
+#### JMP에서 Polars로
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'polars')
- 
-import polars as pl
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-polars_df = pl.from_dataframe(dt)
-print(polars_df)
+import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as pldt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")polars_df = pl.from_dataframe(dt)print(polars_df)
 
 ```
 
-#### Pandas to JMP
+#### Pandas에서 JMP로
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'numpy pandas')
-
-import pandas as pd
-import numpy as np
-
-pandas_df = pd.DataFrame(
-    {
-        "A": 1.0,
-        "B": pd.Timestamp("20130102"),
-        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
-        "D": np.array([3] * 4, dtype="int32"),
-        "E": pd.Categorical(["test", "train", "test", "train"]),
-        "F": "foo",
-    }
-)
-print(pandas_df)
-
-dt = jmp.from_dataframe(pandas_df)
-print(dt)
+import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df)print(dt)
 
 ```
 
-#### Polars to JMP
+#### Polars에서 JMP로
 
 ```python
 
-import jmp
+import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as plfrom datetime import datepolars_df = pl.DataFrame( {    "foo": [1, 2, 3],    "bar": [6.0, 7.0, 8.0],    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],  } ) print(polars_df) dt = jmp.from_dataframe(polars_df) print(dt)
 
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'polars')
+```
 
-import polars as pl
-from datetime import date
+#### Visibility
 
-polars_df = pl.DataFrame(
-    {
-        "foo": [1, 2, 3],
-        "bar": [6.0, 7.0, 8.0],
-        "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
-    }
-)
-print(polars_df)
-dt = jmp.from_dataframe(polars_df)
-print(dt)
+```python
+
+import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df, visibility="invisible")#dt = jmp.from_dataframe(pandas_df, visibility="private")print(dt)
 
 ```
 
 ### from_dataframe_using_csv
 
-**구문:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
+**구문:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;, visibility=&lt;string&gt;)
 
 **설명:** 제공된 CSV 변환 방법을 사용하여 라이브러리의 데이터 프레임에서 jmp.DataTable 개체를 반환합니다.
 
 **JMP추가된 버전:** 19
 
+#### General
+
 ```python
 
-import jmp
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})try:    # Try converting object without CSV fallback    dt = jmp.from_dataframe(df, True, False)    print("Converted using jmp.from_dataframe()")except:     # Explicitly convert using CSV    dt = jmp.from_dataframe_using_csv(df)    print("Converted using jmp.from_dataframe_using_csv()")print(dt)
 
-import jmputils
-jmputils.jpip('install', 'pandas')
+```
 
-import pandas as pd
+#### Visibility
 
-# Object columns are unsupported with jmp.from_dataframe() 
-df = pd.DataFrame({
-    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
-})
+```python
 
-try:
-    # Try converting object without CSV fallback
-    dt = jmp.from_dataframe(df, True, False)
-    print("Converted using jmp.from_dataframe()")
-except: 
-    # Explicitly convert using CSV
-    dt = jmp.from_dataframe_using_csv(df)
-    print("Converted using jmp.from_dataframe_using_csv()")
-
-print(dt)
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe_using_csv(df, visibility="invisible")#dt = jmp.from_dataframe_using_csv(df, visibility="private")print(dt)
 
 ```
 
@@ -589,10 +454,7 @@ print(dt)
 
 ```python
 
-import jmp
-
-obj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')
-print(obj)
+import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
 
 ```
 
@@ -600,10 +462,7 @@ print(obj)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(dt)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```
 
@@ -611,10 +470,7 @@ print(dt)
 
 ```python
 
-import jmp
-
-obj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')
-print(obj)
+import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
 
 ```
 
@@ -622,19 +478,7 @@ print(obj)
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
-dt = jmp.current()
-print(dt)  # => None
-try:
-  dt = jmp.table('Animals')
-except FileNotFoundError:
-  print('Requested table not found')
-dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
-print(dt)
-dt.close(save=False)
-del dt
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt = jmp.current()print(dt)  # => Nonetry:  dt = jmp.table('Animals')except FileNotFoundError:  print('Requested table not found')dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')print(dt)dt.close(save=False)del dt
 
 ```
 
@@ -642,18 +486,7 @@ del dt
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
-dt = jmp.current()
-print(dt)  # success
-dt = jmp.table('Animals')
-print(dt)  # success
-# Select and run the above first if you want to see that even though
-# there is no window, Animals.jmp appears in recent files and
-# home window's list of files
-dt.close(save=False);
-del dt
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')dt = jmp.current()print(dt)  # successdt = jmp.table('Animals')print(dt)  # success# Select and run the above first if you want to see that even though# there is no window, Animals.jmp appears in recent files and# home window's list of filesdt.close(save=False);del dt
 
 ```
 
@@ -667,13 +500,7 @@ del dt
 
 ```python
 
-import jmp
-
-path_value = jmp.path_variable('SAMPLE_DATA')
-if not path_value:
-    print('Invalid path variable.')
-else:
-    print(path_value)
+import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:    print('Invalid path variable.')else:    print(path_value)
 
 ```
 
@@ -687,10 +514,7 @@ else:
 
 ```python
 
-import jmp
-
-rName = jmp.r_name('c d e')
-print(rName)
+import jmprName = jmp.r_name('c d e')print(rName)
 
 ```
 
@@ -698,18 +522,13 @@ print(rName)
 
 **구문:** jmp.reset()
 
-**설명:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**설명:** 공유 Python 환경을 재설정하며 주로 개체에 대한 모든 참조를 제거합니다. 단, 가져온 모듈의 가져오기 캐시는 변경되지 않습니다. 이는 Python 환경 자체의 제한 사항입니다. 공유 라이브러리를 로드하는 모듈은 실행 중인 프로세스에서 언로드할 수 없습니다. 순수형 Python 코드를 다시 로드하려면 Python.org 문서에서 importlib reload()를 검색하여 참조하십시오.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-pi = 3.1415927
-print(pi)
-jmp.reset()
-print(pi)
+import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
 
 ```
 
@@ -725,14 +544,7 @@ print(pi)
 
 ```python
 
-import jmp
-
-value = jmp.run_jsl('''
-Names default to here(1);
-an A = 1.5;
-x = 5 * anA;
-''')
-print( f'{value} = jmp.run_jsl()')
+import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 * anA;''')print( f'{value} = jmp.run_jsl()')
 
 ```
 
@@ -740,9 +552,7 @@ print( f'{value} = jmp.run_jsl()')
 
 ```python
 
-import jmp
-
-jmp.run_jsl('Python Get Version();')
+import jmpjmp.run_jsl('Python Get Version();')
 
 ```
 
@@ -750,24 +560,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```python
 
-import jmp
-
-# Create a data table
-# dt = jmp.DataTable(name='table_name', rows=n)
-pbp = jmp.DataTable(rows=5)
-pbp.name = 'Powered by Python'
-pbp.new_column('Name', jmp.DataType.Character)
-pbp.new_column('Hourly Rate')
-#
-pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']
-pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missing
-pbp[1][4] = 17.25
-#
-# Change column format: Hourly Rate
-jmp.run_jsl('''
-Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );
-Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
-''')
+import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n)pbp = jmp.DataTable(rows=5)pbp.name = 'Powered by Python'pbp.new_column('Name', jmp.DataType.Character)pbp.new_column('Hourly Rate')#pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missingpbp[1][4] = 17.25## Change column format: Hourly Ratejmp.run_jsl('''Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );Data Table( "Powered by Python" ):Name << Set Display Width( 75 );''')
 
 ```
 
@@ -781,10 +574,7 @@ Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print( jmp.table('Big Class') )
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( jmp.table('Big Class') )
 
 ```
 
@@ -800,56 +590,17 @@ print( jmp.table('Big Class') )
 
 #### Ability to copy with copy.copy
 
-**설명:** DataConnector objects support shallow copying with the standard copy.copy function.
+**설명:** DataConnector 개체는 표준 copy.copy 함수를 사용하여 얕은 복사를 지원합니다.
 
 
 
-Changing the copying behavior in subclasses is not supported, so subclasses should not add additional instance attributes because they will not be copied.
+하위 클래스에서 복사 동작을 변경하는 것은 지원되지 않으므로 다른 인스턴스 속성을 더 추가하지 않아야 합니다. 복사되지 않기 때문입니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-import copy
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {'My Option': int}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource(copy.copy(self))
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def __init__(self, config):
-        self._config = config
-        print("Connecting to data source")
-
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table(self, schema, table):
-        dt = jmp.DataTable(rows=1, visibility='private')
-        dt.new_column('column')
-        dt['column'] = [self._config['My Option']]
-        return dt
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" ),
-            My Option( 42 )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpimport copyclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource(copy.copy(self))jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def __init__(self, config):        self._config = config        print("Connecting to data source")    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column')        dt['column'] = [self._config['My Option']]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" ),            My Option( 42 )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
@@ -863,32 +614,7 @@ New SQL Query(
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {"Example Field": str}
-
-class ExampleConnector(jmp.DataConnector):
-    ...
-
-    def _do_as_data_source(self):
-        ef = self["Example Field"]
-        # When running the JSL below, ef will be "example value"
-        print(f"{ef=}")
-        ...
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-# This will fail but only after printing the value
-jmp.run_jsl("""
-    New SQL Query( Connection(
-        New Data Connector(
-            Type("Python:__main__:ExampleConnectorType"),
-            Example Field("example value")
-        )
-    ) ) << Modify
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {"Example Field": str}class ExampleConnector(jmp.DataConnector):    ...    def _do_as_data_source(self):        ef = self["Example Field"]        # When running the JSL below, ef will be "example value"        print(f"{ef=}")        ...jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# This will fail but only after printing the valuejmp.run_jsl("""    New SQL Query( Connection(        New Data Connector(            Type("Python:__main__:ExampleConnectorType"),            Example Field("example value")        )    ) ) << Modify""", echo=False)
 
 ```
 
@@ -896,55 +622,17 @@ jmp.run_jsl("""
 
 **구문:** def _do_as_data_source(self) -&gt; jmp.DataSource:
 
-**설명:** Subclasses should override this function to create a connection. The returned connection, in the form of a subclass of jmp.DataSource, enables integration with Query Builder.
+**설명:** 하위 클래스에서 이 함수를 재정의하여 연결을 생성해야 합니다. jmp.DataSource의 하위 클래스 형태로 반환된 연결을 통해 쿼리 빌더와 통합할 수 있습니다.
 
 
 
-Avoid storing and using a reference to the connector instance (self) in the returned data source. Other code might also hold a reference and change configuration values unexpectedly. Instead, consider using copy.copy to make an independent copy to refer to, like "self_copy = copy.copy(self)".
+반환된 데이터 소스에서 커넥터 인스턴스(self)에 대한 참조를 저장하거나 사용하지 않아야 합니다. 다른 코드에서도 참조를 유지하고 예기치 않게 구성 값을 변경할 수 있기 때문입니다. 대신 "self_copy = copy.copy(self)"처럼 copy.copy를 사용하여 개별 복사본을 만들어 참조하는 것이 좋습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {'My Option': int}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource(self['My Option'])
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def __init__(self, my_option):
-        self._my_option = my_option
-        print("Connecting to data source")
-
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table(self, schema, table):
-        dt = jmp.DataTable(rows=1, visibility='private')
-        dt.new_column('column')
-        dt['column'] = [self._my_option]
-        return dt
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" ),
-            My Option( 42 )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource(self['My Option'])jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def __init__(self, my_option):        self._my_option = my_option        print("Connecting to data source")    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column')        dt['column'] = [self._my_option]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" ),            My Option( 42 )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
@@ -952,37 +640,17 @@ New SQL Query(
 
 **구문:** def _do_open(self) -&gt; jmp.DataTable:
 
-**설명:** Subclasses can override this function to open a table directly. This function implements the Open message in JSL (New Data Connector(...) << Open()).
+**설명:** 하위 클래스에서 이 함수를 재정의하여 테이블을 직접 열 수 있습니다. 이 함수는 JSL에서 Open 메시지를 구현합니다(New Data Connector(...) << Open()).
 
 
 
-If both this function and _do_as_data_source are implemented, they should be able to open the same set of tables.
+이 함수와 _do_as_data_source가 모두 구현된 경우 둘 다 동일한 테이블 집합을 열 수 있어야 합니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {'My Option': int}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_open(self):
-        dt = jmp.DataTable(rows=1)
-        dt.new_column('column')
-        dt['column'] = [self['My Option']]
-        return dt
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-jmp.run_jsl(r"""
-New Data Connector(
-    Type( "Python:__main__:ExampleConnectorType" ),
-    My Option( 42 )
-) << Open();
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_open(self):        dt = jmp.DataTable(rows=1)        dt.new_column('column')        dt['column'] = [self['My Option']]        return dtjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    My Option( 42 )) << Open();""", echo=False)
 
 ```
 
@@ -990,37 +658,17 @@ New Data Connector(
 
 **구문:** jmp.DataConnector.tie(DataConnectorTypeClass, DataConnectorClass)
 
-**설명:** Associates a jmp.DataConnectorType subclass and a jmp.DataConnector subclass, "tying" them together and completing the definitions of both classes. This association gives the jmp.DataConnector subclass access to the jmp.DataConnectorType subclass and its field definitions. It also ensures that the jmp.DataConnectorType subclass creates jmp.DataConnector instances using the specified subclass.
+**설명:** jmp.DataConnectorType 하위 클래스와 jmp.DataConnector 하위 클래스를 연결하여 서로 "묶고" 두 클래스의 정의를 완성합니다. 이 연결을 통해 jmp.DataConnector 하위 클래스가 jmp.DataConnectorType 하위 클래스 및 필드 정의에 액세스할 수 있습니다. 또한 jmp.DataConnectorType 하위 클래스가 지정된 jmp.DataConnector 하위 클래스를 사용하여 인스턴스를 생성하도록 보장합니다.
 
 
 
-This function creates the association by setting attributes on the subclasses.
+이 함수는 하위 클래스에 속성을 설정하여 연결을 생성합니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {'My Option': int}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_open(self):
-        dt = jmp.DataTable(rows=1)
-        dt.new_column('column')
-        dt['column'] = [self['My Option']]
-        return dt
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-jmp.run_jsl(r"""
-New Data Connector(
-    Type( "Python:__main__:ExampleConnectorType" ),
-    My Option( 42 )
-) << Open();
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_open(self):        dt = jmp.DataTable(rows=1)        dt.new_column('column')        dt['column'] = [self['My Option']]        return dtjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    My Option( 42 )) << Open();""", echo=False)
 
 ```
 
@@ -1040,96 +688,49 @@ New Data Connector(
 
 **구문:** field = jmp.DataConnectorField(type, &lt;default=DEFAULT_VALUE,&gt; &lt;tooltip="TOOLTIP" | None,&gt; &lt;ui_name="UI NAME" | None,&gt; &lt;credential="CREDENTIAL TYPE" | None,&gt; &lt;sensitive=True | False,&gt; &lt;mask_input=True | False&gt;)
 
-**설명:** DataConnectorField defines a field.
+**설명:** DataConnectorField는 필드를 정의합니다.
 
 
 
-Base arguments:
+기본 인수:
 
 
 
-type: The type of the field, such as int (see jmp.DataConnectorType.fields for more information).
+type: int 등의 필드 유형입니다(자세한 내용은 jmp.DataConnectorType.fields 참조).
 
 
 
-default: The default value for the field, such as 42. If not provided, the default value depends on the type. The default value is None if that is supported, for example, if the type is "int | None". Otherwise, it is the "empty" value for the type: "" for str, 0 for int, and False for bool.
+default: 필드의 기본값(예: 42)이며 제공하지 않을 경우 기본값은 type에 따라 달라집니다. 예를 들어 type이 "int | None"처럼 None을 지원하는 경우 기본값은 &apos;None&apos;이고, 그렇지 않은 경우 해당 유형의 "비어 있는" 값이 기본값이 됩니다. 즉, str은 "", int는 0, bool은 False입니다.
 
 
 
-tooltip: If provided and not None, it is used as a tooltip for the field in the data connector editor.
+tooltip: &apos;None&apos; 이외의 값을 제공한 경우 데이터 커넥터 편집기에서 필드의 툴팁으로 사용됩니다.
 
 
 
-ui_name: If provided and not None, it is used as the name of the field in the data connector editor instead of the actual name of the field.
+ui_name: &apos;None&apos; 이외의 값을 제공한 경우 데이터 커넥터 편집기에서 필드의 실제 이름 대신 필드 이름으로 사용됩니다.
 
 
 
-Extra arguments when type is "str" or "str | None":
+type이 "str" 또는 "str | None"일 때 추가 인수:
 
 
 
-credential: If provided and not None, the type of credential stored by this field. The valid values are "username" and "password". JMP uses this information to enable placeholder support.
+credential: &apos;None&apos; 이외의 값을 제공한 경우 이 필드에 저장되는 자격 증명의 유형입니다. 유효한 값은 "username"과 "password"입니다. JMP는 이 정보를 사용하여 placeholder 지원을 활성화합니다.
 
 
 
-sensitive: When true, this field is considered to hold sensitive information and as such its values are not written out in plain text. Defaults to true if "credential" is set and false otherwise.
+sensitive: true인 경우 이 필드는 중요한 정보를 포함하는 것으로 간주되어 값이 일반 텍스트로 출력되지 않습니다. 기본값은 "credential"이 설정된 경우 true이고 그렇지 않은 경우 false입니다.
 
 
 
-mask_input: When true, the value is obscured and shown with dots in the Data Connector Editor. Defaults to true if "credential" is "password" or "sensitive" is true and credential is not set.
+mask_input: true인 경우 데이터 커넥터 편집기에서 값이 가려지고 점으로 표시됩니다. 기본값은 "credential"이 "password"이거나, "sensitive"가 true이고 credential이 설정되지 않은 경우 true입니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    _DCF = jmp.DataConnectorField
-    fields = {
-        "Field 1": int,
-        # Same as Field 1 but uses jmp.DataConnectorField instead of a bare type
-        "Field 2": _DCF(int),
-        # Like Field 1 and Field 2 but adds a tooltip
-        "Field 3": _DCF(int, tooltip="The third field."),
-        # Like Field 1 and Field 2 but adds a default value and a tooltip
-        "Field 4": _DCF(int, default=42, tooltip="The fourth field."),
-        # ui_name is useful for JSL-unfriendly names or localization
-        "JSL Unfriendly Field": _DCF(int, ui_name="JSL-Unfriendly Field"),
-        # credential (and sensitive and mask_input) are useful for usernames,
-        # passwords, and other sorts of credentials
-        "Password Field": _DCF(str, credential="password"),
-    }
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_open(self):
-        # Show the values then error
-        print(f"{self["Field 1"] = }")
-        print(f"{self["Field 2"] = }")
-        print(f"{self["Field 3"] = }")
-        print(f"{self["Field 4"] = }")
-        print(f"{self["JSL Unfriendly Field"] = }")
-        print(f"{self["Password Field"] = }")
-        raise NotImplementedError
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-# To see the tooltips, the UI name, and the masking triggered by credential,
-# you'll need to launch the Data Connector Editor and set the type to
-# Python:__main__:ExampleConnectorType.
-jmp.run_jsl(r"""
-New Data Connector(
-    Type( "Python:__main__:ExampleConnectorType" ),
-    Field 1( 4 ),
-    Field 2( 19 ),
-    Field 3( 23 ),
-    Field 4( 42 ),
-    JSL Unfriendly Field( 65 ),
-    // This encodes the string "107":
-    Password Field( "0173AEE42BA6B646CBE03941DD25153DAAFDF2ED3039A9E64296808E53DA110CDE45733216E9B2A3F82AA052F370443F231C8B1D83E2AA68B6D19DD4B6BB0CE08F635C07162E3E13B2AF77D25DF8DDD1DB" )
-) << Open();
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    _DCF = jmp.DataConnectorField    fields = {        "Field 1": int,        # Same as Field 1 but uses jmp.DataConnectorField instead of a bare type        "Field 2": _DCF(int),        # Like Field 1 and Field 2 but adds a tooltip        "Field 3": _DCF(int, tooltip="The third field."),        # Like Field 1 and Field 2 but adds a default value and a tooltip        "Field 4": _DCF(int, default=42, tooltip="The fourth field."),        # ui_name is useful for JSL-unfriendly names or localization        "JSL Unfriendly Field": _DCF(int, ui_name="JSL-Unfriendly Field"),        # credential (and sensitive and mask_input) are useful for usernames,        # passwords, and other sorts of credentials        "Password Field": _DCF(str, credential="password"),    }class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show the values then error        print(f"{self["Field 1"] = }")        print(f"{self["Field 2"] = }")        print(f"{self["Field 3"] = }")        print(f"{self["Field 4"] = }")        print(f"{self["JSL Unfriendly Field"] = }")        print(f"{self["Password Field"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the tooltips, the UI name, and the masking triggered by credential,# you'll need to launch the Data Connector Editor and set the type to# Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    Field 1( 4 ),    Field 2( 19 ),    Field 3( 23 ),    Field 4( 42 ),    JSL Unfriendly Field( 65 ),    // This encodes the string "107":    Password Field( "0173AEE42BA6B646CBE03941DD25153DAAFDF2ED3039A9E64296808E53DA110CDE45733216E9B2A3F82AA052F370443F231C8B1D83E2AA68B6D19DD4B6BB0CE08F635C07162E3E13B2AF77D25DF8DDD1DB" )) << Open();""", echo=False)
 
 ```
 
@@ -1143,57 +744,17 @@ New Data Connector(
 
 **구문:** fields = jmp.DataConnectorGroupedFields([("Group 1 Name", GROUP_1_FIELDS), ("Group 2 Name", GROUP_2_FIELDS), ...])
 
-**설명:** jmp.DataConnectorGroupedFields defines fields in named groups. The groups are passed as a list of pairs. The first element of each pair is the name of the group, and the second is a dictionary with the fields. This dictionary has the same format as one used directly as the value for jmp.DataConnectorType.fields.
+**설명:** jmp.DataConnectorGroupedFields는 명명된 그룹 내에 필드를 정의합니다. 그룹은 쌍 목록 형식으로 전달됩니다. 각 쌍의 첫 번째 요소는 그룹 이름이고 두 번째 요소는 필드를 포함하는 딕셔너리입니다. 이 딕셔너리의 형식은 jmp.DataConnectorType.fields의 값으로 직접 사용되는 형식과 동일합니다.
 
 
 
-The use of groups affects the fields&apos; presentation in the data connector editor but not their programmatic access. The group name is used only in the UI, so the advice for field names to avoid characters that should not be used in JSL names does not apply.
+그룹을 사용하는 것은 데이터 커넥터 편집기에서 필드를 표시하는 데 영향을 주지만 프로그래밍 방식의 액세스에는 영향을 주지 않습니다. 그룹 이름은 UI에만 사용되므로 JSL 이름에 사용하면 안 되는 문자를 필드 이름에 포함하지 말라는 권장 사항이 적용되지 않습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = jmp.DataConnectorGroupedFields([
-        # Specify a first group named "Route" that has "Destination" and
-        # "Origin" fields.
-        ("Route", {
-            "Destination": str,
-            "Origin": str,
-        }),
-        # Specify a second group named "Vehicle" that has "Passengers" and
-        # "Range" fields.
-        ("Vehicle", {
-            "Passengers": int,
-            "Range": int,
-        }),
-    ])
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_open(self):
-        # Show the values then error
-        print(f"{self["Destination"] = }")
-        print(f"{self["Origin"] = }")
-        print(f"{self["Passengers"] = }")
-        print(f"{self["Range"] = }")
-        raise NotImplementedError
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-# To see the groups you'll need to launch the Data Connector Editor
-# and set the type to Python:__main__:ExampleConnectorType.
-jmp.run_jsl(r"""
-New Data Connector(
-    Type( "Python:__main__:ExampleConnectorType" ),
-    Destination( "JMP" ),
-    Origin( "RDU" ),
-    Passengers( 5 ),
-    Range( 254 )
-) << Open();
-""")
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = jmp.DataConnectorGroupedFields([        # Specify a first group named "Route" that has "Destination" and        # "Origin" fields.        ("Route", {            "Destination": str,            "Origin": str,        }),        # Specify a second group named "Vehicle" that has "Passengers" and        # "Range" fields.        ("Vehicle", {            "Passengers": int,            "Range": int,        }),    ])class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show the values then error        print(f"{self["Destination"] = }")        print(f"{self["Origin"] = }")        print(f"{self["Passengers"] = }")        print(f"{self["Range"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the groups you'll need to launch the Data Connector Editor# and set the type to Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    Destination( "JMP" ),    Origin( "RDU" ),    Passengers( 5 ),    Range( 254 )) << Open();""")
 
 ```
 
@@ -1207,55 +768,21 @@ New Data Connector(
 
 **구문:** fields = {"Name 1": TYPE_1 | jmp.DataConnectorField(...), "Name 2": TYPE_2 | jmp.DataConnectorField(...), ...} | jmp.DataConnectorGroupedFields(...)
 
-**설명:** Subclasses must define a class-level variable named "fields" that specifies the configuration options for this type. It should be a dict or a jmp.DataConnectorGroupedFields object.
+**설명:** 하위 클래스에서 이 유형의 구성 옵션을 지정하는 클래스 수준 변수 "fields"를 정의해야 합니다. 이는 dict 또는 jmp.DataConnectorGroupedFields 개체여야 합니다.
 
 
 
-The keys of the dict are the names of the configuration options, which are exposed in JSL and the editor. They should be formatted like JSL identifiers. The value corresponding to each key is the type of the field, such as str or int, or a jmp.DataConnectorField object.
+dict의 키는 JSL과 편집기에서 노출되는 구성 옵션의 이름이며 JSL 식별자와 형식이 같아야 합니다. 각 키에 해당하는 값은 필드 유형(예: str 또는 int)이거나 jmp.DataConnectorField 개체입니다.
 
 
 
-The supported types include bool, int, and str. Optional versions of these, such as typing.Optional[bool] or bool | None for bool, are also supported. A missing value is represented by None.
+지원되는 유형에는 bool, int, str이 있으며 bool의 경우 typing.Optional[bool] 또는 bool | None과 같은 선택적 버전도 지원됩니다. 결측값은 &apos;None&apos;으로 표시됩니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-import typing
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    _DCF = jmp.DataConnectorField
-    fields = {
-        "Basic Int Field": int,
-        "Optional Int Field": int | None,
-        "Alternative Optional Int Field": typing.Optional[int],
-        "Int Field With Default And Tooltip": _DCF(int, default=42, tooltip=(
-            "Tooltip for complicated int field."
-        )),
-        "Catalog": _DCF(str, default="main", tooltip=(
-            "Database catalog in which to access schemas and tables."
-        )),
-    }
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_open(self):
-        # Show values for demo purposes and then error out
-        print(f"{self["Basic Int Field"] = }")
-        print(f"{self["Optional Int Field"] = }")
-        print(f"{self["Alternative Optional Int Field"] = }")
-        print(f"{self["Int Field With Default And Tooltip"] = }")
-        print(f"{self["Catalog"] = }")
-        raise NotImplementedError
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-# To see the tooltips you'll need to launch the Data Connector Editor
-# and set the type to Python:__main__:ExampleConnectorType.
-jmp.run_jsl(r"""
-New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
-""")
+import jmpimport typingclass ExampleConnectorType(jmp.DataConnectorType):    _DCF = jmp.DataConnectorField    fields = {        "Basic Int Field": int,        "Optional Int Field": int | None,        "Alternative Optional Int Field": typing.Optional[int],        "Int Field With Default And Tooltip": _DCF(int, default=42, tooltip=(            "Tooltip for complicated int field."        )),        "Catalog": _DCF(str, default="main", tooltip=(            "Database catalog in which to access schemas and tables."        )),    }class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show values for demo purposes and then error out        print(f"{self["Basic Int Field"] = }")        print(f"{self["Optional Int Field"] = }")        print(f"{self["Alternative Optional Int Field"] = }")        print(f"{self["Int Field With Default And Tooltip"] = }")        print(f"{self["Catalog"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the tooltips you'll need to launch the Data Connector Editor# and set the type to Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();""")
 
 ```
 
@@ -1269,51 +796,13 @@ New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
 
 **구문:** def get_schemas(self) -&gt; Sequence[str] | None:
 
-**설명:** Subclasses can override this function to provide a list of the schemas in the data source. If this function is not overridden or it returns None, the data source is assumed to not support schemas.
+**설명:** 하위 클래스에서 이 함수를 재정의하여 데이터 소스의 스키마 목록을 제공할 수 있습니다. 이 함수가 재정의되지 않거나 &apos;None&apos;을 반환하면 데이터 소스가 스키마를 지원하지 않는 것으로 간주됩니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource()
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-# Pretend our data source has two schemas, each with a table
-class ExampleDataSource(jmp.DataSource):
-    def get_schemas(self):
-        # Normally you would get this dynamically instead of hard-coding it.
-        return ['schema1', 'schema2']
-
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table(self, schema, table):
-        dt = jmp.DataTable(rows=1, visibility='private')
-        dt.new_column('column', jmp.DataType.Character)
-        dt['column'] = [f'{schema}.{table}']
-        return dt
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Schema( "schema1" ), Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# Pretend our data source has two schemas, each with a tableclass ExampleDataSource(jmp.DataSource):    def get_schemas(self):        # Normally you would get this dynamically instead of hard-coding it.        return ['schema1', 'schema2']    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column', jmp.DataType.Character)        dt['column'] = [f'{schema}.{table}']        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Schema( "schema1" ), Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
@@ -1321,47 +810,13 @@ New SQL Query(
 
 **구문:** def get_tables(self, schema: str) -&gt; Sequence[str]:
 
-**설명:** Subclasses should override this function to provide a list of the tables in the data source. If schemas are supported, this list should include only the tables under the schema that is passed. If schemas are not supported, the schema parameter should be ignored.
+**설명:** 하위 클래스에서 이 함수를 재정의하여 데이터 소스의 테이블 목록을 제공해야 합니다. 스키마가 지원되는 경우 이 목록은 전달된 스키마에 속한 테이블만 포함해야 하고 스키마가 지원되지 않는 경우에는 schema 파라미터를 무시해야 합니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource()
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def get_tables(self, schema):
-        # Normally you would get this dynamically instead of hard-coding it.
-        return ['example1', 'example2']
-
-    def open_table(self, schema, table):
-        dt = jmp.DataTable(rows=1, visibility='private')
-        dt.new_column('column', jmp.DataType.Character)
-        dt['column'] = [table]
-        return dt
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" )
-        )
-    ),
-    QueryName( "A" ),
-    Select( Star ),
-    From( Table( "example1", Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        # Normally you would get this dynamically instead of hard-coding it.        return ['example1', 'example2']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column', jmp.DataType.Character)        dt['column'] = [table]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "A" ),    Select( Star ),    From( Table( "example1", Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
@@ -1369,92 +824,27 @@ New SQL Query(
 
 **구문:** def open_table(self, schema: str, table: str) -&gt; jmp.DataTable | str:
 
-**설명:** Subclasses should override this function to get the table data for the named table. If schemas are not supported, the value of the schema argument can be ignored. The function should return a jmp.DataTable or a string containing a path to a file in a data format supported by JMP.
+**설명:** 하위 클래스에서 이 함수를 재정의하여 명명된 테이블의 테이블 데이터를 가져와야 합니다. 스키마가 지원되지 않는 경우 schema 인수의 값을 무시할 수 있습니다. 이 함수는 JMP에서 지원하는 데이터 형식의 파일 경로가 포함된 문자열 또는 jmp.DataTable을 반환해야 합니다.
 
 
 
-If returning a data table directly, the table should be created privately. If returning a path string, JMP opens the table itself and captures the settings that it used, preserving them in Query Builder scripts.
+데이터 테이블을 직접 반환하는 경우 테이블을 비공개로 생성해야 합니다. 경로 문자열을 반환하는 경우 JMP가 직접 테이블을 열고, 사용된 설정을 캡처하여 쿼리 빌더 스크립트에 보존합니다.
 
 **JMP추가된 버전:** 19
 
-**Create the table directly**
+**테이블 직접 생성**
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource()
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table(self, schema, table):
-        # Normally you would use schema and table.
-        dt = jmp.DataTable(rows=1, visibility='private')
-        dt.new_column('Hello', jmp.DataType.Character)
-        dt['Hello'] = ['world!']
-        return dt
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        # Normally you would use schema and table.        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('Hello', jmp.DataType.Character)        dt['Hello'] = ['world!']        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
-**Return a file path**
+**파일 경로 반환**
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource()
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table(self, schema, table):
-        # Normally you would use schema and table.
-        return jmp.SAMPLE_IMPORT_DATA + 'Bigclass_L.txt'
-
-jmp.run_jsl(r"""
-New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Alias( "t1" ) ) )
-) << Run;
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        # Normally you would use schema and table.        return jmp.SAMPLE_IMPORT_DATA + 'Bigclass_L.txt'jmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
 
 ```
 
@@ -1468,45 +858,7 @@ New SQL Query(
 
 ```python
 
-import jmp
-
-
-class ExampleConnectorType(jmp.DataConnectorType):
-    fields = {}
-
-class ExampleConnector(jmp.DataConnector):
-    def _do_as_data_source(self):
-        return ExampleDataSource()
-
-jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
-
-class ExampleDataSource(jmp.DataSource):
-    def get_tables(self, schema):
-        return ['example']
-
-    def open_table_with_settings(self, schema, table, settings):
-        print(f"Input settings: {settings!r}")
-        if settings is None:
-            # In practice settings are something you prompt the user
-            # for, but here we hard-code it.
-            settings = f'settings for {table}'
-        dt = jmp.DataTable(visibility='private')
-        dt.new_column()
-        print(f"Output settings: {settings!r}")
-        return dt, settings
-
-jmp.run_jsl(r"""
-Write( ( New SQL Query(
-    Connection(
-        New Data Connector(
-            Type( "Python:__main__:ExampleConnectorType" )
-        )
-    ),
-    QueryName( "example" ),
-    Select( Star ),
-    From( Table( "example", Alias( "t1" ) ) )
-) << Run Foreground ) << Get Property( "Source" ) );
-""", echo=False)
+import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table_with_settings(self, schema, table, settings):        print(f"Input settings: {settings!r}")        if settings is None:            # In practice settings are something you prompt the user            # for, but here we hard-code it.            settings = f'settings for {table}'        dt = jmp.DataTable(visibility='private')        dt.new_column()        print(f"Output settings: {settings!r}")        return dt, settingsjmp.run_jsl(r"""Write( ( New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run Foreground ) << Get Property( "Source" ) );""", echo=False)
 
 ```
 
@@ -1524,16 +876,7 @@ Write( ( New SQL Query(
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-col1 = dt[0]
-col2 = dt['name']
-col3 = dt['age']
-print( col1 == col2 )
-print( col1 == col3 )
-print( col1 != col2 )
-print( col1 != col3 )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 == col2 )print( col1 == col3 )print( col1 != col2 )print( col1 != col3 )
 
 ```
 
@@ -1545,13 +888,7 @@ print( col1 != col3 )
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable('Names', 5)
-dt.new_column('First Name', jmp.DataType.Character)
-dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
-for i in range(0, dt.nrows):
-    print( dt[0][i] )
+import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]for i in range(0, dt.nrows):    print( dt[0][i] )
 
 ```
 
@@ -1563,13 +900,7 @@ for i in range(0, dt.nrows):
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable('Names', 5)
-dt.new_column('First Name', jmp.DataType.Character)
-dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
-for n in dt[0]:
-    print( n )
+import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]for n in dt[0]:    print( n )
 
 ```
 
@@ -1581,13 +912,7 @@ for n in dt[0]:
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print( [c.name for c in dt[:]] )         # print list of column names default step = 1
-reverse_cols = dt[::-1]                  # list of column names in reverse order
-print( [c.name for c in reverse_cols] )  # print reversed column name list
-print( dt['name'][0:20:2] )              # print every other value in range [0, 20)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for c in dt[:]] )         # print list of column names default step = 1reverse_cols = dt[::-1]                  # list of column names in reverse orderprint( [c.name for c in reverse_cols] )  # print reversed column name listprint( dt['name'][0:20:2] )              # print every other value in range [0, 20)
 
 ```
 
@@ -1601,14 +926,7 @@ print( dt['name'][0:20:2] )              # print every other value in range [0, 
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-col1 = dt[0]
-col2 = dt['name']
-col3 = dt['age']
-print( col1 == col2 )
-print( col1 == col3 )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 == col2 )print( col1 == col3 )
 
 ```
 
@@ -1622,12 +940,7 @@ print( col1 == col3 )
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-col = dt[0]
-for i in range ( len(col) ):
-    print( col[i] )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = dt[0]for i in range ( len(col) ):    print( col[i] )
 
 ```
 
@@ -1641,15 +954,7 @@ for i in range ( len(col) ):
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-col = jmp.DataTable.Column(dt, 'name')
-print(col)
-
-# Note: it's simpler to just let Python create one for you through assignment.
-col2 = dt['name'];
-print(col2)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = jmp.DataTable.Column(dt, 'name')print(col)# Note: it's simpler to just let Python create one for you through assignment.col2 = dt['name'];print(col2)
 
 ```
 
@@ -1663,10 +968,7 @@ print(col2)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-print( len( dt['name'] ) )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len( dt['name'] ) )
 
 ```
 
@@ -1680,14 +982,7 @@ print( len( dt['name'] ) )
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-col1 = dt[0]
-col2 = dt['name']
-col3 = dt['age']
-print( col1 != col2 )
-print( col1 != col3 )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 != col2 )print( col1 != col3 )
 
 ```
 
@@ -1703,13 +998,7 @@ print( col1 != col3 )
 
 ```python
 
-import jmp
-
-from datetime import date
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column('birthday', jmp.DataType.Numeric)
-dt['birthday'].format = "m/d/y"
-dt['birthday'][0] = date.today()
+import jmpfrom datetime import datedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "m/d/y"dt['birthday'][0] = date.today()
 
 ```
 
@@ -1717,69 +1006,7 @@ dt['birthday'][0] = date.today()
 
 ```python
 
-import jmp
-
-from datetime import datetime
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column('birthday', jmp.DataType.Numeric)
-dt['birthday'].format = "m/d/y h:m:s"
-dt['birthday'][0] = datetime.now()
-
-```
-
-**Expression**
-
-```python
-
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column("expressions", jmp.DataType.Expression)
-dt['expressions'][0] = jmp.Expression('1 + 1')
-print(dt['expressions'][0])
-result = jmp.eval(dt['expressions'][0])
-print(result)
-
-```
-
-**Image**
-
-```python
-
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column("images", jmp.DataType.Expression)
-for i in range( len( dt["images"] ) ):
-    dt['images'][i] = jmp.Image(jmp.SAMPLE_IMAGES + "tile.jpg")
-print(dt['images'][0])
-
-```
-
-**Row State**
-
-```python
-
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column("rs", jmp.DataType.RowState)
-dt['rs'][0] = jmp.RowState(selected=True, marker=3, color=4)
-print(dt['rs'][0])
-
-```
-
-**Standard**
-
-```python
-
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-column = dt[0]
-column2 = dt['age']
-print(column)
-print(column2)
+import jmpfrom datetime import datetimedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "m/d/y h:m:s"dt['birthday'][0] = datetime.now()
 
 ```
 
@@ -1787,13 +1014,39 @@ print(column2)
 
 ```python
 
-import jmp
+import jmpimport timedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "h:m:s"dt['birthday'][0] = time.localtime()
 
-import time
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column('birthday', jmp.DataType.Numeric)
-dt['birthday'].format = "h:m:s"
-dt['birthday'][0] = time.localtime()
+```
+
+**이미지**
+
+```python
+
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("images", jmp.DataType.Expression)for i in range( len( dt["images"] ) ):    dt['images'][i] = jmp.Image(jmp.SAMPLE_IMAGES + "tile.jpg")print(dt['images'][0])
+
+```
+
+**표준**
+
+```python
+
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]column2 = dt['age']print(column)print(column2)
+
+```
+
+**표현식**
+
+```python
+
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("expressions", jmp.DataType.Expression)dt['expressions'][0] = jmp.Expression('1 + 1')print(dt['expressions'][0])result = jmp.eval(dt['expressions'][0])print(result)
+
+```
+
+**행 상태**
+
+```python
+
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("rs", jmp.DataType.RowState)dt['rs'][0] = jmp.RowState(selected=True, marker=3, color=4)print(dt['rs'][0])
 
 ```
 
@@ -1807,9 +1060,7 @@ dt['birthday'][0] = time.localtime()
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(dt[0])
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt[0])
 
 ```
 
@@ -1823,15 +1074,13 @@ print(dt[0])
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 ```
 
 #### display_width
 
-**구문:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
+**구문:** col_obj.display_width col_obj.display_width = &lt;int&gt;
 
 **설명:** 열 표시 너비를 변경합니다.
 
@@ -1839,12 +1088,7 @@ print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-jmp.run_jsl('Wait( 0 );')
-print(dt[0].display_width)
-dt[0].display_width = 100
-print(dt[0].display_width)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")jmp.run_jsl('Wait( 0 );')print(dt[0].display_width)dt[0].display_width = 100print(dt[0].display_width)
 
 ```
 
@@ -1858,87 +1102,55 @@ print(dt[0].display_width)
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(f"Data Type of dt['age']: {dt['age'].dtype}")
-dt['age'].dtype = jmp.DataType.Character 
-print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Data Type of dt['age']: {dt['age'].dtype}")dt['age'].dtype = jmp.DataType.Character print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 
 ```
 
 #### format
 
-**구문:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
+**구문:** col_obj.format col_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **설명:** 형식 가져오기
 
 **JMP추가된 버전:** 19
 
-**Different Variations**
+**여러 변형**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + "XYZ Stock Averages (plots).jmp")
-dt[0].format = ("ddMonyyyy", 9)
-dt[1].format = "Currency"
-dt[2].format = (
-    "best",
-    "Use Thousands Separator",
-    10,
-    0)
-dt[3].format = (
-    "Fixed Dec",
-    "Use Thousands Separator",
-    10,
-    2
-)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "XYZ Stock Averages (plots).jmp")dt[0].format = ("ddMonyyyy", 9)dt[1].format = "Currency"dt[2].format = (    "best",    "Use Thousands Separator",    10,    0)dt[3].format = (    "Fixed Dec",    "Use Thousands Separator",    10,    2)
 
 ```
 
-**Tuple Assignment**
+**튜플 할당**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-print(dt[3].format)
-dt[3].format = ('Fixed Dec', 6, 3)
-print(dt[3].format)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[3].format)dt[3].format = ('Fixed Dec', 6, 3)print(dt[3].format)
 
 ```
 
 #### formula
 
-**구문:** col_obj.formulacol_obj.formula = &lt;Expression | string&gt;
+**구문:** col_obj.formula col_obj.formula = &lt;Expression | string&gt;
 
 **설명:** 유효한 JSL을 나타내는 문자열 또는 Expression 개체가 주어지면 열 계산식을 설정합니다.
 
 **JMP추가된 버전:** 19
 
-**Expression**
+**문자열**
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column('ratio', jmp.DataType.Numeric)
-dt['ratio'].formula = jmp.Expression(':Height / :Weight')
-print(dt['ratio'].formula)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('ratio', jmp.DataType.Numeric)dt['ratio'].formula = ':Height / :Weight'print(dt['ratio'].formula)
 
 ```
 
-**String**
+**표현식**
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt.new_column('ratio', jmp.DataType.Numeric)
-dt['ratio'].formula = ':Height / :Weight'
-print(dt['ratio'].formula)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('ratio', jmp.DataType.Numeric)dt['ratio'].formula = jmp.Expression(':Height / :Weight')print(dt['ratio'].formula)
 
 ```
 
@@ -1952,18 +1164,13 @@ print(dt['ratio'].formula)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(f"Modeling Type of dt['age']: {dt['age'].mtype}") 
-dt['age'].mtype = jmp.ModelingType.Nominal
-print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Modeling Type of dt['age']: {dt['age'].mtype}") dt['age'].mtype = jmp.ModelingType.Nominalprint(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 ```
 
 #### name
 
-**구문:** col_obj.namecol_obj.name = &lt;string&gt;
+**구문:** col_obj.name col_obj.name = &lt;string&gt;
 
 **설명:** 읽기 및 설정 가능한 열 이름 특성입니다.
 
@@ -1971,10 +1178,7 @@ print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-print(dt[0].name)
-dt[0].name = 'First Name'
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[0].name)dt[0].name = 'First Name'
 
 ```
 
@@ -1998,15 +1202,7 @@ dt[0].name = 'First Name'
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt2 = jmp.current()
-iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
-print( dt == dt2 )
-print( dt == iris)
-print( dt != dt2 )
-print( dt != iris )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt == dt2 )print( dt == iris)print( dt != dt2 )print( dt != iris )
 
 ```
 
@@ -2018,11 +1214,7 @@ print( dt != iris )
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print( f'Column name: {dt[1].name}' )
-print( f"Column name: {dt['age'].name}" )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( f'Column name: {dt[1].name}' )print( f"Column name: {dt['age'].name}" )
 
 ```
 
@@ -2034,11 +1226,7 @@ print( f"Column name: {dt['age'].name}" )
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-for n in dt:
-    print( n.name )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")for n in dt:    print( n.name )
 
 ```
 
@@ -2050,13 +1238,7 @@ for n in dt:
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print( [c.name for c in dt[:]] )         # print list of column names default step = 1
-reverse_cols = dt[::-1]                  # list of column names in reverse order
-print( [c.name for c in reverse_cols] )  # print reversed column name list
-print( dt['name'][0:20:2] )              # print every other value in range [0, 20)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for c in dt[:]] )         # print list of column names default step = 1reverse_cols = dt[::-1]                  # list of column names in reverse orderprint( [c.name for c in reverse_cols] )  # print reversed column name listprint( dt['name'][0:20:2] )              # print every other value in range [0, 20)
 
 ```
 
@@ -2070,13 +1252,7 @@ print( dt['name'][0:20:2] )              # print every other value in range [0, 
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt2 = jmp.current()
-iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
-print( dt == dt2 )
-print( dt == iris)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt == dt2 )print( dt == iris)
 
 ```
 
@@ -2090,13 +1266,7 @@ print( dt == iris)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-column = dt[0]
-column2 = dt['age']
-print(column)
-print(column2)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]column2 = dt['age']print(column)print(column2)
 
 ```
 
@@ -2112,8 +1282,7 @@ print(column2)
 
 ```python
 
-import jmp
-dt = jmp.DataTable('Powered By Python', 40, visibility='private')
+import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='private')
 
 ```
 
@@ -2121,8 +1290,7 @@ dt = jmp.DataTable('Powered By Python', 40, visibility='private')
 
 ```python
 
-import jmp
-dt = jmp.DataTable()
+import jmpdt = jmp.DataTable()
 
 ```
 
@@ -2130,8 +1298,7 @@ dt = jmp.DataTable()
 
 ```python
 
-import jmp
-dt = jmp.DataTable('Powered By Python')
+import jmpdt = jmp.DataTable('Powered By Python')
 
 ```
 
@@ -2139,8 +1306,7 @@ dt = jmp.DataTable('Powered By Python')
 
 ```python
 
-import jmp
-dt = jmp.DataTable('Powered By Python', 40)
+import jmpdt = jmp.DataTable('Powered By Python', 40)
 
 ```
 
@@ -2148,8 +1314,7 @@ dt = jmp.DataTable('Powered By Python', 40)
 
 ```python
 
-import jmp
-dt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
+import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
 
 ```
 
@@ -2157,8 +1322,7 @@ dt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
 
 ```python
 
-import jmp
-dt = jmp.DataTable(rows=40, name='Powered By Python')
+import jmpdt = jmp.DataTable(rows=40, name='Powered By Python')
 
 ```
 
@@ -2172,10 +1336,7 @@ dt = jmp.DataTable(rows=40, name='Powered By Python')
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-print( len(dt) )
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len(dt) )
 
 ```
 
@@ -2189,13 +1350,7 @@ print( len(dt) )
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt2 = jmp.current()
-iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
-print( dt != dt2 )
-print( dt != iris)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt != dt2 )print( dt != iris)
 
 ```
 
@@ -2209,12 +1364,7 @@ print( dt != iris)
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable('Names', 5)
-dt.new_column('First Name', jmp.DataType.Character)
-dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
-print( dt[0][:] )
+import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]print( dt[0][:] )
 
 ```
 
@@ -2228,9 +1378,7 @@ print( dt[0][:] )
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(dt)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```
 
@@ -2244,17 +1392,27 @@ print(dt)
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.add_rows(5)
-dt.add_rows(1, at=0)
-dt.add_rows(2, at=12) # 0-based indexing
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.add_rows(5)dt.add_rows(1, at=0)dt.add_rows(2, at=12) # 0-based indexing
+
+```
+
+#### begin_update
+
+**구문:** dt.begin_update() # added JMP 19.1
+
+**설명:** Small tables update rapidly, but for large tables, having to update the user interface while making mass changes to a column is very time consuming. The begin_update() method stops the GUI updates to the data table until a corresponding end_update().
+
+**JMP추가된 버전:** 19
+
+```python
+
+import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")print(dt.nrows)start_time = time.perf_counter()dt.begin_update()try:    for x in range(dt.nrows):        dt[5][x] = random.randint(1,1000)finally:    dt.end_update()end_time = time.perf_counter()elapsed = end_time - start_timeprint(f'Elapsed time: {elapsed:.3f}')
 
 ```
 
 #### cell_height
 
-**구문:** dt.cell_heightdt.cell_height = &lt;int&gt;
+**구문:** dt.cell_height dt.cell_height = &lt;int&gt;
 
 **설명:** 각 데이터 테이블 셀의 표시 높이를 설정합니다.
 
@@ -2262,12 +1420,7 @@ dt.add_rows(2, at=12) # 0-based indexing
 
 ```python
 
-import jmp
-dt = jmp.DataTable()
-jmp.run_jsl('Wait(0)')
-print(dt.cell_height)
-dt.cell_height = 40
-print(dt.cell_height)
+import jmpdt = jmp.DataTable()jmp.run_jsl('Wait(0)')print(dt.cell_height)dt.cell_height = 40print(dt.cell_height)
 
 ```
 
@@ -2281,21 +1434,7 @@ print(dt.cell_height)
 
 ```python
 
-import jmp
-
-import os
-
-# To remove the wow.jmp file uncomment then run the 2 lines below,
-# if os.path.isfile('wow.jmp'):
-#    os.unlink('wow.jmp')
-
-dt = jmp.DataTable('wow', 5)
-dt.new_column('one')
-dt.close()                # saves and closes file
-
-dt = jmp.open('wow.jmp')
-dt.new_column('two')
-dt.close(save=False)      # closes without saving
+import jmpimport os# To remove the wow.jmp file uncomment then run the 2 lines below,# if os.path.isfile('wow.jmp'):#    os.unlink('wow.jmp')dt = jmp.DataTable('wow', 5)dt.new_column('one')dt.close()                # saves and closes filedt = jmp.open('wow.jmp')dt.new_column('two')dt.close(save=False)      # closes without saving
 
 ```
 
@@ -2309,26 +1448,27 @@ dt.close(save=False)      # closes without saving
 
 ```python
 
-import jmp
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns('weight')     # JSL:  dt << Select Columns( {:weight})r = dt.delete_columns()                  # delete by selected column(s)print(r)r = dt.delete_columns('name', 'sex')     # delete by nameprint(r)r = dt.delete_columns(['age', 'height']) # delete with list of column namesprint(r)
 
+```
 
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+#### end_update
 
-dt.select_columns('weight')     # JSL:  dt << Select Columns( {:weight})
-r = dt.delete_columns()                  # delete by selected column(s)
-print(r)
+**구문:** dt.end_update() # added JMP 19.1
 
-r = dt.delete_columns('name', 'sex')     # delete by name
-print(r)
+**설명:** Restores the data table GUI update processing.
 
-r = dt.delete_columns(['age', 'height']) # delete with list of column names
-print(r)
+**JMP추가된 버전:** 19
+
+```python
+
+import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")print(dt.nrows)start_time = time.perf_counter()dt.begin_update()try:    for x in range(dt.nrows):        dt[5][x] = random.randint(1,1000)finally:    dt.end_update()end_time = time.perf_counter()elapsed = end_time - start_timeprint(f'Elapsed time: {elapsed:.3f}')
 
 ```
 
 #### name
 
-**구문:** dt.namedt.name = &apos;string&apos;
+**구문:** dt.name dt.name = &apos;string&apos;
 
 **설명:** name 특성은 데이터 테이블 이름을 설정하고 가져올 수 있는 setter이자 getter입니다.
 
@@ -2336,10 +1476,7 @@ print(r)
 
 ```python
 
-import jmp
-dt = jmp.DataTable()
-print(dt.name)
-dt.name = 'Powered by Python'
+import jmpdt = jmp.DataTable()print(dt.name)dt.name = 'Powered by Python'
 
 ```
 
@@ -2353,9 +1490,7 @@ dt.name = 'Powered by Python'
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(f'Number of columns: {dt.ncols}')
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of columns: {dt.ncols}')
 
 ```
 
@@ -2371,23 +1506,7 @@ print(f'Number of columns: {dt.ncols}')
 
 ```python
 
-import jmp
-
-from jmp import DataTable as Dt
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-nc = jmp.DataTable('New Class', dt.nrows)
-nc.new_column('name', jmp.DataType.Character)
-# populate column from a list
-nc[0] = ['Fred','Kimi','Amanda','Courtney','Paul','Theresa','Erika','Blake','Joseph','Amber',
-    'Daphne','Robert','James','Richard', 'Eric','Mark','Coleen','Brian','Bryan','Emily',
-    'Bonnie','Georgia','Terrance','Carmen','Hunter','Samantha','Kay','Tamara','Brett','David',
-    'Chandler','Siebela','Judy','Hui','Drew','Russ','Megan','Evan','Alex','Travis'
-]
-col = nc.new_column('age', jmp.DataType.Numeric)
-# populate column from another column
-nc['age'] = dt['age']
-print(nc['age'][::])
-print(col.__class__)
+import jmpfrom jmp import DataTable as Dtdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')nc = jmp.DataTable('New Class', dt.nrows)nc.new_column('name', jmp.DataType.Character)# populate column from a listnc[0] = ['Fred','Kimi','Amanda','Courtney','Paul','Theresa','Erika','Blake','Joseph','Amber',    'Daphne','Robert','James','Richard', 'Eric','Mark','Coleen','Brian','Bryan','Emily',    'Bonnie','Georgia','Terrance','Carmen','Hunter','Samantha','Kay','Tamara','Brett','David',    'Chandler','Siebela','Judy','Hui','Drew','Russ','Megan','Evan','Alex','Travis']col = nc.new_column('age', jmp.DataType.Numeric)# populate column from another columnnc['age'] = dt['age']print(nc['age'][::])print(col.__class__)
 
 ```
 
@@ -2395,15 +1514,7 @@ print(col.__class__)
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable('Names', 5)
-dt.new_column('First Name', jmp.DataType.Character)
-dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
-print( dt[0][:] )
-print( list( dt['First Name'] ) )
-dt.new_column('Distance (km)', jmp.DataType.Numeric, jmp.ModelingType.Continuous)
-dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
+import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]print( dt[0][:] )print( list( dt['First Name'] ) )dt.new_column('Distance (km)', jmp.DataType.Numeric, jmp.ModelingType.Continuous)dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
 
 ```
 
@@ -2417,64 +1528,63 @@ dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(f'Number of rows: {dt.nrows}')
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of rows: {dt.nrows}')
 
 ```
 
 #### row_states
 
-**구문:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
+**구문:** dt.row_states dt.row_states = [state1, state2, ..., stateN]
 
 **설명:** 데이터 테이블의 모든 행에 대한 행 상태를 설정합니다.
 
 **JMP추가된 버전:** 19
 
-**General Use**
+**반복**
 
 ```python
 
-import jmp
-from jmp import RowState, DataType
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.row_states = [RowState(value=33), RowState(marker=2, selected=True), 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]
-print(dt.row_states)
-
-rs_col = dt.new_column('rs', DataType.RowState)
-dt['rs'] = dt.row_states
-
-row_state = RowState(color=4, selected=False)
-dt['rs'][0] = row_state
-row_state.marker = 9
-dt['rs'][1] = row_state
-
-print(dt.row_states)
-dt.row_states = dt['rs']
-print(dt.row_states)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')for i in range(len(dt.row_states)):    if dt['age'][i] % 2:        dt.row_states[i].selected = Trueprint(dt.row_states)
 
 ```
 
-**List of Integers**
+**일반 용도**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]
-print(dt.row_states)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states[0] = jmp.RowState(marker=4, color=3)print(dt.row_states)dt.row_states[0].selected = Truedt.row_states[1] = jmp.RowState(value=22)print(dt.row_states)
 
 ```
 
-**List of Tuples (<index>, <RowState | int>)**
+**정수 목록**
 
 ```python
 
-import jmp
-from jmp import RowState
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.row_states = [(2, RowState(marker=2, selected=True)), (5, 97)]
-print(dt.row_states)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]print(dt.row_states)
+
+```
+
+**튜플 목록(<index>, <RowState | int>)**
+
+```python
+
+import jmpfrom jmp import RowStatedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [(2, RowState(marker=2, selected=True)), (5, 97)]print(dt.row_states)
+
+```
+
+**행 상태 열**
+
+```python
+
+import jmpfrom jmp import DataTypedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')rs_col = dt.new_column('rs', DataType.RowState)dt['rs'] = dt.row_statesdt['rs'][0] = jmp.RowState(value=33)dt['rs'][1] = jmp.RowState(color=2, marker=3)row_state = jmp.RowState(color=4, selected=False)dt['rs'][3] = row_staterow_state.marker = 9dt['rs'][4] = row_statedt.row_states = dt['rs']print(dt.row_states)
+
+```
+
+**행 상태 재설정**
+
+```python
+
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]print(dt.row_states)dt.row_states = [0] * dt.nrowsprint(dt.row_states)
 
 ```
 
@@ -2488,104 +1598,39 @@ print(dt.row_states)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-dt[0][0] = 'Katie'
-dt.save('BC_lowercase.jmp')
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt[0][0] = 'Katie'dt.save('BC_lowercase.jmp')
 
 ```
 
 #### scripts
 
-**구문:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
+**구문:** dt.scripts dt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **설명:** scripts 특성은 데이터 테이블 스크립트의 읽기 및 쓰기를 허용합니다.
 
 **JMP추가된 버전:** 19
 
-**Deleting Scripts**
+**다중 스크립트**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# Reassigning of scripts removes all other scripts
-dt.scripts = {
-    "Example": 'Print("Foo")',
-    "Example 2": jmp.Expression('Print("Bar")')
-}
-
-print("Distribution" in dt.scripts)   # False
-print("Example" in dt.scripts)        # True
-print("Example 2" in dt.scripts)      # True
-
-# Deleting a script
-# Note: If the script editing window is open, the script will not be deleted. 
-del dt.scripts["Example"]
-dt.scripts["Example 2"] = None
-
-print("Example" in dt.scripts)        # False
-print("Example 2" in dt.scripts)      # False
-
-dt.scripts = {
-    "Example": 'Print("FooBar")',
-}
-
-# Deleting all scripts
-dt.scripts = {}
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Concatenationdt.scripts |= {    "Example": 'Print("Foo")',    "Example 2": jmp.Expression('Print("Bar")')}print("Distribution" in dt.scripts)print("Example" in dt.scripts)print("Example 2" in dt.scripts)# Reassigning of scripts removes all other scriptsdt.scripts = {    "Example": 'Print("FooBar")',}print(dt.scripts)# Iterationfor name, value in dt.scripts.items():    print(name, value)for name in dt.scripts:    print(name, dt.scripts[name])
 
 ```
 
-**Get/Set Scripts**
+**스크립트 가져오기/설정**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# Getting a script
-print(dt.scripts["Distribution"])
-
-# Adding a script
-dt.scripts["Example"] = 'Print("Foo")'
-dt.scripts["Example 2"] = jmp.Expression('Print("Bar")')
-
-# Getting all scripts
-print(dt.scripts)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Getting a scriptprint(dt.scripts["Distribution"])# Adding a scriptdt.scripts["Example"] = 'Print("Foo")'dt.scripts["Example 2"] = jmp.Expression('Print("Bar")')# Getting all scriptsprint(dt.scripts)
 
 ```
 
-**Multiple Scripts**
+**스크립트 삭제**
 
 ```python
 
-import jmp
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# Concatenation
-dt.scripts |= {
-    "Example": 'Print("Foo")',
-    "Example 2": jmp.Expression('Print("Bar")')
-}
-
-print("Distribution" in dt.scripts)
-print("Example" in dt.scripts)
-print("Example 2" in dt.scripts)
-
-# Reassigning of scripts removes all other scripts
-dt.scripts = {
-    "Example": 'Print("FooBar")',
-}
-print(dt.scripts)
-
-# Iteration
-for name, value in dt.scripts.items():
-    print(name, value)
-
-for name in dt.scripts:
-    print(name, dt.scripts[name])
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Reassigning of scripts removes all other scriptsdt.scripts = {    "Example": 'Print("Foo")',    "Example 2": jmp.Expression('Print("Bar")')}print("Distribution" in dt.scripts)   # Falseprint("Example" in dt.scripts)        # Trueprint("Example 2" in dt.scripts)      # True# Deleting a script# Note: If the script editing window is open, the script will not be deleted. del dt.scripts["Example"]dt.scripts["Example 2"] = Noneprint("Example" in dt.scripts)        # Falseprint("Example 2" in dt.scripts)      # Falsedt.scripts = {    "Example": 'Print("FooBar")',}# Deleting all scriptsdt.scripts = {}
 
 ```
 
@@ -2601,12 +1646,7 @@ for name in dt.scripts:
 
 ```python
 
-import jmp
-
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.select_columns([col.name for col in dt])
-# all columns should be selected.
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns([col.name for col in dt])# all columns should be selected.
 
 ```
 
@@ -2614,14 +1654,7 @@ dt.select_columns([col.name for col in dt])
 
 ```python
 
-import jmp
-
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-dt.select_columns('weight')
-dt.select_columns('name', 'sex')
-dt.select_columns(['age', 'height'])
-# all columns should be selected.
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns('weight')dt.select_columns('name', 'sex')dt.select_columns(['age', 'height'])# all columns should be selected.
 
 ```
 
@@ -2647,15 +1680,7 @@ dt.select_columns(['age', 'height'])
 
 ```python
 
-import jmp
-
-expr1 = jmp.Expression('1 + 1')
-expr2 = jmp.Expression('2 + 0')
-expr3 = jmp.Expression('1 + 1')
-print(expr1 == expr2)
-print(expr1 == expr3)
-print(expr1 != expr2)
-print(expr1 != expr3)
+import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 == expr2)print(expr1 == expr3)print(expr1 != expr2)print(expr1 != expr3)
 
 ```
 
@@ -2669,13 +1694,7 @@ print(expr1 != expr3)
 
 ```python
 
-import jmp
-
-expr1 = jmp.Expression('1 + 1')
-expr2 = jmp.Expression('2 + 0')
-expr3 = jmp.Expression('1 + 1')
-print(expr1 == expr2)
-print(expr1 == expr3)
+import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 == expr2)print(expr1 == expr3)
 
 ```
 
@@ -2689,14 +1708,7 @@ print(expr1 == expr3)
 
 ```python
 
-import jmp
-
-from jmp import Expression, eval
-expr = Expression(jsl="2 + 2")
-print(f'Expression: {expr}')
-print(f'Result: {eval(expr)}')
-expr.jsl = '1 + 1'
-print(f'Expression Adjusted: {eval(expr)}')
+import jmpfrom jmp import Expression, evalexpr = Expression(jsl="2 + 2")print(f'Expression: {expr}')print(f'Result: {eval(expr)}')expr.jsl = '1 + 1'print(f'Expression Adjusted: {eval(expr)}')
 
 ```
 
@@ -2710,13 +1722,7 @@ print(f'Expression Adjusted: {eval(expr)}')
 
 ```python
 
-import jmp
-
-expr1 = jmp.Expression('1 + 1')
-expr2 = jmp.Expression('2 + 0')
-expr3 = jmp.Expression('1 + 1')
-print(expr1 != expr2)
-print(expr1 != expr3)
+import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 != expr2)print(expr1 != expr3)
 
 ```
 
@@ -2730,15 +1736,13 @@ print(expr1 != expr3)
 
 ```python
 
-import jmp
-expr = jmp.Expression(':Height / :Weight')
-print(expr)
+import jmpexpr = jmp.Expression(':Height / :Weight')print(expr)
 
 ```
 
 #### jsl
 
-**구문:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
+**구문:** expr_obj.jsl expr_obj.jsl = &lt;string&gt;
 
 **설명:** Expression jsl 특성은 읽기 및 설정이 가능합니다.
 
@@ -2746,12 +1750,7 @@ print(expr)
 
 ```python
 
-import jmp
-
-expr = jmp.Expression(jsl='0 + 0')
-print(expr)
-expr.jsl = '2 + 2'
-print(expr)
+import jmpexpr = jmp.Expression(jsl='0 + 0')print(expr)expr.jsl = '2 + 2'print(expr)
 
 ```
 
@@ -2775,15 +1774,7 @@ print(expr)
 
 ```python
 
-import jmp
-
-image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
-image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
-image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
-print(image1 == image2)
-print(image1 == image3)
-print(image1 != image2)
-print(image1 != image3)
+import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 == image2)print(image1 == image3)print(image1 != image2)print(image1 != image3)
 
 ```
 
@@ -2797,13 +1788,7 @@ print(image1 != image3)
 
 ```python
 
-import jmp
-
-image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
-image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
-image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
-print(image1 == image2)
-print(image1 == image3)
+import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 == image2)print(image1 == image3)
 
 ```
 
@@ -2817,11 +1802,7 @@ print(image1 == image3)
 
 ```python
 
-import jmp
-
-image = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
-print(f'Image: {image}')
-jmp.open(image)
+import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(f'Image: {image}')jmp.open(image)
 
 ```
 
@@ -2835,13 +1816,7 @@ jmp.open(image)
 
 ```python
 
-import jmp
-
-image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
-image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
-image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
-print(image1 != image2)
-print(image1 != image3)
+import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 != image2)print(image1 != image3)
 
 ```
 
@@ -2855,9 +1830,7 @@ print(image1 != image3)
 
 ```python
 
-import jmp
-image = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
-print(image)
+import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(image)
 
 ```
 
@@ -2883,8 +1856,7 @@ print(image)
 
 ```python
 
-import jmp
-prj = jmp.Project('My Project')
+import jmpprj = jmp.Project('My Project')
 
 ```
 
@@ -2892,8 +1864,7 @@ prj = jmp.Project('My Project')
 
 ```python
 
-import jmp
-prj = jmp.Project()
+import jmpprj = jmp.Project()
 
 ```
 
@@ -2901,10 +1872,7 @@ prj = jmp.Project()
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print(prj.name)
+import jmpprj = jmp.Project()print(prj.name)
 
 ```
 
@@ -2918,10 +1886,7 @@ print(prj.name)
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print( prj )
+import jmpprj = jmp.Project()print( prj )
 
 ```
 
@@ -2935,10 +1900,7 @@ print( prj )
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print(prj.contents)
+import jmpprj = jmp.Project()print(prj.contents)
 
 ```
 
@@ -2952,10 +1914,7 @@ print(prj.contents)
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print( prj.exists('myfile.data') )
+import jmpprj = jmp.Project()print( prj.exists('myfile.data') )
 
 ```
 
@@ -2969,10 +1928,7 @@ print( prj.exists('myfile.data') )
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-success = prj.extract('myfile.data')
+import jmpprj = jmp.Project()success = prj.extract('myfile.data')
 
 ```
 
@@ -2986,10 +1942,7 @@ success = prj.extract('myfile.data')
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-success = prj.extract_all()
+import jmpprj = jmp.Project()success = prj.extract_all()
 
 ```
 
@@ -3003,10 +1956,7 @@ success = prj.extract_all()
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print( prj.is_extracted('myfile.data') )
+import jmpprj = jmp.Project()print( prj.is_extracted('myfile.data') )
 
 ```
 
@@ -3020,10 +1970,7 @@ print( prj.is_extracted('myfile.data') )
 
 ```python
 
-import jmp
-
-prj = jmp.Project()
-print(prj.name)
+import jmpprj = jmp.Project()print(prj.name)
 
 ```
 
@@ -3047,15 +1994,7 @@ print(prj.name)
 
 ```python
 
-import jmp
-
-rs1 = jmp.RowState(color=4, marker=2, selected=True)
-rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
-rs3 = jmp.RowState(value=1057)
-print(rs1 == rs2)
-print(rs1 == rs3)
-print(rs1 != rs2)
-print(rs1 != rs3)
+import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 == rs2)print(rs1 == rs3)print(rs1 != rs2)print(rs1 != rs3)
 
 ```
 
@@ -3069,19 +2008,13 @@ print(rs1 != rs3)
 
 ```python
 
-import jmp
-
-rs1 = jmp.RowState(color=4, marker=2, selected=True)
-rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
-rs3 = jmp.RowState(value=1057)
-print(rs1 == rs2)
-print(rs1 == rs3)
+import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 == rs2)print(rs1 == rs3)
 
 ```
 
 #### __init__
 
-**구문:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
+**구문:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;) jmp.RowState(value=&lt;int&gt;)
 
 **설명:** 새 RowState 개체를 생성합니다. RowState는 JMP 데이터 테이블의 행이 가질 수 있는 여섯 가지 특성(선택됨, 숨김, 제외됨, 라벨 지정, 색상 적용, 표식 적용)을 보유한 개체입니다.
 
@@ -3089,14 +2022,7 @@ print(rs1 == rs3)
 
 ```python
 
-import jmp
-
-from jmp import RowState
-rs = RowState(color=4, marker=2, selected=True)
-print(f'Row State: {rs}')
-
-rs_from_value = RowState(value=33)
-print(f'Row State from Value: {rs_from_value}')
+import jmpfrom jmp import RowStaters = RowState(color=4, marker=2, selected=True)print(f'Row State: {rs}')rs_from_value = RowState(value=33)print(f'Row State from Value: {rs_from_value}')
 
 ```
 
@@ -3110,13 +2036,7 @@ print(f'Row State from Value: {rs_from_value}')
 
 ```python
 
-import jmp
-
-rs1 = jmp.RowState(color=4, marker=2, selected=True)
-rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
-rs3 = jmp.RowState(value=1057)
-print(rs1 != rs2)
-print(rs1 != rs3)
+import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 != rs2)print(rs1 != rs3)
 
 ```
 
@@ -3130,15 +2050,13 @@ print(rs1 != rs3)
 
 ```python
 
-import jmp
-rs = jmp.RowState(color=11, excluded=True, labeled=True)
-print(rs)
+import jmprs = jmp.RowState(color=11, excluded=True, labeled=True)print(rs)
 
 ```
 
 #### color
 
-**구문:** rs_obj.colorrs_obj.color = &lt;int&gt;
+**구문:** rs_obj.color rs_obj.color = &lt;int&gt;
 
 **설명:** RowState color 특성은 읽기 및 설정이 가능합니다. 색상은 0 ~ 84 중에서 선택할 수 있습니다(0 ~ 15 기본 색, 16 ~ 31 진한 색, 32 ~ 47 연한 색, 48 ~ 63 매우 진한 색, 64 ~ 79 매우 연한 색, 80 ~ 84 회색).
 
@@ -3146,18 +2064,13 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(color=5)
-print(rs)
-rs.color = 0
-print(rs)
+import jmprs = jmp.RowState(color=5)print(rs)rs.color = 0print(rs)
 
 ```
 
 #### excluded
 
-**구문:** rs_obj.excludedrs_obj.excluded = &lt;boolean&gt;
+**구문:** rs_obj.excluded rs_obj.excluded = &lt;boolean&gt;
 
 **설명:** RowState excluded 특성은 읽기 및 설정이 가능합니다.
 
@@ -3165,18 +2078,13 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(excluded=True)
-print(rs)
-rs.excluded = False 
-print(rs)
+import jmprs = jmp.RowState(excluded=True)print(rs)rs.excluded = False print(rs)
 
 ```
 
 #### hidden
 
-**구문:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
+**구문:** rs_obj.hidden rs_obj.hidden = &lt;boolean&gt;
 
 **설명:** RowState hidden 특성은 읽기 및 설정이 가능합니다.
 
@@ -3184,18 +2092,13 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(hidden=True)
-print(rs)
-rs.hidden = False 
-print(rs)
+import jmprs = jmp.RowState(hidden=True)print(rs)rs.hidden = False print(rs)
 
 ```
 
 #### labeled
 
-**구문:** rs_obj.labeledrs_obj.labeled = &lt;boolean&gt;
+**구문:** rs_obj.labeled rs_obj.labeled = &lt;boolean&gt;
 
 **설명:** RowState labeled 특성은 읽기 및 설정이 가능합니다.
 
@@ -3203,18 +2106,13 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(labeled=True)
-print(rs)
-rs.labeled = False 
-print(rs)
+import jmprs = jmp.RowState(labeled=True)print(rs)rs.labeled = False print(rs)
 
 ```
 
 #### marker
 
-**구문:** rs_obj.markerrs_obj.marker = &lt;int&gt;
+**구문:** rs_obj.marker rs_obj.marker = &lt;int&gt;
 
 **설명:** RowState marker 특성은 읽기 및 설정이 가능합니다. 표식은 0 ~ 31 중에서 선택할 수 있습니다.
 
@@ -3222,18 +2120,13 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(marker=3)
-print(rs)
-rs.marker = 0
-print(rs)
+import jmprs = jmp.RowState(marker=3)print(rs)rs.marker = 0print(rs)
 
 ```
 
 #### selected
 
-**구문:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
+**구문:** rs_obj.selected rs_obj.selected = &lt;boolean&gt;
 
 **설명:** RowState selected 특성은 읽기 및 설정이 가능합니다.
 
@@ -3241,12 +2134,7 @@ print(rs)
 
 ```python
 
-import jmp
-
-rs = jmp.RowState(selected=True)
-print(rs)
-rs.selected = False 
-print(rs)
+import jmprs = jmp.RowState(selected=True)print(rs)rs.selected = False print(rs)
 
 ```
 
@@ -3270,16 +2158,7 @@ print(rs)
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['e'] = 2.718
-jmp.run_jsl('''
-    show(::pi)
-''')
-
-for x in jmp.globals:
-    print( x )
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('''    show(::pi)''')for x in jmp.globals:    print( x )
 
 ```
 
@@ -3287,18 +2166,13 @@ for x in jmp.globals:
 
 **구문:** value = jmp.globals[&apos;name&apos;]
 
-**설명:** JSL 전역 변수를 Python 개체로 가져옵니다. 개체를 찾을 수 없으면 &apos;None&apos;을 반환하고 데이터 유형을 처리할 수 없으면 불투명(opaque) 유형을 반환합니다. Python Send() 및 Python Get()과 동일한 유형의 개체를 전송할 수 있습니다.
+**설명:** JSL 전역 변수를 Python 개체로 가져옵니다. 개체를 찾을 수 없으면 &apos;None&apos;을 반환하고, 데이터 유형을 처리할 수 없으면 불투명(opaque) 유형을 반환합니다. Python Send() 및 Python Get()과 동일한 유형의 개체를 전송할 수 있습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.run_jsl('''
-    pi = 3.1415929
-''')
-print( jmp.globals['pi'] )
+import jmpjmp.run_jsl('''    pi = 3.1415929''')print( jmp.globals['pi'] )
 
 ```
 
@@ -3312,13 +2186,7 @@ print( jmp.globals['pi'] )
 
 ```python
 
-import jmp
-
-print( len( jmp.globals ) )
-jmp.globals['pi'] = 3.1415927
-print( len( jmp.globals ) )
-jmp.globals['e'] =  2.7182818
-print( len( jmp.globals ) )
+import jmpprint( len( jmp.globals ) )jmp.globals['pi'] = 3.1415927print( len( jmp.globals ) )jmp.globals['e'] =  2.7182818print( len( jmp.globals ) )
 
 ```
 
@@ -3326,18 +2194,13 @@ print( len( jmp.globals ) )
 
 **구문:** jmp.globals[&apos;name&apos;] = value
 
-**설명:** Due to Python scoping and the design of Python Get(), only variables in the Python global scope are accessible with Python Get(). The jmp.globals dictionary provides the capacity to directly set or create a JSL variable from Python code. The value type can be any Python type currently supported by Python Get().
+**설명:** Python 범위 규칙과 Python Get() 함수의 설계 특성상 Python Get()으로 액세스 가능한 변수는 Python 전역 범위의 변수뿐입니다. jmp.globals 딕셔너리를 사용하면 Python 코드에서 JSL 변수를 직접 설정하거나 생성할 수 있습니다. 값 유형은 Python Get()에서 현재 지원하는 모든 Python 유형이 가능합니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.run_jsl('''
-    show(pi)
-''')
+import jmpjmp.globals['pi'] = 3.1415927jmp.run_jsl('''    show(pi)''')
 
 ```
 
@@ -3345,20 +2208,13 @@ jmp.run_jsl('''
 
 **구문:** str(jmp.globals)
 
-**설명:** globals의 내용을 사전 형태로 표시합니다. JMP 자체에서 globals 사전이 사용되므로 추가 항목이 있을 수 있습니다.
+**설명:** globals의 내용을 딕셔너리 형태로 표시합니다. JMP 자체에서 globals 딕셔너리가 사용되므로 추가 항목이 있을 수 있습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['e'] =  2.7182818
-jmp.globals['Bb'] = 'bumble bee'
-print( jmp.globals )
-d = str(jmp.globals)
-print(d)
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] =  2.7182818jmp.globals['Bb'] = 'bumble bee'print( jmp.globals )d = str(jmp.globals)print(d)
 
 ```
 
@@ -3372,12 +2228,7 @@ print(d)
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['an A'] = 'Annie'
-print( jmp.globals.get('pi') )                        
-print( jmp.globals.get('ana') )
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['an A'] = 'Annie'print( jmp.globals.get('pi') )                        print( jmp.globals.get('ana') )
 
 ```
 
@@ -3385,17 +2236,13 @@ print( jmp.globals.get('ana') )
 
 **구문:** item_list = jmp.globals.items()
 
-**설명:** 네임스페이스의 키-값 쌍 목록을 반환합니다. JMP 자체에서 globals 사전이 사용되므로 추가 항목이 있을 수 있습니다.
+**설명:** 네임스페이스의 키-값 쌍 목록을 반환합니다. JMP 자체에서 globals 딕셔너리가 사용되므로 추가 항목이 있을 수 있습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['bB'] = 'Bumble Bee'
-print( jmp.globals.items() )
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.items() )
 
 ```
 
@@ -3403,17 +2250,13 @@ print( jmp.globals.items() )
 
 **구문:** key_list = jmp.globals.keys()
 
-**설명:** 네임스페이스의 키 목록을 반환합니다. JMP 자체에서 globals 사전이 사용되므로 추가 항목이 있을 수 있습니다.
+**설명:** 네임스페이스의 키 목록을 반환합니다. JMP 자체에서 globals 딕셔너리가 사용되므로 추가 항목이 있을 수 있습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['bB'] = 'Bumble Bee'
-print( jmp.globals.keys() )
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.keys() )
 
 ```
 
@@ -3421,17 +2264,13 @@ print( jmp.globals.keys() )
 
 **구문:** value_list = jmp.globals.values()
 
-**설명:** 네임스페이스의 값을 반환합니다. JMP 자체에서 globals 사전이 사용되므로 추가 항목이 있을 수 있습니다.
+**설명:** 네임스페이스의 값을 반환합니다. JMP 자체에서 globals 딕셔너리가 사용되므로 추가 항목이 있을 수 있습니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.globals['pi'] = 3.1415927
-jmp.globals['bB'] = 'Bumble Bee'
-print( jmp.globals.values() )
+import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.values() )
 
 ```
 
@@ -3453,18 +2292,7 @@ print( jmp.globals.values() )
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.globals['e'] = 2.718
-jmp.run_jsl('''
-    Names Default to Here(1);
-    show(pi)
-''')
-
-for x in jmp.here:
-    print( x )
-print([x for x in jmp.globals])
+import jmpjmp.here['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('''    Names Default to Here(1);    show(pi)''')for x in jmp.here:    print( x )print([x for x in jmp.globals])
 
 ```
 
@@ -3472,7 +2300,7 @@ print([x for x in jmp.globals])
 
 **구문:** value = jmp.here[&apos;name&apos;]
 
-**설명:** Gets a JSL variable from the current &apos;here&apos; namespace as a Python object. Returns None if the object cannot be found, or an opaque type for data types that cannot yet be handled. Providing direct retrieval of a JSL variable into the local Python scope. Supports transfers of the same types of objects as Python Send(). Note that in JSL namespace scoping, the &apos;here&apos; namespace is local to script submission, and code submitted from different script windows will have separate &apos;here&apos; namespaces. Code that includes another script has a single &apos;here&apos; namespace. This shared namespace also exists for a JSL script running Python via Submit() or Execute(), Python scripts calling run_jsl().
+**설명:** 현재 &apos;here&apos; 네임스페이스에서 JSL 변수를 Python 개체로 가져옵니다. 개체를 찾을 수 없으면 &apos;None&apos;을 반환하고 데이터 유형을 아직 처리할 수 없으면 불투명(opaque) 유형을 반환합니다. JSL 변수를 로컬 Python 범위로 직접 가져올 수 있도록 하며, Python Send()와 동일한 유형의 개체 전송을 지원합니다. JSL 네임스페이스 범위에서 &apos;here&apos; 네임스페이스는 스크립트 전송 시점에 국한됩니다. 즉, 서로 다른 스크립트 창에서 전송된 코드는 각각 별도의 &apos;here&apos; 네임스페이스를 가지며, 다른 스크립트를 포함하는 코드는 단일 &apos;here&apos; 네임스페이스를 가집니다. 이러한 공유 네임스페이스는 Submit() 또는 Execute()를 통해 Python을 실행하는 JSL 스크립트나 run_jsl()을 호출하는 Python 스크립트에서도 존재합니다.
 
 **JMP추가된 버전:** 19
 
@@ -3480,27 +2308,7 @@ print([x for x in jmp.globals])
 
 ```python
 
-import jmp
-
-jmp.run_jsl('''
-Names Default to Here(1);
-here_v = "here";
-Show(here_v);
-''')
-print( f'temporary: {jmp.here['here_v']}' )
-try:    
-    print(here_v)
-except:
-    print('here_v is not in Python globals().')
-def scoped():
-    v = jmp.here['here_v']
-    print(f'scoped: {v}')
-    
-scoped()
-try:    
-    print(v)
-except:
-    print('v is local to scoped().')
+import jmpjmp.run_jsl('''Names Default to Here(1);here_v = "here";Show(here_v);''')print( f'temporary: {jmp.here['here_v']}' )try:        print(here_v)except:    print('here_v is not in Python globals().')def scoped():    v = jmp.here['here_v']    print(f'scoped: {v}')    scoped()try:        print(v)except:    print('v is local to scoped().')
 
 ```
 
@@ -3508,15 +2316,7 @@ except:
 
 ```python
 
-import jmp
-
-jmp.globals['e'] = 2.71828
-jmp.run_jsl('''
-    Names Default to Here(1);
-    pi = 3.1415929;
-    show(::e);
-''')
-print( jmp.here['pi'] )
+import jmpjmp.globals['e'] = 2.71828jmp.run_jsl('''    Names Default to Here(1);    pi = 3.1415929;    show(::e);''')print( jmp.here['pi'] )
 
 ```
 
@@ -3530,13 +2330,7 @@ print( jmp.here['pi'] )
 
 ```python
 
-import jmp
-
-print( len( jmp.here ) )
-jmp.here['pi'] = 3.1415927
-print( len( jmp.here ) )
-jmp.here['e'] =  2.7182818
-print( len( jmp.here ) )
+import jmpprint( len( jmp.here ) )jmp.here['pi'] = 3.1415927print( len( jmp.here ) )jmp.here['e'] =  2.7182818print( len( jmp.here ) )
 
 ```
 
@@ -3544,19 +2338,13 @@ print( len( jmp.here ) )
 
 **구문:** jmp.here[&apos;name&apos;] = value
 
-**설명:** Provides the means to set a value into the JSL script&apos;s &apos;here&apos; namespace. This allows sending back a value that could not be reached by Python Get(). Only variables in the Python global scope can be seen by Python Get(). Supports same object types as Python Get(). Note on JSL namespace scoping, the &apos;here&apos; namespace is local to the script submission.  Code submitted from different script windows will have separate &apos;here&apos; namespaces. Code including another script will have a single &apos;here&apos; namespace. This holds true for a JSL script running Python via Submit() or Execute(), Python scripts calling run_jsl().
+**설명:** JSL 스크립트의 &apos;here&apos; 네임스페이스에 값을 설정하는 방법을 제공합니다. 이를 통해 Python Get()으로는 접근할 수 없는 값을 반환할 수 있습니다. Python Get()은 Python 전역 범위의 변수만 참조할 수 있습니다. Python Get()과 동일한 개체 유형을 지원합니다. JSL 네임스페이스 범위에서 &apos;here&apos; 네임스페이스는 스크립트 전송 시점에 국한됩니다. 즉, 서로 다른 스크립트 창에서 전송된 코드는 각각 별도의 &apos;here&apos; 네임스페이스를 가지며, 다른 스크립트를 포함하는 코드는 단일 &apos;here&apos; 네임스페이스를 가집니다. 이는 Submit() 또는 Execute()를 통해 Python을 실행하는 JSL 스크립트나 run_jsl()을 호출하는 Python 스크립트에도 적용됩니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.run_jsl('''
-    Names Default to Here(1);
-    show(pi)
-''')
+import jmpjmp.here['pi'] = 3.1415927jmp.run_jsl('''    Names Default to Here(1);    show(pi)''')
 
 ```
 
@@ -3564,20 +2352,13 @@ jmp.run_jsl('''
 
 **구문:** str(jmp.here)
 
-**설명:** here의 내용을 사전 형태로 표시합니다.
+**설명:** here의 내용을 딕셔너리 형태로 표시합니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.here['e'] =  2.7182818
-jmp.here['Bb'] = 'bumble bee'
-print( jmp.here )
-d = str(jmp.here)
-print(d)
+import jmpjmp.here['pi'] = 3.1415927jmp.here['e'] =  2.7182818jmp.here['Bb'] = 'bumble bee'print( jmp.here )d = str(jmp.here)print(d)
 
 ```
 
@@ -3591,12 +2372,7 @@ print(d)
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.here['bB'] = 'Bumble Bee'
-print( jmp.here.get('pi') )                        
-print( jmp.here.get('b  b') )
+import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.get('pi') )                        print( jmp.here.get('b  b') )
 
 ```
 
@@ -3610,11 +2386,7 @@ print( jmp.here.get('b  b') )
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.here['bB'] = 'Bumble Bee'
-print( jmp.here.items() )
+import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.items() )
 
 ```
 
@@ -3628,11 +2400,7 @@ print( jmp.here.items() )
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.here['bB'] = 'Bumble Bee'
-print( jmp.here.keys() )
+import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.keys() )
 
 ```
 
@@ -3646,11 +2414,7 @@ print( jmp.here.keys() )
 
 ```python
 
-import jmp
-
-jmp.here['pi'] = 3.1415927
-jmp.here['bB'] = 'Bumble Bee'
-print( jmp.here.values() )
+import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.values() )
 
 ```
 
@@ -3668,22 +2432,13 @@ print( jmp.here.values() )
 
 **구문:** jmp.live.get_credentials(&lt;credential_name&gt;)
 
-**설명:** JMP Live 데이터 새로 고침 스크립트에서 스크립트에 할당된 특정 이름을 가진 자격 증명을 반환합니다(이름이 제공되지 않은 경우 기본 자격 증명 반환). 반환되는 값은 "username", "password", "key_file_path" 키가 있는 사전입니다.
+**설명:** JMP Live 데이터 새로 고침 스크립트에서 스크립트에 할당된 특정 이름을 가진 자격 증명을 반환합니다(이름이 제공되지 않은 경우 기본 자격 증명 반환). 반환되는 값은 "username", "password", "key_file_path" 키가 있는 딕셔너리입니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable()
-
-credentials = jmp.live.get_credentials()
-
-# login to external data source using credentials['username'] and credentials['password']
-# create dt using obtained data
-
-jmp.live.set_result(dt)
+import jmpdt = jmp.DataTable()credentials = jmp.live.get_credentials()# login to external data source using credentials['username'] and credentials['password']# create dt using obtained datajmp.live.set_result(dt)
 
 ```
 
@@ -3697,15 +2452,7 @@ jmp.live.set_result(dt)
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable()
-
-importPath = jmp.live.get_import_file_path()
-with open(importPath) as importFile:
-    # [import data from importFile to dt]
-
-jmp.live.set_result(dt)
+import jmpdt = jmp.DataTable()importPath = jmp.live.get_import_file_path()with open(importPath) as importFile:    # [import data from importFile to dt]jmp.live.set_result(dt)
 
 ```
 
@@ -3719,17 +2466,7 @@ jmp.live.set_result(dt)
 
 ```python
 
-import jmp
-
-dt = jmp.DataTable()
-shouldUpdate = True
-
-# add data to dt, or set shouldUpdate to False
-
-if shouldUpdate:
-    jmp.live.set_result(dt)
-else:
-    jmp.live.set_result(None)
+import jmpdt = jmp.DataTable()shouldUpdate = True# add data to dt, or set shouldUpdate to Falseif shouldUpdate:    jmp.live.set_result(dt)else:    jmp.live.set_result(None)
 
 ```
 
@@ -3749,10 +2486,7 @@ else:
 
 ```python
 
-import jmp
-
-import jmp.log
-jmp.log.flush()
+import jmpimport jmp.logjmp.log.flush()
 
 ```
 
@@ -3766,10 +2500,7 @@ jmp.log.flush()
 
 ```python
 
-import jmp
-
-import jmp.log
-jmp.log.write('I am a log message.')
+import jmpimport jmp.logjmp.log.write('I am a log message.')
 
 ```
 
@@ -3789,8 +2520,7 @@ jmp.log.write('I am a log message.')
 
 ```python
 
-import jmp
-print(jmp.ALL_HOME)
+import jmpprint(jmp.ALL_HOME)
 
 ```
 
@@ -3804,8 +2534,7 @@ print(jmp.ALL_HOME)
 
 ```python
 
-import jmp
-print(jmp.BUILTIN_SCRIPTS)
+import jmpprint(jmp.BUILTIN_SCRIPTS)
 
 ```
 
@@ -3819,8 +2548,7 @@ print(jmp.BUILTIN_SCRIPTS)
 
 ```python
 
-import jmp
-print(jmp.DESKTOP)
+import jmpprint(jmp.DESKTOP)
 
 ```
 
@@ -3834,8 +2562,7 @@ print(jmp.DESKTOP)
 
 ```python
 
-import jmp
-print(jmp.DOCUMENTS)
+import jmpprint(jmp.DOCUMENTS)
 
 ```
 
@@ -3849,8 +2576,7 @@ print(jmp.DOCUMENTS)
 
 ```python
 
-import jmp
-print(jmp.DOWNLOADS)
+import jmpprint(jmp.DOWNLOADS)
 
 ```
 
@@ -3864,12 +2590,7 @@ print(jmp.DOWNLOADS)
 
 ```python
 
-import jmp
-
-# for the sake of typing
-from jmp import DataType as dType
-print('jmp.DataType members:')
-print( list(map(lambda c: c.name, dType)) )
+import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jmp.DataType members:')print( list(map(lambda c: c.name, dType)) )
 
 ```
 
@@ -3883,8 +2604,7 @@ print( list(map(lambda c: c.name, dType)) )
 
 ```python
 
-import jmp
-print(jmp.HOME)
+import jmpprint(jmp.HOME)
 
 ```
 
@@ -3898,8 +2618,7 @@ print(jmp.HOME)
 
 ```python
 
-import jmp
-print(jmp.JMPPRJ)
+import jmpprint(jmp.JMPPRJ)
 
 ```
 
@@ -3913,12 +2632,7 @@ print(jmp.JMPPRJ)
 
 ```python
 
-import jmp
-
-# for the sake of typing
-from jmp import ModelingType as mType
-print('jmp.ModleingType members:')
-print( list(map(lambda c: c.name, mType)) )
+import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint('jmp.ModleingType members:')print( list(map(lambda c: c.name, mType)) )
 
 ```
 
@@ -3932,11 +2646,7 @@ print( list(map(lambda c: c.name, mType)) )
 
 ```python
 
-import jmp
-
-import platform
-if platform.system() == "Windows":
-    print(jmp.PYTHONW_EXE)
+import jmpimport platformif platform.system() == "Windows":    print(jmp.PYTHONW_EXE)
 
 ```
 
@@ -3950,8 +2660,7 @@ if platform.system() == "Windows":
 
 ```python
 
-import jmp
-print(jmp.PYTHON_EXE)
+import jmpprint(jmp.PYTHON_EXE)
 
 ```
 
@@ -3965,8 +2674,7 @@ print(jmp.PYTHON_EXE)
 
 ```python
 
-import jmp
-print(jmp.PY_USER_APPDIR)
+import jmpprint(jmp.PY_USER_APPDIR)
 
 ```
 
@@ -3980,8 +2688,7 @@ print(jmp.PY_USER_APPDIR)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_APPS)
+import jmpprint(jmp.SAMPLE_APPS)
 
 ```
 
@@ -3995,8 +2702,7 @@ print(jmp.SAMPLE_APPS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_DASHBOARDS)
+import jmpprint(jmp.SAMPLE_DASHBOARDS)
 
 ```
 
@@ -4010,8 +2716,7 @@ print(jmp.SAMPLE_DASHBOARDS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_DATA)
+import jmpprint(jmp.SAMPLE_DATA)
 
 ```
 
@@ -4025,8 +2730,7 @@ print(jmp.SAMPLE_DATA)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_IMAGES)
+import jmpprint(jmp.SAMPLE_IMAGES)
 
 ```
 
@@ -4040,8 +2744,7 @@ print(jmp.SAMPLE_IMAGES)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_IMPORT_DATA)
+import jmpprint(jmp.SAMPLE_IMPORT_DATA)
 
 ```
 
@@ -4055,8 +2758,7 @@ print(jmp.SAMPLE_IMPORT_DATA)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_PROJECTS)
+import jmpprint(jmp.SAMPLE_PROJECTS)
 
 ```
 
@@ -4070,8 +2772,7 @@ print(jmp.SAMPLE_PROJECTS)
 
 ```python
 
-import jmp
-print(jmp.SAMPLE_SCRIPTS)
+import jmpprint(jmp.SAMPLE_SCRIPTS)
 
 ```
 
@@ -4085,8 +2786,7 @@ print(jmp.SAMPLE_SCRIPTS)
 
 ```python
 
-import jmp
-print(jmp.TEMP)
+import jmpprint(jmp.TEMP)
 
 ```
 
@@ -4100,8 +2800,7 @@ print(jmp.TEMP)
 
 ```python
 
-import jmp
-print(jmp.USER_APPDATA)
+import jmpprint(jmp.USER_APPDATA)
 
 ```
 
@@ -4115,8 +2814,7 @@ print(jmp.USER_APPDATA)
 
 ```python
 
-import jmp
-print(jmp.__jmp_version__)
+import jmpprint(jmp.__jmp_version__)
 
 ```
 
@@ -4130,8 +2828,7 @@ print(jmp.__jmp_version__)
 
 ```python
 
-import jmp
-print(jmp.__version__)
+import jmpprint(jmp.__version__)
 
 ```
 
@@ -4145,10 +2842,7 @@ print(jmp.__version__)
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(jmp.current())
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
 
 ```
 
@@ -4162,193 +2856,95 @@ print(jmp.current())
 
 ```python
 
-import jmp
-
-from jmp import eval, Expression
-expression = Expression("2 + 2")
-result = eval(expression)
-print(result)
+import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")result = eval(expression)print(result)
 
 ```
 
 #### from_dataframe
 
-**구문:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
+**구문:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;, visibility=&lt;string&gt;)
 
 **설명:** 프로토콜 호환 라이브러리의 데이터 프레임에서 jmp.DataTable 개체를 반환합니다.
 
 **JMP추가된 버전:** 19
 
-**CSV Fallback**
+**CSV 대체 변환**
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas')
-
-import pandas as pd
-
-# Object columns are unsupported with jmp.from_dataframe() 
-df = pd.DataFrame({
-    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
-})
-
-dt = jmp.from_dataframe(df)
-print(dt)
+import jmpimport jmputils        try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe(df)print(dt)
 
 ```
 
-**Ibis to JMP**
+**Ibis에서 JMP로**
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas ibis-framework[duckdb,examples]')
-
-import pandas as pd
-import ibis
-
-pandas_df = pd.DataFrame(
-    [["a", 1, 2], ["b", 3, 4]],
-    columns=["one", "two", "three"],
-)
-t = ibis.memtable(pandas_df, name="t")
-print(t)
-dt = jmp.from_dataframe(t)
-print(dt)
+import jmpimport jmputils try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)    jmputils.jpip('install', 'ibis-framework[duckdb,examples]') except Exception as e:    print(f'Install failed with exception: {e}')          import pandas as pd import ibis  pandas_df = pd.DataFrame(     [["a", 1, 2], ["b", 3, 4]],     columns=["one", "two", "three"], ) t = ibis.memtable(pandas_df, name="t") print(t) dt = jmp.from_dataframe(t) print(dt)
 
 ```
 
-**JMP to Pandas**
+**JMP에서 Pandas로**
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'pandas')
-
-import pandas as pd
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-pandas_df = (pd.api.interchange.from_dataframe(dt))
-print(pandas_df)
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pddt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")pandas_df = (pd.api.interchange.from_dataframe(dt))print(pandas_df)
 
 ```
 
-**JMP to Polars**
+**JMP에서 Polars로**
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'polars')
- 
-import polars as pl
-
-dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
-polars_df = pl.from_dataframe(dt)
-print(polars_df)
+import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as pldt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")polars_df = pl.from_dataframe(dt)print(polars_df)
 
 ```
 
-**Pandas to JMP**
+**Pandas에서 JMP로**
 
 ```python
 
-import jmp
-
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'numpy pandas')
-
-import pandas as pd
-import numpy as np
-
-pandas_df = pd.DataFrame(
-    {
-        "A": 1.0,
-        "B": pd.Timestamp("20130102"),
-        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
-        "D": np.array([3] * 4, dtype="int32"),
-        "E": pd.Categorical(["test", "train", "test", "train"]),
-        "F": "foo",
-    }
-)
-print(pandas_df)
-
-dt = jmp.from_dataframe(pandas_df)
-print(dt)
+import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df)print(dt)
 
 ```
 
-**Polars to JMP**
+**Polars에서 JMP로**
 
 ```python
 
-import jmp
+import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as plfrom datetime import datepolars_df = pl.DataFrame( {    "foo": [1, 2, 3],    "bar": [6.0, 7.0, 8.0],    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],  } ) print(polars_df) dt = jmp.from_dataframe(polars_df) print(dt)
 
-import jmputils
-jmputils.jpip('install --upgrade', 'pip setuptools')
-jmputils.jpip('install', 'polars')
+```
 
-import polars as pl
-from datetime import date
+**Visibility**
 
-polars_df = pl.DataFrame(
-    {
-        "foo": [1, 2, 3],
-        "bar": [6.0, 7.0, 8.0],
-        "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
-    }
-)
-print(polars_df)
-dt = jmp.from_dataframe(polars_df)
-print(dt)
+```python
+
+import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df, visibility="invisible")#dt = jmp.from_dataframe(pandas_df, visibility="private")print(dt)
 
 ```
 
 #### from_dataframe_using_csv
 
-**구문:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
+**구문:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;, visibility=&lt;string&gt;)
 
 **설명:** 제공된 CSV 변환 방법을 사용하여 라이브러리의 데이터 프레임에서 jmp.DataTable 개체를 반환합니다.
 
 **JMP추가된 버전:** 19
 
+**General**
+
 ```python
 
-import jmp
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})try:    # Try converting object without CSV fallback    dt = jmp.from_dataframe(df, True, False)    print("Converted using jmp.from_dataframe()")except:     # Explicitly convert using CSV    dt = jmp.from_dataframe_using_csv(df)    print("Converted using jmp.from_dataframe_using_csv()")print(dt)
 
-import jmputils
-jmputils.jpip('install', 'pandas')
+```
 
-import pandas as pd
+**Visibility**
 
-# Object columns are unsupported with jmp.from_dataframe() 
-df = pd.DataFrame({
-    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
-})
+```python
 
-try:
-    # Try converting object without CSV fallback
-    dt = jmp.from_dataframe(df, True, False)
-    print("Converted using jmp.from_dataframe()")
-except: 
-    # Explicitly convert using CSV
-    dt = jmp.from_dataframe_using_csv(df)
-    print("Converted using jmp.from_dataframe_using_csv()")
-
-print(dt)
+import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe_using_csv(df, visibility="invisible")#dt = jmp.from_dataframe_using_csv(df, visibility="private")print(dt)
 
 ```
 
@@ -4364,10 +2960,7 @@ print(dt)
 
 ```python
 
-import jmp
-
-obj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')
-print(obj)
+import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
 
 ```
 
@@ -4375,10 +2968,7 @@ print(obj)
 
 ```python
 
-import jmp
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print(dt)
+import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```
 
@@ -4386,10 +2976,7 @@ print(dt)
 
 ```python
 
-import jmp
-
-obj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')
-print(obj)
+import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
 
 ```
 
@@ -4397,19 +2984,7 @@ print(obj)
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
-dt = jmp.current()
-print(dt)  # => None
-try:
-  dt = jmp.table('Animals')
-except FileNotFoundError:
-  print('Requested table not found')
-dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
-print(dt)
-dt.close(save=False)
-del dt
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt = jmp.current()print(dt)  # => Nonetry:  dt = jmp.table('Animals')except FileNotFoundError:  print('Requested table not found')dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')print(dt)dt.close(save=False)del dt
 
 ```
 
@@ -4417,18 +2992,7 @@ del dt
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
-dt = jmp.current()
-print(dt)  # success
-dt = jmp.table('Animals')
-print(dt)  # success
-# Select and run the above first if you want to see that even though
-# there is no window, Animals.jmp appears in recent files and
-# home window's list of files
-dt.close(save=False);
-del dt
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')dt = jmp.current()print(dt)  # successdt = jmp.table('Animals')print(dt)  # success# Select and run the above first if you want to see that even though# there is no window, Animals.jmp appears in recent files and# home window's list of filesdt.close(save=False);del dt
 
 ```
 
@@ -4442,13 +3006,7 @@ del dt
 
 ```python
 
-import jmp
-
-path_value = jmp.path_variable('SAMPLE_DATA')
-if not path_value:
-    print('Invalid path variable.')
-else:
-    print(path_value)
+import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:    print('Invalid path variable.')else:    print(path_value)
 
 ```
 
@@ -4462,10 +3020,7 @@ else:
 
 ```python
 
-import jmp
-
-rName = jmp.r_name('c d e')
-print(rName)
+import jmprName = jmp.r_name('c d e')print(rName)
 
 ```
 
@@ -4473,18 +3028,13 @@ print(rName)
 
 **구문:** jmp.reset()
 
-**설명:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**설명:** 공유 Python 환경을 재설정하며 주로 개체에 대한 모든 참조를 제거합니다. 단, 가져온 모듈의 가져오기 캐시는 변경되지 않습니다. 이는 Python 환경 자체의 제한 사항입니다. 공유 라이브러리를 로드하는 모듈은 실행 중인 프로세스에서 언로드할 수 없습니다. 순수형 Python 코드를 다시 로드하려면 Python.org 문서에서 importlib reload()를 검색하여 참조하십시오.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-pi = 3.1415927
-print(pi)
-jmp.reset()
-print(pi)
+import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
 
 ```
 
@@ -4500,14 +3050,7 @@ print(pi)
 
 ```python
 
-import jmp
-
-value = jmp.run_jsl('''
-Names default to here(1);
-an A = 1.5;
-x = 5 * anA;
-''')
-print( f'{value} = jmp.run_jsl()')
+import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 * anA;''')print( f'{value} = jmp.run_jsl()')
 
 ```
 
@@ -4515,9 +3058,7 @@ print( f'{value} = jmp.run_jsl()')
 
 ```python
 
-import jmp
-
-jmp.run_jsl('Python Get Version();')
+import jmpjmp.run_jsl('Python Get Version();')
 
 ```
 
@@ -4525,24 +3066,7 @@ jmp.run_jsl('Python Get Version();')
 
 ```python
 
-import jmp
-
-# Create a data table
-# dt = jmp.DataTable(name='table_name', rows=n)
-pbp = jmp.DataTable(rows=5)
-pbp.name = 'Powered by Python'
-pbp.new_column('Name', jmp.DataType.Character)
-pbp.new_column('Hourly Rate')
-#
-pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']
-pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missing
-pbp[1][4] = 17.25
-#
-# Change column format: Hourly Rate
-jmp.run_jsl('''
-Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );
-Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
-''')
+import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n)pbp = jmp.DataTable(rows=5)pbp.name = 'Powered by Python'pbp.new_column('Name', jmp.DataType.Character)pbp.new_column('Hourly Rate')#pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missingpbp[1][4] = 17.25## Change column format: Hourly Ratejmp.run_jsl('''Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );Data Table( "Powered by Python" ):Name << Set Display Width( 75 );''')
 
 ```
 
@@ -4556,10 +3080,7 @@ Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
 
 ```python
 
-import jmp
-
-jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-print( jmp.table('Big Class') )
+import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( jmp.table('Big Class') )
 
 ```
 
@@ -4583,12 +3104,7 @@ print( jmp.table('Big Class') )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-print(jr.r_version())
+import jmpfrom jmpex.R import Rjr = R()print(jr.r_version())
 
 ```
 
@@ -4596,18 +3112,13 @@ print(jr.r_version())
 
 **구문:** ver = jmpex.R.R().__version__
 
-**설명:** The jmpex package&apos;s R support version.
+**설명:** jmpex 패키지의 R 지원 버전입니다.
 
 **JMP추가된 버전:** 19
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-print(jr.__version__)
+import jmpfrom jmpex.R import Rjr = R()print(jr.__version__)
 
 ```
 
@@ -4623,20 +3134,7 @@ print(jr.__version__)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-d = jr.set( dt , 'rdt' )   # as_name required from Python
-print(d.__class__)
-print(d)
-# A R DataFrame is returned to Python as a pandas.DataFrame
-rdt = jr.get('rdt')
-print( rdt.__class__ )
-print( rdt )
+import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()d = jr.set( dt , 'rdt' )   # as_name required from Pythonprint(d.__class__)print(d)# A R DataFrame is returned to Python as a pandas.DataFramerdt = jr.get('rdt')print( rdt.__class__ )print( rdt )
 
 ```
 
@@ -4644,23 +3142,7 @@ print( rdt )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-import numpy as np
-import rpy2.robjects as ro
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-s = dt['name']
-nas = np.array(s)
-print(nas.__class__)
-print(nas)
-rv = ro.vectors.StrVector(nas)
-print(rv.__class__)
-print(rv)
+import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()s = dt['name']nas = np.array(s)print(nas.__class__)print(nas)rv = ro.vectors.StrVector(nas)print(rv.__class__)print(rv)
 
 ```
 
@@ -4668,24 +3150,7 @@ print(rv)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-import numpy as np
-import rpy2.robjects as ro
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# initialize jmpex.R.R class
-jr = R()
-
-a = dt['age']
-nar = np.array( a )
-print(nar.__class__)
-print(nar)
-rv = ro.vectors.FloatVector(nar)
-print(rv.__class__)
-print(rv)
+import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# initialize jmpex.R.R classjr = R()a = dt['age']nar = np.array( a )print(nar.__class__)print(nar)rv = ro.vectors.FloatVector(nar)print(rv.__class__)print(rv)
 
 ```
 
@@ -4693,20 +3158,7 @@ print(rv)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-a = jr.set( dt['age'], 'rage' )   # as_name required from Python
-
-print(a.__class__)
-print(a)
-ra = jr.get('rage')
-print( ra.__class__ )
-print( ra )
+import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()a = jr.set( dt['age'], 'rage' )   # as_name required from Pythonprint(a.__class__)print(a)ra = jr.get('rage')print( ra.__class__ )print( ra )
 
 ```
 
@@ -4720,13 +3172,7 @@ print( ra )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-print(f'R initialized: {R.is_connected()}')
-jr = R()
-print(f'R initialized: {R.is_connected()}')
+import jmpfrom jmpex.R import Rprint(f'R initialized: {R.is_connected()}')jr = R()print(f'R initialized: {R.is_connected()}')
 
 ```
 
@@ -4740,23 +3186,7 @@ print(f'R initialized: {R.is_connected()}')
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-d = { "canine": ["poodle", "dalmation", "wolf"], 
-      "ages": [ 1, 3, 5], 
-      "vet bill": [200.0, 300.57, 2000.99] }
-      
-r_obj = jr.obj2r( d )
-p_obj = jr.r2obj( r_obj )
-
-print(r_obj.__class__)
-print(r_obj)
-
-print(p_obj.__class__)
-print(p_obj)
+import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmation", "wolf"],       "ages": [ 1, 3, 5],       "vet bill": [200.0, 300.57, 2000.99] }      r_obj = jr.obj2r( d )p_obj = jr.r2obj( r_obj )print(r_obj.__class__)print(r_obj)print(p_obj.__class__)print(p_obj)
 
 ```
 
@@ -4770,23 +3200,7 @@ print(p_obj)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-d = { "canine": ["poodle", "dalmation", "wolf"], 
-      "ages": [ 1, 3, 5], 
-      "vet bill": [200.0, 300.57, 2000.99] }
-      
-r_obj = jr.obj2r( d )
-p_obj = jr.r2obj( r_obj )
-
-print(r_obj.__class__)
-print(r_obj)
-
-print(p_obj.__class__)
-print(p_obj)
+import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmation", "wolf"],       "ages": [ 1, 3, 5],       "vet bill": [200.0, 300.57, 2000.99] }      r_obj = jr.obj2r( d )p_obj = jr.r2obj( r_obj )print(r_obj.__class__)print(r_obj)print(p_obj.__class__)print(p_obj)
 
 ```
 
@@ -4800,12 +3214,7 @@ print(p_obj)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-print(f'R Version: {jr.r_version()}')
+import jmpfrom jmpex.R import Rjr = R()print(f'R Version: {jr.r_version()}')
 
 ```
 
@@ -4821,22 +3230,7 @@ print(f'R Version: {jr.r_version()}')
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...
-d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'
-jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();
-
-print(d.__class__)
-print(d)
-bc = jr.get('Big.Class')
-print( bc.__class__ )
-print( bc )
+import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();print(d.__class__)print(d)bc = jr.get('Big.Class')print( bc.__class__ )print( bc )
 
 ```
 
@@ -4844,23 +3238,7 @@ print( bc )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-import numpy as np
-import rpy2.robjects as ro
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-s = dt['name']
-nas = np.array(s)
-print(nas.__class__)
-print(nas)
-rv = ro.vectors.StrVector(nas)
-print(rv.__class__)
-print(rv)
+import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()s = dt['name']nas = np.array(s)print(nas.__class__)print(nas)rv = ro.vectors.StrVector(nas)print(rv.__class__)print(rv)
 
 ```
 
@@ -4868,24 +3246,7 @@ print(rv)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-import numpy as np
-import rpy2.robjects as ro
-
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# initialize jmpex.R
-jr = R()
-
-a = dt['age']
-nar = np.array( a )
-print(nar.__class__)
-print(nar)
-rv = ro.vectors.FloatVector(nar)
-print(rv.__class__)
-print(rv)
+import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# initialize jmpex.Rjr = R()a = dt['age']nar = np.array( a )print(nar.__class__)print(nar)rv = ro.vectors.FloatVector(nar)print(rv.__class__)print(rv)
 
 ```
 
@@ -4893,20 +3254,7 @@ print(rv)
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-jr = R()
-
-a = jr.set( dt['age'], 'rage' )   # as_name required from Python
-
-print(a.__class__)
-print(a)
-ra = jr.get('rage')
-print( ra.__class__ )
-print( ra )
+import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()a = jr.set( dt['age'], 'rage' )   # as_name required from Pythonprint(a.__class__)print(a)ra = jr.get('rage')print( ra.__class__ )print( ra )
 
 ```
 
@@ -4922,23 +3270,7 @@ print( ra )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-           
-jr = R()
-dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
-
-# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...
-d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'
-df = jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();
-print(f'DataFrame:\n{df}')
-
-print(d.__class__)
-print(d)
-bc = jr.get('Big.Class')
-print( bc.__class__ )
-print( bc )
+import jmpfrom jmpex.R import R           jr = R()dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'df = jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();print(f'DataFrame:\n{df}')print(d.__class__)print(d)bc = jr.get('Big.Class')print( bc.__class__ )print( bc )
 
 ```
 
@@ -4946,15 +3278,7 @@ print( bc )
 
 ```python
 
-import jmp
-
-from jmpex.R import R
-
-jr = R()
-jr.submit('''
-x <- rnorm (100)
-y <- x**2 + rnorm (100)
-''')
+import jmpfrom jmpex.R import Rjr = R()jr.submit('''x <- rnorm (100)y <- x**2 + rnorm (100)''')
 
 ```
 
@@ -4968,19 +3292,7 @@ y <- x**2 + rnorm (100)
 
 ```python
 
-import jmp
-
-import os
-from jmpex.R import R
-
-jr = R()
-result = jr.submit_file( os.path.join(jmp.SAMPLE_SCRIPTS, 'R', 'SI_example.R') )
-print(result)
-print(result.__class__)
-
-po = jr.r2obj(result)
-print(po)
-print(po.__class__)
+import jmpimport osfrom jmpex.R import Rjr = R()result = jr.submit_file( os.path.join(jmp.SAMPLE_SCRIPTS, 'R', 'SI_example.R') )print(result)print(result.__class__)po = jr.r2obj(result)print(po)print(po.__class__)
 
 ```
 
@@ -5008,7 +3320,7 @@ print(po.__class__)
 
 #### jmpex - package
 
-**설명:** The jmpex package contains extension interfaces supported by JMP. Currently it contains only an R support module.
+**설명:** jmpex 패키지는 JMP에서 지원하는 확장 인터페이스를 포함하며 현재는 R 지원 모듈만 포함합니다.
 
 **JMP추가된 버전:** 19
 
@@ -5017,6 +3329,18 @@ print(po.__class__)
 ## jmputils
 
 ### 함수
+
+#### __version__
+
+**설명:** jmputils 패키지의 버전 번호입니다.
+
+**JMP추가된 버전:** 19
+
+```python
+
+import jmpimport jmputilsprint( jmputils.__version__ )
+
+```
 
 #### create_jpip
 
@@ -5028,139 +3352,127 @@ print(po.__class__)
 
 ```python
 
-import jmp
+import jmpimport jmputilsjmp.run_jsl('''dest_path = Pick Directory("Directory location to save jpip script.");// Pick Directory on windows returns a leading / use Convert File Path()If( Host is("Windows"),    dest_path = Convert File Path( dest_path, windows ));Python Send(dest_path);''')jmputils.create_jpip(dest_path)
 
-import jmputils
-jmp.run_jsl('''
-dest_path = Pick Directory("Directory location to save jpip script.");
-// Pick Directory on windows returns a leading / use Convert File Path()
-If( Host is("Windows"),
-    dest_path = Convert File Path( dest_path, windows )
-);
-Python Send(dest_path);
-''')
-jmputils.create_jpip(dest_path)
+```
+
+#### is_installed
+
+**구문:** success = is_installed(package_name)
+
+**설명:** package_name이 설치된 경우 True를 반환하고 그렇지 않은 경우 False를 반환합니다.
+
+**JMP추가된 버전:** 19
+
+**예제 1**
+
+```python
+
+import jmpimport jmputilsif not jmputils.is_installed('certifi'):    result = jmputils.jpip('install', 'certifi', echo=False)    try:        result.check_returncode()        print( jmputils.package_version('certifi') )    except Exception as e:        print(f'jpip install failed with reason: {e}')else:    print( jmputils.package_version('certifi') )
+
+```
+
+**패키지를 찾을 수 없습니다.**
+
+```python
+
+import jmpimport jmputilsif jmputils.is_installed('invalidjmppackage'):    print("Surprise!")else:    print('Package not found.')
 
 ```
 
 #### jpip
 
-**구문:** jpip( &apos;pip_cmd&apos;, packages=&apos;&apos; )
+**구문:** result = jpip( &apos;pip_cmd&apos;, packages=&apos;&apos;, echo=True )
 
-**설명:** 이 함수는 JMP 내에서 호출할 수 있으며 Python pip 명령을 래핑합니다. 이 함수 pip 명령을 문자열로 전달하고, 원하는 경우 설치할 패키지의 문자열(공백으로 구분됨)로 전달할 수 있습니다. 개별 인수 목록도 허용됩니다. packages 인수는 기본적으로 빈 문자열입니다. &apos;jmputils&apos; 패키지는 포함된 Python 표준 라이브러리 파일과 같은 위치에 있습니다. jmputils 내의 모든 함수는 Python 표준 라이브러리 함수 또는 JMP 기본 제공 기능만 활용합니다.
+**설명:** 이 함수는 JMP 내에서 호출할 수 있으며 Python pip 명령을 래핑하고 subprocess.CompletedProcess 개체를 반환합니다. 이 함수에는 pip 명령 인수를 문자열로 전달하며, 설치할 패키지 문자열(공백으로 구분됨)을 선택적으로 지정할 수 있습니다. 개별 인수로 구성된 목록을 사용하는 방법도 가능합니다. 목록 방식은 디렉터리 경로에 공백이 포함된 경우에도 정상적으로 작동하므로 더 안정적입니다. packages 인수의 기본값은 빈 문자열입니다. &apos;jmputils&apos; 패키지는 JMP에 내장된 Python 표준 라이브러리의 일부입니다. jmputils 내의 함수는 Python 표준 라이브러리 호출 또는 JMP 기본 제공 기능만 활용합니다.
 
 **JMP추가된 버전:** 18
-
-**install**
-
-```python
-
-import jmp
-
-from jmputils import jpip
-# update to latest version of pip and setuptools then install numpy & pandas
-jpip('install --upgrade', 'pip setuptools certifi')
-jpip('install', 'numpy pandas')
-
-```
-
-**install (list arguments)**
-
-```python
-
-import jmp
-
-from jmputils import jpip
-# update to latest version of pip and setuptools then install numpy & pandas
-jpip(['install', '--upgrade'], ['pip', 'setuptools', 'certifi'])
-jpip(['install'], ['numpy', 'pandas'])
-
-```
 
 **jmpex**
 
 ```python
 
-import jmp
-
-import os
-from jmputils import jpip
-# Install jmpex package 
-jpip('install', [ os.path.join(jmp.SAMPLE_SCRIPTS, 'Python', 'jmpex.zip') ] )
+import jmpimport osfrom jmputils import jpip# Install jmpex package jpip('install', [ os.path.join(jmp.SAMPLE_SCRIPTS, 'Python', 'jmpex.zip') ] )
 
 ```
 
-**list**
+**로컬 패키지**
 
 ```python
 
-import jmp
-
-from jmputils import jpip
-jpip('list')
+import jmpfrom jmputils import jpipjmp.run_jsl('''dest_path = Pick Directory("Directory location of local package directory to install.");// Pick Directory on windows returns a leading / use Convert File Path()If( Host is("Windows"),    dest_path = Convert File Path( dest_path, windows ));Python Send(dest_path);''')print(dest_path)jpip('install', dest_path)
 
 ```
 
-**Local Package**
+**목록 표시**
 
 ```python
 
-import jmp
-
-from jmputils import jpip
-jmp.run_jsl('''
-dest_path = Pick Directory("Directory location of local package directory to install.");
-// Pick Directory on windows returns a leading / use Convert File Path()
-If( Host is("Windows"),
-    dest_path = Convert File Path( dest_path, windows )
-);
-Python Send(dest_path);
-''')
-print(dest_path)
-jpip('install', dest_path)
+import jmpfrom jmputils import jpipjpip('list')
 
 ```
 
-**Requirements file**
+**설치**
 
 ```python
 
-import jmp
-
-from jmputils import jpip
-
-jmp.run_jsl('''
-
-src_path = Pick File(
-    "Select requirements.txt File",
-    "$DOCUMENTS",
-    {"TXT Files|txt", "All Files|*"},
-    0,
-    0,
-    "requirements.txt"
-);
-show(src_path);
-If( Host is("Windows"),
-    src_path = Convert File Path( src_path, windows )
-);
-show(src_path);
-Python Send(src_path);
-''')
-jpip('install', f'-r {src_path}')
+import jmpfrom jmputils import jpip# update to latest version of pip and setuptools then install numpy & pandasjpip('install --upgrade', 'pip setuptools certifi')jpip('install', 'numpy pandas')
 
 ```
 
-**uninstall**
+**설치 (인수 나열)**
 
 ```python
 
-import jmp
-
-from jmputils import jpip
-# R support package jmpex uninstalled like any other Python package. 
-jpip('uninstall', 'jmpex')
+import jmpfrom jmputils import jpip# update to latest version of pip and setuptools then install numpy & pandasjpip(['install', '--upgrade'], ['pip', 'setuptools', 'certifi'])jpip(['install'], ['numpy', 'pandas'])
 
 ```
+
+**요구 사항 파일**
+
+```python
+
+import jmpfrom jmputils import jpipjmp.run_jsl('''src_path = Pick File(    "Select requirements.txt File",    "$DOCUMENTS",    {"TXT Files|txt", "All Files|*"},    0,    0,    "requirements.txt");show(src_path);If( Host is("Windows"),    src_path = Convert File Path( src_path, windows ));show(src_path);Python Send(src_path);''')jpip('install', f'-r {src_path}')
+
+```
+
+**제거**
+
+```python
+
+import jmpfrom jmputils import jpip# R support package jmpex uninstalled like any other Python package. jpip('uninstall', 'jmpex')
+
+```
+
+#### package_version
+
+**구문:** package_version(package_name)
+
+**설명:** 명명된 패키지의 버전 번호입니다(설치된 경우).
+
+**JMP추가된 버전:** 19
+
+```python
+
+import jmpimport jmputils# package_version() internally calls is_installed()print( jmputils.package_version('certifi') )
+
+```
+
+#### packages
+
+**구문:** pkgs_dict = packages()
+
+**설명:** 설치된 패키지 목록을 포함하는 Python 딕셔너리를 반환합니다.
+
+**JMP추가된 버전:** 19
+
+```python
+
+import jmpimport jmputilspkgs = jmputils.packages()print('Package,', 'Version')for key, value in pkgs.items():    print(f'{key}: {value}')
+
+```
+
+#### 상수
 
 #### 함수
 

@@ -1,0 +1,86 @@
+# JMP Live Space
+
+
+
+## Item Messages
+
+### Get Description
+
+**Syntax:** string = jmplivespace &lt;&lt; Get Description()
+
+**Description:** Gets the description of the JMP Live Space
+
+**JMP Version Added:** 18
+
+```jsl
+
+liveconnection = New JMP Live();
+jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
+
+spaceList = jmpliveresult << As Scriptable;
+space = spaceList[1];
+
+Write( "Description: ", space << Get Description );
+
+```
+
+### Get Key
+
+**Syntax:** string = jmplivespace &lt;&lt; Get Key()
+
+**Description:** Gets the space key for the JMP Live Space
+
+**JMP Version Added:** 18
+
+```jsl
+
+liveconnection = New JMP Live();
+jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
+
+spaceList = jmpliveresult << As Scriptable;
+space = spaceList[1];
+
+Write( "Key: ", space << Get Key );
+
+```
+
+### Get Name
+
+**Syntax:** string = jmplivespace &lt;&lt; Get Name()
+
+**Description:** Gets the name of the JMP Live Space
+
+**JMP Version Added:** 18
+
+```jsl
+
+liveconnection = New JMP Live();
+jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
+
+spaceList = jmpliveresult << As Scriptable;
+space = spaceList[1];
+
+Write( "Name: ", space << Get Name );
+
+```
+
+### Get Type
+
+**Syntax:** string = jmplivespace &lt;&lt; Get Type()
+
+**Description:** Gets the type of the JMP Live Space (Personal or Normal)
+
+**JMP Version Added:** 18
+
+```jsl
+
+liveconnection = New JMP Live();
+jmpliveresult = liveconnection << Find Spaces( Search( "~" ) );
+
+spaceList = jmpliveresult << As Scriptable;
+space = spaceList[1];
+
+Write( "Type: ", space << Get Type );
+
+```
+

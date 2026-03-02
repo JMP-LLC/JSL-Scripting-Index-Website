@@ -12,11 +12,7 @@
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Auto Load( 1 ),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Auto Load( 1 ),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -26,24 +22,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt den Anzeigenamen für ein Add-in zurück.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Display Name();
+addins = Get Addins();addins << Display Name();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Display Name(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Display Name(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -53,24 +44,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt den Startordner für ein Add-in zurück.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Home Folder();
+addins = Get Addins();addins << Home Folder();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Home Folder(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Home Folder(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -80,24 +66,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt die eindeutige ID für ein Add-in zurück.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << ID();
+addins = Get Addins();addins << ID();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << ID(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << ID(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -107,24 +88,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt zurück, ob derzeit ein Add-in geladen ist oder nicht.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Is Loaded();
+addins = Get Addins();addins << Is Loaded();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Is Loaded(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Is Loaded(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -136,11 +112,7 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Load(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Load(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -152,11 +124,7 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Unload(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Unload(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -166,24 +134,19 @@ If( !Is Missing( addin ),
 
 **Beschreibung:** Gibt die Versionsnummer für ein Add-in zurück.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Version();
+addins = Get Addins();addins << Version();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Version(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Version(),	Print( "Add-In ID Not Found" ));
 
 ```
 

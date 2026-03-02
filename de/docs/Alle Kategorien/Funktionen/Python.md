@@ -12,9 +12,7 @@
 
 ```jsl
 
-PythonConnection = Python Connect();
-version = PythonConnection << Get Version;
-Show( version );
+PythonConnection = Python Connect();version = PythonConnection << Get Version;Show( version );
 
 ```
 
@@ -26,7 +24,7 @@ Show( version );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
@@ -34,13 +32,11 @@ Python Create JPIP CMD();
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Create JPIP CMD();
+conn = Python Connect();conn << Create JPIP CMD();
 
 ```
 
@@ -48,75 +44,23 @@ conn << Create JPIP CMD();
 
 **Syntax:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
-**Beschreibung:** Sendet eine Liste von Eingaben, führt Anweisungen aus und gibt eine Liste von Ausgaben zurück. Der optionale Parameter echo() ist standardmäßig „wahr“. Der Parameter echo steuert das Echo der Python-Quelle im Protokoll. Das logische „wahr“ (1) aktiviert das Echo der Quelle, während 0 das Echo im Protokoll unterdrückt.
+**Beschreibung:** Sendet eine Liste von Eingaben, führt Anweisungen aus und gibt eine Liste von Ausgaben zurück. Der optionale Parameter echo() ist standardmäßig „wahr“. Der Parameter echo steuert das Echo des Python-Quellcodes im Protokoll. Das logische „wahr“ (1) aktiviert das Echo des Quellcodes, während 0 das Echo im Protokoll unterdrückt.
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-
-a = "abcdef";
-d = 3.141;
-x = 0;
-z = 0;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m, a, d},
-	{x, z, a, d},
-	"\[
-import numpy as np
-a = np.multiply(v, m) # matrix product
-d = np.divide(v, m) # matrix division
-z = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left division
-x = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division
-]\"
-);
-Show( v, m, ml, x, z, a, d );
+a = "abcdef";d = 3.141;x = 0;z = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m, a, d},	{x, z, a, d},	"\[import numpy as npa = np.multiply(v, m) # matrix productd = np.divide(v, m) # matrix divisionz = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left divisionx = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division]\");Show( v, m, ml, x, z, a, d );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-
-x1 = 1;
-x2 = 2;
-y1 = 1;
-y2 = 2;
-z1 = 1;
-z2 = 2;
-v = [1 0 0, 0 1 0, 0 0 1];
-// pi, e, phi, c, Plank's, Faraday, 345 triangle
-m = [3.141 2.718 1.618,
-2.997 6.626 9.648,
-3 4 5];
-ml = Python Execute(
-	{v, m},
-	{x1, x2, y1, y2, z1, z2},
-	"\[
-import numpy as np
-x1 = np.multiply(v, m) # matrix product
-print('x1=', x1)
-x2 = np.divide(v, m) # matrix division
-print('x2=', x2)
-y1 = np.dot(v, m) # dot product of v and m
-print('y1=', y1)
-y2 = np.dot(m, v) # dot product of m and v
-print('y2=', y2)
-z1 = np.inner(v, m) # inner product of v and m
-print('z1=', z1)
-z2 = np.inner(m, v) # innder product of m and v
-print('z2=', z2)
-]\"
-);
-Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
+x1 = 1;x2 = 2;y1 = 1;y2 = 2;z1 = 1;z2 = 2;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m},	{x1, x2, y1, y2, z1, z2},	"\[import numpy as npx1 = np.multiply(v, m) # matrix productprint('x1=', x1)x2 = np.divide(v, m) # matrix divisionprint('x2=', x2)y1 = np.dot(v, m) # dot product of v and mprint('y1=', y1)y2 = np.dot(m, v) # dot product of m and vprint('y2=', y2)z1 = np.inner(v, m) # inner product of v and mprint('z1=', z1)z2 = np.inner(m, v) # innder product of m and vprint('z2=', z2)]\");Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```
 
@@ -128,15 +72,11 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-
-x1 = {1, 2, 3};
-Python Send( x1 );
-x2 = Python Get( x1 );
-Show( x1, x2 );
+x1 = {1, 2, 3};Python Send( x1 );x2 = Python Get( x1 );Show( x1, x2 );
 
 ```
 
@@ -144,11 +84,7 @@ Show( x1, x2 );
 
 ```jsl
 
-
-date1 = As Date( Today() );
-Python Send( date1 );
-date2 = Python Get( date1 );
-Show( date1, date2 );
+date1 = As Date( Today() );Python Send( date1 );date2 = Python Get( date1 );Show( date1, date2 );
 
 ```
 
@@ -156,12 +92,7 @@ Show( date1, date2 );
 
 ```jsl
 
-
-Python Install Packages( "numpy" );
-Python Submit( "import numpy as np" );
-Python Submit( "datetime64 = np.datetime64('1989-10-05')" );
-numpy_datetime = Python Get( datetime64 );
-Show( numpy_datetime );
+Python Install Packages( "numpy" );Python Submit( "import numpy as np" );Python Submit( "datetime64 = np.datetime64('1989-10-05')" );numpy_datetime = Python Get( datetime64 );Show( numpy_datetime );
 
 ```
 
@@ -175,8 +106,7 @@ Show( numpy_datetime );
 
 ```jsl
 
-version = Python Get Version();
-Show( version );
+version = Python Get Version();Show( version );
 
 ```
 
@@ -188,31 +118,19 @@ Show( version );
 
 **JMP Version hinzugefügt:** 14
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-
-Python Init();
-Python Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\" );
-getStr = Python Get( str );
-Show( getStr );
+Python Init();Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-
-PythonConnection = Python Init();
-PythonConnection << Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog';
-]\" );
-getStr = Python Get( str );
-Show( getStr );
+PythonConnection = Python Init();PythonConnection << Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
 
 ```
 
@@ -224,31 +142,27 @@ Show( getStr );
 
 **JMP Version hinzugefügt:** 18
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( "numpy pandas" );
+// install numpy and pandas packagesPython Install Packages( "numpy pandas" );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 
-// install numpy and pandas packages
-Python Install Packages( {"numpy", "pandas"} );
+// install numpy and pandas packagesPython Install Packages( {"numpy", "pandas"} );
 
 ```
 
-#### Beispiel 3
+**Beispiel 3**
 
 ```jsl
 
-// install numpy and pandas packages
-conn = Python Connect();
-conn << Install Packages( "numpy pandas" );
+// install numpy and pandas packagesconn = Python Connect();conn << Install Packages( "numpy pandas" );
 
 ```
 
@@ -262,8 +176,7 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
-x = Python Is Connected();
-Show( x );
+x = Python Is Connected();Show( x );
 
 ```
 
@@ -277,8 +190,7 @@ Show( x );
 
 ```jsl
 
-Python name = Python JMP Name to Python Name( a b c );
-Show( Python name );
+Python name = Python JMP Name to Python Name( a b c );Show( Python name );
 
 ```
 
@@ -286,26 +198,21 @@ Show( Python name );
 
 **Syntax:** Python Reset()
 
-**Beschreibung:** Resets the shared Python environment, primarily clearing all references to objects. This does not change the import cache of imported modules. This is a limitation of the Python environment itself.  Modules that load shared libraries cannot be unloaded by the running process. To reload pure Python code, see the Python.org documentation on importlib reload().
+**Beschreibung:** Setzt die freigegebene Python-Umgebung zurück, wobei in erster Linie alle Verweise auf Objekte gelöscht werden. Der Import-Cache von importierten Modulen wird dabei nicht verändert. Dies ist eine Einschränkung der Python-Umgebung selbst. Module, die freigegebene Bibliotheken laden, können von dem laufenden Prozess nicht entladen werden. Wie Sie reinen Python-Code neu laden, erfahren Sie in der Python.org-Dokumentation zu importlib reload().
 
 **JMP Version hinzugefügt:** 19
 
 ```jsl
 
-pi = 3.1415927;
-Python Send( pi );
-Python Submit( "print(pi)" );
-Python Reset();
-// will show error, pi not defined
-Python Submit( "print(pi)" );
+pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();// will show error, pi not definedPython Submit( "print(pi)" );
 
 ```
 
 ### Python Send
 
-**Syntax:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
+**Syntax:** Python Send( name, &lt;Python Name( name )&gt; )
 
-**Beschreibung:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
+**Beschreibung:** Sendet Daten an Python. Das Argument name kann jeden der folgenden JMP-Datentypen darstellen (numeric | string | matrix | list | data table | data table column | date).
 
 **JMP Version hinzugefügt:** 14
 
@@ -313,13 +220,7 @@ Python Submit( "print(pi)" );
 
 ```jsl
 
-
-x = {1, 2, 3};
-Python Send( x );
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt );
-Python Submit( "print(x)" );
-Python Submit( "print(dt)" );
+x = {1, 2, 3};Python Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt );Python Submit( "print(x)" );Python Submit( "print(dt)" );
 
 ```
 
@@ -327,10 +228,7 @@ Python Submit( "print(dt)" );
 
 ```jsl
 
-
-date = As Date( Today() );
-Python Send( date );
-Python Submit( "print(date)" );
+date = As Date( Today() );Python Send( date );Python Submit( "print(date)" );
 
 ```
 
@@ -338,10 +236,7 @@ Python Submit( "print(date)" );
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send( dt:weight );
-Python Submit( "print(weight)" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt:weight );Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -355,11 +250,7 @@ Python Submit( "print(weight)" );
 
 ```jsl
 
-
-Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
-Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
-Python Submit( "print(Big_Class)" );
-Python Submit( "print(Baseball)" );
+Python Send File( "$SAMPLE_DATA/Big Class.jmp" );Python Send File( "$SAMPLE_DATA/Baseball.jmp" );Python Submit( "print(Big_Class)" );Python Submit( "print(Baseball)" );
 
 ```
 
@@ -373,12 +264,7 @@ Python Submit( "print(Baseball)" );
 
 ```jsl
 
-Python Submit( "\[
-str = 'The quick brown fox jumps over the lazy dog'
-a = 200]\" );
-getStr = Python Get( str );
-getNum = Python Get( a );
-Show( getStr, getNum );
+Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog'a = 200]\" );getStr = Python Get( str );getNum = Python Get( a );Show( getStr, getNum );
 
 ```
 

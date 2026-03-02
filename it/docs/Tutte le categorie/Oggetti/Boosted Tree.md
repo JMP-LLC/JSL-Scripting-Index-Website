@@ -8,21 +8,11 @@
 
 **Sintassi:** obj &lt;&lt; By( column(s) )
 
+**Descrizione:** Esegue un&apos;analisi separata per ogni livello della colonna specificata.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	By( _bycol ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);
 
 ```
 
@@ -32,13 +22,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -46,17 +30,11 @@ obj = dt << Boosted Tree(
 
 **Sintassi:** obj &lt;&lt; Freq( column )
 
+**Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "_freqcol", Numeric, Continuous, Formula( Random Integer( 1, 5 ) ) );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Freq( _freqcol ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Freq( :_freqcol ),	Go);
 
 ```
 
@@ -66,13 +44,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -82,13 +54,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -96,17 +62,11 @@ obj = dt << Boosted Tree(
 
 **Sintassi:** obj &lt;&lt; Weight( column )
 
+**Descrizione:** Specifica una colonna i cui valori assegnano un peso a ogni riga per l&apos;analisi.
+
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "_weightcol", Numeric, Continuous, Formula( Random Beta( 1, 1 ) ) );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Weight( _weightcol ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Weight( :_weightcol ),	Go);
 
 ```
 
@@ -116,13 +76,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -132,13 +86,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -152,13 +100,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -172,12 +114,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -193,10 +130,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -204,13 +138,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -218,10 +146,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -233,15 +158,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -253,14 +170,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Column Contributions( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Column Contributions( 1 );
 
 ```
 
@@ -272,14 +182,7 @@ obj << Column Contributions( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Column Sampling Rate( 0.95 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Column Sampling Rate( 0.95 ),	Go);
 
 ```
 
@@ -291,12 +194,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
 
 ```
 
@@ -308,14 +206,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Copy Script;
 
 ```
 
@@ -327,14 +218,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Data Table Window;
 
 ```
 
@@ -346,16 +230,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Splits per Tree( 4 ),
-	Number of Layers( 171 ),
-	Learning Rate( 0.08 ),
-	Go
-);
-obj << Decision Threshold( 1 );
+dt = Open( "$Sample_Data/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Splits per Tree( 4 ),	Number of Layers( 171 ),	Learning Rate( 0.08 ),	Go);obj << Decision Threshold( 1 );
 
 ```
 
@@ -367,15 +242,7 @@ obj << Decision Threshold( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Early Stopping( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Early Stopping( 1 ),	Go);
 
 ```
 
@@ -385,78 +252,35 @@ obj = dt << Boosted Tree(
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Test;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
 
 ```
 
@@ -466,64 +290,35 @@ Show( aabs );
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Training;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
 
 ```
 
@@ -533,68 +328,35 @@ Show( aabs );
 
 **Descrizione:** Restituisce la statistica scarto medio ass per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Split Best( 2 )
-);
-aabs = obj << Get Average Absolute Error Validation;
-Show( aabs );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
 
 ```
 
@@ -604,79 +366,35 @@ Show( aabs );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-avg = obj << Get Average Log Error Test;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
 
 ```
 
@@ -686,64 +404,35 @@ Show( avg );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 3 )
-);
-avg = obj << Get Average Log Error Training;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 3 ));avg = obj << Get Average Log Error Training;Show( avg );
 
 ```
 
@@ -753,69 +442,35 @@ Show( avg );
 
 **Descrizione:** Restituisce la media di -log(p), dove p è uguale alla probabilità attribuita dal modello che la risposta si sia effettivamente verificata, per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-avg = obj << Get Average Log Error Validation;
-Show( avg );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
 
 ```
 
@@ -829,9 +484,7 @@ Show( avg );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -841,78 +494,35 @@ biv << Get By Levels;
 
 **Descrizione:** Restituisce la matrice di confusione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Test;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
 
 ```
 
@@ -922,70 +532,35 @@ Show( cm );
 
 **Descrizione:** Restituisce la matrice di confusione per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Training;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
 
 ```
 
@@ -995,71 +570,35 @@ Show( cm );
 
 **Descrizione:** Restituisce la matrice di confusione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cm = obj << Get Confusion Matrix Validation;
-Show( cm );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
 
 ```
 
@@ -1069,78 +608,35 @@ Show( cm );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Test;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
 
 ```
 
@@ -1150,70 +646,35 @@ Show( cr );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Training;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
 
 ```
 
@@ -1223,71 +684,35 @@ Show( cr );
 
 **Descrizione:** Restituisce i tassi di confusione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-cr = obj << Get Confusion Rates Validation;
-Show( cr );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
 
 ```
 
@@ -1301,15 +726,7 @@ Show( cr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1317,27 +734,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -1349,15 +746,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -1367,78 +756,35 @@ Show( N Rows( t ) );
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
 
 ```
 
@@ -1448,70 +794,35 @@ Show( r );
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
 
 ```
 
@@ -1521,71 +832,35 @@ Show( r );
 
 **Descrizione:** Restituisce l&apos;R-quadro generalizzato per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :sex ),
-	X( :marital status, :age, :country, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-r = obj << Get Gen RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
 
 ```
 
@@ -1597,14 +872,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-code = obj << Get MM SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);code = obj << Get MM SAS Data Step;
 
 ```
 
@@ -1616,14 +884,7 @@ code = obj << Get MM SAS Data Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-code = obj << Get MM Tolerant SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);code = obj << Get MM Tolerant SAS Data Step;
 
 ```
 
@@ -1637,14 +898,7 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Get Measures;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Get Measures;
 
 ```
 
@@ -1656,15 +910,7 @@ obj << Get Measures;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-time = obj << Get Microseconds;
-Show( time );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);time = obj << Get Microseconds;Show( time );
 
 ```
 
@@ -1674,78 +920,35 @@ Show( time );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di test. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt << Make Validation Column(
-	Training Set( .6 ),
-	Validation Set( .2 ),
-	Test Set( .2 ),
-	New Column Name( "Valid1" ),
-	Go
-);
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Valid1 ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Test;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
 
 ```
 
@@ -1755,65 +958,35 @@ Show( rate );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di training.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Method( "Decision Tree" )
-);
-obj << Split Best( 2 );
-rate = obj << Get Misclassification Rate Training;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Method( "Decision Tree" ));obj << Split Best( 2 );rate = obj << Get Misclassification Rate Training;Show( rate );
 
 ```
 
@@ -1823,72 +996,35 @@ Show( rate );
 
 **Descrizione:** Restituisce gli errori di classificazione per il set di validazione. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation( :Validation ),
-	Split Best( 2 )
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	validation( :Holdback1 ),
-	Method( "Decision Tree" ),
-	Go
-);
-rate = obj << Get Misclassification Rate Validation;
-Show( rate );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Method( "Decision Tree" ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
 
 ```
 
@@ -1898,58 +1034,27 @@ Show( rate );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di test. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
 
 ```
 
@@ -1959,54 +1064,27 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di training. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-obj << Show Tree( 0 );
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
 
 ```
 
@@ -2016,55 +1094,27 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva di precisione-richiamo per il set di validazione. La curva di precisione-richiamo deve essere visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << Precision Recall Curve;
-area = obj << Get Precision Recall Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
 
 ```
 
@@ -2076,14 +1126,7 @@ Show( area );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Get Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Get Prediction Formula;
 
 ```
 
@@ -2095,15 +1138,7 @@ obj << Get Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-rms = obj << Get RMS Error Test;
-Show( rms );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);rms = obj << Get RMS Error Test;Show( rms );
 
 ```
 
@@ -2115,15 +1150,7 @@ Show( rms );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-rms = obj << Get RMS Error Training;
-Show( rms );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);rms = obj << Get RMS Error Training;Show( rms );
 
 ```
 
@@ -2135,15 +1162,7 @@ Show( rms );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-rms = obj << Get RMS Error Validation;
-Show( rms );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);rms = obj << Get RMS Error Validation;Show( rms );
 
 ```
 
@@ -2153,58 +1172,27 @@ Show( rms );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per i dati del test. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation 2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Test;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
 
 ```
 
@@ -2214,54 +1202,27 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per il data set di training. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Split Best( 2 )
-);
-obj << Show Tree( 0 );
-obj << ROC Curve;
-area = obj << Get ROC Area Training;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
 
 ```
 
@@ -2271,55 +1232,27 @@ Show( area );
 
 **Descrizione:** Restituisce l&apos;area sotto la curva caratteristica operativa del ricevitore (ROC) per il data set di validazione. È necessario che la curva ROC venga visualizzata prima di calcolare l&apos;area. Disponibile solo se si utilizza un set di validazione.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Method( "Decision Tree" ),
-	Go
-);
-obj << ROC Curve;
-area = obj << Get ROC Area Validation;
-Show( area );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
 
 ```
 
@@ -2331,15 +1264,7 @@ Show( area );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get RSquare Test;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);r = obj << Get RSquare Test;Show( r );
 
 ```
 
@@ -2351,15 +1276,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get RSquare Training;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);r = obj << Get RSquare Training;Show( r );
 
 ```
 
@@ -2371,15 +1288,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Get RSquare Validation;
-Show( r );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);r = obj << Get RSquare Validation;Show( r );
 
 ```
 
@@ -2391,14 +1300,7 @@ Show( r );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-code = obj << Get SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);code = obj << Get SAS Data Step;
 
 ```
 
@@ -2410,15 +1312,7 @@ code = obj << Get SAS Data Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);t = obj << Get Script;Show( t );
 
 ```
 
@@ -2430,15 +1324,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -2450,15 +1336,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-time = obj << Get Seconds;
-Show( time );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);time = obj << Get Seconds;Show( time );
 
 ```
 
@@ -2470,15 +1348,7 @@ Show( time );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);t = obj << Get Timing;Show( t );
 
 ```
 
@@ -2490,14 +1360,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Get Tolerant Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Get Tolerant Prediction Formula;
 
 ```
 
@@ -2509,14 +1372,7 @@ obj << Get Tolerant Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-code = obj << Get Tolerant SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);code = obj << Get Tolerant SAS Data Step;
 
 ```
 
@@ -2528,10 +1384,7 @@ code = obj << Get Tolerant SAS Data Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -2545,10 +1398,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -2560,13 +1410,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -2578,66 +1422,45 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
 ### Informative Missing
 
-**Sintassi:** obj = Boosted Tree(...Informative Missing( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Boosted Tree(...Informative Missing( state=0|1 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Per variabili categoriche, tratta mancante come una categoria. Per variabili continue, tratta mancante come basso o alto, a seconda della stima migliore. Per impostazione predefinita l&apos;opzione è attivata.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-dt:Age[3] = .;
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Informative Missing( 0 ),
-	Split Best( 3 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt:Age[3] = .;obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Informative Missing( 0 ),	Split Best( 3 ));
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:age[3] = .;
-obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
-obj << Split Best( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );obj << Split Best( 1 );
 
 ```
 
@@ -2649,13 +1472,7 @@ obj << Split Best( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Learning Rate( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Learning Rate( 0.2 ),	Go);
 
 ```
 
@@ -2667,14 +1484,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Lift Curve( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Lift Curve( 1 );
 
 ```
 
@@ -2686,14 +1496,7 @@ obj << Lift Curve( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -2705,14 +1508,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Make SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Make SAS Data Step;
 
 ```
 
@@ -2724,14 +1520,7 @@ obj << Make SAS Data Step;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Make Tolerant SAS Data Step;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Make Tolerant SAS Data Step;
 
 ```
 
@@ -2745,19 +1534,13 @@ obj << Make Tolerant SAS Data Step;
 
 ### Method
 
-**Sintassi:** Method( "Boosted Tree" )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** Method( "Boosted Tree" ) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Determina il metodo utilizzato per effettuare la partizione dei dati. Per impostazione predefinita è selezionato il metodo Albero decisionale.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);
 
 ```
 
@@ -2769,13 +1552,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Minimum Size Split( 10 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Minimum Size Split( 10 ),	Go);
 
 ```
 
@@ -2785,63 +1562,27 @@ obj = dt << Boosted Tree(
 
 **Descrizione:** Suddivide i calcoli fra i thread disponibili del computer. Per impostazione predefinita l&apos;opzione è attivata.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Multithreading( 1 ),
-	Split Best( 2 )
-);
-
-```
-
-### New JSL Preset
-
-**Sintassi:** New JSL Preset( preset )
-
-**Descrizione:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
-Wait( 1 );
-obj << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Split Best( 2 ));
 
 ```
 
@@ -2855,9 +1596,7 @@ obj << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -2869,62 +1608,45 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Number of Layers( 20 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Number of Layers( 20 ),	Go);
 
 ```
 
 ### Ordinal Restricts Order
 
-**Sintassi:** obj = Boosted Tree(...Ordinal Restricts Order( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Boosted Tree(...Ordinal Restricts Order( state=0|1 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Per le colonne ordinali, considera solo le partizioni che mantengono l&apos;ordine. Per impostazione predefinita l&apos;opzione è attivata.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Ordinal Restricts Order( 1 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Ordinal Restricts Order( 1 ),	Split Best( 2 ));
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
-obj << Split Best( 3 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );obj << Split Best( 3 );
 
 ```
 
@@ -2936,13 +1658,7 @@ obj << Split Best( 3 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Overfit Penalty( 0.0005 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Overfit Penalty( 0.0005 ),	Go);
 
 ```
 
@@ -2954,15 +1670,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -2974,14 +1682,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Plot Actual by Predicted( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Plot Actual by Predicted( 1 );
 
 ```
 
@@ -2993,13 +1694,7 @@ obj << Plot Actual by Predicted( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Precision Recall Curve( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Precision Recall Curve( 1 );
 
 ```
 
@@ -3011,13 +1706,7 @@ obj << Precision Recall Curve( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Profiler( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Profiler( 1 );
 
 ```
 
@@ -3029,14 +1718,7 @@ obj << Profiler( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Publish Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Publish Prediction Formula;
 
 ```
 
@@ -3048,14 +1730,7 @@ obj << Publish Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Publish Tolerant Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Publish Tolerant Prediction Formula;
 
 ```
 
@@ -3067,14 +1742,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << ROC Curve( 1 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << ROC Curve( 1 );
 
 ```
 
@@ -3086,14 +1754,7 @@ obj << ROC Curve( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Redo Analysis;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Redo Analysis;
 
 ```
 
@@ -3105,14 +1766,7 @@ obj << Redo Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Relaunch Analysis;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Relaunch Analysis;
 
 ```
 
@@ -3124,14 +1778,7 @@ obj << Relaunch Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-Wait( 2 );
-obj << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
 
 ```
 
@@ -3143,53 +1790,19 @@ obj << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
-
-```
-
-### Render Preset
-
-**Sintassi:** Render Preset( preset )
-
-**Descrizione:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
-
-**JMP Versione aggiunta:** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :Height ), X( :Age ) );
-obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintassi:** obj &lt;&lt; Report;Report( obj )
+**Sintassi:** obj &lt;&lt; Report; Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -3201,14 +1814,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Report View( "Summary" );
 
 ```
 
@@ -3220,14 +1826,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation Portion( 0.2 ),
-	Row Sampling Rate( 0.95 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Row Sampling Rate( 0.95 ),	Go);
 
 ```
 
@@ -3239,14 +1838,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Cumulative Details;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Cumulative Details;
 
 ```
 
@@ -3258,13 +1850,7 @@ obj << Save Cumulative Details;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Go
-);
-obj << Save Offset Estimates;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Offset Estimates;
 
 ```
 
@@ -3276,14 +1862,7 @@ obj << Save Offset Estimates;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Predicteds;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Predicteds;
 
 ```
 
@@ -3295,14 +1874,7 @@ obj << Save Predicteds;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Prediction Formula;
 
 ```
 
@@ -3314,14 +1886,7 @@ obj << Save Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Residuals;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Residuals;
 
 ```
 
@@ -3333,14 +1898,7 @@ obj << Save Residuals;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Script for All Objects;
 
 ```
 
@@ -3350,45 +1908,19 @@ obj << Save Script for All Objects;
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-#### Esempio 1
+**Esempio 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
-#### Esempio 2
+**Esempio 2**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	By( _bycol ),
-	Go
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -3400,14 +1932,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -3419,14 +1944,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Script to Journal;
 
 ```
 
@@ -3438,14 +1956,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Script to Report;
 
 ```
 
@@ -3457,14 +1968,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Script to Script Window;
 
 ```
 
@@ -3476,14 +1980,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Tolerant Prediction Formula;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Tolerant Prediction Formula;
 
 ```
 
@@ -3495,14 +1992,7 @@ obj << Save Tolerant Prediction Formula;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Save Tree Details;
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Save Tree Details;
 
 ```
 
@@ -3514,15 +2004,7 @@ obj << Save Tree Details;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -3534,20 +2016,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -3559,12 +2028,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -3574,60 +2038,35 @@ dt << Distribution(
 
 **Descrizione:** Specifica un seme casuale per riprodurre i risultati per i futuri avvii della piattaforma.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Set Random Seed( 1234 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Set Random Seed( 1234 ),	Split Best( 2 ));
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Partition(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Set Random Seed( 1234 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Split Best( 2 ));
 
 ```
 
@@ -3639,16 +2078,7 @@ obj = dt << Partition(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Show Trees( Show names categories );
-(obj << Report)["Tree Views"] << Close( 0 );
-(obj << Report)["Layer4"] << Close( 0 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Show Trees( Show names categories );(obj << Report)["Tree Views"] << Close( 0 );(obj << Report)["Layer4"] << Close( 0 );
 
 ```
 
@@ -3660,13 +2090,7 @@ obj << Show Trees( Show names categories );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y Binary ),
-	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Specify Profit Matrix( [1 -1, -1 1, . .], "0", "1", "Undecided" ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Specify Profit Matrix( [1 -1, -1 1, . .], "0", "1", "Undecided" ),	Go);
 
 ```
 
@@ -3678,13 +2102,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Splits Per Tree( 2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Splits Per Tree( 2 ),	Go);
 
 ```
 
@@ -3696,11 +2114,7 @@ obj = dt << Boosted Tree(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -3712,14 +2126,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);obj << Title( "My Platform" );
 
 ```
 
@@ -3731,16 +2138,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Validation( :Validation ),
-	Go
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Go);r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -3760,127 +2158,73 @@ Show( t );
 
 <b>Elemento Finestra di dialogo di avvio: Sì</b>
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Boosted Tree(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Bootstrap Forest(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Use Excluded Rows for Validation( 1 ),
-	Split Best( 2 )
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Use Excluded Rows for Validation( 1 ),	Split Best( 2 ));
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
-For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
-obj = dt << Partition(
-	Y( :Y ),
-	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
-	Use Excluded Rows for Validation( 1 )
-);
-obj << Split Best( 5 );
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Partition(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ));obj << Split Best( 5 );
 
 ```
 
 ### Validation Portion
 
-**Sintassi:** obj = Boosted Tree(...Validation Portion( fraction=0 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Boosted Tree(...Validation Portion( fraction=0 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Crea un set di validazione selezionando righe in modo casuale, ove ciascuna riga ha probabilità p (frazione) di essere selezionata. "0", per impostazione predefinita.
 
-#### Esempio di albero boosted
+**Esempio di albero boosted**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Boosted Tree(
-	Y( :marital status ),
-	X( :sex, :country, :age, :type, :size ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :country, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
 
 ```
 
-#### Esempio di foresta di bootstrap
+**Esempio di foresta di bootstrap**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Bootstrap Forest(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
 
 ```
 
-#### Esempio di incremento (uplift)
+**Esempio di incremento (uplift)**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
-obj = dt << Uplift(
-	Y( :Purchase ),
-	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
-	Treatment( :Promotion ),
-	Validation Portion( 0.2 ),
-	Go
-);
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation Portion( 0.2 ),	Go);
 
 ```
 
-#### Esempio di partizione
+**Esempio di partizione**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Partition(
-	Y( :country ),
-	X( :sex, :marital status, :age, :type, :size ),
-	Validation Portion( 0.2 )
-);
-obj << Split Best( 2 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ));obj << Split Best( 2 );
 
 ```
 
@@ -3892,9 +2236,7 @@ obj << Split Best( 2 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 

@@ -34,7 +34,7 @@ Arrhenius Inv( 100 );
 
 **구문:** z = Beta( x, y )
 
-**설명:** Gamma( x ) * Gamma( y ) / Gamma( x + y )로 정의된 x 및 y의 베타 함수를 반환합니다.
+**설명:** Gamma( x ) \* Gamma( y ) / Gamma( x + y )로 정의된 x 및 y의 베타 함수를 반환합니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
@@ -152,52 +152,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
-A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
-res = FFT( {A} );
-res = FFT( {A}, <<Inverse( 1 ) );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-B = FFT( {A} );
-FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]
-);
-FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]}
-);
-FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5, 3 6, 3 1];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );
-res = FFT( FFT( {A}, <<multivariate( 1 ) ), <<multivariate( 1 ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-A = [1 3 1,
-2 4 3,
-3 1 2,
-4 3 3,
-4 5 9,
-5 2 8,
-5 7 6,
-6 9 5,
-7 5 3,
-7 3 2,
-2 7 1,
-3 4 3,
-6 7 3,
-6 4 2,
-2 7 4,
-2 4 1,
-2 6 5,
-3 5 1,
-3 6 2,
-3 1 9];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );
-fin = FFT( FFT( {A}, <<multivariate( 1 ) ), <<Inverse( 1 ), <<multivariate( 1 ), <<scale( 1 / 20 ) );
-Show( fin );
+FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];res = FFT( {A} );res = FFT( {A}, <<Inverse( 1 ) );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );B = FFT( {A} );FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]);FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]});FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5, 3 6, 3 1];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );res = FFT( FFT( {A}, <<multivariate( 1 ) ), <<multivariate( 1 ), <<Inverse( 1 ), <<scale( 1 / 20 ) );A = [1 3 1,2 4 3,3 1 2,4 3 3,4 5 9,5 2 8,5 7 6,6 9 5,7 5 3,7 3 2,2 7 1,3 4 3,6 7 3,6 4 2,2 7 4,2 4 1,2 6 5,3 5 1,3 6 2,3 1 9];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );fin = FFT( FFT( {A}, <<multivariate( 1 ) ), <<Inverse( 1 ), <<multivariate( 1 ), <<scale( 1 / 20 ) );Show( fin );
 
 ```
 
@@ -205,7 +160,7 @@ Show( fin );
 
 **구문:** y = Factorial( x )
 
-**설명:** x의 계승을 반환하며 Gamma( x + 1 )과 동일합니다. x가 정수이면 결과는 곱 1 * 2 * ... * x입니다.
+**설명:** x의 계승을 반환하며 Gamma( x + 1 )과 동일합니다. x가 정수이면 결과는 곱 1 \* 2 \* ... \* x입니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
@@ -225,15 +180,7 @@ Factorial( 5 );
 
 ```jsl
 
-datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857, -6.1855986,
-2.16525629, -30.990061];
-freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
-As Table( datavec || freqvec );
-Column( 1 ) << set name( "x" );
-Column( 2 ) << set name( "freq vec" );
-Distribution( Freq( :freq vec ), Continuous Distribution( Column( :x ), Fit Distribution( GLog ) ) );
-results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );
-Show( results );
+datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857, -6.1855986,2.16525629, -30.990061];freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];As Table( datavec || freqvec );Column( 1 ) << set name( "x" );Column( 2 ) << set name( "freq vec" );Distribution( Freq( :freq vec ), Continuous Distribution( Column( :x ), Fit Distribution( GLog ) ) );results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );Show( results );
 
 ```
 
@@ -241,7 +188,7 @@ Show( results );
 
 **구문:** y = Gamma( x, &lt;limit&gt; )
 
-**설명:** x의 감마 함수를 반환합니다. 감마 함수는 0에서 ∞까지 z^(x-1)*exp(-z) dz의 적분으로 정의됩니다. limit을 정의하면 해당 한계를 사용하여 적분하므로 불완전 감마가 계산됩니다.
+**설명:** x의 감마 함수를 반환합니다. 감마 함수는 0에서 ∞까지 z^(x-1)\*exp(-z) dz의 적분으로 정의됩니다. limit을 정의하면 해당 한계를 사용하여 적분하므로 불완전 감마가 계산됩니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
@@ -381,7 +328,7 @@ Logit Percent( 95.0 );
 
 **구문:** m = N Choose K( n, k )
 
-**설명:** n! / (k! * (n - k)!)(순서에 관계없이 n개의 항목 중 k개를 선택하는 방법의 수)를 반환합니다.
+**설명:** n! / (k! \* (n - k)!)(순서에 관계없이 n개의 항목 중 k개를 선택하는 방법의 수)를 반환합니다.
 
 **JMP추가된 버전:** 버전 14 이전
 
@@ -429,15 +376,7 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-x1 = SHASHInv( result1, gamma, delta, theta, sigma );
-x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;
-Show( x1, x2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );x1 = SHASHInv( result1, gamma, delta, theta, sigma );x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;Show( x1, x2 );
 
 ```
 
@@ -451,14 +390,7 @@ Show( x1, x2 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -494,7 +426,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 **구문:** y = Scheffe Cubic( x1, x2 )
 
-**설명:** x1*x2*(x1-x2)로 실행합니다. 3차 혼합물 모형에 대한 모델링 표기를 지원하는 데 사용됩니다.
+**설명:** x1\*x2\*(x1-x2)로 실행합니다. 3차 혼합물 모형에 대한 모델링 표기를 지원하는 데 사용됩니다.
 
 **JMP추가된 버전:** 버전 14 이전
 

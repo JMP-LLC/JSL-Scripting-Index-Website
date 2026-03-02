@@ -20,9 +20,7 @@ Le deuxième argument est utilisé pour enregistrer la table de données. Utilis
 
 ```jsl
 
-exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Wait( 3 );
-Close( exdt, NoSave );
+exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 3 );Close( exdt, NoSave );
 
 ```
 
@@ -40,10 +38,7 @@ Seules les fenêtres du projet actif (sauf si le script n&apos;est pas exécuté
 
 ```jsl
 
-exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
-Wait( 3 );
-Close All( Data Tables, NoSave );
+exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );Wait( 3 );Close All( Data Tables, NoSave );
 
 ```
 
@@ -57,15 +52,7 @@ Close All( Data Tables, NoSave );
 
 ```jsl
 
-For Each( {pv},
-	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",
-	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL",
-	"TEMP"},
-	Write(
-		pv || Repeat( " ", 20 - Length( pv ) ) || " => " ||
-		Convert File Path( "$" || pv ) || "\!N"
-	)
-);
+For Each( {pv},	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},	Write(		pv || Repeat( " ", 20 - Length( pv ) ) || " => " || Convert File Path( "$" || pv )		 || "\!N"	));
 
 ```
 
@@ -79,14 +66,7 @@ For Each( {pv},
 
 ```jsl
 
-rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
-rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc3 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
-rc4 = Delete Directory( "$TEMP/Loss Function Templates" );
-rc5 = Directory Exists( "$TEMP/Loss Function Templates" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
+rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );rc2 = Delete File( "$TEMP/Loss Function Templates/Normal.jmp" );rc3 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );rc4 = Delete Directory( "$TEMP/Loss Function Templates" );rc5 = Directory Exists( "$TEMP/Loss Function Templates" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 ```
 
@@ -100,13 +80,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-rc0 = File Exists( "$TEMP/x.jmp" );
-rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = Delete File( "$TEMP/x.jmp" );
-rc4 = File Exists( "$TEMP/x.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 );/* 0 1 1 1 0 */
+rc0 = File Exists( "$TEMP/x.jmp" );rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = Delete File( "$TEMP/x.jmp" );rc4 = File Exists( "$TEMP/x.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 );/* 0 1 1 1 0 */
 
 ```
 
@@ -120,14 +94,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Delete Directory( "$TEMP/sub1" );
-rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
-Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
-date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );
-rc1 = Delete Directory( "$TEMP/sub1" );
-rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
+Delete Directory( "$TEMP/sub1" );rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );rc1 = Delete Directory( "$TEMP/sub1" );rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```
 
@@ -139,27 +106,19 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
-Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Open( "$SAMPLE_DATA/Abrasion.jmp" );
-Create Excel Workbook(
-	"$TEMP/MyWorkbook.xlsx",
-	{"Big Class", "Abrasion"},
-	{"Big", "Abrasive"}
-);
+Open( "$SAMPLE_DATA/Big Class.jmp" );Open( "$SAMPLE_DATA/Abrasion.jmp" );Create Excel Workbook(	"$TEMP/MyWorkbook.xlsx",	{"Big Class", "Abrasion"},	{"Big", "Abrasive"});
 
 ```
 
@@ -187,14 +146,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```jsl
 
-Delete Directory( "$TEMP/sub1" );
-rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
-Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
-date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );
-rc1 = Delete Directory( "$TEMP/sub1" );
-rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||
-Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
+Delete Directory( "$TEMP/sub1" );rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );date = Last Modification Date( "$TEMP/sub1/sub2/sub3/temp.txt" );rc1 = Delete Directory( "$TEMP/sub1" );rc2 = File Exists( "$TEMP/sub1/sub2/sub3/temp.txt" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " ||Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```
 
@@ -208,12 +160,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```jsl
 
-rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
-rc1 = File Exists( "$TEMP/x.jmp" );
-rc2 = Delete File( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/x.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /* 1 1 1 0 */
-;
+rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = File Exists( "$TEMP/x.jmp" );rc2 = Delete File( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/x.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /* 1 1 1 0 */;
 
 ```
 
@@ -227,10 +174,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 ```jsl
 
-If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
-	"ok",
-	"missing!"
-);
+If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),	"ok",	"missing!");
 
 ```
 
@@ -244,10 +188,7 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 
 ```jsl
 
-If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
-	"ok",
-	"missing!"
-);
+If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),	"ok",	"missing!");
 
 ```
 
@@ -273,7 +214,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -281,13 +222,11 @@ Files In Directory( "$HOME" );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
-	Contains( Lowercase( fn ), "stacked" )
-);
+Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),	Contains( Lowercase( fn ), "stacked" ));
 
 ```
 
@@ -305,13 +244,7 @@ Seules les fenêtres du projet en cours (sauf si le script n&apos;est pas exécu
 
 ```jsl
 
-
-exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
-windows = Find All( Data Tables );
-For( i = 1, i <= N Items( windows ), i++,
-	Write( Char( windows[i] << Get Window Title ) || "\!N" )
-);
+exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );windows = Find All( Data Tables );For( i = 1, i <= N Items( windows ), i++,	Write( Char( windows[i] << Get Window Title ) || "\!N" ));
 
 ```
 
@@ -325,9 +258,7 @@ For( i = 1, i <= N Items( windows ), i++,
 
 ```jsl
 
-Show( Get Default Directory() );
-Set Default Directory( "$SAMPLE_DATA" );
-Show( Get Default Directory() );
+Show( Get Default Directory() );Set Default Directory( "$SAMPLE_DATA" );Show( Get Default Directory() );
 
 ```
 
@@ -341,8 +272,7 @@ Show( Get Default Directory() );
 
 ```jsl
 
-sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
-Show( sheetList );
+sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );Show( sheetList );
 
 ```
 
@@ -368,14 +298,11 @@ Get File Search Path();
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-Get Path Variable( "SAMPLE_DATA" );
-/* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
-See full listing of Path Variables in the other example
-See also Convert File Path() and Set Path Variable() */
+Get Path Variable( "SAMPLE_DATA" );/* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTSSee full listing of Path Variables in the other exampleSee also Convert File Path() and Set Path Variable() */
 
 ```
 
@@ -383,50 +310,7 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
-// Run for a Path Variable listing
-path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME",
-"USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS",
-"SAMPLE_IMAGES", "SAMPLE_IMPORT_DATA", "SAMPLE_PROJECTS", "SAMPLE_SCRIPTS"};
-path vars ||= Transform Each( {id}, Get Addins() << ID,
-	Eval Insert( "ADDIN_HOME(^id^)" )
-);
-path vars = Filter Each( {var}, path vars,
-	Directory Exists( Get Path Variable( var ) )
-);
-
-New Window( "Path Variables",
-	<<Type( "Dialog" ),
-	Outline Box( "Path Variables",
-		H List Box(
-			Button Box( "Open Paths",
-				For Each( {row}, tbl << Get Selected Rows, {path},
-					path = tbl[String Col Box( 2 )] << Get( row );
-					Open( path );
-				)
-			),
-			Button Box( "Copy Paths",
-				If( N Items( tbl << Get Selected Rows ),
-					Set Clipboard(
-						Concat Items(
-							Transform Each( {row}, tbl << Get Selected Rows,
-								Output( "List" ),
-								tbl[String Col Box( 2 )] << Get( row )
-							),
-							"\!N"
-						)
-					)
-				)
-			)
-		),
-		window:tbl = Table Box(
-			String Col Box( "Variable", path vars ),
-			String Col Box( "Path",
-				Transform Each( {var}, path vars, Get Path Variable( var ) )
-			),
-			<<Set Selectable Rows
-		)
-	)
-);
+// Run for a Path Variable listingpath vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME","USER_APPDATA", "ALL_HOME", "BUILTIN_SCRIPTS", "SAMPLE_APPS", "SAMPLE_DASHBOARDS","SAMPLE_IMAGES", "SAMPLE_IMPORT_DATA", "SAMPLE_PROJECTS", "SAMPLE_SCRIPTS"};path vars ||= Transform Each( {id}, Get Addins() << ID, Eval Insert( "ADDIN_HOME(^id^)" ) );path vars = Filter Each( {var}, path vars, Directory Exists( Get Path Variable( var ) ) );New Window( "Path Variables",	<<Type( "Dialog" ),	Outline Box( "Path Variables",		H List Box(			Button Box( "Open Paths",				For Each( {row}, tbl << Get Selected Rows, {path},					path = tbl[String Col Box( 2 )] << Get( row );					Open( path );				)			),			Button Box( "Copy Paths",				If( N Items( tbl << Get Selected Rows ),					Set Clipboard(						Concat Items(							Transform Each( {row}, tbl << Get Selected Rows, Output( "List" ),								tbl[String Col Box( 2 )] << Get( row )							),							"\!N"						)					)				)			)		),		window:tbl = Table Box(			String Col Box( "Variable", path vars ),			String Col Box( "Path",				Transform Each( {var}, path vars, Get Path Variable( var ) )			),			<<Set Selectable Rows		)	));
 
 ```
 
@@ -440,14 +324,7 @@ New Window( "Path Variables",
 
 ```jsl
 
-email = "youremail@gmail.com"; //Replace this with your email
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-Google Sheet Export(
-	dt,
-	Email( email ),
-	New Spreadsheet( "JSL Example" ),
-	Sheet Name( "Example 1" )
-);
+email = "youremail@gmail.com"; //Replace this with your emaildt = Open( "$SAMPLE_DATA/Big Class.jmp" );Google Sheet Export(	dt,	Email( email ),	New Spreadsheet( "JSL Example" ),	Sheet Name( "Example 1" ));
 
 ```
 
@@ -461,22 +338,7 @@ Google Sheet Export(
 
 ```jsl
 
-email = "youremail@gmail.com"; //Replace this with your email
-spreadsheet =
-"https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/"; 
-                                        
-Google Sheet Import(
-	Email( email ),
-	Spreadsheet( spreadsheet ),
-	Sheets( "Sheet1", "Sheet2" ),
-	Sheet Settings(
-		Has Column Headers( 0 ),
-		Data Starts on Row( 1 ),
-		Cell Range( "A1:C2" ),
-		Import Cell Colors( 0 ),
-		Suppress Empty Columns( 1 )
-	)
-);
+email = "youremail@gmail.com"; //Replace this with your emailspreadsheet ="https://docs.google.com/spreadsheets/d/1AqV2ZkzzMtFrk-devlFdQW2Sb09ipOQaCQ1p0iho-iE/";                                         Google Sheet Import(	Email( email ),	Spreadsheet( spreadsheet ),	Sheets( "Sheet1", "Sheet2" ),	Sheet Settings(		Has Column Headers( 0 ),		Data Starts on Row( 1 ),		Cell Range( "A1:C2" ),		Import Cell Colors( 0 ),		Suppress Empty Columns( 1 )	));
 
 ```
 
@@ -490,9 +352,7 @@ Google Sheet Import(
 
 ```jsl
 
-rc0 = Is Directory( "$SAMPLE_DATA" );
-rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
-Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
+rc0 = Is Directory( "$SAMPLE_DATA" );rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 
 ```
 
@@ -520,9 +380,7 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 ```jsl
 
-rc0 = Is File( "$SAMPLE_DATA" );
-rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
-Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
+rc0 = Is File( "$SAMPLE_DATA" );rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```
 
@@ -550,16 +408,7 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
-
-myJSON =
-"{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
-parsed = Parse JSON( myJSON );
-x = parsed["myBool"];
-Show( x );
-If( x == JSON Literal( true ),
-	Show( "Worked" ),
-	Show( "Didn't work" )
-);
+myJSON ="{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";parsed = Parse JSON( myJSON );x = parsed["myBool"];Show( x );If( x == JSON Literal( true ),	Show( "Worked" ),	Show( "Didn't work" ));
 
 ```
 
@@ -573,9 +422,7 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
-dt = JSON To Data Table(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
+dt = JSON To Data Table(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");
 
 ```
 
@@ -589,10 +436,7 @@ dt = JSON To Data Table(
 
 ```jsl
 
-l = JSON To List(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-Show( l );
+l = JSON To List(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");Show( l );
 
 ```
 
@@ -620,13 +464,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ```jsl
 
-ex = Load Text File(
-	Get Path Variable( "sample_import_data" ) || "/animals.txt"
-/*, Charset("ascii")*/
-/*, LineSeparator("\!r\!n")*/
-/*, BLOB*/
-);
-Word( 4, ex, " \!t\!n\!r" );
+ex = Load Text File(	Get Path Variable( "sample_import_data" ) || "/animals.txt"/*, Charset("ascii")*//*, LineSeparator("\!r\!n")*//*, BLOB*/);Word( 4, ex, " \!t\!n\!r" );
 
 ```
 
@@ -640,17 +478,7 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
-Delete Directory( "$TEMP/subB" );
-Delete Directory( "$TEMP/Loss Function Templates" );
-rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
-Create Directory( "$TEMP/subB" );
-rc1 = Move Directory( "$TEMP/Loss Function Templates", "$TEMP/subB" );
-rc2 = Directory Exists( "$TEMP/Loss Function Templates" );
-rc3 = Directory Exists( "$TEMP/subB" );
-rc4 = Delete Directory( "$TEMP/subB" );
-rc5 = Directory Exists( "$TEMP/subB" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+Delete Directory( "$TEMP/subB" );Delete Directory( "$TEMP/Loss Function Templates" );rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );Create Directory( "$TEMP/subB" );rc1 = Move Directory( "$TEMP/Loss Function Templates", "$TEMP/subB" );rc2 = Directory Exists( "$TEMP/Loss Function Templates" );rc3 = Directory Exists( "$TEMP/subB" );rc4 = Delete Directory( "$TEMP/subB" );rc5 = Directory Exists( "$TEMP/subB" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -664,17 +492,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-If( File Exists( "$TEMP/y.jmp" ),
-	Delete File( "$TEMP/y.jmp" )
-);
-rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
-rc1 = Move File( "$TEMP/x.jmp", "$TEMP/y.jmp" );
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/y.jmp" );
-rc4 = Delete File( "$TEMP/y.jmp" );
-rc5 = File Exists( "$TEMP/y.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+If( File Exists( "$TEMP/y.jmp" ),	Delete File( "$TEMP/y.jmp" ));rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = Move File( "$TEMP/x.jmp", "$TEMP/y.jmp" );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/y.jmp" );rc4 = Delete File( "$TEMP/y.jmp" );rc5 = File Exists( "$TEMP/y.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -690,11 +508,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-/* Installing Add-In:
-Open( Add-In to open,
-    <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
-    <Update Prompt(0|1)>) // whether or not the add-in will silently update or prompt first */
-Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 1 ) );
+/* Installing Add-In:Open( Add-In to open,    <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running    <Update Prompt(0|1)>) // whether or not the add-in will silently update or prompt first */Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 1 ) );
 
 ```
 
@@ -702,58 +516,7 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 
 ```jsl
 
-/* Other options:
-   SAS File imported as a data table:
-   Open( sasFilePath,
-     <Invisible | Private>,
-     <Use Labels for Var Names(0|1)>,
-     <Password( "password" )>
-   )
-   
-   SAS Transport File imported as a data table, members are separate tables within the larger file:
-   Open( sasTransportFilePath,
-     <Use Labels for Var Names(0|1)>,
-     <Members({"Table1", "Table2"})>
-   )
-   
-   HTML file imported as a data table:
-   Open( htmlFilePath,
-     <Invisible | Private>,
-     <HTML Table(n, <ColumnNames(n)>, DataStarts(n)>)>
-   )
-   
-   Get column names as a list for a JMP Data Table without opening the table:
-   Open( jmpDataTableFilePath, 
-     "Column Names Only"
-   )
-   
-   esriShapeFile opened for use as a map shape data table:
-   Open( esriShapeFilePath,
-     <Invisible | Private>,
-     Columns( Shape=numeric(n),
-     Part=numeric(n),
-     X=numeric(n),
-     Y=numeric(n) ),
-              Polygon Import Options(Simplification Factor(f), Geodesic(g))
-   )
-*/
-//SAS Example:
-dt1 = Open( "$SAMPLE_IMPORT_DATA/Bigclass.sas7bdat", Use Labels for Var Names( 1 ) );
-
-// HTML Example:
-dt2 = Open(
-	"https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina)",
-	HTML Table( 3, Column Names( 1 ), Data Starts( 2 ) )
-);
-
-// Column Names Only Example: 
-colNames = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp", "Column Names Only" );
-
-// SHP Shapefile Example with polygon simplification: 
-Open(
-	"$SAMPLE_IMPORT_DATA/parishes.shp",
-	Polygon Import Options( Simplification Factor( 200 ), Geodesic( 1 ) )
-);
+/* Other options:   SAS File imported as a data table:   Open( sasFilePath,     <Invisible | Private>,     <Use Labels for Var Names(0|1)>,     <Password( "password" )>   )      SAS Transport File imported as a data table, members are separate tables within the larger file:   Open( sasTransportFilePath,     <Use Labels for Var Names(0|1)>,     <Members({"Table1", "Table2"})>   )      HTML file imported as a data table:   Open( htmlFilePath,     <Invisible | Private>,     <HTML Table(n, <ColumnNames(n)>, DataStarts(n)>)>   )      Get column names as a list for a JMP Data Table without opening the table:   Open( jmpDataTableFilePath,      "Column Names Only"   )      esriShapeFile opened for use as a map shape data table:   Open( esriShapeFilePath,     <Invisible | Private>,     Columns( Shape=numeric(n),     Part=numeric(n),     X=numeric(n),     Y=numeric(n) ),              Polygon Import Options(Simplification Factor(f), Geodesic(g))   )*///SAS Example:dt1 = Open( "$SAMPLE_IMPORT_DATA/Bigclass.sas7bdat", Use Labels for Var Names( 1 ) );// HTML Example:dt2 = Open(	"https://en.wikipedia.org/wiki/Black_Mountains_(North_Carolina)",	HTML Table( 3, Column Names( 1 ), Data Starts( 2 ) ));// Column Names Only Example: colNames = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp", "Column Names Only" );// SHP Shapefile Example with polygon simplification: Open(	"$SAMPLE_IMPORT_DATA/parishes.shp",	Polygon Import Options( Simplification Factor( 200 ), Geodesic( 1 ) ));
 
 ```
 
@@ -761,38 +524,7 @@ Open(
 
 ```jsl
 
-/* Excel files imported into a data table:
-   Open( excelFilePath,
-     <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
-     <Use for all sheets(0|1)>,
-     <Concatenate Worksheets(0|1)>,
-     <Create Concatenation Column(0|1)>,
-     <Worksheet Settings( 0|1,
-       Has Column Headers(0|1),
-       Number of Rows in Headers(n),
-       Headers Start on Row(n),
-       Data Starts on Row(n),
-       Data Starts on Column(n),
-       Data Ends on Row(n),
-       Data Ends on Column(n),
-       Replicated Spanned Rows(0|1),
-       Suppress Hidden Rows(0|1),
-       Suppress Hidden Columns(0|1),
-       Treat as Hierarchy(0|1)
-     )>,
-     <Invisible | Private>
-   )
-*/
-
-/* Using the Excel Wizard dialog:
-   Open("$SAMPLE_IMPORT_DATA/Bigclass.xlsx", "Excel Wizard");  
-*/
-
-dt = Open(
-	"$SAMPLE_IMPORT_DATA/Team Results.xlsx",
-	Worksheets( "Ungrouped Team Results" ),
-	Worksheet Settings( Headers Start on Row( 3 ), Data Starts on Row( 4 ) )
-);
+/* Excel files imported into a data table:   Open( excelFilePath,     <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,     <Use for all sheets(0|1)>,     <Concatenate Worksheets(0|1)>,     <Create Concatenation Column(0|1)>,     <Worksheet Settings( 0|1,       Has Column Headers(0|1),       Number of Rows in Headers(n),       Headers Start on Row(n),       Data Starts on Row(n),       Data Starts on Column(n),       Data Ends on Row(n),       Data Ends on Column(n),       Replicated Spanned Rows(0|1),       Suppress Hidden Rows(0|1),       Suppress Hidden Columns(0|1),       Treat as Hierarchy(0|1)     )>,     <Invisible | Private>   )*//* Using the Excel Wizard dialog:   Open("$SAMPLE_IMPORT_DATA/Bigclass.xlsx", "Excel Wizard");  */dt = Open(	"$SAMPLE_IMPORT_DATA/Team Results.xlsx",	Worksheets( "Ungrouped Team Results" ),	Worksheet Settings( Headers Start on Row( 3 ), Data Starts on Row( 4 ) ));
 
 ```
 
@@ -800,8 +532,7 @@ dt = Open(
 
 ```jsl
 
-/* Open of folder launches file browser */
-Open( "$SAMPLE_DATA" );
+/* Open of folder launches file browser */Open( "$SAMPLE_DATA" );
 
 ```
 
@@ -809,9 +540,7 @@ Open( "$SAMPLE_DATA" );
 
 ```jsl
 
-/* Picture file imported as a picture object */
-pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
-New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
+/* Picture file imported as a picture object */pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```
 
@@ -819,23 +548,7 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 
 ```jsl
 
-/* PDF file imported as one or multiple data tables
-open(pdfFilePath,
-    PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
-    PDF All Tables(< Combine(All | Matching Headers | None)>, <Minimum Rows(n)>, <Minimum Columns(n)>) |
-    PDF Text(<Pages(n, ...)>, <sort>) |
-    PDF Wizard
-);*/
-dt = Open( "$SAMPLE_DATA\big class.jmp" );
-w = New Window( "test", Data Table Box( dt ) );
-w << save picture( "$DOCUMENTS\test.pdf", pdf );
-pdftable = Open( "$DOCUMENTS\test.pdf", PDF All Tables( Combine( all ) ) ); // just some of the rows
-pdftable2 = Open(
-	"$DOCUMENTS\test.pdf",
-	PDF Tables(
-		Table( Table Name( "test" ), Add Rows( Page( 1 ), Rect( 0, 0, 5, 3 ) ) )
-	)
-);
+/* PDF file imported as one or multiple data tablesopen(pdfFilePath,    PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |    PDF All Tables(< Combine(All | Matching Headers | None)>, <Minimum Rows(n)>, <Minimum Columns(n)>) |    PDF Text(<Pages(n, ...)>, <sort>) |    PDF Wizard);*/dt = Open( "$SAMPLE_DATA\big class.jmp" );w = New Window( "test", Data Table Box( dt ) );w << save picture( "$DOCUMENTS\test.pdf", pdf );pdftable = Open( "$DOCUMENTS\test.pdf", PDF All Tables( Combine( all ) ) ); // just some of the rowspdftable2 = Open(	"$DOCUMENTS\test.pdf",	PDF Tables( Table( Table Name( "test" ), Add Rows( Page( 1 ), Rect( 0, 0, 5, 3 ) ) ) ));
 
 ```
 
@@ -843,25 +556,7 @@ pdftable2 = Open(
 
 ```jsl
 
-/* Data tables, other JMP files, external files:
-   Open( filePath,
-     <Invisible | Private>,
-     <Select Columns( "col", ... )>,
-     <Ignore Columns( "col", ... )>,
-     <Add to Recent Files(bool)>,
-     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>
-     <Force Refresh>,
-     <Enable Filter Views(bool)>,
-     <"file type">
-   )
-*/
-//Basic data table open
-dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
-//Data table open with some options
-dt2 = Open(
-	"$SAMPLE_DATA/Fitness.jmp",
-	Select Columns( "Name", "Sex", "Age", "Weight" )
-);
+/* Data tables, other JMP files, external files:   Open( filePath,     <Invisible | Private>,     <Select Columns( "col", ... )>,     <Ignore Columns( "col", ... )>,     <Add to Recent Files(bool)>,     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>     <Force Refresh>,     <Enable Filter Views(bool)>,     <"file type">   )*///Basic data table opendt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );//Data table open with some optionsdt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "Weight" ) );
 
 ```
 
@@ -869,31 +564,7 @@ dt2 = Open(
 
 ```jsl
 
-/* Text files imported into a data table:
-   Open( textFilePath,
-     <Invisible | Private>,
-     CharSet("option") // "Best Guess", "utf-8", "utf-16", "us-ascii", "windows-1252", "x-max-roman", "x-mac-japanese", "shift-jis", "euc-jp", "utf-16be", "gb2312"
-     <Number of Columns(n)>,
-     <Columns(colName=colType(colWidth),... )>,// colType is Character|Numeric and colWidth is an integer specifying the width of the column
-     <End Of Field (Tab|Space|Comma|Semicolon|Other|None)>,
-     <EOF Other ("char")>,
-     <End Of Line (CRLF|CR|LF|Semicolon|Other)>,
-     <EOL Other ("char")>,
-     <Strip Quotes|Strip Enclosing Quotes (0|1)>,
-     <Labels|Table Contains Column Headers (0|1)>,
-     <Year Rule|Two digit year rule ("decade start")>, // For example, if the earliest date is 1979, use "1970". If the earliest date is 2001, use "20xx".
-     Treat Empty Columns as Numeric(0|1)
-     Scan Whole File(0|1) // 1 means scan the whole file and 0 means scan for 5 seconds.
-     <Column Names Start|Column Names are on line (n)>,
-     <Data Starts|Data starts on line (n)>,
-     <Lines to Read>, // a number
-     <Use Apostrophe as Quotation Mark>,
-     <CompressNumericColumns(0|1)>,
-     <CompressCharacterColumns(0|1)>,
-     <CompressAllowListCheck(0|1)>
-   )
-*/
-dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0 ) );
+/* Text files imported into a data table:   Open( textFilePath,     <Invisible | Private>,     CharSet("option") // "Best Guess", "utf-8", "utf-16", "us-ascii", "windows-1252", "x-max-roman", "x-mac-japanese", "shift-jis", "euc-jp", "utf-16be", "gb2312"     <Number of Columns(n)>,     <Columns(colName=colType(colWidth),... )>,// colType is Character|Numeric and colWidth is an integer specifying the width of the column     <End Of Field (Tab|Space|Comma|Semicolon|Other|None)>,     <EOF Other ("char")>,     <End Of Line (CRLF|CR|LF|Semicolon|Other)>,     <EOL Other ("char")>,     <Strip Quotes|Strip Enclosing Quotes (0|1)>,     <Labels|Table Contains Column Headers (0|1)>,     <Year Rule|Two digit year rule ("decade start")>, // For example, if the earliest date is 1979, use "1970". If the earliest date is 2001, use "20xx".     Treat Empty Columns as Numeric(0|1)     Scan Whole File(0|1) // 1 means scan the whole file and 0 means scan for 5 seconds.     <Column Names Start|Column Names are on line (n)>,     <Data Starts|Data starts on line (n)>,     <Lines to Read>, // a number     <Use Apostrophe as Quotation Mark>,     <CompressNumericColumns(0|1)>,     <CompressCharacterColumns(0|1)>,     <CompressAllowListCheck(0|1)>   )*/dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0 ) );
 
 ```
 
@@ -907,10 +578,7 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 ```jsl
 
-l = Parse JSON(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-Show( l );
+l = Parse JSON(	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]");Show( l );
 
 ```
 
@@ -946,56 +614,27 @@ Pick Directory( "Select a directory" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-Pick File(
-	"Select JMP File",
-	"$DOCUMENTS",
-	{"JMP Files|jmp;jsl;jrn", "All Files|*"},
-	1,
-	0,
-	"newJmpFile.jmp"
-);
+Pick File(	"Select JMP File",	"$DOCUMENTS",	{"JMP Files|jmp;jsl;jrn", "All Files|*"},	1,	0,	"newJmpFile.jmp");
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-Files = Pick File(
-	"Select JMP File",
-	"$SAMPLE_DATA",
-	{"JMP Files|jmp;jsl;jrn", "All Files|*"},
-	1,
-	0,
-	"",
-	"multiple"
-);
-For( i = 1, i <= N Items( Files ), i++,
-	Try( Open( Files[i] ) )
-);
+Files = Pick File(	"Select JMP File",	"$SAMPLE_DATA",	{"JMP Files|jmp;jsl;jrn", "All Files|*"},	1,	0,	"",	"multiple");For( i = 1, i <= N Items( Files ), i++,	Try( Open( Files[i] ) ));
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-filename = Pick File(
-	"Save As Text",
-	"$DOCUMENTS",
-	{"Text File|txt"},
-	1,
-	1, // Save Flag
-	"export.txt"
-);
-If( Is Missing( filename ),
-	Print( "Canceled" ),
-	Save Text File( filename, "The quick brown fox" )
-);
+filename = Pick File(	"Save As Text",	"$DOCUMENTS",	{"Text File|txt"},	1,	1, // Save Flag	"export.txt");If( Is Missing( filename ),	Print( "Canceled" ),	Save Text File( filename, "The quick brown fox" ));
 
 ```
 
@@ -1009,16 +648,7 @@ If( Is Missing( filename ),
 
 ```jsl
 
-Delete Directory( "$TEMP/subD" );
-Delete Directory( "$TEMP/Loss Function Templates" );
-rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
-rc1 = Rename Directory( "$TEMP/Loss Function Templates", "subD" /* NO PATH */ );
-rc2 = Directory Exists( "$TEMP/Loss Function Templates" );
-rc3 = Directory Exists( "$TEMP/subD" );
-rc4 = Delete Directory( "$TEMP/subD" );
-rc5 = Directory Exists( "$TEMP/subD" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+Delete Directory( "$TEMP/subD" );Delete Directory( "$TEMP/Loss Function Templates" );rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );rc1 = Rename Directory( "$TEMP/Loss Function Templates", "subD" /* NO PATH */ );rc2 = Directory Exists( "$TEMP/Loss Function Templates" );rc3 = Directory Exists( "$TEMP/subD" );rc4 = Delete Directory( "$TEMP/subD" );rc5 = Directory Exists( "$TEMP/subD" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -1032,14 +662,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
-rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
-rc2 = File Exists( "$TEMP/x.jmp" );
-rc3 = File Exists( "$TEMP/y.jmp" );
-rc4 = Delete File( "$TEMP/y.jmp" );
-rc5 = File Exists( "$TEMP/y.jmp" );
-Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " "
- || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
+rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );rc2 = File Exists( "$TEMP/x.jmp" );rc3 = File Exists( "$TEMP/y.jmp" );rc4 = Delete File( "$TEMP/y.jmp" );rc5 = File Exists( "$TEMP/y.jmp" );Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) || " " ||Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```
 
@@ -1053,8 +676,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) ||
 
 ```jsl
 
-Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
-Load Text File( "$TEMP/DeleteMe.txt" );
+Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```
 
@@ -1068,8 +690,7 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```jsl
 
-Set Default Directory( "$SAMPLE_DATA" );
-Open( "Big Class.jmp" );
+Set Default Directory( "$SAMPLE_DATA" );Open( "Big Class.jmp" );
 
 ```
 
@@ -1083,14 +704,7 @@ Open( "Big Class.jmp" );
 
 ```jsl
 
-Set File Search Path(
-	{Convert File Path( "$SAMPLE_DATA/" ),
-	Convert File Path( "$SAMPLE_DATA/Time Series/" )}
-);
-Show( Get File Search Path() );
-Show( Convert File Path( "Air.jmp", search ) );
-Show( Convert File Path( "Full of Air.jmp", search ) );
-Show( Convert File Path( "Iris.jmp", search ) );
+Set File Search Path(	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )});Show( Get File Search Path() );Show( Convert File Path( "Air.jmp", search ) );Show( Convert File Path( "Full of Air.jmp", search ) );Show( Convert File Path( "Iris.jmp", search ) );
 
 ```
 
@@ -1118,8 +732,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```jsl
 
-TripleS Import(); //To get a file dialog to select the XML file
-TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
+TripleS Import(); //To get a file dialog to select the XML fileTripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ```
 

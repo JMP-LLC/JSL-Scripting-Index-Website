@@ -52,7 +52,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -60,7 +60,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -68,7 +68,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -84,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -92,7 +92,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -100,7 +100,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -180,7 +180,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**構文:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**構文:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **説明:** 数を指定の形式で戻す。形式には、[列情報]ダイアログボックス内の「最適」("Best")や「h:m:s」などがある。p値、通貨、日付、時間、地図などの他のオプションについては、トピックのヘルプを参照のこと。
 
@@ -214,21 +214,19 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
 ### Format Date
 
-**構文:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**構文:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **説明:** 数を指定の形式で戻す。形式には、[列情報]ダイアログボックス内の「最適」("Best")や「h:m:s」などがある。p値、通貨、日付、時間、地図などの他のオプションについては、トピックのヘルプを参照のこと。
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -236,7 +234,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -244,13 +242,11 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
-pct = Format( 0.123, "Percent", 2 );
-amt = Format( 123.4567, "Currency", "EUR", 2 );
-result = "Revenue increase: " || amt || " or " || pct || ".";
+pct = Format( 0.123, "Percent", 2 );amt = Format( 123.4567, "Currency", "EUR", 2 );result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```
 
@@ -264,11 +260,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
+bt = HP Time();Open( "$SAMPLE_DATA/Big Class.jmp" );et = HP Time();it = et - bt;Show( it );
 
 ```
 
@@ -372,13 +364,13 @@ In Years( 1 );
 
 ### Informat
 
-**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **説明:** 与えられた形式の文字列を解析する。日付時間形式の場合は、値がAs Date()で囲まれたものとして表現され、日付がddMonyyyy形式で戻される。「最適な」formatString 形式とともに使用できるオプションの<<Restrictは、整数、小数、および指数表現の変換のみ許可する。
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -386,7 +378,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -394,7 +386,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -402,7 +394,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 例 4
+**例 4**
 
 ```jsl
 
@@ -410,16 +402,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 例 5
+**例 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -509,13 +496,13 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **説明:** 与えられた形式の文字列を解析する。日付時間形式の場合は、値がAs Date()で囲まれたものとして表現され、日付がddMonyyyy形式で戻される。「Best」formatString 形式とともに使用できるオプションの<<Restrictは、整数、小数、および指数表現の変換のみ許可する。
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -523,7 +510,7 @@ Informat( "07152000", "MMDDYYYY" );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
@@ -531,7 +518,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```
 
-#### 例 3
+**例 3**
 
 ```jsl
 
@@ -539,7 +526,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```
 
-#### 例 4
+**例 4**
 
 ```jsl
 
@@ -547,16 +534,11 @@ Informat( "123.45%", "Percent" );
 
 ```
 
-#### 例 5
+**例 5**
 
 ```jsl
 
-Show(
-	Informat( "1.23e4", "Best" ),
-	Informat( "1.23e4", "Best", <<Restrict ),
-	Informat( "1989-10-04", "Best" ),
-	Informat( "1989-10-04", "Best", <<Restrict )
-);
+Show(	Informat( "1.23e4", "Best" ),	Informat( "1.23e4", "Best", <<Restrict ),	Informat( "1989-10-04", "Best" ),	Informat( "1989-10-04", "Best", <<Restrict ));
 
 ```
 
@@ -612,10 +594,7 @@ Short Date( Today() );
 
 ```jsl
 
-t1 = Tick Seconds();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-t2 = Tick Seconds();
-Round( t2 - t1, 3 );
+t1 = Tick Seconds();Open( "$SAMPLE_DATA/Big Class.jmp" );t2 = Tick Seconds();Round( t2 - t1, 3 );
 
 ```
 
@@ -655,7 +634,7 @@ As Date( Today() );
 
 **JMP追加されたバージョン:** バージョン14より前
 
-#### 例 1
+**例 1**
 
 ```jsl
 
@@ -663,15 +642,11 @@ Week Of Year( Today() );
 
 ```
 
-#### 例 2
+**例 2**
 
 ```jsl
 
-Show(
-	Week Of Year( 01jan2012, 1 ),
-	Week Of Year( 01jan2012, 2 ),
-	Week Of Year( 01jan2012, 3 )
-);
+Show(	Week Of Year( 01jan2012, 1 ),	Week Of Year( 01jan2012, 2 ),	Week Of Year( 01jan2012, 3 ));
 
 ```
 

@@ -315,7 +315,7 @@ Any( [1 0 2] );
 
 **Syntax:** Arc( left, top, right, bottom, startAngle, endAngle )
 
-**Description:** Draws an arc of an oval.
+**Description:** Draws an arc of an oval. The angles are in degrees, specified with 0 degrees at 12:00 and 90 degrees at 3:00. To line them up with the radian values used by sin() and cos() you must reverse the rotation and add the 90 degree phase shift. For example, radians = 2 * pi() * (90 - degrees) / 360. Arcs sweep clockwise from start to end.
 
 **JMP Version Added:** Before version 14
 
@@ -631,7 +631,7 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ### As Column
 
-**Syntax:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
+**Syntax:** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
 
 **Description:** Accesses the specified column in the specified or current data table. An error is thrown if no such column or data table is found.
 
@@ -926,7 +926,7 @@ ex1 + ex1;
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
@@ -2327,6 +2327,26 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 ```jsl
 
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
+
+```
+
+### Check MATLAB Dependencies
+
+**Syntax:** Check MATLAB Dependencies()
+
+**Description:** Checks if MATLAB dependencies are installed.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies();
+	Print( "Dependencies are installed" );
+,
+	Print( "Dependencies are installed" )
+);
 
 ```
 
@@ -4016,7 +4036,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Column
 
-**Syntax:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Syntax:** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
@@ -7661,7 +7681,7 @@ For Each Row( :height = -:height );
 
 ### Format
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -7703,7 +7723,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Date
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -7737,7 +7757,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Pattern
 
-**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description:** Format Patterns are strings that define a date-time format, such as "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>". The parts of the pattern in angle brackets are called field descriptors. The field descriptors represent a value (such as "<YYYY>", which is a four-digit year) or other date-time text (such as "</>", which is a locale-specific date separator). A format pattern enables you to build formats that aren&apos;t provided in JMP. These formats can be used for both formatting and inputting data.
 
@@ -10718,7 +10738,7 @@ y = Include File List();
 
 ### Informat
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -10836,6 +10856,24 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
+### Install MATLAB Dependencies
+
+**Syntax:** Install MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Description:** Installs the required MATLAB dependencies.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies(),
+	Print( "Dependencies are installed" )
+);
+
+```
+
 ### Integrate
 
 **Syntax:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
@@ -10892,7 +10930,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the internal rate of return for a series of cash flows represented by the numbers in the values argument. Equivalent to the IRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -10907,7 +10945,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Interpolate
 
-**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Description:** Finds the xi arguments that x is between and linearly interpolates the corresponding yi arguments. Note that the xi arguments must be specified in order.
 
@@ -14290,9 +14328,314 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
 
+### MATLAB Connect
+
+**Syntax:** MATLABConnection = MATLAB Connect(&lt;Echo(0|1)&gt;)
+
+**Description:** Returns a MATLAB connection scriptable object.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLABConnection = MATLAB Connect();
+x = MatlabConnection << Is Connected;
+Show( x );
+
+```
+
+### MATLAB Control
+
+**Syntax:** MATLAB Control( Echo(bool) )
+
+**Description:** Changes the control options for MATLAB.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+
+MATLAB Init( Echo( true ) );
+MATLAB Control( Echo( false ) );
+MATLAB Submit(
+	"\[
+	v = [9 8 7, 6 5 4, 3 2 1];
+	m = [1 2 3, 4 5 6, 7 8 9];
+	rowjoin = [v ; m]
+	coljoin = [v , m]
+]\"
+);
+MATLAB Term();
+
+```
+
+### MATLAB Execute
+
+**Syntax:** MATLAB Execute( { list of Inputs }, { list of Outputs }, statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description:** Sends a list of inputs, executes statements and returns a list of outputs.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+a = "abcdef";
+d = 3.141;
+v = [9 8 7, 6 5 4, 3 2 1];
+m = [1 2 3, 4 5 6, 7 8 9];
+ml = MATLAB Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+a = v * m; % matrix product
+d = v / m; % = v * inv(m) called Right division
+z = m \ v; % = m * inv(v) called Left division
+x = m .* v; % element-wise product
+]\"
+);
+Show( v, m, ml, x, z, a, d );
+MATLAB Term();
+
+```
+
+### MATLAB Get
+
+**Syntax:** y = MATLAB Get( name )
+
+**Description:** Returns data from MATLAB, where the name argument can represent any of the following MATLAB data types ( numeric | string | matrix | list | data frame).
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+x1 = [1, 2, 3];
+MATLAB Send( x1 );
+x2 = MATLAB Get( x1 );
+Show( x1, x2 );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt1 );
+dt2 = MATLAB Get( dt1 );
+dt2 << New Data View;
+Close( dt1 );
+MATLAB Term();
+
+```
+
+### MATLAB Get Graphics
+
+**Syntax:** MATLAB graphics = MATLAB Get Graphics( format )
+
+**Description:** Returns the last graphics object written to the MATLAB graph display window in a graphics format specified by the format argument.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+ml = MATLAB Submit( "\[
+plot(1:10)
+]\" );
+plot = MATLAB Get Graphics( png );
+pngJMP = New Window( "Plot", Picture Box( plot ) );
+pngJMP << Close Window;
+MATLAB Submit( "close" );//Needed this command to close the figure generated from Matlab
+MATLAB Term();
+
+```
+
+### MATLAB Get Version
+
+**Syntax:** version = MATLAB Get Version()
+
+**Description:** Returns the version number of MATLAB being used with the JMP MATLAB interfaces.
+
+**JMP Version Added:** 14
+
+```jsl
+
+MATLAB Init();
+version = MATLAB Get Version();
+Show( version );
+MATLAB Term();
+
+```
+
+### MATLAB Init
+
+**Syntax:** MATLAB Init(&lt;Echo(0|1)&gt;)
+
+**Description:** Initializes the MATLAB Interfaces.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
+
+```
+
+### MATLAB Is Connected
+
+**Syntax:** connected = MATLAB Is Connected()
+
+**Description:** Returns 1 if there is an active MATLAB connection; otherwise, returns 0.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+x = MATLAB Is Connected();
+Show( x );
+MATLAB Term();
+
+```
+
+### MATLAB JMP Name to MATLAB Name
+
+**Syntax:** MATLAB name = MATLAB JMP Name To MATLAB Name( JMP name )
+
+**Description:** Maps a JMP variable name to a MATLAB variable name using MATLAB variable naming rules.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );
+Show( MATLAB name );
+MATLAB Term();
+
+```
+
+### MATLAB Load
+
+**Syntax:** MATLAB Load( path )
+
+**Description:** Loads variables into MATLAB from a .mat file and returns the variables to a JSL associative array.
+
+**JMP Version Added:** 19
+
+```jsl
+
+MATLAB Init();
+// if .mat file contained: x = 40; y = 'hello';
+vars = MATLAB Load( "path/to/.mat" );
+Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );
+MATLAB Term();
+
+```
+
+### MATLAB Send
+
+**Syntax:** MATLAB Send( name, &lt;MATLAB Name( name )&gt;, &lt;Named Arguments&gt; )
+
+**Description:** Sends data to MATLAB, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table).
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+x = [1, 2, 3];
+MATLAB Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt );
+Close( dt );
+MATLAB Submit( "x" );
+MATLAB Submit( "dt" );
+MATLAB Term();
+
+```
+
+### MATLAB Send File
+
+**Syntax:** MATLAB Send File( filename, &lt;MATLAB Name( name )&gt; )
+
+**Description:** Sends a data file to MATLAB, where the filename argument is a string that specifies a path name to the file to be sent to MATLAB.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );
+MATLAB Submit( "BigClass" );
+MATLAB Submit( "Baseball" );
+MATLAB Term();
+
+```
+
+### MATLAB Submit
+
+**Syntax:** MATLAB Submit( statements, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description:** Submit statements to MATLAB. Statements can be in the form of a string value or list of string values.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+a = 200;
+]\" );
+getStr = MATLAB Get( str );
+getNum = MATLAB Get( a );
+Show( getStr, getNum );
+MATLAB Term();
+
+```
+
+### MATLAB Submit File
+
+**Syntax:** MATLAB Submit File( path, &lt;Echo(0|1)&gt;, &lt;Expand(0|1)&gt; )
+
+**Description:** Submits statements to MATLAB using a file specified by the path argument.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit File( "file containing MATLAB source.m" );
+MATLAB Term();
+
+```
+
+### MATLAB Term
+
+**Syntax:** MATLAB Term()
+
+**Description:** Terminates the MATLAB interfaces.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
+
+```
+
 ### Matrix
 
-**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
+**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
 
 **Description:** Constructs an n-by-m matrix. If you specify a list of n lists that each contain m row values, the matrix is formed by vertically concatenating the evaluated lists. If you specify a single list of n items, the return value is an n-by-1 column vector. If you specify two integer arguments, the return value is a matrix of zeros that contains n rows and m columns.
 
@@ -14426,7 +14769,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ### Maximize
 
-**Syntax:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntax:** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a concave function, Maximize might find a local maximum rather than the global maximum. If this is a concern, try multiple starting values. Also, Maximize works best for functions with a continuous second derivative. Additional arguments for the Maximize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
@@ -14607,7 +14950,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Minimize
 
-**Syntax:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntax:** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a convex function, Minimize might find a local minimum rather than the global minimum. If this is a concern, try multiple starting values. Also, Minimize works best for functions with a continuous second derivative. Additional arguments for the Minimize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
@@ -14797,7 +15140,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ### Modified Internal Rate of Return
 
-**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the modified internal rate of return for a series of periodic cash flows, taking into account both the cost of the investment and the interest received on reinvestment of cash. Equivalent to the MIRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -15632,7 +15975,7 @@ New Window( "Example: Negative Binomial Quantile",
 
 ### Net Present Value
 
-**Syntax:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the net present value of an investment by using a discount rate and a series of future payments (negative values) and income (positive values). The values argument is a one dimensional matrix. Equivalent to the NPV function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -15958,7 +16301,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ### New Image
 
-**Syntax:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntax:** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Description:** Returns a new image which can then be edited through JSL commands. If a path is specified to an existing image file, the file should be a .JPG, .PNG, .GIF, .BMP or .TIF file.
 
@@ -16006,6 +16349,59 @@ New Window( "image", image3 );
 **Description:** Creates a new IP21 Client instance that can be used to import data from an AspenTech IP.21 server.
 
 **JMP Version Added:** 19
+
+**Example 1**
+
+```jsl
+
+/* Import actual (raw) data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Actual" )
+);
+importer << Run;
+
+```
+
+**Example 2**
+
+```jsl
+
+/* Import interpolated data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Interpolated" ),
+	Period( Minute( 30 ) ), 	/* Every half hour */
+);
+importer << Run;
+
+```
 
 ### New JMP Live
 
@@ -17804,7 +18200,7 @@ Parse( "x+y" );
 
 ### Parse Date
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -19216,7 +19612,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Syntax:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
+**Syntax:** area = Polygon Area( {x1, y1}, {x2, y2}, ... ); area = Polygon Area( xMatrix, yMatrix )
 
 **Description:** Calculates the area of the specified polygon.
 
@@ -19240,7 +19636,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**Syntax:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
+**Syntax:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... ); centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Description:** Calculates the centroid of the specified polygon.
 
@@ -19340,11 +19736,13 @@ New Window( "Parishes",
 
 ### Polytope Uniform Random
 
-**Syntax:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
+**Syntax:** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
 
-**Description:** Generates random uniform points over a convex polytope. The numSamples argument specifies the number of random points to be generated. The A argument is the constraint coefficient matrix. The B argument is the right hand side values of constraints. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, mle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
+**Description:** Generates a random sample subject to linear constraints, variable bound constraints, and cardinality constraints on specified component subgroup variables. The numSamples argument specifies the number of random points to be generated. The A argument is the linear constraint coefficient matrix. The b argument is the vector of right hand side values of the linear constraints. The L and U arguments are vectors of the lower and upper bounds for the variables, respectively. The neq, nle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. The tol argument is the tolerance. The G argument is a vector of indices that assigns the variables to constrained component subgroups where missing or zero values do not belong to a constrained subgroup. The LC and UC arguments are the lower and upper cardinality constraints for the constrained component subgroups, respectively. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
 **JMP Version Added:** Before version 14
+
+**Example 1**
 
 ```jsl
 
@@ -19352,11 +19750,11 @@ A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
 U = [1, 1, 1];
-points = Polytope Uniform Random( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
+points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
 dt = As Table( points );
 tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );
 tfr = tobj[scalebox( 1 )] << clone box;
-New Window( "Example: Polytope Uniform Random",
+New Window( "Example: Random Linearly Constrained Uniform",
 	Outline Box( "Points on a Ternary Plot", tfr ),
 	Outline Box( "Constraints",
 		Text Box( "X1 + x2 + x3 = 1" ),
@@ -19370,6 +19768,44 @@ New Window( "Example: Polytope Uniform Random",
 );
 Close( dt, no save );
 Show( "see new window for example output" );
+
+```
+
+**Example 2**
+
+```jsl
+
+
+A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+b = [100];
+L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
+U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];
+nwarm = 100;
+nstride = 100;
+tol = 1e-8;
+// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.
+G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];
+// Lower cardinality constraints for the constrained subgroups
+LC = [1 1];
+// Upper cardinality constraints for the constrained subgroups
+UC = [3 5];
+points = Random Linearly Constrained Uniform(
+	100,
+	A,
+	b,
+	L,
+	U,
+	1,
+	0,
+	0,
+	nwarm,
+	nstride,
+	tol,
+	G,
+	LC,
+	UC
+);
+dt = As Table( points );
 
 ```
 
@@ -19627,7 +20063,7 @@ Python Create JPIP CMD();
 
 ```jsl
 
-// install numpy and pandas packages
+
 conn = Python Connect();
 conn << Create JPIP CMD();
 
@@ -19637,7 +20073,7 @@ conn << Create JPIP CMD();
 
 **Syntax:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
-**Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
+**Description:** Sends a list of inputs, executes statements, and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
 **JMP Version Added:** 14
 
@@ -19892,7 +20328,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Syntax:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
+**Syntax:** Python Send( name, &lt;Python Name( name )&gt; )
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -19905,7 +20341,7 @@ Python Submit( "print(pi)" );
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
-Python Submit( "print(weight)" );
+Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -20297,7 +20733,7 @@ R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
 Close( dt );
-w = R Get( "weight" );
+w = R Get( "dt.weight" );
 
 ```
 
@@ -20896,6 +21332,81 @@ Show( x, v );
 
 ```
 
+### Random Linearly Constrained Uniform
+
+**Syntax:** points = Random Linearly Constrained Uniform( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt;, &lt;tol=1e-8&gt;, &lt;G&gt;, &lt;LC&gt;, &lt;UC&gt; )
+
+**Description:** Generates a random sample subject to linear constraints, variable bound constraints, and cardinality constraints on specified component subgroup variables. The numSamples argument specifies the number of random points to be generated. The A argument is the linear constraint coefficient matrix. The b argument is the vector of right hand side values of the linear constraints. The L and U arguments are vectors of the lower and upper bounds for the variables, respectively. The neq, nle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. The tol argument is the tolerance. The G argument is a vector of indices that assigns the variables to constrained component subgroups where missing or zero values do not belong to a constrained subgroup. The LC and UC arguments are the lower and upper cardinality constraints for the constrained component subgroups, respectively. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
+
+**JMP Version Added:** 20
+
+**Example 1**
+
+```jsl
+
+A = [1 1 1, 1 2 0];
+b = [1, 0.5];
+L = [0, 0, 0.1];
+U = [1, 1, 1];
+points = Random Linearly Constrained Uniform( 2000, A, b, L, U, 1, 0, 1, 300, 50 );
+dt = As Table( points );
+tobj = Report( Ternary Plot( X( :Col1, :Col2, :Col3 ) ) );
+tfr = tobj[scalebox( 1 )] << clone box;
+New Window( "Example: Random Linearly Constrained Uniform",
+	Outline Box( "Points on a Ternary Plot", tfr ),
+	Outline Box( "Constraints",
+		Text Box( "X1 + x2 + x3 = 1" ),
+		Text Box( "X2 + 2*x2 >= 0.5" )
+	),
+	Outline Box( "Variable Bounds",
+		Text Box( "0 <= x1 <= 1" ),
+		Text Box( "0 <= x2 <= 1" ),
+		Text Box( ".1 < x3 <= 1" )
+	)
+);
+Close( dt, no save );
+Show( "see new window for example output" );
+
+```
+
+**Example 2**
+
+```jsl
+
+  
+A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+b = [100];
+L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
+U = [100 100 95 90 100 85 100 90 60 70 75 70 75 100 95 60 80 95 100 100];
+nwarm = 100;
+nstride = 100;
+tol = 1e-8;
+// Index the constrained subgroups.  Index = 0 is not in a constrained subgroup.
+G = [0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 0 0];
+// Lower cardinality constraints for the constrained subgroups
+LC = [1 1];
+// Upper cardinality constraints for the constrained subgroups
+UC = [3 5];
+points = Random Linearly Constrained Uniform(
+	100,
+	A,
+	b,
+	L,
+	U,
+	1,
+	0,
+	0,
+	nwarm,
+	nstride,
+	tol,
+	G,
+	LC,
+	UC
+);
+dt = As Table( points );
+
+```
+
 ### Random LogGenGamma
 
 **Syntax:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
@@ -21345,7 +21856,7 @@ Show( x, v );
 
 ### Random Triangular
 
-**Syntax:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
+**Syntax:** y = Random Triangular( a, b, c ); y = Random Triangular( b, c ); y = Random Triangular( b )
 
 **Description:** Returns a random number from a triangular distribution with lower limit a, mode b, and upper limit c. Random Triangular(b,c) is equivalent to Random Triangular(0,b,c). Random Triangular(b) is equivalent to Random Triangular(0,b,1).
 
@@ -21782,9 +22293,9 @@ Show( source, matches );
 
 ### Register Addin
 
-**Syntax:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
+**Syntax:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;AutoLoad(0|1)&gt; )
 
-**Description:** Register an add-in
+**Description:** Register an add-in. An Autoload value of 1 forces the add-in to load when registered. A value of 0 leaves the add-in unloaded. If AutoLoad is not specified the addin.def setting will be used if found otherwise the default will be for the add-in to be loaded.
 
 **JMP Version Added:** Before version 14
 
@@ -22226,7 +22737,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Run Program
 
-**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
+**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
 
 **Description:** Control an external program using stdin and stdout.
 
@@ -23972,7 +24483,7 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ### Step
 
-**Syntax:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntax:** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Description:** Returns the yi argument corresponding to the largest xi value which satisfies xi less than or equal to the x argument. Note that the xi arguments must be specified in order.
 
@@ -23981,6 +24492,382 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 ```jsl
 
 Step( 2.5, [1 2 3], [15, 20, 30] );
+
+```
+
+### STK:ArchSpiral
+
+**Syntax:** STK:ArchSpiral(t, &lt;a = 1&gt;, &lt;n = 1&gt;)
+
+**Description:** Takes in a given angle t (in radians) and returns the x,y coordinate pair as a matrix for location on the Archimedean Spiral, given scaling parameter, "a" and the "n"-th root
+
+**Example 1**
+
+```jsl
+
+STK:ArchSpiral( 3, 1, 1 );
+
+```
+
+**Example 2**
+
+```jsl
+
+For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
+
+```
+
+### STK:arctan2
+
+**Syntax:** STK:arctan2(x,y)
+
+**Description:** The arctangent function that takes in 2 arguments. See https://en.wikipedia.org/wiki/Atan2 for motivation and details.
+
+**Example 1**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:arctan2( 3, 4 );
+
+```
+
+### STK:Cart2Polar
+
+**Syntax:** STK:Cart2Polar(x,y)
+
+**Description:** Runs both the Radius() and Theta() in one function, returning the pair in a matrix.
+
+**Example 1**
+
+```jsl
+
+STK:Cart2Polar( 3, 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+
+x = [1, -1, 1, -1];
+y = [1, 1, -1, -1];
+
+For Each( {{a, b}, index}, Across( x, y ), Show( STK:Cart2Polar( a, b ) ) );
+
+```
+
+### STK:deg2rad
+
+**Syntax:** STK:deg2rad(d)
+
+**Description:** Converts a value from degrees to radians
+
+**Example 1**
+
+```jsl
+
+STK:deg2rad( 45 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:um2mm( 45 );
+
+```
+
+### STK:DieIndex
+
+**Syntax:** STK:DieIndex(x,y)
+
+**Description:** Combines the x- and y-die coordinate columns into a single text column. For use with the STK generated wafer shapefiles.
+
+**Example 1**
+
+```jsl
+
+STK:DieIndex( 3, 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+Example;
+
+```
+
+### STK:LPCVDSim
+
+**Syntax:** STK:LPCVDSim(x, y, &lt;time = 30&gt;, &lt;temp = 600&gt;, &lt;press = 20&gt;, &lt;flow = 2&gt;, &lt;gas1 = 1&gt;, &lt;gas2 = 1&gt;, &lt;r = 150&gt;, &lt;tbase = 200&gt;)
+
+**Description:** A simulation of a hypothetical LPCVD profile. Optional parameters include Deposition Time (time = 30), Deposition Temperature (temp = 600), Total Chamber Pressure (press = 20), Gas Flow Rate (flow = 2), Reagent Gas 1 Flow (gas1 = 1), Reagent Gas 2 Flow (gas2 = 1), Wafer Radius (r = 150), Baseline Film Thickness (tbase = 200).
+
+
+
+NOTE: This simulator is entirely empirical and for demonstration, teaching, or testing purposes only.
+
+**Example 1**
+
+```jsl
+
+STK:LPCVDSim( 0, 0 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:LPCVDSim( 0, 0, 100 );
+
+```
+
+### STK:mm2um
+
+**Syntax:** STK:mm2um(x)
+
+**Description:** Converts a value from millimeters (mm) to microns (um).
+
+**Example 1**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:mm2um( 3 );
+
+```
+
+### STK:MShape
+
+**Syntax:** STK:MShape( m )
+
+**Description:** Returns the shape of the matrix as a [nCols nRows] vector.
+
+**Example 1**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:MShape( J( 13, 20 ) );
+
+```
+
+### STK:Polar2Cart
+
+**Syntax:** STK:Polar2Cart(x,y)
+
+**Description:** Runs both the xCart() and yCart() in one function, returning the pair in a matrix. Assumes theta is in radians.
+
+**Example 1**
+
+```jsl
+
+STK:Polar2Cart( 1, Pi() / 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+
+x = [1, -1, 1, -1];
+y = [1, 1, -1, -1];
+
+For Each( {{a, b}, index}, Across( x, y ),
+	p = STK:Cart2Polar( a, b );
+	c = STK:Polar2Cart( p[1], p[2] );
+	Show( p, c );
+);
+
+```
+
+### STK:ProcessSim
+
+**Syntax:** STK:ProcessSim(n, &lt;radius = 150&gt;, &lt;stat = "Mean"&gt;, &lt;result = "summary"&gt;)
+
+**Description:** A simulation of a hypothetical Process based on the LPCVDSim Function. Returns a single value by default using any desired statistic JMP provides directly. A matrix of the measurement coordinates and result value are optional by providing "full" as the final argument
+
+**Example 1**
+
+```jsl
+
+STK:ProcessSim( 13 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:ProcessSim( 13, 150 );
+
+```
+
+**Example 3**
+
+```jsl
+
+STK:ProcessSim( 100, 150, "Std Dev", "full" );
+
+```
+
+### STK:rad2deg
+
+**Syntax:** STK:rad2deg(r)
+
+**Description:** Converts a value from radians to degrees
+
+**Example 1**
+
+```jsl
+
+STK:rad2deg( 0.79 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:um2mm( 0.79 );
+
+```
+
+### STK:Radius
+
+**Syntax:** STK:Radius(x,y)
+
+**Description:** Uses the Pythagorean Transform to convert X,Y data pairs to a radius.
+
+**Example 1**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:Radius( 3, 4 );
+
+```
+
+### STK:Theta
+
+**Syntax:** STK:Theta(x,y)
+
+**Description:** Uses the arccosine function to return the angle of an X,Y data pair in radians.
+
+**Example 1**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:Theta( 3, 4 );
+
+```
+
+### STK:um2mm
+
+**Syntax:** STK:um2mm(x)
+
+**Description:** Converts a value from microns to millimeters.
+
+**Example 1**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:um2mm( 3 );
+
+```
+
+### STK:xCart
+
+**Syntax:** STK:xCart(r,t)
+
+**Description:** Takes in a radius and angle (in radians) and returns the x-component of the cartesian coordinate pair.
+
+**Example 1**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:xCart( 1, Pi() / 4 );
+
+```
+
+### STK:yCart
+
+**Syntax:** STK:yCart(r,t)
+
+**Description:** Takes in a radius and angle (in radians) and returns the y-component of the cartesian coordinate pair
+
+**Example 1**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
+
+```
+
+**Example 2**
+
+```jsl
+
+STK:yCart( 1, Pi() / 4 );
 
 ```
 
@@ -24212,7 +25099,7 @@ dt << setname( "xxx" );
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -24271,7 +25158,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -24832,7 +25719,7 @@ TanH( 1 );
 
 ### Text
 
-**Syntax:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
+**Syntax:** Text( &lt;properties&gt;, {x, y}, text, ... ) Text( {left, top, right, bottom}, text )
 
 **Description:** Moves to the {x, y} position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order. You can also use four x, y coordinates to describe a box within which to draw the text. In that case, properties are not used.
 
@@ -25684,6 +26571,24 @@ Unsubscribe to Data Table List( aSub, "all" );
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 2 );
 Close( dt );
+
+```
+
+### Update MATLAB Dependencies
+
+**Syntax:** Update MATLAB Dependencies(&lt;Patch(0|1)&gt;)
+
+**Description:** Updates the required MATLAB dependencies.
+
+**JMP Version Added:** Before version 14
+
+```jsl
+
+
+If( Check MATLAB Dependencies(),
+	Update MATLAB Dependencies(),
+	Print( "Dependencies are updated" )
+);
 
 ```
 

@@ -12,32 +12,7 @@
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-c7 = Tree Node( "New Child" );
-root1 << Append( c7 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );c7 = Tree Node( "New Child" );root1 << Append( c7 );
 
 ```
 
@@ -49,31 +24,7 @@ root1 << Append( c7 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (root1 << Firs tChild) << GetLabel );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (root1 << Firs tChild) << GetLabel );
 
 ```
 
@@ -85,31 +36,7 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (root2 << Get Child( 2 )) << Get Label );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (root2 << Get Child( 2 )) << Get Label );
 
 ```
 
@@ -121,31 +48,7 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root2 << Get Child Count;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root2 << Get Child Count;
 
 ```
 
@@ -157,42 +60,7 @@ root2 << Get Child Count;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-tree << SetNodeSelectScript(
-	Function( {this},
-		{},
-		Print( Eval( (this << getselected) << GetData ) )
-	)
-);
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );tree << SetNodeSelectScript(	Function( {this},		{},		Print( Eval( (this << getselected) << GetData ) )	));
 
 ```
 
@@ -206,31 +74,7 @@ tree << SetNodeSelectScript(
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root3 << Get Dimmed;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root3 << Get Dimmed;
 
 ```
 
@@ -242,33 +86,7 @@ root3 << Get Dimmed;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root1 << Set Icon( "Distrib" );
-root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );
-root1 << Get Expanded Icon;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root1 << Set Icon( "Distrib" );root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );root1 << Get Expanded Icon;
 
 ```
 
@@ -282,31 +100,7 @@ root1 << Get Expanded Icon;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root3 << Get Font Style;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root3 << Get Font Style;
 
 ```
 
@@ -318,32 +112,7 @@ root3 << Get Font Style;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root1 << Set Icon( "Distrib" );
-root1 << Get Icon;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root1 << Set Icon( "Distrib" );root1 << Get Icon;
 
 ```
 
@@ -355,31 +124,7 @@ root1 << Get Icon;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root3 << Get Label;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root3 << Get Label;
 
 ```
 
@@ -391,33 +136,7 @@ root3 << Get Label;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-c6 << Set Tip( "This is the tool tip for the last child" );
-c6 << Get Tip;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );c6 << Set Tip( "This is the tool tip for the last child" );c6 << Get Tip;
 
 ```
 
@@ -429,31 +148,7 @@ c6 << Get Tip;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root2 << Index Of( root3 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root2 << Index Of( root3 );
 
 ```
 
@@ -465,32 +160,7 @@ root2 << Index Of( root3 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-c7 = Tree Node( "New Child" );
-root3 << Insert( c7, 2 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );c7 = Tree Node( "New Child" );root3 << Insert( c7, 2 );
 
 ```
 
@@ -502,31 +172,7 @@ root3 << Insert( c7, 2 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root3 << Is Leaf;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root3 << Is Leaf;
 
 ```
 
@@ -538,31 +184,7 @@ root3 << Is Leaf;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (root1 << Last Child) << GetLabel );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (root1 << Last Child) << GetLabel );
 
 ```
 
@@ -574,31 +196,7 @@ Print( (root1 << Last Child) << GetLabel );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (c4 << Parent) << GetLabel );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (c4 << Parent) << GetLabel );
 
 ```
 
@@ -610,32 +208,7 @@ Print( (c4 << Parent) << GetLabel );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-c7 = Tree Node( "New Child" );
-root1 << Prepend( c7 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );c7 = Tree Node( "New Child" );root1 << Prepend( c7 );
 
 ```
 
@@ -647,31 +220,7 @@ root1 << Prepend( c7 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (c4 << Prev Sib) << Get Label );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (c4 << Prev Sib) << Get Label );
 
 ```
 
@@ -683,32 +232,7 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-root3 << Remove;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );root3 << Remove;
 
 ```
 
@@ -720,32 +244,7 @@ root3 << Remove;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-root2 << Remove All Children;
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );root2 << Remove All Children;
 
 ```
 
@@ -757,32 +256,7 @@ root2 << Remove All Children;
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-root3 << Remove Child( c6 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );root3 << Remove Child( c6 );
 
 ```
 
@@ -794,42 +268,7 @@ root3 << Remove Child( c6 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );
-tree << SetNodeSelectScript(
-	Function( {this},
-		{},
-		Print( Eval( (this << getselected) << GetData ) )
-	)
-);
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );c1 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c2 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c3 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c4 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c5 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );c6 << SetData( Function( {}, {}, MDYHMS( Today() ) ) );tree << SetNodeSelectScript(	Function( {this},		{},		Print( Eval( (this << getselected) << GetData ) )	));
 
 ```
 
@@ -843,32 +282,7 @@ tree << SetNodeSelectScript(
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-c6 << Set Dimmed( 1 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );c6 << Set Dimmed( 1 );
 
 ```
 
@@ -880,34 +294,7 @@ c6 << Set Dimmed( 1 );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root1 << Set Icon( "Distrib" );
-root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );
-root2 << Set Icon( "Oneway" );
-root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root1 << Set Icon( "Distrib" );root1 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif" );root2 << Set Icon( "Oneway" );root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```
 
@@ -921,32 +308,7 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-c6 << Set Font Style( "Bold" );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );c6 << Set Font Style( "Bold" );
 
 ```
 
@@ -958,33 +320,7 @@ c6 << Set Font Style( "Bold" );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-root1 << Set Icon( "Distrib" );
-root2 << Set Icon( "$SAMPLE_IMAGES/pi.gif" );
-root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );root1 << Set Icon( "Distrib" );root2 << Set Icon( "$SAMPLE_IMAGES/pi.gif" );root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```
 
@@ -996,32 +332,7 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-c6 << Set Label( "Last Child" );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );c6 << Set Label( "Last Child" );
 
 ```
 
@@ -1033,32 +344,7 @@ c6 << Set Label( "Last Child" );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Wait( 1 );
-c6 << Set Tip( "This is the tool tip for the last child" );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Wait( 1 );c6 << Set Tip( "This is the tool tip for the last child" );
 
 ```
 
@@ -1070,31 +356,7 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (c4 << Sib) << Get Label );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (c4 << Sib) << Get Label );
 
 ```
 
@@ -1106,31 +368,7 @@ Print( (c4 << Sib) << Get Label );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
-
-Print( (c6 << Top Parent) << GetLabel );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );Print( (c6 << Top Parent) << GetLabel );
 
 ```
 
@@ -1144,29 +382,7 @@ Print( (c6 << Top Parent) << GetLabel );
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );
-root2 = Tree Node( "Parent 2" );
-root3 = Tree Node( "Parent 3" );
-
-c1 = Tree Node( "Child 1" );
-c2 = Tree Node( "Child 2" );
-c3 = Tree Node( "Child 3" );
-c4 = Tree Node( "Child 4" );
-c5 = Tree Node( "Child 5" );
-c6 = Tree Node( "Child 6" );
-
-root1 << Append( c1 );
-root1 << Append( c2 );
-root2 << Append( c3 );
-root2 << Append( c4 );
-root2 << Append( root3 );
-root3 << Append( c5 );
-root3 << Append( c6 );
-
-New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
-tree << Expand( root1 );
-tree << Expand( root2 );
-tree << Expand( root3 );
+root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );root3 = Tree Node( "Parent 3" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );c5 = Tree Node( "Child 5" );c6 = Tree Node( "Child 6" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );root2 << Append( root3 );root3 << Append( c5 );root3 << Append( c6 );New Window( "TreeBox Tests", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );tree << Expand( root1 );tree << Expand( root2 );tree << Expand( root3 );
 
 ```
 

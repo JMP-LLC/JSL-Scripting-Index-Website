@@ -12,9 +12,7 @@
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
-mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
-Add Custom Functions( {myAdd, mySub} );
+myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );Add Custom Functions( {myAdd, mySub} );
 
 ```
 
@@ -28,15 +26,13 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
-x = 45;
-b = As Boolean( x > 2 );
-Show( b );
+x = 45;b = As Boolean( x > 2 );Show( b );
 
 ```
 
 ### As Column
 
-**Syntaxe :** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
+**Syntaxe :** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
 
 **Description :** Accède à la colonne spécifiée dans la table de données indiquée ou en cours. Une erreur est lancée si aucune colonne ou table de données de ce type n&apos;est trouvée.
 
@@ -44,8 +40,7 @@ Show( b );
 
 ```jsl
 
-exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-exdt:height[1] + :height[2] + As Column( "height" )[3];
+exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 ```
 
@@ -57,51 +52,27 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-New Table( "As Constant Demo Table 1",
-	Add Rows( 10 ),
-	New Column( "Non-Constant", Formula( Random Uniform() ) ),
-	New Column( "Constant", Formula( As Constant( Random Uniform() ) ) )
-);
+New Table( "As Constant Demo Table 1",	Add Rows( 10 ),	New Column( "Non-Constant", Formula( Random Uniform() ) ),	New Column( "Constant", Formula( As Constant( Random Uniform() ) ) ));
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-New Table( "As Constant Demo Table 2",
-	Add Rows( 1000 ),
-	New Column( "What's on Your Desktop?",
-		"character",
-		Formula(
-			As Constant( xFiles = Files In Directory( "$Desktop" ) );
-			iR = Row();
-			If( iR <= N Items( xFiles ),
-				xFiles[iR],
-				"---"
-			);
-		)
-	)
-);
+New Table( "As Constant Demo Table 2",	Add Rows( 1000 ),	New Column( "What's on Your Desktop?",		"character",		Formula(			As Constant( xFiles = Files In Directory( "$Desktop" ) );			iR = Row();			If( iR <= N Items( xFiles ),				xFiles[iR],				"---"			);		)	));
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-For( i = 1, i <= 10, i++,
-	x = 2;
-	y = 100;
-	z = As Constant( x + y );
-	x *= i;
-	y /= i;
-	Show( i, x + y, z );
-);
+For( i = 1, i <= 10, i++,	x = 2;	y = 100;	z = As Constant( x + y );	x *= i;	y /= i;	Show( i, x + y, z ););
 
 ```
 
@@ -115,8 +86,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
-::ex = 23;
-Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
+::ex = 23;Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 ```
 
@@ -144,8 +114,7 @@ As List( [11 22 33, 44 55 66] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt:(As Name( "height" ))[3];
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:(As Name( "height" ))[3];
 
 ```
 
@@ -159,10 +128,7 @@ dt:(As Name( "height" ))[3];
 
 ```jsl
 
-ns = New Namespace(
-	"complex"
-);
-As Namespace( ns );
+ns = New Namespace(	"complex");As Namespace( ns );
 
 ```
 
@@ -176,8 +142,7 @@ As Namespace( ns );
 
 ```jsl
 
-::: ex = 23;
-Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
+::: ex = 23;Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 ```
 
@@ -191,14 +156,13 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 
 ```jsl
 
-Here:z = 23.5;
-As Scoped( Here, z );
+Here:z = 23.5;As Scoped( Here, z );
 
 ```
 
 ### Associative Array
 
-**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
+**Syntaxe :** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
 
 **Description :** Crée un tableau associatif, également appelé dictionnaire ou table de hachage. Sous la forme à deux arguments, les codes et valeurs peuvent être une liste, une matrice ou une colonne de table de données.
 
@@ -206,9 +170,7 @@ As Scoped( Here, z );
 
 ```jsl
 
-ex = Associative Array( {"red", "blue"}, {1, 2} );
-ex["green"] = 3;
-ex << get contents;
+ex = Associative Array( {"red", "blue"}, {1, 2} );ex["green"] = 3;ex << get contents;
 
 ```
 
@@ -286,50 +248,7 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag )
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-clexists = Class Exists( cl );
-Show( clexists );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );clexists = Class Exists( cl );Show( clexists );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -385,8 +304,7 @@ Clear Symbols();
 
 ```jsl
 
-Close Log();
-Show( Is Log Open() );
+Close Log();Show( Is Log Open() );
 
 ```
 
@@ -400,48 +318,7 @@ Show( Is Log Open() );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag )
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( complex );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( complex );
 
 ```
 
@@ -455,24 +332,7 @@ Delete Classes( complex );
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Classes();
-Show( lcl );
-Show Classes();
-Clear Symbols( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
-Show Classes();
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Classes();Show( lcl );Show Classes();Clear Symbols( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );Show Classes();
 
 ```
 
@@ -500,22 +360,7 @@ Delete Globals();
 
 ```jsl
 
-
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-Show Namespaces();
-Delete Namespaces( nsaa, nsbb );
-Show Namespaces();
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});Show Namespaces();Delete Namespaces( nsaa, nsbb );Show Namespaces();
 
 ```
 
@@ -571,9 +416,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ```jsl
 
-ex = "Today is ^As Date( Today())^";
-Eval Insert Into( ex );
-ex;
+ex = "Today is ^As Date( Today())^";Eval Insert Into( ex );ex;
 
 ```
 
@@ -585,7 +428,7 @@ ex;
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -593,13 +436,11 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-x = 5;
-y = 10;
-Eval List( {x, y} );
+x = 5;y = 10;Eval List( {x, y} );
 
 ```
 
@@ -613,13 +454,7 @@ Eval List( {x, y} );
 
 ```jsl
 
-If(
-	New Window( "Exit() example",
-		<<Type( "Modal" ),
-		Text Box( "Shut down JMP?" ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)["Button"] == 1, /*OK==1*/Exit(), /*cancel==-1*/"Good choice."
-);
+If(	New Window( "Exit() example",		<<Type( "Modal" ),		Text Box( "Shut down JMP?" ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	)["Button"] == 1, /*OK==1*/Exit(), /*cancel==-1*/"Good choice.");
 
 ```
 
@@ -645,40 +480,27 @@ First( 11, 22 );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-exsqr = Function( {x}, x * x );
-exsqr( 5 );
+exsqr = Function( {x}, x * x );exsqr( 5 );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-// y is an optional argument
-exmul = Function( {x, y = 3}, x * y );
-a = exmul( 5 );
-b = exmul( 5, 10 );
-Show( a, b );
+// y is an optional argumentexmul = Function( {x, y = 3}, x * y );a = exmul( 5 );b = exmul( 5, 10 );Show( a, b );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-posorneg = Function( {x},
-	{},
-	If(
-		x > 0, Return( "positive" ),
-		x == 0, Return( "zero" ),
-		Return( "negative" )
-	)
-);
-posorneg( -5.5 );
+posorneg = Function( {x},	{},	If(		x > 0, Return( "positive" ),		x == 0, Return( "zero" ),		Return( "negative" )	));posorneg( -5.5 );
 
 ```
 
@@ -692,21 +514,7 @@ posorneg( -5.5 );
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Class Names();
-Show( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Class Names();Show( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );
 
 ```
 
@@ -720,22 +528,7 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
-Define Class(
-	"aa",
-	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
-);
-Define Class(
-	"bb",
-	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )}
-);
-lcaa = New Object( aa() );
-lcbb = New Object( bb() );
-lcl = Get Classes();
-Show( lcl );
-Clear Symbols( lcl );
-lcaa << Delete;
-lcbb << Delete;
-Delete Classes( "aa", "bb" );
+Define Class(	"aa",	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )});Define Class(	"bb",	{_init_ = Method( {} ), y = 1, m2 = Method( {a, b}, a / b )});lcaa = New Object( aa() );lcbb = New Object( bb() );lcl = Get Classes();Show( lcl );Clear Symbols( lcl );lcaa << Delete;lcbb << Delete;Delete Classes( "aa", "bb" );
 
 ```
 
@@ -747,7 +540,7 @@ Delete Classes( "aa", "bb" );
 
 **JMP Version ajoutée :** 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -755,7 +548,7 @@ Get Custom Functions();
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -805,9 +598,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ```jsl
 
-all contents = Get Log();
-headcontents = Get Log( 10 );
-tailcontents = Get Log( -5 );
+all contents = Get Log();headcontents = Get Log( 10 );tailcontents = Get Log( -5 );
 
 ```
 
@@ -821,22 +612,7 @@ tailcontents = Get Log( -5 );
 
 ```jsl
 
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-lns = Get Namespace Names();
-Show( lns );
-nsaa << Delete;
-nsbb << Delete;
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});lns = Get Namespace Names();Show( lns );nsaa << Delete;nsbb << Delete;
 
 ```
 
@@ -850,23 +626,7 @@ nsbb << Delete;
 
 ```jsl
 
-nsaa = New Namespace(
-	"aa",
-	{
-		x = 1
-	}
-);
-nsbb = New Namespace(
-	"bb",
-	{
-		y = 1
-	}
-);
-lns = Get Namespaces();
-Show( lns );
-Clear Symbols( lns );
-nsaa << Delete;
-nsbb << Delete;
+nsaa = New Namespace(	"aa",	{		x = 1	});nsbb = New Namespace(	"bb",	{		y = 1	});lns = Get Namespaces();Show( lns );Clear Symbols( lns );nsaa << Delete;nsbb << Delete;
 
 ```
 
@@ -874,11 +634,11 @@ nsbb << Delete;
 
 **Syntaxe :** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
-**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
+**Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\\/#@&~()[]<>"\*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
 
 **JMP Version ajoutée :** 15
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -886,7 +646,7 @@ Get Punctuation Characters();
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -894,7 +654,7 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
@@ -902,15 +662,11 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
 
-#### Exemple 4
+**Exemple 4**
 
 ```jsl
 
-Collapse Whitespace(
-	Substitute( "This...string..has..dots",
-		Items( Get Punctuation Characters(), "" ), " "
-	)
-);
+Collapse Whitespace(	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " ));
 
 ```
 
@@ -924,10 +680,7 @@ Collapse Whitespace(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << RunScript( "Bivariate" );
-Get Session Script( Report( biv ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << RunScript( "Bivariate" );Get Session Script( Report( biv ) );
 
 ```
 
@@ -981,23 +734,19 @@ y = Include File List();
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-If( Is Log Open(),
-	Close Log()
-);
+If( Is Log Open(),	Close Log());
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-If( !Is Log Open(),
-	Open Log()
-);
+If( !Is Log Open(),	Open Log());
 
 ```
 
@@ -1009,7 +758,7 @@ If( !Is Log Open(),
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -1017,7 +766,7 @@ Length( "Café" );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -1025,7 +774,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
@@ -1033,7 +782,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### Exemple 4
+**Exemple 4**
 
 ```jsl
 
@@ -1065,10 +814,7 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
-Local( {a = 1, b},
-	b = 2;
-	a + b;
-);
+Local( {a = 1, b},	b = 2;	a + b;);
 
 ```
 
@@ -1082,12 +828,7 @@ Local( {a = 1, b},
 
 ```jsl
 
-y = Local Here(
-	a = 1;
-	b = 2;
-	c = a + b;
-	c;
-);
+y = Local Here(	a = 1;	b = 2;	c = a + b;	c;);
 
 ```
 
@@ -1101,18 +842,7 @@ y = Local Here(
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -1126,18 +856,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -1151,12 +870,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-"captured:" || Log Capture(
-	For( i = 1, i <= 3, i++,
-		Write( Char( i ) );
-		Write( " " );
-	)
-);
+"captured:" || Log Capture(	For( i = 1, i <= 3, i++,		Write( Char( i ) );		Write( " " );	));
 
 ```
 
@@ -1168,7 +882,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 **JMP Version ajoutée :** 15
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -1176,7 +890,7 @@ Map Value( "celry", {"celry", "celery"} );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -1184,7 +898,7 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
@@ -1192,7 +906,7 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
 
-#### Exemple 4
+**Exemple 4**
 
 ```jsl
 
@@ -1210,67 +924,7 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag )
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( "complex" );
-
-```
-
-### Mimic
-
-**Syntaxe :** mimic obj = Mimic(Box|PlatformRef)
-
-**Description :** Creates a GUI automation object that mimics a real user. ONLY AVAILABLE IN INTERNAL JMP BUILDS.
-
-**JMP Version ajoutée :** 18
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :age ) );
-outline = Report( obj )[Outline Box( 1 )];
-mc = Mimic( obj );
-mc << Mark( outline );
-mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -1282,7 +936,7 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -1290,7 +944,7 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -1298,12 +952,11 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
-N Items( hlist );
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );N Items( hlist );
 
 ```
 
@@ -1317,8 +970,7 @@ N Items( hlist );
 
 ```jsl
 
-/* Variable x will be stored in the Here: namespace by default */x = 1;
-Show( x );
+/* Variable x will be stored in the Here: namespace by default */x = 1;Show( x );
 
 ```
 
@@ -1332,35 +984,7 @@ Show( x );
 
 ```jsl
 
-New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-ns = Namespace( "complex" );
-Show( ns );
-ns << Delete;
+New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});ns = Namespace( "complex" );Show( ns );ns << Delete;
 
 ```
 
@@ -1374,35 +998,7 @@ ns << Delete;
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-nsexists = Namespace Exists( ns );
-Show( nsexists );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});nsexists = Namespace Exists( ns );Show( nsexists );ns << Delete;
 
 ```
 
@@ -1414,7 +1010,7 @@ ns << Delete;
 
 **JMP Version ajoutée :** 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -1422,41 +1018,19 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-/*Create a custom function that can be used as a format*/
-Add Custom Functions(
-	{New Custom Function(
-		"custom",
-		"User Defined Format Function",
-		Function( {inches},
-			Char( inches ) || " in"
-		),
-		<<Custom Format Category( "Custom" ), 
-
-	)}
-);
+/*Create a custom function that can be used as a format*/Add Custom Functions(	{New Custom Function(		"custom",		"User Defined Format Function",		Function( {inches},			Char( inches ) || " in"		),		<<Custom Format Category( "Custom" ), 	)});
 
 ```
 
-#### Exemple 3
+**Exemple 3**
 
 ```jsl
 
-/*Create a custom function that can be used as a transform*/
-Add Custom Functions(
-	{New Custom Function(
-		"custom",
-		"User Defined Transform Function",
-		Function( {inches},
-			inches * 2.54
-		),
-		<<Transform Category( "Custom" ), 
-
-	)}
-);
+/*Create a custom function that can be used as a transform*/Add Custom Functions(	{New Custom Function(		"custom",		"User Defined Transform Function",		Function( {inches},			inches * 2.54		),		<<Transform Category( "Custom" ), 	)});
 
 ```
 
@@ -1470,34 +1044,7 @@ Add Custom Functions(
 
 ```jsl
 
-ns = New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-Show( ns );
-ns << Delete;
+ns = New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});Show( ns );ns << Delete;
 
 ```
 
@@ -1511,48 +1058,7 @@ ns << Delete;
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag )
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-cl = New Object( complex( 1, 2 ) );
-cl << Delete;
-Delete Classes( "complex" );
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);cl = New Object( complex( 1, 2 ) );cl << Delete;Delete Classes( "complex" );
 
 ```
 
@@ -1564,22 +1070,19 @@ Delete Classes( "complex" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-Open Log();
-Show( Is Log Open() );
+Open Log();Show( Is Log Open() );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-/* Bring Log Windows to the Top */
-Open Log( 1 );
-Show( Is Log Open() );
+/* Bring Log Windows to the Top */Open Log( 1 );Show( Is Log Open() );
 
 ```
 
@@ -1635,13 +1138,7 @@ Print( 355 / 113, Pi() );
 
 ```jsl
 
-If(
-	New Window( "Quit() example",
-		<<Type( "Modal" ),
-		Text Box( "Shut down JMP?" ),
-		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
-	)["Button"] == 1, /*OK==1*/Quit(), /*cancel==-1*/"Good choice."
-);
+If(	New Window( "Quit() example",		<<Type( "Modal" ),		Text Box( "Shut down JMP?" ),		H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )	)["Button"] == 1, /*OK==1*/Quit(), /*cancel==-1*/"Good choice.");
 
 ```
 
@@ -1659,27 +1156,19 @@ Les variables JSL spéciales sont remplies à l&apos;exécution de la commande 
 
 **JMP Version ajoutée :** 15
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
-Recode(
-	"27513-0000",
-	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
-);
+Recode(	"27513-0000",	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )});
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
-Recode(
-	"A B C",
-	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )
-	},
-	By Word
-);
+Recode(	"A B C",	{Map Value( _rcNow, {"A", "Apple", "B", "Banana"}, Unmatched( "Unknown fruit" ) )},	By Word);
 
 ```
 
@@ -1693,13 +1182,7 @@ Recode(
 
 ```jsl
 
-ex rev = Function( {s},
-	If( Length( s ) <= 1,
-		s,
-		Recurse( Substr( s, 2 ) ) || Left( s, 1 )
-	)
-);
-ex rev( "abcd" );
+ex rev = Function( {s},	If( Length( s ) <= 1,		s,		Recurse( Substr( s, 2 ) ) || Left( s, 1 )	));ex rev( "abcd" );
 
 ```
 
@@ -1727,9 +1210,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
-Save Log( "$TEMP/log.txt" );
-exlogText = Load Text File( "$TEMP/log.txt" );
-Substr( exlogText, 1, 30 );
+Save Log( "$TEMP/log.txt" );exlogText = Load Text File( "$TEMP/log.txt" );Substr( exlogText, 1, 30 );
 
 ```
 
@@ -1743,8 +1224,7 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
+Open( "$SAMPLE_DATA/Big Class.jmp" );Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ```
 
@@ -1790,46 +1270,7 @@ Show( 355 / 113, Pi() );
 
 ```jsl
 
-Define Class(
-	"complex",
-	real = 0;
-	imag = 0;
-	_init_ = Method( {a, b},
-		real = a;
-		imag = b;
-	);
-	Add = Method( {y},
-		New Object( complex( real + y:real, imag + y:imag ) )
-	);
-	Sub = Method( {y},
-		New Object( complex( real - y:real, imag - y:imag ) )
-	);
-	Mul = Method( {y},
-		New Object(
-			complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag )
-		)
-	);
-	Div = Method( {y},
-		t = New Object( complex( 0, 0 ) );
-		mag2 = y:Magsq();
-		t:real = real * y:real + imag * y:imag;
-		t:imag = imag * y:real + real * y:imag;
-		t:real = t:real / mag2;
-		t:imag = t:imag / mag2;
-		t;
-	);
-	Magsq = Method( {},
-		real * real + imag * imag
-	);
-	Mag = Method( {},
-		Sqrt( real * real + imag * imag )
-	);
-	_to string_ = Method( {},
-		Char( real ) || " + " || Char( imag ) || "i"
-	);
-	_show_ = _to string_;
-);
-Show Classes();
+Define Class(	"complex",	real = 0;	imag = 0;	_init_ = Method( {a, b},		real = a;		imag = b;	);	Add = Method( {y},		New Object( complex( real + y:real, imag + y:imag ) )	);	Sub = Method( {y},		New Object( complex( real - y:real, imag - y:imag ) )	);	Mul = Method( {y},		New Object( complex( real * y:real - imag * y:imag, imag * y:real + real * y:imag ) )	);	Div = Method( {y},		t = New Object( complex( 0, 0 ) );		mag2 = y:Magsq();		t:real = real * y:real + imag * y:imag;		t:imag = imag * y:real + real * y:imag;		t:real = t:real / mag2;		t:imag = t:imag / mag2;		t;	);	Magsq = Method( {},		real * real + imag * imag	);	Mag = Method( {},		Sqrt( real * real + imag * imag )	);	_to string_ = Method( {},		Char( real ) || " + " || Char( imag ) || "i"	);	_show_ = _to string_;);Show Classes();
 
 ```
 
@@ -1857,34 +1298,7 @@ Show Globals();
 
 ```jsl
 
-New Namespace(
-	"complex",
-	{
-		make = Function( {a, b},
-			Index( a, b, b - a )
-		),
-		add = Function( {x, y}, x + y ),
-		sub = Function( {x, y}, x - y ),
-		mul = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:z[1] = x[1] * y[1] - x[2] * y[2];
-			local:z[2] = x[1] * y[2] + x[2] * y[1];
-			local:z;
-		),
-		div = Function( {x, y},
-			local:z = J( 1, 2 );
-			local:d = (y[1] ^ 2 + y[2] ^ 2);
-			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;
-			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;
-			local:z;
-		),
-		write = Function( {x},
-			Write( x[1], " + ", x[2], "i\!n" )
-		)
-	}
-);
-Show Namespaces( "complex" );
-Delete Namespaces( "complex" );
+New Namespace(	"complex",	{		make = Function( {a, b},			Index( a, b, b - a )		),		add = Function( {x, y}, x + y ),		sub = Function( {x, y}, x - y ),		mul = Function( {x, y},			local:z = J( 1, 2 );			local:z[1] = x[1] * y[1] - x[2] * y[2];			local:z[2] = x[1] * y[2] + x[2] * y[1];			local:z;		),		div = Function( {x, y},			local:z = J( 1, 2 );			local:d = (y[1] ^ 2 + y[2] ^ 2);			local:z[1] = (x[1] * y[1] + x[2] * y[2]) / local:d;			local:z[2] = (x[2] * y[1] - x[1] * y[2]) / local:d;			local:z;		),		write = Function( {x},			Write( x[1], " + ", x[2], "i\!n" )		)	});Show Namespaces( "complex" );Delete Namespaces( "complex" );
 
 ```
 
@@ -1926,9 +1340,7 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-ex = {111, 212, 133, 114, 55};
-Sort List Into( ex );
-ex;
+ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
 
 ```
 
@@ -1944,9 +1356,7 @@ ex;
 
 ```jsl
 
-
-Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
-Print( "AFTER TRY message not reached" );
+Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );Print( "AFTER TRY message not reached" );
 
 ```
 
@@ -1974,7 +1384,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 **JMP Version ajoutée :** Avant la version 14
 
-#### Exemple 1
+**Exemple 1**
 
 ```jsl
 
@@ -1982,7 +1392,7 @@ Try( Sqrt( "s" ), "invalid" );
 
 ```
 
-#### Exemple 2
+**Exemple 2**
 
 ```jsl
 
@@ -2014,18 +1424,7 @@ Type( [1 2 3] );
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Globals( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Globals( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -2039,18 +1438,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
-exalpha = 0.05;
-exdelta = 0.5;
-Watch( exalpha, exdelta );
-Wait( 3 );
-Lock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
-Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );
-Wait( 3 );
-Unlock Symbols( exalpha );
-Wait( 3 );
-Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
+exalpha = 0.05;exdelta = 0.5;Watch( exalpha, exdelta );Wait( 3 );Lock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );Try( exdelta = 0.6, Show( "invalid - exdelta is locked" ) );Wait( 3 );Unlock Symbols( exalpha );Wait( 3 );Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```
 
@@ -2096,16 +1484,7 @@ Wait( 1.5 );
 
 ```jsl
 
-x = 1;
-y = 2;
-z = "abc";
-w = Watch( all );
-Wait( 5 );
-x = x * 5;
-y = y / 25;
-z = z || "def";
-Wait( 5 );
-w << close Window();
+x = 1;y = 2;z = "abc";w = Watch( all );Wait( 5 );x = x * 5;y = y / 25;z = z || "def";Wait( 5 );w << close Window();
 
 ```
 
@@ -2121,12 +1500,7 @@ w << close Window();
 
 ```jsl
 
-xs = [10 20 30 . 50];
-ys = [0 0 0 1 1];
-Where( xs > 20 & ys );
-
-xs = {{10}, {20}, {15}};
-Where( xs[1] < 18 );
+xs = [10 20 30 . 50];ys = [0 0 0 1 1];Where( xs > 20 & ys );xs = {{10}, {20}, {15}};Where( xs[1] < 18 );
 
 ```
 
@@ -2134,10 +1508,7 @@ Where( xs[1] < 18 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Get Rows Where( :sex == "M" );
-Where( :sex == "M" );
-Where( dt, :sex == "M" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Get Rows Where( :sex == "M" );Where( :sex == "M" );Where( dt, :sex == "M" );
 
 ```
 
@@ -2145,10 +1516,7 @@ Where( dt, :sex == "M" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Select Rows( [2 4 6] ) << Exclude( 1 );
-Where( Excluded() );
-Where( !Excluded() );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Select Rows( [2 4 6] ) << Exclude( 1 );Where( Excluded() );Where( !Excluded() );
 
 ```
 
@@ -2156,9 +1524,7 @@ Where( !Excluded() );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
-dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
 
 ```
 
@@ -2166,11 +1532,7 @@ dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) 
 
 ```jsl
 
-xs = [10 20 30 . 50];
-xs[Where( xs >= 20 )];
-xs[Where( !Is Missing( xs ) )];
-ys = {10, 20, "30", ., 50};
-ys[Where( ys >= 20 )];
+xs = [10 20 30 . 50];xs[Where( xs >= 20 )];xs[Where( !Is Missing( xs ) )];ys = {10, 20, "30", ., 50};ys[Where( ys >= 20 )];
 
 ```
 
@@ -2184,11 +1546,7 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
-extestexpr = Expr(
-	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
-	Show( "END" );
-);
-Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
+extestexpr = Expr(	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );	Show( "END" ););Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 ```
 
@@ -2202,11 +1560,7 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 
 ```jsl
 
-extestexpr = Expr(
-	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
-	Show( "END" );
-);
-Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
+extestexpr = Expr(	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );	Show( "END" ););Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 ```
 

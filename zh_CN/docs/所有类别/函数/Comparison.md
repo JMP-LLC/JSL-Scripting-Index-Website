@@ -66,7 +66,7 @@ Is Missing( . );
 
 **JMP添加的版本:** 18
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
@@ -74,7 +74,7 @@ Is Same Color( "black", 0 );
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
@@ -82,7 +82,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```
 
-#### 示例 3
+**示例 3**
 
 ```jsl
 
@@ -90,7 +90,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
 
-#### 示例 4
+**示例 4**
 
 ```jsl
 

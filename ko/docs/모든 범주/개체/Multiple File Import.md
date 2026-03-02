@@ -12,11 +12,7 @@
 
 ```jsl
 
-// use the save-script-to-script-window button 
-// in the MFI dialog to see more messages
-// for filtering files and controlling the import
-Multiple File Import( <<Set Folder( "$DESKTOP" ), <<Set Name Filter( "*.csv;" ), <<Set Name Enable( 1 ) ) <<
-Create Window;
+// use the save-script-to-script-window button // in the MFI dialog to see more messages// for filtering files and controlling the importMultiple File Import( <<Set Folder( "$DESKTOP" ), <<Set Name Filter( "*.csv;" ), <<Set Name Enable( 1 ) ) <<Create Window;
 
 ```
 
@@ -32,10 +28,7 @@ Create Window;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << set folder( "$sample_import_data" );
-mfi << create window();
+mfi = Multiple File Import();mfi << set folder( "$sample_import_data" );mfi << create window();
 
 ```
 
@@ -49,10 +42,7 @@ mfi << create window();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Date Column( 1 );
-mfi << Get Add File Date Column();
+mfi = Multiple File Import();mfi << Set Add File Date Column( 1 );mfi << Get Add File Date Column();
 
 ```
 
@@ -66,10 +56,7 @@ mfi << Get Add File Date Column();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Name Column( 1 );
-mfi << Get Add File Name Column();
+mfi = Multiple File Import();mfi << Set Add File Name Column( 1 );mfi << Get Add File Name Column();
 
 ```
 
@@ -83,10 +70,7 @@ mfi << Get Add File Name Column();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Size Column( 1 );
-mfi << Get Add File Size Column();
+mfi = Multiple File Import();mfi << Set Add File Size Column( 1 );mfi << Get Add File Size Column();
 
 ```
 
@@ -100,9 +84,7 @@ mfi << Get Add File Size Column();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV Allow Numeric;
+mfi = Multiple File Import();mfi << Get CSV Allow Numeric;
 
 ```
 
@@ -116,9 +98,7 @@ mfi << Get CSV Allow Numeric;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF Comma();
+mfi = Multiple File Import();mfi << Get CSV EOF Comma();
 
 ```
 
@@ -132,9 +112,7 @@ mfi << Get CSV EOF Comma();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF Other();
+mfi = Multiple File Import();mfi << Get CSV EOF Other();
 
 ```
 
@@ -148,9 +126,7 @@ mfi << Get CSV EOF Other();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF Space();
+mfi = Multiple File Import();mfi << Get CSV EOF Space();
 
 ```
 
@@ -164,9 +140,7 @@ mfi << Get CSV EOF Space();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF Spaces();
+mfi = Multiple File Import();mfi << Get CSV EOF Spaces();
 
 ```
 
@@ -180,9 +154,7 @@ mfi << Get CSV EOF Spaces();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF TAb();
+mfi = Multiple File Import();mfi << Get CSV EOF TAb();
 
 ```
 
@@ -196,9 +168,7 @@ mfi << Get CSV EOF TAb();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOL CR();
+mfi = Multiple File Import();mfi << Get CSV EOL CR();
 
 ```
 
@@ -212,9 +182,7 @@ mfi << Get CSV EOL CR();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOL CRLF();
+mfi = Multiple File Import();mfi << Get CSV EOL CRLF();
 
 ```
 
@@ -228,9 +196,7 @@ mfi << Get CSV EOL CRLF();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOL LF();
+mfi = Multiple File Import();mfi << Get CSV EOL LF();
 
 ```
 
@@ -244,9 +210,7 @@ mfi << Get CSV EOL LF();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOF Other();
+mfi = Multiple File Import();mfi << Get CSV EOF Other();
 
 ```
 
@@ -260,9 +224,7 @@ mfi << Get CSV EOF Other();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV EOL Semicolon();
+mfi = Multiple File Import();mfi << Get CSV EOL Semicolon();
 
 ```
 
@@ -276,9 +238,7 @@ mfi << Get CSV EOL Semicolon();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV Escape();
+mfi = Multiple File Import();mfi << Get CSV Escape();
 
 ```
 
@@ -292,9 +252,7 @@ mfi << Get CSV Escape();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV First Data Line();
+mfi = Multiple File Import();mfi << Get CSV First Data Line();
 
 ```
 
@@ -308,11 +266,7 @@ mfi << Get CSV First Data Line();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Has Headers( 1 );
-mfi << Set CSV First Header Line( 2 );
-mfi << Get CSV First Header Line();
+mfi = Multiple File Import();mfi << Set CSV Has Headers( 1 );mfi << Set CSV First Header Line( 2 );mfi << Get CSV First Header Line();
 
 ```
 
@@ -326,9 +280,7 @@ mfi << Get CSV First Header Line();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV Has Headers;
+mfi = Multiple File Import();mfi << Get CSV Has Headers;
 
 ```
 
@@ -342,11 +294,7 @@ mfi << Get CSV Has Headers;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Has Headers( 1 );
-mfi << Set CSV Number Of Header Lines( 2 );
-mfi << Get CSV Number Of Header Lines();
+mfi = Multiple File Import();mfi << Set CSV Has Headers( 1 );mfi << Set CSV Number Of Header Lines( 2 );mfi << Get CSV Number Of Header Lines();
 
 ```
 
@@ -360,9 +308,7 @@ mfi << Get CSV Number Of Header Lines();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get CSV Quote();
+mfi = Multiple File Import();mfi << Get CSV Quote();
 
 ```
 
@@ -376,9 +322,7 @@ mfi << Get CSV Quote();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Charset();
+mfi = Multiple File Import();mfi << Get Charset();
 
 ```
 
@@ -392,12 +336,7 @@ mfi << Get Charset();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$downloads" );
-mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );
-mfi << Set Date Enable( 1 );
-mfi << Get Date Count();
+mfi = Multiple File Import();mfi << Set Folder( "$downloads" );mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );mfi << Set Date Enable( 1 );mfi << Get Date Count();
 
 ```
 
@@ -411,9 +350,7 @@ mfi << Get Date Count();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Date Enable();
+mfi = Multiple File Import();mfi << Get Date Enable();
 
 ```
 
@@ -427,11 +364,7 @@ mfi << Get Date Enable();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );
-mfi << Set Date Enable( 1 );
-mfi << Get Date Filter();
+mfi = Multiple File Import();mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );mfi << Set Date Enable( 1 );mfi << Get Date Filter();
 
 ```
 
@@ -445,9 +378,7 @@ mfi << Get Date Filter();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Add Sheet Name Column;
+mfi = Multiple File Import();mfi << Get Excel Add Sheet Name Column;
 
 ```
 
@@ -461,9 +392,7 @@ mfi << Get Excel Add Sheet Name Column;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Best Guess;
+mfi = Multiple File Import();mfi << Get Excel Best Guess;
 
 ```
 
@@ -477,9 +406,7 @@ mfi << Get Excel Best Guess;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Column Headers as Hierarchies;
+mfi = Multiple File Import();mfi << Get Excel Column Headers as Hierarchies;
 
 ```
 
@@ -493,9 +420,7 @@ mfi << Get Excel Column Headers as Hierarchies;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Column Name Separator;
+mfi = Multiple File Import();mfi << Get Excel Column Name Separator;
 
 ```
 
@@ -509,9 +434,7 @@ mfi << Get Excel Column Name Separator;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel First Data Column;
+mfi = Multiple File Import();mfi << Get Excel First Data Column;
 
 ```
 
@@ -525,9 +448,7 @@ mfi << Get Excel First Data Column;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel First Data Line;
+mfi = Multiple File Import();mfi << Get Excel First Data Line;
 
 ```
 
@@ -541,9 +462,7 @@ mfi << Get Excel First Data Line;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel First Header Line;
+mfi = Multiple File Import();mfi << Get Excel First Header Line;
 
 ```
 
@@ -557,9 +476,7 @@ mfi << Get Excel First Header Line;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Has Headers;
+mfi = Multiple File Import();mfi << Get Excel Has Headers;
 
 ```
 
@@ -573,9 +490,7 @@ mfi << Get Excel Has Headers;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Import Color Cells;
+mfi = Multiple File Import();mfi << Get Excel Import Color Cells;
 
 ```
 
@@ -589,9 +504,7 @@ mfi << Get Excel Import Color Cells;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Last Data Column;
+mfi = Multiple File Import();mfi << Get Excel Last Data Column;
 
 ```
 
@@ -605,9 +518,7 @@ mfi << Get Excel Last Data Column;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Last Data Row;
+mfi = Multiple File Import();mfi << Get Excel Last Data Row;
 
 ```
 
@@ -621,9 +532,7 @@ mfi << Get Excel Last Data Row;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Limit Column Type Detection;
+mfi = Multiple File Import();mfi << Get Excel Limit Column Type Detection;
 
 ```
 
@@ -637,9 +546,7 @@ mfi << Get Excel Limit Column Type Detection;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Multiple Series Stack;
+mfi = Multiple File Import();mfi << Get Excel Multiple Series Stack;
 
 ```
 
@@ -653,9 +560,7 @@ mfi << Get Excel Multiple Series Stack;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Number of Header Lines;
+mfi = Multiple File Import();mfi << Get Excel Number of Header Lines;
 
 ```
 
@@ -669,9 +574,7 @@ mfi << Get Excel Number of Header Lines;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Replicate Data In Spanned Rows;
+mfi = Multiple File Import();mfi << Get Excel Replicate Data In Spanned Rows;
 
 ```
 
@@ -685,9 +588,7 @@ mfi << Get Excel Replicate Data In Spanned Rows;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Replicate Headers In Spanned Rows;
+mfi = Multiple File Import();mfi << Get Excel Replicate Headers In Spanned Rows;
 
 ```
 
@@ -701,9 +602,7 @@ mfi << Get Excel Replicate Headers In Spanned Rows;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Suppress Empty Columns;
+mfi = Multiple File Import();mfi << Get Excel Suppress Empty Columns;
 
 ```
 
@@ -717,9 +616,7 @@ mfi << Get Excel Suppress Empty Columns;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Suppress Hidden Columns;
+mfi = Multiple File Import();mfi << Get Excel Suppress Hidden Columns;
 
 ```
 
@@ -733,9 +630,7 @@ mfi << Get Excel Suppress Hidden Columns;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Suppress Hidden Rows;
+mfi = Multiple File Import();mfi << Get Excel Suppress Hidden Rows;
 
 ```
 
@@ -747,9 +642,7 @@ mfi << Get Excel Suppress Hidden Rows;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Excel Worksheet Filter;
+mfi = Multiple File Import();mfi << Get Excel Worksheet Filter;
 
 ```
 
@@ -761,7 +654,7 @@ mfi << Get Excel Worksheet Filter;
 
 ```jsl
 
-Names Default To Here( 1 );
+
 
 ```
 
@@ -775,10 +668,7 @@ Names Default To Here( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$Desktop" );
-mfi << Get Folder;
+mfi = Multiple File Import();mfi << Set Folder( "$Desktop" );mfi << Get Folder;
 
 ```
 
@@ -792,10 +682,7 @@ mfi << Get Folder;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$Desktop" );
-mfi << Get Folder Count;
+mfi = Multiple File Import();mfi << Set Folder( "$Desktop" );mfi << Get Folder Count;
 
 ```
 
@@ -807,23 +694,7 @@ mfi << Get Folder Count;
 
 ```jsl
 
-
-Create Directory( "$temp/deleteme" );
-Save Text File( "$temp/deleteme/test1.txt", "a1\!n1" );
-Save Text File( "$temp/deleteme/test2.txt", "a2\!n1" );
-mfi = Multiple File Import(
-	<<Set Folder( "$temp/deleteme/" ),
-	<<Set Name Filter( "test?.txt;" ),
-	<<Set Name Enable( 1 ),
-	<<Set Add File Name Column( 1 ),
-	<<Set Import Callback(
-		Function( {a, b},
-			Write( "\!na=", a );
-			Write( "\!nb=", b );
-		)
-	)
-);
-mfi << Get Import Callback();
+Create Directory( "$temp/deleteme" );Save Text File( "$temp/deleteme/test1.txt", "a1\!n1" );Save Text File( "$temp/deleteme/test2.txt", "a2\!n1" );mfi = Multiple File Import(	<<Set Folder( "$temp/deleteme/" ),	<<Set Name Filter( "test?.txt;" ),	<<Set Name Enable( 1 ),	<<Set Add File Name Column( 1 ),	<<Set Import Callback(		Function( {a, b},			Write( "\!na=", a );			Write( "\!nb=", b );		)	));mfi << Get Import Callback();
 
 ```
 
@@ -835,10 +706,7 @@ mfi << Get Import Callback();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Import Mode( "Row Per Line" );
-mfi << Get Import Mode();
+mfi = Multiple File Import();mfi << Set Import Mode( "Row Per Line" );mfi << Get Import Mode();
 
 ```
 
@@ -852,9 +720,7 @@ mfi << Get Import Mode();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get JSON Guess();
+mfi = Multiple File Import();mfi << Get JSON Guess();
 
 ```
 
@@ -868,9 +734,7 @@ mfi << Get JSON Guess();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get JSON Method();
+mfi = Multiple File Import();mfi << Get JSON Method();
 
 ```
 
@@ -884,9 +748,7 @@ mfi << Get JSON Method();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get JSON Settings();
+mfi = Multiple File Import();mfi << Get JSON Settings();
 
 ```
 
@@ -900,9 +762,7 @@ mfi << Get JSON Settings();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Name Count();
+mfi = Multiple File Import();mfi << Get Name Count();
 
 ```
 
@@ -916,10 +776,7 @@ mfi << Get Name Count();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Name Enable( 1 );
-mfi << Get Name Enable();
+mfi = Multiple File Import();mfi << Set Name Enable( 1 );mfi << Get Name Enable();
 
 ```
 
@@ -933,11 +790,7 @@ mfi << Get Name Enable();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Name Filter( "*.csv;*.txt" );
-mfi << Set Name Enable( 1 );
-mfi << Get Name Filter();
+mfi = Multiple File Import();mfi << Set Name Filter( "*.csv;*.txt" );mfi << Set Name Enable( 1 );mfi << Get Name Filter();
 
 ```
 
@@ -951,9 +804,7 @@ mfi << Get Name Filter();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get PDF Method();
+mfi = Multiple File Import();mfi << Get PDF Method();
 
 ```
 
@@ -967,9 +818,7 @@ mfi << Get PDF Method();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get PDF Settings();
+mfi = Multiple File Import();mfi << Get PDF Settings();
 
 ```
 
@@ -983,9 +832,7 @@ mfi << Get PDF Settings();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Script();
+mfi = Multiple File Import();mfi << Get Script();
 
 ```
 
@@ -999,10 +846,7 @@ mfi << Get Script();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Show Hidden( 1 );
-mfi << Get Show Hidden();
+mfi = Multiple File Import();mfi << Set Show Hidden( 1 );mfi << Get Show Hidden();
 
 ```
 
@@ -1016,14 +860,7 @@ mfi << Get Show Hidden();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$Documents" );
-mfi << Set Size Filter( {0, 1000} );
-mfi << Set Size Enable( 1 );
-Print( mfi << Get Size Count() );
-mfi << Set Size Enable( 0 );
-Print( mfi << Get Size Count() );
+mfi = Multiple File Import();mfi << Set Folder( "$Documents" );mfi << Set Size Filter( {0, 1000} );mfi << Set Size Enable( 1 );Print( mfi << Get Size Count() );mfi << Set Size Enable( 0 );Print( mfi << Get Size Count() );
 
 ```
 
@@ -1037,11 +874,7 @@ Print( mfi << Get Size Count() );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Size Enable( 1 );
-mfi << Set Size Filter( {0, 1000} );
-mfi << Get Size Enable();
+mfi = Multiple File Import();mfi << Set Size Enable( 1 );mfi << Set Size Filter( {0, 1000} );mfi << Get Size Enable();
 
 ```
 
@@ -1055,10 +888,7 @@ mfi << Get Size Enable();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Size Filter( {0, 1000} );
-mfi << Get Size Filter();
+mfi = Multiple File Import();mfi << Set Size Filter( {0, 1000} );mfi << Get Size Filter();
 
 ```
 
@@ -1072,9 +902,7 @@ mfi << Get Size Filter();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get Stack Mode();
+mfi = Multiple File Import();mfi << Get Stack Mode();
 
 ```
 
@@ -1088,10 +916,7 @@ mfi << Get Stack Mode();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Subfolders( 1 );
-mfi << Get Subfolders();
+mfi = Multiple File Import();mfi << Set Subfolders( 1 );mfi << Get Subfolders();
 
 ```
 
@@ -1103,7 +928,7 @@ mfi << Get Subfolders();
 
 ```jsl
 
-Names Default To Here( 1 );
+
 
 ```
 
@@ -1117,9 +942,7 @@ Names Default To Here( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get XML Guess();
+mfi = Multiple File Import();mfi << Get XML Guess();
 
 ```
 
@@ -1133,9 +956,7 @@ mfi << Get XML Guess();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get XML Method();
+mfi = Multiple File Import();mfi << Get XML Method();
 
 ```
 
@@ -1149,9 +970,7 @@ mfi << Get XML Method();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Get XML Settings();
+mfi = Multiple File Import();mfi << Get XML Settings();
 
 ```
 
@@ -1165,12 +984,7 @@ mfi << Get XML Settings();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
-mfi << Set Name Filter( "*.txt" );
-mfi << Set Name Enable( 1 );
-tables = mfi << Import Data();
+mfi = Multiple File Import();mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );mfi << Set Name Filter( "*.txt" );mfi << Set Name Enable( 1 );tables = mfi << Import Data();
 
 ```
 
@@ -1184,9 +998,7 @@ tables = mfi << Import Data();
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Date Column( 1 );
+mfi = Multiple File Import();mfi << Set Add File Date Column( 1 );
 
 ```
 
@@ -1200,9 +1012,7 @@ mfi << Set Add File Date Column( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Name Column( 1 );
+mfi = Multiple File Import();mfi << Set Add File Name Column( 1 );
 
 ```
 
@@ -1216,9 +1026,7 @@ mfi << Set Add File Name Column( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Add File Size Column( 1 );
+mfi = Multiple File Import();mfi << Set Add File Size Column( 1 );
 
 ```
 
@@ -1232,9 +1040,7 @@ mfi << Set Add File Size Column( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Allow Numeric( 1 );
+mfi = Multiple File Import();mfi << Set CSV Allow Numeric( 1 );
 
 ```
 
@@ -1248,9 +1054,7 @@ mfi << Set CSV Allow Numeric( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Comma( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOF Comma( 1 );
 
 ```
 
@@ -1264,9 +1068,7 @@ mfi << Set CSV EOF Comma( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Other( "\" );
+mfi = Multiple File Import();mfi << Set CSV EOF Other( "\" );
 
 ```
 
@@ -1280,9 +1082,7 @@ mfi << Set CSV EOF Other( "\" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Space( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOF Space( 1 );
 
 ```
 
@@ -1296,9 +1096,7 @@ mfi << Set CSV EOF Space( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Spaces( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOF Spaces( 1 );
 
 ```
 
@@ -1312,9 +1110,7 @@ mfi << Set CSV EOF Spaces( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Tab( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOF Tab( 1 );
 
 ```
 
@@ -1328,9 +1124,7 @@ mfi << Set CSV EOF Tab( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOL CR( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOL CR( 1 );
 
 ```
 
@@ -1344,9 +1138,7 @@ mfi << Set CSV EOL CR( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOL CRLF( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOL CRLF( 1 );
 
 ```
 
@@ -1360,9 +1152,7 @@ mfi << Set CSV EOL CRLF( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOL LF( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOL LF( 1 );
 
 ```
 
@@ -1376,9 +1166,7 @@ mfi << Set CSV EOL LF( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOF Other( "\" );
+mfi = Multiple File Import();mfi << Set CSV EOF Other( "\" );
 
 ```
 
@@ -1392,9 +1180,7 @@ mfi << Set CSV EOF Other( "\" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV EOL Semicolon( 1 );
+mfi = Multiple File Import();mfi << Set CSV EOL Semicolon( 1 );
 
 ```
 
@@ -1408,9 +1194,7 @@ mfi << Set CSV EOL Semicolon( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Escape( "\" );
+mfi = Multiple File Import();mfi << Set CSV Escape( "\" );
 
 ```
 
@@ -1424,9 +1208,7 @@ mfi << Set CSV Escape( "\" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV First Data Line( 4 );
+mfi = Multiple File Import();mfi << Set CSV First Data Line( 4 );
 
 ```
 
@@ -1440,10 +1222,7 @@ mfi << Set CSV First Data Line( 4 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Has Headers( 1 );
-mfi << Set CSV First Header Line( 2 );
+mfi = Multiple File Import();mfi << Set CSV Has Headers( 1 );mfi << Set CSV First Header Line( 2 );
 
 ```
 
@@ -1457,9 +1236,7 @@ mfi << Set CSV First Header Line( 2 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Has Headers( 1 );
+mfi = Multiple File Import();mfi << Set CSV Has Headers( 1 );
 
 ```
 
@@ -1473,10 +1250,7 @@ mfi << Set CSV Has Headers( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Has Headers( 1 );
-mfi << Set CSV Number Of Header Lines( 2 );
+mfi = Multiple File Import();mfi << Set CSV Has Headers( 1 );mfi << Set CSV Number Of Header Lines( 2 );
 
 ```
 
@@ -1490,9 +1264,7 @@ mfi << Set CSV Number Of Header Lines( 2 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set CSV Quote( "'" );
+mfi = Multiple File Import();mfi << Set CSV Quote( "'" );
 
 ```
 
@@ -1506,9 +1278,7 @@ mfi << Set CSV Quote( "'" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Charset( "Best Guess" );
+mfi = Multiple File Import();mfi << Set Charset( "Best Guess" );
 
 ```
 
@@ -1522,10 +1292,7 @@ mfi << Set Charset( "Best Guess" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );
-mfi << Set Date Enable( 1 );
+mfi = Multiple File Import();mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );mfi << Set Date Enable( 1 );
 
 ```
 
@@ -1539,10 +1306,7 @@ mfi << Set Date Enable( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );
-mfi << Set Date Enable( 1 );
+mfi = Multiple File Import();mfi << Set Date Filter( {05Sep2019:14:30:00, Today()} );mfi << Set Date Enable( 1 );
 
 ```
 
@@ -1556,9 +1320,7 @@ mfi << Set Date Enable( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Add Sheet Name Column( 1 );
+mfi = Multiple File Import();mfi << Set Excel Add Sheet Name Column( 1 );
 
 ```
 
@@ -1572,9 +1334,7 @@ mfi << Set Excel Add Sheet Name Column( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Best Guess( 1 );
+mfi = Multiple File Import();mfi << Set Excel Best Guess( 1 );
 
 ```
 
@@ -1588,18 +1348,7 @@ mfi << Set Excel Best Guess( 1 );
 
 ```jsl
 
-
-Multiple File Import(
-	fJust << Set Folder( "$sample_import_data" ),
-	<<Set Name Filter( "texas precipitation.xlsx" ),
-	<<Set Name Enable( 1 ),
-	<<Set Excel Best Guess( 0 ),
-	<<Set Excel Has Headers( 1 ),
-	<<Set Excel Number of Header Lines( 2 ),
-	<<Set Excel First Data Line( 3 ),
-	<<Set Excel Last Data Row( 6 ),
-	<<Set Excel Column Headers As Hierarchies( 1 )
-) << import data;
+Multiple File Import(	fJust << Set Folder( "$sample_import_data" ),	<<Set Name Filter( "texas precipitation.xlsx" ),	<<Set Name Enable( 1 ),	<<Set Excel Best Guess( 0 ),	<<Set Excel Has Headers( 1 ),	<<Set Excel Number of Header Lines( 2 ),	<<Set Excel First Data Line( 3 ),	<<Set Excel Last Data Row( 6 ),	<<Set Excel Column Headers As Hierarchies( 1 )) << import data;
 
 ```
 
@@ -1613,9 +1362,7 @@ Multiple File Import(
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Column Name Separator( "+" );
+mfi = Multiple File Import();mfi << Set Excel Column Name Separator( "+" );
 
 ```
 
@@ -1629,9 +1376,7 @@ mfi << Set Excel Column Name Separator( "+" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel First Data Column( 1 );
+mfi = Multiple File Import();mfi << Set Excel First Data Column( 1 );
 
 ```
 
@@ -1645,9 +1390,7 @@ mfi << Set Excel First Data Column( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel First Data Line( 1 );
+mfi = Multiple File Import();mfi << Set Excel First Data Line( 1 );
 
 ```
 
@@ -1661,9 +1404,7 @@ mfi << Set Excel First Data Line( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel First Header Line( 1 );
+mfi = Multiple File Import();mfi << Set Excel First Header Line( 1 );
 
 ```
 
@@ -1677,9 +1418,7 @@ mfi << Set Excel First Header Line( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Has Headers( 1 );
+mfi = Multiple File Import();mfi << Set Excel Has Headers( 1 );
 
 ```
 
@@ -1693,9 +1432,7 @@ mfi << Set Excel Has Headers( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Import Color Cells( 1 );
+mfi = Multiple File Import();mfi << Set Excel Import Color Cells( 1 );
 
 ```
 
@@ -1709,9 +1446,7 @@ mfi << Set Excel Import Color Cells( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Last Data Column( 2 );
+mfi = Multiple File Import();mfi << Set Excel Last Data Column( 2 );
 
 ```
 
@@ -1725,9 +1460,7 @@ mfi << Set Excel Last Data Column( 2 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Last Data Row( 1 );
+mfi = Multiple File Import();mfi << Set Excel Last Data Row( 1 );
 
 ```
 
@@ -1741,9 +1474,7 @@ mfi << Set Excel Last Data Row( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Limit Column Type Detection( 1 );
+mfi = Multiple File Import();mfi << Set Excel Limit Column Type Detection( 1 );
 
 ```
 
@@ -1757,20 +1488,7 @@ mfi << Set Excel Limit Column Type Detection( 1 );
 
 ```jsl
 
-
-Multiple File Import(
-	<<Set Folder( "$sample_import_data" ),
-	<<Set Name Filter( "texas precipitation.xlsx" ),
-	<<Set Name Enable( 1 ),
-	<<Set Excel Best Guess( 0 ),
-	<<Set Excel Has Headers( 1 ),
-	<<Set Excel Number of Header Lines( 2 ),
-	<<Set Excel First Data Line( 3 ),
-	<<Set Excel Last Data Row( 6 ),
-	<<Set Excel Column Headers As Hierarchies( 1 ), // must be set for Multiple Series Stack
-	<<Set Excel Multiple Series Stack( 1 ),
-
-) << import data;
+Multiple File Import(	<<Set Folder( "$sample_import_data" ),	<<Set Name Filter( "texas precipitation.xlsx" ),	<<Set Name Enable( 1 ),	<<Set Excel Best Guess( 0 ),	<<Set Excel Has Headers( 1 ),	<<Set Excel Number of Header Lines( 2 ),	<<Set Excel First Data Line( 3 ),	<<Set Excel Last Data Row( 6 ),	<<Set Excel Column Headers As Hierarchies( 1 ), // must be set for Multiple Series Stack	<<Set Excel Multiple Series Stack( 1 ),) << import data;
 
 ```
 
@@ -1784,9 +1502,7 @@ Multiple File Import(
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Number of Header Lines( 1 );
+mfi = Multiple File Import();mfi << Set Excel Number of Header Lines( 1 );
 
 ```
 
@@ -1800,9 +1516,7 @@ mfi << Set Excel Number of Header Lines( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Replicate Data In Spanned Rows( 1 );
+mfi = Multiple File Import();mfi << Set Excel Replicate Data In Spanned Rows( 1 );
 
 ```
 
@@ -1816,9 +1530,7 @@ mfi << Set Excel Replicate Data In Spanned Rows( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Replicate Headers In Spanned Rows( 1 );
+mfi = Multiple File Import();mfi << Set Excel Replicate Headers In Spanned Rows( 1 );
 
 ```
 
@@ -1832,9 +1544,7 @@ mfi << Set Excel Replicate Headers In Spanned Rows( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Suppress Empty Columns( 1 );
+mfi = Multiple File Import();mfi << Set Excel Suppress Empty Columns( 1 );
 
 ```
 
@@ -1848,9 +1558,7 @@ mfi << Set Excel Suppress Empty Columns( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Suppress Hidden Columns( 1 );
+mfi = Multiple File Import();mfi << Set Excel Suppress Hidden Columns( 1 );
 
 ```
 
@@ -1864,9 +1572,7 @@ mfi << Set Excel Suppress Hidden Columns( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Suppress Hidden Rows( 1 );
+mfi = Multiple File Import();mfi << Set Excel Suppress Hidden Rows( 1 );
 
 ```
 
@@ -1880,9 +1586,7 @@ mfi << Set Excel Suppress Hidden Rows( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Excel Worksheet Filter( "data*;sheet?" );
+mfi = Multiple File Import();mfi << Set Excel Worksheet Filter( "data*;sheet?" );
 
 ```
 
@@ -1894,7 +1598,7 @@ mfi << Set Excel Worksheet Filter( "data*;sheet?" );
 
 ```jsl
 
-Names Default To Here( 1 );
+
 
 ```
 
@@ -1908,9 +1612,7 @@ Names Default To Here( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Folder( "$Desktop" );
+mfi = Multiple File Import();mfi << Set Folder( "$Desktop" );
 
 ```
 
@@ -1924,25 +1626,7 @@ mfi << Set Folder( "$Desktop" );
 
 ```jsl
 
-
-Create Directory( "$temp/deleteme" );
-Save Text File( "$temp/deleteme/test1.txt", "a1\!n1" );
-Save Text File( "$temp/deleteme/test2.txt", "a2\!n1" );
-mfi = Multiple File Import(
-	<<Set Folder( "$temp/deleteme/" ),
-	<<Set Name Filter( "test?.txt;" ),
-	<<Set Name Enable( 1 ),
-	<<Set Add File Name Column( 1 ),
-	<<Set Import Callback(
-		Function( {a, b}, 
-// a is the same is mfi
-			// b is a list of datatables that were created
-			Write( "\!na=", a );
-			Write( "\!nb=", b );
-		)
-	)
-);
-mfi << Import Data;
+Create Directory( "$temp/deleteme" );Save Text File( "$temp/deleteme/test1.txt", "a1\!n1" );Save Text File( "$temp/deleteme/test2.txt", "a2\!n1" );mfi = Multiple File Import(	<<Set Folder( "$temp/deleteme/" ),	<<Set Name Filter( "test?.txt;" ),	<<Set Name Enable( 1 ),	<<Set Add File Name Column( 1 ),	<<Set Import Callback(		Function( {a, b}, // a is the same is mfi			// b is a list of datatables that were created			Write( "\!na=", a );			Write( "\!nb=", b );		)	));mfi << Import Data;
 
 ```
 
@@ -1956,9 +1640,7 @@ mfi << Import Data;
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Import Mode( "Row Per Line" );
+mfi = Multiple File Import();mfi << Set Import Mode( "Row Per Line" );
 
 ```
 
@@ -1972,10 +1654,7 @@ mfi << Set Import Mode( "Row Per Line" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set JSON Method( "Guess" );
-mfi << Set JSON Guess( "Tall" );
+mfi = Multiple File Import();mfi << Set JSON Method( "Guess" );mfi << Set JSON Guess( "Tall" );
 
 ```
 
@@ -1989,10 +1668,7 @@ mfi << Set JSON Guess( "Tall" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set JSON Method( "Guess" );
-mfi << Set JSON Guess( "Tall" );
+mfi = Multiple File Import();mfi << Set JSON Method( "Guess" );mfi << Set JSON Guess( "Tall" );
 
 ```
 
@@ -2006,62 +1682,7 @@ mfi << Set JSON Guess( "Tall" );
 
 ```jsl
 
-
-dt = Open( "$sample_data\big class.jmp" );
-dt << Save( "$Documents\Big Class.json" );
-Close( dt );
-Multiple File Import(
-	<<Set Folder( "$DOCUMENTS" ),
-	<<Set Name Filter( "big*.JSON" ),
-	<<Set Name Enable( 1 ),
-	<<Set JSON Method( "JSON Settings" ),
-	<<Set JSON Settings(
-		JSON Settings(
-			Stack( 0 ),
-			Row( "/root" ),
-			Col(
-				"/root/name",
-				Column Name( "name" ),
-				Fill( "Use Once" ),
-				Type( "Character" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/root/age",
-				Column Name( "age" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/root/sex",
-				Column Name( "sex" ),
-				Fill( "Use Once" ),
-				Type( "Character" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/root/height",
-				Column Name( "height" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/root/weight",
-				Column Name( "weight" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			)
-		)
-	)
-) << Import Data;
+dt = Open( "$sample_data\big class.jmp" );dt << Save( "$Documents\Big Class.json" );Close( dt );Multiple File Import(	<<Set Folder( "$DOCUMENTS" ),	<<Set Name Filter( "big*.JSON" ),	<<Set Name Enable( 1 ),	<<Set JSON Method( "JSON Settings" ),	<<Set JSON Settings(		JSON Settings(			Stack( 0 ),			Row( "/root" ),			Col(				"/root/name",				Column Name( "name" ),				Fill( "Use Once" ),				Type( "Character" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/root/age",				Column Name( "age" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/root/sex",				Column Name( "sex" ),				Fill( "Use Once" ),				Type( "Character" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/root/height",				Column Name( "height" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/root/weight",				Column Name( "weight" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			)		)	)) << Import Data;
 
 ```
 
@@ -2075,9 +1696,7 @@ Multiple File Import(
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Name Enable( 1 );
+mfi = Multiple File Import();mfi << Set Name Enable( 1 );
 
 ```
 
@@ -2085,15 +1704,13 @@ mfi << Set Name Enable( 1 );
 
 **구문:** obj &lt;&lt; Set Name Filter
 
-**설명:** 포함된 파일을 와일드카드 문자를 포함할 수 있는 필터 목록(세미콜론으로 구분됨)에 추가할 수 있도록 합니다. 세미콜론이나 |을 포함하는 파일 이름은 ? 또는 *와 같은 와일드카드 문자를 사용하여 가져와야 합니다.
+**설명:** 포함된 파일을 와일드카드 문자를 포함할 수 있는 필터 목록(세미콜론으로 구분됨)에 추가할 수 있도록 합니다. 세미콜론이나 |을 포함하는 파일 이름은 ? 또는 \*와 같은 와일드카드 문자를 사용하여 가져와야 합니다.
 
 **JMP추가된 버전:** 14
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Name Filter( "*.csv;*.txt" );
+mfi = Multiple File Import();mfi << Set Name Filter( "*.csv;*.txt" );
 
 ```
 
@@ -2107,9 +1724,7 @@ mfi << Set Name Filter( "*.csv;*.txt" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set PDF Method( "Guess" );
+mfi = Multiple File Import();mfi << Set PDF Method( "Guess" );
 
 ```
 
@@ -2123,19 +1738,7 @@ mfi << Set PDF Method( "Guess" );
 
 ```jsl
 
-
-dt = Open( "$sample_data\big class.jmp" );
-win = New Window( "temp", Data Table Box( dt ) );
-win << Save pdf( "$Documents\big class.PDF" );
-win << Close window;
-Close( dt );
-Multiple File Import(
-	<<Set Folder( "$DOCUMENTS" ),
-	<<Set Name Filter( "big*.pdf" ),
-	<<Set Name Enable( 1 ),
-	<<Set PDF Method( "PDF Settings" ),
-	<<Set PDF Settings( PDF All Tables( combine( all ) ) )
-) << Import Data;
+dt = Open( "$sample_data\big class.jmp" );win = New Window( "temp", Data Table Box( dt ) );win << Save pdf( "$Documents\big class.PDF" );win << Close window;Close( dt );Multiple File Import(	<<Set Folder( "$DOCUMENTS" ),	<<Set Name Filter( "big*.pdf" ),	<<Set Name Enable( 1 ),	<<Set PDF Method( "PDF Settings" ),	<<Set PDF Settings( PDF All Tables( combine( all ) ) )) << Import Data;
 
 ```
 
@@ -2149,9 +1752,7 @@ Multiple File Import(
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Show Hidden( 1 );
+mfi = Multiple File Import();mfi << Set Show Hidden( 1 );
 
 ```
 
@@ -2165,10 +1766,7 @@ mfi << Set Show Hidden( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Size Enable( 1 );
-mfi << Set Size Filter( {0, 1000} );
+mfi = Multiple File Import();mfi << Set Size Enable( 1 );mfi << Set Size Filter( {0, 1000} );
 
 ```
 
@@ -2182,10 +1780,7 @@ mfi << Set Size Filter( {0, 1000} );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Size Enable( 1 );
-mfi << Set Size Filter( {0, 1000} );
+mfi = Multiple File Import();mfi << Set Size Enable( 1 );mfi << Set Size Filter( {0, 1000} );
 
 ```
 
@@ -2199,9 +1794,7 @@ mfi << Set Size Filter( {0, 1000} );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Stack Mode( "Stack Similar" );
+mfi = Multiple File Import();mfi << Set Stack Mode( "Stack Similar" );
 
 ```
 
@@ -2215,9 +1808,7 @@ mfi << Set Stack Mode( "Stack Similar" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set Subfolders( 1 );
+mfi = Multiple File Import();mfi << Set Subfolders( 1 );
 
 ```
 
@@ -2229,7 +1820,7 @@ mfi << Set Subfolders( 1 );
 
 ```jsl
 
-Names Default To Here( 1 );
+
 
 ```
 
@@ -2243,10 +1834,7 @@ Names Default To Here( 1 );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set XML Method( "Guess" );
-mfi << Set XML Guess( "Tall" );
+mfi = Multiple File Import();mfi << Set XML Method( "Guess" );mfi << Set XML Guess( "Tall" );
 
 ```
 
@@ -2260,10 +1848,7 @@ mfi << Set XML Guess( "Tall" );
 
 ```jsl
 
-
-mfi = Multiple File Import();
-mfi << Set XML Method( "Guess" );
-mfi << Set XML Guess( "Tall" );
+mfi = Multiple File Import();mfi << Set XML Method( "Guess" );mfi << Set XML Guess( "Tall" );
 
 ```
 
@@ -2277,42 +1862,7 @@ mfi << Set XML Guess( "Tall" );
 
 ```jsl
 
-
-Multiple File Import(
-	<<Set Folder( "$SAMPLE_IMPORT_DATA" ),
-	<<Set Name Filter( "*.xml" ),
-	<<Set Name Enable( 1 ),
-	<<Set XML Method( "XML Settings" ),
-	<<Set XML Settings(
-		XML Settings(
-			Row( "/book/story/chapter/para" ),
-			Col(
-				"/book/story/chapter/para",
-				Column Name( "story.chapter.para" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/book/story/chapter/para/price",
-				Column Name( "story.chapter.para.price" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			),
-			Col(
-				"/book/story/chapter/para/quantity",
-				Column Name( "story.chapter.para.quantity" ),
-				Fill( "Use Once" ),
-				Type( "Numeric" ),
-				Format( {"Best"} ),
-				Modeling Type( "Continuous" )
-			)
-		)
-	)
-) << Import Data;
+Multiple File Import(	<<Set Folder( "$SAMPLE_IMPORT_DATA" ),	<<Set Name Filter( "*.xml" ),	<<Set Name Enable( 1 ),	<<Set XML Method( "XML Settings" ),	<<Set XML Settings(		XML Settings(			Row( "/book/story/chapter/para" ),			Col(				"/book/story/chapter/para",				Column Name( "story.chapter.para" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/book/story/chapter/para/price",				Column Name( "story.chapter.para.price" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			),			Col(				"/book/story/chapter/para/quantity",				Column Name( "story.chapter.para.quantity" ),				Fill( "Use Once" ),				Type( "Numeric" ),				Format( {"Best"} ),				Modeling Type( "Continuous" )			)		)	)) << Import Data;
 
 ```
 

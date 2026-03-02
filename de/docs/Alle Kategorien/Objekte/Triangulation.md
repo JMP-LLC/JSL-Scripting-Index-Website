@@ -12,9 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Edges;
 
 ```
 
@@ -26,9 +24,7 @@ tri << Get Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Hull Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Edges;
 
 ```
 
@@ -40,9 +36,7 @@ tri << Get Hull Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Hull Path;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Path;
 
 ```
 
@@ -54,9 +48,7 @@ tri << Get Hull Path;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Hull Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Points;
 
 ```
 
@@ -68,9 +60,7 @@ tri << Get Hull Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get NEdges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get NEdges;
 
 ```
 
@@ -82,9 +72,7 @@ tri << Get NEdges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get N Hull Edges;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Hull Edges;
 
 ```
 
@@ -96,9 +84,7 @@ tri << Get N Hull Edges;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get N Hull Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Hull Points;
 
 ```
 
@@ -110,9 +96,7 @@ tri << Get N Hull Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get N Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Points;
 
 ```
 
@@ -124,9 +108,7 @@ tri << Get N Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get N Triangles;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Triangles;
 
 ```
 
@@ -138,9 +120,7 @@ tri << Get N Triangles;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Points;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Points;
 
 ```
 
@@ -152,9 +132,7 @@ tri << Get Points;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Triangles;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Triangles;
 
 ```
 
@@ -166,9 +144,7 @@ tri << Get Triangles;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Get Y;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Y;
 
 ```
 
@@ -180,11 +156,7 @@ tri << Get Y;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-Show( tri << Get N Triangles );
-tri2 = tri << Peel;
-Show( tri2 << Get N Triangles );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );Show( tri << Get N Triangles );tri2 = tri << Peel;Show( tri2 << Get N Triangles );
 
 ```
 
@@ -196,11 +168,7 @@ Show( tri2 << Get N Triangles );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-Show( tri << Get N Triangles );
-tri2 = tri << Subset( tri << Get Hull Points );
-Show( tri2 << Get N Triangles );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );Show( tri << Get N Triangles );tri2 = tri << Subset( tri << Get Hull Points );Show( tri2 << Get N Triangles );
 
 ```
 
@@ -212,9 +180,7 @@ Show( tri2 << Get N Triangles );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
-tri << Transform( "Range Normalized" );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Transform( "Range Normalized" );
 
 ```
 
@@ -226,16 +192,15 @@ tri << Transform( "Range Normalized" );
 
 **Beschreibung:** Gibt ein Objekt mit der Delaunay-Triangulierung des vorgegebenen Punktesatzes zurück. Die optionale Y-Variable wird für doppelte Punkte gemittelt, und alle Punkte in der Ausgabe sind eindeutig.
 
-#### Beispiel 1
+**Beispiel 1**
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```
 
-#### Beispiel 2
+**Beispiel 2**
 
 ```jsl
 

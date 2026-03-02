@@ -14,19 +14,7 @@
 
 ```jsl
 
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Result Example Folder" ),
-	If Exists( "use" )
-);
-worked = jmpliveresult << Succeeded();
-If( worked == 1,
-	folder = jmpliveresult << As Scriptable;
-	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );
-	Write( "\!nTitle: ", folder << Get Title );
-);
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Result Example Folder" ),	If Exists( "use" ));worked = jmpliveresult << Succeeded();If( worked == 1,	folder = jmpliveresult << As Scriptable;	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );	Write( "\!nTitle: ", folder << Get Title ););
 
 ```
 
@@ -40,12 +28,7 @@ If( worked == 1,
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
-
-httpstatus = jmpliveresult << Get HTTP Status();
-httpmessage = jmpliveresult << Get Error Message();
-Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );httpstatus = jmpliveresult << Get HTTP Status();httpmessage = jmpliveresult << Get Error Message();Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```
 
@@ -59,12 +42,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```jsl
 
-liveconnection = New JMP Live();
-jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );
-
-httpstatus = jmpliveresult << Get HTTP Status();
-httpmessage = jmpliveresult << Get Error Message();
-Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Get Folder( "THISISNOTAFOLDERID" );httpstatus = jmpliveresult << Get HTTP Status();httpmessage = jmpliveresult << Get Error Message();Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```
 
@@ -78,17 +56,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ```jsl
 
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Result Example Folder" ),
-	If Exists( "use" )
-);
-secondliveconnection = jmpliveresult << Get JMP Live();
-
-name = secondliveconnection << Get Connection Name();
-Write( "\!nConnection Name: ", name );
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Result Example Folder" ),	If Exists( "use" ));secondliveconnection = jmpliveresult << Get JMP Live();name = secondliveconnection << Get Connection Name();Write( "\!nConnection Name: ", name );
 
 ```
 
@@ -102,19 +70,7 @@ Write( "\!nConnection Name: ", name );
 
 ```jsl
 
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Result Example Folder" ),
-	If Exists( "use" )
-);
-worked = jmpliveresult << Succeeded();
-If( worked == 1,
-	folder = jmpliveresult << As Scriptable;
-	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );
-	Write( "\!nTitle: ", folder << Get Title );
-);
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Result Example Folder" ),	If Exists( "use" ));worked = jmpliveresult << Succeeded();If( worked == 1,	folder = jmpliveresult << As Scriptable;	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );	Write( "\!nTitle: ", folder << Get Title ););
 
 ```
 
@@ -128,19 +84,7 @@ If( worked == 1,
 
 ```jsl
 
-liveconnection = New JMP Live();
-
-jmpliveresult = liveconnection << Create Folder(
-	Parent Folder( "~" ),
-	Title( "Result Example Folder" ),
-	If Exists( "use" )
-);
-worked = jmpliveresult << Succeeded();
-If( worked == 1,
-	folder = jmpliveresult << As Scriptable;
-	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );
-	Write( "\!nTitle: ", folder << Get Title );
-);
+liveconnection = New JMP Live();jmpliveresult = liveconnection << Create Folder(	Parent Folder( "~" ),	Title( "Result Example Folder" ),	If Exists( "use" ));worked = jmpliveresult << Succeeded();If( worked == 1,	folder = jmpliveresult << As Scriptable;	Write( "\!nResponse Type: ", jmpliveresult << Get Response Type );	Write( "\!nTitle: ", folder << Get Title ););
 
 ```
 

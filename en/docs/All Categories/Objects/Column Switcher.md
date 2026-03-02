@@ -12,13 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Close Outline( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Close Outline( 1 );
 
 ```
 
@@ -30,14 +24,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Current( "country" );
-ColumnSwitcherObject << Get Current/*country*/ ;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Current( "country" );ColumnSwitcherObject << Get Current/*country*/ ;
 
 ```
 
@@ -49,20 +36,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Country ), Y( :Weight ) ),
-	Elements( Bar( X, Y, Legend( 4 ) ) )
-);
-cs1 = gb << Column Switcher( :Country, {:Model, :Country, :Type}, Layout( 1 ) );
-cs2 = gb << Column Switcher(
-	:Weight,
-	{:Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size}
-);
-If( cs2 << Get Layout() == 1,
-	Print( "Horizontal" ),
-	Print( "Vertical" )
-);
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );gb = dt << Graph Builder(	Variables( X( :Country ), Y( :Weight ) ),	Elements( Bar( X, Y, Legend( 4 ) ) ));cs1 = gb << Column Switcher( :Country, {:Model, :Country, :Type}, Layout( 1 ) );cs2 = gb << Column Switcher(	:Weight,	{:Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size});If( cs2 << Get Layout() == 1,	Print( "Horizontal" ),	Print( "Vertical" ));
 
 ```
 
@@ -74,13 +48,7 @@ If( cs2 << Get Layout() == 1,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ```
 
@@ -92,14 +60,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Next;
-ColumnSwitcherObject << Get Original/*marital status*/ ;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Next;ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ```
 
@@ -111,13 +72,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-FPM = ColumnSwitcherObject << Get Speed;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});FPM = ColumnSwitcherObject << Get Speed;
 
 ```
 
@@ -131,13 +86,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-columnSwitcher = dt << Column Switcher(
-	:Process 1,
-	{:Process 1, :Process 2, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7}
-);
-gb = Graph Builder( Variables( Y( :Process 1 ) ), Elements( Histogram( Y, Legend( 3 ) ) ) );
-columnSwitcher << Link Platform( gb );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );columnSwitcher = dt << Column Switcher(	:Process 1,	{:Process 1, :Process 2, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7});gb = Graph Builder( Variables( Y( :Process 1 ) ), Elements( Histogram( Y, Legend( 3 ) ) ) );columnSwitcher << Link Platform( gb );
 
 ```
 
@@ -151,30 +100,7 @@ columnSwitcher << Link Platform( gb );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-gb = Graph Builder( Variables( Y( :Process 1 ) ), Elements( Histogram( Y, Legend( 3 ) ) ) );
-columnSwitcher = gb << Column Switcher(
-	:Process 1,
-	{:Process 1, :Process 2, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7}
-);
-pre = Function( {currentColumn, nextColumn, switcher},
-	Print(
-		"Before switch: " || (currentColumn << get name) || " >> " || (nextColumn << get name
-		) || " [Column Switcher] current: " || (columnSwitcher << Get Current)
-	);
-	If( nextColumn << get name == "Process 4",
-		0,
-		1
-	);
-);
-post = Function( {previousColumn, currentColumn, switcher},
-	Print(
-		"After switch: " || (previousColumn << get name) || " >> " || (currentColumn <<
-		get name) || " [Column Switcher] current: " || (columnSwitcher << Get Current)
-	)
-);
-handler = columnSwitcher << Make Column Switch Handler( pre, post );
-columnSwitcher << Run;
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );gb = Graph Builder( Variables( Y( :Process 1 ) ), Elements( Histogram( Y, Legend( 3 ) ) ) );columnSwitcher = gb << Column Switcher(	:Process 1,	{:Process 1, :Process 2, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7});pre = Function( {currentColumn, nextColumn, switcher},	Print(		"Before switch: " || (currentColumn << get name) || " >> " || (nextColumn << get name		) || " [Column Switcher] current: " || (columnSwitcher << Get Current)	);	If( nextColumn << get name == "Process 4",		0,		1	););post = Function( {previousColumn, currentColumn, switcher},	Print(		"After switch: " || (previousColumn << get name) || " >> " || (currentColumn <<		get name) || " [Column Switcher] current: " || (columnSwitcher << Get Current)	));handler = columnSwitcher << Make Column Switch Handler( pre, post );columnSwitcher << Run;
 
 ```
 
@@ -186,13 +112,7 @@ columnSwitcher << Run;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Next;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Next;
 
 ```
 
@@ -204,15 +124,7 @@ ColumnSwitcherObject << Next;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Run;
-Wait( 5/*seconds, while it animates*/ );
-ColumnSwitcherObject << Pause;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Run;Wait( 5/*seconds, while it animates*/ );ColumnSwitcherObject << Pause;
 
 ```
 
@@ -224,13 +136,7 @@ ColumnSwitcherObject << Pause;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Previous;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Previous;
 
 ```
 
@@ -242,15 +148,7 @@ ColumnSwitcherObject << Previous;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Run;
-Wait( 2/*seconds, while it animates*/ );
-ColumnSwitcherObject << Remove Column Switcher;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Run;Wait( 2/*seconds, while it animates*/ );ColumnSwitcherObject << Remove Column Switcher;
 
 ```
 
@@ -262,22 +160,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-Graph Builder(
-	Variables( X( :Process 1 ), Y( :Process 2 ) ),
-	Elements( Points( X, Y, Legend( 2 ) ), Smoother( X, Y, Legend( 3 ) ) ),
-	Column Switcher(
-		:Process 1,
-		{:Process 1, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7},
-		Retain Axis Settings( 1 )
-	),
-	SendToReport(
-		Dispatch( {}, "Process 1", ScaleBox,
-			{Min( -0.5 ), Max( 22 ), Inc( 4 ), Minor Ticks( 3 ),
-			Add Ref Line( 12, "Solid", "Black", "", 1 )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );Graph Builder(	Variables( X( :Process 1 ), Y( :Process 2 ) ),	Elements( Points( X, Y, Legend( 2 ) ), Smoother( X, Y, Legend( 3 ) ) ),	Column Switcher(		:Process 1,		{:Process 1, :Process 3, :Process 4, :Process 5, :Process 6, :Process 7},		Retain Axis Settings( 1 )	),	SendToReport(		Dispatch( {}, "Process 1", ScaleBox,			{Min( -0.5 ), Max( 22 ), Inc( 4 ), Minor Ticks( 3 ),			Add Ref Line( 12, "Solid", "Black", "", 1 )}		)	));
 
 ```
 
@@ -289,13 +172,7 @@ Graph Builder(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Run;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Run;
 
 ```
 
@@ -309,17 +186,7 @@ ColumnSwitcherObject << Run;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Script(
-	Print( "New Value: " || Char( ColumnSwitcherObject << Get Current ) )
-);
-ColumnSwitcherObject << Run;
-Wait( 5/*seconds, while it animates*/ );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Script(	Print( "New Value: " || Char( ColumnSwitcherObject << Get Current ) ));ColumnSwitcherObject << Run;Wait( 5/*seconds, while it animates*/ );
 
 ```
 
@@ -331,13 +198,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Current( "country" );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Current( "country" );
 
 ```
 
@@ -349,17 +210,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
-gb = dt << Graph Builder(
-	Variables( X( :Country ), Y( :Weight ) ),
-	Elements( Bar( X, Y, Legend( 4 ) ) )
-);
-cs1 = gb << Column Switcher( :Country, {:Model, :Country, :Type} );
-cs2 = gb << Column Switcher(
-	:Weight,
-	{:Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size}
-);
-cs1 << Set Layout( 1 );
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );gb = dt << Graph Builder(	Variables( X( :Country ), Y( :Weight ) ),	Elements( Bar( X, Y, Legend( 4 ) ) ));cs1 = gb << Column Switcher( :Country, {:Model, :Country, :Type} );cs2 = gb << Column Switcher(	:Weight,	{:Weight, :Turning Circle, :Displacement, :Horsepower, :Gas Tank Size});cs1 << Set Layout( 1 );
 
 ```
 
@@ -371,13 +222,7 @@ cs1 << Set Layout( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set N Lines( 20 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set N Lines( 20 );
 
 ```
 
@@ -391,17 +236,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Script(
-	Print( "New Value: " || Char( ColumnSwitcherObject << Get Current ) )
-);
-ColumnSwitcherObject << Run;
-Wait( 5/*seconds, while it animates*/ );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Script(	Print( "New Value: " || Char( ColumnSwitcherObject << Get Current ) ));ColumnSwitcherObject << Run;Wait( 5/*seconds, while it animates*/ );
 
 ```
 
@@ -413,13 +248,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Size( 300 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Size( 300 );
 
 ```
 
@@ -431,13 +260,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ```
 
@@ -449,13 +272,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-obj = dt << Contingency( Y( :size ), X( :marital status ) );
-ColumnSwitcherObject = obj << Column Switcher(
-	:marital status,
-	{:sex, :country, :marital status}
-);
-ColumnSwitcherObject << Title( "Switch on X" );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});ColumnSwitcherObject << Title( "Switch on X" );
 
 ```
 

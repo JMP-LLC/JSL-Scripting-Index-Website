@@ -14,12 +14,7 @@
 
 ```jsl
 
-
-webreport = New Web Report();
-webreport << Add Image(
-	File( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),
-	Title( "Black Rhino Footprint" )
-);
+webreport = New Web Report();webreport << Add Image(	File( "$SAMPLE_IMAGES/black rhino footprint.jpg" ),	Title( "Black Rhino Footprint" ));
 
 ```
 
@@ -33,14 +28,7 @@ webreport << Add Image(
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-webreport = New Web Report();
-webreport << Add Report( jmpreport );
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));webreport = New Web Report();webreport << Add Report( jmpreport );
 
 ```
 
@@ -54,26 +42,7 @@ webreport << Add Report( jmpreport );
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Bivariate(
-	Y( :weight ),
-	X( :height ),
-	Automatic Recalc( 1 ),
-	Fit Line( {Line Color( {213, 72, 87} )} ),
-	Local Data Filter( Add Filter( columns( :sex ) ) )
-);
-windows = Find All( Reports );
-If( N Items( windows ) > 0,
-	webreport = New Web Report();
-	webreport << Title( "Big Class Reports" );
-	webreport << Description( "Multiple reports found in Big Class." );
-	webreport << Add Reports( windows );
-);
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Bivariate(	Y( :weight ),	X( :height ),	Automatic Recalc( 1 ),	Fit Line( {Line Color( {213, 72, 87} )} ),	Local Data Filter( Add Filter( columns( :sex ) ) ));windows = Find All( Reports );If( N Items( windows ) > 0,	webreport = New Web Report();	webreport << Title( "Big Class Reports" );	webreport << Description( "Multiple reports found in Big Class." );	webreport << Add Reports( windows ););
 
 ```
 
@@ -87,28 +56,7 @@ If( N Items( windows ) > 0,
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport_1 = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-jmpreport_2 = Bivariate(
-	Y( :weight ),
-	X( :height ),
-	Automatic Recalc( 1 ),
-	Fit Line( {Line Color( {213, 72, 87} )} ),
-	Local Data Filter( Add Filter( columns( :sex ) ) )
-);
-webreport = New Web Report();
-webreport << Add Report( jmpreport_1 );
-webreport << Add Report( jmpreport_2 );
-webreport << Title( "Publish Test" );
-webreport << Description( "This is a multiple report publish" );
-file = webreport << Save( "$TEMP" );
-If( !Is Empty( file ),
-	Web( file )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport_1 = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));jmpreport_2 = Bivariate(	Y( :weight ),	X( :height ),	Automatic Recalc( 1 ),	Fit Line( {Line Color( {213, 72, 87} )} ),	Local Data Filter( Add Filter( columns( :sex ) ) ));webreport = New Web Report();webreport << Add Report( jmpreport_1 );webreport << Add Report( jmpreport_2 );webreport << Title( "Publish Test" );webreport << Description( "This is a multiple report publish" );file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
 
 ```
 
@@ -122,33 +70,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport1 = dt << Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-jmpreport2 = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
-webreport = New Web Report();
-webreport << Add Report( jmpreport1 );
-webreport << Add Report(
-	jmpreport2,
-	Title( "Oneway Analysis" ),
-	Description( "shows height by sex" )
-);
-webreport << Index(
-	Title( "Publish Test" ),
-	Description( "This is a multiple report publish with a custom index page" ),
-	Timestamp( 1 ),
-	Font( "Arial Narrow", "Bold Italic" ),
-	Logo( "$SAMPLE_IMAGES/pi.gif" ),
-	Theme( "Orange" ),
-	Style( "Grid" )
-);
-file = webreport << Save( "$TEMP" );
-If( !Is Empty( file ),
-	Web( file )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport1 = dt << Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));jmpreport2 = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );webreport = New Web Report();webreport << Add Report( jmpreport1 );webreport << Add Report(	jmpreport2,	Title( "Oneway Analysis" ),	Description( "shows height by sex" ));webreport << Index(	Title( "Publish Test" ),	Description( "This is a multiple report publish with a custom index page" ),	Timestamp( 1 ),	Font( "Arial Narrow", "Bold Italic" ),	Logo( "$SAMPLE_IMAGES/pi.gif" ),	Theme( "Orange" ),	Style( "Grid" ));file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
 
 ```
 
@@ -162,26 +84,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-Bivariate(
-	Y( :weight ),
-	X( :height ),
-	Automatic Recalc( 1 ),
-	Fit Line( {Line Color( {213, 72, 87} )} ),
-	Local Data Filter( Add Filter( columns( :sex ) ) )
-);
-windows = Find All( Reports );
-If( N Items( windows ) > 0,
-	webreport = New Web Report();
-	webreport << Add Reports( windows );
-);
-webreport << Reset();
-webreport << Add Report( jmpreport );
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));Bivariate(	Y( :weight ),	X( :height ),	Automatic Recalc( 1 ),	Fit Line( {Line Color( {213, 72, 87} )} ),	Local Data Filter( Add Filter( columns( :sex ) ) ));windows = Find All( Reports );If( N Items( windows ) > 0,	webreport = New Web Report();	webreport << Add Reports( windows ););webreport << Reset();webreport << Add Report( jmpreport );
 
 ```
 
@@ -195,18 +98,7 @@ webreport << Add Report( jmpreport );
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-webreport = New Web Report();
-webreport << Add Report( jmpreport );
-file = webreport << Save( "$TEMP" );
-If( !Is Empty( file ),
-	Web( file )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));webreport = New Web Report();webreport << Add Report( jmpreport );file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
 
 ```
 
@@ -220,27 +112,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
-
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
-jmpreport_1 = Distribution(
-	Continuous Distribution( Column( :weight ) ),
-	Nominal Distribution( Column( :age ) )
-);
-jmpreport_2 = Bivariate(
-	Y( :weight ),
-	X( :height ),
-	Automatic Recalc( 1 ),
-	Fit Line( {Line Color( {213, 72, 87} )} ),
-	Local Data Filter( Add Filter( columns( :sex ) ) )
-);
-webreport = New Web Report();
-webreport << Add Report( jmpreport_1 );
-webreport << Add Report( jmpreport_2 );
-webreport << Title( "Publish Test" );
-file = webreport << Save( "$TEMP" );
-If( !Is Empty( file ),
-	Web( file )
-);
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );jmpreport_1 = Distribution(	Continuous Distribution( Column( :weight ) ),	Nominal Distribution( Column( :age ) ));jmpreport_2 = Bivariate(	Y( :weight ),	X( :height ),	Automatic Recalc( 1 ),	Fit Line( {Line Color( {213, 72, 87} )} ),	Local Data Filter( Add Filter( columns( :sex ) ) ));webreport = New Web Report();webreport << Add Report( jmpreport_1 );webreport << Add Report( jmpreport_2 );webreport << Title( "Publish Test" );file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
 
 ```
 

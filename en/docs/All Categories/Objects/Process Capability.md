@@ -12,13 +12,7 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));
 
 ```
 
@@ -32,19 +26,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
 
 ```
 
@@ -58,18 +40,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-
-dtLimits = Open( "$SAMPLE_DATA/Cheese Manufacturing Limits.jmp" );
-dt = Open( "$SAMPLE_DATA/Cheese Manufacturing Data.jmp" );
-dt << Process Capability(
-	Process Variables( :pH, :Salt Concentration, :Moisture Content ),
-	Grouping( :Cheese Type ),
-	Spec Limits( Use Limits Table( dtLimits ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Goal Plot( 1 ),
-	Capability Index Plot( 1 ),
-	Process Performance Plot( 0 )
-);
+dtLimits = Open( "$SAMPLE_DATA/Cheese Manufacturing Limits.jmp" );dt = Open( "$SAMPLE_DATA/Cheese Manufacturing Data.jmp" );dt << Process Capability(	Process Variables( :pH, :Salt Concentration, :Moisture Content ),	Grouping( :Cheese Type ),	Spec Limits( Use Limits Table( dtLimits ) ),	Moving Range Method( Average of Moving Ranges ),	Goal Plot( 1 ),	Capability Index Plot( 1 ),	Process Performance Plot( 0 ));
 
 ```
 
@@ -77,11 +48,7 @@ dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :NPN1[:lot_id], :PNP1[:lot_id], :PNP2[:lot_id] ),
-	Grouping( :site )
-);
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :NPN1[:lot_id], :PNP1[:lot_id], :PNP2[:lot_id] ),	Grouping( :site ));
 
 ```
 
@@ -93,13 +60,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));
 
 ```
 
@@ -113,13 +74,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer] )
-);
-obj << Individual Detail Reports( 1 );
-Wait( 1 );
-obj << "AIAG (Ppk) Labeling"n( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer] ));obj << Individual Detail Reports( 1 );Wait( 1 );obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ```
 
@@ -131,16 +86,7 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 )
-);
-Wait( 1 );
-obj << Capability Box Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ));Wait( 1 );obj << Capability Box Plots( 1 );
 
 ```
 
@@ -152,18 +98,7 @@ obj << Capability Box Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1 & Dist( Lognormal ), :Process 2 & Dist( Lognormal ),
-		:Process 3 & Dist( Weibull ), :Process 4 & Dist( Lognormal ),
-		:Process 5 & Dist( Weibull ), :Process 6 & Dist( Johnson ), :Process 7
-	),
-	Capability Index Plot( 0 ),
-	Goal Plot( 0 )
-);
-Wait( 1 );
-obj << Capability Index Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1 & Dist( Lognormal ), :Process 2 & Dist( Lognormal ),		:Process 3 & Dist( Weibull ), :Process 4 & Dist( Lognormal ),		:Process 5 & Dist( Weibull ), :Process 6 & Dist( Johnson ), :Process 7	),	Capability Index Plot( 0 ),	Goal Plot( 0 ));Wait( 1 );obj << Capability Index Plot( 1 );
 
 ```
 
@@ -175,12 +110,7 @@ obj << Capability Index Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE, :CO, :SO2, :NO ),
-	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) )
-);
-obj << Color Out of Spec Values( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE, :CO, :SO2, :NO ),	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) ));obj << Color Out of Spec Values( 1 );
 
 ```
 
@@ -192,12 +122,7 @@ obj << Color Out of Spec Values( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE, :CO, :SO2, :NO ),
-	Spec Limits( Get Limits( dt2 ) )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE, :CO, :SO2, :NO ),	Spec Limits( Get Limits( dt2 ) ));
 
 ```
 
@@ -209,16 +134,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Goal Plot( 0 )
-);
-Wait( 1 );
-obj << Goal Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Goal Plot( 0 ));Wait( 1 );obj << Goal Plot( 1 );
 
 ```
 
@@ -230,14 +146,7 @@ obj << Goal Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Individual Detail Reports( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Individual Detail Reports( 1 );
 
 ```
 
@@ -249,14 +158,7 @@ obj << Individual Detail Reports( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Individual Detail Reports Cutoff( 7 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Individual Detail Reports Cutoff( 7 );
 
 ```
 
@@ -268,14 +170,7 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Make Goal Plot Summary Table;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Make Goal Plot Summary Table;
 
 ```
 
@@ -287,16 +182,7 @@ obj << Make Goal Plot Summary Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Within Sigma Summary Report( 1 );
-Wait( 1 );
-obj << Order By( "Within Sigma Cpk Ascending" );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Within Sigma Summary Report( 1 );Wait( 1 );obj << Order By( "Within Sigma Cpk Ascending" );
 
 ```
 
@@ -308,15 +194,7 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << Overall Sigma Normalized Box Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << Overall Sigma Normalized Box Plots( 1 );
 
 ```
 
@@ -328,15 +206,7 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << Overall Sigma Summary Report( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << Overall Sigma Summary Report( 1 );
 
 ```
 
@@ -350,18 +220,7 @@ obj << Overall Sigma Summary Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Capability Index Plot( 0 ),
-
-);
-obj << Process Performance Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Capability Index Plot( 0 ),);obj << Process Performance Plot( 1 );
 
 ```
 
@@ -373,12 +232,7 @@ obj << Process Performance Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE & Dist( Johnson ), :CO, :SO2 & Dist( Lognormal ), :NO ),
-	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) )
-);
-obj << Save Distributions as Column Properties;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE & Dist( Johnson ), :CO, :SO2 & Dist( Lognormal ), :NO ),	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) ));obj << Save Distributions as Column Properties;
 
 ```
 
@@ -390,14 +244,7 @@ obj << Save Distributions as Column Properties;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save In Spec Indicator Formulas;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save In Spec Indicator Formulas;
 
 ```
 
@@ -409,12 +256,7 @@ obj << Save In Spec Indicator Formulas;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE, :CO, :SO2, :NO ),
-	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) )
-);
-obj << Save Spec Limits as Column Properties;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE, :CO, :SO2, :NO ),	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) ));obj << Save Spec Limits as Column Properties;
 
 ```
 
@@ -426,14 +268,7 @@ obj << Save Spec Limits as Column Properties;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Spec Limits to New Table;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Spec Limits to New Table;
 
 ```
 
@@ -445,12 +280,7 @@ obj << Save Spec Limits to New Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE, :CO, :SO2, :NO ),
-	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) )
-);
-obj << Select Out of Spec Values( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE, :CO, :SO2, :NO ),	Spec Limits( Import Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" ) ));obj << Select Out of Spec Values( 1 );
 
 ```
 
@@ -462,12 +292,7 @@ obj << Select Out of Spec Values( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE, :CO, :SO2, :NO ),
-	Spec Limits( Use Limits Table( dt2 ) )
-);
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE, :CO, :SO2, :NO ),	Spec Limits( Use Limits Table( dt2 ) ));
 
 ```
 
@@ -479,15 +304,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << Within Sigma Normalized Box Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << Within Sigma Normalized Box Plots( 1 );
 
 ```
 
@@ -499,15 +316,7 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << Within Sigma Summary Report( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << Within Sigma Summary Report( 1 );
 
 ```
 
@@ -521,15 +330,7 @@ obj << Within Sigma Summary Report( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ```
 
@@ -543,15 +344,7 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 0 );
-obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 0 );obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 ```
 
@@ -565,12 +358,7 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -586,13 +374,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
-dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
-obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
-Wait( 1 );
-obj2 << Apply Preset( preset );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
 
 ```
 
@@ -600,10 +382,7 @@ obj2 << Apply Preset( preset );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -611,10 +390,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ) );
-Wait( 1 );
-obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -626,15 +402,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Automatic Recalc( 1 );
-dt << Select Rows( 5 ) << Exclude( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -648,12 +416,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
-objs = Control Chart Builder(
-	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
-	By( :OPERATOR )
-);
-objs[1] << Broadcast( Save Summaries );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -665,20 +428,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Copy ByGroup Script;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
 
 ```
 
@@ -690,14 +440,7 @@ obj[1] << Copy ByGroup Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Copy Script;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Copy Script;
 
 ```
 
@@ -709,14 +452,7 @@ obj << Copy Script;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Data Table Window;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Data Table Window;
 
 ```
 
@@ -730,9 +466,7 @@ obj << Data Table Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv << Get By Levels;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
 
 ```
 
@@ -744,21 +478,7 @@ biv << Get By Levels;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-t = obj[1] << Get ByGroup Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
 
 ```
 
@@ -772,15 +492,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-t = obj << Get Container;
-Show( (t << XPath( "//OutlineBox" )) << Get Title );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -788,27 +500,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-gb = Graph Builder(
-	Show Control Panel( 0 ),
-	Variables( X( :height ), Y( :weight ) ),
-	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
-	Local Data Filter(
-		Add Filter(
-			columns( :age, :sex, :height ),
-			Where( :age == {12, 13, 14} ),
-			Where( :sex == "F" ),
-			Where( :height >= 55 ),
-			Display( :age, N Items( 6 ) )
-		)
-	)
-);
-New Window( "platform boxes",
-	H List Box(
-		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
-		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
 
 ```
 
@@ -820,15 +512,7 @@ New Window( "platform boxes",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-t = obj << Get Datatable;
-Show( N Rows( t ) );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));t = obj << Get Datatable;Show( N Rows( t ) );
 
 ```
 
@@ -840,11 +524,7 @@ Show( N Rows( t ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
-group = biv[1] << Get Group Platform;
-Wait( 1 );
-group << Layout( "Arrange in Tabs" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -856,15 +536,7 @@ group << Layout( "Arrange in Tabs" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-t = obj << Get Script;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));t = obj << Get Script;Show( t );
 
 ```
 
@@ -876,15 +548,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-t = obj << Get Script With Data Table;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));t = obj << Get Script With Data Table;Show( t );
 
 ```
 
@@ -896,15 +560,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-t = obj << Get Timing;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));t = obj << Get Timing;Show( t );
 
 ```
 
@@ -916,10 +572,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-s = obj << Get Web Support();
-Show( s );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
 
 ```
 
@@ -933,10 +586,7 @@ Show( s );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
-biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
-Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -948,13 +598,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Bivariate(
-	Ignore Platform Preferences( 1 ),
-	Y( :height ),
-	X( :weight ),
-	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
 
 ```
 
@@ -966,14 +610,7 @@ dt << Bivariate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
 
 ```
 
@@ -987,9 +624,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
-preset = obj << New Preset();
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
 
 ```
 
@@ -1001,15 +636,7 @@ preset = obj << New Preset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-filter = dist << Local Data Filter(
-	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
-);
-filter << Copy Local Data Filter;
-dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
-Wait( 1 );
-dist2 << Paste Local Data Filter;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1021,39 +648,7 @@ dist2 << Paste Local Data Filter;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Redo Analysis;
-
-```
-
-### Redo ByGroup Analysis
-
-**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
-
-**Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Redo ByGroup Analysis;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Redo Analysis;
 
 ```
 
@@ -1065,39 +660,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Relaunch Analysis;
-
-```
-
-### Relaunch ByGroup
-
-**Syntax:** obj &lt;&lt; Relaunch ByGroup
-
-**Description:** Opens the platform launch window and recalls the settings that were used to create the report.
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Relaunch ByGroup;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Relaunch Analysis;
 
 ```
 
@@ -1109,37 +672,19 @@ obj[1] << Relaunch ByGroup;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
-dist = dt << Distribution(
-	Nominal Distribution( Column( :country ) ),
-	Local Data Filter(
-		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
-		Mode( Show( 1 ), Include( 1 ) )
-	)
-);
-Wait( 2 );
-dist << remove local data filter;
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report;Report( obj )
+**Syntax:** obj &lt;&lt; Report; Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-r = obj << Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1151,14 +696,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Report View( "Summary" );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Report View( "Summary" );
 
 ```
 
@@ -1170,20 +708,7 @@ obj << Report View( "Summary" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Data Table;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1195,20 +720,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Journal;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
 
 ```
 
@@ -1220,20 +732,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Save ByGroup Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1245,14 +744,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Script for All Objects;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Script for All Objects;
 
 ```
 
@@ -1266,20 +758,7 @@ obj << Save Script for All Objects;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1287,20 +766,7 @@ obj[1] << Save Script for All Objects To Data Table;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-dt << New Column( "_bycol",
-	Character,
-	Nominal,
-	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
-);
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	By( _bycol )
-);
-obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```
 
@@ -1312,14 +778,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1331,14 +790,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Script to Journal;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Script to Journal;
 
 ```
 
@@ -1350,14 +802,7 @@ obj << Save Script to Journal;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Script to Report;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Script to Report;
 
 ```
 
@@ -1369,14 +814,7 @@ obj << Save Script to Report;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Save Script to Script Window;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Save Script to Script Window;
 
 ```
 
@@ -1388,15 +826,7 @@ obj << Save Script to Script Window;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	By( :Sex ),
-	SendToByGroup(
-		{:sex == "F"},
-		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
-	),
-	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
 
 ```
 
@@ -1408,20 +838,7 @@ dt << Distribution(
 
 ```jsl
 
-
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
-dt << Life Distribution(
-	Y( :Time ),
-	Censor( :Censor ),
-	Censor Code( 1 ),
-	<<Fit Weibull,
-	SendToEmbeddedScriptable(
-		Dispatch(
-			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
-			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
-		)
-	)
-);
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
 
 ```
 
@@ -1433,12 +850,7 @@ dt << Life Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Nominal Distribution( Column( :age ) ),
-	Continuous Distribution( Column( :weight ) ),
-	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
 
 ```
 
@@ -1450,11 +862,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );
-dist = Distribution( Continuous Distribution( Column( :POP ) ) );
-Wait( 1 );
-dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
-dist << Sync To Data Table Changes;
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
 
 ```
 
@@ -1466,14 +874,7 @@ dist << Sync To Data Table Changes;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Title( "My Platform" );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Title( "My Platform" );
 
 ```
 
@@ -1485,16 +886,7 @@ obj << Title( "My Platform" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-r = obj << Top Report;
-t = r[Outline Box( 1 )] << Get Title;
-Show( t );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
 
 ```
 
@@ -1508,11 +900,7 @@ Show( t );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-dt << Distribution(
-	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
-	Continuous Distribution( Column( :"age^2"n ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
 
 ```
 
@@ -1524,9 +912,7 @@ dt << Distribution(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
-xml = obj << View Web XML;
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
 
 ```
 
@@ -1538,13 +924,7 @@ xml = obj << View Web XML;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
-biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
-eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
-biv << Close Window;
-New Window( "Bivariate Equation",
-	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
-);
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
 
 ```
 
@@ -1560,28 +940,7 @@ New Window( "Bivariate Equation",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Lognormal,
-			Probability Plots(
-				1,
-				Lognormal Probability Plot( Parametric Fit Confidence Limits Shading( 1 ) )
-			)
-		)
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);
-scrobj << Parametric Fit Confidence Limits Shading( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Lognormal,			Probability Plots(				1,				Lognormal Probability Plot( Parametric Fit Confidence Limits Shading( 1 ) )			)		)	)});Wait( 1 );scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 ```
 
@@ -1593,25 +952,7 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Lognormal,
-			Probability Plots( 1, Lognormal Probability Plot( Parametric Fit Line( 0 ) ) )
-		)
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);
-scrobj << Parametric Fit Line( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Lognormal,			Probability Plots( 1, Lognormal Probability Plot( Parametric Fit Line( 0 ) ) )		)	)});Wait( 1 );scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);scrobj << Parametric Fit Line( 1 );
 
 ```
 
@@ -1623,28 +964,7 @@ scrobj << Parametric Fit Line( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Lognormal,
-			Probability Plots(
-				1,
-				Lognormal Probability Plot( Simultaneous Empirical Confidence Limits( 0 ) )
-			)
-		)
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);
-scrobj << Simultaneous Empirical Confidence Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Lognormal,			Probability Plots(				1,				Lognormal Probability Plot( Simultaneous Empirical Confidence Limits( 0 ) )			)		)	)});Wait( 1 );scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```
 
@@ -1656,30 +976,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Lognormal,
-			Probability Plots(
-				1,
-				Lognormal Probability Plot(
-					Simultaneous Empirical Confidence Limits Shading( 0 )
-				)
-			)
-		)
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);
-scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Lognormal,			Probability Plots(				1,				Lognormal Probability Plot(					Simultaneous Empirical Confidence Limits Shading( 0 )				)			)		)	)});Wait( 1 );scrobj = (Report( obj )["Process 1(Lognormal) Probability Plot"] << get scriptable object);scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```
 
@@ -1695,29 +992,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Normal,
-			<<Fit Gamma,
-			<<Fit Johnson,
-			<<Fit Lognormal,
-			<<Fit Weibull,
-			Comparison Details( 0 )
-		)
-	)}
-);
-Wait( 1 );
-scrobj = Report( obj )["Compare Distributions"] << Get Scriptable Object;
-scrobj << Comparison Details( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Normal,			<<Fit Gamma,			<<Fit Johnson,			<<Fit Lognormal,			<<Fit Weibull,			Comparison Details( 0 )		)	)});Wait( 1 );scrobj = Report( obj )["Compare Distributions"] << Get Scriptable Object;scrobj << Comparison Details( 1 );
 
 ```
 
@@ -1729,29 +1004,7 @@ scrobj << Comparison Details( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1,
-			<<Fit Normal,
-			<<Fit Gamma,
-			<<Fit Johnson,
-			<<Fit Lognormal,
-			<<Fit Weibull,
-			Comparison Histogram( 0 )
-		)
-	)}
-);
-Wait( 1 );
-scrobj = Report( obj )["Compare Distributions"] << Get Scriptable Object;
-scrobj << Comparison Histogram( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1,			<<Fit Normal,			<<Fit Gamma,			<<Fit Johnson,			<<Fit Lognormal,			<<Fit Weibull,			Comparison Histogram( 0 )		)	)});Wait( 1 );scrobj = Report( obj )["Compare Distributions"] << Get Scriptable Object;scrobj << Comparison Histogram( 1 );
 
 ```
 
@@ -1765,16 +1018,7 @@ scrobj << Comparison Histogram( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/cities.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :OZONE ),
-	Spec Limits( OZONE( LSL( 0.05 ), Target( 0.15 ), USL( 0.4 ) ) ),
-	Individual Detail Reports( 1 ),
-	{:OZONE << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["OZONE Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Beta );
+dt = Open( "$SAMPLE_DATA/cities.jmp" );obj = dt << Process Capability(	Process Variables( :OZONE ),	Spec Limits( OZONE( LSL( 0.05 ), Target( 0.15 ), USL( 0.4 ) ) ),	Individual Detail Reports( 1 ),	{:OZONE << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["OZONE Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Beta );
 
 ```
 
@@ -1788,16 +1032,7 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Exponential );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 ```
 
@@ -1809,16 +1044,7 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Gamma );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 ```
 
@@ -1830,16 +1056,7 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Johnson );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 ```
 
@@ -1851,16 +1068,7 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 ```
 
@@ -1872,16 +1080,7 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Lognormal );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```
 
@@ -1893,16 +1092,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Nonparametric );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 ```
 
@@ -1914,13 +1104,7 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});
 
 ```
 
@@ -1934,16 +1118,7 @@ obj = dt << Process Capability(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit SHASH );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```
 
@@ -1955,16 +1130,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 ```
 
@@ -1976,16 +1142,7 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit Weibull );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 ```
 
@@ -1999,16 +1156,7 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 ```
 
@@ -2022,16 +1170,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 ```
 
@@ -2043,20 +1182,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Individual Detail Reports( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis(
-		Compare Distributions(
-			1, <<Fit Normal, <<Fit Gamma, <<Fit Johnson, <<Fit Lognormal, <<Fit Weibull,
-		)
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Compare Distributions"] << get scriptable object);
-scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Individual Detail Reports( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis(		Compare Distributions(			1, <<Fit Normal, <<Fit Gamma, <<Fit Johnson, <<Fit Lognormal, <<Fit Weibull,		)	)});Wait( 1 );scrobj = (Report( obj )["Compare Distributions"] << get scriptable object);scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 ```
 
@@ -2068,16 +1194,7 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Individual Detail Reports( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis( Compare Distributions( 1, <<Fit Normal, <<Fit Lognormal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Compare Distributions"] << get scriptable object);
-scrobj << Probability Plots( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Individual Detail Reports( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis( Compare Distributions( 1, <<Fit Normal, <<Fit Lognormal ) )});Wait( 1 );scrobj = (Report( obj )["Compare Distributions"] << get scriptable object);scrobj << Probability Plots( 1 );
 
 ```
 
@@ -2095,18 +1212,7 @@ scrobj << Probability Plots( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] & Between ),
-	Within Subgroup Variation( Average of Unbiased Standard Deviations ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date] & Between) << Process Capability Analysis(
-		Histogram( 1, "Show Between-and-Within Sigma Density"n( 0 ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << "Show Between-and-Within Sigma Density"n( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] & Between ),	Within Subgroup Variation( Average of Unbiased Standard Deviations ),	Individual Detail Reports( 1 ),	{(:Gap[:Date] & Between) << Process Capability Analysis(		Histogram( 1, "Show Between-and-Within Sigma Density"n( 0 ) )	)});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 ```
 
@@ -2118,15 +1224,7 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Count Axis( 0 ) ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Count Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Count Axis( 0 ) ) )});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Count Axis( 1 );
 
 ```
 
@@ -2138,15 +1236,7 @@ scrobj << Show Count Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Density Axis( 0 ) ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Density Axis( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Density Axis( 0 ) ) )});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Density Axis( 1 );
 
 ```
 
@@ -2158,17 +1248,7 @@ scrobj << Show Density Axis( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis(
-		Histogram( 1, Show Overall Sigma Density( 0 ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Overall Sigma Density( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis(		Histogram( 1, Show Overall Sigma Density( 0 ) )	)});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Overall Sigma Density( 1 );
 
 ```
 
@@ -2180,15 +1260,7 @@ scrobj << Show Overall Sigma Density( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Spec Limits( 0 ) ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Spec Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Spec Limits( 0 ) ) )});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Spec Limits( 1 );
 
 ```
 
@@ -2200,15 +1272,7 @@ scrobj << Show Spec Limits( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Target( 0 ) ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Target( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis( Histogram( 1, Show Target( 0 ) ) )});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Target( 1 );
 
 ```
 
@@ -2220,17 +1284,7 @@ scrobj << Show Target( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date]) << Process Capability Analysis(
-		Histogram( 1, Show Within Sigma Density( 0 ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Histogram"] << get scriptable object);
-scrobj << Show Within Sigma Density( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{(:Gap[:Date]) << Process Capability Analysis(		Histogram( 1, Show Within Sigma Density( 0 ) )	)});Wait( 1 );scrobj = (Report( obj )["Histogram"] << get scriptable object);scrobj << Show Within Sigma Density( 1 );
 
 ```
 
@@ -2248,23 +1302,7 @@ scrobj << Show Within Sigma Density( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :PNP1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:PNP1 << Process Capability Analysis(
-		Process Summary( 0 ),
-		Overall Sigma Capability( 0 ),
-		Nonconformance( 0 ),
-		Within Sigma Capability( 0 ),
-		Histogram( 0 ),
-		Interactive Capability Plot( 1, Capability( 0 ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);
-scrobj << Capability( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :PNP1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:PNP1 << Process Capability Analysis(		Process Summary( 0 ),		Overall Sigma Capability( 0 ),		Nonconformance( 0 ),		Within Sigma Capability( 0 ),		Histogram( 0 ),		Interactive Capability Plot( 1, Capability( 0 ) )	)});Wait( 1 );scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);scrobj << Capability( 1 );
 
 ```
 
@@ -2278,23 +1316,7 @@ scrobj << Capability( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :PNP1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:PNP1 << Process Capability Analysis(
-		Process Summary( 0 ),
-		Overall Sigma Capability( 0 ),
-		Nonconformance( 0 ),
-		Within Sigma Capability( 0 ),
-		Histogram( 0 ),
-		Interactive Capability Plot( 1, Nonconformance( 0 ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);
-scrobj << Nonconformance( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :PNP1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:PNP1 << Process Capability Analysis(		Process Summary( 0 ),		Overall Sigma Capability( 0 ),		Nonconformance( 0 ),		Within Sigma Capability( 0 ),		Histogram( 0 ),		Interactive Capability Plot( 1, Nonconformance( 0 ) )	)});Wait( 1 );scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);scrobj << Nonconformance( 1 );
 
 ```
 
@@ -2308,23 +1330,7 @@ scrobj << Nonconformance( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :PNP1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:PNP1 << Process Capability Analysis(
-		Process Summary( 0 ),
-		Overall Sigma Capability( 0 ),
-		Nonconformance( 0 ),
-		Within Sigma Capability( 0 ),
-		Histogram( 0 ),
-		Interactive Capability Plot( 1, New Values( Mean( 400 ) ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);
-scrobj << Revert to Original Values;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :PNP1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:PNP1 << Process Capability Analysis(		Process Summary( 0 ),		Overall Sigma Capability( 0 ),		Nonconformance( 0 ),		Within Sigma Capability( 0 ),		Histogram( 0 ),		Interactive Capability Plot( 1, New Values( Mean( 400 ) ) )	)});Wait( 1 );scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);scrobj << Revert to Original Values;
 
 ```
 
@@ -2338,23 +1344,7 @@ scrobj << Revert to Original Values;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :PNP1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:PNP1 << Process Capability Analysis(
-		Process Summary( 0 ),
-		Overall Sigma Capability( 0 ),
-		Nonconformance( 0 ),
-		Within Sigma Capability( 0 ),
-		Histogram( 0 ),
-		Interactive Capability Plot( 1, New Values( LSL( 150 ), Target( 300 ), USL( 450 ) ) )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);
-scrobj << Save New Spec Limits as a Column Property;
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :PNP1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:PNP1 << Process Capability Analysis(		Process Summary( 0 ),		Overall Sigma Capability( 0 ),		Nonconformance( 0 ),		Within Sigma Capability( 0 ),		Histogram( 0 ),		Interactive Capability Plot( 1, New Values( LSL( 150 ), Target( 300 ), USL( 450 ) ) )	)});Wait( 1 );scrobj = (Report( obj )["Interactive Capability Plot"] << get scriptable object);scrobj << Save New Spec Limits as a Column Property;
 
 ```
 
@@ -2370,17 +1360,7 @@ scrobj << Save New Spec Limits as a Column Property;
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis(
-		Normal Probability Plot( 1, Normal Fit Confidence Limits Shading( 0 ) )
-	)}
-);
-Wait( 2 );
-scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;
-scrobj << Normal Fit Confidence Limits Shading( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis(		Normal Probability Plot( 1, Normal Fit Confidence Limits Shading( 0 ) )	)});Wait( 2 );scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 ```
 
@@ -2392,17 +1372,7 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis(
-		Normal Probability Plot( 1, Normal Fit Line( 0 ) )
-	)}
-);
-Wait( 2 );
-scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;
-scrobj << Normal Fit Line( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis(		Normal Probability Plot( 1, Normal Fit Line( 0 ) )	)});Wait( 2 );scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;scrobj << Normal Fit Line( 1 );
 
 ```
 
@@ -2414,17 +1384,7 @@ scrobj << Normal Fit Line( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis(
-		Normal Probability Plot( 1, Simultaneous Empirical Confidence Limits( 0 ) )
-	)}
-);
-Wait( 2 );
-scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;
-scrobj << Simultaneous Empirical Confidence Limits( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis(		Normal Probability Plot( 1, Simultaneous Empirical Confidence Limits( 0 ) )	)});Wait( 2 );scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```
 
@@ -2436,17 +1396,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis(
-		Normal Probability Plot( 1, Simultaneous Empirical Confidence Limits Shading( 0 ) )
-	)}
-);
-Wait( 2 );
-scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;
-scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis(		Normal Probability Plot( 1, Simultaneous Empirical Confidence Limits Shading( 0 ) )	)});Wait( 2 );scrobj = Report( obj )["Normal Probability Plot"] << get scriptable object;scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```
 
@@ -2464,17 +1414,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] & Between ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date] & Between) << Process Capability Analysis(
-		"Between-and-Within Sigma Capability"n( 0 )
-	)}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << Get Scriptable Object;
-scrobj << "Between-and-Within Sigma Capability"n( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] & Between ),	Individual Detail Reports( 1 ),	{(:Gap[:Date] & Between) << Process Capability Analysis(		"Between-and-Within Sigma Capability"n( 0 )	)});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << Get Scriptable Object;scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 ```
 
@@ -2488,17 +1428,7 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] & Between ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date] & Between) << Process Capability Analysis(
-		"Between-and-Within Sigma Target Index"n( 1 )
-	)}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << "Between-and-Within Sigma Target Index"n( 0 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] & Between ),	Individual Detail Reports( 1 ),	{(:Gap[:Date] & Between) << Process Capability Analysis(		"Between-and-Within Sigma Target Index"n( 1 )	)});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 ```
 
@@ -2512,17 +1442,7 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] & Between ),
-	Individual Detail Reports( 1 ),
-	{(:Gap[:Date] & Between) << Process Capability Analysis(
-		"Between-and-Within Sigma Z Benchmark"n( 0 )
-	)}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] & Between ),	Individual Detail Reports( 1 ),	{(:Gap[:Date] & Between) << Process Capability Analysis(		"Between-and-Within Sigma Z Benchmark"n( 0 )	)});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 ```
 
@@ -2536,16 +1456,7 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Individual Detail Reports( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis( Compare Distributions( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Process 1(Lognormal) Capability"] << get scriptable object;
-scrobj << Compare Distributions( 1, <<Fit Lognormal );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Individual Detail Reports( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis( Compare Distributions( 0 ) )});Wait( 1 );scrobj = Report( obj )["Process 1(Lognormal) Capability"] << get scriptable object;scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```
 
@@ -2553,16 +1464,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 1, <<Fit SHASH );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```
 
@@ -2570,21 +1472,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Lognormal ) ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	Capability Box Plots( 1 ),
-	Capability Index Plot( 1 ),
-	{(:Process 1 & Dist( Lognormal )) <<
-	Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Process 1(Lognormal) Capability"] << Get Scriptable Object;
-scrobj << Compare Distributions(
-	1, <<Fit Gamma, <<Fit Johnson, <<FitLognormal, <<Fit Weibull
-);
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Lognormal ) ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	Capability Box Plots( 1 ),	Capability Index Plot( 1 ),	{(:Process 1 & Dist( Lognormal )) <<	Process Capability Analysis( Compare Distributions( 1, <<Fit Normal ) )});Wait( 1 );scrobj = Report( obj )["Process 1(Lognormal) Capability"] << Get Scriptable Object;scrobj << Compare Distributions(	1, <<Fit Gamma, <<Fit Johnson, <<FitLognormal, <<Fit Weibull);
 
 ```
 
@@ -2592,18 +1480,7 @@ scrobj << Compare Distributions(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 ),
-	Moving Range Method( Average of Moving Ranges ),
-	Individual Detail Reports( 1 ),
-	{:Process 1 << Process Capability Analysis(
-		Compare Distributions( 1, <<Fit Normal, <<Fit Gamma )
-	)}
-);
-Wait( 1 );
-scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);
-scrobj << Compare Distributions( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 ),	Moving Range Method( Average of Moving Ranges ),	Individual Detail Reports( 1 ),	{:Process 1 << Process Capability Analysis(		Compare Distributions( 1, <<Fit Normal, <<Fit Gamma )	)});Wait( 1 );scrobj = (Report( obj )["Process 1 Capability"] << get scriptable object);scrobj << Compare Distributions( 0 );
 
 ```
 
@@ -2617,16 +1494,7 @@ scrobj << Compare Distributions( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Process 1 & Dist( Weibull ) ),
-	Individual Detail Reports( 1 ),
-	{(:Process 1 & Dist( Weibull )) <<
-	Process Capability Analysis( Fix Parameters( [11, .] ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Process 1(Weibull*) Capability"] << get scriptable object;
-scrobj << Fix Parameters( [., .] );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Process 1 & Dist( Weibull ) ),	Individual Detail Reports( 1 ),	{(:Process 1 & Dist( Weibull )) <<	Process Capability Analysis( Fix Parameters( [11, .] ) )});Wait( 1 );scrobj = Report( obj )["Process 1(Weibull*) Capability"] << get scriptable object;scrobj << Fix Parameters( [., .] );
 
 ```
 
@@ -2638,15 +1506,7 @@ scrobj << Fix Parameters( [., .] );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Histogram( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Histogram( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Histogram( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Histogram( 1 );
 
 ```
 
@@ -2660,15 +1520,7 @@ scrobj << Histogram( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :PNP1 ),
-	Individual Detail Reports( 1 ),
-	{:PNP1 << Process Capability Analysis( Interactive Capability Plot( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["PNP1 Capability"] << get scriptable object;
-scrobj << Interactive Capability Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables( :PNP1 ),	Individual Detail Reports( 1 ),	{:PNP1 << Process Capability Analysis( Interactive Capability Plot( 0 ) )});Wait( 1 );scrobj = Report( obj )["PNP1 Capability"] << get scriptable object;scrobj << Interactive Capability Plot( 1 );
 
 ```
 
@@ -2680,15 +1532,7 @@ scrobj << Interactive Capability Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Nonconformance( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Nonconformance( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Nonconformance( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Nonconformance( 1 );
 
 ```
 
@@ -2700,16 +1544,7 @@ scrobj << Nonconformance( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Purity & Dist( Nonparametric ) ),
-	Individual Detail Reports( 1 ),
-	{(:Purity & Dist( Nonparametric )) <<
-	Process Capability Analysis( Nonparametric Density( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Purity(Nonparametric) Capability"] << get scriptable object;
-scrobj << Nonparametric Density( 1 );
+dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Purity & Dist( Nonparametric ) ),	Individual Detail Reports( 1 ),	{(:Purity & Dist( Nonparametric )) <<	Process Capability Analysis( Nonparametric Density( 0 ) )});Wait( 1 );scrobj = Report( obj )["Purity(Nonparametric) Capability"] << get scriptable object;scrobj << Nonparametric Density( 1 );
 
 ```
 
@@ -2723,15 +1558,7 @@ scrobj << Nonparametric Density( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Normal Probability Plot( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),);Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Normal Probability Plot( 1 );
 
 ```
 
@@ -2743,15 +1570,7 @@ scrobj << Normal Probability Plot( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Overall Sigma Capability( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Overall Sigma Capability( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Overall Sigma Capability( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Overall Sigma Capability( 1 );
 
 ```
 
@@ -2763,15 +1582,7 @@ scrobj << Overall Sigma Capability( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Overall Sigma Z Benchmark( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Overall Sigma Z Benchmark( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Overall Sigma Z Benchmark( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Overall Sigma Z Benchmark( 1 );
 
 ```
 
@@ -2783,16 +1594,7 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Thickness & Dist( Johnson ) ),
-	Individual Detail Reports( 1 ),
-	{(:Thickness & Dist( Johnson )) <<
-	Process Capability Analysis( Parameter Estimates( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Thickness(Johnson) Capability"] << get scriptable object;
-scrobj << Parameter Estimates( 1 );
+dt = Open( "$SAMPLE_DATA/Tablet Measurements.jmp" );obj = dt << Process Capability(	Process Variables( :Thickness & Dist( Johnson ) ),	Individual Detail Reports( 1 ),	{(:Thickness & Dist( Johnson )) <<	Process Capability Analysis( Parameter Estimates( 0 ) )});Wait( 1 );scrobj = Report( obj )["Thickness(Johnson) Capability"] << get scriptable object;scrobj << Parameter Estimates( 1 );
 
 ```
 
@@ -2804,15 +1606,7 @@ scrobj << Parameter Estimates( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Process Summary( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Process Summary( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Process Summary( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Process Summary( 1 );
 
 ```
 
@@ -2824,15 +1618,7 @@ scrobj << Process Summary( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Within Sigma Capability( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Within Sigma Capability( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Within Sigma Capability( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Within Sigma Capability( 1 );
 
 ```
 
@@ -2846,15 +1632,7 @@ scrobj << Within Sigma Capability( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Within Sigma Target Index( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Within Sigma Target Index( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Within Sigma Target Index( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Within Sigma Target Index( 1 );
 
 ```
 
@@ -2866,15 +1644,7 @@ scrobj << Within Sigma Target Index( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );
-obj = dt << Process Capability(
-	Process Variables( :Gap[:Date] ),
-	Individual Detail Reports( 1 ),
-	{:Gap[:Date] << Process Capability Analysis( Within Sigma Z Benchmark( 0 ) )}
-);
-Wait( 1 );
-scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;
-scrobj << Within Sigma Z Benchmark( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Clips2.jmp" );obj = dt << Process Capability(	Process Variables( :Gap[:Date] ),	Individual Detail Reports( 1 ),	{:Gap[:Date] << Process Capability Analysis( Within Sigma Z Benchmark( 0 ) )});Wait( 1 );scrobj = Report( obj )["Gap[Date] Capability"] << get scriptable object;scrobj << Within Sigma Z Benchmark( 1 );
 
 ```
 
@@ -2890,17 +1660,7 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Goal Plot( 1, Capability Lines( 1.5 ) );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-Wait( 1 );
-scrobj << Capability Lines( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Goal Plot( 1, Capability Lines( 1.5 ) );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);Wait( 1 );scrobj << Capability Lines( 1 );
 
 ```
 
@@ -2914,14 +1674,7 @@ scrobj << Capability Lines( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Goal Plot( 1, Defect Rate Contour( 0.01 ) );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Goal Plot( 1, Defect Rate Contour( 0.01 ) );
 
 ```
 
@@ -2929,16 +1682,7 @@ obj << Goal Plot( 1, Defect Rate Contour( 0.01 ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Defect Rate Contour( 0.01 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Defect Rate Contour( 0.01 );
 
 ```
 
@@ -2950,17 +1694,7 @@ scrobj << Defect Rate Contour( 0.01 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Goal Plot( 1, Label Overall Sigma Points( 0 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Label Overall Sigma Points( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Goal Plot( 1, Label Overall Sigma Points( 0 ) );Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Label Overall Sigma Points( 1 );
 
 ```
 
@@ -2972,23 +1706,7 @@ scrobj << Label Overall Sigma Points( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-
-);
-obj << Goal Plot(
-	1,
-	Show Within Sigma Points( 1 ),
-	Show Overall Sigma Points( 0 ),
-	Label Within Sigma Points( 1 )
-);
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Label Within Sigma Points( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),);obj << Goal Plot(	1,	Show Within Sigma Points( 1 ),	Show Overall Sigma Points( 0 ),	Label Within Sigma Points( 1 ));Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Label Within Sigma Points( 0 );
 
 ```
 
@@ -3002,23 +1720,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-
-);
-obj << Goal Plot(
-	1,
-	"Show Within or Between-and-Within Sigma Points"n( 1 ),
-	Show Overall Sigma Points( 0 ),
-	"Label Within or Between-and-Within Sigma Points"n( 1 )
-);
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),);obj << Goal Plot(	1,	"Show Within or Between-and-Within Sigma Points"n( 1 ),	Show Overall Sigma Points( 0 ),	"Label Within or Between-and-Within Sigma Points"n( 1 ));Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```
 
@@ -3030,17 +1732,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-obj << Goal Plot( 1, Shade Levels( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Shade Levels( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));obj << Goal Plot( 1, Shade Levels( 1 ) );Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Shade Levels( 0 );
 
 ```
 
@@ -3052,19 +1744,7 @@ scrobj << Shade Levels( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-
-);
-Wait( 1 );
-obj << Goal Plot( 1, Show Overall Sigma Points( 0 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Show Overall Sigma Points( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),);Wait( 1 );obj << Goal Plot( 1, Show Overall Sigma Points( 0 ) );Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Show Overall Sigma Points( 1 );
 
 ```
 
@@ -3076,18 +1756,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 1 );
-obj << Goal Plot( 1, Show Within Sigma Points( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << Show Within Sigma Points( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 1 );obj << Goal Plot( 1, Show Within Sigma Points( 1 ) );Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << Show Within Sigma Points( 0 );
 
 ```
 
@@ -3101,18 +1770,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	)
-);
-Wait( 1 );
-obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Goal Plot"] << get scriptable object);
-scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	));Wait( 1 );obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( 1 ) );Wait( 1 );scrobj = (Report( obj )["Goal Plot"] << get scriptable object);scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```
 
@@ -3128,20 +1786,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1 & Dist( Johnson ), :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal )
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot( 1, Capability Lines( 2.0 ) );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-Wait( 1 );
-scrobj << Capability Lines( 1.0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1 & Dist( Johnson ), :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal )	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot( 1, Capability Lines( 2.0 ) );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);Wait( 1 );scrobj << Capability Lines( 1.0 );
 
 ```
 
@@ -3153,20 +1798,7 @@ scrobj << Capability Lines( 1.0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot( 1, Label Overall Sigma Points( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << Label Overall Sigma Points( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot( 1, Label Overall Sigma Points( 1 ) );Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << Label Overall Sigma Points( 0 );
 
 ```
 
@@ -3178,25 +1810,7 @@ scrobj << Label Overall Sigma Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7
-	),
-	Moving Range Method( Average of Moving Ranges ),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot(
-	1,
-	Show Within Sigma Points( 1 ),
-	Label Within Sigma Points( 1 )
-);
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << Label Within Sigma Points( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7	),	Moving Range Method( Average of Moving Ranges ),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot(	1,	Show Within Sigma Points( 1 ),	Label Within Sigma Points( 1 ));Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << Label Within Sigma Points( 0 );
 
 ```
 
@@ -3210,24 +1824,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot(
-	1,
-	"Show Within or Between-and-Within Sigma Points"n( 1 ),
-	"Label Within or Between-and-Within Sigma Points"n( 1 )
-);
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot(	1,	"Show Within or Between-and-Within Sigma Points"n( 1 ),	"Label Within or Between-and-Within Sigma Points"n( 1 ));Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```
 
@@ -3239,20 +1836,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot( 1, Shade Levels( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << Shade Levels( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot( 1, Shade Levels( 1 ) );Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << Shade Levels( 0 );
 
 ```
 
@@ -3264,24 +1848,7 @@ scrobj << Shade Levels( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot(
-	1,
-	Show Within Sigma Points( 1 ),
-	Show Overall Sigma Points( 0 )
-);
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << Show Overall Sigma Points( 1 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot(	1,	Show Within Sigma Points( 1 ),	Show Overall Sigma Points( 0 ));Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << Show Overall Sigma Points( 1 );
 
 ```
 
@@ -3293,21 +1860,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,
-		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7
-	),
-	Moving Range Method( Average of Moving Ranges ),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot( 1, Show Within Sigma Points( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << Show Within Sigma Points( 0 );
+dt = Open( "$SAMPLE_DATA/Process Measurements.jmp" );obj = dt << Process Capability(	Process Variables(		:Process 1, :Process 2 & Dist( Lognormal ), :Process 3,		:Process 4 & Dist( Lognormal ), :Process 5 & Dist( Weibull ), :Process 6, :Process 7	),	Moving Range Method( Average of Moving Ranges ),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot( 1, Show Within Sigma Points( 1 ) );Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << Show Within Sigma Points( 0 );
 
 ```
 
@@ -3321,20 +1874,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,
-		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Goal Plot( 0 ),
-	Process Performance Plot( 0 )
-);
-obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);
-scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer] & Between, :PNP1[:lot_id, :wafer] & Between,		:PNP2[:lot_id, :wafer], :NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Goal Plot( 0 ),	Process Performance Plot( 0 ));obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( 1 ) );Wait( 1 );scrobj = (Report( obj )["Capability Index Plot"] << get scriptable object);scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```
 
@@ -3352,22 +1892,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Process Performance Plot( 1 ),
-	Goal Plot( 0 ),
-	Capability Index Plot( 0 )
-);
-Wait( 1 );
-obj << Process Performance Plot( 1, Capability Boundary( 1.33 ) );
-scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);
-Wait( 1 );
-scrobj << Capability Boundary( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Process Performance Plot( 1 ),	Goal Plot( 0 ),	Capability Index Plot( 0 ));Wait( 1 );obj << Process Performance Plot( 1, Capability Boundary( 1.33 ) );scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);Wait( 1 );scrobj << Capability Boundary( 1 );
 
 ```
 
@@ -3381,21 +1906,7 @@ scrobj << Capability Boundary( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Process Performance Plot( 1 ),
-	Goal Plot( 0 ),
-	Capability Index Plot( 0 )
-);
-obj << Process Performance Plot( 1, Label Points( 1 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);
-scrobj << Label Points( 0 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Process Performance Plot( 1 ),	Goal Plot( 0 ),	Capability Index Plot( 0 ));obj << Process Performance Plot( 1, Label Points( 1 ) );Wait( 1 );scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);scrobj << Label Points( 0 );
 
 ```
 
@@ -3409,21 +1920,7 @@ scrobj << Label Points( 0 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Process Performance Plot( 1 ),
-	Goal Plot( 0 ),
-	Capability Index Plot( 0 )
-);
-obj << Process Performance Plot( 1, Show Within Cpk Curve( 0 ) );
-Wait( 1 );
-scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);
-scrobj << Show Within Cpk Curve( 1 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Process Performance Plot( 1 ),	Goal Plot( 0 ),	Capability Index Plot( 0 ));obj << Process Performance Plot( 1, Show Within Cpk Curve( 0 ) );Wait( 1 );scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);scrobj << Show Within Cpk Curve( 1 );
 
 ```
 
@@ -3437,22 +1934,7 @@ scrobj << Show Within Cpk Curve( 1 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
-obj = dt << Process Capability(
-	Process Variables(
-		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],
-		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]
-	),
-	Capability Box Plots( 0 ),
-	Process Performance Plot( 1 ),
-	Goal Plot( 0 ),
-	Capability Index Plot( 0 )
-);
-Wait( 1 );
-obj << Process Performance Plot( 1, Stability Boundary( 1.7 ) );
-scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);
-Wait( 1 );
-scrobj << Stability Boundary( 1.25 );
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Capability(	Process Variables(		:NPN1[:lot_id, :wafer], :PNP1[:lot_id, :wafer], :PNP2[:lot_id, :wafer],		:NPN2[:lot_id, :wafer], :PNP3[:lot_id, :wafer]	),	Capability Box Plots( 0 ),	Process Performance Plot( 1 ),	Goal Plot( 0 ),	Capability Index Plot( 0 ));Wait( 1 );obj << Process Performance Plot( 1, Stability Boundary( 1.7 ) );scrobj = (Report( obj )["Process Performance Plot"] << get scriptable object);Wait( 1 );scrobj << Stability Boundary( 1.25 );
 
 ```
 

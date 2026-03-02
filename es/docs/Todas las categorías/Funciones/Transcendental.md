@@ -34,7 +34,7 @@ Arrhenius Inv( 100 );
 
 **Sintaxis:** z = Beta( x, y )
 
-**Descripción:** Devuelve la función Beta de x y y, definida como Gamma( x ) * Gamma( y ) / Gamma( x + y ).
+**Descripción:** Devuelve la función Beta de x y y, definida como Gamma( x ) \* Gamma( y ) / Gamma( x + y ).
 
 **JMP Versión agregada:** Antes de la versión 14
 
@@ -152,63 +152,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
-A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
-res = FFT( {A} );
-res = FFT( {A}, <<Inverse( 1 ) );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-B = FFT( {A} );
-FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]
-);
-FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-Afun = Function( {},
-	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]}
-);
-FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
-A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5,
-3 6, 3 1];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );
-res = FFT(
-	FFT( {A}, <<multivariate( 1 ) ),
-	<<multivariate( 1 ),
-	<<Inverse( 1 ),
-	<<scale( 1 / 20 )
-);
-A = [1 3 1,
-2 4 3,
-3 1 2,
-4 3 3,
-4 5 9,
-5 2 8,
-5 7 6,
-6 9 5,
-7 5 3,
-7 3 2,
-2 7 1,
-3 4 3,
-6 7 3,
-6 4 2,
-2 7 4,
-2 4 1,
-2 6 5,
-3 5 1,
-3 6 2,
-3 1 9];
-res = FFT( {A} );
-res = FFT( {A}, <<multivariate( 1 ) );
-FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );
-fin = FFT(
-	FFT( {A}, <<multivariate( 1 ) ),
-	<<Inverse( 1 ),
-	<<multivariate( 1 ),
-	<<scale( 1 / 20 )
-);
-Show( fin );
+FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];res = FFT( {A} );res = FFT( {A}, <<Inverse( 1 ) );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );B = FFT( {A} );FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]);FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]});FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5,3 6, 3 1];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );res = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<multivariate( 1 ),	<<Inverse( 1 ),	<<scale( 1 / 20 ));A = [1 3 1,2 4 3,3 1 2,4 3 3,4 5 9,5 2 8,5 7 6,6 9 5,7 5 3,7 3 2,2 7 1,3 4 3,6 7 3,6 4 2,2 7 4,2 4 1,2 6 5,3 5 1,3 6 2,3 1 9];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );fin = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<Inverse( 1 ),	<<multivariate( 1 ),	<<scale( 1 / 20 ));Show( fin );
 
 ```
 
@@ -216,7 +160,7 @@ Show( fin );
 
 **Sintaxis:** y = Factorial( x )
 
-**Descripción:** Devuelve el factorial de x, que es lo mismo que Gamma( x + 1 ). Si x es un entero, el resultado es el producto 1 * 2 * ... * x.
+**Descripción:** Devuelve el factorial de x, que es lo mismo que Gamma( x + 1 ). Si x es un entero, el resultado es el producto 1 \* 2 \* ... \* x.
 
 **JMP Versión agregada:** Antes de la versión 14
 
@@ -236,18 +180,7 @@ Factorial( 5 );
 
 ```jsl
 
-datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
--6.1855986, 2.16525629, -30.990061];
-freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
-As Table( datavec || freqvec );
-Column( 1 ) << set name( "x" );
-Column( 2 ) << set name( "freq vec" );
-Distribution(
-	Freq( :freq vec ),
-	Continuous Distribution( Column( :x ), Fit Distribution( GLog ) )
-);
-results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );
-Show( results );
+datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,-6.1855986, 2.16525629, -30.990061];freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];As Table( datavec || freqvec );Column( 1 ) << set name( "x" );Column( 2 ) << set name( "freq vec" );Distribution(	Freq( :freq vec ),	Continuous Distribution( Column( :x ), Fit Distribution( GLog ) ));results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );Show( results );
 
 ```
 
@@ -255,7 +188,7 @@ Show( results );
 
 **Sintaxis:** y = Gamma( x, &lt;limit&gt; )
 
-**Descripción:** Devuelve la función Gamma de x, definida como la integral de z^(x-1)*exp(-z) dz de 0 a ∞. Si el argumento limit está presente, se calcula una Gamma incompleta usando ese límite de integración.
+**Descripción:** Devuelve la función Gamma de x, definida como la integral de z^(x-1)\*exp(-z) dz de 0 a ∞. Si el argumento limit está presente, se calcula una Gamma incompleta usando ese límite de integración.
 
 **JMP Versión agregada:** Antes de la versión 14
 
@@ -395,7 +328,7 @@ Logit Percent( 95.0 );
 
 **Sintaxis:** m = N Choose K( n, k )
 
-**Descripción:** Devuelve n! / (k! * (n - k)!), que es el número de formas en que se pueden seleccionar k elementos de n, ignorando el orden.
+**Descripción:** Devuelve n! / (k! \* (n - k)!), que es el número de formas en que se pueden seleccionar k elementos de n, ignorando el orden.
 
 **JMP Versión agregada:** Antes de la versión 14
 
@@ -443,15 +376,7 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-x1 = SHASHInv( result1, gamma, delta, theta, sigma );
-x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;
-Show( x1, x2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );x1 = SHASHInv( result1, gamma, delta, theta, sigma );x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;Show( x1, x2 );
 
 ```
 
@@ -465,14 +390,7 @@ Show( x1, x2 );
 
 ```jsl
 
-gamma = 1;
-delta = .5;
-theta = -1;
-sigma = 2;
-x = 3;
-result1 = SHASHTrans( x, gamma, delta, theta, sigma );
-result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
-Show( result1, result2 );
+gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
 
 ```
 
@@ -508,7 +426,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 **Sintaxis:** y = Scheffe Cubic( x1, x2 )
 
-**Descripción:** Evalúa como x1*x2*(x1-x2). Se utiliza para emplear la notación de modelización en modelos de mezcla cúbicos.
+**Descripción:** Evalúa como x1\*x2\*(x1-x2). Se utiliza para emplear la notación de modelización en modelos de mezcla cúbicos.
 
 **JMP Versión agregada:** Antes de la versión 14
 

@@ -12,11 +12,7 @@
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Auto Load( 1 ),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Auto Load( 1 ),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -26,24 +22,19 @@ If( !Is Missing( addin ),
 
 **说明:** 返回插件的显示名称。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Display Name();
+addins = Get Addins();addins << Display Name();
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Display Name(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Display Name(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -53,24 +44,19 @@ If( !Is Missing( addin ),
 
 **说明:** 返回插件的主文件夹。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Home Folder();
+addins = Get Addins();addins << Home Folder();
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Home Folder(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Home Folder(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -80,24 +66,19 @@ If( !Is Missing( addin ),
 
 **说明:** 返回插件的唯一 ID。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << ID();
+addins = Get Addins();addins << ID();
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << ID(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << ID(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -107,24 +88,19 @@ If( !Is Missing( addin ),
 
 **说明:** 返回是否当前已加载插件。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Is Loaded();
+addins = Get Addins();addins << Is Loaded();
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Is Loaded(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Is Loaded(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -136,11 +112,7 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Load(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Load(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -152,11 +124,7 @@ If( !Is Missing( addin ),
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Unload(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Unload(),	Print( "Add-In ID Not Found" ));
 
 ```
 
@@ -166,24 +134,19 @@ If( !Is Missing( addin ),
 
 **说明:** 返回插件的版本号。
 
-#### 示例 1
+**示例 1**
 
 ```jsl
 
-addins = Get Addins();
-addins << Version();
+addins = Get Addins();addins << Version();
 
 ```
 
-#### 示例 2
+**示例 2**
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );
-If( !Is Missing( addin ),
-	addin << Version(),
-	Print( "Add-In ID Not Found" )
-);
+addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Version(),	Print( "Add-In ID Not Found" ));
 
 ```
 
