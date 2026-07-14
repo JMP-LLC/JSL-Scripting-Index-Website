@@ -1,9 +1,9 @@
 # DOE
 
 ### Example 1
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the data from the 'Investment Castings' table.
+> **Summary**: Automates the evaluation of a design with specified factors, utilizing the DOE function to open and analyze data from a table.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEFunction, #DesignOfExperiments, #FactorAnalysis, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -26,9 +26,9 @@ DOE(
 
 
 ### Example 2
-> **Summary**: Opens a data table, defines a full factorial design with continuous and categorical factors, simulates responses using the REML method, and generates a table for analysis.
+> **Summary**: Automates the creation of a full factorial design with continuous and categorical factors, simulating responses, and generating a table.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #REMLMethod, #FullFactorialDesign, #Simulation -->
+<!-- Keywords: #JMPDOE, #FullFactorialDesign, #ContinuousFactors, #CategoricalFactors, #Simulation -->
 
 **Code**:
 ```jsl
@@ -82,9 +82,9 @@ DOE(
 
 
 ### Example 3
-> **Summary**: Generates a space-filling design using the DOE dialog, with factors for Alpha, Beta, Gamma, Algorithm, and Compiler, and optimizes the design type to Fast Flexible Filling.
+> **Summary**: Automates the design and generation of a space-filling design table in JMP, utilizing the DOE dialog to specify response variables, factor settings, and optimality criteria.
 
-<!-- Keywords: #DOEDialog, #SpaceFillingDesign, #FactorSettings, #OptimalityCriterion, #JSLScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #SpaceFillingDesign, #OptimalityCriteria, #FactorSettings -->
 
 **Code**:
 ```jsl
@@ -145,9 +145,9 @@ DOE(
 
 
 ### Example 4
-> **Summary**: Opens a data table, loads factors from the current data table, and creates a space filling design using the DOE function.
+> **Summary**: Automates the creation of a space filling design from a data table, utilizing load factors to optimize experimental runs.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEFunction, #SpaceFillingDesign, #DataTableManagement, #ExperimentalDesign -->
+<!-- Keywords: #JSLScriptingLanguage, #SpaceFillingDesign, #DOE, #ExperimentalDesign, #DataTableManipulation -->
 
 **Code**:
 ```jsl
@@ -170,9 +170,9 @@ DOE(
 
 
 ### Example 5
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing Custom Design and Load Factors from the provided data table.
+> **Summary**: Automates the process of loading and editing a custom design in JMP, utilizing the Load Factors feature to populate the design.
 
-<!-- Keywords: #REML, #CustomDesign, #LoadFactors, #VarianceComponentAnalysis, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesign, #LoadFactors, #DOE, #DataTable -->
 
 **Code**:
 ```jsl
@@ -196,9 +196,9 @@ DOE(
 
 
 ### Example 6
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Evaluate Design function to specify factors.
+> **Summary**: Automates the evaluation design experiment for a data table, specifying factors such as Whole Plots, Subplots, A1, A2, A3, A4, C1, and C2.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #StandardLeastSquares, #RandomEffectsModeling, #JSLScripting -->
+<!-- Keywords: #JSLScripting, #DesignOfExperiments, #DOE, #JMPScriptingLanguage, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -231,9 +231,9 @@ DOE(
 
 
 ### Example 7
-> **Summary**: Generates a custom design of experiments (DOE) using the DOE Dialog in JMP, with the goal of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the generation of a custom design for optimization using DOE in JMP, minimizing OCV and incorporating continuous factors A1-A4 and C1-C2.
 
-<!-- Keywords: #JMP, #DOEDialog, #REML, #VarianceComponentAnalysis, #ShrinkageModel -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #Optimization, #ContinuousFactors, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -314,9 +314,9 @@ DOE(
 
 
 ### Example 8
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Evaluate Design function to specify factors.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for analysis.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares, #JMPScriptingLanguage -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DataAnalysis, #FactorSpecification, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -339,9 +339,9 @@ DOE(
 
 
 ### Example 9
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to define custom design parameters.
+> **Summary**: Automates a custom design of experiments (DOE) process in JMP, defining response and factor variables, setting random seed, and simulating responses.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModel, #JSLScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #CustomDesign, #Simulation, #StatisticalAnalysis -->
 
 **Code**:
 ```jsl
@@ -422,9 +422,9 @@ rep["Design"] << Close( 1 );
 
 
 ### Example 10
-> **Summary**: Evaluates a design experiment with factors Silica, Sulfur, and Silane using the REML method in the Standard Least Squares personality.
+> **Summary**: Automates the evaluation design experiment for factors Silica, Sulfur, and Silane by opening a data table.
 
-<!-- Keywords: #REML, #DesignExperiment, #StandardLeastSquares, #JSLScripting, #VarianceComponentAnalysis -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #DataTableOperations, #FactorEvaluation, #DOE -->
 
 **Code**:
 ```jsl
@@ -447,9 +447,9 @@ DOE(
 
 
 ### Example 11
-> **Summary**: Opens a data table, defines a response surface design using the DOE dialog, and generates a table with specified factor settings and random seed.
+> **Summary**: Automates the creation of a response surface design in JMP, defining a target range for stretch and configuring factor settings for silica and sulfur.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #ResponseSurfaceDesign, #FactorSettings, #RandomSeed -->
+<!-- Keywords: #JMPScriptingLanguage, #ResponseSurfaceDesign, #DOEDialog, #FactorSettings, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -494,9 +494,9 @@ DOE(
 
 
 ### Example 12
-> **Summary**: Opens a data table, loads and edits in Response Surface Design, and applies a custom design with load factors from the current data table.
+> **Summary**: Automates the loading and editing process in Response Surface Design, utilizing the current data table to load factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #ResponseSurfaceDesign, #CustomDesign, #LoadFactors, #DataTable -->
+<!-- Keywords: #JMPScriptingLanguage, #ResponseSurfaceDesign, #DataTable, #LoadFactors, #DOE -->
 
 **Code**:
 ```jsl
@@ -519,9 +519,9 @@ DOE(
 
 
 ### Example 13
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Response Surface Design feature to load responses from the current data table.
+> **Summary**: Automates the process of loading and editing a data table in Response Surface Design, defining a DOE object, and specifying the response surface design.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #ResponseSurfaceDesign, #StandardLeastSquares, #JSLScripting -->
+<!-- Keywords: #JSLScriptingLanguage, #ResponseSurfaceDesign, #DOEObject, #DataTableManagement, #DesignofExperiments -->
 
 **Code**:
 ```jsl
@@ -547,9 +547,9 @@ DOE(
 
 
 ### Example 14
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Custom Design platform to load responses from a data table.
+> **Summary**: Automates the loading and editing process of a custom design in JMP, utilizing the `DOE` function to load responses from an open data table.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #CustomDesign, #StandardLeastSquares, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesign, #DataTable, #DOEFunction, #LoadResponses -->
 
 **Code**:
 ```jsl
@@ -574,9 +574,9 @@ DOE(
 
 
 ### Example 15
-> **Summary**: This JSL script evaluates a design using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the data from the 'Investment Castings' table.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for analysis.
 
-<!-- Keywords: #REML, #ShrinkageModel, #RandomEffects, #StandardLeastSquares, #DesignEvaluation -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignofExperiments, #DataTableManagement, #FactorSpecification, #DOE -->
 
 **Code**:
 ```jsl
@@ -602,9 +602,9 @@ DOE(
 
 
 ### Example 16
-> **Summary**: Generates a custom design of experiments (DOE) using the DOE Dialog in JMP, with two categorical factors and a response variable, to analyze corrosion resistance.
+> **Summary**: Automates the design of experiments (DOE) for a corrosion resistance study, utilizing custom design parameters and categorical factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #CustomDesign, #CategoricalFactors, #ResponseVariable -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDesign, #CategoricalFactors, #DOEDesign -->
 
 **Code**:
 ```jsl
@@ -660,9 +660,9 @@ DOE(
 
 
 ### Example 17
-> **Summary**: Loads a data table, applies Taguchi Arrays to load factors from the current table, and enables variance component analysis using the REML method with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the loading and editing process for Taguchi Arrays in JMP, utilizing the Current Data Table to load factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #TaguchiArrays, #REMLMethod, #VarianceComponentAnalysis, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #TaguchiArrays, #DataLoading, #Editing, #CurrentDataTable -->
 
 **Code**:
 ```jsl
@@ -685,9 +685,9 @@ DOE(
 
 
 ### Example 18
-> **Summary**: Evaluates a design using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing factors such as Cocoa, Sugar, Flour, Butter, Milk, and Eggs.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for analysis.
 
-<!-- Keywords: #REML, #ShrinkageModel, #RandomEffects, #StandardLeastSquares, #DesignEvaluation -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #FactorAnalysis, #DataTableManagement, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -713,9 +713,9 @@ DOE(
 
 
 ### Example 19
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to define a custom design with mixture factors.
+> **Summary**: Automates the design of experiments (DOE) for a mixture problem, defining response and factor variables, and configuring design settings.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #REMLMethod, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #MixtureExperiment, #FactorialDesign, #JMPScriptingLanguage -->
 
 **Code**:
 ```jsl
@@ -791,9 +791,9 @@ DOE(
 
 
 ### Example 20
-> **Summary**: Generates a MaxDiff design for a data table, utilizing the DOE dialog to configure the number of profiles and choice sets.
+> **Summary**: Automates the creation of a MaxDiff Design in JMP, configuring variables and generating a design with simulated responses.
 
-<!-- Keywords: #DOEDialog, #MaxDiffDesign, #JSLScriptingLanguage, #DataTable, #DesignofExperiments -->
+<!-- Keywords: #JMPScriptingLanguage, #MaxDiffDesign, #DOEDialog, #Simulation, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -824,9 +824,9 @@ DOE(
 
 
 ### Example 21
-> **Summary**: This JSL script evaluates a design of experiments (DOE) using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing factors such as temperature, time, and catalyst.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for temperature, time, and catalyst.
 
-<!-- Keywords: #DesignOfExperiments, #REMLMethod, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #FactorSpecification, #WholePlots, #Subplots -->
 
 **Code**:
 ```jsl
@@ -857,9 +857,9 @@ DOE(
 
 
 ### Example 22
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to simulate responses and create a design.
+> **Summary**: Automates the design and simulation of a custom experiment with continuous factors, utilizing JMP's DOE dialog to generate a comprehensive design.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPDOE, #CustomExperimentDesign, #ContinuousFactors, #Simulation, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -919,9 +919,9 @@ DOE(
 
 
 ### Example 23
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Choice Design platform to load factors from a data table.
+> **Summary**: Automates the loading and editing process in Choice Design, utilizing the Current Data Table to load factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #REMLMethod, #VarianceComponentAnalysis, #ChoiceDesign, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #ChoiceDesign, #DataLoading, #Editing, #DOE -->
 
 **Code**:
 ```jsl
@@ -944,9 +944,9 @@ DOE(
 
 
 ### Example 24
-> **Summary**: This JSL script evaluates a design experiment with random effects in the Standard Least Squares personality, using the REML method to perform variance component analysis and fit a model for shrinkage.
+> **Summary**: Automates the evaluation design experiment by opening a data table and specifying variables for Grind, Temperature, Time, Charge, and Station.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares, #DesignExperiment -->
+<!-- Keywords: #JSLScripting, #DesignOfExperiments, #DataTableManipulation, #VariableSpecification, #DOE -->
 
 **Code**:
 ```jsl
@@ -973,9 +973,9 @@ DOE(
 
 
 ### Example 25
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to design an experiment.
+> **Summary**: Automates the generation of a custom design of experiments (DOE) using JMP's DOE dialog, incorporating multiple factors and terms to optimize an experimental process.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSLScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #CustomDesign, #ExperimentalDesign, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1046,9 +1046,9 @@ DOE(
 
 
 ### Example 26
-> **Summary**: Generates a custom design for a response variable using the DOE dialog, incorporating continuous factors X1, X2, and X3, with polynomial terms and random effects in the Standard Least Squares personality.
+> **Summary**: Automates the generation of a custom design of experiments (DOE) using JMP, incorporating continuous factors X1, X2, and X3, with a specified random seed and optimality criterion.
 
-<!-- Keywords: #DOEDialog, #CustomDesign, #RandomEffects, #StandardLeastSquares, #JSLScriptingLanguage -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CustomDesign, #ContinuousFactors, #OptimalityCriterion -->
 
 **Code**:
 ```jsl
@@ -1106,9 +1106,9 @@ DOE(
 
 
 ### Example 27
-> **Summary**: This JSL script evaluates a design experiment using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the data from an open data table.
+> **Summary**: Automates the evaluation design experiment by opening a data table and specifying the factors to be evaluated.
 
-<!-- Keywords: #REML, #ShrinkageModel, #RandomEffects, #StandardLeastSquares, #DesignExperiment -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DataTableManagement, #FactorEvaluation, #DOE -->
 
 **Code**:
 ```jsl
@@ -1130,9 +1130,9 @@ DOE(
 
 
 ### Example 28
-> **Summary**: Generates a full factorial design using the DOE dialog in JMP, with three factors: categorical 'Operator', continuous 'Speed', and continuous 'Current'.
+> **Summary**: Automates the creation of a full factorial design in JMP, incorporating categorical and continuous factors, with a specified response variable.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #FullFactorialDesign, #CategoricalFactors, #ContinuousFactors -->
+<!-- Keywords: #JMPScriptingLanguage, #FullFactorialDesign, #CategoricalFactors, #ContinuousFactors, #DOEDialog -->
 
 **Code**:
 ```jsl
@@ -1183,9 +1183,9 @@ DOE(
 
 
 ### Example 29
-> **Summary**: Evaluates a design experiment using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the data from the 'Investment Castings' data table.
+> **Summary**: Automates the evaluation design experiment by opening a data table and specifying the factors to be evaluated.
 
-<!-- Keywords: #REML, #DesignExperiment, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DOE, #DesignOfExperiments, #DataTable, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -1210,9 +1210,9 @@ DOE(
 
 
 ### Example 30
-> **Summary**: Opens a data table, initiates the DOE dialog, and defines a Definitive Screening Design with multiple factors to optimize yield. The design is then generated using the REML method.
+> **Summary**: Automates the creation of a Definitive Screening Design (DSD) in JMP, adding response and factor variables to optimize experimental design.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #REML, #JMPScriptingLanguage, #ExperimentalDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #DefinitiveScreeningDesign, #ExperimentalDesign, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1264,9 +1264,9 @@ DOE(
 
 
 ### Example 31
-> **Summary**: Loads a data table and performs a Definitive Screening Design using the Load Factors from the current data table, enabling variance component analysis with REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the loading and editing process for a Definitive Screening Design in JMP, utilizing the Current Data Table to load factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #REMLMethod, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #DOEPlatform, #DataLoading, #JSLAutomation -->
 
 **Code**:
 ```jsl
@@ -1290,9 +1290,9 @@ DOE(
 
 
 ### Example 32
-> **Summary**: Evaluates a design experiment using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the data from the 'Investment Castings' table.
+> **Summary**: Automates the evaluation design experiment by opening a data table and specifying the factors to be evaluated.
 
-<!-- Keywords: #REML, #DesignExperiment, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignofExperiments, #DataTableManagement, #EvaluationDesign, #DOE -->
 
 **Code**:
 ```jsl
@@ -1317,9 +1317,9 @@ DOE(
 
 
 ### Example 33
-> **Summary**: Generates a Definitive Screening Design (DSD) using the DOE Dialog in JMP, with the goal of maximizing a response variable 'Y' and exploring the effects of six continuous factors: Methanol, Ethanol, Propanol, Butanol, pH, and Time.
+> **Summary**: Automates the generation of a Definitive Screening Design (DSD) in JMP, optimizing for a response variable and incorporating multiple continuous factors.
 
-<!-- Keywords: #DOEDialog, #DefinitiveScreeningDesign, #JMPScriptingLanguage, #ContinuousFactors, #ResponseVariable -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #DefinitiveScreeningDesign, #ContinuousFactors, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1372,9 +1372,9 @@ DOE(
 
 
 ### Example 34
-> **Summary**: Opens a data table, initiates the DOE dialog, and defines a Definitive Screening Design with continuous factors for Methanol, Ethanol, Propanol, Butanol, pH, and Time, as well as a response variable Yield.
+> **Summary**: Automates the creation of a Definitive Screening Design in JMP, defining factors and response variables to optimize experimental conditions.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #ContinuousFactors, #ResponseVariable, #JSLScript -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #DefinitiveScreeningDesign, #ExperimentalDesign, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1427,9 +1427,9 @@ DOE(
 
 
 ### Example 35
-> **Summary**: This JSL script evaluates a design experiment using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing variables Dichloromethane, Methanol, and Sample Volume from an open data table.
+> **Summary**: Automates the evaluation design experiment by opening a data table and specifying variables for Dichloromethane, Methanol, and Sample Volume.
 
-<!-- Keywords: #REML, #DesignExperiment, #StandardLeastSquares, #RandomEffectsModeling, #JSLScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #DesignOfExperiments, #DataTable, #Evaluation -->
 
 **Code**:
 ```jsl
@@ -1455,9 +1455,9 @@ DOE(
 
 
 ### Example 36
-> **Summary**: Generates a custom design for a DOE (Design of Experiments) analysis using the REML method, fitting a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design for a DOE (Design of Experiments) analysis, incorporating multiple factors and response variables.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEAnalysis, #CustomDesign, #FactorSelection, #ResponseVariable -->
 
 **Code**:
 ```jsl
@@ -1521,9 +1521,9 @@ DOE(
 
 
 ### Example 37
-> **Summary**: Evaluates design using the DOE function to analyze the relationship between pH, Water Temp, Extraction Time, Ratio, Agitation Speed, Hydrolyze, and Pre-Soak in a data table.
+> **Summary**: Automates the evaluation design process by opening a data table and defining variables for analysis, utilizing the DOE function to optimize experimental conditions.
 
-<!-- Keywords: #DOE, #DesignOfExperiments, #JSL, #VarianceComponentAnalysis, #REML -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEFunction, #ExperimentalDesign, #DataAnalysis, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -1551,9 +1551,9 @@ DOE(
 
 
 ### Example 38
-> **Summary**: Opens a data table, defines a DOE (Design of Experiments) with various factors and response variables, and generates a design using the Definitive Screening Design method.
+> **Summary**: Automates a Definitive Screening Design (DSD) experiment using JMP, defining response and factor variables, and configuring simulation settings.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #JMPScriptingLanguage, #ExperimentalDesign, #DataAnalysis -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #DefinitiveScreeningDesign, #FactorialExperiment, #Simulation -->
 
 **Code**:
 ```jsl
@@ -1620,9 +1620,9 @@ DOE(
 
 
 ### Example 39
-> **Summary**: Generates a custom design for a DOE (Design of Experiments) analysis using the Covering Array method, incorporating categorical factors and disallowed combinations to optimize experimental runs.
+> **Summary**: Automates a custom Design of Experiments (DOE) configuration using JMP's DOE dialog, incorporating categorical factors and disallowed combinations.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOE, #CoveringArray, #CategoricalFactors, #ExperimentalDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CategoricalFactors, #DisallowedCombinations, #CustomConfiguration -->
 
 **Code**:
 ```jsl
@@ -1692,9 +1692,9 @@ DOE(
 
 
 ### Example 40
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Covering Array design to load factors from the data table.
+> **Summary**: Automates the process of loading and editing a data table in JMP, utilizing the Covering Array design to optimize experimental factors.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #CoveringArray, #StandardLeastSquares, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #CoveringArray, #DOEPlatform, #ExperimentalDesign, #DataTable -->
 
 **Code**:
 ```jsl
@@ -1718,9 +1718,9 @@ DOE(
 
 
 ### Example 41
-> **Summary**: Opens a data table, initiates the DOE dialog, and designs an experiment using Mixture Design with Extreme Vertices. It sets factor ranges, adds constraints, and selects the response to maximize.
+> **Summary**: Automates the design of a mixture experiment using JMP's DOE dialog, specifying response maximization, factor ranges, and constraints.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #MixtureDesign, #ExperimentalDesign, #DataAnalysis -->
+<!-- Keywords: #JMPScriptingLanguage, #MixtureDesign, #DOEDialog, #ExperimentalDesign, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1770,9 +1770,9 @@ DOE(
 
 
 ### Example 42
-> **Summary**: Evaluates a design using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing factors such as Feed Rate, Catalyst, Stir Rate, Temperature, and Concentration.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for analysis.
 
-<!-- Keywords: #REML, #ShrinkageModel, #RandomEffects, #StandardLeastSquares, #DesignEvaluation -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DataAnalysis, #FactorSelection, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -1798,9 +1798,9 @@ DOE(
 
 
 ### Example 43
-> **Summary**: Generates a custom design of experiments (DOE) using the DOE Dialog in JMP, with factors such as Feed Rate, Catalyst, Stir Rate, Temperature, and Concentration, to analyze the response variable Percent Reacted.
+> **Summary**: Automates the creation of a Screening Design in JMP, defining response and factor variables, setting a random seed, and generating a design.
 
-<!-- Keywords: #JMP, #DOEDialog, #CustomDesign, #ExperimentalDesign, #Statistics -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #ScreeningDesign, #FactorVariables, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -1854,9 +1854,9 @@ DOE(
 
 
 ### Example 44
-> **Summary**: Loads a data table and creates a mixture design using the Load Factors from the current data table, enabling variance component analysis with REML method and model fitting for shrinkage with random effects in Standard Least Squares personality.
+> **Summary**: Automates the creation of a mixture design by loading factors from a data table, utilizing JMP's Mixture Design platform.
 
-<!-- Keywords: #JMPScriptingLanguage, #MixtureDesign, #REMLMethod, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #MixtureDesign, #DataTable, #DOE, #JSL -->
 
 **Code**:
 ```jsl
@@ -1879,9 +1879,9 @@ DOE(
 
 
 ### Example 45
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to design an experiment.
+> **Summary**: Automates the design of experiments (DOE) for a custom study, incorporating categorical and continuous factors, random seed, and constraints to generate an optimal design.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSLScript -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #CustomDesign, #FactorialExperiment, #Optimization -->
 
 **Code**:
 ```jsl
@@ -1946,9 +1946,9 @@ DOE(
 
 
 ### Example 46
-> **Summary**: Generates a custom design of experiments (DOE) using the Custom Design platform in JMP, with specified factors and interactions to analyze the effect of various process variables on a response variable.
+> **Summary**: Automates the generation of a custom Design of Experiments (DOE) using JMP's DOE Dialog, specifying response variables and continuous factors.
 
-<!-- Keywords: #JMP, #CustomDesign, #DOE, #ExperimentalDesign, #ProcessOptimization -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #CustomDesign, #ContinuousFactors, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2019,9 +2019,9 @@ DOE(
 
 
 ### Example 47
-> **Summary**: Generates a full factorial design with six continuous factors and one response variable, utilizing the DOE dialog to create a table for analysis.
+> **Summary**: Automates the creation of a full factorial design experiment in JMP, defining response and continuous factors, and generating a design table.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #FullFactorialDesign, #ContinuousFactors, #ResponseVariable -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #FullFactorialDesign, #ContinuousFactors, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2086,9 +2086,9 @@ DOE(
 
 
 ### Example 48
-> **Summary**: Generates a DOE (Design of Experiments) dialog in JMP, specifying a screening design with multiple continuous factors and a response variable. The script sets up the experiment to simulate responses using REML (Restricted Maximum Likelihood) method.
+> **Summary**: Automates the creation of a Screening Design in JMP, utilizing the DOE dialog to define response and factor settings.
 
-<!-- Keywords: #JMP, #DOE, #REML, #ScreeningDesign, #ContinuousFactors -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #ScreeningDesign, #ContinuousFactors, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -2166,9 +2166,9 @@ DOE(
 
 
 ### Example 49
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to generate an augmented design.
+> **Summary**: Automates the design of experiments (DOE) for a data table, specifying factors and response variables, and generating an optimized design.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSLScripting -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #ExperimentalDesign, #JMPPlatform, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -2230,9 +2230,9 @@ DOE(
 
 
 ### Example 50
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Screening Design feature to load factors from the current data table.
+> **Summary**: Automates the loading and editing process for a Screening Design in JMP, utilizing the current data table.
 
-<!-- Keywords: #REML, #ScreeningDesign, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #ScreeningDesign, #DOE, #DataTable, #JSLAutomation -->
 
 **Code**:
 ```jsl
@@ -2255,9 +2255,9 @@ DOE(
 
 
 ### Example 51
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the Screening Design feature to load responses from the current data table.
+> **Summary**: Automates the loading and editing process for a data table in Screening Design, utilizing the DOE function to load responses from the current data table.
 
-<!-- Keywords: #REML, #ScreeningDesign, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #ScreeningDesign, #DataTableLoading, #DOEFunction, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -2282,9 +2282,9 @@ DOE(
 
 
 ### Example 52
-> **Summary**: Opens a data table, initiates the DOE dialog, and adds categorical factors for Web Browser, Operating System, RAM, and Connection Speed with a strength of 3.
+> **Summary**: Automates the creation of a DOE (Design of Experiments) dialog in JMP, adding categorical factors with defined levels and naming them for analysis.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #CategoricalFactors, #ExperimentalDesign, #DataAnalysis -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #CategoricalFactors, #FactorLevels, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2345,9 +2345,9 @@ DOE(
 
 
 ### Example 53
-> **Summary**: This JSL script evaluates a design of experiments (DOE) using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing factors from an open data table.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors for analysis.
 
-<!-- Keywords: #REML, #DesignOfExperiments, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DataAnalysis, #FactorSpecification, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -2375,9 +2375,9 @@ DOE(
 
 
 ### Example 54
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to evaluate design factors.
+> **Summary**: Automates the evaluation of a design of experiments (DOE) to identify main effects and interactions among factors, utilizing JMP's DOE function.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #FactorialAnalysis, #MainEffects, #InteractionTerms -->
 
 **Code**:
 ```jsl
@@ -2454,9 +2454,9 @@ DOE(
 
 
 ### Example 55
-> **Summary**: Evaluates a design of experiments (DOE) for the specified factors: Solvent, Active, and Water in a data table using the REML method.
+> **Summary**: Automates the evaluation design for a DOE (Design of Experiments) analysis, specifying factors Solvent, Active, and Water.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignofExperiments, #REMLMethod, #VarianceComponentAnalysis, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEAnalysis, #ExperimentalDesign, #FactorSelection, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -2479,9 +2479,9 @@ DOE(
 
 
 ### Example 56
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to design an experiment.
+> **Summary**: Automates the design of experiments (DOE) for a mixture problem, defining response variables and adding mixture factors 'Solvent', 'Active', and 'Water' using JMP's DOE dialog.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #REMLMethod, #VarianceComponentAnalysis, #RandomEffectsModel -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #MixtureProblem, #CustomDesign, #DOEDialog -->
 
 **Code**:
 ```jsl
@@ -2539,9 +2539,9 @@ DOE(
 
 
 ### Example 57
-> **Summary**: Evaluates a design with factors %Beads, %Strength, Flow(g/min), and T(¬∫C) using the REML method in the Standard Least Squares personality.
+> **Summary**: Automates the evaluation design process by opening a data table and specifying factors, including %Beads, %Strength, Flow(g/min), and T(¬∫C).
 
-<!-- Keywords: #DOE, #REML, #StandardLeastSquares, #DesignOfExperiment, #JMPScriptingLanguage -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DOE, #JMPPlatform, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -2571,9 +2571,9 @@ DOE(
 
 
 ### Example 58
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE dialog to define factors and responses.
+> **Summary**: Automates a Design of Experiments (DOE) analysis to optimize the relationship between %Beads, %Strength, Flow(g/min), and T(¬∫C) factors on Size/nm response, utilizing various configuration options.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSL -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEAnalysis, #FactorialDesign, #ResponseSurfaceMethodology, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2646,9 +2646,9 @@ DOE(
 
 
 ### Example 59
-> **Summary**: Generates a custom design for a DOE analysis using the REML method, fitting a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design of experiments (DOE) in JMP, specifying factors X1, X2, and X3, and response variable Y.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #JMPScriptingLanguage -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDOE, #JMPPlatform, #StatisticalAnalysis -->
 
 **Code**:
 ```jsl
@@ -2705,9 +2705,9 @@ DOE(
 
 
 ### Example 60
-> **Summary**: Generates a custom design of experiments (DOE) using the DOE Dialog in JMP, with factors including temperature, gl ratio, and ht, to analyze the relationship between these variables.
+> **Summary**: Automates the generation of a custom design of experiments (DOE) for optimizing odor, utilizing JMP's DOE dialog to add response and continuous factors, set random seed, specify number of starts, and generate a design table.
 
-<!-- Keywords: #JMP, #DOEDialog, #CustomDesign, #ExperimentalDesign, #Statistics -->
+<!-- Keywords: #JMP, #DOE, #CustomDesign, #Optimization, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2767,9 +2767,9 @@ DOE(
 
 
 ### Example 61
-> **Summary**: Generates a custom design of experiments (DOE) using the Custom Design platform in JMP, with a response variable, two continuous factors, and one categorical factor. The script also sets various DOE parameters and generates a design table.
+> **Summary**: Automates the creation of a custom design of experiments (DOE) table in JMP, specifying response variables, continuous and categorical factors, random seed, number of starts, main effects, interaction terms, whole plots, subplots, and sample size.
 
-<!-- Keywords: #JMP, #CustomDesign, #DOE, #ExperimentalDesign, #Statistics -->
+<!-- Keywords: #JSLScripting, #DOEtable, #CustomDesign, #JMPPlatform, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -2830,9 +2830,9 @@ DOE(
 
 
 ### Example 62
-> **Summary**: Performs a space filling design using the Fast Flexible Filling method to optimize the number of trees in a forest, terms sampled per split, bootstrap sample rate, minimum splits per tree, and minimum split size for maximum response Y.
+> **Summary**: Automates a Space Filling Design process to optimize the response variable Y, incorporating multiple continuous factors and optimizing with MaxPro criterion.
 
-<!-- Keywords: #DOE, #SpaceFillingDesign, #JMPScriptingLanguage, #REML, #MaxPro -->
+<!-- Keywords: #JMPScriptingLanguage, #SpaceFillingDesign, #Maximization, #ContinuousFactors, #Optimization -->
 
 **Code**:
 ```jsl
@@ -2900,9 +2900,9 @@ DOE(
 
 
 ### Example 63
-> **Summary**: Performs a custom design of experiments (DOE) to optimize yield, match target MFI, and maximize CI in an investment casting process. It defines multiple continuous factors and sets a random seed for the simulation.
+> **Summary**: Automates the design of a custom experiment using JMP's DOE function, specifying response variables and continuous factors to optimize yield, match target MFI, and maximize CI.
 
-<!-- Keywords: #JMPScriptingLanguage, #CustomDOEDesign, #ExperimentalDesign, #ProcessOptimization, #RandomEffectsModeling -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #CustomDesign, #ContinuousFactors, #ResponseVariables -->
 
 **Code**:
 ```jsl
@@ -2959,9 +2959,9 @@ DOE(
 
 
 ### Example 64
-> **Summary**: This JSL script defines a custom design of experiments (DOE) to optimize yield, match target MFI, and maximize CI in an investment casting process. The script uses the REML method for variance component analysis and fits a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates a custom design of experiments (DOE) to optimize yield, match target MFI, and maximize CI, incorporating four continuous factors: SA, M%, Xf, and Ambient Temp.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSL -->
+<!-- Keywords: #JSLScripting, #DOE, #CustomDesign, #ContinuousFactors, #Simulation -->
 
 **Code**:
 ```jsl
@@ -3024,9 +3024,9 @@ DOE(
 
 
 ### Example 65
-> **Summary**: Generates a custom design for a DOE experiment using the REML method, with random effects in the Standard Least Squares personality. The script optimizes three responses: Yield, MFI, and CI, while controlling four continuous factors.
+> **Summary**: Automates the creation of a custom design for optimization using DOE, maximizing 'Yield', matching target 'MFI', and simulating responses.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #Optimization, #CustomDesign, #Simulation -->
 
 **Code**:
 ```jsl
@@ -3102,9 +3102,9 @@ DOE(
 
 
 ### Example 66
-> **Summary**: Generates a custom design for a DOE experiment using the REML method, fitting a model with random effects in the Standard Least Squares personality. The script optimizes responses 'Yield', 'MFI', and 'CI' while controlling factors 'SA', 'M%', 'Xf', 'Ambient Temp', 'pH', and 'Viscosity'.
+> **Summary**: Automates the creation and simulation of a custom design of experiments (DOE) to optimize multiple responses, including 'Yield', 'MFI', and 'CI', using JMP's DOE dialog.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JMP, #DOE, #CustomDesign, #Optimization, #Simulation -->
 
 **Code**:
 ```jsl
@@ -3200,9 +3200,9 @@ DOE(
 
 
 ### Example 67
-> **Summary**: Generates a Definitive Screening Design using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing various factors and responses to optimize yield, MFI, and CI.
+> **Summary**: Automates the creation of a Definitive Screening Design in JMP, optimizing for Yield, matching target MFI, and maximizing CI.
 
-<!-- Keywords: #JMP, #DOE, #REML, #ShrinkageModeling, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #Optimization, #FactorialDesign, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -3265,9 +3265,9 @@ DOE(
 
 
 ### Example 68
-> **Summary**: This JSL script defines a Definitive Screening Design to optimize three responses: Yield, MFI, and CI. The design is generated using continuous factors SA, M%, Xf, and Ambient Temp.
+> **Summary**: Automates a Definitive Screening Design to optimize three responses: Yield, MFI, and CI, by adding continuous factors SA, M%, Xf, and Ambient Temp.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #JMPScriptingLanguage, #REML, #VarianceComponentAnalysis -->
+<!-- Keywords: #DefinitiveScreeningDesign, #JMPScriptingLanguage, #DOE, #Optimization, #ContinuousFactors -->
 
 **Code**:
 ```jsl
@@ -3320,9 +3320,9 @@ DOE(
 
 
 ### Example 69
-> **Summary**: Generates a Definitive Screening Design using the DOE dialog, with responses to maximize Yield and match Target MFI, as well as continuous factors for SA, M%, Xf, Ambient Temp, pH, and Viscosity.
+> **Summary**: Automates the creation of a Definitive Screening Design in JMP, optimizing Yield, matching Target MFI, and maximizing CI through the addition of continuous factors.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #JSLScriptingLanguage, #CustomDesign, #REML -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #Optimization, #ContinuousFactors, #DesignofExperiments -->
 
 **Code**:
 ```jsl
@@ -3379,9 +3379,9 @@ DOE(
 
 
 ### Example 70
-> **Summary**: This JSL script defines a Definitive Screening Design (DSD) experiment with multiple response variables and factors, including continuous and categorical variables. The script sets up the design for subsequent analysis using REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design and setup of a Definitive Screening Design (DSD) experiment in JMP, defining response variables for maximization and target matching, as well as continuous and categorical factors.
 
-<!-- Keywords: #JMP, #DOE, #REML, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #DOE, #DefinitiveScreeningDesign, #ContinuousFactors, #CategoricalFactor -->
 
 **Code**:
 ```jsl
@@ -3439,9 +3439,9 @@ DOE(
 
 
 ### Example 71
-> **Summary**: Generates a Definitive Screening Design for an optimization problem, incorporating multiple responses and factors to maximize Yield, match Target MFI, and optimize CI, while also considering continuous and categorical factors.
+> **Summary**: Automates the creation of a Definitive Screening Design in JMP, optimizing for Yield, MFI, and CI while incorporating continuous and categorical factors.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #JMPScriptingLanguage, #OptimizationProblem, #ExperimentalDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #Optimization, #DesignofExperiments, #DOE -->
 
 **Code**:
 ```jsl
@@ -3504,9 +3504,9 @@ DOE(
 
 
 ### Example 72
-> **Summary**: Generates a custom design for a DOE (Design of Experiments) using the REML method, with random effects in the Standard Least Squares personality. The script optimizes multiple responses and includes continuous factors, interaction terms, and alias terms.
+> **Summary**: Automates the creation of a custom Design of Experiments (DOE) to optimize Yield and Assay while minimizing Haze and Cost, utilizing continuous factors for Base, Carbamate, Toluene, Temperature, and Time.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSL, #DOE, #CustomDesign, #Optimization, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -3601,9 +3601,9 @@ DOE(
 
 
 ### Example 73
-> **Summary**: Generates a custom design for a DOE experiment using the REML method, fitting a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design for DOE (Design of Experiments) analysis, incorporating categorical and continuous factors, with options to minimize responses and simulate responses.
 
-<!-- Keywords: #DOE, #REML, #CustomDesign, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #CustomDesign, #FactorAnalysis, #Simulation -->
 
 **Code**:
 ```jsl
@@ -3665,9 +3665,9 @@ DOE(
 
 
 ### Example 74
-> **Summary**: Generates a custom design for a response maximization problem using the REML method, incorporating continuous and categorical factors, with random seed control and alias terms.
+> **Summary**: Automates the creation of a custom design for a DOE experiment, specifying factors and terms to optimize response Y.
 
-<!-- Keywords: #REML, #CustomDesign, #MaximizationProblem, #JMPScriptingLanguage, #DOE -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEExperiment, #CustomDesign, #FactorDefinition, #TermSpecification -->
 
 **Code**:
 ```jsl
@@ -3725,9 +3725,9 @@ DOE(
 
 
 ### Example 75
-> **Summary**: Generates a custom design for an experiment using the DOE dialog, with responses to maximize yield and assay, minimize impurity, and factors including continuous temperature, time, and amount, as well as categorical seed and mixture water, alcohol, and ether. The script also sets random seeds, number of starts, sample size, and adds constraints.
+> **Summary**: Automates the creation of a custom design experiment with multiple responses, factors, and constraints using JMP's DOE dialog.
 
-<!-- Keywords: #DOE, #CustomDesign, #JSLScriptingLanguage, #ExperimentalDesign, #StatisticalAnalysis -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #ResponseSurfaceMethodology, #ExperimentalDesign, #StatisticalModeling -->
 
 **Code**:
 ```jsl
@@ -3811,9 +3811,9 @@ DOE(
 
 
 ### Example 76
-> **Summary**: Creates a space filling design using the Fast Flexible Filling method, with factors set for maximum split per tree, row and column sampling rates, and number of trees. The script also sets a random seed and optimizes the design for maximum probability.
+> **Summary**: Automates the creation of a space filling design in JMP, optimizing for maximum response 'Y' and configuring factor settings for continuous variables.
 
-<!-- Keywords: #JMP, #DOE, #SpaceFillingDesign, #FactorSettings, #RandomSeed -->
+<!-- Keywords: #JMPScriptingLanguage, #SpaceFillingDesign, #DOEDialog, #FactorSettings, #Optimization -->
 
 **Code**:
 ```jsl
@@ -3870,9 +3870,9 @@ DOE(
 
 
 ### Example 77
-> **Summary**: Process of generating a Space Filling Design for a DOE (Design of Experiments) using the Fast Flexible Filling method, with specified factor settings and response maximization.
+> **Summary**: Automates a Space Filling Design process to optimize response 'Y' by maximizing it, with specified factor settings and continuous factors added.
 
-<!-- Keywords: #DOE, #SpaceFillingDesign, #FastFlexibleFilling, #JSL, #ExperimentalDesign -->
+<!-- Keywords: #JSLScripting, #SpaceFillingDesign, #DOE, #Optimization, #JMPScriptingLanguage -->
 
 **Code**:
 ```jsl
@@ -3930,9 +3930,9 @@ DOE(
 
 
 ### Example 78
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a custom design with continuous factors X1-X4.
+> **Summary**: Automates the creation of a custom design experiment with four continuous factors, utilizing the DOE dialog in JMP.
 
-<!-- Keywords: #REML, #CustomDesign, #VarianceComponentAnalysis, #RandomEffectsModeling, #StandardLeastSquares -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #ContinuousFactors, #ExperimentalDesign, #Simulation -->
 
 **Code**:
 ```jsl
@@ -3989,9 +3989,9 @@ DOE(
 
 
 ### Example 79
-> **Summary**: This script initiates a custom design of experiments (DOE) process to analyze the relationship between four continuous factors (X1, X2, X3, and X4) and their interactions, using the REML method for variance component analysis and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design of experiments (DOE) process using a Custom Design method, maximizing response 'Y' and incorporating continuous factors X1 to X4.
 
-<!-- Keywords: #CustomDesign, #DOE, #REML, #ShrinkageModel, #RandomEffects -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDesign, #ContinuousFactors, #RandomizedRunOrder -->
 
 **Code**:
 ```jsl
@@ -4057,9 +4057,9 @@ DOE(
 
 
 ### Example 80
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a Custom Design in JMP.
+> **Summary**: Automates the creation of a custom design in JMP, incorporating continuous factors and alias terms to optimize response maximization.
 
-<!-- Keywords: #JMP, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #CustomDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesign, #ContinuousFactors, #AliasTerms, #ResponseMaximization -->
 
 **Code**:
 ```jsl
@@ -4125,9 +4125,9 @@ DOE(
 
 
 ### Example 81
-> **Summary**: Performs a custom design of experiments (DOE) to analyze the relationship between four continuous factors (X1, X2, X3, and X4) using the REML method in the Standard Least Squares personality.
+> **Summary**: Automates the design of a custom experiment with four continuous factors, maximizing a response variable and generating a randomized run order.
 
-<!-- Keywords: #JMPScriptingLanguage, #CustomDesignofExperiments, #REMLMethod, #StandardLeastSquaresPersonality, #DOEAnalysis -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #CustomExperiment, #ContinuousFactors, #RandomizedRunOrder -->
 
 **Code**:
 ```jsl
@@ -4193,9 +4193,9 @@ DOE(
 
 
 ### Example 82
-> **Summary**: This JSL script defines a Definitive Screening Design (DSD) using the DOE Dialog, specifying continuous factors X1 to X5 and maximizing response Y. The design is then simulated with random responses.
+> **Summary**: Automates the creation of a Definitive Screening Design (DSD) for optimizing response Y, incorporating five continuous factors X1 to X5, and specifying additional design parameters.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #DefinitiveScreeningDesign, #ContinuousFactors, #Simulation -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEDesign, #DefinitiveScreeningDesign, #ContinuousFactors, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -4247,9 +4247,9 @@ DOE(
 
 
 ### Example 83
-> **Summary**: Performs a custom design of experiments (DOE) to analyze the relationship between various factors and their impact on NOx emissions, utilizing the REML method for variance component analysis and fitting a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates a custom design of experiments (DOE) process in JMP, defining response variable NOx and adding multiple continuous factors for simulation.
 
-<!-- Keywords: #JMPScriptingLanguage, #CustomDesignofExperiments, #REMLMethod, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesignofExperiments, #Simulation, #Optimization, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -4356,9 +4356,9 @@ DOE(
 
 
 ### Example 84
-> **Summary**: Initiates a custom design of experiments (DOE) process to optimize a response variable Y, with factors Dichloromethane, Methanol, and Sample Volume. The script uses the REML method for variance component analysis and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design and generation of a custom experiment with 32 runs, optimizing for maximum response Y, incorporating factors Dichloromethane, Methanol, and Sample Volume, and utilizing randomization for reproducibility.
 
-<!-- Keywords: #JSL, #DOE, #CustomDesign, #REML, #Shrinkage -->
+<!-- Keywords: #JSL, #DOE, #CustomDesign, #Optimization, #ExperimentDesign -->
 
 **Code**:
 ```jsl
@@ -4421,9 +4421,9 @@ DOE(
 
 
 ### Example 85
-> **Summary**: Generates a full factorial design with six continuous factors and one response variable, using the REML method to perform variance component analysis and fit a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a full factorial design with multiple continuous factors and a response variable, utilizing JMP's DOE dialog to generate a data table.
 
-<!-- Keywords: #DOE, #FullFactorialDesign, #REML, #RandomEffectsModeling, #JSL -->
+<!-- Keywords: #JMPScriptingLanguage, #FullFactorialDesign, #ContinuousFactors, #ResponseVariable, #DOEDialog -->
 
 **Code**:
 ```jsl
@@ -4495,9 +4495,9 @@ DOE(
 
 
 ### Example 86
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a custom design with continuous factors X1-X4.
+> **Summary**: Automates the creation of a custom design for a DOE experiment with four continuous factors, utilizing the JMP DOE dialog to define model terms and optimize the design.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #CustomDesign, #RandomEffectsModeling, #StandardLeastSquares -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #ContinuousFactors, #ModelTerms, #Optimization -->
 
 **Code**:
 ```jsl
@@ -4564,9 +4564,9 @@ DOE(
 
 
 ### Example 87
-> **Summary**: Generates a custom design for a mixture experiment using the DOE dialog, with factors for Solvent, Active, and Water, and performs a variance component analysis using the REML method.
+> **Summary**: Automates the creation of a custom design experiment in JMP, defining factors for Solvent, Active, and Water, and configuring simulation settings.
 
-<!-- Keywords: #JMP, #DOE, #CustomDesign, #REML, #VarianceComponentAnalysis -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesignExperiment, #FactorDefinition, #SimulationSettings, #DesignGeneration -->
 
 **Code**:
 ```jsl
@@ -4624,9 +4624,9 @@ DOE(
 
 
 ### Example 88
-> **Summary**: Generates a custom design for an experiment using the DOE Dialog, optimizing for I-optimality and specifying random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design of a custom mixture experiment using JMP's DOE Dialog, optimizing for I-optimality and generating a randomized run order.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #CustomDesign, #IOptimalDesign, #RandomEffects -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #MixtureExperiment, #Optimization, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -4685,9 +4685,9 @@ DOE(
 
 
 ### Example 89
-> **Summary**: Initiates a custom design of experiments (DOE) process to optimize a response variable, incorporating mixture factors for Solvent, Active, and Water, while applying random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design of experiments (DOE) process for a custom mixture problem, defining factors and constraints to optimize response variables.
 
-<!-- Keywords: #JMPScriptingLanguage, #CustomDesignofExperiments, #MixtureFactors, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #DOE, #MixtureDesign, #CustomDesign, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -4742,9 +4742,9 @@ DOE(
 
 
 ### Example 90
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a custom design with continuous factors X1, X2, and X3.
+> **Summary**: Automates the creation of a custom design for DOE analysis, adding response 'Y' to maximize and incorporating continuous factors 'X1', 'X2', and 'X3'.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #CustomDesign, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEAnalysis, #CustomDesign, #ContinuousFactors, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -4798,9 +4798,9 @@ DOE(
 
 
 ### Example 91
-> **Summary**: Generates a Definitive Screening Design for a six-factor experiment, maximizing the response variable 'Y', and displays the design table.
+> **Summary**: Automates the creation of a Definitive Screening Design in JMP, adding continuous factors X1 to X6 and maximizing response Y.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEDialog, #DefinitiveScreeningDesign, #ExperimentalDesign, #DesignofExperiments -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #ContinuousFactors, #DesignofExperiments, #DOE -->
 
 **Code**:
 ```jsl
@@ -4851,9 +4851,9 @@ DOE(
 
 
 ### Example 92
-> **Summary**: Generates a Definitive Screening Design using the DOE dialog, with six continuous factors and one response variable, to perform a variance component analysis using the REML method and fit a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a Definitive Screening Design with six continuous factors and one response variable, utilizing JMP's DOE dialog.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #REML, #VarianceComponentAnalysis, #RandomEffectsModel -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #DefinitiveScreeningDesign, #ContinuousFactors, #ResponseVariable -->
 
 **Code**:
 ```jsl
@@ -4904,9 +4904,9 @@ DOE(
 
 
 ### Example 93
-> **Summary**: Generates a custom design for a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design for a continuous response variable Y, incorporating two continuous factors: Number Trees and Number Terms, with optimized sample size and optimality criterion.
 
-<!-- Keywords: #REML, #CustomDesign, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #CustomDesign, #ContinuousResponseVariable, #OptimizationCriteria, #SampleSize -->
 
 **Code**:
 ```jsl
@@ -4957,9 +4957,9 @@ DOE(
 
 
 ### Example 94
-> **Summary**: Initiates a custom design of experiments (DOE) process to optimize yield, match target MFI, and maximize CI in an investment casting application. The script defines various factors, including continuous and categorical variables, and sets a random seed.
+> **Summary**: Automates a custom design of experiments (DOE) process to optimize multiple responses, including yield, MFI, and CI, while controlling various continuous and categorical factors.
 
-<!-- Keywords: #JMP, #DOE, #CustomDesign, #ExperimentalDesign, #Optimization -->
+<!-- Keywords: #JSLScriptingLanguage, #CustomDesignOfExperiments, #DOE, #JMPPlatform, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -5032,9 +5032,9 @@ DOE(
 
 
 ### Example 95
-> **Summary**: Creates a Definitive Screening Design (DSD) using the DOE function, defining multiple responses and factors to optimize yield, match target MFI, and maximize CI while controlling various continuous and categorical factors.
+> **Summary**: Automates the creation of a Definitive Screening Design (DSD) in JMP, defining multiple responses and factors to optimize experimental design.
 
-<!-- Keywords: #DOE, #DefinitiveScreeningDesign, #JMPScriptingLanguage, #ExperimentalDesign, #Optimization -->
+<!-- Keywords: #JMPScriptingLanguage, #DefinitiveScreeningDesign, #ExperimentalDesign, #Optimization, #DOE -->
 
 **Code**:
 ```jsl
@@ -5107,9 +5107,9 @@ DOE(
 
 
 ### Example 96
-> **Summary**: Performs a custom design of experiments (DOE) to analyze the impact of factors 'Brand', 'Time', and 'Power' on responses 'Number Popped' and 'Total Kernels'. The script uses the REML method for variance component analysis and fits a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates a custom design of experiments (DOE) to optimize two responses: 'Number Popped' and 'Total Kernels', considering three factors: categorical 'Brand', continuous 'Time', and continuous 'Power'.
 
-<!-- Keywords: #CustomDesign, #DOE, #REML, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #CustomDOE, #Optimization, #FactorialDesign, #Experimentation -->
 
 **Code**:
 ```jsl
@@ -5170,9 +5170,9 @@ DOE(
 
 
 ### Example 97
-> **Summary**: Performs a custom design of experiments (DOE) to optimize the conversion rate, utilizing a combination of continuous and categorical factors, with random effects modeling and REML method for variance component analysis.
+> **Summary**: Automates the design of experiments (DOE) process using a custom design to maximize conversion, incorporating continuous and categorical factors, and configuring model terms for interactions.
 
-<!-- Keywords: #JSL, #DOE, #CustomDesign, #REML, #RandomEffects -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDesign, #ContinuousFactor, #CategoricalFactor -->
 
 **Code**:
 ```jsl
@@ -5242,9 +5242,9 @@ DOE(
 
 
 ### Example 98
-> **Summary**: Performs a full factorial design of experiments (DOE) to analyze the relationships between continuous factors 'Discharge', 'Gradient', and 'Clutter' with response variable 'Y', using the REML method for variance component analysis.
+> **Summary**: Automates the creation of a full factorial design with continuous factors for Discharge, Gradient, and Clutter, and simulates responses to maximize the Y response.
 
-<!-- Keywords: #FullFactorialDesign, #REMLMethod, #VarianceComponentAnalysis, #ContinuousFactors, #JMPScriptingLanguage -->
+<!-- Keywords: #FullFactorialDesign, #ContinuousFactors, #Simulation, #JMPScriptingLanguage, #DOE -->
 
 **Code**:
 ```jsl
@@ -5296,9 +5296,9 @@ DOE(
 
 
 ### Example 99
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a custom design with categorical factors X1 and X2.
+> **Summary**: Automates the creation of a custom design for a DOE experiment, specifying response minimization, categorical factors, and interaction terms.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #CustomDesign, #CategoricalFactors, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #CustomDesign, #CategoricalFactors, #InteractionTerms -->
 
 **Code**:
 ```jsl
@@ -5355,9 +5355,9 @@ DOE(
 
 
 ### Example 100
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a DOE object by opening a data table in JMP.
 
-<!-- Keywords: #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #StandardLeastSquares, #JMPScriptingLanguage -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #DataTable, #DOEObject, #Automation -->
 
 **Code**:
 ```jsl
@@ -5373,9 +5373,9 @@ doe = DOE();
 
 
 ### Example 101
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing a DOE object to load responses from a data table.
+> **Summary**: Automates the loading of responses into a DOE object, allowing for further analysis and exploration.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModeling, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEObject, #ResponseLoading, #DataAnalysis, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -5393,9 +5393,9 @@ doe << Load Responses;
 
 
 ### Example 102
-> **Summary**: Generates a custom design of experiments (DOE) to analyze the impact of multiple factors on a response variable, utilizing the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design and analysis of a DOE experiment, incorporating main effects, interaction terms, and alias terms, with adjustable anticipated coefficients and root mean square error.
 
-<!-- Keywords: #JSL, #DOE, #REML, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DOEAnalysis, #AnticipatedCoefficients, #RMSE -->
 
 **Code**:
 ```jsl
@@ -5429,9 +5429,9 @@ rpt = d << report;
 
 
 ### Example 103
-> **Summary**: Generates a custom design of experiments (DOE) to analyze the relationship between Feed Rate, Catalyst, Stir Rate, Temperature, and Concentration using the REML method in JMP.
+> **Summary**: Automates the design and analysis of a DOE experiment, specifying factors, main effects, interactions, and alias terms, while setting an RMSE value.
 
-<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #REMLMethod, #CustomDOE, #StatisticalAnalysis -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #FactorialDesign, #AliasTerms, #RMSE -->
 
 **Code**:
 ```jsl
@@ -5462,16 +5462,16 @@ d << Set RMSE( 1.5 );
 
 
 ### Example 104
-> **Summary**: Process of opening a data table, setting it as current, launching the Compare Designs platform, and generating a report before closing the window.
+> **Summary**: Automates the process of opening a data table, setting it as current, launching the Compare Designs platform, and generating a report window.
 
-<!-- Keywords: #JMPScriptingLanguage, #CompareDesigns, #DataTableManagement, #REMLMethod, #StandardLeastSquaresPersonality -->
+<!-- Keywords: #JMPScriptingLanguage, #DataTableManagement, #CompareDesignsPlatform, #PlatformAutomation, #ReportGeneration -->
 
 **Code**:
 ```jsl
 dt = Open("data_table.jmp");
 Current Data Table( dt );
 cd = DOE( Compare Designs );
-d4 = Window( "Report: Compare Designs " );
+d4 = Window( "Report: Compare Designs Platform" );
 cd << close window;
 ```
 
@@ -5486,9 +5486,9 @@ cd << close window;
 
 
 ### Example 105
-> **Summary**: Creates a MaxDiff design with 3 profiles and 7 choice sets, generating a table from the design and closing the design window.
+> **Summary**: Automates the creation of a MaxDiff design with 3 profiles and 7 choice sets, making it suitable for table analysis in JMP.
 
-<!-- Keywords: #MaxDiffDesign, #DOE, #JMPScriptingLanguage, #DataTable, #ExperimentalDesign -->
+<!-- Keywords: #MaxDiffDesign, #JMPScriptingLanguage, #DOE, #TableAnalysis, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -5510,9 +5510,9 @@ d << close window;
 
 
 ### Example 106
-> **Summary**: Compares two designs in a DOE analysis, specifying reference and additional design factors for a variance component analysis using REML.
+> **Summary**: Automates the comparison of two designs in a DOE analysis, specifying reference and additional design factors.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #DesignOfExperiments, #JMPScriptingLanguage -->
+<!-- Keywords: #DOE, #DesignOfExperiments, #JMPScriptingLanguage, #ComparisonAnalysis, #FactorialDesign -->
 
 **Code**:
 ```jsl
@@ -5523,7 +5523,7 @@ DOE(
 	Reference Design( "data_table1", X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ) ),
 	Additional Designs( "data_table2", X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ) )
 );
-Window( "Report: Compare Designs " ) << close window;
+Window( "Report: Compare Designs Platform" ) << close window;
 ```
 
 **Code Explanation**:
@@ -5541,9 +5541,9 @@ Window( "Report: Compare Designs " ) << close window;
 
 
 ### Example 107
-> **Summary**: Compares two data tables using Design of Experiments (DOE) analysis, loading factors from the current data table.
+> **Summary**: Automates the comparison of two data tables by setting the current data table to dt1 and initiating DOE analysis.
 
-<!-- Keywords: #JMP_DOE, #Design_of_Experiments, #Data_Comparison, #REML_Method, #Variance_Component_Analysis -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEAnalysis, #DataTableManagement, #JMPScripting, #DesignofExperiments -->
 
 **Code**:
 ```jsl
@@ -5564,9 +5564,9 @@ DOE( Compare Designs );
 
 
 ### Example 108
-> **Summary**: Runs the creation and closure of a DOE (Design of Experiments) object using the Custom Design method, loading factors from the current data table.
+> **Summary**: Automates the opening of a data table, creation of a DOE object, and closing of the DOE window.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #CustomDesign, #DataTable, #JMP -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEObject, #DataTableManagement, #WindowControl, #ScriptAutomation -->
 
 **Code**:
 ```jsl
@@ -5584,9 +5584,9 @@ d << close window;
 
 
 ### Example 109
-> **Summary**: Runs a custom design experiment to analyze the relationship between continuous factors X1 and X2, covariates sex, weight, and age, using REML method for variance component analysis and fitting a model with random effects in Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design experiment in JMP, defining response variables, continuous factors, and covariate factors to simulate responses.
 
-<!-- Keywords: #DOE, #CustomDesign, #REML, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #CustomDesignExperiment, #DOE, #Covariates, #Simulation -->
 
 **Code**:
 ```jsl
@@ -5620,9 +5620,9 @@ rpt = d << report;
 
 
 ### Example 110
-> **Summary**: Creates a Design of Experiments (DOE) using Easy DOE and performs a variance component analysis with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a new Design of Experiments (DOE) design, starting with an open data table.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DataTable, #EasyDOE, #JMP -->
 
 **Code**:
 ```jsl
@@ -5638,9 +5638,9 @@ d = DOE( Easy DOE );
 
 
 ### Example 111
-> **Summary**: Creates and modifies custom design experiments for variance component analysis using REML method in JMP, incorporating covariates, factors, and random seed settings.
+> **Summary**: Automates the creation and configuration of custom design experiments in JMP, including adding response variables, covariates, and interaction terms.
 
-<!-- Keywords: #JMPScriptingLanguage, #CustomDesignExperiment, #REMLMethod, #VarianceComponentAnalysis, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesignExperiment, #DOE, #RandomSeed, #InteractionTerms -->
 
 **Code**:
 ```jsl
@@ -5707,9 +5707,9 @@ Random Reset( 123456789 );
 
 
 ### Example 112
-> **Summary**: Creates a custom Design of Experiments (DOE) for variance component analysis using the REML method and fitting a model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom DOE design with covariates and interaction terms, utilizing JMP's DOE platform.
 
-<!-- Keywords: #JSLScripting, #DOE, #REML, #VarianceComponentAnalysis, #RandomEffects -->
+<!-- Keywords: #JMPDOE, #CustomDesign, #Covariates, #InteractionTerms, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -5742,9 +5742,9 @@ d << close window;
 
 
 ### Example 113
-> **Summary**: Generates a custom design of experiments (DOE) for variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation and manipulation of a custom Design of Experiments (DOE) design in JMP, utilizing various technical features to optimize the design.
 
-<!-- Keywords: #JSLScripting, #DOE, #REML, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDOE, #JMPPlatform, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -5799,9 +5799,9 @@ Random Reset( 123 );
 
 
 ### Example 114
-> **Summary**: Creates a custom design for a response variable and multiple covariates using the DOE function, with options to set random seed, number of starts, and sample size.
+> **Summary**: Automates the creation of a custom design for a response variable and covariates, utilizing DOE parameters to optimize the design.
 
-<!-- Keywords: #DOE, #CustomDesign, #ResponseVariable, #Covariates, #JSL -->
+<!-- Keywords: #JSLScripting, #DOE, #CustomDesign, #Optimization, #JMP -->
 
 **Code**:
 ```jsl
@@ -5843,9 +5843,9 @@ dtCov2 << Sort( By( :Random Uniform ), Order( Ascending ), Replace Table );
 
 
 ### Example 115
-> **Summary**: Generates a custom design of experiments (DOE) for variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation and manipulation of a custom Design of Experiments (DOE) in JMP, including setting missing values, defining factors, and adjusting sample size.
 
-<!-- Keywords: #JSLScripting, #DOE, #REML, #VarianceComponentAnalysis, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CustomDOE, #SampleSizeAdjustment, #LogCapture -->
 
 **Code**:
 ```jsl
@@ -5888,9 +5888,9 @@ d << close window;
 
 
 ### Example 116
-> **Summary**: Generates a custom design of experiments (DOE) to analyze the relationship between continuous factors X1, X2, and X3, while accounting for covariates height and weight, using the REML method in the Standard Least Squares personality.
+> **Summary**: Automates the design and simulation of a custom experiment using JMP's DOE function, incorporating continuous factors, covariates, and alias terms.
 
-<!-- Keywords: #CustomDOE, #REMLMethod, #StandardLeastSquares, #ContinuousFactors, #Covariates -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CustomDOE, #Simulation, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -5925,9 +5925,9 @@ d = DOE(
 
 
 ### Example 117
-> **Summary**: Creates a D-optimal design for a response variable using the Augment Design method, incorporating random effects and specifying linear and interaction terms.
+> **Summary**: Automates the creation of a D-optimal design for a response variable, utilizing DOE settings and specifying X variables.
 
-<!-- Keywords: #DOE, #AugmentDesign, #DOptimalDesign, #RandomEffects, #JSL -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #DesignOfExperiments, #Optimization, #StatisticalAnalysis -->
 
 **Code**:
 ```jsl
@@ -5964,9 +5964,9 @@ d = DOE(
 
 
 ### Example 118
-> **Summary**: Runs the design of experiments for a response variable, utilizing the Augment Design method to generate an experimental design and create a data table.
+> **Summary**: Automates the design and generation of a data table for an experiment with specified input factors, response variable, and design options.
 
-<!-- Keywords: #DOE, #ExperimentalDesign, #JSL, #AugmentDesign, #DataTable -->
+<!-- Keywords: #JSLScripting, #DOE, #DesignOfExperiments, #DataTableGeneration, #JMPScriptingLanguage -->
 
 **Code**:
 ```jsl
@@ -5995,9 +5995,9 @@ d << close window;
 
 
 ### Example 119
-> **Summary**: Generates a custom design of experiments (DOE) for shrinkage analysis with random effects in the Standard Least Squares personality, utilizing the REML method.
+> **Summary**: Automates the design of experiments (DOE) for a custom response and multiple factors, utilizing JMP's DOE platform to generate an optimized experimental design.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #REML, #ShrinkageAnalysis, #StandardLeastSquares -->
+<!-- Keywords: #JMP_DOE, #Experimental_Design, #Custom_Response, #Factorial_Design, #Optimization -->
 
 **Code**:
 ```jsl
@@ -6033,9 +6033,9 @@ d = DOE(
 
 
 ### Example 120
-> **Summary**: Runs the design and execution of a custom experiment with multiple factors, including Feed Rate, Catalyst, Stir Rate, Temperature, and Concentration, to analyze Percent Reacted.
+> **Summary**: Automates the design and generation of a DOE (Design of Experiment) for a data table, specifying factors, response, and augmentation settings.
 
-<!-- Keywords: #DOE, #CustomDesign, #JSLScripting, #ExperimentDesign, #Augmentation -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #ExperimentalDesign, #DataAnalysis, #StatisticalModeling -->
 
 **Code**:
 ```jsl
@@ -6063,9 +6063,9 @@ d << close window;
 
 
 ### Example 121
-> **Summary**: Process of opening a data table, creating a response surface design, and loading factors into the design using the REML method.
+> **Summary**: Automates the creation of a response surface design by loading factors from a data table, utilizing JMP's DOE (Design of Experiments) functionality.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #REML, #ResponseSurfaceDesign, #DataTable -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #ResponseSurfaceDesign, #DataTable, #LogCapture -->
 
 **Code**:
 ```jsl
@@ -6083,9 +6083,9 @@ Log Capture( d << Load Factors );
 
 
 ### Example 122
-> **Summary**: Creates and analyzes a custom design experiment with continuous factors, including response targeting and factor saving, using JMP's DOE platform.
+> **Summary**: Automates the creation and manipulation of a custom design experiment in JMP, including adding continuous factors and generating a report.
 
-<!-- Keywords: #JMPDOE, #CustomDesign, #ContinuousFactors, #ResponseTargeting, #FactorSaving -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesignExperiment, #ContinuousFactors, #DOE, #ReportGeneration -->
 
 **Code**:
 ```jsl
@@ -6137,9 +6137,9 @@ d << Close Window;
 
 
 ### Example 123
-> **Summary**: Creates a custom design with continuous factors, response variable, and constraint matrix to perform a variance component analysis using REML method in Standard Least Squares personality.
+> **Summary**: Automates the creation and configuration of a custom design with response variable 'Y', continuous factors X1, X2, and X3, and constraint matrix for DOE analysis.
 
-<!-- Keywords: #DOE, #CustomDesign, #REML, #VarianceComponentAnalysis, #JMP -->
+<!-- Keywords: #JSLScripting, #DOEAnalysis, #CustomDesign, #ContinuousFactors, #ConstraintMatrix -->
 
 **Code**:
 ```jsl
@@ -6179,9 +6179,9 @@ d << close window;
 
 
 ### Example 124
-> **Summary**: Process of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the process of defining an experimental design, evaluating its power, and retrieving results in JMP.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOEDesign, #REMLMethod, #VarianceComponentAnalysis, #ShrinkageModel -->
+<!-- Keywords: #JMPScriptingLanguage, #ExperimentalDesign, #PowerAnalysis, #DataTableManagement, #DesignEvaluation -->
 
 **Code**:
 ```jsl
@@ -6206,9 +6206,9 @@ d << close window;
 
 
 ### Example 125
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, leveraging the Custom Design feature of JMP.
+> **Summary**: Automates the process of defining a Design of Experiments (DOE) and evaluating its effect power, utilizing JMP's built-in DOE functionality.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOE, #REML, #VarianceComponentAnalysis, #RandomEffects -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #EffectPower, #DataAnalysis, #StatisticalModeling -->
 
 **Code**:
 ```jsl
@@ -6231,9 +6231,9 @@ d << close window;
 
 
 ### Example 126
-> **Summary**: Runs a design of experiments (DOE) analysis using the REML method to evaluate estimation efficiencies in a Standard Least Squares personality, with interactive features for factor selection and response specification.
+> **Summary**: Automates the process of defining a design experiment, evaluating its efficiency, and retrieving estimation efficiencies in JMP.
 
-<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #REMLMethod, #StandardLeastSquares, #EstimationEfficiencies -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #EstimationEfficiencies, #DataManagement, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -6257,9 +6257,9 @@ d << close window;
 
 
 ### Example 127
-> **Summary**: Process of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the process of creating a DOE design, setting factors and response, getting design diagnostics, modifying diagnostics data, and closing the data table and DOE window.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignofExperiments, #REMLMethod, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #DOEDesign, #DataTableManagement, #ScriptAutomation -->
 
 **Code**:
 ```jsl
@@ -6284,9 +6284,9 @@ d << close window;
 
 
 ### Example 128
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to generate a design matrix from specified factors.
+> **Summary**: Automates the creation and analysis of a Design of Experiments (DOE) report, extracting design matrix data from the output.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModel, #JSL -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #DOEReportGeneration, #DataExtraction, #StatisticalAnalysis -->
 
 **Code**:
 ```jsl
@@ -6312,9 +6312,9 @@ d << close window;
 
 
 ### Example 129
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to create an experimental design.
+> **Summary**: Automates the creation and analysis of a design experiment, generating a report with extracted matrix data.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScripting, #DesignOfExperiments, #RootMeanSquareError, #DataAnalysis, #MatrixOperations -->
 
 **Code**:
 ```jsl
@@ -6340,9 +6340,9 @@ d << close window;
 
 
 ### Example 130
-> **Summary**: Creates a Design of Experiments (DOE) design using the Augment method, with specified sample size and output table generation.
+> **Summary**: Automates the creation and configuration of a Design of Experiments (DOE) design, including augmentation, sample size definition, and table generation.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentMethod, #SampleSize, #OutputTable -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #Augmentation, #SampleSize, #DesignTable -->
 
 **Code**:
 ```jsl
@@ -6372,9 +6372,9 @@ d << close window;
 
 
 ### Example 131
-> **Summary**: Creates an augmented design table using the Augment Design method with replicate augmentation, and then generates a table from it.
+> **Summary**: Automates the creation of an augmented design table using the Augment Design method with replicate augmentation, from a specified data table.
 
-<!-- Keywords: #DOE, #AugmentDesign, #ReplicateAugmentation, #JSL, #StatisticalModeling -->
+<!-- Keywords: #JSLScripting, #DOE, #AugmentDesign, #ReplicateAugmentation, #DataManipulation -->
 
 **Code**:
 ```jsl
@@ -6403,9 +6403,9 @@ d << close window;
 
 
 ### Example 132
-> **Summary**: Creates a Design of Experiments (DOE) design table with centerpoints using the Augment Method, and then generates the design table.
+> **Summary**: Automates the creation of a Design of Experiments (DOE) design table with centerpoints, utilizing the Augment Method and specifying factors and response variables.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentMethod, #Centerpoints, #DOEDesignTable -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #Centerpoints, #DesignOfExperiments, #AugmentMethod -->
 
 **Code**:
 ```jsl
@@ -6432,9 +6432,9 @@ d << close window;
 
 
 ### Example 133
-> **Summary**: Creates a design experiment with fold-over augmentation and generates an augmented data table for analysis.
+> **Summary**: Automates the creation and augmentation of a design experiment in JMP, utilizing the Augment Design platform to generate an augmented table.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignofExperiments, #FoldOverAugmentation, #DataTableManipulation, #JMPScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignExperiment, #AugmentDesign, #FoldOver, #DataTable -->
 
 **Code**:
 ```jsl
@@ -6462,9 +6462,9 @@ d << close window;
 
 
 ### Example 134
-> **Summary**: Creates and manipulates design tables for mixture experiments, including augmentation, subset selection, and customization.
+> **Summary**: Automates the creation and manipulation of design tables in JMP, including augmented designs, mixture designs, and custom designs.
 
-<!-- Keywords: #JSLScripting, #DOE, #MixtureDesign, #Augmentation, #SubsetSelection -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #MixtureDesign, #CustomDesign, #DataManipulation -->
 
 **Code**:
 ```jsl
@@ -6530,9 +6530,9 @@ If( isPro,
 
 
 ### Example 135
-> **Summary**: Runs the design of experiments (DOE) process to generate a custom design with continuous factors, load responses, and create a report in JMP.
+> **Summary**: Automates the design of experiments (DOE) process, generating a custom design with continuous factors and loading responses.
 
-<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #CustomDesign, #ContinuousFactors, #ReportGeneration -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #ContinuousFactors, #CustomDesign, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -6564,9 +6564,9 @@ d << Close Window;
 
 
 ### Example 136
-> **Summary**: Runs a custom design experiment with load factors to generate a report, utilizing the REML method for variance component analysis and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation and reporting of a custom design experiment, loading factors and generating the design.
 
-<!-- Keywords: #JSL, #DOE, #REML, #CustomDesign, #RandomEffects -->
+<!-- Keywords: #JSLScriptingLanguage, #CustomDesignExperiment, #DesignofExperiments, #DataTable, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -6589,9 +6589,9 @@ d << close window;
 
 
 ### Example 137
-> **Summary**: Runs the design of experiments (DOE) for a custom model with continuous factors X1 and X2, using the REML method to perform variance component analysis.
+> **Summary**: Automates the design of experiments (DOE) for a custom design with continuous factors X1 and X2, including an intercept term, and loads constraints.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #REMLMethod, #CustomModel, #VarianceComponentAnalysis -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDesign, #ContinuousFactors, #Constraints -->
 
 **Code**:
 ```jsl
@@ -6617,9 +6617,9 @@ d = DOE(
 
 
 ### Example 138
-> **Summary**: Process of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design and analysis of a DOE experiment to evaluate the relationship between Silica, Sulfur, and Silane factors on the Stretch response.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JMPScriptingLanguage -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #FactorialDesign, #ResponseSurfaceMethodology, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -6642,9 +6642,9 @@ d << Remove Term( {3, 2} );
 
 
 ### Example 139
-> **Summary**: Runs the design of experiments (DOE) and retrieves the X matrix for a shrinkage model with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the design experiment process by opening a data table, defining factors and response variables, evaluating the design, and retrieving the X matrix.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #REMLMethod, #ShrinkageModel, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #DOE, #XMatrix, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -6664,9 +6664,9 @@ X = d << Get X Matrix;
 
 
 ### Example 140
-> **Summary**: Creates a Design of Experiments (DOE) object and retrieves power values for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation and evaluation of a design of experiments (DOE) to analyze the relationship between Silica, Sulfur, and Silane factors on the Stretch response.
 
-<!-- Keywords: #DesignOfExperiments, #REML, #ShrinkageModel, #RandomEffects, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #DOE, #DesignOfExperiments, #FactorAnalysis, #ResponseVariable -->
 
 **Code**:
 ```jsl
@@ -6688,9 +6688,9 @@ X = d << Get Power;
 
 
 ### Example 141
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to design and evaluate an experiment.
+> **Summary**: Automates the design experiment process by opening a data table, specifying factors and response variables, evaluating the design, and retrieving effect power for factors.
 
-<!-- Keywords: #JMPScriptingLanguage, #DOEFunction, #REMLMethod, #VarianceComponentAnalysis, #StandardLeastSquares -->
+<!-- Keywords: #JSLScripting, #DesignExperiment, #EffectPower, #DOE, #JMP -->
 
 **Code**:
 ```jsl
@@ -6711,9 +6711,9 @@ X = d << Get Effect Power;
 
 
 ### Example 142
-> **Summary**: Process of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the process of defining a DOE experiment, specifying factors and response, and evaluating design efficiencies in JMP.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModeling, #JMPScripting -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #DOE, #FactorialDesign, #EfficiencyEvaluation -->
 
 **Code**:
 ```jsl
@@ -6732,9 +6732,9 @@ X = d << Get Estimation Efficiencies;
 
 
 ### Example 143
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to create a design.
+> **Summary**: Automates the creation and analysis of a design of experiments (DOE) to evaluate the relationship between Silica, Sulfur, and Silane factors on Stretch response.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #FactorAnalysis, #ResponseModeling, #DataTableOperations -->
 
 **Code**:
 ```jsl
@@ -6757,9 +6757,9 @@ X[2] = .;
 
 
 ### Example 144
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE design to explore relationships between Silica, Sulfur, Silane, and Stretch.
+> **Summary**: Automates the creation and reporting of a Design of Experiments (DOE) design, setting significance level to 0.10 and extracting report data.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JMPScriptingLanguage -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #DesignOfExperiments, #SignificanceLevel, #ReportGeneration -->
 
 **Code**:
 ```jsl
@@ -6786,9 +6786,9 @@ X = rpt[Number Col Edit Box( 1 )] << get as matrix;
 
 
 ### Example 145
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to define the experiment.
+> **Summary**: Automates the process of designing and evaluating a response surface methodology (RSM) experiment, generating a report with RMSE value and extracting a matrix from an edit box.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModel, #StandardLeastSquares -->
+<!-- Keywords: #JMPScriptingLanguage, #DOEDesign, #ResponseSurfaceMethodology, #RMSEValue, #ReportGeneration -->
 
 **Code**:
 ```jsl
@@ -6815,9 +6815,9 @@ X = rpt[Number Col Edit Box( 2 )] << get as matrix;
 
 
 ### Example 146
-> **Summary**: Performs a variance component analysis using the REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to define an experiment.
+> **Summary**: Automates the design and analysis of a DOE experiment, generating a report with power analysis section extracted as a matrix.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #ShrinkageModeling, #JMPScripting -->
+<!-- Keywords: #JMPScripting, #DOEExperiment, #PowerAnalysis, #DesignOfExperiments, #JSLScript -->
 
 **Code**:
 ```jsl
@@ -6843,9 +6843,9 @@ X = rpt["Design Evaluation"]["Power Analysis"][2][2] << get as matrix;
 
 
 ### Example 147
-> **Summary**: Process of performing a variance component analysis using the REML method and fitting a model for shrinkage with random effects in the Standard Least Squares personality, utilizing the DOE function to define the experiment.
+> **Summary**: Automates the process of designing and generating a DOE experiment, grouping new runs into blocks, setting augmentation method, and creating a design table.
 
-<!-- Keywords: #DOE, #REML, #VarianceComponentAnalysis, #RandomEffectsModeling, #JSL -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignofExperiments, #AugmentationMethod, #BlockDesign, #DataTable -->
 
 **Code**:
 ```jsl
@@ -6873,9 +6873,9 @@ x = Column( Current Data Table(), "Block" ) << get as matrix;
 
 
 ### Example 148
-> **Summary**: Creates a Design of Experiments (DOE) for analyzing the relationship between Silica, Sulfur, and Silane on Stretch, with augmentation and sample size control.
+> **Summary**: Automates the creation of a Design of Experiments (DOE) design with specified factors and response, utilizing the Augment Method and setting a sample size.
 
-<!-- Keywords: #JSLScripting, #DOE, #Augmentation, #SampleSizeControl, #DesignOfExperiments -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEDesign, #AugmentMethod, #SampleSize, #DesignOfExperiments -->
 
 **Code**:
 ```jsl
@@ -6900,9 +6900,9 @@ d << make table;
 
 
 ### Example 149
-> **Summary**: Creates a Design of Experiments (DOE) table with replicates, using the Augment Method and specifying factors X1, X2, and X3.
+> **Summary**: Automates the creation of a Design of Experiments (DOE) table with specified factors and response variable, utilizing the Augment Method to replicate the design.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #AugmentMethod, #Replicate, #DesignOfExperiments -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentMethod, #Replication, #DataTable -->
 
 **Code**:
 ```jsl
@@ -6925,9 +6925,9 @@ d << make table;
 
 
 ### Example 150
-> **Summary**: Creates a Design of Experiments (DOE) table with centerpoints for analyzing the relationship between Silica, Sulfur, and Silane factors on Stretch response.
+> **Summary**: Automates the creation of a Design of Experiments (DOE) table with centerpoints, utilizing the Augment Method and specifying factors Silica, Sulfur, and Silane, as well as response Stretch.
 
-<!-- Keywords: #JSLScripting, #DOE, #Centerpoints, #DesignOfExperiments, #JMP -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #Centerpoints, #AugmentMethod, #DOETable -->
 
 **Code**:
 ```jsl
@@ -6951,9 +6951,9 @@ d << make table;
 
 
 ### Example 151
-> **Summary**: Runs the design and augmentation of a custom experiment with random effects using the REML method, generating an augmented design table for analysis.
+> **Summary**: Automates the creation of an augmented design table by defining a DOE experiment, specifying factors and response variables, applying the fold-over augment method, and generating the resulting table.
 
-<!-- Keywords: #JSLScripting, #DOEExperimentDesign, #REMLMethod, #RandomEffects, #AugmentedDesignTable -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEExperimentDesign, #AugmentMethod, #FoldOver, #DataTable -->
 
 **Code**:
 ```jsl
@@ -6974,9 +6974,9 @@ d << make table;
 
 
 ### Example 152
-> **Summary**: Creates a design experiment object with an augmented design, utilizing the Augment Method to add axial terms and generating a table for analysis.
+> **Summary**: Automates the creation of an augmented design experiment from a data table, defining factors and response variables, and generating a table for analysis.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentedDesign, #REMLMethod, #StandardLeastSquares -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentedDesign, #DataTableManipulation, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -6998,9 +6998,9 @@ d << make table;
 
 
 ### Example 153
-> **Summary**: Creates a custom design for a variance component analysis using REML method and fits a model for shrinkage with random effects in the Standard Least Squares personality.
+> **Summary**: Automates the creation of a custom design in JMP, incorporating various factors and settings to optimize the analysis process.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #REML, #RandomEffectsModel, #CustomDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #CustomDesign, #DOE, #FactorManagement, #RandomSeed -->
 
 **Code**:
 ```jsl
@@ -7036,9 +7036,9 @@ d = DOE(
 
 
 ### Example 154
-> **Summary**: Creates a custom design for a statistical experiment using the DOE function, specifying continuous and categorical factors, and optimizing the design with the REML method.
+> **Summary**: Automates the creation of a custom design with multiple factors and terms, utilizing the DOE function in JMP Scripting Language (JSL).
 
-<!-- Keywords: #JSLScriptingLanguage, #DOEFunction, #REMLMethod, #CustomDesign, #StatisticalExperiment -->
+<!-- Keywords: #JMPScriptingLanguage, #DOE, #CustomDesign, #FactorAddition, #TermAddition -->
 
 **Code**:
 ```jsl
@@ -7090,9 +7090,9 @@ rdesign[OutlineBox("Design Explorer")][Button Box(1)]<< click;
 
 ## DOE using Column
 ### Example 1
-> **Summary**: Creates a DOE design with multiple factors and a covariate, simulating responses and saving the X matrix for further analysis.
+> **Summary**: Automates the creation of a design of experiments (DOE) with a covariate, simulates responses, and saves the X matrix for further analysis.
 
-<!-- Keywords: #DOEDesign, #Covariate, #FactorialDesign, #Simulation, #JSLScripting -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #Covariate, #Simulation, #DataAnalysis -->
 
 **Code**:
 ```jsl
@@ -7121,9 +7121,9 @@ d << make design;
 
 
 ### Example 2
-> **Summary**: Creates a design of experiments (DOE) for multivariate correlations analysis with mahalanobis distances, utilizing the Augment Design method and specifying factors for age and sex.
+> **Summary**: Automates the creation of a design of experiments (DOE) for a continuous response variable, utilizing factors and interaction terms to optimize the experimental design.
 
-<!-- Keywords: #JSLScripting, #DOE, #MultivariateCorrelations, #MahalanobisDistances, #ExperimentalDesign -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #ContinuousResponseVariable, #FactorialDesign, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
@@ -7161,9 +7161,9 @@ dt = d << make table;
 
 
 ### Example 3
-> **Summary**: Creates and analyzes a custom design of experiments (DOE) with categorical factors, covariates, and polynomial terms to explore multivariate correlations.
+> **Summary**: Automates the creation and analysis of a custom design of experiments (DOE) with categorical factors, covariates, and polynomial terms, generating a report and comparing values to oracle lists.
 
-<!-- Keywords: #JSLScriptingLanguage, #CustomDOE, #CategoricalFactors, #Covariates, #PolynomialTerms -->
+<!-- Keywords: #JSLScripting, #DOEDesign, #CategoricalFactors, #PolynomialTerms, #ReportGeneration -->
 
 **Code**:
 ```jsl
@@ -7223,7 +7223,7 @@ d << Close Window;
 
 
 ### Example 4
-> **Summary**: Creates a design of experiments (DOE) with continuous and categorical covariates, generating a data table for further analysis.
+> **Summary**: Automates the creation of a design of experiments (DOE) with continuous and categorical covariates, generating a data table for further analysis.
 
 <!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #Covariates, #DataTable, #JMP -->
 
@@ -7256,9 +7256,9 @@ dt = d << Make Table;
 
 
 ### Example 5
-> **Summary**: Creates a DOE design with continuous, mixture, and categorical factors, as well as covariate columns for multivariate correlations analysis.
+> **Summary**: Automates the creation of a DOE design with continuous, mixture, and categorical factors, as well as covariates from an open data table.
 
-<!-- Keywords: #DOEDesign, #MultivariateCorrelations, #CategoricalFactors, #MixtureFactors, #ContinuousFactor -->
+<!-- Keywords: #JSLScriptingLanguage, #DOEDesign, #CategoricalFactors, #MixtureFactors, #ContinuousFactor -->
 
 **Code**:
 ```jsl
@@ -7294,9 +7294,9 @@ d << Add Factor( Covariate, cov1 ) << Add Factor( Covariate, cov2 ) << Add Facto
 
 
 ### Example 6
-> **Summary**: Creates a custom design of experiments (DOE) with continuous factors, covariates, and constraints to generate new data.
+> **Summary**: Automates the creation of a custom design of experiments (DOE) with continuous factors, covariates, and constraints to generate a new data table.
 
-<!-- Keywords: #JSLScriptingLanguage, #CustomDOEDesign, #Covariates, #Constraints, #DataGeneration -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #CustomDOE, #ContinuousFactors, #Covariates -->
 
 **Code**:
 ```jsl
@@ -7330,9 +7330,9 @@ d << Close Window;
 
 
 ## DOE using New Script
-> **Summary**: Runs the design and execution of an experiment using Easy DOE, capturing log output and collapsing whitespace.
+> **Summary**: Automates the process of designing and running an experiment using Easy DOE, capturing log output, and loading design into a table.
 
-<!-- Keywords: #JSLScripting, #EasyDOE, #DesignOfExperiments, #LogCapture, #DataAnalysis -->
+<!-- Keywords: #JMPScripting, #DesignofExperiments, #EasyDOE, #LogCapture, #TableOperations -->
 
 **Code**:
 ```jsl
@@ -7357,9 +7357,9 @@ d << close window;
 
 
 ## DOE using Select Where
-> **Summary**: Creates a custom design for a DOE experiment, utilizing factors and covariates to optimize response variables.
+> **Summary**: Automates a custom design of experiments (DOE) to optimize the 'Rating' response variable, incorporating categorical and continuous factors, covariates, and interaction terms.
 
-<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CustomDesign, #DOE, #JSL -->
+<!-- Keywords: #JSLScriptingLanguage, #CustomDOE, #Optimization, #FactorialDesign, #CovariateAnalysis -->
 
 **Code**:
 ```jsl
@@ -7416,9 +7416,9 @@ dt << Sort( By( :Covariate Row Index ), Order( Ascending ), Replace Table );
 
 
 ## DOE using Log Capture
-> **Summary**: Creates a design experiment with specified factors and response variable, utilizing the Augment Design method to generate a design.
+> **Summary**: Automates the creation of a design experiment with specified factors and response variable, utilizing Augment Design method and disallowed combinations.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignExperiment, #AugmentDesign, #DOE, #JMP -->
+<!-- Keywords: #JSLScripting, #DesignExperiment, #AugmentDesign, #DisallowedCombinations, #DOE -->
 
 **Code**:
 ```jsl
@@ -7461,9 +7461,9 @@ new_message = Regex( mylog, "Invalid disallowed combinations script. See Log for
 
 
 ## DOE using N Row
-> **Summary**: Creates a custom DOE design with mixture sum constraint and optimality criterion, utilizing the `DOE` function to generate a model matrix.
+> **Summary**: Automates the creation of a custom Design of Experiments (DOE) design with mixture sum constraint and optimality criterion, utilizing JMP's DOE platform.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #MixtureSum, #OptimalityCriterion, #DataTable -->
+<!-- Keywords: #JMPDOE, #MixtureDesign, #OptimalityCriterion, #CustomDOE, #Scripting -->
 
 **Code**:
 ```jsl
@@ -7510,9 +7510,9 @@ d << make design;
 
 
 ## DOE using Select Rows
-> **Summary**: Creates a custom Design of Experiments (DOE) design with specific row selection and covariate handling, utilizing JMP's DOE platform.
+> **Summary**: Automates the creation of a custom Design of Experiments (DOE) design in JMP, selecting specific rows from a data table and defining response variables, covariates, and terms.
 
-<!-- Keywords: #JMPDOE, #CustomDesign, #RowSelection, #CovariateHandling, #ExperimentalDesign -->
+<!-- Keywords: #JMPScriptingLanguage, #DesignOfExperiments, #CustomDOE, #CovariateSelection, #ResponseVariable -->
 
 **Code**:
 ```jsl
@@ -7548,9 +7548,9 @@ d << close window;
 
 ## DOE using Expr
 ### Example 1
-> **Summary**: Runs the design of experiments (DOE) analysis for a chemical reaction process, specifying factors and response variables, and setting augment method, random seed, and sample size.
+> **Summary**: Automates the design of experiments (DOE) analysis to optimize a chemical reaction process, utilizing an augment expression with specified factors and response variables.
 
-<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #AugmentMethod, #RandomSeed, #SampleSize -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #ChemicalReactionOptimization, #AugmentExpression, #JMPPlatform -->
 
 **Code**:
 ```jsl
@@ -7593,9 +7593,9 @@ augmentExpr;
 
 
 ### Example 2
-> **Summary**: Evaluates a designed experiment with specified factors and terms, generating an expression that can be used for further analysis.
+> **Summary**: Automates a Design of Experiments (DOE) evaluation to analyze the effects of Feed Rate, Catalyst, Stir Rate, Temperature, and Concentration on an outcome variable.
 
-<!-- Keywords: #JSLScriptingLanguage, #DOE, #DesignOfExperiments, #FactorialDesign, #Expr -->
+<!-- Keywords: #JSLScriptingLanguage, #DesignOfExperiments, #FactorialDesign, #AliasTerms, #EvaluateExpression -->
 
 **Code**:
 ```jsl
@@ -7627,9 +7627,9 @@ evaluateExpr;
 
 
 ### Example 3
-> **Summary**: Creates a MaxDiff design expression for data analysis, setting parameters such as number of profiles and choice sets.
+> **Summary**: Automates the creation and execution of a MaxDiff design expression to analyze data, utilizing the DOE function with specified parameters.
 
-<!-- Keywords: #MaxDiffDesign, #JSLScripting, #DataAnalysis, #ExperimentalDesign, #ChoiceBasedSurvey -->
+<!-- Keywords: #MaxDiffDesign, #DOEFunction, #JSLScripting, #DataAnalysis, #ExperimentalDesign -->
 
 **Code**:
 ```jsl
